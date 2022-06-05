@@ -1,0 +1,239 @@
+brightmap sprite FATTA1
+{
+map "brightmaps/FATTA1B.png"
+disablefullbright
+}
+
+brightmap sprite FATTA2A8
+{
+map "brightmaps/FATTA2A8B.png"
+disablefullbright
+}
+
+brightmap sprite FATTA3A7
+{
+map "brightmaps/FATTA3A7B.png"
+disablefullbright
+}
+
+brightmap sprite FATTA4A6
+{
+map "brightmaps/FATTA4A6B.png"
+disablefullbright
+}
+
+brightmap sprite FATTA5
+{
+map "brightmaps/FATTA5B.png"
+disablefullbright
+}
+
+brightmap sprite FATTB1
+{
+map "brightmaps/FATTB1B.png"
+disablefullbright
+}
+
+brightmap sprite FATTB2B8
+{
+map "brightmaps/FATTB2B8B.png"
+disablefullbright
+}
+
+brightmap sprite FATTB3B7
+{
+map "brightmaps/FATTB3B7B.png"
+disablefullbright
+}
+
+brightmap sprite FATTB4B6
+{
+map "brightmaps/FATTB4B6B.png"
+disablefullbright
+}
+
+brightmap sprite FATTB5
+{
+map "brightmaps/FATTB5B.png"
+disablefullbright
+}
+
+brightmap sprite FATTC1
+{
+map "brightmaps/FATTA1B.png"
+disablefullbright
+}
+
+brightmap sprite FATTC2C8
+{
+map "brightmaps/FATTC2C8B.png"
+disablefullbright
+}
+
+brightmap sprite FATTC3C7
+{
+map "brightmaps/FATTC3C7B.png"
+disablefullbright
+}
+
+brightmap sprite FATTC4C6
+{
+map "brightmaps/FATTC4C6B.png"
+disablefullbright
+}
+
+brightmap sprite FATTC5
+{
+map "brightmaps/FATTC5B.png"
+disablefullbright
+}
+
+brightmap sprite FATTD1
+{
+map "brightmaps/FATTD1B.png"
+disablefullbright
+}
+
+brightmap sprite FATTD2D8
+{
+map "brightmaps/FATTD2D8B.png"
+disablefullbright
+}
+
+brightmap sprite FATTD3D7
+{
+map "brightmaps/FATTD3D7B.png"
+disablefullbright
+}
+
+brightmap sprite FATTD4D6
+{
+map "brightmaps/FATTD4D6B.png"
+disablefullbright
+}
+
+brightmap sprite FATTD5
+{
+map "brightmaps/FATTD5B.png"
+disablefullbright
+}
+
+brightmap sprite FATTE1
+{
+map "brightmaps/FATTE1B.png"
+disablefullbright
+}
+
+brightmap sprite FATTE2E8
+{
+map "brightmaps/FATTE2E8B.png"
+disablefullbright
+}
+
+brightmap sprite FATTE3E7
+{
+map "brightmaps/FATTE3E7B.png"
+disablefullbright
+}
+
+brightmap sprite FATTE4E6
+{
+map "brightmaps/FATTE4E6B.png"
+disablefullbright
+}
+
+brightmap sprite FATTE5
+{
+map "brightmaps/FATTE5B.png"
+disablefullbright
+}
+
+brightmap sprite FATTF1
+{
+map "brightmaps/FATTF1B.png"
+disablefullbright
+}
+
+brightmap sprite FATTF2F8
+{
+map "brightmaps/FATTF2F8B.png"
+disablefullbright
+}
+
+brightmap sprite FATTF3F7
+{
+map "brightmaps/FATTF3F7B.png"
+disablefullbright
+}
+
+brightmap sprite FATTF4F6
+{
+map "brightmaps/FATTF4F6B.png"
+disablefullbright
+}
+
+brightmap sprite FATTF5
+{
+map "brightmaps/FATTF5B.png"
+disablefullbright
+}
+
+brightmap sprite FATTG1
+{
+map "brightmaps/FATTG1B.png"
+disablefullbright
+}
+
+brightmap sprite FATTG2G8
+{
+map "brightmaps/FATTG2G8B.png"
+disablefullbright
+}
+
+brightmap sprite FATTG3G7
+{
+map "brightmaps/FATTG3G7B.png"
+disablefullbright
+}
+
+brightmap sprite FATTG4G6
+{
+map "brightmaps/FATTG4G6B.png"
+disablefullbright
+}
+
+brightmap sprite FATTG5
+{
+map "brightmaps/FATTG5B.png"
+disablefullbright
+}
+
+brightmap sprite FATTH1
+{
+map "brightmaps/FATTH1B.png"
+disablefullbright
+}
+
+brightmap sprite FATTH2H8
+{
+map "brightmaps/FATTH2H8B.png"
+disablefullbright
+}
+
+brightmap sprite FATTH3H7
+{
+map "brightmaps/FATTH3H7B.png"
+disablefullbright
+}
+
+brightmap sprite FATTH4H6
+{
+map "brightmaps/FATTH4H6B.png"
+disablefullbright
+}
+
+brightmap sprite FATTH5
+{
+map "brightmaps/FATTH5B.png"
+disablefullbright
+}

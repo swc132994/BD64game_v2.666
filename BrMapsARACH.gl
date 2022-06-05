@@ -1,0 +1,119 @@
+brightmap sprite BSPIA1
+{
+map "brightmaps/BSPIA1B.png"
+disablefullbright
+}
+
+brightmap sprite BSPIA2A8
+{
+map "brightmaps/BSPIA2A8B.png"
+disablefullbright
+}
+
+brightmap sprite BSPIA3A7
+{
+map "brightmaps/BSPIA3A7B.png"
+disablefullbright
+}
+
+brightmap sprite BSPIA4A6
+{
+map "brightmaps/BSPIA4A6B.png"
+disablefullbright
+}
+
+brightmap sprite BSPIA5
+{
+map "brightmaps/BSPIA5B.png"
+disablefullbright
+}
+
+brightmap sprite BSPIB1
+{
+map "brightmaps/BSPIB1B.png"
+disablefullbright
+}
+
+brightmap sprite BSPIB2B8
+{
+map "brightmaps/BSPIB2B8B.png"
+disablefullbright
+}
+
+brightmap sprite BSPIB3B7
+{
+map "brightmaps/BSPIB3B7B.png"
+disablefullbright
+}
+
+brightmap sprite BSPIB4B6
+{
+map "brightmaps/BSPIB4B6B.png"
+disablefullbright
+}
+
+brightmap sprite BSPIB5
+{
+map "brightmaps/BSPIB5B.png"
+disablefullbright
+}
+
+brightmap sprite BSPIC1
+{
+map "brightmaps/BSPIA1B.png"
+disablefullbright
+}
+
+brightmap sprite BSPIC2C8
+{
+map "brightmaps/BSPIC2C8B.png"
+disablefullbright
+}
+
+brightmap sprite BSPIC3C7
+{
+map "brightmaps/BSPIC3C7B.png"
+disablefullbright
+}
+
+brightmap sprite BSPIC4C6
+{
+map "brightmaps/BSPIC4C6B.png"
+disablefullbright
+}
+
+brightmap sprite BSPIC5
+{
+map "brightmaps/BSPIC5B.png"
+disablefullbright
+}
+
+brightmap sprite BSPID1
+{
+map "brightmaps/BSPID1B.png"
+disablefullbright
+}
+
+brightmap sprite BSPID2D8
+{
+map "brightmaps/BSPID2D8B.png"
+disablefullbright
+}
+
+brightmap sprite BSPID3D7
+{
+map "brightmaps/BSPID3D7B.png"
+disablefullbright
+}
+
+brightmap sprite BSPID4D6
+{
+map "brightmaps/BSPID4D6B.png"
+disablefullbright
+}
+
+brightmap sprite BSPID5
+{
+map "brightmaps/BSPID5B.png"
+disablefullbright
+}

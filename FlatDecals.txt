@@ -1,0 +1,162 @@
+//R29 ADDED SCRIPT AND MENU OPTION TO ENABLE/DISABLE	//R31 SIMPLIFIED & FLOOR/CEILING CHECK
+ACTOR DetectFloorBullet		//r31 checked and working
+{
+scale 0.4
+radius 1
+height 1
+Alpha 0.9	//R31 WAS 0.7
+Renderstyle Translucent
+-DONTSPLASH
++MISSILE
++CLIENTSIDEONLY
++NOTELEPORT
++NOBLOCKMAP
++FORCEXYBILLBOARD
++NODAMAGETHRUST
++MOVEWITHSECTOR
++DOOMBOUNCE
+BounceFactor 0.01
+	States
+	{
+	Spawn:
+		TNT1 A 0 NODELAY A_JumpIf(CallACS("Flat_Decal_Remover")==1,"Off")			//r31
+//		TNT1 A 1 ACS_ExecuteAlways(17001,0)		//R31 REMOVED
+//	On:																		//R31 REMOVED
+		TNT1 A 0 ThrustThingZ(0,-10,0,1)
+		TNT1 A 1 A_CHECKFLOOR("death")											//R31 added floor check
+		STOP
+	Off:
+		TNT1 A 0 A_FadeOut(1)
+		Stop
+	Death:
+		XXX1 A 2000
+		Stop
+	}
+}
+
+ACTOR DetectCeilBullet	//r31 checked and working
+{
+scale 0.4
+radius 1
+height 1
+Alpha 0.9	//R31 WAS 0.7
+Renderstyle Translucent
+-DONTSPLASH
++MISSILE
++NOTELEPORT
++NOBLOCKMAP
++THRUACTORS
++MOVEWITHSECTOR
++NODAMAGETHRUST
++NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 0 NODELAY A_JumpIf(CallACS("Flat_Decal_Remover")==1,"Off")			//r31
+//		TNT1 A 1 ACS_ExecuteAlways(17001,0)		//r31 removed
+//	On:																		//r31 removed
+		TNT1 A 0 ThrustThingZ(0,35,0,1)
+		TNT1 A 1 A_CHECKCEILING("death")										//R31 added ceiling check
+		STOP
+	Off:
+		TNT1 A 0 A_FadeOut(1)
+		Stop
+	Death:
+		XXX1 A 2000
+		Stop
+	}
+}
+
+ACTOR DetectFloorCraterNoSplashes : DetectFloorBullet
+{
+scale 3.4
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectFloorCrater : DetectFloorBullet
+{
+scale 3.4
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectCeilCrater : DetectCeilBullet
+{
+scale 3.4
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectFloorCraterSmall : DetectFloorBullet
+{
+scale 2.0
+Renderstyle Shaded
+StencilColor "Black"
+Alpha 0.9
+}
+
+ACTOR DetectCeilCraterSmall : DetectCeilBullet
+{
+scale 2.0
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectBarrelCrater : DetectFloorBullet
+{
+scale 3.4
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectFloorCraterMed : DetectFloorBullet									//R28.3 added
+{
+scale 2.0
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectCeilCraterMed : DetectCeilBullet									//R28.3 added
+{
+scale 2.0
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectFloorLaser : DetectFloorBullet										//r31 added
+{
+scale 1.5
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectCeilLaser : DetectCeilBullet										//r31 added
+{
+scale 1.5
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectFloorCraterSmallMotherdemon : DetectFloorBullet
+{
+scale 2.0
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+	states
+	{
+	Death:
+		XXX1 A 350
+		Stop
+	}
+}

@@ -1,0 +1,201 @@
+/*
+actor 64RocketSmokeTrail : RocketSmokeTrail replaces RocketSmokeTrail
+{
+  Renderstyle Translucent
+  Alpha 0.5
+  VSpeed 0
+  scale 0.75
+  states
+  {
+  Spawn:
+    RSMK ABCDE 2 bright
+    stop
+  }
+}
+
+KEYCONF OLD //R16
+
+ClearPlayerClasses
+
+AddPlayerClass 64DoomPlayer
+AddPlayerClass Tactical64DoomPlayer
+AddPlayerClass Tactical64DoomPlayer_P											//R15
+
+WeaponSection 64WeaponSection
+
+SetSlot 1 64Fist 64Chainsaw 64ChainsawTACTICAL									//R8 REMOVE 64FIST TACTICAL
+SetSlot 2 64Pistol 64PistolTactical 64RifleTactical								//R15 PISTOL TACTICAL ADDED
+SetSlot 3 64Shotgun 64ShotgunTACTICAL 64SuperShotgun 64SuperShotgunTACTICAL		//R3 ADDED 64SSgTACTICAL
+SetSlot 4 64Rifle 64Chaingun 64ChaingunTactical
+SetSlot 5 64RocketLauncher 64RocketLauncherDM 64RocketLauncherTACTICAL
+SetSlot 6 64PlasmaRifle 64PlasmaRifleDM 64PlasmaRifleTACTICAL
+SetSlot 7 64BFG9000
+SetSlot 8 Unmaker UnmakerTACTICAL												//R13 UNMAKER TACTICAL ADDED
+SetSlot 9 Lasergun
+
+OLD DIFFICULTIES
+Skill Survival1
+{
+	SpawnFilter = Normal
+	Name = "Survival Horror (Normal)"											//R13
+	mustconfirm = "You take double damage, there is only half as much ammo, enemies respawn in 35 secs. Press Y or N"
+	DamageFactor = 2.0
+	respawntime = 35
+//	disablecheats
+}
+
+
+Skill Survival2
+{
+	SpawnFilter = Hard
+	Name = "Survival Horror (Hard)"												//R13
+	mustconfirm = "Same as regular Survival Horror, but with more enemies. Press Y or N"
+	DamageFactor = 2.0
+	respawntime = 35
+//	disablecheats
+*/
+
+OLD LOCKDEFS
+
+ClearLocks
+
+Lock 1 Doom
+{
+GLRedCard
+Message "$PD_REDC"
+RemoteMessage "$PD_REDCO"
+}
+
+Lock 2 Doom
+{
+GLBlueCard
+Message "$PD_BLUEC"
+RemoteMessage "$PD_BLUECO"
+}
+
+Lock 3 Doom
+{
+GLYellowCard
+Message "$PD_YELLOWC"
+RemoteMessage "$PD_YELLOWCO"
+}
+
+Lock 4 Doom
+{
+GLRedSkull
+Message "$PD_REDS"
+RemoteMessage "$PD_REDSO"
+}
+
+Lock 5 Doom
+{
+GLBlueSkull
+Message "$PD_BLUES"
+RemoteMessage "$PD_BLUESO"
+}
+
+Lock 6 Doom
+{
+GLYellowSkull
+Message "$PD_YELLOWS"
+RemoteMessage "$PD_YELLOWSO"
+}
+
+Lock 101 Doom
+{
+GLBlueCard
+GLBlueSkull
+GLYellowCard
+GLYellowSkull
+GLRedCard
+GLRedSkull
+Message "You need all six keys."
+RemoteMessage "You need all six keys."
+}
+
+Lock 129 Doom
+{
+Any { GLRedCard GLRedSkull }
+Message "$PD_REDK"
+RemoteMessage "$PD_REDO"
+}
+
+Lock 130 Doom
+{
+Any { GLBlueCard GLBlueSkull }
+Message "$PD_BLUEK"
+RemoteMessage "$PD_BLUEO"
+}
+
+Lock 131 Doom
+{
+Any { GLYellowCard GLYellowSkull }
+Message "$PD_YELLOWK"
+RemoteMessage "$PD_YELLOWO"
+}
+
+Lock 132 Doom
+{
+Any { GLRedCard GLRedSkull }
+Message "$PD_REDK"
+RemoteMessage "$PD_REDO"
+}
+
+Lock 133 Doom
+{
+Any { GLBlueCard GLBlueSkull }
+Message "$PD_BLUEK"
+RemoteMessage "$PD_BLUEO"
+}
+
+Lock 134 Doom
+{
+Any { GLYellowCard GLYellowSkull }
+Message "$PD_YELLOWK"
+RemoteMessage "$PD_YELLOWO"
+}
+
+Lock 229 dOOM
+{
+Any { GLBlueCard GLBlueSkull }
+Any { GLYellowCard GLYellowSkull }
+Any { GLRedCard GLRedSkull }
+Message "You need all three keys."
+RemoteMessage "You need all three keys."
+}
+
+
+Lock 252 Doom
+{
+WpnPower1Icon
+Message "You lack the ability to activate it..."
+RemoteMessage "You lack the ability to activate it..."
+LockedSound "null"
+}
+
+Lock 253 Doom
+{
+WpnPower2Icon
+Message "You lack the ability to activate it..."
+RemoteMessage "You lack the ability to activate it..."
+LockedSound "null"
+}
+
+Lock 254 Doom
+{
+WpnPower3Icon
+Message "You lack the ability to activate it..."
+RemoteMessage "You lack the ability to activate it..."
+LockedSound "null"
+}
+
+Lock 251 Doom
+{
+WpnPower1Icon
+WpnPower2Icon
+WpnPower3Icon
+Message "You lack all ability to activate it..."
+RemoteMessage "You lack all ability to activate it..."
+}
+
+END OLD LOCKDEFS

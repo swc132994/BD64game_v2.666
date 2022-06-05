@@ -1,0 +1,206 @@
+actor 64Cyberdemon : Cyberdemon Replaces Cyberdemon
+{
+scale 0.80																		//R23 WAS 0.9	r31 was 0.85
+Health 5000
+speed 13
+Painchance "SuperFists",200
+Painchance "Kick",200
+Painchance "SuperKick",200
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+//+FORCEXYBILLBOARD																//R12.3
++FLOORCLIP
+	states
+	{
+	Spawn:
+		CYBR F 10 A_Look
+		TNT1 A 0 A_GiveInventory("BlueArmor",1)								//R19
+		loop
+	See:
+		CYBR A 3 A_Metal
+		CYBR AA 3 A_Chase
+		CYBR B 3 A_Hoof
+		CYBR BBCCCDDD 3 A_Chase
+		Loop
+	Pain:
+		CYBR F 10 A_Pain
+		goto See
+	Pain.Vertigo:
+		TNT1 A 0 ThrustThingZ(0,55,0,0)
+		CYBR F 10 A_Pain
+		Goto See
+	Missile:
+		CYBR F 7 A_FaceTarget
+		CYBR E 10 A_CustomMissile("CyberROcket",62,-24,0)	//r31 was 55-20
+		CYBR F 10 A_FaceTarget
+		CYBR E 10 A_CustomMissile("CyberROcket",62,-24,0)	//r31 was 55-20
+		CYBR F 10 A_FaceTarget
+		CYBR E 10 A_CustomMissile("CyberROcket",62,-24,0)	//r31 was 55-20
+		goto See
+	Death:
+		CYBR G 10
+		CYBR G 0 A_Scream
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",0,0,55,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",-20,-20,110,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",-20,-20,110,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
+		CYBR G 4 A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
+		CYBR H 4 A_SpawnItemEx("64BossExplosion",0,0,55,0,0,0,0,130)
+		CYBR H 4 A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
+		CYBR I 4 A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
+		CYBR I 4 A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
+		CYBR J 4 A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
+		CYBR J 4 A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
+		CYBR K 4 A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
+		CYBR K 4 A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
+		CYBR L 6 A_NoBlocking
+		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
+		TNT1 AAaaa 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AAaaa 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AAaaa 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))	//R30.5
+		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,32)
+		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,90)
+		TNT1 A 0 A_CustomMissile("XDeathCyberArm",80,0,random(0,360),2,random(40,90))	//R30.9
+		TNT1 A 0 A_CustomMissile("XDeathCyberLeg",50,0,random(0,360),2,random(40,90))	//R30.9
+		TNT1 AAAAAAAAA 0 A_CustomMissile("BurningXDeath1",42,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("SuperGoreSpawner",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//r30.9
+		CYBR MN 6
+		CYBR O 30
+		TNT1 A 0 A_BossDeath
+		CYBR O -1
+		stop
+	}
+}
+
+ACTOR Annihilator64 : Cyberdemon 1001		//FROM ONOX792 - PROJECT NIGHTMARE	//R23 inherit from cyberdemon	//R26.1 ADDED ID FROM TC ABS
+{
+SpawnID 157																		//R26.1 ADDED ID FROM TC ABS
+Scale 0.85																		//R23 was 0.95
+Health 6000
+//Height 150																	//R23 REMOVED
+Radius 40
+Mass 1000
+Speed 16
+PainChance 10
+Painchance "SuperFists",200
+Painchance "Kick",200
+Painchance "SuperKick",200
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+Obituary "The Annihilator blew %o away with its rockets."
+SeeSound "monster/annsit"
+PainSound "cyber/pain"
+DeathSound "monster/anndth"
+ActiveSound "cyber/active"
+Tag "Annihilator"		//r31 added
+MONSTER
+//+FORCEXYBILLBOARD																//R12.3
++NOTARGET
++FLOORCLIP
++NORADIUSDMG
++BOSS
++MISSILEEVENMORE
+States
+	{
+	Spawn:
+		A64A AB 10 A_Look
+		TNT1 A 0 A_GiveInventory("BlueArmor",1)								//R19
+		Loop
+	See:
+		A64A A 3 A_Playsound("monster/anhoof")
+		A64A ABBCC 3 A_Chase
+		A64A D 3 A_Playsound("monster/anhoof")
+		A64A D 3 A_Chase
+		Loop
+	Missile:
+		A64A E 0 A_Jump(128,11)
+		A64A E 6 A_FaceTarget
+		A64A F 0 Bright A_CustomMissile("CyberRocket",68,25,0)					//R23 was 80 height all missiel attack
+		A64A F 12 Bright A_CustomMissile("CyberRocket",68,-25,0)
+		A64A E 12 A_FaceTarget
+		A64A F 0 Bright A_CustomMissile("CyberRocket",68,25,0)
+		A64A F 12 Bright A_CustomMissile("CyberRocket",68,-25,0)
+		A64A E 12 A_FaceTarget
+		A64A F 0 Bright A_CustomMissile("CyberRocket",68,25,0)
+		A64A F 12 Bright A_CustomMissile("CyberRocket",68,-25,0)
+		A64A E 0 A_Jump(128,1)
+		Goto See
+		A64A E 6 A_FaceTarget
+		A64A F 0 Bright A_CustomMissile("CyberRocket",68,25,0)
+		A64A F 12 Bright A_CustomMissile("CyberRocket",68,-25,0)
+		A64A E 12 A_FaceTarget
+		A64A F 0 Bright A_CustomMissile("CyberRocket",68,25,0)
+		A64A F 12 Bright A_CustomMissile("CyberRocket",68,-25,0)
+		A64A E 12 A_FaceTarget
+		A64A F 0 Bright A_CustomMissile("CyberRocket",68,25,0)
+		A64A F 12 Bright A_CustomMissile("CyberRocket",68,-25,0)
+		Goto See
+	Pain:
+		A64A B 10 A_Pain
+		Goto See
+	Death:
+		A64A H 10 Bright
+		A64A I 10 Bright A_Scream
+		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,55,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,110,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,110,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,55,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
+		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
+		A64A JKL 4 Bright
+		A64A M 4 Bright A_NoBlocking
+		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
+		TNT1 AAaaa 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AAaaa 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AAaaa 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))	//R30.5
+		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,32)
+		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,90)
+		TNT1 AA 0 A_CustomMissile("XDeathCyberArm",80,0,random(0,360),2,random(40,90))	//R30.9
+		TNT1 AA 0 A_CustomMissile("XDeathCyberLeg",50,0,random(0,360),2,random(40,90))	//R30.9
+		TNT1 AAAAAAAAA 0 A_CustomMissile("BurningXDeath1",42,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("SuperGoreSpawner",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//r30.9
+		A64A NO 4 Bright
+		A64A P 4
+		A64A Q -1 A_BossDeath
+		stop																	//R31 ADDED STOP
+	}
+}

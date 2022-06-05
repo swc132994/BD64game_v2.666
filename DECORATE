@@ -1,0 +1,60 @@
+//PLAYER CLASSES
+#INCLUDE Player.txt
+
+//EFFECTS
+#INCLUDE Blood.txt
+#INCLUDE BloodSplash.txt
+#INCLUDE Gibs.txt
+#INCLUDE MeltedEnemies.txt
+#INCLUDE Teleports.txt
+#INCLUDE StickyGibs.txt
+#INCLUDE HeadTargets.txt
+#INCLUDE Casings.txt
+#INCLUDE Puffs.txt
+#INCLUDE Particles.txt
+#INCLUDE Smoke.txt
+#INCLUDE Flares.txt
+#INCLUDE Zfire.txt
+#INCLUDE Lights.txt
+#INCLUDE Barrels.txt
+#INCLUDE Insects.txt
+#INCLUDE Water.txt
+#INCLUDE FlatDecals.txt
+
+//WEAPONS, AMMO & ITEMS
+#INCLUDE Punches.txt
+#INCLUDE Chainsaw.txt
+#INCLUDE Pistol.txt
+#INCLUDE Shotgun.txt
+#INCLUDE SSG.txt
+#INCLUDE Rifle.txt
+#INCLUDE Chaingun.txt
+#INCLUDE RocketLauncher.txt
+#INCLUDE PlasmaRifle.txt
+#INCLUDE BFG.txt
+#INCLUDE Unmaker.txt
+#INCLUDE AlphaUnmaker.txt
+#INCLUDE Items.txt
+
+//MONSTERS
+#INCLUDE Zombies.txt
+#INCLUDE Imps.txt
+#INCLUDE Demons.txt
+#INCLUDE Cacodemons.txt
+#INCLUDE Revenant.txt
+#INCLUDE Revenant_old.txt
+#INCLUDE Fatso.txt
+#INCLUDE Arachnotron.txt
+#INCLUDE LostSoul.txt
+#INCLUDE HellKnight.txt
+#INCLUDE BaronOfHell.txt
+#INCLUDE PainElemental.txt
+#INCLUDE Cyberdemons.txt
+#INCLUDE Mastermind.txt
+#INCLUDE MotherDemon.txt
+#INCLUDE HellHound.txt
+#INCLUDE HellHound_old.txt
+#INCLUDE Archvile.txt
+
+//OPTIONAL SPAWNERS
+#INCLUDE RandomSpawners.txt

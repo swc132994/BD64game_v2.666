@@ -1,0 +1,89 @@
+brightmap sprite CYBRA1
+{
+map "brightmaps/CYBRA1B.png"
+disablefullbright
+}
+
+brightmap sprite CYBRA2
+{
+map "brightmaps/CYBRA2B.png"
+disablefullbright
+}
+
+brightmap sprite CYBRA8
+{
+map "brightmaps/CYBRA8B.png"
+disablefullbright
+}
+
+brightmap sprite CYBRB1
+{
+map "brightmaps/CYBRB1B.png"
+disablefullbright
+}
+
+brightmap sprite CYBRB2
+{
+map "brightmaps/CYBRB2B.png"
+disablefullbright
+}
+
+brightmap sprite CYBRB8
+{
+map "brightmaps/CYBRB8B.png"
+disablefullbright
+}
+
+brightmap sprite CYBRC1
+{
+map "brightmaps/CYBRC1B.png"
+disablefullbright
+}
+
+brightmap sprite CYBRC2
+{
+map "brightmaps/CYBRC2B.png"
+disablefullbright
+}
+
+brightmap sprite CYBRC8
+{
+map "brightmaps/CYBRC8B.png"
+disablefullbright
+}
+
+brightmap sprite CYBRD1
+{
+map "brightmaps/CYBRD1B.png"
+disablefullbright
+}
+
+brightmap sprite CYBRD2
+{
+map "brightmaps/CYBRD2B.png"
+disablefullbright
+}
+
+brightmap sprite CYBRD8
+{
+map "brightmaps/CYBRD8B.png"
+disablefullbright
+}
+
+brightmap sprite CYBRF1
+{
+map "brightmaps/CYBRF2B.png"
+disablefullbright
+}
+
+brightmap sprite CYBRF2
+{
+map "brightmaps/CYBRF2B.png"
+disablefullbright
+}
+
+brightmap sprite CYBRF8
+{
+map "brightmaps/CYBRF8B.png"
+disablefullbright
+}

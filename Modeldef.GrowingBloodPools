@@ -1,0 +1,129 @@
+Model GrowingBloodPool															//R30.9 SIMPLIFIED INTO ONE MODEL
+{
+Path "models/bloodspot"
+Model 0 "bloodspot.md3"
+Skin 0 "bloodpool2.png"
+Scale 20.0 20.0 1.0
+ZOffset 0.65
+rotating
+INTERPOLATEDOUBLEDFRAMES
+Rotation-Center 0 0 0
+rotation-speed 0.20
+FrameIndex TNT5 A 0 0
+Scale 21.0 21.0 1.0
+FrameIndex TNT5 B 0 0
+Scale 22.0 22.0 1.0
+FrameIndex TNT5 C 0 0
+Scale 23.0 23.0 1.0
+FrameIndex TNT5 D 0 0
+Scale 24.0 24.0 1.0
+FrameIndex TNT5 E 0 0
+Scale 25.0 25.0 1.0
+FrameIndex TNT5 F 0 0
+Scale 26.0 26.0 1.0
+FrameIndex TNT5 G 0 0
+Scale 27.0 27.0 1.0
+FrameIndex TNT5 H 0 0
+Scale 28.0 28.0 1.0
+FrameIndex TNT5 I 0 0
+Scale 29.0 29.0 1.0
+FrameIndex TNT5 J 0 0
+Scale 30.0 30.0 1.0
+FrameIndex TNT5 K 0 0
+Scale 31.0 31.0 1.0
+FrameIndex TNT5 L 0 0
+Scale 32.0 32.0 1.0
+FrameIndex TNT5 M 0 0
+Scale 33.0 33.0 1.0
+FrameIndex TNT5 N 0 0
+Scale 34.0 34.0 1.0
+FrameIndex TNT5 O 0 0
+Scale 35.0 35.0 1.0
+FrameIndex TNT5 P 0 0
+Scale 36.0 36.0 1.0
+FrameIndex TNT5 Q 0 0
+Scale 37.0 37.0 1.0
+FrameIndex TNT5 R 0 0
+Scale 38.0 38.0 1.0
+FrameIndex TNT5 S 0 0
+Scale 39.0 39.0 1.0
+FrameIndex TNT5 T 0 0
+Scale 40.0 40.0 1.0
+FrameIndex TNT5 U 0 0
+Scale 41.0 41.0 1.0
+FrameIndex TNT5 V 0 0
+Scale 42.0 42.0 1.0
+FrameIndex TNT5 W 0 0
+Scale 43.0 43.0 1.0
+FrameIndex TNT5 X 0 0
+Scale 44.0 44.0 1.0
+FrameIndex TNT5 Y 0 0
+Scale 45.0 45.0 1.0
+rotation-speed 0.00
+FrameIndex TNT5 Z 0 0
+}
+
+Model GrowingBloodPoolBig															//R30.9 SIMPLIFIED INTO ONE MODEL
+{
+Path "models/bloodspot"
+Model 0 "bloodspot.md3"
+Skin 0 "bloodpool2.png"
+Scale 35.0 35.0 1.0
+ZOffset 0.65
+rotating
+INTERPOLATEDOUBLEDFRAMES
+Rotation-Center 0 0 0
+rotation-speed 0.20
+FrameIndex TNT5 A 0 0
+Scale 36.0 36.0 1.0
+FrameIndex TNT5 B 0 0
+Scale 37.0 37.0 1.0
+FrameIndex TNT5 C 0 0
+Scale 38.0 38.0 1.0
+FrameIndex TNT5 D 0 0
+Scale 39.0 39.0 1.0
+FrameIndex TNT5 E 0 0
+Scale 40.0 40.0 1.0
+FrameIndex TNT5 F 0 0
+Scale 41.0 41.0 1.0
+FrameIndex TNT5 G 0 0
+Scale 42.0 42.0 1.0
+FrameIndex TNT5 H 0 0
+Scale 43.0 43.0 1.0
+FrameIndex TNT5 I 0 0
+Scale 44.0 44.0 1.0
+FrameIndex TNT5 J 0 0
+Scale 45.0 45.0 1.0
+FrameIndex TNT5 K 0 0
+Scale 46.0 46.0 1.0
+FrameIndex TNT5 L 0 0
+Scale 47.0 47.0 1.0
+FrameIndex TNT5 M 0 0
+Scale 48.0 48.0 1.0
+FrameIndex TNT5 N 0 0
+Scale 49.0 49.0 1.0
+FrameIndex TNT5 O 0 0
+Scale 50.0 50.0 1.0
+FrameIndex TNT5 P 0 0
+Scale 51.0 51.0 1.0
+FrameIndex TNT5 Q 0 0
+Scale 52.0 52.0 1.0
+FrameIndex TNT5 R 0 0
+Scale 53.0 53.0 1.0
+FrameIndex TNT5 S 0 0
+Scale 54.0 54.0 1.0
+FrameIndex TNT5 T 0 0
+Scale 55.0 55.0 1.0
+FrameIndex TNT5 U 0 0
+Scale 56.0 56.0 1.0
+FrameIndex TNT5 V 0 0
+Scale 57.0 57.0 1.0
+FrameIndex TNT5 W 0 0
+Scale 58.0 58.0 1.0
+FrameIndex TNT5 X 0 0
+Scale 59.0 59.0 1.0
+FrameIndex TNT5 Y 0 0
+Scale 60.0 60.0 1.0
+rotation-speed 0.00
+FrameIndex TNT5 Z 0 0
+}

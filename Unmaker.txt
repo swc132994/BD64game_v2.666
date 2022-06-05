@@ -1,0 +1,583 @@
+ACTOR UnmakerSpawner : CustomInventory 9901
+{
+//+INVENTORY.ALWAYSPICKUP														//R12.1
+Inventory.PickupMessage "What the !@# is this!"
+Inventory.PickupSound "WPICK"
+Scale 0.9
+	States
+	{
+	Spawn:
+		LGUN A -1
+		Stop
+	Pickup:																		//R13. MODDED PICKUP TO SELECT CORRECT WEAPON BASED ON CLASS
+		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")						//R28 ADDED
+		TNT1 A 0 A_GiveInventory("Unmaker",1)
+		Stop
+	Pickup2:
+		TNT1 A 0 A_GiveInventory("UnmakerTACTICAL",1)
+		Stop
+	}
+}
+
+actor Unmaker : DoomWeapon 9902		//R13 ADDED
+{
+game Doom
+spawnid 84
+scale 0.9
+Weapon.SelectionOrder 2900
+Inventory.PickupMessage "What the !@# is this!"
+AttackSound "weapons/unmaker"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 20
+Weapon.AmmoType "Cell"
+Inventory.Icon LGUNA0
+VisibleToPlayerClass "64DoomPlayer"
+Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"		//R15 ADDED TACTICAL P	//R28 ADDED MODERN
++INVENTORY.RESTRICTABSOLUTELY
+Tag "Unmaker"
+	States
+	{
+	Spawn:
+		LGUN A -1
+		stop
+	Ready:
+		UNMA A 1 A_WeaponReady
+		loop
+	Deselect:
+		UNMA A 1 A_Lower
+		Wait
+	Select:
+		UNMA A 1 A_Raise
+		loop
+	Fire:
+		TNT1 A 0 A_JumpIfInventory("WeaponPower",1,5)							//R30.8 WAS JUMP 4
+		UNMA A 1 offset(0,40)													//R30.8
+		TNT1 A 0 A_GunFlash
+		UNMA A 3 A_FireCustomMissile("UnmakerLaser2")
+		UNMA A 7
+		Goto Ready
+		TNT1 A 0 A_JumpIfInventory("WeaponPower",2,5)							//R30.8 WAS JUMP 4
+		UNMA A 1 offset(0,40)													//R30.8
+		TNT1 A 0 A_GunFlash
+		UNMA A 3 A_FireCustomMissile("Unmakerlaser2")
+		UNMA A 2
+		Goto Ready
+		TNT1 A 0 A_JumpIfInventory("WeaponPower",3,"Hold1")						//R30.8 WAS JUMP 8	//r31 was jump 9
+		UNMA A 1 offset(0,40)													//R30.8
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_FireCustomMissile("Unmakerlaser2",-1.0)
+		TNT1 A 0 A_JumpIfNoAmmo(3)
+		TNT1 A 0 A_FireCustomMissile("Unmakerlaser2",1.0)
+		UNMA A 5
+		TNT1 A 0 A_Refire
+		goto Ready
+	Hold1:
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2")
+		TNT1 A 0 A_JumpIfNoAmmo(5)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",-1.0)
+		TNT1 A 0 A_JumpIfNoAmmo(3)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",1.0)
+		UNMA A 5
+		TNT1 A 0 A_Refire("Hold2")
+		Goto Ready
+	Hold2:
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2")
+		TNT1 A 0 A_JumpIfNoAmmo(5)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",-3.0)
+		TNT1 A 0 A_JumpIfNoAmmo(3)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",3.0)
+		UNMA A 5
+		TNT1 A 0 A_Refire("Hold3")
+		Goto Ready
+	Hold3:
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2")
+		TNT1 A 0 A_JumpIfNoAmmo(5)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",-6.0)
+		TNT1 A 0 A_JumpIfNoAmmo(3)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",6.0)
+		UNMA A 5
+		TNT1 A 0 A_Refire("Hold4")
+		Goto Ready
+	Hold4:
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2")
+		TNT1 A 0 A_JumpIfNoAmmo(5)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",-9.0)
+		TNT1 A 0 A_JumpIfNoAmmo(3)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",9.0)
+		UNMA A 5
+		TNT1 A 0 A_Refire("Hold5")
+		Goto Ready
+	Hold5:
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2")
+		TNT1 A 0 A_JumpIfNoAmmo(4)		//r31 was 5
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",-12.0)
+		TNT1 A 0 A_JumpIfNoAmmo(2)		//r31 was 3
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",12.0)
+		UNMA A 5
+		Goto Ready
+	Flash:
+		UNMA B 3 bright
+		goto LightDone
+	}
+}
+
+ACTOR SoulAmmo : Ammo
+{
+SCALE 0.35				//R31
+Game Doom
+SpawnID 11
+Inventory.PickupMessage "Soul Collected"	//R31 ADDED NEW MESSAGE
+Inventory.Amount 1		//r31 was 3
+Inventory.MaxAmount 30
+Ammo.BackpackAmount 0	//r31 was 3
+Ammo.BackpackMaxAmount 30
+Inventory.Icon "D4RFL0"		//R10 WAS CLIPA0	//R27 WAS D4RFL0	//r31 was UNMLA0
+ReactionTime 60			//R31
++ALWAYSPICKUP			//R31
+	States				//r31 added spawn
+	{
+	Spawn:
+		D4RF L 3 NODELAY A_SetTranslucent(0.3,1)
+		TNT1 A 0 A_SpawnItem("LensFlareTorchBlue",0,10)
+		D4RF L 3 A_SetTranslucent(0.1,1)
+		D4RF L 3 BRIGHT A_SetTranslucent(0.8,1)
+		TNT1 A 0 A_SpawnItem("LensFlareTorchBlue",0,10)
+		D4RF L 3 BRIGHT A_SetTranslucent(0.6,1)
+		TNT1 A 0 A_Countdown
+		loop
+	Death:
+		D4RF L 4 A_FadeOut(0.05)
+		loop
+	}
+}
+
+ACTOR DemonEssence : Ammo			//R31 ADDED
+{
+SCALE 0.45
+Inventory.PickupMessage "Essence Collected"
+Inventory.Amount 1
+Inventory.MaxAmount 25
+Ammo.BackpackAmount 0
+Ammo.BackpackMaxAmount 25
+Inventory.Icon "D4RFL0"
+ReactionTime 60
++ALWAYSPICKUP
+	States
+	{
+	Spawn:
+		D4RF L 3 NODELAY A_SetTranslucent(0.3,1)
+		TNT1 A 0 A_SpawnItem("LensFlareTorchRed",0,10)
+		D4RF L 3 A_SetTranslucent(0.1,1)
+		D4RF L 3 BRIGHT A_SetTranslucent(0.8,1)
+		TNT1 A 0 A_SpawnItem("LensFlareTorchRed",0,10)
+		D4RF L 3 BRIGHT A_SetTranslucent(0.6,1)
+		TNT1 A 0 A_Countdown
+		loop
+	Death:
+		D4RF L 4 A_FadeOut(0.05)
+		loop
+	}
+}
+
+actor SoulSpawner		//r31 added
+{
+radius 16
+height 16
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("TUnmakerChecker",0,0,0) == 2,"ShowSoul")
+		TNT1 A 0 A_JumpIf(CallACS("TUnmakerChecker",0,0,0) == 3,"ShowSoul")
+		stop
+	ShowSoul:
+		TNT1 A 0 A_SpawnItemEx("SoulAmmo",0,0,0,random(0,5),random(0,5),5,random(0,360))
+		stop
+	}
+}
+
+actor DemonEssenceSpawner		//r31 added
+{
+radius 16
+height 16
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("TUnmakerChecker",0,0,0) == 3,"ShowEssence")
+		stop
+	ShowEssence:
+		TNT1 A 0 A_SpawnItemEx("DemonEssence",0,0,0,random(0,5),random(0,5),5,random(0,360))
+		stop
+	}
+}
+
+actor UnmakerTACTICAL : DoomWeapon
+{
+game Doom
+spawnid 84
+scale 0.9
+Weapon.SelectionOrder 2901														//R21 WAS 2900
+Inventory.PickupMessage "What the !@# is this!"
+AttackSound "weapons/unmaker"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 20																//R11 WAS 40
+Weapon.AmmoType "SoulAmmo"
+Weapon.AmmoUse2 25																//R31
+Weapon.AmmoGive2 0																//R31
+Weapon.AmmoType2 "DemonEssence"													//R31
+Inventory.Icon LGUNA0
+VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"		//R13 ADDED	//R15 "Tactical64DoomPlayer_p"	//R28 ADDED MODERN
+Inventory.ForbiddenTo "64DoomPlayer"											//R13
++INVENTORY.RESTRICTABSOLUTELY													//R13
+Tag "Unmaker"																	//R11 ADDED TAG
++WEAPON.ALT_AMMO_OPTIONAL	//r31 added
++WEAPON.NOALERT				//R31 added
+	States
+	{
+	Spawn:
+		LGUN A -1
+		loop
+	Ready:
+		UNMA A 1 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_PlaySoundEx("UNMKLP","WEAPON",1)							//R1 REMOVED SOUND	//R13 READDED FOR TACTICAL
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")					//R28.2
+		TNT1 A 0 A_TakeInventory("Stamina",0)									//R28.2
+		loop
+	Select:
+		UNMA A 1 A_Raise
+		WAIT
+	SelectAnimation:
+		UNMS ABCD 1
+		Goto Ready
+	Deselect:
+		UNMS DCBA 1
+		TNT1 A 0 A_StopSoundEx("WEAPON")
+		TNT1 A 1 A_Lower
+		Wait
+	Fire:
+		UNMA A 1
+		TNT1 A 0 A_ZoomFactor(0.9)
+		TNT1 A 0 A_PlaySound("UNMAKER",4)
+		TNT1 A 0 A_AlertMonsters	//r31 added
+		TNT1 A 0 A_JumpIfInventory("WeaponPower",3,"Fire3")
+		TNT1 A 0 A_JumpIfInventory("WeaponPower",2,"Fire2")
+		TNT1 A 0 A_JumpIfInventory("WeaponPower",1,"Fire1")
+		TNT1 A 0 A_GunFlash
+	Fire0:
+		UNMA A 1
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser",0,1)
+		Goto FireAnimation
+	Fire1:
+		UNMA A 1
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaserPierce",0,1)
+		Goto FireAnimation
+	Fire2:
+		UNMA A 1
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaserPierce",3,1)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaserPierce",-3,0,0)
+		Goto FireAnimation
+	Fire3:
+		UNMA A 1
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaserPierce",0,1)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaserPierce",4,0,0)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaserPierce",-4,0,0)
+		Goto FireAnimation
+	FireAnimation:
+		TNT1 A 0 A_ZoomFactor(1.0)
+		UNMA C 3 BRIGHT															//R30.8 WAS B & 1 TIC
+		UNMA JKLDE 1
+		UNMA A 18																//R30.8 WAS 20 TIC
+		Goto Ready
+	DoKick:
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_Takeinventory("Kicking",1)
+//		TNT1 A 0 A_Takeinventory("Zoomed",0)									//R11 UNUSED
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"ModernCheck")					//R28
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,1)						//R7 ADDED
+		Goto Ready																//R7 ADDED
+		TNT1 A 0 A_jumpifinventory("Stamina",20,3)
+		TNT1 A 0 A_Print("Not enough stamina!",1)
+		TNT1 A 0 A_PlaySound("Tired",2)
+		Goto Ready
+		TNT1 A 0 A_TakeInventory("Stamina",20)
+	ModernCheck:																//R28 ADDED
+//		TNT1 A 0 A_Takeinventory("ADSmode",1)									//R11 UNUSED
+		TNT1 A 0 A_JumpIf(momZ > 0,"AirKick")
+		TNT1 A 0 A_JumpIf(momZ < 0,"AirKick")
+		TNT1 A 0 A_JumpIf(pitch > 32,"LowKickChecker1")
+		Goto InitializeNormalKick
+	LowKickChecker1:
+		TNT1 A 0 A_JumpIf(pitch > 90,"InitializeNormalKick")
+		TNT1 A 0 A_FireCustomMissile("KickAttackDetectDowned",0,0,0,0)
+	InitializeNormalKick:
+		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"BerserkerKick")
+		TNT1 A 0 A_PlaySound("KICK")
+		TNT1 A 0 SetPlayerProperty(0,1,0)
+		KICK BCD 1
+		TNT1 A 0 A_FireCustomMissile("KickAttack",0,0,0,-7)
+		KICK H 5
+		KICK I 1
+		KICK GFEDCBA 1
+		TNT1 A 0 SetPlayerProperty(0,0,0)
+		Goto SelectAnimation
+	BerserkerKick:
+		TNT1 A 0 A_PlaySound("KICK")
+		TNT1 A 0 SetPlayerProperty(0,1,0)
+		KICK BCD 1
+		TNT1 A 0 A_FireCustomMissile("SuperKickAttack",0,0,0,-7)
+		KICK H 5
+		KICK I 1
+		KICK GFEDCBA 1
+		TNT1 A 0 SetPlayerProperty(0,0,0)
+		Goto SelectAnimation
+	AirKick:
+		TNT1 A 0 A_TakeInventory("Stamina",5)									//R17 WAS 20
+		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"SuperAirKick")
+		TNT1 A 0 A_PlaySound("KICK")
+		TNT1 A 0 A_Recoil(-6)
+		KICK JKLMN 1
+		TNT1 A 0 A_FireCustomMissile("AirKickAttack",0,0,0,-31)
+		KICK O 3
+		KICK PQRST 2
+		Goto SelectAnimation
+	SuperAirKick:
+		TNT1 A 0 A_PlaySound("KICK")
+		TNT1 A 0 A_Recoil(-6)
+		KICK JKLMN 1
+		TNT1 A 0 A_FireCustomMissile("SuperAirKickAttack",0,0,0,-31)
+		KICK O 3
+		KICK PQRST 2
+		Goto SelectAnimation
+	AltFire:									//r31 added altfire
+		TNT1 A 0 A_jumpifNoAmmo("NotReady")
+		TNT1 A 0 A_ZoomFactor(0.9)
+		TNT1 A 0 A_PlaySound("UNMAKER",4)
+		TNT1 A 0 A_AlertMonsters
+		UNMA A 1
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaserWhite",0,1)
+		TNT1 A 0 A_TakeInventory("DemonEssence",24)
+		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
+		TNT1 A 0 A_ZoomFactor(1.0)
+		UNM2 A 3 BRIGHT															//R30.8 WAS B & 1 TIC
+		UNMA JKLDE 1
+		UNMA A 18																//R30.8 WAS 20 TIC
+		Goto Ready
+	NotReady:									//r31 added notready
+		TNT1 A 0 A_Print("Not Enough Ammo!",1)
+		GOTO READY
+	}
+}
+
+actor UnmakerLaser : FastProjectile 9904
+{
+game Doom
+scale 0.6
+radius 2
+height 2
+speed 120
+damage 10
+Damagetype "BFG"
+Alpha 1
+Renderstyle Add
+Decal LaserDecal																//R28.2 ADDED	//r31 was BULLETDECALNEW1
+SeeSound "weapons/unmaker"
+DeathSound "Null"
+Obituary "%o was unmade by %k."
+PROJECTILE
++RANDOMIZE
++EXTREMEDEATH
++FORCERADIUSDMG
+	States
+	{
+	Spawn:
+		TNT1 A 1 bright		//R31 WAS LAZR
+		TNT1 A 0 A_SpawnItem("SuperGore")								 //R14 WAS 2+
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(3*momx)/-35.0,-(3*momy)/-35.0,-1+(3*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(6*momx)/-35.0,-(6*momy)/-35.0,-1+(6*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(9*momx)/-35.0,-(9*momy)/-35.0,-1+(9*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(12*momx)/-35.0,-(12*momy)/-35.0,-1+(12*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(15*momx)/-35.0,-(15*momy)/-35.0,-1+(15*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(18*momx)/-35.0,-(18*momy)/-35.0,-1+(18*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(21*momx)/-35.0,-(21*momy)/-35.0,-1+(21*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(24*momx)/-35.0,-(24*momy)/-35.0,-1+(24*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(27*momx)/-35.0,-(27*momy)/-35.0,-1+(27*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(30*momx)/-35.0,-(30*momy)/-35.0,-1+(30*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(33*momx)/-35.0,-(33*momy)/-35.0,-1+(33*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(36*momx)/-35.0,-(36*momy)/-35.0,-1+(36*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(39*momx)/-35.0,-(39*momy)/-35.0,-1+(39*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(42*momx)/-35.0,-(42*momy)/-35.0,-1+(42*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)	//r31 longer trail
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(45*momx)/-35.0,-(45*momy)/-35.0,-1+(45*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(48*momx)/-35.0,-(48*momy)/-35.0,-1+(48*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(51*momx)/-35.0,-(51*momy)/-35.0,-1+(51*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(54*momx)/-35.0,-(54*momy)/-35.0,-1+(54*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(57*momx)/-35.0,-(57*momy)/-35.0,-1+(57*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(60*momx)/-35.0,-(60*momy)/-35.0,-1+(60*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(63*momx)/-35.0,-(63*momy)/-35.0,-1+(63*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(66*momx)/-35.0,-(66*momy)/-35.0,-1+(66*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(69*momx)/-35.0,-(69*momy)/-35.0,-1+(69*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(72*momx)/-35.0,-(72*momy)/-35.0,-1+(72*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(75*momx)/-35.0,-(75*momy)/-35.0,-1+(75*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(78*momx)/-35.0,-(78*momy)/-35.0,-1+(78*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(81*momx)/-35.0,-(81*momy)/-35.0,-1+(81*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(84*momx)/-35.0,-(84*momy)/-35.0,-1+(84*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(87*momx)/-35.0,-(87*momy)/-35.0,-1+(87*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(90*momx)/-35.0,-(90*momy)/-35.0,-1+(90*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		loop
+	Death:
+		TNT1 A 0 A_SpawnItemEx("DetectFloorLaser",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)							//R28.2	//r31 was DetectFloorBullet
+		TNT1 A 0 A_SpawnItemEx("DetectCeilLaser",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)							//R28.2	//r31 was DetectFloorBullet
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))				//R31 WAS 5 SPAWN HEIGHT	was 9*a
+		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))			//R31 WAS 5 SPAWN HEIGHT	was 18*a
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))				//R31 WAS 5 SPAWN HEIGHT	was 9*a
+		TNT1 A 0 A_Explode(100,15,1)
+		TNT1 AAAAA 1 A_SpawnItem("RocketFlare")
+		TNT1 AAAAA 0 A_CustomMissile("PlasmaSmoke",0,0,random(0,360),2,random(0,360))							//R31 WAS ExplosionSmokeFast22 & WAS 5 SPAWN HEIGHT
+		Stop
+	}
+}
+
+actor UnmakerLaser2 : UnmakerLaser										//R30.8 CHANGEDD TO NEW LASERTRAIL2
+{
+damage(random(25,50))
+	States
+	{
+	Spawn:
+		TNT1 A 1 bright		//R31 WAS LAZR
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(3*momx)/-35.0,-(3*momy)/-35.0,-1+(3*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(6*momx)/-35.0,-(6*momy)/-35.0,-1+(6*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(9*momx)/-35.0,-(9*momy)/-35.0,-1+(9*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(12*momx)/-35.0,-(12*momy)/-35.0,-1+(12*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(15*momx)/-35.0,-(15*momy)/-35.0,-1+(15*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(18*momx)/-35.0,-(18*momy)/-35.0,-1+(18*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(21*momx)/-35.0,-(21*momy)/-35.0,-1+(21*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(24*momx)/-35.0,-(24*momy)/-35.0,-1+(24*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(27*momx)/-35.0,-(27*momy)/-35.0,-1+(27*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(30*momx)/-35.0,-(30*momy)/-35.0,-1+(30*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(33*momx)/-35.0,-(33*momy)/-35.0,-1+(33*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(36*momx)/-35.0,-(36*momy)/-35.0,-1+(36*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(39*momx)/-35.0,-(39*momy)/-35.0,-1+(39*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(42*momx)/-35.0,-(42*momy)/-35.0,-1+(42*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(45*momx)/-35.0,-(45*momy)/-35.0,-1+(45*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)	//r31 longer trail
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(48*momx)/-35.0,-(48*momy)/-35.0,-1+(48*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(51*momx)/-35.0,-(51*momy)/-35.0,-1+(51*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(54*momx)/-35.0,-(54*momy)/-35.0,-1+(54*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(57*momx)/-35.0,-(57*momy)/-35.0,-1+(57*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(60*momx)/-35.0,-(60*momy)/-35.0,-1+(60*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(63*momx)/-35.0,-(63*momy)/-35.0,-1+(63*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(66*momx)/-35.0,-(66*momy)/-35.0,-1+(66*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(69*momx)/-35.0,-(69*momy)/-35.0,-1+(69*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(72*momx)/-35.0,-(72*momy)/-35.0,-1+(72*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(75*momx)/-35.0,-(75*momy)/-35.0,-1+(75*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(78*momx)/-35.0,-(78*momy)/-35.0,-1+(78*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(81*momx)/-35.0,-(81*momy)/-35.0,-1+(81*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(84*momx)/-35.0,-(84*momy)/-35.0,-1+(84*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(87*momx)/-35.0,-(87*momy)/-35.0,-1+(87*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail2",(90*momx)/-35.0,-(90*momy)/-35.0,-1+(90*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		loop
+	}
+}
+
+actor UnmakerLaserWhite : UnmakerLaser	//r31 added
+{
+Damage 1000
+Speed 85
+Decal Scorch
+	States
+	{
+	Spawn:
+		tnt1 A 1 bright
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(3*momx)/-35.0,-(3*momy)/-35.0,-1+(3*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(6*momx)/-35.0,-(6*momy)/-35.0,-1+(6*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(9*momx)/-35.0,-(9*momy)/-35.0,-1+(9*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(12*momx)/-35.0,-(12*momy)/-35.0,-1+(12*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(15*momx)/-35.0,-(15*momy)/-35.0,-1+(15*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(18*momx)/-35.0,-(18*momy)/-35.0,-1+(18*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(21*momx)/-35.0,-(21*momy)/-35.0,-1+(21*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(24*momx)/-35.0,-(24*momy)/-35.0,-1+(24*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(27*momx)/-35.0,-(27*momy)/-35.0,-1+(27*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(30*momx)/-35.0,-(30*momy)/-35.0,-1+(30*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(33*momx)/-35.0,-(33*momy)/-35.0,-1+(33*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(36*momx)/-35.0,-(36*momy)/-35.0,-1+(36*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(39*momx)/-35.0,-(39*momy)/-35.0,-1+(39*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(42*momx)/-35.0,-(42*momy)/-35.0,-1+(42*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)	//r31 longer trail
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(45*momx)/-35.0,-(45*momy)/-35.0,-1+(45*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(48*momx)/-35.0,-(48*momy)/-35.0,-1+(48*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(51*momx)/-35.0,-(51*momy)/-35.0,-1+(51*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(54*momx)/-35.0,-(54*momy)/-35.0,-1+(54*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(57*momx)/-35.0,-(57*momy)/-35.0,-1+(57*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(60*momx)/-35.0,-(60*momy)/-35.0,-1+(60*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(63*momx)/-35.0,-(63*momy)/-35.0,-1+(63*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(66*momx)/-35.0,-(66*momy)/-35.0,-1+(66*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(69*momx)/-35.0,-(69*momy)/-35.0,-1+(69*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(72*momx)/-35.0,-(72*momy)/-35.0,-1+(72*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(75*momx)/-35.0,-(75*momy)/-35.0,-1+(75*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(78*momx)/-35.0,-(78*momy)/-35.0,-1+(78*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(81*momx)/-35.0,-(81*momy)/-35.0,-1+(81*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(84*momx)/-35.0,-(84*momy)/-35.0,-1+(84*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(87*momx)/-35.0,-(87*momy)/-35.0,-1+(87*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(90*momx)/-35.0,-(90*momy)/-35.0,-1+(90*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		loop
+	}
+}
+
+actor UnmakerLaserTrail 9903
+{
+game Doom
+scale 0.4																		//R14 was 0.6	//r31 was 0.3
+height 4
+radius 2
+speed 0
+damage 0
+Alpha 1
+Renderstyle Add
+seesound "null"
+deathsound "null"
+PROJECTILE
++RANDOMIZE
+	states
+	{
+	Spawn:
+		LAZR b 2 bright			//r31 WAS ABAB
+		stop
+	Death:
+		LPUF ABC 2 bright		//R31 WAS FRAME A 1 TIC
+		stop
+	}
+}
+
+ACTOR UnmakerLaserTrail2 : UnmakerLaserTrail										//R30.8 NEW TRAIL FOR CLASSICAL UNMAKER
+{
+scale 0.7																		//R14 was 0.6
+	States
+	{
+	Spawn:
+		LPUF C 2 bright		//was 5 tics
+		Stop
+	}
+}
+
+actor UnmakerLaserTrailWhite : UnmakerLaserTrail		//r31 added
+{
+scale 0.6
+	states
+	{
+	Spawn:
+		LENS A 2 bright
+		stop
+	Death:
+		lenz A 2 bright
+		stop
+	}
+}
+
+Actor UnmakerLaserPierce: UnmakerLaser
+{
+Damage 8
++RIPPER
+}

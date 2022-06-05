@@ -1,0 +1,526 @@
+brightmap sprite PLSGA0
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+
+brightmap sprite PLSGB0
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+
+brightmap sprite PLSGC0
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+
+brightmap sprite PLSFA0
+{
+map "brightmaps/PLSMBMP2.png"
+disablefullbright
+}
+
+brightmap sprite PISFA0
+{
+map "brightmaps/PISBMP.png"
+disablefullbright
+}
+
+brightmap sprite CELLA0
+{
+map "brightmaps/CEL1B.png"
+disablefullbright
+}
+
+brightmap sprite CELPA0
+{
+map "brightmaps/CEL2B.png"
+disablefullbright
+}
+
+brightmap sprite PLASA0
+{
+map "brightmaps/PGUNB.png"
+disablefullbright
+}
+
+brightmap sprite BON2B0
+{
+map "brightmaps/BON2B.png"
+disablefullbright
+}
+
+brightmap sprite BON2C0
+{
+map "brightmaps/BON2B.png"
+disablefullbright
+}
+
+brightmap sprite BON2D0
+{
+map "brightmaps/BON2B.png"
+disablefullbright
+}
+
+brightmap sprite BON2E0
+{
+map "brightmaps/BON2B.png"
+disablefullbright
+}
+
+// IMP
+brightmap sprite TROOA1
+{
+map "brightmaps/TROOA1B.png"
+disablefullbright
+}
+
+brightmap sprite TROOA2A8
+{
+map "brightmaps/TROOA2A8B.png"
+disablefullbright
+}
+
+brightmap sprite TROOB1
+{
+map "brightmaps/TROOB1B.png"
+disablefullbright
+}
+
+brightmap sprite TROOB2B8
+{
+map "brightmaps/TROOB2B8B.png"
+disablefullbright
+}
+
+brightmap sprite TROOC1
+{
+map "brightmaps/TROOC1B.png"
+disablefullbright
+}
+
+brightmap sprite TROOC2C8
+{
+map "brightmaps/TROOC2C8B.png"
+disablefullbright
+}
+
+brightmap sprite TROOD1
+{
+map "brightmaps/TROOD1B.png"
+disablefullbright
+}
+
+brightmap sprite TROOD2D8
+{
+map "brightmaps/TROOD2D8B.png"
+disablefullbright
+}
+
+brightmap sprite TROOE1
+{
+map "brightmaps/TROOE1B.png"
+disablefullbright
+}
+
+brightmap sprite TROOE2E8
+{
+map "brightmaps/TROOE2E8B.png"
+disablefullbright
+}
+
+brightmap sprite TROOF1
+{
+map "brightmaps/TROOF1B.png"
+disablefullbright
+}
+
+brightmap sprite TROOF2F8
+{
+map "brightmaps/TROOF2F8B.png"
+disablefullbright
+}
+
+brightmap sprite TROOG1
+{
+map "brightmaps/TROOG1B.png"
+disablefullbright
+}
+
+brightmap sprite TROOG2G8
+{
+map "brightmaps/TROOG2G8B.png"
+disablefullbright
+}
+
+brightmap sprite TROOH1
+{
+map "brightmaps/TROOH1B.png"
+disablefullbright
+}
+
+brightmap sprite TROOH2H8
+{
+map "brightmaps/TROOH2H8B.png"
+disablefullbright
+}
+
+brightmap sprite TROOI1
+{
+map "brightmaps/TROOI1B.png"
+disablefullbright
+}
+
+brightmap sprite TROOI2I8
+{
+map "brightmaps/TROOI2I8B.png"
+disablefullbright
+}
+
+brightmap sprite TROOJ1
+{
+map "brightmaps/TROOJ1B.png"
+disablefullbright
+}
+
+brightmap sprite TROOJ2J8
+{
+map "brightmaps/TROOJ2J8B.png"
+disablefullbright
+}
+
+brightmap sprite TROOK1
+{
+map "brightmaps/TROOK1B.png"
+disablefullbright
+}
+
+brightmap sprite TROOK2K8
+{
+map "brightmaps/TROOK2K8B.png"
+disablefullbright
+}
+
+//NIGHTMARE IMP
+brightmap sprite TRO2A1
+{
+map "brightmaps/TROOA1B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2A2A8
+{
+map "brightmaps/TROOA2A8B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2B1
+{
+map "brightmaps/TROOB1B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2B2B8
+{
+map "brightmaps/TROOB2B8B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2C1
+{
+map "brightmaps/TROOC1B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2C2C8
+{
+map "brightmaps/TROOC2C8B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2D1
+{
+map "brightmaps/TROOD1B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2D2D8
+{
+map "brightmaps/TROOD2D8B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2E1
+{
+map "brightmaps/TROOE1B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2E2E8
+{
+map "brightmaps/TROOE2E8B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2F1
+{
+map "brightmaps/TROOF1B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2F2F8
+{
+map "brightmaps/TROOF2F8B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2G1
+{
+map "brightmaps/TROOG1B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2G2G8
+{
+map "brightmaps/TROOG2G8B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2H1
+{
+map "brightmaps/TROOH1B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2H2H8
+{
+map "brightmaps/TROOH2H8B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2I1
+{
+map "brightmaps/TROOI1B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2I2I8
+{
+map "brightmaps/TROOI2I8B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2J1
+{
+map "brightmaps/TROOJ1B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2J2J8
+{
+map "brightmaps/TROOJ2J8B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2K1
+{
+map "brightmaps/TROOK1B.png"
+disablefullbright
+}
+
+brightmap sprite TRO2K2K8
+{
+map "brightmaps/TROOK2K8B.png"
+disablefullbright
+}
+
+//PINKY DEMON
+brightmap sprite SARGA1
+{
+map "brightmaps/SARGA1B.png"
+disablefullbright
+}
+
+brightmap sprite SARGA2A8
+{
+map "brightmaps/SARGA2A8B.png"
+disablefullbright
+}
+
+brightmap sprite SARGB1
+{
+map "brightmaps/SARGB1B.png"
+disablefullbright
+}
+
+brightmap sprite SARGB2B8
+{
+map "brightmaps/SARGB2B8B.png"
+disablefullbright
+}
+
+brightmap sprite SARGC2C8
+{
+map "brightmaps/SARGC2C8B.png"
+disablefullbright
+}
+
+brightmap sprite SARGC1
+{
+map "brightmaps/SARGC1B.png"
+disablefullbright
+}
+
+brightmap sprite SARGD1
+{
+map "brightmaps/SARGD1B.png"
+disablefullbright
+}
+
+brightmap sprite SARGD2D8
+{
+map "brightmaps/SARGD2D8B.png"
+disablefullbright
+}
+
+brightmap sprite SARGE1
+{
+map "brightmaps/SARGE1B.png"
+disablefullbright
+}
+
+brightmap sprite SARGE2E8
+{
+map "brightmaps/SARGE2E8B.png"
+disablefullbright
+}
+
+brightmap sprite SARGDF1
+{
+map "brightmaps/SARGF1B.png"
+disablefullbright
+}
+
+brightmap sprite SARGF2F8
+{
+map "brightmaps/SARGF2F8B.png"
+disablefullbright
+}
+
+brightmap sprite SARGG1
+{
+map "brightmaps/SARGG1B.png"
+disablefullbright
+}
+
+brightmap sprite SARGG2G8
+{
+map "brightmaps/SARGG2G8B.png"
+disablefullbright
+}
+
+//SPECTRE
+brightmap sprite SAR2A1
+{
+map "brightmaps/SARGA1B.png"
+disablefullbright
+}
+
+brightmap sprite SAR2A2A8
+{
+map "brightmaps/SARGA2A8B.png"
+disablefullbright
+}
+
+brightmap sprite SAR2B1
+{
+map "brightmaps/SARGB1B.png"
+disablefullbright
+}
+
+brightmap sprite SAR2B2B8
+{
+map "brightmaps/SARGB2B8B.png"
+disablefullbright
+}
+
+brightmap sprite SAR2C2C8
+{
+map "brightmaps/SARGC2C8B.png"
+disablefullbright
+}
+
+brightmap sprite SAR2C1
+{
+map "brightmaps/SARGC1B.png"
+disablefullbright
+}
+
+brightmap sprite SAR2D1
+{
+map "brightmaps/SARGD1B.png"
+disablefullbright
+}
+
+brightmap sprite SAR2D2D8
+{
+map "brightmaps/SARGD2D8B.png"
+disablefullbright
+}
+
+brightmap sprite SAR2E1
+{
+map "brightmaps/SARGE1B.png"
+disablefullbright
+}
+
+brightmap sprite SAR2E2E8
+{
+map "brightmaps/SARGE2E8B.png"
+disablefullbright
+}
+
+brightmap sprite SAR2DF1
+{
+map "brightmaps/SARGF1B.png"
+disablefullbright
+}
+
+brightmap sprite SAR2F2F8
+{
+map "brightmaps/SARGF2F8B.png"
+disablefullbright
+}
+
+brightmap sprite SAR2G1
+{
+map "brightmaps/SARGG1B.png"
+disablefullbright
+}
+
+brightmap sprite SAR2G2G8
+{
+map "brightmaps/SARGG2G8B.png"
+disablefullbright
+}
+
+//R28.1 ADDED
+brightmap sprite media0
+{
+map "brightmaps/mediBR.png"
+disablefullbright
+}
+
+brightmap sprite stima0
+{
+map "brightmaps/stimBR.png"
+disablefullbright
+}
+
+brightmap sprite pstra0
+{
+map "brightmaps/pstrBR.png"
+disablefullbright
+}

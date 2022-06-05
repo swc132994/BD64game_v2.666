@@ -1,0 +1,44 @@
+Actor Swarm
+{
++NoClip
+	States
+	{
+	Spawn:
+		TNT1 A 0 NODELAY A_PlaySoundEx("Flies","SoundSlot6",1,-1)
+		TNT1 AAAAAAA 2 A_CustomMissile("FlyDecor",32,0,random(0,360),2,random(-40,40))
+	Done:
+		TNT1 A -1
+		STOP																	//R31 WAS LOOP
+	}
+}
+
+Actor FlyDecor
+{
+Scale 0.3
+Radius 2
+Height 60
+Speed 3
+Projectile
++DontSplash
++THRUACTORS
++DOOMBOUNCE
++nograVITY
++CLIENTSIDEONLY
++NOCLIP
+ReactionTime 4
+	States
+	{
+	Spawn:
+		SFLY AB 2 ThrustThingZ(0,random(-1,1),random(1,0),1)
+		TNT1 A 0 A_CountDown
+		Loop
+	Death:
+		SFLY A 2 A_CustomMissile("FlyDecor",0,0,random(-40,40))
+		Stop
+	Death.Crush:
+	Crush:
+		TNT1 A 1
+		TNT1 A 1 A_NoBlocking
+		Stop
+	}
+}

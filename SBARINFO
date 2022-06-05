@@ -1,0 +1,127 @@
+height 40;
+completeborder true;
+
+statusbar fullscreen, forcescaled, 0.5
+{
+	drawnumber 3, SMALLFONT, untranslated, Ammo("Stamina"), whennotzero | interpolate(4), 90, 185;	//R4 Added Whennotzero
+	drawimage "HTEXA0", 30, 170;
+	drawnumber 3, HUDFONT_DOOM, untranslated, health, 69, 180;
+	drawimage "ATEXA0", 246, 170;
+	drawnumber 3, HUDFONT_DOOM, untranslated, armor, 283, 180;
+	drawimage "nullimage", 306, 196;
+	drawnumber 3, HUDFONT_DOOM, untranslated, ammo1, 175, 180;
+//	drawimage ammoicon2, 306, 172;
+	drawnumber 3, SMALLFONT, untranslated, ammo2, 192, 183;
+	gamemode deathmatch, teamgame
+	{
+		drawnumber 2, HUDFONT_DOOM, untranslated, frags, 120, 180;
+	}
+	gamemode cooperative, singleplayer
+	{
+		drawswitchableimage BlueCard, "nullimage", "STKEYS0", 90, 181;
+		drawswitchableimage YellowCard, "nullimage", "STKEYS1", 100, 181;
+		drawswitchableimage RedCard, "nullimage", "STKEYS2", 110, 181;
+		drawswitchableimage BlueSkull, "nullimage", "STKEYS3", 90, 181;
+		drawswitchableimage YellowSkull, "nullimage", "STKEYS4", 100, 181;
+		drawswitchableimage RedSkull, "nullimage", "STKEYS5", 110, 181;
+/*		drawswitchableimage GLBlueCard, "nullimage", "STKEYS0", 90, 181;		//R29 REMOVED GL KEYS
+		drawswitchableimage GLYellowCard, "nullimage", "STKEYS1", 100, 181;
+		drawswitchableimage GLRedCard, "nullimage", "STKEYS2", 110, 181;
+		drawswitchableimage GLBlueSkull, "nullimage", "STKEYS3", 90, 181;
+		drawswitchableimage GLYellowSkull, "nullimage", "STKEYS4", 100, 181;
+		drawswitchableimage GLRedSkull, "nullimage", "STKEYS5", 110, 181;*/
+	}
+//	drawselectedinventory INDEXFONT, 306, 148;									//R27 WAS INDEXFON & DISABLED
+//	drawselectedinventory SMALLFONT, 58, 161;									//R27 ALTERNATIVE POSITION NEXT TO HEALTH
+}
+
+statusbar normal
+{
+	drawimage "nullbar", 0, 160;
+	drawswitchableimage WpnPower1Icon, "nullimage", "POW1E0", 222, 215;
+	drawswitchableimage WpnPower3Icon, "nullimage", "POW3E0", 261, 215; //This is out of order on purpose
+	drawswitchableimage WpnPower2Icon, "nullimage", "POW2E0", 300, 215;
+	drawimage "HTEXA0", 6, 165;
+	drawnumber 3, HUDFONT_DOOM, untranslated, Ammo("Stamina"), whennotzero | interpolate(4), 45, 186;	//R1 45 WAS 25, 186 WAS 177		//R4 Added Whennotzero
+	drawnumber 3, HUDFONT_DOOM, untranslated, health, 45, 174;					//R1 174 WAS 177
+	drawnumber 2, HUDFONT_DOOM, untranslated, ammo2, 97, 176;					//R1 WAS 97, 181
+	drawnumber 3, HUDFONT_DOOM, untranslated, ammo1, 97, 187;					//R1 WAS 97, 181
+	drawimage "ATEXA0", 108, 165;
+	drawnumber 3, HUDFONT_DOOM, untranslated, armor, 145, 177;
+	drawswitchableimage BlueCard, "nullimage", "STKEYS0", 57, 162;
+	drawswitchableimage YellowCard, "nullimage", "STKEYS1", 73, 162;
+	drawswitchableimage RedCard, "nullimage", "STKEYS2", 89, 162;
+	drawswitchableimage BlueSkull, "nullimage", "STKEYS3", 57, 162;
+	drawswitchableimage YellowSkull, "nullimage", "STKEYS4", 73, 162;
+	drawswitchableimage RedSkull, "nullimage", "STKEYS5", 89, 162;
+/*	drawswitchableimage GLBlueCard, "nullimage", "STKEYS0", 57, 162;			//R29 REMOVED GL KEYS
+	drawswitchableimage GLYellowCard, "nullimage", "STKEYS1", 73, 162;
+	drawswitchableimage GLRedCard, "nullimage", "STKEYS2", 89, 162;
+	drawswitchableimage GLBlueSkull, "nullimage", "STKEYS3", 57, 162;
+	drawswitchableimage GLYellowSkull, "nullimage", "STKEYS4", 73, 162;
+	drawswitchableimage GLRedSkull, "nullimage", "STKEYS5", 89, 162;*/
+	drawstring SMALLFONT, untranslated, "BU:", 169, 162;
+	drawstring SMALLFONT, untranslated, "/", 191, 162;
+	drawnumber 3, INDEXFONT, darkgray, ammo clip, 182, 163;
+	drawnumber 3, INDEXFONT, darkgray, ammocapacity clip, 203, 163;
+	drawstring SMALLFONT, untranslated, "SH:", 169, 172;
+	drawstring SMALLFONT, untranslated, "/", 191, 172;
+	drawnumber 3, INDEXFONT, darkgray, ammo shell, 182, 173;
+	drawnumber 3, INDEXFONT, darkgray, ammocapacity shell, 203, 173;
+	drawstring SMALLFONT, untranslated, "RO:", 169, 182;
+	drawstring SMALLFONT, untranslated, "/", 191, 182;
+	drawnumber 3, INDEXFONT, darkgray, ammo rocketammo, 182, 183;
+	drawnumber 3, INDEXFONT, darkgray, ammocapacity rocketammo, 203, 183;
+	drawstring SMALLFONT, untranslated, "CE:", 169, 192;
+	drawstring SMALLFONT, untranslated, "/", 191, 192;
+	drawnumber 3, INDEXFONT, darkgray, ammo cell, 182, 193;
+	drawnumber 3, INDEXFONT, darkgray, ammocapacity cell, 203, 193;
+}
+
+statusbar inventory
+{
+	drawinventorybar Doom, 7, INDEXFONT, 50, 170;
+}
+
+statusbar automap
+{
+	drawimage "nullbar", 0, 160;
+	drawswitchableimage WpnPower1Icon, "nullimage", "POW1E0", 222, 215;
+	drawswitchableimage WpnPower3Icon, "nullimage", "POW3E0", 261, 215; //This is out of order on purpose
+	drawswitchableimage WpnPower2Icon, "nullimage", "POW2E0", 300, 215;
+	drawimage "HTEXA0", 6, 165;
+	drawnumber 3, HUDFONT_DOOM, untranslated, Ammo("Stamina"), whennotzero | interpolate(4), 45, 186;	//R1 45 WAS 25, 186 WAS 177		//R4 Added Whennnot zero
+	drawnumber 3, HUDFONT_DOOM, untranslated, health, 45, 174;					//R1 174 WAS 177
+	drawnumber 2, HUDFONT_DOOM, untranslated, ammo2, 97, 176;					//R1 WAS 97, 181
+	drawnumber 3, HUDFONT_DOOM, untranslated, ammo1, 97, 187;					//R1 WAS 97, 181
+	drawimage "ATEXA0", 108, 165;
+	drawnumber 3, HUDFONT_DOOM, untranslated, armor, 145, 177;
+	drawswitchableimage BlueCard, "nullimage", "STKEYS0", 57, 162;
+	drawswitchableimage YellowCard, "nullimage", "STKEYS1", 73, 162;
+	drawswitchableimage RedCard, "nullimage", "STKEYS2", 89, 162;
+	drawswitchableimage BlueSkull, "nullimage", "STKEYS3", 57, 162;
+	drawswitchableimage YellowSkull, "nullimage", "STKEYS4", 73, 162;
+	drawswitchableimage RedSkull, "nullimage", "STKEYS5", 89, 162;
+/*	drawswitchableimage GLBlueCard, "nullimage", "STKEYS0", 57, 162;			//R29 REMOVED GL KEYS
+	drawswitchableimage GLYellowCard, "nullimage", "STKEYS1", 73, 162;
+	drawswitchableimage GLRedCard, "nullimage", "STKEYS2", 89, 162;
+	drawswitchableimage GLBlueSkull, "nullimage", "STKEYS3", 57, 162;
+	drawswitchableimage GLYellowSkull, "nullimage", "STKEYS4", 73, 162;
+	drawswitchableimage GLRedSkull, "nullimage", "STKEYS5", 89, 162;*/
+	drawstring SMALLFONT, untranslated, "BU:", 169, 162;
+	drawstring SMALLFONT, untranslated, "/", 191, 162;
+	drawnumber 3, INDEXFONT, darkgray, ammo clip, 182, 163;
+	drawnumber 3, INDEXFONT, darkgray, ammocapacity clip, 203, 163;
+	drawstring SMALLFONT, untranslated, "SH:", 169, 172;
+	drawstring SMALLFONT, untranslated, "/", 191, 172;
+	drawnumber 3, INDEXFONT, darkgray, ammo shell, 182, 173;
+	drawnumber 3, INDEXFONT, darkgray, ammocapacity shell, 203, 173;
+	drawstring SMALLFONT, untranslated, "RO:", 169, 182;
+	drawstring SMALLFONT, untranslated, "/", 191, 182;
+	drawnumber 3, INDEXFONT, darkgray, ammo rocketammo, 182, 183;
+	drawnumber 3, INDEXFONT, darkgray, ammocapacity rocketammo, 203, 183;
+	drawstring SMALLFONT, untranslated, "CE:", 169, 192;
+	drawstring SMALLFONT, untranslated, "/", 191, 192;
+	drawnumber 3, INDEXFONT, darkgray, ammo cell, 182, 193;
+	drawnumber 3, INDEXFONT, darkgray, ammocapacity cell, 203, 193;
+}

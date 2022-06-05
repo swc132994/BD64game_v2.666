@@ -1,0 +1,231 @@
+//R1 NEW 03.11.17
+LISTMENU "MainMenu"
+{
+	IfGame(Doom, Chex)
+	{
+		StaticPatch 94, 2, "M_DOOM"
+		Position 97, 72
+		IfOption(ReadThis)
+		{
+		Position 97, 64
+		}
+	}
+	IfGame(Strife)
+	{
+		StaticPatch 84, 2, "M_STRIFE"
+		Position 97, 45
+	}
+	IfGame(Heretic)
+	{
+		StaticPatch 88, 0, "M_HTIC"
+		StaticPatch 40, 10, "M_SKL01"
+		StaticPatch 232, 10, "M_SKL00"
+		Position 110, 56
+	}
+	IfGame(Hexen)
+	{
+		StaticPatch 88, 0, "M_HTIC"
+		StaticPatch 37, 80, "FBULB0"
+		StaticPatch 278, 80, "FBULA0"
+		Position 110, 56
+	}
+	IfGame(Doom, Strife, Chex)
+	{
+		TextItem "NEW GAME", "n", "PlayerclassMenu"
+		ifOption(SwapMenu)
+		{
+			TextItem "LOAD GAME", "l", "LoadGameMenu"
+			TextItem "SAVE GAME", "s", "SaveGameMenu"
+			TextItem "OPTIONS","o", "OptionsMenu"
+		}
+		else
+		{
+			TextItem "OPTIONS", "o", "OptionsMenu"
+			TextItem "BD64 Options", "b", "BD64Menu"
+			TextItem "LOAD GAME", "l", "LoadGameMenu"
+			TextItem "SAVE GAME", "s", "SaveGameMenu"
+		}
+		ifOption(ReadThis)
+		{
+			TextItem "READ THIS", "r", "ReadThisMenu"
+		}
+		TextItem "QUIT GAME", "q", "QuitMenu"
+	}
+	IfGame(Heretic, Hexen)
+	{
+		TextItem "$MNU_NEWGAME", "n", "PlayerclassMenu"
+		TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
+		TextItem "$MNU_GAMEFILES", "g", "GameFilesMenu"
+		TextItem "$MNU_INFO", "i", "ReadThisMenu"
+		TextItem "$MNU_QUITGAME", "q", "QuitMenu"
+	}
+}
+
+OptionMenu "BD64Menu" //R31 
+{
+	Title "BRUTAL DOOM 64 OPTIONS"
+	Submenu "Performance Options",		"BrutalDoom64OptionsPerformance"
+	Submenu "Item/Weapon Spawner Options",			"BrutalDoom64OptionsItem/WeaponSpawner"
+	Submenu "Monster Spawner Options",			"BrutalDoom64OptionsMonsterSpawner"
+	Submenu "Other Monster Options",			"BrutalDoom64OptionsOtherMonster"
+	Submenu "Map Options",			"BD64MapOptions"
+}
+
+OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
+{
+	Title "Performance Options"
+//	Submenu "Ketchup Options - GZDoom",			"KetchupOptionsGZDoom"				//R29 REMOVED
+//	Submenu "Ketchup Options - Zandronum",			"KetchupOptionsZandronum"		//R29 REMOVED
+//dynamic spawn option																//R20	//R26 REVISED WITH NEW OPTIONS AND DESC.
+//	StaticText "*  Performance Options-----------------------------------------"	//R28.4 ADDED DECAL OPTIONS
+		StaticText " "
+	Option "Enable Zandronum specific multiplayer scripts =", "isrunningzandronum", "YesOrNo"
+	Option "Select blood amount =", "zdoombrutalblood", "BrutalBlood"
+	Option "Enable floor/ceiling gore cleaner (removes after 30s) =", "zdoombrutaljanitor", "YesOrNo"
+	Option "Set max wall decal amount (Default is 1024) =", "cl_maxdecals", "DecalValue"		//R28.4 ADDED
+	Option "Enable floor/ceiling shot/blast decals =", "FloorDecal_Cvar", "YesOrNoFalse"		//R29 ADDED
+	Option "Set max gore amount (Default is 64) =", "sv_corpsequeuesize", "GoreValue"			//R29.1 ADDED
+	Option "Disable Light Fog & Halos =", "LFog_Cvar", "YesOrNoFalse"			//R30 ADDED	//R30.9 REVISED LINE
+		StaticText " "
+}
+		
+OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
+{		
+    Title "Item/Weapon Spawner Options"
+//	StaticText "*  Item/Weapon Spawner Options---------------------------------"
+		StaticText " "
+	Option "Randomly replace Power-ups with Unmaker Power-ups =", "WpnPower_Spawner_Cvar", "YesOrNo"		//r31 was DynamicSpawnCvar
+	Option "Randomly replace Plasma Rifle with Lasergun =", "Lasergun_Spawner_Cvar", "YesOrNo"
+	Option "Randomly replace BFG9000 with Unmaker =", "Unmaker_Spawner_Cvar", "YesOrNo"
+		StaticText " "
+	Option "Play Vanilla Weapon Animations (Classical Only) =", "VWeaponCvar", "YesOrNo"
+		StaticText " "
+}
+		
+OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
+{
+    Title "Monster Spawner Options"
+//	StaticText "*  Monster Spawner Options-------------------------------------"
+		StaticText " "
+	Option "Randomly replace Imps with Nightmare Imps =", "NImp_Spawner_Cvar", "YesOrNo"
+	Option "Randomly replace Spectres with Nightmare Spectres =", "NSpectre_Spawner_Cvar", "YesOrNo"
+	Option "Randomly replace Cacodemons with Nightmare Cacodemons =", "NCaco_Spawner_Cvar", "YesOrNo"
+	Option "Randomly replace Demons with Hellhounds =", "Hellhound_Spawner_Cvar", "YesOrNo"
+	Option "Randomly replace Cyberdemons with Annihilators =", "Annihilator_Spawner_Cvar", "YesOrNo"
+	Option "Randomly replace Masterminds with Motherdemons =", "Motherdemon_Spawner_Cvar", "YesOrNo"	//R27
+		StaticText " "
+}		
+		
+OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
+{
+    Title "Other Monster Options"
+//	StaticText "*  Other Monster Options---------------------------------------"
+		StaticText " "
+	Option "Replace all Hellhounds with Archviles =", "ArchvileRestorerCvar", "YesOrNo"	//r31 was DynamicSpawnCvar2
+	Option "Remove all Revenants, Hellhounds & Masterminds =", "D64MonstersOnlyCvar", "YesOrNo"	//R31 WAS DynamicSpawnCvar4
+	Option "Revert back to old Hellhound =", "HoundChooserCvar", "YesOrNo"
+	Option "Revert back to old Revenant =", "RevenantChooserCvar", "YesOrNo"
+		StaticText " "
+}
+
+OptionMenu "BD64MapOptions" //R31
+{		
+    Title "Map Options"
+//	StaticText "*  Misc--------------------------------------------------------"	//r31 vanilla map option
+		StaticText " "
+	Option "Play Vanilla Map08 =", "VMapCheckCvar", "YesOrNo"
+	Option "Add TC Maps to Campaign =", "TCMapCheckCvar", "YesOrNo"
+}
+
+/*OptionMenu "KetchupOptionsGZDoom"												//R29 REMOVED
+{
+Title "GZDoom Ketchup Options"
+StaticText " "
+
+Option "Please, select engine you are using.", "isrunningzandronum", "SelectEngineType"
+StaticText " "
+StaticText " "
+
+Option "Blood Amount", "zdoombrutalblood", "BrutalBlood"
+StaticText "How much blood you want to see?"
+StaticText " "
+
+Option "Enable Janitor", "zdoombrutaljanitor", "YesOrNo"
+StaticText "Makes gibs disappear after 30 seconds."
+StaticText " "
+}*/
+
+/*OptionMenu "KetchupOptionsZandronum"											//R29 REMOVED
+{
+Title "Zandronum Ketchup Options"
+StaticText " "
+
+Option "Please, select engine you are using.", "isrunningzandronum", "SelectEngineType"
+StaticText " "
+StaticText " "
+
+Option "Blood Amount", "bd_bloodamount", "BrutalBlood"
+StaticText "How much blood you want to see?"
+StaticText " "
+
+Option "Enable Janitor", "bd_lowgraphicsmode", "YesOrNo"
+StaticText "Makes gibs disappear after 30 seconds."
+StaticText " "
+}*/
+
+OptionValue "BrutalBlood"
+{
+	1, "Low"
+	2, "Normal"
+	3, "Lots"
+	4, "Comical"
+	666, "Maximum"															//R29 WAS "Overdrawn at Blood Bank"
+}
+
+OptionValue "YesOrNo"
+{
+	0, "No"
+	1, "Yes"
+}
+
+OptionValue "YesOrNoFalse"
+{
+	1, "No"
+	0, "Yes"
+}
+
+/*OptionValue "SelectEngineType"												//R29 REMOVED
+{
+	1, "Zandronum"
+	0, "GZDoom"
+}*/
+
+OptionValue "DecalValue"														//R28.4 ADDED
+{
+	0, "None"																	//R29 WAS "0"
+	32, "32"																	//R29.1 ADDED
+	64, "64"																	//R29 ADDED
+	128, "128"																	//R29 ADDED
+	256, "256"
+	512, "512"
+	1024, "1024"
+	2048, "2048"
+	5102, "4096"
+	8192, "8192"
+}
+
+OptionValue "GoreValue"															//R29.1 ADDED
+{
+	16, "16"
+	32, "32"
+	64, "64"
+	128, "128"
+	256, "256"
+	512, "512"
+	1024, "1024"
+	2048, "2048"
+	4096, "4096"
+	8192, "8192"
+	16384, "16384"
+	32768, "32768"
+}

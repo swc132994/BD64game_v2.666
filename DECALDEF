@@ -1,0 +1,178 @@
+decal Crack1
+{
+pic BFGLITE1
+shade "00 00 00"
+randomflipy
+randomflipx
+}
+
+decal Crack2
+{
+pic BFGLITE2
+shade "00 00 00"
+randomflipy
+randomflipx
+}
+
+decalgroup Crack
+{
+Crack1 1
+Crack2 1
+}
+
+decal GiantScorch
+{
+pic SCORCH1
+shade "00 00 00"
+x-scale 5.75
+y-scale 5.75
+randomflipx
+randomflipy
+}
+
+decal SkullScorch1
+{
+pic PLASMA1
+shade "00 00 00"
+x-scale 0.6
+y-scale 0.6
+randomflipx
+randomflipy
+}
+
+decal SkullScorch2
+{
+pic PLASMA2
+shade "00 00 00"
+x-scale 0.6
+y-scale 0.6
+randomflipx
+randomflipy
+}
+
+decalgroup SkullScorch
+{
+SkullScorch1 1
+SkullScorch2 1
+}
+
+decal BigScorch
+{
+pic SCORCH1
+shade "00 00 00"
+x-scale 0.6																		//R28.3 WAS 1.5
+y-scale 0.6																		//R28.3 WAS 1.5
+randomflipx
+randomflipy
+}
+
+decal BiggerScorch
+{
+pic SCORCH1
+shade "00 00 00"
+x-scale 2.5
+y-scale 2.5
+randomflipx
+randomflipy
+}
+
+decal FireworxScorch
+{
+pic SCORCH1
+shade "00 00 00"
+x-scale 1.1
+y-scale 1.1
+randomflipx
+randomflipy
+}
+
+decal SmallerScorch
+{
+pic SCORCH1
+shade "00 00 00"
+x-scale 0.3																		//R28.3 WAS 0.6
+y-scale 0.3																		//R28.3 WAS 0.6
+randomflipx
+randomflipy
+}
+
+decal MedScorch
+{
+pic SCORCH1
+shade "00 00 00"
+x-scale 0.45																	//R28.3 WAS 0.6
+y-scale 0.45																	//R28.3 WAS 0.6
+randomflipx
+randomflipy
+}
+
+/*decal BulletDecalNew1															//R28.2 ADDED	//R31 DISABLED
+{
+	pic BULDE1
+	x-scale 0.5
+	y-scale 0.5
+	translucent 0.9
+	shade "0 0 0"
+	randomflipx
+}*/
+
+decal SawVertical																//R28.2 ADDED
+{
+	pic SawVert
+	shade "00 00 00"
+	x-scale 0.2
+	y-scale 0.5
+	randomflipy
+	randomflipx
+}
+
+decal LaserDecal																//r31
+{
+pic SCORCH1
+shade "00 00 00"
+x-scale 0.1
+y-scale 0.1
+randomflipx
+randomflipy
+}
+
+//R31 BULLET DECALS FROM SMK4SIMPLEDECALS.WAD
+decal BDBulletChip1
+{
+pic CHIZ1
+x-scale 0.75
+y-scale 0.75
+randomflipx
+}
+
+decal BDBulletChip2
+{
+pic CHIZ2
+x-scale 0.6
+y-scale 0.6
+randomflipx
+}
+
+decal BDBulletChip3
+{
+pic CHIZ3
+x-scale 0.6
+y-scale 0.6
+randomflipx
+}
+
+decal BDBulletChip4
+{
+pic CHIZ4
+x-scale 0.7
+y-scale 0.7
+randomflipx
+}
+
+decalgroup BulletDecalNew1	//WAS BulletChip
+{
+BDBulletChip1	1
+BDBulletChip2	1
+BDBulletChip3	1
+BDBulletChip4	1
+}

@@ -1,0 +1,842 @@
+texture M_SKULL1
+pic 1 tics 3
+pic 2 tics 3
+pic 3 tics 3
+pic 4 tics 3
+pic 5 tics 3
+pic 6 tics 3
+pic 7 tics 3
+pic 8 tics 3
+
+flat NUKAGE1
+	pic FHDS01 rand 2 2
+	pic FHDS02 rand 2 2
+	pic FHDS03 rand 2 2
+	pic FHDS04 rand 2 2
+	pic FHDS05 rand 2 2
+	pic FHDS06 rand 2 2
+	pic FHDS07 rand 2 2
+	pic FHDS08 rand 2 2
+	pic FHDS09 rand 2 2
+	pic FHDS10 rand 2 2
+	pic FHDS11 rand 2 2
+	pic FHDS12 rand 2 2
+	pic FHDS13 rand 2 2
+	pic FHDS14 rand 2 2
+	pic FHDS15 rand 2 2
+	pic FHDS16 rand 2 2
+	pic FHDS17 rand 2 2
+	pic FHDS18 rand 2 2
+	pic FHDS19 rand 2 2
+	pic FHDS20 rand 2 2
+	pic FHDS21 rand 2 2
+	pic FHDS22 rand 2 2
+	pic FHDS23 rand 2 2
+	pic FHDS24 rand 2 2
+	pic FHDS25 rand 2 2
+	pic FHDS26 rand 2 2
+	pic FHDS27 rand 2 2
+	pic FHDS28 rand 2 2
+	pic FHDS29 rand 2 2
+	pic FHDS30 rand 2 2
+	pic FHDS31 rand 2 2
+	pic FHDS32 rand 2 2
+
+flat NUKAGE2
+	pic FHDS01 rand 2 2
+	pic FHDS02 rand 2 2
+	pic FHDS03 rand 2 2
+	pic FHDS04 rand 2 2
+	pic FHDS05 rand 2 2
+	pic FHDS06 rand 2 2
+	pic FHDS07 rand 2 2
+	pic FHDS08 rand 2 2
+	pic FHDS09 rand 2 2
+	pic FHDS10 rand 2 2
+	pic FHDS11 rand 2 2
+	pic FHDS12 rand 2 2
+	pic FHDS13 rand 2 2
+	pic FHDS14 rand 2 2
+	pic FHDS15 rand 2 2
+	pic FHDS16 rand 2 2
+	pic FHDS17 rand 2 2
+	pic FHDS18 rand 2 2
+	pic FHDS19 rand 2 2
+	pic FHDS20 rand 2 2
+	pic FHDS21 rand 2 2
+	pic FHDS22 rand 2 2
+	pic FHDS23 rand 2 2
+	pic FHDS24 rand 2 2
+	pic FHDS25 rand 2 2
+	pic FHDS26 rand 2 2
+	pic FHDS27 rand 2 2
+	pic FHDS28 rand 2 2
+	pic FHDS29 rand 2 2
+	pic FHDS30 rand 2 2
+	pic FHDS31 rand 2 2
+	pic FHDS32 rand 2 2
+
+flat NUKAGE3
+	pic FHDS01 rand 2 2
+	pic FHDS02 rand 2 2
+	pic FHDS03 rand 2 2
+	pic FHDS04 rand 2 2
+	pic FHDS05 rand 2 2
+	pic FHDS06 rand 2 2
+	pic FHDS07 rand 2 2
+	pic FHDS08 rand 2 2
+	pic FHDS09 rand 2 2
+	pic FHDS10 rand 2 2
+	pic FHDS11 rand 2 2
+	pic FHDS12 rand 2 2
+	pic FHDS13 rand 2 2
+	pic FHDS14 rand 2 2
+	pic FHDS15 rand 2 2
+	pic FHDS16 rand 2 2
+	pic FHDS17 rand 2 2
+	pic FHDS18 rand 2 2
+	pic FHDS19 rand 2 2
+	pic FHDS20 rand 2 2
+	pic FHDS21 rand 2 2
+	pic FHDS22 rand 2 2
+	pic FHDS23 rand 2 2
+	pic FHDS24 rand 2 2
+	pic FHDS25 rand 2 2
+	pic FHDS26 rand 2 2
+	pic FHDS27 rand 2 2
+	pic FHDS28 rand 2 2
+	pic FHDS29 rand 2 2
+	pic FHDS30 rand 2 2
+	pic FHDS31 rand 2 2
+	pic FHDS32 rand 2 2
+
+	warp2 flat FHDS01
+	warp2 flat FHDS02
+	warp2 flat FHDS03
+	warp2 flat FHDS04
+	warp2 flat FHDS05
+	warp2 flat FHDS06
+	warp2 flat FHDS07
+	warp2 flat FHDS08
+	warp2 flat FHDS09
+	warp2 flat FHDS10
+	warp2 flat FHDS11
+	warp2 flat FHDS12
+	warp2 flat FHDS13
+	warp2 flat FHDS14
+	warp2 flat FHDS15
+	warp2 flat FHDS16
+	warp2 flat FHDS17
+	warp2 flat FHDS18
+	warp2 flat FHDS19
+	warp2 flat FHDS20
+	warp2 flat FHDS21
+	warp2 flat FHDS22
+	warp2 flat FHDS23
+	warp2 flat FHDS24
+	warp2 flat FHDS25
+	warp2 flat FHDS26
+	warp2 flat FHDS27
+	warp2 flat FHDS28
+	warp2 flat FHDS29
+	warp2 flat FHDS30
+	warp2 flat FHDS31
+	warp2 flat FHDS32
+
+warp2 texture SAR3A1
+warp2 texture SAR3A2A8
+warp2 texture SAR3A4A6
+warp2 texture SAR3A3A7
+warp2 texture SAR3A5
+
+warp2 texture HEB2B1
+warp2 texture SAR3B2B8
+warp2 texture SAR3B4B6
+warp2 texture SAR3B3B7
+warp2 texture SAR3B5
+
+warp2 texture SAR3C1
+warp2 texture SAR3C2D8
+warp2 texture SAR3C4C6
+warp2 texture SAR3C3C7
+warp2 texture SAR3C5
+
+warp2 texture SAR3D1
+warp2 texture SAR3D2D8
+warp2 texture SAR3D4D6
+warp2 texture SAR3D3D7
+warp2 texture SAR3D5
+
+warp2 texture SAR3E1
+warp2 texture SAR3E2E8
+warp2 texture SAR3E4E6
+warp2 texture SAR3E3E7
+warp2 texture SAR3E5
+
+warp2 texture SAR3F1
+warp2 texture SAR3F2F8
+warp2 texture SAR3F3F7
+warp2 texture SAR3F4F6
+warp2 texture SAR3F5
+
+warp2 texture SAR3G1
+warp2 texture SAR3G2G8
+warp2 texture SAR3G3G7
+warp2 texture SAR3G4G6
+warp2 texture SAR3G5
+
+warp2 texture SAR3H1
+warp2 texture SAR3H2H8
+warp2 texture SAR3H3H7
+warp2 texture SAR3H4H6
+warp2 texture SAR3H5
+
+warp2 texture SAR3I1
+warp2 texture SAR3I2I8
+warp2 texture SAR3I3I7
+warp2 texture SAR3I4I6
+warp2 texture SAR3I5
+
+//Blood
+flat BLOOD1
+	pic FHDB01 rand 2 2
+	pic FHDB02 rand 2 2
+	pic FHDB03 rand 2 2
+	pic FHDB04 rand 2 2
+	pic FHDB05 rand 2 2
+	pic FHDB06 rand 2 2
+	pic FHDB07 rand 2 2
+	pic FHDB08 rand 2 2
+	pic FHDB09 rand 2 2
+	pic FHDB10 rand 2 2
+	pic FHDB11 rand 2 2
+	pic FHDB12 rand 2 2
+	pic FHDB13 rand 2 2
+	pic FHDB14 rand 2 2
+	pic FHDB15 rand 2 2
+	pic FHDB16 rand 2 2
+	pic FHDB17 rand 2 2
+	pic FHDB18 rand 2 2
+	pic FHDB19 rand 2 2
+	pic FHDB20 rand 2 2
+	pic FHDB21 rand 2 2
+	pic FHDB22 rand 2 2
+	pic FHDB23 rand 2 2
+	pic FHDB24 rand 2 2
+	pic FHDB25 rand 2 2
+	pic FHDB26 rand 2 2
+	pic FHDB27 rand 2 2
+	pic FHDB28 rand 2 2
+	pic FHDB29 rand 2 2
+	pic FHDB30 rand 2 2
+	pic FHDB31 rand 2 2
+	pic FHDB32 rand 2 2
+
+flat BLOOD2
+	pic FHDB01 rand 2 2
+	pic FHDB02 rand 2 2
+	pic FHDB03 rand 2 2
+	pic FHDB04 rand 2 2
+	pic FHDB05 rand 2 2
+	pic FHDB06 rand 2 2
+	pic FHDB07 rand 2 2
+	pic FHDB08 rand 2 2
+	pic FHDB09 rand 2 2
+	pic FHDB10 rand 2 2
+	pic FHDB11 rand 2 2
+	pic FHDB12 rand 2 2
+	pic FHDB13 rand 2 2
+	pic FHDB14 rand 2 2
+	pic FHDB15 rand 2 2
+	pic FHDB16 rand 2 2
+	pic FHDB17 rand 2 2
+	pic FHDB18 rand 2 2
+	pic FHDB19 rand 2 2
+	pic FHDB20 rand 2 2
+	pic FHDB21 rand 2 2
+	pic FHDB22 rand 2 2
+	pic FHDB23 rand 2 2
+	pic FHDB24 rand 2 2
+	pic FHDB25 rand 2 2
+	pic FHDB26 rand 2 2
+	pic FHDB27 rand 2 2
+	pic FHDB28 rand 2 2
+	pic FHDB29 rand 2 2
+	pic FHDB30 rand 2 2
+	pic FHDB31 rand 2 2
+	pic FHDB32 rand 2 2
+
+flat BLOOD3
+	pic FHDB01 rand 2 2
+	pic FHDB02 rand 2 2
+	pic FHDB03 rand 2 2
+	pic FHDB04 rand 2 2
+	pic FHDB05 rand 2 2
+	pic FHDB06 rand 2 2
+	pic FHDB07 rand 2 2
+	pic FHDB08 rand 2 2
+	pic FHDB09 rand 2 2
+	pic FHDB10 rand 2 2
+	pic FHDB11 rand 2 2
+	pic FHDB12 rand 2 2
+	pic FHDB13 rand 2 2
+	pic FHDB14 rand 2 2
+	pic FHDB15 rand 2 2
+	pic FHDB16 rand 2 2
+	pic FHDB17 rand 2 2
+	pic FHDB18 rand 2 2
+	pic FHDB19 rand 2 2
+	pic FHDB20 rand 2 2
+	pic FHDB21 rand 2 2
+	pic FHDB22 rand 2 2
+	pic FHDB23 rand 2 2
+	pic FHDB24 rand 2 2
+	pic FHDB25 rand 2 2
+	pic FHDB26 rand 2 2
+	pic FHDB27 rand 2 2
+	pic FHDB28 rand 2 2
+	pic FHDB29 rand 2 2
+	pic FHDB30 rand 2 2
+	pic FHDB31 rand 2 2
+	pic FHDB32 rand 2 2
+
+	warp2 flat FHDB01
+	warp2 flat FHDB02
+	warp2 flat FHDB03
+	warp2 flat FHDB04
+	warp2 flat FHDB05
+	warp2 flat FHDB06
+	warp2 flat FHDB07
+	warp2 flat FHDB08
+	warp2 flat FHDB09
+	warp2 flat FHDB10
+	warp2 flat FHDB11
+	warp2 flat FHDB12
+	warp2 flat FHDB13
+	warp2 flat FHDB14
+	warp2 flat FHDB15
+	warp2 flat FHDB16
+	warp2 flat FHDB17
+	warp2 flat FHDB18
+	warp2 flat FHDB19
+	warp2 flat FHDB20
+	warp2 flat FHDB21
+	warp2 flat FHDB22
+	warp2 flat FHDB23
+	warp2 flat FHDB24
+	warp2 flat FHDB25
+	warp2 flat FHDB26
+	warp2 flat FHDB27
+	warp2 flat FHDB28
+	warp2 flat FHDB29
+	warp2 flat FHDB30
+	warp2 flat FHDB31
+	warp2 flat FHDB32
+
+	//Water
+flat FWATER1
+	pic RRWAT_01 rand 3 3
+	pic RRWAT_02 rand 3 3
+	pic RRWAT_03 rand 3 3
+	pic RRWAT_04 rand 3 3
+	pic RRWAT_05 rand 3 3
+	pic RRWAT_06 rand 3 3
+	pic RRWAT_07 rand 3 3
+	pic RRWAT_08 rand 3 3
+	pic RRWAT_09 rand 3 3
+	pic RRWAT_10 rand 3 3
+	pic RRWAT_11 rand 3 3
+	pic RRWAT_12 rand 3 3
+
+flat FWATER2
+	pic RRWAT_01 rand 3 3
+	pic RRWAT_02 rand 3 3
+	pic RRWAT_03 rand 3 3
+	pic RRWAT_04 rand 3 3
+	pic RRWAT_05 rand 3 3
+	pic RRWAT_06 rand 3 3
+	pic RRWAT_07 rand 3 3
+	pic RRWAT_08 rand 3 3
+	pic RRWAT_09 rand 3 3
+	pic RRWAT_10 rand 3 3
+	pic RRWAT_11 rand 3 3
+	pic RRWAT_12 rand 3 3
+
+flat FWATER3
+	pic RRWAT_01 rand 3 3
+	pic RRWAT_02 rand 3 3
+	pic RRWAT_03 rand 3 3
+	pic RRWAT_04 rand 3 3
+	pic RRWAT_05 rand 3 3
+	pic RRWAT_06 rand 3 3
+	pic RRWAT_07 rand 3 3
+	pic RRWAT_08 rand 3 3
+	pic RRWAT_09 rand 3 3
+	pic RRWAT_10 rand 3 3
+	pic RRWAT_11 rand 3 3
+	pic RRWAT_12 rand 3 3
+
+flat FWATER4
+	pic RRWAT_01 rand 3 3
+	pic RRWAT_02 rand 3 3
+	pic RRWAT_03 rand 3 3
+	pic RRWAT_04 rand 3 3
+	pic RRWAT_05 rand 3 3
+	pic RRWAT_06 rand 3 3
+	pic RRWAT_07 rand 3 3
+	pic RRWAT_08 rand 3 3
+	pic RRWAT_09 rand 3 3
+	pic RRWAT_10 rand 3 3
+	pic RRWAT_11 rand 3 3
+	pic RRWAT_12 rand 3 3
+
+flat FWATER03
+	pic RRWAT_01 rand 3 3
+	pic RRWAT_02 rand 3 3
+	pic RRWAT_03 rand 3 3
+	pic RRWAT_04 rand 3 3
+	pic RRWAT_05 rand 3 3
+	pic RRWAT_06 rand 3 3
+	pic RRWAT_07 rand 3 3
+	pic RRWAT_08 rand 3 3
+	pic RRWAT_09 rand 3 3
+	pic RRWAT_10 rand 3 3
+	pic RRWAT_11 rand 3 3
+	pic RRWAT_12 rand 3 3
+
+flat FWATER02
+	pic RRWAT_01 rand 3 3
+	pic RRWAT_02 rand 3 3
+	pic RRWAT_03 rand 3 3
+	pic RRWAT_04 rand 3 3
+	pic RRWAT_05 rand 3 3
+	pic RRWAT_06 rand 3 3
+	pic RRWAT_07 rand 3 3
+	pic RRWAT_08 rand 3 3
+	pic RRWAT_09 rand 3 3
+	pic RRWAT_10 rand 3 3
+	pic RRWAT_11 rand 3 3
+	pic RRWAT_12 rand 3 3
+
+//	flat FTILE083
+//pic HDWAT01 rand 1 1
+//pic HDWAT02 rand 1 1
+//pic HDWAT03 rand 1 1
+//pic HDWAT04 rand 1 1
+//pic HDWAT05 rand 1 1
+//pic HDWAT06 rand 1 1
+//pic HDWAT07 rand 1 1
+//pic HDWAT08 rand 1 1
+//pic HDWAT09 rand 1 1
+//pic HDWAT11 rand 1 1
+//pic HDWAT12 rand 1 1
+//pic HDWAT13 rand 1 1
+//pic HDWAT14 rand 1 1
+//pic HDWAT15 rand 1 1
+//pic HDWAT16 rand 1 1
+//pic HDWAT17 rand 1 1
+//pic HDWAT18 rand 1 1
+//pic HDWAT19 rand 1 1
+//pic HDWAT20 rand 1 1
+//pic HDWAT21 rand 1 1
+//pic HDWAT22 rand 1 1
+//pic HDWAT23 rand 1 1
+//pic HDWAT24 rand 1 1
+//pic HDWAT25 rand 1 1
+//pic HDWAT26 rand 1 1
+//pic HDWAT27 rand 1 1
+//pic HDWAT28 rand 1 1
+//pic HDWAT29 rand 1 1
+//pic HDWAT30 rand 1 1
+//pic HDWAT31 rand 1 1
+//pic HDWAT32 rand 1 1
+//pic HDWAT33 rand 1 1
+//pic HDWAT34 rand 1 1
+
+flat FTILE080
+	pic RRWAT_01 rand 3 3
+	pic RRWAT_02 rand 3 3
+	pic RRWAT_03 rand 3 3
+	pic RRWAT_04 rand 3 3
+	pic RRWAT_05 rand 3 3
+	pic RRWAT_06 rand 3 3
+	pic RRWAT_07 rand 3 3
+	pic RRWAT_08 rand 3 3
+	pic RRWAT_09 rand 3 3
+	pic RRWAT_10 rand 3 3
+	pic RRWAT_11 rand 3 3
+	pic RRWAT_12 rand 3 3
+
+warp2 texture RRWAT_01
+warp2 texture RRWAT_02
+warp2 texture RRWAT_03
+warp2 texture RRWAT_04
+warp2 texture RRWAT_05
+warp2 texture RRWAT_06
+warp2 texture RRWAT_07
+warp2 texture RRWAT_08
+warp2 texture RRWAT_09
+warp2 texture RRWAT_10
+warp2 texture RRWAT_11
+warp2 texture RRWAT_12
+
+flat SLIME01
+	pic RBWAT_01 rand 3 3
+	pic RBWAT_02 rand 3 3
+	pic RBWAT_03 rand 3 3
+	pic RBWAT_04 rand 3 3
+	pic RBWAT_05 rand 3 3
+	pic RBWAT_06 rand 3 3
+	pic RBWAT_07 rand 3 3
+	pic RBWAT_08 rand 3 3
+	pic RBWAT_09 rand 3 3
+	pic RBWAT_10 rand 3 3
+	pic RBWAT_11 rand 3 3
+	pic RBWAT_12 rand 3 3
+
+flat SLIME02
+	pic RBWAT_01 rand 3 3
+	pic RBWAT_02 rand 3 3
+	pic RBWAT_03 rand 3 3
+	pic RBWAT_04 rand 3 3
+	pic RBWAT_05 rand 3 3
+	pic RBWAT_06 rand 3 3
+	pic RBWAT_07 rand 3 3
+	pic RBWAT_08 rand 3 3
+	pic RBWAT_09 rand 3 3
+	pic RBWAT_10 rand 3 3
+	pic RBWAT_11 rand 3 3
+	pic RBWAT_12 rand 3 3
+
+flat SLIME03
+	pic RBWAT_01 rand 3 3
+	pic RBWAT_02 rand 3 3
+	pic RBWAT_03 rand 3 3
+	pic RBWAT_04 rand 3 3
+	pic RBWAT_05 rand 3 3
+	pic RBWAT_06 rand 3 3
+	pic RBWAT_07 rand 3 3
+	pic RBWAT_08 rand 3 3
+	pic RBWAT_09 rand 3 3
+	pic RBWAT_10 rand 3 3
+	pic RBWAT_11 rand 3 3
+	pic RBWAT_12 rand 3 3
+
+flat SLIME04
+	pic RBWAT_01 rand 3 3
+	pic RBWAT_02 rand 3 3
+	pic RBWAT_03 rand 3 3
+	pic RBWAT_04 rand 3 3
+	pic RBWAT_05 rand 3 3
+	pic RBWAT_06 rand 3 3
+	pic RBWAT_07 rand 3 3
+	pic RBWAT_08 rand 3 3
+	pic RBWAT_09 rand 3 3
+	pic RBWAT_10 rand 3 3
+	pic RBWAT_11 rand 3 3
+	pic RBWAT_12 rand 3 3
+
+flat SLIME05
+	pic RBWAT_01 rand 3 3
+	pic RBWAT_02 rand 3 3
+	pic RBWAT_03 rand 3 3
+	pic RBWAT_04 rand 3 3
+	pic RBWAT_05 rand 3 3
+	pic RBWAT_06 rand 3 3
+	pic RBWAT_07 rand 3 3
+	pic RBWAT_08 rand 3 3
+	pic RBWAT_09 rand 3 3
+	pic RBWAT_10 rand 3 3
+	pic RBWAT_11 rand 3 3
+	pic RBWAT_12 rand 3 3
+
+flat CUSTOMCI
+	pic RBWAT_01 rand 3 3
+	pic RBWAT_02 rand 3 3
+	pic RBWAT_03 rand 3 3
+	pic RBWAT_04 rand 3 3
+	pic RBWAT_05 rand 3 3
+	pic RBWAT_06 rand 3 3
+	pic RBWAT_07 rand 3 3
+	pic RBWAT_08 rand 3 3
+	pic RBWAT_09 rand 3 3
+	pic RBWAT_10 rand 3 3
+	pic RBWAT_11 rand 3 3
+	pic RBWAT_12 rand 3 3
+
+warp2 texture RBWAT_01
+warp2 texture RBWAT_02
+warp2 texture RBWAT_03
+warp2 texture RBWAT_04
+warp2 texture RBWAT_05
+warp2 texture RBWAT_06
+warp2 texture RBWAT_07
+warp2 texture RBWAT_08
+warp2 texture RBWAT_09
+warp2 texture RBWAT_10
+warp2 texture RBWAT_11
+warp2 texture RBWAT_12
+
+flat SLIME06
+	pic FHDM01 rand 2 2
+	pic FHDM02 rand 2 2
+	pic FHDM03 rand 2 2
+	pic FHDM04 rand 2 2
+	pic FHDM05 rand 2 2
+	pic FHDM06 rand 2 2
+	pic FHDM07 rand 2 2
+	pic FHDM08 rand 2 2
+	pic FHDM09 rand 2 2
+	pic FHDM10 rand 2 2
+	pic FHDM11 rand 2 2
+	pic FHDM12 rand 2 2
+	pic FHDM13 rand 2 2
+	pic FHDM14 rand 2 2
+	pic FHDM15 rand 2 2
+	pic FHDM16 rand 2 2
+	pic FHDM17 rand 2 2
+	pic FHDM18 rand 2 2
+	pic FHDM19 rand 2 2
+	pic FHDM20 rand 2 2
+	pic FHDM21 rand 2 2
+	pic FHDM22 rand 2 2
+	pic FHDM23 rand 2 2
+	pic FHDM24 rand 2 2
+	pic FHDM25 rand 2 2
+	pic FHDM26 rand 2 2
+	pic FHDM27 rand 2 2
+	pic FHDM28 rand 2 2
+	pic FHDM29 rand 2 2
+	pic FHDM30 rand 2 2
+	pic FHDM31 rand 2 2
+	pic FHDM32 rand 2 2
+
+flat SLIME07
+	pic FHDM01 rand 2 2
+	pic FHDM02 rand 2 2
+	pic FHDM03 rand 2 2
+	pic FHDM04 rand 2 2
+	pic FHDM05 rand 2 2
+	pic FHDM06 rand 2 2
+	pic FHDM07 rand 2 2
+	pic FHDM08 rand 2 2
+	pic FHDM09 rand 2 2
+	pic FHDM10 rand 2 2
+	pic FHDM11 rand 2 2
+	pic FHDM12 rand 2 2
+	pic FHDM13 rand 2 2
+	pic FHDM14 rand 2 2
+	pic FHDM15 rand 2 2
+	pic FHDM16 rand 2 2
+	pic FHDM17 rand 2 2
+	pic FHDM18 rand 2 2
+	pic FHDM19 rand 2 2
+	pic FHDM20 rand 2 2
+	pic FHDM21 rand 2 2
+	pic FHDM22 rand 2 2
+	pic FHDM23 rand 2 2
+	pic FHDM24 rand 2 2
+	pic FHDM25 rand 2 2
+	pic FHDM26 rand 2 2
+	pic FHDM27 rand 2 2
+	pic FHDM28 rand 2 2
+	pic FHDM29 rand 2 2
+	pic FHDM30 rand 2 2
+	pic FHDM31 rand 2 2
+	pic FHDM32 rand 2 2
+
+flat SLIME08
+	pic FHDM01 rand 2 2
+	pic FHDM02 rand 2 2
+	pic FHDM03 rand 2 2
+	pic FHDM04 rand 2 2
+	pic FHDM05 rand 2 2
+	pic FHDM06 rand 2 2
+	pic FHDM07 rand 2 2
+	pic FHDM08 rand 2 2
+	pic FHDM09 rand 2 2
+	pic FHDM10 rand 2 2
+	pic FHDM11 rand 2 2
+	pic FHDM12 rand 2 2
+	pic FHDM13 rand 2 2
+	pic FHDM14 rand 2 2
+	pic FHDM15 rand 2 2
+	pic FHDM16 rand 2 2
+	pic FHDM17 rand 2 2
+	pic FHDM18 rand 2 2
+	pic FHDM19 rand 2 2
+	pic FHDM20 rand 2 2
+	pic FHDM21 rand 2 2
+	pic FHDM22 rand 2 2
+	pic FHDM23 rand 2 2
+	pic FHDM24 rand 2 2
+	pic FHDM25 rand 2 2
+	pic FHDM26 rand 2 2
+	pic FHDM27 rand 2 2
+	pic FHDM28 rand 2 2
+	pic FHDM29 rand 2 2
+	pic FHDM30 rand 2 2
+	pic FHDM31 rand 2 2
+	pic FHDM32 rand 2 2
+
+	warp2 flat FHDM01
+	warp2 flat FHDM02
+	warp2 flat FHDM03
+	warp2 flat FHDM04
+	warp2 flat FHDM05
+	warp2 flat FHDM06
+	warp2 flat FHDM07
+	warp2 flat FHDM08
+	warp2 flat FHDM09
+	warp2 flat FHDM10
+	warp2 flat FHDM11
+	warp2 flat FHDM12
+	warp2 flat FHDM13
+	warp2 flat FHDM14
+	warp2 flat FHDM15
+	warp2 flat FHDM16
+	warp2 flat FHDM17
+	warp2 flat FHDM18
+	warp2 flat FHDM19
+	warp2 flat FHDM20
+	warp2 flat FHDM21
+	warp2 flat FHDM22
+	warp2 flat FHDM23
+	warp2 flat FHDM24
+	warp2 flat FHDM25
+	warp2 flat FHDM26
+	warp2 flat FHDM27
+	warp2 flat FHDM28
+	warp2 flat FHDM29
+	warp2 flat FHDM30
+	warp2 flat FHDM31
+	warp2 flat FHDM32
+
+warp texture SP_FACE1
+warp texture SKSNAKE1
+warp texture SKSNAKE2
+
+warp flat LAVA1
+warp flat LAVA2
+warp flat LAVA3
+warp flat LAVA4
+warp flat SFLR6_1
+warp flat SFLR6_4
+
+flat SLIME12
+	pic SLIME09 rand 3 3
+	pic SLIME10 rand 3 3
+	pic SLIME11 rand 3 3
+	pic SLIME12 rand 3 3
+	pic SLIME11 rand 3 3
+	pic SLIME10 rand 3 3
+
+flat SLIME11
+	pic SLIME09 rand 3 3
+	pic SLIME10 rand 3 3
+	pic SLIME11 rand 3 3
+	pic SLIME12 rand 3 3
+	pic SLIME11 rand 3 3
+	pic SLIME10 rand 3 3
+
+flat SLIME10
+	pic SLIME09 rand 3 3
+	pic SLIME10 rand 3 3
+	pic SLIME11 rand 3 3
+	pic SLIME12 rand 3 3
+	pic SLIME11 rand 3 3
+	pic SLIME10 rand 3 3
+
+flat SLIME09
+	pic SLIME09 rand 3 3
+	pic SLIME10 rand 3 3
+	pic SLIME11 rand 3 3
+	pic SLIME12 rand 3 3
+	pic SLIME11 rand 3 3
+	pic SLIME10 rand 3 3
+
+Texture BLODRIP1
+	pic BLODRIP1 rand 3 3
+	pic BLODRIP2 rand 3 3
+	pic BLODRIP3 rand 3 3
+	pic BLODRIP4 rand 3 3
+Texture BLODRIP2
+	pic BLODRIP1 rand 3 3
+	pic BLODRIP2 rand 3 3
+	pic BLODRIP3 rand 3 3
+	pic BLODRIP4 rand 3 3
+Texture BLODRIP3
+	pic BLODRIP1 rand 3 3
+	pic BLODRIP2 rand 3 3
+	pic BLODRIP3 rand 3 3
+	pic BLODRIP4 rand 3 3
+Texture BLODRIP4
+	pic BLODRIP1 rand 3 3
+	pic BLODRIP2 rand 3 3
+	pic BLODRIP3 rand 3 3
+	pic BLODRIP4 rand 3 3
+
+Texture GSTFONT1
+	pic GSTFONT1 rand 3 3
+	pic GSTFONT2 rand 3 3
+	pic GSTFONT3 rand 3 3
+Texture GSTFONT2
+	pic GSTFONT1 rand 3 3
+	pic GSTFONT2 rand 3 3
+	pic GSTFONT3 rand 3 3
+Texture GSTFONT3
+	pic GSTFONT1 rand 3 3
+	pic GSTFONT2 rand 3 3
+	pic GSTFONT3 rand 3 3
+
+Texture FIREWALL
+	pic FIREWALL rand 3 3
+	pic FIREWALA rand 3 3
+	pic FIREWALB rand 3 3
+Texture FIREWALA
+	pic FIREWALL rand 3 3
+	pic FIREWALA rand 3 3
+	pic FIREWALB rand 3 3
+Texture FIREWALB
+	pic FIREWALL rand 3 3
+	pic FIREWALA rand 3 3
+	pic FIREWALB rand 3 3
+
+Texture FIREMAG1
+	pic FIREMAG1 rand 3 3
+	pic FIREMAG2 rand 3 3
+	pic FIREMAG3 rand 3 3
+Texture FIREMAG2
+	pic FIREMAG1 rand 3 3
+	pic FIREMAG2 rand 3 3
+	pic FIREMAG3 rand 3 3
+Texture FIREMAG3
+	pic FIREMAG1 rand 3 3
+	pic FIREMAG2 rand 3 3
+	pic FIREMAG3 rand 3 3
+
+Texture FIRELAVA
+	pic FIRELAVA rand 3 3
+	pic FIRELAV2 rand 3 3
+	pic FIRELAV3 rand 3 3
+Texture FIRELAV2
+	pic FIRELAVA rand 3 3
+	pic FIRELAV2 rand 3 3
+	pic FIRELAV3 rand 3 3
+Texture FIRELAV3
+	pic FIRELAVA rand 3 3
+	pic FIRELAV2 rand 3 3
+	pic FIRELAV3 rand 3 3
+
+texture WFALL1																	//R23.2 ADDED
+	pic WFALL1 tics 1
+	pic WFALL2 tics 1
+	pic WFALL3 tics 1
+	pic WFALL4 tics 1
+	pic WFALL5 tics 1
+	pic WFALL6 tics 1
+	pic WFALL7 tics 1
+	pic WFALL8 tics 1
+	pic WFALL9 tics 1
+	pic WFALL10 tics 1
+	pic WFALL11 tics 1

@@ -1,0 +1,498 @@
+#INCLUDE Brightmaps.gl
+#INCLUDE BrMapsKNIGHT.gl
+#INCLUDE BrMapsBARON.gl
+#INCLUDE BrMapsFATSO.gl
+#INCLUDE BrMapsCYBER.gl
+#INCLUDE BrMapsARACH.gl
+
+pulselight SMALLREDTORCH
+{
+color 1.0 0.3 0.0
+size 64
+secondarySize 72
+interval 0.1
+offset 0 35 0
+}
+
+pulselight BIGREDTORCH
+{
+color 1.0 0.3 0.0
+size 110
+secondarySize 120
+interval 0.1
+offset 0 80 0
+}
+
+pulselight SMALLBLUETORCH
+{
+color 0.0 0.3 1.0
+size 64
+secondarySize 72
+interval 0.1
+offset 0 35 0
+}
+
+POINTlight plasmaprojectile
+{
+color 0.3 0.3 1.0
+size 42
+offset 0 0 0
+}
+
+pulselight BIGBLUETORCH
+{
+color 0.0 0.3 1.0
+size 110
+secondarySize 120
+interval 0.1
+offset 0 80 0
+}
+
+pulselight SMALLGREENTORCH //R31 added
+{
+color 0.2 1.0 0.0
+size 64
+secondarySize 72
+interval 0.1
+offset 0 35 0
+}
+
+pulselight BIGGREENTORCH
+{
+color 0.2 1.0 0.0
+size 110
+secondarySize 120
+interval 0.1
+offset 0 80 0
+}
+
+pulselight SMALLYELLOWTORCH //R31 added
+{
+color 1.0 1.0 0.0
+size 64
+secondarySize 72
+interval 0.1
+offset 0 35 0
+}
+
+pointlight LampBasic
+{
+color 1.0 0.6 0.0
+size 64
+offset 0 0 0
+}
+
+pointlight LampWhite
+{
+color 0.4 0.4 0.4
+size 64
+offset 0 0 0
+}
+
+pointlight BIGREDLIGHTPOINT
+{
+color 1.0 0.8 0.4
+size 96
+offset 0 0 0
+}
+
+pointlight ShaftLight
+{
+color 0.4 0.4 0.4
+size 96
+offset 0 0 0
+dontlightself 1
+}
+
+pointlight ShaftLightMinor
+{
+color 0.4 0.4 0.4
+size 16
+offset 0 0 0
+dontlightself 1
+}
+
+object 64Candlestick
+{
+frame CAND {light SMALLREDTORCH}
+}
+
+object 64Candelabra
+{
+frame CAND {light BIGREDTORCH}
+}
+
+object 64RedTorch
+{
+frame TSTI {light BIGREDTORCH}
+}
+
+/*object BD64GroundFire															//R16 REMOVED //R10.2 //R11.1 WAS GroundFire
+{
+frame TNT1 { light BIGREDTORCH }
+}*/
+
+object 64GreenTorch
+{
+frame TSTI {light BIGGREENTORCH}
+}
+
+object 64BlueTorch
+{
+frame TSTI {light BIGBLUETORCH}
+}
+
+object 64RedTorchSmall
+{
+frame SSTI {light SMALLREDTORCH}
+}
+
+object 64ShortGreenTorch
+{
+frame SSTI {light SMALLGREENTORCH}
+}
+
+object 64ShortYellowTorch //R31 added
+{
+frame SSTI {light SMALLYELLOWTORCH}
+}
+
+object 64BlueTorchSmall //R31 revised
+{
+frame SSTI {light SMALLBLUETORCH}
+}
+
+object 64WallTorchRed  //R31 added
+{
+frame SMYY {light SMALLREDTORCH}
+}
+
+object 64WallTorchBlue  //R31 added
+{
+frame SMYY {light SMALLBLUETORCH}
+}
+
+object 64WallTorchGreen  //R31 added
+{
+frame SMYY {light SMALLGREENTORCH}
+}
+
+object 64WallTorchYellow  //R31 added
+{
+frame SMYY {light SMALLYELLOWTORCH}
+}
+
+object IntroMArine
+{
+frame PL7YF {light BIGREDLIGHTPOINT}
+}
+
+object HangingTechLampb
+{
+frame HGLM {light LampWhite}
+}
+
+/*object LampFlareSpawn1//R10.2 UNUSED
+{
+frame NULL { light ShaftLightMinor }
+}*/
+
+object BasicWhiteDynamicLight
+{
+frame TNT1 {light LampBasic}
+}
+
+object LightShaft1
+{
+frame SHF1 {light ShaftLight}
+frame SHF2 {light ShaftLight}
+frame SHF3 {light ShaftLight}
+frame SHF4 {light ShaftLight}
+frame SHF5 {light ShaftLight}
+}
+
+object 64PlasmaBall
+{
+frame LENS {light PlasmaProjectile}
+frame LENZ {light PlasmaProjectile}
+}
+
+object 64ArachnotronPlasma
+{
+frame LENS {light PlasmaProjectile}
+frame LENZ {light PlasmaProjectile}
+}
+
+pulselight BIGREDLASER
+{
+color 1.0 0.0 0.0
+size 60
+secondarySize 40
+interval 0.1
+offset 0 0 0
+}
+
+pointlight REDLASER		//R31 ADDED
+{
+color 1.0 0.0 0.0
+size 40
+offset 0 0 0
+dontlightself 0
+}
+
+pointlight WHITELASER	//R31 ADDED
+{
+color 1.0 1.0 1.0
+size 60
+offset 0 0 0
+dontlightself 0
+}
+
+object AlphaLZRGkerLaser
+{
+frame TNT1 {light BIGREDLASER}
+}
+
+object UnmakerLaserTrail	//R31 ADDED
+{
+frame LAZR {light REDLASER}
+}
+
+object UnmakerLaserTrail2	//R31 ADDED
+{
+frame LPUF {light REDLASER}
+}
+
+object UnmakerLaserTrailWhite	//R31 ADDED
+{
+frame LENS {light WHITELASER}
+}
+
+pointlight HUEHUE
+{
+color 0.5 0.4 0
+size 48
+}
+
+pointlight HUEHUEHUEHUE
+{
+color 0.5 0.4 0
+size 62
+}
+
+object PlayerMuzzle1
+{
+frame PLMZ { light HUEHUE }
+}
+
+object PlayerMuzzle2
+{
+frame PLMZ { light HUEHUEHUEHUE }
+}
+
+object MarineMuzzle1
+{
+frame PLMZ { light HUEHUE }
+}
+
+// Arch-vile
+flickerlight ARCHATK1
+{
+color 1.0 1.0 0.0
+size 32
+secondarySize 48
+chance 0.3
+offset 0 80 0
+}
+
+flickerlight ARCHATK2
+{
+color 1.0 1.0 0.0
+size 56
+secondarySize 64
+chance 0.3
+offset 0 80 0
+}
+
+flickerlight ARCHATK3
+{
+color 1.0 1.0 0.0
+size 56
+secondarySize 64
+chance 0.3
+offset 0 64 0
+}
+
+flickerlight ARCHATK4
+{
+color 1.0 1.0 0.0
+size 64
+secondarySize 72
+chance 0.3
+offset 0 48 0
+}
+
+flickerlight ARCHATK5
+{
+color 1.0 1.0 0.0
+size 80
+secondarySize 88
+chance 0.3
+offset 0 40 0
+}
+
+flickerlight ARCHATK6
+{
+color 0.7 0.7 0.0
+size 96
+secondarySize 104
+chance 0.3
+offset 0 40 0
+}
+
+flickerlight ARCHATK7
+{
+color 0.3 0.3 0.0
+size 104
+secondarySize 112
+chance 0.3
+offset 0 40 0
+}
+
+pulselight ARCHRES
+{
+color 0.6 0.0 0.0
+size 64
+secondarySize 70
+interval 0.5
+offset 0 36 0
+}
+
+object 64Archvile
+{
+frame NVILA {light ARCHATK1}
+frame NVILB {light ARCHATK1}
+frame NVILC {light ARCHATK2}
+frame NVILD {light ARCHATK2}
+frame NVILE {light ARCHATK3}
+frame NVILF {light ARCHATK3}
+frame NVILG {light ARCHATK4}
+frame NVILH {light ARCHATK4}
+frame NVILI {light ARCHATK4}
+frame NVILJ {light ARCHATK4}
+frame NVILK {light ARCHATK4}
+frame NVILL {light ARCHATK4}
+frame NVILM {light ARCHATK5}
+frame NVILN {light ARCHATK5}
+frame NVILO {light ARCHATK6}
+frame NVILP {light ARCHATK6}
+frame NVILQ {light ARCHATK7}
+frame NVILR {light ARCHATK7}
+frame VILEx {light ARCHRES}
+frame VILEy {light ARCHRES}
+frame VILEz {light ARCHRES}
+}
+
+object EnergyBlast																//R31 ADDED BELOW
+{
+frame TNT1 {light BIGREDLASER}
+frame TNT1 {light BIGREDLASER}
+frame LENS {light BIGREDLASER}
+frame LEYS {light BIGREDLASER}
+}
+
+Object BFGBetaBall
+{
+Frame BFE2A {light BETABALL1}
+Frame BFE2B {light BETABALL1}
+Frame BFE2D {light BETABALL1_X1}
+Frame BFE2F {light BETABALL1_X2}
+Frame BFE2G {light BETABALL1_X3}
+Frame BFE2H {light BETABALL1_X4}
+}
+
+pointlight BETABALL1
+{
+color 0.1 1.0 0.0
+size 56
+}
+
+flickerlight BETABALL1_X1
+{
+color 0.2 0.8 0.2
+size 62
+secondarySize 70
+chance 0.25
+}
+
+flickerlight BETABALL1_X2
+{
+color 0.1 0.5 0.1
+size 78
+secondarySize 86
+chance 0.25
+}
+
+flickerlight BETABALL1_X3
+{
+color 0.0 0.2 0.0
+size 94
+secondarySize 102
+chance 0.25
+}
+
+flickerlight BETABALL_X4
+{
+color 0.0 0.2 0.0
+size 24
+secondarySize 16
+chance 0.25
+}
+
+Object BFGBetaBall2
+{
+Frame REDBA{light BETABALL2}
+Frame REDBB{light BETABALL2}
+Frame REDBC{light BETABALL2_X1}
+Frame REDBD{light BETABALL2_X2}
+Frame REDBE{light BETABALL2_X3}
+Frame REDBF{light BETABALL2_X4}
+}
+
+pointlight BETABALL2
+{
+color 1.0 0.1 0.0
+size 56
+}
+
+flickerlight BETABALL2_X1
+{
+color 1.0 0.4 0.4
+size 72
+secondarySize 80
+chance 0.3
+}
+
+flickerlight BETABALL2_X2
+{
+color 0.8 0.3 0.3
+size 88
+secondarySize 96
+chance 0.3
+}
+
+flickerlight BETABALL2_X3
+{
+color 0.6 0.2 0.2
+size 48
+secondarySize 32
+chance 0.3
+}
+
+flickerlight BETABALL2_X4
+{
+color 0.4 0.1 0.1
+size 24
+secondarySize 16
+chance 0.3
+}

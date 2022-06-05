@@ -1,0 +1,139 @@
+/*ClearLocks																	//R29 CLEARLOCKS & GL KEYS DISABLED
+
+Lock 1 Doom
+{
+GLRedCard
+Message "$PD_REDC"
+RemoteMessage "$PD_REDCO"
+}
+
+Lock 2 Doom
+{
+GLBlueCard
+Message "$PD_BLUEC"
+RemoteMessage "$PD_BLUECO"
+}
+
+Lock 3 Doom
+{
+GLYellowCard
+Message "$PD_YELLOWC"
+RemoteMessage "$PD_YELLOWCO"
+}
+
+Lock 4 Doom
+{
+GLRedSkull
+Message "$PD_REDS"
+RemoteMessage "$PD_REDSO"
+}
+
+Lock 5 Doom
+{
+GLBlueSkull
+Message "$PD_BLUES"
+RemoteMessage "$PD_BLUESO"
+}
+
+Lock 6 Doom
+{
+GLYellowSkull
+Message "$PD_YELLOWS"
+RemoteMessage "$PD_YELLOWSO"
+}
+
+Lock 101 Doom
+{
+GLBlueCard
+GLBlueSkull
+GLYellowCard
+GLYellowSkull
+GLRedCard
+GLRedSkull
+Message "You need all six keys."
+RemoteMessage "You need all six keys."
+}
+
+Lock 129 Doom
+{
+Any { GLRedCard GLRedSkull }
+Message "$PD_REDK"
+RemoteMessage "$PD_REDO"
+}
+
+Lock 130 Doom
+{
+Any { GLBlueCard GLBlueSkull }
+Message "$PD_BLUEK"
+RemoteMessage "$PD_BLUEO"
+}
+
+Lock 131 Doom
+{
+Any { GLYellowCard GLYellowSkull }
+Message "$PD_YELLOWK"
+RemoteMessage "$PD_YELLOWO"
+}
+
+Lock 132 Doom
+{
+Any { GLRedCard GLRedSkull }
+Message "$PD_REDK"
+RemoteMessage "$PD_REDO"
+}
+
+Lock 133 Doom
+{
+Any { GLBlueCard GLBlueSkull }
+Message "$PD_BLUEK"
+RemoteMessage "$PD_BLUEO"
+}
+
+Lock 134 Doom
+{
+Any { GLYellowCard GLYellowSkull }
+Message "$PD_YELLOWK"
+RemoteMessage "$PD_YELLOWO"
+}
+
+Lock 229 dOOM
+{
+Any { GLBlueCard GLBlueSkull }
+Any { GLYellowCard GLYellowSkull }
+Any { GLRedCard GLRedSkull }
+Message "You need all three keys."
+RemoteMessage "You need all three keys."
+}*/
+
+Lock 252 Doom
+{
+WpnPower1Icon
+Message "You lack the ability to activate it..."
+RemoteMessage "You lack the ability to activate it..."
+LockedSound "null"
+}
+
+Lock 253 Doom
+{
+WpnPower2Icon
+Message "You lack the ability to activate it..."
+RemoteMessage "You lack the ability to activate it..."
+LockedSound "null"
+}
+
+Lock 254 Doom
+{
+WpnPower3Icon
+Message "You lack the ability to activate it..."
+RemoteMessage "You lack the ability to activate it..."
+LockedSound "null"
+}
+
+Lock 251 Doom
+{
+WpnPower1Icon
+WpnPower2Icon
+WpnPower3Icon
+Message "You lack all ability to activate it..."
+RemoteMessage "You lack all ability to activate it..."
+}

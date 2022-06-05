@@ -1,0 +1,48 @@
+[enu default]
+
+GOTARMOR = "You pick up the armor.";
+GOTMEGA = "You got the MegaArmor!";
+GOTHTHBONUS = "You pick up a health bonus.";
+GOTARMBONUS = "You pick up an armor bonus.";
+GOTSTIM = "You pick up a stimpack.";
+GOTMEDINEED = "You pick up a medikit that you REALLY need!";
+GOTMEDIKIT = "You pick up a medikit.";
+GOTBLUECARD = "You pick up a blue keycard.";
+GOTYELWCARD = "You pick up a yellow keycard.";
+GOTREDCARD = "You pick up a red keycard.";
+GOTBLUESKUL = "You pick up a blue skull key.";
+GOTYELWSKUL = "You pick up a yellow skull key.";
+GOTREDSKUL = "You pick up a red skull key.";
+GOTINVIS = "Partial Invisibility!";
+GOTVISOR = "Light Amplification Goggles";
+GOTMSPHERE = "Mega Sphere!";
+GOTSHELLBOX = "Picked up a box of shells.";
+GOTBACKPACK = "You got the backpack!";
+GOTRADSUIT = "Radiation Shield.";
+
+PD_BLUEO = "You need a blue key.";
+PD_REDO = "You need a red key.";
+PD_YELLOWO = "You need a yellow key.";
+PD_BLUEK = "You need a blue key.";
+PD_REDK = "You need a red key.";
+PD_YELLOWK = "You need a yellow key.";
+PD_BLUEC = "You need a blue key card.";
+PD_REDC = "You need a red key card.";
+PD_YELLOWC = "You need a yellow key card.";
+PD_BLUECO = "You need a blue key card.";
+PD_REDCO = "You need a red key card.";
+PD_YELLOWCO = "You need a yellow key card.";
+PD_BLUESO = "You need a blue skull key.";
+PD_REDSO = "You need a red skull key.";
+PD_YELLOWSO = "You need a yellow skull key.";
+PD_BLUES = "You need a blue skull key.";
+PD_REDS = "You need a red skull key.";
+PD_YELLOWS = "You need a yellow skull key.";
+PD_ANY = "You need a key.";
+PD_All3 = "You need all three keys.";
+PD_All6 = "You need all six keys.";
+
+STSTR_DQDON = "All Powerful Mode ON";
+STSTR_DQDOFF = "All Powerful Mode OFF";
+STSTR_FAADDED = "Lots of Ammo!";
+STSTR_KFAADDED = "Lots of Goodies!";

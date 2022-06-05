@@ -1,0 +1,96 @@
+gameinfo																		//R4 REMOVED RANDOM PLAYER CLASS
+{
+	NoRandomPlayerClass = true
+	playerclasses = "64DoomPlayer","Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	//R16	//R27 ADDED MODERN
+}
+
+clearskills
+
+Skill Baby
+{
+	SpawnFilter = Easy
+	Name = "Be Gentle!"															//R13
+	AmmoFactor = 2.0
+	EasyBossBrain
+	mustconfirm = "Are you kidding me? This is barely a challenge. Press Y or N"
+}
+
+Skill Easy
+{
+	SpawnFilter = Easy
+	Name = "Bring it on!"														//R13
+	Key = "n"
+	AmmoFactor = 1.0															//R11
+	EasyBossBrain
+	mustconfirm = "Only half as many enemies. Don't complain if you find it boring. Press Y or N"
+}
+
+Skill Normal
+{
+	SpawnFilter = Normal
+	Name = "I own Doom!"														//R13
+	AmmoFactor = 1.0															//R11
+	defaultskill
+}
+
+Skill Hard
+{
+	SpawnFilter = Hard
+	MonsterHealth = 1.0															//R15 ADDED
+	AmmoFactor = 1.0															//R11
+//	Aggressiveness = 0.25														//R18 ADDED
+	Name = "Watch me die!"
+	mustconfirm = "Equivalent to Ultra Violence. Press Y or N"
+}
+
+Skill Nightmare
+{
+	SpawnFilter = Hard
+	DamageFactor = 1.0															//R18 WAS 2
+	MonsterHealth = 1.0															//R15 was 0.75
+	AmmoFactor = 1.0															//R11
+	FastMonsters 																//R1 WAS FastMonsters 1
+//	Aggressiveness = 0.25														//R18 ADDED
+//	disablecheats
+	Name = "Hardcore!"
+	mustconfirm = "Similar to Watch me Die diffiuclty but with fast monsters. Press Y or N"
+}
+
+Skill Nightmare2																//R19 NEW LEVEL
+{
+	SpawnFilter = Hard
+	DamageFactor = 1.0
+	MonsterHealth = 1.0
+	AmmoFactor = 1.0
+//	Aggressiveness = 0.25
+//	disablecheats
+	Name = "Nightmare!"
+	mustconfirm = "Monsters replaced with Nightmare counterparts. Press Y or N"
+	ReplaceActor = "Zombieman", "64ZombieMarine"
+	ReplaceActor = "64ZombieMarine", "64ChaingunGuy"
+	ReplaceActor = "DoomImp", "NightmareImp"
+	ReplaceActor = "Demon", "Spectre"
+	ReplaceActor = "spectre", "64NightmareSpectre"
+	ReplaceActor = "Cacodemon", "NightmareCacodemon"
+	ReplaceActor = "Cyberdemon", "Annihilator64"
+}
+
+Skill Nightmare3																//R19 NEW LEVEL
+{
+	SpawnFilter = Hard
+	DamageFactor = 1.0
+	MonsterHealth = 1.0
+	AmmoFactor = 1.0
+	FastMonsters
+//	Aggressiveness = 0.25
+//	disablecheats
+	Name = "Torment!"
+	mustconfirm = "Similar to Nightmare diffiuclty but with fast monsters Press Y or N"
+	ReplaceActor = "Zombieman", "64ZombieMarine"
+	ReplaceActor = "64ZombieMarine", "64ChaingunGuy"
+	ReplaceActor = "DoomImp", "NightmareImp"
+	ReplaceActor = "Demon", "Spectre"
+	ReplaceActor = "spectre", "64NightmareSpectre"
+	ReplaceActor = "Cacodemon", "NightmareCacodemon"
+	ReplaceActor = "Cyberdemon", "Annihilator64"
+}

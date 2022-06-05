@@ -1,0 +1,441 @@
+ACTOR PlasmaRifleSpawner : CustomInventory Replaces PlasmaRifle
+{
+Scale 0.82
+//+INVENTORY.ALWAYSPICKUP														//R12.1
+Inventory.PickupMessage "$GOTPLASMA"
+Inventory.PickupSound "WPICK"
+	States
+	{
+	Spawn:
+		PLAS A 1
+//		TNT1 A 0 ACS_ExecuteAlways(119)							//r31 removed
+		TNT1 A 0 A_JumpIf(CallACS("DM_SpawnACS")==1,"DMSpawn")	//r31 REVISED DM SPAWN
+//		PLAS A 2												//R31 REMOVED
+//		TNT1 A 0 A_JumpIfInventory("ISDM",1,"DMSpawn")			//r31 removed
+		PLAS A -1
+		Stop
+	Pickup:
+//		TNT1 A 0 A_GiveInventory("Cell",40)									//R12.1
+		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")					//R28 ADDED
+		TNT1 A 0 A_GiveInventory("64PlasmaRifle",1)
+		Stop
+	Pickup2:
+		TNT1 A 0 A_GiveInventory("64PlasmaRifleTACTICAL",1)
+		Stop
+	DMSpawn:
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",1)
+		TNT1 A 0 A_SpawnItem("64PlasmaRifleDM")
+		TNT1 A 1000
+		Loop
+	}
+}
+
+Actor HasPLasmaWeapon : Inventory												//R25 DISABLED
+{
+inventory.maxamount 1
+}
+
+Actor 64PlasmaRifle : DoomWeapon
+{
+Scale 0.82
+Weapon.SelectionOrder 100
+Weapon.AmmoUse 1
+Weapon.AmmoGive 40																//R11 WAS 0
+Weapon.AmmoType "Cell"
+Inventory.PickupMessage "$GOTPLASMA"
+Tag "$TAG_PLASMARIFLE"
+VisibleToPlayerClass "64DoomPlayer"													//R11
+Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"		//R11 ADDED	//R15 ADDED TACTICAL P	//R28 ADDED MODERN
++INVENTORY.RESTRICTABSOLUTELY
+	States
+	{
+	Select:
+		PLSG A 1 A_Raise
+		WAIT
+	SelectAnimation:
+		PLSG JKLM 1
+//		TNT1 A 0 A_giveInventory("HasPLasmaWeapon",1)							//r31 moved to fire:
+		Goto Ready
+	Deselect:
+		PLSG MLKJ 1
+		TNT1 A 0 A_TakeInventory("HasPLasmaWeapon",1)
+		TNT1 A 0 A_StopSoundEx("WEAPON")
+		TNT1 A 1 A_Lower
+		Wait
+	Ready:
+		TNT1 A 0 A_PlaySoundEx("weapon/plasmaidle","WEAPON",1)
+		PLSG ABC 2 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")					//R28.2
+		TNT1 A 0 A_TakeInventory("Stamina",0)									//R28.2
+		loop
+	Fire:
+		TNT1 A 0 A_giveInventory("HasPLasmaWeapon",1)
+		PLSF A 1 BRIGHT A_FireCustomMissile("64PlasmaBall",0,1)
+		PLSF BCDE 1
+		TNT1 A 0 A_ReFire
+		TNT1 A 0 A_JumpIf(CallACS("VanillaWeapons")==0,1)	//r31
+		goto ready											//r31
+		TNT1 A 0 a_SPAWNITEMEX("PlasmaSmoke",30,0,40,0,0,2)	//R31 ADDED
+		PLSR ABCDEF 1 //R31 ADDED OFFSET (Unused), Reworked animation
+		PLSR F 12
+		PLSR FEDCBA 1
+		Goto Ready
+	Spawn:
+		PLAS A -1
+		Stop
+	}
+}
+
+ACTOR PlasmaRifleAmmo : Ammo
+{
+Inventory.Amount 0
+Inventory.MaxAmount 40	//r31 was 30
+Ammo.BackpackAmount 0
+Ammo.BackpackMaxAmount 40	//r31 was 30
+Inventory.Icon "plasa0"															//R10 WAS "RIFLA0"	R27 WAS CELLA0
++IGNORESKILL																	//R11 ADDED
+}
+
+Actor 64PlasmaRifleTACTICAL : DoomWeapon
+{
+Scale 0.82
+Weapon.SelectionOrder 101														//R21 WAS 1
+Weapon.AmmoUse1 1		//R25 WAS 0
+Weapon.AmmoGive1 40																//R12.1
+Weapon.AmmoType1 "Cell"
+Weapon.AmmoUse2 1		//R25 WAS 0
+Weapon.AmmoGive2 0
+Weapon.AmmoType2 "PlasmaRifleAmmo"
+Inventory.PickupMessage "$GOTPLASMA"
+Tag "$TAG_PLASMARIFLE"
+VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	//R11 ADDED	//R15 "Tactical64DoomPlayer_p"	//R28 ADDED MODERN
+Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
++INVENTORY.RESTRICTABSOLUTELY
++WEAPON.AMMO_CHECKBOTH															//R25
+	States
+	{
+	Select:
+		PLSG A 1 A_Raise
+		WAIT
+	SelectAnimation:
+		PLSG JKLM 1
+//		TNT1 A 0 A_giveInventory("HasPLasmaWeapon",1)							//r31 moved to fire:
+		Goto Ready
+	Deselect:
+		PLSG MLKJ 1
+		TNT1 A 0 A_TakeInventory("HasPLasmaWeapon",1)
+		TNT1 A 0 A_StopSoundEx("WEAPON")
+		TNT1 A 1 A_Lower
+		Wait
+	Ready:
+		TNT1 A 0 A_PlaySoundEx("weapon/plasmaidle","WEAPON",1)
+		TNT1 A 0 A_JumpIfInventory("PlasmaRIfleAmmo",1,1)
+		Goto NoAmmo
+		PLSG ABC 2 A_WeaponReady(WRF_ALLOWRELOAD)								//R11 ADDED (WRF_ALLOWRELOAD)	//r31 added frame C
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")					//R28.2
+		TNT1 A 0 A_TakeInventory("Stamina",0)									//R28.2
+		loop
+	NoAmmo:
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,"Ready")					//R31 ADDED
+		TNT1 A 0 A_StopSoundEx("WEAPON")										//R31 ADDED STOP SOUND
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		PLSF D 5 A_WeaponReady(WRF_ALLOWRELOAD)									//R11 REMOVED R11.1 READDED WITH (WRF_ALLOWRELOAD)
+		loop
+	Fire:
+		TNT1 A 0 A_giveInventory("HasPLasmaWeapon",1)
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,1)
+		Goto Reload
+		TNT1 A 0 A_JumpIfInventory("Cell",1,1)								//R25
+		Goto Fire1															//R25
+		TNT1 A 0 A_FireCustomMissile("64PlasmaBall",0,1)
+		TNT1 A 0 A_TakeInventory("PlasmaRifleAmmo",1)
+		TNT1 A 0 A_GiveInventory("Cell",1)								//R25
+		PLSF A 1 BRIGHT
+		TNT1 A 0 A_SetPitch(pitch-1.6)
+		PLSF BCDE 1 A_SetPitch(pitch+0.3)										//r31 added frame E
+		TNT1 A 0 A_SetAngle(angle + random(-1,1))
+		TNT1 A 0 A_ReFire
+		TNT1 A 0 A_SpawnItemEx("PlasmaSmoke",30,0,40,0,0,2)	//R31 ADDED
+		//PLSR CDEDC 3 OFFSET(35,50)							//R31 ADDED OFFSET, Reworked animation
+		PLSR ABCDEF 1
+		PLSR F 12
+		PLSR FEDCBA 1
+		Goto Ready
+	Fire1:																		//R25 NEW FIRE1
+		TNT1 A 0 A_FireCustomMissile("64PlasmaBall",0,1)
+		TNT1 A 0 A_TakeInventory("PlasmaRifleAmmo",1)
+		PLSF A 1 BRIGHT
+		TNT1 A 0 A_SetPitch(pitch-1.6)
+		PLSF BCDE 1 A_SetPitch(pitch+0.3)										//r31 added frame E
+		TNT1 A 0 A_SetAngle(angle + random(-1,1))
+		TNT1 A 0 A_ReFire
+		TNT1 A 0 a_SPAWNITEMEX("PlasmaSmoke",30,0,40,0,0,2)	//R31 ADDED
+		PLSR CDEDC 3 OFFSET(35,50)	//R31 ADDED LINE
+		Goto Ready
+	Spawn:
+		PLAS A -1
+		Stop
+	Reload:
+		TNT1 A 0 A_TakeInventory("Reloading",1)
+		TNT1 A 0 A_JumpIfInventory("Cell",1,1)
+		Goto Ready
+		TNT1 A 0 A_ZoomFactor(1.0)
+//		TNT1 A 0 A_Takeinventory("ADSmode",1)									//R11 UNUSED
+//		TNT1 A 0 A_Takeinventory("Zoomed",1)									//R11 UNUSED
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",40,"Ready")				//R28 WAS JUMP 64	//r31 was 30
+		TNT1 A 0 A_JumpIfInventory("Cell",1,1)									//R31 WAS JUMP 3
+		Goto NoAmmo
+		TNT1 A 0 A_StopSoundEx("WEAPON")										//R31 ADDED STOP SOUND
+		PLSR AB 1 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_PlaySound("PLREAD1",CHAN_WEAPON)
+		PRL2 ABCDEFG 1
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",20,"Reloadcell2")
+		PRL2 H 10 A_PlaySound("PLREL")
+		PRL2 I 2 A_FireCustomMissile("EmptyCell",-5,0,-10,-15)
+		PRL2 IIJJKLLNOP 1
+	InsertBullets:
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",20,"Reloadcell2")
+		TNT1 A 0 A_JumpIfInventory("Cell",1,1)
+		Goto Reloadcell2
+		RIFG A 0 A_Giveinventory("PlasmaRifleAmmo",1)
+		RIFG A 0 A_Takeinventory("Cell",1)
+		Goto InsertBullets
+	Reloadcell2:																//r31 new
+		PRL2 H 15 A_PlaySound("PLREL")
+		PRL2 I 2 A_FireCustomMissile("EmptyCell",-5,0,-10,-15)
+		PRL2 UUVWWXYYZZ 1
+		TNT1 A 0 A_PlaySound("PLREAD2")
+	InsertBullets2:
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",40,"Ready")				//R28 WAS JUMP 64	//r31 was 30
+		TNT1 A 0 A_JumpIfInventory("Cell",1,1)
+		Goto Ready
+		TNT1 A 0 A_Giveinventory("PlasmaRifleAmmo",1)
+		TNT1 A 0 A_Takeinventory("Cell",1)
+		Goto InsertBullets2
+	DoKick:
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_Takeinventory("Kicking",1)
+//		TNT1 A 0 A_Takeinventory("Zoomed",0)									//R11 UNUSED
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"ModernCheck")					//R28
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,1)						//R7 ADDED
+		Goto Ready																//R7 ADDED
+		TNT1 A 0 A_jumpifinventory("Stamina",20,3)
+		TNT1 A 0 A_Print("Not enough stamina!",1)
+		TNT1 A 0 A_PlaySound("Tired",2)
+		Goto Ready
+		TNT1 A 0 A_TakeInventory("Stamina",20)
+	ModernCheck:																//R28 ADDED
+//		TNT1 A 0 A_Takeinventory("ADSmode",1)									//R11 UNUSED
+		TNT1 A 0 A_JumpIf(momZ > 0,"AirKick")
+		TNT1 A 0 A_JumpIf(momZ < 0,"AirKick")
+		TNT1 A 0 A_JumpIf(pitch > 32,"LowKickChecker1")
+		Goto InitializeNormalKick
+	LowKickChecker1:
+		TNT1 A 0 A_JumpIf(pitch > 90,"InitializeNormalKick")
+		TNT1 A 0 A_FireCustomMissile("KickAttackDetectDowned",0,0,0,0)
+	InitializeNormalKick:
+		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"BerserkerKick")
+		TNT1 A 0 A_PlaySound("KICK")
+		TNT1 A 0 SetPlayerProperty(0,1,0)
+		KICK BCD 1
+		TNT1 A 0 A_FireCustomMissile("KickAttack",0,0,0,-7)
+		KICK H 5
+		KICK I 1
+		KICK GFEDCBA 1
+		TNT1 A 0 SetPlayerProperty(0,0,0)
+		Goto SelectAnimation
+	BerserkerKick:
+		TNT1 A 0 A_PlaySound("KICK")
+		TNT1 A 0 SetPlayerProperty(0,1,0)
+		KICK BCD 1
+		TNT1 A 0 A_FireCustomMissile("SuperKickAttack",0,0,0,-7)
+		KICK H 5
+		KICK I 1
+		KICK GFEDCBA 1
+		TNT1 A 0 SetPlayerProperty(0,0,0)
+		Goto SelectAnimation
+	AirKick:
+		TNT1 A 0 A_TakeInventory("Stamina",5)									//R17 WAS 20
+		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"SuperAirKick")
+		TNT1 A 0 A_PlaySound("KICK")
+		TNT1 A 0 A_Recoil(-6)
+		KICK JKLMN 1
+		TNT1 A 0 A_FireCustomMissile("AirKickAttack",0,0,0,-31)
+		KICK O 3
+		KICK PQRST 2
+		Goto SelectAnimation
+	SuperAirKick:
+		TNT1 A 0 A_PlaySound("KICK")
+		TNT1 A 0 A_Recoil(-6)
+		KICK JKLMN 1
+		TNT1 A 0 A_FireCustomMissile("SuperAirKickAttack",0,0,0,-31)
+		KICK O 3
+		KICK PQRST 2
+		Goto SelectAnimation
+	}
+}
+
+ACTOR 64PlasmaBall Replaces PlasmaBall
+{
+SpawnID 99
+Scale 0.01
+Radius 4
+Height 4
+Speed 35
+Damage 6
+Alpha 0.9
+RenderStyle Add
+Damagetype "Plasma"
+SeeSound "weapons/plasmaf"
+DeathSound "weapons/plasmax"
+Obituary "$OB_MPPLASMARIFLE"
+Decal SmallerScorch																//R28.3 WAS SCORCH
+Projectile
++RANDOMIZE
++MISSILE
++THRUSPECIES
+	States
+	{
+	Spawn:
+		TNT1 A 1
+	Fly:
+		plss A 1 bright
+		TNT1 A 0 A_SpawnItem("BlueFlareSmallProjectile")
+		TNT1 A 0 A_SpawnItemEx("PlasmaBallTrail1",(3 *momx)/-35.0,-(3 *momy)/-35.0,2+(3 *momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("PlasmaBallTrail2",(6 *momx)/-35.0,-(6 *momy)/-35.0,2+(6 *momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("PlasmaBallTrail3",(9*momx)/-35.0,-(9*momy)/-35.0,2+(9*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("PlasmaBallTrail4",(12*momx)/-35.0,-(12*momy)/-35.0,2+(12*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("PlasmaBallTrail5",(15*momx)/-35.0,-(15*momy)/-35.0,2+(15*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("PlasmaBallTrail6",(18*momx)/-35.0,-(18*momy)/-35.0,2+(18*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("PlasmaBallTrail7",(21*momx)/-35.0,-(21*momy)/-35.0,2+(21*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("PlasmaBallTrail8",(24*momx)/-35.0,-(24*momy)/-35.0,2+(24*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("PlasmaBallTrail9",(27*momx)/-35.0,-(27*momy)/-35.0,2+(27*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("PlasmaBallTrail9",(30*momx)/-35.0,-(30*momy)/-35.0,2+(30*momz)/-35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		Loop
+	Death:
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmall",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterSmall",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_CustomMissile("BluePlasmaFire",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAA 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
+		TNT1 BBBB 1 BRIGHT A_SpawnItem("LensFlareTorchBlue",0,0)
+		TNT1 AAAAA 9 A_CustomMissile("PlasmaSmoke",1,0,random(0,360),2,random(0,160))
+		Stop
+	}
+}
+
+Actor 64ArachnotronPlasma: 64PlasmaBall Replaces ArachnotronPlasma
+{
+Speed 25
+Species "Spiders"
+}
+
+ACTOR PlasmaBallTrail1
+{
+Scale 0.25
+Alpha 0.99
+Renderstyle Add
++THRUACTORS
++CLIENTSIDEONLY
++NOBLOCKMAP
++NOGRAVITY
++MISSILE
+	States
+	{
+	Spawn:
+		plss A 2 BRIGHT
+		Stop
+	}
+}
+
+ACTOR PlasmaBallTrail2: PlasmaBallTrail1
+{
+Alpha 0.8
+}
+
+ACTOR PlasmaBallTrail3: PlasmaBallTrail1
+{
+Alpha 0.7
+}
+
+ACTOR PlasmaBallTrail4: PlasmaBallTrail1
+{
+Alpha 0.6
+}
+
+ACTOR PlasmaBallTrail5: PlasmaBallTrail1
+{
+Alpha 0.5
+}
+
+ACTOR PlasmaBallTrail6: PlasmaBallTrail1
+{
+Alpha 0.4
+}
+
+ACTOR PlasmaBallTrail7: PlasmaBallTrail1
+{
+Alpha 0.3
+}
+
+ACTOR PlasmaBallTrail8: PlasmaBallTrail1
+{
+Alpha 0.2
+}
+
+ACTOR PlasmaBallTrail9: PlasmaBallTrail1
+{
+Alpha 0.1
+}
+
+//DEATHMATCH STUFF
+Actor 64PlasmaRifleDM : DoomWeapon
+{
+Scale 0.82
+Weapon.SelectionOrder 100
+Weapon.AmmoUse 1
+Weapon.AmmoGive 40
+Weapon.AmmoType "Cell"
++WEAPON.CHEATNOTWEAPON
+Inventory.PickupMessage "$GOTPLASMA"
+Tag "$TAG_PLASMARIFLE"
+	States
+	{
+	Select:
+		TNT1 AAAAA 1 A_Raise
+		Goto SelectAnimation
+	SelectAnimation:
+		PLSG JKLM 1
+		TNT1 A 0 A_giveInventory("HasPLasmaWeapon",1)
+		Goto Ready
+	Deselect:
+		PLSG MLKJ 1
+		TNT1 A 0 A_TakeInventory("HasPLasmaWeapon",1)
+		TNT1 A 0 A_StopSoundEx("WEAPON")
+		TNT1 A 1 A_Lower
+		Wait
+	Ready:
+		TNT1 A 0 A_PlaySoundEx("weapon/plasmaidle","WEAPON",1)
+		PLSG ABC 2 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")					//R28.2
+		TNT1 A 0 A_TakeInventory("Stamina",0)									//R28.2
+		loop
+	Fire:
+		PLSF A 1 BRIGHT A_FireCustomMissile("64PlasmaBallDM",0,1)
+		PLSF BCDE 1
+		TNT1 A 0 A_ReFire
+		Goto Ready
+	Spawn:
+		PLAS A -1
+		Stop
+	}
+}
+
+Actor 64PlasmaBallDM: 64PlasmaBall
+{
+Species "None"
+-THRUSPECIES
+}
