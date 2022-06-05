@@ -7,7 +7,9 @@ Inventory.PickupSound "WPICK"
 	States
 	{
 	Spawn:
-		RIFD A -1
+		ARSD A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2) //R31 Alternative Rifle Skin (Probably not correctly with pickuping)
+		RIFD A 0
+		"####" A -1
 		Stop
 	Pickup:
 //		TNT1 A 0 A_GiveInventory("Clip",20)										//R12.1
@@ -47,26 +49,38 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 	States
 	{
 	Spawn:
-		RIFD A -1
+		ARSD A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2) //R31 Alternative Rifle Skin
+		RIFD A 0
+		"####" A -1
 		Stop
 	Ready:
-		RIFG A 1 A_WeaponReady
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2) //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")					//R28.2
 		TNT1 A 0 A_TakeInventory("Stamina",0)									//R28.2
 		Loop
 	Select:
-		RIFG A 1 A_Raise
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2) //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1 A_Raise
 		WAIT
 	SelectAnimation:
-		RIFS ABCD 1
+		ARSS A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2) //R31 Alternative Rifle Skin
+		RIFS A 0
+		"####" ABCD 1
 		Goto Ready
 	Deselect:
-		RIFS DCBA 1
+		ARSS D 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2) //R31 Alternative Rifle Skin
+		RIFS D 0
+		"####" DCBA 1
 		TNT1 A 1 A_Lower
 		Wait
 	Fire:
 		TNT1 A 0 A_SetPitch(pitch-1.2)
-		RIFF AD 1 BRIGHT														//R31 ADDED A
+		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2) //R31 Alternative Rifle Skin
+		RIFF A 0
+		"####" AD 1 BRIGHT														//R31 ADDED A
 		TNT1 A 0 A_JumpIfInventory("FiredRifle",4,"Fire4")
 		TNT1 A 0 A_JumpIfInventory("FiredRifle",3,"Fire3")
 		TNT1 A 0 A_JumpIfInventory("FiredRifle",2,"Fire2")
@@ -77,10 +91,14 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.0,0.0,-1,7,"RifleBulletPuff")					//R30.5 WAS HITPUFF
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		RIFF BC 1 A_SetPitch(pitch+0.6)
+		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF B 0
+		"####" BC 1 A_SetPitch(pitch+0.6)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
-		RIFG A 1
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1
 		TNT1 A 0 A_Refire
 		Goto FinishFire
 	Fire1:
@@ -89,10 +107,14 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.6,0.6,-1,7,"RifleBulletPuff")					//R30.5 WAS HITPUFF
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		RIFF BC 1 A_SetPitch(pitch+0.6)
+		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF B 0
+		"####" BC 1 A_SetPitch(pitch+0.6)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
-		RIFG A 1
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1
 		TNT1 A 0 A_Refire
 		Goto FinishFire
 	Fire2:
@@ -101,10 +123,14 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(2.0,2.0,-1,7,"RifleBulletPuff")					//R30.5 WAS HITPUFF
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		RIFF BC 1 A_SetPitch(pitch+0.6)
+		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF B 0
+		"####" BC 1 A_SetPitch(pitch+0.6)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
-		RIFG A 1
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1
 		TNT1 A 0 A_Refire
 		Goto FinishFire
 	Fire3:
@@ -113,10 +139,14 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(4.0,4.0,-1,7,"RifleBulletPuff")					//R30.5 WAS HITPUFF
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		RIFF BC 1 A_SetPitch(pitch+0.6)
+		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF B 0
+		"####" BC 1 A_SetPitch(pitch+0.6)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
-		RIFG A 1
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1
 		TNT1 A 0 A_Refire
 		Goto FinishFire
 	Fire4:
@@ -125,14 +155,20 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(7.0,7.0,-1,7,"RifleBulletPuff")					//R30.5 WAS HITPUFF
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		RIFF BC 1 A_SetPitch(pitch+0.6)
+		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF B 0
+		"####" BC 1 A_SetPitch(pitch+0.6)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
-		RIFG A 1
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1
 		TNT1 A 0 A_Refire
 		Goto FinishFire
 	FinishFire:
-		RIFG A 1
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1
 		TNT1 A 0 A_TakeInventory("FiredRifle",4)
 		Goto Ready
 	}
@@ -169,29 +205,43 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 	States
 	{
 	Spawn:
-		RIFD A -1
+		ARSD A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFD A 0
+		"####" A -1
 		Stop
 	Ready:
-		RIFG A 1 A_WeaponReady(WRF_ALLOWRELOAD)										//R11 ADDED(WRF_ALLOWRELOAD)
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD)										//R11 ADDED(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")					//R28.2
 		TNT1 A 0 A_TakeInventory("Stamina",0)									//R28.2
 		Loop
 	NoAmmo:
-		RIFG A 1
-		RIFG A 10 A_PlaySound("DRYFIRE",1)
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 10 A_PlaySound("DRYFIRE",1)
 		Goto Ready
 	Select:
-		RIFG A 1 A_Raise
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1 A_Raise
 		wait
 	SelectAnimation:
-		RIFS ABCD 1
+		ARSS A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFS A 0
+		"####" ABCD 1
 		Goto Ready
 	Deselect:
 		TNT1 A 0 A_Takeinventory("Zoomed",0)									//R31 ADDED
 		TNT1 A 0 A_ZoomFactor(1.0)												//R31 ADDED
-		RIFS DCBA 1
+		ARSS D 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFS D 0
+		"####" DCBA 1
 		TNT1 A 1 A_Lower
 		Wait
 	Fire:
@@ -214,11 +264,17 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_GiveInventory("Clip",1)								//R25 NEW
 		TNT1 A 0 A_AlertMonsters												//R31 ADDED ALERT
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		RIFF AD 1 BRIGHT												//r31 added a
-		RIFF BC 1 A_SetPitch(pitch+0.4)
+		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF A 0
+		"####" AD 1 BRIGHT												//r31 added a
+		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF B 0
+		"####" BC 1 A_SetPitch(pitch+0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
-		RIFG A 1 A_SetAngle(angle + random(-1,1))
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1 A_SetAngle(angle + random(-1,1))
 		TNT1 A 0 A_Refire
 		Goto FinishFire
 	Fire10:																		//R25 NEW FIRE10
@@ -229,11 +285,17 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_TakeInventory("RIfleAmmo",1)
 		TNT1 A 0 A_AlertMonsters												//R31 ADDED ALERT
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		RIFF AD 1 BRIGHT
-		RIFF BC 1 A_SetPitch(pitch+0.4)
+		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF A 0
+		"####" AD 1 BRIGHT
+		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF B 0
+		"####" BC 1 A_SetPitch(pitch+0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
-		RIFG A 1 A_SetAngle(angle + random(-1,1))
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1 A_SetAngle(angle + random(-1,1))
 		TNT1 A 0 A_Refire
 		Goto FinishFire
 	Fire1:
@@ -245,11 +307,17 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_GiveInventory("Clip",1)								//R25 NEW
 		TNT1 A 0 A_AlertMonsters												//R31 ADDED ALERT
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		RIFF AD 1 BRIGHT
-		RIFF BC 1 A_SetPitch(pitch+0.4)
+		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF A 0
+		"####" AD 1 BRIGHT
+		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF B 0
+		"####" BC 1 A_SetPitch(pitch+0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
-		RIFG A 1 A_SetAngle(angle + random(-1,1))
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1 A_SetAngle(angle + random(-1,1))
 		TNT1 A 0 A_Refire
 		Goto FinishFire
 	Fire2:
@@ -261,11 +329,17 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_GiveInventory("Clip",1)								//R25 NEW
 		TNT1 A 0 A_AlertMonsters												//R31 ADDED ALERT
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		RIFF AD 1 BRIGHT
-		RIFF BC 1 A_SetPitch(pitch+0.4)
+		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF A 0
+		"####" AD 1 BRIGHT
+		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF B 0
+		"####" BC 1 A_SetPitch(pitch+0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
-		RIFG A 1 A_SetAngle(angle + random(-1,1))
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1 A_SetAngle(angle + random(-1,1))
 		TNT1 A 0 A_Refire
 		Goto FinishFire
 	Fire3:
@@ -277,11 +351,17 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_GiveInventory("Clip",1)								//R25 NEW
 		TNT1 A 0 A_AlertMonsters												//R31 ADDED ALERT
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		RIFF AD 1 BRIGHT
-		RIFF BC 1 A_SetPitch(pitch+0.4)
+		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF A 0
+		"####" AD 1 BRIGHT
+		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF B 0
+		"####" BC 1 A_SetPitch(pitch+0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
-		RIFG A 1 A_SetAngle(angle + random(-1,1))
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1 A_SetAngle(angle + random(-1,1))
 		TNT1 A 0 A_Refire
 		Goto FinishFire
 	Fire4:
@@ -293,18 +373,27 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_GiveInventory("Clip",1)								//R25 NEW
 		TNT1 A 0 A_AlertMonsters												//R31 ADDED ALERT
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		RIFF AD 1 BRIGHT
-		RIFF BC 1 A_SetPitch(pitch+0.4)
+		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF A 0
+		"####" AD 1 BRIGHT
+		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFF B 0
+		"####" BC 1 A_SetPitch(pitch+0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
-		RIFG A 1 A_SetAngle(angle + random(-1,1))
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1 A_SetAngle(angle + random(-1,1))
 		TNT1 A 0 A_Refire
 		Goto FinishFire
 	FinishFire:
-		RIFG A 1
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFG A 0
+		"####" A 1
 		TNT1 A 0 A_TakeInventory("FiredRifle",4)
 		Goto Ready
 	Reload:
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true, "AlternativeReload")  //R31 Alternative Rifle Skin	(Alternative Reload)
 		RIFG A 1 A_WeaponReady
 		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 0 A_Takeinventory("Reloading",1)
@@ -321,8 +410,36 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		RIFR H 1
 		RIFR GGGGGEDCBA 1 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",1,"InsertBullets2")//30+1 effect
+		Goto InsertBullets
+	AlternativeReload:
+		ARSG A 1 A_WeaponReady
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_Takeinventory("Reloading",1)
+//		TNT1 A 0 A_Takeinventory("ADSmode",1)									//R11 UNUSED
+		TNT1 A 0 A_Takeinventory("Zoomed",0)									//R11 UNUSED	//r31 activated
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",31,"Ready")						//r31 was jump 64
+		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
+		Goto NoAmmo
+//		TNT1 A 0 A_GiveInventory("Pumping",1)	
+		AR2R KJI 1							
+		ARSR AB 1
+		ARSR CDD 1
+		ARSR EFGHII 1 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_PlaySound("Relo1")		
+//		TNT1 A 0 A_JumpIfInventory("HasUnloaded",1,2)							//R11 UNUSED
+		ARSR JKLMNOO 1
+		ARSR PQRST 1
+		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",-5,0,20,-8)				//r31 was ("EmptyClipSpawn",-5,0,8,-4)
+		ARSR UU 5 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_PlaySound("Relo2")		
+		ARSR VWXXZ 1
+		TNT1 A 0 A_PlaySound("Relo3")		
+		AR2R ABCDEGGH 1 A_JumpIfInventory("Kicking",1,"DoKick")
+		AR2R IJK 1
+//		TNT1 A 0 A_Takeinventory("HasUnloaded",1)								//R11 UNUSED
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",1,"InsertBullets2")//30+1 effect		
 	InsertBullets:
-		TNT1 A 0 A_JumpIfInventory("RifleAmmo",31,"Ready")						//R11 WAS("RifleAmmo",30,15)	//R28 WAS JUMP 15
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",30,"Ready")						//R11 WAS("RifleAmmo",30,15)	//R28 WAS JUMP 15
 		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
 		Goto Ready
 		TNT1 A 0 A_Giveinventory("RifleAmmo",1)
@@ -403,15 +520,21 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"NoAim")
 		TNT1 A 0 A_Giveinventory("Zoomed",1)
 		TNT1 A 0 A_ZoomFactor(2.0)
-		RIFZ ABC 1
+		ARSZ A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFZ A 0
+		"####" ABC 1
 		Goto Ready2
 	NoAim:
-		RIFZ CBA 1
+		ARSZ C 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RIFZ C 0
+		"####" CBA 1
 		TNT1 A 0 A_Takeinventory("Zoomed",0)
 		TNT1 A 0 A_ZoomFactor(1.0)
 		Goto Ready
 	Ready2:
-		RI2G A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		AR2G A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RI2G A 0
+		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		Loop
@@ -427,12 +550,22 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		RI2F AD 1 BRIGHT A_SetPitch(-1.0 + pitch)
-		RI2F B 1
-		RI2F C 1 A_SetPitch(0.5 + pitch)
-		RI2G A 1 A_SetPitch(0.5 + pitch)
+		AR2F A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RI2F A 0
+		"####" AD 1 BRIGHT A_SetPitch(-1.0 + pitch)
+		AR2F B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RI2F B 0
+		"####" B 1
+		AR2F C 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RI2F C 0
+		"####" C 1 A_SetPitch(0.5 + pitch)
+		AR2G A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RI2G A 0
+		"####" A 1 A_SetPitch(0.5 + pitch)
 		TNT1 A 0 A_Refire
-		RI2G A 5 A_WeaponReady
+		AR2G A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RI2G A 0
+		"####" A 5 A_WeaponReady
 		Goto Ready2
 	FireZoomed2:
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",1,1)
@@ -443,12 +576,22 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		RI2F AD 1 BRIGHT A_SetPitch(-1.0 + pitch)
-		RI2F B 1
-		RI2F C 1 A_SetPitch(0.5 + pitch)
-		RI2G A 1 A_SetPitch(0.5 + pitch)
+		AR2F A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RI2F A 0
+		"####" AD 1 BRIGHT A_SetPitch(-1.0 + pitch)
+		AR2F B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RI2F B 0
+		"####" B 1
+		AR2F C 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RI2F C 0		
+		"####" C 1 A_SetPitch(0.5 + pitch)
+		AR2G A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RI2G A 0
+		"####" A 1 A_SetPitch(0.5 + pitch)
 		TNT1 A 0 A_Refire
-		RI2G A 5 A_WeaponReady
+		AR2G A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)  //R31 Alternative Rifle Skin
+		RI2G A 0
+		"####" A 5 A_WeaponReady
 		Goto Ready2
 	}
 }

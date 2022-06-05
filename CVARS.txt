@@ -282,3 +282,8 @@ Script "TUnmakerChecker" (void)		//r31 checks if you have tactical unmaker
 		}
 	}
 }
+
+Script "AlternativeRifleSkin" (void) //r31 added alternative rifle skin
+{
+SetResultValue(getCvar("AlternativeRifleSkinCvar"));
+}

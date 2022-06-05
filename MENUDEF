@@ -99,6 +99,7 @@ OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
 	Option "Randomly replace BFG9000 with Unmaker =", "Unmaker_Spawner_Cvar", "YesOrNo"
 		StaticText " "
 	Option "Play Vanilla Weapon Animations (Classical Only) =", "VWeaponCvar", "YesOrNo"
+	Option "Alternative Rifle Skin =", "AlternativeRifleSkinCvar", "YesOrNo"
 		StaticText " "
 }
 		
