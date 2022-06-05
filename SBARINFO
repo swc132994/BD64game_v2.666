@@ -3,7 +3,7 @@ completeborder true;
 
 statusbar fullscreen, forcescaled, 0.5
 {
-	drawnumber 3, SMALLFONT, untranslated, Ammo("Stamina"), whennotzero | interpolate(4), 90, 185;	//R4 Added Whennotzero
+	drawnumber 3, SMALLFONT, red, Ammo("Stamina"), whennotzero | interpolate(4), 88, 183;	//R4 Added Whennotzero //R31 untranslated
 	drawimage "HTEXA0", 30, 170;
 	drawnumber 3, HUDFONT_DOOM, untranslated, health, 69, 180;
 	drawimage "ATEXA0", 246, 170;
@@ -11,19 +11,20 @@ statusbar fullscreen, forcescaled, 0.5
 	drawimage "nullimage", 306, 196;
 	drawnumber 3, HUDFONT_DOOM, untranslated, ammo1, 175, 180;
 //	drawimage ammoicon2, 306, 172;
-	drawnumber 3, SMALLFONT, untranslated, ammo2, 192, 183;
+	drawnumber 3, SMALLFONT, red, ammo2, 192, 183; //R31 untranslated
 	gamemode deathmatch, teamgame
 	{
 		drawnumber 2, HUDFONT_DOOM, untranslated, frags, 120, 180;
 	}
 	gamemode cooperative, singleplayer
 	{
+		//R31 Icon Card and Skull fix	
 		drawswitchableimage BlueCard, "nullimage", "STKEYS0", 90, 181;
 		drawswitchableimage YellowCard, "nullimage", "STKEYS1", 100, 181;
 		drawswitchableimage RedCard, "nullimage", "STKEYS2", 110, 181;
-		drawswitchableimage BlueSkull, "nullimage", "STKEYS3", 90, 181;
-		drawswitchableimage YellowSkull, "nullimage", "STKEYS4", 100, 181;
-		drawswitchableimage RedSkull, "nullimage", "STKEYS5", 110, 181;
+		drawswitchableimage BlueSkull, "nullimage", "STKEYS3", 89, 169;
+		drawswitchableimage YellowSkull, "nullimage", "STKEYS4", 99, 169;
+		drawswitchableimage RedSkull, "nullimage", "STKEYS5", 109, 169;
 /*		drawswitchableimage GLBlueCard, "nullimage", "STKEYS0", 90, 181;		//R29 REMOVED GL KEYS
 		drawswitchableimage GLYellowCard, "nullimage", "STKEYS1", 100, 181;
 		drawswitchableimage GLRedCard, "nullimage", "STKEYS2", 110, 181;
@@ -48,12 +49,13 @@ statusbar normal
 	drawnumber 3, HUDFONT_DOOM, untranslated, ammo1, 97, 187;					//R1 WAS 97, 181
 	drawimage "ATEXA0", 108, 165;
 	drawnumber 3, HUDFONT_DOOM, untranslated, armor, 145, 177;
-	drawswitchableimage BlueCard, "nullimage", "STKEYS0", 57, 162;
-	drawswitchableimage YellowCard, "nullimage", "STKEYS1", 73, 162;
-	drawswitchableimage RedCard, "nullimage", "STKEYS2", 89, 162;
-	drawswitchableimage BlueSkull, "nullimage", "STKEYS3", 57, 162;
-	drawswitchableimage YellowSkull, "nullimage", "STKEYS4", 73, 162;
-	drawswitchableimage RedSkull, "nullimage", "STKEYS5", 89, 162;
+	//R31 Icon Card and Skull fix
+	drawswitchableimage BlueCard, "nullimage", "STKEYS0", 59, 166, center, 10, 6;
+	drawswitchableimage YellowCard, "nullimage", "STKEYS1", 75, 166, center, 10, 6;
+	drawswitchableimage RedCard, "nullimage", "STKEYS2", 91, 166, center, 10, 6;
+	drawswitchableimage BlueSkull, "nullimage", "STKEYS3", 63, 168, center, 10, 6;
+	drawswitchableimage YellowSkull, "nullimage", "STKEYS4", 79, 168, center, 10, 6;
+	drawswitchableimage RedSkull, "nullimage", "STKEYS5", 95, 168, center, 10, 6;
 /*	drawswitchableimage GLBlueCard, "nullimage", "STKEYS0", 57, 162;			//R29 REMOVED GL KEYS
 	drawswitchableimage GLYellowCard, "nullimage", "STKEYS1", 73, 162;
 	drawswitchableimage GLRedCard, "nullimage", "STKEYS2", 89, 162;
@@ -96,13 +98,14 @@ statusbar automap
 	drawnumber 3, HUDFONT_DOOM, untranslated, ammo1, 97, 187;					//R1 WAS 97, 181
 	drawimage "ATEXA0", 108, 165;
 	drawnumber 3, HUDFONT_DOOM, untranslated, armor, 145, 177;
-	drawswitchableimage BlueCard, "nullimage", "STKEYS0", 57, 162;
-	drawswitchableimage YellowCard, "nullimage", "STKEYS1", 73, 162;
-	drawswitchableimage RedCard, "nullimage", "STKEYS2", 89, 162;
-	drawswitchableimage BlueSkull, "nullimage", "STKEYS3", 57, 162;
-	drawswitchableimage YellowSkull, "nullimage", "STKEYS4", 73, 162;
-	drawswitchableimage RedSkull, "nullimage", "STKEYS5", 89, 162;
-/*	drawswitchableimage GLBlueCard, "nullimage", "STKEYS0", 57, 162;			//R29 REMOVED GL KEYS
+	//R31 Icon Card and Skull fix
+	drawswitchableimage BlueCard, "nullimage", "STKEYS0", 59, 166, center, 10, 6;
+	drawswitchableimage YellowCard, "nullimage", "STKEYS1", 75, 166, center, 10, 6;
+	drawswitchableimage RedCard, "nullimage", "STKEYS2", 91, 166, center, 10, 6;
+	drawswitchableimage BlueSkull, "nullimage", "STKEYS3", 63, 168, center, 10, 6;
+	drawswitchableimage YellowSkull, "nullimage", "STKEYS4", 79, 168, center, 10, 6;
+	drawswitchableimage RedSkull, "nullimage", "STKEYS5", 95, 168, center, 10, 6;
+	/*drawswitchableimage GLBlueCard, "nullimage", "STKEYS0", 57, 162;			//R29 REMOVED GL KEYS
 	drawswitchableimage GLYellowCard, "nullimage", "STKEYS1", 73, 162;
 	drawswitchableimage GLRedCard, "nullimage", "STKEYS2", 89, 162;
 	drawswitchableimage GLBlueSkull, "nullimage", "STKEYS3", 57, 162;
