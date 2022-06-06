@@ -429,7 +429,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 //		TNT1 A 0 A_JumpIfInventory("HasUnloaded",1,2)							//R11 UNUSED
 		ARSR JKLMNOO 1
 		ARSR PQRST 1
-		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",-5,0,20,-8)				//r31 was ("EmptyClipSpawn",-5,0,8,-4)
+		ARSR T 1 A_FireCustomMissile("EmptyClipSpawn",-5,0,0,-20)				//r31 was ("EmptyClipSpawn",-5,0,8,-4)
 		ARSR UU 5 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_PlaySound("Relo2")
 		ARSR VWXXZ 1
