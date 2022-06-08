@@ -61,7 +61,7 @@ LISTMENU "MainMenu"
 	}
 }
 
-OptionMenu "BD64Menu" //R31 
+OptionMenu "BD64Menu" //R31
 {
 	Title "BRUTAL DOOM 64 OPTIONS"
 	Submenu "Performance Options",		"BrutalDoom64OptionsPerformance"
@@ -88,9 +88,9 @@ OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 	Option "Disable Light Fog & Halos =", "LFog_Cvar", "YesOrNoFalse"			//R30 ADDED	//R30.9 REVISED LINE
 		StaticText " "
 }
-		
+
 OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
-{		
+{
     Title "Item/Weapon Spawner Options"
 //	StaticText "*  Item/Weapon Spawner Options---------------------------------"
 		StaticText " "
@@ -100,9 +100,10 @@ OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
 		StaticText " "
 	Option "Play Vanilla Weapon Animations (Classical Only) =", "VWeaponCvar", "YesOrNo"
 	Option "Alternative Rifle Skin =", "AlternativeRifleSkinCvar", "YesOrNo"
+	Option "Alternative Laser Skin =", "AlternativeLaserSkinCvar", "YesOrNo"
 		StaticText " "
 }
-		
+
 OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 {
     Title "Monster Spawner Options"
@@ -115,8 +116,8 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 	Option "Randomly replace Cyberdemons with Annihilators =", "Annihilator_Spawner_Cvar", "YesOrNo"
 	Option "Randomly replace Masterminds with Motherdemons =", "Motherdemon_Spawner_Cvar", "YesOrNo"	//R27
 		StaticText " "
-}		
-		
+}
+
 OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 {
     Title "Other Monster Options"
@@ -130,7 +131,7 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 }
 
 OptionMenu "BD64MapOptions" //R31
-{		
+{
     Title "Map Options"
 //	StaticText "*  Misc--------------------------------------------------------"	//r31 vanilla map option
 		StaticText " "

@@ -25,3 +25,4 @@ server int VWeaponCvar = 0;					//R31 VANILLA WEAPON ANIMATION
 server int HoundChooserCvar = 0;			//R31 OLD OR NEW HELLHOUND
 server int RevenantChooserCvar = 0;			//R31 OLD OR NEW REVENANT
 server bool AlternativeRifleSkinCvar = FALSE;			//R31 OLD OR NEW RIFLE
+server bool AlternativeLaserSkinCvar = FALSE;			//R31 OLD OR NEW LASER

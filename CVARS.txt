@@ -287,3 +287,8 @@ Script "AlternativeRifleSkin" (void) //r31 added alternative rifle skin
 {
 SetResultValue(getCvar("AlternativeRifleSkinCvar"));
 }
+
+Script "AlternativeLaserSkin" (void) //r31 added alternative Laser skin
+{
+SetResultValue(getCvar("AlternativeLaserSkinCvar"));
+}
