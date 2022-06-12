@@ -1,0 +1,112 @@
+actor 64Arachnotron : Arachnotron Replaces Arachnotron
+{
+scale 0.8
+Radius 40
+speed 11
+Painchance "SuperFists",200
+Painchance "Kick",255
+Painchance "SuperKick",255
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+BloodType "BD64ArachnotronBlood"
+DROPITEM "DemonEssenceSpawner"		//R31 ADDED
+//+FORCEXYBILLBOARD																//R12.3
++FLOORCLIP
++NOBLOCKMONST
+	states
+	{
+	Spawn:
+		BSPI B 10 A_Look
+		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 was BlueArmor
+		loop
+	See:
+		BSPI A 20
+		BSPI A 2 A_BabyMetal
+		BSPI AABBBCCCDDD 2 A_Chase
+		goto See+1
+	Missile:
+		BSPI A 20 bright A_FaceTarget
+		BSPI E 0 bright A_CustomMissile("ArachnotronPlasma",25,-12,2)
+		BSPI E 4 bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
+		BSPI E 3 bright A_FaceTarget
+		BSPI E 1 bright A_SpidRefire
+		BSPI E 0 bright A_CustomMissile("ArachnotronPlasma",25,-12,2)
+		BSPI E 4 bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
+		BSPI E 3 bright A_FaceTarget
+		BSPI E 1 bright A_SpidRefire
+		BSPI E 0 bright A_CustomMissile("ArachnotronPlasma",25,-12,2)
+		BSPI E 4 bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
+		BSPI E 3 bright A_FaceTarget
+		BSPI E 1 bright A_SpidRefire
+		BSPI E 0 bright A_CustomMissile("ArachnotronPlasma",25,-12,2)
+		BSPI E 4 bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
+		BSPI E 3 bright A_FaceTarget
+		BSPI E 1 bright A_SpidRefire
+		BSPI E 0 bright A_CustomMissile("ArachnotronPlasma",25,-12,2)
+		BSPI E 4 bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
+		BSPI E 3 bright A_FaceTarget
+		BSPI E 1 bright A_SpidRefire
+		loop
+	Pain:
+		BSPI F 3
+		BSPI F 3 A_Pain
+		goto See+1
+	Pain.Vertigo:
+		TNT1 A 0 ThrustThingZ(0,55,0,0)
+		BSPI F 3
+		BSPI F 3 A_Pain
+		Goto See+1
+	Death:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",52,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("XDeath1",52,0,random(0,360),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("XDeath2b",52,0,random(0,360),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath2b",52,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath3",52,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",52,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",52,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("Brains3",50,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
+		BSPI G 4 A_Scream
+		BSPI H 4 A_NoBlocking
+		BSPI IJ 4
+		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
+		BSPI K -1 A_BossDeath
+		stop
+	XDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",52,0,random(150,210),2,random(10,50))
+		TNT1 AAAA 0 A_CustomMissile("XDeath1",52,0,random(0,360),2,random(10,50))
+		TNT1 AAAA 0 A_CustomMissile("XDeath2b",52,0,random(0,360),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("XDeath2b",52,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("XDeath3",52,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",52,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",52,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("Brains3",50,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeathSpiderLeg1",35,0,random(0,360),2,random(10,60))
+		TNT1 A 0 A_CustomMissile("XDeathSpiderLeg2",35,0,random(0,360),2,random(30,60))
+		TNT1 A 0 A_CustomMissile("XDeathSpiderLeg3",35,0,random(0,360),2,random(20,60))
+		TNT1 A 0 A_CustomMissile("XDeathSpiderHead",55,0,random(0,360),2,random(40,90))
+		XSPI A 5 A_Scream
+		XSPI B 5 A_NoBlocking
+		TNT1 A 0 A_STOP
+		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
+		XSPI C -1 A_BossDeath
+		stop
+	Raise:
+		BSPI LKJIHG 5
+		goto See+1
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		POL5 A -1
+		Stop
+	}
+}
+
+actor 64StealthArachnotron : 64Arachnotron Replaces StealthArachnotron
+{
++STEALTH
+}

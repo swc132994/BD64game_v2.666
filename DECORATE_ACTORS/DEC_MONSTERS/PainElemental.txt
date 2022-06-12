@@ -1,0 +1,76 @@
+Actor 64PainElemental : PainElemental Replaces PainElemental
+{
+scale 0.8
+meleedamage 8
+Speed 6																			//R16 WAS 4
+Painchance "SuperFists",255
+Painchance "Kick",255
+Painchance "SuperKick",255
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+hitobituary "%o got too close to a Pain Elemental."
+DROPITEM "DemonEssenceSpawner"		//R31 ADDED
+//bloodcolor "40 40 40"
++FORCEXYBILLBOARD
+	states
+	{
+	Spawn:
+		PAIN A 10 A_Look
+		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 was BlueArmor
+		loop
+	See:
+		PAIN AAAAAA 2 A_Chase("","")
+		PAIN A 2 A_Chase
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
+		Loop
+	Forget:
+		TNT1 A 0 A_ClearTarget
+		Goto Spawn
+//	Melee:
+//		PAIN BB 6 A_FaceTarget
+//		PAIN C 6 bright A_FaceTarget
+//		PAIN C 0 bright A_MeleeAttack
+//		goto See
+	Missile:
+		PAIN BB 6 A_FaceTarget
+		PAIN C 6 bright A_FaceTarget
+		TNT1 A 0 bright A_DualPainAttack
+		goto See
+	Pain:
+		PAIN D 6
+		PAIN D 6 A_Pain
+		goto See
+	Pain.Vertigo:
+		TNT1 A 0 ThrustThingZ(0,55,0,0)
+		PAIN D 6
+		PAIN D 6 A_Pain
+		Goto See
+	Death:
+		PAIN E 4 bright
+		PAIN F 4 bright A_Scream
+		PAIN G 4 bright
+		PAIN H 4 bright
+		PAIN I 4 bright A_PainDie
+		TNT1 A 0 A_SpawnItem("64BarrelExplosion")
+		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("BurningXDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SuperGoreSpawner",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
+		PAIN J 4 bright
+		PAIN K 4 bright
+		PAIN L 4 bright
+		stop
+	Raise:
+		PAIN LKJIHGFE 8
+		goto See
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		POL5 A -1
+		Stop
+	}
+}
