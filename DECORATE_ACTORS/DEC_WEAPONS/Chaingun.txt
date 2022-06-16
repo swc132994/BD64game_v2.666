@@ -130,6 +130,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		CHNS ABCD 1
 		Goto Ready
 	Deselect:
+		TNT1 A 0 A_TakeInventory ("Spin",1)
 		CHNS DCBA 1
 		TNT1 A 1 A_Lower
 		Wait
