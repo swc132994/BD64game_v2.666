@@ -147,7 +147,8 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		loop
 	NoAmmo:
 		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,"Ready")					//R31 ADDED
-		TNT1 A 0 A_StopSoundEx("WEAPON")										//R31 ADDED STOP SOUND
+//		TNT1 A 0 A_StopSoundEx("WEAPON")										//R31 ADDED STOP SOUND	//31 REVISED TO PLAYSOUND, GZ4.8
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)	//31 REVISED TO PLAYSOUND, GZ4.8
 		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		3LSG A 5 A_WeaponReady(WRF_ALLOWRELOAD)									//R11 REMOVED R11.1 READDED WITH (WRF_ALLOWRELOAD) R31 Updated sprite
@@ -174,11 +175,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		PLSR A 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2) //R31 Pseudo-Fade Effect
 		2LSR A 0
 		"####" ABCDEF 1
-		PLSR G 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2) //R31 Pseudo-Fade Effect
-		2LSR G 0
 		"####" G 12
-		PLSR F 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2) //R31 Pseudo-Fade Effect
-		2LSR F 0
 		"####" FEDCBA 1
 		Goto Ready
 	Fire1:																		//R25 NEW FIRE1
@@ -196,11 +193,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		PLSR A 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2) //R31 Pseudo-Fade Effect
 		2LSR A 0
 		"####" ABCDEF 1
-		PLSR G 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2) //R31 Pseudo-Fade Effect
-		2LSR G 0
 		"####" G 12
-		PLSR F 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2) //R31 Pseudo-Fade Effect
-		2LSR F 0
 		"####" FEDCBA 1
 		Goto Ready
 	NoAmmoCooldown:
@@ -208,7 +201,6 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		3LSR G 12
 		3LSR FEDCBA 1
 		Goto NoAmmo
-
 	Spawn:
 		PLAS A -1
 		Stop
