@@ -60,11 +60,13 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"		
 	Deselect:
 		PLSG MLKJ 1
 		TNT1 A 0 A_TakeInventory("HasPLasmaWeapon",1)
-		TNT1 A 0 A_StopSoundEx("WEAPON")
+//		TNT1 A 0 A_StopSoundEx("WEAPON")	//R31 SOUND FIX FOR GZ4.8
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)	//R31 SOUND FIX FOR GZ4.8
 		TNT1 A 1 A_Lower
 		Wait
 	Ready:
-		TNT1 A 0 A_PlaySoundEx("weapon/plasmaidle","WEAPON",1)
+//		TNT1 A 0 A_PlaySoundEx("weapon/plasmaidle","WEAPON",1)	//R31 SOUND FIX FOR GZ4.8
+		TNT1 A 0 A_PlaySound("weapon/plasmaidle",CHAN_WEAPON,1,1)	//R31 SOUND FIX FOR GZ4.8
 		PLSG ABC 2 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")					//R28.2
 		TNT1 A 0 A_TakeInventory("Stamina",0)									//R28.2
@@ -126,11 +128,13 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 	Deselect:
 		PLSG MLKJ 1
 		TNT1 A 0 A_TakeInventory("HasPLasmaWeapon",1)
-		TNT1 A 0 A_StopSoundEx("WEAPON")
+//		TNT1 A 0 A_StopSoundEx("WEAPON")
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)	//31 REVISED TO PLAYSOUND, GZ4.8
 		TNT1 A 1 A_Lower
 		Wait
 	Ready:
-		TNT1 A 0 A_PlaySoundEx("weapon/plasmaidle","WEAPON",1)
+//		TNT1 A 0 A_PlaySoundEx("weapon/plasmaidle","WEAPON",1)
+		TNT1 A 0 A_PlaySound("weapon/plasmaidle",CHAN_WEAPON,1,1)	//31 REVISED TO PLAYSOUND	GZ4.8
 		TNT1 A 0 A_JumpIfInventory("PlasmaRIfleAmmo",1,1)
 		Goto NoAmmo
 		PLSG A 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2) //R31 Pseudo-Fade Effect
