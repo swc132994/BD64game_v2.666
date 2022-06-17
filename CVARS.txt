@@ -54,8 +54,7 @@ GiveInventory("Reloading",1);
 Script "DM_SpawnACS" (VOID)	//R31 WAS 119
 {
 if	(GameType() == GAME_NET_DEATHMATCH)
-	SetResultValue(1);
-//	GiveInventory("IsDM",1);	//R31 REMOVED
+	GiveInventory("IsDM",1);
 }
 
 /*Script "BloodCheckACS" (VOID)		//R31 WAS 799 replaced by script SetBloodAmountACS"
