@@ -8,10 +8,9 @@ Inventory.PickupSound "WPICK"
 	{
 	Spawn:
 		LAUN A 1
-//		TNT1 A 0 ACS_ExecuteAlways(119)							//r31 removed
-		TNT1 A 0 A_JumpIf(CallACS("DM_SpawnACS")==1,"DMSpawn")	//r31 REVISED DM SPAWN
-//		LAUN A 2												//R31 REMOVED
-//		TNT1 A 0 A_JumpIfInventory("ISDM",1,"DMSpawn")			//r31 removed
+		TNT1 A 0 ACS_NamedExecuteAlways("DM_SpawnACS")							//r31 was ACS_ExecuteAlways(119)
+		LAUN A 2
+		TNT1 A 0 A_JumpIfInventory("ISDM",1,"DMSpawn")			//r31 removed
 		LAUN A -1
 		Stop
 	Pickup:
@@ -320,10 +319,10 @@ Species "none"
 }
 
 //DEATHMATCH STUFF
-/*Actor ISDM : Inventory	//R31 REMOVED, REPLACE DM SPAWN
+Actor ISDM : Inventory	//R31 REMOVED, REPLACE DM SPAWN
 {
 inventory.maxamount 1
-}*/
+}
 
 Actor 64RocketLauncherDM : DoomWeapon
 {
