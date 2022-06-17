@@ -12,7 +12,7 @@ Dropitem "SawGas"
 DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 //+FORCEXYBILLBOARD																//R12.3
 +FLOORCLIP
-+DONTHURTSPECIES
++DONTHARMSPECIES		//R31 WAS DONTHURTSPECIES
 	States
 	{
 	Spawn:
