@@ -111,8 +111,8 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 	Death.CutLess:		//R31 EXTRA
 		TNT1 A 0 A_CustomMissile("XDeathHHHead",50,0,random(00,360),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("XDeath2",50,0,random(00,360),2,random(10,50))
+		TNT1 A 0 A_NOBLOCKING
 		TNT1 A 0 A_Scream
-//		TNT1 A 0 A_Fall		//R31 270422
 		TNT1 A 1 A_SpawnItemEx("BrutalizedHound",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.SuperFists:

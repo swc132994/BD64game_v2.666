@@ -147,6 +147,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		TNT1 A 0 A_SpawnItemEx("XDeathRevenantLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 //		TNT1 A 0 A_CustomMissile("XDeathRevenantTorso",50,0,random(0,360),2,random(20,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		tnt1 a 0 a_noblocking	//r31 added
 		TNT1 A 0 A_XScream
 		TNT1 A 0 ThrustThingZ(0,40,0,0)
 		SKG3 A 2 A_ChangeFlag("THRUACTORS",1)
