@@ -122,9 +122,14 @@ object 64Candelabra
 frame CAND {light BIGREDTORCH}
 }
 
-object HEADCANDLES64		//R31 ADDED
+object 64HEADCANDLES		//R31 ADDED
 {
-frame POL3 {light BIGREDTORCH}
+frame A017 {light BIGREDTORCH}
+}
+
+object 64TORCHTREE			//R31 ADDED
+{
+frame TRE1 {light BIGREDTORCH}
 }
 
 object 64RedTorch
