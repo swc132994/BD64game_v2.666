@@ -1486,3 +1486,31 @@ actor 64LiveStick : LiveStick Replaces LiveStick
 		Stop
 	}
 }
+
+ACTOR HeadCandles64 : HeadCandles Replaces HeadCandles		//R31 ADDED
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NODELAY A_spawnItemEX("HeadCandleBurn",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+	STAY:
+		POL3 AB 6 BRIGHT
+		Loop
+	}
+}
+
+actor HeadCandleBurn : 64BurningBarrel		//R31 ADDED
+{
++THRUACTORS
+-SOLID
+	states
+	{
+	spawn:
+		TNT1 A 3 NODELAY A_CustomMissile("RealFlameTrailsSmall",35,0,random(0,360),2,random(70,110))
+		TNT1 A 3 A_CustomMissile("RealFlameTrailsSmall",35,0,random(0,360),2,random(70,110))
+		TNT1 A 3 A_CustomMissile("RealFlameTrailsSmall",35,0,random(0,360),2,random(70,110))
+		TNT1 A 3 A_CustomMissile("RealFlameTrailsSmall",35,0,random(0,360),2,random(70,110))
+		TNT1 A 3 A_CustomMissile("RealFlameTrailsSmall",35,0,random(0,360),2,random(70,110))
+		loop
+	}
+}

@@ -122,6 +122,11 @@ object 64Candelabra
 frame CAND {light BIGREDTORCH}
 }
 
+object HEADCANDLES64		//R31 ADDED
+{
+frame POL3 {light BIGREDTORCH}
+}
+
 object 64RedTorch
 {
 frame TSTI {light BIGREDTORCH}
