@@ -494,7 +494,7 @@ Player.StartItem "IsTacticalClass",1
 Player.StartItem "64RifleTactical"
 Player.StartItem "64PistolTactical"												//R15
 Player.StartItem "64Fist"														//R8 CHANGED BACK TO 64FIST
-Player.StartItem "ShotgunAmmo",8												//R5 NEW
+Player.StartItem "ShotgunAmmo",9												//R5 NEW	//R31 WAS 8
 Player.StartItem "SSGAmmo",2													//R10.2 NEW
 Player.StartItem "PlasmaRifleAmmo",40											//R5 NEW	//r31 was 30
 Player.ColorRange 112,127
@@ -767,7 +767,7 @@ Player.StartItem "IsModern",1
 Player.StartItem "64PistolTactical"
 Player.StartItem "Pistolammo",10
 Player.StartItem "64Fist"
-Player.StartItem "ShotgunAmmo",8
+Player.StartItem "ShotgunAmmo",9	//R31 WAS 8
 Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40											//r31 was 30
 Player.ColorRange 112,127
