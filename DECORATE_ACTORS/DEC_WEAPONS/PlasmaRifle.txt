@@ -213,7 +213,8 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",40,"Ready")				//R28 WAS JUMP 64	//r31 was 30
 		TNT1 A 0 A_JumpIfInventory("Cell",1,1)									//R31 WAS JUMP 3
 		Goto NoAmmo
-		TNT1 A 0 A_StopSoundEx("WEAPON")										//R31 ADDED STOP SOUND
+//		TNT1 A 0 A_StopSoundEx("WEAPON")										//R31 ADDED STOP SOUND	//31 REVISED TO stopsound, GZ4.8
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)	//31 REVISED TO Stopsound, GZ4.8
 		11SR A 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2) //R31 Pseudo-Fade Effect
 		33SR A 0
 		"####" AB 1 A_JumpIfInventory("Kicking",1,"DoKick")
