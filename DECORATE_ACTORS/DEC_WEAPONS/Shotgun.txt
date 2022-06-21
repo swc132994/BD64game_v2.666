@@ -235,7 +235,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 	ReloadNormally:
 		TNT1 A 0 A_JumpIfInventory("Shell",1,1)
 		Goto Ready
-//		SHTG B 1 A_GiveInventory("Pumping",1)	//R31 SWC, NOT USED
+		SHTG B 1 //A_GiveInventory("Pumping",1)	//R31 SWC, NOT USED
 		SHTG CDEFG 1
 	InsertingShells:
 		TNT1 A 0 A_JumpIfInventory("Shell",1,1)
