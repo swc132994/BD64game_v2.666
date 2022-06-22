@@ -594,7 +594,7 @@ ACTOR 64TorchTree : TorchTree Replaces TorchTree	//r31 added
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_spawnItemEX("TORCHTREEBURN",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+//		TNT1 A 0 NODELAY A_spawnItemEX("TORCHTREEBURN",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TRE1 A -1
 		Stop
 	}
