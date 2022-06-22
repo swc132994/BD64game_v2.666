@@ -127,10 +127,10 @@ object 64HEADCANDLES		//R31 ADDED
 frame A017 {light BIGREDTORCH}
 }
 
-object 64TORCHTREE			//R31 ADDED
+/*object 64TORCHTREE			//R31 ADDED
 {
 frame TRE1 {light BIGREDTORCH}
-}
+}*/
 
 object 64RedTorch
 {
