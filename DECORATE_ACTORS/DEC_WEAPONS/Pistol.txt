@@ -126,6 +126,20 @@ Inventory.restrictedto "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	
 		PISG A 1
 		PISG A 10 A_PlaySound("DRYFIRE",1)
 		Goto Ready
+	Fidget: //R31 Fidget Animation
+		PISI ABCDEFG 1 A_WeaponReady
+		PISI HIJKLM 1 A_WeaponReady
+		TNT1 A 0 A_PlaySound("PISBACK",CHAN_WEAPON)		
+		PISI M 1 Offset(-2, 30) A_WeaponReady
+		PISI M 1 Offset(-3, 31) A_WeaponReady	
+		PISI M 1 Offset(-4, 32) A_WeaponReady
+		PISI N 2 A_WeaponReady
+		PISI N 1 Offset(-1, 31) A_WeaponReady	
+		PISI O 5 A_WeaponReady
+		TNT1 A 0 A_PlaySound("PISFORW",CHAN_WEAPON)			
+		PISI LKJIHGFEDCBA 1  A_WeaponReady
+		Goto Ready
+		
 	Ready:
 		PISG A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
@@ -176,7 +190,7 @@ Inventory.restrictedto "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	
 		Goto Ready
 	Reload:																		//R26 REVISED RELOAD ANIMATION OFFSETS
 		TNT1 A 0 A_Takeinventory("Reloading",1)
-		TNT1 A 0 A_JumpIfInventory("PistolAmmo",10,"ready")
+		TNT1 A 0 A_JumpIfInventory("PistolAmmo",10,"Fidget") //R31 Fidget Animation
 		TNT1 A 0 A_JumpIfInventory("Clip",1,1)			//R30.8 was jump 3
 		Goto NoAmmo
 		tnt1 A 0 A_playsound("reload")		//R31 RELOAD FROM IDDQD1337

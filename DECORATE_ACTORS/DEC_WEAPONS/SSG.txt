@@ -149,6 +149,20 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		SSGS DCBA 1
 		TNT1 A 1 A_Lower
 		Wait
+	Fidget: //R31 Fidget Animation
+		SSGG BCDEF 1 a_weaponready
+		SSGI AB 1 a_weaponready		
+		TNT1 A 0 A_PlaySound("weapons/sshoto")
+		SSGI B 10 a_weaponready
+		SSGI CDEE 1 a_weaponready
+		TNT1 A 8 a_weaponready	
+		SSGG RS 1 a_weaponready
+		TNT1 A 0 A_PlaySound("weapons/sshotc")
+		SSGG TUVW 2 a_weaponready
+		SSGG XYZA 1 a_weaponready	//r31 was TUVWXYZAAAAA 1
+		TNT1 A 0 A_TakeInventory("Reloading",1)			
+		Goto Ready
+		
 	Fire:
 		TNT1 A 0 A_JumpIfInventory("SSGAmmo",1,1)
 		Goto Reload
@@ -250,7 +264,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		Goto Reload
 	Reload:																		//r31 new reload sequence
 		TNT1 A 0 A_Takeinventory("Reloading",0)
-		TNT1 A 0 A_jumpifinventory("SSGAmmo",2,"Ready")
+		TNT1 A 0 A_jumpifinventory("SSGAmmo",2,"Fidget")	//R31 Fidget Animation
 		TNT1 A 0 A_jumpifinventory("SSGAmmo",1,"Reload1")
 		Goto Reload2
 	Reload2:
