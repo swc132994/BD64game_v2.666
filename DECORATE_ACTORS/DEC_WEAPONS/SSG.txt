@@ -287,7 +287,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		SSGG XYZA 1	//r31 was TUVWXYZAAAAA 1
 		TNT1 A 0 A_Refire
 		Goto Ready
-	Reload1: //R31 Fixed one shell animation, iddqd 1337
+	Reload1://R31 Fixed one shell animation, iddqd 1337
 		TNT1 A 0 A_jumpifinventory("Shell",1,1)
 		Goto NoAmmo
 		SSGG ABCDEFGH 1
@@ -295,7 +295,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_PlaySound("weapons/sshoto")
 		TNT1 A 0 A_FireCustomMissile("SSGCaseSpawner",0,0,-5,-15)				//30.9 WAS -10 HORZ,R30.9 ADDED VERTICAL OFFSET
 		SSGZ BBBBBBBBBCDEFG 1 //R31 Replace in SSGG to SSGZ, iddqd 1337
-		TNT1 A 0 A_playsound("weapons/sshotl", 4)
+		TNT1 A 0 A_playsound("weapons/sshotl",4)
 		SSGG OPQ 1
 		TNT1 A 0 A_TakeInventory("Shell",1)
 		TNT1 A 0 A_GiveInventory("SSGAmmo",1)									//R6 was SetInventory	//R19 WAS 2
