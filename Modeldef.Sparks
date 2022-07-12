@@ -104,7 +104,7 @@ FrameIndex LENS A 0 0
 Model DetectFloorBullet															//R28.2 ADDED
 {
 Path "models"
-Model 0 "buldecground1"
+Model 0 "buldecground1.md3"
 Skin 0 "BULLETDECAL1.png"
 Scale 5.0 5.0 5.0
 ZOffset 0.1
@@ -114,7 +114,7 @@ FrameIndex XXX1 A 0 0
 Model DetectCeilBullet															//R28.2 ADDED
 {
 Path "models"
-Model 0 "buldecceil1"
+Model 0 "buldecceil1.md3"
 Skin 0 "BULLETDECAL1.png"
 Scale 5.0 5.0 5.0
 ZOffset -0.1																	//R31 WAS 0.1
@@ -124,7 +124,7 @@ FrameIndex XXX1 A 0 0
 Model DetectFloorCrater															//R28.2 ADDED
 {
 Path "models"
-Model 0 "buldecground1"
+Model 0 "buldecground1.md3"
 Skin 0 "SCORCH1.png"
 Scale 10.0 10.0 10.0
 ZOffset 0.1
@@ -134,7 +134,7 @@ FrameIndex XXX1 A 0 0
 Model DetectCeilCrater															//R28.2 ADDED
 {
 Path "models"
-Model 0 "buldecceil1"
+Model 0 "buldecceil1.md3"
 Skin 0 "SCORCH1.png"
 Scale 10.0 10.0 10.0
 ZOffset -0.1
@@ -144,7 +144,7 @@ FrameIndex XXX1 A 0 0
 Model DetectFloorCraterSmall													//R28.2 ADDED
 {
 Path "models"
-Model 0 "buldecground1"
+Model 0 "buldecground1.md3"
 Skin 0 "SCORCH1.png"
 Scale 6.0 6.0 6.0																//R28.3 WAS 10.0 10.0 10.0
 ZOffset 0.1
@@ -154,7 +154,7 @@ FrameIndex XXX1 A 0 0
 Model DetectCeilCraterSmall														//R28.2 ADDED
 {
 Path "models"
-Model 0 "buldecceil1"
+Model 0 "buldecceil1.md3"
 Skin 0 "SCORCH1.png"
 Scale 6.0 6.0 6.0																//R28.3 WAS 10.0 10.0 10.0
 ZOffset -0.1
@@ -164,7 +164,7 @@ FrameIndex XXX1 A 0 0
 Model DetectFloorCraterNoSplashes												//R28.2 ADDED
 {
 Path "models"
-Model 0 "buldecground1"
+Model 0 "buldecground1.md3"
 Skin 0 "SCORCH1.png"
 Scale 10.0 10.0 10.0
 ZOffset 0.1
@@ -174,7 +174,7 @@ FrameIndex XXX1 A 0 0
 Model DetectBarrelCrater														//R28.3 ADDED
 {
 Path "models"
-Model 0 "buldecground1"
+Model 0 "buldecground1.md3"
 Skin 0 "SCORCH1.png"
 Scale 20.0 20.0 20.0
 ZOffset 0.1
@@ -184,7 +184,7 @@ FrameIndex XXX1 A 0 0
 Model DetectFloorCraterMed														//R28.3 ADDED
 {
 Path "models"
-Model 0 "buldecground1"
+Model 0 "buldecground1.md3"
 Skin 0 "SCORCH1.png"
 Scale 8.0 8.0 8.0
 ZOffset 0.1
@@ -194,7 +194,7 @@ FrameIndex XXX1 A 0 0
 Model DetectCeilCraterMed														//R28.3 ADDED
 {
 Path "models"
-Model 0 "buldecceil1"
+Model 0 "buldecceil1.md3"
 Skin 0 "SCORCH1.png"
 Scale 8.0 8.0 8.0
 ZOffset -0.1
@@ -204,7 +204,7 @@ FrameIndex XXX1 A 0 0
 Model DetectFloorLaser															//31 ADDED
 {
 Path "models"
-Model 0 "buldecground1"
+Model 0 "buldecground1.md3"
 Skin 0 "SCORCH1.png"
 Scale 3 3 3
 ZOffset 0.1
@@ -214,7 +214,7 @@ FrameIndex XXX1 A 0 0
 Model DetectCeilLaser															//R31 ADDED
 {
 Path "models"
-Model 0 "buldecceil1"
+Model 0 "buldecceil1.md3"
 Skin 0 "SCORCH1.png"
 Scale 3 3 3
 ZOffset -0.1
@@ -224,7 +224,7 @@ FrameIndex XXX1 A 0 0
 Model DetectFloorCraterSmallMotherdemon											//R31 added
 {
 Path "models"
-Model 0 "buldecground1"
+Model 0 "buldecground1.md3"
 Skin 0 "SCORCH1.png"
 Scale 6.0 6.0 6.0
 ZOffset 0.1
