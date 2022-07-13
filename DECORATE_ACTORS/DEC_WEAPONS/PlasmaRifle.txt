@@ -117,6 +117,31 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 +WEAPON.AMMO_CHECKBOTH															//R25
 	States
 	{
+	
+	KickingFlash:
+		TNT1 A 0 A_JumpIfInventory("PlasmaRIfleAmmo",1,1) //R31 Cooldown if no ammo
+		Goto KickingFlashNoAmmo	
+		PLSR A 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2) //R31 Pseudo-Fade Effect
+		2LSR A 0
+		"####" ABCDEFGGGGFEDCBA 1
+		stop
+
+	AirKickingFlash:
+		TNT1 A 0 A_JumpIfInventory("PlasmaRIfleAmmo",1,1) //R31 Cooldown if no ammo
+		Goto AirKickingFlashNoAmmo		
+		PLSR A 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2) //R31 Pseudo-Fade Effect
+		2LSR A 0
+		"####" ABCDEFGGGGGGFEDCBA 1
+		stop
+		
+	KickingFlashNoAmmo:	
+		3LSR ABCDEFGGGGFEDCBA 1
+		stop
+
+	AirKickingFlashNoAmmo:		
+		3LSR ABCDEFGGGGGGFEDCBA 1
+		stop
+	
 	Select:
 		PLSG A 1 A_Raise
 		WAIT
@@ -268,6 +293,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_JumpIf(pitch > 90,"InitializeNormalKick")
 		TNT1 A 0 A_FireCustomMissile("KickAttackDetectDowned",0,0,0,0)
 	InitializeNormalKick:
+		TNT1 A 0 A_GunFlash("KickingFlash")
 		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"BerserkerKick")
 		TNT1 A 0 A_PlaySound("KICK")
 		TNT1 A 0 SetPlayerProperty(0,1,0)
@@ -277,7 +303,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		KICK I 1
 		KICK GFEDCBA 1
 		TNT1 A 0 SetPlayerProperty(0,0,0)
-		Goto SelectAnimation
+		Goto Ready
 	BerserkerKick:
 		TNT1 A 0 A_PlaySound("KICK")
 		TNT1 A 0 SetPlayerProperty(0,1,0)
@@ -287,9 +313,10 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		KICK I 1
 		KICK GFEDCBA 1
 		TNT1 A 0 SetPlayerProperty(0,0,0)
-		Goto SelectAnimation
+		Goto Ready
 	AirKick:
 		TNT1 A 0 A_TakeInventory("Stamina",5)									//R17 WAS 20
+		TNT1 A 0 A_GunFlash("AirKickingFlash")		
 		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"SuperAirKick")
 		TNT1 A 0 A_PlaySound("KICK")
 		TNT1 A 0 A_Recoil(-6)
@@ -297,7 +324,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_FireCustomMissile("AirKickAttack",0,0,0,-31)
 		KICK O 3
 		KICK PQRST 2
-		Goto SelectAnimation
+		Goto Ready
 	SuperAirKick:
 		TNT1 A 0 A_PlaySound("KICK")
 		TNT1 A 0 A_Recoil(-6)
@@ -305,7 +332,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_FireCustomMissile("SuperAirKickAttack",0,0,0,-31)
 		KICK O 3
 		KICK PQRST 2
-		Goto SelectAnimation
+		Goto Ready
 	}
 }
 

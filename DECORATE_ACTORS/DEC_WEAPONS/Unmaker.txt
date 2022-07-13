@@ -239,6 +239,15 @@ Tag "Unmaker"																	//R11 ADDED TAG
 +WEAPON.NOALERT				//R31 added
 	States
 	{
+	
+	KickingFlash:
+		UNMS DCBAAAAAAAAAABCD 1
+	    stop
+		
+     AirKickingFlash:
+		UNMS DCBAAAAAAAAAAAABCD 1
+	    stop	
+		
 	Spawn:
 		LGUN A -1
 		loop
@@ -318,6 +327,7 @@ Tag "Unmaker"																	//R11 ADDED TAG
 		TNT1 A 0 A_JumpIf(pitch > 90,"InitializeNormalKick")
 		TNT1 A 0 A_FireCustomMissile("KickAttackDetectDowned",0,0,0,0)
 	InitializeNormalKick:
+		TNT1 A 0 A_GunFlash("KickingFlash")
 		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"BerserkerKick")
 		TNT1 A 0 A_PlaySound("KICK")
 		TNT1 A 0 SetPlayerProperty(0,1,0)
@@ -327,7 +337,7 @@ Tag "Unmaker"																	//R11 ADDED TAG
 		KICK I 1
 		KICK GFEDCBA 1
 		TNT1 A 0 SetPlayerProperty(0,0,0)
-		Goto SelectAnimation
+		Goto Ready
 	BerserkerKick:
 		TNT1 A 0 A_PlaySound("KICK")
 		TNT1 A 0 SetPlayerProperty(0,1,0)
@@ -337,9 +347,10 @@ Tag "Unmaker"																	//R11 ADDED TAG
 		KICK I 1
 		KICK GFEDCBA 1
 		TNT1 A 0 SetPlayerProperty(0,0,0)
-		Goto SelectAnimation
+		Goto Ready
 	AirKick:
 		TNT1 A 0 A_TakeInventory("Stamina",5)									//R17 WAS 20
+		TNT1 A 0 A_GunFlash("AirKickingFlash")		
 		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"SuperAirKick")
 		TNT1 A 0 A_PlaySound("KICK")
 		TNT1 A 0 A_Recoil(-6)
@@ -347,7 +358,7 @@ Tag "Unmaker"																	//R11 ADDED TAG
 		TNT1 A 0 A_FireCustomMissile("AirKickAttack",0,0,0,-31)
 		KICK O 3
 		KICK PQRST 2
-		Goto SelectAnimation
+		Goto Ready
 	SuperAirKick:
 		TNT1 A 0 A_PlaySound("KICK")
 		TNT1 A 0 A_Recoil(-6)
@@ -355,7 +366,7 @@ Tag "Unmaker"																	//R11 ADDED TAG
 		TNT1 A 0 A_FireCustomMissile("SuperAirKickAttack",0,0,0,-31)
 		KICK O 3
 		KICK PQRST 2
-		Goto SelectAnimation
+		Goto Ready
 	AltFire:									//r31 added altfire
 		TNT1 A 0 A_jumpifNoAmmo("NotReady")
 		TNT1 A 0 A_ZoomFactor(0.9)
