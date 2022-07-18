@@ -1008,11 +1008,10 @@ object 64ChaingunGuy
 	frame CPOSF {light ZOMBIEATK}
 }
 
-/*object SuperShotgunGuy														//R10.2 UNUSED
+object 64SSGGuy														//R10.2 UNUSED	//r31 active was SuperShotgunGuy
 {
-	frame GPOSE {light ZOMBIEATK}
-	frame GPOSF {light ZOMBIEATK}
-}*/
+	frame POS4F {light ZOMBIEATK}	//R31 NEW FRAME
+}
 
 object 64DoomPlayer
 {

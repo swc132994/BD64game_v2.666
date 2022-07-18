@@ -735,6 +735,69 @@ actor 64StealthShotgunGuy : 64ShotgunGuy Replaces StealthShotgunGuy
 +STEALTH
 }
 
+actor 64SSGGuy : 64ShotgunGuy	//R31 ADDED FROM BD64 AWAKENING
+{
+DropItem "64SuperShotgun"
+DropItem "64SuperShotgunTACTICAL"
+DROPITEM "SOULSPAWNER"
+Tag "SSG Zombie"
+//Translation "128:143=96:111", "144:151=101:106", "152:159=104:111"
+	states
+	{
+	Spawn:
+		POS4 A 10 A_Look
+		TNT1 A 0 A_GiveInventory("GreenArmor",1)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
+		loop
+	See:
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
+		POS4 AAAA 2 A_Chase("","")
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
+		POS4 BBBB 2 A_Chase
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
+		POS4 CCCC 2 A_Chase
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
+		POS4 DDDD 2 A_Chase
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
+		Loop
+	Forget:
+		TNT1 A 0 A_ClearTarget
+		Goto Spawn
+	Missile:
+		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,50,0)
+		POS4 EE 8 A_FaceTarget
+		TNT1 A 0 A_PlaySound("SSGFIRE",1)
+		POS4 FFFFFFFFFFFF 0 bright A_CustomMissile("EnemyProjectile",36,-5,random(-7,7),1,random(-4,4))
+		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,50,0)
+		POS4 F 5 bright
+		POS4 E 5
+		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,40,0)
+		TNT1 A 0 A_PlaySound("weapons/sshoto")
+		PO4R ABC 4
+		TNT1 AA 0 A_CustomMissile("SSGCaseSpawner",36,0,random(-7,7),1,random(-4,4))
+		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,40,0)
+		PO4R DE 5
+		TNT1 A 0 A_playsound("weapons/sshotl")
+		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,40,0)
+		PO4R DE 5
+		TNT1 A 0 A_playsound("weapons/sshotl")
+		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,40,0)
+		TNT1 A 0 A_playsound("weapons/sshotc")
+		PO4R FG 4
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,40,0)
+		Goto See
+	Pain:
+		POS4 G 3
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
+		POS4 G 3 A_Pain
+		Goto See
+	Raise:
+		POS4 L 5
+		POS4 KJIH 5
+		goto See
+	}
+}
+
 actor 64ChaingunGuy : 64Zombieman
 {
 Health 120
