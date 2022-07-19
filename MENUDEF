@@ -73,11 +73,7 @@ OptionMenu "BD64Menu" //R31
 
 OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 {
-	Title "Performance Options"
-//	Submenu "Ketchup Options - GZDoom",			"KetchupOptionsGZDoom"				//R29 REMOVED
-//	Submenu "Ketchup Options - Zandronum",			"KetchupOptionsZandronum"		//R29 REMOVED
-//dynamic spawn option																//R20	//R26 REVISED WITH NEW OPTIONS AND DESC.
-//	StaticText "*  Performance Options-----------------------------------------"	//R28.4 ADDED DECAL OPTIONS
+	Title "Performance Options"	//R31
 		StaticText " "
 	Option "Enable Zandronum specific multiplayer scripts =", "isrunningzandronum", "YesOrNo"
 	Option "Select blood amount =", "zdoombrutalblood", "BrutalBlood"
@@ -91,8 +87,7 @@ OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 
 OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
 {
-    Title "Item/Weapon Spawner Options"
-//	StaticText "*  Item/Weapon Spawner Options---------------------------------"
+	Title "Item/Weapon Spawner Options"
 		StaticText " "
 	Option "Randomly replace Power-ups with Unmaker Power-ups =", "WpnPower_Spawner_Cvar", "YesOrNo"		//r31 was DynamicSpawnCvar
 	Option "Randomly replace Plasma Rifle with Lasergun =", "Lasergun_Spawner_Cvar", "YesOrNo"
@@ -106,9 +101,9 @@ OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
 
 OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 {
-    Title "Monster Spawner Options"
-//	StaticText "*  Monster Spawner Options-------------------------------------"
+	Title "Monster Spawner Options"
 		StaticText " "
+	Option "Randomly replace Shotgun Zombies with SSG Zombies =", "SSGZombieRandom_Cvar", "YesOrNo"		//R31
 	Option "Randomly replace Imps with Nightmare Imps =", "NImp_Spawner_Cvar", "YesOrNo"
 	Option "Randomly replace Spectres with Nightmare Spectres =", "NSpectre_Spawner_Cvar", "YesOrNo"
 	Option "Randomly replace Cacodemons with Nightmare Cacodemons =", "NCaco_Spawner_Cvar", "YesOrNo"
@@ -120,8 +115,7 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 
 OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 {
-    Title "Other Monster Options"
-//	StaticText "*  Other Monster Options---------------------------------------"
+	Title "Other Monster Options"
 		StaticText " "
 	Option "Replace all Hellhounds with Archviles =", "ArchvileRestorerCvar", "YesOrNo"	//r31 was DynamicSpawnCvar2
 	Option "Remove all Revenants, Hellhounds & Masterminds =", "D64MonstersOnlyCvar", "YesOrNo"	//R31 WAS DynamicSpawnCvar4
@@ -132,48 +126,11 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 
 OptionMenu "BD64MapOptions" //R31
 {
-    Title "Map Options"
-//	StaticText "*  Misc--------------------------------------------------------"	//r31 vanilla map option
+	Title "Map Options"
 		StaticText " "
 	Option "Play Vanilla Map08 =", "VMapCheckCvar", "YesOrNo"
 	Option "Add TC Maps to Campaign =", "TCMapCheckCvar", "YesOrNo"
 }
-
-/*OptionMenu "KetchupOptionsGZDoom"												//R29 REMOVED
-{
-Title "GZDoom Ketchup Options"
-StaticText " "
-
-Option "Please, select engine you are using.", "isrunningzandronum", "SelectEngineType"
-StaticText " "
-StaticText " "
-
-Option "Blood Amount", "zdoombrutalblood", "BrutalBlood"
-StaticText "How much blood you want to see?"
-StaticText " "
-
-Option "Enable Janitor", "zdoombrutaljanitor", "YesOrNo"
-StaticText "Makes gibs disappear after 30 seconds."
-StaticText " "
-}*/
-
-/*OptionMenu "KetchupOptionsZandronum"											//R29 REMOVED
-{
-Title "Zandronum Ketchup Options"
-StaticText " "
-
-Option "Please, select engine you are using.", "isrunningzandronum", "SelectEngineType"
-StaticText " "
-StaticText " "
-
-Option "Blood Amount", "bd_bloodamount", "BrutalBlood"
-StaticText "How much blood you want to see?"
-StaticText " "
-
-Option "Enable Janitor", "bd_lowgraphicsmode", "YesOrNo"
-StaticText "Makes gibs disappear after 30 seconds."
-StaticText " "
-}*/
 
 OptionValue "BrutalBlood"
 {

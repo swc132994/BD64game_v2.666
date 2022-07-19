@@ -291,3 +291,8 @@ Script "AlternativeLaserSkin" (void) //r31 added alternative Laser skin
 {
 SetResultValue(getCvar("AlternativeLaserSkinCvar"));
 }
+
+script "SSGZombieRandomACS" (void)	//R31 added
+{
+SetResultValue(GetCVar("SSGZombieRandom_Cvar"));
+}
