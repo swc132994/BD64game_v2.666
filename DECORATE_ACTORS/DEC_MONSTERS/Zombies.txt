@@ -795,6 +795,24 @@ Tag "SSG Zombie"
 		POS4 L 5
 		POS4 KJIH 5
 		goto See
+	Death.Head:
+		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
+		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
+		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 AaaA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
+		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
+		PP4H A 8
+		PP4H B 5 A_XScream
+		PP4H C 5 A_NoBlocking
+		PP4H D 5 A_Stop															//30.7 removed duplicate frame
+//		tnt1 a 0 A_GiveToTarget("SoulAmmo",1)									//R8 WAS 2	//R31 REMOVED
+		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		PP4H E -1
+		Stop
 	}
 }
 
