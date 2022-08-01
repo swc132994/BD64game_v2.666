@@ -734,10 +734,23 @@ actor 64StealthShotgunGuy : 64ShotgunGuy Replaces StealthShotgunGuy
 +STEALTH
 }
 
+Actor SSGZombieDrop		//r31 new
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("SSGinDoom1")==0,3)
+		TNT1 A 0 A_dropitem("64SuperShotgun")
+		TNT1 A 0 A_dropitem("64SuperShotgunTACTICAL")
+		Stop
+		TNT1 A 0 A_dropitem("Shell")
+		Stop
+	}
+}
+
 actor 64SSGGuy : 64ShotgunGuy	//R31 ADDED FROM BD64 AWAKENING
 {
-DropItem "64SuperShotgun"
-DropItem "64SuperShotgunTACTICAL"
+DropItem "SSGZombieDrop"
 DROPITEM "SOULSPAWNER"
 Tag "SSG Zombie"
 //Translation "128:143=96:111", "144:151=101:106", "152:159=104:111"

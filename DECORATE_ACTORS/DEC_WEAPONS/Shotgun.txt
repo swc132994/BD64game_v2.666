@@ -1,4 +1,4 @@
-ACTOR ShotgunSpawner : CustomInventory Replaces Shotgun
+ACTOR ShotgunSpawner : CustomInventory	// Replaces Shotgun		//R31 replaced by new spawner
 {
 Scale 0.87
 //+INVENTORY.ALWAYSPICKUP		//R12.1 REMOVED
@@ -7,14 +7,9 @@ Inventory.PickupSound "WPICK"
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("SSGinDoom1")==0,3)
-		TNT1 A 0 A_JumpIf(CallACS("SSGinDoom1")==2,"SSGSpawning")
-		TNT1 A 0 A_Jump(125,"SSGSpawning")
-		TNT1 A 0 A_SpawnItemEx("64shotgun",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		TNT1 A 0 A_SpawnItemEx("64ShotgunTactical",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-//		SHOT A -1
+		SHOT A -1
 		Stop
-/*	Pickup:
+	Pickup:
 //		TNT1 A 0 A_GiveInventory("Shell",4)						//R12.1 REMOVED
 		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
 		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")		//R28 ADDED
@@ -22,10 +17,6 @@ Inventory.PickupSound "WPICK"
 		Stop
 	Pickup2:
 		TNT1 A 0 A_GiveInventory("64ShotgunTactical",1)
-		Stop*/
-	SSGSpawning:
-		TNT1 A 0 A_SpawnItemEx("SuperShotgunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-//		TNT1 A -1
 		Stop
 	}
 }
@@ -164,9 +155,9 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 	Select:
 		SHTG A 1 A_Raise
 		WAIT
-	SelectAnimation:
+/*	SelectAnimation:
 		SHTS ABCD 1
-		Goto Ready
+		Goto Ready*/
 	Deselect:
 		SHTS DCBA 1
 		TNT1 A 1 A_Lower
