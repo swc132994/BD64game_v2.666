@@ -775,7 +775,7 @@ player.viewheight 50
 player.attackzoffset 23
 Player.DisplayName "Modern"
 Player.CrouchSprite "PLYC"
-Player.WeaponSlot 1,"64ChainsawTACTICAL","64Fist"
+Player.WeaponSlot 1,"64Chainsaw","64Fist"										//R31 was "64ChainsawTactical"
 Player.WeaponSlot 2,"64PistolTACTICAL"
 Player.WeaponSlot 3,"64ShotgunTACTICAL","64SuperShotgunTACTICAL"
 Player.WeaponSlot 4,"64RifleTACTICAL","64ChaingunTACTICAL"
