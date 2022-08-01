@@ -97,6 +97,8 @@ OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
 	Option "Alternative Rifle Skin =", "AlternativeRifleSkinCvar", "YesOrNo"
 	Option "Alternative Laser Skin =", "AlternativeLaserSkinCvar", "YesOrNo"
 		StaticText " "
+	Option "SSG in Doom 1 =", "SSGinDoom1_Cvar", "SSGinDoom1Menu"		
+		
 }
 
 OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
@@ -187,4 +189,11 @@ OptionValue "GoreValue"															//R29.1 ADDED
 	8192, "8192"
 	16384, "16384"
 	32768, "32768"
+}
+
+OptionValue "SSGinDoom1Menu"
+{
+	0, "Shotgun Only"
+	1, "Random"
+	2, "Super Shotgun Only"
 }

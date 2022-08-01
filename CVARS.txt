@@ -296,3 +296,8 @@ script "SSGZombieRandomACS" (void)	//R31 added
 {
 SetResultValue(GetCVar("SSGZombieRandom_Cvar"));
 }
+
+script "SSGinDoom1" (void)
+{
+SetResultValue(GetCVar("SSGinDoom1_Cvar"));
+}
