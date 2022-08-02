@@ -65,16 +65,15 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		RIFG A 0
 		"####" A 1 A_Raise
 		WAIT
-	SelectAnimation:
+	/*SelectAnimation:
 		ARSS A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFS A 0
 		"####" ABCD 1
-		Goto Ready
+		Goto Ready*/
 	Deselect:
 		ARSS D 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFS D 0
-		"####" DCBA 1
-		TNT1 A 1 A_Lower
+		"####" A 1 A_Lower
 		Wait
 	Fire:
 		TNT1 A 0 A_SetPitch(pitch-1.2)
@@ -236,11 +235,11 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		RIFG A 0
 		"####" A 10 A_PlaySound("DRYFIRE",1)
 		Goto Ready
-	Select:
-		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
-		RIFG A 0
-		"####" A 1 A_Raise
-		wait
+	Select: //R31 Select Animation Improvement (Tactical and Modern only)
+        TNT1 A 0 A_PlaySound("RIFBOLT")	
+		TNT1 A 1 A_Raise
+		TNT1 AAAAAAAAA 0 A_Raise
+		Goto SelectAnimation
 	SelectAnimation:
 		ARSS A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFS A 0
@@ -249,7 +248,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 	Fidget: //R31 Fidget Animation
 		RIFR ABCDEF 1 A_WeaponReady
 		RIFI ABCC 1 A_WeaponReady
-		TNT1 A 0 A_PlaySound("ARSBOLT",CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("RIFBOLT",CHAN_WEAPON)
 		RIFI DDEE 1 A_WeaponReady
 		RIFI FGH 1 A_WeaponReady
 		RIFR FEDCBA 1 A_WeaponReady

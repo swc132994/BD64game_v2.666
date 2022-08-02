@@ -52,15 +52,13 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 	Select:
 		PLSG A 1 A_Raise
 		WAIT
-	SelectAnimation:
+	/*SelectAnimation:
 		PLSG JKLM 1
-		Goto Ready
+		Goto Ready*/
 	Deselect:
-		PLSG MLKJ 1
 		TNT1 A 0 A_TakeInventory("HasPLasmaWeapon",1)
-//		TNT1 A 0 A_StopSoundEx("WEAPON")	//R31 SOUND FIX FOR GZ4.8
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)	//R31 SOUND FIX FOR GZ4.8
-		TNT1 A 1 A_Lower
+		PLSG A 1 A_Lower
 		Wait
 	Ready:
 //		TNT1 A 0 A_PlaySoundEx("weapon/plasmaidle","WEAPON",1)		//R31 SOUND FIX FOR GZ4.8
@@ -136,9 +134,11 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 	AirKickingFlashNoAmmo:
 		3LSR ABCDEFGGGGGGFEDCBA 1
 		stop
-	Select:
-		PLSG A 1 A_Raise
-		WAIT
+	Select: //R31 Select Animation Improvement (Tactical and Modern only)
+		TNT1 A 0 A_PlaySound("PLSDRAW")	
+		TNT1 A 1 A_Raise
+		TNT1 AAAAAA 0 A_Raise
+		Goto SelectAnimation
 	SelectAnimation:
 		PLSG JKLM 1
 		Goto Ready

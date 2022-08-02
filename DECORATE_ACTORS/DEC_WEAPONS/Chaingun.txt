@@ -161,8 +161,10 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 ADDED
 		Loop
 	Select:
-		CHNG A 1 A_Raise
-		WAIT
+		TNT1 A 0 A_PlaySound ("CHGNPKUP")	
+		TNT1 AAAAAA 1 A_Raise			
+		TNT1 AAAAAA 0 A_Raise		
+		Goto SelectAnimation
 	SelectAnimation:
 		CHNS ABCD 1
 		Goto Ready
