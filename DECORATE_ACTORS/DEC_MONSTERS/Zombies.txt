@@ -1278,7 +1278,7 @@ actor BrutalizedSSGGuy_2 : BrutalizedSSGGuy_1		//r31 added
 	}
 }
 
-actor 64ChaingunGuy : 64Zombieman
+actor 64ChaingunGuy : 64Zombieman Replaces Chaingunguy //R31 Added
 {
 Health 120
 Speed 4
@@ -1719,12 +1719,12 @@ DROPITEM "SOULSPAWNER"	//R31 ADDED
 	}
 }
 
-actor D64ChaingunnerReplacer : RandomSpawner Replaces Chaingunguy
+/*actor D64ChaingunnerReplacer : RandomSpawner Replaces Chaingunguy
 {
 DropItem "64ZombieMarine"
 DropItem "64ZombieMarine"
 DropItem "64Chaingunguy"
-}
+}*/ //R31 Moved to RandomSpawner.txt
 
 //INTRO MARINES
 actor IntroMarine : 64ZombieMarine Replaces MarinePistol						//R21 MOVED FROM DECORATE.INTROMARINES

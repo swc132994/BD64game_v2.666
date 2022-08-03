@@ -105,13 +105,14 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 {
 	Title "Monster Spawner Options"
 		StaticText " "
-	Option "Randomly replace Shotgun Zombies with SSG Zombies =", "SSGZombieRandom_Cvar", "YesOrNo"		//R31
-	Option "Randomly replace Imps with Nightmare Imps =", "NImp_Spawner_Cvar", "YesOrNo"
-	Option "Randomly replace Spectres with Nightmare Spectres =", "NSpectre_Spawner_Cvar", "YesOrNo"
-	Option "Randomly replace Cacodemons with Nightmare Cacodemons =", "NCaco_Spawner_Cvar", "YesOrNo"
-	Option "Randomly replace Demons with Hellhounds =", "Hellhound_Spawner_Cvar", "YesOrNo"
-	Option "Randomly replace Cyberdemons with Annihilators =", "Annihilator_Spawner_Cvar", "YesOrNo"
-	Option "Randomly replace Masterminds with Motherdemons =", "Motherdemon_Spawner_Cvar", "YesOrNo"	//R27
+	Option "Randomly replace Shotgun Zombies with SSG Zombies =", "SSGZombieRandom_Cvar", "SSGZombieRandom_Value"		//R31
+	Option "Randomly replace Chaingunguy with Zombie Marine =", "D64ChaingunnerRandom_Cvar", "D64ChaingunnerRandom_Value"		//R31	
+	Option "Randomly replace Imps with Nightmare Imps =", "NImp_Spawner_Cvar", "NImp_Spawner_Value"
+	Option "Randomly replace Spectres with Nightmare Spectres =", "NSpectre_Spawner_Cvar", "NSpectre_Spawner_Value"
+	Option "Randomly replace Cacodemons with Nightmare Cacodemons =", "NCaco_Spawner_Cvar", "NCaco_Spawner_Value"
+	Option "Randomly replace Demons with Hellhounds =", "Hellhound_Spawner_Cvar", "Hellhound_Spawner_Value"
+	Option "Randomly replace Cyberdemons with Annihilators =", "Annihilator_Spawner_Cvar", "Annihilator_Spawner_Value"
+	Option "Randomly replace Masterminds with Motherdemons =", "Motherdemon_Spawner_Cvar", "Motherdemon_Spawner_Value"	//R27
 		StaticText " "
 }
 
@@ -196,4 +197,62 @@ OptionValue "SSGinDoom1Menu"
 	0, "Shotgun Only"
 	1, "Random"
 	2, "Super Shotgun Only"
+}
+
+
+//R31 Monster Spawner improvement
+OptionValue "Annihilator_Spawner_Value"
+{
+	0, "Cyberdemon Only"
+	1, "Random"
+	2, "Annihilator Only"
+}
+
+OptionValue "Motherdemon_Spawner_Value"
+{
+	0, "Spider Mastermind Only"
+	1, "Random"
+	2, "Motherdemon Only"
+}
+
+OptionValue "Hellhound_Spawner_Value"
+{
+	0, "Demon Only"
+	1, "Random"
+	2, "Hellhound Only"
+}
+
+OptionValue "NCaco_Spawner_Value"
+{
+	0, "Cacodemon Only"
+	1, "Random"
+	2, "Nightmare Cacodemon Only"
+}
+
+OptionValue "NSpectre_Spawner_Value"
+{
+	0, "Spectre Only"
+	1, "Random"
+	2, "Nightmare Spectre Only"
+}
+
+OptionValue "NImp_Spawner_Value"
+{
+	0, "Imp Only"
+	1, "Random"
+	2, "Nightmare Imp Only"
+}
+
+OptionValue "SSGZombieRandom_Value"
+{
+	0, "ShotgunGuy Only"
+	1, "Random"
+	2, "SSG Zombie Only"
+}
+
+OptionValue "D64ChaingunnerRandom_Value"
+{
+	0, "Chaingunguy Only"
+	1, "Random"
+	2, "Zombie Marine Only"
 }
