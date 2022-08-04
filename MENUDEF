@@ -69,19 +69,26 @@ OptionMenu "BD64Menu" //R31
 	Submenu "Monster Spawner Options",			"BrutalDoom64OptionsMonsterSpawner"
 	Submenu "Other Monster Options",			"BrutalDoom64OptionsOtherMonster"
 	Submenu "Map Options",			"BD64MapOptions"
+	Submenu "Weapon Options", 		"BrutalDoom64WeaponOptions"
 }
 
 OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 {
 	Title "Performance Options"	//R31
+		StaticText " "	
+	StaticText "This option allows you to adjust the performance!"			
 		StaticText " "
 	Option "Enable Zandronum specific multiplayer scripts =", "isrunningzandronum", "YesOrNo"
+	StaticText "This script is possible if you are a server host,"	
+	StaticText "then you can enable this function, if you play alone (it doesn’t matter on which port you play),"
+	StaticText "then this option can be left untouched"
+		StaticText " "
 	Option "Select blood amount =", "zdoombrutalblood", "BrutalBlood"
 	Option "Enable floor/ceiling gore cleaner (removes after 30s) =", "zdoombrutaljanitor", "YesOrNo"
 	Option "Set max wall decal amount (Default is 1024) =", "cl_maxdecals", "DecalValue"		//R28.4 ADDED
 	Option "Enable floor/ceiling shot/blast decals =", "FloorDecal_Cvar", "YesOrNoFalse"		//R29 ADDED
 	Option "Set max gore amount (Default is 64) =", "sv_corpsequeuesize", "GoreValue"			//R29.1 ADDED
-	Option "Disable Light Fog & Halos =", "LFog_Cvar", "YesOrNoFalse"			//R30 ADDED	//R30.9 REVISED LINE
+	Option "Disable Light Fog & Halos =", "LFog_Cvar", "LFog_Value"			//R30 ADDED	//R30.9 REVISED LINE //R31 was YesOrNoFalse
 		StaticText " "
 }
 
@@ -89,13 +96,11 @@ OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
 {
 	Title "Item/Weapon Spawner Options"
 		StaticText " "
-	Option "Randomly replace Power-ups with Unmaker Power-ups =", "WpnPower_Spawner_Cvar", "YesOrNo"		//r31 was DynamicSpawnCvar
-	Option "Randomly replace Plasma Rifle with Lasergun =", "Lasergun_Spawner_Cvar", "YesOrNo"
-	Option "Randomly replace BFG9000 with Unmaker =", "Unmaker_Spawner_Cvar", "YesOrNo"
-		StaticText " "
-	Option "Play Vanilla Weapon Animations (Classical Only) =", "VWeaponCvar", "YesOrNo"
-	Option "Alternative Rifle Skin =", "AlternativeRifleSkinCvar", "YesOrNo"
-	Option "Alternative Laser Skin =", "AlternativeLaserSkinCvar", "YesOrNo"
+	StaticText "This option you can choose between one of the weapons/powerups or they will appear randomly"	
+		StaticText " "		
+	Option "Randomly replace Power-ups with Unmaker Power-ups =", "WpnPower_Spawner_Cvar", "WpnPower_Spawner_Value"		//r31 was DynamicSpawnCvar and YesOrNo
+	Option "Randomly replace Plasma Rifle with Lasergun =", "Lasergun_Spawner_Cvar", "Lasergun_Spawner_Value"  //R31 was YesOrNo
+	Option "Randomly replace BFG9000 with Unmaker =", "Unmaker_Spawner_Cvar", "Unmaker_Spawner_Value"  //R31 was YesOrNo
 		StaticText " "
 	Option "SSG in Doom 1 =", "SSGinDoom1_Cvar", "SSGinDoom1Menu"		
 		
@@ -105,14 +110,16 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 {
 	Title "Monster Spawner Options"
 		StaticText " "
-	Option "Randomly replace Shotgun Zombies with SSG Zombies =", "SSGZombieRandom_Cvar", "SSGZombieRandom_Value"		//R31
-	Option "Randomly replace Chaingunguy with Zombie Marine =", "D64ChaingunnerRandom_Cvar", "D64ChaingunnerRandom_Value"		//R31	
-	Option "Randomly replace Imps with Nightmare Imps =", "NImp_Spawner_Cvar", "NImp_Spawner_Value"
-	Option "Randomly replace Spectres with Nightmare Spectres =", "NSpectre_Spawner_Cvar", "NSpectre_Spawner_Value"
-	Option "Randomly replace Cacodemons with Nightmare Cacodemons =", "NCaco_Spawner_Cvar", "NCaco_Spawner_Value"
-	Option "Randomly replace Demons with Hellhounds =", "Hellhound_Spawner_Cvar", "Hellhound_Spawner_Value"
-	Option "Randomly replace Cyberdemons with Annihilators =", "Annihilator_Spawner_Cvar", "Annihilator_Spawner_Value"
-	Option "Randomly replace Masterminds with Motherdemons =", "Motherdemon_Spawner_Cvar", "Motherdemon_Spawner_Value"	//R27
+	StaticText "This option you can choose between one of the enemies or they will appear randomly"
+		StaticText " "			
+	Option "Randomly replace Shotgun Zombies with SSG Zombies =", "SSGZombieRandom_Cvar", "SSGZombieRandom_Value"		//R31 was YesOrNo
+	Option "Randomly replace Chaingunguy with Zombie Marine =", "D64ChaingunnerRandom_Cvar", "D64ChaingunnerRandom_Value"		//R31 was YesOrNo	
+	Option "Randomly replace Imps with Nightmare Imps =", "NImp_Spawner_Cvar", "NImp_Spawner_Value" //R31 was YesOrNo
+	Option "Randomly replace Spectres with Nightmare Spectres =", "NSpectre_Spawner_Cvar", "NSpectre_Spawner_Value" //R31 was YesOrNo
+	Option "Randomly replace Cacodemons with Nightmare Cacodemons =", "NCaco_Spawner_Cvar", "NCaco_Spawner_Value" //R31 was YesOrNo
+	Option "Randomly replace Demons with Hellhounds =", "Hellhound_Spawner_Cvar", "Hellhound_Spawner_Value" //R31 was YesOrNo
+	Option "Randomly replace Cyberdemons with Annihilators =", "Annihilator_Spawner_Cvar", "Annihilator_Spawner_Value" //R31 was YesOrNo
+	Option "Randomly replace Masterminds with Motherdemons =", "Motherdemon_Spawner_Cvar", "Motherdemon_Spawner_Value"	//R27 //R31 was YesOrNo
 		StaticText " "
 }
 
@@ -120,6 +127,9 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 {
 	Title "Other Monster Options"
 		StaticText " "
+	StaticText "In fact, an option that, for example, can be replaced from Hellhound to Archviles or turn off three cut enemies"
+	StaticText "Also you can revert back to old skins for Revenant and Hellhound"
+		StaticText " "		
 	Option "Replace all Hellhounds with Archviles =", "ArchvileRestorerCvar", "YesOrNo"	//r31 was DynamicSpawnCvar2
 	Option "Remove all Revenants, Hellhounds & Masterminds =", "D64MonstersOnlyCvar", "YesOrNo"	//R31 WAS DynamicSpawnCvar4
 	Option "Revert back to old Hellhound =", "HoundChooserCvar", "YesOrNo"
@@ -131,9 +141,25 @@ OptionMenu "BD64MapOptions" //R31
 {
 	Title "Map Options"
 		StaticText " "
+	StaticText "(Only if you play the Campaing)"
+	StaticText "This option is if want play Vanilla version of MAP08 and add TC levels"	
+		StaticText " "	
 	Option "Play Vanilla Map08 =", "VMapCheckCvar", "YesOrNo"
 	Option "Add TC Maps to Campaign =", "TCMapCheckCvar", "YesOrNo"
 }
+
+OptionMenu "BrutalDoom64WeaponOptions" //R31
+{
+	Title "Weapon Options"
+		StaticText " "
+	StaticText "This option is intended to allow you to change the skin for the Rifle and Laser Gun,"	
+	StaticText "as well as enable the Vanilla Shooting option (Only for Classical)."
+		StaticText " "		
+	Option "Play Vanilla Weapon Animations (Classical Only) =", "VWeaponCvar", "YesOrNo"
+	Option "Alternative Rifle Skin =", "AlternativeRifleSkinCvar", "YesOrNo"
+	Option "Alternative Laser Skin =", "AlternativeLaserSkinCvar", "YesOrNo"
+}
+	
 
 OptionValue "BrutalBlood"
 {
@@ -195,8 +221,8 @@ OptionValue "GoreValue"															//R29.1 ADDED
 OptionValue "SSGinDoom1Menu"
 {
 	0, "Shotgun Only"
-	1, "Random"
-	2, "Super Shotgun Only"
+	1, "Super Shotgun Only"
+	2, "Random"
 }
 
 
@@ -204,55 +230,84 @@ OptionValue "SSGinDoom1Menu"
 OptionValue "Annihilator_Spawner_Value"
 {
 	0, "Cyberdemon Only"
-	1, "Random"
-	2, "Annihilator Only"
+	1, "Annihilator Only"
+	2, "Random"
 }
 
 OptionValue "Motherdemon_Spawner_Value"
 {
 	0, "Spider Mastermind Only"
-	1, "Random"
-	2, "Motherdemon Only"
+	1, "Motherdemon Only"
+	2, "Random"
 }
 
 OptionValue "Hellhound_Spawner_Value"
 {
 	0, "Demon Only"
-	1, "Random"
-	2, "Hellhound Only"
+	1, "Hellhound Only"
+	2, "Random"
 }
 
 OptionValue "NCaco_Spawner_Value"
 {
 	0, "Cacodemon Only"
-	1, "Random"
-	2, "Nightmare Cacodemon Only"
+	1, "Nightmare Cacodemon Only"
+	2, "Random"
 }
 
 OptionValue "NSpectre_Spawner_Value"
 {
 	0, "Spectre Only"
-	1, "Random"
-	2, "Nightmare Spectre Only"
+	1, "Nightmare Spectre Only"
+	2, "Random"
 }
 
 OptionValue "NImp_Spawner_Value"
 {
 	0, "Imp Only"
-	1, "Random"
-	2, "Nightmare Imp Only"
+	1, "Nightmare Imp Only"
+	2, "Random"
 }
 
 OptionValue "SSGZombieRandom_Value"
 {
 	0, "ShotgunGuy Only"
-	1, "Random"
-	2, "SSG Zombie Only"
+	1, "SSG Zombie Only"
+	2, "Random"
 }
 
 OptionValue "D64ChaingunnerRandom_Value"
 {
 	0, "Chaingunguy Only"
-	1, "Random"
-	2, "Zombie Marine Only"
+	1, "Zombie Marine Only"
+	2, "Random"
+}
+
+OptionValue "LFog_Value"
+{
+	0, "Enabled"
+	1, "Disable Light Fog"
+	2, "Disable Halos"
+	3, "Disable Both"
+}
+
+OptionValue "Unmaker_Spawner_Value"
+{
+	0, "BFG9000 Only"
+	1, "Unmaker Only"
+	2, "Random"
+}
+
+OptionValue "Lasergun_Spawner_Value"
+{
+	0, "Plasmagun Only"
+	1, "Lasergun Only"
+	2, "Random"
+}
+
+OptionValue "WpnPower_Spawner_Value"
+{
+	0, "Power-ups only"
+	1, "Unmaker Power-ups only"
+	2, "Random"
 }
