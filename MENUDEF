@@ -69,17 +69,17 @@ OptionMenu "BD64Menu" //R31
 	Submenu "Monster Spawner Options",			"BrutalDoom64OptionsMonsterSpawner"
 	Submenu "Other Monster Options",			"BrutalDoom64OptionsOtherMonster"
 	Submenu "Map Options",			"BD64MapOptions"
-	Submenu "Weapon Options", 		"BrutalDoom64WeaponOptions"
+	Submenu "Weapon Options",		"BrutalDoom64WeaponOptions"
 }
 
 OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 {
 	Title "Performance Options"	//R31
 		StaticText " "	
-	StaticText "This option allows you to adjust the performance!"			
+	StaticText "This option allows you to adjust the performance!"
 		StaticText " "
 	Option "Enable Zandronum specific multiplayer scripts =", "isrunningzandronum", "YesOrNo"
-	StaticText "This script is possible if you are a server host,"	
+	StaticText "This script is possible if you are a server host,"
 	StaticText "then you can enable this function, if you play alone (it doesn’t matter on which port you play),"
 	StaticText "then this option can be left untouched"
 		StaticText " "
@@ -96,13 +96,13 @@ OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
 {
 	Title "Item/Weapon Spawner Options"
 		StaticText " "
-	StaticText "This option you can choose between one of the weapons/powerups or they will appear randomly"	
+	StaticText "This option you can choose between one of the weapons/powerups or they will appear randomly"
 		StaticText " "		
 	Option "Randomly replace Power-ups with Unmaker Power-ups =", "WpnPower_Spawner_Cvar", "WpnPower_Spawner_Value"		//r31 was DynamicSpawnCvar and YesOrNo
-	Option "Randomly replace Plasma Rifle with Lasergun =", "Lasergun_Spawner_Cvar", "Lasergun_Spawner_Value"  //R31 was YesOrNo
-	Option "Randomly replace BFG9000 with Unmaker =", "Unmaker_Spawner_Cvar", "Unmaker_Spawner_Value"  //R31 was YesOrNo
+	Option "Randomly replace Plasma Rifle with Lasergun =", "Lasergun_Spawner_Cvar", "Lasergun_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace BFG9000 with Unmaker =", "Unmaker_Spawner_Cvar", "Unmaker_Spawner_Value"	//R31 was YesOrNo
 		StaticText " "
-	Option "SSG in Doom 1 =", "SSGinDoom1_Cvar", "SSGinDoom1Menu"		
+	Option "SSG in Doom 1 =", "SSGinDoom1_Cvar", "SSGinDoom1Menu"
 		
 }
 
@@ -113,12 +113,13 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 	StaticText "This option you can choose between one of the enemies or they will appear randomly"
 		StaticText " "			
 	Option "Randomly replace Shotgun Zombies with SSG Zombies =", "SSGZombieRandom_Cvar", "SSGZombieRandom_Value"		//R31 was YesOrNo
-	Option "Randomly replace Chaingunguy with Zombie Marine =", "D64ChaingunnerRandom_Cvar", "D64ChaingunnerRandom_Value"		//R31 was YesOrNo	
-	Option "Randomly replace Imps with Nightmare Imps =", "NImp_Spawner_Cvar", "NImp_Spawner_Value" //R31 was YesOrNo
-	Option "Randomly replace Spectres with Nightmare Spectres =", "NSpectre_Spawner_Cvar", "NSpectre_Spawner_Value" //R31 was YesOrNo
-	Option "Randomly replace Cacodemons with Nightmare Cacodemons =", "NCaco_Spawner_Cvar", "NCaco_Spawner_Value" //R31 was YesOrNo
-	Option "Randomly replace Demons with Hellhounds =", "Hellhound_Spawner_Cvar", "Hellhound_Spawner_Value" //R31 was YesOrNo
-	Option "Randomly replace Cyberdemons with Annihilators =", "Annihilator_Spawner_Cvar", "Annihilator_Spawner_Value" //R31 was YesOrNo
+	Option "Randomly replace Chaingunguy with Zombie Marine =", "D64ChaingunnerRandom_Cvar", "D64ChaingunnerRandom_Value"		//R31 was YesOrNo
+	Option "Randomly replace Imps with Nightmare Imps =", "NImp_Spawner_Cvar", "NImp_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Spectres with Nightmare Spectres =", "NSpectre_Spawner_Cvar", "NSpectre_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Cacodemons with Nightmare Cacodemons =", "NCaco_Spawner_Cvar", "NCaco_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Demons with Acid Demons =", "AcidDemonRandom_Cvar", "AcidDemon_Spawner_Value"	//R31 New - Split from Demons with Hellhounds
+	Option "Randomly replace Barons with Hellhounds =", "Hellhound_Spawner_Cvar", "Hellhound_Spawner_Value"	//R31 was YesOrNo	was Demons
+	Option "Randomly replace Cyberdemons with Annihilators =", "Annihilator_Spawner_Cvar", "Annihilator_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Masterminds with Motherdemons =", "Motherdemon_Spawner_Cvar", "Motherdemon_Spawner_Value"	//R27 //R31 was YesOrNo
 		StaticText " "
 }
@@ -152,9 +153,9 @@ OptionMenu "BrutalDoom64WeaponOptions" //R31
 {
 	Title "Weapon Options"
 		StaticText " "
-	StaticText "This option is intended to allow you to change the skin for the Rifle and Laser Gun,"	
+	StaticText "This option is intended to allow you to change the skin for the Rifle and Laser Gun,"
 	StaticText "as well as enable the Vanilla Shooting option (Only for Classical)."
-		StaticText " "		
+		StaticText " "
 	Option "Play Vanilla Weapon Animations (Classical Only) =", "VWeaponCvar", "YesOrNo"
 	Option "Alternative Rifle Skin =", "AlternativeRifleSkinCvar", "YesOrNo"
 	Option "Alternative Laser Skin =", "AlternativeLaserSkinCvar", "YesOrNo"
@@ -167,7 +168,7 @@ OptionValue "BrutalBlood"
 	2, "Normal"
 	3, "Lots"
 	4, "Comical"
-	666, "Maximum"															//R29 WAS "Overdrawn at Blood Bank"
+	666, "Maximum"		//R29 WAS "Overdrawn at Blood Bank"
 }
 
 OptionValue "YesOrNo"
@@ -182,18 +183,18 @@ OptionValue "YesOrNoFalse"
 	0, "Yes"
 }
 
-/*OptionValue "SelectEngineType"												//R29 REMOVED
+/*OptionValue "SelectEngineType"	//R29 REMOVED
 {
 	1, "Zandronum"
 	0, "GZDoom"
 }*/
 
-OptionValue "DecalValue"														//R28.4 ADDED
+OptionValue "DecalValue"	//R28.4 ADDED
 {
-	0, "None"																	//R29 WAS "0"
-	32, "32"																	//R29.1 ADDED
-	64, "64"																	//R29 ADDED
-	128, "128"																	//R29 ADDED
+	0, "None"				//R29 WAS "0"
+	32, "32"				//R29.1 ADDED
+	64, "64"				//R29 ADDED
+	128, "128"				//R29 ADDED
 	256, "256"
 	512, "512"
 	1024, "1024"
@@ -202,7 +203,7 @@ OptionValue "DecalValue"														//R28.4 ADDED
 	8192, "8192"
 }
 
-OptionValue "GoreValue"															//R29.1 ADDED
+OptionValue "GoreValue"		//R29.1 ADDED
 {
 	16, "16"
 	32, "32"
@@ -243,8 +244,15 @@ OptionValue "Motherdemon_Spawner_Value"
 
 OptionValue "Hellhound_Spawner_Value"
 {
-	0, "Demon Only"
+	0, "Baron Only"
 	1, "Hellhound Only"
+	2, "Random"
+}
+
+OptionValue "AcidDemon_Spawner_Value"
+{
+	0, "Demon Only"
+	1, "Acid Demon Only"
 	2, "Random"
 }
 

@@ -302,8 +302,12 @@ script "SSGinDoom1" (void)	//R31 added
 SetResultValue(GetCVar("SSGinDoom1_Cvar"));
 }
 
-
 script "D64ChaingunnerRandomACS" (void)	//R31 added
 {
 SetResultValue(GetCVar("D64ChaingunnerRandom_Cvar"));
+}
+
+script "AcidDemonRandomACS" (void)	//R31 added
+{
+SetResultValue(GetCVar("AcidDemonRandom_Cvar"));
 }

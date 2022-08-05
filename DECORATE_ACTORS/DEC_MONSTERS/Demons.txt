@@ -1053,7 +1053,7 @@ DropItem "None"
 		WAIT	//R31 WAS Goto LandAfterXDeath
 	Pain:
 		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
-		TRDM A 1
+		SANA A 1
 		Goto Spawn
 	raise:
 		SARG NMLKJI 5
@@ -1218,7 +1218,7 @@ DropItem "None"
 		WAIT	//R31 WAS Goto LandAfterXDeath
 	Pain:
 		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
-		TRDM A 1
+		SPCA A 1
 		Goto Spawn
 	raise:
 		SAR2 NMLKJI 5 A_FadeTo(0.25,0.1667,false)
@@ -1382,7 +1382,7 @@ DropItem "None"
 		WAIT	//R31 WAS Goto LandAfterXDeath
 	Pain:
 		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
-		TRDM A 1
+		NMSA A 1
 		Goto Spawn
 	raise:
 		SAR3 NMLKJI 5 A_FadeTo(0.25,0.1667,false)
