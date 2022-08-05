@@ -427,6 +427,7 @@ Gravity 0.8
 Alpha 1
 RenderStyle Add
 SeeSound ""
+Decal "SmallerScorch"
 DeathSound "world/hotsiz"
 Damagetype "BFG"
 SPECIES "Demon"
@@ -446,6 +447,7 @@ Projectile
 		ACIP D 2 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
 		Loop
 	Death:
+		tnt1 a 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		XDT1 F 3 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
 		TNT1 A 0 A_EXPLODE(1,20)
