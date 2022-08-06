@@ -1,0 +1,24 @@
+#library "Flashlight"
+#include "zcommon.acs"
+
+#define MAXPLAYERS 8
+int flashlightOn[MAXPLAYERS];
+
+Script "ToggleFlashlight" (void)
+{
+if (flashlightOn[PlayerNumber()])
+	flashlightOn[PlayerNumber()] = 0;
+		else
+		flashlightOn[PlayerNumber()] = 1;
+		ActivatorSound("flashlight/click", 127);
+}
+
+Script "FlashlightHandling" ENTER
+{
+While(1)
+	{
+	if (flashlightOn[PlayerNumber()])
+			GiveInventory("FlashlightSpawner", 1);
+			Delay(1);
+	}
+}
