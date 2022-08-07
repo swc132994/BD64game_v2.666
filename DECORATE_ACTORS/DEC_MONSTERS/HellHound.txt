@@ -1,5 +1,5 @@
 //R31 EXTRA DEATH ADDED
-actor 64HellHound : Demon// Replaces ArchVile									//R20
+actor 64HellHound : BaronOfHell//		: Demon// Replaces ArchVile		//R20
 {
 Scale 0.8		//r31 was 0.9
 Health 800
@@ -145,7 +145,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		HHMI A 2 A_ChangeFlag("THRUACTORS",1)
 		HHMI A 35
 		TNT1 A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))	//R30.9
-		HHMI A -1																//R30.5 REVISED XDEATH
+		HHMI A -1		//R30.5 REVISED XDEATH
 		STOP
 	}
 }
