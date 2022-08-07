@@ -1,7 +1,7 @@
 //R31 EXTRA DEATH ADDED
-actor 64HellHound : BaronOfHell//		: Demon// Replaces ArchVile		//R20
+actor 64HellHound : Demon// Replaces ArchVile		//R20
 {
-Scale 0.8		//r31 was 0.9
+Scale 0.8		//R31 was 0.9
 Health 800
 GibHealth 20
 Speed 15		//R31 WAS 12
@@ -14,19 +14,19 @@ SeeSound "Dog/See"
 PainSound "Dog/pain"
 DeathSound "Dog/die"
 ActiveSound "Dog/active"
-AttackSound "Dog/melee"													//r31 added
+AttackSound "Dog/melee"				//R31 added
 obituary "%o was scorched by a Hell Hound."
 hitobituary "%o is now dog food."
-species "Dog"																	//R21
-Tag "Hell Hound"	//r31 added
+species "Dog"						//R21 added
+Tag "Hell Hound"					//R31 added
 DROPITEM "DemonEssenceSpawner"		//R31 ADDED
-//+FORCEXYBILLBOARD																//R12.3
+//+FORCEXYBILLBOARD					//R12.3 removed
 +FLOORCLIP
 	states
 	{
 	Spawn:
 		HEHR B 10 A_Look
-		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 was BlueArmor
+		TNT1 A 0 A_GiveInventory("GreenArmor",1)	//R19 added	//R20 was BlueArmor
 		loop
 	See:
 		HEHR AABBCCDD 2 A_Chase
@@ -69,7 +69,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		HEHR J 8 A_Scream
 		HEHR K 4
 		HEHR L 4 A_NoBlocking
-		HEHR M 4 A_Stop															//r31 added stop
+		HEHR M 4 A_Stop				//r31 added stop
 		TNT1 A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
 		HEHR M -1
 		Stop
@@ -91,11 +91,6 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		CRB1 ABCDEFG 4
 		CRB1 H -1
 		Stop
-/*		TNT1 A 0
-		TNT1 A 0 A_XScream
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 1 A_SpawnItem("MeltedHumanoidBig")								//R30.6 WAS 0 TIC
-		Stop*/
 	Raise:
 		HEHR MLKJ 5
 		goto See
@@ -118,7 +113,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 	Death.SuperFists:
 	Death.SuperKick:
 		TNT1 A 0 A_Jump(170,"Death")		//R30.6 ADDED JUMP
-	Death.BFG:																	//R22 NEW DEATHS
+	Death.BFG:								//R22 NEW DEATHS
 	Death.Chainsaw:
 	XDeath:
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
@@ -136,15 +131,15 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))	R30.9
+//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))	R30.9 removed
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		TNT1 AAAA 0 bright A_CustomMissile("SuperGoreSpawner",32,0,random(0,360),2,random(50,130))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-//		TNT1 A 0 ThrustThingZ(0,30,0,0)											//R30.6 REMOVED ZTHRUST
+//		TNT1 A 0 ThrustThingZ(0,30,0,0)			//R30.6 REMOVED ZTHRUST
 		HHMI A 2 A_ChangeFlag("THRUACTORS",1)
 		HHMI A 35
-		TNT1 A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))	//R30.9
+		TNT1 A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))	//R30.9 added
 		HHMI A -1		//R30.5 REVISED XDEATH
 		STOP
 	}
@@ -244,10 +239,10 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 //		TNT1 A 0 ThrustThingZ(0,40,0,0)
-		HHMI A 2 A_ChangeFlag("THRUACTORS",1)									//R22 ADDED
+		HHMI A 2 A_ChangeFlag("THRUACTORS",1)		//R22 ADDED
 		HHMI A 25
-		TNT1 A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))	//R30.9
-		HHMI A -1																//R30.5 REVISED DEATH ENDING
+		TNT1 A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))	//R30.9 added
+		HHMI A -1		//R30.5 REVISED DEATH ENDING
 		STOP
 	Pain:
 		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))

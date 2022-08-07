@@ -748,11 +748,12 @@ Actor SSGZombieDrop		//r31 new
 	}
 }
 
-actor 64SSGGuy : 64ShotgunGuy	//R31 ADDED FROM BD64 AWAKENING
+actor 64SSGGuy : 64ShotgunGuy 19110	//R31 ADDED FROM BD64 AWAKENING
 {
 DropItem "SSGZombieDrop"
 DROPITEM "SOULSPAWNER"
 Tag "SSG Zombie"
+SpawnID 170
 //Translation "128:143=96:111", "144:151=101:106", "152:159=104:111"
 	states
 	{
