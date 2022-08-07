@@ -1,17 +1,16 @@
 //R16 PLAYER CLASSES MOVED MAPINFO
 //R16 WEAPON SLOTS MOVED TO Decorate Players
 
-addkeysection "Brutal Doom 64" BrutalDoomInteractions
+AddKeySection "Brutal Doom 64" BrutalDoomInteractions
 
-addmenukey "Kick" kickem
-alias kickem "pukeName KickKeyPress"			//r31 was puke 301
-defaultbind Q kickem
+Alias "kickem" "pukeName KickKeyPress"			//r31 was puke 301
+AddMenuKey "Kick" "kickem"
+DefaultBind "Q" "kickem"
 
-addmenukey "Reload" reloader
+/*addmenukey "Reload" reloader
 alias reloader "pukeName ReloadKeyPress"		//r31 was puke 303
-defaultbind R reloader
+defaultbind R reloader*/
 
 Alias "Flashlightswitch" "PukeName ToggleFlashlight"
 AddMenuKey "Toggle Flashlight/Torch" "FlashlightSwitch"
-
 DefaultBind "F" "FlashlightSwitch"

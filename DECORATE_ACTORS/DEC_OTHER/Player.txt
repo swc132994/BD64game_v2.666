@@ -262,10 +262,10 @@ Actor IsModern : Inventory														//R27.1 ADDED
 inventory.maxamount 1
 }
 
-Actor Reloading : Inventory
+/*Actor Reloading : Inventory
 {
 inventory.maxamount 1
-}
+}*/
 
 actor MakeEnemiesAttackPlayerBody
 {

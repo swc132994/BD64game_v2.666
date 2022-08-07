@@ -46,10 +46,10 @@ script "KickKeyPress" (VOID) NET		//TRIGGERED FROM KEYPRESS		//r31 was 301
 	}
 }
 
-Script "ReloadKeyPress" (VOID) NET			//TRIGGERED FROM KEYPRESS		//r31 was 303
+/*Script "ReloadKeyPress" (VOID) NET			//TRIGGERED FROM KEYPRESS		//r31 was 303
 {
 GiveInventory("Reloading",1);
-}
+}*/
 
 Script "DM_SpawnACS" (VOID)	//R31 WAS 119
 {

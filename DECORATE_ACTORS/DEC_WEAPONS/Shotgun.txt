@@ -139,7 +139,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		SHOT A -1
 		stop
 	Ready:		//R11 ADDED(WRF_ALLOWRELOAD)
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+//		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,2)	//R28.2 ADDED	//r31 was ready
 		TNT1 A 0 A_TakeInventory("Stamina",0)				//R28.2 ADDED
@@ -152,9 +152,9 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_TakeInventory("HasUSedShell",1)		//R17 ADDED
 		Goto Ready
 	Select: //R31 Select Animation Improvement
-		TNT1 A 0 A_PlaySound("STGNPUMP",3)	
+		TNT1 A 0 A_PlaySound("STGNPUMP",3)
 		SHTG AAAAAA 0 A_Raise
-		SHTG AAA 0 A_Raise			
+		SHTG AAA 0 A_Raise
 		Goto SelectAnimation
 	SelectAnimation:
 		SHTS ABCD 1
@@ -170,7 +170,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		SHTG KLM 1 A_WeaponReady
 		SHTG MLKJ 1 A_WeaponReady
 		SHTG IHGFEDCB 1 A_WeaponReady
-		TNT1 A 0 A_TakeInventory("Reloading",1)
+//		TNT1 A 0 A_TakeInventory("Reloading",1)
 		Goto Ready
 	Fire:
 		SHTG A 1
@@ -220,15 +220,15 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		SHTG BCDEFG 1
 		TNT1 A 0 A_FireCustomMissile("ShotCaseSpawn",0,0,-4,-4)
 		SHTG H 1 A_PlaySound("STGNPUMP",3)
-		SHTG IJ 1 A_JumpIfInventory("Reloading",1,"InsertingShells")
+		SHTG IJ 1 //A_JumpIfInventory("Reloading",1,"InsertingShells")
 		TNT1 A 0 A_JumpIfInventory("ShotgunAmmo",1,2)
 		TNT1 A 0 A_Giveinventory("HasUsedShell",1)
 		Goto InsertingShells
-		SHTG KLM 1 A_JumpIfInventory("Reloading",1,"InsertingShells")
-		SHTG MLKJ 1 A_JumpIfInventory("Reloading",1,"InsertingShells")
+		SHTG KLM 1 //A_JumpIfInventory("Reloading",1,"InsertingShells")
+		SHTG MLKJ 1 //A_JumpIfInventory("Reloading",1,"InsertingShells")
 		TNT1 A 0 A_Takeinventory("HasUsedShell",1)
 		SHTG IHGFEDCB 1 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"InsertingShells")
+//		TNT1 A 0 A_JumpIfInventory("Reloading",1,"InsertingShells")
 		TNT1 A 0 A_JumpIfInventory("ShotgunAmmo",1,1)
 		Goto ReadyToFireAgain
 	ReadyToFireAgain:
@@ -242,7 +242,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 	//R31 reload code reworked
 	ReloadWithNoAmmoLeft:
 	Reload:
-		TNT1 A 0 A_Takeinventory("Reloading",1)
+//		TNT1 A 0 A_Takeinventory("Reloading",1)
 		TNT1 A 0 A_JumpIfInventory("Shell",1,1)
 		Goto NoAmmo
 		TNT1 A 0 A_Takeinventory("Zoomed",1)
@@ -260,7 +260,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_JumpIfInventory("Shell",1,1)
 		Goto PumpNewShell
 //		TNT1 A 0 A_GiveInventory("Pumping",1)	//R31 SWC, NOT USED
-		SHTR H 0 A_TakeInventory("Reloading",1)
+//		SHTR H 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_JumpIfInventory("ShotgunAmmo",8,"CheckIfFinishReload")	//reloads 8 if shotgun completly empty
 		TNT1 A 0 A_GiveInventory("ShotgunAmmo",1)
 		TNT1 A 0 A_TakeInventory("Shell",1)
@@ -268,7 +268,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		SHTR HHHABC 1
 		SHTR D 1 A_PlaySound("inshell")
 		SHTR EFG 1 A_WeaponReady(WRF_NOBOB)
-		SHTR H 0 A_JumpIfInventory("Reloading",1,"PumpNewShell")
+//		SHTR H 0 A_JumpIfInventory("Reloading",1,"PumpNewShell")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKickReloading")	//r31 delay for autofiring (Unused due to Shotgun reload code rework)
 		TNT1 A 0 A_JumpIfInventory("ShotgunAmmo",9,"FinishInsertingShells")
 		Goto InsertingShells
@@ -281,14 +281,14 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_Takeinventory("Shell",1)
 		Goto InsertShellAnimation
 	FinishInsertingShells:
-		SHTG G 1 A_Takeinventory("Reloading",1)
+		SHTG G 1 //A_Takeinventory("Reloading",1)
 		TNT1 A 0 A_jumpIfInventory("HasUsedShell",1,"PumpNewShell")
 		SHTG FEDCBA 1 A_WeaponReady
-		TNT1 A 0 A_Takeinventory("Reloading",1)
+//		TNT1 A 0 A_Takeinventory("Reloading",1)
 		Goto Ready
 	PumpNewShell:
 //		TNT1 A 0 A_GiveInventory("Pumping",1)	//R31 SWC, NOT USED
-		TNT1 A 0 A_TakeInventory("Reloading",1)
+//		TNT1 A 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_Takeinventory("Zoomed",1)
 		TNT1 A 0 A_ZoomFactor(1.0)
 		SHTG G 1

@@ -135,7 +135,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		3LSR ABCDEFGGGGGGFEDCBA 1
 		stop
 	Select: //R31 Select Animation Improvement (Tactical and Modern only)
-		TNT1 A 0 A_PlaySound("PLSDRAW")	
+		TNT1 A 0 A_PlaySound("PLSDRAW")
 		TNT1 A 1 A_Raise
 		TNT1 AAAAAA 0 A_Raise
 		Goto SelectAnimation
@@ -161,7 +161,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		2LSG A 0
 		"####" ABC 2 A_WeaponReady(WRF_ALLOWRELOAD)					//R11 ADDED (WRF_ALLOWRELOAD)	//r31 added frame C
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+//		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 ADDED
 		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 ADDED
 		loop
@@ -169,7 +169,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,"Ready")		//R31 ADDED
 //		TNT1 A 0 A_StopSoundEx("WEAPON")							//R31 ADDED STOP SOUND	//31 REVISED TO PLAYSOUND, GZ4.8
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)							//31 REVISED TO PLAYSOUND, GZ4.8
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+//		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		3LSG A 5 A_WeaponReady(WRF_ALLOWRELOAD)					//R11.1 ADDED WRF_ALLOWRELOAD)	//R31 Updated sprite
 		loop
@@ -222,7 +222,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		3LSR FEDCBA 1
 		Goto NoAmmo
 	Reload:
-		TNT1 A 0 A_TakeInventory("Reloading",1)
+//		TNT1 A 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_JumpIfInventory("Cell",1,1)
 		Goto Ready
 		TNT1 A 0 A_ZoomFactor(1.0)

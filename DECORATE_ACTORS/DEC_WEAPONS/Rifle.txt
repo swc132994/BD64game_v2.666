@@ -222,7 +222,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFG A 0
 		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD)					//R11 ADDED(WRF_ALLOWRELOAD)
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+//		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 ADDED
 		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 ADDED
@@ -236,7 +236,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		"####" A 10 A_PlaySound("DRYFIRE",1)
 		Goto Ready
 	Select: //R31 Select Animation Improvement (Tactical and Modern only)
-        TNT1 A 0 A_PlaySound("RIFBOLT")	
+        TNT1 A 0 A_PlaySound("RIFBOLT")
 		TNT1 A 1 A_Raise
 		TNT1 AAAAAAAAA 0 A_Raise
 		Goto SelectAnimation
@@ -252,14 +252,14 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		RIFI DDEE 1 A_WeaponReady
 		RIFI FGH 1 A_WeaponReady
 		RIFR FEDCBA 1 A_WeaponReady
-		TNT1 A 0 A_TakeInventory("Reloading",1)
+//		TNT1 A 0 A_TakeInventory("Reloading",1)
 		Goto Ready
 	AltFidget: //R31 Fidget Animation (Alternative Skin)
 		ARSI ABBCDD 1 A_WeaponReady
 		TNT1 A 0 A_PlaySound("ARSBOLT",CHAN_WEAPON)
 		ARSI EFGHHHHHHHH 1 A_WeaponReady
 		ARSI IIJAA 1 A_WeaponReady
-		TNT1 A 0 A_TakeInventory("Reloading",1)
+//		TNT1 A 0 A_TakeInventory("Reloading",1)
 		Goto Ready
 	Deselect:
 		TNT1 A 0 A_Takeinventory("Zoomed",0)		//R31 ADDED
@@ -409,7 +409,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,"AlternativeReload")	//R31 Alternative Rifle Skin	(Alternative Reload)
 		RIFG A 1 A_WeaponReady
 		TNT1 A 0 A_ZoomFactor(1.0)
-		TNT1 A 0 A_Takeinventory("Reloading",1)
+//		TNT1 A 0 A_Takeinventory("Reloading",1)
 //		TNT1 A 0 A_Takeinventory("ADSmode",1)				//R11 UNUSED
 		TNT1 A 0 A_Takeinventory("Zoomed",1)				//R11 UNUSED	//r31 activated
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",31,"Fidget")	//R31 Fidget Animation
@@ -427,7 +427,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 	AlternativeReload:
 		ARSG A 1 A_WeaponReady
 		TNT1 A 0 A_ZoomFactor(1.0)
-		TNT1 A 0 A_Takeinventory("Reloading",1)
+//		TNT1 A 0 A_Takeinventory("Reloading",1)
 //		TNT1 A 0 A_Takeinventory("ADSmode",1)					//R11 UNUSED
 		TNT1 A 0 A_Takeinventory("Zoomed",0)					//R11 UNUSED	//r31 activated
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",31,"AltFidget")	//r31 was jump 64, fidget animation (Alternative Skin)
@@ -551,7 +551,7 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		RI2G A 0
 		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
+//		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		Loop
 	FireZoomed:
 		TNT1 A 0 A_JumpIfInventory("clip",1,1)
