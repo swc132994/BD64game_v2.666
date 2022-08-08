@@ -630,8 +630,8 @@ YScale 1.0
 
 actor D64SpiderMastermindCast : 64SpiderMastermind
 {
-XScale 1.0
-YScale 1.0
+XScale 1.5
+YScale 1.5
 	States
 	{
 		See:
@@ -645,8 +645,8 @@ YScale 1.0
 			MSMN M 3 Bright A_SpidRefire
 			Goto Missile+1
 		Death:
-			MSMN G 0 A_Scream
-			MSMN H 0 A_NoBlocking
+			MSMN G 5 A_Scream
+			MSMN H 5 A_NoBlocking
 			MSMN I 4
 			MSMN JK 8
 			MSMN K -1
