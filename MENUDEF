@@ -117,8 +117,10 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 	Option "Randomly replace Imps with Nightmare Imps =", "NImp_Spawner_Cvar", "NImp_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Spectres with Nightmare Spectres =", "NSpectre_Spawner_Cvar", "NSpectre_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Cacodemons with Nightmare Cacodemons =", "NCaco_Spawner_Cvar", "NCaco_Spawner_Value"	//R31 was YesOrNo
-//	Option "Randomly replace Demons with Acid Demons =", "AcidDemonRandom_Cvar", "AcidDemon_Spawner_Value"	//R31 New - Split from Demons with Hellhounds
-	Option "Randomly replace Demons with Acid Demons or Hellhounds =", "Hellhound_Spawner_Cvar", "Hellhound_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Demons with Acid Demons =", "AcidDemonRandom_Cvar", "AcidDemon_Spawner_Value"	//R31 New - Split from Demons with Hellhounds
+//	Option "Randomly replace Demons with Acid Demons or Hellhounds =", "Hellhound_Spawner_Cvar", "Hellhound_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Barons with Hellhounds =", "Hellhound_Spawner_Cvar", "Hellhound_Spawner_Value"	//R31 was YesOrNo
+	
 	Option "Randomly replace Cyberdemons with Annihilators =", "Annihilator_Spawner_Cvar", "Annihilator_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Masterminds with Motherdemons =", "Motherdemon_Spawner_Cvar", "Motherdemon_Spawner_Value"	//R27 //R31 was YesOrNo
 		StaticText " "
@@ -132,24 +134,24 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 	StaticText "Also you can revert back to old skins for Revenant and Hellhound"
 		StaticText " "
 	Option "Replace all Hellhounds with Archviles =", "ArchvileRestorerCvar", "YesOrNo"	//r31 was DynamicSpawnCvar2
-	Option "Remove all Revenants, Hellhounds & Masterminds =", "D64MonstersOnlyCvar", "YesOrNo"	//R31 WAS DynamicSpawnCvar4
+	Option "Remove all Revenants, Hellhounds & Masterminds =", "D64MonstersOnlyCvar", "YesOrNo"	//R31 was DynamicSpawnCvar4
 	Option "Revert back to old Hellhound =", "HoundChooserCvar", "YesOrNo"
 	Option "Revert back to old Revenant =", "RevenantChooserCvar", "YesOrNo"
 		StaticText " "
 }
 
-OptionMenu "BD64MapOptions" //R31
+OptionMenu "BD64MapOptions" //R31 added
 {
 	Title "Map Options"
 		StaticText " "
 	StaticText "(Only if you play the Campaing)"
-	StaticText "This option is if want play Vanilla version of MAP08 and add TC levels"
+	StaticText "Options to play Vanilla version of MAP08 and add TC levels (BD64 Only)"
 		StaticText " "
 	Option "Play Vanilla Map08 =", "VMapCheckCvar", "YesOrNo"
 	Option "Add TC Maps to Campaign =", "TCMapCheckCvar", "YesOrNo"
 }
 
-OptionMenu "BrutalDoom64WeaponOptions" //R31
+OptionMenu "BrutalDoom64WeaponOptions" //R31 added
 {
 	Title "Weapon Options"
 		StaticText " "
@@ -168,7 +170,7 @@ OptionValue "BrutalBlood"
 	2, "Normal"
 	3, "Lots"
 	4, "Comical"
-	666, "Maximum"		//R29 WAS "Overdrawn at Blood Bank"
+	666, "Maximum"		//R29 was "Overdrawn at Blood Bank"
 }
 
 OptionValue "YesOrNo"
@@ -183,18 +185,18 @@ OptionValue "YesOrNoFalse"
 	0, "Yes"
 }
 
-/*OptionValue "SelectEngineType"	//R29 REMOVED
+/*OptionValue "SelectEngineType"	//R29 reomved
 {
 	1, "Zandronum"
 	0, "GZDoom"
 }*/
 
-OptionValue "DecalValue"	//R28.4 ADDED
+OptionValue "DecalValue"	//R28.4 added
 {
-	0, "None"				//R29 WAS "0"
-	32, "32"				//R29.1 ADDED
-	64, "64"				//R29 ADDED
-	128, "128"				//R29 ADDED
+	0, "None"				//R29 was "0"
+	32, "32"				//R29.1 added
+	64, "64"				//R29 added
+	128, "128"				//R29 added
 	256, "256"
 	512, "512"
 	1024, "1024"
@@ -203,7 +205,7 @@ OptionValue "DecalValue"	//R28.4 ADDED
 	8192, "8192"
 }
 
-OptionValue "GoreValue"		//R29.1 ADDED
+OptionValue "GoreValue"		//R29.1 added
 {
 	16, "16"
 	32, "32"
@@ -242,20 +244,27 @@ OptionValue "Motherdemon_Spawner_Value"
 	2, "Random"
 }
 
-OptionValue "Hellhound_Spawner_Value"	//Acid Demon added
+/*OptionValue "Hellhound_Spawner_Value"	//Acid Demon added
 {
 	0, "Demon Only"
 	1, "Acid Demon Only"
 	2, "Hellhound Only"
 	3, "Random"
+}*/
+
+OptionValue "Hellhound_Spawner_Value"
+{
+	0, "Baron Only"
+	1, "Hellhound Only"
+	2, "Random"
 }
 
-/*OptionValue "AcidDemon_Spawner_Value"
+OptionValue "AcidDemon_Spawner_Value"
 {
 	0, "Demon Only"
 	1, "Acid Demon Only"
 	2, "Random"
-}*/
+}
 
 OptionValue "NCaco_Spawner_Value"
 {

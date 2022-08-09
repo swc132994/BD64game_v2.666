@@ -7,10 +7,6 @@ Alias "kickem" "pukeName KickKeyPress"			//r31 was puke 301
 AddMenuKey "Kick" "kickem"
 DefaultBind "Q" "kickem"
 
-/*addmenukey "Reload" reloader
-alias reloader "pukeName ReloadKeyPress"		//r31 was puke 303
-defaultbind R reloader*/
-
 Alias "Flashlightswitch" "PukeName ToggleFlashlight"
 AddMenuKey "Toggle Flashlight/Torch" "FlashlightSwitch"
 DefaultBind "F" "FlashlightSwitch"
