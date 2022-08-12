@@ -1,25 +1,24 @@
 actor Motherdemon 9897	//R26.2 added ID from TC ABS
 {
 game Doom
-spawnid 17				//R26.2 added ID from TC ABS
+spawnid 17		//R26.2 added ID from TC ABS
 scale 1.1
 health 8000
 height 110
 radius 80
 mass 1000
 speed 24
-painchance 20
+painchance 10	//R31 was 20
 reactiontime 8
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-damagefactor "BFG",0.6					//R31 added
 obituary "%o was obliterated by the mother of all demons."
 seesound "mother/sight"
 attacksound "mother/attack"
 painsound "mother/pain"
 deathsound "mother/death"
 activesound "mother/active"
-Tag "Mother Demon"		//r31 added
+Tag "Mother Demon"		//R31 added
 MONSTER
 //+FORCEXYBILLBOARD		//R12.3 removed
 +FLOORCLIP
@@ -29,8 +28,8 @@ MONSTER
 +MISSILEMORE
 +MISSILEEVENMORE
 +LOOKALLAROUND
-+FLOAT				//r31 added
-+NOPAIN				//R24 added
++FLOAT			//R31 added
+//+NOPAIN		//R24 added	//R31 removed
 	states
 	{
 	Spawn:
@@ -50,10 +49,10 @@ MONSTER
 		TNT1 A 0 bright A_CustomMissile("MotherFire",0,0,-90,2,0)
 		MOTH G 14 bright A_CustomMissile("MotherFire",0,0,180,2,0)
 		MOTH E 8 A_FaceTarget
-		TNT1 A 0 bright A_CustomMissile("MotherBall",160,-24,90)	//r31 revised
-		TNT1 A 0 bright A_CustomMissile("MotherBall",80,-48,90)		//r31 revised
-		TNT1 A 0 bright A_CustomMissile("MotherBall",160,24,-90)	//r31 revised
-		MOTH F 14 bright A_CustomMissile("MotherBall",80,48,-90)	//r31 revised
+		TNT1 A 0 bright A_CustomMissile("MotherBall",160,-24,90)	//R31 revised
+		TNT1 A 0 bright A_CustomMissile("MotherBall",80,-48,90)		//R31 revised
+		TNT1 A 0 bright A_CustomMissile("MotherBall",160,24,-90)	//R31 revised
+		MOTH F 14 bright A_CustomMissile("MotherBall",80,48,-90)	//R31 revised
 		MOTH E 8
 		goto See
 	SuperAttack:
@@ -100,9 +99,9 @@ MONSTER
 		MOTH K 4 A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
 		MOTH K 4 A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
-		TNT1 AAaaa 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))	//r30.9 added
-		TNT1 AAaaa 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))	//r30.9 added
-		TNT1 AAaaa 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))	//r30.9 added
+		TNT1 AAaaa 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))	//R30.9 added
+		TNT1 AAaaa 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))	//R30.9 added
+		TNT1 AAaaa 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))	//R30.9 added
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,32)
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,90)
 		TNT1 AAAAAAAAA 0 A_CustomMissile("BurningXDeath1",42,0,random(0,360),2,random(0,90))
@@ -238,4 +237,5 @@ Projectile
 actor Motherdemon_Final : Motherdemon 9898		//R31 added for new arena final BD64 map28
 {
 health 20000
+DamageFactor "BFG",0.7
 }
