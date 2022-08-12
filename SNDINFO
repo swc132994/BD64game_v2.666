@@ -3,6 +3,8 @@ STGNPUMP STGNPUMP
 MGUNFIR MGUNFIR
 $limit MGUNFIR 30
 
+CHGNSHOT CHGNSHOT	//r31 added for mastermind fire
+
 flashlight/click	click	//R31 FLASHLIGHT
 
 DRYFIRE DRYFIRE
