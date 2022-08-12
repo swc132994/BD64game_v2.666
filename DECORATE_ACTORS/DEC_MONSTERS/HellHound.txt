@@ -5,6 +5,7 @@ Scale 0.8		//R31 was 0.9
 Health 800
 GibHealth 20
 Speed 15		//R31 was 12
+Radius 24		//R31 ADDED
 Painchance "SuperFists",200
 Painchance "Kick",255
 Painchance "SuperKick",255
