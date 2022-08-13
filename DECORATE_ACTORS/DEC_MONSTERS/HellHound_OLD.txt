@@ -1,6 +1,7 @@
 //R31 actor now old hellhound
-actor 64HellHound_old : Demon// Replaces ArchVile		//R20 removed replacement
+actor 64HellHound_old : Demon 19115// Replaces ArchVile		//R20 removed replacement	//R31 added ID
 {
+SpawnID 175		//R31 added ID
 Scale 0.9
 Health 800
 GibHealth 20

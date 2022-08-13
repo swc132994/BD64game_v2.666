@@ -1,6 +1,7 @@
 //R31 added extra deaths
-actor 64HellHound : Demon// Replaces ArchVile	//R20 removed replacement
+actor 64HellHound : Demon 19116// Replaces ArchVile	//R20 removed replacement
 {
+SpawnID 176		//R31 added ID
 Scale 0.8		//R31 was 0.9
 Health 800
 GibHealth 20

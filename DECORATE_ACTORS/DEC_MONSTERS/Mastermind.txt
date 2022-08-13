@@ -159,6 +159,7 @@ Scale 0.1
 Damage(random(8,12))
 Speed 50
 FastSpeed 60
++EXTREMEDEATH
 	States
 	{
 	Spawn:
@@ -167,6 +168,7 @@ FastSpeed 60
 	Death:
 		TNT1 A 1 A_SpawnItem("RicoChet")
 		TNT1 A 0 A_EXPLODE(8,15)
+		EFIR ABCDEFGHIJKLM 1
 		Stop
 	XDeath:
 		TNT1 A 1
