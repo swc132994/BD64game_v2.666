@@ -55,7 +55,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		BOSS L 8 A_NoBlocking
 		BOSS M 8
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")			//R31 added
-			TNT1 A 0 A_KillMaster("None",KILS_FOILINVUL)	//08-08-22 tag 666 fix
+			TNT1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
 		BOSS N -1 A_BossDeath
 		stop
 	Raise:
@@ -92,7 +92,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		BS1H ABCDEF 6
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-			TNT1 A 0 A_KillMaster("None",KILS_FOILINVUL)	//08-08-22 tag 666 fix
+			TNT1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
 		BS1H F -1 A_BossDeath
 		Stop
 	Death.Cutless:	//R31 extra
@@ -117,7 +117,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		TNT1 A 0 ThrustThingZ(0,50,0,0)
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
-			TNT1 A 0 A_KillMaster("None",KILS_FOILINVUL)	//08-08-22 tag 666 fix
+			TNT1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
 		TNT1 A 0 A_JUMP(128,3)						//R31 added jump
 		BGB1 A 2 A_ChangeFlag("THRUACTORS",1)
 		BGB1 A 2 A_CheckFloor("LANDAFTERXDEATH1")	//R31 removed 25 A frames
@@ -152,7 +152,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		BOSB IJKLMN 6
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")			//r31 added
 //		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))	//r31 removed
-			TNT1 A 0 A_KillMaster("None",KILS_FOILINVUL)	//08-08-22 tag 666 fix
+			TNT1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
 		BOSB N -1 A_BossDeath
 		Stop
 	}

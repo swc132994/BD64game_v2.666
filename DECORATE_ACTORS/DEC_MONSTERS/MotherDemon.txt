@@ -116,7 +116,7 @@ MONSTER
 		MOTH MNO 3
 		TNT1 A 30
 		TNT1 A 0 A_BossDeath
-			TNT1 A 0 A_KillMaster("None",KILS_FOILINVUL)	//08-08-22 tag 666 fix
+			TNT1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
 		TNT1 A 20// A_BrainDie								//R26.2 disabled braindie
 		stop
 	}
