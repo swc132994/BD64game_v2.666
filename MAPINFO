@@ -1,5 +1,11 @@
-gameinfo																		//R4 REMOVED RANDOM PLAYER CLASS
+gameinfo	//R4 REMOVED RANDOM PLAYER CLASS	//R31 added colours
 {
+MenuFontColor_Title = "Red"//	Color used for the titles of menu pages.
+MenuFontColor_Label = "Green"//	Color used for setting labels in menu pages.
+MenuFontColor_Value = "White"//	Color used for setting values in menu pages.
+MenuFontColor_Action = "White"//	Color used for actions in menu pages.
+MenuFontColor_Header = "Gold"//	Color used for section headers in menu pages.
+
 	NoRandomPlayerClass = true
 	playerclasses = "64DoomPlayer","Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	//R16	//R27 ADDED MODERN
 }
@@ -9,7 +15,7 @@ clearskills
 Skill Baby
 {
 	SpawnFilter = Easy
-	Name = "Be Gentle!"															//R13
+	Name = "Be Gentle!"		//R13
 	AmmoFactor = 2.0
 	EasyBossBrain
 	mustconfirm = "Are you kidding me? This is barely a challenge. Press Y or N"
@@ -18,9 +24,9 @@ Skill Baby
 Skill Easy
 {
 	SpawnFilter = Easy
-	Name = "Bring it on!"														//R13
+	Name = "Bring it on!"	//R13
 	Key = "n"
-	AmmoFactor = 1.0															//R11
+	AmmoFactor = 1.0		//R11
 	EasyBossBrain
 	mustconfirm = "Only half as many enemies. Don't complain if you find it boring. Press Y or N"
 }
@@ -28,17 +34,16 @@ Skill Easy
 Skill Normal
 {
 	SpawnFilter = Normal
-	Name = "I own Doom!"														//R13
-	AmmoFactor = 1.0															//R11
+	Name = "I own Doom!"	//R13
+	AmmoFactor = 1.0		//R11
 	defaultskill
 }
 
 Skill Hard
 {
 	SpawnFilter = Hard
-	MonsterHealth = 1.0															//R15 ADDED
-	AmmoFactor = 1.0															//R11
-//	Aggressiveness = 0.25														//R18 ADDED
+	MonsterHealth = 1.0		//R15 ADDED
+	AmmoFactor = 1.0		//R11
 	Name = "Watch me die!"
 	mustconfirm = "Equivalent to Ultra Violence. Press Y or N"
 }
@@ -46,17 +51,16 @@ Skill Hard
 Skill Nightmare
 {
 	SpawnFilter = Hard
-	DamageFactor = 1.0															//R18 WAS 2
-	MonsterHealth = 1.0															//R15 was 0.75
-	AmmoFactor = 1.0															//R11
-	FastMonsters 																//R1 WAS FastMonsters 1
-//	Aggressiveness = 0.25														//R18 ADDED
+	DamageFactor = 1.0		//R18 WAS 2
+	MonsterHealth = 1.0		//R15 was 0.75
+	AmmoFactor = 1.0		//R11
+	FastMonsters 			//R1 WAS FastMonsters 1
 //	disablecheats
 	Name = "Hardcore!"
 	mustconfirm = "Similar to Watch me Die diffiuclty but with fast monsters. Press Y or N"
 }
 
-Skill Nightmare2																//R19 NEW LEVEL
+Skill Nightmare2			//R19 NEW LEVEL
 {
 	SpawnFilter = Hard
 	DamageFactor = 1.0
@@ -75,7 +79,7 @@ Skill Nightmare2																//R19 NEW LEVEL
 	ReplaceActor = "Cyberdemon","Annihilator64"
 }
 
-Skill Nightmare3																//R19 NEW LEVEL
+Skill Nightmare3			//R19 NEW LEVEL
 {
 	SpawnFilter = Hard
 	DamageFactor = 1.0
