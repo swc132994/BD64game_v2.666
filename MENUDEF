@@ -76,11 +76,12 @@ OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 {
 	Title "Performance Options"	//R31
 		StaticText " "
-	StaticText "This script is possible if you are a server host,",1
-	StaticText "then you can enable this function, if you play single player this can be left off",1
+		StaticText "You should enable this option if you are hosting a server on a multiplayer game,",1
+		StaticText "however if you playing single player it should be left off",1
 	Option "Enable Zandronum specific multiplayer scripts =", "isrunningzandronum", "YesOrNo"
+
 		StaticText " "
-	StaticText "These options allows you to adjust game performance!",1
+		StaticText "Options to adjust game performance!",1
 	Option "Select blood amount =", "zdoombrutalblood", "BrutalBlood"
 	Option "Enable floor/ceiling gore cleaner (removes after 30s) =", "zdoombrutaljanitor", "YesOrNo"
 	Option "Set max wall decal amount (Default is 1024) =", "cl_maxdecals", "DecalValue"		//R28.4 ADDED
@@ -93,13 +94,14 @@ OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
 {
 	Title "Item/Weapon Spawner Options"
 		StaticText " "
-	StaticText "Options to choose replacement of weapons/powerups",1
-		StaticText "or they will appear randomly",1
+		StaticText "Options to choose replacements of weapons and powerups",1
+		StaticText "or set to appear randomly",1
 	Option "Randomly replace Power-ups with Unmaker Power-ups =", "WpnPower_Spawner_Cvar", "WpnPower_Spawner_Value"		//r31 was DynamicSpawnCvar and YesOrNo
 	Option "Randomly replace Plasma Rifle with Lasergun =", "Lasergun_Spawner_Cvar", "Lasergun_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace BFG9000 with Unmaker =", "Unmaker_Spawner_Cvar", "Unmaker_Spawner_Value"	//R31 was YesOrNo
 		StaticText " "
-	StaticText "Option to replace shotguns with super shotguns",1
+		StaticText "Option to replace shotguns with super shotguns",1
+		StaticText "(setting to shotgun will cause SSG Zombies to drop shells instead of SSG)",1
 	Option "SSG in Doom 1 =", "SSGinDoom1_Cvar", "SSGinDoom1Menu"
 
 }
@@ -108,8 +110,8 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 {
 	Title "Monster Spawner Options"
 		StaticText " "
-	StaticText "These options allow you to optionally add nightmare and outcast monsters",1
-		StaticText "or they will appear randomly",1
+	StaticText "These options allow you to set monster replacements for nightmare and",1
+		StaticText "outcast monsters, or set to appear randomly",1
 	Option "Randomly replace Shotgun Zombies with SSG Zombies =", "SSGZombieRandom_Cvar", "SSGZombieRandom_Value"		//R31 was YesOrNo
 	Option "Randomly replace Chaingunguy with Zombie Marine =", "D64ChaingunnerRandom_Cvar", "D64ChaingunnerRandom_Value"		//R31 was YesOrNo
 	Option "Randomly replace Imps with Nightmare Imps =", "NImp_Spawner_Cvar", "NImp_Spawner_Value"	//R31 was YesOrNo
@@ -126,13 +128,13 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 {
 	Title "Other Monster Options"
 		StaticText " "
-	StaticText "Option to restore the Archvile from the Hellhound",1
+		StaticText "Option to restore the Archvile from the Hellhound",1
 	Option "Replace all Hellhounds with Archviles =", "ArchvileRestorerCvar", "YesOrNo"	//r31 was DynamicSpawnCvar2
 		StaticText " "
-	StaticText "Option to have D64 monsters only (no cut monsters)",1
+	StaticText "Option to only show D64 monsters (no cut monsters)",1
 	Option "Remove all Revenants, Hellhounds & Masterminds =", "D64MonstersOnlyCvar", "YesOrNo"	//R31 was DynamicSpawnCvar4
 		StaticText " "
-	StaticText "Option to revert back to old skins for Revenant and Hellhound",1
+		StaticText "Option to revert back to old skins for the Revenant and Hellhound",1
 	Option "Revert back to old Hellhound =", "HoundChooserCvar", "YesOrNo"
 	Option "Revert back to old Revenant =", "RevenantChooserCvar", "YesOrNo"
 }
@@ -141,8 +143,8 @@ OptionMenu "BD64MapOptions" //R31 added
 {
 	Title "Map Options"
 		StaticText " "
-	StaticText "(Only available if you play the BD64 v2.5 Campaign)",1
-	StaticText "Options to play Vanilla version of MAP08 and add TC levels",1
+		StaticText "(Only available when playing the BD64 v2.5 Campaign)",1
+		StaticText "Options to play Vanilla version of MAP08 and add TC levels",1
 	Option "Play Vanilla Map08 =", "VMapCheckCvar", "YesOrNo"
 	Option "Add TC Maps to Campaign =", "TCMapCheckCvar", "YesOrNo"
 }
@@ -151,8 +153,8 @@ OptionMenu "BrutalDoom64WeaponOptions" //R31 added
 {
 	Title "Weapon Options"
 		StaticText " "
-	StaticText "These options allows you to change the skin for the Rifle and Laser Gun,",1
-	StaticText "as well as enable the Vanilla Shooting option (Only for Classical).",1
+		StaticText "These options allow changing the skin for the Rifle and Laser Gun,",1
+		StaticText "as well as D64 vanilla style firing (Only for Classical).",1
 	Option "Play Vanilla Weapon Animations (Classical Only) =", "VWeaponCvar", "YesOrNo"
 	Option "Alternative Rifle Skin =", "AlternativeRifleSkinCvar", "YesOrNo"
 	Option "Alternative Laser Skin =", "AlternativeLaserSkinCvar", "YesOrNo"
@@ -298,10 +300,10 @@ OptionValue "D64ChaingunnerRandom_Value"
 
 OptionValue "LFog_Value"
 {
-	0, "Enabled"
-	1, "Disable Light Fog"
+	0, "Disable Both"
+	1, "Enabled"
 	2, "Disable Halos"
-	3, "Disable Both"
+	3, "Disable Light Fog"
 }
 
 OptionValue "Unmaker_Spawner_Value"

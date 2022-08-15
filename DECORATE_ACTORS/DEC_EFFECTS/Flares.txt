@@ -393,7 +393,7 @@ alpha 0.99
 		TNT1 A 0																//R30.9
 //		TNT1 A 1 ACS_ExecuteAlways(17002,0)										//R30.9	//r31 removed
 		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==2,"SpawnNo")			//r31
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")			//r31
+		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")			//r31
 //	SpawnYes:																	//R30.9	//r31 removed
 		LENS A 1
 		LENS A 525																//R30.9 WAS -1 TICS	//r31 was 4 tics
@@ -418,7 +418,7 @@ alpha 0.6
 		TNT1 A 0																//R30.9
 //		TNT1 A 1 ACS_ExecuteAlways(17002,0)										//R30.9	//r31 removed
 		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==2,"SpawnNo")			//r31
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")			//r31
+		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")			//r31
 //	SpawnYes:																	//R30.9	//r31 removed
 		LENS A 525																//r31 was 5
 		GOTO SPAWN																//R30.9 WAS LOOP
@@ -724,7 +724,7 @@ Alpha 0.25
 		TNT1 A 0																//R30.9
 //		TNT1 A 1 ACS_ExecuteAlways(17002,0)										//R30.9	//r31 removed
 		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==2,"SpawnNo")			//r31
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")			//r31
+		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")			//r31
 //	SpawnYes:																	//R30.9	//r31 removed
 		LEYS O 4 bright
 		LEYZ O 2 BRIGHT
