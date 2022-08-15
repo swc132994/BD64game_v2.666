@@ -99,6 +99,7 @@ OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
 	Option "Randomly replace Power-ups with Unmaker Power-ups =", "WpnPower_Spawner_Cvar", "WpnPower_Spawner_Value"		//r31 was DynamicSpawnCvar and YesOrNo
 	Option "Randomly replace Plasma Rifle with Lasergun =", "Lasergun_Spawner_Cvar", "Lasergun_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace BFG9000 with Unmaker =", "Unmaker_Spawner_Cvar", "Unmaker_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Chaingun with SMG =", "SMG_Spawner_Cvar", "SMG_Spawner_Value"
 		StaticText " "
 		StaticText "Option to replace shotguns with super shotguns",1
 		StaticText "(setting to shotgun will cause SSG Zombies to drop shells instead of SSG)",1
@@ -324,5 +325,12 @@ OptionValue "WpnPower_Spawner_Value"
 {
 	0, "Power-ups only"
 	1, "Unmaker Power-ups only"
+	2, "Random"
+}
+
+OptionValue "SMG_Spawner_Value"
+{
+	0, "Chaingun Only"
+	1, "SMG Only"
 	2, "Random"
 }

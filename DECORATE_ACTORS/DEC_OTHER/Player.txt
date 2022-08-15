@@ -72,7 +72,7 @@ player.attackzoffset 23
 Player.DisplayName "Classical"
 Player.CrouchSprite "PLYC"
 Player.WeaponSlot 1,"64Chainsaw","64Fist"										//R16 DEFINE WEAPONS
-Player.WeaponSlot 2,"64Pistol"
+Player.WeaponSlot 2,"64Pistol","64SMG"
 Player.WeaponSlot 3,"64Shotgun","64SuperShotgun"
 Player.WeaponSlot 4,"64Rifle","64Chaingun"
 Player.WeaponSlot 5,"64RocketLauncher","64RocketLauncherDM"
@@ -488,6 +488,7 @@ DamageFactor "Head",0.0
 Species Marines
 Player.StartItem "Clip",31														//R1 WAS 30
 Player.StartItem "RifleAmmo",31													//R1 WAS 30
+Player.StartItem "SMGAmmo",46													//R31
 Player.StartItem "Pistolammo",10												//R15
 Player.StartItem "Stamina",100
 Player.StartItem "IsTacticalClass",1
@@ -503,7 +504,7 @@ player.attackzoffset 23
 Player.DisplayName "Tactical (Rifle)"											//R15
 Player.CrouchSprite "PLYC"
 Player.WeaponSlot 1,"64ChainsawTACTICAL","64Fist"								//R16 DEFINE WEAPONS
-Player.WeaponSlot 2,"64PistolTACTICAL"
+Player.WeaponSlot 2,"64PistolTACTICAL","64SMGTactical"
 Player.WeaponSlot 3,"64ShotgunTACTICAL","64SuperShotgunTACTICAL"
 Player.WeaponSlot 4,"64RifleTACTICAL","64ChaingunTACTICAL"
 Player.WeaponSlot 5,"64RocketLauncherTACTICAL","64RocketLauncherDM"
@@ -737,6 +738,7 @@ actor Tactical64DoomPlayer_P : Tactical64DoomPlayer								//R15 NEW TACTICAL PL
 {
 Player.StartItem "Clip",31
 Player.StartItem "RifleAmmo",31
+Player.StartItem "SMGAmmo",46													//R31
 Player.StartItem "Stamina",100
 Player.StartItem "IsTacticalClass",1
 Player.StartItem "64PistolTactical"
@@ -763,6 +765,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Head",0.0
 Player.StartItem "Clip",31
 Player.StartItem "RifleAmmo",31
+Player.StartItem "SMGAmmo",46													//R31
 Player.StartItem "IsModern",1
 Player.StartItem "64PistolTactical"
 Player.StartItem "Pistolammo",10
@@ -776,7 +779,7 @@ player.attackzoffset 23
 Player.DisplayName "Modern"
 Player.CrouchSprite "PLYC"
 Player.WeaponSlot 1,"64Chainsaw","64Fist"										//R31 was "64ChainsawTactical"
-Player.WeaponSlot 2,"64PistolTACTICAL"
+Player.WeaponSlot 2,"64PistolTACTICAL","64SMGTactical"
 Player.WeaponSlot 3,"64ShotgunTACTICAL","64SuperShotgunTACTICAL"
 Player.WeaponSlot 4,"64RifleTACTICAL","64ChaingunTACTICAL"
 Player.WeaponSlot 5,"64RocketLauncherTACTICAL","64RocketLauncherDM"

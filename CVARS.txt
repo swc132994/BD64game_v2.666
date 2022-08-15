@@ -311,3 +311,8 @@ script "AcidDemonRandomACS" (void)	//R31 added
 {
 SetResultValue(GetCVar("AcidDemonRandom_Cvar"));
 }
+
+script "SMGRandomACS" (void)	//R31 added
+{
+SetResultValue(GetCVar("SMG_Spawner_Cvar"));
+}
