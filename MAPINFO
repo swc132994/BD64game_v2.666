@@ -1,9 +1,9 @@
-gameinfo	//R4 REMOVED RANDOM PLAYER CLASS	//R31 added colours
+gameinfo	//R4 REMOVED RANDOM PLAYER CLASS	//R31 15/08/22 added colours
 {
 MenuFontColor_Title = "Red"//	Color used for the titles of menu pages.
 MenuFontColor_Label = "Green"//	Color used for setting labels in menu pages.
 MenuFontColor_Value = "White"//	Color used for setting values in menu pages.
-MenuFontColor_Action = "White"//	Color used for actions in menu pages.
+MenuFontColor_Action = "White"//Color used for actions in menu pages.
 MenuFontColor_Header = "Gold"//	Color used for section headers in menu pages.
 
 	NoRandomPlayerClass = true

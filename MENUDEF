@@ -76,18 +76,24 @@ OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 {
 	Title "Performance Options"	//R31
 		StaticText " "
-		StaticText "You should enable this option if you are hosting a server on a multiplayer game,",1
-		StaticText "however if you playing single player it should be left off",1
-	Option "Enable Zandronum specific multiplayer scripts =", "isrunningzandronum", "YesOrNo"
-
+		StaticText "Enable this option if you are hosting a server on a multiplayer game,",1
+		StaticText "however if playing on single player then leave unchecked",1
+	Option "Enable Zandronum specific multiplayer scripts =", "isrunningzandronum", "OnOff"
 		StaticText " "
 		StaticText "Options to adjust game performance!",1
 	Option "Select blood amount =", "zdoombrutalblood", "BrutalBlood"
-	Option "Enable floor/ceiling gore cleaner (removes after 30s) =", "zdoombrutaljanitor", "YesOrNo"
-	Option "Set max wall decal amount (Default is 1024) =", "cl_maxdecals", "DecalValue"		//R28.4 ADDED
+	Option "Enable gore remover for flats (30s) =", "zdoombrutaljanitor", "YesOrNo"
 	Option "Enable floor/ceiling shot/blast decals =", "FloorDecal_Cvar", "YesOrNoFalse"		//R29 ADDED
-	Option "Set max gore amount (Default is 64) =", "sv_corpsequeuesize", "GoreValue"			//R29.1 ADDED
 	Option "Disable Light Fog & Halos =", "LFog_Cvar", "LFog_Value"			//R30 ADDED	//R30.9 REVISED LINE //R31 was YesOrNoFalse
+		StaticText " "
+		Slider "Set max wall decals","cl_maxdecals",0,9999,100,0	//R31 16/08/22 new slider
+		textfield "input value manually","cl_maxdecals"				//R31 16/08/22 new slider
+		StaticText " "
+//	Option "Set max wall decal amount (Default is 1024) =", "cl_maxdecals", "DecalValue"		//R28.4 ADDED
+//	Option "Set max gore amount (Default is 64) =", "sv_corpsequeuesize", "GoreValue"			//R29.1 ADDED
+		Slider "Set max gore amount","sv_corpsequeuesize",25,9999,100,0		//R31 16/08/22 new slider
+		textfield "input value manually","sv_corpsequeuesize"				//R31 16/08/22 new slider
+		StaticText " "
 }
 
 OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
@@ -189,7 +195,7 @@ OptionValue "YesOrNoFalse"
 	0, "GZDoom"
 }*/
 
-OptionValue "DecalValue"	//R28.4 added
+/*OptionValue "DecalValue"	//R28.4 added	//R31 16/08/22 replaced with slider
 {
 	0, "None"				//R29 was "0"
 	32, "32"				//R29.1 added
@@ -201,9 +207,9 @@ OptionValue "DecalValue"	//R28.4 added
 	2048, "2048"
 	5102, "4096"
 	8192, "8192"
-}
+}*/
 
-OptionValue "GoreValue"		//R29.1 added
+/*OptionValue "GoreValue"		//R29.1 added	//R31 16/08/22 replaced with slider
 {
 	16, "16"
 	32, "32"
@@ -217,7 +223,7 @@ OptionValue "GoreValue"		//R29.1 added
 	8192, "8192"
 	16384, "16384"
 	32768, "32768"
-}
+}*/
 
 OptionValue "SSGinDoom1Menu"
 {
@@ -302,7 +308,7 @@ OptionValue "D64ChaingunnerRandom_Value"
 OptionValue "LFog_Value"
 {
 	0, "Disable Both"
-	1, "Enabled"
+	1, "Enable Both"
 	2, "Disable Halos"
 	3, "Disable Light Fog"
 }
