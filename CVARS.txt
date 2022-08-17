@@ -316,3 +316,8 @@ script "SMGRandomACS" (void)	//R31 added
 {
 SetResultValue(GetCVar("SMG_Spawner_Cvar"));
 }
+
+Script "ClassicRLACS" (void) //r31 added alternative Laser skin
+{
+SetResultValue(getCvar("ClassicRLCvar"));
+}

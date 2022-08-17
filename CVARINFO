@@ -31,3 +31,4 @@ server int AcidDemonRandom_Cvar = 0;		//R31 ACID DEMON REPLACES DEMON
 server int SMG_Spawner_Cvar = 0;			//R31 SMG REPLACES CHAINGUN
 server bool AlternativeRifleSkinCvar = FALSE;			//R31 OLD OR NEW RIFLE
 server bool AlternativeLaserSkinCvar = FALSE;			//R31 OLD OR NEW LASER
+server bool ClassicRLCvar = FALSE;			//R31 OLD OR NEW ROCKET LAUNCHER
