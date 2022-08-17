@@ -498,6 +498,7 @@ Player.StartItem "64Fist"														//R8 CHANGED BACK TO 64FIST
 Player.StartItem "ShotgunAmmo",8												//R5 NEW
 Player.StartItem "SSGAmmo",2													//R10.2 NEW
 Player.StartItem "PlasmaRifleAmmo",40											//R5 NEW	//r31 was 30
+Player.StartItem "RLAmmo",6											//R31 added
 Player.ColorRange 112,127
 player.viewheight 50
 player.attackzoffset 23
@@ -747,6 +748,7 @@ Player.StartItem "64Fist"
 Player.StartItem "ShotgunAmmo",8
 Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40											//r31 was 30
+Player.StartItem "RLAmmo",6											//R31 added
 Player.DisplayName "Tactical (Pistol)"
 }
 
@@ -773,6 +775,7 @@ Player.StartItem "64Fist"
 Player.StartItem "ShotgunAmmo",8
 Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40											//r31 was 30
+Player.StartItem "RLAmmo",6											//R31 added
 Player.ColorRange 112,127
 player.viewheight 50
 player.attackzoffset 23
