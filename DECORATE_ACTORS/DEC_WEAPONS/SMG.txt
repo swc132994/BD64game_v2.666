@@ -135,7 +135,6 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_Refire
 		Goto FinishFire
 	FinishFire:
-		SMGG A 0
 		TNT1 A 0 A_TakeInventory("FiredSMG",4)
 		Goto Ready
 	}

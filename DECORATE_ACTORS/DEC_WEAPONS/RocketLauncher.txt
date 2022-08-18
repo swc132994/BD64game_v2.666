@@ -133,13 +133,13 @@ Actor AltMode : Inventory	//R31 Added
 inventory.maxamount 1
 }
 
-ACTOR RLAmmo : Ammo
+ACTOR RLAmmo : Ammo	//R31 added by IDDQD_1337
 {
-   Inventory.Amount 0
-   Inventory.MaxAmount 6
-   Ammo.BackpackAmount 0
-   Ammo.BackpackMaxAmount 6
-   Inventory.Icon "LAUNA0"
+Inventory.Amount 0
+Inventory.MaxAmount 6
+Ammo.BackpackAmount 0
+Ammo.BackpackMaxAmount 6
+Inventory.Icon "LAUNA0"
 }
 
 Actor 64RocketLauncherTactical : DoomWeapon //R31 Rocket Launcher Tactical and Modern Overhaul
@@ -150,7 +150,7 @@ Weapon.AmmoUse1 0
 Weapon.AmmoGive1 0				//R12.1 ADDED
 Weapon.AmmoType1 "RocketAmmo"
 Weapon.AmmoUse2 0
-Weapon.AmmoGive2 0	
+Weapon.AmmoGive2 0
 Weapon.AmmoType2 "RLAmmo"
 Inventory.PickupMessage "$GOTLAUNCHER"
 Tag "$TAG_ROCKETLAUNCHER"
@@ -160,79 +160,77 @@ Inventory.ForbiddenTo "64DoomPlayer"	//R11 ADDED
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.NOAUTOFIRE	//R31 ADDED
 +WEAPON.NOALERT		//R31 ADDED
+Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 	States
 	{
 	KickingFlash:	//r31 new kick animations
-		RLTG B 0 A_JumpifInventory("AltMode",1,2)	
+		RLTG B 0 A_JumpifInventory("AltMode",1,2)
 		RLTL B 0
 		"####" BCDEEEEEEEEEEDCB 1
 		Stop
 	AirKickingFlash: //18
-		RLTG B 0 A_JumpifInventory("AltMode",1,2)	
+		RLTG B 0 A_JumpifInventory("AltMode",1,2)
 		RLTL B 0
 		"####" BCDEEEEEEEEEEEEDCB 1
 		Stop
 	Spawn:
 		LAUN A -1
 		Stop
-	Ready:	
-		RLTG A 0 A_JumpifInventory("AltMode",1,2)	
+	Ready:
+		RLTG A 0 A_JumpifInventory("AltMode",1,2)
 		RLTL A 0
-		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD)	
+		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 ADDED
 		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 ADDED
 		Loop
 	Select: //R31 Select Animation Improvement (Modern and Tactical)
-		TNT1 A 0 A_JumpIf(CallACS("ClassicRLACS")==true,"ClassicRLSelected")	
+		TNT1 A 0 A_JumpIf(CallACS("ClassicRLACS")==true,"ClassicRLSelected")
 		TNT1 A 0 A_PlaySound("ROCKPKUP")
-		TNT1 AAAAAA 0 A_Raise
 		TNT1 A 1 A_Raise
+		TNT1 AAAAAA 0 A_Raise
 		Goto SelectAnimation
 	SelectAnimation:
+		TNT1 A 0 Offset(0,32)
 		RLTS ABCD 1
 		RLTG A 0 A_JumpifInventory("AltMode",1,"Ready") //Skip laser animation
-	LaserActive:	
-		RLTG A 6	
-		TNT1 A 0 A_PlaySound("BEP",1)		
-		TNT1 A 0 A_PlaySound("LASERON",1)			
+	LaserActive:
+		RLTG A 6
+		TNT1 A 0 A_PlaySound("BEP",1)
+		TNT1 A 0 A_PlaySound("LASERON",1)
 		RLTG A 1 Offset(0,32)
-		RLTL A 1 Offset(0,33)	
-		RLTL A 1 Offset(0,32)				
+		RLTL A 1 Offset(0,33)
+		RLTL A 1 Offset(0,32)
 		Goto Ready
-		
 	ClassicRLSelected:
-		NULL A 0 A_GiveInventory("64ClassicRocketLauncherTactical",1)
+		tnt1 A 0 A_GiveInventory("64ClassicRocketLauncherTactical",1)
 		TNT1 A 0 A_SelectWeapon("64ClassicRocketLauncherTactical")
 		Goto Ready
-		
 	Deselect:
-		TNT1 A 0 A_JumpIf(CallACS("ClassicRLACS")==true,"DeselectForClassicRL")	
-		RLTG A 0 A_JumpifInventory("AltMode",1,6) //Skip laser animation	
-		TNT1 A 0 A_PlaySound("BEP",1)		
-		TNT1 A 0 A_PlaySound("LASEROFF",1)			
+		TNT1 A 0 A_JumpIf(CallACS("ClassicRLACS")==true,"DeselectForClassicRL")
+		RLTG A 0 A_JumpifInventory("AltMode",1,6) //Skip laser animation
+		TNT1 A 0 A_PlaySound("BEP",1)
+		TNT1 A 0 A_PlaySound("LASEROFF",1)
 		RLTL A 1 Offset(0,32)
-		RLTG A 1 Offset(0,33)	
-		RLTG A 1 Offset(0,32)	
+		RLTG A 1 Offset(0,33)
+		RLTG A 1 Offset(0,32)
 		RLTS DCBA 1
 		TNT1 A 1 A_Lower
 		Wait
-		
 	DeselectForClassicRL:
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
-	    Wait
-		
-	Fire:	//R31 New smooth animation (Taken from Smooth Doom by gifty)	
+		Wait
+	Fire:	//R31 New smooth animation (Taken from Smooth Doom by gifty)
 		TNT1 A 0 A_JumpIfInventory("RLAmmo",1,1)
-		Goto Reload	
+		Goto Reload
 		RLTF A 0 A_JumpifInventory("AltMode",1,2)
 		RLLF A 0
 		"####" ABCDE 2 bright
-		TNT1 A 0 A_TakeInventory("RLAmmo",1)		
+		TNT1 A 0 A_TakeInventory("RLAmmo",1)
 		TNT1 A 0 A_AlertMonsters	//R31 ADDED
 		tnt1 a 0 A_Recoil(2)
 		TNT1 A 0 A_ZoomFactor(0.97)
-		TNT1 A 0 A_JumpifInventory("AltMode",1,"HeavyFire")			
+		TNT1 A 0 A_JumpifInventory("AltMode",1,"HeavyFire")
 		tnt1 a 0 A_FireCustomMissile("64rocket",0,1)
 		RLLF G 1 A_SetPitch(pitch-2)
 		TNT1 A 0 A_ZoomFactor(1.0)
@@ -251,76 +249,66 @@ Inventory.ForbiddenTo "64DoomPlayer"	//R11 ADDED
 		RLTF FG 1 bright
 		RLTG A 4
 		tnt1 a 0 A_ReFire
-		Goto Ready		
-		
-    Reload:
-		RLNG A 0	
+		Goto Ready
+	Reload:
 		RLTG A 0 A_JumpifInventory("AltMode",1,2)
-		RLTL A 0	
+		RLTL A 0
 		"####" A 1 A_WeaponReady(WRF_NOFIRE)
-        RLTG A 0 A_JumpIfInventory("RLAmmo",6,"NoNeedToReload")
-        RLTG A 0 A_JumpIfInventory("RocketAmmo",1,3)
-        Goto Ready
-        TNT1 AAAA 0
-		RLTG A 0 A_JumpifInventory("AltMode",1,6) //Skip laser animation	
-		TNT1 A 0 A_PlaySound("BEP",1)		
-		TNT1 A 0 A_PlaySound("LASEROFF",1)			
+		RLTG A 0 A_JumpIfInventory("RLAmmo",6,"NoNeedToReload")
+		RLTG A 0 A_JumpIfInventory("RocketAmmo",1,1)
+		Goto Ready
+		RLTG A 0 A_JumpifInventory("AltMode",1,6) //Skip laser animation
+		TNT1 A 0 A_PlaySound("BEP",1)
+		TNT1 A 0 A_PlaySound("LASEROFF",1)
 		RLTL A 1 Offset(0,32)
-		RLTG A 1 Offset(0,33)	
-		RLTG A 1 Offset(0,32)				
-        RLTG A 0 A_PlaySound("ROCKREL")
-        RLTR ABCD 1 
-        RLTG A 0 A_FireCustomMissile("RocketCaseSpawn",-20,0,2,-10)
-        RLTR EFGGG 1
+		RLTG A 1 Offset(0,33)
+		RLTG A 1 Offset(0,32)
+		RLTG A 0 A_PlaySound("ROCKREL")
+		RLTR ABCD 1
+		tnt1 A 0 A_FireCustomMissile("RocketCaseSpawn",-20,0,10,-20)
+		RLTR EFGGG 1
 		RLTR HIJJJJKLM 1
-        RLTG A 0 A_PlaySound("ROCKLOAD")		
-        RLTR MNOPQRST 1
+		tnt1 A 0 A_PlaySound("ROCKLOAD")
+		RLTR MNOPQRST 1
 		RLTR UVWXYZ 1
 		RLT1 AB 1
-		RLTG A 0 A_JumpifInventory("AltMode",1,"FinishReload") //Skip laser animation	
+		RLTG A 0 A_JumpifInventory("AltMode",1,"FinishReload") //Skip laser animation
 		RLTG A 3
-		TNT1 A 0 A_PlaySound("BEP",1)		
-		TNT1 A 0 A_PlaySound("LASERON",1)			
+		TNT1 A 0 A_PlaySound("BEP",1)
+		TNT1 A 0 A_PlaySound("LASERON",1)
 		RLTG A 1 Offset(0,32)
-		RLTL A 1 Offset(0,33)	
-		RLTL A 1 Offset(0,32)			
+		RLTL A 1 Offset(0,33)
+		RLTL A 1 Offset(0,32)
 		Goto FinishReload
-		
-		FinishReload:
-		TNT1 AAAAAA 0
+	FinishReload:
 		RLTG A 0 A_JumpIfInventory("RLAmmo",6,"NoNeedToReload")
-		RLTG A 0 A_JumpIfInventory("RocketAmmo",1,3)
+		RLTG A 0 A_JumpIfInventory("RocketAmmo",1,1)
 		Goto Ready
-        TNT1 AAAAAA 0
-		RLTG A 0 A_Giveinventory("RLAmmo",1)
-		RLTG A 0 A_Takeinventory("RocketAmmo",1)
+		tnt1 A 0 A_Giveinventory("RLAmmo",1)
+		tnt1 A 0 A_Takeinventory("RocketAmmo",1)
 		Goto FinishReload
-		
-		TNT1 AAAAAAAAAA 0
-		
-		NoNeedToReload:
+	NoNeedToReload:
 		RLTG A 0 A_JumpifInventory("AltMode",1,2)
-		RLTL A 0	
+		RLTL A 0
 		"####" A 1 A_Refire
-        Goto Ready
-	
+		Goto Ready
 	Altfire:	//R31 ADDED
 		TNT1 A 0 A_JumpifInventory("AltMode",1,"ReturnToClassic")
 		TNT1 A 0 A_PlaySound("BEP",1)
 		TNT1 A 0 A_Print("Heavy Payload Rockets Enabled",1)
-		TNT1 A 0 A_PlaySound("LASEROFF",1)		
+		TNT1 A 0 A_PlaySound("LASEROFF",1)
 		RLTL A 1 Offset(0,32)
-		RLTG A 1 Offset(0,33)	
-		RLTG A 1 Offset(0,32)		
+		RLTG A 1 Offset(0,33)
+		RLTG A 1 Offset(0,32)
 		TNT1 A 0 A_GiveInventory("AltMode",1)
 		GOTO READY
 	ReturnToClassic:
 		TNT1 A 0 A_PlaySound("BEP",1)
 		TNT1 A 0 A_Print("Regular Rockets Enabled",1)
-		TNT1 A 0 A_PlaySound("LASERON",1)			
+		TNT1 A 0 A_PlaySound("LASERON",1)
 		RLTG A 1 Offset(0,32)
-		RLTL A 1 Offset(0,33)	
-		RLTL A 1 Offset(0,32)			
+		RLTL A 1 Offset(0,33)
+		RLTL A 1 Offset(0,32)
 		TNT1 A 0 A_TakeInventory("AltMode",1)
 		GOTO READY
 	DoKick:
@@ -416,19 +404,19 @@ Weapon.SisterWeapon "64RocketLauncherTactical"
 	Spawn:
 		LAUN A -1
 		Stop
-	Ready:	
-		MISG A 1 A_WeaponReady	
+	Ready:
+		MISG A 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 ADDED
 		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 ADDED
 		Loop
-	Select: //R31 Select Animation Improvement (Modern and Tactical)	
+	Select: //R31 Select Animation Improvement (Modern and Tactical)
 		TNT1 A 0 A_PlaySound("ROCKPKUP")
 		TNT1 AAAAAA 0 A_Raise
 		TNT1 A 1 A_Raise
 		Goto SelectAnimation
 	SelectAnimation:
-		MISS ABCD 1			
+		MISS ABCD 1
 		Goto Ready
 	Deselect:
 		MISS DCBA 1
@@ -442,7 +430,7 @@ Weapon.SisterWeapon "64RocketLauncherTactical"
 		TNT1 A 0 A_ZoomFactor(0.97)
 		TNT1 A 0 A_JumpifInventory("AltMode",1,"HeavyFire")	//R31 ADDED (ALTMODE ALTERNATES ROCKET TYPE)
 		tnt1 a 0 A_FireCustomMissile("64rocket",0,1)
-		MISG D 1 A_SetPitch(pitch-2)	
+		MISG D 1 A_SetPitch(pitch-2)
 		TNT1 A 0 A_ZoomFactor(1.0)
 		MISG E 1 A_SetPitch(pitch+0.8)
 		MISG F 1 A_SetPitch(pitch+0.6)
@@ -450,11 +438,11 @@ Weapon.SisterWeapon "64RocketLauncherTactical"
 		MISG F 1 A_SetPitch(pitch+0.2)
 		MISG FGHI 2 bright
 		MISG A 4
-		tnt1 a 0 A_ReFire	
-		Goto Ready	
+		tnt1 a 0 A_ReFire
+		Goto Ready
 	HeavyFire:
 		tnt1 a 0 A_FireCustomMissile("TacticalRocket",0,1)
-		MISG D 1 A_SetPitch(pitch-2)	
+		MISG D 1 A_SetPitch(pitch-2)
 		TNT1 A 0 A_ZoomFactor(1.0)
 		MISG E 1 A_SetPitch(pitch+0.8)
 		MISG F 1 A_SetPitch(pitch+0.6)
@@ -465,10 +453,9 @@ Weapon.SisterWeapon "64RocketLauncherTactical"
 		MISR ABCCCCC 2
 		TNT1 A 0 A_PlaySound("ROCKLOAD",1)
 		MISR DEFGFED 1
-		MISR CCCCBA 2	
-		tnt1 a 0 A_ReFire		
-		Goto Ready	
-		
+		MISR CCCCBA 2
+		tnt1 a 0 A_ReFire
+		Goto Ready
 	Flash:	//R31 New smooth animation (Taken from Smooth Doom by gifty)
 		TNT1 A 3 Bright A_Light1
 		TNT1 A 2 Bright
@@ -482,14 +469,14 @@ Weapon.SisterWeapon "64RocketLauncherTactical"
 		TNT1 A 0 A_Print("Heavy Payload Rockets Enabled",1)
 		TNT1 A 0 A_GiveInventory("AltMode",1)
 		MISR DEFGFED 1
-		MISR CCCCBA 2		
+		MISR CCCCBA 2
 		GOTO READY
 	ReturnToClassic:
 		TNT1 A 0 A_PlaySound("ROCKLOAD",1)
-		TNT1 A 0 A_Print("Regular Rockets Enabled",1)			
+		TNT1 A 0 A_Print("Regular Rockets Enabled",1)
 		TNT1 A 0 A_TakeInventory("AltMode",1)
 		MISR DEFGFED 1
-		MISR CCCCBA 2		
+		MISR CCCCBA 2
 		GOTO READY
 	DoKick:
 		TNT1 A 0 A_ZoomFactor(1.0)
