@@ -140,7 +140,6 @@ Actor SisterWeaponSelector : PowerWeaponLevel2	//R31 18/08/22 added for classic 
 -COUNTITEM
 -INVBAR
 +PERSISTENTPOWER
-powerup.duration -999999999999999999999999999999999999999
 }
 
 ACTOR RLAmmo : Ammo	//R31 added by IDDQD_1337
