@@ -1,4 +1,4 @@
-//R31 SMG (based on Rifle code) by IDDQD_1337
+//R31 SMG(based on Rifle code) by IDDQD_1337
 ACTOR SMGSpawner : CustomInventory
 {
 Scale 0.82
@@ -31,7 +31,6 @@ Actor SMGBurstMode : Inventory
 {
 inventory.maxamount 1
 }
-
 
 Actor 64SMG : DoomWeapon
 {
@@ -362,8 +361,8 @@ Inventory.ForbiddenTo "64DoomPlayer"
 		SMGG A 1 A_SetAngle(angle + random(-1,1))
 		Goto Ready
 	AltFire:
-		TNT1 A 0 A_JumpIFInventory("SMGBurstMode", 1, "StopAlt")
-		TNT1 A 0 A_GiveInventory("SMGBurstMode", 1)
+		TNT1 A 0 A_JumpIFInventory("SMGBurstMode",1,"StopAlt")
+		TNT1 A 0 A_GiveInventory("SMGBurstMode",1)
 		TNT1 A 0 A_Print("Burst fire mode")
 		TNT1 A 0 A_PlaySound("SMGBURST")
 		SMGG A 1 Offset(0,33)
@@ -371,7 +370,7 @@ Inventory.ForbiddenTo "64DoomPlayer"
 		SMGG A 1 Offset(0,33)
 		Goto Ready
 	StopAlt:
-		TNT1 A 0 A_TakeInventory("SMGBurstMode", 1)
+		TNT1 A 0 A_TakeInventory("SMGBurstMode",1)
 		TNT1 A 0 A_Print("Automatic mode")
 		TNT1 A 0 A_PlaySound("SMGAUTO")
 		SMGG A 1 Offset(0,33)
