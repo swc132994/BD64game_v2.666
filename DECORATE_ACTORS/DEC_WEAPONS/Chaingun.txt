@@ -161,9 +161,9 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 ADDED
 		Loop
 	Select:
-		TNT1 A 0 A_PlaySound ("CHGNPKUP")	
-		TNT1 AAAAAA 1 A_Raise			
-		TNT1 AAAAAA 0 A_Raise		
+		TNT1 A 0 A_PlaySound ("CHGNPKUP")
+		TNT1 AAAAAA 1 A_Raise
+		TNT1 AAAAAA 0 A_Raise
 		Goto SelectAnimation
 	SelectAnimation:
 		CHNS ABCD 1
@@ -176,9 +176,9 @@ Inventory.ForbiddenTo "64DoomPlayer"											//R11 ADDED
 	Fire:
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"Hold")
 		TNT1 A 0 A_PlaySound("CHAINSTA",5)
-		CHNG BC 1
-		CHNG D 1
-		CHNG AB 1
+		CHNG BC 3
+		CHNG D 3
+		CHNG AB 3
 		TNT1 A 0 A_StopSound(5)
 		//CHAG A 0 A_PlaySound("CHAINSPI",5)
 	Hold:
