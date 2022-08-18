@@ -140,7 +140,7 @@ Actor SisterWeaponSelector : PowerWeaponLevel2	//R31 18/08/22 added for classic 
 -COUNTITEM
 -INVBAR
 +PERSISTENTPOWER
-powerup.duration -999999999999999999999999999999999999999
+powerup.duration 2147483647
 }
 
 ACTOR RLAmmo : Ammo	//R31 added by IDDQD_1337
@@ -271,7 +271,7 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		RLTF E 1 A_SetPitch(pitch+0.8)
 		RLTF E 1 A_SetPitch(pitch+0.6)
 		RLTF FG 1 bright
-		RLTG A 4
+		RLTG A 25
 		tnt1 a 0 A_ReFire
 		Goto Ready
 	HeavyFire2:
@@ -281,7 +281,7 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		RLTF E 1 A_SetPitch(pitch+0.8)
 		RLTF E 1 A_SetPitch(pitch+0.6)
 		RLTF FG 1 bright
-		RLTG A 4
+		RLTG A 25
 		tnt1 a 0 A_ReFire
 		Goto Ready
 	Reload:
