@@ -105,30 +105,114 @@ Actor 64Cell : Cell Replaces Cell
 {
 Scale 0.82
 Inventory.PickupSound "IPICK"
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,3)
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")
+		TNT1 A 0 A_JUMP(128,"SPAWN2")
+		CELL A -1
+		stop
+	Spawn2:
+		CEL2 A -1
+		stop				
+	}
 }
 
 Actor 64CellPack : CellPack Replaces CellPack
 {
 Scale 0.82
 Inventory.PickupSound "IPICK"
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,3)
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")
+		TNT1 A 0 A_JUMP(128,"SPAWN2")
+		CELP A -1
+		stop
+	Spawn2:
+		CPK2 A -1	
+		stop
+	}	
 }
 
 Actor 64ClipBox : ClipBox Replaces ClipBox
 {
 Scale 0.82
 Inventory.PickupSound "IPICK"
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,3)
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")		
+		TNT1 A 0 A_JUMP(128,"SPAWN2")
+		ammo A -1		
+		stop
+	Spawn2:
+		AMO2 A -1
+		stop
+	}
 }
 
 Actor 64RocketAmmo : RocketAmmo Replaces RocketAmmo
 {
 Scale 0.82
 Inventory.PickupSound "IPICK"
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,3)
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")	
+		TNT1 A 0 A_JUMP(128,"SPAWN2")
+		rock A -1
+		stop
+	Spawn2:	
+		RCK2 A -1
+		stop
+	}
 }
 
 Actor 64ShellBox : ShellBox Replaces ShellBox
 {
 Scale 0.82
 Inventory.PickupSound "IPICK"
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,3)
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")
+		TNT1 A 0 A_JUMP(128,"SPAWN2")
+		sbox A -1		
+		stop
+	Spawn2:
+		SBX2 A -1
+		stop
+	}
+}
+
+ACTOR 64Rocketbox : Rocketbox replaces Rocketbox
+{
+Scale 0.82
+Inventory.PickupSound "IPICK"
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,3)
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")		
+		TNT1 A 0 A_JUMP(128,"SPAWN2")
+		brok A -1		
+		stop
+	Spawn2:
+		RBX2 A -1
+		stop
+	}
 }
 
 Actor 64Allmap : Allmap Replaces Allmap
@@ -172,12 +256,54 @@ Actor 64Shell : Shell Replaces Shell
 {
 Scale 0.82
 Inventory.PickupSound "IPICK"
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,3)
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"AlternativeSprite")
+		TNT1 A 0 A_JUMP(128,"SPAWN2", "SPAWN3")
+		SHEL A -1
+		stop
+		
+	AlternativeSprite:
+		TNT1 A 0 A_JUMP(128,"SPAWN2", "SPAWN3")
+		Loop			
+		
+	Spawn2:
+		SHL2 A -1
+		stop
+	Spawn3:
+		SHL3 A -1
+		stop		
+	}
 }
 
 Actor 64Clip : Clip Replaces Clip
 {
 Scale 0.82
 Inventory.PickupSound "IPICK"
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,3)
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"AlternativeSprite")
+		TNT1 A 0 A_JUMP(128,"SPAWN2", "SPAWN3")
+		CLIP a -1
+		stop
+
+	AlternativeSprite:
+		TNT1 A 0 A_JUMP(128,"SPAWN2", "SPAWN3")
+		Loop		
+		
+	Spawn2:
+		CLP1 A -1
+		stop
+	Spawn3:
+		CLP2 A -1
+		stop		
+	}
 }
 
 ACTOR WeaponPower : Inventory
