@@ -1,63 +1,63 @@
 //R1 NEW 03.11.17
 LISTMENU "MainMenu"
 {
-	IfGame(Doom, Chex)
+	IfGame(Doom,Chex)
 	{
-		StaticPatch 94, 2, "M_DOOM"
-		Position 97, 72
+		StaticPatch 94,2,"M_DOOM"
+		Position 97,72
 		IfOption(ReadThis)
 		{
-		Position 97, 64
+		Position 97,64
 		}
 	}
 	IfGame(Strife)
 	{
-		StaticPatch 84, 2, "M_STRIFE"
-		Position 97, 45
+		StaticPatch 84,2,"M_STRIFE"
+		Position 97,45
 	}
 	IfGame(Heretic)
 	{
-		StaticPatch 88, 0, "M_HTIC"
-		StaticPatch 40, 10, "M_SKL01"
-		StaticPatch 232, 10, "M_SKL00"
-		Position 110, 56
+		StaticPatch 88,0,"M_HTIC"
+		StaticPatch 40,10,"M_SKL01"
+		StaticPatch 232,10,"M_SKL00"
+		Position 110,56
 	}
 	IfGame(Hexen)
 	{
-		StaticPatch 88, 0, "M_HTIC"
-		StaticPatch 37, 80, "FBULB0"
-		StaticPatch 278, 80, "FBULA0"
-		Position 110, 56
+		StaticPatch 88,0,"M_HTIC"
+		StaticPatch 37,80,"FBULB0"
+		StaticPatch 278,80,"FBULA0"
+		Position 110,56
 	}
-	IfGame(Doom, Strife, Chex)
+	IfGame(Doom,Strife,Chex)
 	{
-		TextItem "NEW GAME", "n", "PlayerclassMenu"
+		TextItem "NEW GAME","n","PlayerclassMenu"
 		ifOption(SwapMenu)
 		{
-			TextItem "LOAD GAME", "l", "LoadGameMenu"
-			TextItem "SAVE GAME", "s", "SaveGameMenu"
-			TextItem "OPTIONS","o", "OptionsMenu"
+			TextItem "LOAD GAME","l","LoadGameMenu"
+			TextItem "SAVE GAME","s","SaveGameMenu"
+			TextItem "OPTIONS","o","OptionsMenu"
 		}
 		else
 		{
-			TextItem "OPTIONS", "o", "OptionsMenu"
-			TextItem "BD64 Options", "b", "BD64Menu"
-			TextItem "LOAD GAME", "l", "LoadGameMenu"
-			TextItem "SAVE GAME", "s", "SaveGameMenu"
+			TextItem "OPTIONS","o","OptionsMenu"
+			TextItem "BD64 Options","b","BD64Menu"
+			TextItem "LOAD GAME","l","LoadGameMenu"
+			TextItem "SAVE GAME","s","SaveGameMenu"
 		}
 		ifOption(ReadThis)
 		{
-			TextItem "READ THIS", "r", "ReadThisMenu"
+			TextItem "READ THIS","r","ReadThisMenu"
 		}
-		TextItem "QUIT GAME", "q", "QuitMenu"
+		TextItem "QUIT GAME","q","QuitMenu"
 	}
-	IfGame(Heretic, Hexen)
+	IfGame(Heretic,Hexen)
 	{
-		TextItem "$MNU_NEWGAME", "n", "PlayerclassMenu"
-		TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
-		TextItem "$MNU_GAMEFILES", "g", "GameFilesMenu"
-		TextItem "$MNU_INFO", "i", "ReadThisMenu"
-		TextItem "$MNU_QUITGAME", "q", "QuitMenu"
+		TextItem "$MNU_NEWGAME","n","PlayerclassMenu"
+		TextItem "$MNU_OPTIONS","o","OptionsMenu"
+		TextItem "$MNU_GAMEFILES","g","GameFilesMenu"
+		TextItem "$MNU_INFO","i","ReadThisMenu"
+		TextItem "$MNU_QUITGAME","q","QuitMenu"
 	}
 }
 
@@ -79,20 +79,20 @@ OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 		StaticText "Enable this option if you are hosting a server on a multiplayer game,",1
 		StaticText "however if playing on single player then leave unchecked",1
 		StaticText " "
-	Option "Enable Zandronum specific multiplayer scripts =", "isrunningzandronum", "OnOff"
+	Option "Enable Zandronum specific multiplayer scripts =","isrunningzandronum","OnOff"
 		StaticText " "
 		StaticText "Options to adjust game performance!",1
 		StaticText " "
-	Option "Select blood amount =", "zdoombrutalblood", "BrutalBlood"
-	Option "Enable gore remover for flats (30s) =", "zdoombrutaljanitor", "YesOrNo"
-	Option "Enable floor/ceiling shot/blast decals =", "FloorDecal_Cvar", "YesOrNoFalse"		//R29 ADDED
-	Option "Disable Light Fog & Halos =", "LFog_Cvar", "LFog_Value"			//R30 ADDED	//R30.9 REVISED LINE //R31 was YesOrNoFalse
+	Option "Select blood amount =","zdoombrutalblood","BrutalBlood"
+	Option "Enable gore remover for flats (30s) =","zdoombrutaljanitor","YesOrNo"
+	Option "Enable floor/ceiling shot/blast decals =","FloorDecal_Cvar","YesOrNoFalse"		//R29 ADDED
+	Option "Disable Light Fog & Halos =","LFog_Cvar","LFog_Value"			//R30 ADDED	//R30.9 REVISED LINE //R31 was YesOrNoFalse
 		StaticText " "
 		Slider "Set max wall decals","cl_maxdecals",0,9999,100,0	//R31 16/08/22 new slider
 		textfield "input value manually","cl_maxdecals"				//R31 16/08/22 new slider
 		StaticText " "
-//	Option "Set max wall decal amount (Default is 1024) =", "cl_maxdecals", "DecalValue"		//R28.4 ADDED
-//	Option "Set max gore amount (Default is 64) =", "sv_corpsequeuesize", "GoreValue"			//R29.1 ADDED
+//	Option "Set max wall decal amount (Default is 1024) =","cl_maxdecals","DecalValue"		//R28.4 ADDED
+//	Option "Set max gore amount (Default is 64) =","sv_corpsequeuesize","GoreValue"			//R29.1 ADDED
 		Slider "Set max gore amount","sv_corpsequeuesize",25,9999,100,0		//R31 16/08/22 new slider
 		textfield "input value manually","sv_corpsequeuesize"				//R31 16/08/22 new slider
 		StaticText " "
@@ -105,15 +105,15 @@ OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
 		StaticText "Options to choose replacements of weapons and powerups",1
 		StaticText "or set to appear randomly",1
 		StaticText " "
-	Option "Randomly replace Power-ups with Unmaker Power-ups =", "WpnPower_Spawner_Cvar", "WpnPower_Spawner_Value"		//r31 was DynamicSpawnCvar and YesOrNo
-	Option "Randomly replace Plasma Rifle with Lasergun =", "Lasergun_Spawner_Cvar", "Lasergun_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace BFG9000 with Unmaker =", "Unmaker_Spawner_Cvar", "Unmaker_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Chaingun with SMG =", "SMG_Spawner_Cvar", "SMG_Spawner_Value"
+	Option "Randomly replace Power-ups with Unmaker Power-ups =","WpnPower_Spawner_Cvar","WpnPower_Spawner_Value"		//r31 was DynamicSpawnCvar and YesOrNo
+	Option "Randomly replace Plasma Rifle with Lasergun =","Lasergun_Spawner_Cvar","Lasergun_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace BFG9000 with Unmaker =","Unmaker_Spawner_Cvar","Unmaker_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Chaingun with SMG =","SMG_Spawner_Cvar","SMG_Spawner_Value"
 		StaticText " "
 		StaticText "Option to replace shotguns with super shotguns",1
 		StaticText "(setting to shotgun will cause SSG Zombies to drop shells instead of SSG)",1
 		StaticText " "
-	Option "SSG in Doom 1 =", "SSGinDoom1_Cvar", "SSGinDoom1Menu"
+	Option "SSG in Doom 1 =","SSGinDoom1_Cvar","SSGinDoom1Menu"
 }
 
 OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
@@ -121,18 +121,18 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 	Title "Monster Spawner Options"
 		StaticText " "
 	StaticText "These options allow you to set monster replacements for nightmare and",1
-		StaticText "outcast monsters, or set to appear randomly",1
+		StaticText "outcast monsters,or set to appear randomly",1
 		StaticText " "
-	Option "Randomly replace Shotgun Zombies with SSG Zombies =", "SSGZombieRandom_Cvar", "SSGZombieRandom_Value"		//R31 was YesOrNo
-	Option "Randomly replace Chaingunguy with Zombie Marine =", "D64ChaingunnerRandom_Cvar", "D64ChaingunnerRandom_Value"		//R31 was YesOrNo
-	Option "Randomly replace Imps with Nightmare Imps =", "NImp_Spawner_Cvar", "NImp_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Spectres with Nightmare Spectres =", "NSpectre_Spawner_Cvar", "NSpectre_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Cacodemons with Nightmare Cacodemons =", "NCaco_Spawner_Cvar", "NCaco_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Demons with Acid Demons =", "AcidDemonRandom_Cvar", "AcidDemon_Spawner_Value"	//R31 New - Split from Demons with Hellhounds
-//	Option "Randomly replace Demons with Acid Demons or Hellhounds =", "Hellhound_Spawner_Cvar", "Hellhound_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Barons with Hellhounds =", "Hellhound_Spawner_Cvar", "Hellhound_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Cyberdemons with Annihilators =", "Annihilator_Spawner_Cvar", "Annihilator_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Masterminds with Motherdemons =", "Motherdemon_Spawner_Cvar", "Motherdemon_Spawner_Value"	//R27 //R31 was YesOrNo
+	Option "Randomly replace Shotgun Zombies with SSG Zombies =","SSGZombieRandom_Cvar","SSGZombieRandom_Value"		//R31 was YesOrNo
+	Option "Randomly replace Chaingunguy with Zombie Marine =","D64ChaingunnerRandom_Cvar","D64ChaingunnerRandom_Value"		//R31 was YesOrNo
+	Option "Randomly replace Imps with Nightmare Imps =","NImp_Spawner_Cvar","NImp_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Spectres with Nightmare Spectres =","NSpectre_Spawner_Cvar","NSpectre_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Cacodemons with Nightmare Cacodemons =","NCaco_Spawner_Cvar","NCaco_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Demons with Acid Demons =","AcidDemonRandom_Cvar","AcidDemon_Spawner_Value"	//R31 New - Split from Demons with Hellhounds
+//	Option "Randomly replace Demons with Acid Demons or Hellhounds =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Barons with Hellhounds =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Cyberdemons with Annihilators =","Annihilator_Spawner_Cvar","Annihilator_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Masterminds with Motherdemons =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"	//R27 //R31 was YesOrNo
 }
 
 OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
@@ -141,16 +141,16 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 		StaticText " "
 		StaticText "Option to restore the Archvile from the Hellhound",1
 		StaticText " "
-	Option "Replace all Hellhounds with Archviles =", "ArchvileRestorerCvar", "YesOrNo"	//r31 was DynamicSpawnCvar2
+	Option "Replace all Hellhounds with Archviles =","ArchvileRestorerCvar","YesOrNo"	//r31 was DynamicSpawnCvar2
 		StaticText " "
 	StaticText "Option to only show D64 monsters (no cut monsters)",1
 		StaticText " "
-	Option "Remove all Revenants, Hellhounds & Masterminds =", "D64MonstersOnlyCvar", "YesOrNo"	//R31 was DynamicSpawnCvar4
+	Option "Remove all Revenants,Hellhounds & Masterminds =","D64MonstersOnlyCvar","YesOrNo"	//R31 was DynamicSpawnCvar4
 		StaticText " "
 		StaticText "Option to revert back to old skins for the Revenant and Hellhound",1
 		StaticText " "
-	Option "Revert back to old Hellhound =", "HoundChooserCvar", "YesOrNo"
-	Option "Revert back to old Revenant =", "RevenantChooserCvar", "YesOrNo"
+	Option "Revert back to old Hellhound =","HoundChooserCvar","YesOrNo"
+	Option "Revert back to old Revenant =","RevenantChooserCvar","YesOrNo"
 }
 
 OptionMenu "BD64MapOptions" //R31 added
@@ -160,8 +160,8 @@ OptionMenu "BD64MapOptions" //R31 added
 		StaticText "(Only available when playing the BD64 v2.5 Campaign)",1
 		StaticText "Options to play Vanilla version of MAP08 and add TC levels",1
 		StaticText " "
-	Option "Play Vanilla Map08 =", "VMapCheckCvar", "YesOrNo"
-	Option "Add TC Maps to Campaign =", "TCMapCheckCvar", "YesOrNo"
+	Option "Play Vanilla Map08 =","VMapCheckCvar","YesOrNo"
+	Option "Add TC Maps to Campaign =","TCMapCheckCvar","YesOrNo"
 }
 
 OptionMenu "BrutalDoom64Item/WeaponOptions" //R31 added
@@ -172,189 +172,189 @@ OptionMenu "BrutalDoom64Item/WeaponOptions" //R31 added
 		StaticText "as well as D64 vanilla style firing (Only for Classical).",1
 		StaticText "Also you can restore Classic Rocket Launcher for Tactical/Modern.",1
 		StaticText " "
-	Option "Play Vanilla Weapon Animations (Classical Only) =", "VWeaponCvar", "YesOrNo"
-	Option "Alternative Rifle Skin =", "AlternativeRifleSkinCvar", "YesOrNo"
-	Option "Alternative Laser Skin =", "AlternativeLaserSkinCvar", "YesOrNo"
-	Option "Classic Rocket Launcher for Tactical/Modern =", "ClassicRLCvar",	"YesOrNo"
-	Option "Alternative Ammo Pickup Sprites =", "AlternativeAmmoPickupSpritesCvar",	"AlternativeAmmoPickupSpritesValue"
+	Option "Play Vanilla Weapon Animations (Classical Only) =","VWeaponCvar","YesOrNo"
+	Option "Alternative Rifle Skin =","AlternativeRifleSkinCvar","YesOrNo"
+	Option "Alternative Laser Skin =","AlternativeLaserSkinCvar","YesOrNo"
+	Option "Classic Rocket Launcher for Tactical/Modern =","ClassicRLCvar","YesOrNo"
+	Option "Alternative Ammo Pickup Sprites =","AlternativeAmmoPickupSpritesCvar","AlternativeAmmoPickupSpritesValue"
+	Option "Switch to Fists on Berserk Pickup =","BerserkSwitchFistsCvar","YesOrNo"
 }
-
 
 OptionValue "BrutalBlood"
 {
-	1, "Low"
-	2, "Normal"
-	3, "Lots"
-	4, "Comical"
-	666, "Maximum"		//R29 was "Overdrawn at Blood Bank"
+	1,"Low"
+	2,"Normal"
+	3,"Lots"
+	4,"Comical"
+	666,"Maximum"		//R29 was "Overdrawn at Blood Bank"
 }
 
 OptionValue "YesOrNo"
 {
-	0, "No"
-	1, "Yes"
+	0,"No"
+	1,"Yes"
 }
 
 OptionValue "YesOrNoFalse"
 {
-	1, "No"
-	0, "Yes"
+	1,"No"
+	0,"Yes"
 }
 
 /*OptionValue "SelectEngineType"	//R29 reomved
 {
-	1, "Zandronum"
-	0, "GZDoom"
+	1,"Zandronum"
+	0,"GZDoom"
 }*/
 
 /*OptionValue "DecalValue"	//R28.4 added	//R31 16/08/22 replaced with slider
 {
-	0, "None"				//R29 was "0"
-	32, "32"				//R29.1 added
-	64, "64"				//R29 added
-	128, "128"				//R29 added
-	256, "256"
-	512, "512"
-	1024, "1024"
-	2048, "2048"
-	5102, "4096"
-	8192, "8192"
+	0,"None"				//R29 was "0"
+	32,"32"				//R29.1 added
+	64,"64"				//R29 added
+	128,"128"				//R29 added
+	256,"256"
+	512,"512"
+	1024,"1024"
+	2048,"2048"
+	5102,"4096"
+	8192,"8192"
 }*/
 
 /*OptionValue "GoreValue"		//R29.1 added	//R31 16/08/22 replaced with slider
 {
-	16, "16"
-	32, "32"
-	64, "64"
-	128, "128"
-	256, "256"
-	512, "512"
-	1024, "1024"
-	2048, "2048"
-	4096, "4096"
-	8192, "8192"
-	16384, "16384"
-	32768, "32768"
+	16,"16"
+	32,"32"
+	64,"64"
+	128,"128"
+	256,"256"
+	512,"512"
+	1024,"1024"
+	2048,"2048"
+	4096,"4096"
+	8192,"8192"
+	16384,"16384"
+	32768,"32768"
 }*/
 
 OptionValue "SSGinDoom1Menu"
 {
-	0, "Shotgun Only"
-	1, "Super Shotgun Only"
-	2, "Random"
+	0,"Shotgun Only"
+	1,"Super Shotgun Only"
+	2,"Random"
 }
 
 //R31 Monster Spawner improvement
 OptionValue "Annihilator_Spawner_Value"
 {
-	0, "Cyberdemon Only"
-	1, "Annihilator Only"
-	2, "Random"
+	0,"Cyberdemon Only"
+	1,"Annihilator Only"
+	2,"Random"
 }
 
 OptionValue "Motherdemon_Spawner_Value"
 {
-	0, "Spider Mastermind Only"
-	1, "Motherdemon Only"
-	2, "Random"
+	0,"Spider Mastermind Only"
+	1,"Motherdemon Only"
+	2,"Random"
 }
 
 /*OptionValue "Hellhound_Spawner_Value"	//Acid Demon added
 {
-	0, "Demon Only"
-	1, "Acid Demon Only"
-	2, "Hellhound Only"
-	3, "Random"
+	0,"Demon Only"
+	1,"Acid Demon Only"
+	2,"Hellhound Only"
+	3,"Random"
 }*/
 
 OptionValue "Hellhound_Spawner_Value"
 {
-	0, "Baron Only"
-	1, "Hellhound Only"
-	2, "Random"
+	0,"Baron Only"
+	1,"Hellhound Only"
+	2,"Random"
 }
 
 OptionValue "AcidDemon_Spawner_Value"
 {
-	0, "Demon Only"
-	1, "Acid Demon Only"
-	2, "Random"
+	0,"Demon Only"
+	1,"Acid Demon Only"
+	2,"Random"
 }
 
 OptionValue "NCaco_Spawner_Value"
 {
-	0, "Cacodemon Only"
-	1, "Nightmare Cacodemon Only"
-	2, "Random"
+	0,"Cacodemon Only"
+	1,"Nightmare Cacodemon Only"
+	2,"Random"
 }
 
 OptionValue "NSpectre_Spawner_Value"
 {
-	0, "Spectre Only"
-	1, "Nightmare Spectre Only"
-	2, "Random"
+	0,"Spectre Only"
+	1,"Nightmare Spectre Only"
+	2,"Random"
 }
 
 OptionValue "NImp_Spawner_Value"
 {
-	0, "Imp Only"
-	1, "Nightmare Imp Only"
-	2, "Random"
+	0,"Imp Only"
+	1,"Nightmare Imp Only"
+	2,"Random"
 }
 
 OptionValue "SSGZombieRandom_Value"
 {
-	0, "ShotgunGuy Only"
-	1, "SSG Zombie Only"
-	2, "Random"
+	0,"ShotgunGuy Only"
+	1,"SSG Zombie Only"
+	2,"Random"
 }
 
 OptionValue "D64ChaingunnerRandom_Value"
 {
-	0, "Chaingunguy Only"
-	1, "Zombie Marine Only"
-	2, "Random"
+	0,"Chaingunguy Only"
+	1,"Zombie Marine Only"
+	2,"Random"
 }
 
 OptionValue "LFog_Value"
 {
-	0, "Disable Both"
-	1, "Enable Both"
-	2, "Disable Halos"
-	3, "Disable Light Fog"
+	0,"Disable Both"
+	1,"Enable Both"
+	2,"Disable Halos"
+	3,"Disable Light Fog"
 }
 
 OptionValue "Unmaker_Spawner_Value"
 {
-	0, "BFG9000 Only"
-	1, "Unmaker Only"
-	2, "Random"
+	0,"BFG9000 Only"
+	1,"Unmaker Only"
+	2,"Random"
 }
 
 OptionValue "Lasergun_Spawner_Value"
 {
-	0, "Plasmagun Only"
-	1, "Lasergun Only"
-	2, "Random"
+	0,"Plasmagun Only"
+	1,"Lasergun Only"
+	2,"Random"
 }
 
 OptionValue "WpnPower_Spawner_Value"
 {
-	0, "Power-ups only"
-	1, "Unmaker Power-ups only"
-	2, "Random"
+	0,"Power-ups only"
+	1,"Unmaker Power-ups only"
+	2,"Random"
 }
 
 OptionValue "SMG_Spawner_Value"
 {
-	0, "Chaingun Only"
-	1, "SMG Only"
-	2, "Random"
+	0,"Chaingun Only"
+	1,"SMG Only"
+	2,"Random"
 }
 
 OptionValue "AlternativeAmmoPickupSpritesValue"
 {
-	0, "Default Only"
-	1, "Alternative Only"
-	2, "Random"
+	0,"Default Only"
+	1,"Alternative Only"
+	2,"Random"
 }

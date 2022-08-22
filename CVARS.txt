@@ -326,3 +326,8 @@ Script "AlternativeAmmoPickupSpritesACS" (void) //r31 added alternative ammo pic
 {
 SetResultValue(getCvar("AlternativeAmmoPickupSpritesCvar"));
 }
+
+Script "BerserkSwitchFistsACS" (void) //r31 added option to restore fist switch on berserk
+{
+SetResultValue(getCvar("BerserkSwitchFistsCvar"));
+}
