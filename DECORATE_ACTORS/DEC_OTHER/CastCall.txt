@@ -648,8 +648,8 @@ YScale 1.5
 			MSMN G 5 A_Scream
 			MSMN H 5 A_NoBlocking
 			MSMN I 4
-			MSMN JK 8
-			MSMN K -1
+			MSMN JKlyz 4
+			MSMN z -1
 			Stop
 	}
 }
