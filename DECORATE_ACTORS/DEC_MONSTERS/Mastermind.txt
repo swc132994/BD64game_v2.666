@@ -20,27 +20,31 @@ AttackSound "weapons/gswing"	//R31 24/08/22 was "weapons/pistol"
 	States
 	{
 	Spawn:
-		MSMN A 0	//Do not use NoDelay here
+		MSMN A 0 a_setscale(1.5,1.5)	//Do not use NoDelay here
+		BSGI A 0 a_setscale(1.0,1.0)
 		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
-		MSMN A 0
+		MSMN A 0 a_setscale(1.5,1.5)
 		"####" AB 10 A_Look
 		"####" A 0 A_GiveInventory("BlueArmor",1)		//R19 added
 		loop
 	See:
+		BSGI A 0 a_setscale(1.0,1.0)
 		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
-		MSMN A 0
+		MSMN A 0 a_setscale(1.5,1.5)
 		"####" A 3 A_Metal
 		"####" AABBCCDD 3 A_Chase
 		Loop
 	Melee:		//r31 new melee
+		BSGI A 0 a_setscale(1.0,1.0)
 		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
-		MSMN A 0
+		MSMN A 0 a_setscale(1.5,1.5)
 		"####" DE 6 A_FaceTarget
 		"####" F 6 A_MeleeAttack
 		Goto See
 	Missile:
+		BSGI A 0 a_setscale(1.0,1.0)
 		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
-		MSMN A 0
+		MSMN A 0 a_setscale(1.5,1.5)
 		"####" A 15 A_FaceTarget
 		"####" E 2 A_FaceTarget
 		"####" M 2 bright A_PlaySound("CHGNSHOT",1)	//R31 was MGUNFIR
@@ -108,21 +112,24 @@ AttackSound "weapons/gswing"	//R31 24/08/22 was "weapons/pistol"
 		"####" E 3 A_SpidRefire
 		GOTO SEE
 	Pain:
+		BSGI A 0 a_setscale(1.0,1.0)
 		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
-		MSMN A 0
+		MSMN A 0 a_setscale(1.5,1.5)
 		"####" F 3
 		"####" F 3 A_Pain
 		goto See
 	Pain.Vertigo:
+		BSGI A 0 a_setscale(1.0,1.0)
 		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
-		MSMN A 0
+		MSMN A 0 a_setscale(1.5,1.5)
 		"####" A 0 ThrustThingZ(0,55,0,0)
 		"####" F 3
 		"####" F 3 A_Pain
 		Goto See
 	Death:
+		BSGI A 0 a_setscale(1.0,1.0)
 		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
-		MSMN A 0
+		MSMN A 0 a_setscale(1.5,1.5)
 		"####" G 0 A_Scream
 		"####" G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
 		"####" G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)

@@ -1,3 +1,4 @@
+/////////////////////////CYBERDEMON
 brightmap sprite CYBRA1
 {
 map "brightmaps/CYBRA1B.png"
@@ -85,5 +86,78 @@ disablefullbright
 brightmap sprite CYBRF8
 {
 map "brightmaps/CYBRF8B.png"
+disablefullbright
+}
+
+/////////////////////////ANNIHILATOR
+brightmap sprite A64AA1
+{
+map "brightmaps/A64AA1_B.png"
+disablefullbright
+}
+
+brightmap sprite A64AA2C8
+{
+map "brightmaps/A64AA2C8_B.png"
+disablefullbright
+}
+
+brightmap sprite A64AB1
+{
+map "brightmaps/A64AB1_B.png"
+disablefullbright
+}
+
+brightmap sprite A64AB2D8
+{
+map "brightmaps/A64AB2D8_B.png"
+disablefullbright
+}
+
+brightmap sprite A64AC1
+{
+map "brightmaps/A64AC1_B.png"
+disablefullbright
+}
+
+brightmap sprite A64AC2A8
+{
+map "brightmaps/A64AC2A8_B.png"
+disablefullbright
+}
+
+brightmap sprite A64AD1
+{
+map "brightmaps/A64AD1_B.png"
+disablefullbright
+}
+
+brightmap sprite A64AD2B8
+{
+map "brightmaps/A64AD2B8_B.png"
+disablefullbright
+}
+
+brightmap sprite A64AE1
+{
+map "brightmaps/A64AE1_B.png"
+disablefullbright
+}
+
+brightmap sprite A64AE2E8
+{
+map "brightmaps/A64AE2E8_B.png"
+disablefullbright
+}
+
+brightmap sprite A64AH0
+{
+map "brightmaps/A64AH0_B.png"
+disablefullbright
+}
+
+brightmap sprite A64AI0
+{
+map "brightmaps/A64AI0_B.png"
 disablefullbright
 }

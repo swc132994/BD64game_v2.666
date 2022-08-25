@@ -506,7 +506,177 @@ map "brightmaps/SARGG2G8B.png"
 disablefullbright
 }
 
-//R28.1 ADDED
+//NIGHTMARE SPECTRE
+brightmap sprite SAR3A1
+{
+map "brightmaps/SARGA1B.png"
+disablefullbright
+}
+
+brightmap sprite SAR3A2A8
+{
+map "brightmaps/SARGA2A8B.png"
+disablefullbright
+}
+
+brightmap sprite SAR3B1
+{
+map "brightmaps/SARGB1B.png"
+disablefullbright
+}
+
+brightmap sprite SAR3B2B8
+{
+map "brightmaps/SARGB2B8B.png"
+disablefullbright
+}
+
+brightmap sprite SAR3C2C8
+{
+map "brightmaps/SARGC2C8B.png"
+disablefullbright
+}
+
+brightmap sprite SAR3C1
+{
+map "brightmaps/SARGC1B.png"
+disablefullbright
+}
+
+brightmap sprite SAR3D1
+{
+map "brightmaps/SARGD1B.png"
+disablefullbright
+}
+
+brightmap sprite SAR3D2D8
+{
+map "brightmaps/SARGD2D8B.png"
+disablefullbright
+}
+
+brightmap sprite SAR3E1
+{
+map "brightmaps/SARGE1B.png"
+disablefullbright
+}
+
+brightmap sprite SAR3E2E8
+{
+map "brightmaps/SARGE2E8B.png"
+disablefullbright
+}
+
+brightmap sprite SAR3DF1
+{
+map "brightmaps/SARGF1B.png"
+disablefullbright
+}
+
+brightmap sprite SAR3F2F8
+{
+map "brightmaps/SARGF2F8B.png"
+disablefullbright
+}
+
+brightmap sprite SAR3G1
+{
+map "brightmaps/SARGG1B.png"
+disablefullbright
+}
+
+brightmap sprite SAR3G2G8
+{
+map "brightmaps/SARGG2G8B.png"
+disablefullbright
+}
+
+//ACID DEMON
+brightmap sprite ACIDA1
+{
+map "brightmaps/SARGA1B.png"
+disablefullbright
+}
+
+brightmap sprite ACIDA2A8
+{
+map "brightmaps/SARGA2A8B.png"
+disablefullbright
+}
+
+brightmap sprite ACIDB1
+{
+map "brightmaps/SARGB1B.png"
+disablefullbright
+}
+
+brightmap sprite ACIDB2B8
+{
+map "brightmaps/SARGB2B8B.png"
+disablefullbright
+}
+
+brightmap sprite ACIDC2C8
+{
+map "brightmaps/SARGC2C8B.png"
+disablefullbright
+}
+
+brightmap sprite ACIDC1
+{
+map "brightmaps/SARGC1B.png"
+disablefullbright
+}
+
+brightmap sprite ACIDD1
+{
+map "brightmaps/SARGD1B.png"
+disablefullbright
+}
+
+brightmap sprite ACIDD2D8
+{
+map "brightmaps/SARGD2D8B.png"
+disablefullbright
+}
+
+brightmap sprite ACIDE1
+{
+map "brightmaps/SARGE1B.png"
+disablefullbright
+}
+
+brightmap sprite ACIDE2E8
+{
+map "brightmaps/SARGE2E8B.png"
+disablefullbright
+}
+
+brightmap sprite ACIDDF1
+{
+map "brightmaps/SARGF1B.png"
+disablefullbright
+}
+
+brightmap sprite ACIDF2F8
+{
+map "brightmaps/SARGF2F8B.png"
+disablefullbright
+}
+
+brightmap sprite ACIDG1
+{
+map "brightmaps/SARGG1B.png"
+disablefullbright
+}
+
+brightmap sprite ACIDG2G8
+{
+map "brightmaps/SARGG2G8B.png"
+disablefullbright
+}
+
+//R28.1 ADDED ITEMS
 brightmap sprite media0
 {
 map "brightmaps/mediBR.png"
