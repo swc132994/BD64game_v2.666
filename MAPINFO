@@ -266,8 +266,8 @@ Intermission Doom2Cast
 	{
 		CastClass = "D64SpiderMastermindCast"
 		CastName = "The Spider Mastermind"
-		AttackSound = "Missile",1,"MGUNFIR"
-		AttackSound = "Missile",2,"MGUNFIR"
+		AttackSound = "Missile",1,"CHGNSHOT"
+		AttackSound = "Missile",2,"CHGNSHOT"
 		AttackSound = "Melee",2,"weapons/gswing"
 	}
 	Cast

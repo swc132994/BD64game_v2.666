@@ -1,4 +1,4 @@
-actor 64SpiderMastermind : SpiderMastermind// Replaces SpiderMastermind		//R26 removed replaces
+actor 64SpiderMastermind : SpiderMastermind// Replaces SpiderMastermind		//R26 removed replaces	//r31 merged Immorpher's skin option
 {
 Scale 1.5
 Health 4000		//R31 added
@@ -11,150 +11,171 @@ Painchance "SuperKick",200
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 MeleeThreshold 200	//r31 24/08/22 added
-meleedamage 60		//r31 24/08/22 added
+meleedamage 50		//r31 24/08/22 added
 meleerange 100		//r31 24/08/22 added
 AttackSound "weapons/gswing"	//R31 24/08/22 was "weapons/pistol"
 //+FORCEXYBILLBOARD		//R12.3 removed
-+FLOORCLIP
+//+FLOORCLIP	//r31 25/08/22 removed
 +EXTREMEDEATH	//r31 24/08/22 added
 	States
 	{
 	Spawn:
-		MSMN AB 10 A_Look
-		TNT1 A 0 A_GiveInventory("BlueArmor",1)		//R19 added
+		MSMN A 0	//Do not use NoDelay here
+		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
+		MSMN A 0
+		"####" AB 10 A_Look
+		"####" A 0 A_GiveInventory("BlueArmor",1)		//R19 added
 		loop
 	See:
-		MSMN A 3 A_Metal
-		MSMN AABBCCDD 3 A_Chase
+		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
+		MSMN A 0
+		"####" A 3 A_Metal
+		"####" AABBCCDD 3 A_Chase
 		Loop
 	Melee:		//r31 new melee
-		MSMN DE 6 A_FaceTarget
-		MSMN F 6 A_MeleeAttack
+		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
+		MSMN A 0
+		"####" DE 6 A_FaceTarget
+		"####" F 6 A_MeleeAttack
 		Goto See
 	Missile:
-		MSMN A 15 A_FaceTarget
-		MSMN E 2 A_FaceTarget
-		MSMN M 2 bright A_PlaySound("CHGNSHOT",1)	//R31 was MGUNFIR
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))		//R25.4 was TNT1 A & random(-9,9),1,random(-4,4))	//R31 was TNT1 AA 0 A_CustomMissile("EnenmyProjectile",40,26,random(-6,6),1,random(-3,3))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))		//R25.4 was TNT1 A & random(-9,9),1,random(-4,4))	//R31 was TNT1 AA 0 A_CustomMissile("EnenmyProjectile",40,26,random(-6,6),1,random(-3,3))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_PlaySound("CHGNSHOT",3)	//R31 was MGUNFIR
-		MSMN E 2 A_FaceTarget
-		MSMN M 2 bright A_PlaySound("CHGNSHOT",1)
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
-		MSMN E 2 A_FaceTarget
-		MSMN M 2 bright A_PlaySound("CHGNSHOT",1)
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
-		MSMN E 2 A_FaceTarget
-		MSMN M 2 bright A_PlaySound("CHGNSHOT",1)
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
-		MSMN E 2 A_FaceTarget
-		MSMN M 2 bright A_PlaySound("CHGNSHOT",1)
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
-		MSMN E 2 A_FaceTarget
-		MSMN M 2 bright A_PlaySound("CHGNSHOT",1)
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
-		MSMN E 2 A_FaceTarget
-		MSMN M 2 bright A_PlaySound("CHGNSHOT",1)
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
-		MSMN E 2 A_FaceTarget
-		MSMN M 2 bright A_PlaySound("CHGNSHOT",1)
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
-		MSMN E 2 A_FaceTarget
-		MSMN M 2 bright A_PlaySound("CHGNSHOT",1)
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added
-		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
-		MSMN E 3 A_SpidRefire
+		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
+		MSMN A 0
+		"####" A 15 A_FaceTarget
+		"####" E 2 A_FaceTarget
+		"####" M 2 bright A_PlaySound("CHGNSHOT",1)	//R31 was MGUNFIR
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))		//R25.4 was TNT1 A & random(-9,9),1,random(-4,4))	//R31 was TNT1 AA 0 A_CustomMissile("EnenmyProjectile",40,26,random(-6,6),1,random(-3,3))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))		//R25.4 was TNT1 A & random(-9,9),1,random(-4,4))	//R31 was TNT1 AA 0 A_CustomMissile("EnenmyProjectile",40,26,random(-6,6),1,random(-3,3))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_PlaySound("CHGNSHOT",3)	//R31 was MGUNFIR
+		"####" E 2 A_FaceTarget
+		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_PlaySound("CHGNSHOT",3)
+		"####" E 2 A_FaceTarget
+		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_PlaySound("CHGNSHOT",3)
+		"####" E 2 A_FaceTarget
+		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_PlaySound("CHGNSHOT",3)
+		"####" E 2 A_FaceTarget
+		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_PlaySound("CHGNSHOT",3)
+		"####" E 2 A_FaceTarget
+		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_PlaySound("CHGNSHOT",3)
+		"####" E 2 A_FaceTarget
+		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_PlaySound("CHGNSHOT",3)
+		"####" E 2 A_FaceTarget
+		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
+		"####" A 0 A_PlaySound("CHGNSHOT",3)
+		"####" E 2 A_FaceTarget
+		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added
+		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added
+		"####" A 0 A_PlaySound("CHGNSHOT",3)
+		"####" E 3 A_SpidRefire
 		GOTO SEE
-//		loop
 	Pain:
-		MSMN F 3
-		MSMN F 3 A_Pain
+		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
+		MSMN A 0
+		"####" F 3
+		"####" F 3 A_Pain
 		goto See
 	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		MSMN F 3
-		MSMN F 3 A_Pain
+		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
+		MSMN A 0
+		"####" A 0 ThrustThingZ(0,55,0,0)
+		"####" F 3
+		"####" F 3 A_Pain
 		Goto See
 	Death:
-		MSMN G 0 A_Scream
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",-64,-64,50,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",64,64,100,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",64,64,0,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",0,0,50,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",-64,-64,0,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",64,64,50,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",-64,-64,100,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",-64,-64,50,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",-64,-64,100,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",64,64,0,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",64,64,50,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",64,64,0,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",0,0,50,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",64,64,100,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",-64,-64,0,0,0,0,0,130)
-		MSMN G 4 A_SpawnItemEx("64BossExplosion",-64,-64,50,0,0,0,0,130)
-		MSMN H 0 A_NoBlocking
-		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
-		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))	//R30.6 added
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))	//R30.6 added
-		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,32)
-		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,90)
-		TNT1 AAAAAAAAA 0 A_CustomMissile("BurningXDeath1",42,0,random(0,360),2,random(0,90))
-		TNT1 AAAAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
-		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("SuperGoreSpawner",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_CustomMissile("XDeathMastermindHead",55,0,random(0,360),2,random(40,90))	//R30.9 removed
-		MSMN H 4 A_SpawnItemEx("64BossExplosion",64,64,100,0,0,0,0,130)
-		MSMN H 4 A_SpawnItemEx("64BossExplosion",-64,-64,0,0,0,0,0,130)
-		MSMN I 4 A_SpawnItemEx("64BossExplosion",64,64,50,0,0,0,0,130)
-		MSMN I 4 A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
-		MSMN JK 4
-		MSMN lyz 4
-		TNT1 A 0 A_BossDeath
-		TNT1 A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))	//R30.9 added
-			TNT1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
-		MSMN z -1
+		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
+		MSMN A 0
+		"####" G 0 A_Scream
+		"####" G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",-64,-64,50,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",64,64,100,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",64,64,0,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",0,0,50,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",-64,-64,0,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",64,64,50,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",-64,-64,100,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",-64,-64,50,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",-64,-64,100,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",64,64,0,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",64,64,50,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",64,64,0,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",0,0,50,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",64,64,100,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",-64,-64,0,0,0,0,0,130)
+		"####" G 4 A_SpawnItemEx("64BossExplosion",-64,-64,50,0,0,0,0,130)
+		"####" H 0 A_NoBlocking
+		"####" AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
+		"####" AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		"####" AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		"####" AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		"####" AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))	//R30.6 added
+		"####" AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))	//R30.6 added
+		"####" A 0 A_SpawnItem("64BarrelExplosion",0,32)
+		"####" A 0 A_SpawnItem("64BarrelExplosion",0,90)
+		"####" AAAAAAAAA 0 A_CustomMissile("BurningXDeath1",42,0,random(0,360),2,random(0,90))
+		"####" AAAAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		"####" AAAAAAAAAAAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
+		"####" AAAAAAAAAAAA 0 A_CustomMissile("SuperGoreSpawner",45,0,random(0,360),2,random(10,90))
+		"####" A 0 A_CustomMissile("XDeathMastermindHead",55,0,random(0,360),2,random(40,90))	//R30.9 removed
+		"####" H 4 A_SpawnItemEx("64BossExplosion",64,64,100,0,0,0,0,130)
+		"####" H 4 A_SpawnItemEx("64BossExplosion",-64,-64,0,0,0,0,0,130)
+		"####" I 4 A_SpawnItemEx("64BossExplosion",64,64,50,0,0,0,0,130)
+		"####" I 4 A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
+		"####" JKL 5
+		"####" A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,"AltDeath")	//R31 Alternative mastermind Skin
+		"####" yz 5
+		"####" A 0 A_BossDeath
+		"####" A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))	//R30.9 added
+		"####" A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
+		"####" z -1
+		stop
+	AltDeath:
+		tnt1 A 0 A_BossDeath
+		tnt1 A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))	//R30.9 added
+		tnt1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
+		bsgi l -1
 		stop
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")

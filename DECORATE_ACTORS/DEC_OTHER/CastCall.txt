@@ -634,23 +634,27 @@ XScale 1.5
 YScale 1.5
 	States
 	{
-		See:
-			MSMN A 3 A_Metal
-			MSMN AABBCCDD 3 A_Chase
-			Loop
-		Missile:
-			MSMN A 15 Bright A_FaceTarget
-			MSMN E 2 Bright A_SPosAttackUseAtkSound
-			MSMN M 2 Bright A_SPosAttackUseAtkSound
-			MSMN M 3 Bright A_SpidRefire
-			Goto Missile+1
-		Death:
-			MSMN G 5 A_Scream
-			MSMN H 5 A_NoBlocking
-			MSMN I 4
-			MSMN JKlyz 4
-			MSMN z -1
-			Stop
+	See:
+		MSMN A 3 A_Metal
+		MSMN AABBCCDD 3 A_Chase
+		Loop
+	Melee:		//r31 new melee
+		MSMN DE 6 A_FaceTarget
+		MSMN F 6 A_MeleeAttack
+		Goto See
+	Missile:
+		MSMN A 15 Bright A_FaceTarget
+		MSMN E 2 Bright A_SPosAttackUseAtkSound
+		MSMN M 2 Bright A_SPosAttackUseAtkSound
+		MSMN M 3 Bright A_SpidRefire
+		Goto Missile+1
+	Death:
+		MSMN G 5 A_Scream
+		MSMN H 5 A_NoBlocking
+		MSMN I 5
+		MSMN JKlyz 5
+		MSMN z -1
+		Stop
 	}
 }
 

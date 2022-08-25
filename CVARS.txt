@@ -331,3 +331,8 @@ Script "BerserkSwitchFistsACS" (void) //r31 added option to restore fist switch 
 {
 SetResultValue(getCvar("BerserkSwitchFistsCvar"));
 }
+
+Script "AlternativeMasterMindSkin" (void) //r31 added alternative MastermindSkin
+{
+SetResultValue(getCvar("AlternativeMasterMindSkinCvar"));
+}
