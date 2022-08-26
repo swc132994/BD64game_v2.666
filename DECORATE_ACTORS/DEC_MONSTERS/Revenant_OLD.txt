@@ -1,7 +1,7 @@
 //R31 NOW OLD STYLE REVENANT
 Actor 64Revenant_old : Revenant// Replaces Revenant									//R26 REMOVED REPLACES
 {
-Scale 0.65																		//R25.2 WAS 0.8	//R31 WAS 0.75
+Scale 0.75																		//R25.2 WAS 0.8	//R31 WAS 0.75
 HEALTH 300
 HEIGHT 65																		//R25.2 WAS 72
 Speed 8																			//R15 WAS 7

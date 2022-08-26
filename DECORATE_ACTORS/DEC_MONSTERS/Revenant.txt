@@ -1,7 +1,7 @@
 //r31 added extra deaths
 Actor 64Revenant : Revenant// Replaces Revenant									//R26 REMOVED REPLACES
 {
-Scale 0.60																		//R31 ADJUSTED SCALE FOR NEW SPRITES
+Scale 0.70																		//R31 ADJUSTED SCALE FOR NEW SPRITES
 HEALTH 300
 HEIGHT 65																		//R25.2 WAS 72
 Speed 8																			//R15 WAS 7
