@@ -67,7 +67,7 @@ Player.StartItem "Clip",50
 //Player.StartItem "Stamina",100												//R4 REMOVE STAMINA CLASSICAL
 Player.StartItem "64Fist"
 Player.ColorRange 112,127
-player.viewheight 49 //test was 50
+player.viewheight 50
 player.attackzoffset 23
 Player.DisplayName "Classical"
 Player.CrouchSprite "PLYC"
@@ -500,7 +500,7 @@ Player.StartItem "SSGAmmo",2													//R10.2 NEW
 Player.StartItem "PlasmaRifleAmmo",40											//R5 NEW	//r31 was 30
 Player.StartItem "RLAmmo",6											//R31 added
 Player.ColorRange 112,127
-player.viewheight 49 //test was 50
+player.viewheight 50
 player.attackzoffset 23
 Player.DisplayName "Tactical (Rifle)"											//R15
 Player.CrouchSprite "PLYC"
@@ -777,7 +777,7 @@ Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40											//r31 was 30
 Player.StartItem "RLAmmo",6											//R31 added
 Player.ColorRange 112,127
-player.viewheight 49 //test was 50
+player.viewheight 50
 player.attackzoffset 23
 Player.DisplayName "Modern"
 Player.CrouchSprite "PLYC"

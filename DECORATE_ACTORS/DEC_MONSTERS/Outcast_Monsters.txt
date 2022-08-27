@@ -30,11 +30,11 @@ DROPITEM "DemonEssenceSpawner"
 		ACID AAAABBBBCCCCDDDD 2 Fast A_Chase
 		Loop
 	Melee:
-		ACID E 4 A_FaceTarget
+		ACID E 6 A_FaceTarget
 		ACID A 0 A_Recoil(-2)
-		ACID F 4 A_FaceTarget
+		ACID F 6 A_FaceTarget
 		TNT1 A 0 A_SargAttack
-		ACID G 4
+		ACID G 6
 		Goto See
 	Missile:
 		TNT1 A 0 Fast A_PlaySound("demon/melee")

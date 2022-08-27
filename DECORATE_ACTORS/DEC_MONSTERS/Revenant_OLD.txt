@@ -1,7 +1,7 @@
 //R31 NOW OLD STYLE REVENANT
 Actor 64Revenant_old : Revenant// Replaces Revenant									//R26 REMOVED REPLACES
 {
-Scale 0.75																		//R25.2 WAS 0.8	//R31 WAS 0.75
+Scale 0.74																		//R25.2 WAS 0.8	//R31 WAS 0.75
 HEALTH 300
 HEIGHT 65																		//R25.2 WAS 72
 Speed 8																			//R15 WAS 7
@@ -44,9 +44,9 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		tnt1 a 0 Bright A_FaceTarget
 		REVN G 12 Bright A_FaceTarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",25,65,0)
-		TNT1 A 0 A_CustomMissile("64RevenantTracer3",57,18,0,0)				//R16 WAS 58
+		TNT1 A 0 A_CustomMissile("64RevenantTracer3",68,18,0,0)		//was 57
 		REVN G 6
-		TNT1 A 0 A_CustomMissile("64RevenantTracer2",57,-18,0,0)				//R16 WAS 58
+		TNT1 A 0 A_CustomMissile("64RevenantTracer2",68,-18,0,0)	//was 57
 		REVN G 6
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",25,65,0)
 		REVN G 12 A_FaceTarget
@@ -305,9 +305,9 @@ DropItem "None"
 		RND2 BADC 5 A_FaceTarget
 		Goto Death
 	Attack:
-		tnt1 a 0 A_CustomMissile("64RevenantTracer3",57,18,0,0)
+		tnt1 a 0 A_CustomMissile("64RevenantTracer3",68,18,0,0)
 		RND2 A 6 A_FaceTarget
-		tnt1 a 0 A_CustomMissile("64RevenantTracer2",57,-18,0,0)
+		tnt1 a 0 A_CustomMissile("64RevenantTracer2",68,-18,0,0)
 		RND2 B 6 A_FaceTarget
 		RND2 DC 4 A_FaceTarget
 		Goto See+9
@@ -352,7 +352,7 @@ DropItem "None"
 
 ACTOR OldRevenantArm1 : XDeath1
 {
-Scale 0.8
+Scale 0.74
 Speed 12
 BounceFactor 0.01
 Gravity 1.0
@@ -378,7 +378,7 @@ States
 
 ACTOR OldRevenantArm2 : XDeath1
 {
-Scale 0.8
+Scale 0.74
 Speed 10
 BounceFactor 0.01
 Gravity 1.0
@@ -404,7 +404,7 @@ Decal BrutalBloodSuper
 
 ACTOR OldRevenantTorso : XDeath1
 {
-Scale 0.8
+Scale 0.74
 Speed 10
 BounceFactor 0.01
 Gravity 1.0

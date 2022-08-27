@@ -916,7 +916,7 @@ BounceFactor 0.01
 
 ACTOR XDeathRevenantArm1 : XDeathZombieArm1
 {
-Scale 0.8
+Scale 0.68
 Speed 12
 BounceFactor 0.01
 +DOOMBOUNCE
@@ -939,7 +939,7 @@ States
 
 ACTOR XDeathRevenantLegs : XDeathZombieArm1		//r31 ADDED
 {
-Scale 0.8
+Scale 0.68
 Speed 10
 BounceFactor 0.01
 +DOOMBOUNCE
@@ -959,7 +959,7 @@ BounceFactor 0.01
 
 ACTOR XDeathRevenantLegL : XDeathZombieArm1		//r31 new
 {
-Scale 0.8
+Scale 0.68
 Speed 10
 BounceFactor 0.01
 +DOOMBOUNCE
@@ -981,7 +981,7 @@ BounceFactor 0.01
 
 ACTOR XDeathRevenantLegR : XDeathZombieArm1		//r31 new
 {
-Scale 0.8
+Scale 0.68
 Speed 10
 BounceFactor 0.01
 +DOOMBOUNCE
@@ -1003,7 +1003,7 @@ BounceFactor 0.01
 
 ACTOR XDeathRevenantLauncher : XDeathZombieArm1		//r31 new
 {
-Scale 0.8
+Scale 0.68
 Speed 10
 BounceFactor 0.01
 +DOOMBOUNCE
