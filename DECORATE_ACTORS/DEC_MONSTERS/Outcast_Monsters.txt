@@ -8,6 +8,7 @@ Speed 12
 FastSpeed 16
 PainChance 180
 MaxTargetRange 384
+MeleeThreshold 125
 Painchance "SuperFists",200
 Painchance "Kick",255
 Painchance "SuperKick",255
@@ -37,7 +38,7 @@ DROPITEM "DemonEssenceSpawner"
 		ACID G 6
 		Goto See
 	Missile:
-		TNT1 A 0 Fast A_PlaySound("demon/melee")
+		TNT1 A 0 Fast A_PlaySound("SlimeBall/Shoot")
 		ACID EF 8 Fast A_FaceTarget
 		ACID GGGGGGGGGG 0 Fast A_CustomMissile("64AcidProjectile",random(44,54),random(-8,8),0,CMF_AIMOFFSET)
 		ACID G 10 Fast
@@ -448,6 +449,7 @@ Projectile
 		ACIP D 2 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
 		Loop
 	Death:
+		tnt1 a 0 A_Playsound("SlimeBall/Splat",4)
 		tnt1 a 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		XDT1 F 3 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
@@ -463,6 +465,7 @@ Projectile
 		TNT1 A 0 A_EXPLODE(1,20)
 		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		XDT1 J 3 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
+		tnt1 a 0 A_PlaysoundEx("AcidPuddle/Start",4,1)
 		TNT1 A 0 A_EXPLODE(1,20)
 		XDT1 K 5 Bright a_SPAWNITEM("PlasmaSmoke")
 		TNT1 A 0 A_EXPLODE(1,20)
@@ -496,6 +499,7 @@ Projectile
 		TNT1 A 0 A_EXPLODE(1,20)
 		XDT1 K 5 Bright a_SPAWNITEM("PlasmaSmoke")
 		TNT1 A 0 A_EXPLODE(1,20)
+		tnt1 a 0 A_StopsoundEx(4)
 		stop
 	}
 }
