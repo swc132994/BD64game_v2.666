@@ -98,8 +98,8 @@ Player.WeaponSlot 9,"Lasergun"
 		//PLAY F 6 BRIGHT
 		//Goto Missile
 	Pain:
-		GMAN H 4			//R31 WAS PLAY G
-		GMAN H 4 A_Pain		//R31 WAS PLAY G
+		PLAY G 4			//R31 WAS GMAN H
+		PLAY G 4 A_Pain		//R31 WAS GMAN H
 		Goto Spawn
 	Death:
 		PLAY H 10
@@ -519,8 +519,8 @@ Player.WeaponSlot 9,"Lasergun"
 	States
 	{
 	Spawn:
-		PLAY E 2
-		PLAY E 0 A_GiveInventory("Stamina",1)
+		PLAY E -1
+		TNT1 A 0 A_GiveInventory("Stamina",1)
 		Loop
 	See:
 		PLAY A 1
@@ -586,8 +586,8 @@ Player.WeaponSlot 9,"Lasergun"
 		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"Run")
 		Goto Spawn+2
 	Pain:
-		GMAN H 4			//R31 WAS PLAY G
-		GMAN H 4 A_Pain		//R31 WAS PLAY G
+		PLAY G 4			//R31 WAS GMAN H
+		PLAY G 4 A_Pain		//R31 WAS GMAN H
 		Goto Spawn
 	Death:
 		PLAY H 10
@@ -801,8 +801,8 @@ Player.WeaponSlot 9,"Lasergun"
 		PLAY ABCD 4
 		Goto Spawn
 	Pain:
-		GMAN H 4			//R31 WAS PLAY G
-		GMAN H 4 A_Pain		//R31 WAS PLAY G
+		PLAY G 4			//R31 WAS GMAN H
+		PLAY G 4 A_Pain		//R31 WAS GMAN H
 		Goto Spawn
 	Death:
 		PLAY H 10

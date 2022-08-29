@@ -21,10 +21,22 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 	states
 	{
 	Spawn:
-		TROO B 10 A_Look
+		TROS B 1
 		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 was BlueArmor
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,56,0)
-		loop
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
+		Goto Stand
+		
+	Stand:
+		TROS B 1
+		TNT1 A 0 A_CheckSight("Stand2")
+		TNT1 AA 0 A_SpawnItem("HeadshotTarget10",0,50,0)
+		TROS AB 10 A_Look
+		Loop
+	
+	Stand2:
+		TROS AB 10 A_Look
+		TNT1 A 0 A_CheckSight("Stand2")
+		Goto Stand	
 	See:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,56,0)
 		TROO AABB 2 A_Chase
@@ -323,11 +335,25 @@ MONSTER
 +FLOORCLIP
 	states
 	{
+	
 	Spawn:
-		TRO2 B 10 A_Look														//R23 WAS TNT1
+		TRS2 B 1
 		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 was BlueArmor
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,56,0)						//R30.7 ADDED HEAD SHOT
-		loop
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
+		Goto Stand
+		
+	Stand:
+		TRS2 B 1
+		TNT1 A 0 A_CheckSight("Stand2")
+		TNT1 AA 0 A_SpawnItem("HeadshotTarget10",0,50,0)
+		TRS2 AB 10 A_Look
+		Loop
+	
+	Stand2:
+		TRS2 AB 10 A_Look
+		TNT1 A 0 A_CheckSight("Stand2")
+		Goto Stand	
+		
 	See:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,56,0)						//R30.7 ADDED HEAD SHOT
 		TNT1 A 1 A_chase("","")

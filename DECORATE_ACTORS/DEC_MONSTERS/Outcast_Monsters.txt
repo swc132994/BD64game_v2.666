@@ -25,8 +25,13 @@ DROPITEM "DemonEssenceSpawner"
 	States
 	{
 	Spawn:
-		ACID BD 10 A_Look
-		Loop
+		ACID Y 1
+		TNT1 A 0 A_GiveInventory("BlueArmor",1)
+		
+	Spawned:	
+		ACID YZ 10 A_Look
+		Loop	
+	
 	See:
 		ACID AAAABBBBCCCCDDDD 2 Fast A_Chase
 		Loop
