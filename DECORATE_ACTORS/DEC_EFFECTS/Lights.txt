@@ -455,7 +455,7 @@ scale 0.82
 height 80
 }
 
-actor 64Meat3 : Meat3 Replaces Meat3	//R31 ADDED
+/*actor 64Meat3 : Meat3 Replaces Meat3	//R31 ADDED
 {
 scale 0.82
 height 80
@@ -477,7 +477,7 @@ height 80
 		MGD1 I -1
 		STOP
 	}
-}
+}*/
 
 actor 64Meat4 : Meat4 Replaces Meat4
 {
@@ -503,7 +503,7 @@ scale 0.82
 height 88
 }
 
-ACTOR 64BloodyTwitch : BloodyTwitch Replaces BloodyTwitch		//r31 added
+/*ACTOR 64BloodyTwitch : BloodyTwitch Replaces BloodyTwitch		//r31 added
 {
 scale 0.82
 }
@@ -511,7 +511,7 @@ scale 0.82
 ACTOR 64NonSolidTwitch : NonSolidTwitch Replaces NonSolidTwitch	//r31 addede
 {
 scale 0.82
-}
+}*/
 
 actor 64DeadMarine : DeadMarine Replaces DeadMarine
 {

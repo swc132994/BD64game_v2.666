@@ -1,0 +1,249 @@
+actor BloodyTwitchReplacer : RandomSpawner Replaces BloodyTwitch
+{
+DropItem "BD64DamnedHanging1SOLID"
+DropItem "BD64DamnedHanging2SOLID"
+}
+
+actor NonSolidTwitchReplacer : RandomSpawner Replaces NonSolidTwitch
+{
+DropItem "BD64DamnedHanging1"
+DropItem "BD64DamnedHanging2"
+}
+
+actor Meat3Replacer : RandomSpawner Replaces Meat3
+{
+DropItem "TorturedMarine21SOLID"
+DropItem "TorturedMarine23SOLID"
+DropItem "TorturedMarine32SOLID"
+DropItem "TorturedMarine66SOLID"
+}
+
+actor NonsolidMeat3Replacer : RandomSpawner Replaces NonsolidMeat3
+{
+DropItem "TorturedMarine21"
+DropItem "TorturedMarine23"
+DropItem "TorturedMarine32"
+DropItem "TorturedMarine66"
+}
+
+Actor BD64DamnedHanging1
+{
+Height 64
+Radius 16
+Scale 0.8
++NOGRAVITY
++SPAWNCEILING
++FRIENDLY
++FORCEXYBILLBOARD
+-SHOOTABLE
+	States
+	{
+	Spawn:
+		DAM1 D 100
+		DAM1 D 1 A_Jump(30,"Movement")
+		Loop
+	Movement:
+		DAM1 D 1
+		TNT1 A 0 A_PlaySound("DamnedSee",3)
+		TNT1 A 0 A_PlaySound("ChainRattle",1)
+		DAM1 CBAABCDEFGGFEDCBABCDEFGFEDCBCCDDEE 2
+		DAM1 DCDEDC 4
+		DAM1 DCDEDC 5
+		Goto Spawn
+	}
+}
+Actor BD64DamnedHanging1SOLID : BD64DamnedHanging1	{+SOLID}
+
+Actor BD64DamnedHanging2 : BD64DamnedHanging1
+{
+	States
+	{
+	Spawn:
+		DAM2 D 100
+		DAM2 D 1 A_Jump(30,"Movement")
+		Loop
+	Movement:
+		DAM2 D 1
+		TNT1 A 0 A_PlaySound("DamnedSee",3)
+		TNT1 A 0 A_PlaySound("ChainRattle",1)
+		DAM2 CBAABCDEFGGFEDCBABCDEFGFEDCBCCDDEE 2
+		DAM2 DCDEDC 4
+		DAM2 DCDEDC 5
+		Goto Spawn
+	}
+}
+Actor BD64DamnedHanging2SOLID : BD64DamnedHanging2	{+SOLID}
+
+Actor TorturedMarine21
+{
+Health 1
+Mass 999999
+Height 72
+Radius 16
+Scale 0.8
++SHOOTABLE
++NORADIUSDMG
++SPAWNCEILING
++NOGRAVITY
++FLOAT
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_PlaySound("TORTURE3")
+		TTR7 A 10
+		TTR7 ABABAB 6
+		TNT1 A 0 A_Jump(10,"Scream")
+		TTR7 A 20
+		TTR7 ABABAB 6
+		TNT1 A 0 A_Jump(10,"Scream")
+		TTR7 A 20
+		TTR7 ABABAB 6
+		TNT1 A 0 A_Jump(10,"Scream")
+		TTR7 A 20
+		TTR7 ABABAB 6
+		TTR7 A 40
+		Goto Scream
+	Scream:
+		TTR7 A 2
+		TNT1 A 0 A_PlaySound("TORTURE")
+		TTR7 BC 3
+		TTR7 DCECDCECDCECDCECDCECDCECDCECDCECDCECDCECDCECDCEC 3
+		TTR7 BA 3
+		TTR7 A 10
+		Goto Spawn
+	Death:
+		TNT1 A 0 A_PlaySound("TORTURE4")
+		TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
+		TTR7 FGHI 10
+		TNT1 A 0 A_SpawnItem("DripingBloodLeavesSmallPool")
+		TNT1 A 0 A_SpawnItem("CeilBloodLargeBloodSpawner")
+		TTR7 J -1
+		Stop
+	}
+}
+Actor TorturedMarine21SOLID : TorturedMarine21	{+SOLID}
+
+Actor TorturedMarine32
+{
+Health 1
+Scale 0.8
+Mass 999999
+Height 72
+Radius 16
++SHOOTABLE
++NORADIUSDMG
++SPAWNCEILING
++NOGRAVITY
++FLOAT
+	States
+	{
+	Spawn:
+		TTR8 A 1
+		TTR8 A 1 A_Jump(80,"Scream")
+		TTR8 A 100
+		Loop
+	Scream:
+		TTR8 A 2
+		TNT1 A 0 A_PlaySound("TORTURE")
+		TTR8 BADEA 3
+		TTR8 BADEA 3
+		TTR8 BADEA 3
+		TTR8 BADEA 3
+		TTR8 BADEA 3
+		TTR8 BADEA 3
+		TTR8 A 10
+		Goto Spawn
+	Death:
+		TNT1 A 0 A_PlaySound("TORTURE4")
+		TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
+		TTR8 FGH 10
+		TNT1 A 0 A_SpawnItem("DripingBloodLeavesSmallPool")
+		TNT1 A 0 A_SpawnItem("CeilBloodLargeBloodSpawner")
+		TTR8 I -1
+		Stop
+	}
+}
+Actor TorturedMarine32SOLID : TorturedMarine32	{+SOLID}
+
+Actor TorturedMarine23
+{
+Health 1
+Scale 0.8
+Mass 999999
+Height 72
+Radius 16
++SHOOTABLE
++NORADIUSDMG
++SPAWNCEILING
++NOGRAVITY
++FLOAT
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_PlaySound("TORTURE3")
+		TTR9 A 10
+		TTR9 ABABAB 6
+		TNT1 A 0 A_Jump(25,"Scream")
+		TTR9 A 20
+		TTR9 ABABAB 6
+		TNT1 A 0 A_Jump(10,"Scream")
+		TTR9 A 20
+		TTR9 ABABAB 6
+		TNT1 A 0 A_Jump(10,"Scream")
+		TTR9 A 20
+		TTR9 ABABAB 6
+		TTR9 A 40
+		Goto Scream
+	Scream:
+		TTR9 A 2
+		TNT1 A 0 A_PlaySound("TORTURE")
+		TTR9 BC 3
+		TTR9 DCECDCECDCECDCECDCECDCECDCECDCECDCECDCECDCECDCEC 3
+		TTR9 BA 3
+		TTR9 A 10
+		Goto Spawn
+	Death:
+		TNT1 A 0 A_PlaySound("TORTURE4")
+		TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
+		TTR9 FGHI 10
+		TNT1 A 0 A_SpawnItem("DripingBloodLeavesSmallPool")
+		TNT1 A 0 A_SpawnItem("CeilBloodLargeBloodSpawner")
+		TTR9 J -1
+		Stop
+	}
+}
+Actor TorturedMarine23SOLID : TorturedMarine23	{+SOLID}
+
+Actor TorturedMarine66
+{
+Health 1
+Scale 0.8
+Mass 999999
+Height 72
+Radius 16
++SHOOTABLE
++NORADIUSDMG
++SPAWNCEILING
++NOGRAVITY
++FLOAT
+	States
+	{
+	Spawn:
+		TTR6 AAAAAAA 100 A_Jump(10,"Scream")
+		Goto Scream
+	Scream:
+		TTR6 B 2
+		TNT1 A 0 A_PlaySound("TORTURE6")
+		TTR6 BCABCA 6
+		Goto Spawn
+	Death:
+		TNT1 A 0 A_PlaySound("TORTURE4")
+		TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
+		TTR6 DE 10
+		TNT1 A 0 A_SpawnItem("DripingBloodLeavesSmallPool")
+		TNT1 A 0 A_SpawnItem("CeilBloodLargeBloodSpawner")
+		TTR6 F -1
+		Stop
+	}
+}
+Actor TorturedMarine66SOLID : TorturedMarine66	{+SOLID}
