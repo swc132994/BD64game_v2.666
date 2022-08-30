@@ -8,12 +8,12 @@ Speed 6
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 damagefactor "chainsaw",0.4
-Tag "Pistol Zombie"	//r31 added
-DROPITEM "SOULSPAWNER"		//R31 ADDED
-DROPITEM "CLIP"				//R31 ADDED
-//+FORCEXYBILLBOARD																//R12.3
+Tag "Pistol Zombie"			//r31 added
+DROPITEM "SOULSPAWNER"		//R31 added
+DROPITEM "CLIP"				//R31 added
+//+FORCEXYBILLBOARD			//R12.3 removed
 +FLOORCLIP
-+DOHARMSPECIES																	//R23 ADDED
++DOHARMSPECIES				//R23 added
 states
 	{
 	Spawn:
@@ -21,38 +21,34 @@ states
 		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 was BlueArmor
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
 		Goto Stand
-		
 	Stand:
 		PSSS B 1
 		TNT1 A 0 A_CheckSight("Stand2")
-		TNT1 A 0 A_Jump(64, "Idle")			
+		TNT1 A 0 A_Jump(64,"Idle")
 		TNT1 AA 0 A_SpawnItem("HeadshotTarget10",0,50,0)
 		PSSS AB 10 A_Look
 		Loop
-	
 	Stand2:
 		PSSS AB 10 A_Look
 		TNT1 A 0 A_CheckSight("Stand2")
-		Goto Stand		
-	
-	Idle:
-	    TNT1 A 0 A_ClearTarget
-        TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		PSSS A 10 A_Look
-        TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		PSSS B 10 A_Look
-		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		PSSS A 10 A_Look
-        TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		PSSS C 10 A_Look
-		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		PSSS A 10 A_Look
-		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		PSSS D 10 A_Look
-		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		PSSS A 10 A_Look	
 		Goto Stand
-	
+	Idle:
+		TNT1 A 0 A_ClearTarget
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		PSSS A 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		PSSS B 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		PSSS A 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		PSSS C 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		PSSS A 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		PSSS D 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		PSSS A 10 A_Look
+		Goto Stand
 	See:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
 		PPOS AAAA 2 A_Chase("","")
@@ -191,12 +187,6 @@ states
 		CRB1 ABCDEFG 4
 		CRB1 H -1
 		Stop
-/*		TNT1 A 0
-		TNT1 A 0 A_XScream
-		TNT1 A 0 A_NoBlocking
-//		tnt1 a 0 A_GiveToTarget("SoulAmmo",1)									//R8 WAS 2	//R31 REMOVED
-		TNT1 A 1 A_SpawnItem("MeltedHumanoidSmall")								//R30.6 WAS 0 TIC
-		Stop*/
 	Death.Shotgun:		//r31 extra
 		POSS H 1
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
@@ -631,7 +621,7 @@ actor 64ShotgunGuy : 64Zombieman Replaces ShotgunGuy
 speed 6
 GibHealth 15
 Tag "Shotgun Zombie"	//r31 added
-DropItem "ShotgunDrop" 															//R12.1 //R31 was 64Shotgun and 64ShotgunTactical
+DropItem "ShotgunDrop"	//R12.1 //R31 was 64Shotgun and 64ShotgunTactical
 DROPITEM "SOULSPAWNER"	//R31 ADDED
 //Translation "128:143=96:111","144:151=101:106","152:159=104:111"
 	states
@@ -641,39 +631,34 @@ DROPITEM "SOULSPAWNER"	//R31 ADDED
 		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 was BlueArmor
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
 		Goto Stand
-		
 	Stand:
 		SSSS B 1
 		TNT1 A 0 A_CheckSight("Stand2")
-		TNT1 A 0 A_Jump(64, "Idle")			
+		TNT1 A 0 A_Jump(64,"Idle")
 		TNT1 AA 0 A_SpawnItem("HeadshotTarget10",0,50,0)
 		SSSS AB 10 A_Look
 		Loop
-	
 	Stand2:
 		SSSS AB 10 A_Look
 		TNT1 A 0 A_CheckSight("Stand2")
-		Goto Stand			
-
-	
-	Idle:
-	    TNT1 A 0 A_ClearTarget
-        TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		SSSS A 10 A_Look
-        TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		SSSS B 10 A_Look
-		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		SSSS A 10 A_Look
-        TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		SSSS C 10 A_Look
-		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		SSSS A 10 A_Look
-		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		SSSS D 10 A_Look
-		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		SSSS A 10 A_Look	
 		Goto Stand
-		
+	Idle:
+		TNT1 A 0 A_ClearTarget
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		SSSS A 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		SSSS B 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		SSSS A 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		SSSS C 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		SSSS A 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		SSSS D 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		SSSS A 10 A_Look
+		Goto Stand
 	See:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
 		SPOS AAAA 2 A_Chase("","")
@@ -811,13 +796,13 @@ Actor SSGZombieDrop		//r31 new
 	}
 }
 
-actor 64SSGGuy : 64ShotgunGuy 19110	//R31 ADDED FROM BD64 AWAKENING (Suspanded)
+actor 64SSGGuy : 64ShotgunGuy 19110	//R31 ADDED FROM BD64 AWAKENING(Suspended)
 {
 DropItem "SSGZombieDrop"
 DROPITEM "SOULSPAWNER"
 Tag "SSG Zombie"
 SpawnID 170
-//Translation "128:143=96:111", "144:151=101:106", "152:159=104:111"
+//Translation "128:143=96:111","144:151=101:106","152:159=104:111"
 	states
 	{
 	Spawn:
@@ -825,39 +810,34 @@ SpawnID 170
 		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 was BlueArmor
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
 		Goto Stand
-		
 	Stand:
 		SSS4 B 1
 		TNT1 A 0 A_CheckSight("Stand2")
-		TNT1 A 0 A_Jump(64, "Idle")		
+		TNT1 A 0 A_Jump(64,"Idle")
 		TNT1 AA 0 A_SpawnItem("HeadshotTarget20",0,50,0)
 		SSS4 AB 10 A_Look
 		Loop
-	
-	Stand2:	
+	Stand2:
 		SSS4 AB 10 A_Look
 		TNT1 A 0 A_CheckSight("Stand2")
-		Goto Stand						
-
-	
-	Idle:
-	    TNT1 A 0 A_ClearTarget
-        TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		SSS4 A 10 A_Look
-        TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		SSS4 B 10 A_Look
-		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		SSS4 A 10 A_Look
-        TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		SSS4 C 10 A_Look
-		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		SSS4 A 10 A_Look
-		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		SSS4 D 10 A_Look
-		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 4, 44,0)
-		SSS4 A 10 A_Look	
 		Goto Stand
-		
+	Idle:
+		TNT1 A 0 A_ClearTarget
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		SSS4 A 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		SSS4 B 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		SSS4 A 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		SSS4 C 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		SSS4 A 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		SSS4 D 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,44,0)
+		SSS4 A 10 A_Look
+		Goto Stand
 	See:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
 		POS4 AAAA 2 A_Chase("","")
@@ -1381,7 +1361,7 @@ Health 120
 Speed 4
 attacksound "grunt/attack"
 Tag "Chaingun Zombie"	//r31 added
-DropItem "ChaingunDrop"															//R12.1
+DropItem "ChaingunDrop"		//R12.1 added	//r31 was chaingun & tactical chaingun
 DROPITEM "SOULSPAWNER"	//R31 ADDED
 	States
 	{
@@ -1551,7 +1531,7 @@ Speed 60					//R25.2 WAS 40
 FastSpeed 70				//R25.2 WAS 50
 Alpha 0.5
 RenderStyle Add
-Decal "BulletDecalNew1"															//R28.3 ADDED
+Decal "BulletDecalNew1"		//R28.3 added
 Projectile
 +RANDOMIZE
 +MISSILE
@@ -1575,8 +1555,8 @@ actor 64Zombiemarine : 64Zombieman Replaces WolfensteinSS
 Speed 12
 attacksound "grunt/attack"
 Tag "Marine Zombie"		//r31 added
-DropItem "RifleDrop"															//R31 Added
-DROPITEM "SOULSPAWNER"	//R31 ADDED
+DropItem "RifleDrop"	//R31 Added
+DROPITEM "SOULSPAWNER"	//R31 added
 	States
 	{
 	Spawn:
@@ -1824,22 +1804,21 @@ DropItem "64Chaingunguy"
 //INTRO MARINES
 actor IntroMarine : 64ZombieMarine Replaces MarinePistol						//R21 MOVED FROM DECORATE.INTROMARINES
 {
-scale 0.8
-Health 5																		//R24.1
+Health 5																		//R24.1 added
 GibHealth 30
 Speed 6
 MaxTargetRange 600
-Species Marines																	//R24.1
-PainSound "player/male/pain100_1"												//r31
-DeathSound "player/male/death1"													//r31
-activesound ""																	//r31
-seesound ""																		//r31
+Species Marines																	//R24.1 added
+PainSound "player/male/pain100_1"												//r31 added
+DeathSound "player/male/death1"													//r31 added
+activesound ""																	//r31 added
+seesound ""																		//r31 added
 Tag "Marine"	//r31 added
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-DropItem "RifleDrop",	15															//R31 Added
-Dropitem "clip"																	//R21
-DROPITEM "SOULSPAWNER"	//R31 ADDED
+DropItem "RifleDrop",	15														//R31 Added
+Dropitem "clip"			//R21 added
+DROPITEM "SOULSPAWNER"	//R31 added
 +FLOORCLIP
 +FRIENDLY
 +LOOKALLAROUND
@@ -2164,7 +2143,7 @@ actor BrutalizedChaingunner_2 : BrutalizedZombieman_2						//R30.5 ADDED	//R30.6
 	See:
 		ZDM2 A 10
 	Death:
-		TNT1 A 0 A_noBlocking
+		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Die	//r31 added A_Die
 //		TNT1 A 0 A_ChangeFLag("SHOOTABLE",0)	//R31 REMOVED
 		PDM2 BCDE 4
@@ -2204,7 +2183,7 @@ actor BrutalizedChaingunner_2 : BrutalizedZombieman_2						//R30.5 ADDED	//R30.6
 	}
 }
 
-actor IntroMarinetitle : IntroMarine 3008										//r31
+actor IntroMarinetitle : IntroMarine 3008	//r31 added for title screen
 {
 Health 100
 +FLOAT

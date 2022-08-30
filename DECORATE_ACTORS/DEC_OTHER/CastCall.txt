@@ -236,7 +236,6 @@ actor D64SpectreCast : 64Spectre
 {
 XScale 1.0
 YScale 1.0
-Alpha 0.5
 	States
 	{
 		See:
@@ -261,7 +260,6 @@ actor D64NightmareSpectreCast : 64NightmareSpectre
 {
 XScale 1.2
 YScale 1.2
-Alpha 0.5
 	States
 	{
 		See:
