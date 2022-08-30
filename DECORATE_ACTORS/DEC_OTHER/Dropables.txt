@@ -30,12 +30,13 @@ Gravity 0.9
 +THRUACTORS
 +NOTELEPORT
 +NOBLOCKMAP
-+BLOODLESSIMPACT 
++BLOODLESSIMPACT
 +FORCEXYBILLBOARD
 +NODAMAGETHRUST
 +MOVEWITHSECTOR
 +CORPSE
 -DONTSPLASH
++DROPPED
 	States
 	{
 	Spawn:
@@ -44,7 +45,8 @@ Gravity 0.9
 		TRII BCDEFGH 4
 		Loop
 	Death:
-		TNT1 A 0 A_SpawnItem("ShotgunSpawner")
+		TNT1 A 0 A_DropItem("64Shotgun")
+		TNT1 A 0 A_DropItem("64ShotgunTactical")
 		Stop
 	}
 }
@@ -58,7 +60,8 @@ Actor DropedShotgun2 : DropedShotgun
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
 		TRII GFEDCBA 4
 	Death:
-		TNT1 A 0 A_SPawnItem("ShotgunSpawner")
+		TNT1 A 0 A_DropItem("64Shotgun")
+		TNT1 A 0 A_DropItem("64ShotgunTactical")
 		Stop
 	}
 }
@@ -88,7 +91,8 @@ ACTOR DropedSSG : DropedShotgun
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
 		TRI1 BCDEFGH 4
 	Death:
-		TNT1 A 0 A_SpawnItem("SuperShotgunSpawner")
+		TNT1 A 0 A_DropItem("64SuperShotgun")
+		TNT1 A 0 A_DropItem("64SuperShotgunTactical")
 		Stop
 	}
 }
@@ -102,7 +106,8 @@ ACTOR DropedSSG2 : DropedShotgun
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
 		TRI1 GFEDCBA 4
 	Death:
-		TNT1 A 0 A_SpawnItem("SuperShotgunSpawner")
+		TNT1 A 0 A_DropItem("64SuperShotgun")
+		TNT1 A 0 A_DropItem("64SuperShotgunTactical")
 		Stop
 	}
 }
@@ -136,7 +141,8 @@ ACTOR DropedRifle : DropedShotgun
 		TRI2 B 0
 		"####" BCDEFGH 4
 	Death:
-		TNT1 A 0 A_SpawnItem("RifleSpawner")
+		TNT1 A 0 A_DropItem("64Rifle")
+		TNT1 A 0 A_DropItem("64RifleTactical")
 		Stop
 	}
 }
@@ -154,7 +160,8 @@ ACTOR DropedRifle2 : DropedShotgun
 		TRI2 G 0
 		"####" GFEDCBA 4
 	Death:
-		TNT1 A 0 A_SpawnItem("RifleSpawner")
+		TNT1 A 0 A_DropItem("64Rifle")
+		TNT1 A 0 A_DropItem("64RifleTactical")
 		Stop
 	}
 }
@@ -184,7 +191,8 @@ ACTOR DropedChaingun : DropedShotgun
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
 		TRI3 BCDEFGH 4
 	Death:
-		TNT1 A 0 A_SpawnItem("ChaingunSpawner")
+		TNT1 A 0 A_DropItem("64Chaingun")
+		TNT1 A 0 A_DropItem("64ChaingunTactical")
 		Stop
 	}
 }
@@ -198,7 +206,8 @@ ACTOR DropedChaingun2 : DropedShotgun
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
 		TRI3 GFEDCBA 4
 	Death:
-		TNT1 A 0 A_SpawnItem("ChaingunSpawner")
+		TNT1 A 0 A_DropItem("64Chaingun")
+		TNT1 A 0 A_DropItem("64ChaingunTactical")
 		Stop
 	}
 }
