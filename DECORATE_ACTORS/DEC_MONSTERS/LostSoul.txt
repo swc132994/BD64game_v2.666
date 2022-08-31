@@ -40,7 +40,6 @@ DamageFactor "CauseObjectsToSplash",0.0
 		SKUL D 2 BRIGHT A_FaceTarget
 		SKUL E 2 BRIGHT A_SpawnItemEx("YellowFlare",0,0,30)
 		SKUL E 1 BRIGHT A_SkullAttack(30)
-		TNT1 AAAAA 0
 		SKUL EE 1 BRIGHT A_SpawnItemEx("LostSoulTrail",0,0,30)
 		SKUL D 2 BRIGHT A_SpawnItemEx("YellowFlare",0,0,30)
 		goto Missile+10
@@ -66,10 +65,6 @@ DamageFactor "CauseObjectsToSplash",0.0
 		SKUL J 4 A_NoBlocking
 		SKUL KLMNOP 4 A_FadeOut(0.1667)
 		stop
-	Crush:
-		TNT1 A 0 A_PlaySound("Misc/Gibbed")
-		POL5 A -1
-		Stop
 	}
 }
 

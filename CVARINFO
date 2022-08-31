@@ -35,3 +35,4 @@ server bool ClassicRLCvar = FALSE;				//R31 OLD OR NEW ROCKET LAUNCHER
 server int AlternativeAmmoPickupSpritesCvar = 0;//R31 DEFAULT OR ALTERNATIVE AMMO PICKUP
 server int BerserkSwitchFistsCvar = 1; 			//R31 BERSERK FISTS SWITCHING
 server bool AlternativeMasterMindSkinCvar = FALSE;	//R31 ALTERNATIVE MASTERMIND SKIN
+server int StalkerRandom_Cvar = 0;			//R31 STALKER REPLACES LOST SOUL
