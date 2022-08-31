@@ -336,3 +336,8 @@ Script "AlternativeMasterMindSkin" (void) //r31 added alternative MastermindSkin
 {
 SetResultValue(getCvar("AlternativeMasterMindSkinCvar"));
 }
+
+script "StalkerRandomACS" (void)	//R31 added
+{
+SetResultValue(GetCVar("StalkerRandom_Cvar"));
+}

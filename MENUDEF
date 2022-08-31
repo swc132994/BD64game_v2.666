@@ -130,6 +130,7 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 	Option "Randomly replace Cacodemons with Nightmare Cacodemons =","NCaco_Spawner_Cvar","NCaco_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Demons with Acid Demons =","AcidDemonRandom_Cvar","AcidDemon_Spawner_Value"	//R31 New - Split from Demons with Hellhounds
 //	Option "Randomly replace Demons with Acid Demons or Hellhounds =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Lost Souls with Stalkers =","StalkerRandom_Cvar","Stalker_Spawner_Value"	//R31 New - Split from Demons with Hellhounds
 	Option "Randomly replace Barons with Hellhounds =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Cyberdemons with Annihilators =","Annihilator_Spawner_Cvar","Annihilator_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Masterminds with Motherdemons =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"	//R27 //R31 was YesOrNo
@@ -270,6 +271,13 @@ OptionValue "Motherdemon_Spawner_Value"
 	2,"Hellhound Only"
 	3,"Random"
 }*/
+
+OptionValue "Stalker_Spawner_Value"
+{
+	0,"Lost Soul Only"
+	1,"Stalker Only"
+	2,"Random"
+}
 
 OptionValue "Hellhound_Spawner_Value"
 {

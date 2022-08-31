@@ -548,3 +548,49 @@ size 24
 secondarySize 16
 chance 0.3
 }
+
+// Stalker
+flickerlight STALKER
+{
+	color 0.2 1.0 0.0
+	size 56
+	secondarysize 64
+	chance 0.5
+}
+
+flickerlight STALKER_X1
+{
+	color 0.2 0.8 0.0
+	size 32
+	secondarySize 46
+	chance 0.25
+}
+
+flickerlight STALKER_X2
+{
+	color 0.2 0.6 0.0
+	size 88
+	secondarySize 96
+	chance 0.25
+}
+
+flickerlight STALKER_X3
+{
+	color 0.1 0.4 0.0
+	size 104
+	secondarySize 112
+	chance 0.25
+}
+
+flickerlight STALKER_X4
+{
+	color 0.0 0.2 0.0
+	size 112
+	secondarySize 120
+	chance 0.25
+}
+
+object 64Stalker
+{
+frame stkr {light STALKER_X1}
+}
