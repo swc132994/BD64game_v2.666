@@ -85,7 +85,7 @@ Inventory.MaxAmount 10
 +IGNORESKILL
 }
 
-Actor 64PistolTACTICAL : DoomWeapon
+Actor 64PistolTACTICAL : Brutal64Weapon
 {
 Weapon.SelectionOrder 1901		//R21 WAS 1900
 Weapon.AmmoUse1 1				//R25 WAS 0
@@ -100,8 +100,6 @@ Obituary "$OB_MPPISTOL"
 Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
 Tag "$TAG_PISTOL"
 Scale 0.82
-Inventory.forbiddento "64DoomPlayer"
-Inventory.restrictedto "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	//R28 ADDED MODERN
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AMMO_CHECKBOTH		//R25 ADDED
 	states
@@ -144,12 +142,13 @@ Inventory.restrictedto "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	
 	AirKickingFlash:
 		PISI ABCDEFGGGGGGFEDCBA 1
 		stop
+	v1Ready:		
 	Ready:
 		PISG A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 //		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 ADDED
-		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 ADDED
+		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 ADDED		
 		Loop
 	Fire:
 		TNT1 A 0 a_JumpifInventory("PistolAmmo",1,1)	//R24.2 WAS JUMP 2
@@ -210,68 +209,6 @@ Inventory.restrictedto "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	
 		TNT1 A 0 A_TakeInventory("Clip",1,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_JumpIfInventory("PistolAmmo",10,"Ready")
 		TNT1 A 0 A_JumpIfInventory("Clip",1,"Reloadloop")
-		Goto Ready
-	DoKick:
-		TNT1 A 0 A_ZoomFactor(1.0)
-		TNT1 A 0 A_Takeinventory("Kicking",1)
-//		TNT1 A 0 A_Takeinventory("Zoomed",0)						//R11 UNUSED
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"ModernCheck")		//R28 ADDED
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,1)			//R7 ADDED
-		Goto Ready													//R7 ADDED
-		TNT1 A 0 A_jumpifinventory("Stamina",20,3)
-		TNT1 A 0 A_Print("Not enough stamina!",1)
-		TNT1 A 0 A_PlaySound("Tired",2)
-		Goto Ready
-		TNT1 A 0 A_TakeInventory("Stamina",20)
-	ModernCheck:									//R28 ADDED
-//		TNT1 A 0 A_Takeinventory("ADSmode",1)		//R11 UNUSED
-		TNT1 A 0 A_JumpIf(momZ > 0,"AirKick")
-		TNT1 A 0 A_JumpIf(momZ < 0,"AirKick")
-		TNT1 A 0 A_JumpIf(pitch > 32,"LowKickChecker1")
-		Goto InitializeNormalKick
-	LowKickChecker1:
-		TNT1 A 0 A_JumpIf(pitch > 90,"InitializeNormalKick")
-		TNT1 A 0 A_FireCustomMissile("KickAttackDetectDowned",0,0,0,0)
-	InitializeNormalKick:
-		TNT1 A 0 A_GunFlash("KickingFlash")
-		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"BerserkerKick")
-		TNT1 A 0 A_PlaySound("KICK")
-		TNT1 A 0 SetPlayerProperty(0,1,0)
-		KICK BCD 1
-		TNT1 A 0 A_FireCustomMissile("KickAttack",0,0,0,-7)
-		KICK H 5
-		KICK I 1
-		KICK GFEDCBA 1
-		TNT1 A 0 SetPlayerProperty(0,0,0)
-		Goto Ready
-	BerserkerKick:
-		TNT1 A 0 A_PlaySound("KICK")
-		TNT1 A 0 SetPlayerProperty(0,1,0)
-		KICK BCD 1
-		TNT1 A 0 A_FireCustomMissile("SuperKickAttack",0,0,0,-7)
-		KICK H 5
-		KICK I 1
-		KICK GFEDCBA 1
-		TNT1 A 0 SetPlayerProperty(0,0,0)
-		Goto ready
-	AirKick:
-		TNT1 A 0 A_TakeInventory("Stamina",5)	//R17 WAS 20
-		TNT1 A 0 A_GunFlash("AirKickingFlash")
-		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"SuperAirKick")
-		TNT1 A 0 A_PlaySound("KICK")
-		TNT1 A 0 A_Recoil(-6)
-		KICK JKLMN 1
-		TNT1 A 0 A_FireCustomMissile("AirKickAttack",0,0,0,-31)
-		KICK O 3
-		KICK PQRST 2
-		Goto Ready
-	SuperAirKick:
-		TNT1 A 0 A_PlaySound("KICK")
-		TNT1 A 0 A_Recoil(-6)
-		KICK JKLMN 1
-		TNT1 A 0 A_FireCustomMissile("SuperAirKickAttack",0,0,0,-31)
-		KICK O 3
-		KICK PQRST 2
 		Goto Ready
 	}
 }

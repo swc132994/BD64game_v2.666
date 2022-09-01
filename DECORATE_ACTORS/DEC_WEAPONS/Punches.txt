@@ -41,6 +41,7 @@ Inventory.Icon "PUN1A0"				//R27 ADDED
 		TNT1 A 12
 		PALT CBA 1
 		stop
+	v1Ready:	
 	Ready:
 		PUN1 A 1 A_WeaponReady(WRF_ALLOWRELOAD)						//R31 ADDED ALLOWRELOAD
 //		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")			//R31 ADDED
@@ -132,6 +133,38 @@ Inventory.Icon "PUN1A0"				//R27 ADDED
 		PUNS JKJI 3
 //		PUNS CBA 1 A_TakeInventory("Reloading",1)
 		Goto Ready
+	Altfire:		//r31 added
+		TNT1 A 0 A_jumpifinventory("IsTacticalClass",1,2)
+		TNT1 A 0 A_jumpifinventory("IsModern",1,4)
+		GOTO READY
+		TNT1 A 0 A_jumpifinventory("Stamina",10,3)
+		TNT1 A 0 A_Print("Not enough stamina!",1)
+		TNT1 A 0 A_PlaySound("Tired",2)
+		Goto Ready
+		TNT1 A 0 A_TakeInventory("Stamina",10)
+		TNT1 A 0 A_PlaySound("KICK")
+		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"BerserkAltPunch2")
+		PALT ABC 1
+		PALT DEFG 1
+		PALT H 3 offset(0,32)
+		TNT1 A 0 A_FireCustomMissile("AirKickAttack",0,0,0,-7)
+		PALT H 2 offset(-1,34)
+		PALT GFED 1
+		PALT CBA 1
+		TNT1 A 0 A_ReFire
+		GOTO Ready
+	BerserkAltPunch2:
+		PALT ABC 1
+		PBAL ABCDE 1
+		PALT H 1 offset(0,32)
+		PALT H 1 offset(-1,33)
+		TNT1 A 0 A_FireCustomMissile("SuperAirKickAttack",0,0,0,-7)
+		PALT H 1 offset(1,34)
+		PALT H 1 offset(2,32)
+		PALT GFED 1
+		PALT CBA 1
+		TNT1 A 0 A_ReFire
+		GOTO SELECTANIMATION
 	DoKick:
 		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 0 A_Takeinventory("Kicking",1)
@@ -193,39 +226,7 @@ Inventory.Icon "PUN1A0"				//R27 ADDED
 		TNT1 A 0 A_FireCustomMissile("SuperAirKickAttack",0,0,0,-31)
 		KICK O 3
 		KICK PQRST 2
-		Goto Ready
-	Altfire:		//r31 added
-		TNT1 A 0 A_jumpifinventory("IsTacticalClass",1,2)
-		TNT1 A 0 A_jumpifinventory("IsModern",1,4)
-		GOTO READY
-		TNT1 A 0 A_jumpifinventory("Stamina",10,3)
-		TNT1 A 0 A_Print("Not enough stamina!",1)
-		TNT1 A 0 A_PlaySound("Tired",2)
-		Goto Ready
-		TNT1 A 0 A_TakeInventory("Stamina",10)
-		TNT1 A 0 A_PlaySound("KICK")
-		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"BerserkAltPunch2")
-		PALT ABC 1
-		PALT DEFG 1
-		PALT H 3 offset(0,32)
-		TNT1 A 0 A_FireCustomMissile("AirKickAttack",0,0,0,-7)
-		PALT H 2 offset(-1,34)
-		PALT GFED 1
-		PALT CBA 1
-		TNT1 A 0 A_ReFire
-		GOTO Ready
-	BerserkAltPunch2:
-		PALT ABC 1
-		PBAL ABCDE 1
-		PALT H 1 offset(0,32)
-		PALT H 1 offset(-1,33)
-		TNT1 A 0 A_FireCustomMissile("SuperAirKickAttack",0,0,0,-7)
-		PALT H 1 offset(1,34)
-		PALT H 1 offset(2,32)
-		PALT GFED 1
-		PALT CBA 1
-		TNT1 A 0 A_ReFire
-		GOTO SELECTANIMATION
+		Goto Ready		
 	}
 }
 
