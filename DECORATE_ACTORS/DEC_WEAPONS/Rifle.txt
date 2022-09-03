@@ -209,13 +209,26 @@ Tag "Assault Rifle"																//R11 WAS $TAG_CHAINGUN
 	KickingFlash:	//r31 new kick animations
 		ARSK A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFK A 0
-		"####" BCDEEEEEEEEEEDCB 1
+		"####" BCDE 1
+		"####" E 8
+		"####" EDCB 1
 		Stop
 	AirKickingFlash:
 		ARSK A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFK A 0
-		"####" BCDEEEEEEEEEEEEDCB 1
+		"####" BCDE 1
+		"####" E 10
+		"####" EDCB 1
 		Stop
+	SlideKickingStart:
+		ARSK A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
+		RIFK A 0
+		"####" BCDE 1
+		"####" E 18		
+	SlideKickingEnd:	
+		"####" E 6
+		"####" EDCB 1
+		Stop		
 	Spawn:
 		ARSD A 0 nodelay A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFD A 0

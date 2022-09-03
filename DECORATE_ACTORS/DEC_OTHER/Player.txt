@@ -494,7 +494,7 @@ Player.StartItem "Stamina",100
 Player.StartItem "IsTacticalClass",1
 Player.StartItem "64RifleTactical"
 Player.StartItem "64PistolTactical"												//R15
-Player.StartItem "64Fist"														//R8 CHANGED BACK TO 64FIST
+Player.StartItem "64FistTactical"														//R8 CHANGED BACK TO 64FIST
 Player.StartItem "ShotgunAmmo",8												//R5 NEW
 Player.StartItem "SSGAmmo",2													//R10.2 NEW
 Player.StartItem "PlasmaRifleAmmo",40											//R5 NEW	//r31 was 30
@@ -504,15 +504,15 @@ player.viewheight 50
 player.attackzoffset 23
 Player.DisplayName "Tactical (Rifle)"											//R15
 Player.CrouchSprite "PLYC"
-Player.WeaponSlot 1,"64ChainsawTACTICAL","64Fist"								//R16 DEFINE WEAPONS
+Player.WeaponSlot 1,"64ChainsawTACTICAL","64FistTactical"								//R16 DEFINE WEAPONS
 Player.WeaponSlot 2,"64PistolTACTICAL","64SMGTactical"
 Player.WeaponSlot 3,"64ShotgunTACTICAL","64SuperShotgunTACTICAL"
 Player.WeaponSlot 4,"64RifleTACTICAL","64ChaingunTACTICAL"
 Player.WeaponSlot 5,"64RocketLauncherTACTICAL","64RocketLauncherDM"
 Player.WeaponSlot 6,"64PlasmaRifleTACTICAL","64PlasmaRifleDM"
-Player.WeaponSlot 7,"64BFG9000"
+Player.WeaponSlot 7,"64BFG9000Tactical"
 Player.WeaponSlot 8,"UnmakerTACTICAL"
-Player.WeaponSlot 9,"Lasergun"
+Player.WeaponSlot 9,"LasergunTactical"
 +THRUSPECIES
 +MTHRUSPECIES
 //Player.JumpZ 7																//R17 ADDED//R24 REMOVED
@@ -744,7 +744,7 @@ Player.StartItem "Stamina",100
 Player.StartItem "IsTacticalClass",1
 Player.StartItem "64PistolTactical"
 Player.StartItem "Pistolammo",10
-Player.StartItem "64Fist"
+Player.StartItem "64FistTactical"
 Player.StartItem "ShotgunAmmo",8
 Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40											//r31 was 30
@@ -771,7 +771,7 @@ Player.StartItem "SMGAmmo",46													//R31
 Player.StartItem "IsModern",1
 Player.StartItem "64PistolTactical"
 Player.StartItem "Pistolammo",10
-Player.StartItem "64Fist"
+Player.StartItem "64FistTactical"
 Player.StartItem "ShotgunAmmo",8
 Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40											//r31 was 30
@@ -781,15 +781,15 @@ player.viewheight 50
 player.attackzoffset 23
 Player.DisplayName "Modern"
 Player.CrouchSprite "PLYC"
-Player.WeaponSlot 1,"64ChainsawModern","64Fist"										//R31 was "64ChainsawTactical"
+Player.WeaponSlot 1,"64ChainsawModern","64FistTactical"										//R31 was "64ChainsawTactical"
 Player.WeaponSlot 2,"64PistolTACTICAL","64SMGTactical"
 Player.WeaponSlot 3,"64ShotgunTACTICAL","64SuperShotgunTACTICAL"
 Player.WeaponSlot 4,"64RifleTACTICAL","64ChaingunTACTICAL"
 Player.WeaponSlot 5,"64RocketLauncherTACTICAL","64RocketLauncherDM"
 Player.WeaponSlot 6,"64PlasmaRifleTACTICAL","64PlasmaRifleDM"
-Player.WeaponSlot 7,"64BFG9000"
+Player.WeaponSlot 7,"64BFG9000Tactical"
 Player.WeaponSlot 8,"UnmakerTACTICAL"
-Player.WeaponSlot 9,"Lasergun"
+Player.WeaponSlot 9,"LasergunTactical"
 +THRUSPECIES
 +MTHRUSPECIES
 	States

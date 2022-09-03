@@ -46,6 +46,25 @@ script "KickKeyPress" (VOID) NET		//TRIGGERED FROM KEYPRESS		//r31 was 301
 	}
 }
 
+script "CheckCrouch" ENTER
+{ 
+ int buttons2;
+
+ while (TRUE)
+ {
+   buttons2 = GetPlayerInput(-1, INPUT_BUTTONS);
+   
+if (buttons2 & BT_CROUCH)
+{
+   GiveInventory("IsCrouching", 1);
+   delay(1);
+   restart;
+}
+   TakeInventory("IsCrouching", 1);
+   delay(4);
+ }
+}
+
 /*Script "ReloadKeyPress" (VOID) NET			//TRIGGERED FROM KEYPRESS		//r31 was 303
 {
 GiveInventory("Reloading",1);

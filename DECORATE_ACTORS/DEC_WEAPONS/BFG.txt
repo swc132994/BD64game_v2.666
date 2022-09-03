@@ -11,7 +11,12 @@ Inventory.PickupSound "WPICK"
 		BFUG A -1
 		Stop
 	Pickup:
+		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
 		TNT1 A 0 A_GiveInventory("64BFG9000")
+		Stop
+	Pickup2:
+		TNT1 A 0 A_GiveInventory("64BFG9000Tactical")
 		Stop
 	}
 }
@@ -27,16 +32,119 @@ Weapon.AmmoType "Cell"
 Inventory.PickupMessage "$GOTBFG9000"
 Tag "$TAG_BFG9000"
 +WEAPON.NOAUTOFIRE
+//+WEAPON.ALT_USES_BOTH	//R31 ADDED, REMOVED
++WEAPON.NOALERT			//R31 ADDED
+	States
+	{
+	/*KickingFlash:
+		BFGS DCBAAAAAAAAAABCD 1
+		stop
+	AirKickingFlash:
+		BFGS DCBAAAAAAAAAAAABCD 1
+		stop*/
+	Ready:
+		TNT1 a 0 A_StopSound(5)									//r31 ADDED
+		BFGG A 1 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")	//R28.2 ADDED
+		TNT1 A 0 A_TakeInventory("Stamina",0)					//R28.2 ADDED
+		Loop
+	Deselect:
+		TNT1 A 0 A_StopSound(5)	//R31 ADDED
+		BFGG A 1 A_Lower
+		Wait
+	Select: //R31 Select Animation Improvement (Tactical and Modern only)	
+		BFGG A 1 A_Raise
+		WAIT
+	Fire:
+		TNT1 A 0 A_JumpIfInventory("CELL",40,2)	//R31 ADDED
+		TNT1 A 0 A_Print("Not Enough Ammo!",1)	//R31 ADDED
+		GOTO READY								//R31 ADDED
+		TNT1 A 0 A_AlertMonsters
+		BFGG A 1 A_BFGSound
+		BFGC ABCDABCDABCDABCDABCDABCD 1 BRIGHT
+		TNT1 A 0 //A_SetBlend("Green",0.75,14)
+		TNT1 A 0 A_FireBFG
+		TNT1 A 0 A_TakeInventory("CELL",39)		//R31 ADDED
+		TNT1 A 0 A_ZoomFactor(0.9)
+		TNT1 A 0 A_SetPitch(pitch-4)
+		BFGF AB 1 BRIGHT
+		TNT1 A 0 A_ZoomFactor(1.0)
+		BFGF CD 1 BRIGHT
+		BFGF EEEFFGHI 1 A_SetPitch(pitch+0.5)
+		BFGG A 20
+		BFGG A 1 A_ReFire
+		goto Ready
+	Spawn:
+		BFUG A -1
+		Stop
+	/*AltFire:	//r31 added altfire
+		TNT1 A 0 A_jumpifinventory("IsTacticalClass",1,2)
+		TNT1 A 0 A_jumpifinventory("IsModern",1,1)
+		Goto Ready
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_BFGSound
+		BFGA ABABABABAB 1 Bright
+		BFGA ABABABABAB 1 Bright
+		BFGA ABABABABAB 1 Bright
+		BFGA ABABABABAB 1 Bright	//40 TICS TOTAL
+		BFGA C 4 Bright
+	AltHold:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("BBFGHOLD",5,1,1)
+		TNT1 A 0 A_FireCustomMissile("BFGBetaBall",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
+		TNT1 A 0 A_FireCustomMissile("BFGBetaBall2",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
+		BFGA D 1 Bright
+		TNT1 A 0 A_FireCustomMissile("BFGBetaBall",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
+		TNT1 A 0 A_FireCustomMissile("BFGBetaBall2",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
+		BFGA C 1 Bright
+		TNT1 A 0 A_FireCustomMissile("BFGBetaBall",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
+		TNT1 A 0 A_FireCustomMissile("BFGBetaBall2",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
+		BFGA D 1 Bright
+		TNT1 A 0 A_FireCustomMissile("BFGBetaBall",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
+		TNT1 A 0 A_FireCustomMissile("BFGBetaBall2",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
+		BFGA C 1 Bright
+		TNT1 a 0 A_ReFire
+		BFGA a 2 Bright
+		BFGA a 12 BRIGHT A_StopSound(5)
+		Goto Ready*/
+	}
+}
+
+Actor 64BFG9000Tactical : Brutal64Weapon
+{
+Scale 0.9
+Height 20
+Weapon.SelectionOrder 2801
+Weapon.AmmoUse 1		//R31 WAS 40
+Weapon.AmmoGive 40
+Weapon.AmmoType "Cell"
+Inventory.PickupMessage "$GOTBFG9000"
+Tag "$TAG_BFG9000"
++WEAPON.NOAUTOFIRE
 +WEAPON.ALT_USES_BOTH	//R31 ADDED
 +WEAPON.NOALERT			//R31 ADDED
 	States
 	{
 	KickingFlash:
-		BFGS DCBAAAAAAAAAABCD 1
+		BFGS DCBA 1
+		BFGS A 8
+		BFGS ABCD 1
 		stop
 	AirKickingFlash:
-		BFGS DCBAAAAAAAAAAAABCD 1
+		BFGS DCBA 1
+		BFGS A 10
+		BFGS ABCD 1
 		stop
+
+	SlideKickingStart:
+		BFGS DCBA 1
+		BFGS A 18
+	SlideKickingEnd:
+		BFGS A 6
+		BFGS ABCD 1
+		stop		
+		
+	v1Ready:	
 	Ready:
 		TNT1 a 0 A_StopSound(5)									//r31 ADDED
 		BFGG A 1 A_WeaponReady
@@ -46,23 +154,14 @@ Tag "$TAG_BFG9000"
 		Loop
 	Deselect:
 		TNT1 A 0 A_StopSound(5)	//R31 ADDED
-		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,4)
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,3)		
-		BFGG A 1 A_Lower
-		Wait
-	DeselectAnimation:
 		BFGS DCBA 1	
 		TNT1 A 1 A_Lower
-		Wait	
+		Wait
 	Select: //R31 Select Animation Improvement (Tactical and Modern only)
-		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,4)
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,3)		
-		BFGG A 1 A_Raise
-		WAIT
-	SelectAnimation:
+		TNT1 A 0 A_PlaySound("BFGREADY")		
 		TNT1 A 1 A_Raise		
 		TNT1 AAAAAAAA 0 A_Raise	
-		TNT1 A 0 A_PlaySound("BFGREADY")			
+	SelectAnimation:			
 		BFGS ABCD 1
 		Goto Ready
 	Fire:
@@ -87,68 +186,6 @@ Tag "$TAG_BFG9000"
 	Spawn:
 		BFUG A -1
 		Stop
-	DoKick:
-		TNT1 A 0 A_ZoomFactor(1.0)
-		TNT1 A 0 A_Takeinventory("Kicking",1)
-//		TNT1 A 0 A_Takeinventory("Zoomed",0)					//R11 UNUSED
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"ModernCheck")	//R28 ADDED
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,1)		//R7 ADDED
-		Goto Ready												//R7 ADDED
-		TNT1 A 0 A_jumpifinventory("Stamina",20,3)
-		TNT1 A 0 A_Print("Not enough stamina!",1)
-		TNT1 A 0 A_PlaySound("Tired",2)
-		Goto Ready
-		TNT1 A 0 A_TakeInventory("Stamina",20)
-	ModernCheck:								//R28 ADDED
-//		TNT1 A 0 A_Takeinventory("ADSmode",1)	//R11 UNUSED
-		TNT1 A 0 A_JumpIf(momZ > 0,"AirKick")
-		TNT1 A 0 A_JumpIf(momZ < 0,"AirKick")
-		TNT1 A 0 A_JumpIf(pitch > 32,"LowKickChecker1")
-		Goto InitializeNormalKick
-	LowKickChecker1:
-		TNT1 A 0 A_JumpIf(pitch > 90,"InitializeNormalKick")
-		TNT1 A 0 A_FireCustomMissile("KickAttackDetectDowned",0,0,0,0)
-	InitializeNormalKick:
-		TNT1 A 0 A_GunFlash("KickingFlash")
-		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"BerserkerKick")
-		TNT1 A 0 A_PlaySound("KICK")
-		TNT1 A 0 SetPlayerProperty(0,1,0)
-		KICK BCD 1
-		TNT1 A 0 A_FireCustomMissile("KickAttack",0,0,0,-7)
-		KICK H 5
-		KICK I 1
-		KICK GFEDCBA 1
-		TNT1 A 0 SetPlayerProperty(0,0,0)
-		Goto Ready
-	BerserkerKick:
-		TNT1 A 0 A_PlaySound("KICK")
-		TNT1 A 0 SetPlayerProperty(0,1,0)
-		KICK BCD 1
-		TNT1 A 0 A_FireCustomMissile("SuperKickAttack",0,0,0,-7)
-		KICK H 5
-		KICK I 1
-		KICK GFEDCBA 1
-		TNT1 A 0 SetPlayerProperty(0,0,0)
-		Goto Ready
-	AirKick:
-		TNT1 A 0 A_TakeInventory("Stamina",5)	//R17 WAS 20
-		TNT1 A 0 A_GunFlash("AirKickingFlash")
-		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"SuperAirKick")
-		TNT1 A 0 A_PlaySound("KICK")
-		TNT1 A 0 A_Recoil(-6)
-		KICK JKLMN 1
-		TNT1 A 0 A_FireCustomMissile("AirKickAttack",0,0,0,-31)
-		KICK O 3
-		KICK PQRST 2
-		Goto Ready
-	SuperAirKick:
-		TNT1 A 0 A_PlaySound("KICK")
-		TNT1 A 0 A_Recoil(-6)
-		KICK JKLMN 1
-		TNT1 A 0 A_FireCustomMissile("SuperAirKickAttack",0,0,0,-31)
-		KICK O 3
-		KICK PQRST 2
-		Goto Ready
 	AltFire:	//r31 added altfire
 		TNT1 A 0 A_jumpifinventory("IsTacticalClass",1,2)
 		TNT1 A 0 A_jumpifinventory("IsModern",1,1)

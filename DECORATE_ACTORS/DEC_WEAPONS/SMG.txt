@@ -168,11 +168,23 @@ Tag "Sub-machine gun"
 	States
 	{
 	KickingFlash:
-		SMGG BCDEEEEEEEEEEDCB 1
+		SMGG BCDE 1
+		SMGG E 8
+		SMGG EDCB 1
 		Stop
 	AirKickingFlash:
-		SMGG BCDEEEEEEEEEEEEDCB 1
+		SMGG BCDE 1
+		SMGG E 10
+		SMGG EDCB 1
 		Stop
+	SlideKickingStart:
+		SMGG BCDE 1
+		SMGG E 18
+	SlideKickingEnd:	
+		SMGG E 6
+		SMGG EDCB 1
+		Stop		
+		
 	Spawn:
 		SMGZ A -1
 		stop

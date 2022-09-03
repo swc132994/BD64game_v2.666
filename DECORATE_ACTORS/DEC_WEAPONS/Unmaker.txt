@@ -244,11 +244,23 @@ Tag "Unmaker"																	//R11 ADDED TAG
 	States
 	{
 	KickingFlash:	//r31 new kick animations
-		UNMS DCBAAAAAAAAAABCD 1
+		UNMS DCBA 1
+		UNMS A 8
+		UNMS ABCD 1
 		stop
 	AirKickingFlash:
-		UNMS DCBAAAAAAAAAAAABCD 1
+		UNMS DCBA 1
+		UNMS A 10
+		UNMS ABCD 1
 		stop
+	SlideKickingStart:
+		UNMS DCBA 1
+		UNMS A 18
+	SlideKickingEnd:
+		UNMS A 6		
+		UNMS ABCD 1
+		stop		
+		
 	Spawn:
 		LGUN A -1
 		loop

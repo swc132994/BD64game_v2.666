@@ -129,11 +129,23 @@ Tag "$TAG_SUPERSHOTGUN"
 	states
 	{
 	KickingFlash:	//r31 new kick animations
-		SSGK ABCDEFFFFFFEDCBA 1
+		SSGK ABCDE 1
+		SSGK F 6
+		SSGK EDCBA 1
 		stop
-	AirKickingFlash: //18
-		SSGK ABCDEFFFFFFFFEDCBA 1
+	AirKickingFlash:
+		SSGK ABCDE 1
+		SSGK F 8
+		SSGK EDCBA 1
 		stop
+	SlideKickingStart:
+		SSGK ABCDE 1
+		SSGK F 10
+	SlideKickingEnd:		
+		SSGK F 5
+		SSGK EDCBA 1
+		stop		
+		
 	Spawn:
 		SGN2 A -1
 		Stop

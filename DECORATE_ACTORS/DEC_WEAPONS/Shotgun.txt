@@ -125,14 +125,26 @@ Tag "$TAG_SHOTGUN"
 	states
 	{
 	KickingFlash:	//r31 new kick animations
-		SHTG BCDEFGGGGGGFEDCB 1
+		SHTG BCDEF 1
+		SHTG G 6
+		SHTG FEDCB 1
 		stop
 	ReloadingKick:
-		SHTR H 13
+		SHTR H 14
 		stop
 	AirKickingFlash:
-		SHTG BCDEFGGGGGGGGFEDCB 1
+		SHTG BCDEF 1
+		SHTG G 8
+		SHTG FEDCB 1
 		stop
+	SlideKickingStart:
+		SHTG BCDEF 1
+		SHTG G 10
+	SlideKickingEnd:		
+		SHTG G 5
+		SHTG FEDCB 1
+		stop		
+		
 	Spawn:
 		SHOT A -1
 		stop

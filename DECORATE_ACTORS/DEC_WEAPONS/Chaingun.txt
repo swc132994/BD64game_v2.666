@@ -31,8 +31,6 @@ Weapon.AmmoType "Clip"
 Inventory.PickupMessage "$GOTCHAINGUN"
 Obituary "$OB_MPCHAINGUN"
 Tag "$TAG_CHAINGUN"
-VisibleToPlayerClass "64DoomPlayer"												//R11 ADDED
-Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	//R11 ADDED	//R15 ADDED TACTICAL P	//R28 ADDED MODERN
 +INVENTORY.RESTRICTABSOLUTELY													//R12.1 ADDED
 	States
 	{
@@ -105,7 +103,9 @@ Tag "$TAG_CHAINGUN"
 	{
 	KickingFlash:	//r31 new kick animations
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"KickSpin")
-		CHNS DCBAAAAAAAAAABCD 1
+		CHNS DCBA 1
+		CHNS A 8
+		CHNS ABCD 1
 		stop
 	KickSpin:
 		CHNS DEFG 1
@@ -123,7 +123,9 @@ Tag "$TAG_CHAINGUN"
 		stop
 	AirKickingFlash:
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"AirKickSpin")
-		CHNS DCBAAAAAAAAAAAABCD 1
+		CHNS DCBA 1
+		CHNS A 10
+		CHNS ABCD 1
 		stop
 	AirKickSpin:
 		CHNS DEFG 1
@@ -138,11 +140,48 @@ Tag "$TAG_CHAINGUN"
 		CHNS KKAL 1
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("CHAINSPI",5)
-		CHNS MN 1 //18
+		CHNS MN 1
 		stop
+	SlideKickingStart:
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"SlideKickingStartSpin")
+		CHNS DCBA 1
+		CHNS A 18
+	SlideKickingEnd:
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"SlideKickingEndSpin")	
+		CHNS A 6
+		CHNS ABCD 1
+		stop		
+
+	SlideKickingStartSpin:
+		CHNS DEFG 1
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",5)
+		CHNS HIJK 1
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",5)		
+		CHNS HIJK 1
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",5)		
+		CHNS HIJK 1
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",5)		
+		CHNS HIJK 1
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",5)		
+	SlideKickingEndSpin:		
+		CHNS HIJK 1
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",5)	
+		CHNS KKAL 1
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",5)	
+		CHNS MN 1
+		stop
+		
 	Spawn:
 		MGUN A -1
 		Stop
+	v1Ready:		
 	Ready:
 		CHNG A 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
