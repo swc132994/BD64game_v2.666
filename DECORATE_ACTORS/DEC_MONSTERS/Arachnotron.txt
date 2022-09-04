@@ -71,6 +71,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		BSPI H 4 A_NoBlocking
 		BSPI IJ 4
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
+		TNT1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
 		BSPI K -1 A_BossDeath
 		stop
 	XDeath:
@@ -94,10 +95,11 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		XSPI B 5 A_NoBlocking
 		TNT1 A 0 A_STOP
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
+		TNT1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
 		XSPI C -1 A_BossDeath
 		stop
 	Raise:
-		BSPI LKJIHG 5
+		BSPI KJIHG 5
 		goto See+1
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")

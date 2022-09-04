@@ -47,13 +47,13 @@ script "KickKeyPress" (VOID) NET		//TRIGGERED FROM KEYPRESS		//r31 was 301
 }
 
 script "CheckCrouch" ENTER
-{ 
+{
  int buttons2;
 
  while (TRUE)
  {
    buttons2 = GetPlayerInput(-1, INPUT_BUTTONS);
-   
+
 if (buttons2 & BT_CROUCH)
 {
    GiveInventory("IsCrouching", 1);
@@ -359,4 +359,9 @@ SetResultValue(getCvar("AlternativeMasterMindSkinCvar"));
 script "StalkerRandomACS" (void)	//R31 added
 {
 SetResultValue(GetCVar("StalkerRandom_Cvar"));
+}
+
+script "NightCrawlerRandomACS" (void)	//R31 added
+{
+SetResultValue(GetCVar("NightCrawlerRandom_Cvar"));
 }

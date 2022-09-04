@@ -529,59 +529,96 @@ Alpha 0.30
 
 ACTOR 64Nightcrawler : 64Arachnotron 19105
 {
-Translation "32:47=64:79","192:207=128:143","176:191=160:167"
+//Translation "32:47=64:79","192:207=128:143","176:191=160:167"
 Health 750
-Radius 56
-Height 88
 PainChance 96
+Painchance "SuperFists",200
+Painchance "Kick",255
+Painchance "SuperKick",255
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was blown up by a nightcrawler."
 Tag "Nightcrawler"
+DROPITEM "DemonEssenceSpawner"
 +DONTHARMSPECIES
 +FLOORCLIP
-	States
+	states
 	{
 	Spawn:
-		BSGI AB 10 A_Look
-		Loop
+		NTCR B 10 A_Look
+		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 was BlueArmor
+		loop
 	See:
-		BSGI A 20
-		BSGI A 3 A_BabyMetal
-		BSGI AABBCCDD 3 A_Chase
-		Goto See+1
+		NTCR A 20
+		NTCR A 2 A_BabyMetal
+		NTCR AABBBCCCDDD 2 A_Chase
+		goto See+1
 	Missile:
-		BSGI A 5 A_FaceTarget
-		BSGI A 5 Fast
-		BSGI E 0 A_PlaySound("weapons/rocklf",CHAN_WEAPON,1,0,ATTN_NORM)
-		BSGI E 0 BRIGHT A_CustomMissile("64NightcrawlerGrenade",25,-12,2)
-		BSGI E 4 BRIGHT A_CustomMissile("64NightcrawlerGrenade",25,12,-2)
-		BSGI E 20 A_FaceTarget
-		BSGI E 0 A_PlaySound("weapons/rocklf",CHAN_WEAPON,1,0,ATTN_NORM)
-		BSGI E 0 BRIGHT A_CustomMissile("64NightcrawlerGrenade",25,-12,2)
-		BSGI E 4 BRIGHT A_CustomMissile("64NightcrawlerGrenade",25,12,-2)
-		BSGI E 3 A_FaceTarget
+		NTCR A 5 A_FaceTarget
+		NTCR A 5 Fast
+		NTCR E 0 A_PlaySound("weapons/rocklf",CHAN_WEAPON,1,0,ATTN_NORM)
+		NTCR E 0 BRIGHT A_CustomMissile("64NightcrawlerGrenade",25,-12,2)
+		NTCR E 4 BRIGHT A_CustomMissile("64NightcrawlerGrenade",25,12,-2)
+		NTCR E 20 A_FaceTarget
+		NTCR E 0 A_PlaySound("weapons/rocklf",CHAN_WEAPON,1,0,ATTN_NORM)
+		NTCR E 0 BRIGHT A_CustomMissile("64NightcrawlerGrenade",25,-12,2)
+		NTCR E 4 BRIGHT A_CustomMissile("64NightcrawlerGrenade",25,12,-2)
+		NTCR E 3 A_FaceTarget
 		Goto See
-/*	Pain:
-		BSGI F 3
-		BSGI F 3 A_Pain
-		Goto See+1
+	Pain:
+		NTCR F 3
+		NTCR F 3 A_Pain
+		goto See+1
 	Pain.Vertigo:
 		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		BSGI F 3
-		BSGI F 3 A_Pain
+		NTCR F 3
+		NTCR F 3 A_Pain
 		Goto See+1
-		//	Death:
-//		BSGI G 20 A_Scream
-//		BSGI H 7 A_NoBlocking
-//		BSGI IJK 7
-//		BSGI L -1 A_BossDeath
-//		Stop
+	Death:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",52,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("XDeath1",52,0,random(0,360),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("XDeath2b",52,0,random(0,360),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath2b",52,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath3",52,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("SmallBrainPieceBlue",52,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("SmallBrainPieceBlue",52,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("Brains3",50,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
+		NTCR G 4 A_Scream
+		NTCR H 4 A_NoBlocking
+		NTCR IJ 4
+		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
+		TNT1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
+		NTCR K -1 A_BossDeath
+		stop
+	XDeath:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",52,0,random(150,210),2,random(10,50))
+		TNT1 AAAA 0 A_CustomMissile("XDeath1",52,0,random(0,360),2,random(10,50))
+		TNT1 AAAA 0 A_CustomMissile("XDeath2b",52,0,random(0,360),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("XDeath2b",52,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("XDeath3",52,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("SmallBrainPieceBlue",52,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("SmallBrainPieceBlue",52,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("Brains3",50,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeathBlueSpiderLeg1",35,0,random(0,360),2,random(10,60))
+		TNT1 A 0 A_CustomMissile("XDeathBlueSpiderLeg2",35,0,random(0,360),2,random(30,60))
+		TNT1 A 0 A_CustomMissile("XDeathBlueSpiderLeg3",35,0,random(0,360),2,random(20,60))
+		TNT1 A 0 A_CustomMissile("XDeathBlueSpiderHead",55,0,random(0,360),2,random(40,90))
+		XBBR A 5 A_Scream
+		XBBR B 5 A_NoBlocking
+		TNT1 A 0 A_STOP
+		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
+		TNT1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
+		XBBR C -1 A_BossDeath
+		stop
 	Raise:
-		BSGI LKJIHG 5
-		Goto See+1
-	Crush:
-		TNT1 A 0 A_PlaySound("misc/gibbed")
-		A027 A -1
-		Stop*/
+		NTCR KJIHG 5
+		goto See+1
 	}
 }
 
@@ -607,13 +644,10 @@ BounceSound "dart/shotx"
 	{
 	Spawn:
 		TNT1 A 0 NoDelay ThrustThingZ(0,10,0,1)
-		Goto Spawn2
 	Spawn2:
-		GREN ABCD 2 BRIGHT A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
+		GREN AAAA 2 BRIGHT A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		Loop
-	Detonate:
 	Death:
-		//TNT1 A 0 A_SpawnItemEx("ExplosionFlareSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
@@ -622,23 +656,19 @@ BounceSound "dart/shotx"
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmall",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterSmall",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		TNT1 A 0 A_SpawnItem("BigRicoChet")
-		TNT1 A 0 A_SPawnItem("ExplosionAirDisplacementEffect")
-		TNT1 A 0 A_playSound("EXPLO3",2)
-		TNT1 A 0 A_playSound("EXPLOSION",1)
+		TNT1 A 0 A_SpawnItem("ExplosionAirDisplacementEffect")
+		TNT1 A 0 A_PlaySound("EXPLO3",2)
+		TNT1 A 0 A_PlaySound("EXPLOSION",1)
 		TNT1 A 0 Radius_Quake(2,8,0,12,0)
 		TNT1 A 2
 		TNT1 A 0 A_Explode(64,136)
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		TNT1 A 10
 		stop
-	Grenade:
-		MISL A 1000 A_Die
-		Wait
-	Mushroom:
-		TNT1 A 0 A_Mushroom
-		Goto Death+1
 	}
 }
+
+Actor SmallBrainPieceBlue : SmallBrainPiece	{Translation "Ice"}
 
 ACTOR 64Stalker : 64LostSoul 19107
 {
@@ -688,7 +718,7 @@ Tag "Stalker"
 		Goto See
 	Teleport:
 		TNT1 A 0 A_PlaySound("DSBOSPIT",3)
-		TNT1 A 0 A_SpawnItemEx("64HellFog",0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HellTeleportationFog",0,0,0,0,0,0,0,0)
 		TNT1 AAAAAAAAAAAAAA 1 A_SpawnItem("GreenFlare",0,40)
 		TNT1 A 0 A_UnSetShootable
 		TNT1 A 0 A_ChangeFlag("NoPain",1)
@@ -696,7 +726,7 @@ Tag "Stalker"
 		TNT1 A 0 A_Jump(256,1,7,15,25)
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_Wander
 		TNT1 A 0 A_PlaySound("DSBOSPIT",3)
-		TNT1 A 0 A_SpawnItemEx("64HellFog",0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HellTeleportationFog",0,0,0,0,0,0,0,0)
 		TNT1 AAAAAAAAAAAAAA 1 A_SpawnItem("GreenFlare",0,40)
 		TNT1 A 0 A_SetShootable
 		TNT1 A 0 A_ChangeFlag("NoPain",0)
@@ -704,7 +734,7 @@ Tag "Stalker"
 		Goto Missile+1
 	TeleportHideStart:
 		TNT1 A 0 A_PlaySound("DSBOSPIT",3)
-		TNT1 A 0 A_SpawnItemEx("64HellFog",0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HellTeleportationFog",0,0,0,0,0,0,0,0)
 		TNT1 AAAAAAAAAAAAAA 1 A_SpawnItem("GreenFlare",0,40)
 		TNT1 A 0 A_UnSetShootable
 		TNT1 A 0 A_ChangeFlag("NoPain",1)
@@ -717,7 +747,7 @@ Tag "Stalker"
 		Loop
 	TeleportEnd:
 		TNT1 A 0 A_PlaySound("DSBOSPIT",3)
-		TNT1 A 0 A_SpawnItemEx("64HellFog",0,0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("HellTeleportationFog",0,0,0,0,0,0,0,0)
 		TNT1 AAAAAAAAAAAAAA 1 A_SpawnItem("GreenFlare",0,40)
 		TNT1 A 0 A_SetShootable
 		TNT1 A 0 A_ChangeFlag("NoPain",0)
@@ -816,16 +846,22 @@ ACTOR 64StalkerShot2 : 64StalkerShot1
 	}
 }
 
-ACTOR 64HellFog
+ACTOR HellTeleportationFog		//r31 allocated to stalker
 {
+Translation "16:47=112:127", "169:191=152:159"
+Scale 0.5
+Alpha 0.5
 +NOBLOCKMAP
 +NOTELEPORT
 +NOGRAVITY
-RenderStyle Add
+RenderStyle translucent	//was add
 	States
 	{
 	Spawn:
-		IFOG EDCBA 2 BRIGHT
+		TNT1 A 0 NoDelay Radius_Quake(3,3,0,10,0)
+		TNT1 A 0 A_PlaySound("DSBOSPIT",3)
+		CFFX A 1 BRIGHT
+		CFFX BCDEfghijk 2 BRIGHT
 		Stop
 	}
 }
