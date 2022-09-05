@@ -1,7 +1,6 @@
 //R31
 //Own Weapon Base for Tactical and Modern Classes
-//v1 bob,Kicking Standalone
-//Laser gun,BFG,Melee and Chainsaw(Modern) has been not on this weapon base yet
+//restored bob from v1
 
 Actor IsCrouching : Inventory
 {
