@@ -46,7 +46,7 @@ script "KickKeyPress" (VOID) NET		//TRIGGERED FROM KEYPRESS		//r31 was 301
 	}
 }
 
-script "CheckCrouch" ENTER
+/*script "CheckCrouch" ENTER
 {
  int buttons2;
 
@@ -63,6 +63,15 @@ if (buttons2 & BT_CROUCH)
    TakeInventory("IsCrouching", 1);
    delay(4);
  }
+}*/
+
+#libdefine PLAYER_VIEWHEIGHT 50			//BD64 default player height
+script "CheckIsPlayerCrouching"(void)	// New check for crouching
+{
+	if(GetActorViewHeight(0) <= PLAYER_VIEWHEIGHT / 2 << 16)
+		GiveInventory("IsCrouching",1);
+	else
+		TakeInventory("IsCrouching",1);
 }
 
 /*Script "ReloadKeyPress" (VOID) NET			//TRIGGERED FROM KEYPRESS		//r31 was 303

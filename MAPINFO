@@ -120,6 +120,8 @@ Intermission Doom2Cast
 		CastClass = "D64SSGGuyCast"
 		CastName = "SSG Guy"
 		AttackSound = "Missile",1,"SSGFIRE"
+//		AttackSound = "Missile",2,"weapons/sshoto"
+//		AttackSound = "Missile",2,"weapons/sshotl"
 	}
 	Cast
 	{
@@ -161,6 +163,7 @@ Intermission Doom2Cast
 	{
 		CastClass = "D64AcidDemonCast"
 		CastName = "Acid Demon"
+		AttackSound = "Missile",2,"SlimeBall/Shoot"
 		AttackSound = "Melee",1,"demon/melee"
 	}
 	Cast
@@ -183,6 +186,12 @@ Intermission Doom2Cast
 	}
 	Cast
 	{
+		CastClass = "D64StalkerCast"
+		CastName = "Stalker"
+		AttackSound = "Missile",1,"skeleton/attack"
+	}
+	Cast
+	{
 		CastClass = "D64CacodemonCast"
 		CastName = "Cacodemon"
 		AttackSound = "Missile",1,"caco/attack"
@@ -200,12 +209,14 @@ Intermission Doom2Cast
 		CastClass = "D64HellKnightCast"
 		CastName = "Hellknight"
 		AttackSound = "Missile",1,"baron/attack"
+		AttackSound = "Melee",1,"imp/melee"
 	}
 	Cast
 	{
 		CastClass = "D64BaronOfHellCast"
 		CastName = "Baron Of Hell"
 		AttackSound = "Missile",1,"baron/attack"
+		AttackSound = "Melee",1,"imp/melee"
 	}
 	Cast
 	{
@@ -216,6 +227,12 @@ Intermission Doom2Cast
 		AttackSound = "Missile",3,"baby/attack"
 		AttackSound = "Missile",4,"baby/attack"
 		AttackSound = "Missile",5,"baby/attack"
+	}
+	Cast
+	{
+		CastClass = "D64NightCrawlerCast"
+		CastName = "Nightcrawler"
+		AttackSound = "Missile",1,"weapons/rocklf"
 	}
 	Cast
 	{
@@ -244,7 +261,7 @@ Intermission Doom2Cast
 		CastClass = "D64HellHoundCast"
 		CastName = "HellHound"
 		AttackSound = "Missile",1,"caco/attack"
-		AttackSound = "Melee",1,"hellhound/melee"
+		AttackSound = "Melee",1,"Dog/melee"
 	}
 	Cast
 	{

@@ -1,32 +1,32 @@
 actor BloodyTwitchReplacer : RandomSpawner Replaces BloodyTwitch
 {
-DropItem "BD64DamnedHanging1SOLID"
-DropItem "BD64DamnedHanging2SOLID"
+DropItem "DamnedHanging1SOLID"
+DropItem "DamnedHanging2SOLID"
 }
 
 actor NonSolidTwitchReplacer : RandomSpawner Replaces NonSolidTwitch
 {
-DropItem "BD64DamnedHanging1"
-DropItem "BD64DamnedHanging2"
+DropItem "DamnedHanging1"
+DropItem "DamnedHanging2"
 }
 
 actor Meat3Replacer : RandomSpawner Replaces Meat3
 {
-DropItem "TorturedMarine21SOLID"
-DropItem "TorturedMarine23SOLID"
-DropItem "TorturedMarine32SOLID"
-DropItem "TorturedMarine66SOLID"
+DropItem "BD64TorturedMarine21SOLID"
+DropItem "BD64TorturedMarine23SOLID"
+DropItem "BD64TorturedMarine32SOLID"
+DropItem "BD64TorturedMarine66SOLID"
 }
 
 actor NonsolidMeat3Replacer : RandomSpawner Replaces NonsolidMeat3
 {
-DropItem "TorturedMarine21"
-DropItem "TorturedMarine23"
-DropItem "TorturedMarine32"
-DropItem "TorturedMarine66"
+DropItem "BD64TorturedMarine21"
+DropItem "BD64TorturedMarine23"
+DropItem "BD64TorturedMarine32"
+DropItem "BD64TorturedMarine66"
 }
 
-Actor BD64DamnedHanging1
+Actor DamnedHanging1
 {
 Height 64
 Radius 16
@@ -52,9 +52,9 @@ Scale 0.8
 		Goto Spawn
 	}
 }
-Actor BD64DamnedHanging1SOLID : BD64DamnedHanging1	{+SOLID}
+Actor DamnedHanging1SOLID : DamnedHanging1	{+SOLID}
 
-Actor BD64DamnedHanging2 : BD64DamnedHanging1
+Actor DamnedHanging2 : DamnedHanging1
 {
 	States
 	{
@@ -72,9 +72,9 @@ Actor BD64DamnedHanging2 : BD64DamnedHanging1
 		Goto Spawn
 	}
 }
-Actor BD64DamnedHanging2SOLID : BD64DamnedHanging2	{+SOLID}
+Actor DamnedHanging2SOLID : DamnedHanging2	{+SOLID}
 
-Actor TorturedMarine21
+Actor BD64TorturedMarine21
 {
 Health 1
 Mass 999999
@@ -121,9 +121,9 @@ Scale 0.8
 		Stop
 	}
 }
-Actor TorturedMarine21SOLID : TorturedMarine21	{+SOLID}
+Actor BD64TorturedMarine21SOLID : BD64TorturedMarine21	{+SOLID}
 
-Actor TorturedMarine32
+Actor BD64TorturedMarine32
 {
 Health 1
 Scale 0.8
@@ -163,9 +163,9 @@ Radius 16
 		Stop
 	}
 }
-Actor TorturedMarine32SOLID : TorturedMarine32	{+SOLID}
+Actor BD64TorturedMarine32SOLID : BD64TorturedMarine32	{+SOLID}
 
-Actor TorturedMarine23
+Actor BD64TorturedMarine23
 {
 Health 1
 Scale 0.8
@@ -212,9 +212,9 @@ Radius 16
 		Stop
 	}
 }
-Actor TorturedMarine23SOLID : TorturedMarine23	{+SOLID}
+Actor BD64TorturedMarine23SOLID : BD64TorturedMarine23	{+SOLID}
 
-Actor TorturedMarine66
+Actor BD64TorturedMarine66
 {
 Health 1
 Scale 0.8
@@ -246,4 +246,4 @@ Radius 16
 		Stop
 	}
 }
-Actor TorturedMarine66SOLID : TorturedMarine66	{+SOLID}
+Actor BD64TorturedMarine66SOLID : BD64TorturedMarine66	{+SOLID}

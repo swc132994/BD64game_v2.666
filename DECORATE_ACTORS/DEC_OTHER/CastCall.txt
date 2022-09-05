@@ -59,9 +59,9 @@ YScale 1.0
 	Missile:
 		POS4 EE 8 A_FaceTarget
 		POS4 F 5 bright
-		POS4 E 5 A_PlaySound("weapons/sshoto")
+		POS4 E 5
 		PO4R ABC 4
-		PO4R DE 5 A_playsound("weapons/sshotl")
+		PO4R DE 5
 		PO4R DE 5
 		PO4R FG 10
 		Goto See
@@ -217,6 +217,10 @@ YScale 0.9
 		See:
 			ACID AABBCCDD 2 A_Chase
 			Loop
+		Missile:
+			ACID EF 8 A_FaceTarget
+			ACID G 8 A_SargAttack
+			Goto See
 		Melee:
 			ACID EF 8 A_FaceTarget
 			ACID G 8 A_SargAttack
@@ -297,13 +301,40 @@ YScale 1.0
 		Death:
 			SKUL G 5 BRIGHT
 			SKUL H 5 BRIGHT A_Scream
-			SKUL I 5 BRIGHT A_NoBlocking
+			SKUL I 5 BRIGHT
 			SKUL J 5 BRIGHT
 			SKUL K 4 BRIGHT A_SetTranslucent(0.188235)
 			SKUL L 3 BRIGHT
 			SKUL MN 2 BRIGHT
 			SKUL OP 1 BRIGHT
 			Stop
+	}
+}
+
+actor D64StalkerCast : 64Stalker
+{
+XScale 1.0
+YScale 1.0
+	States
+	{
+	See:
+		stkr A 4 BRIGHT A_Chase
+		stkr B 4 BRIGHT
+		stkr C 4 BRIGHT
+		Loop
+	Missile:
+		stkr D 1 BRIGHT A_FaceTarget
+		stkr E 7 BRIGHT A_SkelMissile
+		stkr D 4 BRIGHT
+		stkr E 4 BRIGHT
+		Goto See
+	Death:
+		stkr G 7 BRIGHT
+		stkr H 7 BRIGHT A_Scream
+		stkr I 5 BRIGHT
+		stkr J 4 BRIGHT
+		stkr KLMOP 4 BRIGHT A_FadeOut(0.20)
+		Stop
 	}
 }
 
@@ -371,6 +402,9 @@ YScale 1.0
 			BOS2 AABBCCDD 3 A_Chase
 			Loop
 		Melee:
+			BOS2 EF 8 A_FaceTarget
+			BOS2 G 8 A_BruisAttack
+			Goto See
 		Missile:
 			BOS2 EF 8 A_FaceTarget
 			BOS2 G 8 A_BruisAttack
@@ -396,6 +430,9 @@ YScale 1.0
 			BOSS AABBCCDD 3 A_Chase
 			Loop
 		Melee:
+			BOSS EF 8 A_FaceTarget
+			BOSS G 8 A_BruisAttack
+			Goto See
 		Missile:
 			BOSS EF 8 A_FaceTarget
 			BOSS G 8 A_BruisAttack
@@ -437,6 +474,37 @@ YScale 1.0
 			BSPI IJ 10
 			BSPI K -1
 			Stop
+	}
+}
+
+actor D64NightCrawlerCast : 64NightCrawler
+{
+XScale 1.0
+YScale 1.0
+	States
+	{
+	See:
+		NTCR A 20
+		NTCR A 2 A_BabyMetal
+		NTCR AABBBCCCDDD 2 A_Chase
+		goto See+1
+	Missile:
+		NTCR A 5 A_FaceTarget
+		NTCR A 5 Fast
+		NTCR E 0 BRIGHT
+		NTCR E 4 BRIGHT
+		NTCR E 20 A_FaceTarget
+		NTCR E 0 BRIGHT
+		NTCR E 4 BRIGHT
+		NTCR E 3 A_FaceTarget
+		Goto See
+	Death:
+		NTCR G 1 A_FaceTarget
+		NTCR G 9 A_Scream
+		NTCR H 10 A_NoBlocking
+		NTCR IJ 10
+		NTCR K -1
+		Stop
 	}
 }
 
@@ -532,29 +600,25 @@ XScale 1.0
 YScale 1.0
 	States
 	{
-		See:
-			HEHR AABBCCDD 2 A_Chase
-			Loop
-		Melee:
-			HEHR F 4 A_FaceTarget
-			HEHR G 4
-			HEHR H 4 A_SargAttack
-			HEHR G 4
-			Goto See
-		Missile:
-			HEHR F 4 A_FaceTarget
-			HEHR G 4
-			HEHR H 4
-			HEHR G 4
-			Goto See
-		Death:
-			HEHR I 8
-			HEHR J 8 A_Scream
-			HEHR K 4
-			HEHR L 4 A_NoBlocking
-			HEHR M 4
-			HEHR M -1
-			Stop
+	See:
+		HEHR AABBCCDD 2 A_Chase
+		Loop
+	Missile:
+		HEHR E 7 A_FaceTarget
+		HEHR F 7 A_HeadAttack
+		HEHR GH 7
+		Goto See
+	Melee:
+		HEHR E 6 A_FaceTarget
+		HEHR F 6 A_SargAttack
+		HEHR GH 6
+		Goto See
+	Death:
+		HEHR I 8
+		HEHR J 8 A_Scream
+		HEHR Klm 7
+		HEHR M -1
+		Stop
 	}
 }
 
@@ -704,10 +768,10 @@ DeathSound "*death"
 			PLAY ABCD 4 A_Chase
 			Loop
 		Missile:
-			PLAY E 12 A_FaceTarget
+			PLAY F 12 A_FaceTarget
 			Goto Melee
 		Melee:
-			PLAY F 6 BRIGHT
+			PLAY E 6 BRIGHT
 			Goto Spawn
 		Pain:
 			PLAY G 4
