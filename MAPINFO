@@ -195,6 +195,7 @@ Intermission Doom2Cast
 		CastClass = "D64CacodemonCast"
 		CastName = "Cacodemon"
 		AttackSound = "Missile",1,"caco/attack"
+		AttackSound = "Melee",1,"weapons/gswing"
 	}
 	Cast
 	{
@@ -203,6 +204,7 @@ Intermission Doom2Cast
 		AttackSound = "Missile",1,"caco/attack"
 		AttackSound = "Missile",2,"caco/attack"
 		AttackSound = "Missile",3,"caco/attack"
+		AttackSound = "Melee",1,"weapons/gswing"
 	}
 	Cast
 	{
