@@ -1,6 +1,6 @@
 ACTOR UnmakerSpawner : CustomInventory 9901
 {
-//+INVENTORY.ALWAYSPICKUP		//R12.1 REMOVED
+//+INVENTORY.ALWAYSPICKUP		//R12.1 removed
 Inventory.PickupMessage "What the !@# is this!"
 Inventory.PickupSound "WPICK"
 Scale 0.9
@@ -9,9 +9,9 @@ Scale 0.9
 	Spawn:
 		LGUN A -1
 		Stop
-	Pickup:															//R13 EDITED PICKUP TO SELECT CORRECT WEAPON BASED ON CLASS
+	Pickup:		//R13 EDITED PICKUP TO SELECT CORRECT WEAPON BASED ON CLASS
 		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")			//R28 ADDED
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")		//R28 added
 		TNT1 A 0 A_GiveInventory("Unmaker",1)
 		Stop
 	Pickup2:
@@ -20,7 +20,7 @@ Scale 0.9
 	}
 }
 
-actor Unmaker : DoomWeapon 9902		//R13 ADDED
+actor Unmaker : DoomWeapon 9902		//R13 added
 {
 game Doom
 spawnid 84
@@ -33,7 +33,7 @@ Weapon.AmmoGive 20
 Weapon.AmmoType "Cell"
 Inventory.Icon LGUNA0
 VisibleToPlayerClass "64DoomPlayer"
-Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	//R15 ADDED TACTICAL P	//R28 ADDED MODERN
+Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	//R15 added TACTICAL P	//R28 added MODERN
 +INVENTORY.RESTRICTABSOLUTELY
 Tag "Unmaker"
 	States
@@ -52,19 +52,19 @@ Tag "Unmaker"
 		loop
 	Fire:
 		TNT1 A 0 A_JumpIfInventory("WeaponPower",1,5)		//R30.8 WAS JUMP 4
-		UNMA A 1 offset(0,40)								//R30.8 ADDED
+		UNMA A 1 offset(0,40)								//R30.8 added
 		TNT1 A 0 A_GunFlash
 		UNMA A 3 A_FireCustomMissile("UnmakerLaser2")
 		UNMA A 7
 		Goto Ready
 		TNT1 A 0 A_JumpIfInventory("WeaponPower",2,5)		//R30.8 WAS JUMP 4
-		UNMA A 1 offset(0,40)								//R30.8 ADDED
+		UNMA A 1 offset(0,40)								//R30.8 added
 		TNT1 A 0 A_GunFlash
 		UNMA A 3 A_FireCustomMissile("Unmakerlaser2")
 		UNMA A 2
 		Goto Ready
 		TNT1 A 0 A_JumpIfInventory("WeaponPower",3,"Hold1")	//R30.8 WAS JUMP 8	//r31 was jump 9
-		UNMA A 1 offset(0,40)								//R30.8 ADDED
+		UNMA A 1 offset(0,40)								//R30.8 added
 		TNT1 A 0 A_GunFlash
 		TNT1 A 0 A_FireCustomMissile("Unmakerlaser2",-1.0)
 		TNT1 A 0 A_JumpIfNoAmmo(3)
@@ -135,10 +135,10 @@ Tag "Unmaker"
 
 ACTOR SoulAmmo : Ammo
 {
-SCALE 0.35	//R31 ADDED
+SCALE 0.35	//R31 added
 Game Doom
 SpawnID 11
-Inventory.PickupMessage "Soul Collected"	//R31 ADDED NEW MESSAGE
+Inventory.PickupMessage "Soul Collected"	//R31 added
 Inventory.Amount 1			//r31 was 3
 Inventory.MaxAmount 30
 Ammo.BackpackAmount 0		//r31 was 3
@@ -163,7 +163,7 @@ ReactionTime 60				//R31
 	}
 }
 
-ACTOR DemonEssence : Ammo			//R31 ADDED
+ACTOR DemonEssence : Ammo		//R31 added
 {
 SCALE 0.45
 Inventory.PickupMessage "Essence Collected"
@@ -227,18 +227,18 @@ actor UnmakerTACTICAL : Brutal64Weapon
 game Doom
 spawnid 84
 scale 0.9
-Weapon.SelectionOrder 2901														//R21 WAS 2900
+Weapon.SelectionOrder 2901			//R21 WAS 2900
 Inventory.PickupMessage "What the !@# is this!"
 AttackSound "weapons/unmaker"
 Weapon.AmmoUse 1
-Weapon.AmmoGive 20																//R11 WAS 40
+Weapon.AmmoGive 20					//R11 WAS 40
 Weapon.AmmoType "SoulAmmo"
-Weapon.AmmoUse2 25																//R31
-Weapon.AmmoGive2 0																//R31
-Weapon.AmmoType2 "DemonEssence"													//R31
+Weapon.AmmoUse2 25					//R31 added
+Weapon.AmmoGive2 0					//R31 added
+Weapon.AmmoType2 "DemonEssence"		//R31 added
 Inventory.Icon LGUNA0
-+INVENTORY.RESTRICTABSOLUTELY													//R13
-Tag "Unmaker"																	//R11 ADDED TAG
++INVENTORY.RESTRICTABSOLUTELY		//R13 added
+Tag "Unmaker"				//R11 added
 +WEAPON.ALT_AMMO_OPTIONAL	//r31 added
 +WEAPON.NOALERT				//R31 added
 	States
@@ -257,26 +257,25 @@ Tag "Unmaker"																	//R11 ADDED TAG
 		UNMS DCBA 1
 		UNMS A 18
 	SlideKickingEnd:
-		UNMS A 6		
+		UNMS A 6
 		UNMS ABCD 1
-		stop		
-		
+		stop
 	Spawn:
 		LGUN A -1
 		loop
-	v1Ready:	
+	v1Ready:
 	Ready:
 		UNMA A 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-//		TNT1 A 0 A_PlaySoundEx("UNMKLP","WEAPON",1)				//R1 REMOVED SOUND	//R13 READDED FOR TACTICAL		//R31 SOUND FOX FOR GZ4.8
+//		TNT1 A 0 A_PlaySoundEx("UNMKLP","WEAPON",1)				//R1 removed SOUND	//R13 REadded FOR TACTICAL		//R31 SOUND FOX FOR GZ4.8
 		TNT1 A 0 A_PlaySound("UNMKLP",CHAN_WEAPON,1,1)			//R31 SOUND FOX FOR GZ4.8
 		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")	//R28.2
 		TNT1 A 0 A_TakeInventory("Stamina",0)					//R28.2
 		loop
 	Select: //R31 Select Animation Improvement (Tactical and Modern only)
-		TNT1 AAAAAAAAAA 0 A_RAise
+		TNT1 AAAAAAAAAA 0 A_Raise
 		TNT1 A 1 A_Raise
-		UNMA A 0 A_PlaySound("UNMAKSEL")		
+		UNMA A 0 A_PlaySound("UNMAKSEL")
 		Goto SelectAnimation
 	SelectAnimation:
 		UNMS ABCD 1
@@ -352,7 +351,7 @@ damage 10
 Damagetype "BFG"
 Alpha 1
 Renderstyle Add
-Decal LaserDecal			//R28.2 ADDED	//r31 was BULLETDECALNEW1
+Decal LaserDecal		//R28.2 added	//r31 was BULLETDECALNEW1
 SeeSound "weapons/unmaker"
 DeathSound "Null"
 Obituary "%o was unmade by %k."

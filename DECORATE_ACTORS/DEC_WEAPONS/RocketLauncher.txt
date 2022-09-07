@@ -193,17 +193,16 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		RLTL B 0
 		"####" BCDE 1
 		"####" E 17
-	SlideKickingEnd:	
+	SlideKickingEnd:
 		"####" E 6
 		"####" EDCB 1
-		Stop		
-		
+		Stop
 	Spawn:
 		LAUN A -1
 		Stop
 	ClassicRLSelected:
 		tnt1 A 0 A_GiveInventory("SisterWeaponSelector",1)
-	v1Ready:		
+	v1Ready:
 	Ready:
 		TNT1 A 0 A_JumpIf(CallACS("ClassicRLACS")==true,"ClassicRLSelected")
 		RLTG A 0 A_JumpifInventory("AltMode",1,2)
@@ -388,15 +387,14 @@ Weapon.SisterWeapon "64RocketLauncherTactical"	//R31 added
 	SlideKickingStart: //18
 		MISS DCBA 1
 		MISS A 18
-	SlideKickingEnd:		
+	SlideKickingEnd:
 		MISS A 6
 		MISS ABCD 1
-		Stop		
-		
+		Stop
 	Spawn:
 		LAUN A -1
 		Stop
-	v1Ready:		
+	v1Ready:
 	Ready:
 		TNT1 A 0 A_JumpIf(CallACS("ClassicRLACS")==true,2)
 		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",1)

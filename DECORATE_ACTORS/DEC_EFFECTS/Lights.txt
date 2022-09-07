@@ -587,6 +587,18 @@ actor 64BigTree : BigTree Replaces BigTree
 Radius 16
 Height 64
 ProjectilePassHeight -8
+	States
+	{
+	Spawn:
+//		TNT1 A 0 NODELAY A_spawnItemEX("TORCHTREEBURN",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TRE2 A 0 NoDelay A_Jump(128,"Spawn2")
+		TRE2 A -1
+		Stop
+	Spawn2:
+		LTRI B 0 a_setscale(0.5,0.5)
+		LTRI B -1
+		Stop
+	}
 }
 
 ACTOR 64TorchTree : TorchTree Replaces TorchTree	//r31 added
@@ -595,7 +607,12 @@ ACTOR 64TorchTree : TorchTree Replaces TorchTree	//r31 added
 	{
 	Spawn:
 //		TNT1 A 0 NODELAY A_spawnItemEX("TORCHTREEBURN",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TRE1 A 0 NoDelay A_Jump(128,"Spawn2")
 		TRE1 A -1
+		Stop
+	Spawn2:
+		LTRI A 0 a_setscale(0.5,0.5)
+		LTRI A -1
 		Stop
 	}
 }
@@ -1578,5 +1595,122 @@ actor TORCHTREEBURN		//R31 ADDED
 		TNT1 A 3 A_CustomMissile("RealFlameTrailsMedium",35,0,random(0,360),2,random(70,110))
 		TNT1 A 3 A_CustomMissile("RealFlameTrailsMedium",35,0,random(0,360),2,random(70,110))
 		loop
+	}
+}
+
+ACTOR 64EvilEye : EvilEye Replaces EvilEye {SCALE 0.8}	//R31 added CEYE sprites to HELL folder
+
+ACTOR 64Stalagmite : Stalagmite Replaces Stalagmite
+{
+SCALE 0.8
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		BSTK A -1
+		Stop
+	}
+}
+
+ACTOR 64FloatingSkull : FloatingSkull Replaces FloatingSkull
+{
+SCALE 0.8
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItem("Swarm")
+		POL6 A -1
+		Stop
+	}
+}
+
+ACTOR 64ShortGreenColumn : ShortGreenColumn Replaces ShortGreenColumn
+{
+SCALE 0.8
+	States
+	{
+	Spawn:
+		TNT1 a 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItem("Swarm")
+		BODY A -1
+		Stop
+	}
+}
+
+ACTOR 64HeartColumn : HeartColumn Replaces HeartColumn
+{
+SCALE 0.8
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItem("Swarm")
+		BODY B -1
+		Stop
+	}
+}
+
+ACTOR 64ShortRedColumn : ShortRedColumn Replaces ShortRedColumn
+{
+SCALE 0.8
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItem("Swarm")
+		BODY C -1
+		Stop
+	}
+}
+
+ACTOR 64SkullColumn : SkullColumn Replaces SkullColumn
+{
+SCALE 0.8
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItem("Swarm")
+		BODY D -1
+		Stop
+	}
+}
+
+ACTOR 64TallGreenColumn : TallGreenColumn Replaces TallGreenColumn
+{
+SCALE 0.8
+	States
+	{
+	Spawn:
+		GAR1 A -1
+		Stop
+	}
+}
+
+ACTOR 64TallRedColumn : TallRedColumn Replaces TallRedColumn
+{
+SCALE 0.8
+	States
+	{
+	Spawn:
+		GAR2 A -1
+		Stop
+	}
+}
+
+actor 64TechPillar : TechPillar Replaces TechPillar
+{
+SCALE 0.8
+	States
+	{
+	Spawn:
+//		TNT1 A 0 NODELAY A_spawnItemEX("TORCHTREEBURN",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		ELEC A 0 NoDelay A_Jump(128,"Spawn2")
+		ELEC A -1
+		Stop
+	Spawn2:
+		ELEC B -1
+		Stop
 	}
 }

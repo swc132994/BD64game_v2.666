@@ -1,7 +1,7 @@
 ACTOR ChaingunSpawner : CustomInventory Replaces Chaingun
 {
 Scale 0.82
-//+INVENTORY.ALWAYSPICKUP		//R12.1 REMOVED
+//+INVENTORY.ALWAYSPICKUP		//R12.1 removed
 Inventory.PickupMessage "$GOTCHAINGUN"
 Inventory.PickupSound "WPICK"
 	States
@@ -10,9 +10,9 @@ Inventory.PickupSound "WPICK"
 		MGUN A -1
 		Stop
 	Pickup:
-//		TNT1 A 0 A_GiveInventory("Clip",20)							//R12.1 REMOVED
+//		TNT1 A 0 A_GiveInventory("Clip",20)							//R12.1 removed
 		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")			//R28 ADDED
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")			//R28 added
 		TNT1 A 0 A_GiveInventory("64Chaingun",1)
 		Stop
 	Pickup2:
@@ -31,7 +31,7 @@ Weapon.AmmoType "Clip"
 Inventory.PickupMessage "$GOTCHAINGUN"
 Obituary "$OB_MPCHAINGUN"
 Tag "$TAG_CHAINGUN"
-+INVENTORY.RESTRICTABSOLUTELY													//R12.1 ADDED
++INVENTORY.RESTRICTABSOLUTELY		//R12.1 added
 	States
 	{
 	Spawn:
@@ -39,8 +39,8 @@ Tag "$TAG_CHAINGUN"
 		Stop
 	Ready:
 		CHNG A 1 A_WeaponReady
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 ADDED
-		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 ADDED
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 added
+		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 added
 		Loop
 	Select:
 		CHNG A 1 A_Raise
@@ -93,12 +93,12 @@ Actor 64ChaingunTACTICAL : Brutal64Weapon
 Scale 0.82
 Weapon.SelectionOrder 701	//R21 WAS 7
 Weapon.AmmoUse 1
-Weapon.AmmoGive 20			//R12.1 ADDED
+Weapon.AmmoGive 20			//R12.1 added
 Weapon.AmmoType "Clip"
 Inventory.PickupMessage "$GOTCHAINGUN"
 Obituary "$OB_MPCHAINGUN"
 Tag "$TAG_CHAINGUN"
-+INVENTORY.RESTRICTABSOLUTELY													//R12.1 ADDED
++INVENTORY.RESTRICTABSOLUTELY		//R12.1 added
 	States
 	{
 	KickingFlash:	//r31 new kick animations
@@ -147,55 +147,53 @@ Tag "$TAG_CHAINGUN"
 		CHNS DCBA 1
 		CHNS A 18
 	SlideKickingEnd:
-		TNT1 A 0 A_JumpIfInventory("Spin",1,"SlideKickingEndSpin")	
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"SlideKickingEndSpin")
 		CHNS A 6
 		CHNS ABCD 1
-		stop		
-
+		stop
 	SlideKickingStartSpin:
 		CHNS DEFG 1
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("CHAINSPI",5)
 		CHNS HIJK 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",5)		
+		TNT1 A 0 A_PlaySound("CHAINSPI",5)
 		CHNS HIJK 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",5)		
+		TNT1 A 0 A_PlaySound("CHAINSPI",5)
 		CHNS HIJK 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",5)		
+		TNT1 A 0 A_PlaySound("CHAINSPI",5)
 		CHNS HIJK 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",5)		
-	SlideKickingEndSpin:		
+		TNT1 A 0 A_PlaySound("CHAINSPI",5)
+	SlideKickingEndSpin:
 		CHNS HIJK 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",5)	
+		TNT1 A 0 A_PlaySound("CHAINSPI",5)
 		CHNS KKAL 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",5)	
+		TNT1 A 0 A_PlaySound("CHAINSPI",5)
 		CHNS MN 1
 		stop
-		
 	Spawn:
 		MGUN A -1
 		Stop
-	v1Ready:		
+	v1Ready:
 	Ready:
 		CHNG A 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 ADDED
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 added
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"Ready2")
-		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 ADDED
+		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 added
 		Loop
 	Ready2: //R31 Minigun Spinning
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("CHAINSPI",5)	//R31 SOUND FIX FOR GZ4.8
 		CHNG ABCD 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready2")	//R28.2 ADDED
-		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 ADDED
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready2")	//R28.2 added
+		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 added
 		Loop
 	Select:
 		TNT1 A 0 A_PlaySound ("CHGNPKUP")
