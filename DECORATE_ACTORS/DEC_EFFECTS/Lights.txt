@@ -1698,3 +1698,19 @@ SCALE 0.8
 		Stop
 	}
 }
+
+actor 64TechPillar : TechPillar Replaces TechPillar
+{
+SCALE 0.8
+	States
+	{
+	Spawn:
+//		TNT1 A 0 NODELAY A_spawnItemEX("TORCHTREEBURN",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		ELEC A 0 NoDelay A_Jump(128,"Spawn2")
+		ELEC A -1
+		Stop
+	Spawn2:
+		ELEC B -1
+		Stop
+	}
+}
