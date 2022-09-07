@@ -1,7 +1,7 @@
 ACTOR ShotgunSpawner : CustomInventory	// Replaces Shotgun		//R31 replaced by new spawner
 {
 Scale 0.87
-//+INVENTORY.ALWAYSPICKUP		//R12.1 REMOVED
+//+INVENTORY.ALWAYSPICKUP		//R12.1 removed
 Inventory.PickupMessage "$GOTSHOTGUN"
 Inventory.PickupSound "WPICK"
 	States
@@ -10,9 +10,9 @@ Inventory.PickupSound "WPICK"
 		SHOT A -1
 		Stop
 	Pickup:
-//		TNT1 A 0 A_GiveInventory("Shell",4)						//R12.1 REMOVED
+//		TNT1 A 0 A_GiveInventory("Shell",4)						//R12.1 removed
 		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")		//R28 ADDED
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")		//R28 added
 		TNT1 A 0 A_GiveInventory("64Shotgun",1)
 		Stop
 	Pickup2:
@@ -31,15 +31,15 @@ Weapon.AmmoType "Shell"
 Inventory.PickupMessage "$GOTSHOTGUN"
 Obituary "$OB_MPSHOTGUN"
 Tag "$TAG_SHOTGUN"
-VisibleToPlayerClass "64DoomPlayer"		//R11 ADDED
-Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	//R11 ADDED	//R15 ADDED TACTICAL P	//R28 ADDED MODERN
-+INVENTORY.RESTRICTABSOLUTELY			//R12.1 ADDED
+VisibleToPlayerClass "64DoomPlayer"		//R11 added
+Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	//R11 added	//R15 added TACTICAL P	//R28 added MODERN
++INVENTORY.RESTRICTABSOLUTELY			//R12.1 added
 	states
 	{
 	Ready:
 		SHTG A 1 A_WeaponReady
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")	//R28.2 ADDED
-		TNT1 A 0 A_TakeInventory("Stamina",0)					//R28.2 ADDED
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")	//R28.2 added
+		TNT1 A 0 A_TakeInventory("Stamina",0)					//R28.2 added
 		Loop
 	Select:
 		SHTG A 1 A_Raise
@@ -54,7 +54,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		SHTG A 1
 		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
-		tnt1 a 0 A_JumpIf(CallACS("VanillaWeapons")==1,"VanillaFire")	//r31 ADDED
+		tnt1 a 0 A_JumpIf(CallACS("VanillaWeapons")==1,"VanillaFire")	//r31 added
 		TNT1 AAAAA 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-5,5))
 		TNT1 A 0 A_FireBullets(4.0,4.0,8,7,"ShotgunPuff")
 		TNT1 A 0 A_PlaySound("SGFIRE",1)
@@ -97,7 +97,7 @@ Inventory.MaxAmount 9
 Ammo.BackpackAmount 0
 Ammo.BackpackMaxAmount 9
 Inventory.Icon "shota0"		//R10 "RIFLA0"	R27 WAS SHELA0
-+IGNORESKILL				//R11 ADDED
++IGNORESKILL				//R11 added
 }
 
 Actor HasUsedShell : Inventory
@@ -110,7 +110,7 @@ Actor 64ShotgunTACTICAL : Brutal64Weapon
 Scale 0.87
 Weapon.SelectionOrder 1301		//R21 WAS 13
 Weapon.AmmoUse1 1				//R25 WAS 0
-Weapon.AmmoGive1 8				//R12.1 ADDED
+Weapon.AmmoGive1 8				//R12.1 added
 Weapon.AmmoType1 "Shell"
 Weapon.AmmoUse2 1				//R25 WAS 0
 Weapon.AmmoGive2 0
@@ -118,10 +118,10 @@ Weapon.AmmoType2 "ShotgunAmmo"
 Inventory.PickupMessage "$GOTSHOTGUN"
 Obituary "$OB_MPSHOTGUN"
 Tag "$TAG_SHOTGUN"
-+INVENTORY.RESTRICTABSOLUTELY	//R12.1 ADDED
-+WEAPON.NOAUTOFIRE				//R31 ADDED
-+WEAPON.AMMO_CHECKBOTH			//R25 ADDED
-+NOALERT						//R31 ADDED FOR ALTFIRE
++INVENTORY.RESTRICTABSOLUTELY	//R12.1 added
++WEAPON.NOAUTOFIRE				//R31 added
++WEAPON.AMMO_CHECKBOTH			//R25 added
++NOALERT						//R31 added FOR ALTFIRE
 	states
 	{
 	KickingFlash:	//r31 new kick animations
@@ -140,27 +140,26 @@ Tag "$TAG_SHOTGUN"
 	SlideKickingStart:
 		SHTG BCDEF 1
 		SHTG G 10
-	SlideKickingEnd:		
+	SlideKickingEnd:
 		SHTG G 5
 		SHTG FEDCB 1
-		stop		
-		
+		stop
 	Spawn:
 		SHOT A -1
 		stop
-	v1Ready:	
-	Ready:		//R11 ADDED(WRF_ALLOWRELOAD)
+	v1Ready:
+	Ready:		//R11 added(WRF_ALLOWRELOAD)
 //		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,2)	//R28.2 ADDED	//r31 was ready
-		TNT1 A 0 A_TakeInventory("Stamina",0)				//R28.2 ADDED
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,2)	//R28.2 added	//r31 was ready
+		TNT1 A 0 A_TakeInventory("Stamina",0)				//R28.2 added
 	OkToFire:
 		SHTG A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		Goto Ready
 	NoAmmo:
 		SHTG A 10
 		TNT1 A 0 A_PlaySound("DRYFIRE")
-		TNT1 A 0 A_TakeInventory("HasUSedShell",1)		//R17 ADDED
+		TNT1 A 0 A_TakeInventory("HasUSedShell",1)		//R17 added
 		Goto Ready
 	Select: //R31 Select Animation Improvement
 		TNT1 A 0 A_PlaySound("STGNPUMP",3)
@@ -186,17 +185,17 @@ Tag "$TAG_SHOTGUN"
 		SHTG A 1
 		TNT1 A 0 A_JumpIfInventory("ShotgunAmmo",1,1)
 		Goto NoAmmo
-		TNT1 A 0 A_JumpIfInventory("Shell",1,1)		//R25 ADDED
-		Goto Fire1									//R25 ADDED
+		TNT1 A 0 A_JumpIfInventory("Shell",1,1)		//R25 added
+		Goto Fire1									//R25 added
 		TNT1 A 0 A_TakeInventory("ShotgunAmmo",1)
 		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		//TNT1 A 0 A_giveInventory("HasUsedShell",1)
 		TNT1 AAAAA 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-5,5))
 		TNT1 A 0 A_FireBullets(2.0,2.0,8,7,"ShotgunPuff")
-		TNT1 A 0 A_GiveInventory("SHELL",1)		//R25 ADDED
+		TNT1 A 0 A_GiveInventory("SHELL",1)		//R25 added
 		TNT1 A 0 A_PlaySound("SGFIRE",1)
-		TNT1 A 0 A_AlertMonsters		//R31 ADDED ALERT
+		TNT1 A 0 A_AlertMonsters		//R31 added ALERT
 		TNT1 A 0 A_ZoomFactor(0.95)
 		SHTF AB 1 BRIGHT
 		TNT1 A 0 A_ZoomFactor(1.0)
@@ -216,7 +215,7 @@ Tag "$TAG_SHOTGUN"
 		TNT1 A 0 A_FireBullets(2.0,2.0,8,7,"ShotgunPuff")
 		TNT1 A 0 A_TakeInventory("ShotgunAmmo",1)
 		TNT1 A 0 A_PlaySound("SGFIRE",1)
-		TNT1 A 0 A_AlertMonsters		//R31 ADDED ALERT
+		TNT1 A 0 A_AlertMonsters		//R31 added ALERT
 		TNT1 A 0 A_ZoomFactor(0.95)
 		SHTF AB 1 BRIGHT
 		TNT1 A 0 A_ZoomFactor(1.0)
@@ -304,15 +303,15 @@ Tag "$TAG_SHOTGUN"
 		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 0 A_Takeinventory("Kicking",1)
 //		TNT1 A 0 A_Takeinventory("Zoomed",0)								//R11 UNUSED
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"ModernCheckReloading")		//R28 ADDED
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,1)					//R7 ADDED
-		Goto Ready															//R7 ADDED
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"ModernCheckReloading")		//R28 added
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,1)					//R7 added
+		Goto Ready															//R7 added
 		TNT1 A 0 A_jumpifinventory("Stamina",20,3)
 		TNT1 A 0 A_Print("Not enough stamina!",1)
 		TNT1 A 0 A_PlaySound("Tired",2)
 		Goto Ready
 		TNT1 A 0 A_TakeInventory("Stamina",20)
-	ModernCheckReloading:						//R28 ADDED
+	ModernCheckReloading:						//R28 added
 //		TNT1 A 0 A_Takeinventory("ADSmode",1)	//R11 UNUSED
 		TNT1 A 0 A_JumpIf(pitch > 32,"LowKickReloadingChecker1")
 		Goto InitializeReloadingKick

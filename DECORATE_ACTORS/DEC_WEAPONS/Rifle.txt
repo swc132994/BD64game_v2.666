@@ -1,7 +1,7 @@
 ACTOR RifleSpawner : CustomInventory
 {
 Scale 0.82
-//+INVENTORY.ALWAYSPICKUP		//R12.1 REMOVED
+//+INVENTORY.ALWAYSPICKUP		//R12.1 removed
 Inventory.PickupMessage "You got an assault rifle!"
 Inventory.PickupSound "WPICK"
 	States
@@ -12,9 +12,9 @@ Inventory.PickupSound "WPICK"
 		"####" A 1
 		LOOP
 	Pickup:
-//		TNT1 A 0 A_GiveInventory("Clip",20)						//R12.1 REMOVED
+//		TNT1 A 0 A_GiveInventory("Clip",20)						//R12.1 removed
 		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")		//R28 ADDED
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")		//R28 added
 		TNT1 A 0 A_GiveInventory("64Rifle",1)
 		Stop
 	Pickup2:
@@ -44,7 +44,7 @@ Inventory.PickupMessage "You got the assault rifle!"							//R11 WAS "You got an
 Obituary "%o was picked off by %k."												//r30.10 was $OB_MPCHAINGUN"
 Tag "Assault Rifle"																//R11 WAS $TAG_CHAINGUN
 VisibleToPlayerClass "64DoomPlayer"												//R11
-Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	//R11 ADDED	//R15 ADDED TACTICAL P	//R28 ADDED MODERN
+Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	//R11 added	//R15 added TACTICAL P	//R28 added MODERN
 +INVENTORY.RESTRICTABSOLUTELY
 	States
 	{
@@ -57,8 +57,8 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFG A 0
 		"####" A 1 A_WeaponReady
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 ADDED
-		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 ADDED
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 added
+		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 added
 		Loop
 	Select:
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
@@ -79,7 +79,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		TNT1 A 0 A_SetPitch(pitch-1.2)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFF A 0
-		"####" AD 1 BRIGHT		//R31 ADDED A
+		"####" AD 1 BRIGHT		//R31 added A
 		TNT1 A 0 A_JumpIfInventory("FiredRifle",4,"Fire4")
 		TNT1 A 0 A_JumpIfInventory("FiredRifle",3,"Fire3")
 		TNT1 A 0 A_JumpIfInventory("FiredRifle",2,"Fire2")
@@ -180,7 +180,7 @@ Inventory.MaxAmount 31
 Ammo.BackpackAmount 0
 Ammo.BackpackMaxAmount 31
 Inventory.Icon "RIFDA0"		//R10 WAS "RIFLA0"	R27 WAS CLIPA0
-+IGNORESKILL				//R11 ADDED
++IGNORESKILL				//R11 added
 }
 
 Actor RifleBolt : Inventory	//R31 added by IDDQD_1337
@@ -193,17 +193,17 @@ Actor 64RifleTactical : Brutal64Weapon
 Scale 0.82
 Weapon.SelectionOrder 801	//R21 WAS 5
 Weapon.AmmoUse1 1			//R25 WAS 0
-Weapon.AmmoGive1 20			//R12.1 ADDED
+Weapon.AmmoGive1 20			//R12.1 added
 Weapon.AmmoUse2 1
 Weapon.AmmoType1 "Clip"
 Weapon.AmmoType2 "RifleAmmo"
-Inventory.PickupMessage "You got the assault rifle!"							//R11 WAS "You got an assault rifle!"
-Obituary "%o was picked off by %k Assualt Rifle."								//r30.10 was $OB_MPCHAINGUN"
-Tag "Assault Rifle"																//R11 WAS $TAG_CHAINGUN
-+INVENTORY.RESTRICTABSOLUTELY													//R12.1
-+WEAPON.AMMO_CHECKBOTH															//R25
-+WEAPON.NOALERT																	//R31 ADDED
-+WEAPON.NOAUTOFIRE																//R31 ADDED
+Inventory.PickupMessage "You got the assault rifle!"	//R11 WAS "You got an assault rifle!"
+Obituary "%o was picked off by %k Assualt Rifle."		//r30.10 was $OB_MPCHAINGUN"
+Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
++INVENTORY.RESTRICTABSOLUTELY							//R12.1 added
++WEAPON.AMMO_CHECKBOTH									//R25 added
++WEAPON.NOALERT											//R31 added
++WEAPON.NOAUTOFIRE										//R31 added
 	States
 	{
 	KickingFlash:	//r31 new kick animations
@@ -224,25 +224,25 @@ Tag "Assault Rifle"																//R11 WAS $TAG_CHAINGUN
 		ARSK A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFK A 0
 		"####" BCDE 1
-		"####" E 18		
-	SlideKickingEnd:	
+		"####" E 18
+	SlideKickingEnd:
 		"####" E 6
 		"####" EDCB 1
-		Stop		
+		Stop
 	Spawn:
 		ARSD A 0 nodelay A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFD A 0
 		"####" A 1
 		LOOP
-	v1Ready:		
+	v1Ready:
 	Ready:
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFG A 0
-		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD)					//R11 ADDED(WRF_ALLOWRELOAD)
+		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD)					//R11 added(WRF_ALLOWRELOAD)
 //		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 ADDED
-		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 ADDED		
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 added
+		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 added
 		Loop
 	NoAmmo:
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
@@ -295,20 +295,20 @@ Tag "Assault Rifle"																//R11 WAS $TAG_CHAINGUN
 		AR2R AB 1
 		Goto Ready
 	Deselect:
-		TNT1 A 0 A_Takeinventory("Zoomed",0)		//R31 ADDED
-		TNT1 A 0 A_ZoomFactor(1.0)					//R31 ADDED
+		TNT1 A 0 A_Takeinventory("Zoomed",0)		//R31 added
+		TNT1 A 0 A_ZoomFactor(1.0)					//R31 added
 		ARSS D 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFS D 0
 		"####" DCBA 1
 		TNT1 A 1 A_Lower
 		Wait
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"FireZoomed")		//r31 ADDED
+		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"FireZoomed")		//r31 added
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",1,1)
 		Goto Reload
 		TNT1 A 0 A_SetPitch(pitch-1.2)
-		TNT1 A 0 A_JumpIfInventory("clip",1,1)		//R25 ADDED
-		Goto Fire10									//R25 ADDED
+		TNT1 A 0 A_JumpIfInventory("clip",1,1)		//R25 added
+		Goto Fire10									//R25 added
 		TNT1 A 0 A_JumpIfInventory("FiredRifle",4,"Fire4")
 		TNT1 A 0 A_JumpIfInventory("FiredRifle",3,"Fire3")
 		TNT1 A 0 A_JumpIfInventory("FiredRifle",2,"Fire2")
@@ -319,8 +319,8 @@ Tag "Assault Rifle"																//R11 WAS $TAG_CHAINGUN
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.0,0.0,1,8,"RifleBulletPuff")	//r25 was intnumbullets -1	//R30.5 WAS HITPUFF
 		TNT1 A 0 A_TakeInventory("RIfleAmmo",1)
-		TNT1 A 0 A_GiveInventory("Clip",1)		//R25 ADDED
-		TNT1 A 0 A_AlertMonsters				//R31 ADDED ALERT
+		TNT1 A 0 A_GiveInventory("Clip",1)		//R25 added
+		TNT1 A 0 A_AlertMonsters				//R31 added ALERT
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFF A 0
@@ -339,7 +339,7 @@ Tag "Assault Rifle"																//R11 WAS $TAG_CHAINGUN
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.0,0.0,1,8,"RifleBulletPuff")	//R25 was intnumbullets -1	//R30.5 WAS HITPUFF
 		TNT1 A 0 A_TakeInventory("RIfleAmmo",1)
-		TNT1 A 0 A_AlertMonsters					//R31 ADDED ALERT
+		TNT1 A 0 A_AlertMonsters					//R31 added ALERT
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFF A 0
@@ -359,7 +359,7 @@ Tag "Assault Rifle"																//R11 WAS $TAG_CHAINGUN
 		TNT1 A 0 A_FireBullets(0.6,0.6,1,8,"RifleBulletPuff")		//R25 was intnumbullets -1	//R30.5 WAS HITPUFF
 		TNT1 A 0 A_TakeInventory("RIfleAmmo",1)
 		TNT1 A 0 A_GiveInventory("Clip",1)		//R25 NEW
-		TNT1 A 0 A_AlertMonsters				//R31 ADDED ALERT
+		TNT1 A 0 A_AlertMonsters				//R31 added ALERT
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFF A 0
@@ -378,8 +378,8 @@ Tag "Assault Rifle"																//R11 WAS $TAG_CHAINGUN
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(2.0,2.0,1,8,"RifleBulletPuff")		//R25 was intnumbullets -1	//R30.5 WAS HITPUFF
 		TNT1 A 0 A_TakeInventory("RIfleAmmo",1)
-		TNT1 A 0 A_GiveInventory("Clip",1)		//R25 ADDED
-		TNT1 A 0 A_AlertMonsters				//R31 ADDED ALERT
+		TNT1 A 0 A_GiveInventory("Clip",1)		//R25 added
+		TNT1 A 0 A_AlertMonsters				//R31 added ALERT
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFF A 0
@@ -398,8 +398,8 @@ Tag "Assault Rifle"																//R11 WAS $TAG_CHAINGUN
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(4.0,4.0,1,8,"RifleBulletPuff")		//R25 was intnumbullets -1	//R30.5 WAS HITPUFF
 		TNT1 A 0 A_TakeInventory("RIfleAmmo",1)
-		TNT1 A 0 A_GiveInventory("Clip",1)		//R25 ADDED
-		TNT1 A 0 A_AlertMonsters				//R31 ADDED ALERT
+		TNT1 A 0 A_GiveInventory("Clip",1)		//R25 added
+		TNT1 A 0 A_AlertMonsters				//R31 added ALERT
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFF A 0
@@ -418,8 +418,8 @@ Tag "Assault Rifle"																//R11 WAS $TAG_CHAINGUN
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(7.0,7.0,1,8,"RifleBulletPuff")		//R25 was intnumbullets -1	//R30.5 WAS HITPUFF
 		TNT1 A 0 A_TakeInventory("RIfleAmmo",1)
-		TNT1 A 0 A_GiveInventory("Clip",1)		//R25 ADDED
-		TNT1 A 0 A_AlertMonsters				//R31 ADDED ALERT
+		TNT1 A 0 A_GiveInventory("Clip",1)		//R25 added
+		TNT1 A 0 A_AlertMonsters				//R31 added ALERT
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFF A 0
@@ -519,7 +519,7 @@ Tag "Assault Rifle"																//R11 WAS $TAG_CHAINGUN
 		Goto InsertBullets2
 		TNT1 A 0 A_Refire
 		Goto Ready
-	AltFire:		//R31 ADDED ALTFIRE AND EXTRA BELOW, EDITED BY IDDQD 1337
+	AltFire:		//R31 added ALTFIRE AND EXTRA BELOW, EDITED BY IDDQD 1337
 		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"NoAim")
 		TNT1 A 0 A_Giveinventory("Zoomed",1)
 		TNT1 A 0 A_ZoomFactor(2.0)
