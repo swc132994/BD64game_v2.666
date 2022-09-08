@@ -1365,6 +1365,7 @@ DropItem "ChaingunDrop"		//R12.1 added	//r31 was chaingun & tactical chaingun
 DROPITEM "SOULSPAWNER"	//R31 ADDED
 	States
 	{
+	idle:	//r31 added as placeholder
 	Spawn:
 		MPOS A 8 A_Look
 		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 was BlueArmor
@@ -1559,6 +1560,7 @@ DropItem "RifleDrop"	//R31 Added
 DROPITEM "SOULSPAWNER"	//R31 added
 	States
 	{
+	idle:	//r31 added as placeholder
 	Spawn:
 		CPOS A 8 A_Look
 		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 was BlueArmor
@@ -1863,7 +1865,7 @@ DROPITEM "SOULSPAWNER"	//R31 added
 		PLAY F 2 bright A_CustomMissile("EnemyProjectile",36,0,random(-3,3),1,random(-3,3)) //R31 was PL7Y
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)							//R28.4
 		PLAY E 2 A_FaceTarget //R31 was PL7Y
-		TNT1 A 0 A_PlaySound("RIFLE",1) //R31 was PISTOLF2 
+		TNT1 A 0 A_PlaySound("RIFLE",1) //R31 was PISTOLF2
 		PLAY F 2 bright A_CustomMissile("EnemyProjectile",36,0,random(-3,3),1,random(-3,3)) //R31 was PL7Y
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)							//R28.4
 		PLAY E 2 A_FaceTarget //R31 was PL7Y
@@ -1871,7 +1873,7 @@ DROPITEM "SOULSPAWNER"	//R31 added
 		PLAY F 2 bright A_CustomMissile("EnemyProjectile",36,0,random(-3,3),1,random(-3,3)) //R31 was PL7Y
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)							//R28.4
 		PLAY E 2 A_FaceTarget //R31 was PL7Y
-		TNT1 A 0 A_PlaySound("RIFLE",1) //R31 was PISTOLF2 
+		TNT1 A 0 A_PlaySound("RIFLE",1) //R31 was PISTOLF2
 		PLAY F 2 bright A_CustomMissile("EnemyProjectile",36,0,random(-3,3),1,random(-3,3)) //R31 was PL7Y
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)							//R28.4
 		PLAY E 2 A_FaceTarget //R31 was PL7Y
