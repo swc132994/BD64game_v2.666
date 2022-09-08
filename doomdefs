@@ -1627,7 +1627,7 @@ object 64RevenantTracer3														//R10.1 WAS 64RevenantTracer
 	frame TRCRG {light ROCKET_X5}
 }
 
-/*//Arch Vile Fire
+//Arch Vile Fire
 flickerlight ARCHFIRE1
 {
 	color 1.0 1.0 0.0
@@ -1700,16 +1700,28 @@ flickerlight ARCHFIRE8
 	offset 0 80 0
 }
 
-/*object 64ArchvileFire															//R10.2 UNUSED
+object 64ArchvileFire	//R10.2 UNUSED	//R31 activated
 {
-	frame FIREA {light ARCHFIRE1}
-	frame FIREB {light ARCHFIRE2}
-	frame FIREC {light ARCHFIRE3}
-	frame FIRED {light ARCHFIRE4}
-	frame FIREE {light ARCHFIRE5}
-	frame FIREF {light ARCHFIRE6}
-	frame FIREG {light ARCHFIRE7}
-	frame FIREH {light ARCHFIRE8}
+	frame INFEA {light ARCHFIRE1}
+	frame INFEB {light ARCHFIRE1}
+	frame INFEC {light ARCHFIRE2}
+	frame INFED {light ARCHFIRE2}
+	frame INFEE {light ARCHFIRE3}
+	frame INFEF {light ARCHFIRE3}
+	frame INFEG {light ARCHFIRE4}
+	frame INFEH {light ARCHFIRE4}
+	frame INFEI {light ARCHFIRE5}
+	frame INFEJ {light ARCHFIRE5}
+	frame INFEK {light ARCHFIRE6}
+	frame INFEL {light ARCHFIRE6}
+	frame INFEM {light ARCHFIRE7}
+	frame INFEN {light ARCHFIRE7}
+	frame INFEO {light ARCHFIRE8}
+	frame INFEP {light ARCHFIRE8}
+	frame INFEQ {light ARCHFIRE8}
+	frame INFER {light ARCHFIRE8}
+	frame INFES {light ARCHFIRE8}
+	frame INFET {light ARCHFIRE8}
 }
 
 //Arch-vile
@@ -1787,19 +1799,25 @@ pulselight ARCHRES
 
 object 64Archvile																//R10.2 UNUSED
 {
-	frame VILEH {light ARCHATK1}
-	frame VILEI {light ARCHATK2}
-	frame VILEJ {light ARCHATK3}
-	frame VILEK {light ARCHATK4}
-	frame VILEL {light ARCHATK4}
-	frame VILEM {light ARCHATK4}
-	frame VILEN {light ARCHATK5}
-	frame VILEO {light ARCHATK6}
-	frame VILEP {light ARCHATK7}
-	frame VILE[ {light ARCHRES}
-	frame VILE\ {light ARCHRES}
-	frame VILE] {light ARCHRES}
-}*/
+	frame NVILA {light ARCHATK1}
+	frame NVILB {light ARCHATK1}
+	frame NVILC {light ARCHATK2}
+	frame NVILD {light ARCHATK2}
+	frame NVILE {light ARCHATK3}
+	frame NVILF {light ARCHATK3}
+	frame NVILG {light ARCHATK4}
+	frame NVILH {light ARCHATK4}
+	frame NVILI {light ARCHATK5}
+	frame NVILJ {light ARCHATK5}
+	frame NVILK {light ARCHATK6}
+	frame NVILL {light ARCHATK6}
+	frame NVILM {light ARCHATK7}
+	frame NVILN {light ARCHATK7}
+	frame NVILI {light ARCHATK7}
+	frame NVILP {light ARCHRES}
+	frame NVILQ {light ARCHRES}
+	frame NVILR {light ARCHRES}
+}
 
 //MotherDemon Ball
 
