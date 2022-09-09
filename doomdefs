@@ -1349,10 +1349,9 @@ flickerlight BARONBALL_X6
 	chance 0.25
 }
 
-object 64BaronBall
+object 64BaronBallGreen	//r31 fixed frames
 {
-	frame BAL7A {light BARONBALL}
-	frame BAL7B {light BARONBALL}
+	frame BAL7 {light BARONBALL}
 
 	frame BAL7C {light BARONBALL_X1}
 	frame BAL7D {light BARONBALL_X2}
@@ -1419,14 +1418,14 @@ flickerlight BARONBALL2_X6
 
 object 64BaronBall																//R10 WAS BaronBall2
 {
-	frame BRNRA {light BARONBALL2}
-	frame BRNRB {light BARONBALL2}
-	frame BRNRC {light BARONBALL2_X1}
-	frame BRNRD {light BARONBALL2_X2}
-	frame BRNRE {light BARONBALL2_X3}
-	frame BRNRF {light BARONBALL2_X4}
-	frame BRNRG {light BARONBALL2_X5}
-	frame BRNRH {light BARONBALL2_X6}
+	frame brnr {light BARONBALL2}
+
+	frame brnrC {light BARONBALL2_X1}
+	frame brnrD {light BARONBALL2_X2}
+	frame brnrE {light BARONBALL2_X3}
+	frame brnrF {light BARONBALL2_X4}
+	frame brnrG {light BARONBALL2_X5}
+	frame brnrH {light BARONBALL2_X6}
 }
 
 //Lost Soul

@@ -30,16 +30,16 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,56,0)
 		VILM jj 2 a_vilechase
 		Loop
-	Missile:																	//r30.9 redefined for head death
-		TNT1 a 0 bright a_vilestart
+	Missile:		//r30.9 redefined for head death
+		TNT1 a 0 a_vilestart
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
 		NVIL a 3 bright a_facetarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
 		NVIL b 3 bright a_vilestart
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
-		NVIL cdef 3 bright a_facetarget
+		NVIL cde 3 bright a_facetarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
-		NVIL f 0 bright a_viletarget
+		NVIL f 3 bright a_viletarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
 		NVIL ghij 3 bright a_facetarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
@@ -71,7 +71,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		VILD B 3 A_Scream
 		VILD C 3 A_NoBlocking
 		VILD DEFGHIJKLM 3
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9
+		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
 		VILD M -1
 		Stop
 	Death.SSG:
@@ -81,17 +81,17 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		Goto Death
 	Death.Heavy:
 	Death.SuperKick:
-	Death.SuperFists:						//R31 ADDED XVIL SPRITES
+	Death.SuperFists:		//R31 added XVIL sprites
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_XScream														//r30.9 was scream
+		TNT1 A 0 A_XScream		//r30.9 was scream
 		TNT1 A 0 A_NoBlocking
 		xvil ABCDEFGHIJKlmnop 2
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9
+		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
 		xvil q -1
 	XDeath:
 	Death.Chainsaw:
@@ -104,17 +104,17 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
-		TNT1 AA 0 A_CustomMissile("XDeathArchArm1",50,0,random(0,360),2,random(20,90))	//R22 ADDED ARM
+		TNT1 AA 0 A_CustomMissile("XDeathArchArm1",50,0,random(0,360),2,random(20,90))	//R22 added arm
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 ThrustThingZ(0,20,0,0)
-		TNT1 A 0 A_XScream														//r30.9 was scream
+		TNT1 A 0 A_XScream		//r30.9 was scream
 		TNT1 A 0 A_NoBlocking
 		VID3 ABCDEFGHIJK 3
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9
+		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
 		VID3 L -1
 		Stop
 	Death.Plasma:
@@ -127,12 +127,12 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
 		TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumn")
 		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)		//R11 WAS "BurningFleshEffect"
-		TNT1 A 0 A_XScream														//r30.9 was scream
+		TNT1 A 0 A_XScream		//r30.9 was scream
 		TNT1 A 0 A_NoBlocking
 		XVIP ABCDEFGHIJKLMNOPQ 2
 		XVIP Q -1
 		Stop
-	Death.Head:																	//r30.9 added
+	Death.Head:		//r30.9 added
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
@@ -162,12 +162,12 @@ RenderStyle Add
 	States
 	{
 	Spawn:
-		TNT1 A 1 bright A_StartFire
-		INFE ABCDEF 2 bright A_Fire
+		TNT1 A 1 A_StartFire
+		INFE ABCDEF 3 bright A_Fire
 		INFE G 3 bright A_FireCrackle
-		INFE HIJKLM 2 bright A_Fire
+		INFE HIJKLM 3 bright A_Fire
 		INFE N 3 bright A_FireCrackle
-		INFE OPQRS 2 bright A_Fire
+		INFE OPQRS 3 bright A_Fire
 		INFE T 3 bright A_FireCrackle
 		TNT1 A 2
 		Stop

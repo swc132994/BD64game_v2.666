@@ -1,19 +1,19 @@
 //R31 NOW OLD STYLE REVENANT
-Actor 64Revenant_old : Revenant// Replaces Revenant									//R26 REMOVED REPLACES
+Actor 64Revenant_old : Revenant// Replaces Revenant		//R26 removed REPLACES
 {
-Scale 0.74																		//R25.2 WAS 0.8	//R31 WAS 0.75
+Scale 0.74								//R25.2 WAS 0.8	//R31 WAS 0.75
 HEALTH 300
-HEIGHT 65																		//R25.2 WAS 72
-Speed 8																			//R15 WAS 7
-MeleeThreshold 146		//DEFAULT 196											//R16 ADDED
+HEIGHT 65								//R25.2 WAS 72
+Speed 8									//R15 WAS 7
+MeleeThreshold 146	//DEFAULT 196		//R16 added
 PainChance 50
 Painchance "SuperFists",255
 Painchance "Kick",255
 Painchance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-DROPITEM "DemonEssenceSpawner"		//R31 ADDED
-//+FORCEXYBILLBOARD																//R12.3
+DROPITEM "DemonEssenceSpawner"		//R31 added
+//+FORCEXYBILLBOARD					//R12.3 removed
 +FLOORCLIP
 +DONTHARMSPECIES		//R31 WAS DONTHURTSPECIES
 	States
@@ -21,7 +21,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 	Spawn:
 		REVN B 10 A_Look
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",25,65,0)
-		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 WAS BlueArmor
+		TNT1 A 0 A_GiveInventory("GreenArmor",1)		//R19 added //R20 WAS BlueArmor
 		Loop
 	See:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",25,65,0)
@@ -33,7 +33,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",25,65,0)
 		REVN F 2
 		Loop
-	Melee:																		//R16 ADDED REVENANT MELEE
+	Melee:		//R16 added REVENANT MELEE
 		TNT1 A 0 A_FaceTarget
 		REVN G 6 A_SkelWhoosh
 		REVN H 6 A_FaceTarget
@@ -41,7 +41,6 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		Goto See
 	Missile:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",25,65,0)
-		tnt1 a 0 Bright A_FaceTarget
 		REVN G 12 Bright A_FaceTarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",25,65,0)
 		TNT1 A 0 A_CustomMissile("64RevenantTracer3",68,18,0,0)		//was 57
@@ -91,7 +90,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		TNT1 A 1 A_SpawnItemEx("DyingOldRevenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.Plasma:
-	Death.Superkick:															//R10.1
+	Death.Superkick:		//R10.1 added
 	Death.SuperFists:
 	XDeath:
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
@@ -324,7 +323,7 @@ DropItem "None"
 	Death.SSG:
 	Death.CutLess:
 	Death.Plasma:
-	Death.Superkick:															//R10.1
+	Death.Superkick:	//R10.1 added
 	Death.SuperFists:
 	XDeath:
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
@@ -423,7 +422,7 @@ Decal BrutalBloodSuper
 	Death:
 		RVG3 B 1
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
-		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//r30.9
+		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//r30.9 added
 		RVG3 B -1
 		Stop
 	}

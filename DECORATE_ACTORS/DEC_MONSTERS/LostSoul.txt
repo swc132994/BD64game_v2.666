@@ -16,7 +16,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 	{
 	Spawn:
 		SKUL ABC 1 A_Look
-		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 was BlueArmor
+		TNT1 A 0 A_GiveInventory("GreenArmor",1)	//R19//R20 was BlueArmor
 		loop
 	See:
 		SKUL A 1 BRIGHT A_Chase
@@ -48,7 +48,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 		SKUL F 1 A_Pain
 		goto See
 	Pain.Vertigo:
-		TNT1 A 0 BRIGHT ThrustThingZ(0,55,0,0)
+		TNT1 A 0 ThrustThingZ(0,55,0,0)
 		SKUL F 3 BRIGHT
 		SKUL F 3 BRIGHT A_Pain
 		Goto See
