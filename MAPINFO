@@ -300,7 +300,7 @@ Intermission Doom2Cast
 	Cast
 	{
 		CastClass = "D64DoomPlayerCast"
-		CastName = "$CC_HERO"
+		CastName = "Our Hero"
 		AttackSound = "Missile",0,"SGFIRE"
 	}
 	Link = Doom2Cast // restart cast call
