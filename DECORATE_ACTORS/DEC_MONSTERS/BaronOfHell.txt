@@ -187,18 +187,18 @@ Decal "MedScorch"	//R28.3 added
 	states
 	{
 	Spawn:
-		brnr AB 1 BRIGHT A_SpawnItem("LensFlareProjectileOrange")	//R31 fixed frames
+		BRNR AB 1 BRIGHT A_SpawnItem("LensFlareProjectileOrange")	//R31 fixed frames
 		TNT1 AA 0 A_SpawnItem("BaronProjectileCore")
 		loop
 	Death:
 		TNT1 A 1
 		TNT1 AAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(10,70))
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(20,50))
-		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(20,40))		//R11 unused //R31 fixed
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(20,40))		//R11 unused //R31 was "ExplosionParticleFast"
 		TNT1 AAAA 0 A_CustomMissile("SmallFireballFireTrail",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterMed",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)			//R28.3 added
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterMed",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)			//R28.3 added
-		brnr CDEFGH 1 BRIGHT A_SpawnItem("LensFlareTorchOrange",0,0)	//R31 fixed frames
+		BRNR CDEFGH 1 BRIGHT A_SpawnItem("LensFlareTorchOrange",0,0)	//R31 fixed frames
 		stop
 	}
 }

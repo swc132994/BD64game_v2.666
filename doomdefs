@@ -1,11 +1,3 @@
-//----------------------------------------------------
-//------------------DOOM GAME LIGHTS------------------
-//----------------------------------------------------
-
-//----------------
-//--Doom Weapons--
-//----------------
-
 //Bullet puff
 flickerlight BPUFF1
 {
@@ -23,7 +15,7 @@ flickerlight BPUFF2
 	chance 0.8
 }
 
-object HitPuff																	//R10.1 WAS 64BulletPuff
+object HitPuff		//R10.1 WAS 64BulletPuff
 {
 	frame PUFFA {light BPUFF1}
 	frame PUFFB {light BPUFF2}
@@ -235,20 +227,6 @@ object 64BFGExtra
 	frame BFE2F {light BFGBALL_X5}
 }
 
-/*object BFG10kShot																//R10.2 UNUSED
-{
-	frame BFE1A {light BFGBALL_X1}
-	frame BFE1B {light BFGBALL_X2}
-	frame BFE1C {light BFGBALL_X3}
-	frame BFE1D {light BFGBALL_X1}
-	frame BFE1E {light BFGBALL_X4}
-	frame BFE1F {light BFGBALL_X5}
-}*/
-
-//--------------------
-//--Doom Decorations--
-//--------------------
-
 object 64BarrelExplosion
 {
 	frame MISLB {light ROCKET_X1}
@@ -365,15 +343,11 @@ flickerlight2 BIGYELLOWTORCH
 	offset 0 60 0
 }
 
-/*object 64YellowTorch															//R16 MOVED TO MAPS.PK3
+/*object 64YellowTorch		//R16 MOVED TO MAPS.PK3
 {
 	frame TYRN {light BIGYELLOWTORCH}
 }*/
 
-/*object 64YellowSkulltagTorch													//R10.2 UNUSED
-{
-	frame TYRN {light BIGYELLOWTORCH}
-}*/
 
 // Tall white torch
 flickerlight2 BIGWHITETORCH
@@ -385,7 +359,7 @@ flickerlight2 BIGWHITETORCH
 	offset 0 60 0
 }
 
-/*object 64WhiteTorch																//R10.2 UNUSED
+/*object 64WhiteTorch		//R10.2 UNUSED
 {
 	frame TWHT {light BIGWHITETORCH}
 }*/
@@ -400,7 +374,7 @@ flickerlight2 SMALLREDTORCH
 	offset 0 35 0
 }
 
-object 64RedTorchSmall															//R10.1 WAS 64ShortRedTorch
+object 64RedTorchSmall			//R10.1 WAS 64ShortRedTorch
 {
 	frame TRED {light SMALLREDTORCH}
 }
@@ -430,7 +404,7 @@ flickerlight2 SMALLBLUETORCH
 	offset 0 35 0
 }
 
-object 64BlueTorchSmall 														//R10.1 WAS 64ShortBlueTorch
+object 64BlueTorchSmall 		//R10.1 WAS 64ShortBlueTorch
 {
 	frame TBLU {light SMALLBLUETORCH}
 }
@@ -450,10 +424,6 @@ object 64ShortYellowTorch
 	frame TYRN {light SMALLYELLOWTORCH}
 }
 
-/*object 64ShortYellowSkulltagTorch												//R10.2 UNUSED
-{
-	frame TYRN {light SMALLYELLOWTORCH}
-}*/
 
 //Small white torch
 flickerlight2 SMALLWHITETORCH
@@ -465,7 +435,7 @@ flickerlight2 SMALLWHITETORCH
 	offset 0 35 0
 }
 
-/*object 64ShortWhiteTorch														//R10.2 UNUSED
+/*object 64ShortWhiteTorch		//R10.2 unused
 {
 	frame TWHT {light SMALLWHITETORCH}
 }*/
@@ -525,10 +495,6 @@ object Candelabra
 {
 	frame CBRA {light CANDELABRA}
 }
-
-//--------------
-//--Doom Items--
-//--------------
 
 //Soul Sphere
 pulselight SOULSPHERE
@@ -616,71 +582,6 @@ object 64MegaSphere
 	frame MEGA {light MEGASPHERE}
 }
 
-//GuardSphere																	//R10.2 UNUSED
-
-/*object Guardsphere
-{
-	frame GARD {light MEGASPHERE}
-}*/
-
-//Invisibility Sphere
-pointlight INVISSPHERE
-{
-	color 0.0 0.0 1.0
-	size 40
-	offset 0 16 0
-}
-
-/*object InvisibilitySphere														//R10.2 UNUSED
-{
-	frame SINV {light INVISSPHERE}
-}*/
-
-//Turbosphere
-pulselight TURBOSPHERE
-{
-	color 1.0 0.3 0.0
-	size 40
-	secondarySize 42
-	interval 2.0
-	offset 0 16 0
-}
-
-/*object TurboSphere															//R10.2 UNUSED
-{
-	frame TURB { light TURBOSPHERE }
-}*/
-
-//Doomsphere
-pulselight DOOMSPHERE
-{
-	color 1.0 0.0 0.0
-	size 40
-	secondarySize 42
-	interval 2.0
-	offset 0 16 0
-}
-
-/*object DoomSphere																//R10.2 UNUSED
-{
-	frame DOOM { light DOOMSPHERE }
-}*/
-
-// Time Freeze Sphere
-pulselight TIMESPHERE
-{
-	color 7.0 7.0 7.0
-	size 40
-	secondarySize 42
-	interval 2.0
-	offset 0 16 0
-}
-
-/*object TimeFreezeSphere														//R10.2 UNUSED
-{
-	frame TIME {light TIMESPHERE}
-}*/
-
 //Health Potion
 pulselight HEALTHPOTION
 {
@@ -710,7 +611,7 @@ object 64ArmorBonus
 }
 
 //Blue Keys
-pulselight BLUEKEY																//R28.3 NEW
+pulselight BLUEKEY					//R28.3 added
 {
 	color 0.0 0.0 0.6
 	size 16
@@ -718,14 +619,14 @@ pulselight BLUEKEY																//R28.3 NEW
 	interval 0.57
 }
 
-object BlueCard																	//R29 WAS GLBlueCard
+object BlueCard						//R29 WAS GLBlueCard
 {
-	frame BKEY {light BLUEKEY}													//R28.3 WAS LIGHT HEALTHPOTION
+	frame BKEY {light BLUEKEY}		//R28.3 WAS LIGHT HEALTHPOTION
 }
 
-object BlueSkull																//R29 WAS GLBlueSkull
+object BlueSkull					//R29 WAS GLBlueSkull
 {
-	frame BSKU {light BLUEKEY}													//R28.3 WAS LIGHT HEALTHPOTION
+	frame BSKU {light BLUEKEY}		//R28.3 WAS LIGHT HEALTHPOTION
 }
 
 //Yellow Keys
@@ -733,16 +634,16 @@ pulselight YELLOWKEY
 {
 	color 0.6 0.6 0.0
 	size 16
-	secondarySize 38															//R28.3 WAS 18
-	interval 0.57																//R28.3 WAS 2
+	secondarySize 38			//R28.3 WAS 18
+	interval 0.57				//R28.3 WAS 2
 }
 
-object YellowCard																//R29 WAS GLYellowCard
+object YellowCard				//R29 WAS GLYellowCard
 {
 	frame YKEY {light YELLOWKEY}
 }
 
-object YellowSkull																//R29 WAS GLYellowSkull
+object YellowSkull				//R29 WAS GLYellowSkull
 {
 	frame YSKU {light YELLOWKEY}
 }
@@ -752,16 +653,16 @@ pulselight REDKEY
 {
 	color 0.6 0.0 0.0
 	size 16
-	secondarySize 38															//R28.3 WAS 18
-	interval 0.57																//R28.3 WAS 2
+	secondarySize 38		//R28.3 WAS 18
+	interval 0.57			//R28.3 WAS 2
 }
 
-object RedCard																	//R29 WAS GLRedCard
+object RedCard				//R29 WAS GLRedCard
 {
 	frame RKEY {light REDKEY}
 }
 
-object RedSkull																	//R29 WAS GLRedSkull
+object RedSkull				//R29 WAS GLRedSkull
 {
 	frame RSKU {light REDKEY}
 }
@@ -940,7 +841,7 @@ pulselight ARMORBONUS2
 	interval 1.0
 }
 
-/*object MaxArmorBonus															//R10.2 UNUSED
+/*object MaxArmorBonus		//R10.2 unused
 {
 	frame BON4 {light ARMORBONUS2}
 }*/
@@ -954,33 +855,10 @@ pulselight HEALTHPOTION2
 	interval 2.0
 }
 
-/*object MaxHealthBonus															//R10.2 UNUSED
+/*object MaxHealthBonus		//R10.2 unused
 {
 	frame BON3 {light HEALTHPOTION2}
 }*/
-
-//Red armour
-pointlight REDARMOR1
-{
-	color 0.6 0.0 0.0
-	size 48
-}
-
-pointlight REDARMOR2
-{
-	color 0.6 0.0 0.0
-	size 32
-}
-
-/*object RedArmor																//R10.2 UNUSED
-{
-	frame ARM3A {light REDARMOR1}
-	frame ARM3B {light REDARMOR2}
-}*/
-
-//----------------
-//--Doom Enemies--
-//----------------
 
 //Zombies
 flickerlight2 ZOMBIEATK
@@ -1008,9 +886,9 @@ object 64ChaingunGuy
 	frame CPOSF {light ZOMBIEATK}
 }
 
-object 64SSGGuy														//R10.2 UNUSED	//r31 active was SuperShotgunGuy
+object 64SSGGuy		//R10.2 unused	//r31 active was SuperShotgunGuy
 {
-	frame POS4F {light ZOMBIEATK}	//R31 NEW FRAME
+	frame POS4F {light ZOMBIEATK}	//R31 added frame
 }
 
 object 64DoomPlayer
@@ -1074,7 +952,7 @@ flickerlight IMPBALL_X6
 	chance 0.25
 }
 
-object 64ImpBall																//R10.1 WAS 64DoomImpBall
+object 64ImpBall	//R10.1 WAS 64DoomImpBall
 {
 	frame BAL1A {light IMPBALL}
 	frame BAL1B {light IMPBALL}
@@ -1156,21 +1034,6 @@ object NImpBall
 	frame NMBLI {light NIMPBALL_X6}
 }
 
-pointlight SPECTRE
-{
-	color 0.5 0.5 0.5
-	size 48
-	offset 0 24 0
-	subtractive 1
-}
-
-/*
-object Spectre
-{
-	frame SARG { light SPECTRE }
-}
-*/
-
 //Cacodemon fireball
 flickerlight CACOBALL
 {
@@ -1220,20 +1083,22 @@ flickerlight CACOBALL_X5
 	chance 0.25
 }
 
-object 64CacodemonBall
+object 64CacodemonBall	//R31 added frames
 {
 	frame BAL2A {light CACOBALL}
 	frame BAL2B {light CACOBALL}
 	frame BAL2C {light CACOBALL}
+
 	frame BAL2D {light CACOBALL_X1}
 	frame BAL2E {light CACOBALL_X2}
 	frame BAL2F {light CACOBALL_X3}
 	frame BAL2G {light CACOBALL_X4}
 	frame BAL2H {light CACOBALL_X5}
+	frame BAL2I {light CACOBALL_X5}
+	frame BAL2J {light CACOBALL_X5}
 }
 
 //Nightmare Cacodemon Fireball
-
 flickerlight NCACOBALL
 {
 	color 1.0 0.2 0.6
@@ -1282,16 +1147,19 @@ flickerlight NCACOBALL_X5
 	chance 0.25
 }
 
-object NCacoBall																//R10.2 UNUSED //R11 READDED
+object NCacoBall		//R10.2 unused //R11 active	//R31 added frames
 {
 	frame NCACA {light NCACOBALL}
 	frame NCACB {light NCACOBALL}
 	frame NCACC {light NCACOBALL}
+
 	frame NCACD {light NCACOBALL_X1}
 	frame NCACE {light NCACOBALL_X2}
 	frame NCACF {light NCACOBALL_X3}
 	frame NCACG {light NCACOBALL_X4}
 	frame NCACH {light NCACOBALL_X5}
+	frame NCACI {light NCACOBALL_X5}
+	frame NCACJ {light NCACOBALL_X5}
 }
 
 //Hell Knight fireball
@@ -1351,7 +1219,8 @@ flickerlight BARONBALL_X6
 
 object 64BaronBallGreen	//r31 fixed frames
 {
-	frame BAL7 {light BARONBALL}
+	frame BAL7A {light BARONBALL}
+	frame BAL7B {light BARONBALL}
 
 	frame BAL7C {light BARONBALL_X1}
 	frame BAL7D {light BARONBALL_X2}
@@ -1416,16 +1285,17 @@ flickerlight BARONBALL2_X6
 	chance 0.25
 }
 
-object 64BaronBall																//R10 WAS BaronBall2
+object 64BaronBall		//R10 WAS BaronBall2
 {
-	frame brnr {light BARONBALL2}
+	frame BRNRA {light BARONBALL2}
+	frame BRNRB {light BARONBALL2}
 
-	frame brnrC {light BARONBALL2_X1}
-	frame brnrD {light BARONBALL2_X2}
-	frame brnrE {light BARONBALL2_X3}
-	frame brnrF {light BARONBALL2_X4}
-	frame brnrG {light BARONBALL2_X5}
-	frame brnrH {light BARONBALL2_X6}
+	frame BRNRC {light BARONBALL2_X1}
+	frame BRNRD {light BARONBALL2_X2}
+	frame BRNRE {light BARONBALL2_X3}
+	frame BRNRF {light BARONBALL2_X4}
+	frame BRNRG {light BARONBALL2_X5}
+	frame BRNRH {light BARONBALL2_X6}
 }
 
 //Lost Soul
@@ -1521,17 +1391,18 @@ object 64LostSoul
 }
 
 //Mancubus Fireball
-object 64FatShot
+object 64FatShot	//R31 fixed frames
 {
-	frame MANFA {light IMPBALL}
-	frame MANFB {light IMPBALL}
-	frame MANFC {light IMPBALL}
+	frame MTB1A {light IMPBALL}
+	frame MTB1B {light IMPBALL}
+	frame MTB1C {light IMPBALL}
 
-	frame MANFD {light ROCKET_X1}
-	frame MANFE {light ROCKET_X2}
-	frame MANFF {light ROCKET_X3}
-	frame MANFG {light ROCKET_X4}
-	frame MANFH {light ROCKET_X5}
+	frame manfD {light ROCKET_X1}
+	frame manfE {light ROCKET_X2}
+	frame manfF {light ROCKET_X3}
+	frame manfG {light ROCKET_X4}
+	frame manfH {light ROCKET_X5}
+	frame manfI {light ROCKET_X5}
 }
 
 //Arachnotron Fireball
@@ -1615,15 +1486,59 @@ flickerlight TRACER_X3
 	chance 0.25
 }
 
-object 64RevenantTracer3														//R10.1 WAS 64RevenantTracer
+object 64RevenantTracer3	//R10.1 WAS 64RevenantTracer
 {
-	frame TRCRA {light IMPBALL}
-	frame TRCRB {light IMPBALL}
-	frame TRCRC {light ROCKET_X1}
-	frame TRCRD {light ROCKET_X2}
-	frame TRCRE {light ROCKET_X3}
-	frame TRCRF {light ROCKET_X4}
-	frame TRCRG {light ROCKET_X5}
+	frame M5B1A {light TRACER}
+	frame M5B1B {light TRACER}
+	frame M5B1C {light TRACER}
+
+	frame manfD {light TRACER_X1}
+	frame manfE {light TRACER_X1}
+	frame manfF {light TRACER_X2}
+	frame manfG {light TRACER_X2}
+	frame manfH {light TRACER_X3}
+	frame manfI {light TRACER_X3}
+}
+
+object 64RevenantTracer2	//R31 added
+{
+	frame M5B1A {light TRACER}
+	frame M5B1B {light TRACER}
+	frame M5B1C {light TRACER}
+
+	frame manfD {light TRACER_X1}
+	frame manfE {light TRACER_X1}
+	frame manfF {light TRACER_X2}
+	frame manfG {light TRACER_X2}
+	frame manfH {light TRACER_X3}
+	frame manfI {light TRACER_X3}
+}
+
+object 64StalkerShot1	//R31 added
+{
+	frame M5B1A {light TRACER}
+	frame M5B1B {light TRACER}
+	frame M5B1C {light TRACER}
+
+	frame manfD {light TRACER_X1}
+	frame manfE {light TRACER_X1}
+	frame manfF {light TRACER_X2}
+	frame manfG {light TRACER_X2}
+	frame manfH {light TRACER_X3}
+	frame manfI {light TRACER_X3}
+}
+object 64StalkerShot2	//R31 added
+{
+	frame M5B1A {light TRACER}
+	frame M5B1B {light TRACER}
+	frame M5B1C {light TRACER}
+
+	frame manfD {light TRACER_X1}
+	frame manfE {light TRACER_X1}
+	frame manfF {light TRACER_X2}
+	frame manfG {light TRACER_X2}
+	frame manfH {light TRACER_X3}
+	frame manfI {light TRACER_X3}
 }
 
 //Arch Vile Fire
@@ -1796,7 +1711,7 @@ pulselight ARCHRES
 	offset 0 36 0
 }
 
-object 64Archvile																//R10.2 UNUSED
+object 64Archvile		//R10.2 unused //r31 activated
 {
 	frame NVILA {light ARCHATK1}
 	frame NVILB {light ARCHATK1}
@@ -1841,223 +1756,6 @@ object MotherFire
 	frame MFIRD {light ARCHATK1}
 	frame MFIRE {light ARCHATK1}
 }
-
-//Dark Imp Fireball
-pointlight DIMPBALL
-{
-	color 0.0 0.0 1.0
-	size 64
-}
-
-//Dark imp fireball explosion
-flickerlight DIMPBALL_X1
-{
-	color 0.0 0.0 0.7
-	size 80
-	secondarySize 88
-	chance 0.25
-}
-
-flickerlight DIMPBALL_X2
-{
-	color 0.0 0.0 0.5
-	size 96
-	secondarySize 104
-	chance 0.25
-}
-
-flickerlight DIMPBALL_X3
-{
-	color 0.0 0.0 0.4
-	size 112
-	secondarySize 120
-	chance 0.25
-}
-
-flickerlight DIMPBALL_X4
-{
-	color 0.0 0.0 0.3
-	size 112
-	secondarySize 120
-	chance 0.25
-}
-
-flickerlight DIMPBALL_X5
-{
-	color 0.0 0.0 0.2
-	size 112
-	secondarySize 120
-	chance 0.25
-}
-
-flickerlight DIMPBALL_X6
-{
-	color 0.0 0.0 0.1
-	size 112
-	secondarySize 120
-	chance 0.25
-}
-
-/*object DarkImpBall															//R10.2 UNUSED
-{
-	frame BAL4A {light DIMPBALL}
-	frame BAL4B {light DIMPBALL}
-	frame BAL4C {light DIMPBALL}
-	frame BAL4D {light DIMPBALL_X1}
-	frame BAL4E {light DIMPBALL_X2}
-	frame BAL4F {light DIMPBALL_X3}
-	frame BAL4G {light DIMPBALL_X4}
-	frame BAL4H {light DIMPBALL_X5}
-	frame BAL4I {light DIMPBALL_X6}
-}*/
-
-//Belphegor Ball
-/*object BelphegorBall															//R10.2 UNUSED
-{
-	frame BAL7A {light BARONBALL}
-	frame BAL7B {light BARONBALL}
-	frame BAL7C {light BARONBALL_X1}
-	frame BAL7D {light BARONBALL_X2}
-	frame BAL7E {light BARONBALL_X3}
-	frame BAL7F {light BARONBALL_X4}
-	frame BAL7G {light BARONBALL_X5}
-	frame BAL7H {light BARONBALL_X6}
-}*/
-
-//Hectebus Ball
-/*object HectShot																//R10.2 UNUSED
-{
-	frame HECFA {light BARONBALL}
-	frame HECFB {light BARONBALL}
-	frame HECFC {light BARONBALL}
-	frame HECFD {light BARONBALL_X1}
-	frame HECFE {light BARONBALL_X2}
-	frame HECFF {light BARONBALL_X3}
-	frame HECFG {light BARONBALL_X4}
-	frame HECFH {light BARONBALL_X5}
-}*/
-
-//Cacolantern fireball
-flickerlight CACOBALL2
-{
-	color 1.0 1.0 0.0
-	size 56
-	secondarySize 64
-	chance 0.5
-}
-
-flickerlight CACOBALL2_X1
-{
-	color 0.9 0.9 0.0
-	size 72
-	secondarySize 80
-	chance 0.25
-}
-
-flickerlight CACOBALL2_X2
-{
-	color 0.6 0.6 0.0
-	size 88
-	secondarySize 96
-	chance 0.25
-}
-
-flickerlight CACOBALL2_X3
-{
-	color 0.3 0.3 0.0
-	size 104
-	secondarySize 112
-	chance 0.25
-}
-
-flickerlight CACOBALL2_X4
-{
-	color 0.2 0.2 0.0
-	size 104
-	secondarySize 112
-	chance 0.25
-}
-
-flickerlight CACOBALL2_X5
-{
-	color 0.1 0.1 0.0
-	size 104
-	secondarySize 112
-	chance 0.25
-}
-
-/*object CacolanternBall														//R10.2 UNUSED
-{
-	frame BAL8A {light CACOBALL2}
-	frame BAL8B {light CACOBALL2}
-	frame BAL8C {light CACOBALL2}
-	frame BAL8D {light CACOBALL2_X1}
-	frame BAL8E {light CACOBALL2_X2}
-	frame BAL8F {light CACOBALL2_X3}
-	frame BAL8G {light CACOBALL2_X4}
-	frame BAL8H {light CACOBALL2_X5}
-}*/
-
-//Abaddon fireball
-flickerlight CACOBALL3
-{
-	color 1.0 0.0 0.0
-	size 56
-	secondarySize 64
-	chance 0.5
-}
-
-flickerlight CACOBALL3_X1
-{
-	color 0.9 0.0 0.0
-	size 72
-	secondarySize 80
-	chance 0.25
-}
-
-flickerlight CACOBALL3_X2
-{
-	color 0.6 0.0 0.0
-	size 88
-	secondarySize 96
-	chance 0.25
-}
-
-flickerlight CACOBALL3_X3
-{
-	color 0.3 0.0 0.0
-	size 104
-	secondarySize 112
-	chance 0.25
-}
-
-flickerlight CACOBALL3_X4
-{
-	color 0.2 0.0 0.0
-	size 104
-	secondarySize 112
-	chance 0.25
-}
-
-flickerlight CACOBALL3_X5
-{
-	color 0.1 0.0 0.0
-	size 104
-	secondarySize 112
-	chance 0.25
-}
-
-/*object AbaddonBall															//R10.2 UNUSED
-{
-	frame BAL3A {light IMPBALL}
-	frame BAL3B {light IMPBALL}
-	frame BAL3C {light IMPBALL}
-	frame BAL3D {light IMPBALL_X1}
-	frame BAL3E {light IMPBALL_X2}
-	frame BAL3F {light IMPBALL_X3}
-	frame BAL3G {light IMPBALL_X4}
-	frame BAL3H {light IMPBALL_X5}
-}*/
 
 //Grenade
 pointlight ROCKET
@@ -2115,10 +1813,6 @@ flickerlight ROCKET_X5
 	frame MISLF {light ROCKET_X5}
 }*/
 
-//----------------
-//--Doom Effects--
-//----------------
-
 //Doom Teleport fog
 flickerlight DTFOG1
 {
@@ -2152,16 +1846,16 @@ flickerlight DTFOG4
 	chance 0.4
 }
 
-object TeleportationFog															//R10.1 WAS 64TeleportFog
+object TeleportationFog				//R10.1 WAS 64TeleportFog
 {
-	frame TPFGA {light DTFOG1}													//R30.4 WAS TFOGA
-	frame TPFGB {light DTFOG1}													//R30.4 WAS TFOGB
-	frame TPFGC {light DTFOG2}													//R30.4 WAS TFOGC
-	frame TPFGD {light DTFOG2}													//R30.4 WAS TFOGD
-	frame TPFGE {light DTFOG3}													//R30.4 WAS TFOGE
-	frame TPFGF {light DTFOG3}													//R30.4 WAS TFOGF
-	frame TPFGG {light DTFOG4}													//R30.4 WAS TFOGG
-	frame TPFGH {light DTFOG4}													//R30.4 WAS TFOGH
+	frame TPFGA {light DTFOG1}		//R30.4 WAS TFOGA
+	frame TPFGB {light DTFOG1}		//R30.4 WAS TFOGB
+	frame TPFGC {light DTFOG2}		//R30.4 WAS TFOGC
+	frame TPFGD {light DTFOG2}		//R30.4 WAS TFOGD
+	frame TPFGE {light DTFOG3}		//R30.4 WAS TFOGE
+	frame TPFGF {light DTFOG3}		//R30.4 WAS TFOGF
+	frame TPFGG {light DTFOG4}		//R30.4 WAS TFOGG
+	frame TPFGH {light DTFOG4}		//R30.4 WAS TFOGH
 }
 
 //Tiny red torch
@@ -2211,7 +1905,7 @@ pointlight TINYYELLOWTORCH
 	offset 0 16 0
 }
 
-/*object TinyYellowTorch				//r31 removed
+/*object TinyYellowTorch		//r31 removed
 {
 	frame SMYY {light TINYYELLOWTORCH}
 }*/
@@ -2224,7 +1918,7 @@ pointlight HANGLAMP
 	offset 0 0 0
 }
 
-object HangingTechLampB															//R10.1 HangingTechLamp
+object HangingTechLampB			//R10.1 HangingTechLamp
 {
 	frame HGLM {light HANGLAMP}
 }
@@ -2237,7 +1931,7 @@ pointlight CEILINGLIGHT
 	offset 0 0 0
 }
 
-object CeilingLightB															//R10.1 WAS CeilingLight
+object CeilingLightB			//R10.1 WAS CeilingLight
 {
 	frame CEIL {light CEILINGLIGHT}
 }
@@ -2252,7 +1946,7 @@ flickerlight2 GROUNDFIRE
 	offset 0 35 0
 }
 
-/*object BD64GroundFire															//R16 REMOVED //R10.2 //R11.1 WAS GroundFire
+/*object BD64GroundFire			//R10.2 unused	//R11.1 WAS GroundFire //R16 removed
 {
 	frame MFIR {light GROUNDFIRE}
 }*/
