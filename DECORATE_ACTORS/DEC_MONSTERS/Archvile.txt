@@ -12,53 +12,53 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 	See:																		//r30.9 redfined for head
 		VILM a 2 a_vilechase
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,56,0)
-		VILM b 2 a_vilechase
+		VILM B 2 a_vilechase
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,56,0)
-		VILM c 2 a_vilechase
+		VILM C 2 a_vilechase
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,56,0)
-		VILM d 2 a_vilechase
+		VILM D 2 a_vilechase
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,56,0)
-		VILM ee 2 a_vilechase
+		VILM EE 2 a_vilechase
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,56,0)
-		VILM f 2 a_vilechase
+		VILM F 2 a_vilechase
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,56,0)
-		VILM f 2 a_vilechase
+		VILM F 2 a_vilechase
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,56,0)
-		VILM g 2 a_vilechase
+		VILM G 2 a_vilechase
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,56,0)
-		VILM h 2 a_vilechase
+		VILM H 2 a_vilechase
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,56,0)
-		VILM jj 2 a_vilechase
+		VILM JJ 2 a_vilechase
 		Loop
 	Missile:		//r30.9 redefined for head death
-		TNT1 a 0 a_vilestart
+		TNT1 A 0 a_vilestart
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
-		NVIL a 3 bright a_facetarget
+		NVIL A 3 bright a_facetarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
-		NVIL b 3 bright a_vilestart
+		NVIL B 3 bright a_vilestart
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
-		NVIL cde 3 bright a_facetarget
+		NVIL CDE 3 bright a_facetarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
-		NVIL f 3 bright a_viletarget
+		NVIL F 3 bright a_viletarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
-		NVIL ghij 3 bright a_facetarget
+		NVIL GHIJ 3 bright a_facetarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
-		NVIL k 24 bright a_facetarget
+		NVIL K 24 bright a_facetarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
-		NVIL lmno 3 bright a_facetarget
+		NVIL LMNO 3 bright a_facetarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
-		NVIL p 4 bright a_vileattack
+		NVIL P 4 bright a_vileattack
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
-		NVIL q 4 bright
+		NVIL Q 4 bright
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",-12,56,0)
-		NVIL r 20 bright
+		NVIL R 20 bright
 		goto see
 	Heal:
-		VILE xxyzyxxyzy 3 bright
+		VILE XXYZYXXYZY 3 bright
 		goto see
 	Pain:
-		VILP a 3
-		VILP b 7 a_pain
+		VILP A 3
+		VILP B 7 a_pain
 		Goto See
 	Pain.Vertigo:
 		TNT1 A 0 ThrustThingZ(0,55,0,0)
