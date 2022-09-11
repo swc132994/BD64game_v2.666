@@ -876,6 +876,14 @@ flickerlight2 ZOMBIEATK
 	interval 1
 	offset 0 40 0
 }
+flickerlight2 ZOMBIEATK2
+{
+	color 0.8 0.8 0.8
+	size 48
+	secondarySize 56
+	interval 1
+	offset 0 40 0
+}
 
 object 64ZombieMan
 {
@@ -889,8 +897,8 @@ object 64ShotgunGuy
 
 object 64ChaingunGuy
 {
-	frame MPOSE {light ZOMBIEATK}	//r31 was CPOSE
-	frame MPOSF {light ZOMBIEATK}	//r31 was CPOSF
+	frame MPOSE {light ZOMBIEATK2}	//r31 was CPOSE {light ZOMBIEATK}
+	frame MPOSF {light ZOMBIEATK2}	//r31 was CPOSF {light ZOMBIEATK}
 }
 
 object 64Zombiemarine	//R31 added
