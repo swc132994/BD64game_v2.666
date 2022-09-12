@@ -375,6 +375,8 @@ DropItem "None"
 //		tnt1 a 0 A_GiveToTarget("SoulAmmo",1)									//R8 WAS 2	//R31 REMOVED
 		PDM3 F -1
 		Stop
+	Death.Rifle:		//r31 extra
+		TNT1 A 0 A_Jump(128,"Death")		//R31 added
 	Death.Cutless:
 		TNT1 A 0 A_noBlocking
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
@@ -1131,6 +1133,8 @@ DropItem "None"
 //		tnt1 a 0 A_GiveToTarget("SoulAmmo",1)
 		SDM3 F -1
 		Stop
+	Death.Rifle:		//r31 extra
+		TNT1 A 0 A_Jump(128,"Death")		//R31 added
 	Death.Cutless:
 		TNT1 A 0 A_noBlocking
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
@@ -2104,6 +2108,8 @@ DropItem "None"
 //		tnt1 a 0 A_GiveToTarget("SoulAmmo",1)									//R8 WAS 2	//R31 REMOVED
 		PO2D E -1
 		Stop
+	Death.Rifle:		//r31 extra
+		TNT1 A 0 A_Jump(128,"Death")		//R31 added
 	Death.Cutless:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))

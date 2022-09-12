@@ -31,7 +31,9 @@ Weapon.AmmoType "Clip"
 Inventory.PickupMessage "$GOTCHAINGUN"
 Obituary "$OB_MPCHAINGUN"
 Tag "$TAG_CHAINGUN"
-+INVENTORY.RESTRICTABSOLUTELY		//R12.1 added
+VisibleToPlayerClass "64DoomPlayer"												//R11 added
+Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	//R11 added	//R15 added TACTICAL P	//R28 added MODERN
++INVENTORY.RESTRICTABSOLUTELY													//R12.1 added
 	States
 	{
 	Spawn:

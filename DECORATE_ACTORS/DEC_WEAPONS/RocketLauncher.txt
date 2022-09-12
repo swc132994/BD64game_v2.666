@@ -123,7 +123,7 @@ Decal "BigScorch"		//R28.2	ADDED	//R28.3 WAS SCORCH
 		TNT1 A 2
 		TNT1 A 0 A_Explode
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 10
+		MISL BCDEF 2 	//R31 Added frames
 		stop
 	}
 }
@@ -503,7 +503,7 @@ Gravity 0.2
 		TNT1 A 2
 		TNT1 A 0 A_Explode
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 10
+		MISL BCDEF 2 	//R31 Added frames
 		stop
 	}
 }

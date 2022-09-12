@@ -34,6 +34,9 @@ Tag "$TAG_BFG9000"
 +WEAPON.NOAUTOFIRE
 //+WEAPON.ALT_USES_BOTH	//R31 added, removed
 +WEAPON.NOALERT			//R31 added
+VisibleToPlayerClass "64DoomPlayer"												//R11 added
+Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	//R11 added	//R15 added TACTICAL P	//R28 added MODERN
++INVENTORY.RESTRICTABSOLUTELY													//R12.1 added
 	States
 	{
 	/*KickingFlash:
@@ -123,6 +126,7 @@ Tag "$TAG_BFG9000"
 +WEAPON.NOAUTOFIRE
 +WEAPON.ALT_USES_BOTH	//R31 added
 +WEAPON.NOALERT			//R31 added
++INVENTORY.RESTRICTABSOLUTELY		//R12.1 added
 	States
 	{
 	KickingFlash:

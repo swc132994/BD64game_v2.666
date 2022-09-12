@@ -78,6 +78,38 @@ flickerlight ROCKET_X5
 object 64Rocket
 {
 	frame MISLA {light ROCKET}
+
+	frame MISLB {light ROCKET_X1}
+	frame MISLC {light ROCKET_X2}
+	frame MISLD {light ROCKET_X3}
+	frame MISLE {light ROCKET_X4}
+	frame MISLF {light ROCKET_X5}
+}
+
+object TacticalRocket	//R31 Added
+{
+	frame MISLA {light ROCKET}
+
+	frame MISLB {light ROCKET_X1}
+	frame MISLC {light ROCKET_X2}
+	frame MISLD {light ROCKET_X3}
+	frame MISLE {light ROCKET_X4}
+	frame MISLF {light ROCKET_X5}
+}
+
+object CyberRocket	//R31 Added
+{
+	frame MISLA {light ROCKET}
+
+	frame MISLB {light ROCKET_X1}
+	frame MISLC {light ROCKET_X2}
+	frame MISLD {light ROCKET_X3}
+	frame MISLE {light ROCKET_X4}
+	frame MISLF {light ROCKET_X5}
+}
+
+object 64NightcrawlerGrenade	//R31 Added
+{
 	frame MISLB {light ROCKET_X1}
 	frame MISLC {light ROCKET_X2}
 	frame MISLD {light ROCKET_X3}
@@ -136,6 +168,20 @@ object 64PlasmaBall
 {
 	frame PLSSA {light PLASMABALL}
 	frame PLSSB {light PLASMABALL}
+
+	frame PLSEA {light PLASMA_X1}
+	frame PLSEB {light PLASMA_X2}
+	frame PLSEC {light PLASMA_X2}
+	frame PLSED {light PLASMA_X3}
+	frame PLSEE {light PLASMA_X4}
+	frame PLSEF {light PLASMA_X5}
+}
+
+object 64ArachnotronPlasma
+{
+	frame PLSSA {light PLASMABALL}
+	frame PLSSB {light PLASMABALL}
+
 	frame PLSEA {light PLASMA_X1}
 	frame PLSEB {light PLASMA_X2}
 	frame PLSEC {light PLASMA_X2}
@@ -160,10 +206,14 @@ flickerlight UNMAKERSHOT_X
 
 object UnmakerLaser
 {
-	frame LAZRA {light UNMAKERSHOT}
-	frame LAZRB {light UNMAKERSHOT}
-	frame LPUFA {light UNMAKERSHOT_X}
-	frame LPUFA {light UNMAKERSHOT_X}
+	frame LAZR {light UNMAKERSHOT}
+	frame LPUF {light UNMAKERSHOT_X}
+}
+
+object UnmakerLaser2	//R31 added
+{
+	frame LAZR {light UNMAKERSHOT}
+	frame LPUF {light UNMAKERSHOT_X}
 }
 
 //BFG
@@ -217,6 +267,7 @@ object 64BFGBall
 {
 	frame BFS1A {light BFGBALL}
 	frame BFS1B {light BFGBALL}
+
 	frame BFE1A {light BFGBALL_X1}
 	frame BFE1B {light BFGBALL_X2}
 	frame BFE1C {light BFGBALL_X3}
@@ -228,6 +279,7 @@ object 64BFGBall
 object 64BFGExtra
 {
 	frame BFE2A {light BFGBALL}
+
 	frame BFE2B {light BFGBALL_X1}
 	frame BFE2C {light BFGBALL_X2}
 	frame BFE2D {light BFGBALL_X3}
@@ -1493,7 +1545,7 @@ object 64FatShot	//R31 fixed frames
 	frame MANFI {light TRACER_X3}
 }
 
-//Arachnotron Fireball
+/*//Arachnotron Fireball
 pointlight ARACHPLAS
 {
 	color 0.0 0.0 1.0
@@ -1532,7 +1584,7 @@ flickerlight ARACHPLAS_X4
 	chance 0.3
 }
 
-object 64ArachnotronPlasma
+object 64ArachnotronPlasma_OLD	//arachnotron uses same as plasmaball
 {
 	frame APLSA {light ARACHPLAS}
 	frame APLSB {light ARACHPLAS}
@@ -1541,7 +1593,7 @@ object 64ArachnotronPlasma
 	frame APBXC {light ARACHPLAS_X2}
 	frame APBXD {light ARACHPLAS_X3}
 	frame APBXE {light ARACHPLAS_X4}
-}
+}*/
 
 //Revenant tracer
 pointlight TRACER
@@ -1580,12 +1632,12 @@ object 64RevenantTracer3	//R10.1 WAS 64RevenantTracer
 	frame M5B1B {light TRACER}
 	frame M5B1C {light TRACER}
 
-	frame MANFD {light TRACER_X1}
-	frame MANFE {light TRACER_X1}
-	frame MANFF {light TRACER_X2}
-	frame MANFG {light TRACER_X2}
-	frame MANFH {light TRACER_X3}
-	frame MANFI {light TRACER_X3}
+	frame MBALC {light TRACER_X1}
+	frame MBALD {light TRACER_X1}
+	frame MBALE {light TRACER_X2}
+	frame MBALF {light TRACER_X2}
+	frame MBALG {light TRACER_X3}
+	frame MBALH {light TRACER_X3}
 }
 
 object 64RevenantTracer2	//R31 added
@@ -1594,12 +1646,12 @@ object 64RevenantTracer2	//R31 added
 	frame M5B1B {light TRACER}
 	frame M5B1C {light TRACER}
 
-	frame MANFD {light TRACER_X1}
-	frame MANFE {light TRACER_X1}
-	frame MANFF {light TRACER_X2}
-	frame MANFG {light TRACER_X2}
-	frame MANFH {light TRACER_X3}
-	frame MANFI {light TRACER_X3}
+	frame MBALC {light TRACER_X1}
+	frame MBALD {light TRACER_X1}
+	frame MBALE {light TRACER_X2}
+	frame MBALF {light TRACER_X2}
+	frame MBALG {light TRACER_X3}
+	frame MBALH {light TRACER_X3}
 }
 
 object 64StalkerShot1	//R31 added
@@ -1608,12 +1660,12 @@ object 64StalkerShot1	//R31 added
 	frame M5B1B {light TRACER}
 	frame M5B1C {light TRACER}
 
-	frame MANFD {light TRACER_X1}
-	frame MANFE {light TRACER_X1}
-	frame MANFF {light TRACER_X2}
-	frame MANFG {light TRACER_X2}
-	frame MANFH {light TRACER_X3}
-	frame MANFI {light TRACER_X3}
+	frame MBALC {light TRACER_X1}
+	frame MBALD {light TRACER_X1}
+	frame MBALE {light TRACER_X2}
+	frame MBALF {light TRACER_X2}
+	frame MBALG {light TRACER_X3}
+	frame MBALH {light TRACER_X3}
 }
 object 64StalkerShot2	//R31 added
 {
@@ -1621,12 +1673,12 @@ object 64StalkerShot2	//R31 added
 	frame M5B1B {light TRACER}
 	frame M5B1C {light TRACER}
 
-	frame MANFD {light TRACER_X1}
-	frame MANFE {light TRACER_X1}
-	frame MANFF {light TRACER_X2}
-	frame MANFG {light TRACER_X2}
-	frame MANFH {light TRACER_X3}
-	frame MANFI {light TRACER_X3}
+	frame MBALC {light TRACER_X1}
+	frame MBALD {light TRACER_X1}
+	frame MBALE {light TRACER_X2}
+	frame MBALF {light TRACER_X2}
+	frame MBALG {light TRACER_X3}
+	frame MBALH {light TRACER_X3}
 }
 
 //Arch Vile Fire
@@ -2114,13 +2166,6 @@ interval 0.1
 offset 0 35 0
 }
 
-POINTlight plasmaprojectile
-{
-color 0.3 0.3 1.0
-size 42
-offset 0 0 0
-}
-
 pulselight BIGBLUETORCH
 {
 color 0.0 0.3 1.0
@@ -2293,18 +2338,6 @@ frame SHF4 {light ShaftLight}
 frame SHF5 {light ShaftLight}
 }
 
-object 64PlasmaBall
-{
-frame LENS {light PlasmaProjectile}
-frame LENZ {light PlasmaProjectile}
-}
-
-object 64ArachnotronPlasma
-{
-frame LENS {light PlasmaProjectile}
-frame LENZ {light PlasmaProjectile}
-}
-
 pulselight BIGREDLASER
 {
 color 1.0 0.0 0.0
@@ -2338,11 +2371,17 @@ frame TNT1 {light BIGREDLASER}
 object UnmakerLaserTrail	//R31 added
 {
 frame LAZR {light REDLASER}
+frame LPUF {light REDLASER}
 }
 
 object UnmakerLaserTrail2	//R31 added
 {
 frame LPUF {light REDLASER}
+}
+
+object UnmakerLaserWhite	//R31 added for unmaker alt
+{
+frame SHWK {light WHITELASER}
 }
 
 object UnmakerLaserTrailWhite	//R31 added for unmaker alt
