@@ -36,4 +36,5 @@ server int AlternativeAmmoPickupSpritesCvar = 0;//R31 DEFAULT OR ALTERNATIVE AMM
 server int BerserkSwitchFistsCvar = 1; 			//R31 BERSERK FISTS SWITCHING
 server bool AlternativeMasterMindSkinCvar = FALSE;	//R31 ALTERNATIVE MASTERMIND SKIN
 server int StalkerRandom_Cvar = 0;			//R31 STALKER REPLACES LOST SOUL
-server int NightCrawlerRandom_Cvar = 0;			//R31 NIGHTCRAWLER REPLACES ARACHNOTRON
+server int NightCrawlerRandom_Cvar = 0;		//R31 NIGHTCRAWLER REPLACES ARACHNOTRON
+server int FootStepCheckCvar = 1;			//R31 FOOTSTEP SOUNDS

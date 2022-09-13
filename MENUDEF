@@ -96,6 +96,9 @@ OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 		Slider "Set max gore amount","sv_corpsequeuesize",25,9999,100,0		//R31 16/08/22 new slider
 		textfield "input value manually","sv_corpsequeuesize"				//R31 16/08/22 new slider
 		StaticText " "
+		StaticText "Option to enable footstep sounds!",1
+		StaticText " "
+	Option "Enable footstep sounds =","FootStepCheckCvar","YesOrNo"
 }
 
 OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31

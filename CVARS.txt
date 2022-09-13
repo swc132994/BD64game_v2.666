@@ -374,3 +374,8 @@ script "NightCrawlerRandomACS" (void)	//R31 added
 {
 SetResultValue(GetCVar("NightCrawlerRandom_Cvar"));
 }
+
+script "FootStepCheck" (void)	//R31 added for footstep sounds
+{
+SetResultValue(GetCVar("FootStepCheckCvar"));
+}
