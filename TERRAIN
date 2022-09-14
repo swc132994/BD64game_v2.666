@@ -578,6 +578,7 @@ floor SLIME05 water
 floor CUSTOMCI water
 floor CUSTOMCI water
 
-//DOOM 64																		R16 DOOM 64 FLOOR TEXTURES MOVED TO MAPS
-
+//DOOM 64	R16 DOOM 64 FLOOR TEXTURES MOVED TO MAPS
 endif
+
+DefaultTerrain Hard	//R31 added for footstep sounds for other/non-defined flats

@@ -1,6 +1,7 @@
 //R29 ADDED SCRIPT AND MENU OPTION TO ENABLE/DISABLE	//R31 SIMPLIFIED & FLOOR/CEILING CHECK
 ACTOR DetectFloorBullet		//r31 checked and working
 {
+Mass 1	//R31 added
 scale 0.4
 radius 1
 height 1
@@ -36,6 +37,7 @@ BounceFactor 0.01
 
 ACTOR DetectCeilBullet	//r31 checked and working
 {
+Mass 1	//R31 added
 scale 0.4
 radius 1
 height 1

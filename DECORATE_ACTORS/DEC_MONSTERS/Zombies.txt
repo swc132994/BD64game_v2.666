@@ -1823,7 +1823,7 @@ seesound ""																		//r31 added
 Tag "Marine"	//r31 added
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-DropItem "RifleDrop",	15														//R31 Added
+DropItem "RifleDrop",5															//R31 Added
 Dropitem "clip"			//R21 added
 DROPITEM "SOULSPAWNER"	//R31 added
 +FLOORCLIP

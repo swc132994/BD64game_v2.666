@@ -1881,8 +1881,8 @@ frame VILEZ {light ARCHRES}
 
 object MotherBall
 {
-	frame MBALA {light TRACER}
-	frame MBALB {light TRACER}
+	frame M5B1 {light TRACER}
+
 	frame MBALC {light BARONBALL2_X1}
 	frame MBALD {light BARONBALL2_X2}
 	frame MBALE {light BARONBALL2_X3}
@@ -1891,14 +1891,24 @@ object MotherBall
 	frame MBALH {light BARONBALL2_X6}
 }
 
+object SuperMotherBall	//R31 added
+{
+	frame BAL2 {light TRACER}
+}
+
 //MotherDemon Fire
 object MotherFire
 {
 	frame MFIRA {light ARCHATK1}
-	frame MFIRB {light ARCHATK1}
-	frame MFIRC {light ARCHATK1}
-	frame MFIRD {light ARCHATK1}
-	frame MFIRE {light ARCHATK1}
+	frame MFIRB {light ARCHATK2}
+	frame MFIRC {light ARCHATK3}
+	frame MFIRD {light ARCHATK4}
+	frame MFIRE {light ARCHATK5}
+}
+
+object MotherFireTrail	//R31 added
+{
+	frame MPUF {light ARCHATK5}
 }
 
 //Grenade

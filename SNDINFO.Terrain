@@ -43,7 +43,7 @@ $limit world/lavasizzlesmall 4
 //Aspects Floor Sounds
 
 //Carpet - soft ground
-$random floor/carpet		{floor/carpet01  floor/carpet02 floor/carpet03}
+$random floor/carpet		{floor/carpet01 floor/carpet02 floor/carpet03}
 floor/carpet01	dscarp1
 floor/carpet02	dscarp2
 floor/carpet03	dscarp3
@@ -51,7 +51,7 @@ floor/carpet03	dscarp3
 $limit floor/carpet 20
 
 //Dirt
-$random floor/dirt		{floor/dirt01  floor/dirt02 floor/dirt03 floor/dirt04  floor/dirt05 floor/dirt06}
+$random floor/dirt			{floor/dirt01 floor/dirt02 floor/dirt03 floor/dirt04 floor/dirt05 floor/dirt06}
 floor/dirt01	dsdirt1
 floor/dirt02	dsdirt2
 floor/dirt03	dsdirt3
@@ -62,7 +62,7 @@ floor/dirt06	dsdirt6
 $limit floor/dirt 20
 
 //Gravel - loose crunchy surface
-$random floor/gravel		{floor/grav01  floor/grav02 floor/grav03 floor/grav04}
+$random floor/gravel		{floor/grav01 floor/grav02 floor/grav03 floor/grav04}
 floor/grav01	dsgrav1
 floor/grav02	dsgrav2
 floor/grav03	dsgrav3
@@ -71,7 +71,7 @@ floor/grav04	dsgrav4
 $limit floor/gravel 20
 
 //Metal - hard metal
-$random floor/metal		{floor/metl01  floor/metl02 floor/metl03 floor/metl04  floor/metl05 floor/metl06}
+$random floor/metal			{floor/metl01 floor/metl02 floor/metl03 floor/metl04 floor/metl05 floor/metl06}
 floor/metl01	dsmet01
 floor/metl02	dsmet02
 floor/metl03	dsmet03
@@ -82,7 +82,7 @@ floor/metl06	dsmet06
 $limit floor/metal 20
 
 //Metal2 - clanky metal
-$random floor/met2		{ floor/met201  floor/met202 floor/met203 floor/met204 }
+$random floor/met2			{floor/met201 floor/met202 floor/met203 floor/met204}
 floor/met201	dsmet201
 floor/met202	dsmet202
 floor/met203	dsmet203
@@ -91,7 +91,7 @@ floor/met204	dsmet204
 $limit floor/met2 20
 
 //Rock - Hard outdoor type floor
-$random floor/rock		{floor/rock01  floor/rock02 floor/rock03 floor/rock04  floor/rock05 floor/rock06 floor/rock07 floor/rock08}
+$random floor/rock			{floor/rock01 floor/rock02 floor/rock03 floor/rock04 floor/rock05 floor/rock06 floor/rock07 floor/rock08}
 floor/rock01	dsrock1
 floor/rock02	dsrock2
 floor/rock03	dsrock3
@@ -104,7 +104,7 @@ floor/rock08	dsrock8
 $limit floor/rock 20
 
 //Snow
-$random floor/snow		{floor/snow01  floor/snow02 floor/snow03 floor/snow04  floor/snow05 floor/snow06}
+$random floor/snow			{floor/snow01 floor/snow02 floor/snow03 floor/snow04 floor/snow05 floor/snow06}
 floor/snow01	dssnow1
 floor/snow02	dssnow2
 floor/snow03	dssnow3
@@ -115,7 +115,7 @@ floor/snow06	dssnow6
 $limit floor/snow 20
 
 //Hard - generic hard floor
-$random floor/hard		{floor/hard01  floor/hard02 floor/hard03 floor/hard04  floor/hard05 floor/hard06}
+$random floor/hard			{floor/hard01 floor/hard02 floor/hard03 floor/hard04 floor/hard05 floor/hard06}
 floor/hard01	dshard1
 floor/hard02	dshard2
 floor/hard03	dshard3
@@ -126,7 +126,7 @@ floor/hard06	dshard6
 $limit floor/hard 20
 
 //Tile - Hard indoor floor
-$random floor/tile		{ floor/tile01  floor/tile02 floor/tile03 floor/tile04  floor/tile05 floor/tile06 }
+$random floor/tile			{floor/tile01 floor/tile02 floor/tile03 floor/tile04 floor/tile05 floor/tile06}
 floor/tile01	dstile01
 floor/tile02	dstile02
 floor/tile03	dstile03
@@ -137,7 +137,7 @@ floor/tile06	dstile06
 $limit floor/tile 20
 
 //Tile2 - More echoey traditional tile
-$random floor/tile2		{floor/tile201  floor/tile202 floor/tile203 floor/tile204  floor/tile205 floor/tile206 floor/tile207 floor/tile208}
+$random floor/tile2			{floor/tile201 floor/tile202 floor/tile203 floor/tile204 floor/tile205 floor/tile206 floor/tile207 floor/tile208}
 floor/tile201	dstile21
 floor/tile202	dstile22
 floor/tile203	dstile23
@@ -150,7 +150,7 @@ floor/tile208	dstile28
 $limit floor/tile2 20
 
 //Wood
-$random floor/wood		{floor/wood01  floor/wood02 floor/wood03 floor/wood04}
+$random floor/wood			{floor/wood01 floor/wood02 floor/wood03 floor/wood04}
 floor/wood01	dswood1
 floor/wood02	dswood2
 floor/wood03	dswood3
@@ -159,7 +159,7 @@ floor/wood04	dswood4
 $limit floor/wood 20
 
 //Slimy - for the Doom snake floors
-$random floor/slimy		{floor/slimy01  floor/slimy02 floor/slimy03 floor/slimy04}
+$random floor/slimy			{floor/slimy01 floor/slimy02 floor/slimy03 floor/slimy04}
 floor/slimy01	dsslimy1
 floor/slimy02	dsslimy2
 floor/slimy03	dsslimy3
