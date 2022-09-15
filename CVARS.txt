@@ -290,12 +290,12 @@ SetResultValue(GetCVar("FloorDecal_Cvar"));
 
 script "SoulHandler" ENTER			//r31 part of soulammo spawn
 {
-	Thing_ChangeTID(0,1337+PlayerNumber());
+	Thing_ChangeTID(0,2337+PlayerNumber());	//was 1337
 }
 
 Script "TUnmakerChecker" (void)		//r31 checks if you have tactical unmaker
 {
-	for(int i = 1337; i < 1400; i++)
+	for(int i = 2337; i < 2400; i++)	//was 1337,< 1400
 	{
 		if(CheckActorInventory(i,"UnmakerTACTICAL") && CheckActorInventory(i,"WpnPower1Icon") && CheckActorInventory(i,"WpnPower2Icon") && CheckActorInventory(i,"WpnPower3Icon"))		//r31 checks if you have tactical unmaker & demon keys
 		{
