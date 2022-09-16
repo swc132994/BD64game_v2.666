@@ -291,17 +291,15 @@ Decal BrutalBloodSuper
 
 ACTOR HoundFrontLeg : XDeath1	//R31 old hellhound front leg
 {
-+FORCEXYBILLBOARD
+Scale 0.9
 Gravity 1.0
+Speed 10
+BounceFactor 0.01
 Decal BrutalBloodSuper
++DOOMBOUNCE
++FORCEXYBILLBOARD
 +CLIENTSIDEONLY
 +DONTSPLASH
-Speed 10
-Gravity 1.0
-Decal BrutalBloodSuper
-Scale 0.9
-+DOOMBOUNCE
-BounceFactor 0.01
 	States
 	{
 	Spawn:
@@ -319,17 +317,15 @@ BounceFactor 0.01
 
 ACTOR HoundRearLeg : XDeath1	//R31 old hellhound hind leg
 {
-+FORCEXYBILLBOARD
+Scale 0.9
 Gravity 1.0
+Speed 10
+BounceFactor 0.01
 Decal BrutalBloodSuper
++DOOMBOUNCE
++FORCEXYBILLBOARD
 +CLIENTSIDEONLY
 +DONTSPLASH
-Speed 10
-Gravity 1.0
-Decal BrutalBloodSuper
-Scale 0.9
-+DOOMBOUNCE
-BounceFactor 0.01
 	States
 	{
 	Spawn:

@@ -8,6 +8,8 @@ Painchance "Kick",200
 Painchance "SuperKick",200
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
+DROPITEM "DemonEssenceLargeSpawner"		//R31 added
+DropItem "Soulsphere",32				//R31 added
 //+FORCEXYBILLBOARD																//R12.3
 +FLOORCLIP
 	states
@@ -110,13 +112,9 @@ PainSound "cyber/pain"
 DeathSound "monster/anndth"
 ActiveSound "cyber/active"
 Tag "Annihilator"		//r31 added
-MONSTER
-//+FORCEXYBILLBOARD																//R12.3
-+NOTARGET
+DROPITEM "DemonEssenceLargeSpawner"		//R31 added
+DropItem "Soulsphere",32				//R31 added
 +FLOORCLIP
-+NORADIUSDMG
-+BOSS
-+MISSILEEVENMORE
 States
 	{
 	Spawn:

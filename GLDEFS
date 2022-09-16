@@ -891,6 +891,22 @@ object 64RadSuit
 	frame SUITB {light GREENARMOR2}
 }
 
+//Unmaker soul ammo
+object SoulAmmo	//R31 added
+{
+	frame D4RFL {light WEAPONPOWERTEAL3}
+}
+
+object DemonEssence	//R31 added
+{
+	frame D4RFL {light WEAPONPOWERRED3}
+}
+
+object DemonEssenceLarge	//R31 added
+{
+	frame D4RFL {light WEAPONPOWERRED1}
+}
+
 //Max Armor Bonus
 /*pulselight ARMORBONUS2
 {

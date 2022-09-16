@@ -19,6 +19,8 @@ painsound "mother/pain"
 deathsound "mother/death"
 activesound "mother/active"
 Tag "Mother Demon"		//R31 added
+DROPITEM "DemonEssenceLargeSpawner"		//R31 added
+DropItem "Soulsphere",32				//R31 added
 MONSTER
 //+FORCEXYBILLBOARD		//R12.3 removed
 +FLOORCLIP
@@ -38,8 +40,9 @@ MONSTER
 		TNT1 A 0 A_GiveInventory("Bluearmor",1)		//R19 added
 		loop
 	See:
-		MOTH AAABBBCCCDDD 3 A_Chase
+		MOTH AAABBBCCCDDD 3 A_Chase("Melee","Missile",CHF_RESURRECT)	//R31 added resurrect
 		loop
+	Melee:	//R31 added melee
 	Missile:
 		MOTH E 1 A_FaceTarget
 		TNT1 A 0 A_Jump(96,"SuperAttack")
@@ -64,6 +67,9 @@ MONSTER
 		MOTH F 8
 		MOTH E 8
 		goto See
+	Heal:	//R31 added
+		MOTH EEFFFEEFFF 3 bright
+		Goto See
 	Pain:
 		MOTH H 10
 		MOTH H 10 A_Pain

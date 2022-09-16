@@ -14,6 +14,8 @@ MeleeThreshold 200	//r31 24/08/22 added
 meleedamage 50		//r31 24/08/22 added
 meleerange 100		//r31 24/08/22 added
 AttackSound "weapons/gswing"	//R31 24/08/22 was "weapons/pistol"
+DROPITEM "DemonEssenceLargeSpawner"		//R31 added
+DropItem "Soulsphere",32				//R31 added
 //+FORCEXYBILLBOARD		//R12.3 removed
 //+FLOORCLIP	//r31 25/08/22 removed
 +EXTREMEDEATH	//r31 24/08/22 added

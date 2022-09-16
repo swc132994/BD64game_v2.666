@@ -119,6 +119,10 @@ Player.WeaponSlot 9,"Lasergun"
 		PLAY KLMMMM 10
 		PLAY M -1
 		Stop
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		POL5 A -1
+		Stop
 //R31 ADDED DEATHS
 	Death.BFG:																	//R30.5 ADDED
 	XDeath:																		//R30.5 REVISED XDEATH
@@ -628,6 +632,10 @@ Player.WeaponSlot 9,"LasergunTactical"
 		PLAY KLMMMM 10
 		PLAY M -1
 		Stop
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		POL5 A -1
+		Stop
 //R28 ADDED DEATHS
 	Death.BFG:																	//R30.5 ADDED
 	XDeath:																		//R30.5 REVISED XDEATH
@@ -855,6 +863,10 @@ Player.WeaponSlot 9,"LasergunTactical"
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")								//R30.10 ADDED
 		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)									//R30.10 ADDED
 		PLAY M -1
+		Stop
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		POL5 A -1
 		Stop
 //R28 ADDED DEATHS
 	Death.BFG:																	//R30.5 ADDED

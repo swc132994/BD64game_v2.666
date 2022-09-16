@@ -191,6 +191,13 @@ ReactionTime 60
 	}
 }
 
+ACTOR DemonEssenceLarge : DemonEssence		//R31 added For boss demons
+{
+SCALE 0.75
+Inventory.PickupMessage "Large Essence Collected"
+Inventory.Amount 25
+}
+
 actor SoulSpawner		//r31 added
 {
 radius 16
@@ -218,6 +225,21 @@ height 16
 		stop
 	ShowEssence:
 		TNT1 A 0 A_SpawnItemEx("DemonEssence",0,0,0,random(0,5),random(0,5),5,random(0,360))
+		stop
+	}
+}
+
+actor DemonEssenceLargeSpawner		//r31 added
+{
+radius 16
+height 16
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("TUnmakerChecker",0,0,0) == 3,"ShowEssence")
+		stop
+	ShowEssence:
+		TNT1 A 0 A_SpawnItemEx("DemonEssenceLarge",0,0,0,random(0,5),random(0,5),5,random(0,360))
 		stop
 	}
 }
