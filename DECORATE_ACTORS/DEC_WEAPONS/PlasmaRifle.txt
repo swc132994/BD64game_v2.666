@@ -11,8 +11,8 @@ Inventory.PickupSound "WPICK"
 		TNT1 A 0 ACS_NamedExecuteAlways("DM_SpawnACS")	//r31 was ACS_ExecuteAlways(119)
 		PLAS A 2
 		TNT1 A 0 A_JumpIfInventory("ISDM",1,"DMSpawn")
-		PLAS A -1
-		Stop
+		PLAS ABC 2
+		LOOP
 	Pickup:
 //		TNT1 A 0 A_GiveInventory("Cell",40)							//R12.1 removed
 		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
@@ -81,8 +81,8 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		PLSR FEDCBA 1
 		Goto Ready
 	Spawn:
-		PLAS A -1
-		Stop
+		PLAS ABC 2
+		LOOP
 	}
 }
 
@@ -178,8 +178,8 @@ Tag "$TAG_PLASMARIFLE"
 		TNT1 A 1 A_Lower
 		Wait
 	Spawn:
-		PLAS A -1
-		Stop
+		PLAS ABC 2
+		LOOP
 	v1Ready:
 	Ready:
 //		TNT1 A 0 A_PlaySoundEx("weapon/plasmaidle","WEAPON",1)		//R31 removed PLAYSOUNDEX	GZ4.8

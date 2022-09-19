@@ -46,6 +46,18 @@ map "brightmaps/PGUNB.png"
 disablefullbright
 }
 
+brightmap sprite PLASB0
+{
+map "brightmaps/PGUNB1.png"
+disablefullbright
+}
+
+brightmap sprite PLASC0
+{
+map "brightmaps/PGUNB2.png"
+disablefullbright
+}
+
 brightmap sprite BON2B0
 {
 map "brightmaps/BON2B.png"
