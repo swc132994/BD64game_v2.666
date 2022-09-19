@@ -840,3 +840,16 @@ texture WFALL1																	//R23.2 ADDED
 	pic WFALL9 tics 1
 	pic WFALL10 tics 1
 	pic WFALL11 tics 1
+
+texture WFALL2																	//R31 added
+	pic WFALL1 tics 1
+	pic WFALL2 tics 1
+	pic WFALL3 tics 1
+	pic WFALL4 tics 1
+	pic WFALL5 tics 1
+	pic WFALL6 tics 1
+	pic WFALL7 tics 1
+	pic WFALL8 tics 1
+	pic WFALL9 tics 1
+	pic WFALL10 tics 1
+	pic WFALL11 tics 1

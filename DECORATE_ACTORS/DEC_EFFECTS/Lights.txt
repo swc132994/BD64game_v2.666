@@ -1708,7 +1708,7 @@ SCALE 0.8
 	}
 }
 
-/*actor 64TechPillar : TechPillar Replaces TechPillar	//temporary removed
+actor 64TechPillar : TechPillar Replaces TechPillar	//temporary removed
 {
 SCALE 0.8
 	States
@@ -1722,4 +1722,4 @@ SCALE 0.8
 		ELEC C -1
 		Stop
 	}
-}*/
+}
