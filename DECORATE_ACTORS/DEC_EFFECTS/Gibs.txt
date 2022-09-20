@@ -1461,9 +1461,9 @@ BounceFactor 0.01
 		HHFL ABCDEFGH 4 A_CheckFloor("Death")
 		WAIT
 	Death:
-		HHFL C 1
+		HHFL I 1
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
-		HHFL C -1
+		HHFL I -1
 		Stop
 	}
 }
@@ -1486,9 +1486,9 @@ BounceFactor 0.01
 		HHRL ABCDEFGH 4 A_CheckFloor("Death")
 		WAIT
 	Death:
-		HHRL C 1
+		HHRL I 1
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
-		HHRL C -1
+		HHRL I -1
 		Stop
 	}
 }
