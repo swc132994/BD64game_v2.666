@@ -3,6 +3,7 @@ ACTOR UnmakerSpawner : CustomInventory 9901
 //+INVENTORY.ALWAYSPICKUP		//R12.1 removed
 Inventory.PickupMessage "What the !@# is this!"
 Inventory.PickupSound "WPICK"
+spawnid 84
 Scale 0.9
 	States
 	{
@@ -20,10 +21,10 @@ Scale 0.9
 	}
 }
 
-actor Unmaker : DoomWeapon 9902		//R13 added
+actor Unmaker : DoomWeapon// 9902		//R13 added	//R31 removed 9902 (Unmaker spawner should be used)
 {
 game Doom
-spawnid 84
+// spawnid 84	//R31 moved to unmaker spawner
 scale 0.9
 Weapon.SelectionOrder 2900
 Inventory.PickupMessage "What the !@# is this!"
@@ -362,13 +363,13 @@ Tag "Unmaker"				//R11 added
 	}
 }
 
-actor UnmakerLaser : FastProjectile 9904
+actor UnmakerLaser : FastProjectile//9904	//R31 removed 9904
 {
 game Doom
 scale 0.6
 radius 2
 height 2
-speed 120
+speed 100	//R31 WAS 120
 damage 10
 Damagetype "BFG"
 Alpha 1
@@ -527,7 +528,7 @@ SCALE 1.2
 	}
 }
 
-actor UnmakerLaserTrail 9903
+actor UnmakerLaserTrail// 9903	//R31 removed 9903
 {
 game Doom
 scale 0.4	//R14 was 0.6	//r31 was 0.3

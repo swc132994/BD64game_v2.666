@@ -1,5 +1,6 @@
 ACTOR LasergunSpawner : CustomInventory 9351
 {
+SpawnID 180
 Scale 0.9
 //+INVENTORY.ALWAYSPICKUP		//R12.1 REMOVED
 Inventory.PickupMessage "You got the Experimental Laser Gun"
@@ -23,7 +24,7 @@ Inventory.PickupSound "WPICK"
 actor Lasergun : DoomWeapon
 {
 game Doom
-spawnid 84
+//spawnid 84	//R31 removed due to same as unmaker
 scale 0.9
 Weapon.SelectionOrder 200	//WAS 2900
 Inventory.PickupMessage "You got the Experimental Laser Gun"
