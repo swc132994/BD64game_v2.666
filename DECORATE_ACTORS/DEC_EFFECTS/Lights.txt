@@ -680,7 +680,7 @@ Scale 0.7
 +RANDOMIZE
 	States
 	{
-	Spawn:
+/*	Spawn:
 		TNT1 A 0 NODELAY A_SpawnItemEx("LightShaft2BrighterLess",36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
@@ -699,7 +699,17 @@ Scale 0.7
 		Loop
 	Spawn2:
 		CAND D 5
-		Goto Stay
+		Goto Stay*/
+	Spawn:
+		TNT1 AA 0 NODELAY A_SpawnItemEx("LightShaft2BrighterLess",0,0,64)
+	Stay:
+		64CN A 3 Light("FireBarrel") A_CustomMissile("RealFlameTrailsWallTorch",45,0,random(0,360),2,random(70,110))
+		64CN B 3 Light("FireBarrel") A_CustomMissile("RealFlameTrailsWallTorch",45,0,random(0,360),2,random(70,110))
+		64CN A 3 Light("FireBarrel") A_CustomMissile("RealFlameTrailsWallTorch",45,0,random(0,360),2,random(70,110))
+		64CN B 3 Light("FireBarrel") A_CustomMissile("RealFlameTrailsWallTorch",45,0,random(0,360),2,random(70,110))
+		64CN A 3 Light("FireBarrel") A_CustomMissile("RealFlameTrailsWallTorch",45,0,random(0,360),2,random(70,110))
+		64CN B 3 Light("FireBarrel") A_CustomMissile("RealFlameTrailsWallTorch",45,0,random(0,360),2,random(70,110))
+		Loop
 	}
 }
 
@@ -1532,15 +1542,23 @@ Renderstyle Translucent
 	states
 	{
 	spawn:
-		TNT1 A 0 NODELAY A_SpawnItemEx("BlankBarrel",0,0,0,0,0,0,0,0)
-		BFIR A 3 bright
-		BFIR B 3 bright
-		BFIR C 3 bright
-		BFIR D 3 bright
-		BFIR E 3 bright
-		Goto Spawn+1
+//		TNT1 AAAA 0 NODELAY A_SpawnItemEx("LightShaft2BrighterLess",0,0,64)
+		TNT1 A 0 NoDelay A_SpawnItemEx("BlankBarrel",0,0,0,0,0,0,0,0)
+	Stay:
+		TNT1 A 3 Light("FireBarrel") A_CustomMissile("RealFlameTrailsSmall",40,0,random(0,360),2,random(70,110))
+		TNT1 A 3 Light("FireBarrel") A_CustomMissile("RealFlameTrailsSmall",40,0,random(0,360),2,random(70,110))
+		TNT1 A 3 Light("FireBarrel") A_CustomMissile("RealFlameTrailsSmall",40,0,random(0,360),2,random(70,110))
+		TNT1 A 3 Light("FireBarrel") A_CustomMissile("RealFlameTrailsSmall",40,0,random(0,360),2,random(70,110))
+		TNT1 A 3 Light("FireBarrel") A_CustomMissile("RealFlameTrailsSmall",40,0,random(0,360),2,random(70,110))
+//		BFIR A 3 bright
+//		BFIR B 3 bright
+//		BFIR C 3 bright
+//		BFIR D 3 bright
+//		BFIR E 3 bright
+		Loop	//R31 Was Spawn+1
 	death:
-		BFIR ABCDE 3 bright A_FadeOut(0.1)
+		TNT1 A 0
+//		BFIR ABCDE 3 bright A_FadeOut(0.1)
 		stop
 	}
 }
@@ -1572,8 +1590,10 @@ actor HeadCandleBurn		//R31 ADDED
 -SOLID
 	states
 	{
-	spawn:
-		TNT1 A 3 NODELAY A_CustomMissile("RealFlameTrailsSmall",35,0,random(0,360),2,random(70,110))
+	Spawn:
+		TNT1 AA 0 NODELAY A_SpawnItemEx("LightShaft2BrighterLess",0,0,36)
+	Stay:
+		TNT1 A 3 A_CustomMissile("RealFlameTrailsSmall",35,0,random(0,360),2,random(70,110))
 		TNT1 A 3 A_CustomMissile("RealFlameTrailsSmall",35,0,random(0,360),2,random(70,110))
 		TNT1 A 3 A_CustomMissile("RealFlameTrailsSmall",35,0,random(0,360),2,random(70,110))
 		TNT1 A 3 A_CustomMissile("RealFlameTrailsSmall",35,0,random(0,360),2,random(70,110))
@@ -1604,6 +1624,8 @@ SCALE 0.8
 	States
 	{
 	Spawn:
+		TNT1 AA 0 NODELAY A_SpawnItemEx("LightShaft2BrighterLess",0,0,20)
+	Stay:
 		CEYE ABCB 6 BRIGHT Light("SMALLGREENTORCH")	//added light
 		Loop
 	}
@@ -1629,8 +1651,16 @@ SCALE 0.8
 	Spawn:
 		TNT1 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
 		TNT1 A 0 A_SpawnItem("Swarm")
-		POL6 A -1
-		Stop
+	Stay:
+		64FS A 16
+		64FS B 32
+		64FS C 8
+		64FS D 24
+		64FS C 16
+		64FS B 32
+		64FS A 64
+		64FS B 32
+		Loop
 	}
 }
 
@@ -1642,7 +1672,10 @@ SCALE 0.8
 	Spawn:
 		TNT1 a 0 NoDelay A_SpawnItem("64SmallBloodPool")
 		TNT1 A 0 A_SpawnItem("Swarm")
+		TNT1 A 0 A_Jump(128,2)
 		BODY A -1
+		Stop
+		POL6 A -1
 		Stop
 	}
 }
@@ -1655,7 +1688,7 @@ SCALE 0.8
 	Spawn:
 		TNT1 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
 		TNT1 A 0 A_SpawnItem("Swarm")
-		BODY B -1
+		64HC A -1
 		Stop
 	}
 }
@@ -1668,8 +1701,12 @@ SCALE 0.8
 	Spawn:
 		TNT1 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
 		TNT1 A 0 A_SpawnItem("Swarm")
+		TNT1 A 0 A_Jump(128,2)
 		BODY E -1
 		Stop
+		BODY B -1
+		Stop
+
 	}
 }
 

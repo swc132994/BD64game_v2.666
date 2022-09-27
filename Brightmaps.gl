@@ -1,3 +1,4 @@
+//AMMO
 brightmap sprite PLSGA0
 {
 map "brightmaps/PLSMBMP1.png"
@@ -866,5 +867,12 @@ disablefullbright
 brightmap sprite acidZ2Z8
 {
 map "brightmaps/ACIDZ2Z8_B.png"
+disablefullbright
+}
+
+//64HEARTCOLUMN
+brightmap sprite 64HCA0
+{
+map "brightmaps/64HCA0_BR.png"
 disablefullbright
 }
