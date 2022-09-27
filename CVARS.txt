@@ -379,3 +379,8 @@ script "FootStepCheck" (void)	//R31 added for footstep sounds
 {
 SetResultValue(GetCVar("FootStepCheckCvar"));
 }
+
+script "CensoredHealing_ACS" (void)	//R31 added to switch to censored healing sprites
+{
+SetResultValue(GetCVar("CensoredHealing_Cvar"));
+}

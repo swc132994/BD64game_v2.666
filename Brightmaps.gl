@@ -101,6 +101,24 @@ map "brightmaps/pstrBR.png"
 disablefullbright
 }
 
+//CENSORED HEALING SPRITES
+brightmap sprite MEDIB0
+{
+map "brightmaps/MEDIB_BR.png"
+disablefullbright
+}
+
+brightmap sprite STIMB0
+{
+map "brightmaps/STIMB_BR.png"
+disablefullbright
+}
+
+brightmap sprite PSTRB0
+{
+map "brightmaps/PSTRB_BR.png"
+disablefullbright
+}
 // IMP
 brightmap sprite TROOA1
 {

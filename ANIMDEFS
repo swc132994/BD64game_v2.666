@@ -143,13 +143,15 @@ flat NUKAGE3
 	warp2 flat FHDS31
 	warp2 flat FHDS32
 
+/*
+//Nightmare Spectre warping effect
 warp2 texture SAR3A1
 warp2 texture SAR3A2A8
 warp2 texture SAR3A4A6
 warp2 texture SAR3A3A7
 warp2 texture SAR3A5
 
-warp2 texture HEB2B1
+warp2 texture SAR3B1	//R31 WAS HFB2B1
 warp2 texture SAR3B2B8
 warp2 texture SAR3B4B6
 warp2 texture SAR3B3B7
@@ -196,6 +198,7 @@ warp2 texture SAR3I2I8
 warp2 texture SAR3I3I7
 warp2 texture SAR3I4I6
 warp2 texture SAR3I5
+*/
 
 //Blood
 flat BLOOD1

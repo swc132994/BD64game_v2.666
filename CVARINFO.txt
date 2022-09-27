@@ -1,0 +1,41 @@
+//user int bd_bloodamount	= 2;			//R29 DISABLED
+user int bd_lowgraphicsmode = 0;
+
+server int zdoombrutalblood	= 2;
+server int zdoombrutaljanitor = 0;
+server int isrunningzandronum = 0;			//R30.8 WAS 1
+
+//V2.5 VARIABLES BELOW
+server int WpnPower_Spawner_Cvar = 0;		//R20 UNMAKER POWERUPS	//r31 was DynamicSpawnCvar
+server int ArchvileRestorerCvar = 0;		//R20 REPLACE HELLHOUND WITH ARCHVILE	//r31 was DynamicSpawnCvar2
+server int D64MonstersOnlyCvar = 0;			//R26 D64 MONSTERS ONLY		//R31 was DynamicSpawnCvar4
+server int NImp_Spawner_Cvar = 0;			//R26 NIGHTMARE IMP REPLACE IMP
+server int NSpectre_Spawner_Cvar = 0;		//R26 NIGHTMARE SPECTRE	REPLACE SPECTRE
+server int NCaco_Spawner_Cvar = 0;			//R26 NIGHTMARE CACO	REPLACE CACO
+server int Hellhound_Spawner_Cvar = 0;		//R26 HELLHOUND REPLACE BARON	//R31 WAS REPLACES DEMON
+server int Annihilator_Spawner_Cvar = 0;	//R26 ANNIHILATOR REPLACE CYBDERDEMON
+server int Motherdemon_Spawner_Cvar = 0;	//R27 MOTHERDEMON REPLACE MASTERMIND
+server int Lasergun_Spawner_Cvar = 0;		//R26 LASERGUN REPLACE PLASMARIFLE
+server int Unmaker_Spawner_Cvar = 0;		//R26 UNMAKER REPLACE BFG
+server int FloorDecal_Cvar = 0;				//R29 FLOOR/CEILING DECAL CONTROL
+server int LFog_Cvar = 1;					//R30 LIGHT FOG CONTROL		//R30.8 was 0
+server int VMapCheckCvar = 0;				//R31 VANILLA MAP FINAL OUTPOST
+server int TCMapCheckCvar = 0;				//R31 TC MAPS ADDITION
+server int VWeaponCvar = 0;					//R31 VANILLA WEAPON ANIMATION
+server int HoundChooserCvar = 0;			//R31 OLD OR NEW HELLHOUND
+server int RevenantChooserCvar = 0;			//R31 OLD OR NEW REVENANT
+server int SSGZombieRandom_Cvar = 0;		//R31 SSG ZOMBIE REPLACES SHOTGUN ZOMBIE
+server int SSGinDoom1_Cvar = 0;				//R31 SSG in Doom 1
+server int D64ChaingunnerRandom_Cvar = 0;	//R31 ZOMBIE MARINE REPLACES CHAINGUNNER
+server int AcidDemonRandom_Cvar = 0;		//R31 ACID DEMON REPLACES DEMON
+server int SMG_Spawner_Cvar = 0;			//R31 SMG REPLACES CHAINGUN
+server bool AlternativeRifleSkinCvar = FALSE;	//R31 OLD OR NEW RIFLE
+server bool AlternativeLaserSkinCvar = FALSE;	//R31 OLD OR NEW LASER
+server bool ClassicRLCvar = FALSE;				//R31 OLD OR NEW ROCKET LAUNCHER
+server int AlternativeAmmoPickupSpritesCvar = 0;//R31 DEFAULT OR ALTERNATIVE AMMO PICKUP
+server int BerserkSwitchFistsCvar = 1; 			//R31 BERSERK FISTS SWITCHING
+server bool AlternativeMasterMindSkinCvar = FALSE;	//R31 ALTERNATIVE MASTERMIND SKIN
+server int StalkerRandom_Cvar = 0;			//R31 STALKER REPLACES LOST SOUL
+server int NightCrawlerRandom_Cvar = 0;		//R31 NIGHTCRAWLER REPLACES ARACHNOTRON
+server int FootStepCheckCvar = 1;			//R31 FOOTSTEP SOUNDS
+server int CensoredHealing_Cvar = 0;		//R31 CENSORED HEALING SPRITES
