@@ -187,7 +187,7 @@ OptionMenu "BrutalDoom64Item/WeaponOptions" //R31 added
 	Option "Classic Rocket Launcher for Tactical/Modern =","ClassicRLCvar","YesOrNo"
 	Option "Alternative Ammo Pickup Sprites =","AlternativeAmmoPickupSpritesCvar","AlternativeAmmoPickupSpritesValue"
 	Option "Switch to Fists on Berserk Pickup =","BerserkSwitchFistsCvar","YesOrNo"
-	Option "Show censored healing kits/berserk =","CensoredHealing_Cvar","YesOrNo"
+	Option "Show censored healing kits/berserk =","CensoredHealing_Cvar","CensoredHealing_Value"
 }
 
 OptionValue "BrutalBlood"
@@ -381,4 +381,11 @@ OptionValue "AlternativeAmmoPickupSpritesValue"
 	0,"Default Only"
 	1,"Alternative Only"
 	2,"Random"
+}
+
+OptionValue "CensoredHealing_Value"
+{
+	0, "No"
+	1, "Censored (Nightdive)"
+	2, "Alternative (BFG Style)"
 }
