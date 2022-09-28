@@ -102,20 +102,39 @@ map "brightmaps/pstrBR.png"
 disablefullbright
 }
 
-//CENSORED HEALING SPRITES
-brightmap sprite MEDIB0
+// CENSORED HEALING SPRITES
+brightmap sprite medib0
+{
+map "brightmaps/mediBR.png"
+disablefullbright
+}
+
+brightmap sprite stimb0
+{
+map "brightmaps/stimBR.png"
+disablefullbright
+}
+
+brightmap sprite pstrb0
+{
+map "brightmaps/pstrBR.png"
+disablefullbright
+}
+
+//ALTERNATIVE CENSORED HEALING SPRITES
+brightmap sprite MEDIC0
 {
 map "brightmaps/MEDIB_BR.png"
 disablefullbright
 }
 
-brightmap sprite STIMB0
+brightmap sprite STIMC0
 {
 map "brightmaps/STIMB_BR.png"
 disablefullbright
 }
 
-brightmap sprite PSTRB0
+brightmap sprite PSTRC0
 {
 map "brightmaps/PSTRB_BR.png"
 disablefullbright
