@@ -499,8 +499,8 @@ object 64ShortWhiteTorch		//R10.2 unused
 	frame TWHT {light SMALLWHITETORCH}
 }*/
 
-//Burning barrel
-flickerlight2 FIREBARREL
+//Burning barrel				//R31 redefined in decorate actor
+/*flickerlight2 FIREBARREL
 {
 	color 1.0 0.9 0.0
 	size 48
@@ -509,10 +509,10 @@ flickerlight2 FIREBARREL
 	offset 0 32 0
 }
 
-object 64BurningBarrel
+Object 64BurningBarrel
 {
 	frame BFIR {light FIREBARREL}
-}
+}*/
 
 // Skulls w/candles
 flickerlight2 SKULLCANDLES
@@ -550,10 +550,10 @@ pointlight CANDELABRA
 	offset 0 52 0
 }
 
-object Candelabra
+/*object Candelabra	//R31 moved light to decorate actor
 {
 	frame CBRA {light CANDELABRA}
-}
+}*/
 
 //Soul Sphere
 pulselight SOULSPHERE
