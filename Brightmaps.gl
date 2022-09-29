@@ -895,3 +895,15 @@ brightmap sprite 64HCA0
 map "brightmaps/64HCA0_BR.png"
 disablefullbright
 }
+
+//64 GARGOYLES
+brightmap sprite gar1a0
+{
+map "brightmaps/gar1a0_BR.png"
+disablefullbright
+}
+brightmap sprite gar2a0
+{
+map "brightmaps/gar2a0_BR.png"
+disablefullbright
+}

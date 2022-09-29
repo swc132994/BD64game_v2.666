@@ -4,13 +4,13 @@ Scale 0.82
 	states
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"CensoredSpawn")	//R31 added option	
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==2,"BFGStyleSpawn")	//R31 added option
+		PSTR A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"CensoredSpawn")	//R31 added option
+		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"BFGStyleSpawn")	//R31 added option
 		PSTR A 32
 		Loop
 	CensoredSpawn:
 		PSTR B 32
-		Goto Spawn		
+		Goto Spawn
 	BFGStyleSpawn:
 		PSTR C 32
 		Goto Spawn
@@ -112,13 +112,13 @@ Scale 0.82
 	states
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"CensoredSpawn")	//R31 added option	
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==2,"BFGStyleSpawn")	//R31 added option
+		STIM A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"CensoredSpawn")	//R31 added option
+		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"BFGStyleSpawn")	//R31 added option
 		STIM A 32
 		Loop
 	CensoredSpawn:
 		STIM B 32
-		Goto Spawn				
+		Goto Spawn
 	BFGStyleSpawn:
 		STIM C 32
 		Goto Spawn
@@ -131,13 +131,13 @@ Scale 0.82
 	states
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"CensoredSpawn")	//R31 added option	
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==2,"BFGStyleSpawn")	//R31 added option
+		MEDI A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"CensoredSpawn")	//R31 added option
+		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"BFGStyleSpawn")	//R31 added option
 		MEDI A 32
 		Loop
 	CensoredSpawn:
 		MEDI B 32
-		Goto Spawn				
+		Goto Spawn
 	BFGStyleSpawn:
 		MEDI C 32
 		Goto Spawn

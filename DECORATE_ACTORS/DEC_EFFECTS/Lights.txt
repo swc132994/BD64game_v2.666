@@ -1615,7 +1615,7 @@ ACTOR 64HeadCandles : HeadCandles Replaces HeadCandles		//R31 ADDED
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_spawnItemEX("HeadCandleBurn",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		A017 A 0 NODELAY A_spawnItemEX("HeadCandleBurn",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		A017 A -1 BRIGHT
 		STOP
 	}
@@ -1661,7 +1661,7 @@ SCALE 0.8
 	States
 	{
 	Spawn:
-		TNT1 AA 0 NODELAY A_SpawnItemEx("LightShaft2BrighterLess",0,0,20)
+		CEYE AA 0 NODELAY A_SpawnItemEx("LightShaft2BrighterLess",0,0,20)
 	Stay:
 		CEYE ABCB 6 BRIGHT Light("SMALLGREENTORCH")	//added light
 		Loop
@@ -1674,7 +1674,7 @@ SCALE 0.8
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		BSTK A 0 NoDelay A_SpawnItem("64SmallBloodPool")
 		BSTK A -1
 		Stop
 	}
@@ -1686,7 +1686,7 @@ SCALE 0.8
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		64FS A 0 NoDelay A_SpawnItem("64SmallBloodPool")
 		TNT1 A 0 A_SpawnItem("Swarm")
 	Stay:
 		64FS A 16
@@ -1707,7 +1707,7 @@ SCALE 0.8
 	States
 	{
 	Spawn:
-		TNT1 a 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		BODY A 0 NoDelay A_SpawnItem("64SmallBloodPool")
 		TNT1 A 0 A_SpawnItem("Swarm")
 		TNT1 A 0 A_Jump(128,2)
 		BODY A -1
@@ -1723,7 +1723,7 @@ SCALE 0.8
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		64HC A 0 NoDelay A_SpawnItem("64SmallBloodPool")
 		TNT1 A 0 A_SpawnItem("Swarm")
 		64HC A -1
 		Stop
@@ -1736,7 +1736,7 @@ SCALE 0.8
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		BODY E 0 NoDelay A_SpawnItem("64SmallBloodPool")
 		TNT1 A 0 A_SpawnItem("Swarm")
 		TNT1 A 0 A_Jump(128,2)
 		BODY E -1
@@ -1753,7 +1753,7 @@ SCALE 0.8
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		BODY D 0 NoDelay A_SpawnItem("64SmallBloodPool")
 		TNT1 A 0 A_SpawnItem("Swarm")
 		BODY D -1
 		Stop
