@@ -1,4 +1,4 @@
-ACTOR RifleSpawner : CustomInventory
+ACTOR RifleSpawner : CustomInventory 19120	//R31 added number
 {
 Scale 0.82
 //+INVENTORY.ALWAYSPICKUP		//R12.1 removed

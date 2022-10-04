@@ -1,5 +1,5 @@
 //R31 SMG(based on Rifle code) by IDDQD_1337
-ACTOR SMGSpawner : CustomInventory
+ACTOR SMGSpawner : CustomInventory 19121	//R31 added number
 {
 Scale 0.82
 //+INVENTORY.ALWAYSPICKUP
