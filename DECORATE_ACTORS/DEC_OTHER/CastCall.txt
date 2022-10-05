@@ -568,19 +568,24 @@ YScale 1.0
 		HEHR AABBCCDD 2 A_Chase
 		Loop
 	Missile:
-		HEHR E 7 A_FaceTarget
-		HEHR F 7 A_HeadAttack
-		HEHR GH 7
+		HEHR E 4 A_FaceTarget
+		HEHR E 4
+		HEHR O 3 Bright Light("Cacoball") A_FaceTarget
+		HEHR P 3 Bright Light("Cacoball")
+		HEHR E 4
+		HEHR E 4 A_FaceTarget
 		Goto See
 	Melee:
-		HEHR E 6 A_FaceTarget
-		HEHR F 6 A_SargAttack
-		HEHR GH 6
+		HEHR E 4 A_FaceTarget
+		HEHR F 4
+		HEHR H 4 A_SargAttack
+		HEHR F 4 A_FaceTarget
+		HEHR E 4
 		Goto See
 	Death:
 		HEHR I 8
 		HEHR J 8 A_Scream
-		HEHR Klm 7
+		HEHR KLM 7
 		HEHR M -1
 		Stop
 	}

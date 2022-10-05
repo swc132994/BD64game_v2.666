@@ -1567,35 +1567,42 @@ actor 64BurningBarrel : BurningBarrel Replaces BurningBarrel
 scale 0.75
 health 20
 mass 1000000
-Alpha 0.5
-Renderstyle Translucent
--SOLID
+//Alpha 0.5
+//Renderstyle Translucent
++SOLID
 +SHOOTABLE
 +NOBLOOD
+-ISMONSTER
 	states
 	{
 	spawn:
-		FCAN A 0 NoDelay A_SpawnItemEx("BlankBarrel",0,0,0,0,0,0,0,0)
+		FCAN A 1 //NoDelay A_SpawnItemEx("BlankBarrel",0,0,0,0,0,0,0,0)
 	SemiStay:
 		TNT1 AAA 0 A_SpawnItemEx("BurningBarrelSmoke")
 		TNT1 A 0 A_TakeInventory("BurningBarrelSmokeCheck",0)
 	Stay:
-		TNT1 A 3 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",40,0,random(0,360),2,random(70,110))
-		TNT1 A 3 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",40,0,random(0,360),2,random(70,110))
-		TNT1 A 3 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",40,0,random(0,360),2,random(70,110))
-		TNT1 A 3 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",40,0,random(0,360),2,random(70,110))
-		TNT1 A 4 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",40,0,random(0,360),2,random(70,110))
+		FCAN A 3 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",40,0,random(0,360),2,random(70,110))
+		FCAN A 3 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",40,0,random(0,360),2,random(70,110))
+		FCAN A 3 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",40,0,random(0,360),2,random(70,110))
+		FCAN A 3 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",40,0,random(0,360),2,random(70,110))
+		FCAN A 4 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",40,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_GiveInventory("BurningBarrelSmokeCheck",1)
 		TNT1 A 0 A_JumpIfInventory("BurningBarrelSmokeCheck",8,"SemiStay")
-//		BFIR A 3 bright
-//		BFIR B 3 bright
-//		BFIR C 3 bright
-//		BFIR D 3 bright
-//		BFIR E 3 bright
-		Loop	//R31 Was Spawn+1
+		Loop
 	death:
-		TNT1 A 0
-//		BFIR ABCDE 3 bright A_FadeOut(0.1)
+		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile("64ExplosionFireBase",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_SPawnItem("ExplosionAirDisplacementEffect")
+		TNT1 A 0 A_playSound("EXPLOSIO3",2)
+		TNT1 A 0 Radius_Quake(2,8,0,12,0)
+		TNT1 A 2
+		TNT1 a 0 A_SpawnItemEx("DetectFloorCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_Explode
+		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 10
 		stop
 	}
 }

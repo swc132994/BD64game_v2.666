@@ -8,7 +8,6 @@ Speed 12
 PainChance 25
 Monster
 Scale 0.80
-+FLOORCLIP
 +BOSSDEATH
 +MOVEWITHSECTOR
 +RELATIVETOFLOOR
@@ -147,6 +146,9 @@ Radius 42
 Damage(random(3,4))
 Height 8
 Speed 35
+Scale 0.3
+Alpha 1.0
+Gravity 1.0
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -161,9 +163,6 @@ Speed 35
 RenderStyle Add
 DamageType "Plasma"
 Decal "MedScorch"
-Scale 0.3
-Alpha 1.0
-Gravity 1.0
 	States
 	{
 	Spawn:
@@ -208,6 +207,7 @@ Gravity 1.0
 		Stop
 	Death:
 		TNT1 A 0 A_Explode(4,100)
+		TNT1 a 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece2",random(-25,25),random(-15,15))
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece",random(-15,15),random(-15,15))
 		TNT1 AA 0 A_CustomMissile("FlamethrowerFireParticles",6,0,random(0,360),2,random(10,90))
