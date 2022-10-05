@@ -363,6 +363,11 @@ object 64RedTorch
 	frame TRED {light BIGREDTORCH}
 }
 
+object BruiserFlame	//R31 added
+{
+	frame FIR3 {light BIGREDTORCH}
+}
+
 //Tall green torch
 flickerlight2 BIGGREENTORCH
 {
@@ -1317,6 +1322,19 @@ flickerlight BARONBALL_X6
 }
 
 object 64BaronBallGreen	//r31 fixed frames
+{
+	frame BAL7A {light BARONBALL}
+	frame BAL7B {light BARONBALL}
+
+	frame BAL7C {light BARONBALL_X1}
+	frame BAL7D {light BARONBALL_X2}
+	frame BAL7E {light BARONBALL_X3}
+	frame BAL7F {light BARONBALL_X4}
+	frame BAL7G {light BARONBALL_X5}
+	frame BAL7H {light BARONBALL_X6}
+}
+
+object 64BruiserBall	//R31 added
 {
 	frame BAL7A {light BARONBALL}
 	frame BAL7B {light BARONBALL}

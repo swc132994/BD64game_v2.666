@@ -409,3 +409,14 @@ SLIDLOP4	SLIDLOP4
 $random SlideKickStop { SLIDEND1 SLIDEND2 }
 SLIDEND1	SLIDEND1
 SLIDEND2	SLIDEND2
+
+//BRUISER //R31 added
+BREATHOF	BREATHOF
+
+64Bruiser/sight			snddhsit
+64Bruiser/active		snddhzact
+64Bruiser/pain			snddhhit
+64Bruiser/raiseguns		snddhatk
+64Bruiser/death			snddhdie
+64Bruiser/attack		snddhbdmsl
+64Bruiser/shotx			snddhimpct

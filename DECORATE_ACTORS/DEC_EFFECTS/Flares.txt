@@ -1047,3 +1047,8 @@ Alpha 0.5
 		Stop
 	}
 }
+
+Actor BruiserFlare : BFGFlare	//R31 added for Bruiser
+{
+Scale 0.6
+}
