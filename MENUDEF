@@ -37,6 +37,7 @@ LISTMENU "MainMenu"
 			TextItem "LOAD GAME","l","LoadGameMenu"
 			TextItem "SAVE GAME","s","SaveGameMenu"
 			TextItem "OPTIONS","o","OptionsMenu"
+			TextItem "BD64 Options","b","BD64Menu"
 		}
 		else
 		{
@@ -136,6 +137,7 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 	Option "Randomly replace Lost Souls with Stalkers =","StalkerRandom_Cvar","Stalker_Spawner_Value"	//R31 New
 	Option "Randomly replace Arachnotrons with Nightcrawlers =","NightCrawlerRandom_Cvar","NightCrawler_Spawner_Value"	//R31 New
 	Option "Randomly replace Barons with Hellhounds =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Mancubi with Bruisers =","BruiserRandom_Cvar","Bruiser_Spawner_Value"
 	Option "Randomly replace Cyberdemons with Annihilators =","Annihilator_Spawner_Cvar","Annihilator_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Masterminds with Motherdemons =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"	//R27 //R31 was YesOrNo
 }
@@ -276,6 +278,13 @@ OptionValue "Motherdemon_Spawner_Value"
 	2,"Hellhound Only"
 	3,"Random"
 }*/
+
+OptionValue "Bruiser_Spawner_Value"
+{
+	0,"Mancubus Only"
+	1,"Bruiser Only"
+	2,"Random"
+}
 
 OptionValue "NightCrawler_Spawner_Value"
 {

@@ -20,10 +20,13 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 	States
 	{
 	Spawn:	//r31 extra
-		SKEL B 10 A_Look
+		SKEL DE 10 A_Look
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",25,65,0)
 		TNT1 A 0 A_GiveInventory("GreenArmor",1)		//R19 added //R20 WAS BlueArmor
 		Loop
+	Forget:
+		TNT1 A 0 A_ClearTarget
+		Goto Spawn
 	See:	//r31 extra
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",25,65,0)
 		SKEL AABBC 2 A_Chase
@@ -33,6 +36,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		SKEL DDEEF 2 A_Chase
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",25,65,0)
 		SKEL F 2
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")	//R31 added
 		Loop
 	Melee:		//R16 added revenant MELEE & sprites SKEL I
 		TNT1 A 0 A_FaceTarget

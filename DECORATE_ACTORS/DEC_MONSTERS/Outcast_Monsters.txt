@@ -25,13 +25,15 @@ DROPITEM "DemonEssenceSpawner"
 	States
 	{
 	Spawn:
-		ACID Y 1
-		TNT1 A 0 A_GiveInventory("BlueArmor",1)
-	Spawned:
 		ACID YZ 10 A_Look
+		TNT1 A 0 A_GiveInventory("GreenArmor",1)
 		Loop
+	Forget:
+		TNT1 A 0 A_ClearTarget
+		Goto Spawn
 	See:
 		ACID AAAABBBBCCCCDDDD 2 Fast A_Chase
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		Loop
 	Melee:
 		ACID E 6 A_FaceTarget
@@ -295,7 +297,7 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		GANA B 8
 	Death:
-		tnt1 a 0 A_Die
+		TNT1 A 0 A_Die
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
@@ -453,8 +455,8 @@ Projectile
 		ACIP D 2 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
 		Loop
 	Death:
-		tnt1 a 0 A_Playsound("SlimeBall/Splat",4)
-		tnt1 a 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_Playsound("SlimeBall/Splat",4)
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		XDT1 F 3 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
 		TNT1 A 0 A_EXPLODE(1,20)
@@ -503,7 +505,7 @@ Projectile
 		TNT1 A 0 A_EXPLODE(1,20)
 		XDT1 K 5 Bright
 		TNT1 A 0 A_EXPLODE(1,20)
-		tnt1 a 0 A_StopsoundEx(4)
+		TNT1 A 0 A_StopsoundEx(4)
 		stop
 	}
 }
@@ -527,7 +529,6 @@ Alpha 0.30
 	}*/
 }
 
-
 ACTOR 64Nightcrawler : 64Arachnotron 19105
 {
 //Translation "32:47=64:79","192:207=128:143","176:191=160:167"
@@ -546,13 +547,17 @@ DROPITEM "DemonEssenceSpawner"
 	states
 	{
 	Spawn:
-		NTCR B 10 A_Look
-		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 was BlueArmor
+		NTCR BA 10 A_Look
+		TNT1 A 0 A_GiveInventory("GreenArmor",1)
 		loop
+	Forget:
+		TNT1 A 0 A_ClearTarget
+		Goto Spawn
 	See:
 		NTCR A 20
 		NTCR A 2 A_BabyMetal
 		NTCR AABBBCCCDDD 2 A_Chase
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		goto See+1
 	Missile:
 		NTCR A 5 A_FaceTarget
@@ -691,8 +696,8 @@ Tag "Stalker"
 	States
 	{
 	Spawn:
-		STKR A 5 BRIGHT A_Look
-		TNT1 A 0 A_GiveInventory("BlueArmor",1)
+		STKR ABC 2 BRIGHT A_Look
+		TNT1 A 0 A_GiveInventory("GreenArmor",1)
 		Loop
 	See:
 		STKR A 1 BRIGHT A_Chase
@@ -760,14 +765,14 @@ Tag "Stalker"
 		STKR F 2 BRIGHT A_SpawnItemEx("GreenFlare",0,0,30)
 		STKR F 1 BRIGHT A_Pain
 		STKR F 3 BRIGHT A_SpawnItemEx("GreenFlare",0,0,30)
-		tnt1 A 0 BRIGHT A_Jump(32,"Teleport")
+		TNT1 A 0 A_Jump(32,"Teleport")
 		Goto See
 	Pain.Vertigo:
-		tnt1 a 0 ThrustThingZ(0,55,0,0)
+		TNT1 A 0 ThrustThingZ(0,55,0,0)
 		STKR F 2 BRIGHT A_SpawnItemEx("GreenFlare",0,0,30)
 		STKR F 1 BRIGHT A_Pain
 		STKR F 3 BRIGHT A_SpawnItemEx("GreenFlare",0,0,30)
-		tnt1 a 0 A_Jump(32,"Teleport")
+		TNT1 A 0 A_Jump(32,"Teleport")
 		Goto See
 	Death:
 		STKR G 7 BRIGHT

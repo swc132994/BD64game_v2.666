@@ -384,3 +384,8 @@ script "CensoredHealing_ACS" (void)	//R31 added to switch to censored healing sp
 {
 SetResultValue(GetCVar("CensoredHealing_Cvar"));
 }
+
+script "BruiserRandom_ACS" (void)	//R31 added
+{
+SetResultValue(GetCVar("BruiserRandom_Cvar"));
+}

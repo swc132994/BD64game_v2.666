@@ -39,3 +39,4 @@ server int StalkerRandom_Cvar = 0;			//R31 STALKER REPLACES LOST SOUL
 server int NightCrawlerRandom_Cvar = 0;		//R31 NIGHTCRAWLER REPLACES ARACHNOTRON
 server int FootStepCheckCvar = 1;			//R31 FOOTSTEP SOUNDS
 server int CensoredHealing_Cvar = 0;		//R31 CENSORED HEALING SPRITES
+server int BruiserRandom_Cvar = 0;			//R31 BRUISER REPLACES MANCUBUS

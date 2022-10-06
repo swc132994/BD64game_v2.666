@@ -16,7 +16,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 	States
 	{
 	Spawn:
-		FATT H 5 A_Look
+		FATT CD 15 A_Look	//R31 was H 5
 		TNT1 A 0 A_GiveInventory("GreenArmor",1)	//R19 added //R20 was BlueArmor
 		Loop
 	See:
@@ -63,6 +63,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		FATT L 6 A_NoBlocking
 		FATT MN 6
 		TNT1 A 0 A_SpawnItem("GrowingBloodPoolbig")		//r30.9 added
+		TNT1 A 0 A_KillMaster("None")
 		FATT N -1 A_BossDeath
 		stop
 	Death.Shotgun:		//R31 extra
@@ -85,6 +86,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_BossDeath
+		TNT1 A 0 A_KillMaster("None")
 		TNT1 A 1 A_SpawnItemEx("Brutalized64Fatso",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.SuperFists:		//R30.5 added	//R30.6 moved TO XDEATH
@@ -113,6 +115,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		FTX1 B 6 A_NoBlocking
 		FTX1 C 6
 		TNT1 A 0 A_SpawnItem("GrowingBloodPoolbig")		//r30.9 added
+		TNT1 A 0 A_KillMaster("None")
 		FTX1 D -1 A_BossDeath
 		stop
 	Xdeath2:
@@ -120,10 +123,10 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		FTX2 B 6 A_NoBlocking
 		FTX2 C 6
 		TNT1 A 0 A_SpawnItem("GrowingBloodPoolbig")		//r30.9 added
+		TNT1 A 0 A_KillMaster("None")
 		FTX2 D -1 A_BossDeath
 		stop
 	Death.Plasma:				//R25.2 added
-		TNT1 A 0 A_BossDeath	//R30.2 added
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_STOP
@@ -137,9 +140,11 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
 		TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumn")
 		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)		//R11 WAS "BurningFleshEffect"
+		TNT1 AA 0 A_CustomMissile("XDeathFatsoCannon",72,0,random(0,360),2,random(10,50))
 		TNT1 AAA 0 A_SpawnItemEx("Blood",0,0,30)
 		CRB1 ABCDEFG 4
-		CRB1 H -1
+		TNT1 A 0 A_KillMaster("None")
+		CRB1 H -1 A_BossDeath
 		Stop
 	Raise:
 		FATT ONMLKJ 5
