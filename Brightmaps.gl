@@ -23,12 +23,6 @@ map "brightmaps/PLSMBMP2.png"
 disablefullbright
 }
 
-brightmap sprite PISFA0
-{
-map "brightmaps/PISBMP.png"
-disablefullbright
-}
-
 brightmap sprite CELLA0
 {
 map "brightmaps/CEL1B.png"
