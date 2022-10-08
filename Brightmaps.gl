@@ -1,4 +1,47 @@
-//AMMO
+//ROCKET LAUNCHER MODERN/TATICAL
+brightmap sprite RLTLA0
+{
+map "brightmaps/RLTLA0_BR.png"
+disablefullbright
+}
+
+brightmap sprite RLTLB0
+{
+map "brightmaps/RLTLB0_BR.png"
+disablefullbright
+}
+
+brightmap sprite RLTLC0
+{
+map "brightmaps/RLTLC0_BR.png"
+disablefullbright
+}
+
+brightmap sprite RLTLD0
+{
+map "brightmaps/RLTLD0_BR.png"
+disablefullbright
+}
+
+brightmap sprite RLTLE0
+{
+map "brightmaps/RLTLE0_BR.png"
+disablefullbright
+}
+
+brightmap sprite RLLFF0
+{
+map "brightmaps/RLLFF0_BR.png"
+disablefullbright
+}
+
+brightmap sprite RLLFG0
+{
+map "brightmaps/RLLFG0_BR.png"
+disablefullbright
+}
+
+//PLASMA RIFLE
 brightmap sprite PLSGA0
 {
 map "brightmaps/PLSMBMP1.png"
@@ -23,6 +66,7 @@ map "brightmaps/PLSMBMP2.png"
 disablefullbright
 }
 
+//AMMO
 brightmap sprite CELLA0
 {
 map "brightmaps/CEL1B.png"
