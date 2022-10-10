@@ -42,27 +42,352 @@ disablefullbright
 }
 
 //PLASMA RIFLE
+brightmap sprite PLSFC0
+{
+map "brightmaps/PLSFC0_BR.png"
+disablefullbright
+}
+brightmap sprite PLSFD0
+{
+map "brightmaps/PLSFD0_BR.png"
+disablefullbright
+}
+brightmap sprite PLSFE0
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
 brightmap sprite PLSGA0
 {
 map "brightmaps/PLSMBMP1.png"
 disablefullbright
 }
-
+brightmap sprite 2LSGA0	//DIMMED
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
 brightmap sprite PLSGB0
 {
 map "brightmaps/PLSMBMP1.png"
 disablefullbright
 }
-
+brightmap sprite 2LSGB0	//DIMMED
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
 brightmap sprite PLSGC0
 {
 map "brightmaps/PLSMBMP1.png"
 disablefullbright
 }
-
-brightmap sprite PLSFA0
+brightmap sprite 2LSGC0	//DIMMED
 {
-map "brightmaps/PLSMBMP2.png"
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite PLSGJ0
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite 2LSGJ0	//DIMMED
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite PLSGK0
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite 2LSGK0	//DIMMED
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite PLSGL0
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite 2LSGL0	//DIMMED
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite PLSGM0
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite 2LSGM0	//DIMMED
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite PLSRA0
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite 2LSRA0	//DIMMED
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite PLSRB0
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite 2LSRB0	//DIMMED
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite PLSRC0
+{
+map "brightmaps/PLSRC0_BR.png"
+disablefullbright
+}
+brightmap sprite 2LSRC0	//DIMMED
+{
+map "brightmaps/PLSRC0_BR.png"
+disablefullbright
+}
+brightmap sprite PLSRD0
+{
+map "brightmaps/PLSRD0_BR.png"
+disablefullbright
+}
+brightmap sprite 2LSRD0	//DIMMED
+{
+map "brightmaps/PLSRD0_BR.png"
+disablefullbright
+}
+brightmap sprite PLSRE0
+{
+map "brightmaps/PLSRD0_BR.png"
+disablefullbright
+}
+brightmap sprite 2LSRE0	//DIMMED
+{
+map "brightmaps/PLSRD0_BR.png"
+disablefullbright
+}
+brightmap sprite PLSRF0
+{
+map "brightmaps/PLSRD0_BR.png"
+disablefullbright
+}
+brightmap sprite 2LSRF0	//DIMMED
+{
+map "brightmaps/PLSRD0_BR.png"
+disablefullbright
+}
+brightmap sprite PLSRG0
+{
+map "brightmaps/PLSRD0_BR.png"
+disablefullbright
+}
+brightmap sprite 2LSRG0	//DIMMED
+{
+map "brightmaps/PLSRD0_BR.png"
+disablefullbright
+}
+
+brightmap sprite 11SRA0	//DIMMED RELOAD 0
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite 11SRB0	//DIMMED RELOAD 0
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite 11SRC0	//DIMMED RELOAD 0
+{
+map "brightmaps/11SRC0_BR.png"
+disablefullbright
+}
+brightmap sprite 11SRD0	//DIMMED RELOAD 0
+{
+map "brightmaps/11SRC0_BR.png"
+disablefullbright
+}
+brightmap sprite 11SRE0	//DIMMED RELOAD 0
+{
+map "brightmaps/11SRE0_BR.png"
+disablefullbright
+}
+brightmap sprite 11SRF0	//DIMMED RELOAD 0
+{
+map "brightmaps/11SRF0_BR.png"
+disablefullbright
+}
+brightmap sprite 11SRG0	//DIMMED RELOAD 0
+{
+map "brightmaps/11SRF0_BR.png"
+disablefullbright
+}
+brightmap sprite 11SRH0	//DIMMED RELOAD 0
+{
+map "brightmaps/11SRH0_BR.png"
+disablefullbright
+}
+brightmap sprite 11SRI0	//DIMMED RELOAD 0
+{
+map "brightmaps/11SRF0_BR.png"
+disablefullbright
+}
+brightmap sprite 11SRJ0	//DIMMED RELOAD 0
+{
+map "brightmaps/11SRF0_BR.png"
+disablefullbright
+}
+
+brightmap sprite 33SRW0	//DIMMED RELOAD 1
+{
+map "brightmaps/33SRW0_BR.png"
+disablefullbright
+}
+brightmap sprite 33SRX0	//DIMMED RELOAD 1
+{
+map "brightmaps/33SRW0_BR.png"
+disablefullbright
+}
+brightmap sprite 33SRY0	//DIMMED RELOAD 1
+{
+map "brightmaps/33SRW0_BR.png"
+disablefullbright
+}
+
+brightmap sprite 33SRZ0	//DIMMED RELOAD 1
+{
+map "brightmaps/33SRW0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRA0	//DIMMED RELOAD 2
+{
+map "brightmaps/33SRW0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRB0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRB0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRC0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRC0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRD0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRD0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRE0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRE0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRF0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRF0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRG0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRG0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRH0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRH0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRI0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRI0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRJ0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRI0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRK0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRK0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRL0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRL0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRM0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRM0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRN0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRN0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRO0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRN0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRP0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRN0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRQ0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRN0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRR0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRN0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRS0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRN0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRT0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRT0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRU0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRU0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRV0	//DIMMED RELOAD 2
+{
+map "brightmaps/22SRU0_BR.png"
+disablefullbright
+}
+brightmap sprite 22SRW0	//DIMMED RELOAD 2
+{
+map "brightmaps/PLSMBMP1.png"
+disablefullbright
+}
+brightmap sprite 22SRX0	//DIMMED RELOAD 2
+{
+map "brightmaps/PLSMBMP1.png"
 disablefullbright
 }
 

@@ -56,7 +56,8 @@ Skin 0 "fbal1.png"
 Scale 0.6 4.0 4.0
 Offset -20 0 0
 PITCHFROMMOMENTUM
-FrameIndex BRNR AB 0 0
+FrameIndex BRNR A 0 0
+FrameIndex BRNR B 0 0
 }
 
 Model 64BaronBallGreen
@@ -67,7 +68,8 @@ Skin 0 "fbal2.png"
 Scale 0.6 4.0 4.0
 Offset -20 0 0
 PITCHFROMMOMENTUM
-FrameIndex BAL7 AB 0 0
+FrameIndex BAL7 A 0 0
+FrameIndex BAL7 B 0 0
 }
 
 Model BurningPentagram
