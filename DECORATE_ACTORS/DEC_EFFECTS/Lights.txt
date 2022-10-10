@@ -1665,10 +1665,12 @@ actor TORCHTREEBURN		//R31 ADDED
 ACTOR 64EvilEye : EvilEye Replaces EvilEye
 {
 SCALE 0.8
++RANDOMIZE
 	States
 	{
 	Spawn:
 		CEYE AA 0 NODELAY A_SpawnItemEx("LightShaft2BrighterLess",0,0,20)
+		Goto Stay
 	Stay:
 		CEYE ABCB 6 BRIGHT Light("SMALLGREENTORCH")	//added light
 		Loop

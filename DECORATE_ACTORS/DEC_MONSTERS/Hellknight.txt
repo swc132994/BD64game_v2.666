@@ -182,13 +182,13 @@ Scale 0.8
 actor 64BaronBallGreen : BaronBall Replaces BaronBall
 {
 scale 0.75
-renderstyle Add
+renderstyle Normal
 Decal "MedScorch"		//R28.3 added
 	states
 	{
 	Spawn:
-		BAL7 AB 1 BRIGHT A_SpawnItem("LensFlareProjectileGreen")	//R31 fixed frames
-		TNT1 AA 0 A_SpawnItem("BaronGreenProjectileCore")
+		BAL7 AB 2 NoDelay BRIGHT A_CustomMissile("LensFlareProjectileGreen",-2,0)	//R31 added frame B
+		TNT1 A 0 A_CustomMissile("BaronGreenProjectileCore",-2,0)
 		loop
 	Death:
 		TNT1 A 1

@@ -181,14 +181,14 @@ YScale 0.9
 
 actor 64BaronBall : BaronBall
 {
-scale 0.75
-renderstyle Add
+scale 0.8
+renderstyle Normal
 Decal "MedScorch"	//R28.3 added
 	states
 	{
 	Spawn:
-		BRNR AB 1 BRIGHT A_SpawnItem("LensFlareProjectileOrange")	//R31 fixed frames
-		TNT1 AA 0 A_SpawnItem("BaronProjectileCore")
+		BRNR AB 2 NoDelay BRIGHT A_CustomMissile("LensFlareProjectileOrange",-2,0)	//R31 added frame B
+		TNT1 A 0 A_CustomMissile("BaronProjectileCore",-2,0)
 		loop
 	Death:
 		TNT1 A 1
