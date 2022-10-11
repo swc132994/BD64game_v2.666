@@ -1669,10 +1669,10 @@ SCALE 0.8
 	States
 	{
 	Spawn:
-		CEYE AA 0 NODELAY A_SpawnItemEx("LightShaft2BrighterLess",0,0,20)
+		CEYE A 0 NODELAY A_SpawnItemEx("LightShaft2BrighterLess",0,0,20)
 		Goto Stay
 	Stay:
-		CEYE ABCB 6 BRIGHT Light("SMALLGREENTORCH")	//added light
+		CEYE ABCB 6 BRIGHT Light("SMALLGREENTORCH") A_SpawnItemEx("LensFlareTorchGreen",0,0,20)	//added light
 		Loop
 	}
 }	//R31 added CEYE sprites to HELL folder

@@ -108,6 +108,17 @@ menu/backup dspistol
 
 weapons/gswing			dsswing
 
+player/male/death1		DSPLDETH	//R31 added
+knight/death			DSKNTDTH	//R31 added
+skeleton/swing			DSSKESWG	//R31 added
+misc/gibbed				DSSLOP		//R31 added
+misc/teleport			DSTELEPT	//R31 added
+baby/active				DSBSPACT	//R31 added
+misc/p_pkup				DSITEMUP	//R31 added
+grunt/pain				DSPOPAIN	//R31 added
+grunt/sight1			DSPOSIT1	//R31 added
+grunt/sight3			DSPOSIT3	//R31 added
+
 $random menu/quit1		{player/male/death1 demon/pain grunt/pain misc/gibbed misc/teleport grunt/sight1 grunt/sight3 demon/melee}
 $random menu/quit2		{misc/p_pkup misc/gibbed skeleton/swing knight/death baby/active demon/melee}
 
