@@ -1,6 +1,7 @@
 Actor Swarm
 {
-+NoClip
+//+NoClip	//R31 removed
++NOGRAVITY		//R31 added
 	States
 	{
 	Spawn:
@@ -22,9 +23,9 @@ Projectile
 +DontSplash
 +THRUACTORS
 +DOOMBOUNCE
-+nograVITY
++NOGRAVITY
 +CLIENTSIDEONLY
-+NOCLIP
+//+NOCLIP	//R31 removed
 ReactionTime 4
 	States
 	{
