@@ -363,11 +363,6 @@ object 64RedTorch
 	frame TRED {light BIGREDTORCH}
 }
 
-object BruiserFlame	//R31 added
-{
-	frame FIR3 {light BIGREDTORCH}
-}
-
 //Tall green torch
 flickerlight2 BIGGREENTORCH
 {
@@ -381,6 +376,11 @@ flickerlight2 BIGGREENTORCH
 object 64GreenTorch
 {
 	frame TGRE {light BIGGREENTORCH}
+}
+
+object BruiserFlame	//R31 added
+{
+	frame FIR3 {light BIGGREENTORCH}
 }
 
 //Tall blue torch

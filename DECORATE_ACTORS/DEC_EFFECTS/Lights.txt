@@ -456,6 +456,19 @@ actor 64HangTNoBrain : HangTNoBrain Replaces HangTNoBrain
 {
 scale 0.82
 height 80
+	States
+	{
+	Spawn:
+		HDB6 A 0 NoDelay A_SpawnItem("Swarm",0,-10)
+		Goto Stay
+	Stay:
+		TNT1 A 0 A_SpawnItem("DripingBlood",0,-5)
+		TNT1 A 0 A_Jump(128,2)
+		HDB6 A 70
+		Loop
+		HDB6 A 45
+		Loop
+	}
 }
 
 actor 64HangTSkull : HangTSkull Replaces HangTSkull
@@ -551,8 +564,6 @@ scale 0.8
 	States
 	{
 	Spawn:
-		BODY C 0 NoDelay A_SpawnItem("Swarm")
-		TNT1 A 0 A_SpawnItem("64SmallBloodPool")
 		BODY C -1
 		Stop
 	}

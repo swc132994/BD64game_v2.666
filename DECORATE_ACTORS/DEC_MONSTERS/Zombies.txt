@@ -1543,7 +1543,7 @@ DROPITEM "SOULSPAWNER"	//R31 added
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))	//R30.5 WAS A
+		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))//eyes	//R30.5 WAS A
 		TNT1 AA 0 A_CustomMissile("XDeathZombieArmRed",50,0,random(0,360),2,random(20,90))
 //		TNT1 AA 0 A_CustomMissile("XDeathZombieLegRed",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -1569,7 +1569,7 @@ DROPITEM "SOULSPAWNER"	//R31 added
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))	//R30.5 WAS A
+//		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))//eyes	//R30.5 WAS A
 		TNT1 A 0 A_CustomMissile("XDeathZombieArmRed",50,0,random(0,360),2,random(20,90))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLegRed",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -1957,7 +1957,7 @@ DROPITEM "SOULSPAWNER"	//R31 added
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))					//R30.5 WAS A
+//		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))//Eyes		//R30.5 WAS A
 		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))	//R30.5 ADDED ZOMBIE MARINE ARM	//R31 WAS XDeathZombieMarineArm1
 //		TNT1 AA 0 A_CustomMissile("XDeathZombieLeg1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -1998,7 +1998,7 @@ DROPITEM "SOULSPAWNER"	//R31 added
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))	//R30.5 WAS A
+//		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))//eyes	//R30.5 WAS A
 		TNT1 A 0 A_CustomMissile("XDeathMarineArm1",50,0,random(150,210),2,random(10,50))	//R30.5 ADDED ZOMBIE MARINE ARM	//R31 WAS XDeathZombieMarineArm1
 		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(150,210),2,random(10,50))//R31 WAS XDeathZombieLeg1
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -2191,7 +2191,7 @@ DROPITEM "SOULSPAWNER"	//R31 added
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))					//R30.5 WAS A
+//		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))//eyes					//R30.5 WAS A
 		TNT1 A 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))			//R30.6 ADDED MARINE ARM
 //		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(0,360),2,random(20,90))			//R30.6 ADDED MARINE LEG
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -2232,7 +2232,7 @@ DROPITEM "SOULSPAWNER"	//R31 added
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))	//R30.5 WAS A
+//		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))//eyes	//R30.5 WAS A
 		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))			//R30.6 ADDED MARINE ARM
 		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(150,210),2,random(10,50))	//R30.6 ADDED MARINE LEG
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
