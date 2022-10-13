@@ -613,8 +613,8 @@ BounceFactor 0.1
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY ThrustThingZ(0,300,0,1)
-		TNT1 A 0 A_Jump(230,"NoSpawn")
+//		TNT1 A 0 NODELAY ThrustThingZ(0,300,0,1)	//R31 removed to spawn at calling actor
+		TNT1 A 0 NoDelay A_Jump(230,"NoSpawn")
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
 		BLUD Z 500
 		loop
@@ -630,8 +630,8 @@ BounceFactor 0.1
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY ThrustThingZ(0,300,0,1)
-		TNT1 A 0 A_Jump(160,"NoSpawn")
+//		TNT1 A 0 NODELAY ThrustThingZ(0,300,0,1)	//R31 removed to spawn at calling actor
+		TNT1 A 0 NoDelay A_Jump(160,"NoSpawn")
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
 		BLUD Z 500
 		loop

@@ -431,3 +431,5 @@ BREATHOF	BREATHOF
 64Bruiser/death			snddhdie
 64Bruiser/attack		snddhbdmsl
 64Bruiser/shotx			snddhimpct
+
+DSGETPOW	DSGETPOW	//R31 wpnpower pickup

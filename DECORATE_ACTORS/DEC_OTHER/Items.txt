@@ -385,7 +385,7 @@ ACTOR WpnPower1 : CustomInventory 9905
 Game Doom
 Inventory.Icon POW1E0
 Inventory.PickupMessage "You have a feeling that it wasn't meant to be touched."
-Inventory.PickupSound "misc/i_pkup"
+Inventory.PickupSound "DSGETPOW"	//R31 corrected
 +COUNTITEM
 -INTERHUBSTRIP
 	States
@@ -410,7 +410,7 @@ Inventory.Amount 1
 inventory.MaxAmount 1
 Inventory.Icon POW2E0
 Inventory.PickupMessage "It must do something..."
-Inventory.PickupSound "misc/i_pkup"
+Inventory.PickupSound "DSGETPOW"	//R31 corrected
 +COUNTITEM
 -INTERHUBSTRIP
 	States
@@ -434,8 +434,8 @@ Game Doom
 Inventory.Amount 1
 inventory.MaxAmount 1
 Inventory.Icon POW3E0
-Inventory.PickupMessage "Whatever it is,it doesn't belong in this world."
-Inventory.PickupSound "misc/i_pkup"
+Inventory.PickupMessage "Whatever it is, it doesn't belong in this world."
+Inventory.PickupSound "DSGETPOW"	//R31 corrected
 +COUNTITEM
 -INTERHUBSTRIP
 	States
