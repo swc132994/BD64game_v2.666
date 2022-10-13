@@ -1270,3 +1270,165 @@ brightmap sprite gar2a0
 map "brightmaps/gar2a0_BR.png"
 disablefullbright
 }
+
+//HELLHOUND
+brightmap sprite HEHRA1
+{
+map "brightmaps/HEHRA1_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRA2A8
+{
+map "brightmaps/HEHRA2A8_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRA3A7
+{
+map "brightmaps/HEHRA3A7_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRB1
+{
+map "brightmaps/HEHRB1_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRB2B8
+{
+map "brightmaps/HEHRB2B8_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRB3B7
+{
+map "brightmaps/HEHRB3B7_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRC1
+{
+map "brightmaps/HEHRC1_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRC2C8
+{
+map "brightmaps/HEHRC2C8_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRC3C7
+{
+map "brightmaps/HEHRC3C7_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRD1
+{
+map "brightmaps/HEHRD1_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRD2D8
+{
+map "brightmaps/HEHRD2D8_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRD3D7
+{
+map "brightmaps/HEHRD3D7_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRE1
+{
+map "brightmaps/HEHRE1_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRE2E8
+{
+map "brightmaps/HEHRE2E8_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRE3E7
+{
+map "brightmaps/HEHRE3E7_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRF1
+{
+map "brightmaps/HEHRF1_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRF2F8
+{
+map "brightmaps/HEHRF2F8_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRF3F7
+{
+map "brightmaps/HEHRF3F7_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRG1
+{
+map "brightmaps/HEHRG1_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRG2G8
+{
+map "brightmaps/HEHRG2G8_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRG3G7
+{
+map "brightmaps/HEHRG3G7_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRG4G6
+{
+map "brightmaps/HEHRG4G6_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRH1
+{
+map "brightmaps/HEHRH1_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRH2H8
+{
+map "brightmaps/HEHRH2H8_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRH3H7
+{
+map "brightmaps/HEHRH3H7_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRI0
+{
+map "brightmaps/HEHRI0_BR.png"
+disablefullbright
+}
+brightmap sprite HEHRJ0
+{
+map "brightmaps/HEHRJ0_BR.png"
+disablefullbright
+}
+brightmap sprite HH1HA0
+{
+map "brightmaps/HH1HA0_BR.png"
+disablefullbright
+}
+brightmap sprite HH1HB0
+{
+map "brightmaps/HH1HB0_BR.png"
+disablefullbright
+}
+brightmap sprite HH1HC0
+{
+map "brightmaps/HH1HC0_BR.png"
+disablefullbright
+}
+brightmap sprite HH1HD0
+{
+map "brightmaps/HH1HD0_BR.png"
+disablefullbright
+}
+brightmap sprite HH1HE0
+{
+map "brightmaps/HH1HE0_BR.png"
+disablefullbright
+}
