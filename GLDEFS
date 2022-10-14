@@ -193,27 +193,22 @@ object 64ArachnotronPlasma
 pointlight UNMAKERSHOT
 {
 	color 1.0 0.0 0.0
-	size 56
-}
-
-flickerlight UNMAKERSHOT_X
-{
-	color 0.3 0.0 0.0
-	size 8
-	secondarySize 16
-	chance 0.4
+	size 15
 }
 
 object UnmakerLaser
 {
-	frame LAZR {light UNMAKERSHOT}
-	frame LPUF {light UNMAKERSHOT_X}
+frame ULAZ {light UNMAKERSHOT}
 }
 
 object UnmakerLaser2	//R31 added
 {
-	frame LAZR {light UNMAKERSHOT}
-	frame LPUF {light UNMAKERSHOT_X}
+frame ULAZ {light UNMAKERSHOT}
+}
+
+object UnmakerLaserTrail	//R31 added
+{
+frame ULAZ {light UNMAKERSHOT}
 }
 
 //BFG
@@ -2407,7 +2402,7 @@ dontlightself 0
 pointlight WHITELASER	//R31 added
 {
 color 1.0 1.0 1.0
-size 60
+size 30
 offset 0 0 0
 dontlightself 0
 }
@@ -2415,17 +2410,6 @@ dontlightself 0
 object AlphaLZRGkerLaser
 {
 frame TNT1 {light BIGREDLASER}
-}
-
-object UnmakerLaserTrail	//R31 added
-{
-frame LAZR {light REDLASER}
-frame LPUF {light REDLASER}
-}
-
-object UnmakerLaserTrail2	//R31 added
-{
-frame LPUF {light REDLASER}
 }
 
 object UnmakerLaserWhite	//R31 added for unmaker alt
