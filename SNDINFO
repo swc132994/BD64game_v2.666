@@ -114,7 +114,7 @@ skeleton/swing			DSSKESWG	//R31 added
 misc/gibbed				DSSLOP		//R31 added
 misc/teleport			DSTELEPT	//R31 added
 baby/active				DSBSPACT	//R31 added
-misc/p_pkup				DSITEMUP	//R31 added
+misc/p_pkup				dsgetpow	//R31 added // Pickup powerup
 grunt/pain				DSPOPAIN	//R31 added
 grunt/sight1			DSPOSIT1	//R31 added
 grunt/sight3			DSPOSIT3	//R31 added
@@ -431,5 +431,3 @@ BREATHOF	BREATHOF
 64Bruiser/death			snddhdie
 64Bruiser/attack		snddhbdmsl
 64Bruiser/shotx			snddhimpct
-
-DSGETPOW	DSGETPOW	//R31 wpnpower pickup

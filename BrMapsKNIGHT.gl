@@ -60,7 +60,7 @@ disablefullbright
 
 brightmap sprite BOS2C1
 {
-map "brightmaps/BOS2A1B.png"
+map "brightmaps/BOS2C1B.png"
 disablefullbright
 }
 

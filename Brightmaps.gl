@@ -1271,7 +1271,7 @@ map "brightmaps/gar2a0_BR.png"
 disablefullbright
 }
 
-//HELLHOUND
+//NEW HELLHOUND
 brightmap sprite HEHRA1
 {
 map "brightmaps/HEHRA1_BR.png"
@@ -1430,5 +1430,187 @@ disablefullbright
 brightmap sprite HH1HE0
 {
 map "brightmaps/HH1HE0_BR.png"
+disablefullbright
+}
+
+//CERBERUS HELLHOUND
+brightmap sprite DGB1W0
+{
+map "brightmaps/DGB1W0_BR.png"
+disablefullbright
+}
+brightmap sprite DGB1X0
+{
+map "brightmaps/DGB1X0_BR.png"
+disablefullbright
+}
+brightmap sprite DGB1Y0
+{
+map "brightmaps/DGB1Y0_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGA1
+{
+map "brightmaps/DOGGA1_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGA7A3
+{
+map "brightmaps/DOGGA7A3_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGA8A2
+{
+map "brightmaps/DOGGA8A2_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGB1
+{
+map "brightmaps/DOGGB1_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGB7B3
+{
+map "brightmaps/DOGGB7B3_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGB8B2
+{
+map "brightmaps/DOGGB8B2_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGC1
+{
+map "brightmaps/DOGGC1_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGC7C3
+{
+map "brightmaps/DOGGC7C3_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGC8C2
+{
+map "brightmaps/DOGGC8C2_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGD1
+{
+map "brightmaps/DOGGD1_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGD7D3
+{
+map "brightmaps/DOGGD7D3_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGD8D2
+{
+map "brightmaps/DOGGD8D2_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGE1
+{
+map "brightmaps/DOGGE1_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGE7E3
+{
+map "brightmaps/DOGGE7E3_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGE8E2
+{
+map "brightmaps/DOGGE8E2_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGF1
+{
+map "brightmaps/DOGGF1_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGF7F3
+{
+map "brightmaps/DOGGF7F3_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGF8F2
+{
+map "brightmaps/DOGGF8F2_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGG1
+{
+map "brightmaps/DOGGG1_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGG7G3
+{
+map "brightmaps/DOGGG7G3_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGG8G2
+{
+map "brightmaps/DOGGG8G2_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGH1
+{
+map "brightmaps/DOGGH1_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGH7H3
+{
+map "brightmaps/DOGGH7H3_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGH8H2
+{
+map "brightmaps/DOGGH8H2_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGI1
+{
+map "brightmaps/DOGGI1_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGI2
+{
+map "brightmaps/DOGGI2_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGI3
+{
+map "brightmaps/DOGGI3_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGI4
+{
+map "brightmaps/DOGGI4_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGI6
+{
+map "brightmaps/DOGGI6_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGI7
+{
+map "brightmaps/DOGGI7_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGI8
+{
+map "brightmaps/DOGGI8_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGJ0
+{
+map "brightmaps/DOGGJ0_BR.png"
+disablefullbright
+}
+brightmap sprite DOGGK0
+{
+map "brightmaps/DOGGK0_BR.png"
 disablefullbright
 }
