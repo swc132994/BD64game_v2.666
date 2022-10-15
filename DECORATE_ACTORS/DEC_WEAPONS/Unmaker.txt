@@ -366,9 +366,9 @@ Tag "Unmaker"				//R11 added
 actor UnmakerLaser2 : FastProjectile//9904	//R31 removed 9904
 {
 game Doom
-scale 0.8
+scale 1
 radius 2
-height 2
+height 4
 speed 120
 damage 10
 Damagetype "BFG"
@@ -386,8 +386,8 @@ PROJECTILE
 	{
 	Spawn:
 		ULAZ A 1 Bright
-		Goto Spawn1
-	Spawn1:
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-21*momx)/35.0,-(-21*momy)/35.0,0+(-21*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-18*momx)/35.0,-(-18*momy)/35.0,0+(-18*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-15*momx)/35.0,-(-15*momy)/35.0,0+(-15*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-12*momx)/35.0,-(-12*momy)/35.0,0+(-12*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-9*momx)/35.0,-(-9*momy)/35.0,0+(-9*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
@@ -423,7 +423,7 @@ PROJECTILE
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(84*momx)/35.0,-(84*momy)/35.0,0+(84*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(87*momx)/35.0,-(87*momy)/35.0,0+(87*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(90*momx)/35.0,-(90*momy)/35.0,0+(90*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
-		Goto Spawn
+		Loop
 	Death:
 		TNT1 A 0 A_SpawnItemEx("DetectFloorLaser",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)					//R28.2	//r31 was DetectFloorBullet
 		TNT1 A 0 A_SpawnItemEx("DetectCeilLaser",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)					//R28.2	//r31 was DetectFloorBullet
@@ -444,9 +444,46 @@ damage(random(25,50))
 	States
 	{
 	Spawn:
-		TNT1 A 0	//This delay is needed - do not use NoDelay
-		ULAZ A 1 Bright A_SpawnItem("SuperGore")
-		Goto Spawn1
+		ULAZ A 1 Bright
+		TNT1 A 0 A_SpawnItem("SuperGore")
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-21*momx)/35.0,-(-21*momy)/35.0,0+(-21*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-18*momx)/35.0,-(-18*momy)/35.0,0+(-18*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-15*momx)/35.0,-(-15*momy)/35.0,0+(-15*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-12*momx)/35.0,-(-12*momy)/35.0,0+(-12*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-9*momx)/35.0,-(-9*momy)/35.0,0+(-9*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-6*momx)/35.0,-(-6*momy)/35.0,0+(-6*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-3*momx)/35.0,-(-3*momy)/35.0,0+(-3*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",( 3*momx)/35.0,-( 3*momy)/35.0,0+( 3*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)		//R31 was -1 zfloat
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",( 6*momx)/35.0,-( 6*momy)/35.0,0+( 6*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",( 9*momx)/35.0,-( 9*momy)/35.0,0+( 9*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(12*momx)/35.0,-(12*momy)/35.0,0+(12*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(15*momx)/35.0,-(15*momy)/35.0,0+(15*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(18*momx)/35.0,-(18*momy)/35.0,0+(18*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(21*momx)/35.0,-(21*momy)/35.0,0+(21*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(24*momx)/35.0,-(24*momy)/35.0,0+(24*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(27*momx)/35.0,-(27*momy)/35.0,0+(27*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(30*momx)/35.0,-(30*momy)/35.0,0+(30*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(33*momx)/35.0,-(33*momy)/35.0,0+(33*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(36*momx)/35.0,-(36*momy)/35.0,0+(36*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(39*momx)/35.0,-(39*momy)/35.0,0+(39*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(42*momx)/35.0,-(42*momy)/35.0,0+(42*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(45*momx)/35.0,-(45*momy)/35.0,0+(45*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)	//r31 longer trail
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(48*momx)/35.0,-(48*momy)/35.0,0+(48*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(51*momx)/35.0,-(51*momy)/35.0,0+(51*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(54*momx)/35.0,-(54*momy)/35.0,0+(54*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(57*momx)/35.0,-(57*momy)/35.0,0+(57*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(60*momx)/35.0,-(60*momy)/35.0,0+(60*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(63*momx)/35.0,-(63*momy)/35.0,0+(63*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(66*momx)/35.0,-(66*momy)/35.0,0+(66*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(69*momx)/35.0,-(69*momy)/35.0,0+(69*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(72*momx)/35.0,-(72*momy)/35.0,0+(72*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(75*momx)/35.0,-(75*momy)/35.0,0+(75*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(78*momx)/35.0,-(78*momy)/35.0,0+(78*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(81*momx)/35.0,-(81*momy)/35.0,0+(81*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(84*momx)/35.0,-(84*momy)/35.0,0+(84*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(87*momx)/35.0,-(87*momy)/35.0,0+(87*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(90*momx)/35.0,-(90*momy)/35.0,0+(90*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		Loop
 	}
 }
 
@@ -510,7 +547,7 @@ Renderstyle Add
 actor UnmakerLaserTrail// 9903	//R31 removed 9903
 {
 game Doom
-scale 0.8	//R14 was 0.6	//r31 was 0.3
+scale 1.0	//R14 was 0.6	//r31 was 0.3
 height 4
 radius 2
 speed 0

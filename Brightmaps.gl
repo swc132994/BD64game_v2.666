@@ -1614,3 +1614,165 @@ brightmap sprite DOGGK0
 map "brightmaps/DOGGK0_BR.png"
 disablefullbright
 }
+
+//THCERNOBOG REVENANT
+brightmap sprite REVNA1
+{
+map "brightmaps/REVNA1_BR.png"
+disablefullbright
+}
+brightmap sprite REVNA2A8
+{
+map "brightmaps/REVNA2A8_BR.png"
+disablefullbright
+}
+brightmap sprite REVNA3A7
+{
+map "brightmaps/REVNA3A7_BR.png"
+disablefullbright
+}
+brightmap sprite REVNB1
+{
+map "brightmaps/REVNB1_BR.png"
+disablefullbright
+}
+brightmap sprite REVNB2B8
+{
+map "brightmaps/REVNB2B8_BR.png"
+disablefullbright
+}
+brightmap sprite REVNB3B7
+{
+map "brightmaps/REVNB3B7_BR.png"
+disablefullbright
+}
+brightmap sprite REVNC1
+{
+map "brightmaps/REVNC1_BR.png"
+disablefullbright
+}
+brightmap sprite REVNC2C8
+{
+map "brightmaps/REVNC2C8_BR.png"
+disablefullbright
+}
+brightmap sprite REVNC3C7
+{
+map "brightmaps/REVNC3C7_BR.png"
+disablefullbright
+}
+brightmap sprite REVND1
+{
+map "brightmaps/REVND1_BR.png"
+disablefullbright
+}
+brightmap sprite REVND2D8
+{
+map "brightmaps/REVND2D8_BR.png"
+disablefullbright
+}
+brightmap sprite REVND3D7
+{
+map "brightmaps/REVND3D7_BR.png"
+disablefullbright
+}
+brightmap sprite REVNE1
+{
+map "brightmaps/REVNE1_BR.png"
+disablefullbright
+}
+brightmap sprite REVNE2E8
+{
+map "brightmaps/REVNE2E8_BR.png"
+disablefullbright
+}
+brightmap sprite REVNE3E7
+{
+map "brightmaps/REVNE3E7_BR.png"
+disablefullbright
+}
+brightmap sprite REVNF1
+{
+map "brightmaps/REVNF1_BR.png"
+disablefullbright
+}
+brightmap sprite REVNF2F8
+{
+map "brightmaps/REVNF2F8_BR.png"
+disablefullbright
+}
+brightmap sprite REVNF3F7
+{
+map "brightmaps/REVNF3F7_BR.png"
+disablefullbright
+}
+brightmap sprite REVNG1
+{
+map "brightmaps/REVNG1_BR.png"
+disablefullbright
+}
+brightmap sprite REVNG2G8
+{
+map "brightmaps/REVNG2G8_BR.png"
+disablefullbright
+}
+brightmap sprite REVNG3G7
+{
+map "brightmaps/REVNG3G7_BR.png"
+disablefullbright
+}
+brightmap sprite REVNH1
+{
+map "brightmaps/REVNH1_BR.png"
+disablefullbright
+}
+brightmap sprite REVNH2H8
+{
+map "brightmaps/REVNH2H8_BR.png"
+disablefullbright
+}
+brightmap sprite REVNH3H7
+{
+map "brightmaps/REVNH3H7_BR.png"
+disablefullbright
+}
+brightmap sprite REVNI1
+{
+map "brightmaps/REVNI1_BR.png"
+disablefullbright
+}
+brightmap sprite REVNI2I8
+{
+map "brightmaps/REVNI2I8_BR.png"
+disablefullbright
+}
+brightmap sprite REVNI3I7
+{
+map "brightmaps/REVNI3I7_BR.png"
+disablefullbright
+}
+brightmap sprite REVNJ3J7
+{
+map "brightmaps/REVNJ3J7_BR.png"
+disablefullbright
+}
+brightmap sprite RND2A0
+{
+map "brightmaps/RND2A0_BR.png"
+disablefullbright
+}
+brightmap sprite RND2B0
+{
+map "brightmaps/RND2B0_BR.png"
+disablefullbright
+}
+brightmap sprite RND2C0
+{
+map "brightmaps/RND2C0_BR.png"
+disablefullbright
+}
+brightmap sprite RND2D0
+{
+map "brightmaps/RND2D0_BR.png"
+disablefullbright
+}
