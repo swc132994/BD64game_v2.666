@@ -625,7 +625,6 @@ GibHealth 15
 Tag "Shotgun Zombie"	//r31 added
 DropItem "ShotgunDrop"	//R12.1 //R31 was 64Shotgun and 64ShotgunTactical
 DROPITEM "SOULSPAWNER"	//R31 ADDED
-//Translation "128:143=96:111","144:151=101:106","152:159=104:111"
 	states
 	{
 	Spawn:
@@ -804,7 +803,7 @@ DropItem "SSGZombieDrop"
 DROPITEM "SOULSPAWNER"
 Tag "SSG Zombie"
 SpawnID 170
-//Translation "128:143=96:111","144:151=101:106","152:159=104:111"
+Obituary "%o was blown apart by an SSG Zombie."
 	states
 	{
 	Spawn:
@@ -858,7 +857,9 @@ SpawnID 170
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,50,0)
 		POS4 EE 8 A_FaceTarget
 		TNT1 A 0 A_PlaySound("SSGFIRE",1)
+		TNT1 A 0 A_JumpIfCloser(150,"MissileClose")
 		POS4 FFFFFFFFFFFF 0 bright A_CustomMissile("EnemyProjectile",36,-5,random(-7,7),1,random(-4,4))
+	MissileCP:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,50,0)
 		POS4 F 5 bright
 		POS4 E 5
@@ -877,6 +878,9 @@ SpawnID 170
 		PO4R FG 4
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,40,0)
 		Goto See
+	MissileClose:
+		POS4 FFFFFFFFFFFF 0 bright A_CustomMissile("EnemyProjectileExtreme",36,-5,random(-7,7),1,random(-4,4))
+		Goto MissileCP
 	Pain:
 		POS4 G 3
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
@@ -1796,7 +1800,7 @@ actor BrutalizedChaingunner_2 : BrutalizedChaingunner_1	//R31 revised for new sp
 	}
 }
 
-ACTOR EnemyProjectile: FastProjectile
+ACTOR EnemyProjectile : FastProjectile
 {
 Scale 0.05
 Damage(random(4,6))
@@ -1824,6 +1828,11 @@ Projectile
 	}
 }
 
+Actor EnemyProjectileExtreme : EnemyProjectile
+{
++EXTREMEDEATH
+}
+
 actor 64Zombiemarine : 64Zombieman Replaces WolfensteinSS
 {
 Health 80 //R31 added
@@ -1832,6 +1841,7 @@ attacksound "grunt/attack"
 Tag "Marine Zombie"		//r31 added
 DropItem "RifleDrop"	//R31 Added
 DROPITEM "SOULSPAWNER"	//R31 added
+Obituary "%o was gunned down by a zombie marine."
 	States
 	{
 	idle:	//r31 added as placeholder
@@ -2094,6 +2104,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 DropItem "RifleDrop",5															//R31 Added
 Dropitem "clip"			//R21 added
 DROPITEM "SOULSPAWNER"	//R31 added
+Obituary "%o was gunned down by a marine."
 +FLOORCLIP
 +FRIENDLY
 +LOOKALLAROUND

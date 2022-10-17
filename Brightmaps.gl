@@ -106,14 +106,79 @@ disablefullbright
 }
 
 //PLASMA AMMO
-brightmap sprite CELLA0
+brightmap sprite CELLA0		//cell
 {
-map "brightmaps/CEL1B.png"
+map "brightmaps/CELLA0_BR.png"
 disablefullbright
 }
-brightmap sprite CELPA0
+brightmap sprite CEL2A0		//Blue alt cell
 {
-map "brightmaps/CEL2B.png"
+map "brightmaps/CELLA0_BR.png"
+disablefullbright
+}
+brightmap sprite CELPA0		//cell pack
+{
+map "brightmaps/CELPA0_BR.png"
+disablefullbright
+}
+brightmap sprite CPK2A0		//red alt cell pack
+{
+map "brightmaps/CELPA0_BR.png"
+disablefullbright
+}
+brightmap sprite CEL3A0		//new alt cell animated
+{
+map "brightmaps/CEL3A0_BR.png"
+disablefullbright
+}
+brightmap sprite CEL3B0		//new alt cell animated
+{
+map "brightmaps/CEL3B0_BR.png"
+disablefullbright
+}
+brightmap sprite CEL3C0		//new alt cell animated
+{
+map "brightmaps/CEL3C0_BR.png"
+disablefullbright
+}
+brightmap sprite CEL3D0		//new alt cell animated
+{
+map "brightmaps/CEL3D0_BR.png"
+disablefullbright
+}
+brightmap sprite CEL3E0		//new alt cell animated
+{
+map "brightmaps/CEL3E0_BR.png"
+disablefullbright
+}
+brightmap sprite CEL3F0		//new alt cell animated
+{
+map "brightmaps/CEL3F0_BR.png"
+disablefullbright
+}
+brightmap sprite CEL3G0		//new alt cell animated
+{
+map "brightmaps/CEL3G0_BR.png"
+disablefullbright
+}
+brightmap sprite CEL3H0		//new alt cell animated
+{
+map "brightmaps/CEL3H0_BR.png"
+disablefullbright
+}
+brightmap sprite CEL3I0		//new alt cell animated
+{
+map "brightmaps/CEL3I0_BR.png"
+disablefullbright
+}
+brightmap sprite CEL3J0		//new alt cell animated
+{
+map "brightmaps/CEL3J0_BR.png"
+disablefullbright
+}
+brightmap sprite CELPB0		//new alt cell pack
+{
+map "brightmaps/CELPB0_BR.png"
 disablefullbright
 }
 
@@ -2316,31 +2381,6 @@ disablefullbright
 brightmap sprite FATTF5
 {
 map "brightmaps/FATTF5B.png"
-disablefullbright
-}
-brightmap sprite FATTG1
-{
-map "brightmaps/FATTG1B.png"
-disablefullbright
-}
-brightmap sprite FATTG2G8
-{
-map "brightmaps/FATTG2G8B.png"
-disablefullbright
-}
-brightmap sprite FATTG3G7
-{
-map "brightmaps/FATTG3G7B.png"
-disablefullbright
-}
-brightmap sprite FATTG4G6
-{
-map "brightmaps/FATTG4G6B.png"
-disablefullbright
-}
-brightmap sprite FATTG5
-{
-map "brightmaps/FATTG5B.png"
 disablefullbright
 }
 brightmap sprite FATTH1

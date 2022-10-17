@@ -50,65 +50,65 @@ DropItem "Soulsphere",32				//R31 added
 		"####" A 15 A_FaceTarget
 		"####" E 2 A_FaceTarget
 		"####" M 2 bright A_PlaySound("CHGNSHOT",1)	//R31 was MGUNFIR
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))		//R25.4 was TNT1 A & random(-9,9),1,random(-4,4))	//R31 was TNT1 AA 0 A_CustomMissile("EnenmyProjectile",40,26,random(-6,6),1,random(-3,3))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))		//R25.4 was TNT1 A & random(-9,9),1,random(-4,4))	//R31 was TNT1 AA 0 A_CustomMissile("EnenmyProjectile",40,26,random(-6,6),1,random(-3,3))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))		//R25.4 was TNT1 A & random(-9,9),1,random(-4,4))	//R31 was TNT1 AA 0 A_CustomMissile("EnenmyProjectile",40,26,random(-6,6),1,random(-3,3))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))		//R25.4 was TNT1 A & random(-9,9),1,random(-4,4))	//R31 was TNT1 AA 0 A_CustomMissile("EnenmyProjectile",40,26,random(-6,6),1,random(-3,3))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
 		"####" A 0 A_PlaySound("CHGNSHOT",3)	//R31 was MGUNFIR
 		"####" E 2 A_FaceTarget
 		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
 		"####" A 0 A_PlaySound("CHGNSHOT",3)
 		"####" E 2 A_FaceTarget
 		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
 		"####" A 0 A_PlaySound("CHGNSHOT",3)
 		"####" E 2 A_FaceTarget
 		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
 		"####" A 0 A_PlaySound("CHGNSHOT",3)
 		"####" E 2 A_FaceTarget
 		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
 		"####" A 0 A_PlaySound("CHGNSHOT",3)
 		"####" E 2 A_FaceTarget
 		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
 		"####" A 0 A_PlaySound("CHGNSHOT",3)
 		"####" E 2 A_FaceTarget
 		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
 		"####" A 0 A_PlaySound("CHGNSHOT",3)
 		"####" E 2 A_FaceTarget
 		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added	//R31 was AA
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added	//R31 was AA
 		"####" A 0 A_PlaySound("CHGNSHOT",3)
 		"####" E 2 A_FaceTarget
 		"####" M 2 bright A_PlaySound("CHGNSHOT",1)
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,26,40,0,0)		//R28.4 added
-		"####" A 0 A_CustomMissile("MasterMindProjectile",50,-26,random(-4,4),1,random(-2,2))
+		"####" A 0 A_CustomMissile("MasterMindProjectile",45,-26,random(-4,4),1,random(-2,2))
 		"####" A 0 A_SpawnItemEx("50CaseSpawn",26,-26,40,0,0)		//R28.4 added
 		"####" A 0 A_PlaySound("CHGNSHOT",3)
 		"####" E 3 A_SpidRefire
