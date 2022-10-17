@@ -1,9 +1,4 @@
 #INCLUDE Brightmaps.gl
-#INCLUDE BrMapsKNIGHT.gl
-#INCLUDE BrMapsBARON.gl
-#INCLUDE BrMapsFATSO.gl
-#INCLUDE BrMapsCYBER.gl
-#INCLUDE BrMapsARACH.gl
 
 //start import doomdefs
 //Bullet puff
