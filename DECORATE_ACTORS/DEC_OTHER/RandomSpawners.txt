@@ -277,7 +277,7 @@ Monster
 
 Actor D64_Mastermind_Replacer Replaces SpiderMastermind		//08-08-22 Combined motherdemon spawner & tag 666 fix (A_KillMaster must be called from spawned monster)
 {
-SCALE 1.5
+Scale 1
 Monster
 -SOLID
 -COUNTKILL

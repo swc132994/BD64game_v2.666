@@ -1,6 +1,5 @@
-actor 64SpiderMastermind : SpiderMastermind// Replaces SpiderMastermind		//R26 removed replaces	//r31 merged Immorpher's skin option
+actor 64SpiderMastermind : SpiderMastermind Replaces SpiderMastermind	//r31 merged Immorpher's skin option
 {
-Scale 1.5
 Health 4000		//R31 added
 speed 15		//R25.4 was 12
 Radius 62
@@ -16,37 +15,31 @@ meleerange 100		//r31 24/08/22 added
 AttackSound "weapons/gswing"	//R31 24/08/22 was "weapons/pistol"
 DROPITEM "DemonEssenceLargeSpawner"		//R31 added
 DropItem "Soulsphere",32				//R31 added
-//+FORCEXYBILLBOARD		//R12.3 removed
-//+FLOORCLIP	//r31 25/08/22 removed
 +EXTREMEDEATH	//r31 24/08/22 added
 	States
 	{
 	Spawn:
-		MSMN A 0 a_setscale(1.5,1.5)	//Do not use NoDelay here
-		BSGI A 0 a_setscale(1.0,1.0)
+		MSMN A 0//sets spawn sprite
 		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
-		MSMN A 0 a_setscale(1.5,1.5)
+		MSMN A 0
 		"####" AB 10 A_Look
 		"####" A 0 A_GiveInventory("BlueArmor",1)		//R19 added
 		loop
 	See:
-		BSGI A 0 a_setscale(1.0,1.0)
 		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
-		MSMN A 0 a_setscale(1.5,1.5)
+		MSMN A 0
 		"####" A 3 A_Metal
 		"####" AABBCCDD 3 A_Chase
 		Loop
 	Melee:		//r31 new melee
-		BSGI A 0 a_setscale(1.0,1.0)
 		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
-		MSMN A 0 a_setscale(1.5,1.5)
+		MSMN A 0
 		"####" DE 6 A_FaceTarget
 		"####" F 6 A_MeleeAttack
 		Goto See
 	Missile:
-		BSGI A 0 a_setscale(1.0,1.0)
 		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
-		MSMN A 0 a_setscale(1.5,1.5)
+		MSMN A 0
 		"####" A 15 A_FaceTarget
 		"####" E 2 A_FaceTarget
 		"####" M 2 bright A_PlaySound("CHGNSHOT",1)	//R31 was MGUNFIR
@@ -114,24 +107,21 @@ DropItem "Soulsphere",32				//R31 added
 		"####" E 3 A_SpidRefire
 		GOTO SEE
 	Pain:
-		BSGI A 0 a_setscale(1.0,1.0)
 		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
-		MSMN A 0 a_setscale(1.5,1.5)
+		MSMN A 0
 		"####" F 3
 		"####" F 3 A_Pain
 		goto See
 	Pain.Vertigo:
-		BSGI A 0 a_setscale(1.0,1.0)
 		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
-		MSMN A 0 a_setscale(1.5,1.5)
+		MSMN A 0
 		"####" A 0 ThrustThingZ(0,55,0,0)
 		"####" F 3
 		"####" F 3 A_Pain
 		Goto See
 	Death:
-		BSGI A 0 a_setscale(1.0,1.0)
 		BSGI A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,2)	//R31 Alternative mastermind Skin
-		MSMN A 0 a_setscale(1.5,1.5)
+		MSMN A 0
 		"####" G 0 A_Scream
 		"####" G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
 		"####" G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
@@ -181,10 +171,10 @@ DropItem "Soulsphere",32				//R31 added
 		"####" z -1
 		stop
 	AltDeath:
-		tnt1 A 0 A_BossDeath
-		tnt1 A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))	//R30.9 added
-		tnt1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
-		bsgi l -1
+		TNT1 A 0 A_BossDeath
+		TNT1 A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))	//R30.9 added
+		TNT1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
+		BSGI l -1
 		stop
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")

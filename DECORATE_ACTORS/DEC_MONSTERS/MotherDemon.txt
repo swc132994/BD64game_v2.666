@@ -22,7 +22,6 @@ Tag "Mother Demon"		//R31 added
 DROPITEM "DemonEssenceLargeSpawner"		//R31 added
 DropItem "Soulsphere",32				//R31 added
 MONSTER
-//+FORCEXYBILLBOARD		//R12.3 removed
 +FLOORCLIP
 +DONTMORPH
 +BOSS
@@ -31,7 +30,6 @@ MONSTER
 +MISSILEEVENMORE
 +LOOKALLAROUND
 +FLOAT			//R31 added
-//+NOPAIN		//R24 added	//R31 removed
 +QUICKTORETALIATE	//R31 added
 	states
 	{

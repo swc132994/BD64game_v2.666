@@ -10,8 +10,6 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 BloodType "BD64ArachnotronBlood"
 DROPITEM "DemonEssenceSpawner"		//R31 added
-//+FORCEXYBILLBOARD					//R12.3 removed
-+FLOORCLIP
 +NOBLOCKMONST
 	states
 	{

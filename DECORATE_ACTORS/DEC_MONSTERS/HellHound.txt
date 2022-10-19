@@ -1,5 +1,5 @@
 //R31 added extra deaths
-actor 64HellHound : Demon 19116// Replaces ArchVile	//R20 removed replacement
+actor 64HellHound : Demon Replaces ArchVile 19116
 {
 SpawnID 176		//R31 added ID
 Scale 0.8		//R31 was 0.9
@@ -22,8 +22,6 @@ hitobituary "%o is now dog food."
 species "Dog"						//R21 added
 Tag "Hell Hound"					//R31 added
 DROPITEM "DemonEssenceSpawner"		//R31 added
-//+FORCEXYBILLBOARD					//R12.3 removed
-+FLOORCLIP
 	states
 	{
 	Spawn:

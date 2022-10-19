@@ -10,8 +10,6 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Dropitem "SawGas"
 DROPITEM "DemonEssenceSpawner"		//R31 added
-//+FORCEXYBILLBOARD					//R12.3 removed
-+FLOORCLIP
 +DONTHARMSPECIES	//R31 WAS DONTHURTSPECIES
 	States
 	{
@@ -229,7 +227,6 @@ DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Chainsaw",2.0
 DropItem "None"
 -COUNTKILL
-+FLOORCLIP
 +FRIENDLY
 +NOTARGET
 +NOPAIN

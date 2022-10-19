@@ -1,5 +1,5 @@
 //R31 NOW OLD STYLE REVENANT
-Actor 64Revenant_old : Revenant// Replaces Revenant		//R26 removed REPLACES
+Actor 64Revenant_old : Revenant
 {
 Scale 0.74								//R25.2 WAS 0.8	//R31 WAS 0.75
 HEALTH 300
@@ -13,8 +13,6 @@ Painchance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DROPITEM "DemonEssenceSpawner"		//R31 added
-//+FORCEXYBILLBOARD					//R12.3 removed
-+FLOORCLIP
 +DONTHARMSPECIES		//R31 WAS DONTHURTSPECIES
 	States
 	{

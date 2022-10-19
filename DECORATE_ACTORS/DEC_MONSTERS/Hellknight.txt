@@ -22,8 +22,7 @@ activesound "knight/active"
 DROPITEM "DemonEssenceSpawner"		//R31 added
 //bloodcolor "18 8c 31"
 MONSTER
--BOSSDEATH
-//+FORCEXYBILLBOARD		//R12.3 removed
++BOSSDEATH		//R31 was -
 +FLOORCLIP
 	states
 	{

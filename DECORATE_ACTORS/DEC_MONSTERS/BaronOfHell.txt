@@ -11,8 +11,6 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DROPITEM "DemonEssenceSpawner"		//R31 added
 //bloodcolor "8C 39 10"
-//+FORCEXYBILLBOARD					//R12.3 removed
-+FLOORCLIP
 	states
 	{
 	Spawn:		//R31 extra

@@ -11,8 +11,6 @@ damagefactor "chainsaw",0.4
 Tag "Pistol Zombie"			//r31 added
 DROPITEM "SOULSPAWNER"		//R31 added
 DROPITEM "CLIP"				//R31 added
-//+FORCEXYBILLBOARD			//R12.3 removed
-+FLOORCLIP
 +DOHARMSPECIES				//R23 added
 states
 	{
@@ -2105,7 +2103,6 @@ DropItem "RifleDrop",5															//R31 Added
 Dropitem "clip"			//R21 added
 DROPITEM "SOULSPAWNER"	//R31 added
 Obituary "%o was gunned down by a marine."
-+FLOORCLIP
 +FRIENDLY
 +LOOKALLAROUND
 +QUICKTORETALIATE

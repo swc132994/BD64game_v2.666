@@ -9,9 +9,7 @@ Painchance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DROPITEM "DemonEssenceSpawner"		//R31 added
-
 MeleeSound "weapons/gswing"
-
 +FLOORCLIP
 +FORCEXYBILLBOARD
 +MISSILEMORE
