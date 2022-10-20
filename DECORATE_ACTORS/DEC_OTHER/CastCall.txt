@@ -591,6 +591,49 @@ YScale 1.0
 	}
 }
 
+actor D64BruiserCast : 64Bruiser
+{
+XScale 1.0
+YScale 1.0
+	States
+	{
+	See:
+		DKHL AABBCCDDEEFF 3 A_Chase
+		Loop
+Melee:
+		DKHL H 10 A_PlaySound("64Bruiser/raiseguns",CHAN_AUTO)
+		DKHL H 10 A_FaceTarget
+		DKHL G 3 BRIGHT A_CustomMissile("BruiserFlame",53,-21,15,0)
+		DKHL G 3 BRIGHT A_CustomMissile("BruiserFlame",53,-21,15,0)
+		DKHL G 3 BRIGHT A_CustomMissile("BruiserFlame",53,-21,15,0)
+		DKHL G 3 BRIGHT A_CustomMissile("BruiserFlame",53,-21,15,0)
+		DKHL G 3 BRIGHT A_CustomMissile("BruiserFlame",53,-21,15,0)
+		DKHL G 3 BRIGHT A_CustomMissile("BruiserFlame",53,-21,15,0)
+		DKHL G 3 BRIGHT A_CustomMissile("BruiserFlame",53,-21,15,0)
+		DKHL G 3 BRIGHT A_CustomMissile("BruiserFlame",53,-21,15,0)
+		DKHL G 3 BRIGHT A_CustomMissile("BruiserFlame",53,-21,15,0)
+		DKHL G 3 BRIGHT A_CustomMissile("BruiserFlame",53,-21,15,0)
+		DKHL G 3 BRIGHT A_CustomMissile("BruiserFlame",53,-21,15,0)
+		DKHL G 3 BRIGHT A_CustomMissile("BruiserFlame",53,-21,15,0)
+		DKHL H 10 A_FaceTarget
+		Goto See
+	Missile:
+		DKHL H 25 A_FaceTarget
+		DKHL G 10 BRIGHT
+		DKHL H 25 A_FaceTarget
+		DKHL G 10 BRIGHT
+		DKHL H 25 A_FaceTarget
+		Goto See
+	Death:
+		DKHL J 8
+		DKHL K 8 A_Scream
+		DKHL L 8 A_NoBlocking
+		DKHL MN 8
+		DKHL O -1 A_BossDeath
+		Stop
+	}
+}
+
 actor D64CyberdemonCast : 64Cyberdemon
 {
 XScale 1.0
@@ -659,8 +702,8 @@ YScale 1.0
 
 actor D64SpiderMastermindCast : 64SpiderMastermind
 {
-XScale 1.5
-YScale 1.5
+XScale 1.0
+YScale 1.0
 	States
 	{
 	See:

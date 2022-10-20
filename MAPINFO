@@ -267,6 +267,13 @@ Intermission Doom2Cast
 	}
 	Cast
 	{
+		CastClass = "D64BruiserCast"
+		CastName = "Bruiser"
+		AttackSound = "Missile",1,"64Bruiser/raiseguns"
+		AttackSound = "Melee",1,"BREATHOF"
+	}
+	Cast
+	{
 		CastClass = "D64CyberdemonCast"
 		CastName = "The Cybderdemon"
 		AttackSound = "Missile",1,"weapons/rocklf"

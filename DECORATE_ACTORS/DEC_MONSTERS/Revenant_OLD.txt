@@ -2,7 +2,7 @@
 Actor 64Revenant_old : Revenant
 {
 Scale 0.74								//R25.2 WAS 0.8	//R31 WAS 0.75
-HEALTH 300
+HEALTH 350
 HEIGHT 65								//R25.2 WAS 72
 Speed 8									//R15 WAS 7
 MeleeThreshold 146	//DEFAULT 196		//R16 added
@@ -43,7 +43,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		Goto See
 	Missile:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",25,65,0)
-		REVN J 6 Bright A_FaceTarget
+		REVN J 12 Bright A_FaceTarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",25,65,0)
 		TNT1 A 0 A_CustomMissile("64RevenantTracer3",68,18,0,0)		//was 57
 		REVN J 6 Bright
