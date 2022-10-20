@@ -2679,3 +2679,100 @@ brightmap sprite A64AI0
 map "brightmaps/A64AI0_B.png"
 disablefullbright
 }
+
+//SPIDERMASTERMIND
+brightmap sprite MSMNa1
+{
+map "brightmaps/MSMNa1_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNa2a8
+{
+map "brightmaps/MSMNa2a8_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNa3a7
+{
+map "brightmaps/MSMNa3a7_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNb1
+{
+map "brightmaps/MSMNb1_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNb2b8
+{
+map "brightmaps/MSMNb2b8_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNb3b7
+{
+map "brightmaps/MSMNb3b7_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNc1
+{
+map "brightmaps/MSMNc1_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNc2c8
+{
+map "brightmaps/MSMNc2c8_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNc3c7
+{
+map "brightmaps/MSMNc3c7_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNd1
+{
+map "brightmaps/MSMNd1_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNd2d8
+{
+map "brightmaps/MSMNd2d8_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNd3d7
+{
+map "brightmaps/MSMNd3d7_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNe1
+{
+map "brightmaps/MSMNe1_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNe2e8
+{
+map "brightmaps/MSMNe2e8_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNe3e7
+{
+map "brightmaps/MSMNe3e7_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNf1
+{
+map "brightmaps/MSMNf1_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNf2f8
+{
+map "brightmaps/MSMNf2f8_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNf3f7
+{
+map "brightmaps/MSMNf3f7_BR.png"
+disablefullbright
+}
+brightmap sprite MSMNg0
+{
+map "brightmaps/MSMNg0_BR.png"
+disablefullbright
+}
