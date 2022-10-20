@@ -274,14 +274,14 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		RND2 ABDC 5 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_Pain
+		TNT1 A 0 //A_Pain
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		RND2 DCAB 5 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_Pain
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		RND2 ABDC 5 A_FaceTarget
-		TNT1 A 0 A_Pain
+		TNT1 A 0 //A_Pain
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_Jump(50,"Attack")
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
@@ -290,19 +290,19 @@ DropItem "None"
 		TNT1 A 0 A_Pain
 		RND2 ABAB 5 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_Pain
+		TNT1 A 0 //A_Pain
 		RND2 DADC 5 A_FaceTarget
 		TNT1 A 0 A_Jump(50,"Attack")
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_Pain
 		RND2 ABDC 5 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_Pain
+		TNT1 A 0 //A_Pain
 		RND2 DCAB 5 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_Pain
 		RND2 DCAB 5 A_FaceTarget
-		TNT1 A 0 A_Pain
+		TNT1 A 0 //A_Pain
 		RND2 BADC 5 A_FaceTarget
 		Goto Death
 	Attack:
