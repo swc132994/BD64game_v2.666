@@ -1,7 +1,3 @@
-/*TO DO NOTES
-NEW REVENANT
-*/
-
 //PROP DECORATIONS
 //64HEARTCOLUMN
 brightmap sprite 64HCA0
@@ -1721,6 +1717,283 @@ disablefullbright
 brightmap sprite RND2D0
 {
 map "brightmaps/RND2D0_BR.png"
+disablefullbright
+}
+
+//NEW REVENANT
+brightmap sprite RVNCA0
+{
+map "brightmaps/RVNCA0_BR.png"
+disablefullbright
+}
+brightmap sprite RVNCB0
+{
+map "brightmaps/RVNCB0_BR.png"
+disablefullbright
+}
+brightmap sprite RVNCC0
+{
+map "brightmaps/RVNCC0_BR.png"
+disablefullbright
+}
+brightmap sprite SKELA1
+{
+map "brightmaps/SKELA1_BR.png"
+disablefullbright
+}
+brightmap sprite SKELA2
+{
+map "brightmaps/SKELA2_BR.png"
+disablefullbright
+}
+brightmap sprite SKELA3
+{
+map "brightmaps/SKELA3_BR.png"
+disablefullbright
+}
+brightmap sprite SKELB1
+{
+map "brightmaps/SKELB1_BR.png"
+disablefullbright
+}
+brightmap sprite SKELB2
+{
+map "brightmaps/SKELB2_BR.png"
+disablefullbright
+}
+brightmap sprite SKELB3
+{
+map "brightmaps/SKELB3_BR.png"
+disablefullbright
+}
+brightmap sprite SKELB8
+{
+map "brightmaps/SKELB8_BR.png"
+disablefullbright
+}
+brightmap sprite SKELC1
+{
+map "brightmaps/SKELC1_BR.png"
+disablefullbright
+}
+brightmap sprite SKELC2
+{
+map "brightmaps/SKELC2_BR.png"
+disablefullbright
+}
+brightmap sprite SKELC3
+{
+map "brightmaps/SKELC3_BR.png"
+disablefullbright
+}
+brightmap sprite SKELC8
+{
+map "brightmaps/SKELC8_BR.png"
+disablefullbright
+}
+brightmap sprite SKELD1
+{
+map "brightmaps/SKELD1_BR.png"
+disablefullbright
+}
+brightmap sprite SKELD2
+{
+map "brightmaps/SKELD2_BR.png"
+disablefullbright
+}
+brightmap sprite SKELD7
+{
+map "brightmaps/SKELD7_BR.png"
+disablefullbright
+}
+brightmap sprite SKELD8
+{
+map "brightmaps/SKELD8_BR.png"
+disablefullbright
+}
+brightmap sprite SKELE1
+{
+map "brightmaps/SKELE1_BR.png"
+disablefullbright
+}
+brightmap sprite SKELE2
+{
+map "brightmaps/SKELE2_BR.png"
+disablefullbright
+}
+brightmap sprite SKELE7
+{
+map "brightmaps/SKELE7_BR.png"
+disablefullbright
+}
+brightmap sprite SKELE8
+{
+map "brightmaps/SKELE8_BR.png"
+disablefullbright
+}
+brightmap sprite SKELF1
+{
+map "brightmaps/SKELF1_BR.png"
+disablefullbright
+}
+brightmap sprite SKELF2
+{
+map "brightmaps/SKELF2_BR.png"
+disablefullbright
+}
+brightmap sprite SKELF7
+{
+map "brightmaps/SKELF7_BR.png"
+disablefullbright
+}
+brightmap sprite SKELF8
+{
+map "brightmaps/SKELF8_BR.png"
+disablefullbright
+}
+brightmap sprite SKELG1
+{
+map "brightmaps/SKELG1_BR.png"
+disablefullbright
+}
+brightmap sprite SKELG7
+{
+map "brightmaps/SKELG7_BR.png"
+disablefullbright
+}
+brightmap sprite SKELG8
+{
+map "brightmaps/SKELG8_BR.png"
+disablefullbright
+}
+brightmap sprite SKELH1
+{
+map "brightmaps/SKELH1_BR.png"
+disablefullbright
+}
+brightmap sprite SKELH2
+{
+map "brightmaps/SKELH2_BR.png"
+disablefullbright
+}
+brightmap sprite SKELH3
+{
+map "brightmaps/SKELH3_BR.png"
+disablefullbright
+}
+brightmap sprite SKELH7
+{
+map "brightmaps/SKELH7_BR.png"
+disablefullbright
+}
+brightmap sprite SKELH8
+{
+map "brightmaps/SKELH8_BR.png"
+disablefullbright
+}
+brightmap sprite SKELI1
+{
+map "brightmaps/SKELI1_BR.png"
+disablefullbright
+}
+brightmap sprite SKELI2
+{
+map "brightmaps/SKELI2_BR.png"
+disablefullbright
+}
+brightmap sprite SKELI3
+{
+map "brightmaps/SKELI3_BR.png"
+disablefullbright
+}
+brightmap sprite SKELI8
+{
+map "brightmaps/SKELI8_BR.png"
+disablefullbright
+}
+brightmap sprite SKELK1
+{
+map "brightmaps/SKELK1_BR.png"
+disablefullbright
+}
+brightmap sprite SKELK2
+{
+map "brightmaps/SKELK2_BR.png"
+disablefullbright
+}
+brightmap sprite SKELK8
+{
+map "brightmaps/SKELK8_BR.png"
+disablefullbright
+}
+brightmap sprite SKELL6
+{
+map "brightmaps/SKELL6_BR.png"
+disablefullbright
+}
+brightmap sprite SKELL7
+{
+map "brightmaps/SKELL7_BR.png"
+disablefullbright
+}
+brightmap sprite SKELL8
+{
+map "brightmaps/SKELL8_BR.png"
+disablefullbright
+}
+brightmap sprite SKELN0
+{
+map "brightmaps/SKELN0_BR.png"
+disablefullbright
+}
+brightmap sprite SND1A0
+{
+map "brightmaps/SND1A0_BR.png"
+disablefullbright
+}
+brightmap sprite SND1A1
+{
+map "brightmaps/SND1A1_BR.png"
+disablefullbright
+}
+brightmap sprite SND1A2A8
+{
+map "brightmaps/SND1A2A8_BR.png"
+disablefullbright
+}
+brightmap sprite SND1A3A7
+{
+map "brightmaps/SND1A3A7_BR.png"
+disablefullbright
+}
+brightmap sprite SND1B0
+{
+map "brightmaps/SND1B0_BR.png"
+disablefullbright
+}
+brightmap sprite SND1B1
+{
+map "brightmaps/SND1B1_BR.png"
+disablefullbright
+}
+brightmap sprite SND1B2B8
+{
+map "brightmaps/SND1B2B8_BR.png"
+disablefullbright
+}
+brightmap sprite SND1B3B7
+{
+map "brightmaps/SND1B3B7_BR.png"
+disablefullbright
+}
+brightmap sprite SND2B0
+{
+map "brightmaps/SND2B0_BR.png"
+disablefullbright
+}
+brightmap sprite SND2D0
+{
+map "brightmaps/SND2D0_BR.png"
 disablefullbright
 }
 
