@@ -263,6 +263,7 @@ Tag "$TAG_SHOTGUN"
 		Goto Ready
 		SHTG B 1
 		SHTG CDEFG 1
+		SHSR ABC 1
 	InsertingShells:
 		TNT1 A 0 A_JumpIfInventory("Shell",1,1)
 		Goto PumpNewShell
@@ -270,15 +271,16 @@ Tag "$TAG_SHOTGUN"
 		TNT1 A 0 A_GiveInventory("ShotgunAmmo",1)
 		TNT1 A 0 A_TakeInventory("Shell",1)
 	InsertShellAnimation:
-		SHTR HHHABC 1
+		SHSR C 3
+		SHTR ABC 1
 		SHTR D 1 A_PlaySound("inshell")
-		SHTR EFG 1 A_WeaponReady(WRF_NOBOB)
+		SHTR EFGHIJ 1 A_WeaponReady(WRF_NOBOB)
 //		SHTR H 0 A_JumpIfInventory("Reloading",1,"PumpNewShell")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKickReloading")	//r31 delay for autofiring (Unused due to Shotgun reload code rework)
 		TNT1 A 0 A_JumpIfInventory("ShotgunAmmo",9,"FinishInsertingShells")
 		Goto InsertingShells
 	CheckIfFinishReload:
-		SHTR H 1
+		SHSR C 1
 		TNT1 A 0 A_JumpIfInventory("HasUsedShell",1,"FinishInsertingShells")
 		TNT1 A 0 A_JumpIfInventory("Shell",1,1)
 		Goto PumpNewShell
@@ -286,6 +288,7 @@ Tag "$TAG_SHOTGUN"
 		TNT1 A 0 A_Takeinventory("Shell",1)
 		Goto InsertShellAnimation
 	FinishInsertingShells:
+		SHSR CBA 1
 		SHTG G 1
 		TNT1 A 0 A_jumpIfInventory("HasUsedShell",1,"PumpNewShell")
 		SHTG FEDCBA 1 A_WeaponReady
