@@ -127,7 +127,7 @@ Scale 0.82
 		PISI HIJKLMOPQ 1 A_WeaponReady
 		TNT1 A 0 A_PlaySound("PISBACK",CHAN_WEAPON)
 		PISI Q 1 Offset(-2,35) A_WeaponReady
-		PISI Q 1 Offset(-3,37) A_WeaponReady		
+		PISI Q 1 Offset(-3,37) A_WeaponReady
 		PISI R 10 A_WeaponReady
 		TNT1 A 0 A_PlaySound("PISFORW",CHAN_WEAPON)
 		PISI STU 1  A_WeaponReady
