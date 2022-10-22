@@ -184,7 +184,8 @@ $random Bullet/Ricochet	{DSRIC1 DSRIC2 DSRIC3}
 
 //Super Shotgun
 weapons/sshoto dsdbopn
-weapons/sshotl dsdbcls
+weapons/sshotl dsdbload //R31 fixed
+weapons/sshotc dsdbcls
 
 weapons/grenlx			dsbarexp
 weapons/grenlf			dsrlaunc
