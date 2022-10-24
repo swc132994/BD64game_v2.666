@@ -3,6 +3,7 @@
 //Option to replace plasma rifle with lasergun
 Actor Dyn_PlasmaRifleReplacer Replaces Plasmarifle
 {
+Scale 0.82
 	States
 	{
 	Spawn:
@@ -19,6 +20,7 @@ Actor Dyn_PlasmaRifleReplacer Replaces Plasmarifle
 //Option to replace BFG with unmaker
 Actor Dyn_BFGReplacer Replaces BFG9000
 {
+Scale 0.9
 	States
 	{
 	Spawn:
@@ -35,6 +37,7 @@ Actor Dyn_BFGReplacer Replaces BFG9000
 //Options to replace powerups with unmaker powerups
 Actor Dyn_WpnPower1Replacer Replaces Blursphere
 {
+Scale 0.82
 	States
 	{
 	Spawn:
@@ -51,6 +54,7 @@ Actor Dyn_WpnPower1Replacer Replaces Blursphere
 
 Actor Dyn_WpnPower2Replacer Replaces Berserk
 {
+Scale 0.82
 	States
 	{
 	Spawn:
@@ -67,6 +71,7 @@ Actor Dyn_WpnPower2Replacer Replaces Berserk
 
 Actor Dyn_WpnPower3Replacer Replaces Soulsphere
 {
+Scale 0.7
 	States
 	{
 	Spawn:
@@ -84,6 +89,7 @@ Actor Dyn_WpnPower3Replacer Replaces Soulsphere
 //Option to replace shotgun with SSG for Doom1
 Actor SSG_Shotgun_Replacer Replaces Shotgun		//r31 new
 {
+Scale 0.87
 	States
 	{
 	Spawn:
@@ -381,6 +387,7 @@ Monster
 
 Actor Dyn_ChaingunReplacer Replaces Chaingun //R31 Added
 {
+Scale 0.82
 	States
 	{
 	Spawn:

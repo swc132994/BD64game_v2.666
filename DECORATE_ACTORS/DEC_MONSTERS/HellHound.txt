@@ -114,7 +114,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		TNT1 A 0 A_NOBLOCKING
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_KillMaster("None")	//08-08-22 tag 666 fix
-		HEHR G 1 A_SpawnItemEx("BrutalizedHound",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		HH1H A 1 A_SpawnItemEx("BrutalizedHound",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.SuperFists:
 	Death.SuperKick:
