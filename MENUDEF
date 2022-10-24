@@ -92,8 +92,6 @@ OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 		Slider "Set max wall decals","cl_maxdecals",0,9999,100,0	//R31 16/08/22 new slider
 		textfield "input value manually","cl_maxdecals"				//R31 16/08/22 new slider
 		StaticText " "
-//	Option "Set max wall decal amount (Default is 1024) =","cl_maxdecals","DecalValue"		//R28.4 ADDED
-//	Option "Set max gore amount (Default is 64) =","sv_corpsequeuesize","GoreValue"			//R29.1 ADDED
 		Slider "Set max gore amount","sv_corpsequeuesize",25,9999,100,0		//R31 16/08/22 new slider
 		textfield "input value manually","sv_corpsequeuesize"				//R31 16/08/22 new slider
 		StaticText " "
@@ -133,7 +131,6 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 	Option "Randomly replace Spectres with Nightmare Spectres =","NSpectre_Spawner_Cvar","NSpectre_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Cacodemons with Nightmare Cacodemons =","NCaco_Spawner_Cvar","NCaco_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Demons with Acid Demons =","AcidDemonRandom_Cvar","AcidDemon_Spawner_Value"	//R31 New - Split from Demons with Hellhounds
-//	Option "Randomly replace Demons with Acid Demons or Hellhounds =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Lost Souls with Stalkers =","StalkerRandom_Cvar","Stalker_Spawner_Value"	//R31 New
 	Option "Randomly replace Arachnotrons with Nightcrawlers =","NightCrawlerRandom_Cvar","NightCrawler_Spawner_Value"	//R31 New
 	Option "Randomly replace Barons with Hellhounds =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"	//R31 was YesOrNo
@@ -219,36 +216,6 @@ OptionValue "YesOrNoFalse"
 	0,"GZDoom"
 }*/
 
-/*OptionValue "DecalValue"	//R28.4 added	//R31 16/08/22 replaced with slider
-{
-	0,"None"				//R29 was "0"
-	32,"32"				//R29.1 added
-	64,"64"				//R29 added
-	128,"128"				//R29 added
-	256,"256"
-	512,"512"
-	1024,"1024"
-	2048,"2048"
-	5102,"4096"
-	8192,"8192"
-}*/
-
-/*OptionValue "GoreValue"		//R29.1 added	//R31 16/08/22 replaced with slider
-{
-	16,"16"
-	32,"32"
-	64,"64"
-	128,"128"
-	256,"256"
-	512,"512"
-	1024,"1024"
-	2048,"2048"
-	4096,"4096"
-	8192,"8192"
-	16384,"16384"
-	32768,"32768"
-}*/
-
 OptionValue "SSGinDoom1Menu"
 {
 	0,"Shotgun Only"
@@ -270,14 +237,6 @@ OptionValue "Motherdemon_Spawner_Value"
 	1,"Motherdemon Only"
 	2,"Random"
 }
-
-/*OptionValue "Hellhound_Spawner_Value"	//Acid Demon added
-{
-	0,"Demon Only"
-	1,"Acid Demon Only"
-	2,"Hellhound Only"
-	3,"Random"
-}*/
 
 OptionValue "Bruiser_Spawner_Value"
 {

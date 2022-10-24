@@ -157,7 +157,6 @@ Monster
 	Death.SuperKick:
 		TNT1 A 0 A_Jump(170,"Death.Head")
 	XDeath:
-		DKHL I 1
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -169,7 +168,7 @@ Monster
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		TNT1 AA 0 A_CustomMissile("XDeathFatsoCannon",72,0,random(0,360),2,random(10,50))
-		TNT1 A 1 A_SpawnItemEx("XDeathHKLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		DKHL I 1 A_SpawnItemEx("XDeathHKLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 0 ThrustThingZ(0,50,0,0)
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
@@ -251,10 +250,10 @@ ACTOR BruiserFlame
 {
 Translation "0:255=%[0,0,0]:[0,1,0]"
 Scale 0.3
-Damage(random(3,4))
+Damage(random(3,6))
 Speed 35
 Height 8
-Radius 42
+Radius 8
 Gravity 1.0
 Alpha 1.0
 RenderStyle Add
@@ -271,6 +270,7 @@ Decal "Scorch"
 +NODAMAGETHRUST
 -NOGRAVITY
 -BLOODSPLATTER
++RIPPER
 	States
 	{
 	Spawn:

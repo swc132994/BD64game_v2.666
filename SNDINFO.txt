@@ -433,6 +433,9 @@ BREATHOF	BREATHOF
 64Bruiser/attack		snddhbdmsl
 64Bruiser/shotx			snddhimpct
 
+//Alt Fire Plasma
+PlasFire	PlasFire
+
 //---------------------------
 //**********GORE*************
 //---------------------------

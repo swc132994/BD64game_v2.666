@@ -46,23 +46,23 @@ MONSTER
 		TNT1 A 0 A_Jump(96,"SuperAttack")
 		MOTH E 8 A_FaceTarget
 		TNT1 A 0 A_PlaySoundEx("Mother/attack","Body")
-		TNT1 A 0 bright A_CustomMissile("MotherFire",0,0,0,2,0)
-		TNT1 A 0 bright A_CustomMissile("MotherFire",0,0,90,2,0)
-		TNT1 A 0 bright A_CustomMissile("MotherFire",0,0,-90,2,0)
+		TNT1 A 0 A_CustomMissile("MotherFire",0,0,0,2,0)
+		TNT1 A 0 A_CustomMissile("MotherFire",0,0,90,2,0)
+		TNT1 A 0 A_CustomMissile("MotherFire",0,0,-90,2,0)
 		MOTH G 14 bright A_CustomMissile("MotherFire",0,0,180,2,0)
 		MOTH E 8 A_FaceTarget
-		TNT1 A 0 bright A_CustomMissile("MotherBall",160,-24,90)	//R31 revised
-		TNT1 A 0 bright A_CustomMissile("MotherBall",80,-48,90)		//R31 revised
-		TNT1 A 0 bright A_CustomMissile("MotherBall",160,24,-90)	//R31 revised
+		TNT1 A 0 A_CustomMissile("MotherBall",160,-24,90)	//R31 revised
+		TNT1 A 0 A_CustomMissile("MotherBall",80,-48,90)		//R31 revised
+		TNT1 A 0 A_CustomMissile("MotherBall",160,24,-90)	//R31 revised
 		MOTH F 14 bright A_CustomMissile("MotherBall",80,48,-90)	//R31 revised
 		MOTH E 8
 		goto See
 	SuperAttack:
 		MOTH E 8 A_FaceTarget
 		TNT1 A 0 A_PlaySoundEx("Mother/attack","Body")
-		TNT1 A 0 bright A_CustomMissile("SuperMotherBall",100)
+		TNT1 A 0 A_CustomMissile("SuperMotherBall",100)
 		MOTH E 8 A_FaceTarget
-		MOTH F 8
+		MOTH F 8 bright
 		MOTH E 8
 		goto See
 	Heal:	//R31 added
@@ -79,7 +79,7 @@ MONSTER
 		Goto See
 	Death:
 		MOTH I 10
-		MOTH I 0 A_Scream
+		TNT1 A 0 A_Scream
 		MOTH I 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
 		MOTH I 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
 		MOTH I 4 A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
@@ -104,25 +104,25 @@ MONSTER
 		MOTH K 4 A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
 		MOTH K 4 A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
-		TNT1 AAaaa 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))	//R30.9 added
-		TNT1 AAaaa 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))	//R30.9 added
-		TNT1 AAaaa 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))	//R30.9 added
+		TNT1 AAAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))	//R30.9 added
+		TNT1 AAAAA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))	//R30.9 added
+		TNT1 AAAAA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))	//R30.9 added
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,32)
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,90)
 		TNT1 AAAAAAAAA 0 A_CustomMissile("BurningXDeath1",42,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
 		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("SuperGoreSpawner",45,0,random(0,360),2,random(10,90))
-		MOTH L 0 A_NoBlocking
-		TNT1 AAAaaaaaa 0 A_CustomMissile("Brutal_Blood",75,0,random(0,360),2,random(0,90))	//R30.9 added
+		TNT1 A 0 A_NoBlocking
+		TNT1 AAAAAAAAA 0 A_CustomMissile("Brutal_Blood",75,0,random(0,360),2,random(0,90))	//R30.9 added
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))			//R30.9 added
 		MOTH L 3 A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
 		MOTH L 3 A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
 		MOTH MNO 3
 		TNT1 A 30
 		TNT1 A 0 A_BossDeath
-			TNT1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
-		TNT1 A 20// A_BrainDie								//R26.2 disabled braindie
+		TNT1 A 0 A_KillMaster("None")	//08-08-22 tag 666 fix
+		TNT1 A 20// A_BrainDie		//R26.2 disabled braindie
 		stop
 	}
 }
@@ -181,28 +181,28 @@ RenderStyle translucent
 	Spawn:
 		MPUF A 5 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		tnt1 a 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
 		MPUF A 5 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		tnt1 a 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
 		MPUF A 5 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		tnt1 a 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
 		MPUF A 5 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		tnt1 a 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
 		MPUF A 5 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		tnt1 a 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
 		MPUF A 5 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		tnt1 a 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
 		MPUF A 5 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		tnt1 a 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
 		MPUF A 5 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		tnt1 a 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
 		Stop
 	}
 }
@@ -226,7 +226,7 @@ Projectile
 		Loop
 	Death:
 		TNT1 AAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
-		tnt1 a 0 A_SpawnItemEx("DetectFloorCratermed",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)			//R30.10 added
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCratermed",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)			//R30.10 added
 //		TNT1 AAAAAA 0 A_CustomMissile("ExplosionParticleFast",0,0,random(0,360),2,random(0,180))	//R11 unused
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion")
 		TNT1 A 0 A_Explode(200,200,1)

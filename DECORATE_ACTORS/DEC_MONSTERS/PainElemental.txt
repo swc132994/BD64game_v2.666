@@ -34,7 +34,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 	Missile:
 		PAIN BB 6 A_FaceTarget
 		PAIN C 6 bright A_FaceTarget
-		TNT1 A 0 bright A_DualPainAttack
+		TNT1 A 0 A_DualPainAttack
 		goto See
 	Pain:
 		PAIN D 6
