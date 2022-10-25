@@ -172,6 +172,22 @@ object 64PlasmaBall
 	frame PLSEF {light PLASMA_X5}
 }
 
+object PlasmaFlame
+{
+	frame PLSEA {light PLASMA_X1}
+	frame PLSEG {light PLASMA_X1}
+	frame PLSEB {light PLASMA_X2}
+	frame PLSEH {light PLASMA_X2}
+	frame PLSEC {light PLASMA_X2}
+	frame PLSEI {light PLASMA_X2}
+	frame PLSED {light PLASMA_X3}
+	frame PLSEJ {light PLASMA_X3}
+	frame PLSEE {light PLASMA_X4}
+	frame PLSEK {light PLASMA_X4}
+	frame PLSEF {light PLASMA_X5}
+	frame PLSEL {light PLASMA_X5}
+}
+
 object 64ArachnotronPlasma
 {
 	frame PLSSA {light PLASMABALL}
