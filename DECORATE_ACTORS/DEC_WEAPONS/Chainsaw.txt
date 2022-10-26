@@ -1,5 +1,5 @@
 //R5 added CHAINSAW FOR CLASSICAL MODE
-ACTOR ChainsawSpawner : CustomInventory Replaces Chainsaw
+Actor ChainsawSpawner : CustomInventory Replaces Chainsaw
 {
 Scale 0.82
 //+INVENTORY.ALWAYSPICKUP		//R5 removed
@@ -38,34 +38,14 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 +INVENTORY.RESTRICTABSOLUTELY													//R12.1 added
 	States
 	{
-	KickingFlash:	//r31 new kick animations
-		TNT1 A 0 A_PlaySound("weapons/sawidle",5)
-		SAWS ABCD 1
-		SAWS D 8
-		SAWS DCBA 1
-		stop
-	AirKickingFlash:
-		TNT1 A 0 A_PlaySound("weapons/sawidle",5)
-		SAWS ABCD 1
-		SAWS D 10
-		SAWS DCBA 1
-		stop
-	SlideKickingStart:
-		TNT1 A 0 A_PlaySound("weapons/sawidle",5)
-		SAWS ABCD 1
-		SAWS D 18
-	SlideKickingEnd:
-		SAWS DCBA 1
-		stop
 	Spawn:		//R21 added
 		CSAW A -1
 		Stop
 	Select:
 		TNT1 A 0 A_PlaySoundEx("weapons/sawup",SOUNDSLOT7,0)
 		SAWG C 1 A_Raise
-		wait
+		Wait
 	Ready:
-//		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		SAWG CD 5 A_WeaponReady
 		TNT1 A 0 A_PlaySound("weapons/sawidle",5)					//R31 02.08.22 added
 		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 added
@@ -75,31 +55,19 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 //		TNT1 A 0 A_PlaySound("weapons/chainsaw/start",3)	//R11.3 removed
 		SAWG HI 1
 	Hold:
-//		TNT1 A 0 A_JumpIfInventory("IsModern",1,"ModernHold")
 		TNT1 A 0 A_PlaySound("weapons/chainsaw/loop",1)
 		SAWG ABEF 2 A_FireCustomMissile("SawDamage",0,0,0,0)
 		TNT1 A 0 A_ReFire
-		TNT1 A 0 A_Playsound("weapons/chainsaw/stop",3)
+		TNT1 A 0 A_Playsound("weapons/chainsaw/Stop",3)
 		SAWG IH 1
 		Goto Ready
-/*	ModernHold:
-		TNT1 A 0 A_PlaySound("weapons/chainsaw/loop",1)
-		SAWG A 1 A_FireCustomMissile("SawDamage",10,1,0,0)
-		SAWG BBB 1 A_FireCustomMissile("SawDamage",-10,0,0,0)	//R26.1 added BB
-		SAWG EEE 1 A_FireCustomMissile("SawDamage",10,0,0,0)	//R26.1 added EE
-		SAWG FFF 1 A_FireCustomMissile("SawDamage",-10,0,0,0)	//R26.1 added FF
-		TNT1 A 0 A_ReFire
-		TNT1 A 0 A_Playsound("weapons/chainsaw/stop",3)
-		TNT1 A 0 A_Playsound("weapons/chainsaw/stop",1)
-		SAWG IH 1
-		Goto Ready*/
 	Deselect:				//R5 added
 		SAWG C 1 A_Lower	//R5 added
 		Wait				//R5 added
 	}
 }
 
-ACTOR SawDamage : FastProjectile
+Actor SawDamage : FastProjectile
 {
 Damage(random(5,6))			//R9 added
 DamageType Chainsaw			//R8.1 added
@@ -109,7 +77,6 @@ Height 2					//R8.1 added
 Alpha 0.6
 RenderStyle Add
 Decal "SawVertical"			//R9 added	//R28.2 WAS BULLETDECALNEW1
-//HitObituary "$OB_IMPHIT"
 SeeSound "none"
 DeathSound "none"
 Obituary "$OB_MPCHAINSAW"	//r30.10 added
@@ -159,20 +126,20 @@ Tag "$TAG_CHAINSAW"
 		SAWS ABCD 1
 		SAWS D 8
 		SAWS DCBA 1
-		stop
+		Stop
 	AirKickingFlash:
 		TNT1 A 0 A_PlaySound("weapons/sawidle",5)
 		SAWS ABCD 1
 		SAWS D 10
 		SAWS DCBA 1
-		stop
+		Stop
 	SlideKickingStart:
 		TNT1 A 0 A_PlaySound("weapons/sawidle",5)
 		SAWS ABCD 1
 		SAWS D 18
 	SlideKickingEnd:
 		SAWS DCBA 1
-		stop
+		Stop
 	Spawn:
 		CSAW A -1
 		Stop
@@ -182,11 +149,11 @@ Tag "$TAG_CHAINSAW"
 	Select:
 		TNT1 A 0 A_JumpIfInventory("SawGas",1,"SELECT2")
 		SAWG C 1 A_Raise
-		WAIT
+		Wait
 	Select2:
 		TNT1 A 0 A_PlaySoundEx("weapons/sawup",SOUNDSLOT7,0)
 		SAWG C 1 A_Raise
-		WAIT
+		Wait
 /*	SelectAnimation:		//r31 new select animstion
 		SAWS ABCD 1*/
 	v1Ready:
@@ -215,14 +182,14 @@ Tag "$TAG_CHAINSAW"
 		SAWG EEE 1 A_FireCustomMissile("SawDamage",10,0,0,0)	//R26.1 added EE
 		SAWG FFF 1 A_FireCustomMissile("SawDamage",-10,0,0,0)	//R26.1 added FF
 		TNT1 A 0 A_ReFire
-		TNT1 A 0 A_Playsound("weapons/chainsaw/stop",3)
-		TNT1 A 0 A_Playsound("weapons/chainsaw/stop",1)
+		TNT1 A 0 A_Playsound("weapons/chainsaw/Stop",3)
+		TNT1 A 0 A_Playsound("weapons/chainsaw/Stop",1)
 		SAWG IH 1
 		Goto Ready
 	}
 }
 
-ACTOR SawGas : Ammo
+Actor SawGas : Ammo
 {
 Game Doom
 SpawnID 11
@@ -262,13 +229,13 @@ Tag "$TAG_CHAINSAW"			//R11 added
 		SAWS ABCD 1
 		SAWS D 8
 		SAWS DCBA 1
-		stop
+		Stop
 	AirKickingFlash:
 		TNT1 A 0 A_PlaySound("weapons/sawidle",5)
 		SAWS ABCD 1
 		SAWS D 10
 		SAWS DCBA 1
-		stop
+		Stop
 	SlideKickingStart:
 		TNT1 A 0 A_PlaySound("weapons/sawidle",5)
 		SAWS ABCD 1
@@ -276,14 +243,14 @@ Tag "$TAG_CHAINSAW"			//R11 added
 	SlideKickingEnd:
 		SAWS D 6
 		SAWS DCBA 1
-		stop
+		Stop
 	Spawn:		//R21 added
 		CSAW A -1
 		Stop
 	Select:
 		TNT1 A 0 A_PlaySoundEx("weapons/sawup",SOUNDSLOT7,0)
 		SAWG C 1 A_Raise
-		wait
+		Wait
 	v1Ready:
 	Ready:
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
@@ -302,8 +269,8 @@ Tag "$TAG_CHAINSAW"			//R11 added
 		SAWG EEE 1 A_FireCustomMissile("SawDamage",10,0,0,0)	//R26.1 added EE
 		SAWG FFF 1 A_FireCustomMissile("SawDamage",-10,0,0,0)	//R26.1 added FF
 		TNT1 A 0 A_ReFire
-		TNT1 A 0 A_Playsound("weapons/chainsaw/stop",3)
-		TNT1 A 0 A_Playsound("weapons/chainsaw/stop",1)
+		TNT1 A 0 A_Playsound("weapons/chainsaw/Stop",3)
+		TNT1 A 0 A_Playsound("weapons/chainsaw/Stop",1)
 		SAWG IH 1
 		Goto Ready
 	Deselect:				//R5 added

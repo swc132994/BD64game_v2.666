@@ -1,15 +1,15 @@
 //R31 ADDED EXTR DEATHS
-actor 64Fatso : Fatso Replaces Fatso
+Actor 64Fatso : Fatso Replaces Fatso
 {
 Scale 0.8
 Speed 6		//R16 WAS 4
-Painchance "SuperFists",200
-Painchance "Kick",255
-Painchance "SuperKick",255
+PainChance "SuperFists",200
+PainChance "Kick",255
+PainChance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Dropitem "SawGas"
-DROPITEM "DemonEssenceSpawner"		//R31 added
+Dropitem "DemonEssenceSpawner"		//R31 added
 +DONTHARMSPECIES	//R31 WAS DONTHURTSPECIES
 	States
 	{
@@ -27,23 +27,23 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		Goto Spawn
 	Missile:
 		FATT H 20 A_FatRaise
-		FATT G 10 bright
+		FATT G 10 Bright
 		TNT1 A 0 A_CustomMissile("FatShot",48,-25,0)
 		TNT1 A 0 A_CustomMissile("FatShot",48,25,-15)
 		FATT HH 5 A_FaceTarget
-		FATT G 10 bright
+		FATT G 10 Bright
 		TNT1 A 0 A_CustomMissile("FatShot",48,-25,15)
 		TNT1 A 0 A_CustomMissile("FatShot",48,25,0)
 		FATT HH 5 A_FaceTarget
-		FATT G 10 bright
+		FATT G 10 Bright
 		TNT1 A 0 A_CustomMissile("FatShot",48,-25,7)
 		TNT1 A 0 A_CustomMissile("FatShot",48,25,-7)
 		FATT HH 5 A_FaceTarget
-		goto See
+		Goto See
 	Pain:
 		FATT I 3
 		FATT I 3 A_Pain
-		goto See
+		Goto See
 	Pain.Vertigo:
 		TNT1 A 0 ThrustThingZ(0,55,0,0)
 		FATT I 3
@@ -66,14 +66,14 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		TNT1 A 0 A_SpawnItem("GrowingBloodPoolbig")		//r30.9 added
 		TNT1 A 0 A_KillMaster("None")
 		FATT N -1 A_BossDeath
-		stop
+		Stop
 	Death.Shotgun:		//R31 extra
-		TNT1 A 0 A_Jump(85,"Death")
+		TNT1 A 0 A_Jump(128,"Death")
 		FATT I 1 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.SSG:			//R31 extra
 		FATT I 1 A_JumpIFCloser(200,"Xdeath")
-		TNT1 A 0 A_Jump(85,"Death")
+		TNT1 A 0 A_Jump(128,"Death")
 		FATT I 1 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.Cut:
@@ -118,7 +118,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		TNT1 A 0 A_SpawnItem("GrowingBloodPoolbig")		//r30.9 added
 		TNT1 A 0 A_KillMaster("None")
 		FTX1 D -1 A_BossDeath
-		stop
+		Stop
 	Xdeath2:
 		FTX2 A 6 A_XScream
 		FTX2 B 6 A_NoBlocking
@@ -126,11 +126,11 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		TNT1 A 0 A_SpawnItem("GrowingBloodPoolbig")		//r30.9 added
 		TNT1 A 0 A_KillMaster("None")
 		FTX2 D -1 A_BossDeath
-		stop
+		Stop
 	Death.Plasma:				//R25.2 added
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_STOP
+		TNT1 A 0 A_Stop
 		CRB1 A 1
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmall",35,0,random(0,360),2,random(0,90))
@@ -149,7 +149,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		Stop
 	Raise:
 		FATT ONMLKJ 5
-		goto See
+		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
 		POL5 A -1
@@ -157,32 +157,32 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 	}
 }
 
-actor 64StealthFatso : 64Fatso Replaces StealthFatso
+Actor 64StealthFatso : 64Fatso Replaces StealthFatso
 {
 +STEALTH
 }
 
-actor 64FatShot : FatShot Replaces FatShot
+Actor 64FatShot : FatShot Replaces FatShot
 {
-scale 0.8
-damage 7
-speed 20
-renderstyle normal
+Scale 0.8
+Damage 7
+Speed 20
+RenderStyle Normal
 Decal "MedScorch"	//R28.3 added
 +EXTREMEDEATH		//R31 added
 	States
 	{
 	Spawn:
-		MTB1 A 2 bright A_SpawnItem("YellowFlare")
+		MTB1 A 2 Bright A_SpawnItem("YellowFlare")
 		TNT1 A 0 A_SpawnItem("MancubusFireTrailparticle")
 		TNT1 A 0 A_SpawnItem("OldschoolRocketSmokeTrail2")
-		MTB1 B 2 bright A_SpawnItem("YellowFlare")
+		MTB1 B 2 Bright A_SpawnItem("YellowFlare")
 		TNT1 A 0 A_SpawnItem("MancubusFireTrailparticle")
 		TNT1 A 0 A_SpawnItem("OldschoolRocketSmokeTrail2")
-		MTB1 C 2 bright A_SpawnItem("YellowFlare")
+		MTB1 C 2 Bright A_SpawnItem("YellowFlare")
 		TNT1 A 0 A_SpawnItem("MancubusFireTrailparticle")
 		TNT1 A 0 A_SpawnItem("OldschoolRocketSmokeTrail2")
-		loop
+		Loop
 	Death:
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
@@ -198,15 +198,15 @@ Decal "MedScorch"	//R28.3 added
 		TNT1 A 0 A_Explode(10,100)
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		MANF DEFGHI 2	//R31 added frames
-		stop
+		Stop
 	}
 }
 
-actor MancubusFireTrailparticle
+Actor MancubusFireTrailparticle
 {
-scale 0.8
+Scale 0.8
 Alpha 0.9
-Renderstyle Add
+RenderStyle Add
 +FORCEXYBILLBOARD
 +NOINTERACTION
 +CLIENTSIDEONLY
@@ -214,12 +214,12 @@ Renderstyle Add
 	{
 	Spawn:
 		TNT1 A 2
-		MTB2 ABCA 1 BRIGHT
+		MTB2 ABCA 1 Bright
 		Stop
 	}
 }
 
-actor Brutalized64Fatso : 64Fatso		//R31 extra
+Actor Brutalized64Fatso : 64Fatso		//R31 extra
 {
 Health 175
 DamageFactor "CauseWaterSplash",0.0
@@ -270,7 +270,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		FTNG B 8
 	Death:
-		TNT1 A 0 A_DIE
+		TNT1 A 0 A_Die
 		TNT1 A 0 A_CustomMissile("XDeath2b",72,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",72,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("SmallBrainPiece",72,0,random(150,210),2,random(10,50))
@@ -312,10 +312,10 @@ DropItem "None"
 		FTX1 C 6
 		TNT1 A 0 A_SpawnItem("GrowingBloodPoolbig")
 		FTX1 D -1 A_BossDeath
-		stop
-	raise:
+		Stop
+	Raise:
 		FATT ONMLKJ 5
 		TNT1 A 0 A_SpawnItemEx("64Fatso",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		stop
+		Stop
 	}
 }

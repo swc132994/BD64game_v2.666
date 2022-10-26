@@ -1,54 +1,54 @@
-actor 64Arachnotron : Arachnotron Replaces Arachnotron
+Actor 64Arachnotron : Arachnotron Replaces Arachnotron
 {
-scale 0.8
+Scale 0.8
 Radius 40
-speed 11
-Painchance "SuperFists",200
-Painchance "Kick",255
-Painchance "SuperKick",255
+Speed 11
+PainChance "SuperFists",200
+PainChance "Kick",255
+PainChance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 BloodType "BD64ArachnotronBlood"
-DROPITEM "DemonEssenceSpawner"		//R31 added
+DropItem "DemonEssenceSpawner"		//R31 added
 +NOBLOCKMONST
 	states
 	{
 	Spawn:
 		BSPI BA 10 A_Look
 		TNT1 A 0 A_GiveInventory("GreenArmor",1)	//R19//R20 was BlueArmor
-		loop
+		Loop
 	See:
 		BSPI A 20
 		BSPI A 2 A_BabyMetal
 		BSPI AABBBCCCDDD 2 A_Chase
-		goto See+1
+		Goto See+1
 	Missile:
 		BSPI A 20 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("ArachnotronPlasma",25,-12,2)
-		BSPI E 4 bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
-		BSPI E 3 bright A_FaceTarget
-		BSPI E 1 bright A_SpidRefire
+		BSPI E 4 Bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
+		BSPI E 3 Bright A_FaceTarget
+		BSPI E 1 Bright A_SpidRefire
 		TNT1 A 0 A_CustomMissile("ArachnotronPlasma",25,-12,2)
-		BSPI E 4 bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
-		BSPI E 3 bright A_FaceTarget
-		BSPI E 1 bright A_SpidRefire
+		BSPI E 4 Bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
+		BSPI E 3 Bright A_FaceTarget
+		BSPI E 1 Bright A_SpidRefire
 		TNT1 A 0 A_CustomMissile("ArachnotronPlasma",25,-12,2)
-		BSPI E 4 bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
-		BSPI E 3 bright A_FaceTarget
-		BSPI E 1 bright A_SpidRefire
+		BSPI E 4 Bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
+		BSPI E 3 Bright A_FaceTarget
+		BSPI E 1 Bright A_SpidRefire
 		TNT1 A 0 A_CustomMissile("ArachnotronPlasma",25,-12,2)
-		BSPI E 4 bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
-		BSPI E 3 bright A_FaceTarget
-		BSPI E 1 bright A_SpidRefire
+		BSPI E 4 Bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
+		BSPI E 3 Bright A_FaceTarget
+		BSPI E 1 Bright A_SpidRefire
 		TNT1 A 0 A_CustomMissile("ArachnotronPlasma",25,-12,2)
-		BSPI E 4 bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
-		BSPI E 3 bright A_FaceTarget
-		BSPI E 1 bright A_SpidRefire
-		loop
+		BSPI E 4 Bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
+		BSPI E 3 Bright A_FaceTarget
+		BSPI E 1 Bright A_SpidRefire
+		Loop
 	Pain:
 		BSPI F 3
 		BSPI F 3 A_Pain
-		goto See+1
+		Goto See+1
 	Pain.Vertigo:
 		TNT1 A 0 ThrustThingZ(0,55,0,0)
 		BSPI F 3
@@ -71,7 +71,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
 		TNT1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
 		BSPI K -1 A_BossDeath
-		stop
+		Stop
 	XDeath:
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",52,0,random(150,210),2,random(10,50))
@@ -91,11 +91,11 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		TNT1 A 0 A_CustomMissile("XDeathSpiderHead",55,0,random(0,360),2,random(40,90))
 		XSPI A 5 A_Scream
 		XSPI B 5 A_NoBlocking
-		TNT1 A 0 A_STOP
+		TNT1 A 0 A_Stop
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		TNT1 A 0 A_KillMaster("None")//,KILS_FOILINVUL)	//08-08-22 tag 666 fix
+		TNT1 A 0 A_KillMaster("None")	//08-08-22 tag 666 fix
 		XSPI C -1 A_BossDeath
-		stop
+		Stop
 	Raise:
 		BSPI KJIHG 5
 		goto See+1
@@ -106,7 +106,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 	}
 }
 
-actor 64StealthArachnotron : 64Arachnotron Replaces StealthArachnotron
+Actor 64StealthArachnotron : 64Arachnotron Replaces StealthArachnotron
 {
 +STEALTH
 }

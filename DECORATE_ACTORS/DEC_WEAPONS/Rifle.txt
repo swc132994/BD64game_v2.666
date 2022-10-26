@@ -1,4 +1,4 @@
-ACTOR RifleSpawner : CustomInventory 19120	//R31 added number
+Actor RifleSpawner : CustomInventory 19120	//R31 added number
 {
 Scale 0.82
 //+INVENTORY.ALWAYSPICKUP		//R12.1 removed
@@ -7,10 +7,10 @@ Inventory.PickupSound "WPICK"
 	States
 	{
 	Spawn:
-		ARSD A 0 nodelay A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
+		ARSD A 0 NoDelay A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFD A 0
 		"####" A 1
-		LOOP
+		Loop
 	Pickup:
 //		TNT1 A 0 A_GiveInventory("Clip",20)						//R12.1 removed
 		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
@@ -49,10 +49,10 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 	States
 	{
 	Spawn:
-		ARSD A 0 nodelay A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
+		ARSD A 0 NoDelay A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFD A 0
 		"####" A 1
-		LOOP
+		Loop
 	Ready:
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFG A 0
@@ -64,22 +64,17 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFG A 0
 		"####" A 1 A_Raise
-		WAIT
-	/*SelectAnimation:
-		ARSS A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
-		RIFS A 0
-		"####" ABCD 1
-		Goto Ready*/
+		Wait
 	Deselect:
-		ARSS D 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
-		RIFS D 0
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
+		RIFG A 0
 		"####" A 1 A_Lower
 		Wait
 	Fire:
 		TNT1 A 0 A_SetPitch(pitch-1.2)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFF A 0
-		"####" AD 1 BRIGHT		//R31 added A
+		"####" AD 1 Bright		//R31 added A
 		TNT1 A 0 A_JumpIfInventory("FiredRifle",4,"Fire4")
 		TNT1 A 0 A_JumpIfInventory("FiredRifle",3,"Fire3")
 		TNT1 A 0 A_JumpIfInventory("FiredRifle",2,"Fire2")
@@ -173,7 +168,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 	}
 }
 
-ACTOR RifleAmmo : Ammo
+Actor RifleAmmo : Ammo
 {
 Inventory.Amount 0
 Inventory.MaxAmount 31
@@ -230,10 +225,10 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		"####" EDCB 1
 		Stop
 	Spawn:
-		ARSD A 0 nodelay A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
+		ARSD A 0 NoDelay A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFD A 0
 		"####" A 1
-		LOOP
+		Loop
 	v1Ready:
 	Ready:
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
@@ -254,7 +249,6 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		Goto Ready
 	Select: //R31 Select Animation Improvement (Tactical and Modern only)
 		TNT1 A 0 A_PlaySound("RIFBOLT")
-		TNT1 A 1 A_Raise
 		TNT1 AAAAAAAAA 0 A_Raise
 		Goto SelectAnimation
 	SelectAnimation:
@@ -296,7 +290,7 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		Goto Ready
 	Deselect:
 		TNT1 A 0 A_Takeinventory("Zoomed",0)		//R31 added
-		TNT1 A 0 A_ZoomFactor(1.0)					//R31 added
+		TNT1 A 0 A_ZoomFActor(1.0)					//R31 added
 		ARSS D 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFS D 0
 		"####" DCBA 1
@@ -324,7 +318,7 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFF A 0
-		"####" AD 1 BRIGHT		//r31 added A FRAME
+		"####" AD 1 Bright		//r31 added A FRAME
 		"####" BC 1 A_SetPitch(pitch+0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
@@ -343,7 +337,7 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFF A 0
-		"####" AD 1 BRIGHT
+		"####" AD 1 Bright
 		"####" BC 1 A_SetPitch(pitch+0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
@@ -363,7 +357,7 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFF A 0
-		"####" AD 1 BRIGHT
+		"####" AD 1 Bright
 		"####" BC 1 A_SetPitch(pitch+0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
@@ -383,7 +377,7 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFF A 0
-		"####" AD 1 BRIGHT
+		"####" AD 1 Bright
 		"####" BC 1 A_SetPitch(pitch+0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
@@ -403,7 +397,7 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFF A 0
-		"####" AD 1 BRIGHT
+		"####" AD 1 Bright
 		"####" BC 1 A_SetPitch(pitch+0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
@@ -423,7 +417,7 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFF A 0
-		"####" AD 1 BRIGHT
+		"####" AD 1 Bright
 		"####" BC 1 A_SetPitch(pitch+0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
@@ -441,7 +435,7 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 	Reload:
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,"AlternativeReload")	//R31 Alternative Rifle Skin	(Alternative Reload)
 		RIFG A 1 A_WeaponReady
-		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_ZoomFActor(1.0)
 //		TNT1 A 0 A_Takeinventory("Reloading",1)
 //		TNT1 A 0 A_Takeinventory("ADSmode",1)				//R11 UNUSED
 		TNT1 A 0 A_Takeinventory("Zoomed",1)				//R11 UNUSED	//r31 activated
@@ -459,7 +453,7 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		Goto InsertBullets
 	AlternativeReload:
 		ARSG A 1 A_WeaponReady
-		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_ZoomFActor(1.0)
 //		TNT1 A 0 A_Takeinventory("Reloading",1)
 //		TNT1 A 0 A_Takeinventory("ADSmode",1)					//R11 UNUSED
 		TNT1 A 0 A_Takeinventory("Zoomed",0)					//R11 UNUSED	//r31 activated
@@ -522,7 +516,7 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 	AltFire:		//R31 added ALTFIRE AND EXTRA BELOW, EDITED BY IDDQD 1337
 		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"NoAim")
 		TNT1 A 0 A_Giveinventory("Zoomed",1)
-		TNT1 A 0 A_ZoomFactor(2.0)
+		TNT1 A 0 A_ZoomFActor(2.0)
 		ARSZ A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFZ A 0
 		"####" ABC 1
@@ -532,7 +526,7 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		RIFZ C 0
 		"####" CBA 1
 		TNT1 A 0 A_Takeinventory("Zoomed",0)
-		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_ZoomFActor(1.0)
 		Goto Ready
 	Ready2:
 		AR2G A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
@@ -555,7 +549,7 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		AR2F A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RI2F A 0
-		"####" AD 1 BRIGHT A_SetPitch(-1.0 + pitch)
+		"####" AD 1 Bright A_SetPitch(-1.0 + pitch)
 		"####" B 1
 		"####" C 1 A_SetPitch(0.5 + pitch)
 		AR2G A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
@@ -575,7 +569,7 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		AR2F A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RI2F A 0
-		"####" AD 1 BRIGHT A_SetPitch(-1.0 + pitch)
+		"####" AD 1 Bright A_SetPitch(-1.0 + pitch)
 		"####" B 1
 		"####" C 1 A_SetPitch(0.5 + pitch)
 		AR2G A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin

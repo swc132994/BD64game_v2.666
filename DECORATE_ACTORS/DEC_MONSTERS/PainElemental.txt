@@ -1,15 +1,15 @@
 Actor 64PainElemental : PainElemental Replaces PainElemental
 {
-scale 0.8
-meleedamage 8
+Scale 0.8
+MeleeDamage 8
 Speed 6																			//R16 WAS 4
-Painchance "SuperFists",255
-Painchance "Kick",255
-Painchance "SuperKick",255
+PainChance "SuperFists",255
+PainChance "Kick",255
+PainChance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-hitobituary "%o got too close to a Pain Elemental."
-DROPITEM "DemonEssenceSpawner"		//R31 ADDED
+HitObituary "%o got too close to a Pain Elemental."
+DropItem "DemonEssenceSpawner"		//R31 ADDED
 //bloodcolor "40 40 40"
 +FORCEXYBILLBOARD
 	states
@@ -17,7 +17,7 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 	Spawn:
 		PAIN AD 10 A_Look
 		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 was BlueArmor
-		loop
+		Loop
 	See:
 		PAIN AAAAAA 2 A_Chase("","")
 		PAIN A 2 A_Chase
@@ -28,29 +28,29 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		Goto Spawn
 //	Melee:
 //		PAIN BB 6 A_FaceTarget
-//		PAIN C 6 bright A_FaceTarget
-//		PAIN C 0 bright A_MeleeAttack
+//		PAIN C 6 Bright A_FaceTarget
+//		PAIN C 0 Bright A_MeleeAttack
 //		goto See
 	Missile:
 		PAIN BB 6 A_FaceTarget
-		PAIN C 6 bright A_FaceTarget
+		PAIN C 6 Bright A_FaceTarget
 		TNT1 A 0 A_DualPainAttack
-		goto See
+		Goto See
 	Pain:
 		PAIN D 6
 		PAIN D 6 A_Pain
-		goto See
+		Goto See
 	Pain.Vertigo:
 		TNT1 A 0 ThrustThingZ(0,55,0,0)
 		PAIN D 6
 		PAIN D 6 A_Pain
 		Goto See
 	Death:
-		PAIN E 4 bright
-		PAIN F 4 bright A_Scream
-		PAIN G 4 bright
-		PAIN H 4 bright
-		PAIN I 4 bright A_PainDie
+		PAIN E 4 Bright
+		PAIN F 4 Bright A_Scream
+		PAIN G 4 Bright
+		PAIN H 4 Bright
+		PAIN I 4 Bright A_PainDie
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion")
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
@@ -61,13 +61,13 @@ DROPITEM "DemonEssenceSpawner"		//R31 ADDED
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
 		TNT1 AAAAAA 0 A_CustomMissile("SuperGoreSpawner",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
-		PAIN J 4 bright
-		PAIN K 4 bright
-		PAIN L 4 bright
-		stop
+		PAIN J 4 Bright
+		PAIN K 4 Bright
+		PAIN L 4 Bright
+		Stop
 	Raise:
 		PAIN LKJIHGFE 8
-		goto See
+		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
 		POL5 A -1

@@ -1,17 +1,17 @@
 //R31 added extra deaths
-actor 64BaronOfHell : BaronOfHell Replaces BaronOfHell
+Actor 64BaronOfHell : BaronOfHell Replaces BaronOfHell
 {
-scale 0.9
-missiletype BaronBall2
-Painchance "Provoke",255
-Painchance "SuperFists",200
-Painchance "Kick",255
-Painchance "SuperKick",255
+Scale 0.9
+MissileType BaronBall2
+PainChance "Provoke",255
+PainChance "SuperFists",200
+PainChance "Kick",255
+PainChance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-DROPITEM "DemonEssenceSpawner"		//R31 added
+DropItem "DemonEssenceSpawner"		//R31 added
 //bloodcolor "8C 39 10"
-	states
+	States
 	{
 	Spawn:		//R31 extra
 		BOSS AB 10 A_Look
@@ -31,13 +31,13 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		TNT1 A 0 A_JumpIfInTargetInventory("IsDeadPLayer",1,"Stomp")
 		BOSS EF 8 A_FaceTarget
 		BOSS G 8 A_BasicAttack(10,"baron/melee","64BaronBall",32)
-		goto See
+		Goto See
 	Missile:	//R31 extra
 		TNT1 A 0 A_SpawnItem("HeadshotTarget30",25,70,0)
 		TNT1 A 0 A_JumpIfInTargetInventory("IsDeadPLayer",1,"See")
 		BOSS EF 8 A_FaceTarget
 		BOSS G 8 Bright A_BasicAttack(10,"baron/melee","64BaronBall",32)
-		goto See
+		Goto See
 	Pain.Provoke:
 		BOSS A 2
 		Goto See
@@ -55,10 +55,10 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")	//R31 added
 		TNT1 A 0 A_KillMaster("None")	//08-08-22 tag 666 fix
 		BOSS N -1 A_BossDeath
-		stop
+		Stop
 	Raise:
 		BOSS NMLKJI 8
-		goto See
+		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
 		POL5 A -1
@@ -116,21 +116,21 @@ DROPITEM "DemonEssenceSpawner"		//R31 added
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_KillMaster("None")	//08-08-22 tag 666 fix
-		TNT1 A 0 A_JUMP(128,3)						//R31 added jump
+		TNT1 A 0 A_Jump(128,3)						//R31 added jump
 		BGB1 A 2 A_ChangeFlag("THRUACTORS",1)
 		BGB1 A 2 A_CheckFloor("LANDAFTERXDEATH1")	//R31 removed 25 A frames
-		WAIT	//R31 was Goto LandAfterXDeath
+		Wait	//R31 was Goto LandAfterXDeath
 		BGB1 C 2 A_ChangeFlag("THRUACTORS",1)		//R31 added
 		BGB1 C 2 A_CheckFloor("LANDAFTERXDEATH2")	//R31 added
-		WAIT										//R31 added
+		Wait										//R31 added
 	LandAfterXDeath1:
-		BGB1 B 1 A_stop
+		BGB1 B 1 A_Stop
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
 		BGB1 B -1 A_BossDeath	//R30.2 added
 		Stop
 	LandAfterXDeath2:	//R31 added
-		BGB1 D 1 A_stop
+		BGB1 D 1 A_Stop
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
 		BGB1 D -1 A_BossDeath
@@ -168,8 +168,8 @@ YScale 0.9
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_JUMP(128,2)			//R31 flip image Horz
-		TNT1 A 0 A_SETSCALE(0-ScaleX,ScaleY)	//R31 flip image Horz
+		TNT1 A 0 NoDelay A_Jump(128,2)			//R31 flip image Horz
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//R31 flip image Horz
 		BGB3 ABC 4
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		BGB3 D -1
@@ -177,17 +177,17 @@ YScale 0.9
 	}
 }
 
-actor 64BaronBall : BaronBall
+Actor 64BaronBall : BaronBall
 {
-scale 0.8
-renderstyle Normal
+Scale 0.8
+RenderStyle Normal
 Decal "MedScorch"	//R28.3 added
-	states
+	States
 	{
 	Spawn:
-		BRNR AB 2 NoDelay BRIGHT A_CustomMissile("LensFlareProjectileOrange",-2,0)	//R31 added frame B
+		BRNR AB 2 NoDelay Bright A_CustomMissile("LensFlareProjectileOrange",-2,0)	//R31 added frame B
 		TNT1 A 0 A_CustomMissile("BaronProjectileCore",-2,0)
-		loop
+		Loop
 	Death:
 		TNT1 A 1
 		TNT1 AAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(10,70))
@@ -196,8 +196,8 @@ Decal "MedScorch"	//R28.3 added
 		TNT1 AAAA 0 A_CustomMissile("SmallFireballFireTrail",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterMed",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)			//R28.3 added
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterMed",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)			//R28.3 added
-		BRNR CDEFGH 1 BRIGHT A_SpawnItem("LensFlareTorchOrange",0,0)	//R31 fixed frames
-		stop
+		BRNR CDEFGH 1 Bright A_SpawnItem("LensFlareTorchOrange",0,0)	//R31 fixed frames
+		Stop
 	}
 }
 
@@ -205,7 +205,7 @@ Actor BaronProjectileCore
 {
 Scale 0.9
 Alpha 0.9
-Renderstyle Add
+RenderStyle Add
 +CLIENTSIDEONLY
 +THRUACTORS
 +NOBLOCKMAP
@@ -213,7 +213,7 @@ Renderstyle Add
 	States
 	{
 	Spawn:
-		BAL7 I 2 BRIGHT
+		BAL7 I 2 Bright
 		Stop
 	}
 }
