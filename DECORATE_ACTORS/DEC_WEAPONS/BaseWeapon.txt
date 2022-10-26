@@ -98,7 +98,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	//
 		Goto GetReady
 	SlideAttack:
 		TNT1 A 0 SetPlayerProperty(0,1,0)
-		tnt1 A 0 A_Takeinventory("Kicking",1)
+		TNT1 A 0 A_Takeinventory("Kicking",1)
 		TNT1 A 0 A_PlaySound("KICK")
 		TNT1 A 0 A_Recoil(-6)
 		TNT1 A 0 A_PlaySound("SlideKickStart",5)

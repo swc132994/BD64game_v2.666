@@ -314,7 +314,6 @@ Decal "Scorch"
 		TNT1 A 0 A_CustomMissile("BigBlackSmoke",0,0,random(0,360),2,random(40,160))
 		Stop
 	Death:
-		TNT1 A 0 A_Explode(4,100)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPieceGreen2",random(-25,25),random(-15,15))
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPieceGreen",random(-15,15),random(-15,15))
