@@ -4,9 +4,6 @@ Actor 64DoomImp : DoomImp Replaces DoomImp
 Scale 0.75
 Height 56
 GibHealth 15
-MeleeDamage 3
-MissileType 64ImpBall
-MeleeSound "imp/Melee"
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255
@@ -51,12 +48,14 @@ DropItem "DemonEssenceSpawner"		//R31 added
 	Melee:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",12,56,0)
 		TROO EF 8 A_FaceTarget
-		TROO G 6 A_MeleeAttack
+//		TROO G 6 A_MeleeAttack
+		TROO G 6 A_CustomMeleeAttack(3*random(1,8),"imp/melee")
 		Goto See
 	Missile:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",12,56,0)
 		TROO IJ 8 A_FaceTarget
-		TROO K 6 A_MissileAttack
+//		TROO K 6 A_MissileAttack
+		TROO K 6 Bright A_CustomMissile("64ImpBall",32)
 		Goto See
 	Pain:
 		TROO H 2
@@ -747,18 +746,15 @@ Radius 20
 Mass 100
 Speed 14
 PainChance 200
-MeleeDamage 3
 Alpha 0.6
 RenderStyle Translucent
 DamageFactor "Head",0.8
-MissileType NImpBall
 Obituary "%o was burned by a Nightmare Imp."
 HitObituary "%o was slashed by a Nightmare Imp."
 SeeSound "imp/sight"
 PainSound "imp/pain"
 DeathSound "imp/death"
 ActiveSound "imp/active"
-MeleeSound "imp/Melee"
 Tag "Nightmare Imp"		//r31 added
 	States
 	{
@@ -810,12 +806,14 @@ Tag "Nightmare Imp"		//r31 added
 	Melee:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",12,56,0)
 		TRO2 EF 8 A_FaceTarget
-		TRO2 G 6 A_MeleeAttack
+//		TRO2 G 6 A_MeleeAttack
+		TRO2 G 6 A_CustomMeleeAttack(3*random(1,8),"imp/melee")
 		Goto See
 	Missile:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",12,56,0)
 		TRO2 IJ 8 A_FaceTarget
-		TRO2 K 6 A_MissileAttack
+//		TRO2 K 6 A_MissileAttack
+		TRO2 K 6 Bright A_CustomMissile("NImpBall",32)
 		Goto See
 	Pain:
 		TRO2 H 2
@@ -1459,7 +1457,7 @@ DropItem "None"
 	}
 }
 
-Actor NimpBall
+Actor NImpBall
 {
 Height 2
 Radius 2
@@ -1504,7 +1502,7 @@ RenderStyle Translucent
 	}
 }
 
-Actor NightmareImpSprite2: NightmareImpSprite1
+Actor NightmareImpSprite2 : NightmareImpSprite1
 {
 	States
 	{
@@ -1516,7 +1514,7 @@ Actor NightmareImpSprite2: NightmareImpSprite1
 	}
 }
 
-Actor NightmareImpSprite3: NightmareImpSprite1
+Actor NightmareImpSprite3 : NightmareImpSprite1
 {
 	States
 	{
@@ -1528,7 +1526,7 @@ Actor NightmareImpSprite3: NightmareImpSprite1
 	}
 }
 
-Actor NightmareImpSprite4: NightmareImpSprite1
+Actor NightmareImpSprite4 : NightmareImpSprite1
 {
 	States
 	{

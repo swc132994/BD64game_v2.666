@@ -2,8 +2,6 @@
 Actor 64BaronOfHell : BaronOfHell Replaces BaronOfHell
 {
 Scale 0.9
-MissileType BaronBall2
-PainChance "Provoke",255
 PainChance "SuperFists",200
 PainChance "Kick",255
 PainChance "SuperKick",255
@@ -28,15 +26,17 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		Goto Spawn
 	Melee:		//R31 extra
 		TNT1 A 0 A_SpawnItem("HeadshotTarget30",25,70,0)
-		TNT1 A 0 A_JumpIfInTargetInventory("IsDeadPLayer",1,"Stomp")
+//		TNT1 A 0 A_JumpIfInTargetInventory("IsDeadPLayer",1,"Stomp")
 		BOSS EF 8 A_FaceTarget
-		BOSS G 8 A_BasicAttack(10,"baron/melee","64BaronBall",32)
+//		BOSS G 8 A_BasicAttack(10,"baron/melee","64BaronBall",32)
+		BOSS G 8 A_CustomMeleeAttack(10*random(1,8),"baron/melee")	//R31 Melee and Missile seperated
 		Goto See
 	Missile:	//R31 extra
 		TNT1 A 0 A_SpawnItem("HeadshotTarget30",25,70,0)
-		TNT1 A 0 A_JumpIfInTargetInventory("IsDeadPLayer",1,"See")
+//		TNT1 A 0 A_JumpIfInTargetInventory("IsDeadPLayer",1,"See")
 		BOSS EF 8 A_FaceTarget
-		BOSS G 8 Bright A_BasicAttack(10,"baron/melee","64BaronBall",32)
+//		BOSS G 8 Bright A_BasicAttack(10,"baron/melee","64BaronBall",32)
+		BOSS G 8 Bright A_CustomMissile("64BaronBall",32)	//R31 Melee and Missile seperated
 		Goto See
 	Pain.Provoke:
 		BOSS A 2
@@ -63,14 +63,14 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
 		POL5 A -1
 		Stop
-	Stomp:
+/*	Stomp:
 		//BOSS A 1 A_FaceTarget
 		//BOSS ABCD 4 A_Recoil(-1)
 		BRST AAAAAABBCD 3 A_faceTarget
 		BRST DDEF 3 A_FaceTarget
 		TNT1 A 0 A_BasicAttack(40,"None","64BaronBall",32)
 		BRST G 4
-		Goto See
+		Goto See*/
 	Death.SSG:
 		BOSS H 1
 		TNT1 A 0 A_FaceTarget

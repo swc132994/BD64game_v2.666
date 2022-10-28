@@ -9,7 +9,6 @@ PainChance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DropItem "DemonEssenceSpawner"		//R31 added
-MeleeSound "weapons/gswing"
 +FLOORCLIP
 +FORCEXYBILLBOARD
 +MISSILEMORE
@@ -36,15 +35,15 @@ MeleeSound "weapons/gswing"
 		HEAD D 3
 		HEAD D 3 A_Pain
 		Goto See
-	Melee:
-		HEAD EF 5 A_FaceTarget
-//		HEAD G 5 Bright A_HeadAttack		//R18 removed
-		HEAD G 5 A_BasicAttack(8,"weapons/gswing","CacodemonBall",28)	//R21 WAS "none"
+	Melee:	//R31 Melee and Missile seperated
+		HEAD XY 5 A_FaceTarget
+//		HEAD Z 5 A_BasicAttack(8,"weapons/gswing","CacodemonBall",28)	//R21 WAS "none"
+		HEAD Z 5 A_CustomMeleeAttack(8,"weapons/gswing")	//R31 Melee and Missile seperated
 		Goto See
-	Missile:
+	Missile:	//R31 Melee and Missile seperated
 		HEAD EF 5 A_FaceTarget
-//		HEAD G 5 Bright A_HeadAttack		//R18 removed
-		HEAD G 5 Bright A_BasicAttack(8,"weapons/gswing","CacodemonBall",28)	//R21 WAS "none"
+//		HEAD G 5 Bright A_BasicAttack(8,"weapons/gswing","CacodemonBall",28)	//R21 WAS "none"
+		HEAD G 5 Bright A_CustomMissile("CacodemonBall",28)	//R31 Melee and Missile seperated
 		Goto See
 	Death:
 		HEAD H 8
@@ -525,17 +524,21 @@ DropItem "DemonEssenceSpawner"	//R31 added
 		HEA2 D 3
 		HEA2 D 3 A_Pain
 		Goto See
-	Melee:
-		HEA2 EF 4 A_FaceTarget
-		HEA2 G 4 A_BasicAttack(8,"weapons/gswing","NCacoBall",28)	//R21 WAS "none"
+	Melee:	//R31 Melee and Missile seperated
+		HEA2 XY 4 A_FaceTarget
+//		HEA2 Z 4 A_BasicAttack(8,"weapons/gswing","NCacoBall",28)	//R21 WAS "none"
+		HEA2 Z 4 A_CustomMeleeAttack(8,"weapons/gswing")	//R31 Melee and Missile seperated
 		Goto see
-	Missile:		//R31 WAS 4 TICS FOR EACH
+	Missile:		//R31 WAS 4 TICS FOR EACH	//	//R31 Melee and Missile seperated
 		HEA2 EF 4 A_FaceTarget
-		HEA2 G 4 Bright A_BasicAttack(8,"weapons/gswing","NCacoBall",28)	//R21 WAS "none"
+//		HEA2 G 4 Bright A_BasicAttack(8,"weapons/gswing","NCacoBall",28)	//R21 WAS "none"
+		HEA2 G 4 Bright A_CustomMissile("NCacoBall",28)	//R31 Melee and Missile seperated
 		HEA2 EF 4 A_FaceTarget
-		HEA2 G 4 Bright A_BasicAttack(8,"weapons/gswing","NCacoBall",28)	//R21 WAS "none"
+//		HEA2 G 4 Bright A_BasicAttack(8,"weapons/gswing","NCacoBall",28)	//R21 WAS "none"
+		HEA2 G 4 Bright A_CustomMissile("NCacoBall",28)	//R31 Melee and Missile seperated
 		HEA2 EF 4 A_FaceTarget
-		HEA2 G 4 Bright A_BasicAttack(8,"weapons/gswing","NCacoBall",28)	//R21 WAS "none"
+//		HEA2 G 4 Bright A_BasicAttack(8,"weapons/gswing","NCacoBall",28)	//R21 WAS "none"
+		HEA2 G 4 Bright A_CustomMissile("NCacoBall",28)	//R31 Melee and Missile seperated
 		Goto see
 	Death:
 		HEA2 H 8
