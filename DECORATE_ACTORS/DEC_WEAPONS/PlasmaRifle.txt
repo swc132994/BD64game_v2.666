@@ -529,57 +529,58 @@ Decal "Scorch"
 	States
 	{
 	Spawn:
-		TNT1 A 2
-		PLSE A 1 Bright A_SetScale(3.0,4.0)
+		PLSE A 1 Bright
+		PLSE G 1 Bright
+		PLSE A 1 Bright
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
-		PLSE G 1 Bright A_SetScale(5.0,6.0)
+		PLSE G 1 Bright A_SetScale(2.0,3.0)
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
-		PLSE A 1 Bright A_SetScale(3.0,4.0)
-		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
-		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
-		PLSE B 1 Bright A_SetScale(2.5,3.5)
+		PLSE A 1 Bright
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
-		PLSE H 1 Bright A_SetScale(4.5,5.5)
+		PLSE B 1 Bright
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
-		PLSE B 1 Bright A_SetScale(2.5,3.5)
+		PLSE H 1 Bright A_SetScale(2.0,3.0)
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
-		PLSE C 1 Bright A_SetScale(2.0,3.0)
+		PLSE B 1 Bright
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
-		PLSE I 1 Bright A_SetScale(4.0,5.0)
+		PLSE C 1 Bright
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
-		PLSE C 1 Bright A_SetScale(2.0,3.0)
+		PLSE I 1 Bright A_SetScale(2.0,3.0)
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
-		PLSE D 1 Bright A_SetScale(1.5,2.5)
+		PLSE C 1 Bright
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
-		PLSE J 1 Bright A_SetScale(3.5,4.5)
+		PLSE D 1 Bright
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
-		PLSE D 1 Bright A_SetScale(1.5,2.5)
+		PLSE J 1 Bright A_SetScale(2.0,3.0)
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
-		PLSE E 1 Bright A_SetScale(1.0,2.0)
+		PLSE D 1 Bright
+		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
+		PLSE E 1 Bright
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
 		TNT1 A 0 A_ChangeFlag("DOOMBOUNCE",1)
 		TNT1 A 0 A_CustomMissile("ExplosionParticleHeavyBlue",0,0,random(-30,30),2,random(40,160))
-		PLSE K 1 Bright A_SetScale(3.0,4.0)
+		PLSE K 1 Bright A_SetScale(2.0,3.0)
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
 		PLSE E 1 Bright A_SetScale(1.0,2.0)
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
-		PLSE F 1 Bright A_SetScale(0.5,1.5)
+		PLSE F 1 Bright
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
-		PLSE L 1 Bright A_SetScale(2.5,3.5)
+		PLSE L 1 Bright A_SetScale(2.0,3.0)
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
 		Stop
