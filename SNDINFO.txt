@@ -74,6 +74,7 @@ weapons/casing3	dscasin3
 SSGFIRE SSGFIRE
 PISTOLF PISTOLF
 PISTOLF2 PISTOLF2
+PISTOLF3 PISTOLF3
 
 $random LSOD {LSOD1 LSOD2 LSOD3 LSOD4}
 LSOD1 LSOD1
@@ -435,6 +436,10 @@ BREATHOF	BREATHOF
 
 //Alt Fire Plasma
 PlasFire	PlasFire
+
+//Pistol Suppressor
+SILEIN SILEIN
+SILEOUT SILEOUT
 
 //---------------------------
 //**********GORE*************
