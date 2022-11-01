@@ -3,7 +3,7 @@ Actor UnmakerSpawner : CustomInventory 9901
 //+INVENTORY.ALWAYSPICKUP		//R12.1 removed
 Inventory.PickupMessage "What the !@# is this!"
 Inventory.PickupSound "WPICK"
-Spawnid 84
+SpawnID 84
 Scale 0.9
 	States
 	{
@@ -21,10 +21,8 @@ Scale 0.9
 	}
 }
 
-Actor Unmaker : DoomWeapon// 9902		//R13 added	//R31 removed 9902 (Unmaker spawner should be used)
+Actor Unmaker : DoomWeapon// 9902		//R13 added	//R31 removed ThingID
 {
-Game Doom
-// spawnid 84	//R31 moved to unmaker spawner
 Scale 0.9
 Weapon.SelectionOrder 2900
 Inventory.PickupMessage "What the !@# is this!"
@@ -147,7 +145,7 @@ Inventory.Icon "SINII0"		//R10 WAS CLIPA0	//R27 WAS D4RFL0	//r31 was UNMLA0
 ReactionTime 30				//R31
 +ALWAYSPICKUP				//R31
 Translation "Ice"
-Renderstyle Add
+RenderStyle Add
 Alpha 0.99
 	States					//r31 added spawn
 	{
@@ -173,7 +171,7 @@ Inventory.PickupSound "misc/p_pkup"
 Inventory.Icon "SINII0"
 ReactionTime 30
 +ALWAYSPICKUP
-Renderstyle Add
+RenderStyle Add
 Alpha 0.9
 	States
 	{
@@ -241,8 +239,6 @@ Height 16
 
 Actor UnmakerTACTICAL : Brutal64Weapon
 {
-Game Doom
-Spawnid 84
 Scale 0.9
 Weapon.SelectionOrder 2901			//R21 WAS 2900
 Inventory.PickupMessage "What the !@# is this!"
@@ -358,23 +354,22 @@ Tag "Unmaker"				//R11 added
 
 Actor UnmakerLaser2 : FastProjectile//9904	//R31 removed 9904
 {
-Game Doom
 Scale 1
 Radius 2
 Height 4
-speed 120
-damage 10
-Damagetype "BFG"
+Speed 120
+Damage 10
+DamageType "BFG"
 //Alpha 1
-Renderstyle Normal
+RenderStyle Normal
 Decal LaserDecal		//R28.2 added	//r31 was BULLETDECALNEW1
 SeeSound "weapons/unmaker"
-DeathSound "Null"
+DeathSound ""
 Obituary "%o was unmade by %k."
 PROJECTILE
 +RANDOMIZE
 +EXTREMEDEATH
-+FORCERadiusDMG
++FORCERADIUSDMG
 	States
 	{
 	Spawn:
@@ -433,7 +428,7 @@ PROJECTILE
 
 Actor UnmakerLaser : UnmakerLaser2
 {
-Damage(random(25,50))
+Damage(Random(25,50))
 	States
 	{
 	Spawn:
@@ -487,7 +482,7 @@ Speed 85
 Decal Scorch
 Scale 1.2
 Alpha 1
-Renderstyle Add
+RenderStyle Add
 	States
 	{
 	Spawn:
@@ -530,7 +525,6 @@ Renderstyle Add
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))	//R31 WAS 5 SPAWN Height	was 18*a
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))		//R31 WAS 5 SPAWN Height	was 9*a
 		TNT1 A 0 A_Explode(100,15,1)
-//		TNT1 AAAAA 1 A_SpawnItem("RocketFlare")
 		TNT1 AAAAA 0 A_CustomMissile("PlasmaSmoke",0,0,random(0,360),2,random(0,360))	//R31 WAS ExplosionSmokeFast22 & WAS 5 SPAWN Height
 		SHWK ABCDEFGHIJKL 1 Bright	//R31 Added frames
 		Stop
@@ -539,16 +533,13 @@ Renderstyle Add
 
 Actor UnmakerLaserTrail// 9903	//R31 removed 9903
 {
-Game Doom
 Scale 1.0	//R14 was 0.6	//r31 was 0.3
 Height 4
 Radius 2
 Speed 0
 Damage 0
 //Alpha 1
-Renderstyle Normal
-SeeSound "null"
-DeathSound "null"
+RenderStyle Normal
 PROJECTILE
 	states
 	{
@@ -565,7 +556,7 @@ Actor UnmakerLaserTrailWhite : UnmakerLaserTrail	//r31 added
 {
 Scale 0.6
 Alpha 1
-Renderstyle Add
+RenderStyle Add
 	states
 	{
 	Spawn:
