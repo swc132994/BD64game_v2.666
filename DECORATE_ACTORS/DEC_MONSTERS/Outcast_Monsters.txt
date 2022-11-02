@@ -444,7 +444,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
+		TNT1 A 0 NoDelay ThrustThingZ(0,20,0,1)
 		ACIP A 2 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
 		ACIP B 2 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
 		ACIP C 2 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
@@ -647,7 +647,7 @@ BounceSound "dart/shotx"
 	States
 	{
 	Spawn:
-		TNT1 A 0 ThrustThingZ(0,10,0,1)
+		TNT1 A 0 NoDelay ThrustThingZ(0,10,0,1)
 	Spawn2:
 		GREN AAAA 2 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		Loop
