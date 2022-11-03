@@ -30,11 +30,7 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		Loop
 	See:
 		HEHR AABBCCDD 2 A_Chase
-		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		Loop
-	Forget:
-		TNT1 A 0 A_ClearTarget
-		Goto Spawn
 	Melee:
 		HEHR E 4 A_FaceTarget
 		HEHR F 4

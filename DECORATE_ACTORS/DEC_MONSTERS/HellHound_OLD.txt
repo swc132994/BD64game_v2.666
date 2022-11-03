@@ -30,11 +30,7 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		Loop
 	See:
 		DOGG AABBCCDD 2 A_Chase
-		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		Loop
-	Forget:
-		TNT1 A 0 A_ClearTarget
-		Goto Spawn
 	Melee:
 		DOGG F 4 A_FaceTarget
 		TNT1 A 0 A_Recoil(-2)

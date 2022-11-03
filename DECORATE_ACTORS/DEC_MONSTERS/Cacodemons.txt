@@ -510,11 +510,7 @@ DropItem "DemonEssenceSpawner"	//R31 added
 		Loop
 	See:
 		HEA2 AABBCCDD 3 A_Chase("Melee","Missile",CHF_FASTCHASE)
-		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		Loop
-	Forget:
-		TNT1 A 0 A_ClearTarget
-		Goto Spawn
 	Pain:
 		HEA2 D 3
 		HEA2 D 3 A_Pain
