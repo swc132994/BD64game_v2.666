@@ -54,23 +54,28 @@ MONSTER
 		TNT1 A 0 A_CustomMissile("BruiserFlame",53,21,-15,0)
 		DKHL G 3 Bright A_CustomMissile("BruiserFlame",53,-21,15,0)
 		TNT1 A 0 A_CustomMissile("BruiserFlame",53,21,-15,0)
+		TNT1 A 0 A_FaceTarget
 		DKHL G 3 Bright A_CustomMissile("BruiserFlame",53,-21,15,0)
 		TNT1 A 0 A_CustomMissile("BruiserFlame",53,21,-15,0)
 		TNT1 A 0 A_SpawnItem("HeadshotTarget30",15,60,0)
 		DKHL G 3 Bright A_CustomMissile("BruiserFlame",53,-21,15,0)
 		TNT1 A 0 A_CustomMissile("BruiserFlame",53,21,-15,0)
+		TNT1 A 0 A_FaceTarget
 		DKHL G 3 Bright A_CustomMissile("BruiserFlame",53,-21,15,0)
 		TNT1 A 0 A_CustomMissile("BruiserFlame",53,21,-15,0)
 		DKHL G 3 Bright A_CustomMissile("BruiserFlame",53,-21,15,0)
 		TNT1 A 0 A_CustomMissile("BruiserFlame",53,21,-15,0)
+		TNT1 A 0 A_FaceTarget
 		DKHL G 3 Bright A_CustomMissile("BruiserFlame",53,-21,15,0)
 		TNT1 A 0 A_CustomMissile("BruiserFlame",53,21,-15,0)
 		DKHL G 3 Bright A_CustomMissile("BruiserFlame",53,-21,15,0)
 		TNT1 A 0 A_CustomMissile("BruiserFlame",53,21,-15,0)
+		TNT1 A 0 A_FaceTarget
 		DKHL G 3 Bright A_CustomMissile("BruiserFlame",53,-21,15,0)
 		TNT1 A 0 A_CustomMissile("BruiserFlame",53,21,-15,0)
 		DKHL G 3 Bright A_CustomMissile("BruiserFlame",53,-21,15,0)
 		TNT1 A 0 A_CustomMissile("BruiserFlame",53,21,-15,0)
+		TNT1 A 0 A_FaceTarget
 		DKHL G 3 Bright A_CustomMissile("BruiserFlame",53,-21,15,0)
 		TNT1 A 0 A_CustomMissile("BruiserFlame",53,21,-15,0)
 		DKHL G 3 Bright A_CustomMissile("BruiserFlame",53,-21,15,0)
@@ -206,12 +211,13 @@ Actor 64BruiserBall : 64BaronBallGreen
 Scale 1.2
 DamageType "BFG"
 Damage 50
--THRUACTORS
++THRUACTORS
 	states
 	{
 	Spawn:
 		BAL7 AB 1 Bright A_SpawnItem("LensFlareProjectileGreen")
 		TNT1 A 0 A_SpawnItem("BruiserFlare")
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
 		Loop
 	Death:
 		TNT1 A 1

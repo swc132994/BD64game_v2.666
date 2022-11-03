@@ -170,6 +170,8 @@ OptionMenu "BD64MapOptions" //R31 added
 		StaticText " "
 	Option "Play Vanilla Map08 =","VMapCheckCvar","YesOrNo"
 	Option "Add TC Maps to Campaign =","TCMapCheckCvar","YesOrNo"
+
+	Option "Show Opening Title Map (Restart Required) =","D64_SkipTitleMap","YesOrNoFalse"
 }
 
 OptionMenu "BrutalDoom64Item/WeaponOptions" //R31 added
