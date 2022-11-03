@@ -86,8 +86,8 @@ Player.WeaponSlot 9,"Lasergun"
 	Spawn:
 		PLAY E -1
 		Stop
-	See:
-		TNT1 A 0 A_JumpIf(CallACS("FootStepCheck")==1,"See2")	//R31 added for footstep sounds
+	See:	//0 frames rendered for player selection screen
+		PLAY A 0 A_JumpIf(CallACS("FootStepCheck")==1,"See2")	//R31 added for footstep sounds
 		PLAY ABCD 4
 		Goto Spawn
 	See2:	//R31 added for footstep sounds
@@ -520,44 +520,38 @@ Player.WeaponSlot 9,"LasergunTactical"
 		PLAY E 2
 		PLAY E 0 A_GiveInventory("Stamina",1)
 		Loop
-	See://0 frames rendered for player selection screen
-		PLAY A 1
-		PLAY A 0 A_JumpIfInventory("PowerStrength",1,"See2")	//R17 jumps to see2 if berserk
-		PLAY A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
-		PLAY A 0 ACS_NamedExecuteAlways("TacticalPlayerSlowerACS")//Makes player slower.	//r31 replaces ACS 853
-		PLAY A 5 A_GiveInventory("Stamina",1)
-		PLAY A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
-		PLAY B 5 A_GiveInventory("Stamina",1)
-		PLAY B 0 A_JumpIfInventory("IsRunning",1,"StartRun")
-		PLAY B 0 A_JumpIf(CallACS("FootStepCheck")==0,4)	//R31 added for footstep sounds
-		PLAY B 0 A_CheckFloor(2)	//R31 makes sure player is on the ground
-		PLAY B 0 A_Jump(256,2)	//R31 jumps over footstep if floor check fails
-		PLAY B 0 A_SpawnItemEx("FootStep8",0,0,40,0,0)
-		PLAY B 0 A_JumpIfInventory("IsRunning",1,"StartRun")
-		PLAY C 5 A_GiveInventory("Stamina",1)
-		PLAY C 0 A_JumpIfInventory("IsRunning",1,"StartRun")
-		PLAY D 5 A_GiveInventory("Stamina",1)
-		PLAY D 0 A_JumpIfInventory("IsRunning",1,"StartRun")
-		PLAY D 0 A_JumpIf(CallACS("FootStepCheck")==0,"Spawn")	//R31 added for footstep sounds
-		PLAY D 0 A_CheckFloor(2)	//R31 makes sure player is on the ground
-		PLAY D 0 A_Jump(256,"Spawn")	//R31 jumps over footstep if floor check fails
-		PLAY D 0 A_SpawnItemEx("FootStep8",0,0,40,0,0)
+	See:	//0 frames rendered for player selection screen. See is used for player selction animation. See2 is actually used by the player
+		PLAY A 0 A_Jump(256,"See2")
+		PLAY ABCD 4
 		Goto Spawn
-	See2:																		//R17 ADDED FASTER STAMINA REGEN IF BERSERK
+	See2:
+		PLAY A 1
 		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
 		TNT1 A 0 ACS_NamedExecuteAlways("TacticalPlayerSlowerACS")//Makes player slower.	//r31 replaces ACS 853
-		PLAY A 2 A_GiveInventory("Stamina",1)
+		PLAY A 5 A_GiveInventory("Stamina",1)
+		TNT1 A 0 A_JumpIfInventory("PowerStrength",1,2)	//give more stamina if berserk
+		TNT1 A 0 A_Jump(256,2)	//give more stamina if berserk
+		TNT1 A 0 A_GiveInventory("Stamina",1)	//give more stamina if berserk
 		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
-		PLAY B 2 A_GiveInventory("Stamina",1)
+		PLAY B 5 A_GiveInventory("Stamina",1)
+		TNT1 A 0 A_JumpIfInventory("PowerStrength",1,2)	//give more stamina if berserk
+		TNT1 A 0 A_Jump(256,2)	//give more stamina if berserk
+		TNT1 A 0 A_GiveInventory("Stamina",1)	//give more stamina if berserk
 		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
 		TNT1 A 0 A_JumpIf(CallACS("FootStepCheck")==0,4)	//R31 added for footstep sounds
 		TNT1 A 0 A_CheckFloor(2)	//R31 makes sure player is on the ground
 		TNT1 A 0 A_Jump(256,2)	//R31 jumps over footstep if floor check fails
 		TNT1 A 0 A_SpawnItemEx("FootStep8",0,0,40,0,0)
 		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
-		PLAY C 2 A_GiveInventory("Stamina",1)
+		PLAY C 5 A_GiveInventory("Stamina",1)
+		TNT1 A 0 A_JumpIfInventory("PowerStrength",1,2)	//give more stamina if berserk
+		TNT1 A 0 A_Jump(256,2)	//give more stamina if berserk
+		TNT1 A 0 A_GiveInventory("Stamina",1)	//give more stamina if berserk
 		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
-		PLAY D 2 A_GiveInventory("Stamina",1)
+		PLAY D 5 A_GiveInventory("Stamina",1)
+		TNT1 A 0 A_JumpIfInventory("PowerStrength",1,2)	//give more stamina if berserk
+		TNT1 A 0 A_Jump(256,2)	//give more stamina if berserk
+		TNT1 A 0 A_GiveInventory("Stamina",1)	//give more stamina if berserk
 		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
 		TNT1 A 0 A_JumpIf(CallACS("FootStepCheck")==0,"Spawn")	//R31 added for footstep sounds
 		TNT1 A 0 A_CheckFloor(2)	//R31 makes sure player is on the ground
@@ -820,8 +814,8 @@ Player.WeaponSlot 9,"LasergunTactical"
 	Spawn:
 		PLAY E -1
 		Stop
-	See:
-		TNT1 A 0 A_JumpIf(CallACS("FootStepCheck")==1,"See2")	//R31 added for footstep sounds
+	See:	//0 frames rendered for player selection screen
+		PLAY A 0 A_JumpIf(CallACS("FootStepCheck")==1,"See2")	//R31 added for footstep sounds
 		PLAY ABCD 4
 		Goto Spawn
 	See2:	//R31 added for footstep sounds
