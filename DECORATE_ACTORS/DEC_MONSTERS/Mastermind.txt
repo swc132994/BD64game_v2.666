@@ -14,6 +14,7 @@ MeleeRange 100		//r31 24/08/22 added
 DropItem "DemonEssenceLargeSpawner"		//R31 added
 DropItem "Soulsphere",32				//R31 added
 +EXTREMEDEATH	//r31 24/08/22 added
++MISSILEEVENMORE
 	States
 	{
 	Spawn:
@@ -163,11 +164,11 @@ DropItem "Soulsphere",32				//R31 added
 		"####" I 4 A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
 		"####" JKL 5
 		"####" A 0 A_JumpIf(CallACS("AlternativeMasterMindSkin")==true,"AltDeath")	//R31 Alternative mastermind Skin
-		"####" yz 5
+		"####" YZ 5
 		"####" A 0 A_BossDeath
 		"####" A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))	//R30.9 added
 		"####" A 0 A_KillMaster("None")	//08-08-22 tag 666 fix
-		"####" z -1
+		"####" Z -1
 		Stop
 	AltDeath:
 		TNT1 A 0 A_BossDeath
@@ -185,10 +186,11 @@ DropItem "Soulsphere",32				//R31 added
 ACTOR MasterMindProjectile : EnemyProjectile	//R31 added
 {
 Scale 0.1
-Damage(random(8,12))
+Damage(random(3,4))
 Speed 50
 FastSpeed 60
 +EXTREMEDEATH
++RIPPER
 	States
 	{
 	Spawn:
