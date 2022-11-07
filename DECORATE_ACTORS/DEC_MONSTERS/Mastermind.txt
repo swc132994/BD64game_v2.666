@@ -189,6 +189,7 @@ Damage(random(8,12))
 Speed 50
 FastSpeed 60
 +EXTREMEDEATH
++RIPPER
 	States
 	{
 	Spawn:
