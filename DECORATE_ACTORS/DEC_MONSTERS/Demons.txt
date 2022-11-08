@@ -856,6 +856,7 @@ Alpha 0.2
 RenderStyle Translucent
 +NOBLOCKMAP
 +CLIENTSIDEONLY
++ISMONSTER		//R30.7 added INFRARED
 	States
 	{
 	Spawn:
@@ -1345,6 +1346,7 @@ Alpha 0.2
 RenderStyle Translucent
 +NOBLOCKMAP
 +CLIENTSIDEONLY
++ISMONSTER		//R30.7 added INFRARED
 	States
 	{
 	Spawn:

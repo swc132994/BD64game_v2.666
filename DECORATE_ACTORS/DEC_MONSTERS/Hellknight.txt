@@ -165,6 +165,7 @@ Scale 0.8
 +NOBLOCKMAP
 +FLOORCLIP
 +ISMONSTER		//R30.7 added INFRARED
++MOVEWITHSECTOR	//R31 added
 	States
 	{
 	Spawn:

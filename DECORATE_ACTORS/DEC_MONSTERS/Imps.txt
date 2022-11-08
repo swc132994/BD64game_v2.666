@@ -1492,6 +1492,7 @@ Alpha 0.08
 RenderStyle Translucent
 +NOBLOCKMAP
 +CLIENTSIDEONLY
++ISMONSTER		//R31 added for INFRARED
 	States
 	{
 	Spawn:

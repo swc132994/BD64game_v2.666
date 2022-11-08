@@ -181,7 +181,7 @@ Tag "Laser Gun"			//R11 ADDED TAG
 		"####" A 2
 		Goto Ready
 	AltFire:		//R31 ADDED ALTFIRE, Improvement animation
-		TNT1 A 0 A_jumpifinventory("CELL",20,2)
+		TNT1 A 0 A_jumpifinventory("CELL",15,2)
 		TNT1 A 0 A_Print("Not Enough Ammo!",1)
 		Goto Ready
 		TNT1 A 0 A_GiveInventory("HasPlasmaWeapon",1)
@@ -208,7 +208,7 @@ Tag "Laser Gun"			//R11 ADDED TAG
 	AltHold:
 		HDLZ A 0 A_JumpIf(CallACS("AlternativeLaserSkin")==true,2)	//R31 Alternative Laser Skin
 		LAZF A 0
-		"####" A 0 A_jumpifinventory("CELL",20,2)
+		"####" A 0 A_jumpifinventory("CELL",15,2)
 		"####" A 0 A_Print("Not Enough Ammo!",1)
 		Goto Ready
 		"####" A 1 Bright Offset(0,32)
@@ -230,7 +230,7 @@ Tag "Laser Gun"			//R11 ADDED TAG
 		"####" A 0 A_ZoomFactor(0.9)
 		"####" A 1 Bright offset(0,40)
 		TNT1 A 0 A_FireCustomMissile("EnergyBlast",0,0,0,-3,0,0)
-		TNT1 A 0 A_TakeInventory("CELL",20)		//R31 fixed 19 to 20
+		TNT1 A 0 A_TakeInventory("CELL",15)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_FireCustomMissile("LaserTrail",0,0,0,0,0,0)
 		HDLl A 0 A_JumpIf(CallACS("AlternativeLaserSkin")==true,2)	//R31 Alternative Laser Skin

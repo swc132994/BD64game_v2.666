@@ -256,7 +256,7 @@ Actor BruiserFlame
 {
 Translation "0:255=%[0,0,0]:[0,1,0]"
 Scale 0.3
-Damage(random(4,7))
+Damage(random(5,6))
 Speed 35
 Height 8
 Radius 8

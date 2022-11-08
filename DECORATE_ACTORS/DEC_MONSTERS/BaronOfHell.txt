@@ -165,6 +165,7 @@ YScale 0.9
 +NOBLOCKMAP
 +FLOORCLIP
 +ISMONSTER	//R30.7 added for infrared
++MOVEWITHSECTOR	//R31 added
 	States
 	{
 	Spawn:
