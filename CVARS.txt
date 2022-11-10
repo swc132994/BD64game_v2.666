@@ -389,3 +389,8 @@ script "BruiserRandom_ACS" (void)	//R31 added
 {
 SetResultValue(GetCVar("BruiserRandom_Cvar"));
 }
+
+script "PainStalkerRandomACS" (void)	//R31 added
+{
+SetResultValue(GetCVar("PainStalkerRandom_Cvar"));
+}

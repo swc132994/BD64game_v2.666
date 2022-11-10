@@ -40,4 +40,5 @@ server int NightCrawlerRandom_Cvar = 0;		//R31 NIGHTCRAWLER REPLACES ARACHNOTRON
 server int FootStepCheckCvar = 1;			//R31 FOOTSTEP SOUNDS
 server int CensoredHealing_Cvar = 0;		//R31 CENSORED HEALING SPRITES
 server int BruiserRandom_Cvar = 0;			//R31 BRUISER REPLACES MANCUBUS
+server int PainStalkerRandom_Cvar = 0;		//R31 ALLOW PAIN ELEMENTALS TO RANDOM SPLIT STALKERS
 server int D64_SkipTitleMap = 0;			//used for skipping title map

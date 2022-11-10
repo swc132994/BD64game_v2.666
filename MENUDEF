@@ -159,6 +159,10 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 		StaticText "Option to switch to alternative skin for the Spider Mastermind",1
 		StaticText " "
 	Option "Alternative Spider Mastermind Skin =","AlternativeMasterMindSkinCvar","YesOrNo"
+		StaticText " "
+		StaticText "Option to allow pain elementals to randomly spit stalkers",1
+		StaticText " "
+	Option "Allow Pain Elemental Stalker attack =","PainStalkerRandom_Cvar","YesOrNo"
 }
 
 OptionMenu "BD64MapOptions" //R31 added
