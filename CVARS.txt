@@ -26,13 +26,13 @@ script "KickKeyPress" (VOID) NET		//TRIGGERED FROM KEYPRESS		//r31 was 301
 	}																			//R28
 	else																		//R8
 	{																			//R8
-	if(CheckInventory("stamina") < 1)											//R8
+	if(CheckInventory("stamina") == 100)										//R8
 		{																		//R8
 		terminate;																//R8
 		}																		//R8
 	else
 		{
-		if(CheckInventory("Stamina") < 20)
+		if(CheckInventory("Stamina") > 80)
 			{
 			Print(s:"Not enough stamina!");
 			PlaySound(0,"Tired",2,1.0,FALSE,ATTN_NORM);
@@ -45,25 +45,6 @@ script "KickKeyPress" (VOID) NET		//TRIGGERED FROM KEYPRESS		//r31 was 301
 		}
 	}
 }
-
-/*script "CheckCrouch" ENTER
-{
-int buttons2;
-
-while (TRUE)
-	{
-	buttons2 = GetPlayerInput(-1, INPUT_BUTTONS);
-
-		if (buttons2 & BT_CROUCH)
-		{
-			GiveInventory("IsCrouching", 1);
-			delay(1);
-			restart;
-		}
-	TakeInventory("IsCrouching", 1);
-	delay(4);
-	}
-}*/
 
 #libdefine PLAYER_VIEWHEIGHT 50		//BD64 default player height
 script "CheckIfCrouching"(void)		// New check for crouching
@@ -187,15 +168,6 @@ delay (1);
 }
 
 //V2.5 SCRIPTS BELOW
-script "MapStartStamina" ENTER													//R28	//R31 WAS 17000
-{
-if(CheckInventory("IsTacticalClass") > 0)
-	{
-	GiveInventory("Stamina",100);
-	terminate;
-	}
-}
-
 script "VanillaMapChecker" ENTER												//R31 GIVES DUMMY ITEM ON MAP07 TO EXIT TO VANILLA MAP08
 {
 if	(GetCvar("VMapCheckCvar") == 0) {TakeInventory("VMapCheck",1);}
@@ -390,7 +362,7 @@ script "BruiserRandom_ACS" (void)	//R31 added
 SetResultValue(GetCVar("BruiserRandom_Cvar"));
 }
 
-script "PainStalkerRandomACS" (void)	//R31 added
+script "PainStalkerRandomACS" (void)	//R31 added for pain elemantal stalker attack
 {
 SetResultValue(GetCVar("PainStalkerRandom_Cvar"));
 }

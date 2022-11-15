@@ -48,8 +48,6 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 	Ready:
 		SAWG ABCD 3 A_WeaponReady
 		TNT1 A 0 A_PlaySound("weapons/sawidle",5)					//R31 02.08.22 added
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 added
-		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 added
 		Loop
 	Fire:
 //		TNT1 A 0 A_PlaySound("weapons/chainsaw/start",3)	//R11.3 removed
@@ -197,8 +195,6 @@ Tag "$TAG_CHAINSAW"
 		SAWG AB 3 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_PlaySound("weapons/sawidle",5)
 		SAWG CD 3 A_WeaponReady(WRF_ALLOWRELOAD)
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 added
-		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 added
 		Loop
 	NotReady:
 		SAWG A 5 A_WeaponReady
@@ -409,8 +405,6 @@ Tag "$TAG_CHAINSAW"			//R11 added
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		SAWG ABCD 3 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_PlaySound("weapons/sawidle",5)					//R31 02.08.22 added
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")		//R28.2 added
-		TNT1 A 0 A_TakeInventory("Stamina",0)						//R28.2 added
 		Loop
 	Fire:
 //		TNT1 A 0 A_PlaySound("weapons/chainsaw/start",3)	//R11.3 removed

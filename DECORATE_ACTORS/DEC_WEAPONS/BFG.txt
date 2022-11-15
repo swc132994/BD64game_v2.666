@@ -40,8 +40,6 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 	Ready:
 		TNT1 A 0 A_StopSound(5)									//r31 added
 		BFGG A 1 A_WeaponReady
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")	//R28.2 added
-		TNT1 A 0 A_TakeInventory("Stamina",0)					//R28.2 added
 		Loop
 	Deselect:
 		TNT1 A 0 A_StopSound(5)	//R31 added
@@ -107,8 +105,6 @@ Tag "$TAG_BFG9000"
 		TNT1 A 0 A_StopSound(5)									//r31 added
 		BFGG A 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")	//R28.2 added
-		TNT1 A 0 A_TakeInventory("Stamina",0)					//R28.2 added
 		Loop
 	Deselect:
 		TNT1 A 0 A_StopSound(5)	//R31 added

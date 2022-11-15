@@ -22,6 +22,11 @@ Inventory.forbiddento "64DoomPlayer"
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	//R28 added MODERN
 	States
 	{
+	Tired:
+		TNT1 A 0 A_Print("Not enough stamina!",1)
+		TNT1 A 0 A_PlaySound("Tired",2)
+		TNT1 A 12
+		Goto GetReady
 	GetReady:
 		TNT1 A 0 A_TakeInventory("Kicking",1)
 		TNT1 AAAA 1 A_Jump(255,"v1Ready")
@@ -40,11 +45,8 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	//
 		TNT1 A 0 A_JumpIfInventory("IsModern",1,"ModernCheck")	//R28 added
 		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,1)		//R7 added
 		Goto GetReady											//R7 added
-		TNT1 A 0 A_jumpifinventory("Stamina",20,3)
-		TNT1 A 0 A_Print("Not enough stamina!",1)
-		TNT1 A 0 A_PlaySound("Tired",2)
-		Goto GetReady
-		TNT1 A 0 A_TakeInventory("Stamina",20)
+		TNT1 A 0 A_jumpifinventory("Stamina",80,"Tired")
+		TNT1 A 0 A_GiveInventory("Stamina",20)
 	ModernCheck:								//R28 added
 //		TNT1 A 0 A_Takeinventory("ADSmode",1)	//R11 unused
 		TNT1 A 0 A_JumpIf(momZ > 0,"AirKick")
@@ -78,7 +80,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	//
 		TNT1 A 0 SetPlayerProperty(0,0,0)
 		Goto GetReady
 	AirKick:
-		TNT1 A 0 A_TakeInventory("Stamina",5)		//R17 WAS 20
+		TNT1 A 0 A_GiveInventory("Stamina",5)		//R17 WAS 20
 		TNT1 A 0 A_GunFlash("AirKickingFlash")
 		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"SuperAirKick")
 		TNT1 A 0 A_PlaySound("KICK")

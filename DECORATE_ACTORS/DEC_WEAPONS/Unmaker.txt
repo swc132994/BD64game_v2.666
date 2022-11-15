@@ -282,8 +282,6 @@ Tag "Unmaker"				//R11 added
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 //		TNT1 A 0 A_PlaySoundEx("UNMKLP","WEAPON",1)				//R1 removed SOUND	//R13 REadded FOR TACTICAL		//R31 SOUND FOX FOR GZ4.8
 		TNT1 A 0 A_PlaySound("UNMKLP",CHAN_WEAPON,1,1)			//R31 SOUND FOX FOR GZ4.8
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,"Ready")	//R28.2
-		TNT1 A 0 A_TakeInventory("Stamina",0)					//R28.2
 		Loop
 	Select: //R31 Select Animation Improvement (Tactical and Modern only)
 		TNT1 AAAAAAAAAA 0 A_Raise
