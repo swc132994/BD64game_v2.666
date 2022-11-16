@@ -535,7 +535,7 @@ flickerlight2 SKULLCANDLES
 	offset 0 24 0
 }
 
-object HeadCandles
+/*object HeadCandles	//Replaced with 64HeadCandles
 {
 	frame POL3 {light SKULLCANDLES}
 }
@@ -546,7 +546,7 @@ pointlight CANDLE
 	color 1.0 0.25 0.0
 	size 16
 	offset 0 16 0
-}
+}*/
 
 object 64Candlestick
 {
@@ -2319,10 +2319,10 @@ object 64Candelabra
 frame CAND {light BIGREDTORCH}
 }
 
-object 64HEADCANDLES		//R31 ADDED
+/*object 64HEADCANDLES		//R31 ADDED
 {
 frame A017 {light BIGREDTORCH}
-}
+}*/
 
 /*object 64TORCHTREE			//R31 ADDED
 {
