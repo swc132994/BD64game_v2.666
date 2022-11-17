@@ -98,6 +98,10 @@ OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 		StaticText "Option to enable footstep sounds!",1
 		StaticText " "
 	Option "Enable footstep sounds =","FootStepCheckCvar","YesOrNo"
+		StaticText " "
+		StaticText "HUD options",1
+		StaticText " "
+	Option "Set Normal HUD to vanilla style (takes effect on next map)","VanillaStatusBarCvar","YesorNo"
 }
 
 OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31

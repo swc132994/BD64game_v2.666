@@ -366,3 +366,9 @@ script "PainStalkerRandomACS" (void)	//R31 added for pain elemantal stalker atta
 {
 SetResultValue(GetCVar("PainStalkerRandom_Cvar"));
 }
+
+Script "VanillaHUDSwitching" ENTER	//option to set vanilla normal HUD
+{
+if(GetCvar("VanillaStatusBarCvar") == 1) {GiveInventory("VanillaSBar",1);}
+if(GetCvar("VanillaStatusBarCvar") == 0) {TakeInventory("VanillaSBar",1);}
+}

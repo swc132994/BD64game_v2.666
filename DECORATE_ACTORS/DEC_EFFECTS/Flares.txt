@@ -376,7 +376,7 @@ alpha 0.99
 		LENS A 525																//R30.9 WAS -1 TICS	//r31 was 4 tics
 		Goto Spawn																//R30.9 WAS Stop
 	WaitSight:
-		TNT1 A 5
+		TNT1 A 3
 		Goto Live
 	SpawnNo:																	//R30.9
 		TNT1 A 525																//R30.9	//r31 was 0
@@ -403,7 +403,7 @@ alpha 0.6
 		LENS A 525																//r31 was 5
 		Goto Spawn																//R30.9 WAS LOOP
 	WaitSight:
-		TNT1 A 5
+		TNT1 A 3
 		Goto Live
 	SpawnNo:																	//R30.9
 		TNT1 A 525																//R30.9	//r31 was 0
@@ -699,7 +699,7 @@ Alpha 0.25
 		LEYZ O 4 Bright
 		Goto Spawn																//R30.9 WAS LOOP
 	WaitSight:
-		TNT1 A 5
+		TNT1 A 3
 		Goto Live
 	SpawnNo:																	//R30.9
 		TNT1 A 525																//R30.9	//r31 was 0
