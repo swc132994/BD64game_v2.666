@@ -3,7 +3,7 @@ completeborder true;
 
 statusbar fullscreen,forcescaled,0.5
 {
-	drawnumber 3,SMALLFONT,red,Ammo("Stamina"),WhenNotZero | interpolate(4),88,183;	//R4 Added WhenNotZero //R31 untranslated
+	drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),88,183;	//R4 Added WhenNotZero //R31 untranslated
 	drawimage "HTEXA0",30,170;
 	drawnumber 3,HUDFONT_DOOM,untranslated,health,69,180;
 	drawimage "ATEXA0",246,170;
@@ -37,7 +37,7 @@ statusbar normal
 	drawswitchableimage WpnPower3Icon,"nullimage","POW3E0",261,215; //This is out of order on purpose
 	drawswitchableimage WpnPower2Icon,"nullimage","POW2E0",300,215;
 	drawimage "HTEXA0",6,165;
-	drawnumber 3,HUDFONT_DOOM,untranslated,Ammo("Stamina"),WhenNotZero | interpolate(4),45,186;	//R1 45 WAS 25,186 WAS 177		//R4 Added WhenNotZero
+	drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),45,186;	//R1 45 WAS 25,186 WAS 177		//R4 Added WhenNotZero
 	drawnumber 3,HUDFONT_DOOM,untranslated,health,45,174;					//R1 174 WAS 177
 	drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;					//R1 WAS 97,181
 	drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;					//R1 WAS 97,181
@@ -148,10 +148,6 @@ statusbar normal
 			drawswitchableimage weaponslot 8,"STGNUM8","STYSNUM8",123,182;
 			drawswitchableimage weaponslot 9,"STGNUM9","STYSNUM9",135,182;
 		}
-		gamemode cooperative,deathmatch,teamgame
-		{
-			drawimage translatable "STFBANY",144,169;
-		}
 	}
 }
 
@@ -167,7 +163,7 @@ statusbar automap
 	drawswitchableimage WpnPower3Icon,"nullimage","POW3E0",261,215; //This is out of order on purpose
 	drawswitchableimage WpnPower2Icon,"nullimage","POW2E0",300,215;
 	drawimage "HTEXA0",6,165;
-	drawnumber 3,HUDFONT_DOOM,untranslated,Ammo("Stamina"),WhenNotZero | interpolate(4),45,186;	//R1 45 WAS 25,186 WAS 177		//R4 Added Whennnot zero
+//	drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),45,186;	//R1 45 WAS 25,186 WAS 177		//R4 Added Whennnot zero
 	drawnumber 3,HUDFONT_DOOM,untranslated,health,45,174;					//R1 174 WAS 177
 	drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;					//R1 WAS 97,181
 	drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;					//R1 WAS 97,181

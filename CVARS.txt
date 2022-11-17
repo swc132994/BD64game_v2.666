@@ -369,6 +369,8 @@ SetResultValue(GetCVar("PainStalkerRandom_Cvar"));
 
 Script "VanillaHUDSwitching" ENTER	//option to set vanilla normal HUD
 {
-if(GetCvar("VanillaStatusBarCvar") == 1) {GiveInventory("VanillaSBar",1);}
-if(GetCvar("VanillaStatusBarCvar") == 0) {TakeInventory("VanillaSBar",1);}
+if(GetUserCvar(0,"VanillaStatusBarCvar") == 1) {GiveInventory("VanillaSBar",1);}
+if(GetUserCvar(0,"VanillaStatusBarCvar") == 0) {TakeInventory("VanillaSBar",1);}
+Delay(35);
+Restart;
 }

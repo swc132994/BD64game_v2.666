@@ -75,10 +75,10 @@ OptionMenu "BD64Menu" //R31
 
 OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 {
-	Title "Performance Options"	//R31
+	Title "Performance & Miscellaneous Options"	//R31
 		StaticText " "
-		StaticText "Enable this option if you are hosting a server on a multiplayer game,",1
-		StaticText "however if playing on single player then leave unchecked",1
+		StaticText "Enable this option only if hosting a server on a multiplayer game,",1
+		StaticText "If playing on single player then set to Off",1
 		StaticText " "
 	Option "Enable Zandronum specific multiplayer scripts =","isrunningzandronum","OnOff"
 		StaticText " "
@@ -95,13 +95,10 @@ OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 		Slider "Set max gore amount","sv_corpsequeuesize",25,9999,100,0		//R31 16/08/22 new slider
 		textfield "input value manually","sv_corpsequeuesize"				//R31 16/08/22 new slider
 		StaticText " "
-		StaticText "Option to enable footstep sounds!",1
+		StaticText "Miscellaneous Options!",1
 		StaticText " "
 	Option "Enable footstep sounds =","FootStepCheckCvar","YesOrNo"
-		StaticText " "
-		StaticText "HUD options",1
-		StaticText " "
-	Option "Set Normal HUD to vanilla style (takes effect on next map)","VanillaStatusBarCvar","YesorNo"
+	Option "Set Normal size HUD to Doom style =","VanillaStatusBarCvar","YesorNo"
 }
 
 OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
@@ -117,7 +114,7 @@ OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
 	Option "Randomly replace Chaingun with SMG =","SMG_Spawner_Cvar","SMG_Spawner_Value"
 		StaticText " "
 		StaticText "Option to replace shotguns with super shotguns",1
-		StaticText "(setting to shotgun will cause SSG Zombies to drop shells instead of SSG)",1
+		StaticText "(setting to shotgun only will cause SSG Zombies to drop shells instead of SSG)",1
 		StaticText " "
 	Option "SSG in Doom 1 =","SSGinDoom1_Cvar","SSGinDoom1Menu"
 }
