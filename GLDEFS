@@ -991,11 +991,6 @@ object IntroMarine
 frame PLAYF {light ZOMBIEATK}	//R31 was frame PL7YF {light BIGREDLIGHTPOINT}
 }
 
-object IntroMarinetitle
-{
-frame PLAYF {light ZOMBIEATK}	//R31 added
-}
-
 object 64SSGGuy		//R10.2 unused	//r31 active was SuperShotgunGuy
 {
 	frame POS4F {light ZOMBIEATK}	//R31 added frame
