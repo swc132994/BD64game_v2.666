@@ -152,10 +152,10 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 		StaticText " "
 	Option "Remove all Revenants,Hellhounds & Masterminds =","D64MonstersOnlyCvar","YesOrNo"	//R31 was DynamicSpawnCvar4
 		StaticText " "
-		StaticText "Option to revert back to old skins for the Revenant and Hellhound",1
+		StaticText "Options to switch to alternate spawns for the Revenant and Hellhound",1
 		StaticText " "
-	Option "Revert back to old Hellhound =","HoundChooserCvar","YesOrNo"
-	Option "Revert back to old Revenant =","RevenantChooserCvar","YesOrNo"
+	Option "Select between Cerberus, Alternate and GEC Hellhound =","HoundChooserCvar","HoundChooser"
+	Option "Revert back to Tchernobog Revenant =","RevenantChooserCvar","YesOrNo"
 		StaticText " "
 		StaticText "Option to switch to alternative skin for the Spider Mastermind",1
 		StaticText " "
@@ -231,6 +231,13 @@ OptionValue "SSGinDoom1Menu"
 }
 
 //R31 Monster Spawner improvement
+OptionValue "HoundChooser"
+{
+	0,"Alternate"
+	1,"GEC"
+	2,"Cerberus"
+}
+
 OptionValue "Annihilator_Spawner_Value"
 {
 	0,"Cyberdemon Only"

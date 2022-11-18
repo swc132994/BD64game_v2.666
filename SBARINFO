@@ -80,14 +80,14 @@ statusbar normal
 
 		PlayerType "Tactical64DoomPlayer"
 			{
-			drawstring SMALLFONT,untranslated,"CL/",22,169;
+			drawstring SMALLFONT,untranslated,"CL",15,169;
 			drawnumber 3,HUDFONT_DOOM,Red,ammo2,44,164;
 			drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;
 			}
 
 		PlayerType "Modern"
 			{
-			drawstring SMALLFONT,untranslated,"CL/",22,169;
+			drawstring SMALLFONT,untranslated,"CL",15,169;
 			drawnumber 3,HUDFONT_DOOM,Red,ammo2,44,164;
 			drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;
 			}
