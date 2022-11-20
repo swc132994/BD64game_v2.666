@@ -2100,7 +2100,6 @@ Obituary "%o was gunned down by a marine."
 +FRIENDLY
 +LOOKALLAROUND
 +QUICKTORETALIATE
-+FLOAT
 	states
 	{
 	Spawn:

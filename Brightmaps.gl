@@ -3074,3 +3074,37 @@ brightmap sprite BSGIE3E7
 map "brightmaps/BSGIE3E7_BR.png"
 disablefullbright
 }
+
+//GEC_HELLHOUND
+brightmap sprite GECHA1		{map "brightmaps/GECHA1_BR.png"}
+brightmap sprite GECHA2A8	{map "brightmaps/GECHA2A8_BR.png"}
+brightmap sprite GECHA3A7	{map "brightmaps/GECHA3A7_BR.png"}
+brightmap sprite GECHB1		{map "brightmaps/GECHB1_BR.png"}
+brightmap sprite GECHB2B8	{map "brightmaps/GECHB2B8_BR.png"}
+brightmap sprite GECHB3B7	{map "brightmaps/GECHB3B7_BR.png"}
+brightmap sprite GECHC2C8	{map "brightmaps/GECHC2C8_BR.png"}
+brightmap sprite GECHC3C7	{map "brightmaps/GECHC3C7_BR.png"}
+brightmap sprite GECHD1		{map "brightmaps/GECHD1_BR.png"}
+brightmap sprite GECHD2D8	{map "brightmaps/GECHD2D8_BR.png"}
+brightmap sprite GECHD3D7	{map "brightmaps/GECHD3D7_BR.png"}
+brightmap sprite GECHE1		{map "brightmaps/GECHE1_BR.png"}
+brightmap sprite GECHE2E8	{map "brightmaps/GECHE2E8_BR.png"}
+brightmap sprite GECHE3E7	{map "brightmaps/GECHE3E7_BR.png"}
+brightmap sprite GECHF1		{map "brightmaps/GECHF1_BR.png"}
+brightmap sprite GECHF2F8	{map "brightmaps/GECHF2F8_BR.png"}
+brightmap sprite GECHF3F7	{map "brightmaps/GECHF3F7_BR.png"}
+brightmap sprite GECHG1		{map "brightmaps/GECHG1_BR.png"}
+brightmap sprite GECHG2G8	{map "brightmaps/GECHG2G8_BR.png"}
+brightmap sprite GECHG3G7	{map "brightmaps/GECHG3G7_BR.png"}
+brightmap sprite GECHH1		{map "brightmaps/GECHH1_BR.png"}
+brightmap sprite GECHH2H8	{map "brightmaps/GECHH2H8_BR.png"}
+brightmap sprite GECHH3H7	{map "brightmaps/GECHH3H7_BR.png"}
+brightmap sprite GECHO1		{map "brightmaps/GECHO1_BR.png"}
+brightmap sprite GECHO2O8	{map "brightmaps/GECHO2O8_BR.png"}
+brightmap sprite GECHO3O7	{map "brightmaps/GECHO3O7_BR.png"}
+brightmap sprite GECHP1		{map "brightmaps/GECHP1_BR.png"}
+brightmap sprite GECHP2P8	{map "brightmaps/GECHP2P8_BR.png"}
+brightmap sprite GECHP3P7	{map "brightmaps/GECHP3P7_BR.png"}
+brightmap sprite GH1HA0		{map "brightmaps/GH1HA0_BR.png"}
+brightmap sprite GH1HB0		{map "brightmaps/GH1HB0_BR.png"}
+brightmap sprite GH1HC0		{map "brightmaps/GH1HC0_BR.png"}
