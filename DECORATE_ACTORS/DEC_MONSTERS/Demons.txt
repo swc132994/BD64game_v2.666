@@ -11,7 +11,7 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "chainsaw",0.9
 DropItem "DemonEssenceSpawner"		//R31 added
-+NOBLOCKMONST
+//+NOBLOCKMONST
 	States
 	{
 	Spawn:
@@ -420,7 +420,7 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "chainsaw",0.9
 DropItem "DemonEssenceSpawner"		//R31 added
-+NOBLOCKMONST
+//+NOBLOCKMONST
 	States
 	{
 	Spawn:

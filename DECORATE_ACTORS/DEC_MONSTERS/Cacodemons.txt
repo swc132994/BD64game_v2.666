@@ -12,7 +12,7 @@ DropItem "DemonEssenceSpawner"		//R31 added
 +FLOORCLIP
 +FORCEXYBILLBOARD
 +MISSILEMORE
-+NOBLOCKMONST
+//+NOBLOCKMONST
 	States
 	{
 	Spawn:
@@ -501,7 +501,7 @@ DropItem "DemonEssenceSpawner"	//R31 added
 +FORCEXYBILLBOARD
 +MISSILEMORE
 +MISSILEEVENMORE	//R31 added
-+NOBLOCKMONST
+//+NOBLOCKMONST
 	States
 	{
 	Spawn:

@@ -10,7 +10,7 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 BloodType "BD64ArachnotronBlood"
 DropItem "DemonEssenceSpawner"		//R31 added
-+NOBLOCKMONST
+//+NOBLOCKMONST
 	states
 	{
 	Spawn:

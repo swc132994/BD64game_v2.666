@@ -19,7 +19,7 @@ Obituary "%o was dissolved by an acid demon"
 Tag "Acid Demon"
 DropItem "DemonEssenceSpawner"
 +DONTHARMSPECIES
-+NOBLOCKMONST
+//+NOBLOCKMONST
 +MISSILEMORE
 	States
 	{
