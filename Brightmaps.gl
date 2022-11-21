@@ -195,41 +195,47 @@ disablefullbright
 
 //WEAPONS
 //ROCKET LAUNCHER MODERN/TATICAL
-brightmap sprite RLTLA0
-{
-map "brightmaps/RLTLA0_BR.png"
-disablefullbright
-}
-brightmap sprite RLTLB0
-{
-map "brightmaps/RLTLB0_BR.png"
-disablefullbright
-}
-brightmap sprite RLTLC0
-{
-map "brightmaps/RLTLC0_BR.png"
-disablefullbright
-}
-brightmap sprite RLTLD0
-{
-map "brightmaps/RLTLD0_BR.png"
-disablefullbright
-}
-brightmap sprite RLTLE0
-{
-map "brightmaps/RLTLE0_BR.png"
-disablefullbright
-}
-brightmap sprite RLLFF0
-{
-map "brightmaps/RLLFF0_BR.png"
-disablefullbright
-}
-brightmap sprite RLLFG0
-{
-map "brightmaps/RLLFG0_BR.png"
-disablefullbright
-}
+brightmap sprite RL1RA0		{map "brightmaps/RL1RA0_BR.png"}
+brightmap sprite RL1RB0		{map "brightmaps/RL1RB0_BR.png"}
+brightmap sprite RL1RC0		{map "brightmaps/RL1RC0_BR.png"}
+brightmap sprite RL1RD0		{map "brightmaps/RL1RD0_BR.png"}
+brightmap sprite RL1RE0		{map "brightmaps/RL1RE0_BR.png"}
+brightmap sprite RL1RF0		{map "brightmaps/RL1RF0_BR.png"}
+brightmap sprite RL2RA0		{map "brightmaps/RL2RA0_BR.png"}
+brightmap sprite RL2RB0		{map "brightmaps/RL2RB0_BR.png"}
+brightmap sprite RL2RC0		{map "brightmaps/RL2RC0_BR.png"}
+brightmap sprite RL2RD0		{map "brightmaps/RL2RD0_BR.png"}
+brightmap sprite RLLFE0		{map "brightmaps/RLLFE0_BR.png"}
+brightmap sprite RLLFF0		{map "brightmaps/RLLFF0_BR.png"}
+brightmap sprite RLLFG0		{map "brightmaps/RLLFG0_BR.png"}
+brightmap sprite RLTFE0		{map "brightmaps/RLTFE0_BR.png"}
+brightmap sprite RLTFF0		{map "brightmaps/RLTFF0_BR.png"}
+brightmap sprite RLTFG0		{map "brightmaps/RLTFG0_BR.png"}
+brightmap sprite RLTGA0		{map "brightmaps/RLTGA0_BR.png"}
+brightmap sprite RLTGB0		{map "brightmaps/RLTGB0_BR.png"}
+brightmap sprite RLTGC0		{map "brightmaps/RLTGC0_BR.png"}
+brightmap sprite RLTGD0		{map "brightmaps/RLTGD0_BR.png"}
+brightmap sprite RLTGE0		{map "brightmaps/RLTGE0_BR.png"}
+brightmap sprite RLTLA0		{map "brightmaps/RLTLA0_BR.png"}
+brightmap sprite RLTLB0		{map "brightmaps/RLTLB0_BR.png"}
+brightmap sprite RLTLC0		{map "brightmaps/RLTLC0_BR.png"}
+brightmap sprite RLTLD0		{map "brightmaps/RLTLD0_BR.png"}
+brightmap sprite RLTLE0		{map "brightmaps/RLTLE0_BR.png"}
+brightmap sprite RLTMA0		{map "brightmaps/RLTMA0_BR.png"}
+brightmap sprite RLTMB0		{map "brightmaps/RLTMB0_BR.png"}
+brightmap sprite RLTMC0		{map "brightmaps/RLTMC0_BR.png"}
+brightmap sprite RLTMD0		{map "brightmaps/RLTMD0_BR.png"}
+brightmap sprite RLTME0		{map "brightmaps/RLTME0_BR.png"}
+brightmap sprite RLTMF0		{map "brightmaps/RLTMF0_BR.png"}
+brightmap sprite RLTMG0		{map "brightmaps/RLTMG0_BR.png"}
+brightmap sprite RLTMH0		{map "brightmaps/RLTMH0_BR.png"}
+brightmap sprite RLTMI0		{map "brightmaps/RLTMI0_BR.png"}
+brightmap sprite RLTMJ0		{map "brightmaps/RLTMJ0_BR.png"}
+brightmap sprite RLTRZ0		{map "brightmaps/RLTRZ0_BR.png"}
+brightmap sprite RLTSA0		{map "brightmaps/RLTSA0_BR.png"}
+brightmap sprite RLTSB0		{map "brightmaps/RLTSB0_BR.png"}
+brightmap sprite RLTSC0		{map "brightmaps/RLTSC0_BR.png"}
+brightmap sprite RLTSD0		{map "brightmaps/RLTSD0_BR.png"}
 
 //PLASMA RIFLE
 brightmap sprite PLSFC0
