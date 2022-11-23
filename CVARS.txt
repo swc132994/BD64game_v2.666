@@ -374,3 +374,40 @@ if(GetUserCvar(0,"VanillaStatusBarCvar") == 0) {TakeInventory("VanillaSBar",1);}
 Delay(35);
 Restart;
 }
+
+Script "VanillaChainsawACS" ENTER 	//option to set vanilla Chainsaw
+{
+if (CheckInventory("64ChainsawTACTICAL") == 1 && GetCvar("VanillaChainsawCvar") == 1)
+	{
+	SetAmmoCapacity("SawGas",700);
+	GiveInventory("64ChainsawTACTICAL_Classic",1);
+	TakeInventory("64ChainsawTACTICAL",1);
+	TakeInventory("SawGas",100);
+	SetAmmoCapacity("SawGas",600);
+	}
+if (CheckInventory("64ChainsawTACTICAL_Classic") == 1 && GetCvar("VanillaChainsawCvar") == 0)
+	{
+	SetAmmoCapacity("SawGas",700);
+	GiveInventory("64ChainsawTACTICAL",1);
+	TakeInventory("64ChainsawTACTICAL_Classic",1);
+	TakeInventory("SawGas",100);
+	SetAmmoCapacity("SawGas",600);
+	}
+if (CheckInventory("64ChainsawMODERN") == 1 && GetCvar("VanillaChainsawCvar") == 1)
+	{
+	GiveInventory("64ChainsawMODERN_Classic",1);
+	TakeInventory("64ChainsawMODERN",1);
+	}
+if (CheckInventory("64ChainsawMODERN_Classic") == 1 && GetCvar("VanillaChainsawCvar") == 0)
+	{
+	GiveInventory("64ChainsawMODERN",1);
+	TakeInventory("64ChainsawMODERN_Classic",1);
+	}
+Delay(40);
+Restart;
+}
+
+script "ClassicCSAWCheck" (void)	//cvar check for chainsaw pickup
+{
+SetResultValue(GetCVar("VanillaChainsawCvar"));
+}

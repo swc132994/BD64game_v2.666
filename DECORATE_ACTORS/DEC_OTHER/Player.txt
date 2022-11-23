@@ -508,7 +508,7 @@ Player.ViewHeight 50
 Player.AttackZOffset 23
 Player.DisplayName "Tactical (Rifle)"											//R15
 Player.CrouchSprite "PLYC"
-Player.WeaponSlot 1,"64ChainsawTACTICAL","64FistTactical"								//R16 DEFINE WEAPONS
+Player.WeaponSlot 1,"64ChainsawTACTICAL","64ChainsawTACTICAL_Classic","64FistTactical"								//R16 DEFINE WEAPONS
 Player.WeaponSlot 2,"64PistolTACTICAL","64SMGTactical"
 Player.WeaponSlot 3,"64ShotgunTACTICAL","64SuperShotgunTACTICAL"
 Player.WeaponSlot 4,"64RifleTACTICAL","64ChaingunTACTICAL"
@@ -805,7 +805,7 @@ Player.ViewHeight 50
 Player.AttackZOffset 23
 Player.DisplayName "Modern"
 Player.CrouchSprite "PLYC"
-Player.WeaponSlot 1,"64ChainsawModern","64FistTactical"		//R31 was "64ChainsawTactical"
+Player.WeaponSlot 1,"64ChainsawModern","64ChainsawModern_Classic","64FistTactical"		//R31 was "64ChainsawTactical"
 Player.WeaponSlot 2,"64PistolTACTICAL","64SMGTactical"
 Player.WeaponSlot 3,"64ShotgunTACTICAL","64SuperShotgunTACTICAL"
 Player.WeaponSlot 4,"64RifleTACTICAL","64ChaingunTACTICAL"

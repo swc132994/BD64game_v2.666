@@ -191,6 +191,7 @@ OptionMenu "BrutalDoom64Item/WeaponOptions" //R31 added
 	Option "Alternative Rifle Skin =","AlternativeRifleSkinCvar","YesOrNo"
 	Option "Alternative Laser Skin =","AlternativeLaserSkinCvar","YesOrNo"
 	Option "Classic Rocket Launcher for Tactical/Modern =","ClassicRLCvar","YesOrNo"
+	Option "Classic Chainsaw for Tactical/Modern =","VanillaChainsawCvar","YesOrNo"
 	Option "Alternative Ammo Pickup Sprites =","AlternativeAmmoPickupSpritesCvar","AlternativeAmmoPickupSpritesValue"
 	Option "Switch to Fists on Berserk Pickup =","BerserkSwitchFistsCvar","YesOrNo"
 	Option "Show censored healing kits/berserk =","CensoredHealing_Cvar","CensoredHealing_Value"
