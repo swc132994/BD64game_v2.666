@@ -485,7 +485,7 @@ RenderStyle Add
 	{
 	Spawn:
 		LENZ A 1 Bright
-		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",( 3*momx)/35.0,-( 3*momy)/35.0,0+( 3*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)		//R31 was -1 zfloat
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",( 3*momx)/35.0,-( 3*momy)/35.0,0+( 3*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)	//R31 was -1 zfloat
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",( 6*momx)/35.0,-( 6*momy)/35.0,0+( 6*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",( 9*momx)/35.0,-( 9*momy)/35.0,0+( 9*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(12*momx)/35.0,-(12*momy)/35.0,0+(12*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
@@ -538,7 +538,6 @@ Speed 0
 Damage 0
 //Alpha 1
 RenderStyle Normal
-PROJECTILE
 	states
 	{
 	Spawn:
