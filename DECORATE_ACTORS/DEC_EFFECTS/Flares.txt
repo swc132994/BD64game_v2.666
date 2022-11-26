@@ -786,6 +786,17 @@ Actor LensFlareProjectileGreen : LensFlareTorchOrange							//R11 WAS LensFlareP
 	}
 }
 
+Actor LensFlareProjectileYellow : LensFlareTorchOrange
+{
+	states
+	{
+	Spawn:
+		LENS Y 1 Bright
+		LENZ Y 1 Bright
+		Stop
+	}
+}
+
 Actor LensFlareTorchBlue : LensFlareAlt
 {
 Alpha 0.5

@@ -1431,6 +1431,74 @@ object 64BaronBall		//R10 WAS BaronBall2
 	frame BRNRH {light BARONBALL2_X6}
 }
 
+//Knightmare fireball
+pointlight BARONBALL3
+{
+	color 1.0 1.0 0.0
+	size 64
+}
+
+flickerlight BARONBALL3_X1
+{
+	color 0.7 0.7 0.0
+	size 80
+	secondarySize 88
+	chance 0.25
+}
+
+flickerlight BARONBALL3_X2
+{
+	color 0.5 0.5 0.0
+	size 96
+	secondarySize 104
+	chance 0.25
+}
+
+flickerlight BARONBALL3_X3
+{
+	color 0.4 0.4 0.0
+	size 112
+	secondarySize 120
+	chance 0.25
+}
+
+flickerlight BARONBALL3_X4
+{
+	color 0.3 0.3 0.0
+	size 112
+	secondarySize 120
+	chance 0.25
+}
+
+flickerlight BARONBALL3_X5
+{
+	color 0.2 0.2 0.0
+	size 112
+	secondarySize 120
+	chance 0.25
+}
+
+flickerlight BARONBALL3_X6
+{
+	color 0.1 0.1 0.0
+	size 112
+	secondarySize 120
+	chance 0.25
+}
+
+object 64BaronBallYellow
+{
+	frame BAL7A {light BARONBALL3}
+	frame BAL7B {light BARONBALL3}
+
+	frame BAL7C {light BARONBALL3_X1}
+	frame BAL7D {light BARONBALL3_X2}
+	frame BAL7E {light BARONBALL3_X3}
+	frame BAL7F {light BARONBALL3_X4}
+	frame BAL7G {light BARONBALL3_X5}
+	frame BAL7H {light BARONBALL3_X6}
+}
+
 //Lost Soul
 flickerlight LOSTSOUL
 {

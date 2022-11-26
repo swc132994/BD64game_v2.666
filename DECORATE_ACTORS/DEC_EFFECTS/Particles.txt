@@ -1002,6 +1002,62 @@ Gravity 0.9
 	}
 }
 
+ACTOR ExplosionParticleYellow: ExplosionParticle2
+{
+SCALE 0.05
+SPEED 9
+Translation "0:255=%[0,0,0]:[1,1,0]"
+	States
+	{
+	Spawn:
+	SPRG SSSSSSSS 1 BRIGHT
+	SPRG SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS 1 Bright A_FadeOut(0.02)
+	Stop
+	}
+}
+
+ACTOR ExplosionParticleYellowHeavy: ExplosionParticleHeavy
+{
+SCALE 0.2
+Translation "0:255=%[0,0,0]:[1,1,0]"
+	States
+	{
+	Spawn:
+		SPRG SSSSSSSS 1 BRIGHT
+		SPRG SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS 1 Bright A_FadeOut(0.02)
+		Stop
+	}
+}
+
+ACTOR ExplosionParticleYellowHeavySmall: ExplosionParticleHeavy
+{
+SCALE 0.1
+Translation "0:255=%[0,0,0]:[1,1,0]"
+	States
+	{
+	Spawn:
+		SPRG SSSSSSSS 1 BRIGHT
+		SPRG SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS 1 Bright A_FadeOut(0.02)
+		Stop
+	}
+}
+
+ACTOR ExplosionParticleYellowVeryFast: ExplosionParticleHeavy
+{
+game Doom
+SCALE 0.1
+speed 18
+Gravity 0.9
+Translation "0:255=%[0,0,0]:[1,1,0]"
+	States
+	{
+	Spawn:
+		SPRG SSSSSSSS 1 BRIGHT
+		SPRG SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS 1 Bright A_FadeOut(0.02)
+		Stop
+	}
+}
+
 ACTOR BurnParticlesNoDamage//: BurnParticles									//R11 ADDED
 {
 	States
