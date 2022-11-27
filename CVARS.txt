@@ -411,3 +411,8 @@ script "ClassicCSAWCheck" (void)	//cvar check for chainsaw pickup
 {
 SetResultValue(GetCVar("VanillaChainsawCvar"));
 }
+
+script "KnightmareRandom" (void)	//cvar check to random spawn knightmare from hellknight
+{
+SetResultValue(GetCVar("KnightmareRandomCvar"));
+}

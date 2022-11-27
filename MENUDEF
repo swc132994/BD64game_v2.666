@@ -134,6 +134,7 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 	Option "Randomly replace Demons with Acid Demons =","AcidDemonRandom_Cvar","AcidDemon_Spawner_Value"	//R31 New - Split from Demons with Hellhounds
 	Option "Randomly replace Lost Souls with Stalkers =","StalkerRandom_Cvar","Stalker_Spawner_Value"	//R31 New
 	Option "Randomly replace Arachnotrons with Nightcrawlers =","NightCrawlerRandom_Cvar","NightCrawler_Spawner_Value"	//R31 New
+	Option "Randomly replace HellKnights with Knightmares =","KnightmareRandomCvar","Knightmare_Spawner_Value"
 	Option "Randomly replace Barons with Hellhounds =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Mancubi with Bruisers =","BruiserRandom_Cvar","Bruiser_Spawner_Value"
 	Option "Randomly replace Cyberdemons with Annihilators =","Annihilator_Spawner_Cvar","Annihilator_Spawner_Value"	//R31 was YesOrNo
@@ -243,6 +244,13 @@ OptionValue "Annihilator_Spawner_Value"
 {
 	0,"Cyberdemon Only"
 	1,"Annihilator Only"
+	2,"Random"
+}
+
+OptionValue "Knightmare_Spawner_Value"
+{
+	0,"HellKnight Only"
+	1,"Knightmare Only"
 	2,"Random"
 }
 

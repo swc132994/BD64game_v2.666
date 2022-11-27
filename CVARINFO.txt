@@ -44,3 +44,4 @@ server int PainStalkerRandom_Cvar = 0;		//R31 ALLOW PAIN ELEMENTALS TO RANDOM SP
 server int D64_SkipTitleMap = 0;			//used for skipping title map
 user int VanillaStatusBarCvar = 0;			//enable vanila status bar
 server int VanillaChainsawCvar = 0;			//Switch to Vanilla Chainsaw
+server int KnightmareRandomCvar = 0;		//KNIGHTMARE REPLACE HELLKNIGHT

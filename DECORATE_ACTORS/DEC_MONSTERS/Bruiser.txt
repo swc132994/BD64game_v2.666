@@ -133,6 +133,7 @@ MONSTER
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
 		BOSB IJKLMN 3
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
+		TNT1 A 0 A_KillMaster("None")	//08-08-22 tag 666 fix
 		BOSB N -1 A_BossDeath
 		Stop
 	Death.SSG:
@@ -154,6 +155,7 @@ MONSTER
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		DKHL JKLMN 6
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
+		TNT1 A 0 A_KillMaster("None")	//08-08-22 tag 666 fix
 		DKHL O -1 A_BossDeath
 		Stop
 	Death.Cutless:
@@ -177,6 +179,7 @@ MONSTER
 		TNT1 A 0 ThrustThingZ(0,50,0,0)
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
+		TNT1 A 0 A_KillMaster("None")	//08-08-22 tag 666 fix
 		TNT1 A 0 A_Jump(128,3)
 		KGB8 A 2 A_ChangeFlag("THRUACTORS",1)
 		KGB8 A 2 A_CheckFloor("LANDAFTERXDEATH1")
