@@ -192,6 +192,8 @@ Scale 0.8
 +FLOORCLIP
 +ISMONSTER
 +MOVEWITHSECTOR
+Alpha 0.6
+RenderStyle Translucent
 	States
 	{
 	Spawn:
@@ -206,14 +208,19 @@ Scale 0.8
 
 ACTOR KnightmareArm
 {
+Scale 0.8
+Speed 3
+BounceFactor 0.01
 Radius 8
 Height 8
 Mass 1
 SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
 Decal BrutalBloodSuper
-damagetype Blood
+Damagetype Blood
 BounceCount 1
+Alpha 0.6
+RenderStyle Translucent
 +BOUNCEONFLOORS
 +NOBLOCKMAP
 +MISSILE
@@ -221,24 +228,20 @@ BounceCount 1
 +MOVEWITHSECTOR
 +RIPPER
 +BLOODLESSIMPACT
--DONTSPLASH
 +THRUGHOST
 +THRUACTORS
 +FLOORCLIP
 +ISMONSTER
-Scale 0.8
-Speed 3
-BounceFactor 0.01
 +DOOMBOUNCE
 +CLIENTSIDEONLY
 +DONTSPLASH
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_JUMP(128,2)
-		TNT1 A 0 A_SETSCALE(0-ScaleX,ScaleY)
-		BZB2 A 4 A_CHECKFLOOR("DEATH")
-		WAIT
+		TNT1 A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)
+		BZB2 A 4 A_CheckFloor("Death")
+		Wait
 	Death:
 		BZB2 B 1
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
@@ -249,7 +252,7 @@ BounceFactor 0.01
 
 Actor KnightmareSprite1
 {
-Scale 0.75
+Scale 0.8
 Alpha 0.08
 RenderStyle Translucent
 +NOBLOCKMAP
@@ -310,7 +313,7 @@ Damage 12
 RenderStyle Normal
 Decal "MedScorch"
 Translation "0:255=%[0,0,0]:[1,1,0]"
-	states
+	States
 	{
 	Spawn:
 		BAL7 AB 2 NoDelay Bright A_CustomMissile("LensFlareProjectileYellow",-2,0)
