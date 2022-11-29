@@ -570,8 +570,8 @@ pointlight CANDELABRA
 pulselight SOULSPHERE
 {
 	color 0.0 0.2 1.0
-	size 40
-	secondarySize 42
+	size 20
+	secondarySize 24
 	interval 2.0
 	offset 0 16 0
 }
@@ -585,8 +585,8 @@ object 64SoulSphere
 pulselight INVULN
 {
 	color 0.0 1.0 0.0
-	size 40
-	secondarySize 42
+	size 20
+	secondarySize 24
 	interval 2.0
 	offset 0 16 0
 }
@@ -597,52 +597,26 @@ object 64InvulnerabilitySphere
 }
 
 //Blur Sphere
-pointlight BLURSPHERE1
+pulselight BLURSPHERE
 {
 	color 1.0 0.0 0.0
-	size 40
-	offset 0 16 0
-}
-
-pointlight BLURSPHERE2
-{
-	color 1.0 0.0 0.0
-	size 32
-	offset 0 16 0
-}
-
-pointlight BLURSPHERE3
-{
-	color 1.0 0.0 0.0
-	size 24
-	offset 0 16 0
-}
-
-pointlight BLURSPHERE4
-{
-	color 1.0 0.0 0.0
-	size 16
-	offset 0 16 0
-}
-
-pointlight BLURSPHERE5
-{
-	color 1.0 0.0 0.0
-	size 8
+	size 20
+	secondarySize 24
+	interval 2.0
 	offset 0 16 0
 }
 
 object 64BlurSphere
 {
-	frame PINS {light BLURSPHERE1}
+	frame PINS {light BLURSPHERE}
 }
 
 //Mega Sphere
 pulselight MEGASPHERE
 {
 	color 1.0 0.9 0.8
-	size 40
-	secondarySize 42
+	size 20
+	secondarySize 24
 	interval 2.0
 	offset 0 16 0
 }
@@ -656,8 +630,8 @@ object 64MegaSphere
 pulselight HEALTHPOTION
 {
 	color 0.0 0.0 0.6
-	size 16
-	secondarySize 18
+	size 10
+	secondarySize 12
 	interval 2.0
 }
 
@@ -670,8 +644,8 @@ object 64HealthBonus
 pulselight ARMORBONUS
 {
 	color 0.0 0.6 0.0
-	size 16
-	secondarySize 14
+	size 10
+	secondarySize 12
 	interval 1.0
 }
 
@@ -684,8 +658,8 @@ object 64ArmorBonus
 pulselight BLUEKEY					//R28.3 added
 {
 	color 0.0 0.0 0.6
-	size 16
-	secondarySize 38
+	size 10
+	secondarySize 14
 	interval 0.57
 }
 
@@ -703,8 +677,8 @@ object BlueSkull					//R29 WAS GLBlueSkull
 pulselight YELLOWKEY
 {
 	color 0.6 0.6 0.0
-	size 16
-	secondarySize 38			//R28.3 WAS 18
+	size 10
+	secondarySize 14			//R28.3 WAS 18
 	interval 0.57				//R28.3 WAS 2
 }
 
@@ -722,8 +696,8 @@ object YellowSkull				//R29 WAS GLYellowSkull
 pulselight REDKEY
 {
 	color 0.6 0.0 0.0
-	size 16
-	secondarySize 38		//R28.3 WAS 18
+	size 10
+	secondarySize 14		//R28.3 WAS 18
 	interval 0.57			//R28.3 WAS 2
 }
 
@@ -741,13 +715,13 @@ object RedSkull				//R29 WAS GLRedSkull
 pointlight GREENARMOR1
 {
 	color 0.0 0.6 0.0
-	size 48
+	size 20
 }
 
 pointlight GREENARMOR2
 {
 	color 0.0 0.6 0.0
-	size 32
+	size 24
 }
 
 object 64GreenArmor
@@ -760,13 +734,13 @@ object 64GreenArmor
 pointlight BLUEARMOR1
 {
 	color 0.0 0.1 0.6
-	size 48
+	size 20
 }
 
 pointlight BLUEARMOR2
 {
 	color 0.0 0.1 0.6
-	size 32
+	size 24
 }
 
 object 64BlueArmor
@@ -779,25 +753,25 @@ object 64BlueArmor
 pointlight WEAPONPOWERRED1
 {
 	color 1.0 0.0 0.0
-	size 48
+	size 24
 }
 
 pointlight WEAPONPOWERRED2
 {
 	color 0.7 0.0 0.0
-	size 40
+	size 22
 }
 
 pointlight WEAPONPOWERRED3
 {
 	color 0.5 0.0 0.0
-	size 32
+	size 20
 }
 
 pointlight WEAPONPOWERRED4
 {
 	color 0.3 0.0 0.0
-	size 24
+	size 18
 }
 
 pointlight WEAPONPOWERRED5
@@ -819,25 +793,25 @@ object WpnPower1
 pointlight WEAPONPOWERTEAL1
 {
 	color 0.0 1.0 1.0
-	size 48
+	size 24
 }
 
 pointlight WEAPONPOWERTEAL2
 {
 	color 0.0 0.7 0.7
-	size 40
+	size 22
 }
 
 pointlight WEAPONPOWERTEAL3
 {
 	color 0.0 0.5 0.5
-	size 32
+	size 20
 }
 
 pointlight WEAPONPOWERTEAL4
 {
 	color 0.0 0.3 0.3
-	size 24
+	size 18
 }
 
 pointlight WEAPONPOWERTEAL5
@@ -859,25 +833,25 @@ object WpnPower3
 pointlight WEAPONPOWERPURPLE1
 {
 	color 0.5 0.0 1.0
-	size 48
+	size 24
 }
 
 pointlight WEAPONPOWERPURPLE2
 {
 	color 0.4 0.0 0.8
-	size 40
+	size 22
 }
 
 pointlight WEAPONPOWERPURPLE3
 {
 	color 0.35 0.0 0.7
-	size 32
+	size 20
 }
 
 pointlight WEAPONPOWERPURPLE4
 {
 	color 0.15 0.0 0.3
-	size 24
+	size 18
 }
 
 pointlight WEAPONPOWERPURPLE5
