@@ -2497,6 +2497,12 @@ color 0.5 0.4 0
 size 62
 }
 
+pointlight Chaingun
+{
+color 0.35 0.2 1
+size 48
+}
+
 object PlayerMuzzle1
 {
 frame PLMZ { light HUEHUE }
@@ -2505,6 +2511,11 @@ frame PLMZ { light HUEHUE }
 object PlayerMuzzle2
 {
 frame PLMZ { light HUEHUEHUEHUE }
+}
+
+object PlayerMuzzle3
+{
+frame CGMZ { light Chaingun }
 }
 
 object MarineMuzzle1
