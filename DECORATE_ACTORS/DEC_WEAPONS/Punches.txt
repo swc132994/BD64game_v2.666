@@ -218,7 +218,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 	}
 }
 
-Actor PunchAttack: FastProjectile
+Actor PunchAttack : FastProjectile
 {
 Damage(random(5,10))
 DamageType Melee
@@ -250,7 +250,7 @@ Projectile
 	}
 }
 
-Actor SuperPunchAttack: PunchAttack
+Actor SuperPunchAttack : PunchAttack
 {
 Damage(2*random(60,80))		//R26.1 added 2*
 DamageType SuperFists
@@ -280,7 +280,7 @@ Obituary "$OB_MPFIST"		//r30.10 added
 	}
 }
 
-Actor KickAttack: FastProjectile
+Actor KickAttack : FastProjectile
 {
 Damage(random(15,25))		//R14 WAS 10,15
 DamageType Kick
@@ -394,7 +394,7 @@ Obituary "%o chewed on %k's foot."		//r30.10 added
 Actor KickAttackDetectDowned : KickAttack	//R11 added
 {
 Damage(random(2,2))
-DamageType LowKick
+//DamageType LowKick
 Speed 40
 Radius 4
 Height 4
