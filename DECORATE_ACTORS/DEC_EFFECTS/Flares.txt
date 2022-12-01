@@ -512,6 +512,20 @@ PROJECTILE
 	}
 }
 
+ACTOR PlayerMuzzle3
+{
+Speed 0
+PROJECTILE
++NOCLIP
++NOGRAVITY
+	States
+	{
+	Spawn:
+		CGMZ A 2 BRIGHT
+		Stop
+	}
+}
+
 ACTOR MarineMuzzle1
 {
 Speed 5
