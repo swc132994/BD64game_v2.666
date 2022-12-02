@@ -166,10 +166,10 @@ Tag "$TAG_CHAINGUN"
 	SlideKickingEndSpin:
 		CHNS HIJK 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",5)
+		TNT1 A 0 A_PlaySound("CHAINSTO",5)
 		CHNS KKAL 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",5)
+		TNT1 A 0 A_PlaySound("CHAINSTO",5)
 		CHNS MN 1
 		Stop
 	Spawn:
@@ -209,6 +209,7 @@ Tag "$TAG_CHAINGUN"
 		TNT1 A 0 A_StopSound(5)
 		//CHAG A 0 A_PlaySound("CHAINSPI",5)
 	Hold:
+	    TNT1 A 0 A_PlaySound("CHAINSPI",5,1,1)
 		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle3",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
