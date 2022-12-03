@@ -197,6 +197,7 @@ Tag "$TAG_CHAINGUN"
 		Goto Ready
 	Deselect:
 		TNT1 A 0 A_TakeInventory("Spin",1)
+		TNT1 A 0 A_StopSound(5)
 		CHNS DCBA 1
 		TNT1 A 1 A_Lower
 		Wait
