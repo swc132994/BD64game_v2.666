@@ -215,6 +215,13 @@ Intermission Doom2Cast
 	}
 	Cast
 	{
+		CastClass = "D64KnightmareCast"
+		CastName = "Knightmare"
+		AttackSound = "Missile",1,"baron/attack"
+		AttackSound = "Melee",1,"imp/melee"
+	}
+	Cast
+	{
 		CastClass = "D64BaronOfHellCast"
 		CastName = "Baron Of Hell"
 		AttackSound = "Missile",1,"baron/attack"

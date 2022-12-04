@@ -397,6 +397,33 @@ YScale 1.0
 	}
 }
 
+actor D64KnightmareCast : 64Knightmare
+{
+XScale 1.0
+YScale 1.0
+	States
+	{
+		See:
+			BOZ3 AABBCCDD 3 A_Chase
+			Loop
+		Melee:
+			BOZ3 EF 8 A_FaceTarget
+			BOZ3 G 8 A_BruisAttack
+			Goto See
+		Missile:
+			BOZ3 EF 8 A_FaceTarget
+			BOZ3 G 8 A_BruisAttack
+			Goto See
+		Death:
+			BOZ3 I 8
+			BOZ3 J 8 A_Scream
+			BOZ3 KLM 8
+			BOZ3 N -1
+			Stop
+	}
+}
+
+
 actor D64BaronOfHellCast : 64BaronOfHell
 {
 XScale 1.0
