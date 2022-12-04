@@ -125,7 +125,7 @@ Tag "$TAG_SHOTGUN"
 		SHTG FEDCB 1
 		Stop
 	ReloadingKick:
-		SHTR H 14
+		SHSR C 15
 		Stop
 	AirKickingFlash:
 		SHTG BCDEF 1
