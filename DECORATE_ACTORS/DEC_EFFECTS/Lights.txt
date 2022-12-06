@@ -954,7 +954,7 @@ ProjectilePassHeight -8
 	States
 	{
 	Spawn:
-		TYRN A 0 Bright
+		SSTI A 0 Bright
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
@@ -1407,6 +1407,7 @@ actor 64WallTorchRed 9930		//R31 ADDED
 {
 Game Doom
 Scale 0.75
+Radius 5
 +NOGRAVITY
 	States
 	{
@@ -1436,6 +1437,7 @@ actor 64WallTorchBlue 9933		//R31 ADDED
 {
 Game Doom
 Scale 0.75
+Radius 5
 +NOGRAVITY
 	States
 	{
@@ -1465,6 +1467,7 @@ actor 64WallTorchGreen 9935		//R31 ADDED
 {
 Game Doom
 Scale 0.75
+Radius 5
 +NOGRAVITY
 	States
 	{
@@ -1494,6 +1497,7 @@ actor 64WallTorchYellow 9936		//R31 ADDED
 {
 Game Doom
 Scale 0.75
+Radius 5
 +NOGRAVITY
 	States
 	{
@@ -1733,17 +1737,17 @@ SCALE 0.8
 	States
 	{
 	Spawn:
-		64FS A 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		FSKU A 0 NoDelay Bright A_SpawnItem("64SmallBloodPool")
 		TNT1 A 0 A_SpawnItem("Swarm",0,20)
 	Stay:
-		64FS A 16
-		64FS B 32
-		64FS C 8
-		64FS D 24
-		64FS C 16
-		64FS B 32
-		64FS A 64
-		64FS B 32
+		FSKU A 16 Bright
+		FSKU B 32 Bright
+		FSKU C 8 Bright
+		FSKU B 24 Bright
+		FSKU C 16 Bright
+		FSKU B 32 Bright
+		FSKU A 64 Bright
+		FSKU B 32 Bright
 		Loop
 	}
 }
