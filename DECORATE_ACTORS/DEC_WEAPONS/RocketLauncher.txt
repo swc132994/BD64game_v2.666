@@ -269,24 +269,24 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		RLLF AB 2 Bright
 		TNT1 A 0 A_FireCustomMissile("64rocket",0,1)
 		TNT1 A 0 A_GiveInventory("RocketAmmo",1)
-		RLLF CDE 2 Bright
-		RLLF G 1 A_SetPitch(pitch-2)
+		RLLF CD 2 Bright
+		RLLF E 1 A_SetPitch(pitch-2)
 		TNT1 A 0 A_ZoomFActor(1.0)
-		RLLF E 1 A_SetPitch(pitch+0.8)
-		RLLF E 1 A_SetPitch(pitch+0.6)
-		RLLF FG 1
+		RLLF F 1 A_SetPitch(pitch+0.8)
+		RLLF G 1 A_SetPitch(pitch+0.6)
+		RLTL A 1
 		RLTL A 2
 		TNT1 A 0 A_ReFire
 		Goto Ready
 	Fire1:
 		RLLF AB 2 Bright
 		TNT1 A 0 A_FireCustomMissile("64rocket",0,1)
-		RLLF CDE 2 Bright
-		RLLF G 1 A_SetPitch(pitch-2)
+		RLLF CD 2 Bright
+		RLLF E 1 A_SetPitch(pitch-2)
 		TNT1 A 0 A_ZoomFActor(1.0)
-		RLLF E 1 A_SetPitch(pitch+0.8)
-		RLLF E 1 A_SetPitch(pitch+0.6)
-		RLLF FG 1
+		RLLF F 1 A_SetPitch(pitch+0.8)
+		RLLF G 1 A_SetPitch(pitch+0.6)
+		RLTL A 1
 		RLTL A 2
 		TNT1 A 0 A_ReFire
 		Goto Ready
@@ -296,25 +296,27 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		RLTF AB 2 Bright
 		TNT1 A 0 A_FireCustomMissile("TacticalRocket",0,1)
 		TNT1 A 0 A_GiveInventory("RocketAmmo",1)
-		RLTF CDE 2 Bright
-		RLTF G 1 A_SetPitch(pitch-2)
+		RLTF CD 2 Bright
+		RLTF F 1 A_SetPitch(pitch-2)
 		TNT1 A 0 A_ZoomFActor(1.0)
 		RLTF E 1 A_SetPitch(pitch+0.8)
 		RLTF E 1 A_SetPitch(pitch+0.6)
+		RLTF E 23
 		RLTF FG 1
-		RLTG A 25
+		RLTG A 1
 		TNT1 A 0 A_ReFire
 		Goto Ready
 	HeavyFire2:
 		RLTF AB 2 Bright
 		TNT1 A 0 A_FireCustomMissile("TacticalRocket",0,1)
-		RLTF CDE 2 Bright
-		RLTF G 1 A_SetPitch(pitch-2)
+		RLTF CD 2 Bright
+		RLTF F 1 A_SetPitch(pitch-2)
 		TNT1 A 0 A_ZoomFActor(1.0)
 		RLTF E 1 A_SetPitch(pitch+0.8)
 		RLTF E 1 A_SetPitch(pitch+0.6)
+		RLTF E 23
 		RLTF FG 1
-		RLTG A 25
+		RLTG A 1
 		TNT1 A 0 A_ReFire
 		Goto Ready
 	Reload:
