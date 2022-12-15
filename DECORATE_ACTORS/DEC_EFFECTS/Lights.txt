@@ -1422,9 +1422,9 @@ Radius 5
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
 		//TNT1 A 0 A_Playsound("BDfireplace")
-		TNT1 A 0 A_CustomMissile("RealFlameTrailsWallTorch",25,0,random(0,360),2,random(70,110))
-		TNT1 A 0 A_CustomMissile("ImBallGettingReadyWallTorch",25,0,random(0,140),2,random(0,160))
-		SMYY AA 2 A_SpawnItem("LensFlareTorchOrangeWallTorch",0,25)
+		TNT1 A 0 A_CustomMissile("RealFlameTrailsWallTorch",20,0,random(0,360),2,random(70,110))
+		TNT1 A 0 A_CustomMissile("ImBallGettingReadyWallTorch",20,0,random(0,140),2,random(0,160))
+		SMYY AA 2 A_SpawnItem("LensFlareTorchOrangeWallTorch",0,20)
 		Loop
 	StayBlank:
 		//TNT1 A 0 A_Playsound("BDfireplace")
@@ -1452,9 +1452,9 @@ Radius 5
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
 		//TNT1 A 0 A_Playsound("BDfireplace")
-		TNT1 A 0 A_CustomMissile("RealFlameTrailsBlueWallTorch",25,0,random(0,360),2,random(70,110))
-		TNT1 A 0 A_CustomMissile("BallGettingReadyBlueWallTorch",25,0,random(0,140),2,random(0,160))
-		SMYY AA 2 A_SpawnItem("LensFlareTorchBlueWallTorch",0,25)
+		TNT1 A 0 A_CustomMissile("RealFlameTrailsBlueWallTorch",20,0,random(0,360),2,random(70,110))
+		TNT1 A 0 A_CustomMissile("BallGettingReadyBlueWallTorch",20,0,random(0,140),2,random(0,160))
+		SMYY AA 2 A_SpawnItem("LensFlareTorchBlueWallTorch",0,20)
 		Loop
 	StayBlank:
 		//TNT1 A 0 A_Playsound("BDfireplace")
@@ -1482,9 +1482,9 @@ Radius 5
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
 		//TNT1 A 0 A_Playsound("BDfireplace")
-		TNT1 A 0 A_CustomMissile("RealFlameTrailsGreenWallTorch",25,0,random(0,360),2,random(70,110))
-		TNT1 A 0 A_CustomMissile("BallGettingReadyGreenWallTorch",25,0,random(0,140),2,random(0,160))
-		SMYY AA 2 A_SpawnItem("LensFlareTorchGreenWallTorch",0,25)
+		TNT1 A 0 A_CustomMissile("RealFlameTrailsGreenWallTorch",20,0,random(0,360),2,random(70,110))
+		TNT1 A 0 A_CustomMissile("BallGettingReadyGreenWallTorch",20,0,random(0,140),2,random(0,160))
+		SMYY AA 2 A_SpawnItem("LensFlareTorchGreenWallTorch",0,20)
 		Loop
 	StayBlank:
 		//TNT1 A 0 A_Playsound("BDfireplace")
@@ -1512,9 +1512,9 @@ Radius 5
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
 		//TNT1 A 0 A_Playsound("BDfireplace")
-		TNT1 A 0 A_CustomMissile("RealFlameTrailsYellowWallTorch",25,0,random(0,360),2,random(70,110))
-		TNT1 A 0 A_CustomMissile("BallGettingReadyYellowWallTorch",25,0,random(0,140),2,random(0,160))
-		SMYY AA 2 A_SpawnItem("LensFlareTorchYellowWallTorch",0,25)
+		TNT1 A 0 A_CustomMissile("RealFlameTrailsYellowWallTorch",20,0,random(0,360),2,random(70,110))
+		TNT1 A 0 A_CustomMissile("BallGettingReadyYellowWallTorch",20,0,random(0,140),2,random(0,160))
+		SMYY AA 2 A_SpawnItem("LensFlareTorchYellowWallTorch",0,20)
 		Loop
 	StayBlank:
 		//TNT1 A 0 A_Playsound("BDfireplace")
