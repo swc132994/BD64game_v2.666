@@ -13,6 +13,11 @@ Actor VanillaSBar : Inventory		// r31 added to switch to Vanilla Statusbar
 Inventory.MaxAmount 1
 }
 
+Actor StartWeapon : Inventory		// r31 added to Starting Weapon
+{
+Inventory.MaxAmount 1
+}
+
 Actor FootStep
 {
 Radius 10
@@ -503,6 +508,9 @@ Player.StartItem "ShotgunAmmo",8												//R5 NEW
 Player.StartItem "SSGAmmo",2													//R10.2 NEW
 Player.StartItem "PlasmaRifleAmmo",40											//R5 NEW	//r31 was 30
 Player.StartItem "RLAmmo",6											//R31 added
+Player.StartItem "StartWeapon"
+Player.StartItem "FirstTimePistol"
+Player.StartItem "FirstTimeShotgun"
 Player.ColorRange 112,127
 Player.ViewHeight 50
 Player.AttackZOffset 23
@@ -773,6 +781,9 @@ Player.StartItem "ShotgunAmmo",8
 Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40		//r31 was 30
 Player.StartItem "RLAmmo",6					//R31 added
+Player.StartItem "StartWeapon"
+Player.StartItem "FirstTimeRifle"
+Player.StartItem "FirstTimeShotgun"
 Player.DisplayName "Tactical (Pistol)"
 }
 
@@ -800,6 +811,9 @@ Player.StartItem "ShotgunAmmo",8
 Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40	//r31 was 30
 Player.StartItem "RLAmmo",6				//R31 added
+Player.StartItem "StartWeapon"
+Player.StartItem "FirstTimeRifle"
+Player.StartItem "FirstTimeShotgun"
 Player.ColorRange 112,127
 Player.ViewHeight 50
 Player.AttackZOffset 23

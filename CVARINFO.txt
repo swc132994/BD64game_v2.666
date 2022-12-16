@@ -45,3 +45,4 @@ server int D64_SkipTitleMap = 0;			//used for skipping title map
 user int VanillaStatusBarCvar = 0;			//enable vanila status bar
 server int VanillaChainsawCvar = 0;			//Switch to Vanilla Chainsaw
 server int KnightmareRandomCvar = 0;		//KNIGHTMARE REPLACE HELLKNIGHT
+server bool WeaponsWarmUpCvar = FALSE;		//Weapons Warm Up Animation

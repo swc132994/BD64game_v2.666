@@ -416,3 +416,8 @@ script "KnightmareRandom" (void)	//cvar check to random spawn knightmare from he
 {
 SetResultValue(GetCVar("KnightmareRandomCvar"));
 }
+
+script "WeaponsWarmUpACS" (void)
+{
+SetResultValue(GetCVar("WeaponsWarmUpCvar"));
+}

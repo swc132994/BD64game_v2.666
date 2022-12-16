@@ -189,6 +189,7 @@ OptionMenu "BrutalDoom64Item/WeaponOptions" //R31 added
 		StaticText "Also you can restore Classic Rocket Launcher for Tactical/Modern.",1
 		StaticText " "
 	Option "Play Vanilla Weapon Animations (Classical Only) =","VWeaponCvar","YesOrNo"
+	Option "Play Start Warm Up Weapons (Tactical/Modern Only)=", "WeaponsWarmUpCvar", "YesOrNo"
 	Option "Alternative Rifle Skin =","AlternativeRifleSkinCvar","YesOrNo"
 	Option "Alternative Laser Skin =","AlternativeLaserSkinCvar","YesOrNo"
 	Option "Classic Rocket Launcher for Tactical/Modern =","ClassicRLCvar","YesOrNo"
