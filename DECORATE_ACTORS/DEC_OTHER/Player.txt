@@ -511,6 +511,7 @@ Player.StartItem "RLAmmo",6											//R31 added
 Player.StartItem "StartWeapon"
 Player.StartItem "FirstTimePistol"
 Player.StartItem "FirstTimeShotgun"
+Player.StartItem "FirstTimeSSG"
 Player.ColorRange 112,127
 Player.ViewHeight 50
 Player.AttackZOffset 23
@@ -784,6 +785,7 @@ Player.StartItem "RLAmmo",6					//R31 added
 Player.StartItem "StartWeapon"
 Player.StartItem "FirstTimeRifle"
 Player.StartItem "FirstTimeShotgun"
+Player.StartItem "FirstTimeSSG"
 Player.DisplayName "Tactical (Pistol)"
 }
 
@@ -814,6 +816,7 @@ Player.StartItem "RLAmmo",6				//R31 added
 Player.StartItem "StartWeapon"
 Player.StartItem "FirstTimeRifle"
 Player.StartItem "FirstTimeShotgun"
+Player.StartItem "FirstTimeSSG"
 Player.ColorRange 112,127
 Player.ViewHeight 50
 Player.AttackZOffset 23
