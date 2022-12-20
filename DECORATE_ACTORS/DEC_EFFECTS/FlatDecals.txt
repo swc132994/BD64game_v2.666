@@ -24,7 +24,7 @@ BounceFactor 0.01
 //		TNT1 A 1 ACS_ExecuteAlways(17001,0)		//R31 REMOVED
 //	On:																		//R31 REMOVED
 		TNT1 A 1 ThrustThingZ(0,-10,0,1)	//R31 28.7.22	WAS 0 TIC
-		TNT1 A 1 A_CHECKFLOOR("death")											//R31 added floor check
+		TNT1 AA 1 A_CHECKFLOOR("death")											//R31 added floor check
 		STOP
 	Off:
 		TNT1 A 0 A_FadeOut(1)
@@ -58,7 +58,7 @@ Renderstyle Translucent
 //		TNT1 A 1 ACS_ExecuteAlways(17001,0)		//r31 removed
 //	On:																		//r31 removed
 		TNT1 A 1 ThrustThingZ(0,35,0,1)	//R31 28.7.22	WAS 0 TIC
-		TNT1 A 1 A_CHECKCEILING("death")										//R31 added ceiling check
+		TNT1 AA 1 A_CHECKCEILING("death")										//R31 added ceiling check
 		STOP
 	Off:
 		TNT1 A 0 A_FadeOut(1)
