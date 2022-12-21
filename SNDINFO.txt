@@ -438,6 +438,16 @@ BREATHOF	BREATHOF
 64Bruiser/attack		snddhbdmsl
 64Bruiser/shotx			snddhimpct
 
+//THING
+64Thing/sight		HEADRIP3
+64Thing/pain		BQPAIN2A
+64Thing/death		B3DIE03G
+64Thing/attack		B2REC03
+64Thing/Walk		SLIROA02
+
+64ThingActive		SBR1C
+64ThingActive1		BLROAM2A
+
 //Alt Fire Plasma
 PlasFire	PlasFire
 

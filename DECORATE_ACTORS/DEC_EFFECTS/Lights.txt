@@ -551,19 +551,54 @@ ACTOR 64NonSolidTwitch : NonSolidTwitch Replaces NonSolidTwitch	//r31 added
 scale 0.82
 }*/
 
-actor 64DeadMarine : DeadMarine Replaces DeadMarine
+actor 64DeadMarineReplacer : RandomSpawner Replaces DeadMarine
+{
+DropItem "64Thing"
+DropItem "64DeadMarine"
+DropItem "64DeadMarine"
+DropItem "64DeadMarine"
+DropItem "64DeadMarine"
+}
+
+actor 64GibbedMarineReplacer : RandomSpawner Replaces GibbedMarine
+{
+DropItem "64Thing"
+DropItem "64GibbedMarine"
+DropItem "64GibbedMarine"
+DropItem "64GibbedMarine"
+DropItem "64GibbedMarine"
+}
+
+actor 64GibbedMarineExtraReplacer : RandomSpawner Replaces GibbedMarineExtra
+{
+DropItem "64Thing"
+DropItem "64GibbedMarineExtra"
+DropItem "64GibbedMarineExtra"
+DropItem "64GibbedMarineExtra"
+DropItem "64GibbedMarineExtra"
+}
+
+actor 64DeadMarine : DeadMarine// Replaces DeadMarine
 {
 +ISMONSTER		//R30.7 added for infrared
-//scale 0.75
+scale 0.8
+	States
+	{
+	Spawn:
+		PLAY M -1
+		Stop
+	}
 }
 
-actor 64GibbedMarine : GibbedMarine Replaces GibbedMarine
+actor 64GibbedMarine : GibbedMarine// Replaces GibbedMarine
 {
-//scale 0.75
++ISMONSTER
+scale 0.8
 }
 
-actor 64GibbedMarineExtra : GibbedMarineExtra Replaces GibbedMarineExtra
+actor 64GibbedMarineExtra : GibbedMarineExtra// Replaces GibbedMarineExtra
 {
++ISMONSTER
 scale 0.8
 	States
 	{
