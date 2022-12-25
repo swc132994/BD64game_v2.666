@@ -86,7 +86,7 @@ Player.WeaponSlot 3,"64Shotgun","64SuperShotgun"
 Player.WeaponSlot 4,"64Rifle","64Chaingun"
 Player.WeaponSlot 5,"64RocketLauncher","64RocketLauncherDM"
 Player.WeaponSlot 6,"64PlasmaRifle","64PlasmaRifleDM"
-Player.WeaponSlot 7,"64BFG9000"
+Player.WeaponSlot 7,"BD64_GaussCannon","64BFG9000"
 Player.WeaponSlot 8,"Unmaker"
 Player.WeaponSlot 9,"Lasergun"
 +THRUSPECIES
@@ -508,6 +508,7 @@ Player.StartItem "ShotgunAmmo",8												//R5 NEW
 Player.StartItem "SSGAmmo",2													//R10.2 NEW
 Player.StartItem "PlasmaRifleAmmo",40											//R5 NEW	//r31 was 30
 Player.StartItem "RLAmmo",6											//R31 added
+Player.StartItem "GaussAmmo",4			//R31 added
 Player.StartItem "StartWeapon"
 Player.StartItem "FirstTimePistol"
 Player.StartItem "FirstTimeShotgun"
@@ -523,7 +524,7 @@ Player.WeaponSlot 3,"64ShotgunTACTICAL","64SuperShotgunTACTICAL"
 Player.WeaponSlot 4,"64RifleTACTICAL","64ChaingunTACTICAL"
 Player.WeaponSlot 5,"64RocketLauncherTACTICAL","64RocketLauncherDM"
 Player.WeaponSlot 6,"64PlasmaRifleTACTICAL","64PlasmaRifleDM"
-Player.WeaponSlot 7,"64BFG9000Tactical"
+Player.WeaponSlot 7,"BD64_GaussCannonTACTICAL","64BFG9000Tactical"
 Player.WeaponSlot 8,"UnmakerTACTICAL"
 Player.WeaponSlot 9,"LasergunTactical"
 +THRUSPECIES
@@ -813,6 +814,7 @@ Player.StartItem "ShotgunAmmo",8
 Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40	//r31 was 30
 Player.StartItem "RLAmmo",6				//R31 added
+Player.StartItem "GaussAmmo",4			//R31 added
 Player.StartItem "StartWeapon"
 Player.StartItem "FirstTimeRifle"
 Player.StartItem "FirstTimeShotgun"
@@ -828,7 +830,7 @@ Player.WeaponSlot 3,"64ShotgunTACTICAL","64SuperShotgunTACTICAL"
 Player.WeaponSlot 4,"64RifleTACTICAL","64ChaingunTACTICAL"
 Player.WeaponSlot 5,"64RocketLauncherTACTICAL","64RocketLauncherDM"
 Player.WeaponSlot 6,"64PlasmaRifleTACTICAL","64PlasmaRifleDM"
-Player.WeaponSlot 7,"64BFG9000Tactical"
+Player.WeaponSlot 7,"BD64_GaussCannonTACTICAL","64BFG9000Tactical"
 Player.WeaponSlot 8,"UnmakerTACTICAL"
 Player.WeaponSlot 9,"LasergunTactical"
 +THRUSPECIES

@@ -455,6 +455,20 @@ PlasFire	PlasFire
 SILEIN SILEIN
 SILEOUT SILEOUT
 
+//GAUSS CANNON
+$random GaussCannon/Fire { GaussCannon/Fire1 GaussCannon/Fire2 GaussCannon/Fire3 }
+GaussCannon/Fire1 GAUSS1
+GaussCannon/Fire2 GAUSS2
+GaussCannon/Fire3 GAUSS3
+
+GAUDR1 GAUDR1
+
+RAILMAG1 RAILMAG1 //pull out mag when gun is still on
+RAILMAG2 RAILMAG2 //pull out mag when gun is off
+RAILINSR RAILINSR //insert mag
+Railgun/Eject RAILEJCT
+
+
 //---------------------------
 //**********GORE*************
 //---------------------------
