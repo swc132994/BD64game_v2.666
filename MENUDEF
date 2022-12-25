@@ -109,9 +109,9 @@ OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
 		StaticText "or set to appear randomly",1
 		StaticText " "
 	Option "Randomly replace Power-ups with Unmaker Power-ups =","WpnPower_Spawner_Cvar","WpnPower_Spawner_Value"		//r31 was DynamicSpawnCvar and YesOrNo
-	Option "Randomly replace Plasma Rifle with Lasergun =","Lasergun_Spawner_Cvar","Lasergun_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace BFG9000 with Unmaker =","Unmaker_Spawner_Cvar","Unmaker_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Chaingun with SMG =","SMG_Spawner_Cvar","SMG_Spawner_Value"
+	Option "Randomly replace Plasma Rifle with Gauss Cannon =","GaussCannon_Spawner_Cvar","GaussCannon_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace BFG9000 with Unmaker/Lasergun =","BFG_Spawner_Cvar","BFG_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Chaingun with SMG/Rifle =","Chaingun_Spawner_Cvar","Chaingun_Spawner_Value"
 		StaticText " "
 		StaticText "Option to replace shotguns with super shotguns",1
 		StaticText "(setting to shotgun only will cause SSG Zombies to drop shells instead of SSG)",1
@@ -340,17 +340,18 @@ OptionValue "LFog_Value"
 	3,"Disable Light Fog"
 }
 
-OptionValue "Unmaker_Spawner_Value"
+OptionValue "BFG_Spawner_Value"
 {
 	0,"BFG9000 Only"
 	1,"Unmaker Only"
-	2,"Random"
+	2,"Lasergun Only"	
+	3,"Random"
 }
 
-OptionValue "Lasergun_Spawner_Value"
+OptionValue "GaussCannon_Spawner_Value"
 {
 	0,"Plasmagun Only"
-	1,"Lasergun Only"
+	1,"Gauss Cannon Only"
 	2,"Random"
 }
 
@@ -361,11 +362,12 @@ OptionValue "WpnPower_Spawner_Value"
 	2,"Random"
 }
 
-OptionValue "SMG_Spawner_Value"
+OptionValue "Chaingun_Spawner_Value"
 {
 	0,"Chaingun Only"
-	1,"SMG Only"
-	2,"Random"
+	1,"Rifle Only"
+	2,"SMG Only"
+	3,"Random"
 }
 
 OptionValue "AlternativeAmmoPickupSpritesValue"

@@ -185,14 +185,14 @@ script "VanillaWeapons" (void)													//R31 Vanilla weapon animations
 SetResultValue(GetCVar("VWeaponCvar"));
 }
 
-script "LasergunRandom" (void)													//R31 Replaces 1485
+script "GaussCannonRandom" (void)													//R31 Replaces 1485
 {
-SetResultValue(GetCVar("Lasergun_Spawner_Cvar"));
+SetResultValue(GetCVar("GaussCannon_Spawner_Cvar"));
 }
 
-script "UnmakerRandom" (void)													//R31 Replaces 1486
+script "BFGRandom" (void)													//R31 Replaces 1486
 {
-SetResultValue(GetCVar("Unmaker_Spawner_Cvar"));
+SetResultValue(GetCVar("BFG_Spawner_Cvar"));
 }
 
 script "WpnPowerRandom" (void)													//R31 Replaces 1478
@@ -312,9 +312,9 @@ script "AcidDemonRandomACS" (void)	//R31 added
 SetResultValue(GetCVar("AcidDemonRandom_Cvar"));
 }
 
-script "SMGRandomACS" (void)	//R31 added
+script "ChaingunRandomACS" (void)	//R31 added
 {
-SetResultValue(GetCVar("SMG_Spawner_Cvar"));
+SetResultValue(GetCVar("Chaingun_Spawner_Cvar"));
 }
 
 Script "ClassicRLACS" (void) //r31 added
