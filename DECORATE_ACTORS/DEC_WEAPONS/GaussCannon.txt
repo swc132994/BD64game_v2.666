@@ -192,7 +192,6 @@ Decal BigScorch
 	FullReload:
 		TNT1 A 0 A_PlaySound("RAILMAG1",CHAN_WEAPON)
 		GCFL DDEFGHIJKLMN 1
-		TNT1 A 0 A_FireCustomMissile("EmptyCellPack",-30,0,-11,-24)
 		GCRL E 10
 	FinishReload:
 		GCBL AABBCCDEFGHIJK 1
