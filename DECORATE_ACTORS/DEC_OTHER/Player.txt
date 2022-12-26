@@ -3,6 +3,11 @@ Actor VMapCheck : Inventory		// r31 added to switch to vanilla BD64 maps
 Inventory.MaxAmount 1
 }
 
+Actor AbsMapCheck : Inventory	//To access Map28A
+{
+Inventory.MaxAmount 1
+}
+
 Actor TCMapCheck : Inventory		// r31 added to switch to TC maps
 {
 Inventory.MaxAmount 1

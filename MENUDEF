@@ -65,12 +65,12 @@ LISTMENU "MainMenu"
 OptionMenu "BD64Menu" //R31
 {
 	Title "BRUTAL DOOM 64 OPTIONS"
-	Submenu "Performance Options",		"BrutalDoom64OptionsPerformance"
-	Submenu "Item/Weapon Spawner Options",			"BrutalDoom64OptionsItem/WeaponSpawner"
-	Submenu "Monster Spawner Options",			"BrutalDoom64OptionsMonsterSpawner"
-	Submenu "Other Monster Options",			"BrutalDoom64OptionsOtherMonster"
-	Submenu "Map Options",			"BD64MapOptions"
-	Submenu "Item/Weapon Options",		"BrutalDoom64Item/WeaponOptions"
+	Submenu "Performance Options",			"BrutalDoom64OptionsPerformance"
+	Submenu "Item/Weapon Spawner Options",	"BrutalDoom64OptionsItem/WeaponSpawner"
+	Submenu "Monster Spawner Options",		"BrutalDoom64OptionsMonsterSpawner"
+	Submenu "Other Monster Options",		"BrutalDoom64OptionsOtherMonster"
+	Submenu "Map Options",					"BD64MapOptions"
+	Submenu "Item/Weapon Options",			"BrutalDoom64Item/WeaponOptions"
 }
 
 OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
@@ -111,7 +111,7 @@ OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
 	Option "Randomly replace Power-ups with Unmaker Power-ups =","WpnPower_Spawner_Cvar","WpnPower_Spawner_Value"		//r31 was DynamicSpawnCvar and YesOrNo
 	Option "Randomly replace Plasma Rifle with Gauss Cannon =","GaussCannon_Spawner_Cvar","GaussCannon_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace BFG9000 with Unmaker/Lasergun =","BFG_Spawner_Cvar","BFG_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Chaingun with SMG/Rifle =","Chaingun_Spawner_Cvar","Chaingun_Spawner_Value"
+	Option "Randomly replace Chaingun with SMG or Rifle =","Chaingun_Spawner_Cvar","Chaingun_Spawner_Value"
 		StaticText " "
 		StaticText "Option to replace shotguns with super shotguns",1
 		StaticText "(setting to shotgun only will cause SSG Zombies to drop shells instead of SSG)",1
@@ -176,6 +176,7 @@ OptionMenu "BD64MapOptions" //R31 added
 		StaticText " "
 	Option "Play Vanilla Map08 =","VMapCheckCvar","YesOrNo"
 	Option "Add TC Maps to Campaign =","TCMapCheckCvar","YesOrNo"
+	Option "Revert Back to Original Map28 =","AbsMapCheckCvar","YesOrNo"
 
 	Option "Show Opening Title Map (Restart Required) =","D64_SkipTitleMap","YesOrNoFalse"
 }
@@ -344,7 +345,7 @@ OptionValue "BFG_Spawner_Value"
 {
 	0,"BFG9000 Only"
 	1,"Unmaker Only"
-	2,"Lasergun Only"	
+	2,"Lasergun Only"
 	3,"Random"
 }
 
