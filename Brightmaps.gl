@@ -3166,3 +3166,7 @@ brightmap sprite BOZ3H2H8	{map "brightmaps/BOZ3H2H8_BR.png"}
 brightmap sprite BOZ3H3H7	{map "brightmaps/BOZ3H3H7_BR.png"}
 brightmap sprite BOZ3H4H6	{map "brightmaps/BOZ3H4H6_BR.png"}
 brightmap sprite BOZ3H5		{map "brightmaps/BOZ3H5_BR.png"}
+
+//Alpha Build Barrel
+brightmap sprite BAR1A0		{map "brightmaps/BAR1A0_BR.png"}
+brightmap sprite BAR1B0		{map "brightmaps/BAR1B0_BR.png"}

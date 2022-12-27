@@ -11,7 +11,14 @@ Damagefactor "Kick",0		//R31 ADDED
 	{
 
 	Spawn:
-		BAR1 AB 6 Bright A_SpawnItem("GreenLensFlareAltSmall",0,35)
+		BAR1 A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"StayAlpha")
+		
+	Stay:
+		BEXP A -1
+		Stop
+	
+	StayAlpha:
+		BAR1 AB 6 A_SpawnItem("GreenLensFlareAltSmall",0,35)
 		Loop
 	Death:
 		BEXP ABC 3 BRIGHT
