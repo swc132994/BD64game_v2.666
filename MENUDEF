@@ -198,7 +198,7 @@ OptionMenu "BrutalDoom64Item/WeaponOptions" //R31 added
 	Option "Alternative Ammo Pickup Sprites =","AlternativeAmmoPickupSpritesCvar","AlternativeAmmoPickupSpritesValue"
 	Option "Switch to Fists on Berserk Pickup =","BerserkSwitchFistsCvar","YesOrNo"
 	Option "Show Alpha/censored healing kits/berserk =","CensoredHealing_Cvar","CensoredHealing_Value"
-	Option "Alpha Items Pickup =","AlphaPickupCvar","YesOrNo"
+	Option "Alpha Build Items Pickup =","AlphaPickupCvar","YesOrNo"
 }
 
 OptionValue "BrutalBlood"
