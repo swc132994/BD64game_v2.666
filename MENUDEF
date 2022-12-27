@@ -197,7 +197,8 @@ OptionMenu "BrutalDoom64Item/WeaponOptions" //R31 added
 	Option "Classic Chainsaw for Tactical/Modern =","VanillaChainsawCvar","YesOrNo"
 	Option "Alternative Ammo Pickup Sprites =","AlternativeAmmoPickupSpritesCvar","AlternativeAmmoPickupSpritesValue"
 	Option "Switch to Fists on Berserk Pickup =","BerserkSwitchFistsCvar","YesOrNo"
-	Option "Show censored healing kits/berserk =","CensoredHealing_Cvar","CensoredHealing_Value"
+	Option "Show Alpha/censored healing kits/berserk =","CensoredHealing_Cvar","CensoredHealing_Value"
+	Option "Alpha Items Pickup =","AlphaPickupCvar","YesOrNo"
 }
 
 OptionValue "BrutalBlood"
@@ -375,12 +376,14 @@ OptionValue "AlternativeAmmoPickupSpritesValue"
 {
 	0,"Default Only"
 	1,"Alternative Only"
-	2,"Random"
+	2,"Alpha Build Only"
+	3,"Random (Except Alpha Build)"
 }
 
 OptionValue "CensoredHealing_Value"
 {
-	0, "No"
-	1, "Censored (Nightdive)"
-	2, "Alternative (BFG Style)"
+	0,"No"
+	1,"Alpha Build"
+	2,"Censored (Nightdive)"
+	3,"Alternative (BFG Style)"
 }

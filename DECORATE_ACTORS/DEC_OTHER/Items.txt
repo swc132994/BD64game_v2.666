@@ -4,8 +4,9 @@ Scale 0.82
 	states
 	{
 	Spawn:
-		PSTR A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"CensoredSpawn")	//R31 added option
-		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"BFGStyleSpawn")	//R31 added option
+		PSTR A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"AlphaSpawn")	//R31 added option
+		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"CensoredSpawn")	//R31 added option
+		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==3,"BFGStyleSpawn")	//R31 added option
 		PSTR A 32
 		Loop
 	CensoredSpawn:
@@ -14,6 +15,9 @@ Scale 0.82
 	BFGStyleSpawn:
 		PSTR C 32
 		Goto Spawn
+	AlphaSpawn:
+		PSTR D 32
+		Goto Spawn		
 	Pickup:
 		TNT1 A 0 A_SetBlend("ff0000",0.75,70)
 		TNT1 A 0 A_GiveInventory("PowerStrength")
@@ -37,6 +41,18 @@ Actor 64GreenArmor : GreenArmor Replaces GreenArmor
 Scale 0.82
 Inventory.PickupSound "ARMOR"
 //Armor.Savepercent 60	//removed - set from project nightmare
+	States
+	{
+	Spawn:
+		ARM1 A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")	//R31 added option
+		ARM1 A 6
+		ARM1 B 7 Bright
+		Loop
+	AlphaSpawn:
+		ARM3 A 6
+		ARM3 B 7 Bright
+		Loop		
+	}
 }
 
 Actor 64BlueArmor : BlueArmor Replaces BlueArmor
@@ -44,6 +60,18 @@ Actor 64BlueArmor : BlueArmor Replaces BlueArmor
 Scale 0.82
 Inventory.PickupSound "ARMOR"
 //Armor.Savepercent 80	//removed - set from project nightmare
+	States
+	{
+	Spawn:
+		ARM2 A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")	//R31 added option
+		ARM2 A 6
+		ARM2 B 6 Bright
+		Loop
+	AlphaSpawn:
+		ARM4 A 6
+		ARM4 B 6 Bright
+		Loop	
+	}
 }
 
 Actor 64BlurSphere : BlurSphere Replaces BlurSphere
@@ -54,8 +82,12 @@ powerup.strength 50
 	States
 	{
 	Spawn:
+		PINS A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")	//R31 added option
 		PINS ABCD 2 Bright A_SpawnItem("RedFlareSmall",0,25)
 		loop
+	AlphaSpawn:
+		PIN2 ABCD 2 Bright A_SpawnItem("RedFlareSmall",0,25)
+		loop		
 	//Pickup:
 		//TNT1 A 1
 		//TNT1 A 0 A_GiveInventory("PowerInvisibility")
@@ -71,8 +103,12 @@ powerup.color "FF FF FF",0.30
 	states
 	{
 	Spawn:
+		PINV A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")	//R31 added option
 		PINV ABCDCB 6 Bright
 		loop
+	AlphaSpawn:
+		P1NV ABCDCB 6 Bright
+		loop		
 	}
 }
 
@@ -80,6 +116,16 @@ Actor 64Megasphere : Megasphere Replaces Megasphere
 {
 Scale 0.82
 Inventory.PickupSound "misc/p_pkup"
+	 States
+	 {
+	 Spawn:
+		MEGA A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")	//R31 added option
+		MEGA ABCD 6 Bright
+		Loop
+	 AlphaSpawn:
+		M3GA ABCD 6 Bright
+		Loop
+	 }
 }
 
 Actor 64RadSuit : RadSuit Replaces RadSuit
@@ -101,8 +147,12 @@ Scale 0.7
 	States
 	{
 	Spawn:
+		SOUL A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")	//R31 added option
 		SOUL AAABBBCCCDDDCCCBBB 1 A_SpawnItemEx("BlueFlareSmall",0,0,22)
 		Loop
+	AlphaSpawn:	
+		2OUL AABBCCDDCCBB 1 A_SpawnItemEx("BlueFlareSmall",0,0,22)
+		Loop		
 	}
 }
 
@@ -112,8 +162,9 @@ Scale 0.82
 	states
 	{
 	Spawn:
-		STIM A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"CensoredSpawn")	//R31 added option
-		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"BFGStyleSpawn")	//R31 added option
+		STIM A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"AlphaSpawn")	//R31 added option
+		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"CensoredSpawn")	//R31 added option
+		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==3,"BFGStyleSpawn")	//R31 added option		
 		STIM A 32
 		Loop
 	CensoredSpawn:
@@ -122,6 +173,9 @@ Scale 0.82
 	BFGStyleSpawn:
 		STIM C 32
 		Goto Spawn
+	AlphaSpawn:
+		STIM D 32
+		Goto Spawn		
 	}
 }
 
@@ -131,8 +185,9 @@ Scale 0.82
 	states
 	{
 	Spawn:
-		MEDI A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"CensoredSpawn")	//R31 added option
-		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"BFGStyleSpawn")	//R31 added option
+		MEDI A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"AlphaSpawn")	//R31 added option
+		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"CensoredSpawn")	//R31 added option
+		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==3,"BFGStyleSpawn")	//R31 added option		
 		MEDI A 32
 		Loop
 	CensoredSpawn:
@@ -141,6 +196,9 @@ Scale 0.82
 	BFGStyleSpawn:
 		MEDI C 32
 		Goto Spawn
+	AlphaSpawn:
+		MEDI D 32
+		Goto Spawn		
 	}
 }
 
@@ -189,7 +247,7 @@ Inventory.PickupSound "IPICK"
 	{
 	Spawn:
 		CELL A 0 NoDelay A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,3)
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")	
 		TNT1 A 0 A_Jump(128,"SPAWN2")
 		CELL A -1
 		Stop
@@ -199,7 +257,7 @@ Inventory.PickupSound "IPICK"
 		Stop
 	Spawn3:
 		CEL3 ABCDEFGHIJ 2
-		Loop
+		Loop		
 	}
 }
 
@@ -212,6 +270,7 @@ Inventory.PickupSound "IPICK"
 	Spawn:
 		CELP A 0 NoDelay A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,3)
 		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==2,"AlphaSpawn")		
 		TNT1 A 0 A_Jump(128,"SPAWN2")
 		CELP A -1
 		Stop
@@ -221,6 +280,9 @@ Inventory.PickupSound "IPICK"
 		Stop
 		CELP B -1
 		Stop
+	AlphaSpawn:
+		CELP C -1
+		Stop		
 	}
 }
 
@@ -269,12 +331,17 @@ Inventory.PickupSound "IPICK"
 	Spawn:
 		SBOX A 0 NoDelay A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,3)
 		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==2,"AlphaSpawn")		
 		TNT1 A 0 A_Jump(128,"SPAWN2")
 		SBOX A -1
 		Stop
 	Spawn2:
 		SBX2 A -1
 		Stop
+	AlphaSpawn:
+		SBOX B -1
+		Stop		
+		
 	}
 }
 
@@ -302,8 +369,12 @@ Scale 0.82
 	states
 	{
 	Spawn:
+		PMAP A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
 		PMAP ABCBAD 6 Bright
 		loop
+	AlphaSpawn:
+		PMAP E -1 Bright
+		Stop
 	}
 }
 
@@ -333,6 +404,23 @@ Armor.Savepercent 50
 	}
 }
 
+ACTOR 64Infrared : Infrared Replaces Infrared
+{
+Scale 0.82
+	States
+	{
+	Spawn:
+		PVIS A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
+		PVIS A 6 Bright
+		PVIS B 6
+		Loop
+	AlphaSpawn:
+		PVI2 A 6 Bright
+		PVI2 B 6
+		Loop	
+	}
+}
+
 Actor 64Shell : Shell Replaces Shell	//R31 added alt sprites
 {
 Scale 0.82
@@ -342,6 +430,7 @@ Inventory.PickupSound "IPICK"
 	Spawn:
 		SHEL A 0 NoDelay A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,3)
 		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"AlternativeSprite")
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==2,"AlphaSpawn")		
 		TNT1 A 0 A_Jump(128,"SPAWN2","SPAWN3")
 		SHEL A -1
 		Stop
@@ -354,6 +443,9 @@ Inventory.PickupSound "IPICK"
 	Spawn3:
 		SHL3 A -1
 		Stop
+	AlphaSpawn:
+		SHEL B -1
+		Stop		
 	}
 }
 
@@ -366,6 +458,7 @@ Inventory.PickupSound "IPICK"
 	Spawn:
 		CLIP A 0 NoDelay A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,3)
 		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"AlternativeSprite")
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==2,"AlphaSpawn")
 		TNT1 A 0 A_Jump(128,"SPAWN2", "SPAWN3")
 		CLIP a -1
 		Stop
@@ -378,6 +471,9 @@ Inventory.PickupSound "IPICK"
 	Spawn3:
 		CLP2 A -1
 		Stop
+	AlphaSpawn:
+		CLIP B -1
+		Stop		
 	}
 }
 

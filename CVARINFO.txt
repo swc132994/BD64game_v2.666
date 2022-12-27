@@ -47,3 +47,4 @@ user int VanillaStatusBarCvar = 0;			//enable vanila status bar
 server int VanillaChainsawCvar = 0;			//Switch to Vanilla Chainsaw
 server int KnightmareRandomCvar = 0;		//KNIGHTMARE REPLACE HELLKNIGHT
 server bool WeaponsWarmUpCvar = FALSE;		//Weapons Warm Up Animation
+server bool AlphaPickupCvar = FALSE;		//Pickup Sprites from D64 Alpha Build

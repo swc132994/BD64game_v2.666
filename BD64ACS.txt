@@ -427,3 +427,8 @@ script "WeaponsWarmUpACS" (void)
 {
 SetResultValue(GetCVar("WeaponsWarmUpCvar"));
 }
+
+script "AlphaPickupACS" (void)
+{
+SetResultValue(GetCVar("AlphaPickupCvar"));
+}
