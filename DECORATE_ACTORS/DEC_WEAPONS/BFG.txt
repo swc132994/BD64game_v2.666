@@ -2,7 +2,6 @@
 Actor BFG9000Spawner : CustomInventory Replaces BFG9000
 {
 Scale 0.9
-//+INVENTORY.ALWAYSPICKUP		//R12.1 removed
 Inventory.PickupMessage "$GOTBFG9000"
 Inventory.PickupSound "WPICK"
 	States
@@ -38,24 +37,24 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 	States
 	{
 	Ready:
-		TNT1 A 0 A_StopSound(5)									//r31 added
+		TNT1 A 0 A_StopSound(5)	//r31 added
 		BFGG A 1 A_WeaponReady
 		Loop
 	Deselect:
 		TNT1 A 0 A_StopSound(5)	//R31 added
 		BFGG A 1 A_Lower
 		Wait
-	Select: 
+	Select:
 		BFGG A 1 A_Raise
 		Wait
 	Fire:
 		BFGG A 1 A_BFGSound
 		BFGC ABCDABCDABCDABCDABCDABCD 1 Bright
 		TNT1 A 0 A_FireBFG
-		TNT1 A 0 A_ZoomFActor(0.9)
+		TNT1 A 0 A_ZoomFactor(0.9)
 		TNT1 A 0 A_SetPitch(pitch-4)
 		BFGF AB 1 Bright
-		TNT1 A 0 A_ZoomFActor(1.0)
+		TNT1 A 0 A_ZoomFactor(1.0)
 		BFGF CD 1 Bright
 		BFGF EEEFFGHI 1 A_SetPitch(pitch+0.5)
 		BFGG A 20
@@ -80,7 +79,7 @@ Tag "$TAG_BFG9000"
 +WEAPON.NOAUTOFIRE
 +WEAPON.ALT_USES_BOTH	//R31 added
 +WEAPON.NOALERT			//R31 added
-+INVENTORY.RESTRICTABSOLUTELY		//R12.1 added
++INVENTORY.RESTRICTABSOLUTELY	//R12.1 added
 	States
 	{
 	KickingFlash:
@@ -102,7 +101,7 @@ Tag "$TAG_BFG9000"
 		Stop
 	v1Ready:
 	Ready:
-		TNT1 A 0 A_StopSound(5)									//r31 added
+		TNT1 A 0 A_StopSound(5)	//r31 added
 		BFGG A 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		Loop
@@ -111,7 +110,7 @@ Tag "$TAG_BFG9000"
 		BFGS DCBA 1
 		TNT1 A 1 A_Lower
 		Wait
-	Select: //R31 Select Animation Improvement (Tactical and Modern only)
+	Select:	//R31 Select Animation Improvement (Tactical and Modern only)
 		TNT1 A 0 A_PlaySound("BFGREADY")
 		TNT1 AAAAAAAA 0 A_Raise
 	SelectAnimation:
@@ -125,11 +124,11 @@ Tag "$TAG_BFG9000"
 		BFGG A 1 A_BFGSound
 		BFGC ABCDABCDABCDABCDABCDABCD 1 Bright
 		TNT1 A 0 A_FireBFG
-		TNT1 A 0 A_TakeInventory("CELL",39)		//R31 added
-		TNT1 A 0 A_ZoomFActor(0.9)
+		TNT1 A 0 A_TakeInventory("CELL",39,TIF_NOTAKEINFINITE)	//R31 added to ensure 40 cells total are used
+		TNT1 A 0 A_ZoomFactor(0.9)
 		TNT1 A 0 A_SetPitch(pitch-4)
 		BFGF AB 1 Bright
-		TNT1 A 0 A_ZoomFActor(1.0)
+		TNT1 A 0 A_ZoomFactor(1.0)
 		BFGF CD 1 Bright
 		BFGF EEEFFGHI 1 A_SetPitch(pitch+0.5)
 		BFGG A 20
@@ -139,8 +138,8 @@ Tag "$TAG_BFG9000"
 		BFUG A -1
 		Stop
 	AltFire:	//r31 added altfire
-		TNT1 A 0 A_jumpifinventory("IsTacticalClass",1,2)
-		TNT1 A 0 A_jumpifinventory("IsModern",1,1)
+		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,2)
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,1)
 		Goto Ready
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_BFGSound

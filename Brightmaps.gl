@@ -196,13 +196,13 @@ disablefullbright
 //WEAPONS
 	//GAUSS CANNON
 	//Pick-Up
-brightmap sprite GCPCA0{map "BRIGHTMAPS/GCPCA0.png" Disablefullbright}
+brightmap sprite GCPCA0{map "BRIGHTMAPS/GCPCA0_BR.png" Disablefullbright}
 	//Fire
-brightmap sprite GCFIA0{map "BRIGHTMAPS/GCFIA0.png" Disablefullbright}
-brightmap sprite GCFIB0{map "BRIGHTMAPS/GCFIB0.png" Disablefullbright}
+brightmap sprite GCFIA0{map "BRIGHTMAPS/GCFIA0_BR.png" Disablefullbright}
+brightmap sprite GCFIB0{map "BRIGHTMAPS/GCFIB0_BR.png" Disablefullbright}
 	//Tactical Fire
-brightmap sprite TGCFA0{map "BRIGHTMAPS/TGCFA0.png" Disablefullbright}
-brightmap sprite TGCFB0{map "BRIGHTMAPS/TGCFB0.png" Disablefullbright}
+brightmap sprite TGCFA0{map "BRIGHTMAPS/TGCFA0_BR.png" Disablefullbright}
+brightmap sprite TGCFB0{map "BRIGHTMAPS/TGCFB0_BR.png" Disablefullbright}
 
 //ROCKET LAUNCHER MODERN/TATICAL
 brightmap sprite RL1RA0		{map "brightmaps/RL1RA0_BR.png"}

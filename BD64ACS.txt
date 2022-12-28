@@ -1,24 +1,8 @@
 #library "BD64ACS"
 #include "zcommon.acs"
 
-/*script 166 enter																//R29 NOT NEEDED
-{
-	TakeInventory("PowerInvisibility",1);
-}*/
-
-/*Script 1801 (VOID)		//R31 NOT USED
-{
-if	(GetCvar("bd64_nostamina") == 1) {SetResultValue(1);}
-if	(GetCvar("bd64_nostamina") == 0) {SetResultValue(0);}
-}*/
-
 script "KickKeyPress" (VOID) NET		//TRIGGERED FROM KEYPRESS		//r31 was 301
 {
-/*if(GetCvar("bd64_nostamina") == 1)	//R31 THIS SEGMENT NOT USED
-	{
-	TakeInventory("Stamina",0);
-	GiveInventory("Kicking",1);
-	}*/
 	if(CheckInventory("IsModern") > 0)											//R28
 	{																			//R28
 	GiveInventory("Kicking",1);													//R28
@@ -34,7 +18,7 @@ script "KickKeyPress" (VOID) NET		//TRIGGERED FROM KEYPRESS		//r31 was 301
 		{
 		if(CheckInventory("Stamina") > 80)
 			{
-			Print(s:"Not enough stamina!");
+			Print(s:"Not Enough Stamina!");
 			PlaySound(0,"Tired",2,1.0,FALSE,ATTN_NORM);
 			terminate;
 			}
@@ -55,54 +39,11 @@ script "CheckIfCrouching"(void)		// New check for crouching
 		SetResultValue(FALSE);
 }
 
-/*Script "ReloadKeyPress" (VOID) NET			//TRIGGERED FROM KEYPRESS		//r31 was 303
-{
-GiveInventory("Reloading",1);
-}*/
-
 Script "DM_SpawnACS" (VOID)	//R31 WAS 119
 {
 if	(GameType() == GAME_NET_DEATHMATCH)
 	GiveInventory("IsDM",1);
 }
-
-/*Script "BloodCheckACS" (VOID)		//R31 WAS 799 replaced by script SetBloodAmountACS"
-{*/
-/*	if																			//R29 REMOVED
-	(GetCvar("isrunningzandronum") == 1)
-	{
-		if	(GetCvar("bd_bloodamount") == 0) {SetActorState(0,"LowBlood");}
-		if	(GetCvar("bd_bloodamount") == 1) {SetActorState(0,"LowBlood");}
-		if	(GetCvar("bd_bloodamount") == 3) {SetActorState(0,"LotsOfBlood");}
-		if	(GetCvar("bd_bloodamount") >= 4) {SetActorState(0,"AbsurdBlood");}
-	}
-	if
-	(GetCvar("isrunningzandronum") == 0)*/
-	/*{
-		If	(GetCvar("zdoombrutalblood") == 0) {SetActorState(0,"LowBlood");}
-		if	(GetCvar("zdoombrutalblood") == 1) {SetActorState(0,"LowBlood");}
-		if	(GetCvar("zdoombrutalblood") == 3) {SetActorState(0,"LotsOfBlood");}
-		if	(GetCvar("zdoombrutalblood") >= 4) {SetActorState(0,"AbsurdBlood");}
-	}*/
-/*if																			//R29 REMOVED
-	(GetCvar("isrunningzandronum") == 1)
-{
-if	(GetCvar("bd_bloodamount") == 666)
-	{
-	SetActorState(0,"AbsurdBlood");
-	GiveInventory("AnimuGore", 1);
-	}
-}
-	if
-		(GetCvar("isrunningzandronum") == 0)*/
-	/*{
-	if	(GetCvar("zdoombrutalblood") == 666)
-		{
-		SetActorState(0,"AbsurdBlood");
-		GiveInventory("AnimuGore",1);
-		}
-	}
-}*/
 
 script "SetBloodAmountACS" (void)		//R31 ADDED, REPLACES SCRIPT 799
 {
@@ -116,12 +57,6 @@ if	(GetCvar("zdoombrutaljanitor") == 1) {GiveInventory("LowGraphicsMode",1);}
 if	(GameType() == GAME_NET_DEATHMATCH) {GiveInventory("LowGraphicsMode",1);}		//R29 ADDED
 terminate;
 }
-
-/*Script 797 (VOID)																//R29 UNUSED
-{
-if	(GetCvar("bd_bloodamount") == 1) { SetActorState(0,"Vanish"); }
-if	(GetCvar("bd_bloodamount") == 0) { SetActorState(0,"Vanish"); }
-}*/
 
 script "Zandro_Check" OPEN		//R31 WAS 822
 {

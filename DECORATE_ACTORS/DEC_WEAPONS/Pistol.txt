@@ -50,7 +50,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	/
 		TNT1 AA 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-6,6),0,-1,0,0,random(-5,5))
 		TNT1 A 0 A_FireBullets(4.0,4.0,1,10,"HitPuff")
-		TNT1 A 0 A_PlaySound("PISTOLF",1) 	//R31 was EAGLEFI
+		TNT1 A 0 A_PlaySound("PISTOLF",1)	//R31 was EAGLEFI
 		TNT1 A 0 A_ZoomFactor(0.95)
 		PISF A 1 Bright
 		TNT1 A 0 A_SetPitch(pitch-1.5)
@@ -91,6 +91,7 @@ inventory.maxamount 1
 
 Actor 64PistolTACTICAL : Brutal64Weapon
 {
+Scale 0.82
 Weapon.SelectionOrder 1901		//R21 WAS 1900
 Weapon.AmmoUse1 1				//R25 WAS 0
 Weapon.AmmoGive1 10
@@ -99,20 +100,17 @@ Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
 Weapon.AmmoType2 "PistolAmmo"
 Obituary "$OB_MPPISTOL"
-//+WEAPON.WIMPY_WEAPON		//R25 removed
-+WEAPON.NOALERT
-+WEAPON.NOAUTOFIRE
 Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
 Tag "$TAG_PISTOL"
-Scale 0.82
 +INVENTORY.RESTRICTABSOLUTELY
++WEAPON.NOALERT
++WEAPON.NOAUTOFIRE
 +WEAPON.AMMO_CHECKBOTH		//R25 added
 	states
 	{
 	Spawn:
 		PIST A -1
 		Stop
-		
 	LetsGetStarted:
 		TNT1 A 0 A_TakeInventory("StartWeapon")
 		PUN1 A 10 A_WeaponReady
@@ -122,13 +120,13 @@ Scale 0.82
 		PUNS I 7 A_PlaySound("Knuckled")
 		PUNS JKJI 3 A_WeaponReady
 		PUNS CBA 1 A_WeaponReady
-		PUN6 DCBA 1	A_WeaponReady 	
+		PUN6 DCBA 1	A_WeaponReady
 	WarmUp:
 		TNT1 A 0 A_TakeInventory("FirstTimePistol")
-		PISI C 1 Offset(55, 59)
-		PISI C 1 Offset(34, 48)
-		PISI C 1 Offset(15, 37)
-		PISI C 1 Offset(6, 32)
+		PISI C 1 Offset(55,59)
+		PISI C 1 Offset(34,48)
+		PISI C 1 Offset(15,37)
+		PISI C 1 Offset(6,32)
 		PISI DEFG 1 A_WeaponReady
 		PISI G 5 A_WeaponReady
 		TNT1 A 0 A_PlaySound("prel")
@@ -140,13 +138,11 @@ Scale 0.82
 		PISI Q 1 Offset(-3,37) A_WeaponReady
 		PISI R 10 A_WeaponReady
 		TNT1 A 0 A_PlaySound("PISFORW",CHAN_WEAPON)
-		PISI STU 1  A_WeaponReady
+		PISI STU 1 A_WeaponReady
 		PISI DCBA 1 A_WeaponReady
-		Goto Ready		
-	
-	
+		Goto Ready
 	Select:
-		TNT1 A 0 A_JumpIf(CallACS("WeaponsWarmUpACS")==false,3)	
+		TNT1 A 0 A_JumpIf(CallACS("WeaponsWarmUpACS")==false,3)
 		TNT1 A 0 A_JumpIfInventory("StartWeapon",1,"LetsGetStarted")
 		TNT1 A 0 A_JumpIfInventory("FirstTimePistol",1,"WarmUp")
 		TNT1 A 0 A_PlaySound("PISSEL",CHAN_WEAPON)
@@ -181,7 +177,7 @@ Scale 0.82
 		TNT1 A 0 A_PlaySound("PISFORW",CHAN_WEAPON)
 		P1SI S 0 A_JumpIfInventory("IsSilencer",1,2)
 		PISI S 0
-		"####" STU 1  A_WeaponReady
+		"####" STU 1 A_WeaponReady
 		"####" DCBA 1 A_WeaponReady
 		Goto Ready
 	KickingFlash:	//r31 new kick animations
@@ -212,19 +208,15 @@ Scale 0.82
 		P1SG A 0 A_JumpIfInventory("IsSilencer",1,2)
 		PISG A 0
 		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD)
-//		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		Loop
 	Fire:
 		TNT1 A 0 A_JumpIfInventory("PistolAmmo",1,1)	//R24.2 WAS JUMP 2
 		Goto Reload
-		TNT1 A 0 A_JumpIfInventory("clip",1,1)			//R25 added
-		Goto Fire1										//R25 added
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-6,6),0,-1,0,0,random(-5,5))
-		TNT1 A 0 A_FireBullets(4.0,4.0,1,10,"HitPuff")
-		TNT1 A 0 A_GiveInventory("Clip",1)				//R25 added
+		TNT1 A 0 A_FireBullets(4.0,4.0,1,10,"HitPuff",0)
 		TNT1 A 0 A_TakeInventory("PistolAmmo",1,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_JumpIfInventory("IsSilencer",1,"SilenceFire")	//R25 added
 		TNT1 A 0 A_AlertMonsters
@@ -237,31 +229,11 @@ Scale 0.82
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,0,0)
 		PISF CC 1 A_SetPitch(pitch+0.5)
 		PISF D 1 A_SetPitch(pitch+0.5)
-		PISG A 7 A_WeaponReady(1 | WRF_ALLOWRELOAD)
-		TNT1 A 0 A_Refire
-		Goto Ready
-	Fire1:		//R25 NEW FIRE1
-		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
-		TNT1 A 0 A_FireCustomMissile("Tracer",random(-6,6),0,-1,0,0,random(-5,5))
-		TNT1 A 0 A_FireBullets(4.0,4.0,1,10,"HitPuff")
-		TNT1 A 0 A_TakeInventory("PistolAmmo",1,TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_JumpIfInventory("IsSilencer",1,"SilenceFire1")			//R25 added
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("PISTOLF",CHAN_WEAPON)		//R31 was EAGLEFI
-		TNT1 A 0 A_ZoomFactor(0.95)
-		PISF A 1 Bright
-		TNT1 A 0 A_SetPitch(pitch-1.5)
-		TNT1 A 0 A_ZoomFactor(1.0)
-		PISF B 2 Bright
-		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,0,0)
-		PISF CC 1 A_SetPitch(pitch+0.5)
-		PISF D 1 A_SetPitch(pitch+0.5)
-		PISG A 7 A_WeaponReady(1 | WRF_ALLOWRELOAD)
+		PISG A 7 A_WeaponReady(1|WRF_ALLOWRELOAD)
 		TNT1 A 0 A_Refire
 		Goto Ready
 	SilenceFire:
-		TNT1 A 0 A_PlaySound("PISTOLF3",CHAN_WEAPON)		//R31 was EAGLEFI
+		TNT1 A 0 A_PlaySound("PISTOLF3",CHAN_WEAPON)	//R31 was EAGLEFI
 		TNT1 A 0 A_ZoomFactor(0.95)
 		P1SF A 1 Bright
 		TNT1 A 0 A_SetPitch(pitch-1.5)
@@ -270,28 +242,15 @@ Scale 0.82
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,0,0)
 		P1SF CC 1 A_SetPitch(pitch+0.5)
 		P1SF D 1 A_SetPitch(pitch+0.5)
-		P1SG A 7 A_WeaponReady(1 | WRF_ALLOWRELOAD)
-		TNT1 A 0 A_Refire
-		Goto Ready
-	SilenceFire1:		//R25 NEW FIRE1
-		TNT1 A 0 A_PlaySound("PISTOLF3",CHAN_WEAPON)		//R31 was EAGLEFI
-		TNT1 A 0 A_ZoomFactor(0.95)
-		P1SF A 1 Bright
-		TNT1 A 0 A_SetPitch(pitch-1.5)
-		TNT1 A 0 A_ZoomFactor(1.0)
-		P1SF B 2 Bright
-		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,0,0)
-		P1SF CC 1 A_SetPitch(pitch+0.5)
-		P1SF D 1 A_SetPitch(pitch+0.5)
-		P1SG A 7 A_WeaponReady(1 | WRF_ALLOWRELOAD)
+		P1SG A 7 A_WeaponReady(1|WRF_ALLOWRELOAD)
 		TNT1 A 0 A_Refire
 		Goto Ready
 	AltFire:
 		TNT1 A 0 A_JumpIfInventory("PistolSilencerPickup",1,2)
-		TNT1 A 0 A_Print("You do not have a pistol silencer")
+		TNT1 A 0 A_Print("You need a pistol silencer!")
 		Goto Ready
-		TNT1 A 0 A_JumpIfInventory("IsSilencer",1,"StopAltFire")			//R25 added
-		TNT1 A 0 A_GiveInventory("IsSilencer",1)			//R25 added
+		TNT1 A 0 A_JumpIfInventory("IsSilencer",1,"StopAltFire")	//R25 added
+		TNT1 A 0 A_GiveInventory("IsSilencer",1)	//R25 added
 		PISA ABCDEFGHIJKLMN 1
 		PISA O 3
 		TNT1 A 0 A_PlaySound("SILEIN")
@@ -310,8 +269,7 @@ Scale 0.82
 		PISA O 3
 		PISA NMLKJIHGFEDCBA 1
 		Goto Ready
-	Reload:			//R26 REVISED RELOAD ANIMATION OFFSETS
-//		TNT1 A 0 A_Takeinventory("Reloading",1)
+	Reload:		//R26 REVISED RELOAD ANIMATION OFFSETS
 		TNT1 A 0 A_JumpIfInventory("PistolAmmo",10,"Fidget")	//R31 Fidget Animation
 		TNT1 A 0 A_JumpIfInventory("Clip",1,1)					//R30.8 was jump 3
 		Goto NoAmmo
@@ -319,7 +277,7 @@ Scale 0.82
 		P1SR A 0 A_JumpIfInventory("IsSilencer",1,2)
 		PISR A 0
 		"####" ABCDEFGH 1
-		TNT1 A 0 A_FireCustomMissile("EmptyPistolClipSpawn",-5,0,-10,-20)		//R30.10 added
+		TNT1 A 0 A_FireCustomMissile("EmptyPistolClipSpawn",-5,0,-10,-20)	//R30.10 added
 		P1SR H 0 A_JumpIfInventory("IsSilencer",1,2)
 		PISR H 0
 		"####" I 10
