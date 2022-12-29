@@ -73,7 +73,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		SSGG RR 1
 		SSGG S 3
 		SSGG TUVWX 1
-		TNT1 A 0 A_playsound("weapons/sshotl",4)
+		TNT1 A 0 A_PlaySound("weapons/sshotl",4)
 		SSGG YZ 1
 		SSGH ABCD 1
 		TNT1 A 0 A_PlaySound("weapons/sshotc")
@@ -166,10 +166,10 @@ Tag "$TAG_SUPERSHOTGUN"
 		SSGG RR 1
 		SSGG S 3
 		SSGW BCDEFGH 1
-		TNT1 A 0 A_playsound("weapons/sshotl")
+		TNT1 A 0 A_PlaySound("weapons/sshotl")
 		SSGW IJKLM 1
 		SSGW OPPQRST 1
-		TNT1 A 0 A_playsound("weapons/sshotl")
+		TNT1 A 0 A_PlaySound("weapons/sshotl")
 		SSGW UUVWXY 1
 		TNT1 A 0 A_PlaySound("weapons/sshotc")
 		SSGH FGHIJKLM 1
@@ -290,7 +290,7 @@ Tag "$TAG_SUPERSHOTGUN"
 		SSGG RR 1
 		SSGG S 3
 		SSGG TUVWX 1
-		TNT1 A 0 A_playsound("weapons/sshotl",4)
+		TNT1 A 0 A_PlaySound("weapons/sshotl",4)
 		SSGG YZ 1
 		TNT1 A 0 A_TakeInventory("Shell",2,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_GiveInventory("SSGAmmo",2)	//R6 was SetInventory
@@ -309,7 +309,7 @@ Tag "$TAG_SUPERSHOTGUN"
 		TNT1 A 0 A_FireCustomMissile("SSGCaseSpawner",0,0,-5,-15)	//30.9 WAS -10 HORZ,R30.9 added VERTICAL Offset
 		SSGZ B 3
 		SSGZ CDEFGGGHH 1
-		TNT1 A 0 A_playsound("weapons/sshotl",4)
+		TNT1 A 0 A_PlaySound("weapons/sshotl",4)
 		TNT1 A 0 A_TakeInventory("Shell",1,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_GiveInventory("SSGAmmo",1)	//R6 was SetInventory	//R19 WAS 2
 		SSGZ IJKL 1

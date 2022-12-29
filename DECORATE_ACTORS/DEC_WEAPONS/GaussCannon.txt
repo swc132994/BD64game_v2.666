@@ -58,7 +58,7 @@ Decal BigScorch
 		TGCF A 1 Bright A_ZoomFactor(0.94)
 		TGCF A 1 Bright A_ZoomFactor(0.98)
 		TGCF B 1 Bright A_ZoomFactor(0.99)
-		TGCF B 1 Bright A_ZoomFactor(1) 
+		TGCF B 1 Bright A_ZoomFactor(1)
  		GCFI C 5
 		GCFI DEF 1
 		GCID A 20
@@ -149,7 +149,7 @@ Decal BigScorch
 		TGCF A 1 Bright A_ZoomFactor(0.94)
 		TGCF A 1 Bright A_ZoomFactor(0.98)
 		TGCF B 1 Bright A_ZoomFactor(0.99)
-		TGCF B 1 Bright A_ZoomFactor(1) 
+		TGCF B 1 Bright A_ZoomFactor(1)
 		TGCF C 5
 		TGCF DEF 1
 		TGCI A 20

@@ -52,8 +52,8 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		MISG A 1 A_Raise
 		Wait
 	Fire:	//R31 New smooth animation(Taken from Smooth Doom by gifty)
-		MISG B 2 Bright offset(0,36)
-		MISG C 2 Bright offset(0,37) A_GunFlash
+		MISG B 2 Bright Offset(0,36)
+		MISG C 2 Bright Offset(0,37) A_GunFlash
 		TNT1 A 0 A_FireMissile
 		TNT1 A 0 A_Recoil(2)
 		MISG D 1 A_SetPitch(pitch-2)
@@ -109,9 +109,9 @@ Decal "BigScorch"		//R28.2	ADDED	//R28.3 WAS SCORCH
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R28.2 ADDED
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R28.2 ADDED
 		TNT1 A 0 A_SpawnItem("BigRicoChet")
-		TNT1 A 0 A_SPawnItem("ExplosionAirDisplacementEffect")
-		TNT1 A 0 A_playSound("EXPLO3",2)
-		TNT1 A 0 A_playSound("EXPLOSION",1)
+		TNT1 A 0 A_SpawnItem("ExplosionAirDisplacementEffect")
+		TNT1 A 0 A_PlaySound("EXPLO3",2)
+		TNT1 A 0 A_PlaySound("EXPLOSION",1)
 		TNT1 A 0 Radius_Quake(2,8,0,12,0)
 		TNT1 A 2
 		TNT1 A 0 A_Explode
@@ -396,8 +396,8 @@ Weapon.SisterWeapon "64RocketLauncherTactical"	//R31 added
 		TNT1 A 1 A_Lower
 		Wait
 	Fire:	//R31 New smooth animation(Taken from Smooth Doom by gifty)
-		MISG B 2 Bright offset(0,36)
-		MISG C 2 Bright offset(0,37) A_GunFlash
+		MISG B 2 Bright Offset(0,36)
+		MISG C 2 Bright Offset(0,37) A_GunFlash
 		TNT1 A 0 A_AlertMonsters	//R31 ADDED
 		TNT1 A 0 A_Recoil(2)
 		TNT1 A 0 A_ZoomFactor(0.97)
@@ -474,9 +474,9 @@ Gravity 0.2
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R28.2 ADDED
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R28.2 ADDED
 		TNT1 A 0 A_SpawnItem("BigRicoChet")
-		TNT1 A 0 A_SPawnItem("ExplosionAirDisplacementEffect")
-		TNT1 A 0 A_playSound("EXPLO3",2)
-		TNT1 A 0 A_playSound("EXPLOSION",1)
+		TNT1 A 0 A_SpawnItem("ExplosionAirDisplacementEffect")
+		TNT1 A 0 A_PlaySound("EXPLO3",2)
+		TNT1 A 0 A_PlaySound("EXPLOSION",1)
 		TNT1 A 0 Radius_Quake(7,13,0,17,0)	//+5ea
 		TNT1 A 2
 		TNT1 A 0 A_Explode
