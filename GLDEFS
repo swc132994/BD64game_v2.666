@@ -950,7 +950,6 @@ object 64ShotgunGuy
 
 object 64ChaingunGuy
 {
-	frame MPOSE {light ZOMBIEATK2}	//r31 was CPOSE {light ZOMBIEATK}
 	frame MPOSF {light ZOMBIEATK2}	//r31 was CPOSF {light ZOMBIEATK}
 }
 
