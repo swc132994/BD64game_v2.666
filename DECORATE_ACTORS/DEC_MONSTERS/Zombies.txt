@@ -619,6 +619,7 @@ Actor 64ShotgunGuy : 64Zombieman Replaces ShotgunGuy
 Speed 6
 GibHealth 15
 Tag "Shotgun Zombie"	//r31 added
+Obituary "$OB_SHOTGUY"
 DropItem "ShotgunDrop"	//R31 was 64Shotgun and 64ShotgunTactical
 DropItem "SOULSPAWNER"	//R31 added
 	States
@@ -1363,6 +1364,7 @@ Health 120
 Speed 4
 AttackSound "grunt/attack"
 Tag "Chaingun Zombie"	//R31 added
+Obituary "$OB_CHAINGUY"
 DropItem "ChaingunDrop"	//R12.1 added	//r31 was chaingun & tactical chaingun
 DropItem "SOULSPAWNER"	//R31 added
 	States
