@@ -273,12 +273,12 @@ ReactionTime 60
 	States
 	{
 	Spawn:
-		BFE2 AGH 2 Bright A_CHECKCEILING("Death")
+		GRNB ACB 2 Bright A_CHECKCEILING("Death")
 		TNT1 A 0 A_Countdown
 		Loop
 	Death:
 		TNT1 A 0 A_PlaySound("DSFIRXPL",3)
-		BFE2 BDF 3 Bright
+		BFE2 ABCD 3 Bright
 		TNT1 AAAAA 0 A_CustomMissile("explosionParticleGreenHeavySmall",0,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleGreen",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_CustomMissile("BigRicoChet")
@@ -296,12 +296,12 @@ Actor BFGBetaBall2 : BFGBetaBall	//R31 added
 	States
 	{
 	Spawn:
-		REDB ABC 2 Bright
+		LAZR AB 2 Bright
 		TNT1 A 0 A_Countdown
 		Loop
 	Death:
 		TNT1 A 0 A_PlaySound("DSFIRXPL",3)
-		REDB DEF 3 Bright
+		REDB ABCD 3 Bright
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleLaser",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_CustomMissile("BigRicoChet")
