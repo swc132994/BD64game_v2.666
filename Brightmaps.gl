@@ -2861,9 +2861,9 @@ disablefullbright
 }
 
 //ANNIHILATOR
-brightmap sprite A64AA1
+brightmap sprite A64AA1C1
 {
-map "brightmaps/A64AA1_B.png"
+map "brightmaps/A64AA1C1_B.png"
 disablefullbright
 }
 brightmap sprite A64AA2C8
@@ -2871,9 +2871,9 @@ brightmap sprite A64AA2C8
 map "brightmaps/A64AA2C8_B.png"
 disablefullbright
 }
-brightmap sprite A64AB1
+brightmap sprite A64AB1D1
 {
-map "brightmaps/A64AB1_B.png"
+map "brightmaps/A64AB1D1_B.png"
 disablefullbright
 }
 brightmap sprite A64AB2D8
@@ -2881,19 +2881,9 @@ brightmap sprite A64AB2D8
 map "brightmaps/A64AB2D8_B.png"
 disablefullbright
 }
-brightmap sprite A64AC1
-{
-map "brightmaps/A64AC1_B.png"
-disablefullbright
-}
 brightmap sprite A64AC2A8
 {
 map "brightmaps/A64AC2A8_B.png"
-disablefullbright
-}
-brightmap sprite A64AD1
-{
-map "brightmaps/A64AD1_B.png"
 disablefullbright
 }
 brightmap sprite A64AD2B8

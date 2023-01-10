@@ -127,31 +127,25 @@ States
 	Missile:
 		TNT1 A 0 A_Jump(128,11)
 		A64A E 6 A_FaceTarget
-		A64A F 12 Bright
-		TNT1 A 0 A_CustomMissile("CyberRocket",68,25,0)		//R23 was 80 height all missiel attack
-		TNT1 A 0 A_CustomMissile("CyberRocket",68,-25,0)
+		TNT1 A 0 A_CustomMissile("CyberRocket",68,25,0)		//R23 was 80 height all missile attack
+		A64A F 12 Bright A_CustomMissile("CyberRocket",68,-25,0)
 		A64A E 12 A_FaceTarget
-		A64A F 12 Bright
 		TNT1 A 0 A_CustomMissile("CyberRocket",68,25,0)
-		TNT1 A 0 A_CustomMissile("CyberRocket",68,-25,0)
+		A64A F 12 Bright A_CustomMissile("CyberRocket",68,-25,0)
 		A64A E 12 A_FaceTarget
-		A64A F 12 Bright
 		TNT1 A 0 A_CustomMissile("CyberRocket",68,25,0)
-		TNT1 A 0 A_CustomMissile("CyberRocket",68,-25,0)
+		A64A F 12 Bright A_CustomMissile("CyberRocket",68,-25,0)
 		TNT1 A 0 A_Jump(128,1)
 		Goto See
 		A64A E 6 A_FaceTarget
-		A64A F 12 Bright
 		TNT1 A 0 A_CustomMissile("CyberRocket",68,25,0)
-		TNT1 A 0 A_CustomMissile("CyberRocket",68,-25,0)
+		A64A F 12 Bright A_CustomMissile("CyberRocket",68,-25,0)
 		A64A E 12 A_FaceTarget
-		A64A F 12 Bright
 		TNT1 A 0 A_CustomMissile("CyberRocket",68,25,0)
-		TNT1 A 0 A_CustomMissile("CyberRocket",68,-25,0)
+		A64A F 12 Bright A_CustomMissile("CyberRocket",68,-25,0)
 		A64A E 12 A_FaceTarget
-		A64A F 12 Bright
 		TNT1 A 0 A_CustomMissile("CyberRocket",68,25,0)
-		TNT1 A 0 A_CustomMissile("CyberRocket",68,-25,0)
+		A64A F 12 Bright A_CustomMissile("CyberRocket",68,-25,0)
 		Goto See
 	Pain:
 		A64A B 10 A_Pain
