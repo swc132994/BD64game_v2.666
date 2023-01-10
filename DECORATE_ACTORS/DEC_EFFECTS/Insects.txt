@@ -17,13 +17,12 @@ Actor FlyDecor
 {
 Scale 0.3
 Radius 2
-Height 60
+Height 4//WAS 60
 Speed 3
 Projectile
 +DontSplash
 +THRUACTORS
 +DOOMBOUNCE
-+NOGRAVITY
 +CLIENTSIDEONLY
 +NOCLIP
 ReactionTime 4
