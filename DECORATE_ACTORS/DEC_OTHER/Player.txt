@@ -23,19 +23,17 @@ Actor StartWeapon : Inventory		// r31 added to Starting Weapon
 Inventory.MaxAmount 1
 }
 
-Actor FootStep
+Actor BD64FootStep
 {
-Radius 10
-Height 10
-Speed 7
-Gravity 40
-Mass 1000
-Damage 0
-PROJECTILE
--NOGRAVITY
+Radius 6
+Height 6
+Speed 1
+Gravity 1
+Mass 1
+//PROJECTILE
++NOGRAVITY
 +MISSILE
 +NOTELEPORT
-+CLIENTSIDEONLY
 +MOVEWITHSECTOR
 +NOEXTREMEDEATH
 +NODAMAGETHRUST
@@ -44,23 +42,18 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 A 2
-		TNT1 A 1 //A_Explode(10,4,0)
+		TNT1 A 3 NoDelay A_JumpIf(CallACS("FootStepCheck")==0,"NOSOUND")
+		TNT1 AA 2 A_CheckFloor("DEATH")
 		Stop
 	Death:
-		TNT1 A 1 //A_Explode(10,4,0)
-		Stop
 	Crash:
-		TNT1 A 1 //A_Explode(10,4,0)
+		TNT1 A 1 A_SetMass(999)
+		TNT1 A 1 A_Explode(10,4,0)
+		Stop
+	NoSound:
+		TNT1 A 0
 		Stop
 	}
-}
-
-Actor FootStep8 : FootStep
-{
-Damage(random(3,3))
-Mass 999
--CLIENTSIDEONLY
 }
 
 Actor 64DoomPlayer : PlayerPawn Replaces DoomPlayer
@@ -99,22 +92,14 @@ Player.WeaponSlot 9,"Lasergun"
 	States
 	{
 	Spawn:
-		PLAY E 2 A_TakeInventory("Stamina",0)
-		Wait
-	See:	//0 frames rendered for player selection screen
-		PLAY A 0 A_JumpIf(CallACS("FootStepCheck")==1,"See2")	//R31 added for footstep sounds
-		PLAY ABCD 4 A_TakeInventory("Stamina",0)
-		Goto Spawn
-	See2:	//R31 added for footstep sounds
-		PLAY AB 5 A_TakeInventory("Stamina",0)
-		TNT1 A 0 A_CheckFloor(2)	//R31 makes sure player is on the ground
-		TNT1 A 0 A_Jump(256,2)	//R31 jumps over footstep if floor check fails
-		TNT1 A 0 A_SpawnItemEx("FootStep8",0,0,40,0,0)
+		PLAY E -1
+		Stop
+	See:
+		PLAY AB 5
+		PLAY B 0 A_SpawnItemEx("BD64FootStep",0,0,0,0,0)
 		PLAY CD 5
-		TNT1 A 0 A_CheckFloor(2)	//R31 makes sure player is on the ground
-		TNT1 A 0 A_Jump(256,"Spawn")	//R31 jumps over footstep if floor check fails
-		TNT1 A 0 A_SpawnItemEx("FootStep8",0,0,40,0,0)
-		Goto Spawn
+		PLAY D 0 A_SpawnItemEx("BD64FootStep",0,0,0,0,0)
+		Loop
 	Pain:
 		PLAY G 4			//R31 WAS GMAN H
 		PLAY G 4 A_Pain		//R31 WAS GMAN H
@@ -541,43 +526,33 @@ Player.WeaponSlot 9,"LasergunTactical"
 		PLAY E 0 A_TakeInventory("Stamina",1)
 		Loop
 	See:	//0 frames rendered for player selection screen. See is used for player selction animation. See2 is actually used by the player
-		PLAY A 0 A_Jump(256,"See2")
-		PLAY ABCD 4
-		Goto Spawn
-	See2:
 		PLAY A 1
-		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
-		TNT1 A 0 ACS_NamedExecuteAlways("TacticalPlayerSlowerACS")//Makes player slower.	//r31 replaces ACS 853
+		PLAY A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
+		PLAY A 0 ACS_NamedExecuteAlways("TacticalPlayerSlowerACS")//Makes player slower.	//r31 replaces ACS 853
 		PLAY A 5 A_TakeInventory("Stamina",1)
-		TNT1 A 0 A_JumpIfInventory("PowerStrength",1,2)	//give more stamina if berserk
-		TNT1 A 0 A_Jump(256,2)	//give more stamina if berserk
-		TNT1 A 0 A_TakeInventory("Stamina",1)	//give more stamina if berserk
-		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
+		PLAY A 0 A_JumpIfInventory("PowerStrength",1,2)	//give more stamina if berserk
+		PLAY A 0 A_Jump(256,2)	//give more stamina if berserk
+		PLAY A 0 A_TakeInventory("Stamina",1)	//give more stamina if berserk
+		PLAY A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
 		PLAY B 5 A_TakeInventory("Stamina",1)
-		TNT1 A 0 A_JumpIfInventory("PowerStrength",1,2)	//give more stamina if berserk
-		TNT1 A 0 A_Jump(256,2)	//give more stamina if berserk
-		TNT1 A 0 A_TakeInventory("Stamina",1)	//give more stamina if berserk
-		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
-		TNT1 A 0 A_JumpIf(CallACS("FootStepCheck")==0,4)	//R31 added for footstep sounds
-		TNT1 A 0 A_CheckFloor(2)	//R31 makes sure player is on the ground
-		TNT1 A 0 A_Jump(256,2)	//R31 jumps over footstep if floor check fails
-		TNT1 A 0 A_SpawnItemEx("FootStep8",0,0,40,0,0)
-		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
+		PLAY B 0 A_JumpIfInventory("PowerStrength",1,2)	//give more stamina if berserk
+		PLAY B 0 A_Jump(256,2)	//give more stamina if berserk
+		PLAY B 0 A_TakeInventory("Stamina",1)	//give more stamina if berserk
+		PLAY B 0 A_JumpIfInventory("IsRunning",1,"StartRun")
+		PLAY B 0 A_SpawnItemEx("BD64FootStep",0,0,0,0,0)
+		PLAY B 0 A_JumpIfInventory("IsRunning",1,"StartRun")
 		PLAY C 5 A_TakeInventory("Stamina",1)
-		TNT1 A 0 A_JumpIfInventory("PowerStrength",1,2)	//give more stamina if berserk
-		TNT1 A 0 A_Jump(256,2)	//give more stamina if berserk
-		TNT1 A 0 A_TakeInventory("Stamina",1)	//give more stamina if berserk
-		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
+		PLAY C 0 A_JumpIfInventory("PowerStrength",1,2)	//give more stamina if berserk
+		PLAY C 0 A_Jump(256,2)	//give more stamina if berserk
+		PLAY C 0 A_TakeInventory("Stamina",1)	//give more stamina if berserk
+		PLAY C 0 A_JumpIfInventory("IsRunning",1,"StartRun")
 		PLAY D 5 A_TakeInventory("Stamina",1)
-		TNT1 A 0 A_JumpIfInventory("PowerStrength",1,2)	//give more stamina if berserk
-		TNT1 A 0 A_Jump(256,2)	//give more stamina if berserk
-		TNT1 A 0 A_TakeInventory("Stamina",1)	//give more stamina if berserk
-		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
-		TNT1 A 0 A_JumpIf(CallACS("FootStepCheck")==0,"Spawn")	//R31 added for footstep sounds
-		TNT1 A 0 A_CheckFloor(2)	//R31 makes sure player is on the ground
-		TNT1 A 0 A_Jump(256,"Spawn")	//R31 jumps over footstep if floor check fails
-		TNT1 A 0 A_SpawnItemEx("FootStep8",0,0,40,0,0)
-		Goto Spawn
+		PLAY D 0 A_JumpIfInventory("PowerStrength",1,2)	//give more stamina if berserk
+		PLAY D 0 A_Jump(256,2)	//give more stamina if berserk
+		PLAY D 0 A_TakeInventory("Stamina",1)	//give more stamina if berserk
+		PLAY D 0 A_JumpIfInventory("IsRunning",1,"StartRun")
+		PLAY D 0 A_SpawnItemEx("BD64FootStep",0,0,0,0,0)
+		Loop
 	StartRun:
 		PLAY A 1
 		TNT1 A 0 A_JumpIfInventory("Stamina",85,"Tired")
@@ -591,35 +566,24 @@ Player.WeaponSlot 9,"LasergunTactical"
 		PLAY AAAA 1 A_SetPitch(+0.4 + pitch)
 		PLAY BBBB 1 A_SetPitch(-0.4 + pitch)
 		PLAY B 4
-		TNT1 A 0 A_JumpIf(CallACS("FootStepCheck")==0,4)	//R31 added for footstep sounds
-		TNT1 A 0 A_CheckFloor(2)	//R31 makes sure player is on the ground
-		TNT1 A 0 A_Jump(256,2)	//R31 jumps over footstep if floor check fails
-		TNT1 A 0 A_SpawnItemEx("FootStep8",0,0,40,0,0)
-		//TNT1 A 0 A_JumpIfInventory("IsRunning",1,1)
-		//Goto See
+		TNT1 A 0 A_SpawnItemEx("BD64FootStep",0,0,0,0,0)
 		PLAY CCCC 1 A_SetPitch(-0.4 + pitch)
 		PLAY DDDD 1 A_SetPitch(+0.4 + pitch)
 		PLAY D 2
-		TNT1 A 0 A_JumpIf(CallACS("FootStepCheck")==0,4)	//R31 added for footstep sounds
-		TNT1 A 0 A_CheckFloor(2)	//R31 makes sure player is on the ground
-		TNT1 A 0 A_Jump(256,2)	//R31 jumps over footstep if floor check fails
-		TNT1 A 0 A_SpawnItemEx("FootStep8",0,0,40,0,0)
+		TNT1 A 0 A_SpawnItemEx("BD64FootStep",0,0,0,0,0)
 		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"Run")
-		Goto Spawn+2
+		Goto See
 	Tired:
 		TNT1 A 0 ACS_NamedExecuteAlways("TacticalPlayerSlowerACS")//Makes player slower.	//r31 replaces ACS 853
 		TNT1 A 0 A_PlaySound("Tired",2)
 		PLAY ABCD 5
-		TNT1 A 0 A_JumpIf(CallACS("FootStepCheck")==0,"Spawn")	//R31 added for footstep sounds
-		TNT1 A 0 A_CheckFloor(2)	//R31 makes sure player is on the ground
-		TNT1 A 0 A_Jump(256,"Spawn")	//R31 jumps over footstep if floor check fails
-		TNT1 A 0 A_SpawnItemEx("FootStep8",0,0,40,0,0)
-		Goto Spawn
+		TNT1 A 0 A_SpawnItemEx("BD64FootStep",0,0,0,0,0)
+		Goto See
 	Tired2:
 		TNT1 A 0 A_PlaySound("Tired",2)
 		TNT1 A 0 ACS_NamedExecuteAlways("TacticalPlayerSlowerACS")//Makes player slower.	//r31 replaces ACS 853
 		PLAY ABCD 5
-		Goto See+2
+		Goto See
 	Pain:
 		PLAY G 4			//R31 WAS GMAN H
 		PLAY G 4 A_Pain		//R31 WAS GMAN H
@@ -843,22 +807,14 @@ Player.WeaponSlot 9,"LasergunTactical"
 	States
 	{
 	Spawn:
-		PLAY E 2 A_TakeInventory("Stamina",0)
-		Wait
-	See:	//0 frames rendered for player selection screen
-		PLAY A 0 A_JumpIf(CallACS("FootStepCheck")==1,"See2")	//R31 added for footstep sounds
-		PLAY ABCD 4 A_TakeInventory("Stamina",0)
-		Goto Spawn
-	See2:	//R31 added for footstep sounds
-		PLAY AB 5 A_TakeInventory("Stamina",0)
-		TNT1 A 0 A_CheckFloor(2)	//R31 makes sure player is on the ground
-		TNT1 A 0 A_Jump(256,2)	//R31 jumps over footstep if floor check fails
-		TNT1 A 0 A_SpawnItemEx("FootStep8",0,0,40,0,0)
+		PLAY E -1
+		Stop
+	See:
+		PLAY AB 5
+		PLAY B 0 A_SpawnItemEx("BD64FootStep",0,0,0,0,0)
 		PLAY CD 5
-		TNT1 A 0 A_CheckFloor(2)	//R31 makes sure player is on the ground
-		TNT1 A 0 A_Jump(256,"Spawn")	//R31 jumps over footstep if floor check fails
-		TNT1 A 0 A_SpawnItemEx("FootStep8",0,0,40,0,0)
-		Goto Spawn
+		PLAY D 0 A_SpawnItemEx("BD64FootStep",0,0,0,0,0)
+		Loop
 	Pain:
 		PLAY G 4			//R31 WAS GMAN H
 		PLAY G 4 A_Pain		//R31 WAS GMAN H
