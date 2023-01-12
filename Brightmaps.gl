@@ -203,6 +203,17 @@ brightmap sprite GCFIB0{map "BRIGHTMAPS/GCFIB0_BR.png" Disablefullbright}
 	//Tactical Fire
 brightmap sprite TGCFA0{map "BRIGHTMAPS/TGCFA0_BR.png" Disablefullbright}
 brightmap sprite TGCFB0{map "BRIGHTMAPS/TGCFB0_BR.png" Disablefullbright}
+	//SCOPE
+brightmap sprite GCSCA0{map "BRIGHTMAPS/GCSCA0_BR.png" Disablefullbright}
+brightmap sprite GCSCB0{map "BRIGHTMAPS/GCSCB0_BR.png" Disablefullbright}
+brightmap sprite GCSCC0{map "BRIGHTMAPS/GCSCC0_BR.png" Disablefullbright}
+brightmap sprite GCSCD0{map "BRIGHTMAPS/GCSCD0_BR.png" Disablefullbright}
+brightmap sprite GCSCE0{map "BRIGHTMAPS/GCSCE0_BR.png" Disablefullbright}
+brightmap sprite GCSCF0{map "BRIGHTMAPS/GCSCF0_BR.png" Disablefullbright}
+brightmap sprite GCSCG0{map "BRIGHTMAPS/GCSCG0_BR.png" Disablefullbright}
+brightmap sprite GCSCH0{map "BRIGHTMAPS/GCSCH0_BR.png" Disablefullbright}
+brightmap sprite GCSCI0{map "BRIGHTMAPS/GCSCI0_BR.png" Disablefullbright}
+brightmap sprite GCSCJ0{map "BRIGHTMAPS/GCSCJ0_BR.png" Disablefullbright}
 
 //ROCKET LAUNCHER MODERN/TATICAL
 brightmap sprite RL1RA0		{map "brightmaps/RL1RA0_BR.png"}
