@@ -138,7 +138,7 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 	Option "Randomly replace Barons with Hellhounds =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Mancubi with Bruisers =","BruiserRandom_Cvar","Bruiser_Spawner_Value"
 	Option "Randomly replace Cyberdemons with Annihilators =","Annihilator_Spawner_Cvar","Annihilator_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Masterminds with Motherdemons =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"	//R27 //R31 was YesOrNo
+	Option "Randomly replace Masterminds with Motherdemons or Eradicators =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"	//R27 //R31 was YesOrNo
 }
 
 OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
@@ -151,17 +151,17 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 		StaticText " "
 	StaticText "Option to only show D64 monsters (no cut monsters)",1
 		StaticText " "
-	Option "Remove all Revenants,Hellhounds & Masterminds =","D64MonstersOnlyCvar","YesOrNo"	//R31 was DynamicSpawnCvar4
+	Option "Remove all Revenants, Hellhounds & Masterminds =","D64MonstersOnlyCvar","YesOrNo"	//R31 was DynamicSpawnCvar4
 		StaticText " "
 		StaticText "Options to switch to alternate spawns for the Revenant and Hellhound",1
 		StaticText " "
 	Option "Select between Cerberus, Alternate and GEC Hellhound =","HoundChooserCvar","HoundChooser"
 	Option "Revert back to Tchernobog Revenant =","RevenantChooserCvar","YesOrNo"
 		StaticText " "
-		StaticText "Option to switch to alternative skin for the Spider Mastermind",1
-		StaticText " "
-	Option "Alternative Spider Mastermind Skin =","AlternativeMasterMindSkinCvar","YesOrNo"
-		StaticText " "
+//		StaticText "Option to switch to alternative skin for the Spider Mastermind",1
+//		StaticText " "
+//	Option "Alternative Spider Mastermind Skin =","AlternativeMasterMindSkinCvar","YesOrNo"
+//		StaticText " "
 		StaticText "Option to allow pain elementals to randomly spit stalkers",1
 		StaticText " "
 	Option "Allow Pain Elemental Stalker attack =","PainStalkerRandom_Cvar","YesOrNo"
@@ -171,8 +171,8 @@ OptionMenu "BD64MapOptions" //R31 added
 {
 	Title "Map Options"
 		StaticText " "
-		StaticText "(Only available when playing the BD64 v2.5 Campaign)",1
-		StaticText "Options to play Vanilla version of MAP08 and add TC levels",1
+		StaticText "(Only available when playing the BD64 Campaign)",1
+//		StaticText "Options to play Vanilla version of MAP08 and add TC levels",1
 		StaticText " "
 	Option "Play Vanilla Map08 =","VMapCheckCvar","YesOrNo"
 	Option "Add TC Maps to Campaign =","TCMapCheckCvar","YesOrNo"
@@ -197,7 +197,7 @@ OptionMenu "BrutalDoom64Item/WeaponOptions" //R31 added
 	Option "Classic Chainsaw for Tactical/Modern =","VanillaChainsawCvar","YesOrNo"
 	Option "Alternative Ammo Pickup Sprites =","AlternativeAmmoPickupSpritesCvar","AlternativeAmmoPickupSpritesValue"
 	Option "Switch to Fists on Berserk Pickup =","BerserkSwitchFistsCvar","YesOrNo"
-	Option "Show Alpha/censored healing kits/berserk =","CensoredHealing_Cvar","CensoredHealing_Value"
+	Option "Show alpha/censored healing kits/berserk =","CensoredHealing_Cvar","CensoredHealing_Value"
 	Option "Alpha Build Items Pickup =","AlphaPickupCvar","YesOrNo"
 }
 
@@ -259,9 +259,10 @@ OptionValue "Knightmare_Spawner_Value"
 
 OptionValue "Motherdemon_Spawner_Value"
 {
-	0,"Spider Mastermind Only"
+	0,"Mastermind Only"
 	1,"Motherdemon Only"
-	2,"Random"
+	2,"Eradicator Only"
+	3,"Random"
 }
 
 OptionValue "Bruiser_Spawner_Value"
@@ -322,14 +323,14 @@ OptionValue "NImp_Spawner_Value"
 
 OptionValue "SSGZombieRandom_Value"
 {
-	0,"ShotgunGuy Only"
-	1,"SSG Zombie Only"
+	0,"Shotgun Guy Only"
+	1,"SSG Guy Only"
 	2,"Random"
 }
 
 OptionValue "D64ChaingunnerRandom_Value"
 {
-	0,"Chaingunguy Only"
+	0,"Chaingun Guy Only"
 	1,"Zombie Marine Only"
 	2,"Random"
 }

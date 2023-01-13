@@ -81,6 +81,11 @@ MONSTER
 		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		TNG2 V -1
 		Stop
+	Death.SSG:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_Recoil(6)
+		TNT1 A 0 A_JumpIfCloser(170,"XDeath")
+		Goto Death
 	Death.SuperFists:
 	Death.SuperKick:
 	Death.Cutless:

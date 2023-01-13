@@ -217,6 +217,11 @@ object UnmakerLaser2	//R31 added
 frame ULAZ {light UNMAKERSHOT}
 }
 
+object EradicatorLaser
+{
+frame ULAZ {light UNMAKERSHOT}
+}
+
 object UnmakerLaserTrail	//R31 added
 {
 frame ULAZ {light UNMAKERSHOT}
