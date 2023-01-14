@@ -1,13 +1,11 @@
 //r31 added extra deaths
 Actor 64Revenant : Revenant Replaces Revenant
 {
-Speed 3
 Scale 0.68								//R31 adjusted scale for sprites
 Health 350
 Height 65								//R25.2 WAS 72
-Speed 8									//R15 WAS 7
 MeleeThreshold 146	//DEFAULT 196		//R16 added
-PainChance 50
+MeleeRange 60 //default 44
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255

@@ -7,6 +7,7 @@ Health 800
 GibHealth 20
 Speed 15		//R31 WAS 12
 Radius 24		//R31 ADDED
+MeleeRange 60 //default 44
 PainChance "SuperFists",200
 PainChance "Kick",255
 PainChance "SuperKick",255

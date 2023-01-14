@@ -1,29 +1,18 @@
 //r31 added extra deaths
-Actor 64HellKnight Replaces HellKnight
+Actor 64HellKnight : HellKnight Replaces HellKnight
 {
 Scale 0.8
-Health 500
 Height 64
 Radius 24
-Speed 8
-Mass 1000
-PainChance 50
 PainChance "SuperFists",220
 PainChance "Kick",255
 PainChance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-Obituary "%o was splayed by a Hell Knight"
-HitObituary "%o was gutted by a Hell Knight"
-SeeSound "knight/sight"
-PainSound "knight/pain"
-DeathSound "knight/death"
-ActiveSound "knight/active"
 DropItem "DemonEssenceSpawner"		//R31 added
+MeleeRange 60//default 44
+Species HellKnight
 //bloodcolor "18 8c 31"
-MONSTER
-+BOSSDEATH		//R31 was -
-+FLOORCLIP
 	states
 	{
 	Spawn:		//R31 EXTRA

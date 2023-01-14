@@ -183,7 +183,7 @@ DropItem "Soulsphere",32				//R31 added
 	}
 }*/
 
-Actor 64SpiderMastermind : SpiderMastermind Replaces SpiderMastermind	//r31 merged Immorpher's skin option
+Actor 64SpiderMastermind : SpiderMastermind Replaces SpiderMastermind
 {
 Speed 14		//R25.4 was 12
 Radius 62
@@ -374,7 +374,7 @@ FastSpeed 60
 	}
 }
 
-Actor 64Eradicator : SpiderMastermind Replaces SpiderMastermind
+Actor 64Eradicator : SpiderMastermind Replaces SpiderMastermind 19119
 {
 Health 4000
 Speed 16

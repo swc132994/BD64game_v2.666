@@ -9,6 +9,7 @@ Mass 500
 Speed 14
 PainChance 75
 Alpha 0.6
+MeleeRange 60 //default 44
 RenderStyle Translucent
 DamageFactor "Head",0.8
 Obituary "%o was charred by a Knightmare."

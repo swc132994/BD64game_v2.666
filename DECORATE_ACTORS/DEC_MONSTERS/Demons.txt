@@ -4,6 +4,7 @@ Actor 64Demon : Demon Replaces Demon
 Scale 0.8
 GibHealth 20
 Speed 14	//R25.5 WAS 12	//r30.10 was 13
+MeleeRange 55 //default 44
 PainChance "SuperFists",200
 PainChance "Kick",255
 PainChance "SuperKick",255
@@ -412,6 +413,7 @@ Scale 0.8
 GibHealth 20
 Speed 16	//R30.10 added
 Alpha 0.5
+MeleeRange 55 //default 44
 RenderStyle Translucent
 PainChance "SuperFists",200
 PainChance "Kick",255
@@ -910,6 +912,7 @@ Scale 0.85		//was 1.0
 Health 500
 Speed 18		//R30.10 WAS 16
 Alpha 0.5
+MeleeRange 55 //default 44
 RenderStyle Translucent
 Tag "Nightmare Spectre"			//R31 added
 Obituary "%o was hunted down by a nightmare spectre."	//R31 added

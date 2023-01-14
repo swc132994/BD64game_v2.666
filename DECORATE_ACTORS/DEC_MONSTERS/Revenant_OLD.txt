@@ -4,9 +4,8 @@ Actor 64Revenant_old : Revenant
 Scale 0.74								//R25.2 WAS 0.8	//R31 WAS 0.75
 Health 350
 Height 65								//R25.2 WAS 72
-Speed 8									//R15 WAS 7
 MeleeThreshold 146	//DEFAULT 196		//R16 added
-PainChance 50
+MeleeRange 60 //default 44
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255

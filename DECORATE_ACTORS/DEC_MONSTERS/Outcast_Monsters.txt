@@ -6,6 +6,7 @@ Scale 0.8
 Health 200
 Speed 12
 FastSpeed 16
+MeleeRange 60 //default 44
 MaxTargetRange 384
 MeleeThreshold 125
 PainChance 180
