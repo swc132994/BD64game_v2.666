@@ -66,3 +66,99 @@ LASERGUN SPAWNER	9351	180
 WPNPOWER1			9905
 WPNPOWER2			9906
 WPNPOWER3			9907
+
+CREDITS v2.666 (here for now until I find a better place)
+--------------
+
+Weapons:
+SMG - IDDQD_1337 (Animation) & Super Piter (sprites)
+Gauss Cannon - IDDQD_1337 (animation), I'M (scope and cell sprites), BigStronk (decorate) & VriskaSerket (sprites)
+Tactical Rocket Launcher - IDDQD_1337 (animation) & I'M (sprites)
+Tactical Chainsaw - IDDQD_1337 (animation)
+Tactical Pistol - IDDQD_1337 (animation) & I'M (sprites)
+Alt Lasergun - IDDQD_1337 (animation)
+Alt Rifle - IDDQD_1337 (animation) & I'M (sprites)
+Tactical Shotgun Alt attack - IDDQD_1337 (animation) & I'M (sprites)
+
+New weapon kicking and slide kicking animations by IDDQD_1337
+
+
+Add-ons:
+D64PSX_HQ_SFX (SFX Marine (Nate))
+BD64v2.666_Reflective_Blood_[GZDoom] (IDDQD_1337)
+BD64v2.666_Alt_Weapon_Sounds (BigStronk)
+BD64v2.666_Beefy_SFX (BigStronk)
+BD64v2.666_SkiesHD - Slightly edited version of "High Quality Skies for BD 64" by Marklegg (https://www.moddb.com/mods/brutal-doom-64/addons/high-quality-skies-for-brutal-doom-64)
+BD64v2.666_CD_Weapons_AR_AS - Reworked version of "Autoshotgun & Assault Rifle with Grenade Launcher" by Flammable4444 (https://www.moddb.com/mods/brutal-doom-64/addons/cd-weapons-ar-as)
+BD64v2.666_Rework_D4_Weapons_&_Voxels - Reworked version of "DOOM4 Voxels and Weapons For BD64-V3.3" by KEENO7 (https://www.moddb.com/mods/brutal-doom-64/addons/doom4-voxels-and-weapons-for-bd64v3)
+
+Monsters:
+64Thing - Craneo(D64 sprites), based on the Mimic by StopSignal
+New Revenant - DrPsypy (sprites)
+
+Hellhound Alt - I'M (sprites)
+Hellhound GEC - Gerardo194 (sprites)
+Bruiser a.k.a Duke of Hell - Gerardo194 (sprites)
+Knightmare - 
+Eradicator a.k.a unmaker mastermind - Immorpher (sprites)
+Chaingunner - Craneo (reworked sprites), Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim
+
+Props:
+Impaled Doom 64 guys - Craneo
+Floating skull - Craneo (extra sprites)
+EvilEye - Craneo
+
+Items:
+Alt cell packs - DrDoctor (sprites)
+Soul ammo - DrDoctor (sprites)
+
+Maps:
+Converting Hexen format maps to UDMF - IDDQD_64
+New Map28 Ultimate Absolution - Styd051
+D64 puzzles - added by IDDQD_64 from Nevander's D64 Retribution
+D64 opening title - added by Styd051 from Nevander's D64 Retribution
+
+Compatible_Retribution_Maps - Trimmed down version of Nevander's D64 Retribution
+
+Blood, nukage, slime and water liquid textures - Guest6777
+
+New intermission music tracks added by Sraigius
+NEEDED: list music creators.
+
+
+v2.5 credits upto R30:
+Sergeant Mark IV for creating Brutal Doom 64.
+Xamp for reworking the SSG firing and reloading
+Styd051 for reworking the imp shotgun, super shotgun and BFG deaths. (BD 64 TC Absolution Remake)
+Iddqd_Idkfa_Idclip for Stamina drain fixes from run button press. (BD 64 Absolute Nightmare)
+Onox792 for the completed nightmare monsters.
+Gifty (ZDoom) for the smooth animations used for the Archvile
+YukiHerz for HD Laser gun sprites.
+Immorpher for the Revenant melee sprites.
+Jimmy (ZDoom forum) for Doom 64 style fonts.
+The music track for the intro map is Algamated Man by Lustmord used in the unloved mod final boss map. (NOW INTRO INTERMISSION in v2.666)
+Jakinsbob for beta testing the no stamina class (Modern).
+idkfa3215 for the original work on New Deaths for BD64 from which NDBD64 Enhanced is based. (NOW FULLY INTEGRATED in v2.666)
+doomguy199333 for beta testing New Deaths for BD64 Enhanced addon.
+OldCactusCN for working the smoother pistol, shotgun, SSG, unmaker muzzle flash, new assault rifle, new pentagram sprites as well as new demon/spectre sounds.
+Dexiaz (Doomworld forum) for new archvile sounds
+
+
+Sgt Mark's v2 credits:
+Based on:
+Doom 64 Absolution by Samuel "Kaiser" Villareal
+GZDoom 64 By Nightshade
+Doom64 Monster Replacer by Kaal979
+
+Additional Sprites:
+Cage - Extra animations for weapons (shotgun, super shotgun reloading, etc.)
+Scalliano and Dr Doctor - Alpha Unmaker (a.k.a Laser gun)
+Monolith, Raven Software, 3D Realms - Several Sprites
+Skjalg L. Sellæg - Rotations for Revenant's sprites.
+Leonard - Chaingunguy sprites.(NO LONGER USED in v2.666)
+Footman - Zombie Marine sprites.
+Mike12 - Assault Rifle sprites.
+
+Music:
+
+Aubrey Hodges
