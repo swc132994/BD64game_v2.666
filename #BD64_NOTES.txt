@@ -70,6 +70,8 @@ WPNPOWER3			9907
 CREDITS v2.666 (here for now until I find a better place)
 --------------
 
+Original Brutal Doom 64 mod by Sergeant Mark IV
+
 Weapons:
 SMG - IDDQD_1337 (Animation) & Super Piter (sprites)
 Gauss Cannon - IDDQD_1337 (animation), I'M (scope and cell sprites), BigStronk (decorate) & VriskaSerket (sprites)
@@ -82,16 +84,6 @@ Tactical Shotgun Alt attack - IDDQD_1337 (animation) & I'M (sprites)
 
 New weapon kicking and slide kicking animations by IDDQD_1337
 
-
-Add-ons:
-D64PSX_HQ_SFX (SFX Marine (Nate))
-BD64v2.666_Reflective_Blood_[GZDoom] (IDDQD_1337)
-BD64v2.666_Alt_Weapon_Sounds (BigStronk)
-BD64v2.666_Beefy_SFX (BigStronk)
-BD64v2.666_SkiesHD - Slightly edited version of "High Quality Skies for BD 64" by Marklegg (https://www.moddb.com/mods/brutal-doom-64/addons/high-quality-skies-for-brutal-doom-64)
-BD64v2.666_CD_Weapons_AR_AS - Reworked version of "Autoshotgun & Assault Rifle with Grenade Launcher" by Flammable4444 (https://www.moddb.com/mods/brutal-doom-64/addons/cd-weapons-ar-as)
-BD64v2.666_Rework_D4_Weapons_&_Voxels - Reworked version of "DOOM4 Voxels and Weapons For BD64-V3.3" by KEENO7 (https://www.moddb.com/mods/brutal-doom-64/addons/doom4-voxels-and-weapons-for-bd64v3)
-
 Monsters:
 64Thing - Craneo(D64 sprites), based on the Mimic by StopSignal
 New Revenant - DrPsypy (sprites)
@@ -103,10 +95,20 @@ Knightmare -
 Eradicator a.k.a unmaker mastermind - Immorpher (sprites)
 Chaingunner - Craneo (reworked sprites), Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim
 
+Add-ons:
+D64PSX_HQ_SFX (SFX Marine (Nate))
+BD64v2.666_Reflective_Blood_[GZDoom] (IDDQD_1337)
+BD64v2.666_Alt_Weapon_Sounds (BigStronk)
+BD64v2.666_Beefy_SFX (BigStronk)
+BD64v2.666_SkiesHD - Slightly edited version of "High Quality Skies for BD 64" by Marklegg (https://www.moddb.com/mods/brutal-doom-64/addons/high-quality-skies-for-brutal-doom-64)
+BD64v2.666_CD_Weapons_AR_AS - Reworked version of "Autoshotgun & Assault Rifle with Grenade Launcher" by Flammable4444 (https://www.moddb.com/mods/brutal-doom-64/addons/cd-weapons-ar-as)
+BD64v2.666_Rework_D4_Weapons_&_Voxels - Reworked version of "DOOM4 Voxels and Weapons For BD64-V3.3" by KEENO7 (https://www.moddb.com/mods/brutal-doom-64/addons/doom4-voxels-and-weapons-for-bd64v3)
+
 Props:
-Impaled Doom 64 guys - Craneo
-Floating skull - Craneo (extra sprites)
-EvilEye - Craneo
+Impaled Doom 64 guys - Craneochrome://vivaldi-webui/startpage?section=Speed-dials&background-color=#41403b
+64 Floating skull - Craneo (extra sprites), DrDoctor (original)??
+64 EvilEye - Craneo
+64 Candleabra - DrDoctor
 
 Items:
 Alt cell packs - DrDoctor (sprites)
@@ -122,12 +124,22 @@ Compatible_Retribution_Maps - Trimmed down version of Nevander's D64 Retribution
 
 Blood, nukage, slime and water liquid textures - Guest6777
 
-New intermission music tracks added by Sraigius
-NEEDED: list music creators.
-
+Music:
+Map tracks: 20th Anniversary Edition of Doom 64 soundtrack plus bonus tracks - Aubrey Hodges
+Title screen theme by Andrew Hulshult
+New intermission music tracks added by Sraigius:
+INTERA = Aubrey Hodges - Doom 64 Stats Screen (anniversary version)
+INTERB = Davester2296 - DOOM 64 - Stats Screen - 20th Anniversary Version
+INTERC = Neurological - Between hell and earth (more of Neurological's music, as well as this album can be downloaded in http://www.neuro-lab.net/ )
+INTERD = Davester2296 - DOOM 64 | D64D2 - Stats Screen - End Of Level
+INTERE = DexiaZ fantom - Doom 64 OST Remix - Intermission/Stats Screen Remastered
+INTERF = Aubrey Hodges - Doom 64 Stats Screen (original version)
+INTERG = Aubrey Hodges - Doom 64 Stats Screen (anniversary version) (excerpt from about 3:15)
+PLOTA and PLOTB = ElguitarTom - DooM 64 - Conclusion - Metal Remix
+PLOTC = Aubrey Hodges = Doom 64 - Finale
+D_ALGMAN = Lustmord - Intro intermission, Amalgamated Man
 
 v2.5 credits upto R30:
-Sergeant Mark IV for creating Brutal Doom 64.
 Xamp for reworking the SSG firing and reloading
 Styd051 for reworking the imp shotgun, super shotgun and BFG deaths. (BD 64 TC Absolution Remake)
 Iddqd_Idkfa_Idclip for Stamina drain fixes from run button press. (BD 64 Absolute Nightmare)
@@ -154,11 +166,7 @@ Additional Sprites:
 Cage - Extra animations for weapons (shotgun, super shotgun reloading, etc.)
 Scalliano and Dr Doctor - Alpha Unmaker (a.k.a Laser gun)
 Monolith, Raven Software, 3D Realms - Several Sprites
-Skjalg L. Sellæg - Rotations for Revenant's sprites.
+Skjalg L. Sellæg - Rotations for Revenant's sprites (Tchernobog Revenant v2.666)
 Leonard - Chaingunguy sprites.(NO LONGER USED in v2.666)
 Footman - Zombie Marine sprites.
 Mike12 - Assault Rifle sprites.
-
-Music:
-
-Aubrey Hodges
