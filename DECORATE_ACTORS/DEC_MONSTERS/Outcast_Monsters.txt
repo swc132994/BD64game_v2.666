@@ -447,29 +447,30 @@ PROJECTILE
 	Spawn:
 		TNT1 A 0 NoDelay ThrustThingZ(0,20,0,1)
 		ACIP A 2 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
-		ACIP B 2 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
+		ACIP B 2 Bright
 		ACIP C 2 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
-		ACIP D 2 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
+		ACIP D 2 Bright
 		Goto Spawn2
 	Spawn2:
 		ACIP D 2 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
+		ACIP D 2 Bright
 		Loop
 	Death:
 		TNT1 A 0 A_PlaySound("SlimeBall/Splat",4)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
+//		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		XDT1 F 3 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
 		TNT1 A 0 A_Explode(1,20)
 		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
-		XDT1 G 3 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
+		XDT1 G 3 Bright// A_CustomMissile("64AcidPuff",0,0,0,2,0)
 		TNT1 A 0 A_Explode(1,20)
-		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
+//		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		XDT1 H 3 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
 		TNT1 A 0 A_Explode(1,20)
 		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
-		XDT1 I 3 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
+		XDT1 I 3 Bright// A_CustomMissile("64AcidPuff",0,0,0,2,0)
 		TNT1 A 0 A_Explode(1,20)
-		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
+//		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		XDT1 J 3 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
 		TNT1 A 0 A_PlaysoundEx("AcidPuddle/Start",4,1)
 		TNT1 A 0 A_Explode(1,20)
@@ -477,7 +478,7 @@ PROJECTILE
 		TNT1 A 0 A_Explode(1,20)
 		XDT1 K 5 Bright
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright A_SpawnItem("PlasmaSmoke")
+		XDT1 K 5 Bright// A_SpawnItem("PlasmaSmoke")
 		TNT1 A 0 A_Explode(1,20)
 		XDT1 K 5 Bright
 		TNT1 A 0 A_Explode(1,20)
@@ -485,7 +486,7 @@ PROJECTILE
 		TNT1 A 0 A_Explode(1,20)
 		XDT1 K 5 Bright
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright A_SpawnItem("PlasmaSmoke")
+		XDT1 K 5 Bright// A_SpawnItem("PlasmaSmoke")
 		TNT1 A 0 A_Explode(1,20)
 		XDT1 K 5 Bright
 		TNT1 A 0 A_Explode(1,20)
@@ -493,7 +494,7 @@ PROJECTILE
 		TNT1 A 0 A_Explode(1,20)
 		XDT1 K 5 Bright
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright A_SpawnItem("PlasmaSmoke")
+		XDT1 K 5 Bright// A_SpawnItem("PlasmaSmoke")
 		TNT1 A 0 A_Explode(1,20)
 		XDT1 K 5 Bright
 		TNT1 A 0 A_Explode(1,20)
@@ -501,7 +502,7 @@ PROJECTILE
 		TNT1 A 0 A_Explode(1,20)
 		XDT1 K 5 Bright
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright A_SpawnItem("PlasmaSmoke")
+		XDT1 K 5 Bright// A_SpawnItem("PlasmaSmoke")
 		TNT1 A 0 A_Explode(1,20)
 		XDT1 K 5 Bright
 		TNT1 A 0 A_Explode(1,20)
