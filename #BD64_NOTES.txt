@@ -105,10 +105,12 @@ BD64v2.666_CD_Weapons_AR_AS - Reworked version of "Autoshotgun & Assault Rifle w
 BD64v2.666_Rework_D4_Weapons_&_Voxels - Reworked version of "DOOM4 Voxels and Weapons For BD64-V3.3" by KEENO7 (https://www.moddb.com/mods/brutal-doom-64/addons/doom4-voxels-and-weapons-for-bd64v3)
 
 Props:
-Impaled Doom 64 guys - Craneochrome://vivaldi-webui/startpage?section=Speed-dials&background-color=#41403b
-64 Floating skull - Craneo (extra sprites), DrDoctor (original)??
+Impaled Doom 64 guys - Craneo
+64 Floating skull - Craneo (extra sprites), DrDoctor (original)
 64 EvilEye - Craneo
-64 Candleabra - DrDoctor
+64 Candelabra - DrDoctor
+64 TwitchGibs - Nevander's D64 Retribution
+64 HeadCandles - Craneo
 
 Items:
 Alt cell packs - DrDoctor (sprites)

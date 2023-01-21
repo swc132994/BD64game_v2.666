@@ -67,28 +67,6 @@ Actor 64Gibs : 64RealGibs Replaces Gibs
 Game Doom
 }
 
-Actor 64ColonGibs : 64RealGibs Replaces ColonGibs
-{
-Game Doom
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_NoBlocking
-		//TNT1 A 0 A_PlaySoundEx("misc/gibbed","Body",0,0)
-		TNT1 A 0 A_SpawnItem("Swarm")
-		TNT1 A 0 A_SpawnItem("64SmallBloodPool")
-		Goto SpawnLive
-	SpawnLive:
-		POB1 A 25
-		POB1 ABABAB 4
-		POB1 A 60
-		POB1 ABAB 4
-		POB1 A 110
-		POB1 ABABABABABAB 4
-		Loop
-	}
-}
-
 Actor 64SmallBloodPool : SmallBloodPool Replaces SmallBloodPool
 {
 scale 0.82
@@ -1805,7 +1783,22 @@ actor 64LiveStick : LiveStick Replaces LiveStick
 	}
 }
 
-ACTOR 64HeadCandles : HeadCandles Replaces HeadCandles		//R31 ADDED
+ACTOR 64HeadCandles : HeadCandles Replaces HeadCandles
+{
+Scale 0.8
+	States
+	{
+	Spawn:
+		HDCA A 0 NoDelay Bright A_SpawnItem("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItem("Swarm",0,20)
+		Goto Stay
+	Stay:
+		HDCA AB 5 Bright Light("SKULLCANDLES")
+		Loop
+	}
+}
+
+/*ACTOR 64HeadCandles : HeadCandles Replaces HeadCandles
 {
 Scale 0.8
 	States
@@ -1815,7 +1808,7 @@ Scale 0.8
 		A017 A -1 Bright Light("BIGREDTORCH")
 		Stop
 	}
-}
+}*/
 
 actor HeadCandleBurn		//R31 ADDED
 {
@@ -1980,5 +1973,21 @@ SCALE 0.8
 	Spawn2:
 		ELEC C -1
 		Stop
+	}
+}
+
+ACTOR 64ColonGibs : ColonGibs Replaces ColonGibs
+{
+Radius 24
+Height 19
+-SOLID
+	States
+	{
+	Spawn:
+		A014 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		Goto SpawnLive
+	SpawnLive:
+		A014 AB 8
+		Loop
 	}
 }

@@ -540,37 +540,6 @@ flickerlight2 SKULLCANDLES
 	offset 0 24 0
 }
 
-/*object HeadCandles	//Replaced with 64HeadCandles
-{
-	frame POL3 {light SKULLCANDLES}
-}
-
-// Candle
-pointlight CANDLE
-{
-	color 1.0 0.25 0.0
-	size 16
-	offset 0 16 0
-}*/
-
-object 64Candlestick
-{
-	frame CAND {light CANDLE}
-}
-
-// Candelabra
-pointlight CANDELABRA
-{
-	color 1.0 1.0 0.0
-	size 48
-	offset 0 52 0
-}
-
-/*object Candelabra	//R31 moved light to decorate actor
-{
-	frame CBRA {light CANDELABRA}
-}*/
-
 //Soul Sphere
 pulselight SOULSPHERE
 {
