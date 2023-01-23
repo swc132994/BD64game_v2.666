@@ -22,10 +22,8 @@ BounceFactor 0.01
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("Flat_Decal_Remover")==1,"Off")	//r31 revised
-		TNT1 A 0 A_JumpIf(CallACS("FloorCheck")==FALSE,"Off")
+		TNT1 A 0 A_JumpIf(CallACS("FloorCheck")==FALSE,"Off")	//replaces A_CheckFloor
 		TNT1 A 0 ThrustThingZ(0,10,1,0)
-//		TNT1 AA 1 A_CheckFloor("Death")		//R31 added floor check
-//		Stop
 	Death:
 		XXX1 A 2000
 		Stop
@@ -157,7 +155,7 @@ StencilColor "Black"
 	states
 	{
 	Death:
-		XXX1 A 350
+		XXX1 A 350	//shorter duration
 		Stop
 	}
 }

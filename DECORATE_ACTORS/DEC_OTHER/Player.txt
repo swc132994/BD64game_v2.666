@@ -348,7 +348,6 @@ Player.StartItem "Clip",31				//R1 WAS 30
 Player.StartItem "RifleAmmo",31			//R1 WAS 30
 Player.StartItem "SMGAmmo",46			//R31 added
 Player.StartItem "Pistolammo",10		//R15 added
-Player.StartItem "Stamina",1
 Player.StartItem "IsTacticalClass",1
 Player.StartItem "64RifleTactical"
 Player.StartItem "64PistolTactical"		//R15 added
@@ -610,7 +609,6 @@ Actor Tactical64DoomPlayer_P : Tactical64DoomPlayer		//R15 tactical class with p
 Player.StartItem "Clip",31
 Player.StartItem "RifleAmmo",31
 Player.StartItem "SMGAmmo",46			//R31 added
-Player.StartItem "Stamina",1
 Player.StartItem "IsTacticalClass",1
 Player.StartItem "64PistolTactical"
 Player.StartItem "Pistolammo",10

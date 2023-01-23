@@ -545,28 +545,3 @@ Speed 100
 		Stop
 	}
 }
-
-Actor EradicatorHead : XDeathSpiderHead
-{
-Scale 1.5
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_Jump(128,2)
-		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)
-		ERHD ABCDEFGH 4 A_CheckFloor("Death")
-		WAIT
-	Death:
-		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
-		TNT1 A 0 A_Jump(128,"Death2")
-		ERHD I 1
-		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
-		ERHD I -1
-		Stop
-	Death2:
-		ERHD J 1
-		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
-		ERHD J -1
-		Stop
-	}
-}
