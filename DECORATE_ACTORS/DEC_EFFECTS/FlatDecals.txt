@@ -3,10 +3,11 @@ ACTOR DetectFloorBullet		//r31 checked and working
 {
 Mass 1	//R31 added
 scale 0.4
-radius 1
+radius 12
 height 1
 Alpha 0.9	//R31 WAS 0.7
 Renderstyle Translucent
++FLOORCLIP
 -DONTSPLASH
 +MISSILE
 +CLIENTSIDEONLY
@@ -20,12 +21,11 @@ BounceFactor 0.01
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_JumpIf(CallACS("Flat_Decal_Remover")==1,"Off")			//r31
-//		TNT1 A 1 ACS_ExecuteAlways(17001,0)		//R31 REMOVED
-//	On:																		//R31 REMOVED
-		TNT1 A 1 ThrustThingZ(0,-10,0,1)	//R31 28.7.22	WAS 0 TIC
-		TNT1 AA 1 A_CHECKFLOOR("death")											//R31 added floor check
-		STOP
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("Flat_Decal_Remover")==1,"Off")	//r31 revised
+		TNT1 A 0 A_JumpIf(CallACS("FloorCheck")==FALSE,"Off")
+		TNT1 A 0 ThrustThingZ(0,10,1,0)
+		TNT1 AA 1 A_CheckFloor("Death")		//R31 added floor check
+		Stop
 	Off:
 		TNT1 A 0 A_FadeOut(1)
 		Stop
@@ -39,10 +39,11 @@ ACTOR DetectCeilBullet	//r31 checked and working
 {
 Mass 1	//R31 added
 scale 0.4
-radius 1
+radius 12
 height 1
 Alpha 0.9	//R31 WAS 0.7
 Renderstyle Translucent
++FLOORCLIP
 -DONTSPLASH
 +MISSILE
 +NOTELEPORT
@@ -54,12 +55,10 @@ Renderstyle Translucent
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_JumpIf(CallACS("Flat_Decal_Remover")==1,"Off")			//r31
-//		TNT1 A 1 ACS_ExecuteAlways(17001,0)		//r31 removed
-//	On:																		//r31 removed
-		TNT1 A 1 ThrustThingZ(0,35,0,1)	//R31 28.7.22	WAS 0 TIC
-		TNT1 AA 1 A_CHECKCEILING("death")										//R31 added ceiling check
-		STOP
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("Flat_Decal_Remover")==1,"Off")	//r31 revised
+		TNT1 A 0 ThrustThingZ(0,35,0,0)
+		TNT1 AA 1 A_CheckCeiling("Death")	//R31 added ceiling check
+		Stop
 	Off:
 		TNT1 A 0 A_FadeOut(1)
 		Stop
@@ -117,7 +116,7 @@ Renderstyle Shaded
 StencilColor "Black"
 }
 
-ACTOR DetectFloorCraterMed : DetectFloorBullet									//R28.3 added
+ACTOR DetectFloorCraterMed : DetectFloorBullet	//R28.3 added
 {
 scale 2.0
 Alpha 0.9
@@ -125,7 +124,7 @@ Renderstyle Shaded
 StencilColor "Black"
 }
 
-ACTOR DetectCeilCraterMed : DetectCeilBullet									//R28.3 added
+ACTOR DetectCeilCraterMed : DetectCeilBullet	//R28.3 added
 {
 scale 2.0
 Alpha 0.9
@@ -133,7 +132,7 @@ Renderstyle Shaded
 StencilColor "Black"
 }
 
-ACTOR DetectFloorLaser : DetectFloorBullet										//r31 added
+ACTOR DetectFloorLaser : DetectFloorBullet		//r31 added
 {
 scale 1.5
 Alpha 0.9
@@ -141,7 +140,7 @@ Renderstyle Shaded
 StencilColor "Black"
 }
 
-ACTOR DetectCeilLaser : DetectCeilBullet										//r31 added
+ACTOR DetectCeilLaser : DetectCeilBullet		//r31 added
 {
 scale 1.5
 Alpha 0.9
