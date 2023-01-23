@@ -69,6 +69,7 @@ Game Doom
 
 Actor 64SmallBloodPool : SmallBloodPool Replaces SmallBloodPool
 {
++FLOORCLIP
 scale 0.82
 }
 

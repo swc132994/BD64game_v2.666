@@ -179,27 +179,21 @@ RenderStyle Translucent
 	States
 	{
 	Spawn:
+		MPUF A 5 Bright
 		MPUF A 5 Bright A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
 		MPUF A 5 Bright A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
 		MPUF A 5 Bright A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
 		MPUF A 5 Bright A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
 		MPUF A 5 Bright A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
 		MPUF A 5 Bright A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
 		MPUF A 5 Bright A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
 		MPUF A 5 Bright A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
