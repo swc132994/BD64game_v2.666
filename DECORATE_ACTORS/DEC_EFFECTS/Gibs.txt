@@ -279,15 +279,15 @@ SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
 Decal BrutalBloodSuper
 damagetype Blood
-BounceCount 1
-+BOUNCEONFLOORS
+//BounceCount 1
+//+BOUNCEONFLOORS
 +NOBLOCKMAP
 +MISSILE
 +NOTELEPORT
 +MOVEWITHSECTOR
 +CLIENTSIDEONLY
-+RIPPER
-+BLOODLESSIMPACT
+//+RIPPER
+//+BLOODLESSIMPACT
 -DONTSPLASH
 +THRUGHOST
 +THRUACTORS
@@ -545,7 +545,7 @@ Decal "None"
 	}
 }
 
-ACTOR Instestin
+ACTOR Instestin : XDeath1
 {
 Scale 0.8
 Radius 8
@@ -556,16 +556,16 @@ Alpha 0.9
 Renderstyle Translucent
 DeathSound "misc/xdeath1"
 Decal BrutalBloodSplat
-BounceFactor 0.01
--EXPLODEONWATER
-+DOOMBOUNCE
-+NOBLOCKMAP
-+MISSILE
-+NOTELEPORT
-+MOVEWITHSECTOR
-+CLIENTSIDEONLY
-+FORCEXYBILLBOARD
-+ISMONSTER																		//R30.7 TEST INFRARED
+//BounceFactor 0.01
+//-EXPLODEONWATER
+//+DOOMBOUNCE
+//+NOBLOCKMAP
+//+MISSILE
+//+NOTELEPORT
+//+MOVEWITHSECTOR
+//+CLIENTSIDEONLY
+//+FORCEXYBILLBOARD
+//+ISMONSTER																		//R30.7 TEST INFRARED
 	States
 	{
 	Spawn:
