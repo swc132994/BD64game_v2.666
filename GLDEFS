@@ -957,10 +957,23 @@ flickerlight2 MASTERMINDATK
 	offset 0 40 0
 }
 
+flickerlight2 MASTERMINDATK2
+{
+	color 1.0 0.0 0.0
+	size 94
+	secondarySize 56
+	interval 1
+	offset 0 40 0
+}
+
 object 64SpiderMastermind
 {
-	frame BSGIM { light MASTERMINDATK }
-	frame MSMNM { light MASTERMINDATK }
+	frame MSMNM {light MASTERMINDATK}
+}
+
+object 64Eradicator
+{
+	frame BSGIM {light MASTERMINDATK2}
 }
 
 //Doom Imp Fireball

@@ -196,6 +196,7 @@ MeleeThreshold 200	//r31 24/08/22 added
 MeleeRange 100		//r31 24/08/22 added
 DropItem "DemonEssenceLargeSpawner"		//R31 added
 DropItem "Soulsphere",32				//R31 added
+AttackSound "weapons/gswing"	//for melee
 +EXTREMEDEATH	//r31 24/08/22 added
 +AVOIDMELEE
 +QUICKTORETALIATE
@@ -214,7 +215,7 @@ DropItem "Soulsphere",32				//R31 added
 	Melee:		//r31 new Melee
 		MSMN A 0
 		"####" DE 6 A_FaceTarget
-		"####" F 6 A_CustomMeleeAttack(50,"weapons/gswing")
+		"####" F 6 A_CustomMeleeAttack(50)
 		Goto See
 	Missile:
 		MSMN A 0
@@ -385,6 +386,7 @@ PainChance "Kick",200
 PainChance "SuperKick",200
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
+AttackSound "weapons/gswing"	//for melee
 MeleeThreshold 200
 MeleeRange 100
 DropItem "DemonEssenceLargeSpawner"
@@ -409,7 +411,7 @@ Tag "Eradicator"
 	Melee:
 		BSGI A 0
 		"####" DE 6 A_FaceTarget
-		"####" F 6 A_CustomMeleeAttack(75,"weapons/gswing")
+		"####" F 6 A_CustomMeleeAttack(75)
 		Goto See
 	Missile:
 		BSGI A 0

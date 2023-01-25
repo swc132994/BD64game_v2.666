@@ -108,6 +108,7 @@ menu/clear dsempty
 menu/activate dsempty
 menu/backup dspistol
 
+//Fists swing
 weapons/gswing			dsswing
 
 player/male/death1		DSPLDETH	//R31 added
@@ -131,7 +132,9 @@ $limit misc/p_pkup 0
 
 misc/keytry				dsnokey
 weapon/plasmaidle		dspsidl
-spider/attack			dspistol
+
+//Mastermind Melee
+//spider/attack			dspistol	//r31 removed
 
 //Mother Demon
 mother/sight dsmthsit
@@ -319,7 +322,8 @@ RCHARGE	RCHARGE
 DSFIRXPL	DSFIRXPL
 
 //R31 for BFG ALt
-BBFGHOLD	BBFGHOLD
+weapons/bfgf2	DSBFG
+BBFGHOLD		BBFGHOLD
 
 //R31 Bashing sound for shotgun by iddqd1337
 $random fstatk {fstatk1 fstatk2 fstatk3}
