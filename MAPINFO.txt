@@ -1,0 +1,337 @@
+gameinfo	//R4 REMOVED RANDOM PLAYER CLASS	//R31 15/08/22 added colours
+{
+MenuFontColor_Title = "Red"//	Color used for the titles of menu pages.
+MenuFontColor_Label = "Green"//	Color used for setting labels in menu pages.
+MenuFontColor_Value = "White"//	Color used for setting values in menu pages.
+MenuFontColor_Action = "White"//Color used for actions in menu pages.
+MenuFontColor_Header = "Gold"//	Color used for section headers in menu pages.
+
+	NoRandomPlayerClass = true
+	playerclasses = "64DoomPlayer","Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	//R16	//R27 ADDED MODERN
+}
+
+clearskills
+
+Skill Baby
+{
+	SpawnFilter = Easy
+	Name = "Be Gentle!"		//R13
+	AmmoFactor = 2.0
+	EasyBossBrain
+	mustconfirm = "Are you kidding me? This is barely a challenge. Press Y or N"
+}
+
+Skill Easy
+{
+	SpawnFilter = Easy
+	Name = "Bring it on!"	//R13
+	Key = "n"
+	AmmoFactor = 1.0		//R11
+	EasyBossBrain
+	mustconfirm = "Only half as many enemies. Don't complain if you find it boring. Press Y or N"
+}
+
+Skill Normal
+{
+	SpawnFilter = Normal
+	Name = "I own Doom!"	//R13
+	AmmoFactor = 1.0		//R11
+	defaultskill
+}
+
+Skill Hard
+{
+	SpawnFilter = Hard
+	MonsterHealth = 1.0		//R15 ADDED
+	AmmoFactor = 1.0		//R11
+	Name = "Watch me die!"
+	mustconfirm = "Equivalent to Ultra Violence. Press Y or N"
+}
+
+Skill Nightmare
+{
+	SpawnFilter = Hard
+	DamageFactor = 1.0		//R18 WAS 2
+	MonsterHealth = 1.0		//R15 was 0.75
+	AmmoFactor = 1.0		//R11
+	FastMonsters 			//R1 WAS FastMonsters 1
+//	disablecheats
+	Name = "Hardcore!"
+	mustconfirm = "Similar to Watch me Die diffiuclty but with fast monsters. Press Y or N"
+}
+
+Skill Nightmare2			//R19 NEW LEVEL
+{
+	SpawnFilter = Hard
+	DamageFactor = 1.0
+	MonsterHealth = 1.0
+	AmmoFactor = 1.0
+//	Aggressiveness = 0.25
+//	disablecheats
+	Name = "Nightmare!"
+	mustconfirm = "Monsters replaced with Nightmare counterparts. Press Y or N"
+	ReplaceActor = "Zombieman","64ZombieMarine"
+	ReplaceActor = "64ZombieMarine","64ChaingunGuy"
+	ReplaceActor = "DoomImp","NightmareImp"
+	ReplaceActor = "Demon","64AcidDemon"
+	ReplaceActor = "spectre","64NightmareSpectre"
+	ReplaceActor = "HellKnight","64Knightmare"
+	ReplaceActor = "Cacodemon","NightmareCacodemon"
+	ReplaceActor = "Cyberdemon","Annihilator64"
+	ReplaceActor = "Spidermastermind","64Eradicator"
+}
+
+Skill Nightmare3			//R19 NEW LEVEL
+{
+	SpawnFilter = Hard
+	DamageFactor = 1.0
+	MonsterHealth = 1.0
+	AmmoFactor = 1.0
+	FastMonsters
+//	Aggressiveness = 0.25
+//	disablecheats
+	Name = "Torment!"
+	mustconfirm = "Similar to Nightmare diffiuclty but with fast monsters Press Y or N"
+	ReplaceActor = "Zombieman","64ZombieMarine"
+	ReplaceActor = "64ZombieMarine","64ChaingunGuy"
+	ReplaceActor = "DoomImp","NightmareImp"
+	ReplaceActor = "Demon","64AcidDemon"
+	ReplaceActor = "spectre","64NightmareSpectre"
+	ReplaceActor = "HellKnight","64Knightmare"
+	ReplaceActor = "Cacodemon","NightmareCacodemon"
+	ReplaceActor = "Cyberdemon","Annihilator64"
+	ReplaceActor = "Spidermastermind","64Eradicator"
+}
+
+// CAST ENDING FIX R31
+
+Intermission Doom2Cast
+{
+	Cast
+	{
+		CastClass = "D64ZombiemanCast"
+		CastName = "Zombie Man"
+		AttackSound = "Missile",1,"grunt/attack"
+	}
+	Cast
+	{
+		CastClass = "D64ShotgunGuyCast"
+		CastName = "Shotgun Guy"
+		AttackSound = "Missile",1,"shotguy/attack"
+	}
+	Cast
+	{
+		CastClass = "D64SSGGuyCast"
+		CastName = "SSG Guy"
+		AttackSound = "Missile",1,"SSGFIRE"
+	}
+	Cast
+	{
+		CastClass = "D64ChaingunGuyCast"
+		CastName = "Chaingun Guy"
+		AttackSound = "Missile",1,"MGUNFIR"
+		AttackSound = "Missile",2,"MGUNFIR"
+		AttackSound = "Missile",3,"MGUNFIR"
+	}
+	Cast
+	{
+		CastClass = "D64ZombiemarineCast"
+		CastName = "Zombie Marine"
+		AttackSound = "Missile",1,"PISTOLF2"
+		AttackSound = "Missile",2,"PISTOLF2"
+		AttackSound = "Missile",3,"PISTOLF2"
+	}
+	Cast
+	{
+		CastClass = "D64ThingCast"
+		CastName = "The Thing"
+		AttackSound = "Melee",1,"64Thing/attack"
+	}
+	Cast
+	{
+		CastClass = "D64DoomImpCast"
+		CastName = "Imp"
+		AttackSound = "Missile",2,"imp/attack"
+		AttackSound = "Melee",2,"imp/melee"
+	}
+	Cast
+	{
+		CastClass = "D64NightmareImpCast"
+		CastName = "Nightmare Imp"
+		AttackSound = "Missile",2,"imp/attack"
+		AttackSound = "Melee",2,"imp/melee"
+	}
+	Cast
+	{
+		CastClass = "D64DemonCast"
+		CastName = "Demon"
+		AttackSound = "Melee",1,"demon/melee"
+	}
+	Cast
+	{
+		CastClass = "D64AcidDemonCast"
+		CastName = "Acid Demon"
+		AttackSound = "Missile",2,"SlimeBall/Shoot"
+		AttackSound = "Melee",1,"demon/melee"
+	}
+	Cast
+	{
+		CastClass = "D64SpectreCast"
+		CastName = "Spectre"
+		AttackSound = "Melee",1,"demon/melee"
+	}
+	Cast
+	{
+		CastClass = "D64NightmareSpectreCast"
+		CastName = "Nightmare Spectre"
+		AttackSound = "Melee",1,"demon/melee"
+	}
+	Cast
+	{
+		CastClass = "D64LostSoulCast"
+		CastName = "Lost Soul"
+		AttackSound = "Missile",1,"skull/melee"
+	}
+	Cast
+	{
+		CastClass = "D64StalkerCast"
+		CastName = "Stalker"
+		AttackSound = "Missile",1,"skeleton/attack"
+	}
+	Cast
+	{
+		CastClass = "D64CacodemonCast"
+		CastName = "Cacodemon"
+		AttackSound = "Missile",1,"caco/attack"
+		AttackSound = "Melee",1,"weapons/gswing"
+	}
+	Cast
+	{
+		CastClass = "D64NightmareCacodemonCast"
+		CastName = "Nightmare Cacodemon"
+		AttackSound = "Missile",1,"caco/attack"
+		AttackSound = "Missile",2,"caco/attack"
+		AttackSound = "Missile",3,"caco/attack"
+		AttackSound = "Melee",1,"weapons/gswing"
+	}
+	Cast
+	{
+		CastClass = "D64HellKnightCast"
+		CastName = "Hellknight"
+		AttackSound = "Missile",1,"baron/attack"
+		AttackSound = "Melee",1,"imp/melee"
+	}
+	Cast
+	{
+		CastClass = "D64KnightmareCast"
+		CastName = "Knightmare"
+		AttackSound = "Missile",1,"baron/attack"
+		AttackSound = "Melee",1,"imp/melee"
+	}
+	Cast
+	{
+		CastClass = "D64BaronOfHellCast"
+		CastName = "Baron Of Hell"
+		AttackSound = "Missile",1,"baron/attack"
+		AttackSound = "Melee",1,"imp/melee"
+	}
+	Cast
+	{
+		CastClass = "D64ArachnotronCast"
+		CastName = "Arachnotron"
+		AttackSound = "Missile",1,"baby/attack"
+		AttackSound = "Missile",2,"baby/attack"
+		AttackSound = "Missile",3,"baby/attack"
+		AttackSound = "Missile",4,"baby/attack"
+		AttackSound = "Missile",5,"baby/attack"
+	}
+	Cast
+	{
+		CastClass = "D64NightCrawlerCast"
+		CastName = "Nightcrawler"
+		AttackSound = "Missile",1,"weapons/rocklf"
+	}
+	Cast
+	{
+		CastClass = "D64PainElementalCast"
+		CastName = "Pain Elemental"
+		AttackSound = "Missile",2,"skull/melee"
+	}
+	Cast
+	{
+		CastClass = "D64RevenantCast"
+		CastName = "Revenant"
+		AttackSound = "Missile",1,"skeleton/attack"
+		AttackSound = "Melee",1,"skeleton/swing"
+		AttackSound = "Melee",3,"skeleton/melee"
+	}
+	Cast
+	{
+		CastClass = "D64FatsoCast"
+		CastName = "Mancubus"
+		AttackSound = "Missile",1,"fatso/attack"
+		AttackSound = "Missile",4,"fatso/attack"
+		AttackSound = "Missile",7,"fatso/attack"
+	}
+	Cast
+	{
+		CastClass = "D64HellHoundCast"
+		CastName = "HellHound"
+		AttackSound = "Missile",1,"caco/attack"
+		AttackSound = "Melee",1,"Dog/melee"
+	}
+	Cast
+	{
+		CastClass = "D64BruiserCast"
+		CastName = "Bruiser"
+		AttackSound = "Missile",1,"64Bruiser/raiseguns"
+		AttackSound = "Melee",1,"BREATHOF"
+	}
+	Cast
+	{
+		CastClass = "D64CyberdemonCast"
+		CastName = "The Cybderdemon"
+		AttackSound = "Missile",1,"weapons/rocklf"
+		AttackSound = "Missile",3,"weapons/rocklf"
+		AttackSound = "Missile",5,"weapons/rocklf"
+	}
+	Cast
+	{
+		CastClass = "D64AnnihilatorCast"
+		CastName = "The Annihilator"
+		AttackSound = "Missile",1,"weapons/rocklf"
+		AttackSound = "Missile",3,"weapons/rocklf"
+		AttackSound = "Missile",5,"weapons/rocklf"
+	}
+	Cast
+	{
+		CastClass = "D64SpiderMastermindCast"
+		CastName = "The Spider Mastermind"
+		AttackSound = "Missile",1,"CHGNSHOT"
+		AttackSound = "Missile",2,"CHGNSHOT"
+		AttackSound = "Melee",2,"weapons/gswing"
+	}
+	Cast
+	{
+		CastClass = "D64EradicatorCast"
+		CastName = "The Eradicator"
+		AttackSound = "Missile",1,"UNMAKER"
+		AttackSound = "Missile",2,"UNMAKER"
+		AttackSound = "Melee",2,"weapons/gswing"
+	}
+	Cast
+	{
+		CastClass = "D64ResurrectorCast"
+		CastName = "The Mother Demon"
+		AttackSound = "Missile",1,"mother/attack"
+		AttackSound = "Missile",3,"mother/attack"
+		AttackSound = "Missile",5,"mother/attack"
+	}
+	Cast
+	{
+		CastClass = "D64DoomPlayerCast"
+		CastName = "Our Hero"
+		AttackSound = "Missile",0,"SGFIRE"
+	}
+	Link = Doom2Cast // restart cast call
+}

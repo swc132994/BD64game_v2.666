@@ -1,5 +1,5 @@
 //R31 NOW OLD STYLE REVENANT
-Actor 64Revenant_old : Revenant
+Actor 64TRevenant : Revenant
 {
 Scale 0.74								//R25.2 WAS 0.8	//R31 WAS 0.75
 Health 350
@@ -72,11 +72,11 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		REVN Q -1
 		Stop
 	AlmostDead:
-		RND1 A 1 A_SpawnItemEx("AlmostDeadOldRevenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		RND1 A 1 A_SpawnItemEx("AlmostDeadTRevenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.CutLess:
 		TNT1 A 0 A_NoBlocking
-		RND2 A 1 A_SpawnItemEx("BrutalisedOldRevenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		RND2 A 1 A_SpawnItemEx("BrutalisedTRevenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.Shotgun:
 		REVN H 1 A_JumpIfCloser(1000,"Death.CutLess")
@@ -88,7 +88,7 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		Goto Death
 	Death.Head:
 		TNT1 A 0 A_NoBlocking
-		RVNH A 1 A_SpawnItemEx("DyingOldRevenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		RVNH A 1 A_SpawnItemEx("DyingTRevenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.Plasma:
 	Death.Superkick:		//R10.1 added
@@ -98,9 +98,9 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("OldRevenantArm1",50,0,random(0,360),2,random(20,90))
-		TNT1 A 0 A_CustomMissile("OldRevenantArm2",50,0,random(0,360),2,random(20,90))
-		TNT1 A 0 A_CustomMissile("OldRevenantTorso",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("TRevenantArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("TRevenantArm2",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("TRevenantTorso",50,0,random(0,360),2,random(20,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
@@ -116,7 +116,7 @@ DropItem "DemonEssenceSpawner"		//R31 added
 	}
 }
 
-Actor DyingOldRevenant : 64Revenant_old
+Actor DyingTRevenant : 64TRevenant
 {
 Health 100
 DamageFactor "CauseWaterSplash",0.0
@@ -139,9 +139,9 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("OldRevenantArm1",50,0,random(0,360),2,random(20,90))
-		TNT1 A 0 A_CustomMissile("OldRevenantArm2",50,0,random(0,360),2,random(20,90))
-		TNT1 A 0 A_CustomMissile("OldRevenantTorso",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("TRevenantArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("TRevenantArm2",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("TRevenantTorso",50,0,random(0,360),2,random(20,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
@@ -205,12 +205,12 @@ DropItem "None"
 		stop
 	Raise:
 		REVN QPONM 5
-		TNT1 A 0 A_SpawnItemEx("64Revenant_old",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		TNT1 A 0 A_SpawnItemEx("64TRevenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
 }
 
-Actor AlmostDeadOldRevenant : 64Revenant_old
+Actor AlmostDeadTRevenant : 64TRevenant
 {
 Health 150
 DamageFactor "CauseWaterSplash",0.0
@@ -246,12 +246,12 @@ DropItem "None"
 		Stop
 	Raise:
 		REVN QPONM 5
-		TNT1 A 0 A_SpawnItemEx("64Revenant_old",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		TNT1 A 0 A_SpawnItemEx("64TRevenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
 }
 
-Actor BrutalisedOldRevenant : 64Revenant_old
+Actor BrutalisedTRevenant : 64TRevenant
 {
 Health 150
 DamageFactor "CauseWaterSplash",0.0
@@ -332,9 +332,9 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("OldRevenantArm1",50,0,random(0,360),2,random(20,90))
-		TNT1 A 0 A_CustomMissile("OldRevenantArm2",50,0,random(0,360),2,random(20,90))
-		TNT1 A 0 A_CustomMissile("OldRevenantTorso",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("TRevenantArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("TRevenantArm2",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("TRevenantTorso",50,0,random(0,360),2,random(20,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_Scream
@@ -345,7 +345,7 @@ DropItem "None"
 		Stop
 	Raise:
 		REVN QPONM 5
-		TNT1 A 0 A_SpawnItemEx("64Revenant_old",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		TNT1 A 0 A_SpawnItemEx("64TRevenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
 }

@@ -1251,7 +1251,7 @@ Scale 0.68
 }
 
 //THCERNOBOG REVENANT
-Actor OldRevenantArm1 : XDeathZombieArm1
+Actor TRevenantArm1 : XDeathZombieArm1
 {
 Scale 0.74
 States
@@ -1269,7 +1269,7 @@ States
 	}
 }
 
-Actor OldRevenantArm2 : XDeathZombieArm1
+Actor TRevenantArm2 : XDeathZombieArm1
 {
 Scale 0.74
 	States
@@ -1287,7 +1287,7 @@ Scale 0.74
 	}
 }
 
-Actor OldRevenantTorso : XDeathZombieArm1
+Actor TRevenantTorso : XDeathZombieArm1
 {
 Scale 0.74
 	States
@@ -1825,7 +1825,7 @@ Scale 0.8
 }
 
 //CERBERUS HELLHOUND
-Actor HoundHead : XDeathZombieArm1
+Actor CHoundHead : XDeathZombieArm1
 {
 Scale 0.9
 	States
@@ -1843,7 +1843,7 @@ Scale 0.9
 	}
 }
 
-Actor HoundFrontLeg : XDeathZombieArm1
+Actor CHoundFrontLeg : XDeathZombieArm1
 {
 Scale 0.9
 	States
@@ -1861,7 +1861,7 @@ Scale 0.9
 	}
 }
 
-Actor HoundRearLeg : XDeathZombieArm1
+Actor CHoundRearLeg : XDeathZombieArm1
 {
 Scale 0.9
 	States

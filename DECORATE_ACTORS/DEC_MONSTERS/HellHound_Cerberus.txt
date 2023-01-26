@@ -1,5 +1,5 @@
 //R31 Actor now old hellhound
-Actor 64HellHound_old : Demon 19115
+Actor 64CHellHound : Demon 19115
 {
 SpawnID 175		//R31 added ID
 Scale 0.9
@@ -44,9 +44,9 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		DOGG F 4 A_FaceTarget
 		DOGG G 4 A_FaceTarget
 		DOGG H 4
-		DOGG V 4 Bright
 		TNT1 A 0 A_CustomMissile("CacodemonBall",36,-9,random(-1,1),1,random(-1,1))
 		TNT1 A 0 A_CustomMissile("CacodemonBall",36,9,random(-1,1),1,random(-1,1))
+		DOGG V 4 Bright
 		DOGG H 4
 		DOGG G 4 A_FaceTarget
 		Goto See
@@ -107,12 +107,12 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		DOGG I 1 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.CutLess:		//R31 extra
-		TNT1 A 0 A_CustomMissile("HoundHead",50,0,random(00,360),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("CHoundHead",50,0,random(00,360),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("XDeath2",50,0,random(00,360),2,random(10,50))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_KillMaster("None")	//08-08-22 tag 666 fix
-		DGB1 W 1 A_SpawnItemEx("Brutalized_Hound",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		DGB1 W 1 A_SpawnItemEx("Brutalized_CHound",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.SuperFists:
 	Death.SuperKick:
@@ -128,9 +128,9 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
-		TNT1 AA 0 A_CustomMissile("HoundFrontLeg",50,0,random(0,360),2,random(20,90))
-		TNT1 AA 0 A_CustomMissile("HoundRearLeg",50,0,random(0,360),2,random(20,90))
-		TNT1 AA 0 A_CustomMissile("HoundHead",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("CHoundFrontLeg",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("CHoundRearLeg",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("CHoundHead",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
@@ -150,7 +150,7 @@ DropItem "DemonEssenceSpawner"		//R31 added
 	}
 }
 
-Actor Brutalized_Hound : 64Hellhound_OLD
+Actor Brutalized_CHound : 64CHellHound
 {
 Health 125
 DropItem "None"
@@ -238,9 +238,9 @@ DropItem "None"
 		TNT1 AAAAAAAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
-		TNT1 AA 0 A_CustomMissile("HoundFrontLeg",50,0,random(0,360),2,random(20,90))
-		TNT1 AA 0 A_CustomMissile("HoundRearLeg",50,0,random(0,360),2,random(20,90))
-		TNT1 A 0 A_CustomMissile("HoundHead",50,0,random(00,360),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("CHoundFrontLeg",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("CHoundRearLeg",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("CHoundHead",50,0,random(00,360),2,random(10,50))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 //		TNT1 A 0 ThrustThingZ(0,40,0,0)
@@ -255,7 +255,7 @@ DropItem "None"
 	raise:
 		TNT1 A 0 A_SetScale(0.9,0.9)
 		DOGG MLKJ 5
-		TNT1 A 0 A_SpawnItemEx("64HellHound_OLD",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		TNT1 A 0 A_SpawnItemEx("64CHellHound",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
 }

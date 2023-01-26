@@ -5,7 +5,7 @@ Health 500
 Height 64
 Radius 24
 Mass 300
-Speed 8
+Speed 9
 PainChance 50
 Obituary "%o was inverted by a Thing."
 SeeSound "64Thing/sight"

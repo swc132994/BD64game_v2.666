@@ -43,12 +43,13 @@ DropItem "DemonEssenceSpawner"
 	Missile:
 		GECH E 4 A_FaceTarget
 		GECH E 4
-		GECH O 3 Bright Light("Cacoball") A_FaceTarget
-		GECH P 3 Bright Light("Cacoball")
+		GECH O 3 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("CacodemonBall",36,-9,random(-1,1),1,random(-1,1))
 		TNT1 A 0 A_CustomMissile("CacodemonBall",36,9,random(-1,1),1,random(-1,1))
-		GECH E 4
-		GECH E 4 A_FaceTarget
+		GECH P 4 Bright Light("Cacoball")
+		GECH O 3 
+		GECH E 3
+		GECH E 3 A_FaceTarget
 		Goto See
 	Pain:
 		GECH G 2

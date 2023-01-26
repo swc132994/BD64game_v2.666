@@ -1,0 +1,3 @@
+STARTUPTYPE = "Hexen"
+STARTUPTITLE = "Brutal Doom 64 (Version 2.666)"
+STARTUPCOLORS = "CC 00 00", "00 33 66"	//red text,blue background

@@ -11,26 +11,32 @@ SOUNDS/WORLD/TERRAIN
 D64 TO DOOM 2 MONSTER SCALE VALUES
 ----------------------------------
 
-ARACHNOTRONS	0.63
+ARACHNOTRON		0.63
+NIGHTCRAWLER	0.63
 ARCHVILE		1.0
 BARON			0.72
 CYBERDEMON		0.66
+ANNIHILATOR		0.66
 CACODEMONS		1.0
-DEMONS			0.67
+DEMONS (ALL)	0.67
 FATSO			0.62
 HELLHOUND ALT	0.65
 HELLHOUND CER	0.65
 HELLHOUND GEC	0.65
 HELLKNIGHT		0.72
-KNIHTMARE		0.72
+KNIGHTMARE		0.72
+BRUISER			0.72
 IMPS			0.63
 LOST SOUL		0.76
+STALKER			0.76
 MASTERMIND		0.9
+ERADICATOR		0.9
 MOTHERDEMON		1.0
 PAIN ELEMENTAL	0.77
-REVENENT NEW	0.68
-REVENANT OLD	0.74
+REVENENT		0.68
+REVENANT TCHER	0.74
 ZOMBIES			0.63
+THING			0.63
 
 NEW ACTOR IDS
 ---------------
@@ -85,18 +91,20 @@ Tactical Shotgun Alt attack - IDDQD_1337 (animation) & I'M (sprites)
 New weapon kicking and slide kicking animations by IDDQD_1337
 
 Monsters:
-64Thing - Craneo(D64 sprites), based on the Mimic by StopSignal
+64Thing - Craneo(D64 sprites), based on the Mimic by StopSignal, sounds from Duke Nukem 3D by 3D Realms
 New Revenant - DrPsypy (sprites)
 
 Hellhound Alt - I'M (sprites)
 Hellhound GEC - Gerardo194 (sprites)
 Bruiser a.k.a Duke of Hell - Gerardo194 (sprites)
-Knightmare - 
+Knightmare - Craneo
 Eradicator a.k.a unmaker mastermind - Immorpher (sprites)
 Chaingunner - Craneo (reworked sprites), Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim
+Acid Demon sounds from REALM667-SLIME WORM by Captain Toenail
 
 Add-ons:
 D64PSX_HQ_SFX (SFX Marine (Nate))
+BD64_NathanSFXPack (SFX Marine (Nate))
 BD64v2.666_Reflective_Blood_[GZDoom] (IDDQD_1337)
 BD64v2.666_Alt_Weapon_Sounds (BigStronk)
 BD64v2.666_Beefy_SFX (BigStronk)
@@ -104,13 +112,15 @@ BD64v2.666_SkiesHD - Slightly edited version of "High Quality Skies for BD 64" b
 BD64v2.666_CD_Weapons_AR_AS - Reworked version of "Autoshotgun & Assault Rifle with Grenade Launcher" by Flammable4444 (https://www.moddb.com/mods/brutal-doom-64/addons/cd-weapons-ar-as)
 BD64v2.666_Rework_D4_Weapons_&_Voxels - Reworked version of "DOOM4 Voxels and Weapons For BD64-V3.3" by KEENO7 (https://www.moddb.com/mods/brutal-doom-64/addons/doom4-voxels-and-weapons-for-bd64v3)
 
-Props:
+Props and misc:
 Impaled Doom 64 guys - Craneo
 64 Floating skull - Craneo (extra sprites), DrDoctor (original)
 64 EvilEye - Craneo
 64 Candelabra - DrDoctor
 64 TwitchGibs - Nevander's D64 Retribution
 64 HeadCandles - Craneo
+New blood splats sprites by I'M
+New Bullet decals from SMK4SIMPLEDECALS.wad by Sgt Mark IV
 
 Items:
 Alt cell packs - DrDoctor (sprites)

@@ -1,0 +1,390 @@
+//R1 NEW 03.11.17
+LISTMENU "MainMenu"
+{
+	IfGame(Doom,Chex)
+	{
+		StaticPatch 94,2,"M_DOOM"
+		Position 97,72
+		IfOption(ReadThis)
+		{
+		Position 97,64
+		}
+	}
+	IfGame(Strife)
+	{
+		StaticPatch 84,2,"M_STRIFE"
+		Position 97,45
+	}
+	IfGame(Heretic)
+	{
+		StaticPatch 88,0,"M_HTIC"
+		StaticPatch 40,10,"M_SKL01"
+		StaticPatch 232,10,"M_SKL00"
+		Position 110,56
+	}
+	IfGame(Hexen)
+	{
+		StaticPatch 88,0,"M_HTIC"
+		StaticPatch 37,80,"FBULB0"
+		StaticPatch 278,80,"FBULA0"
+		Position 110,56
+	}
+	IfGame(Doom,Strife,Chex)
+	{
+		TextItem "NEW GAME","n","PlayerclassMenu"
+		ifOption(SwapMenu)
+		{
+			TextItem "LOAD GAME","l","LoadGameMenu"
+			TextItem "SAVE GAME","s","SaveGameMenu"
+			TextItem "OPTIONS","o","OptionsMenu"
+			TextItem "BD64 Options","b","BD64Menu"
+		}
+		else
+		{
+			TextItem "OPTIONS","o","OptionsMenu"
+			TextItem "BD64 Options","b","BD64Menu"
+			TextItem "LOAD GAME","l","LoadGameMenu"
+			TextItem "SAVE GAME","s","SaveGameMenu"
+		}
+		ifOption(ReadThis)
+		{
+			TextItem "READ THIS","r","ReadThisMenu"
+		}
+		TextItem "QUIT GAME","q","QuitMenu"
+	}
+	IfGame(Heretic,Hexen)
+	{
+		TextItem "$MNU_NEWGAME","n","PlayerclassMenu"
+		TextItem "$MNU_OPTIONS","o","OptionsMenu"
+		TextItem "$MNU_GAMEFILES","g","GameFilesMenu"
+		TextItem "$MNU_INFO","i","ReadThisMenu"
+		TextItem "$MNU_QUITGAME","q","QuitMenu"
+	}
+}
+
+OptionMenu "BD64Menu" //R31
+{
+	Title "BRUTAL DOOM 64 OPTIONS"
+	Submenu "Performance Options",			"BrutalDoom64OptionsPerformance"
+	Submenu "Item/Weapon Spawner Options",	"BrutalDoom64OptionsItem/WeaponSpawner"
+	Submenu "Monster Spawner Options",		"BrutalDoom64OptionsMonsterSpawner"
+	Submenu "Other Monster Options",		"BrutalDoom64OptionsOtherMonster"
+	Submenu "Map Options",					"BD64MapOptions"
+	Submenu "Item/Weapon Options",			"BrutalDoom64Item/WeaponOptions"
+}
+
+OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
+{
+	Title "Performance & Miscellaneous Options"	//R31
+		StaticText " "
+		StaticText "Enable this option only if hosting a server on a multiplayer game,",1
+		StaticText "If playing on single player then set to Off",1
+		StaticText " "
+	Option "Enable Zandronum specific multiplayer scripts =","isrunningzandronum","OnOff"
+		StaticText " "
+		StaticText "Options to adjust game performance!",1
+		StaticText " "
+	Option "Select blood amount =","zdoombrutalblood","BrutalBlood"
+	Option "Enable gore remover for flats (30s) =","zdoombrutaljanitor","YesOrNo"
+	Option "Enable floor/ceiling shot/blast decals =","FloorDecal_Cvar","YesOrNoFalse"		//R29 ADDED
+	Option "Disable Light Fog & Halos =","LFog_Cvar","LFog_Value"			//R30 ADDED	//R30.9 REVISED LINE //R31 was YesOrNoFalse
+		StaticText " "
+		Slider "Set max wall decals","cl_maxdecals",0,9999,100,0	//R31 16/08/22 new slider
+		textfield "input value manually","cl_maxdecals"				//R31 16/08/22 new slider
+		StaticText " "
+		Slider "Set max gore amount","sv_corpsequeuesize",25,9999,100,0		//R31 16/08/22 new slider
+		textfield "input value manually","sv_corpsequeuesize"				//R31 16/08/22 new slider
+		StaticText " "
+		StaticText "Miscellaneous Options!",1
+		StaticText " "
+	Option "Enable footstep sounds =","FootStepCheckCvar","YesOrNo"
+	Option "Set Normal size HUD to Doom style =","VanillaStatusBarCvar","YesorNo"
+}
+
+OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
+{
+	Title "Item/Weapon Spawner Options"
+		StaticText " "
+		StaticText "Options to choose replacements of weapons and powerups",1
+		StaticText "or set to appear randomly",1
+		StaticText " "
+	Option "Randomly replace Power-ups with Unmaker Power-ups =","WpnPower_Spawner_Cvar","WpnPower_Spawner_Value"		//r31 was DynamicSpawnCvar and YesOrNo
+	Option "Randomly replace Plasma Rifle with Gauss Cannon =","GaussCannon_Spawner_Cvar","GaussCannon_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace BFG9000 with Unmaker/Lasergun =","BFG_Spawner_Cvar","BFG_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Chaingun with SMG or Rifle =","Chaingun_Spawner_Cvar","Chaingun_Spawner_Value"
+		StaticText " "
+		StaticText "Option to replace shotguns with super shotguns",1
+		StaticText "(setting to shotgun only will cause SSG Zombies to drop shells instead of SSG)",1
+		StaticText " "
+	Option "SSG in Doom 1 =","SSGinDoom1_Cvar","SSGinDoom1Menu"
+}
+
+OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
+{
+	Title "Monster Spawner Options"
+		StaticText " "
+	StaticText "These options allow you to set monster replacements for nightmare and",1
+		StaticText "outcast monsters,or set to appear randomly",1
+		StaticText " "
+	Option "Randomly replace Shotgun Zombies with SSG Zombies =","SSGZombieRandom_Cvar","SSGZombieRandom_Value"		//R31 was YesOrNo
+	Option "Randomly replace Chaingunguy with Zombie Marine =","D64ChaingunnerRandom_Cvar","D64ChaingunnerRandom_Value"		//R31 was YesOrNo
+	Option "Randomly replace Imps with Nightmare Imps =","NImp_Spawner_Cvar","NImp_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Spectres with Nightmare Spectres =","NSpectre_Spawner_Cvar","NSpectre_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Cacodemons with Nightmare Cacodemons =","NCaco_Spawner_Cvar","NCaco_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Demons with Acid Demons =","AcidDemonRandom_Cvar","AcidDemon_Spawner_Value"	//R31 New - Split from Demons with Hellhounds
+	Option "Randomly replace Lost Souls with Stalkers =","StalkerRandom_Cvar","Stalker_Spawner_Value"	//R31 New
+	Option "Randomly replace Arachnotrons with Nightcrawlers =","NightCrawlerRandom_Cvar","NightCrawler_Spawner_Value"	//R31 New
+	Option "Randomly replace HellKnights with Knightmares =","KnightmareRandomCvar","Knightmare_Spawner_Value"
+	Option "Randomly replace Barons with Hellhounds =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Mancubi with Bruisers =","BruiserRandom_Cvar","Bruiser_Spawner_Value"
+	Option "Randomly replace Cyberdemons with Annihilators =","Annihilator_Spawner_Cvar","Annihilator_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Masterminds with Motherdemons or Eradicators =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"	//R27 //R31 was YesOrNo
+}
+
+OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
+{
+	Title "Other Monster Options"
+		StaticText " "
+		StaticText "Option to restore the Archvile from the Hellhound",1
+		StaticText " "
+	Option "Replace all Hellhounds with Archviles =","ArchvileRestorerCvar","YesOrNo"	//r31 was DynamicSpawnCvar2
+		StaticText " "
+	StaticText "Option to only show D64 monsters (no cut monsters)",1
+		StaticText " "
+	Option "Remove all Revenants, Hellhounds & Masterminds =","D64MonstersOnlyCvar","YesOrNo"	//R31 was DynamicSpawnCvar4
+		StaticText " "
+		StaticText "Options to switch to alternate spawns for the Revenant and Hellhound",1
+		StaticText " "
+	Option "Select between Cerberus, Alternate and GEC Hellhound =","HoundChooserCvar","HoundChooser"
+	Option "Revert back to Tchernobog Revenant =","RevenantChooserCvar","YesOrNo"
+		StaticText " "
+//		StaticText "Option to switch to alternative skin for the Spider Mastermind",1
+//		StaticText " "
+//	Option "Alternative Spider Mastermind Skin =","AlternativeMasterMindSkinCvar","YesOrNo"
+//		StaticText " "
+		StaticText "Option to allow pain elementals to randomly spit stalkers",1
+		StaticText " "
+	Option "Allow Pain Elemental Stalker attack =","PainStalkerRandom_Cvar","YesOrNo"
+}
+
+OptionMenu "BD64MapOptions" //R31 added
+{
+	Title "Map Options"
+		StaticText " "
+		StaticText "(Only available when playing the BD64 Campaign)",1
+//		StaticText "Options to play Vanilla version of MAP08 and add TC levels",1
+		StaticText " "
+	Option "Play Vanilla Map08 =","VMapCheckCvar","YesOrNo"
+	Option "Add TC Maps to Campaign =","TCMapCheckCvar","YesOrNo"
+	Option "Revert Back to Original Map28 =","AbsMapCheckCvar","YesOrNo"
+
+	Option "Show Opening Title Map (Restart Required) =","D64_SkipTitleMap","YesOrNoFalse"
+}
+
+OptionMenu "BrutalDoom64Item/WeaponOptions" //R31 added
+{
+	Title "Item/Weapon Options"
+		StaticText " "
+		StaticText "These options allow changing the skin for the Rifle and Laser Gun,",1
+		StaticText "as well as D64 vanilla style firing (Only for Classical).",1
+		StaticText "Also you can restore Classic Rocket Launcher for Tactical/Modern.",1
+		StaticText " "
+	Option "Play Vanilla Weapon Animations (Classical Only) =","VWeaponCvar","YesOrNo"
+	Option "Play Start Warm Up Weapons (Tactical/Modern Only)=", "WeaponsWarmUpCvar", "YesOrNo"
+	Option "Alternative Rifle Skin =","AlternativeRifleSkinCvar","YesOrNo"
+	Option "Alternative Laser Skin =","AlternativeLaserSkinCvar","YesOrNo"
+	Option "Classic Rocket Launcher for Tactical/Modern =","ClassicRLCvar","YesOrNo"
+	Option "Classic Chainsaw for Tactical/Modern =","VanillaChainsawCvar","YesOrNo"
+	Option "Alternative Ammo Pickup Sprites =","AlternativeAmmoPickupSpritesCvar","AlternativeAmmoPickupSpritesValue"
+	Option "Switch to Fists on Berserk Pickup =","BerserkSwitchFistsCvar","YesOrNo"
+	Option "Show alpha/censored healing kits/berserk =","CensoredHealing_Cvar","CensoredHealing_Value"
+	Option "Alpha Build Items Pickup =","AlphaPickupCvar","YesOrNo"
+}
+
+OptionValue "BrutalBlood"
+{
+	1,"Low"
+	2,"Normal"
+	3,"Lots"
+	4,"Comical"
+	666,"Maximum"		//R29 was "Overdrawn at Blood Bank"
+}
+
+OptionValue "YesOrNo"
+{
+	0,"No"
+	1,"Yes"
+}
+
+OptionValue "YesOrNoFalse"
+{
+	1,"No"
+	0,"Yes"
+}
+
+/*OptionValue "SelectEngineType"	//R29 reomved
+{
+	1,"Zandronum"
+	0,"GZDoom"
+}*/
+
+OptionValue "SSGinDoom1Menu"
+{
+	0,"Shotgun Only"
+	1,"Super Shotgun Only"
+	2,"Random"
+}
+
+//R31 Monster Spawner improvement
+OptionValue "HoundChooser"
+{
+	0,"Alternate"
+	1,"GEC"
+	2,"Cerberus"
+}
+
+OptionValue "Annihilator_Spawner_Value"
+{
+	0,"Cyberdemon Only"
+	1,"Annihilator Only"
+	2,"Random"
+}
+
+OptionValue "Knightmare_Spawner_Value"
+{
+	0,"HellKnight Only"
+	1,"Knightmare Only"
+	2,"Random"
+}
+
+OptionValue "Motherdemon_Spawner_Value"
+{
+	0,"Mastermind Only"
+	1,"Motherdemon Only"
+	2,"Eradicator Only"
+	3,"Random"
+}
+
+OptionValue "Bruiser_Spawner_Value"
+{
+	0,"Mancubus Only"
+	1,"Bruiser Only"
+	2,"Random"
+}
+
+OptionValue "NightCrawler_Spawner_Value"
+{
+	0,"Arachnotron Only"
+	1,"NightCrawler Only"
+	2,"Random"
+}
+
+OptionValue "Stalker_Spawner_Value"
+{
+	0,"Lost Soul Only"
+	1,"Stalker Only"
+	2,"Random"
+}
+
+OptionValue "Hellhound_Spawner_Value"
+{
+	0,"Baron Only"
+	1,"Hellhound Only"
+	2,"Random"
+}
+
+OptionValue "AcidDemon_Spawner_Value"
+{
+	0,"Demon Only"
+	1,"Acid Demon Only"
+	2,"Random"
+}
+
+OptionValue "NCaco_Spawner_Value"
+{
+	0,"Cacodemon Only"
+	1,"Nightmare Cacodemon Only"
+	2,"Random"
+}
+
+OptionValue "NSpectre_Spawner_Value"
+{
+	0,"Spectre Only"
+	1,"Nightmare Spectre Only"
+	2,"Random"
+}
+
+OptionValue "NImp_Spawner_Value"
+{
+	0,"Imp Only"
+	1,"Nightmare Imp Only"
+	2,"Random"
+}
+
+OptionValue "SSGZombieRandom_Value"
+{
+	0,"Shotgun Guy Only"
+	1,"SSG Guy Only"
+	2,"Random"
+}
+
+OptionValue "D64ChaingunnerRandom_Value"
+{
+	0,"Chaingun Guy Only"
+	1,"Zombie Marine Only"
+	2,"Random"
+}
+
+OptionValue "LFog_Value"
+{
+	0,"Disable Both"
+	1,"Enable Both"
+	2,"Disable Halos"
+	3,"Disable Light Fog"
+}
+
+OptionValue "BFG_Spawner_Value"
+{
+	0,"BFG9000 Only"
+	1,"Unmaker Only"
+	2,"Lasergun Only"
+	3,"Random"
+}
+
+OptionValue "GaussCannon_Spawner_Value"
+{
+	0,"Plasmagun Only"
+	1,"Gauss Cannon Only"
+	2,"Random"
+}
+
+OptionValue "WpnPower_Spawner_Value"
+{
+	0,"Power-ups only"
+	1,"Unmaker Power-ups only"
+	2,"Random"
+}
+
+OptionValue "Chaingun_Spawner_Value"
+{
+	0,"Chaingun Only"
+	1,"Rifle Only"
+	2,"SMG Only"
+	3,"Random"
+}
+
+OptionValue "AlternativeAmmoPickupSpritesValue"
+{
+	0,"Default Only"
+	1,"Alternative Only"
+	2,"Alpha Build Only"
+	3,"Random (Except Alpha Build)"
+}
+
+OptionValue "CensoredHealing_Value"
+{
+	0,"No"
+	1,"Alpha Build"
+	2,"Censored (Nightdive)"
+	3,"Alternative (BFG Style)"
+}
