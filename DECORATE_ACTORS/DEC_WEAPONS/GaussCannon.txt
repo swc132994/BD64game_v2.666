@@ -234,6 +234,7 @@ Decal BigScorch
 Actor GaussCannonProjectilePuff
 {
 +ALWAYSPUFF
++PUFFONACTORS
 -NOCLIP
 +NOGRAVITY
 +PIERCEARMOR
@@ -251,12 +252,13 @@ Scale 1.5
 	Death:
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAA 0 A_SpawnItem("LensFlareTorchBlue",0,0)
-		GEXP BCDEFGHIJKL 2 Bright
-		TNT1 A 0 A_SpawnItemEx("DetectCeilCrater",0,0,0,0,0,0,0,0,0)
-		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_SpawnItem("DetectCeilCrater")
+		TNT1 A 0 ThrustThingZ(0,1,1,0)
+		GEXP ABCDEFGHIJKL 2 Bright
+		TNT1 A 0 A_SpawnItem("DetectFloorCrater")
 		GEXP MNOPQR 2 Bright A_CustomMissile("PlasmaSmoke",1,0,random(0,360),2,random(0,160))
 		GEXP STUVWXYZ 2 Bright
-	Stop
+		stop
 	}
 }
 
