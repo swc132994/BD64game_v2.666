@@ -179,6 +179,16 @@ ZOffset 0.6
 FrameIndex BPDL A 0 0
 }
 
+Model MediumAcidSpot
+{
+Path "models/bloodspot"
+Model 0 "bloodspot.md3"
+Skin 0 "bloodspot2.png"
+Scale 40.0 40.0 40.0
+ZOffset 0.6
+FrameIndex BPDL A 0 0
+}
+
 Model Instestin
 {
 Path "models/bloodspot"

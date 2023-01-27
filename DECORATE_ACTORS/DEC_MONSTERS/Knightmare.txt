@@ -1,6 +1,6 @@
 Actor 64Knightmare 19118
 {
-Spawnid 178
+SpawnID 178
 Scale 0.8
 Health 500
 Height 64
@@ -187,12 +187,14 @@ MONSTER
 Actor KnightmareLegs
 {
 Scale 0.8
+Health 0
 +CLIENTSIDEONLY
 +THRUACTORS
 +NOBLOCKMAP
 +FLOORCLIP
 +ISMONSTER
 +MOVEWITHSECTOR
++CORPSE
 Alpha 0.6
 RenderStyle Translucent
 	States
@@ -203,6 +205,10 @@ RenderStyle Translucent
 		BZB3 ABC 4
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		BZB3 D -1
+		Stop
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		POL5 A -1
 		Stop
 	}
 }
@@ -282,8 +288,8 @@ Translation "0:255=%[0,0,0]:[1,1,0]"
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleYellowHeavySmall",0,0,random(0,360),2,random(20,50))
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleYellowVeryFast",0,0,random(0,360),2,random(20,40))
 		TNT1 AAAA 0 A_CustomMissile("ExplosionParticleYellow",0,0,random(0,360),2,random(0,360))
-		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterMed",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterMed",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_SpawnItem("DetectFloorCraterMed")
+		TNT1 A 0 A_SpawnItem("DetectCeilCraterMed")
 		BAL7 CDEFGH 1 Bright A_SpawnItem("LensFlareTorchYellow",0,0)
 		Stop
 	}

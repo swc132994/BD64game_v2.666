@@ -196,7 +196,7 @@ RenderStyle Translucent
 		TNT1 A 0 A_Explode(15,35,1)
 		MPUF A 5 Bright A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)		//R30.10 ADDED	//r31 revised
+		TNT1 A 0 A_SpawnItem("DetectFloorCraterSmallMotherdemon")		//R30.10 ADDED	//r31 revised
 		Stop
 	}
 }
@@ -220,7 +220,7 @@ PROJECTILE
 		Loop
 	Death:
 		TNT1 AAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
-		TNT1 A 0 A_SpawnItemEx("DetectFloorCratermed",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)			//R30.10 added
+		TNT1 A 0 A_SpawnItem("DetectFloorCraterMed")			//R30.10 added
 //		TNT1 AAAAAA 0 A_CustomMissile("ExplosionParticleFast",0,0,random(0,360),2,random(0,180))	//R11 unused
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion")
 		TNT1 A 0 A_Explode(200,200,1)

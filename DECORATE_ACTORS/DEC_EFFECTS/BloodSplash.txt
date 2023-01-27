@@ -74,7 +74,7 @@ Decal BloodSplat
 	states
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_JumpIf(waterlevel > 1,"SpawnUnderwater")
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"SpawnUnderwater")
 		BLER GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_FadeOut(0.01)
 		stop
 	SpawnUnderwater:
@@ -171,7 +171,7 @@ Decal BloodSuper
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_JumpIf(waterlevel > 1,"Splash")
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
 		//XDT1 ABCD 4// A_SpawnItem("BloodTr",0,0,0,1)
 		TNT1 A 1
 		loop
@@ -277,7 +277,7 @@ Decal BloodSplat
 	states
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_JumpIf(waterlevel > 1,"SpawnUnderwater")
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"SpawnUnderwater")
 		BLOD EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE 1 A_FadeOut(0.03)
 		stop
 	SpawnUnderwater:

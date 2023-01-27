@@ -521,7 +521,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		CGMZ A 2 BRIGHT
+		CGMZ A 2 Bright
 		Stop
 	}
 }

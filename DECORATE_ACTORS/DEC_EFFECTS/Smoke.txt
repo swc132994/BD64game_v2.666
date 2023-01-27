@@ -530,13 +530,13 @@ RenderStyle Translucent
 		TNT1 A 0 A_Jump(128,4)
 		TNT1 A 0 A_Jump(192,4)
 		TNT1 A 0 A_Jump(255,4)
-		SMOK ABCDEFGHIJKLMNOPQr 2 BRIGHT	//r31 added r
+		SMOK ABCDEFGHIJKLMNOPQr 2 Bright	//r31 added r
 		stop
-		SMOK AABBCDDEEFFGGHHIIJJJKKLLMMNNOOPPQQr 2 BRIGHT	//r31 added r
+		SMOK AABBCDDEEFFGGHHIIJJJKKLLMMNNOOPPQQr 2 Bright	//r31 added r
 		stop
-		SMOK ABCCDDEFFGHHIJJKKLMMNNOOPQr 2 BRIGHT	//r31 added r
+		SMOK ABCCDDEFFGHHIJJKKLMMNNOOPQr 2 Bright	//r31 added r
 		stop
-		SMOK AABCDEFFGGHIJKLMMNNOPQQr 2 BRIGHT	//r31 added r
+		SMOK AABCDEFFGGHIJKLMMNNOPQQr 2 Bright	//r31 added r
 		stop
 	}
 }
@@ -566,13 +566,13 @@ RenderStyle Translucent
 		TNT1 A 0 A_Jump(128,4)
 		TNT1 A 0 A_Jump(192,4)
 		TNT1 A 0 A_Jump(255,4)
-		SMOK ABCDEFGHIJKLMNOPQr 2 BRIGHT	//r31 added r
+		SMOK ABCDEFGHIJKLMNOPQr 2 Bright	//r31 added r
 		stop
-		SMOK ABCDEFGHIJKLMNOPQr 2 BRIGHT	//r31 added r
+		SMOK ABCDEFGHIJKLMNOPQr 2 Bright	//r31 added r
 		stop
-		SMOK ABCDEFGHIJKLMNOPQr 2 BRIGHT	//r31 added r
+		SMOK ABCDEFGHIJKLMNOPQr 2 Bright	//r31 added r
 		stop
-		SMOK ABCDEFGHIJKLMNOPQr 2 BRIGHT	//r31 added r
+		SMOK ABCDEFGHIJKLMNOPQr 2 Bright	//r31 added r
 		stop
 	}
 }
@@ -620,13 +620,13 @@ RenderStyle Add
 		TNT1 A 0 A_Jump(128,4)
 		TNT1 A 0 A_Jump(192,4)
 		TNT1 A 0 A_Jump(255,4)
-		SMOK ABCDEFGHIJKLMNOPQr 2 BRIGHT	//r31 added r
+		SMOK ABCDEFGHIJKLMNOPQr 2 Bright	//r31 added r
 		stop
-		SMOK AABBCDDEEFFGGHHIIJJJKKLLMMNNOOPPQQr 2 BRIGHT	//r31 added r
+		SMOK AABBCDDEEFFGGHHIIJJJKKLLMMNNOOPPQQr 2 Bright	//r31 added r
 		stop
-		SMOK ABCCDDEFFGHHIJJKKLMMNNOOPQr 2 BRIGHT	//r31 added r
+		SMOK ABCCDDEFFGHHIJJKKLMMNNOOPQr 2 Bright	//r31 added r
 		stop
-		SMOK AABCDEFFGGHIJKLMMNNOPQQr 2 BRIGHT	//r31 added r
+		SMOK AABCDEFFGGHIJKLMMNNOPQQr 2 Bright	//r31 added r
 		stop
 	}
 }
@@ -753,7 +753,7 @@ RenderStyle Translucent
 		BSP4 B 1
 		Goto Death
 	Death:
-		BSP4 CCCCCDDDDDEEEEEFFFFFGGGGGHHHHHIIIIIJJJJJKKKKK 1 BRIGHT A_FadeOut(0.005)
+		BSP4 CCCCCDDDDDEEEEEFFFFFGGGGGHHHHHIIIIIJJJJJKKKKK 1 Bright A_FadeOut(0.005)
 		Stop
 	}
 }
@@ -790,7 +790,7 @@ BounceFactor 0.5
 	{
 	Spawn:
 		TNT1 A 0
-		TTRB A 0 bright A_CustomMissile("PlasmaSmoke",0,0,random(0,360),2,random(70,110))
+		TTRB A 0 Bright A_CustomMissile("PlasmaSmoke",0,0,random(0,360),2,random(70,110))
 		stop
 	}
 }
@@ -816,7 +816,7 @@ BounceFactor 0.5
 	Spawn:
 		TNT1 A 0
 		TNT1 A 0 A_Jump(200,2)
-		TTRB A 0 bright A_CustomMissile("TorchSmoke",0,0,random(0,360),2,random(70,110))
+		TTRB A 0 Bright A_CustomMissile("TorchSmoke",0,0,random(0,360),2,random(70,110))
 		stop
 		TNT1 A 0
 		stop
@@ -834,7 +834,7 @@ renderstyle translucent
 	states
 	{
 	Spawn:
-		MNSM ABCDEFGHIJKLMNOPQ 1 bright
+		MNSM ABCDEFGHIJKLMNOPQ 1 Bright
 		stop
 	}
 }
@@ -1026,7 +1026,7 @@ Renderstyle Add
 	States
 	{
 	Spawn:
-		FIR3 ABCDEFGHIJKLMNOP 1 BRIGHT
+		FIR3 ABCDEFGHIJKLMNOP 1 Bright
 		Goto Death
 	Death:
 		TNT1 A 0
@@ -1045,7 +1045,7 @@ Speed 24
 	States
 	{
 	Spawn:
-		FIR3 ABCDEFG 1 BRIGHT A_CustomMissile("BarrelExplosionFire",0,0,random(0,360),2,random(10,40))
+		FIR3 ABCDEFG 1 Bright A_CustomMissile("BarrelExplosionFire",0,0,random(0,360),2,random(10,40))
 		Goto Death
 	}
 }

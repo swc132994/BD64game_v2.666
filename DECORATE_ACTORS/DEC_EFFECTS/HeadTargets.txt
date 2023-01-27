@@ -15,7 +15,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Explode(100,200)
+		TNT1 A 0 NoDelay A_Explode(100,200)
 		Stop
 	}
 }
@@ -328,7 +328,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Explode(60,20)
+		TNT1 A 0 NoDelay A_Explode(60,20)
 		TNT1 ABC 1
 		Stop
 	}
@@ -353,7 +353,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Explode(60,20)
+		TNT1 A 0 NoDelay A_Explode(60,20)
 		TNT1 ABC 1
 		Stop
 	}
@@ -378,7 +378,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Explode(150,20)
+		TNT1 A 0 NoDelay A_Explode(150,20)
 		TNT1 ABC 1
 		Stop
 	}
@@ -403,7 +403,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY  A_Explode(1,20)
+		TNT1 A 0 NoDelay  A_Explode(1,20)
 		TNT1 ABC 1
 		Stop
 	}
@@ -428,7 +428,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Explode(150,20)
+		TNT1 A 0 NoDelay A_Explode(150,20)
 		TNT1 ABC 1
 		Stop
 	}
@@ -453,7 +453,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Explode(10,20)
+		TNT1 A 0 NoDelay A_Explode(10,20)
 		TNT1 ABC 1
 		Stop
 	}
@@ -478,7 +478,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Explode(250,20)
+		TNT1 A 0 NoDelay A_Explode(250,20)
 		TNT1 ABC 1
 		Stop
 	}
@@ -489,7 +489,7 @@ actor HeadshotXX: HeadshotX
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Explode(300,20)
+		TNT1 A 0 NoDelay A_Explode(300,20)
 		TNT1 ABC 1
 		Stop
 	}
@@ -500,7 +500,7 @@ actor HeadshotXCyber: HeadshotX
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Explode(150,20)
+		TNT1 A 0 NoDelay A_Explode(150,20)
 		TNT1 ABC 1
 		Stop
 	}
@@ -522,7 +522,7 @@ DamageType head
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Explode(500,20)
+		TNT1 A 0 NoDelay A_Explode(500,20)
 		TNT1 ABC 1
 		Stop
 	}
@@ -547,7 +547,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY  A_Explode(70,20)
+		TNT1 A 0 NoDelay  A_Explode(70,20)
 		TNT1 ABC 3
 		Stop
 	}
@@ -574,7 +574,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Jump(128,"Minorhit")
+		TNT1 A 0 NoDelay A_Jump(128,"Minorhit")
 		TNT1 A 0 A_Explode(70,20)
 		TNT1 A 0 A_Explode(70,20)
 		TNT1 ABC 3
@@ -590,7 +590,7 @@ actor HeadshotTinyHitChaingun: HeadshotMinorHitChaingun
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Explode(35,20)
+		TNT1 A 0 NoDelay A_Explode(35,20)
 		TNT1 ABC 1
 		Stop
 	}
@@ -617,7 +617,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_Explode(300,20)
+		TNT1 A 0 NoDelay A_Explode(300,20)
 		TNT1 ABC 3
 		Stop
 	}
@@ -629,7 +629,7 @@ Decal BloodSplat
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_JumpIf(waterlevel > 1,"Splash")
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBloodTrail",15,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail",0,0,random(0,180),2,random(0,180))
 		TNT1 A 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))

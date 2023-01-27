@@ -5,7 +5,7 @@ Actor Swarm
 	States
 	{
 	Spawn:
-		TNT1 A 0 NODELAY A_PlaySoundEx("Flies","SoundSlot6",1,-1)
+		TNT1 A 0 NoDelay A_PlaySoundEx("Flies","SoundSlot6",1,-1)
 		TNT1 AAAAAAA 2 A_CustomMissile("FlyDecor",32,0,random(0,360),2,random(-40,40))
 	Done:
 		TNT1 A -1

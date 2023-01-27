@@ -235,7 +235,7 @@ translation "168:191=112:127","16:47=120:127"
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
-		TNT1 A 0 Thing_ChangeTid(0,386)
+		TNT1 A 0 Thing_ChangeTID(0,386)
 		BLOD ABCD 2
 		stop
 	Splash:
@@ -259,7 +259,7 @@ decal CacoBloodSplat
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
-		TNT1 A 0 Thing_ChangeTid(0,386)
+		TNT1 A 0 Thing_ChangeTID(0,386)
 		BLOD ABCD 2
 		stop
 	Splash:
@@ -752,6 +752,7 @@ Decal BrutalBloodSuper
 ACTOR XDeathZombieArm1 : XDeath1
 {
 Scale 0.8
+Health 0
 +DONTSPLASH
 +CORPSE
 -MISSILE
@@ -772,6 +773,9 @@ Scale 0.8
 		TRG3 J 1
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
 		TRG3 J -1
+		Stop
+	Crush:
+		TNT1 A 1
 		Stop
 	}
 }

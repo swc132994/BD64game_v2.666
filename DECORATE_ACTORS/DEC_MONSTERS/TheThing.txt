@@ -89,7 +89,7 @@ MONSTER
 	Death.SuperFists:
 	Death.SuperKick:
 	Death.Cutless:
-		TNT1 A 0 A_Jump(128,"Death")
+		TNT1 A 0 A_Jump(96,"Death")
 	Death.Chainsaw:
 	Death.BFG:
 	XDeath:

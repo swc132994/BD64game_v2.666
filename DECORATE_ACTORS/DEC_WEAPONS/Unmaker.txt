@@ -413,8 +413,8 @@ PROJECTILE
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(90*momx)/35.0,-(90*momy)/35.0,0+(90*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		Loop
 	Death:
-		TNT1 A 0 A_SpawnItemEx("DetectFloorLaser",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)					//R28.2	//r31 was DetectFloorBullet
-		TNT1 A 0 A_SpawnItemEx("DetectCeilLaser",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)					//R28.2	//r31 was DetectFloorBullet
+		TNT1 A 0 A_SpawnItem("DetectFloorLaser")	//R28.2	//r31 was DetectFloorBullet
+		TNT1 A 0 A_SpawnItem("DetectCeilLaser")		//R28.2	//r31 was DetectFloorBullet
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))		//R31 WAS 5 SPAWN Height	was 9*a
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))	//R31 WAS 5 SPAWN Height	was 18*a
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))		//R31 WAS 5 SPAWN Height	was 9*a
@@ -479,7 +479,7 @@ Actor UnmakerLaserWhite : UnmakerLaser	//r31 added
 {
 Damage 1000
 Speed 85
-Decal Scorch
+Decal MedScorch
 Scale 1.2
 Alpha 1
 RenderStyle Add
@@ -519,8 +519,8 @@ RenderStyle Add
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(90*momx)/35.0,-(90*momy)/35.0,0+(90*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		Loop
 	Death:
-		TNT1 A 0 A_SpawnItemEx("DetectFloorLaser",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)					//R28.2	//r31 was DetectFloorBullet
-		TNT1 A 0 A_SpawnItemEx("DetectCeilLaser",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)					//R28.2	//r31 was DetectFloorBullet
+		TNT1 A 0 A_SpawnItem("DetectCeilCraterMed")
+		TNT1 A 0 A_SpawnItem("DetectFloorCraterMed")
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))		//R31 WAS 5 SPAWN Height	was 9*a
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))	//R31 WAS 5 SPAWN Height	was 18*a
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))		//R31 WAS 5 SPAWN Height	was 9*a
