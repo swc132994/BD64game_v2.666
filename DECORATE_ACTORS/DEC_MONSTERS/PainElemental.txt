@@ -11,6 +11,7 @@ HitObituary "%o got too close to a Pain Elemental."
 DropItem "DemonEssenceSpawner"		//R31 ADDED
 //bloodcolor "40 40 40"
 +FORCEXYBILLBOARD
++NOBLOODDECALS
 	states
 	{
 	Spawn:

@@ -197,7 +197,6 @@ pic BSPLNEW4
 x-scale 0.4
 y-scale 0.4
 randomflipx
-//shade "65 00 00"	//red
 animator BrutalBloodSmearer
 }
 
@@ -207,7 +206,6 @@ pic BSPLNEW5
 x-scale 0.4
 y-scale 0.4
 randomflipx
-//shade "65 00 00"	//red
 animator BrutalBloodSmearer
 }
 
@@ -223,7 +221,6 @@ pic BSPLNEW8
 x-scale 0.25
 y-scale 0.25
 randomflipx
-//shade "65 00 00"	//red
 animator BrutalBloodSmearer
 }
 
@@ -233,7 +230,6 @@ pic BSPLNEW7
 x-scale 0.2
 y-scale 0.2
 randomflipx
-//shade "65 00 00"	//red
 animator BrutalBloodSmearer
 }
 
@@ -246,24 +242,20 @@ BrutalBloodSmearSmall2 1
 //Blood Base
 decal BloodSplat001
 {
-pic BSPLNEW
-x-scale 0.25
-y-scale 0.25
+pic BSPLBLNK	//blank graphic
+x-scale 1
+y-scale 1
 randomflipx
 randomflipy
-shade "65 00 00"	//red
-//lowerdecal BrutalBloodSmearSmall
 }
 
 decal BloodSplat002
 {
-pic BSPLNEW
-x-scale 0.25
-y-scale 0.25
+pic BSPLBLNK	//blank graphic
+x-scale 1
+y-scale 1
 randomflipx
 randomflipy
-shade "65 00 00"	//red
-//lowerdecal BrutalBloodSmearSmall
 }
 
 decalgroup BloodSplat
@@ -272,15 +264,38 @@ BloodSplat001 6
 BloodSplat002 6
 }
 
+decal BloodSmear001
+{
+pic BSPLBLNK	//blank graphic
+x-scale 1
+y-scale 1
+randomflipx
+randomflipy
+}
+
+decal BloodSmear002
+{
+pic BSPLBLNK	//blank graphic
+x-scale 1
+y-scale 1
+randomflipx
+randomflipy
+}
+
+decalgroup BloodSmear
+{
+	BloodSmear001	1
+	BloodSmear002	1
+}
+
 // Red Blood
 decal BrutalBloodSplat01
 {
-pic BSPLNEW
+pic BSPLNEW1
 x-scale 0.25
 y-scale 0.25
 randomflipx
 randomflipy
-shade "65 00 00"	//red
 //lowerdecal BrutalBloodSmearSmall
 }
 
@@ -291,7 +306,6 @@ x-scale 0.25
 y-scale 0.25
 randomflipx
 randomflipy
-shade "65 00 00"	//red
 //lowerdecal BrutalBloodSmear
 }
 
@@ -419,33 +433,6 @@ decalgroup BrutalBloodSmearSmallGreen
 {
 BrutalBloodSmearSmallGreen1 1
 BrutalBloodSmearSmallGreen2 1
-}
-
-//Blood Base Green
-decal BloodSplatGreen001
-{
-pic GSPLNEW
-x-scale 0.25
-y-scale 0.25
-randomflipx
-randomflipy
-//lowerdecal BrutalBloodSmearSmall
-}
-
-decal BloodSplatGreen002
-{
-pic GSPLNEW
-x-scale 0.25
-y-scale 0.25
-randomflipx
-randomflipy
-//lowerdecal BrutalBloodSmearSmall
-}
-
-decalgroup BloodSplatGreen
-{
-BloodSplatGreen001 6
-BloodSplatGreen002 6
 }
 
 // Green Blood

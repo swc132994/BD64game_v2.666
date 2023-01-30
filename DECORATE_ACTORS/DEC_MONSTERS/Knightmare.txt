@@ -30,10 +30,10 @@ DamageFactor "chainsaw",0.5
 DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodGreen"
 //bloodcolor "18 8c 31"
-BloodColor "00 64 00"	//Hex value
 MONSTER
 +BOSSDEATH
 +FLOORCLIP
++NOBLOODDECALS
 	states
 	{
 	Spawn:

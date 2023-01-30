@@ -23,6 +23,7 @@ HitObituary "%o is now dog food."
 Species "Dog"						//R21 added
 Tag "Hell Hound"					//R31 added
 DropItem "DemonEssenceSpawner"		//R31 added
++NOBLOODDECALS
 	states
 	{
 	Spawn:

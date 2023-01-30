@@ -2,6 +2,7 @@ Actor 64Archvile : Archvile
 {
 DamageFactor "Head",0.8				//r30.9 added
 DropItem "DemonEssenceSpawner"		//R31 added
++NOBLOODDECALS
 	States
 	{
 	Spawn:

@@ -13,6 +13,7 @@ MeleeRange 60 //default 44
 +FLOORCLIP
 +FORCEXYBILLBOARD
 +MISSILEMORE
++NOBLOODDECALS
 //+NOBLOCKMONST
 	States
 	{
@@ -432,6 +433,7 @@ Actor 64StealthCacodemon : StealthCacodemon Replaces StealthCacodemon
 {
 Scale 0.75
 +MISSILEMORE
++NOBLOODDECALS
 	States
 	{
 	Spawn:
@@ -502,6 +504,7 @@ DropItem "DemonEssenceSpawner"	//R31 added
 +FORCEXYBILLBOARD
 +MISSILEMORE
 +MISSILEEVENMORE	//R31 added
++NOBLOODDECALS
 //+NOBLOCKMONST
 	States
 	{

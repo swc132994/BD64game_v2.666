@@ -12,6 +12,7 @@ Tag "Pistol Zombie"			//r31 added
 DropItem "SOULSPAWNER"		//R31 added
 DropItem "CLIP"				//R31 added
 +DOHARMSPECIES				//R23 added
++NOBLOODDECALS
 states
 	{
 	Spawn:

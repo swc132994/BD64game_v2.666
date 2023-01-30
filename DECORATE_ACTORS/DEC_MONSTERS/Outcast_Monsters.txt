@@ -21,10 +21,10 @@ Tag "Acid Demon"
 DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodGreen"
 //bloodcolor "18 8c 31"
-BloodColor "00 64 00"	//Hex value
 +DONTHARMSPECIES
 //+NOBLOCKMONST
 +MISSILEMORE
++NOBLOODDECALS
 	States
 	{
 	Spawn:
@@ -258,7 +258,6 @@ BloodColor "00 64 00"	//Hex value
 
 Actor 64AcidDemonNoArm : 64AcidDemon	//R31 ADDED
 {
-Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 Health 80
 Height 60
 DropItem "None"

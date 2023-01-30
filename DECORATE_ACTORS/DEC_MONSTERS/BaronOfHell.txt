@@ -12,7 +12,7 @@ DropItem "DemonEssenceSpawner"		//R31 added
 MeleeRange 60//default 44
 //bloodcolor "18 8c 31"
 BloodType "Brutal_BloodGreen"
-BloodColor "00 64 00"	//Hex value
++NOBLOODDECALS
 	States
 	{
 	Spawn:		//R31 extra

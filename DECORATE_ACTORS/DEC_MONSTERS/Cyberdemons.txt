@@ -10,6 +10,7 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DropItem "DemonEssenceLargeSpawner"		//R31 added
 DropItem "Soulsphere",32				//R31 added
++NOBLOODDECALS
 	states
 	{
 	Spawn:
@@ -112,6 +113,7 @@ ActiveSound "cyber/active"
 Tag "Annihilator"		//R31 added
 DropItem "DemonEssenceLargeSpawner"		//R31 added
 DropItem "Soulsphere",32				//R31 added
++NOBLOODDECALS
 States
 	{
 	Spawn:

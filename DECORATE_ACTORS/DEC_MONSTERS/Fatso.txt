@@ -11,6 +11,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 Dropitem "SawGas"
 Dropitem "DemonEssenceSpawner"		//R31 added
 +DONTHARMSPECIES	//R31 WAS DONTHURTSPECIES
++NOBLOODDECALS
 	States
 	{
 	Spawn:
