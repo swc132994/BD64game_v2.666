@@ -197,7 +197,7 @@ pic BSPLNEW4
 x-scale 0.4
 y-scale 0.4
 randomflipx
-OpaqueBlood
+//shade "65 00 00"	//red
 animator BrutalBloodSmearer
 }
 
@@ -207,7 +207,7 @@ pic BSPLNEW5
 x-scale 0.4
 y-scale 0.4
 randomflipx
-OpaqueBlood
+//shade "65 00 00"	//red
 animator BrutalBloodSmearer
 }
 
@@ -223,7 +223,7 @@ pic BSPLNEW8
 x-scale 0.25
 y-scale 0.25
 randomflipx
-OpaqueBlood
+//shade "65 00 00"	//red
 animator BrutalBloodSmearer
 }
 
@@ -233,7 +233,7 @@ pic BSPLNEW7
 x-scale 0.2
 y-scale 0.2
 randomflipx
-OpaqueBlood
+//shade "65 00 00"	//red
 animator BrutalBloodSmearer
 }
 
@@ -243,7 +243,7 @@ BrutalBloodSmearSmall1 1
 BrutalBloodSmearSmall2 1
 }
 
-//Blood Base Red
+//Blood Base
 decal BloodSplat001
 {
 pic BSPLNEW
@@ -251,7 +251,7 @@ x-scale 0.25
 y-scale 0.25
 randomflipx
 randomflipy
-OpaqueBlood
+shade "65 00 00"	//red
 //lowerdecal BrutalBloodSmearSmall
 }
 
@@ -262,7 +262,7 @@ x-scale 0.25
 y-scale 0.25
 randomflipx
 randomflipy
-OpaqueBlood
+shade "65 00 00"	//red
 //lowerdecal BrutalBloodSmearSmall
 }
 
@@ -280,7 +280,7 @@ x-scale 0.25
 y-scale 0.25
 randomflipx
 randomflipy
-OpaqueBlood
+shade "65 00 00"	//red
 //lowerdecal BrutalBloodSmearSmall
 }
 
@@ -291,7 +291,7 @@ x-scale 0.25
 y-scale 0.25
 randomflipx
 randomflipy
-OpaqueBlood
+shade "65 00 00"	//red
 //lowerdecal BrutalBloodSmear
 }
 
@@ -308,7 +308,7 @@ x-scale 0.45
 y-scale 0.45
 randomflipx
 randomflipy
-OpaqueBlood
+//shade "65 00 00"	//red
 lowerdecal BrutalBloodSmear
 }
 
@@ -318,7 +318,7 @@ pic BSPLBIG2
 x-scale 0.45
 y-scale 0.45
 randomflipx
-OpaqueBlood
+//shade "65 00 00"	//red
 lowerdecal BrutalBloodSmear
 }
 
@@ -379,7 +379,6 @@ pic GSPLNEW4
 x-scale 0.4
 y-scale 0.4
 randomflipx
-OpaqueBlood
 animator BrutalBloodSmearer
 }
 
@@ -389,7 +388,6 @@ pic GSPLNEW5
 x-scale 0.4
 y-scale 0.4
 randomflipx
-OpaqueBlood
 animator BrutalBloodSmearer
 }
 
@@ -405,7 +403,6 @@ pic GSPLNEW8
 x-scale 0.25
 y-scale 0.25
 randomflipx
-OpaqueBlood
 animator BrutalBloodSmearer
 }
 
@@ -415,7 +412,6 @@ pic GSPLNEW7
 x-scale 0.2
 y-scale 0.2
 randomflipx
-OpaqueBlood
 animator BrutalBloodSmearer
 }
 
@@ -425,7 +421,7 @@ BrutalBloodSmearSmallGreen1 1
 BrutalBloodSmearSmallGreen2 1
 }
 
-//Blood Base
+//Blood Base Green
 decal BloodSplatGreen001
 {
 pic GSPLNEW
@@ -433,7 +429,6 @@ x-scale 0.25
 y-scale 0.25
 randomflipx
 randomflipy
-OpaqueBlood
 //lowerdecal BrutalBloodSmearSmall
 }
 
@@ -444,7 +439,6 @@ x-scale 0.25
 y-scale 0.25
 randomflipx
 randomflipy
-OpaqueBlood
 //lowerdecal BrutalBloodSmearSmall
 }
 
@@ -462,7 +456,6 @@ x-scale 0.25
 y-scale 0.25
 randomflipx
 randomflipy
-OpaqueBlood
 //lowerdecal BrutalBloodSmearSmall
 }
 
@@ -473,7 +466,6 @@ x-scale 0.25
 y-scale 0.25
 randomflipx
 randomflipy
-OpaqueBlood
 //lowerdecal BrutalBloodSmear
 }
 
@@ -490,7 +482,6 @@ x-scale 0.45
 y-scale 0.45
 randomflipx
 randomflipy
-OpaqueBlood
 lowerdecal BrutalBloodSmearGreen
 }
 
@@ -500,7 +491,6 @@ pic GSPLBIG2
 x-scale 0.45
 y-scale 0.45
 randomflipx
-OpaqueBlood
 lowerdecal BrutalBloodSmearGreen
 }
 
