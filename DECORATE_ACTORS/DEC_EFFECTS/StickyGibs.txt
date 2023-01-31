@@ -142,7 +142,7 @@ Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
 	}
 }
 
-ACTOR CeilXDeath2Checker : Brutal_FLyingBlood
+ACTOR CeilXDeath2Checker : Brutal_FlyingBlood
 {
 damage 0
 Radius 0
@@ -170,7 +170,7 @@ Decal BrutalBloodSuper
 	}
 }
 
-ACTOR CeilXDeath2CheckerGreen : Brutal_FLyingBloodGreen
+ACTOR CeilXDeath2CheckerGreen : Brutal_FlyingBloodGreen
 {
 damage 0
 Radius 0
@@ -310,7 +310,6 @@ DeathSound "misc/xdeath2"
 
 ACTOR XDeath2NoStickGreen : XDeath1Green
 {
-Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Partial Green
 Scale 1.1
 Radius 1
 Height 0
@@ -665,7 +664,6 @@ Decal BrutalBloodSplat
 
 ACTOR XDeath3NoStickGreen : XDeath1Green
 {
-Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
 Scale 1.0
 Speed 0
 Gravity 0.4
@@ -919,6 +917,21 @@ DamageType Blood
 	}
 }
 
+ACTOR DetectCeilBrainGreen : DetectCeilBrain
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay ThrustThingZ(0,35,0,1)
+		TNT1 A 2
+		TNT1 A 0 A_SpawnItem("SmearingBrainGreen")
+		Stop
+	Death:
+		TNT1 A 0 A_CustomMissile("SmallBrainPieceGreen",-15,0,90,2,90)
+		Stop
+	}
+}
+
 ACTOR SmearingBrain
 {
 Scale 0.5
@@ -956,6 +969,44 @@ Mass 1
 	Death:
 	Rest:
 		TNT1 A 0 A_QueueCorpse													//R29.1 ADDED
+		TNT1 A 0 A_ChangeFlag("QUARTERGRAVITY",0)
+		XDB5 A 2 ThrustThingZ(0,-2,0,1)
+		TNT1 A 0 A_CheckFloor("Sleep")
+		Loop
+	Sleep:
+		XDT5 BBBBBBBBBBBBBBBBBB 2 //ThrustThingZ(0,-2,0,1)
+		XDT5 B 2002
+		Stop
+	DoNothing:
+		TNT1 A 0
+		Stop
+	}
+}
+
+ACTOR SmearingBrainGreen : SmearingBrain
+{
+Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_ChangeFlag("NOGRAVITY",1)
+		TNT1 A 0 A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
+		Goto Spawn1
+	Spawn1:
+		XDB5 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn2:
+		XDB5 BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn3:
+		XDB5 CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn4:
+		XDB5 DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD 1 A_CheckFloor("Rest")
+		Goto Death
+	Death:
+	Rest:
+		TNT1 A 0 A_QueueCorpse
 		TNT1 A 0 A_ChangeFlag("QUARTERGRAVITY",0)
 		XDB5 A 2 ThrustThingZ(0,-2,0,1)
 		TNT1 A 0 A_CheckFloor("Sleep")

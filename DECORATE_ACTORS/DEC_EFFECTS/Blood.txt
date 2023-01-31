@@ -537,7 +537,7 @@ Scale 0.4
 actor MediumAcidSpot : GiantBloodSpot
 {
 
-Translation "0:255=%[0,0,0]:[1,2,0]"//Green
+Translation "0:255=%[0,0,0]:[2,2,0]"//Mustard
 game Doom
 Scale 0.4
 	States
@@ -1345,6 +1345,42 @@ BounceFactor 0.1
 	}
 }
 
+ACTOR SmallBrainPieceGreen : SmallBrainPiece
+{
+Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
+Decal BloodSplatGreen
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_Jump(32,"DoNothing")
+		TNT1 A 0 A_ChangeFlag("NOGRAVITY",0)
+		Goto See
+	See:
+		XDB5 ABCD 3
+		Loop
+	Death:
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects	//r31 replaces ACS 798
+		TNT1 A 0 A_CheckFloor("Rest")
+		TNT1 A 0 A_SpawnItem("DetectCeilBrainGreen")
+		TNT1 A 2
+		Stop
+	Rest:
+		TNT1 A 0 A_QueueCorpse													//R29.1 ADDED
+		TNT1 A 0 A_Jump(255,"Rest1","Rest2")
+	Rest1:
+		XDT5 B 800
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
+		Loop
+	Rest2:
+		XDT5 O 800
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
+		Loop
+	DoNothing:
+		TNT1 A 0
+		Stop
+	}
+}
+
 ACTOR Brains1 //Random bloody piece
 {
 Scale 0.5
@@ -1464,6 +1500,45 @@ BounceCount 0
 		BRIB E 1
 		TNT1 A 0 A_QueueCorpse													//R29.1 ADDED
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects	//r31 replaces ACS 798
+		Goto Rest
+	Rest:
+		TNT1 A 0 A_Jump(255,"Rest1","Rest2","Rest3","Rest4")
+	Rest1:
+		BRIB E 800
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
+		Loop
+	Rest2:
+		BRIB F 800
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
+		Loop
+	Rest3:
+		BRIB G 800
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
+		Loop
+	Rest4:
+		BRIB H 800
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
+		Loop
+	DoNothing:
+		TNT1 A 0
+		Stop
+	}
+}
+
+ACTOR EyesGreen :  Brains3	//Eyeballs
+{
+Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
+Decal BrutalBloodSplatGreen
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Death")
+		BRIB EFGH 4 //A_CustomMissile("BloodTr255",0,0,random(0,360),2,random(0,360))
+		Loop
+	Death:
+		BRIB E 1
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		Goto Rest
 	Rest:
 		TNT1 A 0 A_Jump(255,"Rest1","Rest2","Rest3","Rest4")
