@@ -15,6 +15,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "chainsaw",0.5
 DamageFactor "Head",0.8
 DropItem "DemonEssenceSpawner"		//R31 added
++NOBLOODDECALS
 //+NOBLOCKMONST
 	States
 	{

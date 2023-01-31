@@ -13,6 +13,7 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DropItem "DemonEssenceSpawner"		//R31 added
 +DONTHARMSPECIES		//R31 WAS DONTHURTSPECIES
++NOBLOODDECALS
 	States
 	{
 	Spawn:

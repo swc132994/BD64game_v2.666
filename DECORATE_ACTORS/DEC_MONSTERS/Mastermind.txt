@@ -15,6 +15,7 @@ DropItem "DemonEssenceLargeSpawner"		//R31 added
 DropItem "Soulsphere",32				//R31 added
 +EXTREMEDEATH	//r31 24/08/22 added
 +MISSILEEVENMORE
++NOBLOODDECALS
 	States
 	{
 	Spawn:

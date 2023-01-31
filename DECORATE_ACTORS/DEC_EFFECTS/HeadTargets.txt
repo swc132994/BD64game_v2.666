@@ -168,6 +168,18 @@ States
 	}
 }
 
+actor HeadshotTarget4Green: HeadshotTargetBase
+{
+BloodType "Brutal_BloodGreen"
+States
+	{
+	Spawn:
+		XXXX A 5
+		XXXX A 1 A_NoBlocking
+		Stop
+	}
+}
+
 actor HeadshotTarget6: HeadshotTargetBase
 {
 States
@@ -236,6 +248,19 @@ States
 	}
 }
 
+actor HeadshotTarget20Green: HeadshotTargetBase
+{
+BloodType "Brutal_BloodGreen"
+Height 15
+States
+	{
+	Spawn:
+		XXXX A 22
+		XXXX A 1 A_NoBlocking
+		Stop
+	}
+}
+
 actor HeadshotTarget23: HeadshotTargetBase
 {
 Height 15
@@ -250,6 +275,19 @@ Height 15
 
 actor HeadshotTarget30: HeadshotTargetBase
 {
+Height 15
+	States
+	{
+	Spawn:
+		XXXX A 33
+		XXXX A 1 A_NoBlocking
+		Stop
+	}
+}
+
+actor HeadshotTarget30Green: HeadshotTargetBase
+{
+BloodType "Brutal_BloodGreen"
 Height 15
 	States
 	{

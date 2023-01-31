@@ -34,12 +34,40 @@ Projectile
 	}
 }
 
+Actor SuperGoreSpawnerGreen : SuperGoreSpawner
+{
+Translation "0:255=%[0,0,0]:[1,2,0]"//Green
+Decal BloodSuperGreen
+	states
+	{
+	Spawn:
+		TNT1 AAAAAAAA 3 A_SpawnItem("SuperGoreGreen")
+		Stop
+	Death:
+		Stop
+	XDeath:
+		TNT1 A 0
+		Stop
+	}
+}
+
 Actor SuperGoreSpawner2 : SuperGoreSpawner
 {
 	states
 	{
 	Spawn:
 		TNT1 AAAAAAAAA 2 A_SpawnItem("SuperGore")
+		Stop
+	}
+}
+
+Actor SuperGoreSpawner2Green : SuperGoreSpawnerGreen
+{
+Translation "0:255=%[0,0,0]:[1,2,0]"//Green
+	states
+	{
+	Spawn:
+		TNT1 AAAAAAAAA 2 A_SpawnItem("SuperGoreGreen")
 		Stop
 	}
 }
@@ -83,6 +111,12 @@ Decal BloodSplat
 	}
 }
 
+actor SuperGoreGreen : SuperGore
+{
+Decal BloodSplatGreen
+Translation "0:255=%[0,0,0]:[1,2,0]"//Green
+}
+
 Actor SuperGoreMist : SuperGore
 {
 Scale 3.0
@@ -92,6 +126,15 @@ Gravity 0.3
 
 Actor SuperGoreMistSmall : SuperGore
 {
+Scale 1.0
+Speed 2
+Gravity 0.1
+}
+
+Actor SuperGoreMistSmallGreen : SuperGoreGreen
+{
+bloodcolor "18 8c 31"
+Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 Scale 1.0
 Speed 2
 Gravity 0.1
