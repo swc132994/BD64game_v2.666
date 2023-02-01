@@ -103,7 +103,7 @@ Chaingunner - Craneo (reworked sprites), Midway, DrDoctor, Immorpher, Footman, A
 Acid Demon sounds from REALM667-SLIME WORM by Captain Toenail
 
 Add-ons:
-BD64HUD_Ashton - (Paladin-julio (ModDB))
+BD64HUD_Ashton (Paladin-julio (ModDB))
 D64PSX_HQ_SFX (SFX Marine (Nate))
 BD64_NathanSFXPack (SFX Marine (Nate))
 BD64v2.666_Reflective_Blood_[GZDoom] (IDDQD_1337)
