@@ -22,7 +22,7 @@ FLAT NUKAGE1
 	pic GRSL_10 rand 4 4
 	pic GRSL_11 rand 4 4
 	pic GRSL_12 rand 4 4
-	
+
 FLAT NUKAGE2
 	pic GRSL_01 rand 4 4
 	pic GRSL_02 rand 4 4
@@ -36,7 +36,7 @@ FLAT NUKAGE2
 	pic GRSL_10 rand 4 4
 	pic GRSL_11 rand 4 4
 	pic GRSL_12 rand 4 4
-	
+
 FLAT NUKAGE3
 	pic GRSL_01 rand 4 4
 	pic GRSL_02 rand 4 4
@@ -50,7 +50,7 @@ FLAT NUKAGE3
 	pic GRSL_10 rand 4 4
 	pic GRSL_11 rand 4 4
 	pic GRSL_12 rand 4 4
-	
+
 warp2 texture GRSL_01
 warp2 texture GRSL_02
 warp2 texture GRSL_03
@@ -257,7 +257,7 @@ flat FWATER4
 	pic RRWAT_11 rand 3 3
 	pic RRWAT_12 rand 3 3
 
-flat FWATER03
+/*flat FWATER03
 	pic RRWAT_01 rand 3 3
 	pic RRWAT_02 rand 3 3
 	pic RRWAT_03 rand 3 3
@@ -284,7 +284,7 @@ flat FWATER02
 	pic RRWAT_10 rand 3 3
 	pic RRWAT_11 rand 3 3
 	pic RRWAT_12 rand 3 3
-
+*/
 //	flat FTILE083
 //pic HDWAT01 rand 1 1
 //pic HDWAT02 rand 1 1
@@ -320,7 +320,7 @@ flat FWATER02
 //pic HDWAT33 rand 1 1
 //pic HDWAT34 rand 1 1
 
-flat FTILE080
+/*flat FTILE080
 	pic RRWAT_01 rand 3 3
 	pic RRWAT_02 rand 3 3
 	pic RRWAT_03 rand 3 3
@@ -333,7 +333,7 @@ flat FTILE080
 	pic RRWAT_10 rand 3 3
 	pic RRWAT_11 rand 3 3
 	pic RRWAT_12 rand 3 3
-
+*/
 warp2 texture RRWAT_01
 warp2 texture RRWAT_02
 warp2 texture RRWAT_03
@@ -417,7 +417,7 @@ flat SLIME05
 	pic RBWAT_11 rand 3 3
 	pic RBWAT_12 rand 3 3
 
-flat CUSTOMCI
+/*flat CUSTOMCI
 	pic RBWAT_01 rand 3 3
 	pic RBWAT_02 rand 3 3
 	pic RBWAT_03 rand 3 3
@@ -429,7 +429,7 @@ flat CUSTOMCI
 	pic RBWAT_09 rand 3 3
 	pic RBWAT_10 rand 3 3
 	pic RBWAT_11 rand 3 3
-	pic RBWAT_12 rand 3 3
+	pic RBWAT_12 rand 3 3*/
 
 warp2 texture RBWAT_01
 warp2 texture RBWAT_02
@@ -591,6 +591,7 @@ warp FLAT LAVA4
 warp flat SFLR6_1
 warp flat SFLR6_4
 
+/*
 flat SLIME12
 	pic SLIME09 rand 3 3
 	pic SLIME10 rand 3 3
@@ -622,6 +623,7 @@ flat SLIME09
 	pic SLIME12 rand 3 3
 	pic SLIME11 rand 3 3
 	pic SLIME10 rand 3 3
+*/
 
 Texture BLODRIP1
 	pic BLODRIP1 rand 3 3
@@ -722,7 +724,7 @@ texture WFALL2
 	pic WFALL9 tics 1
 	pic WFALL10 tics 1
 	pic WFALL11 tics 1
-	
+
 texture WFALL3
 	pic WFALL1 tics 1
 	pic WFALL2 tics 1
@@ -735,7 +737,7 @@ texture WFALL3
 	pic WFALL9 tics 1
 	pic WFALL10 tics 1
 	pic WFALL11 tics 1
-	
+
 texture WFALL4
 	pic WFALL1 tics 1
 	pic WFALL2 tics 1
@@ -775,7 +777,7 @@ texture SFALL2
 	pic SFALL9 tics 1
 	pic SFALL10 tics 1
 	pic SFALL11 tics 1
-	
+
 texture SFALL3
 	pic SFALL1 tics 1
 	pic SFALL2 tics 1
@@ -788,7 +790,7 @@ texture SFALL3
 	pic SFALL9 tics 1
 	pic SFALL10 tics 1
 	pic SFALL11 tics 1
-	
+
 texture SFALL4
 	pic SFALL1 tics 1
 	pic SFALL2 tics 1
@@ -802,7 +804,7 @@ texture SFALL4
 	pic SFALL10 tics 1
 	pic SFALL11 tics 1
 
-//BLOODFALL	
+//BLOODFALL
 texture BFALL1
 	pic BFALL1 tics 1
 	pic BFALL2 tics 1
@@ -828,7 +830,7 @@ texture BFALL2
 	pic BFALL9 tics 1
 	pic BFALL10 tics 1
 	pic BFALL11 tics 1
-	
+
 texture BFALL3
 	pic BFALL1 tics 1
 	pic BFALL2 tics 1
@@ -841,7 +843,7 @@ texture BFALL3
 	pic BFALL9 tics 1
 	pic BFALL10 tics 1
 	pic BFALL11 tics 1
-	
+
 texture BFALL4
 	pic BFALL1 tics 1
 	pic BFALL2 tics 1
