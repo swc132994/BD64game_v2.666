@@ -8,197 +8,61 @@ pic 6 tics 3
 pic 7 tics 3
 pic 8 tics 3
 
-flat NUKAGE1
-	pic FHDS01 rand 2 2
-	pic FHDS02 rand 2 2
-	pic FHDS03 rand 2 2
-	pic FHDS04 rand 2 2
-	pic FHDS05 rand 2 2
-	pic FHDS06 rand 2 2
-	pic FHDS07 rand 2 2
-	pic FHDS08 rand 2 2
-	pic FHDS09 rand 2 2
-	pic FHDS10 rand 2 2
-	pic FHDS11 rand 2 2
-	pic FHDS12 rand 2 2
-	pic FHDS13 rand 2 2
-	pic FHDS14 rand 2 2
-	pic FHDS15 rand 2 2
-	pic FHDS16 rand 2 2
-	pic FHDS17 rand 2 2
-	pic FHDS18 rand 2 2
-	pic FHDS19 rand 2 2
-	pic FHDS20 rand 2 2
-	pic FHDS21 rand 2 2
-	pic FHDS22 rand 2 2
-	pic FHDS23 rand 2 2
-	pic FHDS24 rand 2 2
-	pic FHDS25 rand 2 2
-	pic FHDS26 rand 2 2
-	pic FHDS27 rand 2 2
-	pic FHDS28 rand 2 2
-	pic FHDS29 rand 2 2
-	pic FHDS30 rand 2 2
-	pic FHDS31 rand 2 2
-	pic FHDS32 rand 2 2
-
-flat NUKAGE2
-	pic FHDS01 rand 2 2
-	pic FHDS02 rand 2 2
-	pic FHDS03 rand 2 2
-	pic FHDS04 rand 2 2
-	pic FHDS05 rand 2 2
-	pic FHDS06 rand 2 2
-	pic FHDS07 rand 2 2
-	pic FHDS08 rand 2 2
-	pic FHDS09 rand 2 2
-	pic FHDS10 rand 2 2
-	pic FHDS11 rand 2 2
-	pic FHDS12 rand 2 2
-	pic FHDS13 rand 2 2
-	pic FHDS14 rand 2 2
-	pic FHDS15 rand 2 2
-	pic FHDS16 rand 2 2
-	pic FHDS17 rand 2 2
-	pic FHDS18 rand 2 2
-	pic FHDS19 rand 2 2
-	pic FHDS20 rand 2 2
-	pic FHDS21 rand 2 2
-	pic FHDS22 rand 2 2
-	pic FHDS23 rand 2 2
-	pic FHDS24 rand 2 2
-	pic FHDS25 rand 2 2
-	pic FHDS26 rand 2 2
-	pic FHDS27 rand 2 2
-	pic FHDS28 rand 2 2
-	pic FHDS29 rand 2 2
-	pic FHDS30 rand 2 2
-	pic FHDS31 rand 2 2
-	pic FHDS32 rand 2 2
-
-flat NUKAGE3
-	pic FHDS01 rand 2 2
-	pic FHDS02 rand 2 2
-	pic FHDS03 rand 2 2
-	pic FHDS04 rand 2 2
-	pic FHDS05 rand 2 2
-	pic FHDS06 rand 2 2
-	pic FHDS07 rand 2 2
-	pic FHDS08 rand 2 2
-	pic FHDS09 rand 2 2
-	pic FHDS10 rand 2 2
-	pic FHDS11 rand 2 2
-	pic FHDS12 rand 2 2
-	pic FHDS13 rand 2 2
-	pic FHDS14 rand 2 2
-	pic FHDS15 rand 2 2
-	pic FHDS16 rand 2 2
-	pic FHDS17 rand 2 2
-	pic FHDS18 rand 2 2
-	pic FHDS19 rand 2 2
-	pic FHDS20 rand 2 2
-	pic FHDS21 rand 2 2
-	pic FHDS22 rand 2 2
-	pic FHDS23 rand 2 2
-	pic FHDS24 rand 2 2
-	pic FHDS25 rand 2 2
-	pic FHDS26 rand 2 2
-	pic FHDS27 rand 2 2
-	pic FHDS28 rand 2 2
-	pic FHDS29 rand 2 2
-	pic FHDS30 rand 2 2
-	pic FHDS31 rand 2 2
-	pic FHDS32 rand 2 2
-
-	warp2 flat FHDS01
-	warp2 flat FHDS02
-	warp2 flat FHDS03
-	warp2 flat FHDS04
-	warp2 flat FHDS05
-	warp2 flat FHDS06
-	warp2 flat FHDS07
-	warp2 flat FHDS08
-	warp2 flat FHDS09
-	warp2 flat FHDS10
-	warp2 flat FHDS11
-	warp2 flat FHDS12
-	warp2 flat FHDS13
-	warp2 flat FHDS14
-	warp2 flat FHDS15
-	warp2 flat FHDS16
-	warp2 flat FHDS17
-	warp2 flat FHDS18
-	warp2 flat FHDS19
-	warp2 flat FHDS20
-	warp2 flat FHDS21
-	warp2 flat FHDS22
-	warp2 flat FHDS23
-	warp2 flat FHDS24
-	warp2 flat FHDS25
-	warp2 flat FHDS26
-	warp2 flat FHDS27
-	warp2 flat FHDS28
-	warp2 flat FHDS29
-	warp2 flat FHDS30
-	warp2 flat FHDS31
-	warp2 flat FHDS32
-
-/*
-//Nightmare Spectre warping effect
-warp2 texture SAR3A1
-warp2 texture SAR3A2A8
-warp2 texture SAR3A4A6
-warp2 texture SAR3A3A7
-warp2 texture SAR3A5
-
-warp2 texture SAR3B1	//R31 WAS HFB2B1
-warp2 texture SAR3B2B8
-warp2 texture SAR3B4B6
-warp2 texture SAR3B3B7
-warp2 texture SAR3B5
-
-warp2 texture SAR3C1
-warp2 texture SAR3C2D8
-warp2 texture SAR3C4C6
-warp2 texture SAR3C3C7
-warp2 texture SAR3C5
-
-warp2 texture SAR3D1
-warp2 texture SAR3D2D8
-warp2 texture SAR3D4D6
-warp2 texture SAR3D3D7
-warp2 texture SAR3D5
-
-warp2 texture SAR3E1
-warp2 texture SAR3E2E8
-warp2 texture SAR3E4E6
-warp2 texture SAR3E3E7
-warp2 texture SAR3E5
-
-warp2 texture SAR3F1
-warp2 texture SAR3F2F8
-warp2 texture SAR3F3F7
-warp2 texture SAR3F4F6
-warp2 texture SAR3F5
-
-warp2 texture SAR3G1
-warp2 texture SAR3G2G8
-warp2 texture SAR3G3G7
-warp2 texture SAR3G4G6
-warp2 texture SAR3G5
-
-warp2 texture SAR3H1
-warp2 texture SAR3H2H8
-warp2 texture SAR3H3H7
-warp2 texture SAR3H4H6
-warp2 texture SAR3H5
-
-warp2 texture SAR3I1
-warp2 texture SAR3I2I8
-warp2 texture SAR3I3I7
-warp2 texture SAR3I4I6
-warp2 texture SAR3I5
-*/
+//NEW NUKAGE
+FLAT NUKAGE1
+	pic GRSL_01 rand 4 4
+	pic GRSL_02 rand 4 4
+	pic GRSL_03 rand 4 4
+	pic GRSL_04 rand 4 4
+	pic GRSL_05 rand 4 4
+	pic GRSL_06 rand 4 4
+	pic GRSL_07 rand 4 4
+	pic GRSL_08 rand 4 4
+	pic GRSL_09 rand 4 4
+	pic GRSL_10 rand 4 4
+	pic GRSL_11 rand 4 4
+	pic GRSL_12 rand 4 4
+	
+FLAT NUKAGE2
+	pic GRSL_01 rand 4 4
+	pic GRSL_02 rand 4 4
+	pic GRSL_03 rand 4 4
+	pic GRSL_04 rand 4 4
+	pic GRSL_05 rand 4 4
+	pic GRSL_06 rand 4 4
+	pic GRSL_07 rand 4 4
+	pic GRSL_08 rand 4 4
+	pic GRSL_09 rand 4 4
+	pic GRSL_10 rand 4 4
+	pic GRSL_11 rand 4 4
+	pic GRSL_12 rand 4 4
+	
+FLAT NUKAGE3
+	pic GRSL_01 rand 4 4
+	pic GRSL_02 rand 4 4
+	pic GRSL_03 rand 4 4
+	pic GRSL_04 rand 4 4
+	pic GRSL_05 rand 4 4
+	pic GRSL_06 rand 4 4
+	pic GRSL_07 rand 4 4
+	pic GRSL_08 rand 4 4
+	pic GRSL_09 rand 4 4
+	pic GRSL_10 rand 4 4
+	pic GRSL_11 rand 4 4
+	pic GRSL_12 rand 4 4
+	
+warp2 texture GRSL_01
+warp2 texture GRSL_02
+warp2 texture GRSL_03
+warp2 texture GRSL_04
+warp2 texture GRSL_05
+warp2 texture GRSL_06
+warp2 texture GRSL_07
+warp2 texture GRSL_08
+warp2 texture GRSL_09
+warp2 texture GRSL_10
+warp2 texture GRSL_11
+warp2 texture GRSL_12
 
 //Blood
 flat BLOOD1
@@ -719,10 +583,11 @@ warp texture SP_FACE1
 warp texture SKSNAKE1
 warp texture SKSNAKE2
 
-warp flat LAVA1
-warp flat LAVA2
-warp flat LAVA3
-warp flat LAVA4
+warp FLAT LAVA1
+warp FLAT LAVA2
+warp FLAT LAVA3
+warp FLAT LAVA4
+
 warp flat SFLR6_1
 warp flat SFLR6_4
 
@@ -831,7 +696,8 @@ Texture FIRELAV3
 	pic FIRELAV2 rand 3 3
 	pic FIRELAV3 rand 3 3
 
-texture WFALL1																	//R23.2 ADDED
+//WATERFALL
+texture WFALL1		//R23.2 ADDED
 	pic WFALL1 tics 1
 	pic WFALL2 tics 1
 	pic WFALL3 tics 1
@@ -844,7 +710,7 @@ texture WFALL1																	//R23.2 ADDED
 	pic WFALL10 tics 1
 	pic WFALL11 tics 1
 
-texture WFALL2																	//R31 added
+texture WFALL2
 	pic WFALL1 tics 1
 	pic WFALL2 tics 1
 	pic WFALL3 tics 1
@@ -856,3 +722,135 @@ texture WFALL2																	//R31 added
 	pic WFALL9 tics 1
 	pic WFALL10 tics 1
 	pic WFALL11 tics 1
+	
+texture WFALL3
+	pic WFALL1 tics 1
+	pic WFALL2 tics 1
+	pic WFALL3 tics 1
+	pic WFALL4 tics 1
+	pic WFALL5 tics 1
+	pic WFALL6 tics 1
+	pic WFALL7 tics 1
+	pic WFALL8 tics 1
+	pic WFALL9 tics 1
+	pic WFALL10 tics 1
+	pic WFALL11 tics 1
+	
+texture WFALL4
+	pic WFALL1 tics 1
+	pic WFALL2 tics 1
+	pic WFALL3 tics 1
+	pic WFALL4 tics 1
+	pic WFALL5 tics 1
+	pic WFALL6 tics 1
+	pic WFALL7 tics 1
+	pic WFALL8 tics 1
+	pic WFALL9 tics 1
+	pic WFALL10 tics 1
+	pic WFALL11 tics 1
+
+//SLIMEFALL
+texture SFALL1
+	pic SFALL1 tics 1
+	pic SFALL2 tics 1
+	pic SFALL3 tics 1
+	pic SFALL4 tics 1
+	pic SFALL5 tics 1
+	pic SFALL6 tics 1
+	pic SFALL7 tics 1
+	pic SFALL8 tics 1
+	pic SFALL9 tics 1
+	pic SFALL10 tics 1
+	pic SFALL11 tics 1
+
+texture SFALL2
+	pic SFALL1 tics 1
+	pic SFALL2 tics 1
+	pic SFALL3 tics 1
+	pic SFALL4 tics 1
+	pic SFALL5 tics 1
+	pic SFALL6 tics 1
+	pic SFALL7 tics 1
+	pic SFALL8 tics 1
+	pic SFALL9 tics 1
+	pic SFALL10 tics 1
+	pic SFALL11 tics 1
+	
+texture SFALL3
+	pic SFALL1 tics 1
+	pic SFALL2 tics 1
+	pic SFALL3 tics 1
+	pic SFALL4 tics 1
+	pic SFALL5 tics 1
+	pic SFALL6 tics 1
+	pic SFALL7 tics 1
+	pic SFALL8 tics 1
+	pic SFALL9 tics 1
+	pic SFALL10 tics 1
+	pic SFALL11 tics 1
+	
+texture SFALL4
+	pic SFALL1 tics 1
+	pic SFALL2 tics 1
+	pic SFALL3 tics 1
+	pic SFALL4 tics 1
+	pic SFALL5 tics 1
+	pic SFALL6 tics 1
+	pic SFALL7 tics 1
+	pic SFALL8 tics 1
+	pic SFALL9 tics 1
+	pic SFALL10 tics 1
+	pic SFALL11 tics 1
+
+//BLOODFALL	
+texture BFALL1
+	pic BFALL1 tics 1
+	pic BFALL2 tics 1
+	pic BFALL3 tics 1
+	pic BFALL4 tics 1
+	pic BFALL5 tics 1
+	pic BFALL6 tics 1
+	pic BFALL7 tics 1
+	pic BFALL8 tics 1
+	pic BFALL9 tics 1
+	pic BFALL10 tics 1
+	pic BFALL11 tics 1
+
+texture BFALL2
+	pic BFALL1 tics 1
+	pic BFALL2 tics 1
+	pic BFALL3 tics 1
+	pic BFALL4 tics 1
+	pic BFALL5 tics 1
+	pic BFALL6 tics 1
+	pic BFALL7 tics 1
+	pic BFALL8 tics 1
+	pic BFALL9 tics 1
+	pic BFALL10 tics 1
+	pic BFALL11 tics 1
+	
+texture BFALL3
+	pic BFALL1 tics 1
+	pic BFALL2 tics 1
+	pic BFALL3 tics 1
+	pic BFALL4 tics 1
+	pic BFALL5 tics 1
+	pic BFALL6 tics 1
+	pic BFALL7 tics 1
+	pic BFALL8 tics 1
+	pic BFALL9 tics 1
+	pic BFALL10 tics 1
+	pic BFALL11 tics 1
+	
+texture BFALL4
+	pic BFALL1 tics 1
+	pic BFALL2 tics 1
+	pic BFALL3 tics 1
+	pic BFALL4 tics 1
+	pic BFALL5 tics 1
+	pic BFALL6 tics 1
+	pic BFALL7 tics 1
+	pic BFALL8 tics 1
+	pic BFALL9 tics 1
+	pic BFALL10 tics 1
+	pic BFALL11 tics 1

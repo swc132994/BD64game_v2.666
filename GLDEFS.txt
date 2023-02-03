@@ -2612,3 +2612,27 @@ Frame REDBD {light BETABALL2_X2}
 Frame REDBE {light BETABALL2_X3}
 Frame REDBF {light BETABALL2_X4}
 }
+
+//TEXTURES
+Glow
+{
+	Walls
+	{
+		LAVA1
+		LAVA2
+		LAVA3
+		LAVA4
+		NUKAGE1
+		NUKAGE2
+		NUKAGE3
+		LPNUKE
+	}
+	Texture "LAVA1",#FF3200,40,fullbright
+	Texture "LAVA2",#FF3200,40,fullbright
+	Texture "LAVA3",#FF3200,40,fullbright
+	Texture "LAVA4",#FF3200,40,fullbright
+	Texture "NUKAGE1",#00FF00,80,fullbright
+	Texture "NUKAGE2",#00FF00,80,fullbright
+	Texture "NUKAGE3",#00FF00,80,fullbright
+	Texture "LPNUKE",#00FF00,80,fullbright
+}
