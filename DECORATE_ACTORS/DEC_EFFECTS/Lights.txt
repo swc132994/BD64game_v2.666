@@ -1791,10 +1791,12 @@ Scale 0.8
 	{
 	Spawn:
 		HDCA A 0 NoDelay Bright A_SpawnItem("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItem("LightShaft2BrighterLess")
+		TNT1 A 0 A_SpawnItem("LightShaft2Fast")
 		TNT1 A 0 A_SpawnItem("Swarm",0,20)
 		Goto Stay
 	Stay:
-		HDCA AB 5 Bright Light("SKULLCANDLES")
+		HDCA AB 3 Bright Light("SKULLCANDLES") 
 		Loop
 	}
 }
@@ -1809,7 +1811,7 @@ Scale 0.8
 		A017 A -1 Bright Light("BIGREDTORCH")
 		Stop
 	}
-}*/
+}
 
 actor HeadCandleBurn		//R31 ADDED
 {
@@ -1831,7 +1833,7 @@ actor HeadCandleBurn		//R31 ADDED
 		TNT1 A 3
 		Goto Stay
 	}
-}
+}*/
 
 ACTOR 64EvilEye : EvilEye Replaces EvilEye
 {
@@ -1841,6 +1843,7 @@ SCALE 0.8
 	{
 	Spawn:
 		CEYE A 0 NoDelay A_SpawnItemEx("LightShaft2BrighterLess",0,0,20)
+		TNT1 A 0 A_Jump(128,"Stay2")
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
@@ -1849,8 +1852,15 @@ SCALE 0.8
 	StayBlank:
 		CEYE ABCB 6 Bright Light("SMALLGREENTORCH")
 		Goto Stay
+	Stay2:
+		TNT1 A 0 A_CheckSight("StayBlank2")
+		EYE2 ABCB 6 Bright Light("SMALLGREENTORCH") A_SpawnItemEx("LensFlareTorchGreen",0,0,20)	//added light
+		Loop
+	StayBlank2:
+		EYE2 ABCB 6 Bright Light("SMALLGREENTORCH")
+		Goto Stay2
 	}
-}	//R31 added CEYE sprites to HELL folder
+}	//R31 added CEYE and EYE2 sprites to HELL folder
 
 ACTOR 64Stalagmite : Stalagmite Replaces Stalagmite
 {

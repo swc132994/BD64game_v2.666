@@ -97,7 +97,7 @@ New Revenant - DrPsypy (sprites)
 Hellhound Alt - I'M (sprites)
 Hellhound GEC - Gerardo194 (sprites)
 Bruiser a.k.a Duke of Hell - Gerardo194 (sprites)
-Knightmare - Craneo
+Knightmare a.k.a. DreadKnight - Dr Doctor (Original sprites) Craneo (Rework)
 Eradicator a.k.a unmaker mastermind - Immorpher (sprites)
 Chaingunner - Craneo (reworked sprites), Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim
 Acid Demon sounds from REALM667-SLIME WORM by Captain Toenail
@@ -116,7 +116,7 @@ BD64v2.666_Rework_D4_Weapons_&_Voxels - Reworked version of "DOOM4 Voxels and We
 Props and misc:
 Impaled Doom 64 guys - Craneo
 64 Floating skull - Craneo (extra sprites), DrDoctor (original)
-64 EvilEye - Craneo
+64 EvilEye and Evileye2 - Craneo
 64 Candelabra - DrDoctor
 64 TwitchGibs - Nevander's D64 Retribution
 64 HeadCandles - Craneo
