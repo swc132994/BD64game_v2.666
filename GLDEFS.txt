@@ -553,6 +553,7 @@ pulselight SOULSPHERE
 object 64SoulSphere
 {
 	frame SOUL {light SOULSPHERE}
+	frame 2OUL {light SOULSPHERE}
 }
 
 //Invulnerability Sphere
@@ -584,6 +585,7 @@ pulselight BLURSPHERE
 object 64BlurSphere
 {
 	frame PINS {light BLURSPHERE}
+	frame PIN2 {light BLURSPHERE}
 }
 
 //Mega Sphere
@@ -599,6 +601,7 @@ pulselight MEGASPHERE
 object 64MegaSphere
 {
 	frame MEGA {light MEGASPHERE}
+	frame M3GA {light MEGASPHERE}	
 }
 
 //Health Potion
@@ -703,6 +706,8 @@ object 64GreenArmor
 {
 	frame ARM1A {light GREENARMOR1}
 	frame ARM1B {light GREENARMOR2}
+	frame ARM3A {light GREENARMOR1}
+	frame ARM3B {light GREENARMOR2}
 }
 
 //Blue armour
@@ -722,6 +727,8 @@ object 64BlueArmor
 {
 	frame ARM2A {light BLUEARMOR1}
 	frame ARM2B {light BLUEARMOR2}
+	frame ARM4A {light BLUEARMOR1}
+	frame ARM4B {light BLUEARMOR2}	
 }
 
 //Pentagram Red

@@ -30,11 +30,17 @@ brightmap sprite MEDIB0		{map "brightmaps/MEDIBR.png"disablefullbright}//Medikit
 brightmap sprite STIMB0		{map "brightmaps/STIMBR.png"disablefullbright}//Stimpack
 brightmap sprite PSTRB0		{map "brightmaps/PSTRBR.png"disablefullbright}//Berserk
 
-
 //ALTERNATIVE CENSORED HEALING SPRITES
 brightmap sprite MEDIC0		{map "brightmaps/MEDIB_BR.png"disablefullbright}//Medikit
 brightmap sprite STIMC0		{map "brightmaps/STIMB_BR.png"disablefullbright}//Stimpack
 brightmap sprite PSTRC0		{map "brightmaps/PSTRB_BR.png"disablefullbright}//Berserk
+
+//ALPHA ITEMS
+brightmap sprite MEDID0		{map "brightmaps/MEDID0_BR.png"disablefullbright}//Medikit
+brightmap sprite STIMD0		{map "brightmaps/STIMD0_BR.png"disablefullbright}//Stimpack
+brightmap sprite PSTRD0		{map "brightmaps/PSTRD0_BR.png"disablefullbright}//Berserk
+brightmap sprite CELPC0		{map "brightmaps/CELPC0_BR.png"disablefullbright}//Cell Pack
+brightmap sprite PMAPE0		{map "brightmaps/PMAPE0_BR.png"disablefullbright}//All Map
 
 //PLASMA AMMO
 brightmap sprite CELLA0		{map "brightmaps/CELLA0_BR.png"disablefullbright}//cell
