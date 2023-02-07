@@ -1648,6 +1648,8 @@ ProjectilePassHeight -8
 	states
 	{
 	Spawn:
+		A017 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItem("Swarm",0,10)
 		A017 A -1
 		Stop
 	}
@@ -1661,8 +1663,19 @@ height 56
 	states
 	{
 	Spawn:
-		A019 A -1
-		Stop
+		A019 A 0 NoDelay A_SpawnItem("Swarm",0,5)
+		Goto Stay
+	Stay:
+		TNT1 A 0 A_CheckSight("StayBlank")
+		TNT1 A 0 A_SpawnItem("DripingBlood",0,-5)
+		TNT1 A 0 A_Jump(128,2)
+		A019 A 70
+		Loop
+		A019 A 45
+		Loop
+	StayBlank:
+		A019 A 3
+		Goto Stay
 	}
 }
 

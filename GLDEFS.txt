@@ -568,6 +568,7 @@ pulselight INVULN
 object 64InvulnerabilitySphere
 {
 	frame PINV {light INVULN}
+	frame P1NV {light INVULN}
 }
 
 //Blur Sphere
