@@ -377,7 +377,7 @@ Decal BrutalBloodSuper
 
 ACTOR XDeath2Green : XDeath2
 {
-Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
+Translation "16:31=%[0,0,0]:[0,1,0]","176:191=%[0,0,0]:[0,1,0]","32:47=%[0,0,0]:[0,1,0]"//Green
 Decal BrutalBloodSuperGreen
 	States
 	{

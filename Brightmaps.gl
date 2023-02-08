@@ -82,6 +82,9 @@ brightmap sprite GCSCH0		{map "BRIGHTMAPS/GCSCH0_BR.png" Disablefullbright}//Sco
 brightmap sprite GCSCI0		{map "BRIGHTMAPS/GCSCI0_BR.png" Disablefullbright}//Scope
 brightmap sprite GCSCJ0		{map "BRIGHTMAPS/GCSCJ0_BR.png" Disablefullbright}//Scope
 
+//BFG
+brightmap sprite BFUGA0		{map "BRIGHTMAPS/BFUGA0_BR.png" Disablefullbright}//Pick-Up
+
 //ROCKET LAUNCHER MODERN/TATICAL
 brightmap sprite RL1RA0		{map "brightmaps/RL1RA0_BR.png"}
 brightmap sprite RL1RB0		{map "brightmaps/RL1RB0_BR.png"}
