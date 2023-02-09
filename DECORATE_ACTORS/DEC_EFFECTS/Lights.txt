@@ -544,12 +544,14 @@ Height 71
 
 Actor Meat2Replacer : RandomSpawner Replaces Meat2
 {
++SPAWNCEILING
 DropItem "64Meat2"
 DropItem "TweezerGore"
 }
 
 Actor Meat2ReplacerNonSolid : RandomSpawner Replaces NonsolidMeat2
 {
++SPAWNCEILING
 DropItem "64NonsolidMeat2"
 DropItem "TweezerGoreNonSolid"
 }
@@ -756,7 +758,7 @@ ProjectilePassHeight -8
 		TRE2 A -1
 		Stop
 	Spawn2:
-		LTRI B 0 A_SetScale(0.5,0.5)
+		LTRI B 0 A_SetScale(0.7,0.7)
 		LTRI B -1
 		Stop
 	}
@@ -771,7 +773,7 @@ ACTOR 64TorchTree : TorchTree Replaces TorchTree	//r31 added
 		TRE1 A -1
 		Stop
 	Spawn2:
-		LTRI A 0 A_SetScale(0.5,0.5)
+		LTRI A 0 A_SetScale(0.7,0.7)
 		LTRI A -1
 		Stop
 	}
