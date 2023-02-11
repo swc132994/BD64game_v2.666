@@ -9,60 +9,9 @@ pic 7 tics 3
 pic 8 tics 3
 
 //NEW NUKAGE
-FLAT NUKAGE1
-	pic GRSL_01 rand 4 4
-	pic GRSL_02 rand 4 4
-	pic GRSL_03 rand 4 4
-	pic GRSL_04 rand 4 4
-	pic GRSL_05 rand 4 4
-	pic GRSL_06 rand 4 4
-	pic GRSL_07 rand 4 4
-	pic GRSL_08 rand 4 4
-	pic GRSL_09 rand 4 4
-	pic GRSL_10 rand 4 4
-	pic GRSL_11 rand 4 4
-	pic GRSL_12 rand 4 4
-
-FLAT NUKAGE2
-	pic GRSL_01 rand 4 4
-	pic GRSL_02 rand 4 4
-	pic GRSL_03 rand 4 4
-	pic GRSL_04 rand 4 4
-	pic GRSL_05 rand 4 4
-	pic GRSL_06 rand 4 4
-	pic GRSL_07 rand 4 4
-	pic GRSL_08 rand 4 4
-	pic GRSL_09 rand 4 4
-	pic GRSL_10 rand 4 4
-	pic GRSL_11 rand 4 4
-	pic GRSL_12 rand 4 4
-
-FLAT NUKAGE3
-	pic GRSL_01 rand 4 4
-	pic GRSL_02 rand 4 4
-	pic GRSL_03 rand 4 4
-	pic GRSL_04 rand 4 4
-	pic GRSL_05 rand 4 4
-	pic GRSL_06 rand 4 4
-	pic GRSL_07 rand 4 4
-	pic GRSL_08 rand 4 4
-	pic GRSL_09 rand 4 4
-	pic GRSL_10 rand 4 4
-	pic GRSL_11 rand 4 4
-	pic GRSL_12 rand 4 4
-
-warp2 texture GRSL_01
-warp2 texture GRSL_02
-warp2 texture GRSL_03
-warp2 texture GRSL_04
-warp2 texture GRSL_05
-warp2 texture GRSL_06
-warp2 texture GRSL_07
-warp2 texture GRSL_08
-warp2 texture GRSL_09
-warp2 texture GRSL_10
-warp2 texture GRSL_11
-warp2 texture GRSL_12
+warp2 texture NUKAGE1
+warp2 texture NUKAGE2
+warp2 texture NUKAGE3
 
 //Blood
 flat BLOOD1
