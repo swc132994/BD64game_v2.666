@@ -202,138 +202,153 @@ flat BLOOD3
 
 	//Water
 flat FWATER1
-	pic RRWAT_01 rand 3 3
-	pic RRWAT_02 rand 3 3
-	pic RRWAT_03 rand 3 3
-	pic RRWAT_04 rand 3 3
-	pic RRWAT_05 rand 3 3
-	pic RRWAT_06 rand 3 3
-	pic RRWAT_07 rand 3 3
-	pic RRWAT_08 rand 3 3
-	pic RRWAT_09 rand 3 3
-	pic RRWAT_10 rand 3 3
-	pic RRWAT_11 rand 3 3
-	pic RRWAT_12 rand 3 3
+	pic HDWAT01 rand 2 2
+	pic HDWAT02 rand 2 2
+	pic HDWAT03 rand 2 2
+	pic HDWAT04 rand 2 2
+	pic HDWAT05 rand 2 2
+	pic HDWAT06 rand 2 2
+	pic HDWAT07 rand 2 2
+	pic HDWAT08 rand 2 2
+	pic HDWAT09 rand 2 2
+	pic HDWAT10 rand 2 2
+	pic HDWAT11 rand 2 2
+	pic HDWAT12 rand 2 2
+	pic HDWAT13 rand 2 2
+	pic HDWAT14 rand 2 2
+	pic HDWAT15 rand 2 2
+	pic HDWAT16 rand 2 2
+	pic HDWAT17 rand 2 2
+	pic HDWAT18 rand 2 2
+	pic HDWAT19 rand 2 2
+	pic HDWAT20 rand 2 2
+	pic HDWAT21 rand 2 2
+	pic HDWAT22 rand 2 2
+	pic HDWAT23 rand 2 2
+	pic HDWAT24 rand 2 2
+	pic HDWAT25 rand 2 2
+	pic HDWAT26 rand 2 2
+	pic HDWAT27 rand 2 2
+	pic HDWAT28 rand 2 2
+	pic HDWAT29 rand 2 2
+	pic HDWAT30 rand 2 2
+	pic HDWAT31 rand 2 2
+	pic HDWAT32 rand 2 2
+	pic HDWAT32 rand 2 2
+	pic HDWAT33 rand 2 2
+	pic HDWAT34 rand 2 2
 
 flat FWATER2
-	pic RRWAT_01 rand 3 3
-	pic RRWAT_02 rand 3 3
-	pic RRWAT_03 rand 3 3
-	pic RRWAT_04 rand 3 3
-	pic RRWAT_05 rand 3 3
-	pic RRWAT_06 rand 3 3
-	pic RRWAT_07 rand 3 3
-	pic RRWAT_08 rand 3 3
-	pic RRWAT_09 rand 3 3
-	pic RRWAT_10 rand 3 3
-	pic RRWAT_11 rand 3 3
-	pic RRWAT_12 rand 3 3
+	pic HDWAT01 rand 2 2
+	pic HDWAT02 rand 2 2
+	pic HDWAT03 rand 2 2
+	pic HDWAT04 rand 2 2
+	pic HDWAT05 rand 2 2
+	pic HDWAT06 rand 2 2
+	pic HDWAT07 rand 2 2
+	pic HDWAT08 rand 2 2
+	pic HDWAT09 rand 2 2
+	pic HDWAT10 rand 2 2
+	pic HDWAT11 rand 2 2
+	pic HDWAT12 rand 2 2
+	pic HDWAT13 rand 2 2
+	pic HDWAT14 rand 2 2
+	pic HDWAT15 rand 2 2
+	pic HDWAT16 rand 2 2
+	pic HDWAT17 rand 2 2
+	pic HDWAT18 rand 2 2
+	pic HDWAT19 rand 2 2
+	pic HDWAT20 rand 2 2
+	pic HDWAT21 rand 2 2
+	pic HDWAT22 rand 2 2
+	pic HDWAT23 rand 2 2
+	pic HDWAT24 rand 2 2
+	pic HDWAT25 rand 2 2
+	pic HDWAT26 rand 2 2
+	pic HDWAT27 rand 2 2
+	pic HDWAT28 rand 2 2
+	pic HDWAT29 rand 2 2
+	pic HDWAT30 rand 2 2
+	pic HDWAT31 rand 2 2
+	pic HDWAT32 rand 2 2
+	pic HDWAT32 rand 2 2
+	pic HDWAT33 rand 2 2
+	pic HDWAT34 rand 2 2
 
 flat FWATER3
-	pic RRWAT_01 rand 3 3
-	pic RRWAT_02 rand 3 3
-	pic RRWAT_03 rand 3 3
-	pic RRWAT_04 rand 3 3
-	pic RRWAT_05 rand 3 3
-	pic RRWAT_06 rand 3 3
-	pic RRWAT_07 rand 3 3
-	pic RRWAT_08 rand 3 3
-	pic RRWAT_09 rand 3 3
-	pic RRWAT_10 rand 3 3
-	pic RRWAT_11 rand 3 3
-	pic RRWAT_12 rand 3 3
+	pic HDWAT01 rand 2 2
+	pic HDWAT02 rand 2 2
+	pic HDWAT03 rand 2 2
+	pic HDWAT04 rand 2 2
+	pic HDWAT05 rand 2 2
+	pic HDWAT06 rand 2 2
+	pic HDWAT07 rand 2 2
+	pic HDWAT08 rand 2 2
+	pic HDWAT09 rand 2 2
+	pic HDWAT10 rand 2 2
+	pic HDWAT11 rand 2 2
+	pic HDWAT12 rand 2 2
+	pic HDWAT13 rand 2 2
+	pic HDWAT14 rand 2 2
+	pic HDWAT15 rand 2 2
+	pic HDWAT16 rand 2 2
+	pic HDWAT17 rand 2 2
+	pic HDWAT18 rand 2 2
+	pic HDWAT19 rand 2 2
+	pic HDWAT20 rand 2 2
+	pic HDWAT21 rand 2 2
+	pic HDWAT22 rand 2 2
+	pic HDWAT23 rand 2 2
+	pic HDWAT24 rand 2 2
+	pic HDWAT25 rand 2 2
+	pic HDWAT26 rand 2 2
+	pic HDWAT27 rand 2 2
+	pic HDWAT28 rand 2 2
+	pic HDWAT29 rand 2 2
+	pic HDWAT30 rand 2 2
+	pic HDWAT31 rand 2 2
+	pic HDWAT32 rand 2 2
+	pic HDWAT32 rand 2 2
+	pic HDWAT33 rand 2 2
+	pic HDWAT34 rand 2 2
 
 flat FWATER4
-	pic RRWAT_01 rand 3 3
-	pic RRWAT_02 rand 3 3
-	pic RRWAT_03 rand 3 3
-	pic RRWAT_04 rand 3 3
-	pic RRWAT_05 rand 3 3
-	pic RRWAT_06 rand 3 3
-	pic RRWAT_07 rand 3 3
-	pic RRWAT_08 rand 3 3
-	pic RRWAT_09 rand 3 3
-	pic RRWAT_10 rand 3 3
-	pic RRWAT_11 rand 3 3
-	pic RRWAT_12 rand 3 3
+	pic HDWAT01 rand 2 2
+	pic HDWAT02 rand 2 2
+	pic HDWAT03 rand 2 2
+	pic HDWAT04 rand 2 2
+	pic HDWAT05 rand 2 2
+	pic HDWAT06 rand 2 2
+	pic HDWAT07 rand 2 2
+	pic HDWAT08 rand 2 2
+	pic HDWAT09 rand 2 2
+	pic HDWAT10 rand 2 2
+	pic HDWAT11 rand 2 2
+	pic HDWAT12 rand 2 2
+	pic HDWAT13 rand 2 2
+	pic HDWAT14 rand 2 2
+	pic HDWAT15 rand 2 2
+	pic HDWAT16 rand 2 2
+	pic HDWAT17 rand 2 2
+	pic HDWAT18 rand 2 2
+	pic HDWAT19 rand 2 2
+	pic HDWAT20 rand 2 2
+	pic HDWAT21 rand 2 2
+	pic HDWAT22 rand 2 2
+	pic HDWAT23 rand 2 2
+	pic HDWAT24 rand 2 2
+	pic HDWAT25 rand 2 2
+	pic HDWAT26 rand 2 2
+	pic HDWAT27 rand 2 2
+	pic HDWAT28 rand 2 2
+	pic HDWAT29 rand 2 2
+	pic HDWAT30 rand 2 2
+	pic HDWAT31 rand 2 2
+	pic HDWAT32 rand 2 2
+	pic HDWAT32 rand 2 2
+	pic HDWAT33 rand 2 2
+	pic HDWAT34 rand 2 2
 
-/*flat FWATER03
-	pic RRWAT_01 rand 3 3
-	pic RRWAT_02 rand 3 3
-	pic RRWAT_03 rand 3 3
-	pic RRWAT_04 rand 3 3
-	pic RRWAT_05 rand 3 3
-	pic RRWAT_06 rand 3 3
-	pic RRWAT_07 rand 3 3
-	pic RRWAT_08 rand 3 3
-	pic RRWAT_09 rand 3 3
-	pic RRWAT_10 rand 3 3
-	pic RRWAT_11 rand 3 3
-	pic RRWAT_12 rand 3 3
-
-flat FWATER02
-	pic RRWAT_01 rand 3 3
-	pic RRWAT_02 rand 3 3
-	pic RRWAT_03 rand 3 3
-	pic RRWAT_04 rand 3 3
-	pic RRWAT_05 rand 3 3
-	pic RRWAT_06 rand 3 3
-	pic RRWAT_07 rand 3 3
-	pic RRWAT_08 rand 3 3
-	pic RRWAT_09 rand 3 3
-	pic RRWAT_10 rand 3 3
-	pic RRWAT_11 rand 3 3
-	pic RRWAT_12 rand 3 3
-*/
-//	flat FTILE083
-//pic HDWAT01 rand 1 1
-//pic HDWAT02 rand 1 1
-//pic HDWAT03 rand 1 1
-//pic HDWAT04 rand 1 1
-//pic HDWAT05 rand 1 1
-//pic HDWAT06 rand 1 1
-//pic HDWAT07 rand 1 1
-//pic HDWAT08 rand 1 1
-//pic HDWAT09 rand 1 1
-//pic HDWAT11 rand 1 1
-//pic HDWAT12 rand 1 1
-//pic HDWAT13 rand 1 1
-//pic HDWAT14 rand 1 1
-//pic HDWAT15 rand 1 1
-//pic HDWAT16 rand 1 1
-//pic HDWAT17 rand 1 1
-//pic HDWAT18 rand 1 1
-//pic HDWAT19 rand 1 1
-//pic HDWAT20 rand 1 1
-//pic HDWAT21 rand 1 1
-//pic HDWAT22 rand 1 1
-//pic HDWAT23 rand 1 1
-//pic HDWAT24 rand 1 1
-//pic HDWAT25 rand 1 1
-//pic HDWAT26 rand 1 1
-//pic HDWAT27 rand 1 1
-//pic HDWAT28 rand 1 1
-//pic HDWAT29 rand 1 1
-//pic HDWAT30 rand 1 1
-//pic HDWAT31 rand 1 1
-//pic HDWAT32 rand 1 1
-//pic HDWAT33 rand 1 1
-//pic HDWAT34 rand 1 1
-
-/*flat FTILE080
-	pic RRWAT_01 rand 3 3
-	pic RRWAT_02 rand 3 3
-	pic RRWAT_03 rand 3 3
-	pic RRWAT_04 rand 3 3
-	pic RRWAT_05 rand 3 3
-	pic RRWAT_06 rand 3 3
-	pic RRWAT_07 rand 3 3
-	pic RRWAT_08 rand 3 3
-	pic RRWAT_09 rand 3 3
-	pic RRWAT_10 rand 3 3
-	pic RRWAT_11 rand 3 3
-	pic RRWAT_12 rand 3 3
-*/
 warp2 texture RRWAT_01
 warp2 texture RRWAT_02
 warp2 texture RRWAT_03
@@ -416,20 +431,6 @@ flat SLIME05
 	pic RBWAT_10 rand 3 3
 	pic RBWAT_11 rand 3 3
 	pic RBWAT_12 rand 3 3
-
-/*flat CUSTOMCI
-	pic RBWAT_01 rand 3 3
-	pic RBWAT_02 rand 3 3
-	pic RBWAT_03 rand 3 3
-	pic RBWAT_04 rand 3 3
-	pic RBWAT_05 rand 3 3
-	pic RBWAT_06 rand 3 3
-	pic RBWAT_07 rand 3 3
-	pic RBWAT_08 rand 3 3
-	pic RBWAT_09 rand 3 3
-	pic RBWAT_10 rand 3 3
-	pic RBWAT_11 rand 3 3
-	pic RBWAT_12 rand 3 3*/
 
 warp2 texture RBWAT_01
 warp2 texture RBWAT_02
@@ -590,40 +591,6 @@ warp FLAT LAVA4
 
 warp flat SFLR6_1
 warp flat SFLR6_4
-
-/*
-flat SLIME12
-	pic SLIME09 rand 3 3
-	pic SLIME10 rand 3 3
-	pic SLIME11 rand 3 3
-	pic SLIME12 rand 3 3
-	pic SLIME11 rand 3 3
-	pic SLIME10 rand 3 3
-
-flat SLIME11
-	pic SLIME09 rand 3 3
-	pic SLIME10 rand 3 3
-	pic SLIME11 rand 3 3
-	pic SLIME12 rand 3 3
-	pic SLIME11 rand 3 3
-	pic SLIME10 rand 3 3
-
-flat SLIME10
-	pic SLIME09 rand 3 3
-	pic SLIME10 rand 3 3
-	pic SLIME11 rand 3 3
-	pic SLIME12 rand 3 3
-	pic SLIME11 rand 3 3
-	pic SLIME10 rand 3 3
-
-flat SLIME09
-	pic SLIME09 rand 3 3
-	pic SLIME10 rand 3 3
-	pic SLIME11 rand 3 3
-	pic SLIME12 rand 3 3
-	pic SLIME11 rand 3 3
-	pic SLIME10 rand 3 3
-*/
 
 Texture BLODRIP1
 	pic BLODRIP1 rand 3 3
