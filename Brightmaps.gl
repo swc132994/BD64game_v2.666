@@ -800,3 +800,12 @@ brightmap sprite BOZ3H2H8	{map "brightmaps/BOZ3H2H8_BR.png"}
 brightmap sprite BOZ3H3H7	{map "brightmaps/BOZ3H3H7_BR.png"}
 brightmap sprite BOZ3H4H6	{map "brightmaps/BOZ3H4H6_BR.png"}
 brightmap sprite BOZ3H5		{map "brightmaps/BOZ3H5_BR.png"}
+
+//LIQUID TEXTURES
+brightmap sprite LAVA1		{map "brightmaps/256SQ_BR.png"}
+brightmap sprite LAVA2		{map "brightmaps/256SQ_BR.png"}
+brightmap sprite LAVA3		{map "brightmaps/256SQ_BR.png"}
+brightmap sprite LAVA4		{map "brightmaps/256SQ_BR.png"}
+brightmap sprite NUKAGE1	{map "brightmaps/256SQ_BR.png"}
+brightmap sprite NUKAGE2	{map "brightmaps/256SQ_BR.png"}
+brightmap sprite NUKAGE3	{map "brightmaps/256SQ_BR.png"}

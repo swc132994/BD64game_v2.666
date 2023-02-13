@@ -2633,7 +2633,6 @@ Glow
 		NUKAGE1
 		NUKAGE2
 		NUKAGE3
-		LPNUKE
 	}
 	Texture "LAVA1",#FF3200,40,fullbright
 	Texture "LAVA2",#FF3200,40,fullbright
@@ -2642,5 +2641,4 @@ Glow
 	Texture "NUKAGE1",#00FF00,80,fullbright
 	Texture "NUKAGE2",#00FF00,80,fullbright
 	Texture "NUKAGE3",#00FF00,80,fullbright
-	Texture "LPNUKE",#00FF00,80,fullbright
 }
