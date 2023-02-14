@@ -601,7 +601,7 @@ pulselight MEGASPHERE
 object 64MegaSphere
 {
 	frame MEGA {light MEGASPHERE}
-	frame M3GA {light MEGASPHERE}	
+	frame M3GA {light MEGASPHERE}
 }
 
 //Health Potion
@@ -728,7 +728,7 @@ object 64BlueArmor
 	frame ARM2A {light BLUEARMOR1}
 	frame ARM2B {light BLUEARMOR2}
 	frame ARM4A {light BLUEARMOR1}
-	frame ARM4B {light BLUEARMOR2}	
+	frame ARM4B {light BLUEARMOR2}
 }
 
 //Pentagram Red
@@ -928,11 +928,6 @@ object 64ZombieMan
 object 64ShotgunGuy
 {
 	frame SPOSF {light ZOMBIEATK}
-}
-
-object 64ChaingunGuy
-{
-	frame MPOSF {light ZOMBIEATK2}	//r31 was CPOSF {light ZOMBIEATK}
 }
 
 object 64Zombiemarine	//R31 added
