@@ -99,6 +99,13 @@ OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 		StaticText " "
 	Option "Enable footstep sounds =","FootStepCheckCvar","YesOrNo"
 	Option "Set Normal size HUD to Doom style =","VanillaStatusBarCvar","YesorNo"
+	Option "Screen Effects =", "bd64_ScreenFX", "ScreenTypes"
+		StaticText "Enables Screen Effects on HUD, such as Blood Splashing and Bullet Holes."
+		StaticText " "
+    Option "Blood Trail Splash =", "bd64_BloodTrail", "YesOrNoFalse"
+		StaticText "Enables Blood Splashing when Enemies are bleeding out."
+		StaticText "If Screen Effects is disabled, this option will also be disabled."
+		StaticText "Does not work for the BDv21 Mode."	
 }
 
 OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
@@ -387,4 +394,11 @@ OptionValue "CensoredHealing_Value"
 	1,"Alpha Build"
 	2,"Censored (Nightdive)"
 	3,"Alternative (BFG Style)"
+}
+
+OptionValue "ScreenTypes"
+{
+	0, "No"
+	1, "Yes"
+	2, "BDv21"
 }
