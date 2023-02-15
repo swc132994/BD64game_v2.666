@@ -250,14 +250,14 @@ MONSTER
 
 Actor D64_Archvile_Replacer Replaces Archvile	//08-08-22 combined hound chooser & archvile replacer
 {
-Scale 1.0
+Scale 0.75
 MONSTER
 -SOLID
 -COUNTKILL
 	States
 	{
 	Spawn:
-		VILM A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnArachnotron")	//was 1481	//if 1 goto arachnotron
+		VILE A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnArachnotron")	//was 1481	//if 1 goto arachnotron
 		TNT1 A 0 A_JumpIf(CallACS("ArchvileRestorer")==1,"SpawnArchvile")	//if 1 goto archvile
 		TNT1 A 0 A_JumpIf(CallACS("HoundChooserACS")==1,4)//GEC
 		TNT1 A 0 A_JumpIf(CallACS("HoundChooserACS")==2,2)//CERB
