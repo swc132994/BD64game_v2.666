@@ -700,14 +700,9 @@ brightmap sprite MSMNC2C8	{map "brightmaps/MSMNC2C8_BR.png"}
 brightmap sprite MSMNC3C7	{map "brightmaps/MSMNC3C7_BR.png"}
 brightmap sprite MSMND1		{map "brightmaps/MSMND1_BR.png"}
 brightmap sprite MSMND2D8	{map "brightmaps/MSMND2D8_BR.png"}
-brightmap sprite MSMND3D7	{map "brightmaps/MSMND3D7_BR.png"}
 brightmap sprite MSMNE1		{map "brightmaps/MSMNE1_BR.png"}
 brightmap sprite MSMNE2E8	{map "brightmaps/MSMNE2E8_BR.png"}
 brightmap sprite MSMNE3E7	{map "brightmaps/MSMNE3E7_BR.png"}
-brightmap sprite MSMNF1		{map "brightmaps/MSMNF1_BR.png"}
-brightmap sprite MSMNF2F8	{map "brightmaps/MSMNF2F8_BR.png"}
-brightmap sprite MSMNF3F7	{map "brightmaps/MSMNF3F7_BR.png"}
-brightmap sprite MSMNG0		{map "brightmaps/MSMNG0_BR.png"}
 
 //ERADICATOR
 brightmap sprite BSGIA1		{map "brightmaps/BSGIA1_BR.png"}

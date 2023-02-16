@@ -953,7 +953,7 @@ object 64DoomPlayer
 
 flickerlight2 MASTERMINDATK
 {
-	color 1.0 0.8 0.2
+	color 1.0 0.8 0.8
 	size 94
 	secondarySize 56
 	interval 1

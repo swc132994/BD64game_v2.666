@@ -41,32 +41,32 @@ DropItem "Soulsphere",32				//R31 added
 	Death:
 		CYBR G 10
 		TNT1 A 0 A_Scream
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",0,0,55,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",-20,-20,110,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",-20,-20,110,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
-		CYBR G 4 A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
-		CYBR H 4 A_SpawnItemEx("64BossExplosion",0,0,55,0,0,0,0,130)
-		CYBR H 4 A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
-		CYBR I 4 A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
-		CYBR I 4 A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
-		CYBR J 4 A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
-		CYBR J 4 A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
-		CYBR K 4 A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
-		CYBR K 4 A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
-		CYBR L 6 A_NoBlocking
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,55,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,110,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,110,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
+		CYBR G 4 Bright A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
+		CYBR H 4 Bright A_SpawnItemEx("64BossExplosion",0,0,55,0,0,0,0,130)
+		CYBR H 4 Bright A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
+		CYBR I 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
+		CYBR I 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
+		CYBR J 4 Bright A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
+		CYBR J 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
+		CYBR K 4 Bright A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
+		CYBR K 4 Bright A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
+		CYBR L 6 Bright A_NoBlocking
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AAAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -81,7 +81,7 @@ DropItem "Soulsphere",32				//R31 added
 		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
 		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("SuperGoreSpawner",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//r30.9
-		CYBR MN 6
+		CYBR MN 6 Bright
 		CYBR O 30
 		TNT1 A 0 A_BossDeath
 		TNT1 A 0 A_KillMaster("None")	//08-08-22 tag 666 fix
@@ -155,31 +155,31 @@ States
 	Death:
 		A64A H 10 Bright
 		A64A I 10 Bright A_Scream
-		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,55,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,110,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,110,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,55,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
-		A64A I 4 A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",0,0,55,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,110,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,110,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",20,20,0,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",0,0,55,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
+		A64A I 4 Bright A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
 		A64A JKL 4 Bright
 		A64A M 4 Bright A_NoBlocking
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
@@ -197,7 +197,7 @@ States
 		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("SuperGoreSpawner",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//r30.9 added
 		A64A NO 4 Bright
-		A64A P 4
+		A64A P 4 Bright
 		TNT1 A 0 A_KillMaster("None")	//08-08-22 tag 666 fix
 		A64A Q -1 A_BossDeath
 		stop
