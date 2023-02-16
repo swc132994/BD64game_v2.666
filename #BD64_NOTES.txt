@@ -92,16 +92,15 @@ New weapon kicking and slide kicking animations by IDDQD_1337
 
 Monsters:
 64Thing - Craneo(D64 sprites), based on the Mimic by StopSignal, sounds from Duke Nukem 3D by 3D Realms
-New Revenant - DrPsypy (sprites)
-
+New Revenant - DrPyspy (sprites)
+New Archvile - DrPyspy (sprites)
 Hellhound Alt - I'M (sprites)
 Hellhound GEC - Gerardo194 (sprites)
 Bruiser a.k.a Duke of Hell - Gerardo194 (sprites)
 Knightmare a.k.a. DreadKnight - Dr Doctor (Original sprites) Craneo (Rework)
 Eradicator a.k.a unmaker mastermind - Immorpher (sprites)
 Chaingunner - Craneo (reworked sprites), Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim
-Acid Demon sounds from REALM667-SLIME WORM by Captain Toenail
-64 Archvile - DrPsypy (Sprites)
+Acid Demon sounds from REALM667 - SLIME WORM by Captain Toenail
 
 Add-ons:
 BD64HUD_Ashton (Paladin-julio (ModDB))

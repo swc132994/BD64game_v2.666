@@ -1778,7 +1778,7 @@ RenderStyle Translucent
 //ARCHVILE
 ACTOR XDeathArchArm1 : XDeathZombieArm1
 {
-Scale 0.8
+Scale 0.7
 	States
 	{
 	Spawn:
@@ -1796,7 +1796,7 @@ Scale 0.8
 
 ACTOR XDeathArchLeg1 : XDeathZombieArm1
 {
-Scale 0.8
+Scale 0.7
 	States
 	{
 	Spawn:
