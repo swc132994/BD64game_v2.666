@@ -101,6 +101,7 @@ Knightmare a.k.a. DreadKnight - Dr Doctor (Original sprites) Craneo (Rework)
 Eradicator a.k.a unmaker mastermind - Immorpher (sprites)
 Chaingunner - Craneo (reworked sprites), Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim
 Acid Demon sounds from REALM667-SLIME WORM by Captain Toenail
+Spider Mastermind - Craneo (rework), 3D Realms (Battlelord chaingun), Sgt Mark IV (face), Immorpher (based on mastermind rework)
 
 Add-ons:
 BD64HUD_Ashton (Paladin-julio (ModDB))
