@@ -250,7 +250,7 @@ MONSTER
 
 Actor D64_Archvile_Replacer Replaces Archvile	//08-08-22 combined hound chooser & archvile replacer
 {
-Scale 0.75
+Scale 0.7
 MONSTER
 -SOLID
 -COUNTKILL
