@@ -243,9 +243,9 @@ script "SSGinDoom1" (void)	//R31 added
 SetResultValue(GetCVar("SSGinDoom1_Cvar"));
 }
 
-script "D64ChaingunnerRandomACS" (void)	//R31 added
+script "ZMarineRandomACS" (void)	//Was used for replacing chaingunner
 {
-SetResultValue(GetCVar("D64ChaingunnerRandom_Cvar"));
+SetResultValue(GetCVar("ZMarineRandom_Cvar"));
 }
 
 script "AcidDemonRandomACS" (void)	//R31 added
@@ -272,11 +272,6 @@ Script "BerserkSwitchFistsACS" (void) //r31 added option to restore fist switch 
 {
 SetResultValue(getCvar("BerserkSwitchFistsCvar"));
 }
-
-/*Script "AlternativeMasterMindSkin" (void) //r31 added alternative MastermindSkin
-{
-SetResultValue(getCvar("AlternativeMasterMindSkinCvar"));
-}*/
 
 script "StalkerRandomACS" (void)	//R31 added
 {

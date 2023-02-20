@@ -1,6 +1,6 @@
 Actor 64SpiderMastermind : SpiderMastermind Replaces SpiderMastermind
 {
-Scale 0.88
+Scale 0.9
 Radius 62
 PainChance "SuperFists",200
 PainChance "Kick",200
@@ -12,7 +12,6 @@ MeleeRange 100		//r31 24/08/22 added
 DropItem "DemonEssenceLargeSpawner"		//R31 added
 DropItem "Soulsphere",32				//R31 added
 AttackSound "weapons/gswing"	//for melee
-Species SpiderMastermind
 +EXTREMEDEATH	//r31 24/08/22 added
 +AVOIDMELEE
 +QUICKTORETALIATE
@@ -166,9 +165,7 @@ Scale 0.1
 Damage(random(5,10))
 Speed 50
 FastSpeed 60
-Species SpiderMastermind
 +EXTREMEDEATH
-+DONTHARMSPECIES
 	States
 	{
 	Spawn:
@@ -187,6 +184,7 @@ Species SpiderMastermind
 
 Actor 64Eradicator : SpiderMastermind 19119
 {
+Scale 0.9
 Health 4000
 Speed 14
 Radius 62
@@ -203,7 +201,6 @@ DropItem "DemonEssenceLargeSpawner"
 DropItem "Soulsphere",64
 Obituary "The Eradicator unmade %o."
 Tag "Eradicator"
-Species SpiderMastermind
 +EXTREMEDEATH
 +AVOIDMELEE
 +QUICKTORETALIATE
@@ -335,10 +332,7 @@ Species SpiderMastermind
 
 Actor EradicatorLaser : UnmakerLaser2
 {
-Species SpiderMastermind
 Speed 100
-+THRUSPECIES
-+DONTHARMSPECIES
 	States
 	{
 	Death:

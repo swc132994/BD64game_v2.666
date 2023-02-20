@@ -67,7 +67,7 @@ Actor 64Gibs : 64RealGibs Replaces Gibs
 Game Doom
 }
 
-Actor 64SmallBloodPool Replaces SmallBloodPool
+Actor 64SmallBloodPool : SmallBloodPool Replaces SmallBloodPool
 {
 Scale 0.82
   Radius 20
@@ -75,12 +75,6 @@ Scale 0.82
   +NOBLOCKMAP
   +MOVEWITHSECTOR
   +FLOORCLIP
-  States
-  {
-  Spawn:
-    CRS1 A -1
-    Stop
-  }
 }
 
 actor 64BrainStem : 64Gibs Replaces BrainStem

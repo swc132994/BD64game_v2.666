@@ -1470,17 +1470,17 @@ DropItem "SOULSPAWNER"	//R31 added
 		MPOS G 3 A_Pain
 		Goto See
 	Raise:		//r31 added
-		MPOS MLKJIH 5
+		MPOS NMLKJIH 5
 		Goto See
 	Death:		//r31 added new standard death
 		MPOS H 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
 		MPOS I 5 A_Scream
 		MPOS J 5 A_NoBlocking
-		MPOS K 5 A_Stop
+		MPOS KL 5 A_Stop
 //		tnt1 a 0 A_GiveToTarget("SoulAmmo",1)	//R8 WAS 2	//R31 removed
 		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
-		MPOS L 5
-		MPOS M -1
+		MPOS M 5
+		MPOS N -1
 		Stop
 	Death.Shotgun:		//R31 EX
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
@@ -1830,7 +1830,7 @@ Actor EnemyProjectileExtreme : EnemyProjectile
 
 Actor 64Zombiemarine : 64Zombieman Replaces WolfensteinSS
 {
-Health 80 //R31 added
+Health 90 //R31 added
 Speed 12
 AttackSound "grunt/attack"
 Tag "Marine Zombie"		//r31 added
