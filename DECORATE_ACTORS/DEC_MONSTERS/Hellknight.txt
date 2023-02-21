@@ -21,11 +21,11 @@ BloodColor "00 64 00"	//Hex value
 	{
 	Spawn:		//R31 EXTRA
 		BOS2 AB 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",25,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",12,60,0)
 		TNT1 A 0 A_GiveInventory("GreenArmor",1)		//R19//R20 WAS BlueArmor
 		Loop
 	See:		//R31 EXTRA
-		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",25,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",12,60,0)
 		BOS2 AABBCCDD 3 A_Chase
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		Loop
@@ -33,13 +33,13 @@ BloodColor "00 64 00"	//Hex value
 		TNT1 A 0 A_ClearTarget
 		Goto Spawn
 	Melee:		//R31 extra
-		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",25,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",12,60,0)
 		BOS2 EF 8 A_FaceTarget
 //		BOS2 G 8 A_BruisAttack
 		BOS2 G 8 A_CustomMeleeAttack(10*random(1,8),"baron/melee")	//R31 Melee and Missile seperated
 		Goto See
 	Missile:		//R31 extra
-		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",25,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",0,60,0)
 		BOS2 EF 8 A_FaceTarget
 //		BOS2 G 8 Bright A_BruisAttack
 		BOS2 G 8 Bright A_CustomMissile("64BaronBallGreen",32)	//R31 Melee and Missile seperated
@@ -185,6 +185,8 @@ Health 0
 Actor 64BaronBallGreen : BaronBall Replaces BaronBall
 {
 Scale 0.75
+Radius 6
+Height 6
 RenderStyle Normal
 Decal "MedScorch"	//R28.3 added
 	states

@@ -24,8 +24,8 @@ actor HeadshotTargetBase
 {
 Health 300
 GibHealth 10000
-Radius 7
-Height 18
+Radius 5	//was 7
+Height 10	//was 18
 DamageType head
 BloodType "Brutal_Blood"
 PainChance 255
@@ -238,7 +238,7 @@ States
 
 actor HeadshotTarget20: HeadshotTargetBase
 {
-Height 15
+//Height 15
 States
 	{
 	Spawn:
@@ -251,7 +251,7 @@ States
 actor HeadshotTarget20Green: HeadshotTargetBase
 {
 BloodType "Brutal_BloodGreen"
-Height 15
+//Height 15
 States
 	{
 	Spawn:
@@ -263,7 +263,7 @@ States
 
 actor HeadshotTarget23: HeadshotTargetBase
 {
-Height 15
+//Height 15
 	States
 	{
 	Spawn:
@@ -275,7 +275,7 @@ Height 15
 
 actor HeadshotTarget30: HeadshotTargetBase
 {
-Height 15
+//Height 15
 	States
 	{
 	Spawn:
@@ -288,7 +288,7 @@ Height 15
 actor HeadshotTarget30Green: HeadshotTargetBase
 {
 BloodType "Brutal_BloodGreen"
-Height 15
+//Height 15
 	States
 	{
 	Spawn:
@@ -300,7 +300,7 @@ Height 15
 
 actor HeadshotTarget60: HeadshotTargetBase
 {
-Height 15
+//Height 15
 	States
 	{
 	Spawn:
@@ -312,7 +312,7 @@ Height 15
 
 actor HeadshotTarget50: HeadshotTargetBase
 {
-Height 15
+//Height 15
 States
 	{
 	Spawn:
@@ -324,7 +324,7 @@ States
 
 actor HeadshotTarget100: HeadshotTargetBase
 {
-Height 15
+//Height 15
 	States
 	{
 	Spawn:
@@ -336,7 +336,7 @@ Height 15
 
 actor HeadshotTarget200: HeadshotTargetBase
 {
-Height 15
+//Height 15
 	States
 	{
 	Spawn:

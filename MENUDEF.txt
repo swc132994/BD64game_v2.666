@@ -135,6 +135,7 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 		StaticText " "
 	Option "Randomly replace Shotgun Zombies with SSG Zombies =","SSGZombieRandom_Cvar","SSGZombieRandom_Value"		//R31 was YesOrNo
 	Option "Randomly replace ZombieMen with Zombie Marines =","ZMarineRandom_Cvar","ZMarineRandom_Value"		//R31 was YesOrNo
+	Option "Randomly replace Chaingun Zombies with BFG Zombies =","ZombieBFGRandom_Cvar","BFGZombie_Value"
 	Option "Randomly replace Imps with Nightmare Imps =","NImp_Spawner_Cvar","NImp_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Spectres with Nightmare Spectres =","NSpectre_Spawner_Cvar","NSpectre_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Cacodemons with Nightmare Cacodemons =","NCaco_Spawner_Cvar","NCaco_Spawner_Value"	//R31 was YesOrNo
@@ -339,6 +340,13 @@ OptionValue "ZMarineRandom_Value"
 {
 	0,"ZombieMan Only"
 	1,"Zombie Marine Only"
+	2,"Random"
+}
+
+OptionValue "BFGZombie_Value"
+{
+	0,"ChaingunGuy Only"
+	1,"BFGGuy Only"
 	2,"Random"
 }
 

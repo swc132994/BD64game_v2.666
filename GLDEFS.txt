@@ -1326,6 +1326,19 @@ object 64BruiserBall	//R31 added
 	frame BAL7H {light BARONBALL_X6}
 }
 
+object 64EnemyBFGBall
+{
+	frame BFS1A {light BARONBALL}
+	frame BFS1B {light BARONBALL}
+
+	frame BFE1A {light BARONBALL_X1}
+	frame BFE1B {light BARONBALL_X2}
+	frame BFE1C {light BARONBALL_X3}
+	frame BFE1D {light BARONBALL_X4}
+	frame BFE1E {light BARONBALL_X5}
+	frame BFE1F {light BARONBALL_X6}
+}
+
 //Baron of Hell fireball
 pointlight BARONBALL2
 {

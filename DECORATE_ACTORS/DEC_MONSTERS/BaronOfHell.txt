@@ -15,11 +15,11 @@ BloodType "Brutal_Blood"
 	{
 	Spawn:		//R31 extra
 		BOSS AB 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget30",25,70,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget30",12,70,0)
 		TNT1 A 0 A_GiveInventory("GreenArmor",1)			//R19 added //R20 was BlueArmor
 		Loop
 	See:		//R31 extra
-		TNT1 A 0 A_SpawnItem("HeadshotTarget30",25,70,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget30",12,70,0)
 		BOSS AABBCCDD 3 A_Chase
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		Loop
@@ -27,13 +27,13 @@ BloodType "Brutal_Blood"
 		TNT1 A 0 A_ClearTarget
 		Goto Spawn
 	Melee:		//R31 extra
-		TNT1 A 0 A_SpawnItem("HeadshotTarget30",25,70,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget30",12,70,0)
 //		TNT1 A 0 A_JumpIfInTargetInventory("IsDeadPLayer",1,"Stomp")
 		BOSS EF 8 A_FaceTarget
 		BOSS G 8 A_CustomMeleeAttack(10*random(1,8),"baron/melee")	//R31 Melee and Missile seperated
 		Goto See
 	Missile:	//R31 extra
-		TNT1 A 0 A_SpawnItem("HeadshotTarget30",25,70,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget30",0,70,0)
 //		TNT1 A 0 A_JumpIfInTargetInventory("IsDeadPLayer",1,"See")
 		BOSS EF 8 A_FaceTarget
 		BOSS G 8 Bright A_CustomMissile("64BaronBall",32)	//R31 Melee and Missile seperated
@@ -187,6 +187,8 @@ Health 0
 Actor 64BaronBall : BaronBall
 {
 Scale 0.8
+Radius 6
+Height 6
 RenderStyle Normal
 Decal "MedScorch"	//R28.3 added
 	States

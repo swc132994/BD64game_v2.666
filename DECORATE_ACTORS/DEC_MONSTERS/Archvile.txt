@@ -32,19 +32,19 @@ DropItem "DemonEssenceSpawner"
 		Loop
 	Missile:
 		TNT1 A 0 A_VileStart
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23",12,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget23",0,71,0)
 		VILE G 10 Bright A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23",12,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget23",0,71,0)
 		VILE H 8 Bright A_VileStart
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23",12,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget23",0,71,0)
 		VILE IJ 8 Bright A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23",12,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget23",0,71,0)
 		VILE KL 8 Bright a_viletarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23",12,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget23",0,71,0)
 		VILE MN 8 Bright A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23",12,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget23",0,71,0)
 		VILE OP 8 Bright A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23",12,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget23",0,71,0)
 		VILE Q 12 Bright A_VileAttack
 		Goto See
 	Heal:

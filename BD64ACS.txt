@@ -243,9 +243,14 @@ script "SSGinDoom1" (void)	//R31 added
 SetResultValue(GetCVar("SSGinDoom1_Cvar"));
 }
 
-script "ZMarineRandomACS" (void)	//Was used for replacing chaingunner
+script "ZMarineRandomACS" (void)
 {
 SetResultValue(GetCVar("ZMarineRandom_Cvar"));
+}
+
+script "ZombieBFGRandomACS" (void)
+{
+SetResultValue(GetCVar("ZombieBFGRandom_Cvar"));
 }
 
 script "AcidDemonRandomACS" (void)	//R31 added

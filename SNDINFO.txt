@@ -452,6 +452,19 @@ BREATHOF	BREATHOF
 64ThingActive		SBR1C
 64ThingActive1		BLROAM2A
 
+//BFG Zombie
+$random chainguy/sight		{ bfgguy/sight1  bfgguy/sight2 }
+bfgguy/sight1 	DSBFZSIT	// SeeSound
+bfgguy/sight2		DSBFZATK	// SeeSound 2 
+bfgguy/pain  		DSBZPAIN	// PainSound 
+bfgguy/death 		DSBFZDTH	// DeathSound 
+bfgguy/active		DSBFZACT	// ActiveSound 
+$volume bfgguy/sight1 0.8
+$volume bfgguy/sight2 0.8
+$volume bfgguy/pain 0.8
+$volume bfgguy/death 0.8
+$volume bfgguy/active 0.8
+
 //Alt Fire Plasma
 PlasFire	PlasFire
 

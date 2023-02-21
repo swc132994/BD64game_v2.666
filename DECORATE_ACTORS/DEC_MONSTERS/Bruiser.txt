@@ -37,20 +37,20 @@ MONSTER
 	{
 	Spawn:
 		DKHL AB 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget20Green",15,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget20Green",10,62,0)
 		TNT1 A 0 A_GiveInventory("GreenArmor",1)
 		Loop
 	Forget:
 		TNT1 A 0 A_ClearTarget
 		Goto Spawn
 	See:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",15,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",10,62,0)
 		DKHL AABBCCDDEEFF 3 A_Chase
 		TNT1 A 0 A_GiveInventory("GreenArmor",1)
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		Loop
 	Melee:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",15,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",10,62,0)
 		DKHL H 10 A_PlaySound("64Bruiser/raiseguns",CHAN_AUTO)
 		DKHL H 10 A_FaceTarget
 		TNT1 A 0 A_PlaySound("BREATHOF")
@@ -61,7 +61,7 @@ MONSTER
 		TNT1 A 0 A_FaceTarget
 		DKHL G 3 Bright A_CustomMissile("BruiserFlame",53,-21,15,0)
 		TNT1 A 0 A_CustomMissile("BruiserFlame",53,21,-15,0)
-		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",15,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",10,62,0)
 		DKHL G 3 Bright A_CustomMissile("BruiserFlame",53,-21,15,0)
 		TNT1 A 0 A_CustomMissile("BruiserFlame",53,21,-15,0)
 		TNT1 A 0 A_FaceTarget
@@ -87,17 +87,17 @@ MONSTER
 		TNT1 A 0 A_SpidRefire
 		Goto See
 	Missile:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",15,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",0,62,0)
 		TNT1 A 0 A_JumpIfCloser(250,"Melee")
 		TNT1 A 0 A_PlaySound("64Bruiser/raiseguns",CHAN_AUTO)
 		DKHL H 25 A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",15,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",0,62,0)
 		DKHL G 10 Bright
 		TNT1 A 0 A_CustomMissile("64BruiserBall",53,21,random(-1,1),1,random(-1,1))
 		TNT1 A 0 A_CustomMissile("64BruiserBall",53,-21,random(-1,1),1,random(-1,1))
 		TNT1 A 0 A_JumpIfCloser(250,"Melee")
 		DKHL H 25 A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",15,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget30Green",0,62,0)
 		DKHL G 10 Bright
 		TNT1 A 0 A_CustomMissile("64BruiserBall",53,21,random(-1,1),1,random(-1,1))
 		TNT1 A 0 A_CustomMissile("64BruiserBall",53,-21,random(-1,1),1,random(-1,1))
@@ -220,13 +220,13 @@ Scale 1.2
 DamageType "BFG"
 Damage 50
 Decal Scorch
-+THRUACTORS
+//+THRUACTORS
 	states
 	{
 	Spawn:
 		BAL7 AB 1 Bright A_SpawnItem("LensFlareProjectileGreen")
 		TNT1 A 0 A_SpawnItem("BruiserFlare")
-		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
+//		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
 		Loop
 	Death:
 		TNT1 A 1
