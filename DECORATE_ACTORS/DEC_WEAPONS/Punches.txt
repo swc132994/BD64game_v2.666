@@ -297,7 +297,7 @@ DamageType Kick
 Speed 30
 Radius 18
 Height 6
-ProjectileKickBack 1000		//R17 added
+//ProjectileKickBack 1000		//R17 added
 Alpha 0.6
 RenderStyle Add
 SeeSound "none"
@@ -319,6 +319,7 @@ Projectile
 		TNT1 A 0 A_PlaySound("FOOTWALL",3)
 		TNT1 A 0 A_SpawnItemEx("PLOFT2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		TNT1 AAAAAA 0 A_CustomMissile("MeleeSmoke",0,0,random(0,360),2,random(0,360))
+
 		TNT1 A 0 Radius_Quake(2,6,0,5,0)
 		TNT1 A 10
 		Stop
@@ -337,7 +338,7 @@ Actor SuperKickAttack : KickAttack		//R10.1 NEW SUPERKICK
 {
 Damage(2*random(70,90))					//R14 WAS 62,62	//R26.1 added 2*
 DamageType SuperKick
-ProjectileKickBack 550					//R26.1	//R28.2 WAS 500
+//ProjectileKickBack 550					//R26.1	//R28.2 WAS 500
 Obituary "%o chewed on %k's foot."		//r30.10 added
 +EXTREMEDEATH
 	States

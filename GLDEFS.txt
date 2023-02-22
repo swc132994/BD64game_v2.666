@@ -2421,11 +2421,6 @@ object HangingTechLampb
 frame HGLM {light LampWhite}
 }
 
-/*object LampFlareSpawn1//R10.2 UNUSED
-{
-frame NULL { light ShaftLightMinor }
-}*/
-
 object BasicWhiteDynamicLight
 {
 frame TNT1 {light LampBasic}

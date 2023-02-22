@@ -1748,13 +1748,16 @@ actor 64BurningBarrel : BurningBarrel Replaces BurningBarrel
 {
 scale 0.75
 health 20
-mass 1000000
-//Alpha 0.5
-//Renderstyle Translucent
+mass 100
+Damagefactor "Melee",0		//R31 ADDED
+Damagefactor "Kick",0		//R31 ADDED
 +SOLID
 +SHOOTABLE
 +NOBLOOD
 -ISMONSTER
++EXTREMEDEATH
++PUSHABLE		//R31 ADDED
++SLIDESONWALLS	//R31 ADDED
 	States
 	{
 	Spawn:
