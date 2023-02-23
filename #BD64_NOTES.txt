@@ -126,6 +126,7 @@ Nukage recolour - Craneo
 New blood splats sprites by I'M
 New screen blood splats by IDDQD_1337
 New Bullet decals from SMK4SIMPLEDECALS.wad by Sgt Mark IV
+Screen effects - Added by IDDQD_1337, Original creator Mechanical-Sanity
 
 Items:
 Alt cell packs - DrDoctor (sprites)
