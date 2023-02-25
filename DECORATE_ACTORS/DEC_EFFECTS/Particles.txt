@@ -963,6 +963,11 @@ SPEED 9
 	}
 }
 
+ACTOR ExplosionParticleBlue : ExplosionParticleGreen
+{
+Translation "0:255=%[0,0,0]:[0,0,1]"//Blue
+}
+
 ACTOR ExplosionParticleGreenHeavy: ExplosionParticleHeavy
 {
 SCALE 0.2
@@ -987,6 +992,11 @@ SCALE 0.1
 	}
 }
 
+ACTOR ExplosionParticleBlueHeavySmall : ExplosionParticleGreenHeavySmall
+{
+Translation "0:255=%[0,0,0]:[0,0,1]"//Blue
+}
+
 ACTOR ExplosionParticleGreenVeryFast: ExplosionParticleHeavy
 {
 game Doom
@@ -1000,6 +1010,11 @@ Gravity 0.9
 		SPRG SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS 1 Bright A_FadeOut(0.02)
 		Stop
 	}
+}
+
+ACTOR ExplosionParticleBlueVeryFast : ExplosionParticleGreenVeryFast
+{
+Translation "0:255=%[0,0,0]:[0,0,1]"//Blue
 }
 
 ACTOR ExplosionParticleYellow: ExplosionParticle2

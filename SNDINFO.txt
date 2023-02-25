@@ -434,13 +434,13 @@ SLIDEND2	SLIDEND2
 //BRUISER //R31 added
 BREATHOF	BREATHOF
 
-64Bruiser/sight			snddhsit
-64Bruiser/active		snddhzact
-64Bruiser/pain			snddhhit
-64Bruiser/raiseguns		snddhatk
-64Bruiser/death			snddhdie
-64Bruiser/attack		snddhbdmsl
-64Bruiser/shotx			snddhimpct
+64Bruiser/sight			SNDDHATK	//snddhsit
+64Bruiser/active		SNDZACT		//snddhzact
+64Bruiser/pain			SNDDHHIT	//snddhhit
+64Bruiser/raiseguns		SNDDHATK	//snddhatk
+64Bruiser/death			SNDDHDIE	//snddhdie
+64Bruiser/attack		SNDBDMSL	//snddhbdmsl
+64Bruiser/shotx			SNDIMPCT	//snddhimpct
 
 //THING
 64Thing/sight		HEADRIP3

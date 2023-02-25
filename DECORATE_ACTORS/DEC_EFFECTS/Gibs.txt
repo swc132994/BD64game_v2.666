@@ -2003,6 +2003,7 @@ Scale 0.8
 	}
 }
 
+
 ACTOR XDeathHHHead : XDeathZombieArm1	//R31 REDEFINED
 {
 Scale 0.8
@@ -2109,6 +2110,26 @@ Scale 0.9
 		DGL1 E 1
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
 		DGL1 E -1
+		Stop
+	}
+}
+
+//Belphegor
+ACTOR BelphegorLeg : XDeathZombieArm1
+{
+Translation "16:31=%[0,0,0]:[0,1,0]","176:191=%[0,0,0]:[0,1,0]","32:47=%[0,0,0]:[0,1,0]"
+Scale 0.8
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
+		BPLG ABCDEFGH 4 A_CheckFloor("Death")
+		Wait
+	Death:
+		BPLG I 1
+		TNT1 A 0 A_SpawnItem("Brutal_BloodSpotGreen",0,0,0,1)
+		BPLG I -1
 		Stop
 	}
 }
