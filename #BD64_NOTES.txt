@@ -103,6 +103,7 @@ Chaingunner - Craneo (reworked sprites), Midway, DrDoctor, Immorpher, Footman, A
 Acid Demon sounds from REALM667 - SLIME WORM by Captain Toenail
 Spider Mastermind - Craneo (rework), 3D Realms (Battlelord chaingun), Sgt Mark IV (face), Immorpher (based on mastermind rework)
 BFG Zombie - Sprites: Id Software, Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim, Korp, ItsNatureToDie, neoworm, Craneo. Sounds: Immorpher
+Belphegor - Midway, NMN, DrDoctor (sprites)
 
 Add-ons:
 BD64HUD_Ashton (Paladin-julio (ModDB))

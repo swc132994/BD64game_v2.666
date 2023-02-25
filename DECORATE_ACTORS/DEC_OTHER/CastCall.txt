@@ -120,6 +120,46 @@ YScale 1.0
 	}
 }
 
+Actor D64BFGGuyCast : 64BFGGuy
+{
+XScale 1.0
+YScale 1.0
+	States
+	{
+	Idle:
+	Spawn:
+		64BZ A 8 A_Look
+		Loop
+	See:
+		64BZ AA 4 A_Chase("","")
+		64BZ BB 4 A_Chase
+		64BZ CC 4 A_Chase
+		64BZ DD 4 A_Chase
+		64BZ AA 4 A_Chase("","")
+		64BZ BB 4 A_Chase
+		64BZ CC 4 A_Chase
+		64BZ DD 4 A_Chase
+		Loop
+	Melee:
+		64BZ AB 4 A_Recoil(4)
+	Missile:
+		64BZ UUU 8 Light("BFGBALL_X5") A_FaceTarget
+		64BZ EE 4 Bright Light("BFGBALL_X4") A_FaceTarget
+		64BZ F 1 Bright Light("BFGBALL_X1") A_CustomMissile("64EnemyBFGBall",36,6)
+		64BZ E 2 Bright Light("BFGBALL_X4") A_FaceTarget
+		64BZ UUU 4 Light("BFGBALL_X5") A_FaceTarget
+		Goto See
+	Death:
+		64BZ H 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
+		64BZ I 5 A_Scream
+		64BZ J 5 A_NoBlocking
+		64BZ KL 5 A_Stop
+		64BZ M 5
+		64BZ N -1
+		Stop
+	}
+}
+
 Actor D64ThingCast : 64Thing
 {
 Scale 1.0
@@ -775,10 +815,10 @@ YScale 1.0
 		MSMN M 3 Bright A_SpidRefire
 		Goto Missile+1
 	Death:
-		MSMN G 5 A_Scream
-		MSMN HI 5
-		MSMN JKLYZ 5
-		MSMN Z -1
+		MSMN G 6 A_Scream
+		MSMN HI 6
+		MSMN JKL 6
+		MSMN L -1
 		Stop
 	}
 }
@@ -873,5 +913,39 @@ DeathSound "*death"
 			PLAY M 3
 			PLAY M -1
 			Stop
+	}
+}
+
+Actor D64BelphegorCast : 64Belphegor
+{
+XScale 1.0
+YScale 1.0
+	States
+	{
+	Spawn:
+		BOS3 B 10 A_Look
+		Loop
+	See:
+		BOS3 AAAABBBBCCCCDDDD 2 A_Chase
+		Loop
+	Pain:
+		BOS3 H 10 A_Pain
+		Goto See
+	Missile:
+		BOS3 EF 9 A_FaceTarget
+		BOS3 G 8 A_CustomMissile("64BelphegorBall",60,0)
+		Goto See
+	Melee:
+		BOS3 EF 9 A_FaceTarget
+		BOS3 G 8 A_CustomComboAttack("64BelphegorBall",32,10*random(1,8),"baron/melee")
+		Goto See
+	Death:
+		BOS3 I 8
+		BOS3 J 8 A_Scream
+		BOS3 K 8
+		BOS3 L 8 A_NoBlocking
+		BOS3 MN 8
+		BOS3 N -1
+		Stop
 	}
 }

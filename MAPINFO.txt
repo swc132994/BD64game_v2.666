@@ -143,6 +143,13 @@ Intermission Doom2Cast
 	}
 	Cast
 	{
+		CastClass = "D64BFGGuyCast"
+		CastName = "BFG Zombie"
+		AttackSound = "Missile",1,"weapons/bfgf"
+		AttackSound = "Melee",1,"weapons/bfgf"
+	}
+	Cast
+	{
 		CastClass = "D64ThingCast"
 		CastName = "The Thing"
 		AttackSound = "Melee",1,"64Thing/attack"
@@ -286,6 +293,13 @@ Intermission Doom2Cast
 		CastName = "Bruiser"
 		AttackSound = "Missile",1,"64Bruiser/raiseguns"
 		AttackSound = "Melee",1,"BREATHOF"
+	}
+	Cast
+	{
+		CastClass = "D64BelphegorCast"
+		CastName = "Belphegor"
+		AttackSound = "Missile",1,"baron/attack"
+		AttackSound = "Melee",1,"imp/melee"
 	}
 	Cast
 	{

@@ -1,0 +1,116 @@
+Actor 64Belphegor 11053
+{
+Scale 1
+Health 2000
+Speed 8
+FastSpeed 12
+Height 85
+Radius 31
+PainChance 15
+Mass 1200
+SeeSound "64Bruiser/sight"
+PainSound "64Bruiser/pain"
+DeathSound "64Bruiser/death"
+ActiveSound "64Bruiser/active"
+Obituary "%o was Obliterated by a Belphegor."
+Tag "Belphegor"
+PainChance 25
+PainChance "SuperFists",220
+PainChance "Kick",255
+PainChance "SuperKick",255
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+DropItem "DemonEssenceSpawner"
+BloodType "Brutal_BloodGreen"
+BloodColor "00 64 00"	//Hex value
+MONSTER
++BOSSDEATH
++MOVEWITHSECTOR
++RELATIVETOFLOOR
++NOBLOODDECALS
++MISSILEMORE
++MISSILEEVENMORE
++NORADIUSDMG
++FLOORCLIP	
+	States
+	{
+	Spawn:
+		BOS3 B 10 A_Look
+		Loop
+	See:
+		BOS3 AAAABBBBCCCCDDDD 2 A_Chase
+		Loop
+	See2:
+		BOS3 PPP 1 A_Chase
+		BOS3 QQQ 1 A_Chase
+		BOS3 RRR 1 A_Chase
+		Goto Missile2
+	Pain:
+		BOS3 H 10 A_Pain
+		Goto See
+	Missile:
+		TNT1 A 0 A_JumpIfHealthLower(1200,"See2")
+		BOS3 EF 9 A_FaceTarget
+		BOS3 G 8 A_CustomMissile("64BelphegorBall",60,0)
+		Goto See
+	Missile2:
+		BOS3 E 0 A_FaceTarget
+		BOS3 PPP 1 A_Chase
+		BOS3 E 0 A_FaceTarget
+		BOS3 QQQ 1 A_Chase
+		BOS3 E 0 A_FaceTarget
+		BOS3 G 0 A_CustomMissile("64BelphegorBall",70,0,0,1)
+		BOS3 RRR 1 A_Chase
+		Goto Missile2
+	Melee:
+		BOS3 EF 9 A_FaceTarget
+		BOS3 G 8 A_CustomComboAttack("64BelphegorBall",32,10*random(1,8),"baron/melee")
+		Goto See
+	Death:
+		BOS3 I 8
+		BOS3 J 8 A_Scream
+		BOS3 K 8
+		BOS3 L 8 A_NoBlocking
+		BOS3 MN 8
+		TNT1 A 0 A_SpawnItem("GrowingBloodPoolGreen")
+		BOS3 N -1 A_BossDeath
+		Stop
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		POL5 A -1
+		Stop
+	}
+}
+
+Actor 64BelphegorBall : BaronBall
+{
+Translation "0:255=%[0,0,0]:[0,0,1]"//Blue
+Damage (random(60,60))
+Scale 1.5
+Speed 30
+FastSpeed 30
+Radius 6
+Height 6
+RenderStyle Normal
+Decal "MedScorch"
++EXTREMEDEATH
+	States
+	{
+	Spawn:
+		BRNR AB 2 NoDelay Bright Light("PLASMABALL") A_CustomMissile("LensFlareProjectileBlue",-2,0)
+//		TNT1 A 0 A_CustomMissile("BaronProjectileCore",-2,0)
+		Loop
+	Death:
+		TNT1 A 1
+//		TNT1 AAA 0 A_CustomMissile("ExplosionParticleBlueHeavySmall",0,0,random(0,360),2,random(10,70))
+//		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleBlueHeavySmall",0,0,random(0,360),2,random(20,50))
+//		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleBlueVeryFast",0,0,random(0,360),2,random(20,40))
+//		TNT1 AAAA 0 A_CustomMissile("ExplosionParticleBlue",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_SpawnItem("DetectFloorCraterMed")
+		TNT1 A 0 A_SpawnItem("DetectCeilCraterMed")
+		TNT1 A 0 Radius_Quake(2,54,0,15,0)
+		TNT1 A 0 A_Explode(32,96,1)
+		BAL7 CDEFGH 1 Bright Light("PLASMA_X3") A_SpawnItem("LensFlareTorchBlue",0,0)
+		Stop
+	}
+}
