@@ -16,7 +16,6 @@ DropItem "DemonEssenceSpawner"		//R31 ADDED
 	{
 	Spawn:
 		PAIN AD 10 A_Look
-		TNT1 A 0 A_GiveInventory("GreenArmor",1)								//R19//R20 was BlueArmor
 		Loop
 	See:
 		PAIN AAAAAA 2 A_Chase("","")

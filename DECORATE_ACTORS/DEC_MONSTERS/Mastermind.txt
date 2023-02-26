@@ -19,7 +19,6 @@ AttackSound "weapons/gswing"	//for melee
 	{
 	Spawn:
 		MSMN AB 10 A_Look
-		TNT1 A 0 A_GiveInventory("BlueArmor",1)		//R19 added
 		Loop
 	See:
 		MSMN A 3 A_Metal
@@ -208,7 +207,6 @@ Tag "Eradicator"
 	{
 	Spawn:
 		BSGI AB 10 A_Look
-		TNT1 A 0 A_GiveInventory("BlueArmor",1)
 		Loop
 	See:
 		BSGI A 3 A_Metal

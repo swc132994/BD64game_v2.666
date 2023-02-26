@@ -28,7 +28,6 @@ DropItem "DemonEssenceSpawner"		//R31 added
 	{
 	Spawn:
 		HEHR BA 10 A_Look
-		TNT1 A 0 A_GiveInventory("GreenArmor",1)	//R19 added	//R20 was BlueArmor
 		Loop
 	See:
 		HEHR AABBCCDD 2 A_Chase
@@ -169,7 +168,6 @@ DropItem "None"
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		HH1H B 8 A_FaceTarget
 		HH1H A 8 A_FaceTarget
-		TNT1 A 0 //A_Pain
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		HH1H C 8 A_FaceTarget
 		HH1H A 8 A_FaceTarget
@@ -177,7 +175,6 @@ DropItem "None"
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		HH1H B 8 A_FaceTarget
 		HH1H A 8 A_FaceTarget
-		TNT1 A 0 //A_Pain
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		HH1H C 8 A_FaceTarget
 		HH1H A 8 A_FaceTarget
@@ -185,7 +182,6 @@ DropItem "None"
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		HH1H B 6 A_FaceTarget
 		HH1H A 8 A_FaceTarget
-		TNT1 A 0 //A_Pain
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		HH1H C 8 A_FaceTarget
 		HH1H A 8 A_FaceTarget
@@ -193,7 +189,6 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		HH1H B 8
 		HH1H A 8 A_FaceTarget
-		TNT1 A 0 //A_Pain
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		HH1H C 8
 		HH1H A 8 A_FaceTarget
@@ -201,7 +196,6 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		HH1H B 8
 		HH1H A 8 A_FaceTarget
-		TNT1 A 0 //A_Pain
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		HH1H A 8
 		Goto Death

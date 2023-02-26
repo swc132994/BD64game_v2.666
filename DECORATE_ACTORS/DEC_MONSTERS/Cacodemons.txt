@@ -19,7 +19,6 @@ MeleeRange 60 //default 44
 	{
 	Spawn:
 		HEAD ABCD 5 A_Look
-		TNT1 A 0 A_GiveInventory("GreenArmor",1)	//R19 added	//R20 was BlueArmor
 		Loop
 	See:
 		HEAD AABBCCDD 2 A_Chase
@@ -438,7 +437,6 @@ Scale 0.75
 	{
 	Spawn:
 		HEAD ABCD 15 A_Look
-		TNT1 A 0 A_GiveInventory("GreenArmor",1)	//R19//R20 was BlueArmor
 		Loop
 	See:
 		HEAD AABBCCDD 3 A_Chase
@@ -510,7 +508,6 @@ DropItem "DemonEssenceSpawner"	//R31 added
 	{
 	Spawn:
 		HEA2 ABCD 8 A_Look
-		TNT1 A 0 A_GiveInventory("GreenArmor",1)	//R19//R20 was BlueArmor
 		Loop
 	See:
 		HEA2 AABBCCDD 3 A_Chase("Melee","Missile",CHF_FASTCHASE)
