@@ -4,8 +4,8 @@ Scale 1
 Health 2000
 Speed 8
 FastSpeed 12
-Height 85
-Radius 31
+Height 75
+Radius 25
 PainChance 15
 Mass 1200
 SeeSound "64Bruiser/sight"
@@ -45,10 +45,12 @@ MONSTER
 		Goto See
 	Missile:
 		TNT1 A 0 A_JumpIfCloser(320,"ChargeStart")
+		TNT1 A 0 A_PlaySound("64Bruiser/raiseguns",CHAN_AUTO)
 		BOS3 EF 9 A_FaceTarget
 		BOS3 G 8 BRIGHT A_CustomMissile("64BelphegorBall",60,0)
 		Goto See
 	ChargeStart:
+		TNT1 A 0 A_PlaySound("KICK",CHAN_AUTO)
 		TNT1 A 0 A_JumpIfCloser(90,"ChargeStop")
 		TNT1 A 0 A_Chase
 		BOS3 OOO 1 A_Chase
@@ -116,7 +118,6 @@ MONSTER
 		TNT1 A 0 ThrustThingZ(0,50,0,0)
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
-		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		TNT1 A 0 A_Jump(128,3)
 		BPTG A 2 A_ChangeFlag("THRUACTORS",1)
 		BPTG A 2 A_CheckFloor("LANDAFTERXDEATH1")
@@ -141,7 +142,6 @@ MONSTER
 		TNT1 A 0 ThrustThingZ(0,75,0,0)
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
-		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		TNT1 A 0 A_Jump(128,3)
 		BPTG A 2 A_ChangeFlag("THRUACTORS",1)
 		BPTG A 2 A_CheckFloor("LANDAFTERXDEATH1")
@@ -153,12 +153,14 @@ MONSTER
 		BPTG B 1 A_Stop
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
 		TNT1 A 0 A_SpawnItem("GrowingBloodPoolGreen")
+		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		BPTG B -1 A_BossDeath
 		Stop
 	LandAfterXDeath2:
 		BPTG D 1 A_Stop
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
 		TNT1 A 0 A_SpawnItem("GrowingBloodPoolGreen")
+		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		BPTG D -1 A_BossDeath
 		Stop
 	Crush:
