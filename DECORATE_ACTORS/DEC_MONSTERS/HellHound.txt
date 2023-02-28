@@ -1,5 +1,5 @@
 //R31 added extra deaths
-Actor 64HellHound : Demon Replaces ArchVile 19116
+Actor 64HellHound : Demon 19116
 {
 SpawnID 176		//R31 added ID
 Scale 0.8		//R31 was 0.9

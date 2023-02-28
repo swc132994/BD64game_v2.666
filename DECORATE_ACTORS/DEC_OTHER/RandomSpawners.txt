@@ -166,6 +166,39 @@ MONSTER
 	}
 }
 
+Actor Hound_Chooser	19125	//Used for direct hound placement on maps. Tag 666 fix (A_KillMaster must be called from spawned monster)
+{
+SpawnID 185
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++BOSSDEATH
+	States
+	{
+	Death:
+	XDeath:
+		TNT1 A 0 A_BossDeath
+		Stop
+	Spawn:
+		GECH A 0 NoDelay A_NoBlocking
+		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnArachnotron")	//if 1 goto arachnotron
+		TNT1 A 0 A_JumpIf(CallACS("HoundChooserACS")==1,"HoundGEC")//GEC
+		TNT1 A 0 A_JumpIf(CallACS("HoundChooserACS")==2,"HoundCerb")//CERB
+		TNT1 A -1 A_SpawnItemEx("64Hellhound",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	HoundCerb:
+		TNT1 A -1 A_SpawnItemEx("64CHellHound",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	HoundGEC:
+		TNT1 A -1 A_SpawnItemEx("64HellHoundGEC",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnArachnotron:
+		TNT1 A -1 A_SpawnItemEx("64Arachnotron",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
 Actor Hellhound_Random Replaces BaronOfHell		//08-08-22 revised to spawn from baron & combined hound chooser & tag 666 fix (A_KillMaster must be called from spawned monster)
 {
 Scale 0.9
@@ -186,7 +219,9 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==2,"SpawnBelp")	//Belphegor only
 		TNT1 A 0 A_Jump(39,"SpawnBelp")		//(15%)
 		TNT1 A 0 A_Jump(51,"HoundChooser")	//(20%)
-		Goto SpawnBaron
+	SpawnBaron:
+		TNT1 A -1 A_SpawnItemEx("64BaronOfHell",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop		
 	HoundChooser:
 		TNT1 A 0 A_JumpIf(CallACS("HoundChooserACS")==1,"HoundGEC")//GEC
 		TNT1 A 0 A_JumpIf(CallACS("HoundChooserACS")==2,"HoundCerb")//CERB
@@ -197,9 +232,6 @@ MONSTER
 		Stop
 	HoundGEC:
 		TNT1 A -1 A_SpawnItemEx("64HellHoundGEC",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop
-	SpawnBaron:
-		TNT1 A -1 A_SpawnItemEx("64BaronOfHell",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	SpawnBelp:
 		TNT1 A -1 A_SpawnItemEx("64Belphegor",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -257,7 +289,7 @@ MONSTER
 	}
 }
 
-Actor D64_Archvile_Replacer Replaces Archvile	//08-08-22 combined hound chooser & archvile replacer
+/*Actor D64_Archvile_Replacer Replaces Archvile	//08-08-22 combined hound chooser & archvile replacer
 {
 Scale 0.7
 MONSTER
@@ -283,6 +315,25 @@ MONSTER
 		Stop
 	SpawnArachnotron:
 		TNT1 A 0 A_SpawnItemEx("64Arachnotron",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}*/
+
+Actor D64_Archvile_Replacer Replaces Archvile
+{
+Scale 0.7
+MONSTER
+-SOLID
+-COUNTKILL
+	States
+	{
+	Spawn:
+		VILE A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnFatso")	//was 1481	//if 1 goto fatso
+	SpawnArchvile:
+		TNT1 A 0 A_SpawnItemEx("64Archvile",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnFatso:
+		TNT1 A 0 A_SpawnItemEx("64Fatso",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	}
 }

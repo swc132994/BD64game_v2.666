@@ -152,14 +152,14 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 {
 	Title "Other Monster Options"
+//		StaticText " "
+//		StaticText "Option to restore the Archvile from the Hellhound",1
+//		StaticText " "
+//	Option "Replace all Hellhounds with Archviles =","ArchvileRestorerCvar","YesOrNo"	//r31 was DynamicSpawnCvar2
 		StaticText " "
-		StaticText "Option to restore the Archvile from the Hellhound",1
+	StaticText "Option to ONLY show D64 monsters (no cut monsters)",1
 		StaticText " "
-	Option "Replace all Hellhounds with Archviles =","ArchvileRestorerCvar","YesOrNo"	//r31 was DynamicSpawnCvar2
-		StaticText " "
-	StaticText "Option to only show D64 monsters (no cut monsters)",1
-		StaticText " "
-	Option "Remove all Revenants, Hellhounds & Masterminds =","D64MonstersOnlyCvar","YesOrNo"	//R31 was DynamicSpawnCvar4
+	Option "Remove all Revenants, Hellhounds, Archviles & Masterminds =","D64MonstersOnlyCvar","YesOrNo"	//R31 was DynamicSpawnCvar4
 		StaticText " "
 		StaticText "Options to switch to alternate spawns for the Revenant and Hellhound",1
 		StaticText " "

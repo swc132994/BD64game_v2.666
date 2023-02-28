@@ -1,4 +1,4 @@
-Actor 64Archvile : Archvile
+Actor 64Archvile : Archvile Replaces Archvile
 {
 Height 70
 Scale 0.7

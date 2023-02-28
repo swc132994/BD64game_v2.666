@@ -188,8 +188,8 @@ Player.WeaponSlot 9,"Lasergun"
 		Loop
 	Pain:
 		PLAY G 4			//R31 WAS GMAN H
-		NULL A 0 A_JumpIfInventory("ScreenFX",1,2)
-        NULL A 0 ACS_Execute(530, 0, 0, 0, 0)
+		TNT1 A 0 A_JumpIfInventory("ScreenFX",1,2)
+        TNT1 A 0 ACS_Execute(530, 0, 0, 0, 0)
 		PLAY G 4 A_Pain		//R31 WAS GMAN H
 		Goto Spawn	
 	Death:
@@ -464,8 +464,8 @@ Player.WeaponSlot 9,"LasergunTactical"
 		Goto Spawn+1
 	Pain:
 		PLAY G 4			//R31 WAS GMAN H
-		NULL A 0 A_JumpIfInventory("ScreenFX",1,2)
-        NULL A 0 ACS_Execute(530, 0, 0, 0, 0)		
+		TNT1 A 0 A_JumpIfInventory("ScreenFX",1,2)
+        TNT1 A 0 ACS_Execute(530, 0, 0, 0, 0)		
 		PLAY G 4 A_Pain		//R31 WAS GMAN H
 		Goto Spawn		
 	Death:
@@ -696,8 +696,8 @@ Player.WeaponSlot 9,"LasergunTactical"
 		Loop
 	Pain:
 		PLAY G 4			//R31 WAS GMAN H
-		NULL A 0 A_JumpIfInventory("ScreenFX",1,2)
-        NULL A 0 ACS_Execute(530, 0, 0, 0, 0)		
+		TNT1 A 0 A_JumpIfInventory("ScreenFX",1,2)
+        TNT1 A 0 ACS_Execute(530, 0, 0, 0, 0)		
 		PLAY G 4 A_Pain		//R31 WAS GMAN H
 		Goto Spawn	
 	Death:

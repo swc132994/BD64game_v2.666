@@ -11,6 +11,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 DropItem "DemonEssenceLargeSpawner"		//R31 added
 DropItem "Soulsphere",32				//R31 added
 +NOBLOODDECALS
++QUICKTORETALIATE
 	states
 	{
 	Spawn:
@@ -113,7 +114,8 @@ Tag "Annihilator"		//R31 added
 DropItem "DemonEssenceLargeSpawner"		//R31 added
 DropItem "Soulsphere",32				//R31 added
 +NOBLOODDECALS
-States
++QUICKTORETALIATE
+	States
 	{
 	Spawn:
 		A64A AB 10 A_Look

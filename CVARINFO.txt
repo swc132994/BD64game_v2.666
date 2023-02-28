@@ -7,7 +7,7 @@ server int isrunningzandronum = 0;			//R30.8 WAS 1
 
 //V2.5 VARIABLES BELOW
 server int WpnPower_Spawner_Cvar = 0;		//R20 UNMAKER POWERUPS	//r31 was DynamicSpawnCvar
-server int ArchvileRestorerCvar = 0;		//R20 REPLACE HELLHOUND WITH ARCHVILE	//r31 was DynamicSpawnCvar2
+//server int ArchvileRestorerCvar = 0;		//R20 REPLACE HELLHOUND WITH ARCHVILE	//r31 was DynamicSpawnCvar2
 server int D64MonstersOnlyCvar = 0;			//R26 D64 MONSTERS ONLY		//R31 was DynamicSpawnCvar4
 server int NImp_Spawner_Cvar = 0;			//R26 NIGHTMARE IMP REPLACE IMP
 server int NSpectre_Spawner_Cvar = 0;		//R26 NIGHTMARE SPECTRE	REPLACE SPECTRE

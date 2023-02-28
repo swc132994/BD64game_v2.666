@@ -1,4 +1,4 @@
-//R31 Actor now old hellhound
+//R31 Actor now Cerberus hellhound
 Actor 64CHellHound : Demon 19115
 {
 SpawnID 175		//R31 added ID

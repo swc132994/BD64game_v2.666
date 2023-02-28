@@ -171,10 +171,10 @@ script "MotherDemonRandom" (void)												//R31 Replaces 1495
 SetResultValue(GetCVar("Motherdemon_Spawner_Cvar"));
 }
 
-script "ArchvileRestorer" (void)												//R31 Replaces 1479
+/*script "ArchvileRestorer" (void)												//R31 Replaces 1479
 {
 SetResultValue(GetCVar("ArchvileRestorerCvar"));
-}
+}*/
 
 script "HoundChooserACS" (void)													//R31 new choice between old and new hellhound
 {
