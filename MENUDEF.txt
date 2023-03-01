@@ -152,14 +152,11 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 {
 	Title "Other Monster Options"
-//		StaticText " "
-//		StaticText "Option to restore the Archvile from the Hellhound",1
-//		StaticText " "
-//	Option "Replace all Hellhounds with Archviles =","ArchvileRestorerCvar","YesOrNo"	//r31 was DynamicSpawnCvar2
 		StaticText " "
-	StaticText "Option to ONLY show D64 monsters (no cut monsters)",1
+	StaticText "Option to ONLY spawn Doom 64 monsters i.e. no cut monsters.",1
+	StaticText "(need to manually disable random spawners)",1
 		StaticText " "
-	Option "Remove all Revenants, Hellhounds, Archviles & Masterminds =","D64MonstersOnlyCvar","YesOrNo"	//R31 was DynamicSpawnCvar4
+	Option "Spawn Doom 64 Vanilla monsters ONLY =","D64MonstersOnlyCvar","YesOrNo"	//R31 was DynamicSpawnCvar4
 		StaticText " "
 		StaticText "Options to switch to alternate spawns for the Revenant and Hellhound",1
 		StaticText " "
@@ -327,8 +324,8 @@ OptionValue "NImp_Spawner_Value"
 
 OptionValue "SSGZombieRandom_Value"
 {
-	0,"Shotgun Guy Only"
-	1,"SSG Guy Only"
+	0,"ShotgunGuy Only"
+	1,"SSGGuy Only"
 	2,"Random"
 }
 
