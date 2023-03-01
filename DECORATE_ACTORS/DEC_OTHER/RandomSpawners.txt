@@ -172,7 +172,8 @@ MONSTER
 States
 {
 	Spawn:
-		SAR2 A 0 NoDelay A_JumpIf(CallACS("NSpectreRandom")==0,"SpawnSpectre")
+		SAR2 A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnSpectre")	//if D64 monsters only enabled spawn spectre
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==0,"SpawnSpectre")
 		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==1,"SpawnNightSpectre")
 		TNT1 A 0 A_Jump(39,"SpawnNightSpectre") //(15%)
 	SpawnSpectre:
@@ -193,7 +194,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		HEAD A 0 NoDelay A_JumpIf(CallACS("NCacoRandom")==0,"SpawnCacodemon")
+		HEAD A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnCacodemon")	//if D64 monsters only enabled spawn cacodemon
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==0,"SpawnCacodemon")
 		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==1,"SpawnNightCacodemon")
 		TNT1 A 0 A_Jump(51,"SpawnNightCacodemon") //(20%)
 	SpawnCacodemon:
@@ -253,6 +255,7 @@ MONSTER
 		Stop
 	Spawn:
 		BOSS A 0 NoDelay A_NoBlocking
+		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnBaron")	//if D64 monsters only enabled spawn Baron
 		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==0,"SpawnBaron")	//Baron only
 		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==1,"HoundChooser")	//Hound Chooser
 		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==2,"SpawnBelp")	//Belphegor only
@@ -293,6 +296,7 @@ MONSTER
 		Stop
 	Spawn:
 		BOS2 A 0 NoDelay A_NoBlocking
+		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnHellKnight")	//if D64 monsters only enabled spawn Hellknight
 		TNT1 A 0 A_JumpIf(CallACS("KnightmareRandom")==0,"SpawnHellKnight")
 		TNT1 A 0 A_JumpIf(CallACS("KnightmareRandom")==1,"SpawnKnightmare")
 		TNT1 A 0 A_Jump(39,"SpawnKnightmare") //(15%)
@@ -320,6 +324,7 @@ MONSTER
 		Stop
 	Spawn:
 		CYBR A 0 NoDelay A_NoBlocking
+		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnCyberdemon")	//if D64 monsters only enabled spawn cyberdemon
 		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==0,"SpawnCyberdemon")
 		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==1,"SpawnAnnihilator")
 		TNT1 A 0 A_Jump(64,"SpawnAnnihilator") //(25%)
@@ -423,6 +428,7 @@ MONSTER
 		Stop
 	Spawn:
 		BSPI A 0 NoDelay A_NoBlocking
+		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnArachnotron")	//if D64 monsters only enabled spawn arachnotron
 		TNT1 A 0 A_JumpIf(CallACS("NightCrawlerRandomACS")==0,"SpawnArachnotron")
 		TNT1 A 0 A_JumpIf(CallACS("NightCrawlerRandomACS")==1,"SpawnNightCrawler")
 		TNT1 A 0 A_Jump(51,"SpawnNightCrawler") //(20%)
@@ -444,7 +450,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		SPOS A 0 NoDelay A_JumpIf(CallACS("SSGZombieRandomACS")==0,"SpawnShotgunGuy")
+		SPOS A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnShotgunGuy")	//if D64 monsters only enabled spawn shotgunguy
+		TNT1 A 0 A_JumpIf(CallACS("SSGZombieRandomACS")==0,"SpawnShotgunGuy")
 		TNT1 A 0 A_JumpIf(CallACS("SSGZombieRandomACS")==1,"SpawnSSGGuy")
 		TNT1 A 0 A_Jump(51,"SpawnSSGGuy") //(20%)
 	SpawnShotgunGuy:
@@ -465,7 +472,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		PSSS B 0 NoDelay A_JumpIf(CallACS("ZMarineRandomACS")==0,"SpawnZombieMan")
+		PSSS B 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnZombieMan")	//if D64 monsters only enabled spawn zombieman
+		TNT1 A 0 A_JumpIf(CallACS("ZMarineRandomACS")==0,"SpawnZombieMan")
 		TNT1 A 0 A_JumpIf(CallACS("ZMarineRandomACS")==1,"SpawnZombieMarine")
 		TNT1 A 0 A_Jump(38,"SpawnZombieMarine") //(15%)
 	SpawnZombieMan:
@@ -511,7 +519,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		SARG A 0 NoDelay A_JumpIf(CallACS("AcidDemonRandomACS")==0,"SpawnPinky")
+		SARG A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnPinky")	//if D64 monsters only enabled spawn pinky demon
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==0,"SpawnPinky")
 		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==1,"SpawnAcidDemon")
 		TNT1 A 0 A_Jump(39,"SpawnAcidDemon") //(15%)
 	SpawnPinky:
@@ -532,7 +541,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		SKUL A 0 NoDelay A_JumpIf(CallACS("StalkerRandomACS")==0,"SpawnLostSoul")
+		SKUL A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnLostSoul")	//if D64 monsters only enabled spawn pinky lost soul
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==0,"SpawnLostSoul")
 		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==1,"SpawnStalker")
 		TNT1 A 0 A_Jump(51,"SpawnStalker") //(20%)
 	SpawnLostSoul:
@@ -559,6 +569,7 @@ MONSTER
 		Stop
 	Spawn:
 		FATT A 0 NoDelay A_NoBlocking
+		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnFatso")	//if D64 monsters only enabled spawn fatso
 		TNT1 A 0 A_JumpIf(CallACS("BruiserRandom_ACS")==0,"SpawnFatso")
 		TNT1 A 0 A_JumpIf(CallACS("BruiserRandom_ACS")==1,"SpawnBruiser")
 		TNT1 A 0 A_Jump(51,"SpawnBruiser") //(20%)

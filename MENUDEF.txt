@@ -132,6 +132,7 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 		StaticText " "
 	StaticText "These options allow you to set monster replacements for nightmare and",1
 		StaticText "outcast monsters,or set to appear randomly",1
+		StaticText "(Enabling the D64 monsters only option will override these settings)",1
 		StaticText " "
 	Option "Randomly replace Shotgun Zombies with SSG Zombies =","SSGZombieRandom_Cvar","SSGZombieRandom_Value"		//R31 was YesOrNo
 	Option "Randomly replace ZombieMen with Zombie Marines =","ZMarineRandom_Cvar","ZMarineRandom_Value"		//R31 was YesOrNo
@@ -154,7 +155,7 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 	Title "Other Monster Options"
 		StaticText " "
 	StaticText "Option to ONLY spawn Doom 64 monsters i.e. no cut monsters.",1
-	StaticText "(need to manually disable random spawners)",1
+		StaticText "(Enabling this option will override all alternate monster spawns)",1
 		StaticText " "
 	Option "Spawn Doom 64 Vanilla monsters ONLY =","D64MonstersOnlyCvar","YesOrNo"	//R31 was DynamicSpawnCvar4
 		StaticText " "
@@ -164,6 +165,7 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 	Option "Revert back to Tchernobog Revenant =","RevenantChooserCvar","YesOrNo"
 		StaticText " "
 		StaticText "Option to allow pain elementals to randomly spit stalkers",1
+		StaticText "(Enabling the D64 monsters only option will override these setting)",1
 		StaticText " "
 	Option "Allow Pain Elemental Stalker attack =","PainStalkerRandom_Cvar","YesOrNo"
 }
