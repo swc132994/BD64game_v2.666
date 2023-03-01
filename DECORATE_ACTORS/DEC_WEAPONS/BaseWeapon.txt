@@ -59,9 +59,9 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	//
 		KICK BCD 1
 		TNT1 A 0 A_FireCustomMissile("KickAttack",0,0,0,-7)
 		TNT1 A 0 A_RadiusThrust(4000,70,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
-		KICK H 5
-		KICK I 1
-		KICK GFEDCBA 1
+		KICK I 5
+		KICK HGFED 1
+		KICK CBA 1
 		TNT1 A 0 SetPlayerProperty(0,0,0)
 		Goto GetReady
 	BerserkerKick:
@@ -70,9 +70,9 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	//
 		KICK BCD 1
 		TNT1 A 0 A_FireCustomMissile("SuperKickAttack",0,0,0,-7)
 		TNT1 A 0 A_RadiusThrust(8000,70,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
-		KICK H 5
-		KICK I 1
-		KICK GFEDCBA 1
+		KICK I 5
+		KICK HGFED 1
+		KICK CBA 1
 		TNT1 A 0 SetPlayerProperty(0,0,0)
 		Goto GetReady
 	AirKick:
