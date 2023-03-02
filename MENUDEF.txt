@@ -157,7 +157,7 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 	StaticText "Option to ONLY spawn Doom 64 monsters i.e. no cut monsters.",1
 		StaticText "(Enabling this option will override all alternate monster spawns)",1
 		StaticText " "
-	Option "Spawn Doom 64 Vanilla monsters ONLY =","D64MonstersOnlyCvar","YesOrNo"	//R31 was DynamicSpawnCvar4
+	Option "Spawn Doom 64 vanilla monsters ONLY =","D64MonstersOnlyCvar","YesOrNo"	//R31 was DynamicSpawnCvar4
 		StaticText " "
 		StaticText "Options to switch to alternate spawns for the Revenant and Hellhound",1
 		StaticText " "
@@ -186,6 +186,10 @@ OptionMenu "BD64MapOptions" //R31 added
 OptionMenu "BrutalDoom64Item/WeaponOptions" //R31 added
 {
 	Title "Item/Weapon Options"
+	StaticText "Option to ONLY spawn Doom 64 weapons i.e. no cut or extra weapons.",1
+		StaticText "(Enabling this option will override all alternate weapons spawns/drops)",1
+		StaticText " "
+	Option "Spawn Doom 64 vanilla weapons ONLY =","D64WeaponsOnlyCvar","YesOrNo"
 		StaticText " "
 		StaticText "These options allow changing the skin for the Rifle and Laser Gun,",1
 		StaticText "as well as D64 vanilla style firing (Only for Classical).",1

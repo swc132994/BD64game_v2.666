@@ -8,6 +8,7 @@ server int isrunningzandronum = 0;			//R30.8 WAS 1
 //V2.5 VARIABLES BELOW
 server int WpnPower_Spawner_Cvar = 0;		//R20 UNMAKER POWERUPS	//r31 was DynamicSpawnCvar
 server int D64MonstersOnlyCvar = 0;			//R26 D64 MONSTERS ONLY		//R31 was DynamicSpawnCvar4
+server int D64WeaponsOnlyCvar = 0;
 server int NImp_Spawner_Cvar = 0;			//R26 NIGHTMARE IMP REPLACE IMP
 server int NSpectre_Spawner_Cvar = 0;		//R26 NIGHTMARE SPECTRE	REPLACE SPECTRE
 server int NCaco_Spawner_Cvar = 0;			//R26 NIGHTMARE CACO	REPLACE CACO
@@ -49,4 +50,5 @@ server bool WeaponsWarmUpCvar = TRUE;		//Weapons Warm Up Animation
 server bool AlphaPickupCvar = FALSE;		//Pickup Sprites from D64 Alpha Build
 server int bd64_ScreenFX = 0;				//ScreenFX
 server int bd64_BloodTrail = 0;				//Bloodtrail
+
 //Leave blank end line to prevent UDB error warning

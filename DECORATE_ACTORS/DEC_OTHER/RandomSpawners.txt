@@ -1,13 +1,13 @@
 //R20 Added Project Nightmare monsters through optional spawners
 
-//Option to replace plasma rifle with lasergun
-Actor Dyn_PlasmaRifleReplacer Replaces Plasmarifle
+Actor Dyn_PlasmaRifleReplacer Replaces Plasmarifle	//Option to replace plasma rifle with gauss cannon
 {
 Scale 0.82
 	States
 	{
 	Spawn:
-		PLAS A 0 NoDelay A_JumpIf(CallACS("GaussCannonRandom")==0,"SpawnPlasmaRifle")
+		PLAS A 0 NoDelay A_JumpIf(CallACS("D64WeaponsOnlyReplacer")==1,"SpawnPlasmaRifle")	//if D64 weapons only enabled spawn plasma rifle
+		TNT1 A 0 A_JumpIf(CallACS("GaussCannonRandom")==0,"SpawnPlasmaRifle")
 		TNT1 A 0 A_JumpIf(CallACS("GaussCannonRandom")==1,"SpawnGaussCannon")
 		TNT1 A 0 A_Jump(64,"SpawnGaussCannon") //(25%)
 	SpawnPlasmaRifle:
@@ -19,8 +19,7 @@ Scale 0.82
 	}
 }
 
-//Option to replace BFG with unmaker
-Actor Dyn_BFGReplacer Replaces BFG9000
+Actor Dyn_BFGReplacer Replaces BFG9000	//Option to replace BFG with unmaker or lasergun
 {
 Scale 0.9
 	States
@@ -38,6 +37,47 @@ Scale 0.9
 		Stop
 	SpawnLasergun:
 		TNT1 A 0 A_SpawnItemEx("LasergunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
+Actor Dyn_ChaingunReplacer Replaces Chaingun //R31 Added
+{
+Scale 0.82
+	States
+	{
+	Spawn:
+		MGUN A 0 NoDelay A_JumpIf(CallACS("D64WeaponsOnlyReplacer")==1,"SpawnChaingun")	//if D64 weapons only enabled spawn Chaingun
+		TNT1 A 0 A_JumpIf(CallACS("ChaingunRandomACS")==0,"SpawnChaingun")
+		TNT1 A 0 A_JumpIf(CallACS("ChaingunRandomACS")==1,"SpawnRifle")
+		TNT1 A 0 A_JumpIf(CallACS("ChaingunRandomACS")==2,"SpawnSMG")
+		TNT1 A 0 A_Jump(64,"SpawnSMG","SpawnRifle") //(25%)
+	SpawnChaingun:
+		TNT1 A 0 A_SpawnItemEx("ChaingunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnRifle:	
+		TNT1 A 0 A_SpawnItemEx("RifleSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnSMG:
+		TNT1 A 0 A_SpawnItemEx("SMGSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
+Actor SSG_Shotgun_Replacer Replaces Shotgun		//Option to replace shotgun with SSG for Doom1
+{
+Scale 0.87
+	States
+	{
+	Spawn:
+		SHOT A 0 NoDelay A_JumpIf(CallACS("SSGinDoom1")==0,"SpawnShotgun")
+		TNT1 A 0 A_JumpIf(CallACS("SSGinDoom1")==1,"SpawnSSG")
+		TNT1 A 0 A_Jump(64,"SpawnSSG") //(25%)
+	SpawnShotgun:
+		TNT1 A 0 A_SpawnItemEx("Shotgunspawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnSSG:
+		TNT1 A 0 A_SpawnItemEx("SuperShotgunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	}
 }
@@ -96,47 +136,6 @@ Scale 0.7
 	SpawnDemonKey:
 		TNT1 A 0 A_SpawnItemEx("64Soulsphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		TNT1 A 0 A_SpawnItem("WpnPower3")
-		Stop
-	}
-}
-
-//Option to replace shotgun with SSG for Doom1
-Actor SSG_Shotgun_Replacer Replaces Shotgun		//r31 new
-{
-Scale 0.87
-	States
-	{
-	Spawn:
-		SHOT A 0 NoDelay A_JumpIf(CallACS("SSGinDoom1")==0,"SpawnShotgun")
-		TNT1 A 0 A_JumpIf(CallACS("SSGinDoom1")==1,"SpawnSSG")
-		TNT1 A 0 A_Jump(64,"SpawnSSG") //(25%)
-	SpawnShotgun:
-		TNT1 A 0 A_SpawnItemEx("Shotgunspawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop
-	SpawnSSG:
-		TNT1 A 0 A_SpawnItemEx("SuperShotgunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop
-	}
-}
-
-Actor Dyn_ChaingunReplacer Replaces Chaingun //R31 Added
-{
-Scale 0.82
-	States
-	{
-	Spawn:
-		MGUN A 0 NoDelay A_JumpIf(CallACS("ChaingunRandomACS")==0,"SpawnChaingun")
-		TNT1 A 0 A_JumpIf(CallACS("ChaingunRandomACS")==1,"SpawnRifle")
-		TNT1 A 0 A_JumpIf(CallACS("ChaingunRandomACS")==2,"SpawnSMG")
-		TNT1 A 0 A_Jump(64,"SpawnSMG","SpawnRifle") //(25%)
-	SpawnChaingun:
-		TNT1 A 0 A_SpawnItemEx("ChaingunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop
-	SpawnRifle:	
-		TNT1 A 0 A_SpawnItemEx("RifleSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop			
-	SpawnSMG:
-		TNT1 A 0 A_SpawnItemEx("SMGSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	}
 }
@@ -263,7 +262,7 @@ MONSTER
 		TNT1 A 0 A_Jump(51,"HoundChooser")	//(20%)
 	SpawnBaron:
 		TNT1 A -1 A_SpawnItemEx("64BaronOfHell",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop		
+		Stop
 	HoundChooser:
 		TNT1 A 0 A_JumpIf(CallACS("HoundChooserACS")==1,"HoundGEC")
 		TNT1 A 0 A_JumpIf(CallACS("HoundChooserACS")==2,"HoundCerb")

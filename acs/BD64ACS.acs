@@ -186,6 +186,11 @@ script "D64MonstersOnlyReplacer" (void)											//R31 Replaces 1481
 SetResultValue(GetCVar("D64MonstersOnlyCvar"));
 }
 
+script "D64WeaponsOnlyReplacer" (void)
+{
+SetResultValue(GetCVar("D64WeaponsOnlyCvar"));
+}
+
 script "Light_Fog_Remover" (void)												//R31 Replaces 17002
 {
 SetResultValue(GetCVar("LFog_Cvar"));

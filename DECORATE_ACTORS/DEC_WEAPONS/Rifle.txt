@@ -6,7 +6,8 @@ Inventory.PickupSound "WPICK"
 	States
 	{
 	Spawn:
-		ARSD A 0 NoDelay A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
+		ARSD A 0 NoDelay A_JumpIf(CallACS("D64WeaponsOnlyReplacer")==1,"SpawnChaingun")	//D64 weapon only
+		ARSD A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)	//R31 Alternative Rifle Skin
 		RIFD A 0
 		"####" A 1
 		Loop
@@ -17,6 +18,9 @@ Inventory.PickupSound "WPICK"
 		Stop
 	Pickup2:
 		TNT1 A 0 A_GiveInventory("64RifleTactical",1)
+		Stop
+	SpawnChaingun:
+		TNT1 A 0 A_SpawnItemEx("ChaingunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	}
 }
