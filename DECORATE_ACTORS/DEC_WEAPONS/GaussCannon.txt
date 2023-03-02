@@ -203,6 +203,7 @@ Decal BigScorch
 	AltFire:
 		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"NoAim")
 		TNT1 A 0 A_GiveInventory("Zoomed",1)
+		GCSZ ABCD 1		
 		GCSC ABCDEFGHI 1
 		TNT1 A 0 A_ZoomFactor(10.0)
 		Goto Ready2
@@ -211,6 +212,7 @@ Decal BigScorch
 		TNT1 A 0 A_TakeInventory("HasPLasmaWeapon",1)
 		TNT1 A 0 A_ZoomFactor(1.0)
 		GCSC IHGFEDCBA 1
+		GCSZ DCBA 1		
 		Goto Ready
 	Ready2:
 		TNT1 A 0 A_GiveInventory("HasPlasmaWeapon",1)
