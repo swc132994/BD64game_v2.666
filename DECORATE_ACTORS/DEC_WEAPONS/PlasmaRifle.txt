@@ -181,6 +181,7 @@ Tag "$TAG_PLASMARIFLE"
 		2LSG A 0
 		"####" ABC 2 A_WeaponReady(WRF_ALLOWRELOAD)					//R11 added (WRF_ALLOWRELOAD)	//r31 added frame C
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")		
 		Loop
 	NoAmmo:
 		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,"Ready")		//R31 added

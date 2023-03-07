@@ -180,6 +180,15 @@ Tag "$TAG_PISTOL"
 		"####" STU 1 A_WeaponReady
 		"####" DCBA 1 A_WeaponReady
 		Goto Ready
+	MineThrowFlash:
+		P1SS A 0 A_JumpIfInventory("IsSilencer",1,2)
+		PISS A 0
+		"####" DCBA 1
+		TNT1 A 35
+		P1SS D 0 A_JumpIfInventory("IsSilencer",1,2)
+		PISS D 0
+		"####" ABCD 1
+		Stop		
 	KickingFlash:	//r31 new kick animations
 		P1SI A 0 A_JumpIfInventory("IsSilencer",1,2)
 		PISI A 0
@@ -209,6 +218,7 @@ Tag "$TAG_PISTOL"
 		PISG A 0
 		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")		
 		Loop
 	Fire:
 		TNT1 A 0 A_JumpIfInventory("PistolAmmo",1,1)	//R24.2 WAS JUMP 2
