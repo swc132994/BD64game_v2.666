@@ -35,6 +35,42 @@ Tag "Proximity Mine"
 +INVENTORY.RESTRICTABSOLUTELY
 	States
 	{
+	KickingFlash:
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo", 1, 1)
+		Goto NoMinesKickingFlash
+		LMNK ABCD 1
+		LMNK E 8
+		LMNK DCBA 1
+		Stop
+	AirKickingFlash:
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo", 1, 1)
+		Goto NoMinesAirKickingFlash
+		LMNK ABCD 1
+		LMNK E 10
+		LMNK DCBA 1
+		Stop
+	SlideKickingStart:
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo", 1, 1)
+		Goto NoMinesSlideKickingStart	
+		LMNK ABCD 1
+		LMNK E 18
+	SlideKickingEnd:
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo", 1, 1)
+		Goto NoMinesSlideKickingEnd
+		LMNK E 6
+		LMNK DCBA 1
+		Stop	
+	NoMinesKickingFlash:
+		TNT1 A 16
+		Stop
+	NoMinesAirKickingFlash:
+		TNT1 A 18
+		Stop
+	NoMinesSlideKickingStart:
+		TNT1 A 22
+	NoMinesSlideKickingEnd:
+		TNT1 A 10
+		Stop
 	Spawn:
 		LMNE C -1
 		Stop
@@ -42,23 +78,59 @@ Tag "Proximity Mine"
 		TNT1 AAAAAAAAA 0 A_Raise
 		Goto SelectAnimation
 	SelectAnimation:
-		LMNE B 1
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo", 1, 1)
+		Goto NoMines	
+		LMNS ABCDE 1
 		Goto Ready
 	Deselect:
-		LMNE B 1
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo", 1, 1)
+		Goto DeselectNoMines
+		LMNS EDCBA 1
 		TNT1 A 1 A_Lower
 		Wait
+	DeselectNoMines:
+		TNT1 A 0 A_SetCrosshair(0)
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+		Wait	
 	v1Ready:
 	Ready:
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo", 1, 1)
+		Goto NoMines
 		LMNE B 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		Loop
+	NoMines:
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo", 1, "SelectAnimation")
+		TNT1 A 1 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		Goto Ready	
 	Fire:
-		LMNE B 3
-		TNT1 A 0 A_PlaySound("GRNTOSS")
-		LMNE BA 2
+		LMNF ABCD 1
+		LMNF D 1 Offset(0,33)
+		LMNF D 1 Offset(0,34)
+		LMNF D 1 Offset(0,35)
+		LMNF D 3 Offset(0,36)
+		LMNF D 1 Offset(0,35)
+		LMNF D 1 Offset(0,34)
+		LMNF D 1 Offset(0,33)
+		LMNF EFG 1
 		TNT1 A 0 A_FireCustomMissile("64ThrownProxMine",0,1,0,0,0,0)
-		Goto Ready
+		LMNF HIJKLMNOQ 1
+		TNT1 A 2
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo", 1, "SelectAnimation")
+		Goto NoMines
+	AltFire:
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo", 1, 1)
+		Goto NoMines
+		LMNE B 1 Offset(0,33)
+		LMNE B 1 Offset(0,34)
+		LMNE B 1 Offset(0,35)
+		LMNP ABCDE 1
+		TNT1 A 0 A_TakeInventory("64MineAmmo",1)
+		TNT1 A 0 A_SpawnItemEx("64GroundProxMine",10,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 2
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo", 1, "SelectAnimation")
+		Goto NoMines		
 	}
 }
 
