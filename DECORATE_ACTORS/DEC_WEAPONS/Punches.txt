@@ -97,6 +97,11 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 +WEAPON.NOALERT				//R9.1 restored //R1 added
 	States
 	{
+	MineThrowFlash:
+		PUN6 EFGH 1
+		TNT1 A 35
+		PUN6 ABCD 1
+		Stop	
 	KickingFlash:	//r31 new kick animations
 		PUN6 CBA 1
 		TNT1 A 10
@@ -117,20 +122,28 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 	v1Ready:
 	Ready: //R31 added ALLOWRELOAD
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		PUN1 A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")		
 		PUN1 LL 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")		
 		PUN1 MM 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")		
 		PUN1 NN 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")		
 		PUN1 OOO 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")		
 		PUN1 NN 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")		
 		PUN1 MM 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")		
 		PUN1 LL 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		Loop
 	Tired:

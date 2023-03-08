@@ -10,3 +10,7 @@ DefaultBind "Q" "kickem"
 Alias "Flashlightswitch" "PukeName ToggleFlashlight"
 AddMenuKey "Toggle Flashlight/Torch" "FlashlightSwitch"
 DefaultBind "F" "FlashlightSwitch"
+
+Alias "MineToss" "PukeName TossingMine"
+AddMenuKey "Toss Mine" "MineToss"
+DefaultBind "G" "MineToss"
