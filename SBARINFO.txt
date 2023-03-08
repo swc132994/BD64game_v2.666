@@ -92,7 +92,7 @@ statusbar normal
 			{
 			drawstring SMALLFONT,untranslated,"CL",15,169;
 			drawnumber 3,HUDFONT_DOOM,Red,ammo2,44,164;
-			drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;			
+			drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;
 			}
 
 		drawstring SMALLFONT,untranslated,"AMMO",38,191;
