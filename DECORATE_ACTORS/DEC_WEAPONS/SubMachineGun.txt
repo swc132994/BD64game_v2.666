@@ -2,7 +2,7 @@
 Actor SMGSpawner : CustomInventory 19121	//R31 added number
 {
 Scale 0.82
-Inventory.PickupMessage "You got an SMG!"
+Inventory.PickupMessage "You got the SMG!"
 Inventory.PickupSound "WPICK"
 	States
 	{

@@ -225,7 +225,7 @@ Scale 0.82
 
 
 
-Actor 64Backpack : Backpack// Replaces Backpack
+Actor 64BackpackGive : Backpack
 {
 Scale 0.82
 	States
@@ -241,7 +241,7 @@ Actor PistolSilencerPickup : Inventory
 inventory.maxamount 1
 }
 
-Actor BackPackUpgrade : CustomInventory Replaces Backpack
+Actor 64Backpack : CustomInventory Replaces Backpack
 {
 Game Doom
 Scale 0.82
@@ -253,15 +253,16 @@ Inventory.PickupMessage "$GOTBACKPACK"
 		BPAK A -1
 		Stop
 	Pickup:
-		TNT1 A 0 A_GiveInventory("64Backpack",1)
+		TNT1 A 0 A_GiveInventory("64BackpackGive",1)
+		TNT1 A 0 A_JumpIf(CallACS("D64WeaponsOnlyReplacer")==1,2)	//if D64 weapons only is enabled no proxy mine is collected
 		TNT1 A 0 A_GiveInventory("64ProximityMine",1)
 		TNT1 A 0 A_Jump(64,1)//25%
 		Stop
-		TNT1 A 0 A_JumpIfInventory("PistolSilencerPickup",1,"NoSilencer")
+		TNT1 A 0 A_JumpIfInventory("PistolSilencerPickup",1,"FinishPickup")
 		TNT1 A 0 A_GiveInventory("PistolSilencerPickup",1)
-		TNT1 A 0 A_Print("You found a pistol silencer in the backpack.")
+		TNT1 A 0 A_Print("You got a pistol silencer!")
 		Stop
-	NoSilencer:
+	FinishPickup:
 		TNT1 A 0
 		Stop
 	}

@@ -32,7 +32,7 @@ script "KickKeyPress" (VOID) NET		//TRIGGERED FROM KEYPRESS		//r31 was 301
 
 Script "TossingMine" (VOID) NET
 {
-	GiveInventory("TossMine", 1);
+	GiveInventory("TossMine",1);
 }
 
 #libdefine PLAYER_VIEWHEIGHT 50		//BD64 default player height

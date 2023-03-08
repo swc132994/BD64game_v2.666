@@ -89,7 +89,7 @@ Tactical Pistol - IDDQD_1337 (animation) & I'M (sprites)
 Alt Lasergun - IDDQD_1337 (animation)
 Alt Rifle - IDDQD_1337 (animation) & I'M (sprites)
 Tactical Shotgun Alt attack - IDDQD_1337 (animation) & I'M (sprites)
-Proximity Mine (Tactical and Modern) - Sprite rework by Craneo, Sounds from Brutal Hellfest by Gni. Orginally created by Capt. J and Ezequiel-TM's tripwire lasermine
+Proximity Mine (Tactical and Modern) - Sprite rework by Craneo, Animations extra sprites and decorate by IDDQD_1337. Sounds from Brutal Hellfest by Gni. Orginally created by Capt. J and Ezequiel-TM's tripwire lasermine
 
 New weapon kicking and slide kicking animations by IDDQD_1337
 
