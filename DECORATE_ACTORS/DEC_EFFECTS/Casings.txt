@@ -4,7 +4,7 @@ Speed 20
 PROJECTILE
 +NOCLIP
 +CLIENTSIDEONLY
-+ISMONSTER																		//R30.7 INFRARED
++ISMONSTER		//R30.7 INFRARED
 	States
 	{
 	Spawn:
@@ -39,7 +39,7 @@ ACTOR 50CaseSpawn
 	PROJECTILE
 	+NOCLIP
 	+CLIENTSIDEONLY
-	+ISMONSTER																	//R30.7 INFRARED
+	+ISMONSTER		//R30.7 INFRARED
 	States
 	{
 	Spawn:
@@ -54,7 +54,7 @@ Speed 20
 PROJECTILE
 +NOCLIP
 +CLIENTSIDEONLY
-+ISMONSTER																		//R30.7 NFRARED
++ISMONSTER		//R30.7 NFRARED
 	States
 	{
 	Spawn:
@@ -84,7 +84,7 @@ SeeSound "weapons/casing"
 +GHOST
 +FLOORCLIP
 +THRUACTORS
-+ISMONSTER																		//R30.7 NFRARED
++ISMONSTER		//R30.7 NFRARED
 +DOOMBOUNCE
 BounceFactor 0.3
 	States
@@ -168,7 +168,7 @@ SeeSound "weapons/shell"
 +FORCEXYBILLBOARD
 +NOTDMATCH
 +GHOST
-+ISMONSTER					//R30.7 INFRARED
++ISMONSTER		//R30.7 INFRARED
 +DOOMBOUNCE
 BounceFactor 0.3
 	States
@@ -219,8 +219,7 @@ SeeSound "weapons/largemagdrop"
 +FORCEXYBILLBOARD
 +NOTDMATCH
 +GHOST
-+ISMONSTER				//R30.7 INFRARED
-//+DOOMBOUNCE			//R31 REMOVED
++ISMONSTER		//R30.7 INFRARED
 	States
 	{
 	Spawn:
@@ -239,7 +238,7 @@ SeeSound "weapons/largemagdrop"
 	}
 }
 
-ACTOR EmptyPistolClip			//R30.10 ADDED	//R31 REDEFINED STATES
+ACTOR EmptyPistolClip		//R30.10 ADDED	//R31 REDEFINED STATES
 {
 Scale 1.01
 Height 2
@@ -259,7 +258,6 @@ SeeSound "weapons/largemagdrop"
 +NOTDMATCH
 +GHOST
 +ISMONSTER
-//+DOOMBOUNCE		//R31 REMOVED
 	States
 	{
 	Spawn:
@@ -299,7 +297,7 @@ SeeSound "weapons/barrelpain"
 +FORCEXYBILLBOARD
 +NOTDMATCH
 +GHOST
-+ISMONSTER						//R30.7 INFRARED
++ISMONSTER		//R30.7 INFRARED
 +DOOMBOUNCE
 	States
 	{
@@ -338,8 +336,7 @@ SeeSound "weapons/largemagdrop"
 +FORCEXYBILLBOARD
 +NOTDMATCH
 +GHOST
-+ISMONSTER						//R30.7 INFRARED
-//+DOOMBOUNCE	//R31 REMOVED
++ISMONSTER		//R30.7 INFRARED
 	States
 	{
 	Spawn:
@@ -364,7 +361,7 @@ Speed 20
 PROJECTILE
 +NOCLIP
 +CLIENTSIDEONLY
-+ISMONSTER						//R30.7 INFRARED
++ISMONSTER		//R30.7 INFRARED
 	States
 	{
 	Spawn:
@@ -388,7 +385,7 @@ ACTOR EmptyClipSpawn
 Speed 20
 PROJECTILE
 +NOCLIP
-+ISMONSTER						//R30.7 INFRARED
++ISMONSTER		//R30.7 INFRARED
 	States
 	{
 	Spawn:

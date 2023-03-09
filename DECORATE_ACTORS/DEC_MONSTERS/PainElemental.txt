@@ -1,7 +1,7 @@
 Actor 64PainElemental : PainElemental Replaces PainElemental
 {
 Scale 0.8
-Speed 6																			//R16 WAS 4
+Speed 6			//R16 WAS 4
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255
@@ -9,7 +9,6 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 HitObituary "%o got too close to a Pain Elemental."
 DropItem "DemonEssenceSpawner"		//R31 ADDED
-//bloodcolor "40 40 40"
 +FORCEXYBILLBOARD
 +NOBLOODDECALS
 	states
@@ -64,7 +63,6 @@ DropItem "DemonEssenceSpawner"		//R31 ADDED
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
 		TNT1 AAAAAA 0 A_CustomMissile("SuperGoreSpawner",45,0,random(0,360),2,random(10,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		PAIN J 4 Bright
 		PAIN K 4 Bright
 		PAIN L 4 Bright

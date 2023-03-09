@@ -1,3 +1,10 @@
+//DECAL FADER
+Fader ScorchFader
+{
+DecayStart 56
+DecayTime 4
+}
+
 //Crack Decals
 decal Crack1
 {
@@ -5,6 +12,7 @@ pic BFGLITE1
 shade "00 00 00"
 randomflipy
 randomflipx
+Animator ScorchFader
 }
 
 decal Crack2
@@ -13,6 +21,7 @@ pic BFGLITE2
 shade "00 00 00"
 randomflipy
 randomflipx
+Animator ScorchFader
 }
 
 decalgroup Crack
@@ -30,6 +39,7 @@ x-scale 5.75
 y-scale 5.75
 randomflipx
 randomflipy
+Animator ScorchFader
 }
 
 decal SkullScorch1
@@ -40,6 +50,7 @@ x-scale 0.6
 y-scale 0.6
 randomflipx
 randomflipy
+Animator ScorchFader
 }
 
 decal SkullScorch2
@@ -50,6 +61,7 @@ x-scale 0.6
 y-scale 0.6
 randomflipx
 randomflipy
+Animator ScorchFader
 }
 
 decalgroup SkullScorch
@@ -66,6 +78,7 @@ x-scale 0.6			//R28.3 WAS 1.5
 y-scale 0.6			//R28.3 WAS 1.5
 randomflipx
 randomflipy
+Animator ScorchFader
 }
 
 decal BiggerScorch
@@ -76,6 +89,7 @@ x-scale 2.5
 y-scale 2.5
 randomflipx
 randomflipy
+Animator ScorchFader
 }
 
 decal FireworxScorch
@@ -86,6 +100,7 @@ x-scale 1.1
 y-scale 1.1
 randomflipx
 randomflipy
+Animator ScorchFader
 }
 
 decal SmallerScorch
@@ -96,6 +111,7 @@ x-scale 0.3			//R28.3 WAS 0.6
 y-scale 0.3			//R28.3 WAS 0.6
 randomflipx
 randomflipy
+Animator ScorchFader
 }
 
 decal MedScorch
@@ -106,6 +122,7 @@ x-scale 0.45		//R28.3 WAS 0.6
 y-scale 0.45		//R28.3 WAS 0.6
 randomflipx
 randomflipy
+Animator ScorchFader
 }
 
 decal LaserDecal	//R31 added
@@ -116,17 +133,19 @@ x-scale 0.1
 y-scale 0.1
 randomflipx
 randomflipy
+Animator ScorchFader
 }
 
 //Saw Decal
 decal SawVertical	//R28.2 added
 {
-	pic SawVert
-	shade "00 00 00"
-	x-scale 0.2
-	y-scale 0.5
-	randomflipy
-	randomflipx
+pic SawVert
+shade "00 00 00"
+x-scale 0.2
+y-scale 0.5
+randomflipy
+randomflipx
+Animator ScorchFader
 }
 
 //R31 Bullet Decals from SMK4SIMPLEDECALS.WAD
@@ -146,6 +165,7 @@ pic CHIZ1
 x-scale 0.75
 y-scale 0.75
 randomflipx
+Animator ScorchFader
 }
 
 decal BDBulletChip2
@@ -154,6 +174,7 @@ pic CHIZ2
 x-scale 0.6
 y-scale 0.6
 randomflipx
+Animator ScorchFader
 }
 
 decal BDBulletChip3
@@ -162,6 +183,7 @@ pic CHIZ3
 x-scale 0.6
 y-scale 0.6
 randomflipx
+Animator ScorchFader
 }
 
 decal BDBulletChip4
@@ -170,6 +192,7 @@ pic CHIZ4
 x-scale 0.7
 y-scale 0.7
 randomflipx
+Animator ScorchFader
 }
 
 decalgroup BulletDecalNew1	//WAS BulletChip

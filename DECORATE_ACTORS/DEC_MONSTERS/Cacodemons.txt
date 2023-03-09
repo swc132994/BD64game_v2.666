@@ -14,7 +14,6 @@ MeleeRange 60 //default 44
 +FORCEXYBILLBOARD
 +MISSILEMORE
 +NOBLOODDECALS
-//+NOBLOCKMONST
 	States
 	{
 	Spawn:
@@ -36,14 +35,12 @@ MeleeRange 60 //default 44
 		HEAD D 3
 		HEAD D 3 A_Pain
 		Goto See
-	Melee:	//R31 Melee and Missile seperated
+	Melee:
 		HEAD XY 5 A_FaceTarget
-//		HEAD Z 5 A_BasicAttack(8,"weapons/gswing","CacodemonBall",28)	//R21 WAS "none"
 		HEAD Z 5 A_CustomMeleeAttack(8,"weapons/gswing")	//R31 Melee and Missile seperated
 		Goto See
-	Missile:	//R31 Melee and Missile seperated
+	Missile:
 		HEAD EF 5 A_FaceTarget
-//		HEAD G 5 Bright A_BasicAttack(8,"weapons/gswing","CacodemonBall",28)	//R21 WAS "none"
 		HEAD G 5 Bright A_CustomMissile("CacodemonBall",28)	//R31 Melee and Missile seperated
 		Goto See
 	Death:
@@ -75,7 +72,6 @@ MeleeRange 60 //default 44
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//r30.9 removed
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop
@@ -104,7 +100,6 @@ MeleeRange 60 //default 44
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//R30.9 removed
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
@@ -135,7 +130,6 @@ MeleeRange 60 //default 44
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//r30.9 removed
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop
@@ -197,7 +191,6 @@ DropItem "None"
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
-//		TNT1 A 0 A_ChangeFLag("SHOOTABLE",0)
 		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
 		HNHE B -1
 		Stop
@@ -217,7 +210,6 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//R30.9 removed
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
@@ -241,7 +233,6 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//R30.9 removed
 		CAGM A 20
 		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
 		CAGM A -1
@@ -281,7 +272,6 @@ DropItem "None"
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
-//		TNT1 A 0 A_ChangeFLag("SHOOTABLE",0)
 		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
 		HNHE D -1
 		Stop
@@ -300,7 +290,6 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//R30.9 removed
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_NoBlocking
 		HNHE E 1 A_SpawnItemEx("Brutalized64Caco_3",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
@@ -321,7 +310,6 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//R30.9 removed
 		CAGM A 20
 		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
 		CAGM A -1
@@ -360,7 +348,6 @@ DropItem "None"
 		TNT1 A 0 A_Die
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_NoBlocking
-//		TNT1 A 0 A_ChangeFLag("SHOOTABLE",0)
 		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
 		HNHE F -1
 		Stop
@@ -384,7 +371,6 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//R30.9 removed
 		CAGM A 20
 		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
 		CAGM A -1
@@ -418,7 +404,7 @@ PROJECTILE
 		Loop
 	Death:
 		TNT1 AA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
-		TNT1 AAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,180))		//R11 unused //R31 was ExplosionParticleFast
+		TNT1 AAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,180))	//R31 was ExplosionParticleFast
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAA 0 A_CustomMissile("SmallFireballFireTrail",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_SpawnItem("DetectFloorCraterSmall")		//R28.3 added
@@ -452,12 +438,10 @@ Scale 0.75
 		Goto See
 	Melee:
 		HEAD EF 5 A_FaceTarget
-//		HEAD G 5 Bright A_HeadAttack	//R18 removed
 		HEAD G 5 A_CustomComboAttack("CacodemonBall",32,10 * random(1,6),"weapons/gswing")	//R18 added //R21 was "baron/melee"
 		Goto See
 	Missile:
 		HEAD EF 5 A_FaceTarget
-//		HEAD G 5 Bright A_HeadAttack	/R18 removed
 		HEAD G 5 Bright A_CustomComboAttack("CacodemonBall",32,10 * random(1,6),"weapons/gswing")	//R18 added//R21 was "baron/melee"
 		Goto See
 	Death:
@@ -497,13 +481,11 @@ Obituary "%o was scorched by a Nightmare Cacodemon."
 HitObituary "%o was chomped by a Nightmare Cacodemon."
 Tag "Nightmare Cacodemon"		//r31 added
 DropItem "DemonEssenceSpawner"	//R31 added
-//bloodcolor "C5 00 28"
 +FLOORCLIP
 +FORCEXYBILLBOARD
 +MISSILEMORE
 +MISSILEEVENMORE	//R31 added
 +NOBLOODDECALS
-//+NOBLOCKMONST
 	States
 	{
 	Spawn:
@@ -521,20 +503,16 @@ DropItem "DemonEssenceSpawner"	//R31 added
 		HEA2 D 3
 		HEA2 D 3 A_Pain
 		Goto See
-	Melee:	//R31 Melee and Missile seperated
+	Melee:
 		HEA2 XY 4 A_FaceTarget
-//		HEA2 Z 4 A_BasicAttack(8,"weapons/gswing","NCacoBall",28)	//R21 WAS "none"
 		HEA2 Z 4 A_CustomMeleeAttack(8,"weapons/gswing")	//R31 Melee and Missile seperated
 		Goto see
-	Missile:		//R31 WAS 4 TICS FOR EACH	//	//R31 Melee and Missile seperated
+	Missile:
 		HEA2 EF 4 A_FaceTarget
-//		HEA2 G 4 Bright A_BasicAttack(8,"weapons/gswing","NCacoBall",28)	//R21 WAS "none"
 		HEA2 G 4 Bright A_CustomMissile("NCacoBall",28)	//R31 Melee and Missile seperated
 		HEA2 EF 4 A_FaceTarget
-//		HEA2 G 4 Bright A_BasicAttack(8,"weapons/gswing","NCacoBall",28)	//R21 WAS "none"
 		HEA2 G 4 Bright A_CustomMissile("NCacoBall",28)	//R31 Melee and Missile seperated
 		HEA2 EF 4 A_FaceTarget
-//		HEA2 G 4 Bright A_BasicAttack(8,"weapons/gswing","NCacoBall",28)	//R21 WAS "none"
 		HEA2 G 4 Bright A_CustomMissile("NCacoBall",28)	//R31 Melee and Missile seperated
 		Goto see
 	Death:
@@ -566,7 +544,6 @@ DropItem "DemonEssenceSpawner"	//R31 added
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))	//r30.9 removed
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop
@@ -595,7 +572,6 @@ DropItem "DemonEssenceSpawner"	//R31 added
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//R30.9 removed
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
@@ -626,7 +602,6 @@ DropItem "DemonEssenceSpawner"	//R31 added
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))	//R30.9 removed
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop
@@ -688,7 +663,6 @@ DropItem "None"
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
-//		TNT1 A 0 A_ChangeFLag("SHOOTABLE",0)
 		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
 		NCHE B -1
 		Stop
@@ -708,7 +682,6 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//R30.9 removed
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
@@ -732,7 +705,6 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//R30.9 removed
 		TNT1 A 0 A_NoBlocking
 		NCGM A 20
 		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
@@ -773,7 +745,6 @@ DropItem "None"
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
-//		TNT1 A 0 A_ChangeFLag("SHOOTABLE",0)
 		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
 		NCHE D -1
 		Stop
@@ -792,7 +763,6 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//R30.9 removed
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_NoBlocking
 		NCHE E 1 A_SpawnItemEx("BrutalizedNCaco_3",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
@@ -813,7 +783,6 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//R30.9 removed
 		TNT1 A 0 A_NoBlocking
 		NCGM A 20
 		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
@@ -853,7 +822,6 @@ DropItem "None"
 		TNT1 A 0 A_Die
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_NoBlocking
-//		TNT1 A 0 A_ChangeFLag("SHOOTABLE",0)
 		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
 		NCHE F -1
 		Stop
@@ -877,7 +845,6 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))		//R30.9 removed
 		TNT1 A 0 A_NoBlocking
 		NCGM A 20
 		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
@@ -907,7 +874,7 @@ Decal "SmallerScorch"	//R28.3 added
 		Loop
 	Death:
 		TNT1 AA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
-		TNT1 AAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,180))		//R11 unused //R31 was ExplosionParticleFast
+		TNT1 AAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,180))	//R11 unused //R31 was ExplosionParticleFast
 		TNT1 AAAA 0 A_CustomMissile("Shoque",0,0,random(0,360),2,random(0,180))
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAA 0 A_CustomMissile("SmallFireballFireTrail",0,0,random(0,360),2,random(0,360))

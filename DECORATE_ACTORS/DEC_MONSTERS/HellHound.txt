@@ -74,7 +74,7 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		HEHR L 4 A_NoBlocking
 		HEHR M 4 A_Stop				//r31 added Stop
 		TNT1 A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_KillMaster("None")	//08-08-22 tag 666 fix
+		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		HEHR M -1
 		Stop
 	Death.Plasma:
@@ -134,16 +134,14 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-//		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))	R30.9 removed
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		TNT1 AAAA 0 A_CustomMissile("SuperGoreSpawner",32,0,random(0,360),2,random(50,130))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-//		TNT1 A 0 ThrustThingZ(0,30,0,0)			//R30.6 removed
 		HHMI A 2 A_ChangeFlag("THRUACTORS",1)
 		HHMI BCDE 5
 		TNT1 A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))	//R30.9 added
-		TNT1 A 0 A_KillMaster("None")	//08-08-22 tag 666 fix
+		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		HHMI E -1		//R30.5 revised
 		Stop
 	}
@@ -204,13 +202,11 @@ DropItem "None"
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
-//		TNT1 A 0 A_ChangeFLag("SHOOTABLE",0)
 		HH1H CDEF 5
 		TNT1 A 0 A_Stop
 		TNT1 A 0 A_SpawnItem("GrowingBloodPoolBig")
 		HH1H F -1
 		Stop
-//	Death.Shotgun:
 	Death.SSG:
 	Death.Heavy:
 	Death.CutLess:
@@ -238,7 +234,6 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathHHHead",50,0,random(00,360),2,random(10,50))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-//		TNT1 A 0 ThrustThingZ(0,40,0,0)
 		HHMI A 2 A_ChangeFlag("THRUACTORS",1)		//R22 added
 		HHMI BCDE 5
 		TNT1 A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))	//R30.9 added

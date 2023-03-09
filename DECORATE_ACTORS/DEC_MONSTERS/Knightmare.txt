@@ -29,7 +29,6 @@ DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "chainsaw",0.5
 DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodGreen"
-//bloodcolor "18 8c 31"
 MONSTER
 +BOSSDEATH
 +FLOORCLIP

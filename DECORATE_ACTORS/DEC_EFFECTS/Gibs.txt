@@ -112,7 +112,6 @@ damagefactor "Plasma",20.0
 +NOBLOCKMONST
 +THRUACTORS
 +FLOORCLIP
-//+SOLID
 	States
 	{
 	Spawn:
@@ -183,7 +182,7 @@ Decal BrutalBloodSplat
 		//BLOD A 0 A_SpawnItem("Big_Blood",0,10)
 		stop
 	Splash:			//R31 ADDED SPLASH STATE (WAS MISSING)
-		BLOD A 0
+		TNT1 A 0
 		stop
 	}
 }
