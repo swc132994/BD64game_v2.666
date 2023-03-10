@@ -299,16 +299,6 @@ ZOffset -0.7
 FrameIndex BPDL A 0 0
 }
 
-Model MediumBloodSpot2
-{
-Path "models/bloodspot"
-Model 0 "bloodspot.md3"
-Skin 0 "SMSHD.png"
-Scale 80.0 80.0 80.0
-ZOffset 0.6
-FrameIndex BPDL A 0 0
-}
-
 Model MediumBloodSpot
 {
 Path "models/bloodspot"
@@ -365,26 +355,6 @@ Path "models/bloodspot"
 Model 0 "bloodspot.md3"
 Skin 0 "gut2.png"
 Scale 25.0 25.0 85.0
-ZOffset 2.1
-FrameIndex GUTS F 0 0
-}
-
-Model Instestin2
-{
-Path "models/bloodspot"
-Model 0 "bloodspot.md3"
-Skin 0 "gut1.png"
-Scale 15.0 15.0 85.0
-ZOffset 2.1
-FrameIndex GUTS E 0 0
-}
-
-Model Instestin2
-{
-Path "models/bloodspot"
-Model 0 "bloodspot.md3"
-Skin 0 "gut2.png"
-Scale 15.0 15.0 85.0
 ZOffset 2.1
 FrameIndex GUTS F 0 0
 }
