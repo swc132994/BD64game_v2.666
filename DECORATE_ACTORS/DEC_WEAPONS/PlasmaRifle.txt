@@ -108,7 +108,7 @@ Tag "$TAG_PLASMARIFLE"
 	{
 	MineThrowFlash:
 		PLSG MLKJ 1
-		TNT1 A 35
+		TNT1 A 18
 		PLSG JKLM 1
 		Stop
 	KickingFlash:	//r31 new kick animations

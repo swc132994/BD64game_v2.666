@@ -99,7 +99,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 	{
 	MineThrowFlash:
 		PUN6 EFGH 1
-		TNT1 A 35
+		TNT1 A 18
 		PUN6 ABCD 1
 		Stop	
 	KickingFlash:	//r31 new kick animations

@@ -168,7 +168,7 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 	{
 	MineThrowFlash:
 		RLTS DCBA 1
-		TNT1 A 35
+		TNT1 A 18
 		RLTS ABCD 1
 		Stop	
 	KickingFlash:	//r31 new kick animations
@@ -363,7 +363,7 @@ Weapon.SisterWeapon "64RocketLauncherTactical"	//R31 added
 	{
 	MineThrowFlash:
 		MISS DCBA 1
-		TNT1 A 35
+		TNT1 A 18
 		MISS ABCD 1
 		Stop	
 	KickingFlash:	//r31 new kick animations

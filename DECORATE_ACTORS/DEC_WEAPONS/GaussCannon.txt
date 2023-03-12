@@ -106,7 +106,7 @@ Decal BigScorch
 	{
 	MineThrowFlash:
 		TGCS DCBA 1
-		TNT1 A 35
+		TNT1 A 18
 		TGCS ABCD 1
 		Stop		
 	KickingFlash:

@@ -160,7 +160,7 @@ Tag "Sub-machine gun"
 	{
 	MineThrowFlash:
 		SMGS DCBA 1
-		TNT1 A 35
+		TNT1 A 18
 		SMGS ABCD 1
 		Stop
 	KickingFlash:

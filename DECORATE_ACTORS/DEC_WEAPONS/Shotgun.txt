@@ -123,7 +123,7 @@ Tag "$TAG_SHOTGUN"
 	{
 	MineThrowFlash:
 		SHTS DCBA 1
-		TNT1 A 35
+		TNT1 A 18
 		SHTS ABCD 1
 		Stop
 	KickingFlash:	//r31 new kick animations

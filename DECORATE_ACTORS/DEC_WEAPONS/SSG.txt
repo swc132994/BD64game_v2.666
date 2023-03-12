@@ -131,7 +131,7 @@ Tag "$TAG_SUPERSHOTGUN"
 	{
 	MineThrowFlash:
 		SSGS DCBA 1
-		TNT1 A 35
+		TNT1 A 18
 		SSGS ABCD 1
 		Stop
 	KickingFlash:	//r31 new kick animations

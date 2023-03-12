@@ -84,7 +84,7 @@ Tag "$TAG_BFG9000"
 	{
 	MineThrowFlash:
 		BFGS DCBA 1
-		TNT1 A 35
+		TNT1 A 18
 		BFGS ABCD 1
 		Stop	
 	KickingFlash:
