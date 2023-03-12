@@ -17,7 +17,7 @@ statusbar fullscreen,forcescaled,0.5
 	{
 		IsSelected not "64ProximityMine"
 		{
-		drawimage "PMNEC0",218,185,center,10,5;
+		drawimage "PMNEC0",218,185,center,20,15;
 		drawnumber 3,SMALLFONT,untranslated,Ammo("64MineAmmo"),alignment(center),218,185;
 		}
 	}
