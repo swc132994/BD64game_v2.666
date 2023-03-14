@@ -109,6 +109,11 @@ Actor YellowFlareSmall : YellowFlare
 Scale 0.15
 }
 
+Actor YellowFlareSmall2 : YellowFlare
+{
+Scale 0.1
+}
+
 Actor YellowFlareMedium : YellowFlare
 {
 Scale 0.20
@@ -441,7 +446,7 @@ PROJECTILE
 	}
 }
 
-ACTOR PLasmaFlareSpawn
+ACTOR PlasmaFlareSpawn
 {
 Speed 20
 PROJECTILE
@@ -463,8 +468,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 AA 1 NoDelay A_CustomMissile("YellowFlareSmallB",-5,0,-85,0,random(-10,10))
-		//TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt",2,0,0,0,0)
+		TNT1 AA 1 NoDelay A_CustomMissile("YellowFlareSmall2",-5,0,-85,0,random(-10,10))
 		Stop
 	}
 }

@@ -86,7 +86,7 @@ Tag "$TAG_BFG9000"
 		BFGS DCBA 1
 		TNT1 A 18
 		BFGS ABCD 1
-		Stop	
+		Stop
 	KickingFlash:
 		BFGS DCBA 1
 		BFGS A 8
@@ -110,6 +110,7 @@ Tag "$TAG_BFG9000"
 		BFGG A 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		Loop
 	Deselect:
 		TNT1 A 0 A_StopSound(5)	//R31 added

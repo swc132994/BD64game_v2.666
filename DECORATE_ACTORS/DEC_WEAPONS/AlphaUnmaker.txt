@@ -147,7 +147,8 @@ Tag "Laser Gun"			//R11 ADDED TAG
 		LZRG A 0
 		"####" A 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")		
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		Loop
 	Select: //R31 Select Animation Improvement (Tactical and Modern only)
 		TNT1 A 0 A_PlaySound("LSGREADY")

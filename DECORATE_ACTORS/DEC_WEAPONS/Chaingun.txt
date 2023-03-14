@@ -100,7 +100,7 @@ Tag "$TAG_CHAINGUN"
 		CHNS DCBA 1
 		TNT1 A 18
 		CHNS ABCD 1
-		Stop	
+		Stop
 	KickingFlash:	//r31 new kick animations
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"KickSpin")
 		CHNS DCBA 1
@@ -183,7 +183,8 @@ Tag "$TAG_CHAINGUN"
 	Ready:
 		CHNG A 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")		
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"Ready2")
 		Loop
 	Ready2: //R31 Minigun Spinning
