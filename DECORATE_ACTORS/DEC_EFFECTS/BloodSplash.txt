@@ -66,17 +66,6 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 	}
 }
 
-Actor UltraGoreSpawner : SuperGoreSpawner
-{
-speed 60
-	states
-	{
-	Spawn:
-		TNT1 AAAAAAAAAAAAAA 1 A_SpawnItem("SuperGore")
-		Stop
-	}
-}
-
 actor SuperGore
 {
 game Doom
@@ -97,8 +86,8 @@ Decal BloodSplat
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"SpawnUnderwater")
-		BLER GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_FadeOut(0.01)
-		stop
+		BLER G 1 A_FadeOut(0.01)
+		Wait
 	SpawnUnderwater:
 		TNT1 AA 0 A_CustomMissile("Underblood3",32,0,random(0,360),2,random(0,160))
 		Stop
@@ -132,135 +121,4 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 Scale 1.0
 Speed 2
 Gravity 0.1
-}
-
-Actor SuperGoreMistTiny : SuperGore
-{
-Scale 0.4
-Speed 1
-Gravity 0.1
-}
-
-actor BlueSuperGore : SuperGore
-{
-Alpha 0.4
-translation "168:191=192:207","16:47=240:247"
-}
-
-actor BlueSuperGoreFast : SuperGore
-{
-Alpha 0.4
-Speed 2
-translation "168:191=192:207","16:47=240:247"
-}
-
-Actor BlueSuperGoreSpawner : SuperGoreSpawner
-{
-speed 20
-	states
-	{
-	Spawn:
-		TNT1 AAAAAAAA 1 A_SpawnItem("BlueSuperGore")
-		Stop
-	}
-}
-
-actor GreenSuperGore : SuperGore
-{
-translation "168:191=112:127","16:47=120:127"
-}
-
-Actor GreenSuperGoreSpawner : SuperGoreSpawner
-{
-	states
-	{
-	Spawn:
-		TNT1 AAAA 1 A_SpawnItem("GreenSuperGore")
-		Stop
-	}
-}
-
-ACTOR BloodSplasher2
-{
-Game Doom
-Health 1
-Radius 1
-Height 1
-Mass 1
-DamageType Blood
-damagefactor "Trample",0.0
-DeathSound "None"
-+NOCLIP
-+NOGRAVITY
-+ACTIVATEMCROSS
-+WINDTHRUST
-+NODAMAGETHRUST
-+PIERCEARMOR
-+BLOODLESSIMPACT
-	States
-	{
-	Spawn:
-		BTRL A 1
-		TNT1 A 0 A_Explode(3,200)
-		Stop
-	}
-}
-
-ACTOR BloodSplasher3 : BloodSplasher2
-{
-	States
-	{
-	Spawn:
-		BTRL A 1
-		TNT1 A 0 A_Explode(3,600)
-		Stop
-	}
-}
-
-actor SmallSuperGore
-{
-game Doom
-Scale 2
-Speed 16
-Alpha 0.5
-Decal BloodSplat
--EXPLODEONWATER
--ALLOWPARTICLES
-+FORCEXYBILLBOARD
-+GHOST
-+NOBLOCKMAP
-+DontSplash
-+CLIENTSIDEONLY
-+THRUACTORS
-+MISSILE
-+NOGRAVITY
-	states
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"SpawnUnderwater")
-		BLOD EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE 1 A_FadeOut(0.03)
-		stop
-	SpawnUnderwater:
-		TNT1 AA 0 A_CustomMissile("Underblood3",32,0,random(0,360),2,random(0,160))
-		Stop
-	}
-}
-
-actor SmallSuperGore2 : SmallSuperGore
-{
-Alpha 0.3
-Scale 0.6
-Speed 1
-}
-
-actor MediumSuperGore : SmallSuperGore
-{
-Scale 2.0
-Speed 4
-}
-
-actor GiantSuperGore : SmallSuperGore
-{
-Scale 4.0
-Speed 8
 }

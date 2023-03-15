@@ -524,7 +524,7 @@ RenderStyle Translucent
 		TNT1 A 0 A_Jump(64,4)
 		TNT1 A 0 A_Jump(128,4)
 		TNT1 A 0 A_Jump(192,4)
-		TNT1 A 0 A_Jump(255,4)
+		TNT1 A 0 A_Jump(256,4)
 		SMOK ABCDEFGHIJKLMNOPQr 2 Bright	//r31 added R
 		stop
 		SMOK AABBCDDEEFFGGHHIIJJJKKLLMMNNOOPPQQR 2 Bright	//r31 added R
@@ -560,7 +560,7 @@ RenderStyle Translucent
 		TNT1 A 0 A_Jump(64,4)
 		TNT1 A 0 A_Jump(128,4)
 		TNT1 A 0 A_Jump(192,4)
-		TNT1 A 0 A_Jump(255,4)
+		TNT1 A 0 A_Jump(256,4)
 		SMOK ABCDEFGHIJKLMNOPQR 2 Bright	//r31 added R
 		stop
 		SMOK ABCDEFGHIJKLMNOPQR 2 Bright	//r31 added R
@@ -614,7 +614,7 @@ RenderStyle Add
 		TNT1 A 0 A_Jump(64,4)
 		TNT1 A 0 A_Jump(128,4)
 		TNT1 A 0 A_Jump(192,4)
-		TNT1 A 0 A_Jump(255,4)
+		TNT1 A 0 A_Jump(256,4)
 		SMOK ABCDEFGHIJKLMNOPQR 2 Bright	//r31 added R
 		stop
 		SMOK AABBCDDEEFFGGHHIIJJJKKLLMMNNOOPPQQR 2 Bright	//r31 added R

@@ -70,11 +70,17 @@ Game Doom
 Actor 64SmallBloodPool : SmallBloodPool Replaces SmallBloodPool
 {
 Scale 0.82
-  Radius 20
-  Height 1
-  +NOBLOCKMAP
-  +MOVEWITHSECTOR
-  +FLOORCLIP
+Radius 20
+Height 1
++NOBLOCKMAP
++MOVEWITHSECTOR
++FLOORCLIP
+	States
+	{
+	Spawn:
+		POB2 A -1
+		Stop
+	}
 }
 
 actor 64BrainStem : 64Gibs Replaces BrainStem
@@ -88,7 +94,7 @@ Scale 0.82
 Radius 8
 Height 64
 +SOLID
-States
+	States
 	{
 	Spawn:
 		POL4 A 1
@@ -679,18 +685,24 @@ scale 0.8
 
 actor 64GibbedMarine : GibbedMarine// Replaces GibbedMarine
 {
-+ISMONSTER
 scale 0.8
++ISMONSTER
+	States
+	{
+	Spawn:
+		PLAY W -1
+		Stop
+	}
 }
 
 actor 64GibbedMarineExtra : GibbedMarineExtra// Replaces GibbedMarineExtra
 {
-+ISMONSTER
 scale 0.8
++ISMONSTER
 	States
 	{
 	Spawn:
-		BODY C -1
+		PLAY W -1
 		Stop
 	}
 }

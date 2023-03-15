@@ -17,7 +17,6 @@ BounceFactor 0.1
 +NOTELEPORT
 +MOVEWITHSECTOR
 +CLIENTSIDEONLY
-//+BLOODLESSIMPACT
 -DONTSPLASH
 +THRUGHOST
 +THRUACTORS
@@ -234,7 +233,7 @@ wallbouncefactor 0.2
 		Loop
 	Death:
 		TNT1 A 0
-		TNT1 A 0 A_Jump(255,"Death1","Death2")
+		TNT1 A 0 A_Jump(256,"Death1","Death2")
 		GOto Death1
 	Death1:
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects	//r31 replaces ACS 798
@@ -395,7 +394,7 @@ Decal BrutalBloodSplat
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
+		TNT1 A 0 NoDelay A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
 	Spawn1:
 		GUTS A 1
 		Loop
@@ -415,7 +414,7 @@ Decal BrutalBloodSplat
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects	//r31 replaces ACS 798
 		Goto Rest
 	Rest:
-		TNT1 A 0 A_Jump(255,"Rest1","Rest2")
+		TNT1 A 0 A_Jump(256,"Rest1","Rest2")
 	Rest1:
 		GUTS E 800
 		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
@@ -448,7 +447,7 @@ Decal BrutalBloodSplatGreen
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(255,"Spawn1","Spawn2","Spawn3","Spawn4")
+		TNT1 A 0 NoDelay A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
 	Spawn1:
 		GUTS A 1
 		Loop
@@ -468,7 +467,7 @@ Decal BrutalBloodSplatGreen
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects	//r31 replaces ACS 798
 		Goto Rest
 	Rest:
-		TNT1 A 0 A_Jump(255,"Rest1","Rest2")
+		TNT1 A 0 A_Jump(256,"Rest1","Rest2")
 	Rest1:
 		GUTS E 800
 		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
@@ -491,34 +490,6 @@ Decal BrutalBloodSplatGreen
 		GUTS IJ 10
 		//TNT1 A 0 A_JumpIf(waterlevel == 0,"Death")
 		Loop
-	}
-}
-
-ACTOR XJunk1 : XDeath1
-{
-Scale 1.0
-Speed 14
-Gravity 0.8
-DeathSound "none"
-SeeSound "none"
-Decal "None"
-BounceFactor 0.5
-+DOOMBOUNCE
-+CLIENTSIDEONLY
-+DONTSPLASH
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
-		JNK6 ABCD 3
-		Loop
-	Death:
-		JNK6 A 2000
-		Stop
-	Splash:
-		TNT1 A 1
-		JNK6 A -1
-		Stop
 	}
 }
 

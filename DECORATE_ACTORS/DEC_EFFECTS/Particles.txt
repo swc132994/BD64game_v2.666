@@ -670,7 +670,7 @@ states
 		BPRT ABCDEFGH 2
 		loop
 	Death:
-		TNT1 A 0 A_jump(255,"death1","death2","death3","death4","death5","death6")
+		TNT1 A 0 A_Jump(256,"death1","death2","death3","death4","death5","death6")
 	Death1:
 		BPRT A 1 A_Fadeout(0.001)
 		loop
