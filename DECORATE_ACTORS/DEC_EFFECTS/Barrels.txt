@@ -2,7 +2,7 @@ Actor 64ExplosiveBarrel : ExplosiveBarrel Replaces ExplosiveBarrel
 {
 Scale 0.8
 Health 20
-Mass 100
+Mass 125
 Damagefactor "Melee",0		//R31 ADDED
 Damagefactor "Kick",0		//R31 ADDED
 +EXTREMEDEATH

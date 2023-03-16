@@ -100,13 +100,6 @@ Decal BloodSplatGreen
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 }
 
-Actor SuperGoreMist : SuperGore
-{
-Scale 3.0
-Speed 8
-Gravity 0.3
-}
-
 Actor SuperGoreMistSmall : SuperGore
 {
 Scale 1.0

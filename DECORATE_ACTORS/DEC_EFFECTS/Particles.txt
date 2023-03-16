@@ -3,11 +3,6 @@ Actor lowgraphicsmode : Inventory
 inventory.maxamount 1
 }
 
-Actor IsOverLava : Inventory
-{
-inventory.maxamount 1
-}
-
 Actor ExplosionParticle2
 {
 Scale 0.1
@@ -692,50 +687,6 @@ states
 	}
 }
 
-Actor WoodParticle : BarrelParticle
-{
-Scale 1.5
-speed 8
-seesound ""
-+THRUACTORS
-bouncefactor 0.5
-states
-	{
-	Spawn:
-		WOOD ABCD 2
-		loop
-	Death:
-		WOOD B 300
-		WOOD B 1 A_FadeOut(0.2)
-		wait
-	}
-}
-
-Actor WoodParticleSmall: WoodParticle
-{
-Scale 0.9
-speed 6
-}
-
-Actor WoodParticleBig: WoodParticle
-{
-Scale 2.3
-speed 11
-}
-
-Actor WoodParticleTIny: WoodParticle
-{
-Scale 0.6
-speed 5
-states
-	{
-	Death:
-		WOOD B 100
-		WOOD B 1 A_FadeOut(0.2)
-		wait
-	}
-}
-
 ACTOR SparkX: ExplosionParticleHeavy
 {
 Scale 0.05
@@ -812,150 +763,7 @@ ACTOR MetalShard3: MetalShard1
 	}
 }
 
-ACTOR MudDust
-{
-Scale 1.0
-Speed 8
-Gravity 0.4
-height 1
-radius 1
-+noteleport
-+missile
-+forcexybillboard
-+CLIENTSIDEONLY
-+DOOMBOUNCE
-BounceFactor 0.01
-	States
-	{
-	Spawn:
-		DIRP A 1
-		Loop
-	Death:
-		DIRP B 300
-		Stop
-	}
-}
-
-ACTOR BrownCloud: MudDust
-{
-Speed 2
-Alpha 0.3
-Renderstyle Translucent
-+NOGRAVITY
-+WINDTHRUST
-+THRUACTORS
-	States
-	{
-	Spawn:
-		DIRP C 40
-		DIRP C 1 A_FadeOut(0.01)
-		wait
-	}
-}
-
-Actor BrownCloudSmall: BrownCloud
-{
-Scale 0.5
-Alpha 0.3
-Speed 2
-Gravity 0.1
--NOGRAVITY
-+THRUACTORS
-	States
-	{
-	Spawn:
-		DIRP C 1 A_FadeOut(0.01)
-		wait
-	}
-}
-
-ACTOR WallChunk
-{
-Scale 0.16
-height 1
-radius 1
-Speed 6
-Gravity 0.7
-+noteleport
-+missile
-+forcexybillboard
-+CLIENTSIDEONLY
-+bounceonactors
-+doombounce
-bouncefactor 0.2
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_GiveInventory("Timer",random(1,4))
-	See:
-		TNT1 A 0 A_JumpIfInventory("Timer",4,"See4")
-		TNT1 A 0 A_JumpIfInventory("Timer",3,"See3")
-		TNT1 A 0 A_JumpIfInventory("Timer",2,"See2")
-	See1:
-		DUST A 1
-		loop
-	See2:
-		DUST B 1
-		loop
-	See3:
-		DUST C 1
-		loop
-	See4:
-		DUST D 1
-		loop
-	Death:
-		TNT1 A 0 A_ChangeFlag("missile",0)
-		TNT1 A 0 A_ChangeFlag("doombounce",0)
-		TNT1 A 0 A_JumpIfInventory("Timer",4,"Death4")
-		TNT1 A 0 A_JumpIfInventory("Timer",3,"Death3")
-		TNT1 A 0 A_JumpIfInventory("Timer",2,"Death2")
-	Death1:
-		DUST A 100
-		Stop
-	Death2:
-		DUST B 100
-		Stop
-	Death3:
-		DUST C 100
-		Stop
-	Death4:
-		DUST D 100
-		Stop
-	}
-}
-
-ACTOR TinyWallChunk : WallChunk
-{
-Scale 0.12
-}
-
-ACTOR BigWallChunk : WallChunk
-{
-Scale 0.3
-}
-
-ACTOR HugeWallChunk : WallChunk
-{
-Scale 0.4
-}
-
-ACTOR DirtChunk1 : WallChunk
-{
-Scale 0.6
-Speed 16
-BounceFactor 0.5
-Translation "128:151=74:79","96:111=71:79"
-}
-
-ACTOR DirtChunk2 : WallChunk
-{
-Scale 0.4
-Speed 12
-BounceFactor 0.3
-Translation "128:151=74:79","96:111=71:79"
-}
-
-ACTOR ExplosionParticleGreen: ExplosionParticle2
+ACTOR ExplosionParticleGreen : ExplosionParticle2
 {
 SCALE 0.05
 SPEED 9
@@ -973,7 +781,7 @@ ACTOR ExplosionParticleBlue : ExplosionParticleGreen
 Translation "0:255=%[0,0,0]:[0,0,1]"//Blue
 }
 
-ACTOR ExplosionParticleGreenHeavy: ExplosionParticleHeavy
+ACTOR ExplosionParticleGreenHeavy : ExplosionParticleHeavy
 {
 SCALE 0.2
 	States

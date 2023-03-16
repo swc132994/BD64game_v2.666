@@ -28,7 +28,7 @@ Inventory.PickupSound "WPICK"
 	}
 }
 
-Actor HasPLasmaWeapon : Inventory
+Actor HasPlasmaWeapon : Inventory
 {
 inventory.maxamount 1
 }
@@ -51,7 +51,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		PLSG A 1 A_Raise
 		Wait
 	Deselect:
-		TNT1 A 0 A_TakeInventory("HasPLasmaWeapon",1)
+		TNT1 A 0 A_TakeInventory("HasPlasmaWeapon",1)
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)	//R31 SOUND FIX FOR GZ4.8
 		PLSG A 1 A_Lower
 		Wait
@@ -60,7 +60,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		PLSG ABC 2 A_WeaponReady
 		Loop
 	Fire:
-		TNT1 A 0 A_GiveInventory("HasPLasmaWeapon",1)					//R31 LINE MOVED FROM SELECTANIMATION
+		TNT1 A 0 A_GiveInventory("HasPlasmaWeapon",1)					//R31 LINE MOVED FROM SELECTANIMATION
 		PLSF A 1 Bright A_FireCustomMissile("64PlasmaBall",0,1,0,-10)	//r31 added 10
 		PLSF B 1 Bright
 		PLSF CDE 1
@@ -112,18 +112,18 @@ Tag "$TAG_PLASMARIFLE"
 		PLSG JKLM 1
 		Stop
 	KickingFlash:	//r31 new kick animations
-		TNT1 A 0 A_JumpIfInventory("PlasmaRIfleAmmo",1,1)	//R31 Cooldown if no ammo
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,1)	//R31 Cooldown if no ammo
 		Goto KickingFlashNoAmmo
-		PLSR A 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2)	//R31 Pseudo-Fade Effect
+		PLSR A 0 A_JumpIfInventory("PlasmaRifleAmmo",21,2)	//R31 Pseudo-Fade Effect
 		2LSR A 0
 		"####" ABCDEF 1
 		"####" G 4
 		"####" FEDCBA 1
 		Stop
 	AirKickingFlash:
-		TNT1 A 0 A_JumpIfInventory("PlasmaRIfleAmmo",1,1)	//R31 Cooldown if no ammo
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,1)	//R31 Cooldown if no ammo
 		Goto AirKickingFlashNoAmmo
-		PLSR A 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2)	//R31 Pseudo-Fade Effect
+		PLSR A 0 A_JumpIfInventory("PlasmaRifleAmmo",21,2)	//R31 Pseudo-Fade Effect
 		2LSR A 0
 		"####" ABCDEF 1
 		"####" G 6
@@ -140,16 +140,16 @@ Tag "$TAG_PLASMARIFLE"
 		3LSR FEDCBA 1
 		Stop
 	SlideKickingStart:
-		TNT1 A 0 A_JumpIfInventory("PlasmaRIfleAmmo",1,1)	//R31 Cooldown if no ammo
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,1)	//R31 Cooldown if no ammo
 		Goto SlideKickingStartNoAmmo
-		PLSR A 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2)	//R31 Pseudo-Fade Effect
+		PLSR A 0 A_JumpIfInventory("PlasmaRifleAmmo",21,2)	//R31 Pseudo-Fade Effect
 		2LSR A 0
 		"####" ABCDEF 1
 		"####" G 10
 	SlideKickingEnd:
-		TNT1 A 0 A_JumpIfInventory("PlasmaRIfleAmmo",1,1)	//R31 Cooldown if no ammo
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,1)	//R31 Cooldown if no ammo
 		Goto SlideKickingEndNoAmmo
-		PLSR A 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2)	//R31 Pseudo-Fade Effect
+		PLSR A 0 A_JumpIfInventory("PlasmaRifleAmmo",21,2)	//R31 Pseudo-Fade Effect
 		2LSR A 0
 		"####" G 4
 		"####" FEDCBA 1
@@ -170,7 +170,7 @@ Tag "$TAG_PLASMARIFLE"
 		Goto Ready
 	Deselect:
 		PLSG MLKJ 1
-		TNT1 A 0 A_TakeInventory("HasPLasmaWeapon",1)
+		TNT1 A 0 A_TakeInventory("HasPlasmaWeapon",1)
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)	//R31 REVISED TO PLAYSOUND,GZ4.8
 		TNT1 A 1 A_Lower
 		Wait
@@ -180,9 +180,9 @@ Tag "$TAG_PLASMARIFLE"
 	v1Ready:
 	Ready:
 		TNT1 A 0 A_PlaySound("weapon/plasmaidle",CHAN_WEAPON,1,1)	//R31 REVISED TO PLAYSOUND	GZ4.8
-		TNT1 A 0 A_JumpIfInventory("PlasmaRIfleAmmo",1,1)
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,1)
 		Goto NoAmmo
-		PLSG A 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2)			//R31 Pseudo-Fade Effect
+		PLSG A 0 A_JumpIfInventory("PlasmaRifleAmmo",21,2)			//R31 Pseudo-Fade Effect
 		2LSG A 0
 		"####" ABC 2 A_WeaponReady(WRF_ALLOWRELOAD)					//R11 added (WRF_ALLOWRELOAD)	//r31 added frame C
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
@@ -196,7 +196,7 @@ Tag "$TAG_PLASMARIFLE"
 		3LSG A 5 A_WeaponReady(WRF_ALLOWRELOAD)					//R11.1 added WRF_ALLOWRELOAD)	//R31 Updated sprite
 		Loop
 	Fire:
-		TNT1 A 0 A_GiveInventory("HasPLasmaWeapon",1)			//R31 LINE MOVED FROM SELECTANIMATION
+		TNT1 A 0 A_GiveInventory("HasPlasmaWeapon",1)			//R31 LINE MOVED FROM SELECTANIMATION
 		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,1)
 		Goto Reload
 		TNT1 A 0 A_FireCustomMissile("64PlasmaBall",0,0,0,-10)	//r31 added 10
@@ -209,9 +209,9 @@ Tag "$TAG_PLASMARIFLE"
 		TNT1 A 0 A_ReFire
 		TNT1 A 0 A_SpawnItemEx("PlasmaSmoke",30,0,40,0,0,2)		//R31 added
 		TNT1 A 0 A_SpawnItemEx("PlasmaSmoke",30,0,40,0,0,2)
-		TNT1 A 0 A_JumpIfInventory("PlasmaRIfleAmmo",1,1)		//R31 Cooldown if no ammo
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,1)		//R31 Cooldown if no ammo
 		Goto NoAmmoCooldown
-		PLSR A 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2)		//R31 Pseudo-Fade Effect
+		PLSR A 0 A_JumpIfInventory("PlasmaRifleAmmo",21,2)		//R31 Pseudo-Fade Effect
 		2LSR A 0
 		"####" ABCDEF 1
 		"####" G 12
@@ -230,11 +230,11 @@ Tag "$TAG_PLASMARIFLE"
 		TNT1 A 0 A_JumpIfInventory("Cell",1,1)						//R31 WAS JUMP 3
 		Goto NoAmmo
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)					//R31 REVISED TO Stopsound,GZ4.8
-		11SR A 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2)	//R31 Pseudo-Fade Effect
+		11SR A 0 A_JumpIfInventory("PlasmaRifleAmmo",21,2)	//R31 Pseudo-Fade Effect
 		33SR A 0
 		"####" AB 1 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_PlaySound("PLREAD1",CHAN_WEAPON)
-		11SR C 0 A_JumpIfInventory("PlasmaRIfleAmmo",21,2)	//R31 Pseudo-Fade Effect
+		11SR C 0 A_JumpIfInventory("PlasmaRifleAmmo",21,2)	//R31 Pseudo-Fade Effect
 		33SR C 0
 		"####" CDEFGHIJ 1
 		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",21,"Reloadcell2")
@@ -416,11 +416,11 @@ Tag "$TAG_PLASMARIFLE"
 		Goto SelectAnimation
 	SelectAnimation:
 		PLSG JKLM 1
-		TNT1 A 0 A_GiveInventory("HasPLasmaWeapon",1)
+		TNT1 A 0 A_GiveInventory("HasPlasmaWeapon",1)
 		Goto Ready
 	Deselect:
 		PLSG MLKJ 1
-		TNT1 A 0 A_TakeInventory("HasPLasmaWeapon",1)
+		TNT1 A 0 A_TakeInventory("HasPlasmaWeapon",1)
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)	//R31 SOUND FIX FOR GZ4.8
 		TNT1 A 1 A_Lower
 		Wait

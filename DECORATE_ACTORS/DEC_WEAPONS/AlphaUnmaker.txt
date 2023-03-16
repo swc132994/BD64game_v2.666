@@ -349,7 +349,6 @@ ReactionTime 45
 		LENR AB 1 Bright A_SpawnItem("RocketFlare")
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",2,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleLaser",0,0,random(0,360),2,random(0,360))
-		TNT1 A 0 A_CustomMissile("BigRicoChet")
 		TNT1 A 1 A_Explode(100,70)
 		TNT1 A 0 A_SpawnItem("Shoque")
 		TNT1 A 0 A_SpawnItem("DetectFloorCraterMed")

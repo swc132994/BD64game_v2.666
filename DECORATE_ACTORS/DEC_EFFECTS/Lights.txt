@@ -12,6 +12,12 @@ scale 0.75
 actor 64DeadDemon : DeadDemon Replaces DeadDemon
 {
 scale 0.75
+	states
+	{
+	Spawn:
+		SARG N -1
+		Stop
+	}
 }
 
 actor 64DeadDoomImp : DeadDoomImp Replaces DeadDoomImp
@@ -28,11 +34,23 @@ scale 0.75
 actor 64DeadShotgunGuy : DeadShotgunGuy Replaces DeadShotgunGuy
 {
 scale 0.75
+	states
+	{
+	Spawn:
+		SPOS L -1
+		Stop
+	}
 }
 
 actor 64DeadZombieMan : DeadZombieMan Replaces DeadZombieMan
 {
 scale 0.75
+	states
+	{
+	Spawn:
+		POSS L -1
+		Stop
+	}
 }
 
 ACTOR 64RealGibs : RealGibs replaces RealGibs
@@ -41,7 +59,7 @@ scale 0.8
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_NoBlocking
+		POL5 A 0 NoDelay A_NoBlocking
 		//TNT1 A 0 A_PlaySoundEx("misc/gibbed","Body",0,0)
 		TNT1 A 0 A_SpawnItem("Swarm")
 		TNT1 A 0 A_SpawnItem("64SmallBloodPool")
@@ -237,7 +255,7 @@ actor GoreDecorationLongSpawner : GoreLongDecoration1
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5")//,"Spawn6","Spawn7","Spawn8")
+		TNT1 A 0 NoDelay A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5")
 		Goto Spawn1
 	Spawn1:
 		TNT1 A 0 A_SpawnItem("GoreLongDecoration7")
@@ -254,15 +272,6 @@ actor GoreDecorationLongSpawner : GoreLongDecoration1
 	Spawn5:
 		TNT1 A 0 A_SpawnItem("GoreLongDecoration11")
 		Stop
-/*	Spawn6:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration12")
-		Stop
-	Spawn7:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration13")
-		Stop
-	Spawn8:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration14")
-		Stop*/
 	}
 }
 
@@ -566,7 +575,7 @@ DropItem "64NonsolidMeat2"
 DropItem "TweezerGoreNonSolid"
 }
 
-actor 64Meat2 : Meat2// Replaces Meat2
+actor 64Meat2 : Meat2
 {
 Scale 0.82
 Height 79
@@ -589,7 +598,7 @@ Height 79
 	}
 }
 
-actor 64NonsolidMeat2 : 64Meat2// Replaces NonsolidMeat2	//R31 ADDED
+actor 64NonsolidMeat2 : 64Meat2
 {
 -SOLID
 }
@@ -671,7 +680,7 @@ DropItem "64GibbedMarineExtra"
 DropItem "64GibbedMarineExtra"
 }
 
-actor 64DeadMarine : DeadMarine// Replaces DeadMarine
+actor 64DeadMarine : DeadMarine
 {
 +ISMONSTER		//R30.7 added for infrared
 scale 0.8
@@ -683,7 +692,7 @@ scale 0.8
 	}
 }
 
-actor 64GibbedMarine : GibbedMarine// Replaces GibbedMarine
+actor 64GibbedMarine : GibbedMarine
 {
 scale 0.8
 +ISMONSTER
@@ -695,14 +704,14 @@ scale 0.8
 	}
 }
 
-actor 64GibbedMarineExtra : GibbedMarineExtra// Replaces GibbedMarineExtra
+actor 64GibbedMarineExtra : GibbedMarineExtra
 {
 scale 0.8
 +ISMONSTER
 	States
 	{
 	Spawn:
-		PLAY W -1
+		PLAY N -1
 		Stop
 	}
 }
@@ -835,7 +844,7 @@ Scale 0.7
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItem("LightShaft2Brighter")
+		CAND C 0 NoDelay A_SpawnItem("LightShaft2Brighter")
 		TNT1 A 0 A_SpawnItemEx("LensFlareAltLongOrangeForever",3,3,20)
 		TNT1 A 0 A_SpawnItemEx("LensFlareAltLongOrangeForever",-3,3,20)
 		TNT1 A 0 A_SpawnItemEx("LensFlareAltLongOrangeForever",3,-3,20)
@@ -1290,14 +1299,9 @@ Scale 2.0
 Height 2
 Alpha 0.15
 Speed 0
-//MONSTER				//R30.7 removed
-//-FORCEYBILLBOARD
 -SHOOTABLE
 -SOLID
 -SPAWNCEILING
-//-COUNTKILL			//R30.7 removed
-//+FRIENDLY				//R30.7 removed
-//+FORCEXYBILLBOARD
 +THRUACTORS
 	States
 	{
@@ -1307,7 +1311,6 @@ Speed 0
 		TNT1 A 2
 		TNT1 A 0 A_Stop
 	SPAWNCP:																	//R30.9
-//		TNT1 A 1 ACS_ExecuteAlways(17002,0)										//R30	//r31 removed
 		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")			//r31
 		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")			//r31
 	Live:
@@ -1315,7 +1318,6 @@ Speed 0
 		FBB3 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
 		FBB4 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
 		FBB5 ABCDEFGHIJKL 2
-		//SBF1 ABCDEFGHIJKLMNOPQRSTUVWXY 2
 		GOTO SPAWNCP															//R30.9 WAS LOOP
 	WaitSight:
 		TNT1 A 5
@@ -1392,7 +1394,6 @@ Alpha 0.25
 		TNT1 A 0 A_CheckSight("WaitSight")
 		FBB1 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
 		FBB2 ABCDE 2
-		//SBF1 ABCDEFGHIJKLMNOPQRSTUVWXY 2
 		GOTO SPAWNCP															//R30.9 WAS LOOP
 	WaitSight:
 		TNT1 A 5
@@ -1525,19 +1526,6 @@ Scale 0.75
 		Stop
 	}
 }
-
-/*actor TinyYellowTorch 9930	//R31 REMOVED
-{
-Game Doom
-Scale 0.75
-+NOGRAVITY
-	States
-	{
-	Spawn:
-		SMYY ABCDE 5 Bright
-		loop
-	}
-}*/
 
 actor 64WallTorchRed 9930		//R31 ADDED
 {
@@ -1697,44 +1685,6 @@ height 56
 	}
 }
 
-actor BlankBarrel
-{
-scale 0.75
-health 20
-Height 34
-Radius 16
-mass 1000000
-deathsound "world/barrelx"
-Obituary "$OB_BARREL" // "%o went boom."
-+SOLID
-+SHOOTABLE
-+NOBLOOD
-+ACTIVATEMCROSS
-+DONTGIB
-+NOICEDEATH
-+OLDRADIUSDMG
-	States
-	{
-	Spawn:
-		FCAN A -1
-		Stop
-	Death:
-		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
-		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
-		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
-		TNT1 AAAAAAAAAA 0 A_CustomMissile("64ExplosionFireBase",0,0,random(0,360),2,random(0,360))
-		TNT1 AAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
-		TNT1 A 0 A_SPawnItem("ExplosionAirDisplacementEffect")
-		TNT1 A 0 A_playSound("EXPLOSIO3",2)
-		TNT1 A 0 Radius_Quake(2,8,0,12,0)
-		TNT1 A 2
-		TNT1 A 0 A_Explode
-		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 10
-		Stop
-	}
-}
-
 actor BurningBarrelSmoke : LightShaft2	//R31 added burningbarrel smoke
 {
 XScale 1.8
@@ -1760,20 +1710,20 @@ actor 64BurningBarrel : BurningBarrel Replaces BurningBarrel
 {
 scale 0.75
 health 20
-mass 100
+mass 125
 Damagefactor "Melee",0		//R31 ADDED
 Damagefactor "Kick",0		//R31 ADDED
+-ISMONSTER
 +SOLID
 +SHOOTABLE
 +NOBLOOD
--ISMONSTER
 +EXTREMEDEATH
 +PUSHABLE		//R31 ADDED
 +SLIDESONWALLS	//R31 ADDED
 	States
 	{
 	Spawn:
-		FCAN A 1 //NoDelay A_SpawnItemEx("BlankBarrel",0,0,0,0,0,0,0,0)
+		FCAN A 1
 	SemiStay:
 		TNT1 AAA 0 A_SpawnItemEx("BurningBarrelSmoke")
 		TNT1 A 0 A_TakeInventory("BurningBarrelSmokeCheck",0)
@@ -1835,40 +1785,6 @@ Scale 0.8
 	}
 }
 
-/*ACTOR 64HeadCandles : HeadCandles Replaces HeadCandles
-{
-Scale 0.8
-	States
-	{
-	Spawn:
-		A017 A 0 NoDelay A_SpawnItemEx("HeadCandleBurn",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
-		A017 A -1 Bright Light("BIGREDTORCH")
-		Stop
-	}
-}
-
-actor HeadCandleBurn		//R31 ADDED
-{
-+THRUACTORS
--SOLID
-	states
-	{
-	Spawn:
-		TNT1 AA 0 NoDelay A_SpawnItemEx("LightShaft2BrighterLess",0,0,36)
-	Stay:
-		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 3 A_CustomMissile("RealFlameTrailsSmall",35,0,random(0,360),2,random(70,110))
-		TNT1 A 3 A_CustomMissile("RealFlameTrailsSmall",35,0,random(0,360),2,random(70,110))
-		TNT1 A 3 A_CustomMissile("RealFlameTrailsSmall",35,0,random(0,360),2,random(70,110))
-		TNT1 A 3 A_CustomMissile("RealFlameTrailsSmall",35,0,random(0,360),2,random(70,110))
-		TNT1 A 3 A_CustomMissile("RealFlameTrailsSmall",35,0,random(0,360),2,random(70,110))
-		loop
-	StayBlank:
-		TNT1 A 3
-		Goto Stay
-	}
-}*/
-
 ACTOR 64EvilEye : EvilEye Replaces EvilEye
 {
 SCALE 0.8
@@ -1915,9 +1831,6 @@ SCALE 0.8
 	States
 	{
 	Spawn:
-/*		FSKU A 0 NoDelay Bright A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,20)
-	Stay:*/
 		FSKU A 5 Bright
 		FSKU B 5 Bright
 		FSKU C 5 Bright
