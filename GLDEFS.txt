@@ -424,22 +424,6 @@ object 64YellowTorch		//R16 MOVED TO MAPS.PK3
 	frame TYRN {light BIGYELLOWTORCH}
 }*/
 
-
-// Tall white torch
-/*flickerlight2 BIGWHITETORCH
-{
-	color 1.0 1.0 1.0
-	size 64
-	secondarySize 72
-	interval 0.1
-	offset 0 60 0
-}
-
-object 64WhiteTorch		//R10.2 UNUSED
-{
-	frame TWHT {light BIGWHITETORCH}
-}*/
-
 // Small red torch
 flickerlight2 SMALLREDTORCH
 {
@@ -499,36 +483,6 @@ object 64ShortYellowTorch
 {
 	frame TYRN {light SMALLYELLOWTORCH}
 }
-
-//Small white torch
-/*flickerlight2 SMALLWHITETORCH
-{
-	color 1.0 1.0 1.0
-	size 48
-	secondarySize 54
-	interval 0.1
-	offset 0 35 0
-}
-
-object 64ShortWhiteTorch		//R10.2 unused
-{
-	frame TWHT {light SMALLWHITETORCH}
-}*/
-
-//Burning barrel				//R31 redefined in decorate actor
-/*flickerlight2 FIREBARREL
-{
-	color 1.0 0.9 0.0
-	size 48
-	secondarySize 54
-	interval 0.1
-	offset 0 32 0
-}
-
-Object 64BurningBarrel
-{
-	frame BFIR {light FIREBARREL}
-}*/
 
 // Skulls w/candles
 flickerlight2 SKULLCANDLES
@@ -873,34 +827,6 @@ object DemonEssenceLarge	//R31 added
 {
 	frame D4RFL {light WEAPONPOWERRED1}
 }
-
-//Max Armor Bonus
-/*pulselight ARMORBONUS2
-{
-	color 0.0 0.0 0.6
-	size 16
-	secondarySize 14
-	interval 1.0
-}
-
-object MaxArmorBonus		//R10.2 unused
-{
-	frame BON4 {light ARMORBONUS2}
-}*/
-
-//Max Health Bonus
-/*pulselight HEALTHPOTION2
-{
-	color 0.6 0.0 0.0
-	size 16
-	secondarySize 18
-	interval 2.0
-}
-
-object MaxHealthBonus		//R10.2 unused
-{
-	frame BON3 {light HEALTHPOTION2}
-}*/
 
 //Zombies
 flickerlight2 ZOMBIEATK
@@ -2003,62 +1929,6 @@ object MotherFireTrail	//R31 added
 	frame MPUF {light ARCHATK5}
 }
 
-//Grenade
-/*pointlight GRENADE
-{
-	color 1.0 0.7 0.0
-	size 56
-}
-
-flickerlight GRENADE_X1
-{
-	color 1.0 0.7 0.0
-	size 64
-	secondarySize 72
-	chance 0.3
-}
-
-flickerlight GRENADE_X2
-{
-	color 0.5 0.3 0.0
-	size 80
-	secondarySize 88
-	chance 0.3
-}
-
-flickerlight GRENADE_X3
-{
-	color 0.4 0.2 0.0
-	size 96
-	secondarySize 104
-	chance 0.3
-}
-
-flickerlight GRENADE_X4
-{
-	color 0.3 0.1 0.0
-	size 96
-	secondarySize 104
-	chance 0.3
-}
-flickerlight GRENADE_X5
-{
-	color 0.2 0.1 0.0
-	size 96
-	secondarySize 104
-	chance 0.3
-}
-
-Object 64Grenade		//R10.2 unused
-{
-	frame SGRNA {light GRENADE}
-	frame MISLB {light GRENADE_X1}
-	frame MISLC {light GRENADE_X2}
-	frame MISLD {light GRENADE_X3}
-	frame MISLE {light GRENADE_X4}
-	frame MISLF {light GRENADE_X5}
-}*/
-
 //Doom Teleport fog
 flickerlight DTFOG1
 {
@@ -2142,60 +2012,6 @@ object TinyGreenTorch
 {
 	frame SMGT {light TINYGREENTORCH}
 }
-
-//Tiny yellow torch
-/*pointlight TINYYELLOWTORCH
-{
-	color 1.0 1.0 0.0
-	size 16
-	offset 0 16 0
-}
-
-object TinyYellowTorch		//r31 removed
-{
-	frame SMYY {light TINYYELLOWTORCH}
-}*/
-
-//Hanging Tech Lamp
-pointlight HANGLAMP
-{
-	color 1.0 0.7 0.0
-	size 48
-	offset 0 0 0
-}
-
-object HangingTechLampB			//R10.1 HangingTechLamp
-{
-	frame HGLM {light HANGLAMP}
-}
-
-//Ceiling Light
-pointlight CEILINGLIGHT
-{
-	color 1.0 0.7 0.0
-	size 32
-	offset 0 0 0
-}
-
-object CeilingLightB			//R10.1 WAS CeilingLight
-{
-	frame CEIL {light CEILINGLIGHT}
-}
-
-//Fire
-/*flickerlight2 GROUNDFIRE
-{
-	color 1.0 0.9 0.0
-	size 32
-	secondarySize 38
-	interval 0.1
-	offset 0 35 0
-}
-
-object BD64GroundFire			//R10.2 unused	//R11.1 WAS GroundFire //R16 removed
-{
-	frame MFIR {light GROUNDFIRE}
-}*/
 
 //end import doomdefs
 
@@ -2351,16 +2167,6 @@ object 64Candelabra
 frame CAND {light BIGREDTORCH}
 }
 
-/*object 64HEADCANDLES		//R31 ADDED
-{
-frame A017 {light BIGREDTORCH}
-}*/
-
-/*object 64TORCHTREE			//R31 ADDED
-{
-frame TRE1 {light BIGREDTORCH}
-}*/
-
 object 64RedTorch
 {
 frame TSTI {light BIGREDTORCH}
@@ -2414,25 +2220,6 @@ frame SMYY {light SMALLGREENTORCH}
 object 64WallTorchYellow  //R31 added
 {
 frame SMYY {light SMALLYELLOWTORCH}
-}
-
-object HangingTechLampb
-{
-frame HGLM {light LampWhite}
-}
-
-object BasicWhiteDynamicLight
-{
-frame TNT1 {light LampBasic}
-}
-
-object LightShaft1
-{
-frame SHF1 {light ShaftLight}
-frame SHF2 {light ShaftLight}
-frame SHF3 {light ShaftLight}
-frame SHF4 {light ShaftLight}
-frame SHF5 {light ShaftLight}
 }
 
 pulselight BIGREDLASER

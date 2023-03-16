@@ -400,7 +400,6 @@ floor FWATER1 Water
 floor FWATER2 Water
 floor FWATER3 Water
 floor FWATER4 Water
-//floor FWATER02 Water
 floor LAVA1 Lava
 floor LAVA2 Lava
 floor LAVA3 Lava
@@ -530,7 +529,6 @@ floor TLITE6_1 tile
 floor TLITE6_4 tile
 floor TLITE6_5 tile
 floor TLITE6_6 tile
-floor TLITE6_6 tile
 //floor BRICK22 rock
 floor STONE2 rock
 floor REDWALL rock
@@ -573,10 +571,7 @@ floor METAL1 metal2
 floor WOODVERT wood
 floor WOOD1 wood
 //floor DNBLDG03 wood
-//floor FTILE080 water
 floor SLIME05 water
-//floor CUSTOMCI water
-//floor CUSTOMCI water
 
 //DOOM 64	R16 DOOM 64 FLOOR TEXTURES MOVED TO MAPS
 endif
