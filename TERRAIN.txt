@@ -1,11 +1,11 @@
 //********** Splashes **********
 splash nukage
 {
-smallclass		nukageSplashBase
+smallclass		NukageSplashBase
 smallclip		6
 //smallsound	world/lavasizzlesmall
 
-baseclass		nukageSplashBase
+baseclass		NukageSplashBase
 chunkclass		sludgechunk
 chunkxvelshift	8
 chunkyvelshift	8
@@ -33,7 +33,7 @@ NoAlert
 
 splash water
 {
-smallclass	watersplashbase2
+smallclass		watersplashbase2
 smallclip		2
 smallsound		dssplash
 
@@ -49,7 +49,7 @@ NoAlert
 
 splash blood
 {
-smallclass	bloodsplashbasesmall
+smallclass		BloodSplashBase3
 smallclip		16
 //smallsound	world/sludgegloopsmall
 
