@@ -6,7 +6,7 @@ smallclip		6
 //smallsound	world/lavasizzlesmall
 
 baseclass		NukageSplashBase
-chunkclass		sludgechunk
+chunkclass		NukageSplashBase	//was sludgechunk
 chunkxvelshift	8
 chunkyvelshift	8
 chunkzvelshift	6
@@ -17,12 +17,12 @@ NoAlert
 
 splash Slime
 {
-smallclass		SlimeSplashBaseSmall
+smallclass		SlimeSplashBase
 smallclip		16
 smallsound		world/sludgegloopsmall
 
 baseclass		SlimeSplashBase
-chunkclass		SlimeChunk
+chunkclass		SlimeSplashBase		//was SlimeChunk
 chunkxvelshift	8
 chunkyvelshift	8
 chunkzvelshift	8
@@ -54,7 +54,7 @@ smallclip		16
 //smallsound	world/sludgegloopsmall
 
 baseclass		bloodsplashbase3
-chunkclass		bloodsplash
+chunkclass		bloodsplashbase3	//was bloodsplash
 chunkxvelshift	8
 chunkyvelshift	8
 chunkzvelshift	8
@@ -407,14 +407,14 @@ floor LAVA4 Lava
 floor NUKAGE1 Nukage
 floor NUKAGE2 Nukage
 floor NUKAGE3 Nukage
-floor SLIME01 Water
-floor SLIME02 Water
-floor SLIME03 Water
-floor SLIME04 Water
-floor SLIME05 Water
-floor SLIME06 Water
-floor SLIME07 Water
-floor SLIME08 Water
+floor SLIME01 SLIME
+floor SLIME02 SLIME
+floor SLIME03 SLIME
+floor SLIME04 SLIME
+floor SLIME05 SLIME
+floor SLIME06 SLIME
+floor SLIME07 SLIME
+floor SLIME08 SLIME
 floor CEIL1_1 wood
 floor CEIL1_2 metal
 floor CEIL1_3 tile
@@ -571,7 +571,6 @@ floor METAL1 metal2
 floor WOODVERT wood
 floor WOOD1 wood
 //floor DNBLDG03 wood
-floor SLIME05 water
 
 //DOOM 64	R16 DOOM 64 FLOOR TEXTURES MOVED TO MAPS
 endif

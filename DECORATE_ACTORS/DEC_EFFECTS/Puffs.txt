@@ -78,31 +78,6 @@ Obituary "%o ate bullet shrapnel."
 	}
 }
 
-ACTOR GiantWaterRicochet : RicoChet
-{
-XScale 3.0
-YScale 2.0
-alpha 0.9
-renderstyle Add
-	states
-	{
-	Spawn:
-		GSPL ABCDEFGHIJKLMNOPQRSTUVWXYZ 1
-		Stop
-	}
-}
-
-ACTOR GiantNukageRicochet : GiantWaterRicochet
-{
-Translation "0:255=%[0,0,0]:[0,1,0]"//Green
-}
-
-ACTOR GiantBloodRicochet : GiantWaterRicochet
-{
-RenderStyle Normal
-Translation "0:255=187:191" //Red
-}
-
 Actor MachineGunBulletPuff : HitPuff
 {
 DamageType CutLess
