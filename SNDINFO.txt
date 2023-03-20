@@ -305,8 +305,7 @@ Dog/melee DOGGATT
 //R30.10 TELEPORT NEW
 DSTELEPT DSTELEPT
 
-// Demon R30.10
-
+//Demon
 demon/sight			dssgtsit
 demon/active		demoact
 demon/pain			demopain
@@ -314,20 +313,19 @@ demon/melee			dssgtatk
 demon/death			dssgtdth
 $limit demon/melee 4
 
-// Spectre R30.10
-
+//Spectre
 spectre/sight			dssgtsit
 spectre/active			demoact
 spectre/pain			demopain
 spectre/melee			dssgtatk
 spectre/death			dssgtdth
 
-//R31 LASERGUN RAIL BLAST
+//LASERGUN RAIL BLAST
 RBLAST	RBLAST
 RCHARGE	RCHARGE
 DSFIRXPL	DSFIRXPL
 
-//R31 for BFG ALt
+//BFG ALt
 weapons/bfgf2	DSBFG
 BBFGHOLD		BBFGHOLD
 
@@ -353,7 +351,6 @@ CHAINSPI CHAINSPI
 CHAINSTO CHAINSTO
 
 //R31 Fidget sounds
-
 Knuckled Knuckled
 
 PISBACK PISBACK
@@ -363,7 +360,6 @@ RIFBOLT RIFBOLT
 ARSBOLT ARSBOLT
 
 //R31 restore select animation
-
 PISSEL PISSEL
 CLIPINSS CLIPINSS
 CHGNPKUP CHGNPKUP
@@ -421,7 +417,6 @@ DSSTLKPN	DSSTLKPN
 DSSTLKST	DSSTLKST
 
 //R31 Sliding kick
-
 $random SlideKickStart { SLIDSTRT1 SLIDSTRT2 SLIDSTRT3 }
 SLIDSTRT1	SLIDSTR1
 SLIDSTRT2	SLIDSTR2
@@ -437,7 +432,7 @@ $random SlideKickStop { SLIDEND1 SLIDEND2 }
 SLIDEND1	SLIDEND1
 SLIDEND2	SLIDEND2
 
-//BRUISER //R31 added
+//BRUISER
 BREATHOF	BREATHOF
 
 64Bruiser/sight			SNDDHATK	//snddhsit
@@ -470,6 +465,26 @@ $volume bfgguy/sight2 0.8
 $volume bfgguy/pain 0.8
 $volume bfgguy/death 0.8
 $volume bfgguy/active 0.8
+
+//Wraith
+Roach/Death	ROACDEAT
+
+$Random Roach/Sight		{ROACSIG1 ROACSIG2 ROACSIG3}
+ROACSIG1	ROACSIG1
+ROACSIG2	ROACSIG2
+ROACSIG3	ROACSIG3
+
+$Random Roach/Active	{ROACACT1 ROACACT2}
+ROACACT1	ROACACT1
+ROACACT2	ROACACT2
+
+$Random Roach/Pain		{ROACPAI1 ROACPAI2}
+ROACPAI1	ROACPAI1
+ROACPAI2	ROACPAI2
+
+$Random D3Wraith/Attack	{3WRTATK1 3WRTATK2}
+3WRTATK1	3WRTATK1
+3WRTATK2	3WRTATK2
 
 //Alt Fire Plasma
 PlasFire	PlasFire

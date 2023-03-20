@@ -2,14 +2,14 @@
 splash nukage
 {
 smallclass		NukageSplashBase
-smallclip		6
+smallclip		2
 //smallsound	world/lavasizzlesmall
 
 baseclass		NukageSplashBase
 chunkclass		NukageSplashBase	//was sludgechunk
 chunkxvelshift	8
 chunkyvelshift	8
-chunkzvelshift	6
+chunkzvelshift	8
 chunkbasezvel	2
 sound			world/lavasizzle
 NoAlert
@@ -18,7 +18,7 @@ NoAlert
 splash Slime
 {
 smallclass		SlimeSplashBase
-smallclip		16
+smallclip		2
 smallsound		world/sludgegloopsmall
 
 baseclass		SlimeSplashBase
@@ -50,7 +50,7 @@ NoAlert
 splash blood
 {
 smallclass		BloodSplashBase3
-smallclip		16
+smallclip		2
 //smallsound	world/sludgegloopsmall
 
 baseclass		bloodsplashbase3

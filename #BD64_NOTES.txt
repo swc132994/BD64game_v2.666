@@ -66,6 +66,7 @@ ACID DEMON			19106	158
 STALKER				19107	183
 BRUISER				19111
 KNIGHTMARE			19118	178
+WRAITH				19123
 
 SMG SPAWNER			19121
 RIFLE SPAWNER		19120
@@ -90,14 +91,14 @@ Alt Lasergun - IDDQD_1337 (animation)
 Alt Rifle - IDDQD_1337 (animation) & I'M (sprites)
 Tactical Shotgun Alt attack - IDDQD_1337 (animation) & I'M (sprites)
 Laser Mine (unused) - Sprite rework by Craneo, Animations extra sprites and decorate by IDDQD_1337. Sounds from Brutal Hellfest by Gni. Orginally created by Capt. J and Ezequiel-TM's tripwire lasermine
-Proxy Mine (Tactical and Modern) - CaptJ and Apocalyptic Studios, edited by Craneo
+Proxy Mine (Tactical and Modern) - CaptJ and Apocalyptic Studios, edited by Craneo and IDDQD_1337.
 
 New weapon kicking and slide kicking animations by IDDQD_1337
 
 Monsters:
 64Thing - Craneo(D64 sprites), based on the Mimic by StopSignal, sounds from Duke Nukem 3D by 3D Realms
-New Revenant - DrPyspy (sprites)
-New Archvile - DrPyspy (sprites)
+64 Revenant - DrPyspy (sprites)
+64 Archvile - DrPyspy (sprites)
 Hellhound Alt - I'M (sprites)
 Hellhound GEC - Gerardo194 (sprites)
 Bruiser a.k.a Duke of Hell - Gerardo194 (sprites)
@@ -108,6 +109,7 @@ Acid Demon sounds from REALM667 - SLIME WORM by Captain Toenail
 Spider Mastermind - Craneo (rework), 3D Realms (Battlelord chaingun), Sgt Mark IV (face), Immorpher (based on mastermind rework)
 BFG Zombie - Sprites: Id Software, Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim, Korp, ItsNatureToDie, neoworm, Craneo. Sounds: Immorpher
 Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
+64Wraith - Vader, Captain Toenail, Midway, Id Software, Gregor Punchatz, Craneo (D64 style sprites)
 
 Add-ons:
 BD64HUD_Ashton (Paladin-julio (ModDB))
