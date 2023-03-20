@@ -88,6 +88,7 @@ MeleeRange 60 //default 44
 		HEAD D 1 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.CutLess:	//r31 extra
+		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Xdeath")
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -414,53 +415,9 @@ PROJECTILE
 	}
 }
 
-Actor 64StealthCacodemon : StealthCacodemon Replaces StealthCacodemon
+Actor 64StealthCacodemon : 64Cacodemon Replaces StealthCacodemon
 {
-Scale 0.75
-+MISSILEMORE
-+NOBLOODDECALS
-	States
-	{
-	Spawn:
-		HEAD ABCD 15 A_Look
-		Loop
-	See:
-		HEAD AABBCCDD 3 A_Chase
-		Loop
-	Pain:
-		HEAD D 3
-		HEAD D 3 A_Pain
-		Goto See
-	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		HEAD D 3
-		HEAD D 3 A_Pain
-		Goto See
-	Melee:
-		HEAD EF 5 A_FaceTarget
-		HEAD G 5 A_CustomComboAttack("CacodemonBall",32,10 * random(1,6),"weapons/gswing")	//R18 added //R21 was "baron/melee"
-		Goto See
-	Missile:
-		HEAD EF 5 A_FaceTarget
-		HEAD G 5 Bright A_CustomComboAttack("CacodemonBall",32,10 * random(1,6),"weapons/gswing")	//R18 added//R21 was "baron/melee"
-		Goto See
-	Death:
-		HEAD H 8
-		HEAD I 8 A_Scream
-		HEAD JK 8
-		HEAD L 8 A_NoBlocking
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.9 added
-		HEAD M -1 A_SetFloorClip
-		Stop
-	Raise:
-		HEAD M 8 A_UnSetFloorClip
-		HEAD LKJIH 8
-		Goto See
-	Crush:
-		TNT1 A 0 A_PlaySound("Misc/Gibbed")
-		POL5 A -1
-		Stop
-	}
++STEALTH
 }
 
 Actor NightmareCacodemon : Cacodemon 19990		//R23 moved from NIGHTMARESTUFF	//R26.1 added ID FROM TC ABS
@@ -560,6 +517,7 @@ DropItem "DemonEssenceSpawner"	//R31 added
 		HEA2 D 1 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.CutLess:	//r31 extra
+		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Xdeath")
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))

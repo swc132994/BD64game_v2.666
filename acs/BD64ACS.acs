@@ -385,3 +385,8 @@ script "FloorCheck" (Void)
 	else
 		SetResultValue(FALSE);
 }
+
+Script "SevereredLimbDeathACS" (void)
+{
+SetResultValue(GetCVar("SevereredLimbDeathCvar"));
+}

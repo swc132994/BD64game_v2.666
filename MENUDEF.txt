@@ -102,10 +102,10 @@ OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 	Option "Screen Effects =", "bd64_ScreenFX", "ScreenTypes"
 		StaticText "Enables Screen Effects on HUD, such as Blood Splashing and Bullet Holes."
 		StaticText " "
-    Option "Blood Trail Splash =", "bd64_BloodTrail", "YesOrNoFalse"
+	Option "Blood Trail Splash =", "bd64_BloodTrail", "YesOrNoFalse"
 		StaticText "Enables Blood Splashing when Enemies are bleeding out."
 		StaticText "If Screen Effects is disabled, this option will also be disabled."
-		StaticText "Does not work for the BDv21 Mode."	
+		StaticText "Does not work for the BDv21 Mode."
 }
 
 OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
@@ -138,7 +138,7 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 	Option "Randomly replace ZombieMen with Zombie Marines =","ZMarineRandom_Cvar","ZMarineRandom_Value"		//R31 was YesOrNo
 	Option "Randomly replace Chaingun Zombies with BFG Zombies =","ZombieBFGRandom_Cvar","BFGZombie_Value"
 	Option "Randomly replace Imps with Nightmare Imps =","NImp_Spawner_Cvar","NImp_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Spectres with Nightmare Spectres =","NSpectre_Spawner_Cvar","NSpectre_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Spectres with Nightmare Spectres or Wraiths =","NSpectre_Spawner_Cvar","NSpectre_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Cacodemons with Nightmare Cacodemons =","NCaco_Spawner_Cvar","NCaco_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Demons with Acid Demons =","AcidDemonRandom_Cvar","AcidDemon_Spawner_Value"	//R31 New - Split from Demons with Hellhounds
 	Option "Randomly replace Lost Souls with Stalkers =","StalkerRandom_Cvar","Stalker_Spawner_Value"	//R31 New
@@ -168,6 +168,10 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 		StaticText "(Enabling the D64 monsters only option will override these setting)",1
 		StaticText " "
 	Option "Allow Pain Elemental Stalker attack =","PainStalkerRandom_Cvar","YesOrNo"
+		StaticText " "
+		StaticText "Allow limb loss death states",1
+		StaticText " "
+	Option "Allow Severed Limb Deaths =","SevereredLimbDeathCvar","YesOrNo"
 }
 
 OptionMenu "BD64MapOptions" //R31 added
@@ -228,16 +232,10 @@ OptionValue "YesOrNoFalse"
 	0,"Yes"
 }
 
-/*OptionValue "SelectEngineType"	//R29 reomved
-{
-	1,"Zandronum"
-	0,"GZDoom"
-}*/
-
 OptionValue "SSGinDoom1Menu"
 {
 	0,"Shotgun Only"
-	1,"Super Shotgun Only"
+	1,"SSG Only"
 	2,"Random"
 }
 
@@ -310,21 +308,22 @@ OptionValue "AcidDemon_Spawner_Value"
 OptionValue "NCaco_Spawner_Value"
 {
 	0,"Cacodemon Only"
-	1,"Nightmare Cacodemon Only"
+	1,"N'mare Cacodemon Only"
 	2,"Random"
 }
 
 OptionValue "NSpectre_Spawner_Value"
 {
 	0,"Spectre Only"
-	1,"Nightmare Spectre Only"
-	2,"Random"
+	1,"N'mare Spectre Only"
+	2,"Wraith Only"
+	3,"Random"
 }
 
 OptionValue "NImp_Spawner_Value"
 {
 	0,"Imp Only"
-	1,"Nightmare Imp Only"
+	1,"N'mare Imp Only"
 	2,"Random"
 }
 
@@ -392,7 +391,7 @@ OptionValue "AlternativeAmmoPickupSpritesValue"
 	0,"Default Only"
 	1,"Alternative Only"
 	2,"Alpha Build Only"
-	3,"Random (Except Alpha Build)"
+	3,"Random (No Alpha Build)"
 }
 
 OptionValue "CensoredHealing_Value"

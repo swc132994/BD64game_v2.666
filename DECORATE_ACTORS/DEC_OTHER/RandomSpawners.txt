@@ -174,12 +174,17 @@ States
 		SAR2 A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnSpectre")	//if D64 monsters only enabled spawn spectre
 		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==0,"SpawnSpectre")
 		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==1,"SpawnNightSpectre")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==2,"SpawnWraith")
 		TNT1 A 0 A_Jump(39,"SpawnNightSpectre") //(15%)
+		TNT1 A 0 A_Jump(51,"SpawnWraith") //(20%)
 	SpawnSpectre:
 		TNT1 A 0 A_SpawnItemEx("64Spectre",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	SpawnNightSpectre:
 		TNT1 A 0 A_SpawnItemEx("64NightmareSpectre",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnWraith:
+		TNT1 A 0 A_SpawnItemEx("64Wraith",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	}
 }

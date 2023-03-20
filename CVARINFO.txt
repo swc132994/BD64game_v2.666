@@ -50,5 +50,6 @@ server bool WeaponsWarmUpCvar = TRUE;		//Weapons Warm Up Animation
 server bool AlphaPickupCvar = FALSE;		//Pickup Sprites from D64 Alpha Build
 server int bd64_ScreenFX = 0;				//ScreenFX
 server int bd64_BloodTrail = 0;				//Bloodtrail
+server int SevereredLimbDeathCvar = 1;			//Option to skip one arm deaths
 
 //Leave blank end line to prevent UDB error warning
