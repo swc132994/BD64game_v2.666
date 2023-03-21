@@ -164,7 +164,7 @@ Player.AttackZOffset 23
 Player.DisplayName "Classical"
 Player.CrouchSprite "PLYC"
 Player.WeaponSlot 1,"64Chainsaw","64Fist"		//R16 DEFINE WEAPONS
-Player.WeaponSlot 2,"64Pistol","64SMG"
+Player.WeaponSlot 2,"64Pistol","64SMG", "64MP40"
 Player.WeaponSlot 3,"64Shotgun","64SuperShotgun"
 Player.WeaponSlot 4,"64Rifle","64Chaingun"
 Player.WeaponSlot 5,"64RocketLauncher","64RocketLauncherDM"
@@ -359,12 +359,13 @@ Player.StartItem "IsTacticalClass",1
 Player.StartItem "64RifleTactical"
 Player.StartItem "64PistolTactical"		//R15 added
 Player.StartItem "64FistTactical"
-Player.StartItem "ShotgunAmmo",8		//R5 NEW
+Player.StartItem "ShotgunAmmo",9		//R5 NEW
 Player.StartItem "SSGAmmo",2			//R10.2 NEW
 Player.StartItem "PlasmaRifleAmmo",40	//R5 NEW	//r31 was 30
 Player.StartItem "RLAmmo",6				//R31 added
 Player.StartItem "GaussAmmo",4			//R31 added
 Player.StartItem "64ProximityMine",1
+Player.StartItem "MP40Ammo",31			//R31 added
 Player.StartItem "StartWeapon"
 Player.StartItem "FirstTimePistol"
 Player.StartItem "FirstTimeShotgun"
@@ -375,7 +376,7 @@ Player.AttackZOffset 23
 Player.DisplayName "Tactical (Rifle)"		//R15 changed name
 Player.CrouchSprite "PLYC"
 Player.WeaponSlot 1,"64ChainsawTACTICAL","64ChainsawTACTICAL_Classic","64FistTactical"		//R16 DEFINE WEAPONS
-Player.WeaponSlot 2,"64PistolTACTICAL","64SMGTactical"
+Player.WeaponSlot 2,"64PistolTACTICAL","64SMGTactical", "64MP40Tactical"
 Player.WeaponSlot 3,"64ShotgunTACTICAL","64SuperShotgunTACTICAL"
 Player.WeaponSlot 4,"64RifleTACTICAL","64ChaingunTACTICAL"
 Player.WeaponSlot 5,"64ProximityMine","64RocketLauncherTACTICAL","64RocketLauncherDM"
@@ -619,10 +620,11 @@ Player.StartItem "IsTacticalClass",1
 Player.StartItem "64PistolTactical"
 Player.StartItem "Pistolammo",10
 Player.StartItem "64FistTactical"
-Player.StartItem "ShotgunAmmo",8
+Player.StartItem "ShotgunAmmo",9
 Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40	//r31 was 30
 Player.StartItem "RLAmmo",6				//R31 added
+Player.StartItem "MP40Ammo",31			//R31 added
 Player.StartItem "StartWeapon"
 Player.StartItem "FirstTimeRifle"
 Player.StartItem "FirstTimeShotgun"
@@ -650,11 +652,12 @@ Player.StartItem "IsModern",1
 Player.StartItem "64PistolTactical"
 Player.StartItem "Pistolammo",10
 Player.StartItem "64FistTactical"
-Player.StartItem "ShotgunAmmo",8
+Player.StartItem "ShotgunAmmo",9
 Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40	//r31 was 30
 Player.StartItem "RLAmmo",6				//R31 added
 Player.StartItem "GaussAmmo",4			//R31 added
+Player.StartItem "MP40Ammo",31			//R31 added
 Player.StartItem "64ProximityMine",1
 Player.StartItem "StartWeapon"
 Player.StartItem "FirstTimeRifle"
@@ -666,7 +669,7 @@ Player.AttackZOffset 23
 Player.DisplayName "Modern"
 Player.CrouchSprite "PLYC"
 Player.WeaponSlot 1,"64ChainsawModern","64ChainsawModern_Classic","64FistTactical"		//R31 was "64ChainsawTactical"
-Player.WeaponSlot 2,"64PistolTACTICAL","64SMGTactical"
+Player.WeaponSlot 2,"64PistolTACTICAL","64SMGTactical", "64MP40Tactical"
 Player.WeaponSlot 3,"64ShotgunTACTICAL","64SuperShotgunTACTICAL"
 Player.WeaponSlot 4,"64RifleTACTICAL","64ChaingunTACTICAL"
 Player.WeaponSlot 5,"64ProximityMine","64RocketLauncherTACTICAL","64RocketLauncherDM"

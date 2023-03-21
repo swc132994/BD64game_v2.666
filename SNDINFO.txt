@@ -39,6 +39,12 @@ DSBOSPIT DSBOSPIT
 
 INSHELL INSHELL
 
+//MP40
+
+MP40 MP40
+
+RELOAN RELOAN
+
 Flies	DSBUZZ
 $random world/ricochet		{ricochet/hit world/blank1}
 $random ricochet/hit		{world/ricochet1 world/ricochet2 world/ricochet3 world/ricochet4 world/ricochet5 world/ricochet6 world/ricochet7}

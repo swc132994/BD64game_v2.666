@@ -11,7 +11,7 @@ AttackSound "MP40"
 PainSound "none"
 DeathSound "nazi/death"
 Obituary "%o was executed by a WafenSS."
-DropItem "SMGSpawner"
+DropItem "MP40Spawner"
 DropItem "SOULSPAWNER"
 +MISSILEMORE
 	States
