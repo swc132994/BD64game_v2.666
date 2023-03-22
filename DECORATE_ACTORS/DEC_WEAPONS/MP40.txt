@@ -1,5 +1,5 @@
 //R31 MP40(based on Rifle code) by IDDQD_1337
-Actor MP40Spawner : CustomInventory 19121	//R31 added number
+Actor MP40Spawner : CustomInventory 19124
 {
 Scale 0.45
 Inventory.PickupMessage "You got the MP40!"
@@ -7,18 +7,22 @@ Inventory.PickupSound "WPICK"
 	States
 	{
 	Spawn:
-		MP4P A -1
-		Stop
+		MP4P A 3 NoDelay A_JumpIf(CallACS("D64WeaponsOnlyReplacer")==1,"SpawnClip")	//D64 weapon only
+		Loop
 	Pickup:
 		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
 		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
-		TNT1 A 0 A_GiveInventory("64MP40",1)
+		TNT1 A 0 A_GiveInventory("64MP40")
 		Stop
 	Pickup2:
-		TNT1 A 0 A_GiveInventory("64MP40Tactical",1)
+		TNT1 A 0 A_GiveInventory("64MP40Tactical")
+		Stop
+	SpawnClip:
+		TNT1 A 0 A_SpawnItemEx("Clip",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	}
 }
+
 
 Actor FiredMP40 : Inventory
 {

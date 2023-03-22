@@ -60,6 +60,7 @@ MOTHERDEMON			9897	17
 ERADICATOR			19119
 BELPHEGOR 			11053
 64BFGGUY			19122
+WAFFEN-SS			TO REPLACE WOLFENSTEINSS
 
 NIGHTCRAWLER		19105	181
 ACID DEMON			19106	158
@@ -68,6 +69,7 @@ BRUISER				19111
 KNIGHTMARE			19118	178
 WRAITH				19123
 
+MP40 SPAWNER		19124
 SMG SPAWNER			19121
 RIFLE SPAWNER		19120
 UNMAKER SPAWNER		9901	84
@@ -110,6 +112,7 @@ Spider Mastermind - Craneo (rework), 3D Realms (Battlelord chaingun), Sgt Mark I
 BFG Zombie - Sprites: Id Software, Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim, Korp, ItsNatureToDie, neoworm, Craneo. Sounds: Immorpher
 Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 64Wraith - Vader, Captain Toenail, Midway, Id Software, Gregor Punchatz, Craneo (D64 style sprites)
+64WaffenSS - Sounds from Return to Castle Wolfenstein, uploaded by Labtec Speakers to The Sounds Resource, 
 
 Add-ons:
 BD64HUD_Ashton (Paladin-julio (ModDB))

@@ -1728,7 +1728,7 @@ Actor EnemyProjectileExtreme : EnemyProjectile
 +EXTREMEDEATH
 }
 
-Actor 64Zombiemarine : 64Zombieman Replaces WolfensteinSS
+Actor 64ZombieMarine : 64Zombieman Replaces WolfensteinSS
 {
 Health 90 //R31 added
 Speed 12
@@ -1739,7 +1739,7 @@ DropItem "SOULSPAWNER"	//R31 added
 Obituary "%o was gunned down by a zombie marine."
 	States
 	{
-	Idle:	//r31 added as placeholder
+	Idle:	//r31 added placeholder
 	Spawn:
 		CPOS A 8 A_Look
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
@@ -1818,33 +1818,33 @@ Obituary "%o was gunned down by a zombie marine."
 		Goto See
 	Death.Bullet:
 	Death:			//R30.7 ADDED DEATH FRAMES
-		CPOS H 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
-		CPOS I 5 A_Scream
+		TNT1 A 0 A_Scream
+		CPOS H 5
+		CPOS I 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
 		CPOS J 5 A_NoBlocking
-		CPOS KL 5 A_Stop
-		CPOS A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
-		CPOS M 3500
+		CPOS KL 5
+		CPOS M 3500 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_Jump(192,2)
 		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 		CPOS M -1
 		Stop
 	Death.Head:
-		CPOH H 5
+		CPOS G 5
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))//Eyes
 		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
-		CPOH I 5 A_XScream
-		CPOH JK 5 A_Stop
+		CPOH H 5 A_XScream
+		CPOH IJK 5
 		CPOH L 5 A_NoBlocking
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))		//R30.7 ADDED
-		CPOH M -1
+		CPOH M -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))		//R30.7 ADDED
 		Stop
 	Raise:
 		CPOS MLKJIH 5
@@ -1855,7 +1855,7 @@ Obituary "%o was gunned down by a zombie marine."
 		Stop
 	Death.BFG:		//R30.5 ADDED
 	XDeath:			//R30.5 REVISED XDEATH
-		CPOS N 3
+		CPOS G 5
 		TNT1 A 0 A_NoBlocking	//R28.4 ADDED
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
@@ -1864,19 +1864,16 @@ Obituary "%o was gunned down by a zombie marine."
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-//		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))//Eyes		//R30.5 WAS A
 		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))	//R30.5 ADDED ZOMBIE MARINE ARM	//R31 WAS XDeathZombieMarineArm1
-//		TNT1 AA 0 A_CustomMissile("XDeathZombieLeg1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-		TNT1 A 2 A_ChangeFlag("THRUACTORS",1)		//R30.6 WAS CPOG A SPRITE
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",1)		//R30.6 WAS CPOG A SPRITE
 		TNT1 A 0 A_XScream
-		CPOS OPQRST 4
-		CPOS U 10 A_Stop	//R30.9 added
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		CPOS V -1
+		CPOS NOPQRSTU 4
+		CPOS V 35
+		CPOS V -1 A_SpawnItem("GrowingBloodPool")
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
@@ -1902,8 +1899,6 @@ Obituary "%o was gunned down by a zombie marine."
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-//		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))//eyes	//R30.5 WAS A
-		TNT1 A 0 A_CustomMissile("XDeathMarineArm1",50,0,random(150,210),2,random(10,50))	//R30.5 ADDED ZOMBIE MARINE ARM	//R31 WAS XDeathZombieMarineArm1
 		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(150,210),2,random(10,50))//R31 WAS XDeathZombieLeg1
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -1919,17 +1914,15 @@ Obituary "%o was gunned down by a zombie marine."
 		CPOG B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		CPOG B -1
+		CPOG B -1 A_SpawnItem("GrowingBloodPool")
 		Stop
-	LandAfterXDeath2:
-		CPOG C 1	//r31 added C frame
+	LandAfterXDeath2:	//r31 added C frame
+		CPOG C 1
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		CPOG C -1	//r31 added c frame
+		CPOG C -1 A_SpawnItem("GrowingBloodPool")
 		Stop
 	Death.Cutless:		//R30.5 new death cutless
-		CPOS H 5
+		CPOS G 5
 		TNT1 A 0 A_Jump(64,"Death")
 		TNT1 A 0 A_CustomMissile("XDeathMarineArm1",50,0,random(150,210),2,random(10,50))	//R30.6 ADDED ZOMBIE MARINE ARM	//R31 WAS XDeathZombieMarineArm1
 		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",25,0,random(150,210),2,random(10,50))	//R31 WAS XDeathZombieLeg1
@@ -1947,31 +1940,19 @@ Obituary "%o was gunned down by a zombie marine."
 	Death.Rifle:		//r31 added
 		TNT1 A 0 A_Jump(168,"Death")
 	Death.Heavy:		//R30.5 revised
-		CPOH H 5
-		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
+		CPOH G 5 A_XScream
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
-		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeath1",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
-		CPOH I 5 A_XScream
-		CPOH J 5 A_NoBlocking
-		CPOH KL 5 A_Stop	//R30.9 added A_Stop
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.7 added
-		CPOH M -1
-		Stop
+		Goto Death+1
 	}
 }
-
-/*Actor D64ChaingunnerReplacer : RandomSpawner Replaces Chaingunguy
-{
-DropItem "64ZombieMarine"
-DropItem "64ZombieMarine"
-DropItem "64Chaingunguy"
-}*/ //R31 Moved to RandomSpawner.txt
 
 //INTRO MARINES
 Actor IntroMarine : 64ZombieMarine Replaces MarinePistol	//R21 MOVED FROM DECORATE.INTROMARINES
@@ -2058,7 +2039,7 @@ Obituary "%o was gunned down by a marine."
 		PLAY G 3 A_Pain		//R31 WAS GMAN H
 		Goto See
 	Raise:		//r31 added
-		CPOS MLKJHI 5	//R31 RAISES AS ZOMBIEMARINE
+		CPOS MLKJIH 5	//R31 RAISES AS ZOMBIEMARINE
 		TNT1 A 0 A_SpawnItemEx("64ZombieMarine",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Crush:
@@ -2067,12 +2048,12 @@ Obituary "%o was gunned down by a marine."
 		Stop
 	Death.Bullet:
 	Death:
+		TNT1 A 0 A_Scream
 		PLAY H 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
-		PLAY I 5 A_Scream
+		PLAY I 5
 		PLAY J 5 A_NoBlocking
-		PLAY KL 5 A_Stop
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
-		PLAY M 3500
+		PLAY KL 5
+		PLAY M 3500 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_Jump(200,3)
 		THT1 A 0 A_ChangeFlag("FRIENDLY",0)
 		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
@@ -2081,7 +2062,7 @@ Obituary "%o was gunned down by a marine."
 		Stop
 	Death.BFG:		//R30.5 ADDED
 	XDeath:			//R30.5 REVISED XDEATH
-		PLAY O 3
+		PLAY G 5
 		TNT1 A 0 A_NoBlocking	//R28.4 ADDED
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
@@ -2090,19 +2071,16 @@ Obituary "%o was gunned down by a marine."
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-//		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))//eyes		//R30.5 WAS A
-		TNT1 A 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))		//R30.6 ADDED MARINE ARM
-//		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(0,360),2,random(20,90))	//R30.6 ADDED MARINE LEG
+		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))		//R30.6 ADDED MARINE ARM
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 2 A_ChangeFlag("THRUACTORS",1)	//R30.6 WAS CPOG A
 		TNT1 A 0 A_XScream						//r31 was a_scream
-		PLAY PQRSTU 4							//R30.6 ADDED MARINE SPRITES
-		PLAY V 10 A_Stop
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		PLAY W -1	//R30.6 ADDED MARINE SPRITES
+		PLAY NOPQRSTU 4							//R30.6 ADDED MARINE SPRITES
+		PLAY V 35
+		PLAY V -1 A_SpawnItem("GrowingBloodPool")	//R30.6 ADDED MARINE SPRITES
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
@@ -2128,8 +2106,6 @@ Obituary "%o was gunned down by a marine."
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-//		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))//eyes		//R30.5 WAS A
-		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))	//R30.6 ADDED MARINE ARM
 		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(150,210),2,random(10,50))	//R30.6 ADDED MARINE LEG
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -2142,7 +2118,7 @@ Obituary "%o was gunned down by a marine."
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")	//R31 REMOVED 25 A FRAMES
 		Wait	//R31 WAS Goto LandAfterXDeath
 	Death.Cutless:	//R30.5 new death cutless
-		CPOS H 5
+		PLAY G 5
 		TNT1 A 0 A_Jump(64,"Death")
 		TNT1 A 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))		//R30.6 ADDED MARINE ARM
 		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",25,0,random(150,210),2,random(10,50))	//R30.6 ADDED MARINE LEG
@@ -2156,22 +2132,17 @@ Obituary "%o was gunned down by a marine."
 		CPOG A 2 A_ChangeFlag("THRUACTORS",1)
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")	//R31 REMOVED 25 A FRAMES
 		Wait	//R31 WAS Goto LandAfterXDeath
-	Death.Heavy:	//R30.5 REWORKED
-		CPOH H 5
-		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
+	Death.Heavy:		//R30.5 revised
+		PLAY G 5 A_XScream
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
-		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeath1",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
-		CPOH I 5 A_XScream
-		CPOH J 5 A_NoBlocking
-		CPOH KL 5 A_Stop	//R30.9 ADDED A_Stop
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R30.7 ADDED
-		CPOH M -1
-		Stop
+		Goto Death+1
 	}
 }
