@@ -41,8 +41,8 @@ INSHELL INSHELL
 
 //MP40
 MP40 64MP40
-
 RELOAN RELOAN
+MP40BACK MP40BACK
 
 Flies	DSBUZZ
 $random world/ricochet		{ricochet/hit world/blank1}
