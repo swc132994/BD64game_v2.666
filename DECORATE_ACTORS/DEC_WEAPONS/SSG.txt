@@ -141,7 +141,7 @@ Tag "$TAG_SUPERSHOTGUN"
 		Stop
 	AirKickingFlash:
 		SSGG BCDEFGH 1
-		SSGG I 8
+		SSGG I 5
 		SSGG HGFEDCB 1
 		Stop
 	SlideKickingStart:
