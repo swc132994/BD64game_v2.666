@@ -159,10 +159,14 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 		StaticText " "
 	Option "Spawn Doom 64 vanilla monsters ONLY =","D64MonstersOnlyCvar","YesOrNo"	//R31 was DynamicSpawnCvar4
 		StaticText " "
-		StaticText "Options to switch to alternate spawns for the Revenant and Hellhound",1
+		StaticText "Option to switch to alternate spawns for the Revenant and Hellhound",1
 		StaticText " "
 	Option "Select between Cerberus, Alternate and GEC Hellhound =","HoundChooserCvar","HoundChooser"
 	Option "Revert back to Tchernobog Revenant =","RevenantChooserCvar","YesOrNo"
+		StaticText " "
+		StaticText "Option to replace all Zombie Marines map spawns with Waffen-SS",1
+		StaticText " "
+	Option "Select between Zombie Marines or Waffen-SS =","ZombieMarineNaziCvar","ZombieMarineNazi"
 		StaticText " "
 		StaticText "Option to allow pain elementals to randomly spit stalkers",1
 		StaticText "(Enabling the D64 monsters only option will override these setting)",1
@@ -240,6 +244,12 @@ OptionValue "SSGinDoom1Menu"
 }
 
 //R31 Monster Spawner improvement
+OptionValue "ZombieMarineNazi"
+{
+	0,"Zombie Marine"
+	1,"Waffen-SS"
+}
+
 OptionValue "HoundChooser"
 {
 	0,"Alternate"

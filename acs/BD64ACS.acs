@@ -390,3 +390,8 @@ Script "SevereredLimbDeathACS" (void)
 {
 SetResultValue(GetCVar("SevereredLimbDeathCvar"));
 }
+
+Script "ReplaceZMarineNaziACS" (void)
+{
+SetResultValue(GetCVar("ZombieMarineNaziCvar"));
+}
