@@ -146,6 +146,7 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 	Option "Randomly replace HellKnights with Knightmares =","KnightmareRandomCvar","Knightmare_Spawner_Value"
 	Option "Randomly replace Barons with Hellhounds or Belphegors =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Mancubi with Bruisers =","BruiserRandom_Cvar","Bruiser_Spawner_Value"
+	Option "Randomly replace Pain Elementals with Nightmare Elementals =","NightElementalRandomCvar","NightElemental_Spawner_Value"
 	Option "Randomly replace Cyberdemons with Annihilators =","Annihilator_Spawner_Cvar","Annihilator_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Masterminds with Motherdemons or Eradicators =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"	//R27 //R31 was YesOrNo
 }
@@ -334,6 +335,13 @@ OptionValue "NImp_Spawner_Value"
 {
 	0,"Imp Only"
 	1,"N'mare Imp Only"
+	2,"Random"
+}
+
+OptionValue "NightElemental_Spawner_Value"
+{
+	0,"Pain Elemental Only"
+	1,"N'mare Elemental Only"
 	2,"Random"
 }
 

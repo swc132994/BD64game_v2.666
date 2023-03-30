@@ -1,4 +1,3 @@
-//r31 added extra deaths
 Actor 64Cacodemon : Cacodemon Replaces Cacodemon
 {
 Scale 0.8
@@ -420,7 +419,7 @@ Actor 64StealthCacodemon : 64Cacodemon Replaces StealthCacodemon
 +STEALTH
 }
 
-Actor NightmareCacodemon : Cacodemon 19990		//R23 moved from NIGHTMARESTUFF	//R26.1 added ID FROM TC ABS
+Actor NightmareCacodemon : Cacodemon 19990		//R23 moved from NIGHTMARESTUFF
 {
 SpawnID 156		//R26.1 added ID FROM TC ABS
 Scale 0.8

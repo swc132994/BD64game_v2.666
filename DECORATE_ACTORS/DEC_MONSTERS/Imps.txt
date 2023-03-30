@@ -712,7 +712,7 @@ Actor 64StealthDoomImp : 64DoomImp Replaces StealthDoomImp
 +STEALTH
 }
 
-Actor NightmareImp : 64Doomimp 19989	//R26.1 added ID FROM TC AB
+Actor NightmareImp : 64Doomimp 19989
 {
 SpawnID 13	//R26.1 added ID FROM TC ABS
 Scale 0.75

@@ -536,6 +536,28 @@ MONSTER
 	}
 }
 
+Actor NightmareElemental_Random Replaces PainElemental //R31 added
+{
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
+	States
+	{
+	Spawn:
+		PAIN A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnPainElemental")	//if D64 monsters only enabled spawn shotgunguy
+		TNT1 A 0 A_JumpIf(CallACS("NightElementalRandom_ACS")==0,"64PainElemental")
+		TNT1 A 0 A_JumpIf(CallACS("NightElementalRandom_ACS")==1,"SpawnNightmareElemental")
+		TNT1 A 0 A_Jump(51,"SpawnNightmareElemental")//(20%)
+	SpawnPainElemental:
+		TNT1 A 0 A_SpawnItemEx("64PainElemental",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnNightmareElemental:
+		TNT1 A 0 A_SpawnItemEx("64NightmareElemental",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
 Actor D64StalkerRandom Replaces LostSoul //R31 added
 {
 Scale 0.8

@@ -68,6 +68,7 @@ STALKER				19107	183
 BRUISER				19111
 KNIGHTMARE			19118	178
 WRAITH				19123
+NIGHT ELEMENTAL		19126
 
 MP40 SPAWNER		19124
 SMG SPAWNER			19121
@@ -112,7 +113,8 @@ Spider Mastermind - Craneo (rework), 3D Realms (Battlelord chaingun), Sgt Mark I
 BFG Zombie - Sprites: Id Software, Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim, Korp, ItsNatureToDie, neoworm, Craneo. Sounds: Immorpher
 Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 64Wraith - Vader, Captain Toenail, Midway, Id Software, Gregor Punchatz, Craneo (D64 style sprites)
-64WaffenSS - Sounds from Return to Castle Wolfenstein, uploaded by Labtec Speakers to The Sounds Resource, 
+64WaffenSS - Sounds from Return to Castle Wolfenstein, uploaded by Labtec Speakers to The Sounds Resource.
+64Nightmare Elemental - Sprites by Styd051, Decorate script by Craneo.
 
 Add-ons:
 BD64HUD_Ashton (Paladin-julio (ModDB))

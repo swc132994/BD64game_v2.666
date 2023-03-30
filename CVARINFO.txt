@@ -52,5 +52,6 @@ server int bd64_ScreenFX = 0;				//ScreenFX
 server int bd64_BloodTrail = 0;				//Bloodtrail
 server int SevereredLimbDeathCvar = 1;		//Option to skip one arm deaths
 server int ZombieMarineNaziCvar = 0;		//Choose between zombie marine or Nazi
+server int NightElementalRandomCvar = 0;	//Night Elemental replaces Pain Elemental
 
 //Leave blank end line to prevent UDB error warning

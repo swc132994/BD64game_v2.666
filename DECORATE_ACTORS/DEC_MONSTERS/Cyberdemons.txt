@@ -90,7 +90,7 @@ DropItem "Soulsphere",32				//R31 added
 	}
 }
 
-Actor Annihilator64 : Cyberdemon 1001		//FROM ONOX792 - PROJECT NIGHTMARE	//R23 inherit from cyberdemon	//R26.1 ADDED ID FROM TC ABS
+Actor Annihilator64 : Cyberdemon 1001		//FROM ONOX792 - PROJECT NIGHTMARE	//R23 inherit from cyberdemon
 {
 SpawnID 157		//R26.1 added ID FROM TC ABS
 Scale 0.85		//R23 was 0.95

@@ -76,3 +76,81 @@ DropItem "DemonEssenceSpawner"		//R31 ADDED
 		Stop
 	}
 }
+
+Actor 64NightmareElemental : 64PainElemental 19126
+{
+Speed 18
+HitObituary "%o was tormented by a nightmare elemental."
+Tag "Nightmare Elemental"
+Alpha 0.5
+RenderStyle Translucent
+PainChance 64
+Health 600
++MissileMore
+	states
+	{
+	Spawn:
+		NPEL AD 10 A_Look
+		Loop
+	See:
+		NPEL AAAAAA 2 A_Chase("","")
+		NPEL A 2 A_Chase
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
+		Loop
+	Forget:
+		TNT1 A 0 A_ClearTarget
+		Goto Spawn
+	Missile:
+		NPEL BB 6 A_FaceTarget
+		NPEL C 6 Bright A_FaceTarget
+		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,2)
+		TNT1 A 0 A_JumpIf(CallACS("PainStalkerRandomACS")==1,5)
+		TNT1 A 0 A_PainAttack("64LostSoul")
+		TNT1 A 0 A_DualPainAttack("64LostSoul")
+		NPEL CB 3 A_FaceTarget
+		Goto See
+		TNT1 A 0 A_PainAttack
+		TNT1 A 0 A_DualPainAttack
+		NPEL CB 3 A_FaceTarget
+		Goto See
+	Pain:
+		NPEL D 6
+		NPEL D 6 A_Pain
+		Goto See
+	Pain.Vertigo:
+		TNT1 A 0 ThrustThingZ(0,55,0,0)
+		NPEL D 6
+		NPEL D 6 A_Pain
+		Goto See
+	Death:
+		NPEL E 4 Bright
+		NPEL F 4 Bright A_Scream
+		NPEL G 4 Bright
+		NPEL H 4 Bright
+		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,2)
+		TNT1 A 0 A_JumpIf(CallACS("PainStalkerRandomACS")==1,3)
+		NPEL I 4 Bright A_PainDie("64LostSoul")
+		TNT1 A 0 A_Jump(256,2)
+		NPEL I 4 Bright A_PainDie
+		TNT1 A 0 A_SpawnItem("64BarrelExplosion")
+		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("BurningXDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SuperGoreSpawner",45,0,random(0,360),2,random(10,90))
+		NPEL J 4 Bright
+		NPEL K 4 Bright
+		NPEL L 4 Bright
+		Stop
+	Raise:
+		NPEL LKJIHGFE 8
+		Goto See
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		POL5 A -1
+		Stop
+	}
+}

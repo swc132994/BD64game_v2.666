@@ -395,3 +395,8 @@ Script "ReplaceZMarineNaziACS" (void)
 {
 SetResultValue(GetCVar("ZombieMarineNaziCvar"));
 }
+
+Script "NightElementalRandom_ACS" (void)
+{
+SetResultValue(GetCVar("NightElementalRandomCvar"));
+}

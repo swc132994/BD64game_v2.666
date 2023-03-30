@@ -880,7 +880,7 @@ Actor SpectreSprite4: SpectreSprite1
 	}
 }
 
-Actor 64NightmareSpectre : 64Spectre 1000	//R26.1 ADDED ID FROM TC ABS
+Actor 64NightmareSpectre : 64Spectre 1000
 {
 SpawnID 155		//R26.1 ADDED ID FROM TC ABS
 Scale 0.85		//was 1.0
