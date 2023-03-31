@@ -811,14 +811,12 @@ YScale 1.0
 	Missile:
 		MSMN A 15 Bright A_FaceTarget
 		MSMN E 2 Bright A_SPosAttackUseAtkSound
-		MSMN M 2 Bright A_SPosAttackUseAtkSound
-		MSMN M 3 Bright A_SpidRefire
+		MSMN Q 2 Bright A_SpidRefire
 		Goto Missile+1
 	Death:
 		MSMN G 6 A_Scream
-		MSMN HI 6
-		MSMN JKL 6
-		MSMN L -1
+		MSMN HIJKLMNOP 6
+		MSMN P -1
 		Stop
 	}
 }
@@ -839,15 +837,13 @@ YScale 1.0
 		Goto See
 	Missile:
 		BSGI A 15 Bright A_FaceTarget
-		BSGI E 2 Bright A_SPosAttackUseAtkSound
-		BSGI M 2 Bright A_SPosAttackUseAtkSound
-		BSGI M 3 Bright A_SpidRefire
-		Goto Missile+1
+		BSGI E 3 Bright A_SPosAttackUseAtkSound
+		BSGI Q 4 Bright
+		Goto See
 	Death:
 		BSGI G 5 A_Scream
-		BSGI HI 5
-		BSGI JKL 5
-		BSGI L -1
+		BSGI HIJKLMNOP 5
+		BSGI P -1
 		Stop
 	}
 }

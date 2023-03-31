@@ -897,12 +897,12 @@ flickerlight2 MASTERMINDATK2
 
 object 64SpiderMastermind
 {
-	frame MSMNM {light MASTERMINDATK}
+	frame MSMNQ {light MASTERMINDATK}
 }
 
 object 64Eradicator
 {
-	frame BSGIM {light MASTERMINDATK2}
+	frame BSGIQ {light MASTERMINDATK2}
 }
 
 //Doom Imp Fireball

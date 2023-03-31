@@ -106,10 +106,10 @@ Hellhound Alt - I'M (sprites)
 Hellhound GEC - Gerardo194 (sprites)
 Bruiser a.k.a Duke of Hell - Gerardo194 (sprites)
 Knightmare a.k.a. DreadKnight - Dr Doctor (Original sprites) Craneo (Rework)
-Eradicator a.k.a unmaker mastermind - Immorpher (sprites)
+Eradicator a.k.a unmaker mastermind - Craneo (sprite rework), Midway, 3DRealms, Immorpher, Sgt_Mark_IV, DrPyspy
 Chaingunner - Craneo (reworked sprites), Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim
 Acid Demon sounds from REALM667 - SLIME WORM by Captain Toenail
-Spider Mastermind - Craneo (rework), 3D Realms (Battlelord chaingun), Sgt Mark IV (face), Immorpher (based on mastermind rework)
+Spider Mastermind - Craneo (sprite rework), Midway, 3DRealms, Immorpher, Sgt_Mark_IV, DrPyspy
 BFG Zombie - Sprites: Id Software, Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim, Korp, ItsNatureToDie, neoworm, Craneo. Sounds: Immorpher
 Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 64Wraith - Vader, Captain Toenail, Midway, Id Software, Gregor Punchatz, Craneo (D64 style sprites)

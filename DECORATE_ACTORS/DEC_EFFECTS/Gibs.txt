@@ -1501,6 +1501,12 @@ ACTOR XDeathBlueSpiderHead : XDeathSpiderHead	//R31 added for night crawler
 	}
 }
 
+//ERADICATOR - UNMAKER MASTERMIND
+Actor EradicatorHead : XDeathBlueSpiderHead
+{
+Scale 1.5
+}
+
 ACTOR XDeathBlueSpiderLeg1 : XDeathSpiderLeg1
 {
 	States
@@ -1531,32 +1537,6 @@ YScale -0.8
 ACTOR XDeathMastermindHead : XDeathSpiderHead	//r30.9 added
 {
 Scale 1.5
-}
-
-//ERADICATOR - UNMAKER MASTERMIND
-Actor EradicatorHead : XDeathSpiderHead
-{
-Scale 1.5
-	States
-	{
-	Spawn:
-		ERHD A 0 NoDelay A_Jump(128,2)
-		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)
-		ERHD ABCDEFGH 4 A_CheckFloor("Death")
-		Wait
-	Death:
-		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
-		TNT1 A 0 A_Jump(128,"Death2")
-		ERHD I 1
-		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
-		ERHD I -1
-		Stop
-	Death2:
-		ERHD J 1
-		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
-		ERHD J -1
-		Stop
-	}
 }
 
 //HELLHOUND ALT
