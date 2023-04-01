@@ -199,6 +199,7 @@ MONSTER
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
 		POL5 A -1
 		Stop
+	Death.Bullet:
 	Death:
 		TNT1 A 0 A_Scream
 		TNT1 AA 0 A_CustomMissile("Blood",25,0,random(0,360),2,random(0,180))
@@ -236,9 +237,6 @@ MONSTER
 		TNT1 A 0 A_CustomMissile("BloodMistSmall",9,0,random(0,360),2,random(0,180))
 		PTXC L -1 A_SpawnItem("GrowingBloodPool")
 		Stop
-	Death.Bullet:
-		TNT1 A 0 A_Jump(205,"Death")//80%
-		Goto XDeath
 	Death.Rifle:
 		TNT1 A 0 A_Jump(166,"Death")//65%
 		Goto XDeath

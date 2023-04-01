@@ -100,7 +100,7 @@ DropItem "DemonEssenceSpawner"		//R31 added
 	Death.Rifle:	//R31 EX
 	Death.CutLess:	//R31 EX
 		TNT1 A 0 A_Jump(64,"Death")
-		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Xdeath")
+		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Death.Heavy")
 		TNT1 A 0 A_CustomMissile("XDeathImpArm1",50,0,random(150,210),2,random(10,50))	//R18 added
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
@@ -812,7 +812,7 @@ Tag "Nightmare Imp"		//r31 added
 	Death.Rifle:		//R31 EX
 	Death.CutLess:		//R31 EX
 		TNT1 A 0 A_Jump(64,"Death")
-		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Xdeath")
+		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Death.Heavy")
 		TNT1 A 0 A_CustomMissile("XDeathNImpArm1",50,0,random(150,210),2,random(10,50))	//R18 added
 		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
@@ -830,7 +830,7 @@ Tag "Nightmare Imp"		//r31 added
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
 		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 AaaaaaaaaaaA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
 		TR2H A 8
