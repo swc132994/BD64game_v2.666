@@ -86,7 +86,7 @@ Original Brutal Doom 64 mod by Sergeant Mark IV
 
 Weapons:
 SMG - IDDQD_1337 (Animation) & Super Piter (sprites)
-Gauss Cannon - IDDQD_1337 (animation), I'M (scope and cell sprites), BigStronk (decorate) & VriskaSerket (sprites)
+Gauss Cannon - IDDQD_1337 (animation), I'M (scope and cell sprites), BigStronk (decorate), VriskaSerket & CaptainJ (sprites)
 Tactical Rocket Launcher - IDDQD_1337 (animation) & I'M (sprites)
 Tactical Chainsaw - IDDQD_1337 (animation)
 Tactical Pistol - IDDQD_1337 (animation) & I'M (sprites)
