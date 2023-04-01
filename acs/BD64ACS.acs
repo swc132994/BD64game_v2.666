@@ -251,6 +251,23 @@ SetResultValue(GetCVar("SSGZombieRandom_Cvar"));
 script "SSGinDoom1" (void)	//R31 added
 {
 SetResultValue(GetCVar("SSGinDoom1_Cvar"));
+	if	(GetCvar("SSGinDoom1_Cvar") == 3)
+	{
+		str maplump = StrParam(n:PRINTNAME_LEVEL);
+		
+		if (StrCmp(StrLeft(maplump, 2), "E1") == 0 | StrCmp(StrLeft(maplump, 2), "E2") == 0 | StrCmp(StrLeft(maplump, 2), "E3") == 0 | StrCmp(StrLeft(maplump, 2), "E4") == 0)
+		{
+			SetActorState(0,"SSG_Shotgun_Replacer");
+		}
+		else if (StrCmp(StrLeft(maplump, 5), "LEVEL") == 0 | StrCmp(StrLeft(maplump, 3), "NV_") == 0 )
+		{
+			SetActorState(0,"ShotgunSpawner");
+		}
+		else
+		{
+			SetActorState(0,"ShotgunSpawner");
+		}
+	}
 }
 
 script "ZMarineRandomACS" (void)
