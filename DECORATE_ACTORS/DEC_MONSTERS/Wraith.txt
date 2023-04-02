@@ -78,10 +78,9 @@ MONSTER
 	Melee:
 		TNT1 A 0 A_JumpIfInventory("FireSeq",1,"Melee2")
 		3WRT AAA 2 A_FaceTarget
-		TNT1 A 0 A_PlayWeaponSound("D3Wraith/Attack")
 		TNT1 A 0 A_Recoil(-1)
 		3WRT FF 3 A_FaceTarget
-		3WRT G 6 A_CustomMeleeAttack(5*random(1,8),"D3Wraith/Hit")
+		3WRT G 6 A_CustomMeleeAttack(5*random(1,8),"D3Wraith/Attack")
 		3WRT AA 2
 		TNT1 A 0 A_GiveInventory("FireSeq",1)
 		TNT1 A 0 A_TakeInventory("WraithTeleportCooldown",1)	//Attacking lowers teleport cooldown
@@ -89,10 +88,9 @@ MONSTER
 	Melee2:
 		3WRT AAA 2 A_FaceTarget
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)
-		TNT1 A 0 A_PlayWeaponSound("D3Wraith/Attack")
 		TNT1 A 0 A_Recoil(-1)
 		3WRT FF 3 A_FaceTarget
-		3WRT G 6 A_CustomMeleeAttack(5*random(1,8),"D3Wraith/Hit")
+		3WRT G 6 A_CustomMeleeAttack(5*random(1,8),"D3Wraith/Attack")
 		3WRT AA 2
 		TNT1 A 0 A_TakeInventory("FireSeq",1)
 		TNT1 A 0 A_TakeInventory("WraithTeleportCooldown",1)	//Attacking lowers teleport cooldown

@@ -160,7 +160,7 @@ Inventory.PickupAnnouncerEntry "soulsphere"
 		SOUL A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")	//R31 added option
 		SOUL AAABBBCCCDDDCCCBBB 1 A_SpawnItemEx("BlueFlareSmall",0,0,22)
 		Loop
-	AlphaSpawn:	
+	AlphaSpawn:
 		2OUL AAABBBCCCDDDCCCBBB 1 A_SpawnItemEx("BlueFlareSmall",0,0,22)
 		Loop
 	Pickup:
@@ -289,7 +289,7 @@ Inventory.PickupSound "IPICK"
 		Stop
 	Spawn3:
 		CEL3 ABCDEFGHIJ 2
-		Loop		
+		Loop
 	}
 }
 
@@ -355,7 +355,7 @@ Inventory.PickupSound "IPICK"
 		Stop
 	AlphaSpawn:
 		ROCK B -1
-		Stop		
+		Stop
 	}
 }
 
@@ -378,7 +378,6 @@ Inventory.PickupSound "IPICK"
 	AlphaSpawn:
 		SBOX B -1
 		Stop
-		
 	}
 }
 
@@ -455,7 +454,7 @@ Scale 0.82
 	AlphaSpawn:
 		PVI2 A 6
 		PVI2 B 6 Bright
-		Loop	
+		Loop
 	}
 }
 
@@ -498,7 +497,7 @@ Inventory.PickupSound "IPICK"
 		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"AlternativeSprite")
 		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==2,"AlphaSpawn")
 		TNT1 A 0 A_Jump(128,"SPAWN2", "SPAWN3")
-		CLIP a -1
+		CLIP A -1
 		Stop
 	AlternativeSprite:
 		TNT1 A 0 A_Jump(128,"SPAWN2","SPAWN3")

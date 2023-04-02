@@ -18,7 +18,7 @@ Skill Baby
 	Name = "Be Gentle!"		//R13
 	AmmoFactor = 2.0
 	EasyBossBrain
-	mustconfirm = "Are you kidding me? This is barely a challenge. Press Y or N"
+	mustconfirm = "Are you kidding me? This is barely a challenge."
 }
 
 Skill Easy
@@ -26,16 +26,15 @@ Skill Easy
 	SpawnFilter = Easy
 	Name = "Bring it on!"	//R13
 	Key = "n"
-	AmmoFactor = 1.0		//R11
 	EasyBossBrain
-	mustconfirm = "Only half as many enemies. Don't complain if you find it boring. Press Y or N"
+	mustconfirm = "Don't complain if you find it boring."
 }
 
 Skill Normal
 {
 	SpawnFilter = Normal
 	Name = "I own Doom!"	//R13
-	AmmoFactor = 1.0		//R11
+	mustconfirm = "Normal difficulty."
 	defaultskill
 }
 
@@ -43,41 +42,41 @@ Skill Hard
 {
 	SpawnFilter = Hard
 	MonsterHealth = 1.0		//R15 ADDED
-	AmmoFactor = 1.0		//R11
 	Name = "Watch me die!"
-	mustconfirm = "Equivalent to Ultra Violence. Press Y or N"
+	mustconfirm = "Equivalent to Ultra Violence."
 }
 
 Skill Nightmare
 {
 	SpawnFilter = Hard
-	DamageFactor = 1.0		//R18 WAS 2
-	MonsterHealth = 1.0		//R15 was 0.75
-	AmmoFactor = 1.0		//R11
+	DamageFactor = 1.5		//R18 WAS 2
+	MonsterHealth = 1.25	//R15 was 0.75
 	FastMonsters 			//R1 WAS FastMonsters 1
-//	disablecheats
 	Name = "Hardcore!"
-	mustconfirm = "Similar to Watch me Die diffiuclty but with fast monsters. Press Y or N"
+	mustconfirm = "Monsters are faster, more durarble. All damage increased by 50%."
 }
 
+/*
 Skill Nightmare2			//R19 NEW LEVEL
 {
 	SpawnFilter = Hard
 	DamageFactor = 1.0
 	MonsterHealth = 1.0
-	AmmoFactor = 1.0
-//	Aggressiveness = 0.25
-//	disablecheats
 	Name = "Nightmare!"
-	mustconfirm = "Monsters replaced with Nightmare counterparts. Press Y or N"
+	mustconfirm = "All monsters replaced with Nightmare counterparts. Press Y or N"
 	ReplaceActor = "Zombieman","64ZombieMarine"
+	ReplaceActor = "ShotgunGuy","64SSGGuy"
 	ReplaceActor = "64ZombieMarine","64ChaingunGuy"
 	ReplaceActor = "DoomImp","NightmareImp"
 	ReplaceActor = "Demon","64AcidDemon"
 	ReplaceActor = "spectre","64NightmareSpectre"
 	ReplaceActor = "HellKnight","64Knightmare"
+	ReplaceActor = "BaronOfHell","64Belphegor"
 	ReplaceActor = "Cacodemon","NightmareCacodemon"
+	ReplaceActor = "Fatso","64Bruiser"
+	ReplaceActor = "LostSoul","64Stalker"
 	ReplaceActor = "Cyberdemon","Annihilator64"
+	ReplaceActor = "PainElemental","64NightmareElemental"
 	ReplaceActor = "Spidermastermind","64Eradicator"
 }
 
@@ -86,22 +85,25 @@ Skill Nightmare3			//R19 NEW LEVEL
 	SpawnFilter = Hard
 	DamageFactor = 1.0
 	MonsterHealth = 1.0
-	AmmoFactor = 1.0
 	FastMonsters
-//	Aggressiveness = 0.25
-//	disablecheats
 	Name = "Torment!"
 	mustconfirm = "Similar to Nightmare diffiuclty but with fast monsters Press Y or N"
 	ReplaceActor = "Zombieman","64ZombieMarine"
+	ReplaceActor = "ShotgunGuy","64SSGGuy"
 	ReplaceActor = "64ZombieMarine","64ChaingunGuy"
 	ReplaceActor = "DoomImp","NightmareImp"
 	ReplaceActor = "Demon","64AcidDemon"
 	ReplaceActor = "spectre","64NightmareSpectre"
 	ReplaceActor = "HellKnight","64Knightmare"
+	ReplaceActor = "BaronOfHell","64Belphegor"
 	ReplaceActor = "Cacodemon","NightmareCacodemon"
+	ReplaceActor = "Fatso","64Bruiser"
+	ReplaceActor = "LostSoul","64Stalker"
 	ReplaceActor = "Cyberdemon","Annihilator64"
+	ReplaceActor = "PainElemental","64NightmareElemental"
 	ReplaceActor = "Spidermastermind","64Eradicator"
 }
+*/
 
 // CAST ENDING FIX R31
 
@@ -195,6 +197,12 @@ Intermission Doom2Cast
 	}
 	Cast
 	{
+		CastClass = "64WraithCast"
+		CastName = "Wraith"
+		AttackSound = "Melee",1,"D3Wraith/Attack"
+	}
+	Cast
+	{
 		CastClass = "D64LostSoulCast"
 		CastName = "Lost Soul"
 		AttackSound = "Missile",1,"skull/melee"
@@ -262,6 +270,12 @@ Intermission Doom2Cast
 	{
 		CastClass = "D64PainElementalCast"
 		CastName = "Pain Elemental"
+		AttackSound = "Missile",2,"skull/melee"
+	}
+	Cast
+	{
+		CastClass = "64NightmareElementalCast"
+		CastName = "Nightmare Elemental"
 		AttackSound = "Missile",2,"skull/melee"
 	}
 	Cast
