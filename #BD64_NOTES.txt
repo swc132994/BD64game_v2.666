@@ -126,6 +126,8 @@ BD64v2.666_Beefy_SFX (BigStronk)
 BD64v2.666_SkiesHD - Slightly edited version of "High Quality Skies for BD 64" by Marklegg (https://www.moddb.com/mods/brutal-doom-64/addons/high-quality-skies-for-brutal-doom-64)
 BD64v2.666_CD_Weapons_AR_AS - Reworked version of "Autoshotgun & Assault Rifle with Grenade Launcher" by Flammable4444 (https://www.moddb.com/mods/brutal-doom-64/addons/cd-weapons-ar-as)
 BD64v2.666_Rework_D4_Weapons_&_Voxels - Reworked version of "DOOM4 Voxels and Weapons For BD64-V3.3" by KEENO7 (https://www.moddb.com/mods/brutal-doom-64/addons/doom4-voxels-and-weapons-for-bd64v3)
+BD64_AssaultShotgunRemake - By IDDQD_1337: Sprites: TSF, Brightmaps: BigStronk, Code: Shotgun from BD64, Sounds: Valve (Shotgun from Half-Life), Extra Edits: Craneo (Sprite color), IDDQD_1337 (Animation and coding)
+BD64_Immolators - By Craneo: Sprites: Yukiherz, Code: Dox778, Extra Edits: Craneo
 
 Props and misc:
 Impaled Doom 64 guys - Craneo

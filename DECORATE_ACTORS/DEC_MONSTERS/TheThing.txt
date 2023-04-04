@@ -33,7 +33,16 @@ MONSTER
 	{
 	Spawn:
 		PLAY M 1 A_LookEx(0,0,150,100)
+		TNT1 A 0 A_SpawnItem("64SmallBloodPool")
 		Loop
+	Idle:
+		TNG2 CBA 1
+		TNT1 A 0 A_PlaySound("64Thing/sight",CHAN_BODY)
+		THNG ZYXWVUTTRQPON 3
+		TNT1 A 0 A_PlaySound("64Thing/sight",CHAN_BODY)
+		THNG MLKJIHGFEDCBA 3
+		TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+		Goto spawn
 	See:
 		THNG ABABAB 4
 		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
