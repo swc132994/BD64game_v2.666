@@ -83,6 +83,8 @@ scale 0.75
 actor 64DeadNightImp : 64DeadDoomImp
 {
 scale 0.75
+Alpha 0.6
+RenderStyle Translucent
 	states
 	{
 	Spawn:
