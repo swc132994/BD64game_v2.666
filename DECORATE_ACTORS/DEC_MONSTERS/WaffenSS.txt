@@ -278,11 +278,11 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
-		SS8H AB 8
-		SS8H C 5 A_XScream
-		SS8H D 5 A_NoBlocking
-		SS8H E 5 A_Stop
-		SS8H E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		ZZ8H AB 8
+		ZZ8H C 5 A_XScream
+		ZZ8H D 5 A_NoBlocking
+		ZZ8H E 5 A_Stop
+		ZZ8H E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 A_FaceTarget

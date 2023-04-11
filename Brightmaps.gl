@@ -66,41 +66,41 @@ brightmap sprite PLASC0		{map "brightmaps/PGUNB2.png"disablefullbright}
 
 //WEAPONS
 //RIFLE ("I LOVE BRIGHTMAPS YEAH" - BigStronk  4th April 2023, UTC+00  (UK Time) 22:54)
-brightmap sprite RIFSA0		{map "BRIGHTMAPS/RifleBM/RIFSA0.png" Disablefullbright}//Selection
-brightmap sprite RIFSB0		{map "BRIGHTMAPS/RifleBM/RIFSB0.png" Disablefullbright}//Selection
-brightmap sprite RIFSC0		{map "BRIGHTMAPS/RifleBM/RIFSC0.png" Disablefullbright}//Selection
-brightmap sprite RIFSD0		{map "BRIGHTMAPS/RifleBM/RIFSD0.png" Disablefullbright}//Selection
-brightmap sprite RIFGA0		{map "BRIGHTMAPS/RifleBM/RIFGA0.png" Disablefullbright}//Idle
-brightmap sprite RIFFB0		{map "BRIGHTMAPS/RifleBM/RIFFB0.png" Disablefullbright}//Fire
-brightmap sprite RIFFC0		{map "BRIGHTMAPS/RifleBM/RIFFC0.png" Disablefullbright}//Fire
-brightmap sprite RIFZA0		{map "BRIGHTMAPS/RifleBM/RIFZA0.png" Disablefullbright}//ADS Transition
-brightmap sprite RIFZB0		{map "BRIGHTMAPS/RifleBM/RIFZB0.png" Disablefullbright}//ADS Transition
-brightmap sprite RIFZC0		{map "BRIGHTMAPS/RifleBM/RIFZC0.png" Disablefullbright}//ADS Transition
-brightmap sprite RI2GA0		{map "BRIGHTMAPS/RifleBM/RI2GA0.png" Disablefullbright}//ADS Idle
-brightmap sprite RI2FB0		{map "BRIGHTMAPS/RifleBM/RI2FB0.png" Disablefullbright}//ADS Fire
-brightmap sprite RI2FC0		{map "BRIGHTMAPS/RifleBM/RI2FC0.png" Disablefullbright}//ADS Fire
-brightmap sprite RIFRA0		{map "BRIGHTMAPS/RifleBM/RIFRA0.png" Disablefullbright}//Reloading 
-brightmap sprite RIFRB0		{map "BRIGHTMAPS/RifleBM/RIFRB0.png" Disablefullbright}//Reloading 
-brightmap sprite RIFRC0		{map "BRIGHTMAPS/RifleBM/RIFRC0.png" Disablefullbright}//Reloading 
-brightmap sprite RIFRD0		{map "BRIGHTMAPS/RifleBM/RIFRD0.png" Disablefullbright}//Reloading 
-brightmap sprite RIFRE0		{map "BRIGHTMAPS/RifleBM/RIFRE0.png" Disablefullbright}//Reloading 
-brightmap sprite RIFRF0		{map "BRIGHTMAPS/RifleBM/RIFRF0.png" Disablefullbright}//Reloading 
-brightmap sprite RIFRG0		{map "BRIGHTMAPS/RifleBM/RIFRG0.png" Disablefullbright}//Reloading 
-brightmap sprite RIFRH0		{map "BRIGHTMAPS/RifleBM/RIFRH0.png" Disablefullbright}//Reloading 
-brightmap sprite RIFRI0			{map "BRIGHTMAPS/RifleBM/RIFRI0.png" Disablefullbright}//Reloading 
-brightmap sprite RIFKA0		{map "BRIGHTMAPS/RifleBM/RIFKA0.png" Disablefullbright}//Kicking with malicious intent haha
-brightmap sprite RIFKB0		{map "BRIGHTMAPS/RifleBM/RIFKB0.png" Disablefullbright}//Kicking
-brightmap sprite RIFKC0		{map "BRIGHTMAPS/RifleBM/RIFKC0.png" Disablefullbright}//Kicking
-brightmap sprite RIFKD0		{map "BRIGHTMAPS/RifleBM/RIFKD0.png" Disablefullbright}//Kicking
-brightmap sprite RIFKE0		{map "BRIGHTMAPS/RifleBM/RIFKE0.png" Disablefullbright}//Kicking
-brightmap sprite RIFIA0			{map "BRIGHTMAPS/RifleBM/Fidget/RIFIA0.png" Disablefullbright}//Fidgeting
-brightmap sprite RIFIB0			{map "BRIGHTMAPS/RifleBM/Fidget/RIFIB0.png" Disablefullbright}//Fidgeting
-brightmap sprite RIFIC0			{map "BRIGHTMAPS/RifleBM/Fidget/RIFIC0.png" Disablefullbright}//Fidgeting
-brightmap sprite RIFID0			{map "BRIGHTMAPS/RifleBM/Fidget/RIFID0.png" Disablefullbright}//Fidgeting
-brightmap sprite RIFIE0			{map "BRIGHTMAPS/RifleBM/Fidget/RIFIE0.png" Disablefullbright}//Fidgeting
-brightmap sprite RIFIF0			{map "BRIGHTMAPS/RifleBM/Fidget/RIFIF0.png" Disablefullbright}//Fidgeting
-brightmap sprite RIFIG0			{map "BRIGHTMAPS/RifleBM/Fidget/RIFIG0.png" Disablefullbright}//Fidgeting
-brightmap sprite RIFIH0			{map "BRIGHTMAPS/RifleBM/Fidget/RIFIH0.png" Disablefullbright}//Fidgeting
+brightmap sprite RIFSA0		{map "BRIGHTMAPS/RifleBM/RIFSA0_BR.png" Disablefullbright}//Selection
+brightmap sprite RIFSB0		{map "BRIGHTMAPS/RifleBM/RIFSB0_BR.png" Disablefullbright}//Selection
+brightmap sprite RIFSC0		{map "BRIGHTMAPS/RifleBM/RIFSC0_BR.png" Disablefullbright}//Selection
+brightmap sprite RIFSD0		{map "BRIGHTMAPS/RifleBM/RIFSD0_BR.png" Disablefullbright}//Selection
+brightmap sprite RIFGA0		{map "BRIGHTMAPS/RifleBM/RIFGA0_BR.png" Disablefullbright}//Idle
+brightmap sprite RIFFB0		{map "BRIGHTMAPS/RifleBM/RIFFB0_BR.png" Disablefullbright}//Fire
+brightmap sprite RIFFC0		{map "BRIGHTMAPS/RifleBM/RIFFC0_BR.png" Disablefullbright}//Fire
+brightmap sprite RIFZA0		{map "BRIGHTMAPS/RifleBM/RIFZA0_BR.png" Disablefullbright}//ADS Transition
+brightmap sprite RIFZB0		{map "BRIGHTMAPS/RifleBM/RIFZB0_BR.png" Disablefullbright}//ADS Transition
+brightmap sprite RIFZC0		{map "BRIGHTMAPS/RifleBM/RIFZC0_BR.png" Disablefullbright}//ADS Transition
+brightmap sprite RI2GA0		{map "BRIGHTMAPS/RifleBM/RI2GA0_BR.png" Disablefullbright}//ADS Idle
+brightmap sprite RI2FB0		{map "BRIGHTMAPS/RifleBM/RI2FB0_BR.png" Disablefullbright}//ADS Fire
+brightmap sprite RI2FC0		{map "BRIGHTMAPS/RifleBM/RI2FC0_BR.png" Disablefullbright}//ADS Fire
+brightmap sprite RIFRA0		{map "BRIGHTMAPS/RifleBM/RIFRA0_BR.png" Disablefullbright}//Reloading 
+brightmap sprite RIFRB0		{map "BRIGHTMAPS/RifleBM/RIFRB0_BR.png" Disablefullbright}//Reloading 
+brightmap sprite RIFRC0		{map "BRIGHTMAPS/RifleBM/RIFRC0_BR.png" Disablefullbright}//Reloading 
+brightmap sprite RIFRD0		{map "BRIGHTMAPS/RifleBM/RIFRD0_BR.png" Disablefullbright}//Reloading 
+brightmap sprite RIFRE0		{map "BRIGHTMAPS/RifleBM/RIFRE0_BR.png" Disablefullbright}//Reloading 
+brightmap sprite RIFRF0		{map "BRIGHTMAPS/RifleBM/RIFRF0_BR.png" Disablefullbright}//Reloading 
+brightmap sprite RIFRG0		{map "BRIGHTMAPS/RifleBM/RIFRG0_BR.png" Disablefullbright}//Reloading 
+brightmap sprite RIFRH0		{map "BRIGHTMAPS/RifleBM/RIFRH0_BR.png" Disablefullbright}//Reloading 
+brightmap sprite RIFRI0		{map "BRIGHTMAPS/RifleBM/RIFRI0_BR.png" Disablefullbright}//Reloading 
+brightmap sprite RIFKA0		{map "BRIGHTMAPS/RifleBM/RIFKA0_BR.png" Disablefullbright}//Kicking with malicious intent haha
+brightmap sprite RIFKB0		{map "BRIGHTMAPS/RifleBM/RIFKB0_BR.png" Disablefullbright}//Kicking
+brightmap sprite RIFKC0		{map "BRIGHTMAPS/RifleBM/RIFKC0_BR.png" Disablefullbright}//Kicking
+brightmap sprite RIFKD0		{map "BRIGHTMAPS/RifleBM/RIFKD0_BR.png" Disablefullbright}//Kicking
+brightmap sprite RIFKE0		{map "BRIGHTMAPS/RifleBM/RIFKE0_BR.png" Disablefullbright}//Kicking
+brightmap sprite RIFIA0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIA0_BR.png" Disablefullbright}//Fidgeting
+brightmap sprite RIFIB0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIB0_BR.png" Disablefullbright}//Fidgeting
+brightmap sprite RIFIC0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIC0_BR.png" Disablefullbright}//Fidgeting
+brightmap sprite RIFID0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFID0_BR.png" Disablefullbright}//Fidgeting
+brightmap sprite RIFIE0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIE0_BR.png" Disablefullbright}//Fidgeting
+brightmap sprite RIFIF0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIF0_BR.png" Disablefullbright}//Fidgeting
+brightmap sprite RIFIG0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIG0_BR.png" Disablefullbright}//Fidgeting
+brightmap sprite RIFIH0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIH0_BR.png" Disablefullbright}//Fidgeting
 
 //GAUSS CANNON
 brightmap sprite GCPCA0		{map "BRIGHTMAPS/GCPCA0_BR.png" Disablefullbright}//Pick-Up

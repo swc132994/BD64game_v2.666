@@ -744,7 +744,7 @@ Actor SSGZombieDrop		//r31 new
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("SSGinDoom1")==0,2)
 		TNT1 A 0 A_DropItem("SSGDrop")
 		Stop
-		TNT1 A 0 A_DropItem("Shell")
+		TNT1 A 0 A_DropItem("64Shell")
 		Stop
 	}
 }
