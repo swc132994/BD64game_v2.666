@@ -298,6 +298,39 @@ $limit TIRED 1
 KICK KICK
 FOOTWALL FOOTWALL
 
+//FLESH WIZARD
+$random wizard/tele			{64FWTEL1 64FWTEL2}
+64FWTEL1					64FWTEL1
+64FWTEL2					64FWTEL2
+
+$random wizard/pain			{64FWPAI1 64FWPAI2 64FWPAI3}
+64FWPAI1					64FWPAI1
+64FWPAI2					64FWPAI2
+64FWPAI3					64FWPAI3
+
+$random wizard/active		{64FWACT1 64FWACT2 64FWACT3 64FWACT4}
+64FWACT1					64FWACT1
+64FWACT2					64FWACT2
+64FWACT3					64FWACT3
+64FWACT4					64FWACT4
+
+$random wizard/see			{64FWSIT1 64FWSIT2 64FWSIT3 64FWSIT4}
+64FWSIT1					64FWSIT1
+64FWSIT2					64FWSIT2
+64FWSIT3					64FWSIT3
+64FWSIT4					64FWSIT4
+
+$random wizard/death		{64FWDTH1 64FWDTH2 64FWDTH3}
+64FWDTH1					64FWDTH1
+64FWDTH2					64FWDTH2
+64FWDTH3					64FWDTH3
+
+$volume wizard/see 0.8
+$volume wizard/active 0.4
+$volume wizard/pain 0.8
+$volume wizard/death 0.8
+$volume wizard/tele 0.4
+
 //Annihilator	BY ONOX792
 monster/annsit dsannsit
 

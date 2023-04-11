@@ -1,19 +1,19 @@
 #library "BD64ACS"
 #include "zcommon.acs"
 
-script "KickKeyPress" (VOID) NET		//TRIGGERED FROM KEYPRESS		//r31 was 301
+script "KickKeyPress" (VOID) NET		//TRIGGERED FROM KEYPRESS	//R8 revised Stamina check	//R28 added modern class check	//r31 was script 301
 {
-	if(CheckInventory("IsModern") > 0)											//R28
-	{																			//R28
-	GiveInventory("Kicking",1);													//R28
-	terminate;																	//r31
-	}																			//R28
-	else																		//R8
-	{																			//R8
-	if(CheckInventory("stamina") == 100)										//R8
-		{																		//R8
-		terminate;																//R8
-		}																		//R8
+	if(CheckInventory("IsModern") > 0)
+	{
+	GiveInventory("Kicking",1);
+	terminate;
+	}
+	else
+	{
+	if(CheckInventory("stamina") == 100)
+		{
+		terminate;
+		}
 	else
 		{
 		if(CheckInventory("Stamina") > 80)
@@ -41,7 +41,7 @@ Script "PlacingMine" (VOID) NET
 }
 
 #libdefine PLAYER_VIEWHEIGHT 50		//BD64 default player height
-script "CheckIfCrouching"(void)		// New check for crouching
+script "CheckIfCrouching"(void)		//New check for crouching
 {
 	if(GetActorViewHeight(0) <= PLAYER_VIEWHEIGHT / 2 << 16)
 		SetResultValue(TRUE);
@@ -55,7 +55,7 @@ if	(GameType() == GAME_NET_DEATHMATCH)
 	GiveInventory("IsDM",1);
 }
 
-script "SetBloodAmountACS" (void)		//R31 ADDED, REPLACES SCRIPT 799
+script "SetBloodAmountACS" (void)		//R31 REPLACES SCRIPT 799
 {
 SetResultValue(GetCVar("zdoombrutalblood"));
 }
@@ -68,7 +68,7 @@ if	(GameType() == GAME_NET_DEATHMATCH) {GiveInventory("LowGraphicsMode",1);}		//
 terminate;
 }
 
-script "Zandro_Check" OPEN		//R31 WAS 822
+script "Zandro_Check" OPEN		//R31 WAS script 822
 {
 if (GetCvar("isrunningzandronum") == 1)
 	{
@@ -77,7 +77,7 @@ if (GetCvar("isrunningzandronum") == 1)
 }
 
 //SPRINTING
-script "Sprinting" ENTER		//	R31 WAS 851
+script "Sprinting" ENTER		//	R31 WAS script 851
 {
 if(CheckInventory("IsTacticalClass") == 1)		//r31 leads to terminates if not tacticalclass
 	{
@@ -100,13 +100,13 @@ if(CheckInventory("IsTacticalClass") == 1)		//r31 leads to terminates if not tac
 	terminate;
 }
 
-script "TacticalPlayerFasterACS" (void)		//r31 was 852
+script "TacticalPlayerFasterACS" (void)		//r31 was script 852
 {
 SetActorProperty(0,APROP_Speed,2.0);
 delay (1);
 }
 
-script "TacticalPlayerSlowerACS" (void)		//r31 was 853
+script "TacticalPlayerSlowerACS" (void)		//r31 was script 853
 {
 SetActorProperty(0,APROP_Speed,1.0);
 delay (1);
@@ -131,67 +131,67 @@ if	(GetCvar("TCMapCheckCvar") == 0) {TakeInventory("TCMapCheck",1);}
 if	(GetCvar("TCMapCheckCvar") == 1) {GiveInventory("TCMapCheck",1);}
 }
 
-script "VanillaWeapons" (void)													//R31 Vanilla weapon animations
+script "VanillaWeapons" (void)			//R31 Vanilla weapon animations
 {
 SetResultValue(GetCVar("VWeaponCvar"));
 }
 
-script "GaussCannonRandom" (void)													//R31 Replaces 1485
+script "GaussCannonRandom" (void)		//R31 Replaces script 1485
 {
 SetResultValue(GetCVar("GaussCannon_Spawner_Cvar"));
 }
 
-script "BFGRandom" (void)													//R31 Replaces 1486
+script "BFGRandom" (void)				//R31 Replaces script 1486
 {
 SetResultValue(GetCVar("BFG_Spawner_Cvar"));
 }
 
-script "WpnPowerRandom" (void)													//R31 Replaces 1478
+script "WpnPowerRandom" (void)			//R31 Replaces script 1478
 {
 SetResultValue(GetCVar("WpnPower_Spawner_Cvar"));
 }
 
-script "NImpRandom" (void)														//R31 Replaces 1490
+script "NImpRandom" (void)				//R31 Replaces script 1490
 {
 SetResultValue(GetCVar("NImp_Spawner_Cvar"));
 }
 
-script "NSpectreRandom" (void)													//R31 Replaces 1491
+script "NSpectreRandom" (void)			//R31 Replaces script 1491
 {
 SetResultValue(GetCVar("NSpectre_Spawner_Cvar"));
 }
 
-script "NCacoRandom" (void)														//R31 Replaces 1492
+script "NCacoRandom" (void)				//R31 Replaces script 1492
 {
 SetResultValue(GetCVar("NCaco_Spawner_Cvar"));
 }
 
-script "HellHoundRandom" (void)													//R31 Replaces 1493
+script "HellHoundRandom" (void)			//R31 Replaces script 1493
 {
 SetResultValue(GetCVar("Hellhound_Spawner_Cvar"));
 }
 
-script "AnnihilatorRandom" (void)												//R31 Replaces 1494
+script "AnnihilatorRandom" (void)		//R31 Replaces script 1494
 {
 SetResultValue(GetCVar("Annihilator_Spawner_Cvar"));
 }
 
-script "MotherDemonRandom" (void)												//R31 Replaces 1495
+script "MotherDemonRandom" (void)		//R31 Replaces script 1495
 {
 SetResultValue(GetCVar("Motherdemon_Spawner_Cvar"));
 }
 
-script "HoundChooserACS" (void)													//R31 new choice between old and new hellhound
+script "HoundChooserACS" (void)			//R31 new choice between GEC and Cerberus style hellhound
 {
 SetResultValue(GetCVar("HoundChooserCvar"));
 }
 
-script "RevenantChooserACS" (void)												//R31 new choice between old and new Revenant
+script "RevenantChooserACS" (void)		//R31 new choice between Pyspy and Tchernobog style revenent
 {
 SetResultValue(GetCVar("RevenantChooserCvar"));
 }
 
-script "D64MonstersOnlyReplacer" (void)											//R31 Replaces 1481
+script "D64MonstersOnlyReplacer" (void)	//R31 Replaces script 1481
 {
 SetResultValue(GetCVar("D64MonstersOnlyCvar"));
 }
@@ -201,12 +201,12 @@ script "D64WeaponsOnlyReplacer" (void)
 SetResultValue(GetCVar("D64WeaponsOnlyCvar"));
 }
 
-script "Light_Fog_Remover" (void)												//R31 Replaces 17002
+script "Light_Fog_Remover" (void)		//R31 Replaces script 17002
 {
 SetResultValue(GetCVar("LFog_Cvar"));
 }
 
-script "Flat_Decal_Remover" (void)												//R31 Replaces 17001
+script "Flat_Decal_Remover" (void)		//R31 Replaces script 17001
 {
 SetResultValue(GetCVar("FloorDecal_Cvar"));
 }
@@ -416,4 +416,9 @@ SetResultValue(GetCVar("ZombieMarineNaziCvar"));
 Script "NightElementalRandom_ACS" (void)
 {
 SetResultValue(GetCVar("NightElementalRandomCvar"));
+}
+
+Script "FleshWizardRandomACS" (void)
+{
+SetResultValue(GetCVar("FleshWizardRandomCvar"));
 }

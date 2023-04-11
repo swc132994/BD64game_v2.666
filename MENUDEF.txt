@@ -135,18 +135,19 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 		StaticText "(Enabling the D64 monsters only option will override these settings)",1
 		StaticText " "
 	Option "Randomly replace Shotgun Zombies with SSG Zombies =","SSGZombieRandom_Cvar","SSGZombieRandom_Value"		//R31 was YesOrNo
-	Option "Randomly replace ZombieMen with Zombie Marines =","ZMarineRandom_Cvar","ZMarineRandom_Value"		//R31 was YesOrNo
+	Option "Randomly replace ZombieMen with Zombie Marines =","ZMarineRandom_Cvar","ZMarineRandom_Value"			//R31 was YesOrNo
 	Option "Randomly replace Chaingun Zombies with BFG Zombies =","ZombieBFGRandom_Cvar","BFGZombie_Value"
 	Option "Randomly replace Imps with Nightmare Imps =","NImp_Spawner_Cvar","NImp_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Spectres with Nightmare Spectres or Wraiths =","NSpectre_Spawner_Cvar","NSpectre_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Cacodemons with Nightmare Cacodemons =","NCaco_Spawner_Cvar","NCaco_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Demons with Acid Demons =","AcidDemonRandom_Cvar","AcidDemon_Spawner_Value"	//R31 New - Split from Demons with Hellhounds
-	Option "Randomly replace Lost Souls with Stalkers =","StalkerRandom_Cvar","Stalker_Spawner_Value"	//R31 New
-	Option "Randomly replace Arachnotrons with Nightcrawlers =","NightCrawlerRandom_Cvar","NightCrawler_Spawner_Value"	//R31 New
+	Option "Randomly replace Demons with Acid Demons =","AcidDemonRandom_Cvar","AcidDemon_Spawner_Value"	//Split from Demons with Hellhounds
+	Option "Randomly replace Lost Souls with Stalkers =","StalkerRandom_Cvar","Stalker_Spawner_Value"
+	Option "Randomly replace Arachnotrons with Nightcrawlers =","NightCrawlerRandom_Cvar","NightCrawler_Spawner_Value"
 	Option "Randomly replace HellKnights with Knightmares =","KnightmareRandomCvar","Knightmare_Spawner_Value"
 	Option "Randomly replace Barons with Hellhounds or Belphegors =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Mancubi with Bruisers =","BruiserRandom_Cvar","Bruiser_Spawner_Value"
 	Option "Randomly replace Pain Elementals with Nightmare Elementals =","NightElementalRandomCvar","NightElemental_Spawner_Value"
+	Option "Randomly replace Archviles with Flesh Wizards =","FleshWizardRandomCvar","FleshWizardRandom_Value"
 	Option "Randomly replace Cyberdemons with Annihilators =","Annihilator_Spawner_Cvar","Annihilator_Spawner_Value"	//R31 was YesOrNo
 	Option "Randomly replace Masterminds with Motherdemons or Eradicators =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"	//R27 //R31 was YesOrNo
 }
@@ -364,6 +365,13 @@ OptionValue "BFGZombie_Value"
 {
 	0,"ChaingunGuy Only"
 	1,"BFGGuy Only"
+	2,"Random"
+}
+
+OptionValue "FleshWizardRandom_Value"
+{
+	0,"Archvile Only"
+	1,"FleshWizard Only"
 	2,"Random"
 }
 

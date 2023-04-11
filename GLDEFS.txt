@@ -201,6 +201,7 @@ object 64ArachnotronPlasma
 	frame PLSEF {light PLASMA_X5}
 }
 
+//UNMAKER
 pointlight UNMAKERSHOT
 {
 	color 1.0 0.0 0.0
@@ -298,6 +299,7 @@ object 64BFGExtra
 	frame BFE2F {light BFGBALL_X5}
 }
 
+//EXPLOSIONS
 object 64BarrelExplosion
 {
 	frame MISLB {light ROCKET_X1}
@@ -1706,7 +1708,7 @@ object 64StalkerShot2	//R31 added
 	frame MBALH {light TRACER_X3}
 }
 
-//Arch Vile Fire
+//ArchVile Fire
 flickerlight ARCHFIRE1
 {
 	color 1.0 1.0 0.0
@@ -1803,7 +1805,7 @@ object 64ArchvileFire	//R10.2 unused	//R31 activated
 	frame INFET {light ARCHFIRE8}
 }
 
-// Arch-vile
+//Archvile
 flickerlight ARCHATK1
 {
 color 1.0 1.0 0.0
@@ -1895,8 +1897,20 @@ frame VILHA {light ARCHRES}
 frame VILHB {light ARCHRES}
 }
 
-//MotherDemon Ball
+//FleshWizard
+pointlight BLOODMAGICGLOW
+{
+	color 1.0 0.0 0.0
+	size 80
+}
 
+object 64BloodHaunting
+{
+	frame BFVI {light BLOODMAGICGLOW}
+	frame BFV0 {light BLOODMAGICGLOW}
+}
+
+//MotherDemon Ball
 object MotherBall
 {
 	frame M5B1 {light TRACER}
@@ -2015,25 +2029,26 @@ object TinyGreenTorch
 
 //end import doomdefs
 
-object FlashlightProjectile		//R31 TORCH/FLASHLIGHT
+//TORCH-FLASHLIGHT
+object FlashlightProjectile
 {
-frame TNT2 { light Flashlight2 }
-frame TNT2 { light Flashlight3 }
+frame TNT2 {light Flashlight2}
+frame TNT2 {light Flashlight3}
 }
 
 object FlashlightProjectile2
 {
-frame TNT2 { light Flashlight1 }
+frame TNT2 {light Flashlight1}
 }
 
 object FlashlightProjectile3
 {
-frame TNT2 { light Flashlight3 }
+frame TNT2 {light Flashlight3}
 }
 
 object FlashlightSource
 {
-frame TNT1 { light Flashlight3 }
+frame TNT1 {light Flashlight3}
 }
 
 pointlight Flashlight1
@@ -2055,8 +2070,9 @@ pointlight Flashlight3
 color 0.2 0.2 0.2
 size 64
 offset 0 0 0
-}							//R31 TORCH/FLASHLIGHT
+}
 
+//TECH LAMPS & TORCHES
 pulselight SMALLREDTORCH
 {
 color 1.0 0.3 0.0

@@ -1,4 +1,3 @@
-//R31 ADDED EXTR DEATHS
 Actor 64Fatso : Fatso Replaces Fatso
 {
 Scale 0.8

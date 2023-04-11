@@ -8,10 +8,10 @@ Speed 6
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "chainsaw",0.4
-Tag "Pistol Zombie"			//r31 added
-DropItem "SOULSPAWNER"		//R31 added
-DropItem "CLIP"				//R31 added
-+DOHARMSPECIES				//R23 added
+Tag "Pistol Zombie"
+DropItem "SOULSPAWNER"
+DropItem "64Clip"
++DOHARMSPECIES		//R23 added
 +NOBLOODDECALS
 states
 	{
@@ -1957,20 +1957,20 @@ Obituary "%o was gunned down by a zombie marine."
 //INTRO MARINES
 Actor IntroMarine : 64ZombieMarine Replaces MarinePistol	//R21 MOVED FROM DECORATE.INTROMARINES
 {
-Health 15									//R24.1 added
+Health 15		//R24.1 added
 GibHealth 30
 Speed 7
 MaxTargetRange 600
-Species Marines								//R24.1 added
-PainSound "player/male/pain100_1"			//r31 added
-DeathSound "player/male/death1"				//r31 added
-ActiveSound ""								//r31 added
-SeeSound ""									//r31 added
+Species Marines							//R24.1 added
+PainSound "player/male/pain100_1"		//r31 added
+DeathSound "player/male/death1"			//r31 added
+ActiveSound ""							//r31 added
+SeeSound ""								//r31 added
 Tag "Marine"	//r31 added
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-DropItem "RifleDrop",5						//R31 Added
-DropItem "clip"			//R21 added
+DropItem "RifleDrop",5	//R31 Added
+DropItem "64Clip"		//R21 added
 DropItem "SOULSPAWNER"	//R31 added
 Obituary "%o was gunned down by a marine."
 +FRIENDLY

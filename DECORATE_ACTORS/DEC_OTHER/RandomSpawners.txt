@@ -351,10 +351,17 @@ MONSTER
 	{
 	Spawn:
 		VILE A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"D64MonsterOnly")		//if D64 monsters only enabled spawn fatso
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==0,"SpawnArchvile")
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==1,"SpawnFleshWizard")
+		TNT1 A 0 A_Jump(64,"SpawnFleshWizard")//(25%)
+	SpawnArchvile:
 		TNT1 A 0 A_SpawnItemEx("64Archvile",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	D64MonsterOnly:
 		TNT1 A 0 A_SpawnItemEx("64Fatso",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnFleshWizard:
+		TNT1 A 0 A_SpawnItemEx("64FleshWizard",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	}
 }
@@ -526,7 +533,7 @@ MONSTER
 		SARG A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnPinky")	//if D64 monsters only enabled spawn pinky demon
 		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==0,"SpawnPinky")
 		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==1,"SpawnAcidDemon")
-		TNT1 A 0 A_Jump(39,"SpawnAcidDemon") //(15%)
+		TNT1 A 0 A_Jump(39,"SpawnAcidDemon")//(15%)
 	SpawnPinky:
 		TNT1 A 0 A_SpawnItemEx("64Demon",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -546,7 +553,7 @@ MONSTER
 	{
 	Spawn:
 		PAIN A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnPainElemental")	//if D64 monsters only enabled spawn shotgunguy
-		TNT1 A 0 A_JumpIf(CallACS("NightElementalRandom_ACS")==0,"64PainElemental")
+		TNT1 A 0 A_JumpIf(CallACS("NightElementalRandom_ACS")==0,"SpawnPainElemental")
 		TNT1 A 0 A_JumpIf(CallACS("NightElementalRandom_ACS")==1,"SpawnNightmareElemental")
 		TNT1 A 0 A_Jump(51,"SpawnNightmareElemental")//(20%)
 	SpawnPainElemental:
