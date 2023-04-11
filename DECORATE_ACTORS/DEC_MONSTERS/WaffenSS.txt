@@ -490,3 +490,8 @@ ReactionTime 35
 		Stop
 	}
 }
+
+Actor 64StickGrenadePlayer: 64StickGrenade
+{
+Speed 30
+}
