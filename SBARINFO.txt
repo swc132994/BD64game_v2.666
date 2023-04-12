@@ -3,16 +3,30 @@ completeborder true;
 
 statusbar fullscreen,forcescaled,0.5
 {
-	drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),88,183;	//R4 Added WhenNotZero //R31 untranslated
-	drawimage "HTEXA0",30,170;
-	drawnumber 3,HUDFONT_DOOM,untranslated,health,69,180;
-	drawimage "ATEXA0",246,170;
-	drawnumber 3,HUDFONT_DOOM,untranslated,armor,283,180;
-	drawimage "nullimage",306,196;
-	drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
-//	drawimage ammoicon2,306,172;
-	drawnumber 3,SMALLFONT,red,ammo2,192,183; //R31 untranslated
-
+	InInventory "ArrangedHud",1 //R31 Fullscreen HUD
+	{
+		drawnumber 3,HUDFONT_DOOM,untranslated,health,69,180;
+		drawimage armoricon, 18,178,none, 15, 15;
+		drawnumber 3,HUDFONT_DOOM,untranslated,armor,WhenNotZero,69,166;		
+		drawimage ammoicon1, 288,190,none, 15, 15;
+		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;	
+		drawimage ammoicon2, 288,174,none, 20, 20;
+		drawnumber 3,HUDFONT_DOOM,untranslated,ammo2,276,166;
+		drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),175,180;		
+	}
+	else
+	{
+		drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),88,183;	//R4 Added WhenNotZero //R31 untranslated
+		drawimage "HTEXA0",30,170;
+		drawnumber 3,HUDFONT_DOOM,untranslated,health,69,180;
+		drawimage "ATEXA0",246,170;
+		drawnumber 3,HUDFONT_DOOM,untranslated,armor,283,180;
+		drawimage "nullimage",306,196;
+		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
+	//	drawimage ammoicon2,306,172;
+		drawnumber 3,SMALLFONT,red,ammo2,192,183; //R31 untranslated
+	}
+	
 	PlayerType "Tactical64DoomPlayer","Modern"
 	{
 		IsSelected not "64ProximityMine"
@@ -38,6 +52,7 @@ statusbar fullscreen,forcescaled,0.5
 	}
 //	drawselectedinventory INDEXFONT,306,148;								//R27 WAS INDEXFON & DISABLED
 //	drawselectedinventory SMALLFONT,58,161;									//R27 ALTERNATIVE POSITION NEXT TO HEALTH
+
 }
 
 statusbar normal

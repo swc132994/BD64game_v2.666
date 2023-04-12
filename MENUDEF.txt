@@ -99,6 +99,7 @@ OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 		StaticText " "
 	Option "Enable footstep sounds =","FootStepCheckCvar","YesOrNo"
 	Option "Set Normal size HUD to Doom style =","VanillaStatusBarCvar","YesorNo"
+	Option "Set Fullscreen size HUD to Doom style =","ArragendHUDCvar","YesorNo"	
 	Option "Screen Effects =", "bd64_ScreenFX", "ScreenTypes"
 		StaticText "Enables Screen Effects on HUD, such as Blood Splashing and Bullet Holes."
 		StaticText " "

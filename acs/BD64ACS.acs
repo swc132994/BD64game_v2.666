@@ -343,6 +343,14 @@ Delay(35);
 Restart;
 }
 
+Script "ArragendHUDSwitching" ENTER	//option to set vanilla normal HUD
+{
+if(GetUserCvar(0,"ArragendHUDCvar") == 1) {GiveInventory("ArrangedHud",1);}
+if(GetUserCvar(0,"ArragendHUDCvar") == 0) {TakeInventory("ArrangedHud",1);}
+Delay(35);
+Restart;
+}
+
 Script "VanillaChainsawACS" ENTER 	//option to set vanilla Chainsaw
 {
 if (CheckInventory("64ChainsawTACTICAL") == 1 && GetCvar("VanillaChainsawCvar") == 1)
