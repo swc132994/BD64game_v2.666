@@ -5,6 +5,14 @@ statusbar fullscreen,forcescaled,0.5
 {
 	InInventory "ArrangedHud",1 //R31 Fullscreen HUD
 	{
+		InInventory "PowerStrength",1
+		{
+		drawimage "pstra0", 18,191,none, 15, 15;
+		}
+		else
+		{
+		drawimage "media0", 18,191,none, 15, 15;
+		}
 		drawnumber 3,HUDFONT_DOOM,untranslated,health,69,180;
 		drawimage armoricon, 18,178,none, 15, 15;
 		drawnumber 3,HUDFONT_DOOM,untranslated,armor,WhenNotZero,69,166;		
