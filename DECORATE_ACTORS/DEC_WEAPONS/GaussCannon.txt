@@ -19,6 +19,12 @@ Inventory.PickupSound "WPICK"
 	}
 }
 
+ACTOR GaussScopeLightAmp : PowerLightAmp
+{
+Powerup.Duration 2147483647
+}
+
+
 ACTOR BD64_GaussCannon : DoomWeapon
 {
 SpawnID 164
@@ -105,24 +111,29 @@ Decal BigScorch
 	States
 	{
 	MineThrowFlash:
+		TNT1 A 0 A_TakeInventory("GaussScopeLightAmp",1)
 		TGCS DCBA 1
 		TNT1 A 18
 		TGCS ABCD 1
 		Stop
 	KickingFlash:
+		TNT1 A 0 A_TakeInventory("GaussScopeLightAmp",1)
 		GCIK ABCD 1
 		GCIK D 8
 		GCIK DCBA 1
 		Stop
 	AirKickingFlash:
+		TNT1 A 0 A_TakeInventory("GaussScopeLightAmp",1)
 		GCIK ABCD 1
 		GCIK D 10
 		GCIK DCBA 1
 		Stop
 	SlideKickingStart:
+		TNT1 A 0 A_TakeInventory("GaussScopeLightAmp",1)
 		GCIK ABCD 1
 		GCIK D 18
 	SlideKickingEnd:
+		TNT1 A 0 A_TakeInventory("GaussScopeLightAmp",1)
 		GCIK D 6
 		GCIK DCBA 1
 		Stop
@@ -137,7 +148,9 @@ Decal BigScorch
 	Deselect:
 		TGCS DCBA 1
 		TNT1 A 0 A_TakeInventory("Zoomed",0)
+		TNT1 A 0 A_TakeInventory("GaussScopeLightAmp",1)
 		TNT1 A 0 A_TakeInventory("HasPlasmaWeapon",1)
+		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 1 A_Lower
 		Wait
 	Select:
@@ -171,6 +184,7 @@ Decal BigScorch
 		TNT1 A 0 A_JumpIfInventory("Cell",1,1)
 		Goto Ready
 		TNT1 A 0 A_TakeInventory("Zoomed",0)
+		TNT1 A 0 A_TakeInventory("GaussScopeLightAmp",1)
 		TNT1 A 0 A_TakeInventory("HasPlasmaWeapon",1)
 		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 0 A_JumpIfInventory("GaussAmmo",10,"Ready")
@@ -213,10 +227,12 @@ Decal BigScorch
 		GCSZ ABCD 1
 		GCSC ABCDEFGHI 1
 		TNT1 A 0 A_ZoomFactor(10.0)
+		TNT1 A 0 A_GiveInventory("GaussScopeLightAmp",1)
 		Goto Ready2
 	NoAim:
 		TNT1 A 0 A_Takeinventory("Zoomed",0)
-		TNT1 A 0 A_TakeInventory("HasPLasmaWeapon",1)
+		TNT1 A 0 A_TakeInventory("GaussScopeLightAmp",1)
+		TNT1 A 0 A_TakeInventory("HasPlasmaWeapon",1)
 		TNT1 A 0 A_ZoomFactor(1.0)
 		GCSC IHGFEDCBA 1
 		GCSZ DCBA 1

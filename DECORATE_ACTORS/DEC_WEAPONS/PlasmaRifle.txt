@@ -213,9 +213,9 @@ Tag "$TAG_PLASMARIFLE"
 		Goto NoAmmoCooldown
 		PLSR A 0 A_JumpIfInventory("PlasmaRifleAmmo",21,2)		//R31 Pseudo-Fade Effect
 		2LSR A 0
-		"####" ABCDEF 1
-		"####" G 12
-		"####" FEDCBA 1
+		"####" ABCDEF 1 A_WeaponReady(WRF_NOSECONDARY)
+		"####" G 12 A_WeaponReady(WRF_NOSECONDARY)
+		"####" FEDCBA 1 A_WeaponReady(WRF_NOSECONDARY)
 		Goto Ready
 	NoAmmoCooldown:
 		3LSR ABCDEF 1

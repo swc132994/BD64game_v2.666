@@ -15,12 +15,12 @@ statusbar fullscreen,forcescaled,0.5
 		}
 		drawnumber 3,HUDFONT_DOOM,untranslated,health,69,180;
 		drawimage armoricon, 18,178,none, 15, 15;
-		drawnumber 3,HUDFONT_DOOM,untranslated,armor,WhenNotZero,69,166;		
+		drawnumber 3,HUDFONT_DOOM,untranslated,armor,WhenNotZero,69,166;
 		drawimage ammoicon1, 288,190,none, 15, 15;
-		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;	
+		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;
 		drawimage ammoicon2, 288,174,none, 20, 20;
 		drawnumber 3,HUDFONT_DOOM,untranslated,ammo2,276,166;
-		drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),175,180;		
+		drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),175,180;
 	}
 	else
 	{
@@ -103,7 +103,7 @@ statusbar normal
 	InInventory "VanillaSBar",1	//Vanilla status bar
 		{
 		drawimage "STBAR1",0,160;
-		drawimage "STTPRCNT",86,171;
+		drawimage "STTPRCNT",88,171;
 		drawimage "STTPRCNT",219,171;
 
 		PlayerType "64DoomPlayer"
@@ -121,7 +121,7 @@ statusbar normal
 		drawstring SMALLFONT,untranslated,"AMMO",38,191;
 
 		drawstring SMALLFONT,untranslated,"HEALTH",96,191;
-		drawnumber 3,HUDFONT_DOOM,Red,health,86,171;
+		drawnumber 3,HUDFONT_DOOM,Red,health,88,171;
 
 		drawstring SMALLFONT,untranslated,"ARMOUR",228,191;
 		drawnumber 3,HUDFONT_DOOM,untranslated,armor,219,171;
