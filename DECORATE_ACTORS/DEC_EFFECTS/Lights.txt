@@ -1266,9 +1266,23 @@ Game Doom
 	}
 }
 
-ACTOR ReplacesColumn : 64TechLamp2B replaces Column
+actor 64TechColumn : Column Replaces Column
 {
-+NOBLOCKMAP
+	States
+	{
+	Spawn:
+		TLP1 A 0 NoDelay A_SpawnItemEx("LightShaft2",36,36,0)
+		TNT1 A 0 A_SpawnItemEx("LightShaft2",-36,36,0)
+		TNT1 A 0 A_SpawnItemEx("LightShaft2",36,-36,0)
+		TNT1 A 0 A_SpawnItemEx("LightShaft2",-36,-36,0)
+	Live:
+		TLP1 A 1 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmallPermanent",6,6,44)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmallPermanent",-6,-6,44)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmallPermanent",6,-6,44)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmallPermanent",-6,6,44)
+		TLP1 A -1 Light("LampBasic")
+		Stop
+	}
 }
 
 actor LightShaft2	//imported properites from removed LightShaft1 actor
