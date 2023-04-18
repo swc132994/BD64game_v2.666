@@ -12,6 +12,7 @@ PainChance 10	//R31 was 20
 ReactionTime 8
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
+DamageFactor "UnmakerWhite",0.5
 Obituary "%o was obliterated by the mother of all demons."
 SeeSound "mother/sight"
 AttackSound "mother/attack"

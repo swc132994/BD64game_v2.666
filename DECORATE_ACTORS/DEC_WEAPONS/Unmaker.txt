@@ -425,7 +425,7 @@ PROJECTILE
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))		//R31 WAS 5 SPAWN Height	was 9*a
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))	//R31 WAS 5 SPAWN Height	was 18*a
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))		//R31 WAS 5 SPAWN Height	was 9*a
-		TNT1 A 0 A_Explode(100,15,1)
+		TNT1 A 0 A_Explode(100,15,0)
 		TNT1 AAAAA 1 A_SpawnItem("RocketFlare")
 		TNT1 AAAAA 0 A_CustomMissile("PlasmaSmoke",0,0,random(0,360),2,random(0,360))	//R31 WAS ExplosionSmokeFast22 & WAS 5 SPAWN Height
 		LPUF ABC 4 Bright
@@ -484,12 +484,13 @@ Damage(Random(25,50))
 
 Actor UnmakerLaserWhite : UnmakerLaser	//r31 added
 {
-Damage 1000
+Damage 0
 Speed 85
 Decal MedScorch
 Scale 1.2
 Alpha 1
 RenderStyle Add
+DamageType "UnmakerWhite"
 	States
 	{
 	Spawn:
@@ -531,7 +532,7 @@ RenderStyle Add
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))		//R31 WAS 5 SPAWN Height	was 9*a
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))	//R31 WAS 5 SPAWN Height	was 18*a
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))		//R31 WAS 5 SPAWN Height	was 9*a
-		TNT1 A 0 A_Explode(100,15,1)
+		TNT1 A 0 A_Explode(1000,15,0,0,15)
 		TNT1 AAAAA 0 A_CustomMissile("PlasmaSmoke",0,0,random(0,360),2,random(0,360))	//R31 WAS ExplosionSmokeFast22 & WAS 5 SPAWN Height
 		SHWK ABCDEFGHIJKL 1 Bright	//R31 Added frames
 		Stop
@@ -570,7 +571,7 @@ RenderStyle Add
 	}
 }
 
-Actor UnmakerLaserPierce: UnmakerLaser
+Actor UnmakerLaserPierce : UnmakerLaser
 {
 Damage 8
 +RIPPER
