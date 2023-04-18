@@ -357,6 +357,18 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		ARSR Z 1
 		AR2R AB 1
 		Goto Ready
+	AltADSFidget:		
+		AR2G Q 1
+		AR2G RST 1
+		AR2G U 3
+		TNT1 A 0 A_PlaySound("ARSBOLT",CHAN_WEAPON)
+		AR2G VWXYZ 1
+		AR2G Z 4
+		AR2G XYWV 1
+		AR2G U 3
+		AR2G TSR 1
+		AR2G Q 1
+		Goto Ready2
 	Deselect:
 		TNT1 A 0 A_Takeinventory("Zoomed",0)		//R31 added
 		TNT1 A 0 A_ZoomFactor(1.0)					//R31 added
@@ -477,9 +489,10 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		Goto Ready
 	Reload:
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,"AlternativeReload")	//R31 Alternative Rifle Skin	(Alternative Reload)
+		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"ADSReload")		
 		RIFG A 1 A_WeaponReady
-		TNT1 A 0 A_ZoomFactor(1.0)
-		TNT1 A 0 A_Takeinventory("Zoomed",1)				//r31 activated
+		/*TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_Takeinventory("Zoomed",1)*/		//r31 activated
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",31,"Fidget")	//R31 Fidget Animation
 		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
 		Goto NoAmmo
@@ -492,10 +505,26 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		RIFR GGGGGEDCBA 1 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",1,"InsertBullets2")//30+1 effect
 		Goto InsertBullets
+	ADSReload:
+		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,"AlternativeADSReload")	//R31 Alternative Rifle Skin	(Alternative Reload)
+		RI2G A 1 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",31,"Ready2")	//R31 Fidget Animation
+		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
+		Goto NoAmmo
+		TNT1 A 0 A_PlaySound("Reload")
+		RI2R ABCDEFG 1 A_JumpIfInventory("Kicking",1,"DoKick")
+		RI2R H 1 A_FireCustomMissile("EmptyClipSpawn",-5,0,8,-18)	//R31 WAS -4 HEIGHT
+		RI2R I 11 A_JumpIfInventory("Kicking",1,"DoKick")
+		RI2R JK 1
+		RI2R J 1
+		RI2R IIIIIGFEDCBA 1 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",1,"ADSInsertBullets2")//30+1 effect
+		Goto ADSInsertBullets	
 	AlternativeReload:
+		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"ADSAlternativeReload")	
 		ARSG A 1 A_WeaponReady
-		TNT1 A 0 A_ZoomFactor(1.0)
-		TNT1 A 0 A_Takeinventory("Zoomed",0)					//r31 activated
+		/*TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_Takeinventory("Zoomed",0)*/					//r31 activated
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",31,"AltFidget")	//r31 was jump 64, fidget animation (Alternative Skin)
 		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
 		Goto NoAmmo
@@ -534,10 +563,12 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 	InsertBullets:
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",30,"Ready")		//R11 WAS("RifleAmmo",30,15)	//R28 WAS JUMP 15
 		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
+		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"Ready2")
 		Goto Ready
 		TNT1 A 0 A_Giveinventory("RifleAmmo",1)
 		TNT1 A 0 A_Takeinventory("Clip",1,TIF_NOTAKEINFINITE)
 		Goto InsertBullets
+		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"Ready2")		
 		TNT1 A 0 A_Refire
 		Goto Ready
 	InsertBullets2:
@@ -546,9 +577,59 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 		Goto Ready
 		TNT1 A 0 A_Giveinventory("RifleAmmo",1)
 		TNT1 A 0 A_Takeinventory("Clip",1,TIF_NOTAKEINFINITE)
-		Goto InsertBullets2
+		Goto InsertBullets2	
 		TNT1 A 0 A_Refire
 		Goto Ready
+	ADSAlternativeReload:
+		AR2G A 1 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",31,"AltADSFidget")	//r31 was jump 64, fidget animation (Alternative Skin)
+		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
+		Goto NoAmmo
+		TNT1 A 0 A_PlaySound("Relo1")
+		AR2G ABCDE 1
+		ARSR F 0 A_FireCustomMissile("EmptyClipSpawn",-5,0,8,-14)
+		AR2G GHIJKLM 1
+		AR2G N 4
+		AR2G OP 1
+		RIFL C 0 A_PlaySound("Relo2")
+		AR2G O 1
+		TNT1 A 0 A_PlaySound("Relo3")
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",1,3)
+		TNT1 A 0 A_GiveInventory("RifleBolt",1)
+		TNT1 A 0 A_JumpIfInventory("RifleBolt",1,"ADSReloadEmpty")
+		AR2G NNMLKJIHGEDCB 1
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",1,"ADSInsertBullets2")//30+1 effect
+	ADSReloadEmpty:
+		TNT1 A 0 A_TakeInventory("RifleBolt",1)
+		AR2G Q 1
+		AR2G RST 1
+		AR2G U 3
+		TNT1 A 0 A_PlaySound("ARSBOLT",CHAN_WEAPON)
+		AR2G VWXYZ 1
+		AR2G Z 4
+		AR2G XYWV 1
+		AR2G U 3
+		AR2G TSR 1
+		AR2G Q 1
+		AR2G B 1		
+	ADSInsertBullets:
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",30,"Ready2")		//R11 WAS("RifleAmmo",30,15)	//R28 WAS JUMP 15
+		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
+		Goto Ready2
+		TNT1 A 0 A_Giveinventory("RifleAmmo",1)
+		TNT1 A 0 A_Takeinventory("Clip",1,TIF_NOTAKEINFINITE)
+		Goto ADSInsertBullets	
+		TNT1 A 0 A_Refire
+		Goto Ready2
+	ADSInsertBullets2:
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",31,"Ready2")		//R28 WAS JUMP 15
+		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
+		Goto Ready2
+		TNT1 A 0 A_Giveinventory("RifleAmmo",1)
+		TNT1 A 0 A_Takeinventory("Clip",1,TIF_NOTAKEINFINITE)
+		Goto ADSInsertBullets2	
+		TNT1 A 0 A_Refire
+		Goto Ready2		
 	AltFire:		//R31 added ALTFIRE AND EXTRA BELOW, EDITED BY IDDQD 1337
 		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"NoAim")
 		TNT1 A 0 A_Giveinventory("Zoomed",1)
