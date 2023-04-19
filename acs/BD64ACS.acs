@@ -40,6 +40,11 @@ Script "PlacingMine" (VOID) NET
 	GiveInventory("PlaceMine",1);
 }
 
+Script "WeaponSpecialAction" (VOID) NET
+{
+	GiveInventory("WeaponSpecialAction",1);
+}
+
 #libdefine PLAYER_VIEWHEIGHT 50		//BD64 default player height
 script "CheckIfCrouching"(void)		//New check for crouching
 {

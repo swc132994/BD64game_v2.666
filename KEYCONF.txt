@@ -18,3 +18,7 @@ DefaultBind "G" "MineToss"
 Alias "MinePlace" "PukeName PlacingMine"
 AddMenuKey "Place Mine" "MinePlace"
 DefaultBind "M" "MinePlace"
+
+Alias "WeaponSpecialAction" "PukeName WeaponSpecialAction"
+AddMenuKey "Weapon Special Action" "WeaponSpecialAction"
+DefaultBind "V" "WeaponSpecialAction"

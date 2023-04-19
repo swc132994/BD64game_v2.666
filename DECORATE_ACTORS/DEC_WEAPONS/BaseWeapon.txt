@@ -17,6 +17,11 @@ Actor PlaceMine : Inventory
 inventory.maxamount 1
 }
 
+Actor WeaponSpecialAction : Inventory
+{
+inventory.maxamount 1
+}
+
 Actor Brutal64Weapon : DoomWeapon
 {
 Weapon.BobStyle InverseSmooth
