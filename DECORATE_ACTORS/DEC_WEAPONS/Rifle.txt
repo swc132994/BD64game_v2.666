@@ -563,12 +563,10 @@ Tag "Assault Rifle"										//R11 WAS $TAG_CHAINGUN
 	InsertBullets:
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",30,"Ready")		//R11 WAS("RifleAmmo",30,15)	//R28 WAS JUMP 15
 		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
-		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"Ready2")
 		Goto Ready
 		TNT1 A 0 A_Giveinventory("RifleAmmo",1)
 		TNT1 A 0 A_Takeinventory("Clip",1,TIF_NOTAKEINFINITE)
-		Goto InsertBullets
-		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"Ready2")		
+		Goto InsertBullets	
 		TNT1 A 0 A_Refire
 		Goto Ready
 	InsertBullets2:
