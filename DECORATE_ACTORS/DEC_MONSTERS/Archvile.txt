@@ -455,10 +455,9 @@ Actor BrutalizedArchvile_2 : BrutalizedArchvile_1
 	}
 }
 
-Actor 64ArchvileFire Replaces ArchvileFire
+ACTOR 64ArchvileFire : ArchvileFire Replaces ArchvileFire
 {
-Game Doom
-Scale 1.5
+Scale 1.25
 Alpha 0.75
 RenderStyle Add
 +NOBLOCKMAP
@@ -466,14 +465,12 @@ RenderStyle Add
 	States
 	{
 	Spawn:
-		TNT1 A 1 A_StartFire
-		INFE ABCDEF 3 Bright A_Fire
-		INFE G 3 Bright A_FireCrackle
-		INFE HIJKLM 3 Bright A_Fire
-		INFE N 3 Bright A_FireCrackle
-		INFE OPQRS 3 Bright A_Fire
-		INFE T 3 Bright A_FireCrackle
-		TNT1 A 2
+		F4RE A 2 Bright A_StartFire
+		F4RE BAB 2 Bright A_Fire
+		F4RE C 2 Bright A_FireCrackle
+		F4RE BCBCDCDCDEDED 2 Bright A_Fire
+		F4RE E 2 Bright A_FireCrackle
+		F4RE FEFEFGHIGHIGHI 2 Bright A_Fire
 		Stop
 	}
 }

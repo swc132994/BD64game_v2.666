@@ -146,9 +146,6 @@ $limit misc/p_pkup 0
 misc/keytry				dsnokey
 weapon/plasmaidle		dspsidl
 
-//Mastermind Melee
-//spider/attack			dspistol	//r31 removed
-
 //Mother Demon
 mother/sight dsmthsit
 mother/pain dsmthpai

@@ -1781,28 +1781,17 @@ flickerlight ARCHFIRE8
 	offset 0 80 0
 }
 
-object 64ArchvileFire	//R10.2 unused	//R31 activated
+object 64ArchvileFire
 {
-	frame INFEA {light ARCHFIRE1}
-	frame INFEB {light ARCHFIRE1}
-	frame INFEC {light ARCHFIRE2}
-	frame INFED {light ARCHFIRE2}
-	frame INFEE {light ARCHFIRE3}
-	frame INFEF {light ARCHFIRE3}
-	frame INFEG {light ARCHFIRE4}
-	frame INFEH {light ARCHFIRE4}
-	frame INFEI {light ARCHFIRE5}
-	frame INFEJ {light ARCHFIRE5}
-	frame INFEK {light ARCHFIRE6}
-	frame INFEL {light ARCHFIRE6}
-	frame INFEM {light ARCHFIRE7}
-	frame INFEN {light ARCHFIRE7}
-	frame INFEO {light ARCHFIRE8}
-	frame INFEP {light ARCHFIRE8}
-	frame INFEQ {light ARCHFIRE8}
-	frame INFER {light ARCHFIRE8}
-	frame INFES {light ARCHFIRE8}
-	frame INFET {light ARCHFIRE8}
+	frame F4REA {light ARCHFIRE1}
+	frame F4REB {light ARCHFIRE2}
+	frame F4REC {light ARCHFIRE3}
+	frame F4RED {light ARCHFIRE4}
+	frame F4REE {light ARCHFIRE5}
+	frame F4REF {light ARCHFIRE6}
+	frame F4REG {light ARCHFIRE7}
+	frame F4REH {light ARCHFIRE8}
+	frame F4REI {light ARCHFIRE8}
 }
 
 //Archvile
