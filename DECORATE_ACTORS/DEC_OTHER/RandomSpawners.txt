@@ -140,7 +140,7 @@ Scale 0.7
 	}
 }
 
-//R26 Optional monster spawners
+//R26 Random monster spawners
 Actor NImp_Random Replaces Doomimp
 {
 Scale 0.8
@@ -152,7 +152,27 @@ MONSTER
 	Spawn:
 		TROO A 0 NoDelay A_JumpIf(CallACS("NImpRandom")==0,"SpawnImp")
 		TNT1 A 0 A_JumpIf(CallACS("NImpRandom")==1,"SpawnNightImp")
-		TNT1 A 0 A_Jump(51,"SpawnNightImp") //(20%)
+		TNT1 A 0 A_JumpIf(CallACS("NImpRandom")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("NImpRandom")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("NImpRandom")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("NImpRandom")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("NImpRandom")==50,"P50")
+		Goto SpawnImp
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnNightImp")//(10%)
+		Goto SpawnImp
+	P20:
+		TNT1 A 0 A_Jump(51,"SpawnNightImp")//(20%)
+		Goto SpawnImp
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnNightImp")//(30%)
+		Goto SpawnImp
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnNightImp")//(40%)
+		Goto SpawnImp
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnNightImp")//(50%)
+		Goto SpawnImp
 	SpawnImp:
 		TNT1 A 0 A_SpawnItemEx("64DoomImp",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -175,8 +195,27 @@ States
 		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==0,"SpawnSpectre")
 		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==1,"SpawnNightSpectre")
 		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==2,"SpawnWraith")
-		TNT1 A 0 A_Jump(39,"SpawnNightSpectre") //(15%)
-		TNT1 A 0 A_Jump(51,"SpawnWraith") //(20%)
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==50,"P50")
+		Goto SpawnSpectre
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnNightSpectre","SpawnWraith")//(10%)
+		Goto SpawnSpectre
+	P20:
+		TNT1 A 0 A_Jump(51,"SpawnNightSpectre","SpawnWraith")//(20%)
+		Goto SpawnSpectre
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnNightSpectre","SpawnWraith")//(30%)
+		Goto SpawnSpectre
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnNightSpectre","SpawnWraith")//(40%)
+		Goto SpawnSpectre
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnNightSpectre","SpawnWraith")//(50%)
+		Goto SpawnSpectre
 	SpawnSpectre:
 		TNT1 A 0 A_SpawnItemEx("64Spectre",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -201,45 +240,32 @@ MONSTER
 		HEAD A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnCacodemon")	//if D64 monsters only enabled spawn cacodemon
 		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==0,"SpawnCacodemon")
 		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==1,"SpawnNightCacodemon")
-		TNT1 A 0 A_Jump(51,"SpawnNightCacodemon") //(20%)
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==50,"P50")
+		Goto SpawnCacodemon
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnNightCacodemon")//(10%)
+		Goto SpawnCacodemon
+	P20:
+		TNT1 A 0 A_Jump(51,"SpawnNightCacodemon")//(20%)
+		Goto SpawnCacodemon
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnNightCacodemon")//(30%)
+		Goto SpawnCacodemon
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnNightCacodemon")//(40%)
+		Goto SpawnCacodemon
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnNightCacodemon")//(50%)
+		Goto SpawnCacodemon
 	SpawnCacodemon:
 		TNT1 A 0 A_SpawnItemEx("64Cacodemon",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	SpawnNightCacodemon:
 		TNT1 A 0 A_SpawnItemEx("NightmareCacodemon",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop
-	}
-}
-
-Actor Hound_Chooser	19125	//Used for direct hound placement on maps. Tag 666 fix (A_KillMaster must be called from spawned monster)
-{
-SpawnID 185
-Scale 0.8
-MONSTER
--SOLID
--COUNTKILL
-+BOSSDEATH
-	States
-	{
-	Death:
-	XDeath:
-		TNT1 A 0 A_BossDeath
-		Stop
-	Spawn:
-		GECH A 0 NoDelay A_NoBlocking
-		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnArachnotron")		//if D64 monsters only enabled spawn Arachnotron
-		TNT1 A 0 A_JumpIf(CallACS("HoundChooserACS")==1,"HoundGEC")
-		TNT1 A 0 A_JumpIf(CallACS("HoundChooserACS")==2,"HoundCerb")
-		TNT1 A -1 A_SpawnItemEx("64Hellhound",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop
-	HoundCerb:
-		TNT1 A -1 A_SpawnItemEx("64CHellHound",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop
-	HoundGEC:
-		TNT1 A -1 A_SpawnItemEx("64HellHoundGEC",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop
-	SpawnArachnotron:
-		TNT1 A -1 A_SpawnItemEx("64Arachnotron",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	}
 }
@@ -263,8 +289,27 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==0,"SpawnBaron")	//Baron only
 		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==1,"HoundChooser")	//Hound Chooser
 		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==2,"SpawnBelp")	//Belphegor only
-		TNT1 A 0 A_Jump(39,"SpawnBelp")		//(15%)
-		TNT1 A 0 A_Jump(51,"HoundChooser")	//(20%)
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==50,"P50")
+		Goto SpawnBaron
+	P10:
+		TNT1 A 0 A_Jump(26,"HoundChooser","SpawnBelp")//(10%)
+		Goto SpawnBaron
+	P20:
+		TNT1 A 0 A_Jump(51,"HoundChooser","SpawnBelp")//(20%)
+		Goto SpawnBaron
+	P30:
+		TNT1 A 0 A_Jump(77,"HoundChooser","SpawnBelp")//(30%)
+		Goto SpawnBaron
+	P40:
+		TNT1 A 0 A_Jump(102,"HoundChooser","SpawnBelp")//(40%)
+		Goto SpawnBaron
+	P50:
+		TNT1 A 0 A_Jump(128,"HoundChooser","SpawnBelp")//(50%)
+		Goto SpawnBaron
 	SpawnBaron:
 		TNT1 A -1 A_SpawnItemEx("64BaronOfHell",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -303,7 +348,27 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnHellKnight")	//if D64 monsters only enabled spawn Hellknight
 		TNT1 A 0 A_JumpIf(CallACS("KnightmareRandom")==0,"SpawnHellKnight")
 		TNT1 A 0 A_JumpIf(CallACS("KnightmareRandom")==1,"SpawnKnightmare")
-		TNT1 A 0 A_Jump(39,"SpawnKnightmare") //(15%)
+		TNT1 A 0 A_JumpIf(CallACS("KnightmareRandom")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("KnightmareRandom")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("KnightmareRandom")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("KnightmareRandom")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("KnightmareRandom")==50,"P50")
+		Goto SpawnHellKnight
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnKnightmare")//(10%)
+		Goto SpawnHellKnight
+	P20:
+		TNT1 A 0 A_Jump(51,"SpawnKnightmare")//(20%)
+		Goto SpawnHellKnight
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnKnightmare")//(30%)
+		Goto SpawnHellKnight
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnKnightmare")//(40%)
+		Goto SpawnHellKnight
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnKnightmare")//(50%)
+		Goto SpawnHellKnight
 	SpawnHellKnight:
 		TNT1 A -1 A_SpawnItemEx("64HellKnight",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -331,7 +396,27 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnCyberdemon")	//if D64 monsters only enabled spawn cyberdemon
 		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==0,"SpawnCyberdemon")
 		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==1,"SpawnAnnihilator")
-		TNT1 A 0 A_Jump(64,"SpawnAnnihilator") //(25%)
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==50,"P50")
+		Goto SpawnCyberdemon
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnAnnihilator")//(10%)
+		Goto SpawnCyberdemon
+	P20:
+		TNT1 A 0 A_Jump(51,"SpawnAnnihilator")//(20%)
+		Goto SpawnCyberdemon
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnAnnihilator")//(30%)
+		Goto SpawnCyberdemon
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnAnnihilator")//(40%)
+		Goto SpawnCyberdemon
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnAnnihilator")//(50%)
+		Goto SpawnCyberdemon
 	SpawnCyberdemon:
 		TNT1 A -1 A_SpawnItemEx("64Cyberdemon",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -353,42 +438,40 @@ MONSTER
 		VILE A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"D64MonsterOnly")		//if D64 monsters only enabled spawn fatso
 		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==0,"SpawnArchvile")
 		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==1,"SpawnFleshWizard")
-		TNT1 A 0 A_Jump(64,"SpawnFleshWizard")//(25%)
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==50,"P50")
+		Goto SpawnArchvile
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnFleshWizard")//(10%)
+		Goto SpawnArchvile
+	P20:
+		TNT1 A 0 A_Jump(51,"SpawnFleshWizard")//(20%)
+		Goto SpawnArchvile
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnFleshWizard")//(30%)
+		Goto SpawnArchvile
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnFleshWizard")//(40%)
+		Goto SpawnArchvile
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnFleshWizard")//(50%)
+		Goto SpawnArchvile
 	SpawnArchvile:
 		TNT1 A 0 A_SpawnItemEx("64Archvile",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop
-	D64MonsterOnly:
-		TNT1 A 0 A_SpawnItemEx("64Fatso",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	SpawnFleshWizard:
 		TNT1 A 0 A_SpawnItemEx("64FleshWizard",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
-	}
-}
-
-Actor D64_Revenant_Replacer Replaces Revenant	//09-08-22 combined revenant chooser
-{
-Scale 0.6
-MONSTER
--SOLID
--COUNTKILL
-	States
-	{
-	Spawn:
-		SKEL A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"D64MonsterOnly")	//if D64 monsters only enabled spawn baron
-		TNT1 A 0 A_JumpIf(CallACS("RevenantChooserACS")==1,"TRevenant")
-		TNT1 A 0 A_SpawnItemEx("64Revenant",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop
-	TRevenant:
-		TNT1 A 0 A_SpawnItemEx("64TRevenant",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop
 	D64MonsterOnly:
-		TNT1 A 0 A_SpawnItemEx("64BaronOfHell",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		TNT1 A 0 A_SpawnItemEx("64Fatso",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	}
 }
 
-Actor D64_Mastermind_Replacer Replaces SpiderMastermind		//08-08-22 Combined motherdemon spawner & tag 666 fix (A_KillMaster must be called from spawned monster)
+Actor D64_Mastermind_Replacer Replaces SpiderMastermind		//Combined motherdemon spawner & tag 666 fix (A_KillMaster must be called from spawned monster)
 {
 Scale 1
 MONSTER
@@ -407,8 +490,27 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==0,"SpawnMastermind")
 		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==1,"SpawnMother")
 		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==2,"SpawnEradicator")
-		TNT1 A 0 A_Jump(39,"SpawnMother")//(15%)
-		TNT1 A 0 A_Jump(51,"SpawnEradicator")//(20%)
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==50,"P50")
+		Goto SpawnMastermind
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnEradicator","SpawnMother")//(10%)
+		Goto SpawnMastermind
+	P20:
+		TNT1 A 0 A_Jump(51,"SpawnEradicator","SpawnMother")//(20%)
+		Goto SpawnMastermind
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnEradicator","SpawnMother")//(30%)
+		Goto SpawnMastermind
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnEradicator","SpawnMother")//(40%)
+		Goto SpawnMastermind
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnEradicator","SpawnMother")//(50%)
+		Goto SpawnMastermind
 	SpawnMastermind:
 		TNT1 A -1 A_SpawnItemEx("64SpiderMastermind",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -424,7 +526,7 @@ MONSTER
 	}
 }
 
-Actor D64Arachnotron_Replacer Replaces Arachnotron		//04-09-22 tag 666 fix (A_KillMaster must be called from spawned monster)
+Actor D64Arachnotron_Replacer Replaces Arachnotron		//tag 666 fix (A_KillMaster must be called from spawned monster)
 {
 Scale 0.8
 MONSTER
@@ -442,11 +544,31 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnArachnotron")	//if D64 monsters only enabled spawn arachnotron
 		TNT1 A 0 A_JumpIf(CallACS("NightCrawlerRandomACS")==0,"SpawnArachnotron")
 		TNT1 A 0 A_JumpIf(CallACS("NightCrawlerRandomACS")==1,"SpawnNightCrawler")
-		TNT1 A 0 A_Jump(51,"SpawnNightCrawler") //(20%)
+		TNT1 A 0 A_JumpIf(CallACS("NightCrawlerRandomACS")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("NightCrawlerRandomACS")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("NightCrawlerRandomACS")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("NightCrawlerRandomACS")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("NightCrawlerRandomACS")==50,"P50")
+		Goto SpawnArachnotron
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnNightCrawler")//(10%)
+		Goto SpawnArachnotron
+	P20:
+		TNT1 A 0 A_Jump(51,"SpawnNightCrawler")//(20%)
+		Goto SpawnArachnotron
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnNightCrawler")//(30%)
+		Goto SpawnArachnotron
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnNightCrawler")//(40%)
+		Goto SpawnArachnotron
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnNightCrawler")//(50%)
+		Goto SpawnArachnotron
 	SpawnArachnotron:
 		TNT1 A -1 A_SpawnItemEx("64Arachnotron",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
-	SpawnNightCrawler:	
+	SpawnNightCrawler:
 		TNT1 A -1 A_SpawnItemEx("64NightCrawler",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		stop
 	}
@@ -464,7 +586,27 @@ MONSTER
 		SPOS A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnShotgunGuy")	//if D64 monsters only enabled spawn shotgunguy
 		TNT1 A 0 A_JumpIf(CallACS("SSGZombieRandomACS")==0,"SpawnShotgunGuy")
 		TNT1 A 0 A_JumpIf(CallACS("SSGZombieRandomACS")==1,"SpawnSSGGuy")
-		TNT1 A 0 A_Jump(51,"SpawnSSGGuy") //(20%)
+		TNT1 A 0 A_JumpIf(CallACS("SSGZombieRandomACS")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("SSGZombieRandomACS")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("SSGZombieRandomACS")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("SSGZombieRandomACS")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("SSGZombieRandomACS")==50,"P50")
+		Goto SpawnShotgunGuy
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnSSGGuy")//(10%)
+		Goto SpawnShotgunGuy
+	P20:
+		TNT1 A 0 A_Jump(51,"SpawnSSGGuy")//(20%)
+		Goto SpawnShotgunGuy
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnSSGGuy")//(30%)
+		Goto SpawnShotgunGuy
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnSSGGuy")//(40%)
+		Goto SpawnShotgunGuy
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnSSGGuy")//(50%)
+		Goto SpawnShotgunGuy
 	SpawnShotgunGuy:
 		TNT1 A 0 A_SpawnItemEx("64Shotgunguy",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -486,7 +628,27 @@ MONSTER
 		PSSS B 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnZombieMan")	//if D64 monsters only enabled spawn zombieman
 		TNT1 A 0 A_JumpIf(CallACS("ZMarineRandomACS")==0,"SpawnZombieMan")
 		TNT1 A 0 A_JumpIf(CallACS("ZMarineRandomACS")==1,"SpawnZombieMarine")
-		TNT1 A 0 A_Jump(38,"SpawnZombieMarine") //(15%)
+		TNT1 A 0 A_JumpIf(CallACS("ZMarineRandomACS")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("ZMarineRandomACS")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("ZMarineRandomACS")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("ZMarineRandomACS")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("ZMarineRandomACS")==50,"P50")
+		Goto SpawnZombieMan
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnZombieMarine")//(10%)
+		Goto SpawnZombieMan
+	P20:
+		TNT1 A 0 A_Jump(51,"SpawnZombieMarine")//(20%)
+		Goto SpawnZombieMan
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnZombieMarine")//(30%)
+		Goto SpawnZombieMan
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnZombieMarine")//(40%)
+		Goto SpawnZombieMan
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnZombieMarine")//(50%)
+		Goto SpawnZombieMan
 	SpawnZombieMan:
 		TNT1 A 0 A_SpawnItemEx("64ZombieMan",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -506,13 +668,33 @@ MONSTER
 	{
 	Spawn:
 		MPOS A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"D64MonsterOnly")	//if D64 monsters only enabled spawn shotgunguy
-		TNT1 A 0 A_JumpIf(CallACS("ZombieBFGRandomACS")==0,"ChaingunGuy")
-		TNT1 A 0 A_JumpIf(CallACS("ZombieBFGRandomACS")==1,"BFGGuy")
-		TNT1 A 0 A_Jump(26,"BFGGuy") //(10%)
-	ChaingunGuy:
+		TNT1 A 0 A_JumpIf(CallACS("ZombieBFGRandomACS")==0,"SpawnChaingunGuy")
+		TNT1 A 0 A_JumpIf(CallACS("ZombieBFGRandomACS")==1,"SpawnBFGGuy")
+		TNT1 A 0 A_JumpIf(CallACS("ZombieBFGRandomACS")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("ZombieBFGRandomACS")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("ZombieBFGRandomACS")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("ZombieBFGRandomACS")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("ZombieBFGRandomACS")==50,"P50")
+		Goto SpawnChaingunGuy
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnBFGGuy")//(10%)
+		Goto SpawnChaingunGuy
+	P20:
+		TNT1 A 0 A_Jump(51,"SpawnBFGGuy")//(20%)
+		Goto SpawnChaingunGuy
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnBFGGuy")//(30%)
+		Goto SpawnChaingunGuy
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnBFGGuy")//(40%)
+		Goto SpawnChaingunGuy
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnBFGGuy")//(50%)
+		Goto SpawnChaingunGuy
+	SpawnChaingunGuy:
 		TNT1 A 0 A_SpawnItemEx("64Chaingunguy",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
-	BFGGuy:
+	SpawnBFGGuy:
 		TNT1 A 0 A_SpawnItemEx("64BFGGuy",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	D64MonsterOnly:
@@ -533,7 +715,27 @@ MONSTER
 		SARG A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnPinky")	//if D64 monsters only enabled spawn pinky demon
 		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==0,"SpawnPinky")
 		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==1,"SpawnAcidDemon")
-		TNT1 A 0 A_Jump(39,"SpawnAcidDemon")//(15%)
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==50,"P50")
+		Goto SpawnPinky
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnAcidDemon")//(10%)
+		Goto SpawnPinky
+	P20:
+		TNT1 A 0 A_Jump(51,"SpawnAcidDemon")//(20%)
+		Goto SpawnPinky
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnAcidDemon")//(30%)
+		Goto SpawnPinky
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnAcidDemon")//(40%)
+		Goto SpawnPinky
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnAcidDemon")//(50%)
+		Goto SpawnPinky
 	SpawnPinky:
 		TNT1 A 0 A_SpawnItemEx("64Demon",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -555,7 +757,27 @@ MONSTER
 		PAIN A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnPainElemental")	//if D64 monsters only enabled spawn shotgunguy
 		TNT1 A 0 A_JumpIf(CallACS("NightElementalRandom_ACS")==0,"SpawnPainElemental")
 		TNT1 A 0 A_JumpIf(CallACS("NightElementalRandom_ACS")==1,"SpawnNightmareElemental")
+		TNT1 A 0 A_JumpIf(CallACS("NightElementalRandom_ACS")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("NightElementalRandom_ACS")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("NightElementalRandom_ACS")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("NightElementalRandom_ACS")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("NightElementalRandom_ACS")==50,"P50")
+		Goto SpawnPainElemental
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnNightmareElemental")//(10%)
+		Goto SpawnPainElemental
+	P20:
 		TNT1 A 0 A_Jump(51,"SpawnNightmareElemental")//(20%)
+		Goto SpawnPainElemental
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnNightmareElemental")//(30%)
+		Goto SpawnPainElemental
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnNightmareElemental")//(40%)
+		Goto SpawnPainElemental
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnNightmareElemental")//(50%)
+		Goto SpawnPainElemental
 	SpawnPainElemental:
 		TNT1 A 0 A_SpawnItemEx("64PainElemental",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -577,7 +799,27 @@ MONSTER
 		SKUL A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnLostSoul")	//if D64 monsters only enabled spawn pinky lost soul
 		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==0,"SpawnLostSoul")
 		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==1,"SpawnStalker")
-		TNT1 A 0 A_Jump(51,"SpawnStalker") //(20%)
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==50,"P50")
+		Goto SpawnLostSoul
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnStalker")//(10%)
+		Goto SpawnLostSoul
+	P20:
+		TNT1 A 0 A_Jump(51,"SpawnStalker")//(20%)
+		Goto SpawnLostSoul
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnStalker")//(30%)
+		Goto SpawnLostSoul
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnStalker")//(40%)
+		Goto SpawnLostSoul
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnStalker")//(50%)
+		Goto SpawnLostSoul
 	SpawnLostSoul:
 		TNT1 A 0 A_SpawnItemEx("64LostSoul",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -587,7 +829,7 @@ MONSTER
 	}
 }
 
-Actor D64_Mancubus_Replacer Replaces Fatso	//06-10-22 tag 666 fix (A_KillMaster must be called from spawned monster)
+Actor D64_Mancubus_Replacer Replaces Fatso	//tag 666 fix (A_KillMaster must be called from spawned monster)
 {
 Scale 0.8
 MONSTER
@@ -605,7 +847,27 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnFatso")	//if D64 monsters only enabled spawn fatso
 		TNT1 A 0 A_JumpIf(CallACS("BruiserRandom_ACS")==0,"SpawnFatso")
 		TNT1 A 0 A_JumpIf(CallACS("BruiserRandom_ACS")==1,"SpawnBruiser")
-		TNT1 A 0 A_Jump(51,"SpawnBruiser") //(20%)
+		TNT1 A 0 A_JumpIf(CallACS("BruiserRandom_ACS")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("BruiserRandom_ACS")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("BruiserRandom_ACS")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("BruiserRandom_ACS")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("BruiserRandom_ACS")==50,"P50")
+		Goto SpawnFatso
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnBruiser")//(10%)
+		Goto SpawnFatso
+	P20:
+		TNT1 A 0 A_Jump(51,"SpawnBruiser")//(20%)
+		Goto SpawnFatso
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnBruiser")//(30%)
+		Goto SpawnFatso
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnBruiser")//(40%)
+		Goto SpawnFatso
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnBruiser")//(50%)
+		Goto SpawnFatso
 	SpawnFatso:
 		TNT1 A -1 A_SpawnItemEx("64Fatso",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -615,6 +877,7 @@ MONSTER
 	}
 }
 
+//Direct monster replacers
 Actor D64_WaffenSS_Replacer Replaces WolfensteinSS
 {
 Scale 0.7
@@ -629,6 +892,61 @@ MONSTER
 		Stop
 	SpawnWaffen:
 		TNT1 A 0 A_SpawnItemEx("64WaffenSS",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
+Actor D64_Revenant_Replacer Replaces Revenant	//combined revenant chooser
+{
+Scale 0.6
+MONSTER
+-SOLID
+-COUNTKILL
+	States
+	{
+	Spawn:
+		SKEL A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"D64MonsterOnly")	//if D64 monsters only enabled spawn baron
+		TNT1 A 0 A_JumpIf(CallACS("RevenantChooserACS")==1,"TRevenant")
+		TNT1 A 0 A_SpawnItemEx("64Revenant",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	TRevenant:
+		TNT1 A 0 A_SpawnItemEx("64TRevenant",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	D64MonsterOnly:
+		TNT1 A 0 A_SpawnItemEx("64BaronOfHell",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
+Actor Hound_Chooser	19125	//Used for direct hound placement on maps. Tag 666 fix (A_KillMaster must be called from spawned monster)
+{
+SpawnID 185
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++BOSSDEATH
+	States
+	{
+	Death:
+	XDeath:
+		TNT1 A 0 A_BossDeath
+		Stop
+	Spawn:
+		GECH A 0 NoDelay A_NoBlocking
+		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnArachnotron")		//if D64 monsters only enabled spawn Arachnotron
+		TNT1 A 0 A_JumpIf(CallACS("HoundChooserACS")==1,"HoundGEC")
+		TNT1 A 0 A_JumpIf(CallACS("HoundChooserACS")==2,"HoundCerb")
+		TNT1 A -1 A_SpawnItemEx("64Hellhound",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	HoundCerb:
+		TNT1 A -1 A_SpawnItemEx("64CHellHound",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	HoundGEC:
+		TNT1 A -1 A_SpawnItemEx("64HellHoundGEC",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnArachnotron:
+		TNT1 A -1 A_SpawnItemEx("64Arachnotron",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	}
 }

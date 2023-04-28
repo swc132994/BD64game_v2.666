@@ -239,15 +239,6 @@ OptionValue "YesOrNoFalse"
 	0,"Yes"
 }
 
-OptionValue "SSGinDoom1Menu"
-{
-	0,"Shotgun Only"
-	1,"SSG Only"
-	2,"Random"
-	3,"Automatic"
-}
-
-//R31 Monster Spawner improvement
 OptionValue "ZombieMarineNazi"
 {
 	0,"Zombie Marine"
@@ -263,125 +254,198 @@ OptionValue "HoundChooser"
 
 OptionValue "Annihilator_Spawner_Value"
 {
-	0,"Cyberdemon Only"
-	1,"Annihilator Only"
-	2,"Random"
-}
-
-OptionValue "Knightmare_Spawner_Value"
-{
-	0,"HellKnight Only"
-	1,"Knightmare Only"
-	2,"Random"
+	0,"Cyberdemon"
+	1,"Annihilator"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
 }
 
 OptionValue "Motherdemon_Spawner_Value"
 {
-	0,"Mastermind Only"
-	1,"Motherdemon Only"
-	2,"Eradicator Only"
-	3,"Random"
+	0,"Mastermind"
+	1,"Motherdemon"
+	2,"Eradicator"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
+}
+
+OptionValue "Knightmare_Spawner_Value"
+{
+	0,"HellKnight"
+	1,"Knightmare"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
 }
 
 OptionValue "Bruiser_Spawner_Value"
 {
-	0,"Mancubus Only"
-	1,"Bruiser Only"
-	2,"Random"
+	0,"Mancubus"
+	1,"Bruiser"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
 }
 
 OptionValue "NightCrawler_Spawner_Value"
 {
-	0,"Arachnotron Only"
-	1,"NightCrawler Only"
-	2,"Random"
+	0,"Arachnotron"
+	1,"Night Crawler"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
 }
 
 OptionValue "Stalker_Spawner_Value"
 {
-	0,"Lost Soul Only"
-	1,"Stalker Only"
-	2,"Random"
+	0,"Lost Soul"
+	1,"Stalker"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
 }
 
 OptionValue "Hellhound_Spawner_Value"
 {
-	0,"Baron Only"
-	1,"Hellhound Only"
-	2,"Belphegor Only"
-	3,"Random"
+	0,"Baron"
+	1,"Hellhound"
+	2,"Belphegor"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
 }
 
 OptionValue "AcidDemon_Spawner_Value"
 {
-	0,"Demon Only"
-	1,"Acid Demon Only"
-	2,"Random"
+	0,"Pinky Demon"
+	1,"Acid Demon"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
 }
 
 OptionValue "NCaco_Spawner_Value"
 {
-	0,"Cacodemon Only"
-	1,"N'mare Cacodemon Only"
-	2,"Random"
+	0,"Cacodemon"
+	1,"N'mare Cacodemon"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
 }
 
 OptionValue "NSpectre_Spawner_Value"
 {
-	0,"Spectre Only"
-	1,"N'mare Spectre Only"
-	2,"Wraith Only"
-	3,"Random"
+	0,"Spectre"
+	1,"N'mare Spectre"
+	2,"Wraith"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
 }
 
 OptionValue "NImp_Spawner_Value"
 {
-	0,"Imp Only"
-	1,"N'mare Imp Only"
-	2,"Random"
+	0,"Imp"
+	1,"N'mare Imp"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
 }
 
 OptionValue "NightElemental_Spawner_Value"
 {
-	0,"Pain Elemental Only"
-	1,"N'mare Elemental Only"
-	2,"Random"
+	0,"Pain Elemental"
+	1,"N'mare Elemental"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
 }
 
 OptionValue "SSGZombieRandom_Value"
 {
-	0,"ShotgunGuy Only"
-	1,"SSGGuy Only"
-	2,"Random"
+	0,"Shotgun Guy"
+	1,"SSG Guy"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
 }
 
 OptionValue "ZMarineRandom_Value"
 {
-	0,"ZombieMan Only"
-	1,"Zombie Marine Only"
-	2,"Random"
+	0,"Zombie Man"
+	1,"Zombie Marine"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
 }
 
 OptionValue "BFGZombie_Value"
 {
-	0,"ChaingunGuy Only"
-	1,"BFGGuy Only"
-	2,"Random"
+	0,"Chaingun Guy"
+	1,"BFG Guy"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
 }
 
 OptionValue "FleshWizardRandom_Value"
 {
-	0,"Archvile Only"
-	1,"FleshWizard Only"
-	2,"Random"
+	0,"Archvile"
+	1,"Flesh Wizard"
+	10,"10%"
+	20,"20%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
 }
 
+//Performance values
 OptionValue "LFog_Value"
 {
 	0,"Disable Both"
 	1,"Enable Both"
 	2,"Disable Halos"
 	3,"Disable Light Fog"
+}
+
+OptionValue "Chaingun_Spawner_Value"
+{
+	0,"Chaingun Only"
+	1,"Rifle Only"
+	2,"SMG Only"
+	3,"Random"
 }
 
 OptionValue "BFG_Spawner_Value"
@@ -399,19 +463,19 @@ OptionValue "GaussCannon_Spawner_Value"
 	2,"Random"
 }
 
+OptionValue "SSGinDoom1Menu"
+{
+	0,"Shotgun Only"
+	1,"SSG Only"
+	2,"Random"
+	3,"Automatic"
+}
+
 OptionValue "WpnPower_Spawner_Value"
 {
 	0,"Power-ups only"
 	1,"Unmaker Power-ups only"
 	2,"Random"
-}
-
-OptionValue "Chaingun_Spawner_Value"
-{
-	0,"Chaingun Only"
-	1,"Rifle Only"
-	2,"SMG Only"
-	3,"Random"
 }
 
 OptionValue "AlternativeAmmoPickupSpritesValue"
