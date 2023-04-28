@@ -1695,7 +1695,7 @@ Scale 0.8
 		TNT1 A 0 A_SpawnItem("Swarm",0,20)
 		Goto Stay
 	Stay:
-		HDCA AB 3 Bright Light("SKULLCANDLES") 
+		HDCA AB 3 Bright Light("SKULLCANDLES")
 		Loop
 	}
 }
@@ -1782,7 +1782,7 @@ SCALE 0.8
 	}
 }
 
-ACTOR 64ShortRedColumn : ShortRedColumn Replaces ShortRedColumn
+ACTOR 64ShortRedColumn : ShortRedColumn// Replaces ShortRedColumn	//Replaced with chance to replace with tortured marine
 {
 SCALE 0.8
 	States
@@ -1799,7 +1799,7 @@ SCALE 0.8
 	}
 }
 
-ACTOR 64SkullColumn : SkullColumn Replaces SkullColumn
+ACTOR 64SkullColumn : SkullColumn// Replaces SkullColumn	//Replaced with chance to replace with tortured marine
 {
 SCALE 0.8
 	States
