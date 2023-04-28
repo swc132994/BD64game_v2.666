@@ -101,7 +101,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	//
 		TNT1 A 0 A_Recoil(-6)
 		KICK JKLMN 1
 		TNT1 A 0 A_FireCustomMissile("AirKickAttack",0,0,0,-31)
-		TNT1 A 0 A_RadiusThrust(4500,70,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
+		TNT1 A 0 A_RadiusThrust(5000,70,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
 		KICK O 3
 		KICK PQRST 2
 		Goto GetReady
@@ -110,7 +110,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	//
 		TNT1 A 0 A_Recoil(-6)
 		KICK JKLMN 1
 		TNT1 A 0 A_FireCustomMissile("SuperAirKickAttack",0,0,0,-31)
-		TNT1 A 0 A_RadiusThrust(9000,70,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
+		TNT1 A 0 A_RadiusThrust(10000,70,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
 		KICK O 3
 		KICK PQRST 2
 		Goto GetReady
