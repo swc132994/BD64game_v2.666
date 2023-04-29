@@ -263,6 +263,14 @@ DropItem "64ShortRedColumn"
 DropItem "BD64TorturedMarine55"
 }
 
+ACTOR 64ShortGreenColumnReplacer : RandomSpawner Replaces ShortGreenColumn
+{
+DropItem "64ShortGreenColumn"
+DropItem "64ShortGreenColumn"
+DropItem "64ShortGreenColumn"
+DropItem "BD64TorturedMarine55"
+}
+
 Actor BD64TorturedMarine55
 {
 Scale 0.8

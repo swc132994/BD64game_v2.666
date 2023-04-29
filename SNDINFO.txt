@@ -1,52 +1,225 @@
-//PROXIMITY MINES
-GRNTOSS		GRNTOSS
-MINE001		MINE001
-MINE002		MINE002
-Weapons/StickyBombTick	SBMBTICK
+//Flashlight
+flashlight/click	click
 
-SGFIRE SGFIRE
-STGNPUMP STGNPUMP
-MGUNFIR MGUNFIR
-$limit MGUNFIR 30
-
-CHGNSHOT CHGNSHOT	//r31 added for mastermind fire
-
-flashlight/click	click	//R31 FLASHLIGHT
-
-DRYFIRE DRYFIRE
-RELOAD RELOAD
-RIFLOAD RIFLOAD
-
-EAGLEFI EAGLEFI
-prel prel		//R31 FROM IDDQD1337
-
+//Pickups
 ARMOR ARMOR
 WPICK WPICK
 IPICK APICK
 ROCKE3 ROCKE3
 
-ROCKLOAD ROCKLOAD
-RIFLE RIFLE
+//Fidget sounds
+Knuckled Knuckled
 
+PISBACK PISBACK
+PISFORW PISFORW
+
+RIFBOLT RIFBOLT
+ARSBOLT ARSBOLT
+
+//Restore select animation
+PISSEL PISSEL
+CLIPINSS CLIPINSS
+CHGNPKUP CHGNPKUP
+ROCKPKUP ROCKPKUP
+PLSDRAW PLSDRAW
+BFGREADY BFGREADY
+LSGREADY LSGREADY
+UNMAKSEL UNMAKSEL
+
+//Tired no stamina
+TIRED TIRED
+$limit TIRED 1
+
+//Melee
+$random SUPERFIST {marine/superfist1 marine/superfist2 marine/superfist3 marine/superfist4 marine/superfist5}
+marine/superfist1 plspnch1
+marine/superfist2 plspnch2
+marine/superfist3 plspnch3
+marine/superfist4 plspnch4
+marine/superfist5 plspnch5
+
+KICK KICK
+FOOTWALL FOOTWALL
+VUP VUP
+weapons/gswing	dsswing	//Fist swing
+
+//Sliding kick
+$random SlideKickStart { SLIDSTRT1 SLIDSTRT2 SLIDSTRT3 }
+SLIDSTRT1	SLIDSTR1
+SLIDSTRT2	SLIDSTR2
+SLIDSTRT3	SLIDSTR3
+
+$random SlideKickLoop { SLIDLOP1 SLIDLOP2 SLIDLOP3 SLIDLOP4 }
+SLIDLOP1	SLIDLOP1
+SLIDLOP2	SLIDLOP2
+SLIDLOP3	SLIDLOP3
+SLIDLOP4	SLIDLOP4
+
+$random SlideKickStop { SLIDEND1 SLIDEND2 }
+SLIDEND1	SLIDEND1
+SLIDEND2	SLIDEND2
+
+//Chainsaw
+$random CSAWFLESH {DSSAW0 DSSAW1 DSSAW2 DSSAW3 DSSAW4 DSSAW5 DSSAW6 DSSAW7 DSSAW8 DSSAW9}
+DSSAW1 DSSAW1
+DSSAW2 DSSAW2
+DSSAW3 DSSAW3
+DSSAW4 DSSAW4
+DSSAW5 DSSAW5
+DSSAW6 DSSAW6
+DSSAW7 DSSAW7
+DSSAW8 DSSAW8
+DSSAW9 DSSAW9
+DSSAW0 DSSAW0
+
+$limit DSSAWAL 12
+DSSAWAL DSSAWAL
+DSSAWFUL DSSAWFUL
+DSSAWHIT DSSAWHIT
+DSSAWUP DSSAWUP
+DSSAWDIE DSSAWDIE
+
+weapons/chainsaw/draw	CSAWDRAW
+weapons/chainsaw/start	CSAWSTRT
+weapons/chainsaw/loop	CSAWFUL
+weapons/chainsaw/stop	CSAWSTOP
+weapons/chainsaw/idle	CSAWREDY
+CSAWCUT					CSAWCUT
+
+//Chainsaw update
+DSSAWZIP DSSAWZIP
+
+//Pistol
+EAGLEFI EAGLEFI
+prel prel		//R31 FROM IDDQD1337
+PISTOLF PISTOLF
+PISTOLF2 PISTOLF2
+PISTOLF3 PISTOLF3
+
+//Pistol Suppressor
+SILEIN SILEIN
+SILEOUT SILEOUT
+
+//SMG
+SMG SMG
+RELOAU RELOAU
+SMGBURST SMGBURST
+SMGAUTO SMGAUTO
+SMGBACK SMGBACK
+SMGFORW SMGFORW
+
+//Shotgun
+SGFIRE SGFIRE
+STGNPUMP STGNPUMP
+INSHELL INSHELL
+
+//Shotgun alt
+$random fstatk {fstatk1 fstatk2 fstatk3}
+fstatk1 fstatk1
+fstatk2 fstatk2
+fstatk3 fstatk3
+
+//SSG
+SSGFIRE SSGFIRE
+weapons/sshoto dsdbopn
+weapons/sshotl dsdbload //R31 fixed
+weapons/sshotc dsdbcls
+
+//Rifle
+DRYFIRE DRYFIRE
+RELOAD RELOAD
+RIFLOAD RIFLOAD
+RIFLE RIFLE
+$volume RIFLE 0.9
+
+//Rifle reload alt skin
+RELO1 RELO1
+RELO2 RELO2
+RELO3 RELO3
+
+//Chaingun
+MGUNFIR MGUNFIR
+$limit MGUNFIR 30
+
+//Spinning chaingun
+CHAINSTA CHAINSTA
+CHAINSPI CHAINSPI
+CHAINSTO CHAINSTO
+
+//Masermind chaingun
+CHGNSHOT CHGNSHOT
+
+//Rocket launcher
+ROCKLOAD ROCKLOAD
+weapons/grenlx			dsbarexp
+weapons/grenlf			dsrlaunc
+
+//Rocket launcher Tactical|Modern Overhaul
+BEP BEP
+LASERON LASERON
+LASEROFF LASEROFF
+ROCKREL ROCKREL
+
+//Proxy mines
+GRNTOSS		GRNTOSS
+MINE001		MINE001
+MINE002		MINE002
+Weapons/StickyBombTick	SBMBTICK
+
+//Plasma rifle
+weapon/plasmaidle		dspsidl
+
+//Plasma rifle reload by iddqd1337
+PLREL PLREL
+PLREAD1 PLREAD1
+PLREAD2 PLREAD2
+
+//Plasma rifle alt
+PlasFire	PlasFire
+
+//Gauss cannon
+$random GaussCannon/Fire { GaussCannon/Fire1 GaussCannon/Fire2 GaussCannon/Fire3 }
+GaussCannon/Fire1 GAUSS1
+GaussCannon/Fire2 GAUSS2
+GaussCannon/Fire3 GAUSS3
+
+GAUDR1 GAUDR1
+
+RAILMAG1 RAILMAG1 //pull out mag when gun is still on
+RAILMAG2 RAILMAG2 //pull out mag when gun is off
+RAILINSR RAILINSR //insert mag
+Railgun/Eject RAILEJCT
+
+//BFG alt
+weapons/bfgf2	DSBFG
+BBFGHOLD		BBFGHOLD
+
+//Lasergun
 LSSTART LSSTART
 LSLOOP LSLOOP
 LSSTOP LSSTOP
 
+//Lasergun alt
+RBLAST	RBLAST
+RCHARGE	RCHARGE
+DSFIRXPL	DSFIRXPL
+
+//Unmaker
 UNMAKER UNMAKER
 UNMKLP UNMKLP
 
-DSBOSPIT DSBOSPIT
-
-INSHELL INSHELL
+weapons/unmaker dslaser
+$limit weapons/unmaker 0
 
 //MP40
 MP40 64MP40
 RELOAN RELOAN
 MP40BACK MP40BACK
 GRNPIN GRNPIN
-GRNTOSS GRNTOSS
 
+//Flies
 Flies	DSBUZZ
+
 $random world/ricochet		{ricochet/hit world/blank1}
 $random ricochet/hit		{world/ricochet1 world/ricochet2 world/ricochet3 world/ricochet4 world/ricochet5 world/ricochet6 world/ricochet7}
 world/ricochet1				ricoche1
@@ -85,11 +258,6 @@ weapons/casing2	dscasin1
 weapons/casing2	dscasin2
 weapons/casing3	dscasin3
 
-SSGFIRE SSGFIRE
-PISTOLF PISTOLF
-PISTOLF2 PISTOLF2
-PISTOLF3 PISTOLF3
-
 $random LSOD {LSOD1 LSOD2 LSOD3 LSOD4}
 LSOD1 LSOD1
 LSOD2 LSOD2
@@ -121,9 +289,6 @@ menu/clear dsempty
 menu/activate dsempty
 menu/backup dspistol
 
-//Fists swing
-weapons/gswing			dsswing
-
 player/male/death1		DSPLDETH	//R31 added
 knight/death			DSKNTDTH	//R31 added
 skeleton/swing			DSSKESWG	//R31 added
@@ -143,8 +308,8 @@ $limit misc/k_pkup 0
 $limit misc/w_pkup 0
 $limit misc/p_pkup 0
 
-misc/keytry				dsnokey
-weapon/plasmaidle		dspsidl
+//Door need key
+misc/keytry		dsnokey
 
 //Mother Demon
 mother/sight dsmthsit
@@ -152,9 +317,6 @@ mother/pain dsmthpai
 mother/death dsmthdth
 mother/attack dsmthatk
 mother/active dsmthact
-
-//Unmaker
-weapons/unmaker dslaser
 
 //Nazi
 DSNZACT1	DSNZACT1
@@ -218,15 +380,6 @@ DSRIC3 DSRIC3
 
 $random Bullet/Ricochet	{DSRIC1 DSRIC2 DSRIC3}
 
-//Super Shotgun
-weapons/sshoto dsdbopn
-weapons/sshotl dsdbload //R31 fixed
-weapons/sshotc dsdbcls
-
-weapons/grenlx			dsbarexp
-weapons/grenlf			dsrlaunc
-weapons/grbnce			dsbounce
-
 //Dart
 dart/attack				dsskeswg
 dart/shotx				dsting
@@ -246,34 +399,7 @@ $limit baron/shotx 0
 $limit skull/death 0
 $limit baby/shotx 0
 $limit fatso/attack 0
-$limit weapons/unmaker 0
 $limit grunt/attack 0
-
-$random CSAWFLESH {DSSAW0 DSSAW1 DSSAW2 DSSAW3 DSSAW4 DSSAW5 DSSAW6 DSSAW7 DSSAW8 DSSAW9}
-DSSAW1 DSSAW1
-DSSAW2 DSSAW2
-DSSAW3 DSSAW3
-DSSAW4 DSSAW4
-DSSAW5 DSSAW5
-DSSAW6 DSSAW6
-DSSAW7 DSSAW7
-DSSAW8 DSSAW8
-DSSAW9 DSSAW9
-DSSAW0 DSSAW0
-
-$limit DSSAWAL 12
-DSSAWAL DSSAWAL
-DSSAWFUL DSSAWFUL
-DSSAWHIT DSSAWHIT
-DSSAWUP DSSAWUP
-DSSAWDIE DSSAWDIE
-
-weapons/chainsaw/draw	CSAWDRAW
-weapons/chainsaw/start	CSAWSTRT
-weapons/chainsaw/loop	CSAWFUL
-weapons/chainsaw/stop	CSAWSTOP
-weapons/chainsaw/idle	CSAWREDY
-CSAWCUT					CSAWCUT
 
 $random world/watersplash	{dssplash dssplas2 water}
 dssplash					dssplash
@@ -281,21 +407,6 @@ dssplas2					dssplas2
 world/watersplashsmall		dssplsml
 bigspl1 bigspl1
 $limit bigspl1 2
-
-VUP VUP
-
-$random SUPERFIST {marine/superfist1 marine/superfist2 marine/superfist3 marine/superfist4 marine/superfist5}
-marine/superfist1 plspnch1
-marine/superfist2 plspnch2
-marine/superfist3 plspnch3
-marine/superfist4 plspnch4
-marine/superfist5 plspnch5
-
-TIRED TIRED
-$limit TIRED 1
-
-KICK KICK
-FOOTWALL FOOTWALL
 
 //FLESH WIZARD
 $random wizard/tele			{64FWTEL1 64FWTEL2}
@@ -332,9 +443,7 @@ $volume wizard/tele 0.4
 
 //Annihilator	BY ONOX792
 monster/annsit dsannsit
-
 monster/anndth dsanndth
-
 monster/anhoof dsanhoof
 
 weapons/hrlexp dshrlexp
@@ -378,72 +487,6 @@ spectre/pain			demopain
 spectre/melee			dssgtatk
 spectre/death			dssgtdth
 
-//LASERGUN RAIL BLAST
-RBLAST	RBLAST
-RCHARGE	RCHARGE
-DSFIRXPL	DSFIRXPL
-
-//BFG ALt
-weapons/bfgf2	DSBFG
-BBFGHOLD		BBFGHOLD
-
-//R31 Bashing sound for shotgun by iddqd1337
-$random fstatk {fstatk1 fstatk2 fstatk3}
-fstatk1 fstatk1
-fstatk2 fstatk2
-fstatk3 fstatk3
-
-//R31 New plasmagun reload by iddqd1337
-PLREL PLREL
-PLREAD1 PLREAD1
-PLREAD2 PLREAD2
-
-//R31 Alternative Rifle skin Reload
-RELO1 RELO1
-RELO2 RELO2
-RELO3 RELO3
-
-//R31 Spinning Chaingun
-CHAINSTA CHAINSTA
-CHAINSPI CHAINSPI
-CHAINSTO CHAINSTO
-
-//R31 Fidget sounds
-Knuckled Knuckled
-
-PISBACK PISBACK
-PISFORW PISFORW
-
-RIFBOLT RIFBOLT
-ARSBOLT ARSBOLT
-
-//R31 restore select animation
-PISSEL PISSEL
-CLIPINSS CLIPINSS
-CHGNPKUP CHGNPKUP
-ROCKPKUP ROCKPKUP
-PLSDRAW PLSDRAW
-BFGREADY BFGREADY
-LSGREADY LSGREADY
-UNMAKSEL UNMAKSEL
-
-//R31 SMG
-SMG SMG
-RELOAU RELOAU
-SMGBURST SMGBURST
-SMGAUTO SMGAUTO
-SMGBACK SMGBACK
-SMGFORW SMGFORW
-
-//R31 Rocket Launcher Tactical|Modern Overhaul
-BEP BEP
-LASERON LASERON
-LASEROFF LASEROFF
-ROCKREL ROCKREL
-
-//R31 Updated Chainsaw
-DSSAWZIP DSSAWZIP
-
 //ACID DEMON - FROM REALMS 667 SLIME WORM
 DSSPIT1	DSSPIT1
 DSSPIT2	DSSPIT2
@@ -470,25 +513,12 @@ TORTURE4 TORTURE4
 TORTURE5 TORTURE5
 TORTURE6 TORTURE6
 
+$volume TORTURE5 0.4
+
 //Stalker
 DSSTLKPN	DSSTLKPN
 DSSTLKST	DSSTLKST
-
-//R31 Sliding kick
-$random SlideKickStart { SLIDSTRT1 SLIDSTRT2 SLIDSTRT3 }
-SLIDSTRT1	SLIDSTR1
-SLIDSTRT2	SLIDSTR2
-SLIDSTRT3	SLIDSTR3
-
-$random SlideKickLoop { SLIDLOP1 SLIDLOP2 SLIDLOP3 SLIDLOP4 }
-SLIDLOP1	SLIDLOP1
-SLIDLOP2	SLIDLOP2
-SLIDLOP3	SLIDLOP3
-SLIDLOP4	SLIDLOP4
-
-$random SlideKickStop { SLIDEND1 SLIDEND2 }
-SLIDEND1	SLIDEND1
-SLIDEND2	SLIDEND2
+DSBOSPIT DSBOSPIT	//Stalker teleport
 
 //BRUISER
 BREATHOF	BREATHOF
@@ -526,7 +556,6 @@ $volume bfgguy/active 0.8
 
 //Wraith
 D3Wraith/Death	3WRTDEAT
-
 D3Wraith/Sight	3WRTSIG1
 
 $Random D3Wraith/Active	{3WRTACT1 3WRTACT2}
@@ -543,27 +572,6 @@ $Random D3Wraith/Attack	{3WRTATK1 3WRTATK2}
 
 3WRTLOUT	3WRTLOUT	//TELEPORT OUT
 3WRTTLIN	3WRTTLIN	//TELEPORT IN
-
-//Alt Fire Plasma
-PlasFire	PlasFire
-
-//Pistol Suppressor
-SILEIN SILEIN
-SILEOUT SILEOUT
-
-//GAUSS CANNON
-$random GaussCannon/Fire { GaussCannon/Fire1 GaussCannon/Fire2 GaussCannon/Fire3 }
-GaussCannon/Fire1 GAUSS1
-GaussCannon/Fire2 GAUSS2
-GaussCannon/Fire3 GAUSS3
-
-GAUDR1 GAUDR1
-
-RAILMAG1 RAILMAG1 //pull out mag when gun is still on
-RAILMAG2 RAILMAG2 //pull out mag when gun is off
-RAILINSR RAILINSR //insert mag
-Railgun/Eject RAILEJCT
-
 
 //---------------------------
 //**********GORE*************

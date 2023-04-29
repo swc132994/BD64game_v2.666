@@ -13,6 +13,10 @@ brightmap sprite GAR2A0		{map "brightmaps/GAR2A0_BR.png"disablefullbright}
 brightmap sprite BAR1A0		{map "brightmaps/BAR1A0_BR.png"}
 brightmap sprite BAR1B0		{map "brightmaps/BAR1B0_BR.png"}
 
+//Baron heart statue
+brightmap sprite BHCLA0		{map "brightmaps/BHCL_BR.png"}
+brightmap sprite BHCLB0		{map "brightmaps/BHCL_BR.png"}
+
 //ITEMS
 //ARMOUR BONUS
 brightmap sprite BON2B0		{map "brightmaps/BON2B.png"disablefullbright}
