@@ -177,6 +177,10 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		PUN6 ABCD 1
 		Goto Ready
 	Deselect:
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
+		TNT1 A 0 A_Takeinventory("TossMine",1)
+		TNT1 A 0 A_Takeinventory("PlaceMine",1)
+		TNT1 A 0 A_Takeinventory("Kicking",1)
 		PUN6 DCBA 1
 		TNT1 A 1 A_Lower
 		Wait

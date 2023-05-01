@@ -197,6 +197,10 @@ Tag "$TAG_SUPERSHOTGUN"
 		SSGH GHIJKLM 1
 		Goto Ready
 	Deselect:
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
+		TNT1 A 0 A_Takeinventory("TossMine",1)
+		TNT1 A 0 A_Takeinventory("PlaceMine",1)
+		TNT1 A 0 A_Takeinventory("Kicking",1)
 		SSGS DCBA 1
 		TNT1 A 1 A_Lower
 		Wait

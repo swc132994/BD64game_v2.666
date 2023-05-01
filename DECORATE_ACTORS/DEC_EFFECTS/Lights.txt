@@ -1733,8 +1733,10 @@ SCALE 0.8
 	States
 	{
 	Spawn:
-		BSTK A 0 NoDelay A_SpawnItem("64SmallBloodPool")
-		BSTK A -1
+		STAG A 0 NoDelay A_Jump(128,2)
+		STAG A -1
+		Stop
+		STAG B -1
 		Stop
 	}
 }

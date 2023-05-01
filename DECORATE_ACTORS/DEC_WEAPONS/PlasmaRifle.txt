@@ -169,8 +169,12 @@ Tag "$TAG_PLASMARIFLE"
 		PLSG JKLM 1
 		Goto Ready
 	Deselect:
-		PLSG MLKJ 1
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
+		TNT1 A 0 A_Takeinventory("TossMine",1)
+		TNT1 A 0 A_Takeinventory("PlaceMine",1)
+		TNT1 A 0 A_Takeinventory("Kicking",1)
 		TNT1 A 0 A_TakeInventory("HasPlasmaWeapon",1)
+		PLSG MLKJ 1
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)	//R31 REVISED TO PLAYSOUND,GZ4.8
 		TNT1 A 1 A_Lower
 		Wait

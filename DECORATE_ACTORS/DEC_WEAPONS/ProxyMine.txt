@@ -84,6 +84,8 @@ Tag "Multi-Purpose Mine"
 		PMNS ABCDE 1
 		Goto Ready
 	Deselect:
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
+		TNT1 A 0 A_Takeinventory("Kicking",1)
 		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,1)
 		Goto DeselectNoMines
 		PMNS EDCBA 1

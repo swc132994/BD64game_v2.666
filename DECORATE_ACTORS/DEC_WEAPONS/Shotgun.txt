@@ -194,6 +194,10 @@ Tag "$TAG_SHOTGUN"
 		SHTS ABCD 1
 		Goto Ready
 	Deselect:
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
+		TNT1 A 0 A_Takeinventory("TossMine",1)
+		TNT1 A 0 A_Takeinventory("PlaceMine",1)
+		TNT1 A 0 A_Takeinventory("Kicking",1)
 		SHTS DCBA 1
 		TNT1 A 1 A_Lower
 		Wait

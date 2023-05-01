@@ -156,6 +156,10 @@ Tag "$TAG_CHAINSAW"
 		CSAW A -1
 		Stop
 	Deselect:
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
+		TNT1 A 0 A_Takeinventory("TossMine",1)
+		TNT1 A 0 A_Takeinventory("PlaceMine",1)
+		TNT1 A 0 A_Takeinventory("Kicking",1)
 		SAWS RQPONDCBA 1
 	DeselectEnd:
 		TNT1 A 0 A_SetCrosshair(0)
@@ -400,6 +404,10 @@ Tag "$TAG_CHAINSAW"		//R11 added
 		SAWF BA 1
 		Goto Ready
 	Deselect:
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
+		TNT1 A 0 A_Takeinventory("TossMine",1)
+		TNT1 A 0 A_Takeinventory("PlaceMine",1)
+		TNT1 A 0 A_Takeinventory("Kicking",1)
 		SAWS RQPONDCBA 1
 	DeselectEnd:
 		TNT1 A 0 A_SetCrosshair(0)
@@ -521,6 +529,10 @@ Tag "$TAG_CHAINSAW"
 		CSAW A -1
 		Stop
 	Deselect:
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
+		TNT1 A 0 A_Takeinventory("TossMine",1)
+		TNT1 A 0 A_Takeinventory("PlaceMine",1)
+		TNT1 A 0 A_Takeinventory("Kicking",1)
 		WASG C 1 A_Lower
 		Loop
 	Select:
