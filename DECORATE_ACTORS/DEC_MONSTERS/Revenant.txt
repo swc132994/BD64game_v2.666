@@ -1,29 +1,28 @@
-//r31 added extra deaths
-Actor 64Revenant : Revenant Replaces Revenant
+Actor 64Revenant : Revenant Replaces Revenant	//DrPyspy 64 stlye revenant
 {
-Scale 0.68								//R31 adjusted scale for sprites
+Scale 0.68
 Health 350
-Height 65								//R25.2 WAS 72
-MeleeThreshold 146	//DEFAULT 196		//R16 added
-MeleeRange 60 //default 44
+Height 65
+MeleeThreshold 146	//default 196
+MeleeRange 60		//default 44
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-DropItem "DemonEssenceSpawner"		//R31 added
-+DONTHARMSPECIES		//R31 WAS DONTHURTSPECIES
+DropItem "DemonEssenceSpawner"
++DONTHARMSPECIES
 +NOBLOODDECALS
 	States
 	{
-	Spawn:	//r31 extra
+	Spawn:
 		SKEL DE 10 A_Look
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",12,65,0)
 		Loop
 	Forget:
 		TNT1 A 0 A_ClearTarget
 		Goto Spawn
-	See:	//r31 extra
+	See:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",12,65,0)
 		SKEL AABBC 2 A_Chase
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",12,65,0)
@@ -32,21 +31,21 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		SKEL DDEEF 2 A_Chase
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",12,65,0)
 		SKEL F 2
-		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")	//R31 added
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		Loop
-	Melee:		//R16 added revenant MELEE & sprites SKEL I
+	Melee:
 		TNT1 A 0 A_FaceTarget
 		SKEL G 6 A_SkelWhoosh
 		SKEL H 6 A_FaceTarget
 		SKEL I 6 A_SkelFist
 		Goto See
-	Missile:	//r31 extra
+	Missile:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,65,0)
 		SKEL J 12 Bright A_FaceTarget
-		TNT1 A 0 A_CustomMissile("64RevenantTracer3",65,18,0,0)		//R16 WAS 58.20
+		TNT1 A 0 A_CustomMissile("64RevenantTracer3",65,18,0,0)
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,65,0)
 		SKEL J 6 Bright
-		TNT1 A 0 A_CustomMissile("64RevenantTracer2",65,-18,0,0)	//R16 WAS 58,-20
+		TNT1 A 0 A_CustomMissile("64RevenantTracer2",65,-18,0,0)
 		SKEL K 6
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,65,0)
 		SKEL K 12 A_FaceTarget
@@ -63,15 +62,14 @@ DropItem "DemonEssenceSpawner"		//R31 added
 	Raise:
 		SKEL QPONM 5
 		Goto See
-	Death:		//R31 added
-		SKEL M 7
+	Death:
+		SKEL M 7 A_NoBlocking
 		SKEL N 7 A_Scream
-		SKEL O 7 A_NoBlocking
-		SKEL P 7
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R31 was bigbloodspot
-		SKEL Q -1
+		SKEL OP 7
+		SKEL Q 35
+		SKEL Q -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
-	AlmostDead:		//r31 extra
+	AlmostDead:
 		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"XDeath")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
@@ -81,8 +79,8 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		SND1 A 1 A_SpawnItemEx("LegsWalkAbout",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		SND1 A 1 A_SpawnItemEx("AlmostDead64Revenant",0,0,40,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
-	Death.CutLess:	//r31 extra		27/04/22 revised
-		TNT1 A 0 A_Jump(152,"AlmostDead")	//60%
+	Death.CutLess:
+		TNT1 A 0 A_Jump(152,"AlmostDead")//60%
 		TNT1 A 0 A_NoBlocking
 		RVNC ABC 8
 		TNT1 A 0 ThrustThing(random(0,360),5,0,0)
@@ -94,11 +92,11 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		TNT1 AAA 0 A_SpawnItemEx("Blood",0,0,30)
 		SND1 C 4 A_CheckFloor(1)
 		Wait
-		SND1 DE 4
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
-		SND1 E -1
+		SND1 D 4
+		SND1 E 35
+		SND1 E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
-	Death.Cutless2:		//r31 added
+	Death.Cutless2:
 		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Xdeath")
 		TNT1 A 0 A_NoBlocking
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
@@ -108,17 +106,17 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		Stop
-	Death.Shotgun:	//r31 extra
-		TNT1 A 0 A_Jump(85,"Death")		//33% Jump
+	Death.Shotgun:
+		TNT1 A 0 A_Jump(85,"Death")//33%
 		SKEL L 1 A_JumpIfCloser(1000,"Death.CutLess2")
-	Death.SSG:		//r31 extra
+	Death.SSG:
 		TNT1 A 0 A_FaceTarget
 		SKEL L 1 A_JumpIfCloser(250,"XDeath")
-		TNT1 A 0 A_Jump(64,"Death")		//25% Jump
+		TNT1 A 0 A_Jump(64,"Death")//25%
 		SKEL L 1 A_JumpIfCloser(1000,"Death.CutLess2")
 		TNT1 A 0 A_Recoil(6)
 		Goto Death
-	Death.Head:		//r31 extra
+	Death.Head:
 		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Death")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
@@ -132,7 +130,7 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
 		SKNH A 1 A_SpawnItemEx("Dying64revenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
-	Death.Plasma:	//r31 extra
+	Death.Plasma:
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmall",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,180))
@@ -141,35 +139,31 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		TNT1 AA 0 A_CustomMissile("CarbonizedSmoke1",30,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
 		TNT1 AAA 0 A_SpawnItemEx("Blood",0,0,30)
-	XDeath:			//r31 edited for new revenant
+	XDeath:
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeathRevenantArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_SpawnItemEx("XDeathRevenantLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
-//		TNT1 A 0 A_CustomMissile("XDeathRevenantTorso",50,0,random(0,360),2,random(20,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_NoBlocking	//r31 added
+		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
-		TNT1 A 0 ThrustThingZ(0,40,0,0)
-		SKG3 A 2 A_ChangeFlag("THRUACTORS",1)
+		SKG3 A 2 ThrustThingZ(0,40,0,0)
 		SKG3 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
 		SKG3 B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		SKG3 B -1
+		SKG3 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	LandAfterXDeath2:
 		SKG3 C 1
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		SKG3 C -1
+		SKG3 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
-	Death.Superkick:		//R10.1 added
+	Death.Superkick:
 	Death.SuperFists:
 		TNT1 A 0 A_Jump(256,"Death","Death.CutLess2","XDeath")
 		Stop
@@ -190,17 +184,17 @@ Actor 64RevenantTracer3 Replaces RevenantTracer
 Game Doom
 SpawnID 53
 Scale 0.4
-Damage 8	//R16 WAS 5
-Speed 10	//R16 WAS 9
+Damage 8
+Speed 10
 Height 6
 Radius 6
 SeeSound "skeleton/attack"
 DeathSound "skeleton/tracex"
-Decal "SmallerScorch"		//R28.3 added
-DamageType Fire				//R31 added
+Decal "SmallerScorch"
+DamageType Fire
 PROJECTILE
 +SEEKERMISSILE
-+EXTREMEDEATH	//r31 added
++EXTREMEDEATH
 	States
 	{
 	Spawn:
@@ -223,22 +217,22 @@ PROJECTILE
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("64ExplosionFireBase",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
-		TNT1 A 0 A_SpawnItem("DetectFloorCraterSmall")		//R28.3 added
-		TNT1 A 0 A_SpawnItem("DetectCeilCraterSmall")		//R28.3 added
+		TNT1 A 0 A_SpawnItem("DetectFloorCraterSmall")
+		TNT1 A 0 A_SpawnItem("DetectCeilCraterSmall")
 		TNT1 A 0 A_SPawnItem("ExplosionAirDisplacementEffect")
 		TNT1 A 0 A_playSound("EXPLOSIO3",2)
 		TNT1 A 0 Radius_Quake(2,8,0,12,0)
 		TNT1 A 2
 		TNT1 A 0 A_Explode(5,100)
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		MBAL CDEFGH 2 Bright	//R31 Added frames
+		MBAL CDEFGH 2 Bright
 		Stop
 	}
 }
 
 Actor 64RevenantTracer2: 64RevenantTracer3
 {
-Speed 9		//R16 WAS 8
+Speed 9
 }
 
 Actor RevenantFireTrailparticle
@@ -258,7 +252,7 @@ RenderStyle Add
 	}
 }
 
-Actor Dying64revenant : 64revenant	//r31 extra
+Actor Dying64revenant : 64revenant
 {
 Health 100
 DamageFactor "CauseWaterSplash",0.0
@@ -277,13 +271,14 @@ DropItem "None"
 		Goto Death
 	Death:
 		TNT1 A 0 A_Die
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_Xscream
 		TNT1 AA 0 A_CustomMissile("XDeathRevenantArm1",50,0,random(0,360),2,random(20,90))
-		TNT1 A 0 A_SpawnItemEx("XDeathRevenantLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)		//R31 added 27.04.22
+		TNT1 A 0 A_SpawnItemEx("XDeathRevenantLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
 		TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumn")
@@ -291,7 +286,6 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
 		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_PlaySound("world/barrelx")
 		TNT1 AA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
 		TNT1 AA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
@@ -301,7 +295,6 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_playSound("EXPLO3",2)
 		TNT1 A 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_Stop
 		TNT1 A 0 Radius_Quake(2,8,0,12,0)
 		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
@@ -335,12 +328,10 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_playSound("EXPLO3",2)
 		TNT1 A 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_Stop
 		TNT1 A 0 Radius_Quake(2,8,0,12,0)
 		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
-		TNT1 A 0 ThrustThingZ(0,40,0,0)
-		TNT1 A 0 THRUSTTHING(RANDOM(0,360),5)
-		SKG3 A 2 A_ChangeFlag("THRUACTORS",1)
+		SKG3 A 2 ThrustThingZ(0,40,0,0)
+		TNT1 A 0 ThrustThing(RANDOM(0,360),5)
 		SKG3 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Raise:
@@ -350,11 +341,11 @@ DropItem "None"
 	}
 }
 
-Actor AlmostDead64Revenant : 64revenant //r31 extra
+Actor AlmostDead64Revenant : 64revenant
 {
 Speed 5
 Health 150
-Height 44	//R31 added
+Height 44
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DropItem "None"
@@ -368,7 +359,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("Instestin",5,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath1",5,17,random(0,360),2,random(0,90))
 		Goto See
-	See:	//r31 extra
+	See:
 		TNT1 A 0 A_Jump(128,2)
 		TNT1 A 0 A_CustomMissile("XDeath1",5,-17,random(0,360),2,random(0,90))
 		SND1 AABB 5 A_Chase
@@ -399,9 +390,9 @@ DropItem "None"
 		TNT1 A 0 A_Die
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
-		SND1 CD 6 A_Stop
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R31 was bigbloodspot
-		SND1 E -1
+		SND1 CD 6
+		SND1 E 35
+		SND1 E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Plasma:
 	Death.BFG:
@@ -426,14 +417,14 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		SKG3 A 20
+		SKG3 A 2 ThrustThingZ(0,40,0,0)
+		SKG3 A 2 A_CheckFloor(1)
+		Wait
 		TNT1 A 0 A_Stop
-		TNT1 A 0 A_Jump(168,3)
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R31 was bigbloodspot
-		SKG3 B -1
+		TNT1 A 0 A_Jump(128,2)
+		SKG3 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))	//R31 was bigbloodspot
-		SKG3 C -1
+		SKG3 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Raise:
 		SKEL QPONM 5
@@ -442,7 +433,7 @@ DropItem "None"
 	}
 }
 
-Actor Brutalized64Revenant : 64revenant	//r31 extra
+Actor Brutalized64Revenant : 64revenant
 {
 Health 150
 DamageFactor "CauseWaterSplash",0.0
@@ -457,30 +448,30 @@ DropItem "None"
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(128,2)			//R31 added
-		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//R31 added
+		TNT1 A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//Flip horizontal
 	See:
 		TNT1 A 0 A_Pain
-		TNT1 A 0 A_Jump(85,8,15,21,28)	//33% Jump
-		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))	//WAS -17 HORZ FOR EVERY XDEATH1
+		TNT1 A 0 A_Jump(85,8,15,21,28)//33%
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
 		SND2 ABAC 5 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))	//8
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
 		SND2 ACAB 5 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_Pain
-		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))	//15
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
 		SND2 ABAC 5 A_FaceTarget
-		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))	//21
-		TNT1 A 0 A_Jump(64,"Attack")	//25% Jump
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_Jump(64,"Attack")//25%
 		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
 		SND2 ACAB 5 A_FaceTarget
-		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))	//28
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_Pain
 		SND2 ABAB 5 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
 		SND2 CABC 5 A_FaceTarget
-		TNT1 A 0 A_Jump(64,"Attack")	//25% Jump
+		TNT1 A 0 A_Jump(64,"Attack")//25%
 		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_Pain
 		SND2 ABAC 5 A_FaceTarget
@@ -492,7 +483,7 @@ DropItem "None"
 		SND2 BABC 5 A_FaceTarget
 		Goto Death
 	Attack:
-		SKEL K 0 A_CustomMissile("64RevenantTracer3",65,0,0,0)		//R31 WAS 20 HORZ
+		TNT1 A 0 A_CustomMissile("64RevenantTracer3",65,0,0,0)
 		SND2 A 6 A_FaceTarget
 		SND2 BC 4 A_FaceTarget
 		Goto See+9
@@ -505,11 +496,10 @@ DropItem "None"
 	Death:
 		TNT1 A 0 A_Die
 		TNT1 A 0 A_Scream
-		SND2 D 5
-		SND2 E 5 A_NoBlocking
-		SND2 FG 5
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
-		SND2 G -1
+		SND2 D 5 A_NoBlocking
+		SND2 EF 5
+		SND2 G 35
+		SND2 G -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Plasma:
 	Death.BFG:
@@ -523,9 +513,9 @@ DropItem "None"
 		TNT1 AAA 0 A_SpawnItemEx("Blood",0,0,30)
 		Goto XDeath
 	Death.CutLess:
-	Death.Superkick:	//R10.1 added
+	Death.Superkick:
 	Death.SuperFists:
-	XDeath:				//R31 redefined
+	XDeath:
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
@@ -534,24 +524,20 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeathRevenantArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_SpawnItemEx("XDeathRevenantLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
-//		TNT1 A 0 A_CustomMissile("XDeathRevenantTorso",50,0,random(0,360),2,random(20,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-		TNT1 A 0 ThrustThingZ(0,40,0,0)
-		SKG4 A 2 A_ChangeFlag("THRUACTORS",1)
+		SKG4 A 2 ThrustThingZ(0,40,0,0)
 		SKG4 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
 		SKG4 B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		SKG4 B -1
+		SKG4 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	LandAfterXDeath2:
 		SKG4 C 1
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		SKG4 C -1
+		SKG4 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	raise:
 		SKEL QPONM 5
@@ -560,7 +546,7 @@ DropItem "None"
 	}
 }
 
-Actor LegsWalkAbout : 64revenant	//R31 added
+Actor LegsWalkAbout : 64revenant
 {
 Health 80
 Height 40
@@ -582,7 +568,7 @@ DropItem "None"
 	States
 	{
 	Spawn:
-		DKEL A 0	//spawn frame
+		DKEL A 1
 		Goto See
 	See:
 		DKEL AABBCCDD 2 A_Wander
@@ -609,11 +595,9 @@ DropItem "None"
 		Goto Death
 	Death:
 		TNT1 A 0 A_Die
-//		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
 		TNT1 A 0 A_NoBlocking
 		SKD1 ABCDE 4
-		TNT1 A 0 A_SpawnItemEx("Blood",0,0,30)
-		SKD1 E -1
+		SKD1 E -1 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Plasma:
 	Death.BFG:
