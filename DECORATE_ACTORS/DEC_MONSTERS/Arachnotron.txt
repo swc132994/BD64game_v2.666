@@ -9,7 +9,7 @@ PainChance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 BloodType "BD64ArachnotronBlood"
-DropItem "DemonEssenceSpawner"		//R31 added
+DropItem "DemonEssenceSpawner"
 +NOBLOODDECALS
 	states
 	{
@@ -71,9 +71,9 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		BSPI G 4 A_Scream
 		BSPI H 4 A_NoBlocking
 		BSPI IJ 4
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
-		BSPI K -1 A_BossDeath
+		BSPI K 35 A_BossDeath
+		BSPI K -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	XDeath:
 		TNT1 A 0 A_FaceTarget
@@ -94,10 +94,9 @@ DropItem "DemonEssenceSpawner"		//R31 added
 		TNT1 A 0 A_CustomMissile("XDeathSpiderHead",55,0,random(0,360),2,random(40,90))
 		XSPI A 5 A_Scream
 		XSPI B 5 A_NoBlocking
-		TNT1 A 0 A_Stop
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
-		XSPI C -1 A_BossDeath
+		XSPI C 35 A_BossDeath
+		XSPI C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Raise:
 		BSPI KJIHG 5
