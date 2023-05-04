@@ -63,12 +63,11 @@ DropItem "DemonEssenceSpawner"
 		Goto See
 	Death.Bullet:
 	Death:
-		VILE S 7
+		VILE S 7 A_NoBlocking
 		VILE T 7 A_Scream
-		VILE U 7 A_NoBlocking
-		VILE VWX 7
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
-		VILE Y -1
+		VILE UVWX 7
+		VILE Y 35
+		VILE Y -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
@@ -89,7 +88,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumn")
 		TNT1 A 0 A_SpawnItemEx("BurningFleshEffect2",0,0,5)
 		TNT1 AAA 0 A_SpawnItemEx("Blood",0,0,30)
-		CRB1 ABCDEFG 4
+		CRB1 ABCDEFGH 4
 		CRB1 H -1
 		Stop
 	Death.Shotgun:
@@ -115,8 +114,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("XDeathArchArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 AA 0 A_CustomMissile("XDeathArchLeg1",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -125,8 +123,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 AAAA 0 A_CustomMissile("Brutal_Blood",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 ThrustThingZ(0,40,0,1)
-		VID5 A 2 A_ChangeFlag("THRUACTORS",1)
+		VID5 A 2 ThrustThingZ(0,40,0,1)
 		VID5 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Rifle:
@@ -134,6 +131,7 @@ DropItem "DemonEssenceSpawner"
 	Death.Cutless:
 		TNT1 A 0 A_Jump(92,"Death.Heavy")
 		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Xdeath")
+		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2b",32,0,random(0,360),2,random(10,50))
@@ -151,44 +149,39 @@ DropItem "DemonEssenceSpawner"
 		TNT1 AAAA 0 A_CustomMissile("Brutal_Blood",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 ThrustThingZ(0,30,0,1)
-		VID6 A 2 A_ChangeFlag("THRUACTORS",1)
+		VID6 A 2 ThrustThingZ(0,30,0,1)
 		VID6 A 2 A_CheckFloor(1)
 		Wait
 		VID6 B 5 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		VID6 B 5 A_SpawnItem("GrowingBloodPool")
-		VID6 B -1
+		VID6 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	LandAfterXDeath:
 		VID5 B 5 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		VID5 B -1
+		VID5 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	LandAfterXDeath2:
 		VID5 C 5
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		VID5 C -1
+		VID5 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Head:
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
 		VILE ST 5
 		VID4 A 5 A_XScream
 		VID4 B 5 A_NoBlocking
-		VID4 C 5 A_Stop
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		VID4 C 5
 		VILE WX 5
-		VILE Y -1
+		VILE Y 35
+		VILE Y -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	}
 }
@@ -205,7 +198,7 @@ DropItem "None"
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_Jump(128,2)
-		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//Flip horizontal
 	See:
 		VID7 A 9
 		TNT1 A 0 A_Pain
@@ -223,30 +216,30 @@ DropItem "None"
 		VID7 B 9 A_SpawnItem("HeadshotTarget10",0,71,0)
 	Death:
 	Death.Bullet:
+		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Die
 		VID7 CDE 4
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		VILE WX 5
-		VILE Y -1
+		VILE Y 35
+		VILE Y -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Head:
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
 		VID7 C 8
 		VID7 N 5 A_XScream
 		VID7 O 5 A_NoBlocking
-		VID7 P 5 A_Stop
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		VID7 P 5
 		VILE WX 5
-		VILE Y -1
+		VILE Y 35
+		VILE Y -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 A_FaceTarget
@@ -262,6 +255,7 @@ DropItem "None"
 		TNT1 A 0 A_Jump(128,"Death")
 	Death.Cutless:
 		TNT1 A 0 A_Jump(92,"Death.Heavy")
+		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2b",32,0,random(0,360),2,random(10,50))
@@ -277,8 +271,7 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("XDeathArchArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 AA 0 A_CustomMissile("XDeathArchLeg1",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -287,8 +280,7 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Brutal_Blood",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 ThrustThingZ(0,40,0,1)
-		VID5 A 2 A_ChangeFlag("THRUACTORS",1)
+		VID5 A 2 ThrustThingZ(0,40,0,1)
 		VID5 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.SuperFists:
@@ -303,31 +295,11 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Brutal_Blood",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 ThrustThingZ(0,30,0,1)
-		VID7 W 2 A_ChangeFlag("THRUACTORS",1)
+		VID7 W 2 ThrustThingZ(0,30,0,1)
 		VID7 W 2 A_CheckFloor(1)
 		Wait
 		VID7 X 5 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		VID7 X 5 A_SpawnItem("GrowingBloodPool")
-		VID7 X -1
-		Stop
-	Death.Head:
-		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
-		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
-		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
-		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
-		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
-		VID7 C 5
-		VID7 N 5 A_XScream
-		VID7 O 5 A_NoBlocking
-		VID7 P 5 A_Stop
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
-		VILE WX 5
-		VILE Y -1
+		VID7 X -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	}
 }
@@ -338,7 +310,7 @@ Actor BrutalizedArchvile_2 : BrutalizedArchvile_1
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_Jump(128,2)
-		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//Flip horizontal
 	See:
 		VID8 A 9
 		TNT1 A 0 A_Pain
@@ -357,30 +329,30 @@ Actor BrutalizedArchvile_2 : BrutalizedArchvile_1
 	Death:
 	Death.Rifle:
 	Death.Bullet:
+		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Die
 		VID8 CDE 4
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		VILE WX 5
-		VILE Y -1
+		VILE Y 35
+		VILE Y -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Head:
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
 		VID8 C 8
 		VID8 N 5 A_XScream
 		VID8 O 5 A_NoBlocking
-		VID8 P 5 A_Stop
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		VID8 P 5
 		VILE WX 5
-		VILE Y -1
+		VILE Y 35
+		VILE Y -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 A_FaceTarget
@@ -400,8 +372,7 @@ Actor BrutalizedArchvile_2 : BrutalizedArchvile_1
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathArchArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 AA 0 A_CustomMissile("XDeathArchLeg1",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -410,8 +381,7 @@ Actor BrutalizedArchvile_2 : BrutalizedArchvile_1
 		TNT1 AAAA 0 A_CustomMissile("Brutal_Blood",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 ThrustThingZ(0,40,0,1)
-		VID5 A 2 A_ChangeFlag("THRUACTORS",1)
+		VID5 A 2 ThrustThingZ(0,40,0,1)
 		VID5 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.SuperFists:
@@ -426,31 +396,11 @@ Actor BrutalizedArchvile_2 : BrutalizedArchvile_1
 		TNT1 AAAA 0 A_CustomMissile("Brutal_Blood",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 ThrustThingZ(0,30,0,1)
-		VID8 W 2 A_ChangeFlag("THRUACTORS",1)
+		VID8 W 2 ThrustThingZ(0,30,0,1)
 		VID8 W 2 A_CheckFloor(1)
 		Wait
 		VID8 X 5 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		VID8 X 5 A_SpawnItem("GrowingBloodPool")
-		VID8 X -1
-		Stop
-	Death.Head:
-		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
-		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
-		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
-		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
-		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
-		VID8 C 5
-		VID8 N 5 A_XScream
-		VID8 O 5 A_NoBlocking
-		VID8 P 5 A_Stop
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
-		VILE WX 5
-		VILE Y -1
+		VID8 X -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	}
 }

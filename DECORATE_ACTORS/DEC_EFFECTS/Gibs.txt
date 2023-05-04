@@ -1672,7 +1672,7 @@ Scale 0.9
 ACTOR BelphegorLeg : XDeathZombieArm1
 {
 Translation "16:31=%[0,0,0]:[0,1,0]","176:191=%[0,0,0]:[0,1,0]","32:47=%[0,0,0]:[0,1,0]"
-Scale 0.8
+Scale 1
 	States
 	{
 	Spawn:
@@ -1686,6 +1686,12 @@ Scale 0.8
 		BPLG I -1
 		Stop
 	}
+}
+
+ACTOR BelphegorArm : XDeathHKArm
+{
+Translation "16:31=%[0,0,0]:[0,1,0]","176:191=%[0,0,0]:[0,1,0]","32:47=%[0,0,0]:[0,1,0]"
+Scale 1
 }
 
 //BFG Guy
