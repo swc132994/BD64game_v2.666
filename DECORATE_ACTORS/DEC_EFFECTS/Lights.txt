@@ -1689,7 +1689,8 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		HDCA A 0 NoDelay Bright A_SpawnItem("64SmallBloodPool")
+		HDCA A 0 NoDelay A_Jump(128,"Spawn2")
+		TNT1 A 0 A_SpawnItem("64SmallBloodPool")
 		TNT1 A 0 A_SpawnItem("LightShaft2BrighterLess")
 		TNT1 A 0 A_SpawnItem("LightShaft2Fast")
 		TNT1 A 0 A_SpawnItem("Swarm",0,20)
@@ -1697,6 +1698,24 @@ Scale 0.8
 	Stay:
 		HDCA AB 3 Bright Light("SKULLCANDLES")
 		Loop
+	Spawn2:		//Burning marine
+		ALVE A 1
+	SemiStay2:
+		TNT1 AAA 0 A_SpawnItemEx("BurningBarrelSmoke")
+		TNT1 A 0 A_TakeInventory("BurningBarrelSmokeCheck",0)
+	Stay2:
+		TNT1 A 0 A_CheckSight("StayBlank2")
+		ALVE A 3 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",0,0,random(0,360),2,random(70,110))
+		ALVE A 3 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",0,0,random(0,360),2,random(70,110))
+		ALVE A 3 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",0,0,random(0,360),2,random(70,110))
+		ALVE A 3 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",0,0,random(0,360),2,random(70,110))
+		ALVE A 4 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",0,0,random(0,360),2,random(70,110))
+		TNT1 A 0 A_GiveInventory("BurningBarrelSmokeCheck",1)
+		TNT1 A 0 A_JumpIfInventory("BurningBarrelSmokeCheck",8,"SemiStay2")
+		Loop
+	StayBlank2:
+		ALVE A 3 Bright Light("BIGREDTORCH")
+		Goto Stay2
 	}
 }
 

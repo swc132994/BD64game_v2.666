@@ -69,10 +69,9 @@ MeleeRange 120
 		64BZ H 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
 		64BZ I 5 A_Scream
 		64BZ J 5 A_NoBlocking
-		64BZ KL 5 A_Stop
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
-		64BZ M 5
-		64BZ N -1
+		64BZ KLM 5
+		64BZ N 35
+		64BZ N -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
@@ -111,17 +110,16 @@ MeleeRange 120
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
 		BZ65 HI 8
 		BZ65 J 5 A_XScream
 		BZ65 K 5 A_NoBlocking
-		BZ65 L 5 A_Stop
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
-		BZ65 M -1
+		BZ65 L 5
+		BZ65 M 35
+		BZ65 M -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Chainsaw:
 	Death.BFG:
@@ -131,8 +129,7 @@ MeleeRange 120
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieArmBFG",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -142,20 +139,19 @@ MeleeRange 120
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
-		TNT1 A 0 A_Stop
-		64BZ PQRST 4
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		64BZ T -1
+		64BZ PQRS 4
+		64BZ T 35
+		64BZ T -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	XDeath:
 		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArmBFG",50,0,random(0,360),2,random(20,90))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLegBFG",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -163,22 +159,19 @@ MeleeRange 120
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 ThrustThingZ(0,30,0,0)
-		BZ66 A 2 A_ChangeFlag("THRUACTORS",1)
+		BZ66 A 2 ThrustThingZ(0,30,0,0)
 		BZ66 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
 		BZ66 B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		BZ66 B -1
+		BZ66 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	LandAfterXDeath2:
 		BZ66 C 1
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		BZ66 C -1
+		BZ66 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	}
 }
@@ -213,27 +206,27 @@ DropItem "None"
 		ZBF1 A 9 A_SpawnItem("HeadshotTarget10",0,50,0)
 	Death:
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_Die	
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_Die
 		BZ65 ABCDE 4
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
-		BZ65 F -1
+		BZ65 F 35
+		BZ65 F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Head:
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 AAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
 		BZ68 HI 8
 		BZ68 J 5 A_XScream
 		BZ68 K 5 A_NoBlocking
-		BZ68 L 5 A_Stop
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
-		BZ68 M -1
+		BZ68 L 5
+		BZ68 M 35
+		BZ68 M -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 A_FaceTarget
@@ -246,14 +239,14 @@ DropItem "None"
 		BZ68 H 1 A_JumpIfCloser(170,"Xdeath")
 		Goto Death
 	XDeath:
+		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArmBFG",50,0,random(0,360),2,random(20,90))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLegBFG",50,0,random(0,360),2,random(20,90))
@@ -262,13 +255,13 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 ThrustThingZ(0,30,0,0)
-		BZ69 A 2 A_ChangeFlag("THRUACTORS",1)
+		BZ69 A 2 ThrustThingZ(0,30,0,0)
 		BZ69 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Rifle:
 		TNT1 A 0 A_Jump(128,"Death")
 	Death.Cutless:
+		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2b",32,0,random(0,360),2,random(10,50))
@@ -285,8 +278,7 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArmBFG",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -296,10 +288,9 @@ DropItem "None"
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
-		TNT1 A 0 A_Stop
-		64BZ PQRST 4
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		64BZ T -1
+		64BZ PQRS 5
+		64BZ T 35
+		64BZ T -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Raise:
 		64BZ LKJIH 5
@@ -317,10 +308,11 @@ Actor BrutalizedBFGDude_2 : BrutalizedBFGDude_1
 		ZBF2 A 10
 	Death:
 		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Scream
 		TNT1 A 0 A_Die
 		BZ67 ABCDE 4
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
-		BZ67 F -1
+		BZ67 F 35
+		BZ67 F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Cutless:
 		Goto Xdeath
@@ -332,8 +324,7 @@ Actor BrutalizedBFGDude_2 : BrutalizedBFGDude_1
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -342,10 +333,9 @@ Actor BrutalizedBFGDude_2 : BrutalizedBFGDude_1
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
-		TNT1 A 0 A_Stop
-		64BZ PQRST 4
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		64BZ T -1
+		64BZ PQRS 4
+		64BZ T 35
+		64BZ T -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Raise:
 		64BZ LKJIH 5
@@ -383,9 +373,7 @@ DeathSound "weapons/bfgx"
 		BFE1 A 6 Bright A_SpawnItem("LensFlareTorchGreen",0,0)
 		BFE1 B 7 Bright A_FadeOut(0.142857)
 		BFE1 C 4 Bright A_FadeOut(0.142857)
-		BFE1 D 1 Bright A_FadeOut(0.142857)
-		BFE1 E 1 Bright A_FadeOut(0.142857)
-		BFE1 F 1 Bright A_FadeOut(0.142857)
+		BFE1 DEF 1 Bright A_FadeOut(0.142857)
 		Stop
 	}
 }

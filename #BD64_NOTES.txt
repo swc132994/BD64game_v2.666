@@ -86,7 +86,7 @@ CREDITS v2.666 (here for now until I find a better place)
 Original Brutal Doom 64 mod by Sergeant Mark IV
 
 Weapons:
-SMG - IDDQD_1337 (Animation) & Super Piter (sprites)
+SMG - IDDQD_1337 (Animation) & Super Piter (sprites). New sprites update (04/05/23) - Midway, Doom Piter, Sgt Mark IV, I'M.
 Gauss Cannon - IDDQD_1337 (animation), I'M (scope and cell sprites), BigStronk (decorate), VriskaSerket & CaptainJ (sprites)
 Tactical Rocket Launcher - IDDQD_1337 (animation) & I'M (sprites)
 Tactical Chainsaw - IDDQD_1337 (animation)
