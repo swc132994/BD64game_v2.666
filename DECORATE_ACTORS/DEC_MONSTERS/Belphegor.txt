@@ -31,7 +31,7 @@ MONSTER
 +MISSILEMORE
 +MISSILEEVENMORE
 +NORADIUSDMG
-+FLOORCLIP	
++FLOORCLIP
 	States
 	{
 	Spawn:
@@ -100,7 +100,7 @@ MONSTER
 		TNT1 A 0 A_Jump(128,"Death")
 		Goto XDeath2
 	Death.BFG:
-	Xdeath:
+	Xdeath:	//Seperate legs
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncherGreen",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1Green",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2Green",32,0,random(0,360),2,random(0,90))
@@ -124,7 +124,7 @@ MONSTER
 		BPTG C 2 A_CheckFloor("LANDAFTERXDEATH2")
 		Wait
 	Death.Chainsaw:
-	Xdeath2:	//Torso seperates
+	Xdeath2:	//combined legs
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncherGreen",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1Green",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2Green",32,0,random(0,360),2,random(0,90))
