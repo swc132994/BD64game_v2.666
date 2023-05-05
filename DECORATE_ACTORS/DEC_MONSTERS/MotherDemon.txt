@@ -1,27 +1,28 @@
-Actor Motherdemon 9897	//R26.2 added ID from TC ABS
+Actor Motherdemon 9897
 {
 Game Doom
-SpawnID 17		//R26.2 added ID from TC ABS
+SpawnID 17
 Scale 1.0
 Health 8000
 Height 110
 Radius 65
 Mass 1000
 Speed 24
-PainChance 10	//R31 was 20
+PainChance 10
 ReactionTime 8
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "UnmakerWhite",0.5
+DamageFactor "BFG",0.7
 Obituary "%o was obliterated by the mother of all demons."
 SeeSound "mother/sight"
 AttackSound "mother/attack"
 PainSound "mother/Pain"
 DeathSound "mother/Death"
 ActiveSound "mother/Active"
-Tag "Mother Demon"		//R31 added
-DropItem "DemonEssenceLargeSpawner"		//R31 added
-DropItem "Soulsphere",32				//R31 added
+Tag "Mother Demon"
+DropItem "DemonEssenceLargeSpawner"
+DropItem "Soulsphere",32
 MONSTER
 +FLOORCLIP
 +DONTMORPH
@@ -30,8 +31,8 @@ MONSTER
 +MISSILEMORE
 +MISSILEEVENMORE
 +LOOKALLAROUND
-+FLOAT			//R31 added
-+QUICKTORETALIATE	//R31 added
++FLOAT
++QUICKTORETALIATE
 +NOBLOODDECALS
 	States
 	{
@@ -39,9 +40,9 @@ MONSTER
 		MOTH ABCD 9 A_Look
 		Loop
 	See:
-		MOTH AAABBBCCCDDD 3 A_Chase("Melee","Missile",CHF_RESURRECT)	//R31 added resurrect
+		MOTH AAABBBCCCDDD 3 A_Chase("Melee","Missile",CHF_RESURRECT)
 		Loop
-	Melee:	//R31 added melee
+	Melee:
 	Missile:
 		MOTH E 1 A_FaceTarget
 		TNT1 A 0 A_Jump(96,"SuperAttack")
@@ -52,10 +53,10 @@ MONSTER
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,-90,2,0)
 		MOTH G 14 Bright A_CustomMissile("MotherFire",0,0,180,2,0)
 		MOTH E 8 A_FaceTarget
-		TNT1 A 0 A_CustomMissile("MotherBall",160,-24,90)		//R31 revised
-		TNT1 A 0 A_CustomMissile("MotherBall",80,-48,90)		//R31 revised
-		TNT1 A 0 A_CustomMissile("MotherBall",160,24,-90)		//R31 revised
-		MOTH F 14 Bright A_CustomMissile("MotherBall",80,48,-90)	//R31 revised
+		TNT1 A 0 A_CustomMissile("MotherBall",160,-24,90)
+		TNT1 A 0 A_CustomMissile("MotherBall",80,-48,90)
+		TNT1 A 0 A_CustomMissile("MotherBall",160,24,-90)
+		MOTH F 14 Bright A_CustomMissile("MotherBall",80,48,-90)
 		MOTH E 8
 		Goto See
 	SuperAttack:
@@ -66,7 +67,7 @@ MONSTER
 		MOTH F 8 Bright
 		MOTH E 8
 		Goto See
-	Heal:	//R31 added
+	Heal:
 		MOTH EEFFFEEFFF 3 Bright
 		Goto See
 	Pain:
@@ -81,7 +82,7 @@ MONSTER
 	Death:
 		MOTH I 10 Bright 
 		TNT1 A 0 A_Scream
-		MOTH I 4 Bright A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		MOTH I 4 Bright A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
 		MOTH I 4 Bright A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
 		MOTH I 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
 		MOTH I 4 Bright A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
@@ -105,9 +106,9 @@ MONSTER
 		MOTH K 4 Bright A_SpawnItemEx("64BossExplosion",20,20,110,0,0,0,0,130)
 		MOTH K 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,0,0,0,0,0,130)
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
-		TNT1 AAAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))	//R30.9 added
-		TNT1 AAAAA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))	//R30.9 added
-		TNT1 AAAAA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))	//R30.9 added
+		TNT1 AAAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,32)
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,90)
 		TNT1 AAAAAAAAA 0 A_CustomMissile("BurningXDeath1",42,0,random(0,360),2,random(0,90))
@@ -115,15 +116,14 @@ MONSTER
 		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
 		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("SuperGoreSpawner",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_NoBlocking
-		TNT1 AAAAAAAAA 0 A_CustomMissile("Brutal_Blood",75,0,random(0,360),2,random(0,90))	//R30.9 added
-		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))			//R30.9 added
+		TNT1 AAAAAAAAA 0 A_CustomMissile("Brutal_Blood",75,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		MOTH L 3 Bright A_SpawnItemEx("64BossExplosion",20,20,55,0,0,0,0,130)
 		MOTH L 3 Bright A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
-		MOTH MNO 3 Bright 
-		TNT1 A 30
 		TNT1 A 0 A_BossDeath
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
-		TNT1 A 20// A_BrainDie		//R26.2 disabled braindie
+		MOTH MNO 3 Bright
+		TNT1 A 35
 		Stop
 	}
 }
@@ -156,7 +156,7 @@ PROJECTILE
 	{
 	Spawn:
 		MFIR ABCDE 4 Bright A_CustomMissile("MotherFireTrail",0,0,0,2,0)
-		TNT1 A 0 A_FireCrackle	//R31 added
+		TNT1 A 0 A_FireCrackle
 		Loop
 	Death:
 		MFIR E 1 Bright
@@ -168,12 +168,12 @@ Actor MotherFireTrail
 {
 Game Doom
 Scale 0.8
-Mass 1	//R31 added
+Mass 1
 Height 8
 Radius 6
 Speed 0
 Damage 0
-DamageType "Plasma"	//R31 added
+DamageType "Plasma"
 Alpha 0.6
 RenderStyle Translucent
 +NOGRAVITY
@@ -197,7 +197,7 @@ RenderStyle Translucent
 		TNT1 A 0 A_Explode(15,35,1)
 		MPUF A 5 Bright A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		TNT1 A 0 A_SpawnItem("DetectFloorCraterSmallMotherdemon")		//R30.10 ADDED	//r31 revised
+		TNT1 A 0 A_SpawnItem("DetectFloorCraterSmallMotherdemon")
 		Stop
 	}
 }
@@ -221,24 +221,23 @@ PROJECTILE
 		Loop
 	Death:
 		TNT1 AAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
-		TNT1 A 0 A_SpawnItem("DetectFloorCraterMed")			//R30.10 added
+		TNT1 A 0 A_SpawnItem("DetectFloorCraterMed")
 		TNT1 AAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,180))
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion")
 		TNT1 A 0 A_Explode(200,200,1)
-		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,0,CMF_AIMDIRECTION )
-		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,45,CMF_AIMDIRECTION )
-		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,90,CMF_AIMDIRECTION )
-		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,135,CMF_AIMDIRECTION )
-		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,180,CMF_AIMDIRECTION )
-		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,225,CMF_AIMDIRECTION )
-		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,270,CMF_AIMDIRECTION )
-		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,315,CMF_AIMDIRECTION )
+		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,0,CMF_AIMDIRECTION)
+		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,45,CMF_AIMDIRECTION)
+		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,90,CMF_AIMDIRECTION)
+		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,135,CMF_AIMDIRECTION)
+		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,180,CMF_AIMDIRECTION)
+		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,225,CMF_AIMDIRECTION)
+		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,270,CMF_AIMDIRECTION)
+		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,315,CMF_AIMDIRECTION)
 		Stop
 	}
 }
 
-Actor Motherdemon_Final : Motherdemon 9898		//R31 added for new arena final BD64 map28
+Actor Motherdemon_Final : Motherdemon 9898		//New boss for map28 Ultimate Absolution
 {
 health 20000
-DamageFactor "BFG",0.7
 }

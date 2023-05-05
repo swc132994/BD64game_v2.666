@@ -7,12 +7,12 @@ PainChance "Kick",200
 PainChance "SuperKick",200
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-MeleeThreshold 200	//r31 added
-MeleeRange 100		//r31 added
-DropItem "DemonEssenceLargeSpawner"		//R31 added
-DropItem "Soulsphere",32				//R31 added
-AttackSound "weapons/gswing"	//for melee
-+EXTREMEDEATH	//r31 added
+MeleeThreshold 200
+MeleeRange 100
+DropItem "DemonEssenceLargeSpawner"
+DropItem "Soulsphere",32
+AttackSound "weapons/gswing"
++EXTREMEDEATH
 +AVOIDMELEE
 +QUICKTORETALIATE
 	States
@@ -24,56 +24,56 @@ AttackSound "weapons/gswing"	//for melee
 		MSMN A 3 A_Metal
 		MSMN AABBCCDD 3 A_Chase
 		Loop
-	Melee:		//r31 new Melee
+	Melee:
 		MSMN DE 6 A_FaceTarget
 		MSMN D 6 A_CustomMeleeAttack(50)
 		Goto See
 	Missile:
 		MSMN A 15 A_FaceTarget
 		MSMN E 2 A_FaceTarget
-		MSMN Q 2 Bright A_PlaySound("CHGNSHOT",1)	//R31 was MGUNFIR
-		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))		//R25.4 was TNT1 A & random(-9,9),1,random(-4,4))	//R31 was TNT1 AA 0 A_CustomMissile("EnenmyProjectile",40,26,random(-6,6),1,random(-3,3))
-		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)		//R28.4 added	//R31 was AA
-		TNT1 A 0 A_PlaySound("CHGNSHOT",3)	//R31 was MGUNFIR
-		MSMN E 2 A_FaceTarget
 		MSMN Q 2 Bright A_PlaySound("CHGNSHOT",1)
 		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)		//R28.4 added	//R31 was AA
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
 		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
 		MSMN E 2 A_FaceTarget
 		MSMN Q 2 Bright A_PlaySound("CHGNSHOT",1)
 		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)		//R28.4 added	//R31 was AA
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
 		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
 		MSMN E 2 A_FaceTarget
 		MSMN Q 2 Bright A_PlaySound("CHGNSHOT",1)
 		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)		//R28.4 added	//R31 was AA
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
 		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
 		MSMN E 2 A_FaceTarget
 		MSMN Q 2 Bright A_PlaySound("CHGNSHOT",1)
 		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)		//R28.4 added	//R31 was AA
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
 		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
 		MSMN E 2 A_FaceTarget
 		MSMN Q 2 Bright A_PlaySound("CHGNSHOT",1)
 		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)		//R28.4 added	//R31 was AA
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
 		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
 		MSMN E 2 A_FaceTarget
 		MSMN Q 2 Bright A_PlaySound("CHGNSHOT",1)
 		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)		//R28.4 added	//R31 was AA
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
 		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
 		MSMN E 2 A_FaceTarget
 		MSMN Q 2 Bright A_PlaySound("CHGNSHOT",1)
 		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)		//R28.4 added	//R31 was AA
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
 		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
 		MSMN E 2 A_FaceTarget
 		MSMN Q 2 Bright A_PlaySound("CHGNSHOT",1)
 		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
-		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)		//R28.4 added
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
+		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
+		MSMN E 2 A_FaceTarget
+		MSMN Q 2 Bright A_PlaySound("CHGNSHOT",1)
+		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
 		TNT1 A 0 A_PlaySound("CHGNSHOT",3)
 		MSMN E 3 A_SpidRefire
 		Goto Missile+2
@@ -88,7 +88,7 @@ AttackSound "weapons/gswing"	//for melee
 		Goto See
 	Death:
 		TNT1 A 0 A_Scream
-		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
 		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
 		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",-64,-64,50,0,0,0,0,130)
 		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",64,64,100,0,0,0,0,130)
@@ -114,8 +114,7 @@ AttackSound "weapons/gswing"	//for melee
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))	//R30.6 added
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))	//R30.6 added
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,32)
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,90)
 		TNT1 AAAAAAAAA 0 A_CustomMissile("BurningXDeath1",42,0,random(0,360),2,random(0,90))
@@ -128,10 +127,9 @@ AttackSound "weapons/gswing"	//for melee
 		MSMN J 4 Bright A_SpawnItemEx("64BossExplosion",64,64,50,0,0,0,0,130)
 		MSMN K 4 Bright A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
 		MSMN LMNOP 5 Bright
-		TNT1 A 0 A_BossDeath
-		TNT1 A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))	//R30.9 added
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
-		MSMN P -1
+		MSMN P 35 A_BossDeath
+		MSMN P -1 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
 		Stop
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
@@ -140,7 +138,7 @@ AttackSound "weapons/gswing"	//for melee
 	}
 }
 
-ACTOR MasterMindProjectile : EnemyProjectile	//R31 added
+ACTOR MasterMindProjectile : EnemyProjectile
 {
 Scale 0.1
 Damage(random(10,15))
@@ -175,7 +173,7 @@ PainChance "Kick",200
 PainChance "SuperKick",200
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-AttackSound "weapons/gswing"	//for melee
+AttackSound "weapons/gswing"
 MeleeThreshold 200
 MeleeRange 100
 DropItem "DemonEssenceLargeSpawner"
@@ -249,7 +247,7 @@ Tag "Eradicator"
 		Goto See
 	Death:
 		TNT1 A 0 A_Scream
-		BSGI G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
 		BSGI G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
 		BSGI G 4 Bright A_SpawnItemEx("64BossExplosion",-64,-64,50,0,0,0,0,130)
 		BSGI G 4 Bright A_SpawnItemEx("64BossExplosion",64,64,100,0,0,0,0,130)
@@ -275,8 +273,7 @@ Tag "Eradicator"
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,32)
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,90)
 		TNT1 AAAAAAAAA 0 A_CustomMissile("BurningXDeath1",42,0,random(0,360),2,random(0,90))
@@ -290,9 +287,9 @@ Tag "Eradicator"
 		BSGI K 4 Bright A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
 		BSGI LMNOP 5 Bright
 		TNT1 A 0 A_BossDeath
-		TNT1 A 0 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
-		BSGI P -1
+		BSGI P 35
+		BSGI P -1 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
 		Stop
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")

@@ -1,14 +1,14 @@
 Actor 64PainElemental : PainElemental Replaces PainElemental
 {
 Scale 0.8
-Speed 6			//R16 WAS 4
+Speed 6
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 HitObituary "%o got too close to a Pain Elemental."
-DropItem "DemonEssenceSpawner"		//R31 ADDED
+DropItem "DemonEssenceSpawner"
 +FORCEXYBILLBOARD
 +NOBLOODDECALS
 	states

@@ -709,8 +709,9 @@ Tag "Stalker"
 		STKR H 7 Bright A_Scream
 		STKR I 5 Bright
 		STKR J 4 Bright A_NoBlocking
-		STKR KLMOP 4 Bright A_FadeOut(0.20)
-		Stop
+		STKR KLMO 4 Bright A_FadeOut(0.1667)
+		STKR P 4 Bright A_FadeOut(0.1667)
+		Wait
 	}
 }
 
