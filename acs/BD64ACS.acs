@@ -435,3 +435,8 @@ Script "FleshWizardRandomACS" (void)
 {
 SetResultValue(GetCVar("FleshWizardRandomCvar"));
 }
+
+script "HordeMultiplier" (void)		//Husk
+{
+SetResultValue(GetCVar("TheHorde_Multiplier_Cvar"));
+}

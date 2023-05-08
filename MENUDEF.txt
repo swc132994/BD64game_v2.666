@@ -179,6 +179,8 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 		StaticText "Allow limb loss death states",1
 		StaticText " "
 	Option "Allow Severed Limb Deaths =","SevereredLimbDeathCvar","YesOrNo"
+		StaticText " "
+	Option "Tweak The Horde's Husk multiplier =","TheHorde_Multiplier_Cvar","TheHorde_Multiplier_Value"
 }
 
 OptionMenu "BD64MapOptions" //R31 added
@@ -429,6 +431,16 @@ OptionValue "FleshWizardRandom_Value"
 	30,"30%"
 	40,"40%"
 	50,"50%"
+}
+
+OptionValue "TheHorde_Multiplier_Value"		//Husk
+{
+	0,"Disable Husks"
+	1,"x1 Husks"
+	2,"x2 Husks"
+	3,"x3 Husks"
+	4,"x4 Husks"
+	5,"Random"
 }
 
 //Performance values

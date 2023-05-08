@@ -573,6 +573,13 @@ $Random D3Wraith/Attack	{3WRTATK1 3WRTATK2}
 3WRTLOUT	3WRTLOUT	//TELEPORT OUT
 3WRTTLIN	3WRTTLIN	//TELEPORT IN
 
+//Husk
+TheHusk/See			64ZMSIT
+TheHusk/Active		64ZMACT
+TheHusk/Pain		64ZMPAI
+TheHusk/Death		64ZMDTH
+TheHusk/Attack		64ZMMIS
+
 //---------------------------
 //**********GORE*************
 //---------------------------

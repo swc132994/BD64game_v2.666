@@ -55,5 +55,6 @@ server int SevereredLimbDeathCvar = 1;		//Option to skip one arm deaths
 server int ZombieMarineNaziCvar = 0;		//Choose between zombie marine or Nazi
 server int NightElementalRandomCvar = 0;	//Night Elemental replaces Pain Elemental
 server int FleshWizardRandomCvar = 0;		//Flesh wizard replaces archvile
+server int TheHorde_Multiplier_Cvar = 0;	//Husk
 
 //Leave blank end line to prevent UDB error warning

@@ -121,6 +121,12 @@ Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 	Sprites: Freedoom (Flesh Wizard base), Monolith (Blood Zombie), Craneo (Flesh Wizard 64 conversion), HAUNT folder sprites taken from LCA DUST's Bloody Frandle
 	Sounds: 64FWSITx, 64FWDTHx (Dead Space), 64FWACTx (Doom 3), 64FWPAIx (Dying Light), 64FWTELx (System Shock 2)
 			}
+64Husk{
+		Sprite Credits: Amuscaria, DrDoctor, Midway
+		Code Credits: HorrorMovieRei, swc132994, Sgt_Mark_IV (most likely), Lagi (zombie group spawn code)
+		Sounds Credits: Id Software, Immorpher
+		Frankensprite by Craneo.
+		}
 
 Add-ons:
 BD64HUD_Ashton (Paladin-julio (ModDB))
