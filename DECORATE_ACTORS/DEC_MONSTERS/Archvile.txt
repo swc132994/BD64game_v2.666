@@ -56,11 +56,6 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,71,0)
 		VILE R 5 A_Pain
 		Goto See
-	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		VILE R 5
-		VILE R 5 A_Pain
-		Goto See
 	Death.Bullet:
 	Death:
 		VILE S 7 A_NoBlocking
@@ -93,12 +88,10 @@ DropItem "DemonEssenceSpawner"
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		VILE S 1 A_JumpIfCloser(210,"Death.Heavy")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		VILE S 1 A_JumpIfCloser(170,"XDeath")
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
@@ -141,7 +134,7 @@ DropItem "DemonEssenceSpawner"
 		VILE S 1 A_SpawnItemEx("BrutalizedArchvile_1",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.Heavy:
-		VILE S 5
+		VILE S 3
 		TNT1 AA 0 A_CustomMissile("XDeathArchLeg1",25,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -242,12 +235,10 @@ DropItem "None"
 		VILE Y -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		VID7 A 1 A_JumpIfCloser(170,"Death.Heavy")
 		Goto Death.Heavy
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		VID7 A 1 A_JumpIfCloser(170,"XDeath")
 		Goto Death.Heavy
@@ -355,13 +346,11 @@ Actor BrutalizedArchvile_2 : BrutalizedArchvile_1
 		VILE Y -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		VID8 A 1 A_JumpIfCloser(170,"Death.Heavy")
 		Goto Death.Heavy
 	Death.SSG:
 	Death.Cutless:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		VID8 A 1 A_JumpIfCloser(170,"XDeath")
 		Goto Death.Heavy

@@ -21,7 +21,6 @@ Inventory.PickupSound "WPICK"
 		TNT1 A 0 A_GiveInventory("64RocketLauncherTactical",1)
 		Stop
 	DMSpawn:
-		TNT1 A 0 A_ChangeFlag("THRUActorS",1)
 		TNT1 A 0 A_SpawnItem("64RocketLauncherDM")
 		TNT1 A 1000
 		Loop

@@ -50,11 +50,6 @@ DropItem "DemonEssenceSpawner"
 		DOGG I 2
 		DOGG I 2 A_Pain
 		Goto See
-	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		DOGG I 2
-		DOGG I 2 A_Pain
-		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
 		POL5 A -1
@@ -64,9 +59,9 @@ DropItem "DemonEssenceSpawner"
 		DOGG MLKJ 5
 		Goto See
 	Death:
-		DOGG I 8 A_NoBlocking
-		DOGG J 8 A_Scream
-		DOGG KL 4 A_KillMaster("None")	//tag 666 fix
+		DOGG I 5 A_NoBlocking
+		DOGG J 5 A_Scream
+		DOGG KL 5 A_KillMaster("None")	//tag 666 fix
 		DOGG M 35
 		DOGG M -1 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
 		Stop
@@ -190,7 +185,6 @@ DropItem "None"
 		Goto Death
 	Death:
 		TNT1 A 0 A_Die
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		DGB1 XY 5

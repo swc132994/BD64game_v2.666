@@ -50,11 +50,6 @@ DropItem "DemonEssenceSpawner"
 		GECH G 2
 		GECH G 2 A_Pain
 		Goto See
-	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		GECH G 2
-		GECH G 2 A_Pain
-		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
 		POL5 A -1
@@ -63,9 +58,9 @@ DropItem "DemonEssenceSpawner"
 		GECH MLKJI 5
 		Goto See
 	Death:
-		GECH I 8 A_NoBlocking
-		GECH J 8 A_Scream
-		GECH KL 4
+		GECH I 5 A_NoBlocking
+		GECH J 5 A_Scream
+		GECH KL 5
 		GECH M 35 A_KillMaster("None")	//tag 666 fix
 		GECH M -1 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
 		Stop
@@ -209,7 +204,6 @@ DropItem "None"
 		Goto Death
 	Death:
 		TNT1 A 0 A_Die
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		GH1H CDE 5

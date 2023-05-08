@@ -81,11 +81,6 @@ AttackSound "weapons/gswing"
 		MSMN F 3
 		MSMN F 3 A_Pain
 		Goto See
-	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		MSMN F 3
-		MSMN F 3 A_Pain
-		Goto See
 	Death:
 		TNT1 A 0 A_Scream
 		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
@@ -126,7 +121,7 @@ AttackSound "weapons/gswing"
 		MSMN I 4 Bright A_SpawnItemEx("64BossExplosion",-64,-64,0,0,0,0,0,130)
 		MSMN J 4 Bright A_SpawnItemEx("64BossExplosion",64,64,50,0,0,0,0,130)
 		MSMN K 4 Bright A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
-		MSMN LMNOP 5 Bright
+		MSMN LMNO 5 Bright
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		MSMN P 35 A_BossDeath
 		MSMN P -1 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
@@ -240,11 +235,6 @@ Tag "Eradicator"
 		BSGI F 3
 		BSGI F 3 A_Pain
 		Goto See
-	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		BSGI F 3
-		BSGI F 3 A_Pain
-		Goto See
 	Death:
 		TNT1 A 0 A_Scream
 		BSGI G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
@@ -285,7 +275,7 @@ Tag "Eradicator"
 		BSGI I 4 Bright A_SpawnItemEx("64BossExplosion",-64,-64,0,0,0,0,0,130)
 		BSGI J 4 Bright A_SpawnItemEx("64BossExplosion",64,64,50,0,0,0,0,130)
 		BSGI K 4 Bright A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
-		BSGI LMNOP 5 Bright
+		BSGI LMNO 5 Bright
 		TNT1 A 0 A_BossDeath
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		BSGI P 35

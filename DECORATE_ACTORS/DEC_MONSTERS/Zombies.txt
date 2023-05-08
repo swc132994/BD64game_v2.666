@@ -77,18 +77,13 @@ states
 	Raise:
 		POSS LKJIH 5
 		Goto See
-	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		PPOS H 3
-		PPOS H 3 A_Pain
-		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
 		POL5 A -1
 		Stop
 	Death:
-		POSS H 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
-		POSS I 5 A_Scream
+		POSS H 5 A_Scream
+		POSS I 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
 		POSS J 5 A_NoBlocking
 		POSS K 5
 		POSS L 35
@@ -103,9 +98,9 @@ states
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
-		PPOH A 5 A_XScream
-		PPOH B 5 A_NoBlocking
-		PPOH CD 5
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		PPOH ABCD 5
 		PPOH E 35
 		PPOH E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
@@ -125,15 +120,14 @@ states
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		SPOS NOPQRST 5
 		SPOS U 35
 		SPOS U -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	XDeath:
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_XScream
+		PPOS H 3
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -148,6 +142,8 @@ states
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		GBM1 A 2 ThrustThingZ(0,30,0,0)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
@@ -171,14 +167,12 @@ states
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		PPOS H 1 A_JumpIfCloser(210,"Death.Heavy")
 		TNT1 A 0 A_Jump(128,"Death")
 		PPOS H 1 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		PPOS H 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
@@ -190,6 +184,7 @@ states
 	Death.SuperKick:
 		TNT1 A 0 A_Jump(170,"Death.Heavy")
 	Death.SplatteredOnWall:
+		PPOS H 3
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
@@ -220,7 +215,7 @@ states
 		GBM1 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Heavy:
-		PO2D A 3
+		PPOS H 3
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
@@ -228,10 +223,10 @@ states
 		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArm1",50,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
-		PO2D A 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
-		PO2D B 5 A_XScream
-		PO2D C 5 A_NoBlocking
-		PO2D D 5
+		TNT1 A 0 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		PO2D ABCD 5
 		PO2D E 35
 		PO2D E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
@@ -283,14 +278,15 @@ DropItem "None"
 		PDM1 A 9 A_SpawnItem("HeadshotTarget10",0,50,0)
 	Death:
 	Death.Bullet:
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Die
 		PDM1 BCDE 5
 		PDM1 F 35
 		PDM1 F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Head:
+		PDM1 A 3
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
@@ -299,23 +295,21 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
-		PP8H A 5 A_XScream
-		PP8H B 5 A_NoBlocking
-		PP8H CD 5
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		PP8H ABCD 5
 		PP8H E 35
 		PP8H E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		PDM1 A 1 A_JumpIfCloser(170,"Death.SplatSmall")
 		Goto Death.Heavy
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		PDM1 A 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 	Death.SplatSmall:
-		POD2 A 3
+		PDM1 A 3
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
@@ -327,17 +321,17 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAA 0 A_CustomMissile("Bloodmist",45,0,random(0,360),2,random(0,90))
-		PDM3 A 5 A_XScream
-		PDM3 B 5 A_NoBlocking
-		PDM3 CDE 5
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		PDM3 ABCDE 5
 		PDM3 F 35
 		PDM3 F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Rifle:
 		TNT1 A 0 A_Jump(128,"Death")
 	Death.Cutless:
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2b",32,0,random(0,360),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3b",32,0,random(0,360),2,random(10,50))
@@ -347,7 +341,7 @@ DropItem "None"
 		Stop
 	Death.Chainsaw:
 	Death.BFG:
-		SPOS M 3
+		PDM1 A 3
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -361,15 +355,14 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		SPOS NOPQRST 5
 		SPOS U 35
 		SPOS U -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	XDeath:
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_XScream
+		PDM1 A 3
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -384,6 +377,8 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		GBM1 A 2 ThrustThingZ(0,30,0,0)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
@@ -391,6 +386,7 @@ DropItem "None"
 	Death.SuperKick:
 		TNT1 A 0 A_Jump(170,"Death.Heavy")
 	Death.SplatteredOnWall:
+		PDM1 A 3
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
@@ -410,17 +406,17 @@ DropItem "None"
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Heavy:
-		PO2D A 3
+		PDM1 A 3
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
-		PO2D A 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
-		PO2D B 5 A_XScream
-		PO2D C 5 A_NoBlocking
-		PO2D D 5
+		TNT1 A 0 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		PO2D ABCD 5
 		PO2D E 35
 		PO2D E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
@@ -440,9 +436,9 @@ Actor BrutalizedZombieman_2 : BrutalizedZombieman_1
 		PDM2 A 10
 	Death.Bullet:
 	Death:
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_Die
 		TNT1 A 0 A_Scream
+		TNT1 A 0 A_Die
+		TNT1 A 0 A_NoBlocking
 		PDM2 BCDE 5
 		PDM2 F 35
 		PDM2 F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
@@ -451,7 +447,6 @@ Actor BrutalizedZombieman_2 : BrutalizedZombieman_1
 	Death.SSG:
 	Death.Cutless:
 		TNT1 A 0 A_Jump(96,"Death")
-		TNT1 A 0 A_NoBlocking
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
@@ -462,8 +457,9 @@ Actor BrutalizedZombieman_2 : BrutalizedZombieman_1
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAA 0 A_CustomMissile("Bloodmist",45,0,random(0,360),2,random(0,90))
-		PDM3 A 5 A_XScream
-		PDM3 BCDE 5
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		PDM3 ABCDE 5
 		PDM3 F 35
 		PDM3 F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
@@ -482,15 +478,13 @@ Actor BrutalizedZombieman_2 : BrutalizedZombieman_1
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		SPOS NOPQRST 5
 		SPOS U 35
 		SPOS U -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	XDeath:
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_XScream
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -504,6 +498,8 @@ Actor BrutalizedZombieman_2 : BrutalizedZombieman_1
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		GBM1 A 2 ThrustThingZ(0,30,0,0)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
@@ -613,8 +609,8 @@ DropItem "SOULSPAWNER"
 		SPOS LKJIH 5
 		Goto See
 	Death:
-		SPOS H 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
-		SPOS I 5 A_Scream
+		SPOS H 5 A_Scream
+		SPOS I 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
 		SPOS J 5 A_NoBlocking
 		SPOS K 5
 		SPOS L 35
@@ -650,9 +646,8 @@ DropItem "SOULSPAWNER"
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
-		TNT1 A 0 A_Stop
+		TNT1 A 0 A_NoBlocking
 		SPOS NOPQRST 5
 		SPOS U 35
 		SPOS U -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
@@ -669,8 +664,8 @@ Actor BrutalizedShotgunner_1 : BrutalizedZombieman_1
 		TNT1 A 0 A_SpawnItemEx("64ShotgunGuy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.Cutless:
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2b",32,0,random(0,360),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3b",32,0,random(0,360),2,random(10,50))
@@ -800,8 +795,8 @@ Obituary "%o was blown apart by an SSG Zombie."
 		POS4 LKJIH 5
 		Goto See
 	Death:
-		POS4 H 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
-		POS4 I 5 A_Scream
+		POS4 H 5 A_Scream
+		POS4 I 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
 		POS4 J 5 A_NoBlocking
 		POS4 K 5
 		POS4 L 35
@@ -813,8 +808,8 @@ Obituary "%o was blown apart by an SSG Zombie."
 	Death.Cutless:
 		TNT1 A 0 A_Jump(64,"Death")
 		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Death.Heavy")
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2b",32,0,random(0,360),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3b",32,0,random(0,360),2,random(10,50))
@@ -838,15 +833,13 @@ Obituary "%o was blown apart by an SSG Zombie."
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		POS4 NOPQRST 5
 		POS4 U 35
 		POS4 U -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	XDeath:
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_XScream
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -861,6 +854,8 @@ Obituary "%o was blown apart by an SSG Zombie."
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		GBM1 A 2 ThrustThingZ(0,30,0,0)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
@@ -874,22 +869,20 @@ Obituary "%o was blown apart by an SSG Zombie."
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
-		PP4H A 5 A_XScream
-		PP4H B 5 A_NoBlocking
-		PP4H CD 5
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		PP4H ABCD 5
 		PP4H E 35
 		PP4H E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		POS4 H 1 A_JumpIfCloser(210,"Death.Heavy")
 		TNT1 A 0 A_Jump(128,"Death")
 		POS4 H 1 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		POS4 H 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
@@ -928,10 +921,10 @@ Obituary "%o was blown apart by an SSG Zombie."
 		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArmBlack",50,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
-		PO3D A 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
-		PO3D B 5 A_XScream
-		PO3D C 5 A_NoBlocking
-		PO3D D 5
+		TNT1 A 0 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		PO3D ABCD 5
 		PO3D E 35
 		PO3D E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
@@ -968,8 +961,8 @@ DropItem "None"
 		SDM1 A 9 A_SpawnItem("HeadshotTarget10",0,50,0)
 	Death:
 	Death.Bullet:
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Die
 		SDM1 BCDE 5
 		SDM1 F 35
@@ -984,24 +977,21 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
-		SS8H A 5 A_XScream
-		SS8H B 5 A_NoBlocking
-		SS8H CD 5
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		SS8H ABCD 5
 		SS8H E 35
 		SS8H E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		PO3D H 1 A_JumpIfCloser(170,"Death.SplatSmall")
 		Goto Death.Heavy
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		PO3D H 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 	Death.SplatSmall:
 		PO3D H 3
-		TNT1 A 0 A_NoBlocking
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
@@ -1013,16 +1003,17 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAA 0 A_CustomMissile("Bloodmist",45,0,random(0,360),2,random(0,90))
-		SDM3 A 5 A_XScream
-		SDM3 BCDE 5
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		SDM3 ABCDE 5
 		SDM3 F 35
 		SDM3 F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Rifle:
 		TNT1 A 0 A_Jump(128,"Death")
 	Death.Cutless:
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2b",32,0,random(0,360),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3b",32,0,random(0,360),2,random(10,50))
@@ -1046,15 +1037,13 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		POS4 NOPQRST 5
 		POS4 U 35
 		POS4 U -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	XDeath:
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_XScream
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -1069,6 +1058,8 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		GBM1 A 2 ThrustThingZ(0,30,0,0)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
@@ -1102,10 +1093,10 @@ DropItem "None"
 		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
-		PO3D A 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
-		PO3D B 5 A_XScream
-		PO3D C 5 A_NoBlocking
-		PO3D D 5
+		TNT1 A 0 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		PO3D ABCD 5
 		PO3D E 35
 		PO3D E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
@@ -1139,7 +1130,6 @@ Actor BrutalizedSSGGuy_2 : BrutalizedSSGGuy_1
 	Death.SSG:
 	Death.Cutless:
 		TNT1 A 0 A_Jump(96,"Death")
-		TNT1 A 0 A_NoBlocking
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
@@ -1150,8 +1140,9 @@ Actor BrutalizedSSGGuy_2 : BrutalizedSSGGuy_1
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAA 0 A_CustomMissile("Bloodmist",45,0,random(0,360),2,random(0,90))
-		SDM3 A 5 A_XScream
-		SDM3 BCDE 5
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		SDM3 ABCDE 5
 		SDM3 F 35
 		SDM3 F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
@@ -1170,16 +1161,13 @@ Actor BrutalizedSSGGuy_2 : BrutalizedSSGGuy_1
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
-		TNT1 A 0 A_Stop
+		TNT1 A 0 A_NoBlocking
 		POS4 NOPQRST 5
 		POS4 U 35
 		POS4 U -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	XDeath:
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_XScream
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -1193,6 +1181,8 @@ Actor BrutalizedSSGGuy_2 : BrutalizedSSGGuy_1
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		GBM1 A 2 ThrustThingZ(0,30,0,0)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
@@ -1333,8 +1323,8 @@ DropItem "SOULSPAWNER"
 		MPOS NMLKJIH 5
 		Goto See
 	Death:
-		MPOS H 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
-		MPOS I 5 A_Scream
+		MPOS H 5 A_Scream
+		MPOS I 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
 		MPOS J 5 A_NoBlocking
 		MPOS KLM 5
 		MPOS N 35
@@ -1342,14 +1332,12 @@ DropItem "SOULSPAWNER"
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		MPOS G 1 A_JumpIfCloser(210,"Death.Head")
 		TNT1 A 0 A_Jump(128,"Death")
 		MPOS G 1 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		MPOS G 1 A_JumpIfCloser(170,"Xdeath")
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
@@ -1363,8 +1351,8 @@ DropItem "SOULSPAWNER"
 	Death.Cutless:
 		TNT1 A 0 A_Jump(64,"Death")
 		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Death.Head")
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2b",32,0,random(0,360),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3b",32,0,random(0,360),2,random(10,50))
@@ -1381,9 +1369,9 @@ DropItem "SOULSPAWNER"
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
-		CG65 H 5 A_XScream
-		CG65 I 5 A_NoBlocking
-		CG65 JKL 5
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		CG65 HIJKL 5
 		CG65 M 35
 		CG65 M -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
@@ -1403,15 +1391,13 @@ DropItem "SOULSPAWNER"
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		MPOS PQRS 5
 		MPOS T 35
 		MPOS T -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	XDeath:
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_XScream
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -1425,6 +1411,8 @@ DropItem "SOULSPAWNER"
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		CG66 A 2 ThrustThingZ(0,30,0,0)
 		CG66 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
@@ -1478,8 +1466,8 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		ZDM1 A 9 A_SpawnItem("HeadshotTarget10",0,50,0)
 	Death:
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Die
 		CG65 ABCDE 5
 		CG65 F 35
@@ -1494,25 +1482,21 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
-		CG68 H 5 A_XScream
-		CG68 I 5 A_NoBlocking
-		CG68 JKL 5
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		CG68 HIJKL 5
 		CG68 M 35
 		CG68 M -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		CG68 H 1 A_JumpIfCloser(170,"Death.Head")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		CG68 H 1 A_JumpIfCloser(170,"Xdeath")
 		Goto Death
 	XDeath:
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_XScream
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -1527,14 +1511,16 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		CG69 A 2 ThrustThingZ(0,30,0,0)
 		CG69 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Rifle:
 		TNT1 A 0 A_Jump(128,"Death")
 	Death.Cutless:
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2b",32,0,random(0,360),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3b",32,0,random(0,360),2,random(10,50))
@@ -1558,8 +1544,8 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		MPOS PQRS 5
 		MPOS T 35
 		MPOS T -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
@@ -1579,8 +1565,8 @@ Actor BrutalizedChaingunner_2 : BrutalizedChaingunner_1
 	See:
 		ZDM2 A 10
 	Death:
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Die
 		CG67 ABCDE 5
 		CG67 F 35
@@ -1603,8 +1589,8 @@ Actor BrutalizedChaingunner_2 : BrutalizedChaingunner_1
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		MPOS PQRS 4
 		MPOS T 35
 		MPOS T -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
@@ -1760,9 +1746,9 @@ Obituary "%o was gunned down by a zombie marine."
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
-		CPOH H 5 A_XScream
-		CPOH I 5 A_NoBlocking
-		CPOH JKL 5
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		CPOH HIJKL 5
 		CPOH M 35
 		CPOH M -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
@@ -1776,7 +1762,6 @@ Obituary "%o was gunned down by a zombie marine."
 	Death.BFG:
 	XDeath:
 		CPOS G 3
-		TNT1 A 0 A_NoBlocking
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -1789,18 +1774,17 @@ Obituary "%o was gunned down by a zombie marine."
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		CPOS NOPQRSTU 5
 		CPOS V 35
 		CPOS V -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		CPOS G 1 A_JumpIfCloser(210,"Death.Heavy")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		CPOS G 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
@@ -1945,11 +1929,6 @@ Obituary "%o was gunned down by a marine."
 		Goto See
 	Pain:
 		PLAY G 3
-		PLAY G 3 A_Pain	
-		Goto See
-	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		PLAY G 3
 		PLAY G 3 A_Pain
 		Goto See
 	Raise:
@@ -1976,7 +1955,6 @@ Obituary "%o was gunned down by a marine."
 	Death.BFG:
 	XDeath:
 		PLAY G 3
-		TNT1 A 0 A_NoBlocking
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -1989,18 +1967,17 @@ Obituary "%o was gunned down by a marine."
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		PLAY NOPQRSTU 5
 		PLAY V 35
 		PLAY V -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		PLAY G 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 		TNT1 A 0 ThrustThingZ(0,20,0,1)

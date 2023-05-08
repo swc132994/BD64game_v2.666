@@ -77,8 +77,8 @@ MONSTER
 		BOS3 G 8 A_CustomMeleeAttack(10*random(1,8),"baron/melee")	//Melee and Missile seperated
 		Goto See
 	Death:
-		BOS3 I 8 A_NoBlocking
-		BOS3 J 8 A_Scream
+		BOS3 I 8 A_Scream
+		BOS3 J 8 A_NoBlocking
 		BOS3 KLM 8
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		BOS3 N 35 A_BossDeath
@@ -86,7 +86,6 @@ MONSTER
 		Stop
 	Death.SSG:
 		BOS3 H 1
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		BOS3 H 1 A_JumpIfCloser(170,"XDeath2")
 		BOS3 H 1
@@ -113,8 +112,8 @@ MONSTER
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBigGreen",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_CustomMissile("BelphegorArm",52,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("BelphegorLeg",52,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_BossDeath
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		BPTG A 2 ThrustThingZ(0,50,0,0)
@@ -137,8 +136,8 @@ MONSTER
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBigGreen",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_CustomMissile("BelphegorArm",52,0,random(0,360),2,random(0,90))
 		BOS3 I 1 A_SpawnItemEx("XDeathBelpLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_BossDeath
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		BPTG A 2 ThrustThingZ(0,75,0,0)

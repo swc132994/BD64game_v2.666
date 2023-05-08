@@ -45,11 +45,6 @@ DamageFactor "CauseObjectsToSplash",0.0
 		SKUL FF 2 A_SpawnItemEx("YellowFlare",0,0,30)
 		SKUL F 1 A_Pain
 		goto See
-	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		SKUL F 3 Bright
-		SKUL F 3 Bright A_Pain
-		Goto See
 	Death:
 		SKUL G 2 Bright
 		TNT1 A 0 A_PlaySound("LSOD",1)

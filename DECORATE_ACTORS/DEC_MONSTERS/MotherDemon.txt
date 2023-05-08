@@ -74,14 +74,8 @@ MONSTER
 		MOTH H 10
 		MOTH H 10 A_Pain
 		Goto See
-	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		MOTH H 10
-		MOTH H 10 A_Pain
-		Goto See
 	Death:
-		MOTH I 10 Bright 
-		TNT1 A 0 A_Scream
+		MOTH I 10 A_Scream
 		MOTH I 4 Bright A_SpawnItemEx("64BossExplosion",0,0,110,0,0,0,0,130)
 		MOTH I 4 Bright A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
 		MOTH I 4 Bright A_SpawnItemEx("64BossExplosion",-20,-20,55,0,0,0,0,130)
@@ -123,7 +117,6 @@ MONSTER
 		TNT1 A 0 A_BossDeath
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		MOTH MNO 3 Bright
-		TNT1 A 35
 		Stop
 	}
 }

@@ -54,20 +54,15 @@ DropItem "DemonEssenceSpawner"
 		REVN H 5
 		REVN H 5 A_Pain
 		Goto See
-	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		REVN H 5
-		REVN H 5 A_Pain
-		Goto See
 	Raise:
 		REVN QPONM 5
 		Goto See
 	Death:
-		REVN M 7
-		REVN N 7 A_Scream
-		REVN O 7 A_NoBlocking
+		REVN M 5
+		REVN N 5 A_Scream
+		REVN O 5 A_NoBlocking
 		TNT1 A 0 A_Jump(80,"AlmostDead")
-		REVN P 7
+		REVN P 5
 		REVN Q -1 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		Stop
 	AlmostDead:
@@ -83,7 +78,6 @@ DropItem "DemonEssenceSpawner"
 	Death.Shotgun:
 		REVN H 1 A_JumpIfCloser(1000,"Death.CutLess")
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		REVN H 1 A_JumpIfCloser(250,"XDeath")
 		REVN H 1 A_JumpIfCloser(1000,"Death.CutLess")
 		TNT1 A 0 A_Recoil(6)
@@ -108,8 +102,8 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_CustomMissile("TRevenantTorso",50,0,random(0,360),2,random(20,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
-		RVD1 A 8 A_NoBlocking
-		RVD1 BCD 8
+		TNT1 A 0 A_NoBlocking
+		RVD1 ABCD 5
 		RVD1 D -1 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		Stop
 	Crush:
@@ -198,7 +192,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 Radius_Quake(2,8,0,12,0)
 		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
-		RVD1 BCD 8
+		RVD1 BCD 5
 		RVD1 D -1 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		stop
 	Raise:
@@ -304,11 +298,11 @@ DropItem "None"
 		RND2 DC 4 A_FaceTarget
 		Goto See+9
 	Death:
-		TNT1 A 0 A_Die
 		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
 		RND2 EFG 5
 		RND2 HGHGHGHGHGHGH 2
-		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Die
 		RND2 HIJ 5
 		RND2 J -1 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		Stop
@@ -327,9 +321,9 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("TRevenantArm2",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("TRevenantTorso",50,0,random(0,360),2,random(20,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_Scream
-		RVD1 A 8 A_NoBlocking
-		RVD1 BCD 8
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		RVD1 ABCD 5
 		RVD1 D -1 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		Stop
 	Raise:

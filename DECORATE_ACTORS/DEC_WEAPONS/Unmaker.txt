@@ -140,7 +140,7 @@ Inventory.MaxAmount 30
 Ammo.BackpackAmount 0
 Ammo.BackpackMaxAmount 30
 Inventory.PickupSound "misc/p_pkup"
-Inventory.Icon "SINII0"		//R10 WAS CLIPA0	//R27 WAS D4RFL0	//r31 was UNMLA0
+Inventory.Icon "LAZRB0"
 ReactionTime 30
 +ALWAYSPICKUP
 Translation "Ice"
@@ -167,7 +167,7 @@ Inventory.MaxAmount 25
 Ammo.BackpackAmount 0
 Ammo.BackpackMaxAmount 25
 Inventory.PickupSound "misc/p_pkup"
-Inventory.Icon "SINII0"
+Inventory.Icon "LAZWB0"
 ReactionTime 30
 +ALWAYSPICKUP
 RenderStyle Add

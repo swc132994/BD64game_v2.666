@@ -52,13 +52,7 @@ DropItem "DemonEssenceSpawner"
 		BSPI F 3
 		BSPI F 3 A_Pain
 		Goto See+1
-	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		BSPI F 3
-		BSPI F 3 A_Pain
-		Goto See+1
 	Death:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",52,0,random(150,210),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("XDeath1",52,0,random(0,360),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("XDeath2b",52,0,random(0,360),2,random(10,50))
@@ -67,15 +61,14 @@ DropItem "DemonEssenceSpawner"
 		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",52,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("Brains3",50,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
-		BSPI G 4 A_Scream
-		BSPI H 4 A_NoBlocking
-		BSPI IJ 4
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		BSPI GHIJ 5
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		BSPI K 35 A_BossDeath
 		BSPI K -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	XDeath:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",52,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",52,0,random(0,360),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("XDeath2b",52,0,random(0,360),2,random(10,50))

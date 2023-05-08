@@ -47,6 +47,7 @@ damagefactor "TeleportRemover",0.0
 -SOLID
 +NOGRAVITY
 +SHOOTABLE
++THRUACTORS
 +NOTELEPORT
 +FORCERADIUSDMG
 +NODAMAGETHRUST
@@ -155,7 +156,7 @@ damagefactor "TeleportRemover",0.0
 	}
 }
 
-actor HeadshotTarget4: HeadshotTargetBase
+actor HeadshotTarget4 : HeadshotTargetBase
 {
 States
 	{
@@ -166,7 +167,7 @@ States
 	}
 }
 
-actor HeadshotTarget4Green: HeadshotTargetBase
+actor HeadshotTarget4Green : HeadshotTargetBase
 {
 BloodType "Brutal_BloodGreen"
 States
@@ -178,7 +179,7 @@ States
 	}
 }
 
-actor HeadshotTarget6: HeadshotTargetBase
+actor HeadshotTarget6 : HeadshotTargetBase
 {
 States
 	{
@@ -189,7 +190,7 @@ States
 	}
 }
 
-actor HeadshotTarget2: HeadshotTargetBase
+actor HeadshotTarget2 : HeadshotTargetBase
 {
 States
 	{
@@ -200,7 +201,7 @@ States
 	}
 }
 
-actor HeadshotTarget8: HeadshotTargetBase
+actor HeadshotTarget8 : HeadshotTargetBase
 {
 States
 	{
@@ -211,19 +212,19 @@ States
 	}
 }
 
-actor HeadshotTarget4b: HeadshotTarget4
+actor HeadshotTarget4b : HeadshotTarget4
 {
 Radius 12
 Height 22
 }
 
-actor HeadshotTarget8b: HeadshotTarget8
+actor HeadshotTarget8b : HeadshotTarget8
 {
 Radius 12
 Height 22
 }
 
-actor HeadshotTarget10: HeadshotTargetBase
+actor HeadshotTarget10 : HeadshotTargetBase
 {
 States
 	{
@@ -234,7 +235,7 @@ States
 	}
 }
 
-actor HeadshotTarget20: HeadshotTargetBase
+actor HeadshotTarget20 : HeadshotTargetBase
 {
 //Height 15
 States
@@ -246,7 +247,7 @@ States
 	}
 }
 
-actor HeadshotTarget20Green: HeadshotTargetBase
+actor HeadshotTarget20Green : HeadshotTargetBase
 {
 BloodType "Brutal_BloodGreen"
 //Height 15
@@ -259,7 +260,7 @@ States
 	}
 }
 
-actor HeadshotTarget23: HeadshotTargetBase
+actor HeadshotTarget23 : HeadshotTargetBase
 {
 //Height 15
 	States
@@ -271,7 +272,7 @@ actor HeadshotTarget23: HeadshotTargetBase
 	}
 }
 
-actor HeadshotTarget30: HeadshotTargetBase
+actor HeadshotTarget30 : HeadshotTargetBase
 {
 //Height 15
 	States
@@ -283,7 +284,7 @@ actor HeadshotTarget30: HeadshotTargetBase
 	}
 }
 
-actor HeadshotTarget30Green: HeadshotTargetBase
+actor HeadshotTarget30Green : HeadshotTargetBase
 {
 BloodType "Brutal_BloodGreen"
 //Height 15
@@ -296,7 +297,7 @@ BloodType "Brutal_BloodGreen"
 	}
 }
 
-actor HeadshotTarget60: HeadshotTargetBase
+actor HeadshotTarget60 : HeadshotTargetBase
 {
 //Height 15
 	States
@@ -308,7 +309,7 @@ actor HeadshotTarget60: HeadshotTargetBase
 	}
 }
 
-actor HeadshotTarget50: HeadshotTargetBase
+actor HeadshotTarget50 : HeadshotTargetBase
 {
 //Height 15
 States
@@ -320,7 +321,7 @@ States
 	}
 }
 
-actor HeadshotTarget100: HeadshotTargetBase
+actor HeadshotTarget100 : HeadshotTargetBase
 {
 //Height 15
 	States
@@ -332,7 +333,7 @@ actor HeadshotTarget100: HeadshotTargetBase
 	}
 }
 
-actor HeadshotTarget200: HeadshotTargetBase
+actor HeadshotTarget200 : HeadshotTargetBase
 {
 //Height 15
 	States

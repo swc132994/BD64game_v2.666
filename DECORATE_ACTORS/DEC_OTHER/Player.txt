@@ -1,4 +1,4 @@
-/*Actor IsDeadPLayer : Inventory
+/*Actor IsDeadPLayer : Inventory	//unused actor
 {
 Inventory.MaxAmount 1
 }*/
@@ -8,52 +8,52 @@ Actor IsTacticalClass : Inventory
 Inventory.MaxAmount 1
 }
 
-Actor IsModern : Inventory		//R27.1 added for modern class
+Actor IsModern : Inventory		//check for modern class
 {
 Inventory.MaxAmount 1
 }
 
-Actor VMapCheck : Inventory		//r31 added to switch to vanilla BD64 maps
+Actor VMapCheck : Inventory		//option switch to vanilla BD64 maps
 {
 Inventory.MaxAmount 1
 }
 
-Actor AbsMapCheck : Inventory	//To access original final map now Map28A
+Actor AbsMapCheck : Inventory	//option switch to final map now Map28A
 {
 Inventory.MaxAmount 1
 }
 
-Actor TCMapCheck : Inventory		//r31 added to switch to TC maps
+Actor TCMapCheck : Inventory		//option to switch to TC maps
 {
 Inventory.MaxAmount 1
 }
 
-Actor VanillaSBar : Inventory		//r31 added to switch to Vanilla Statusbar
+Actor VanillaSBar : Inventory		//option to switch to vanilla Statusbar
 {
 Inventory.MaxAmount 1
 }
 
-Actor ArrangedHud : Inventory			//r31 added to switch to Arranged Hud
+Actor ArrangedHud : Inventory		//option to switch to arranged HUD
 {
 Inventory.MaxAmount 1
 }
 
-Actor StartWeapon : Inventory		//r31 added to Starting Weapon
+Actor StartWeapon : Inventory		//option to show starting weapon warm-up
 {
 Inventory.MaxAmount 1
 }
 
-Actor ScreenFX : Inventory
+Actor ScreenFX : Inventory			//option to HUD blood splash
 {
 inventory.maxamount 1
 }
 
-Actor BloodTrail: Inventory
+Actor BloodTrail: Inventory			//option to HUD blood trail
 {
 inventory.maxamount 1
 }
 
-/*Actor MakeEnemiesAttackPlayerBody
+/*Actor MakeEnemiesAttackPlayerBody		//unused actor
 {
 Health 30
 Radius 5
@@ -89,7 +89,7 @@ MONSTER
 	}
 }*/
 
-/*Actor KillMe
+/*Actor KillMe		//unused actor
 {
 Radius 10
 Height 10
@@ -150,7 +150,7 @@ Mass 1
 Actor 64DoomPlayer : PlayerPawn Replaces DoomPlayer
 {
 Scale 0.8
-Speed 0.9 //Doom 64 has reduced player speed as far as I remember.
+Speed 0.9 //Doom 64 has reduced player speed
 Health 100
 Radius 16
 Height 56
@@ -168,7 +168,7 @@ Player.ViewHeight 50
 Player.AttackZOffset 23
 Player.DisplayName "Classical"
 Player.CrouchSprite "PLYC"
-Player.WeaponSlot 1,"64Chainsaw","64Fist"		//R16 DEFINE WEAPONS
+Player.WeaponSlot 1,"64Chainsaw","64Fist"
 Player.WeaponSlot 2,"64Pistol","64SMG", "64MP40"
 Player.WeaponSlot 3,"64Shotgun","64SuperShotgun"
 Player.WeaponSlot 4,"64Rifle","64Chaingun"
@@ -206,32 +206,29 @@ Player.WeaponSlot 9,"Lasergun"
 		PLAY J 5 A_NoBlocking
 		PLAY KL 5
 		PLAY M 35
-		PLAY M -1 A_SpawnItem("GrowingBloodPool")
+		PLAY M -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
-//R31 ADDED DEATHS
-	Death.BFG:						//R30.5 ADDED
-	XDeath:							//R30.5 REVISED XDEATH
-		TNT1 A 0 A_NoBlocking		//R28.4 ADDED
+	Death.BFG:
+	XDeath:
+		TNT1 A 0 A_NoBlocking
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))				//R30.5 WAS A
-		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))	//R30.6 ADDED MARINE ARM
-		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(0,360),2,random(20,90))	//R30.6 ADDED MARINE LEG
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-		TNT1 A 2 A_ChangeFlag("THRUACTORS",1)		//R30.6 WAS CPOG A
-		TNT1 A 0 A_Scream
-		PLAY NOPQRSTU 4								//R30.6 ADDED MARINE SPRITES
-		PLAY V 35									//r30.9 added
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)		//R8 ADDED
-		PLAY V -1 A_SpawnItem("GrowingBloodPool")									//R30.6 ADDED MARINE SPRITES
+		TNT1 A 0 A_XScream
+		PLAY NOPQRSTU 4
+		PLAY V 35
+//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
+		PLAY V -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Plasma:
 		TNT1 A 0 A_XScream
@@ -246,39 +243,36 @@ Player.WeaponSlot 9,"Lasergun"
 		TNT1 AA 0 A_CustomMissile("CarbonizedSmoke1",30,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
 		TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumn")
-		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)		//R11 WAS "BurningFleshEffect"
+		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)
 		TNT1 AAA 0 A_SpawnItemEx("Blood",0,0,30)
-		CRB1 ABCDEFG 4
+		CRB1 ABCDEFGH 4
 		CRB1 H -1
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)		//R8 ADDED
+//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
-		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")		//R30.5 WAS 0 TIC
+		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
-		PLAY G 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")	//R30.5 WAS 0 TIC
+		PLAY G 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")				//R30.5 WAS 0 TIC
+		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")
 		Goto Death
-	Death.SuperFists:							//R30.5 ADDED	//R30.6 MOVED FROM DEATH HEAVY
-	Death.SuperKick:							//R30.5 ADDED	//R30.6 MOVED FROM DEATH HEAVY
-		TNT1 A 0 A_Jump(170,"Death.Heavy")		//R30.6 ADDED JUMP
-	Death.Chainsaw:								//R30.5 ADDED
+	Death.SuperFists:
+	Death.SuperKick:
+		TNT1 A 0 A_Jump(170,"Death.Heavy")
+	Death.Chainsaw:
 	Death.SplatteredOnWall:
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))	//R30.5 WAS A
-		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))	//R30.6 ADDED MARINE ARM
-		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(150,210),2,random(10,50))	//R30.6 ADDED MARINE LEG
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
@@ -286,27 +280,26 @@ Player.WeaponSlot 9,"Lasergun"
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 ThrustThingZ(0,40,0,1)
-		CPOG A 2 A_ChangeFlag("THRUACTORS",1)
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)		//R8 ADDED
+		CPOG A 2 ThrustThingZ(0,40,0,1)
+//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
 		CPOG B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		CPOG B -1 A_SpawnItem("GrowingBloodPool")
+		CPOG B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	LandAfterXDeath2:
 		CPOG C 1
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		CPOG C -1 A_SpawnItem("GrowingBloodPool")
+		CPOG C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
-	Death.Cutless:		//R30.5 new death cutless
+	Death.Cutless:
 		PLAY G 5
 		TNT1 A 0 A_jump(64,"Death")
-		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))	//R30.6 ADDED MARINE ARM
-		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",25,0,random(150,210),2,random(10,50))	//R30.6 ADDED MARINE LEG
+		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",25,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
@@ -314,11 +307,10 @@ Player.WeaponSlot 9,"Lasergun"
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		CPOG A 2 A_ChangeFlag("THRUACTORS",1)
+		CPOG A 2 ThrustThingZ(0,20,0,1)
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
-	Death.Heavy:		//R30.5 revised
+	Death.Heavy:
 		PLAY G 5 A_XScream
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("BloodMistBig",56,0,random(0,360),2,random(20,90))
@@ -333,7 +325,7 @@ Player.WeaponSlot 9,"Lasergun"
 	}
 }
 
-Actor Tactical64DoomPlayer : PlayerPawn Replaces DoomPlayer		//R11 NEW TACTICAL PLAYER CLASS
+Actor Tactical64DoomPlayer : PlayerPawn Replaces DoomPlayer		//TACTICAL PLAYER CLASS
 {
 Scale 0.8
 Health 100
@@ -347,21 +339,21 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Head",0.0
 Species Marines
-Player.StartItem "Clip",31				//R1 WAS 30
-Player.StartItem "RifleAmmo",31			//R1 WAS 30
-Player.StartItem "SMGAmmo",46			//R31 added
-Player.StartItem "Pistolammo",10		//R15 added
+Player.StartItem "Clip",31
+Player.StartItem "RifleAmmo",31
+Player.StartItem "SMGAmmo",46
+Player.StartItem "Pistolammo",10
 Player.StartItem "IsTacticalClass",1
 Player.StartItem "64RifleTactical"
-Player.StartItem "64PistolTactical"		//R15 added
+Player.StartItem "64PistolTactical"
 Player.StartItem "64FistTactical"
-Player.StartItem "ShotgunAmmo",9		//R5 NEW
-Player.StartItem "SSGAmmo",2			//R10.2 NEW
-Player.StartItem "PlasmaRifleAmmo",40	//R5 NEW	//r31 was 30
-Player.StartItem "RLAmmo",6				//R31 added
-Player.StartItem "GaussAmmo",4			//R31 added
+Player.StartItem "ShotgunAmmo",9
+Player.StartItem "SSGAmmo",2
+Player.StartItem "PlasmaRifleAmmo",40
+Player.StartItem "RLAmmo",6
+Player.StartItem "GaussAmmo",4
 Player.StartItem "64ProximityMine",1
-Player.StartItem "MP40Ammo",31			//R31 added
+Player.StartItem "MP40Ammo",31
 Player.StartItem "StartWeapon"
 Player.StartItem "FirstTimePistol"
 Player.StartItem "FirstTimeShotgun"
@@ -369,9 +361,9 @@ Player.StartItem "FirstTimeSSG"
 Player.ColorRange 112,127
 Player.ViewHeight 50
 Player.AttackZOffset 23
-Player.DisplayName "Tactical (Rifle)"		//R15 changed name
+Player.DisplayName "Tactical (Rifle)"
 Player.CrouchSprite "PLYC"
-Player.WeaponSlot 1,"64ChainsawTACTICAL","64ChainsawTACTICAL_Classic","64FistTactical"		//R16 DEFINE WEAPONS
+Player.WeaponSlot 1,"64ChainsawTACTICAL","64ChainsawTACTICAL_Classic","64FistTactical"
 Player.WeaponSlot 2,"64PistolTACTICAL","64SMGTactical", "64MP40Tactical"
 Player.WeaponSlot 3,"64ShotgunTACTICAL","64SuperShotgunTACTICAL"
 Player.WeaponSlot 4,"64RifleTACTICAL","64ChaingunTACTICAL"
@@ -390,7 +382,7 @@ Player.WeaponSlot 9,"LasergunTactical"
 		Loop
 	See:
 		PLAY A 0 A_JumpIfInventory("IsRunning",1,"StartRun")
-		PLAY A 0 ACS_NamedExecuteAlways("TacticalPlayerSlowerACS")//Makes player slower.	//r31 replaces ACS 853
+		PLAY A 0 ACS_NamedExecuteAlways("TacticalPlayerSlowerACS")	//Makes player slower
 		PLAY A 5 A_TakeInventory("Stamina",1)
 		PLAY A 0 A_JumpIfInventory("PowerStrength",1,2)	//give more stamina if berserk
 		PLAY A 0 A_Jump(256,2)	//give more stamina if berserk
@@ -420,8 +412,8 @@ Player.WeaponSlot 9,"LasergunTactical"
 	Run:
 		TNT1 A 0 A_JumpIfInventory("Stamina",100,"Tired")
 	KeepRunning:
-		TNT1 A 0 A_GiveInventory("Stamina",10)		//R8 WAS 11
-		TNT1 A 0 ACS_NamedExecuteAlways("TacticalPlayerFasterACS")//Makes player faster.	//r31 replaces ACS 852
+		TNT1 A 0 A_GiveInventory("Stamina",10)
+		TNT1 A 0 ACS_NamedExecuteAlways("TacticalPlayerFasterACS")	//Makes player faster
 		PLAY AAAA 1 A_SetPitch(+0.4 + pitch)
 		PLAY BBBB 1 A_SetPitch(-0.4 + pitch)
 		PLAY B 4
@@ -433,7 +425,7 @@ Player.WeaponSlot 9,"LasergunTactical"
 		TNT1 A 0 A_JumpIfInventory("IsRunning",1,"Run")
 		Goto Spawn+1
 	Tired:
-		TNT1 A 0 ACS_NamedExecuteAlways("TacticalPlayerSlowerACS")//Makes player slower.	//r31 replaces ACS 853
+		TNT1 A 0 ACS_NamedExecuteAlways("TacticalPlayerSlowerACS")	//Makes player slower
 		TNT1 A 0 A_PlaySound("Tired",2)
 		PLAY ABCD 5
 		TNT1 A 0 A_SpawnItemEx("BD64FootStep",0,0,0,0,0)
@@ -448,7 +440,7 @@ Player.WeaponSlot 9,"LasergunTactical"
 	AlmostTired:
 		TNT1 A 0 A_Print("Not Enough Stamina to Sprint",2)
 		TNT1 A 0 A_PlaySound("Tired",2)
-		TNT1 A 0 ACS_NamedExecuteAlways("TacticalPlayerSlowerACS")//Makes player slower.	//r31 replaces ACS 853
+		TNT1 A 0 ACS_NamedExecuteAlways("TacticalPlayerSlowerACS")	//Makes player slower
 		PLAY AABB 6
 		TNT1 A 0 A_SpawnItemEx("BD64FootStep",0,0,0,0,0)
 		PLAY CCDD 6
@@ -456,10 +448,10 @@ Player.WeaponSlot 9,"LasergunTactical"
 		PLAY E 10
 		Goto Spawn+1
 	Pain:
-		PLAY G 4			//R31 WAS GMAN H
+		PLAY G 4
 		TNT1 A 0 A_JumpIfInventory("ScreenFX",1,2)
 		TNT1 A 0 ACS_Execute(530, 0, 0, 0, 0)
-		PLAY G 4 A_Pain		//R31 WAS GMAN H
+		PLAY G 4 A_Pain
 		Goto Spawn
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
@@ -471,32 +463,29 @@ Player.WeaponSlot 9,"LasergunTactical"
 		PLAY J 5 A_NoBlocking
 		PLAY KL 5
 		PLAY M 35
-		PLAY M -1 A_SpawnItem("GrowingBloodPool")
+		PLAY M -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
-//R31 ADDED DEATHS
-	Death.BFG:						//R30.5 ADDED
-	XDeath:							//R30.5 REVISED XDEATH
-		TNT1 A 0 A_NoBlocking		//R28.4 ADDED
+	Death.BFG:
+	XDeath:
+		TNT1 A 0 A_NoBlocking
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))				//R30.5 WAS A
-		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))	//R30.6 ADDED MARINE ARM
-		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(0,360),2,random(20,90))	//R30.6 ADDED MARINE LEG
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-		TNT1 A 2 A_ChangeFlag("THRUACTORS",1)		//R30.6 WAS CPOG A
 		TNT1 A 0 A_Scream
-		PLAY NOPQRSTU 4								//R30.6 ADDED MARINE SPRITES
-		PLAY V 35									//r30.9 added
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)		//R8 ADDED
-		PLAY V -1 A_SpawnItem("GrowingBloodPool")									//R30.6 ADDED MARINE SPRITES
+		PLAY NOPQRSTU 4
+		PLAY V 35
+//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
+		PLAY V -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Plasma:
 		TNT1 A 0 A_XScream
@@ -511,39 +500,36 @@ Player.WeaponSlot 9,"LasergunTactical"
 		TNT1 AA 0 A_CustomMissile("CarbonizedSmoke1",30,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
 		TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumn")
-		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)		//R11 WAS "BurningFleshEffect"
+		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)
 		TNT1 AAA 0 A_SpawnItemEx("Blood",0,0,30)
-		CRB1 ABCDEFG 4
+		CRB1 ABCDEFGH 4
 		CRB1 H -1
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)		//R8 ADDED
+//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
-		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")		//R30.5 WAS 0 TIC
+		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
-		PLAY G 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")	//R30.5 WAS 0 TIC
+		PLAY G 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")				//R30.5 WAS 0 TIC
+		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")
 		Goto Death
-	Death.SuperFists:							//R30.5 ADDED	//R30.6 MOVED FROM DEATH HEAVY
-	Death.SuperKick:							//R30.5 ADDED	//R30.6 MOVED FROM DEATH HEAVY
-		TNT1 A 0 A_Jump(170,"Death.Heavy")		//R30.6 ADDED JUMP
-	Death.Chainsaw:								//R30.5 ADDED
+	Death.SuperFists:
+	Death.SuperKick:
+		TNT1 A 0 A_Jump(170,"Death.Heavy")
+	Death.Chainsaw:
 	Death.SplatteredOnWall:
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))	//R30.5 WAS A
-		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))	//R30.6 ADDED MARINE ARM
-		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(150,210),2,random(10,50))	//R30.6 ADDED MARINE LEG
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
@@ -551,27 +537,26 @@ Player.WeaponSlot 9,"LasergunTactical"
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 ThrustThingZ(0,40,0,1)
-		CPOG A 2 A_ChangeFlag("THRUACTORS",1)
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)		//R8 ADDED
+		CPOG A 2 ThrustThingZ(0,40,0,1)
+//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
 		CPOG B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		CPOG B -1 A_SpawnItem("GrowingBloodPool")
+		CPOG B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	LandAfterXDeath2:
 		CPOG C 1
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		CPOG C -1 A_SpawnItem("GrowingBloodPool")
+		CPOG C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
-	Death.Cutless:		//R30.5 new death cutless
+	Death.Cutless:
 		PLAY G 5
 		TNT1 A 0 A_jump(64,"Death")
-		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))	//R30.6 ADDED MARINE ARM
-		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",25,0,random(150,210),2,random(10,50))	//R30.6 ADDED MARINE LEG
+		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",25,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
@@ -579,11 +564,10 @@ Player.WeaponSlot 9,"LasergunTactical"
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		CPOG A 2 A_ChangeFlag("THRUACTORS",1)
+		CPOG A 2 ThrustThingZ(0,20,0,1)
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
-	Death.Heavy:		//R30.5 revised
+	Death.Heavy:
 		PLAY G 5 A_XScream
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("BloodMistBig",56,0,random(0,360),2,random(20,90))
@@ -598,20 +582,20 @@ Player.WeaponSlot 9,"LasergunTactical"
 	}
 }
 
-Actor Tactical64DoomPlayer_P : Tactical64DoomPlayer		//R15 tactical class with pistol start
+Actor Tactical64DoomPlayer_P : Tactical64DoomPlayer		//tactical class with pistol start
 {
 Player.StartItem "Clip",31
 Player.StartItem "RifleAmmo",31
-Player.StartItem "SMGAmmo",46			//R31 added
+Player.StartItem "SMGAmmo",46
 Player.StartItem "IsTacticalClass",1
 Player.StartItem "64PistolTactical"
 Player.StartItem "Pistolammo",10
 Player.StartItem "64FistTactical"
 Player.StartItem "ShotgunAmmo",9
 Player.StartItem "SSGAmmo",2
-Player.StartItem "PlasmaRifleAmmo",40	//r31 was 30
-Player.StartItem "RLAmmo",6				//R31 added
-Player.StartItem "MP40Ammo",31			//R31 added
+Player.StartItem "PlasmaRifleAmmo",40
+Player.StartItem "RLAmmo",6
+Player.StartItem "MP40Ammo",31
 Player.StartItem "StartWeapon"
 Player.StartItem "FirstTimeRifle"
 Player.StartItem "FirstTimeShotgun"
@@ -619,7 +603,7 @@ Player.StartItem "FirstTimeSSG"
 Player.DisplayName "Tactical (Pistol)"
 }
 
-Actor Modern : PlayerPawn Replaces DoomPlayer	//R28 Modern class - tactical with no stamina
+Actor Modern : PlayerPawn Replaces DoomPlayer	//RModern class - tactical with no stamina
 {
 Scale 0.8
 Speed 0.9	//Doom 64 has reduced player speed
@@ -634,17 +618,17 @@ DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Head",0.0
 Player.StartItem "Clip",31
 Player.StartItem "RifleAmmo",31
-Player.StartItem "SMGAmmo",46			//R31 added
+Player.StartItem "SMGAmmo",46
 Player.StartItem "IsModern",1
 Player.StartItem "64PistolTactical"
 Player.StartItem "Pistolammo",10
 Player.StartItem "64FistTactical"
 Player.StartItem "ShotgunAmmo",9
 Player.StartItem "SSGAmmo",2
-Player.StartItem "PlasmaRifleAmmo",40	//r31 was 30
-Player.StartItem "RLAmmo",6				//R31 added
-Player.StartItem "GaussAmmo",4			//R31 added
-Player.StartItem "MP40Ammo",31			//R31 added
+Player.StartItem "PlasmaRifleAmmo",40
+Player.StartItem "RLAmmo",6
+Player.StartItem "GaussAmmo",4
+Player.StartItem "MP40Ammo",31
 Player.StartItem "64ProximityMine",1
 Player.StartItem "StartWeapon"
 Player.StartItem "FirstTimeRifle"
@@ -655,7 +639,7 @@ Player.ViewHeight 50
 Player.AttackZOffset 23
 Player.DisplayName "Modern"
 Player.CrouchSprite "PLYC"
-Player.WeaponSlot 1,"64ChainsawModern","64ChainsawModern_Classic","64FistTactical"		//R31 was "64ChainsawTactical"
+Player.WeaponSlot 1,"64ChainsawModern","64ChainsawModern_Classic","64FistTactical"
 Player.WeaponSlot 2,"64PistolTACTICAL","64SMGTactical", "64MP40Tactical"
 Player.WeaponSlot 3,"64ShotgunTACTICAL","64SuperShotgunTACTICAL"
 Player.WeaponSlot 4,"64RifleTACTICAL","64ChaingunTACTICAL"
@@ -678,10 +662,10 @@ Player.WeaponSlot 9,"LasergunTactical"
 		PLAY D 0 A_SpawnItemEx("BD64FootStep",0,0,0,0,0)
 		Loop
 	Pain:
-		PLAY G 4			//R31 WAS GMAN H
+		PLAY G 4
 		TNT1 A 0 A_JumpIfInventory("ScreenFX",1,2)
 		TNT1 A 0 ACS_Execute(530, 0, 0, 0, 0)
-		PLAY G 4 A_Pain		//R31 WAS GMAN H
+		PLAY G 4 A_Pain
 		Goto Spawn
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
@@ -693,32 +677,29 @@ Player.WeaponSlot 9,"LasergunTactical"
 		PLAY J 5 A_NoBlocking
 		PLAY KL 5
 		PLAY M 35
-		PLAY M -1 A_SpawnItem("GrowingBloodPool")
+		PLAY M -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
-//R31 ADDED DEATHS
-	Death.BFG:						//R30.5 ADDED
-	XDeath:							//R30.5 REVISED XDEATH
-		TNT1 A 0 A_NoBlocking		//R28.4 ADDED
+	Death.BFG:
+	XDeath:
+		TNT1 A 0 A_NoBlocking
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))				//R30.5 WAS A
-		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))	//R30.6 ADDED MARINE ARM
-		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(0,360),2,random(20,90))	//R30.6 ADDED MARINE LEG
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-		TNT1 A 2 A_ChangeFlag("THRUACTORS",1)		//R30.6 WAS CPOG A
-		TNT1 A 0 A_Scream
-		PLAY NOPQRSTU 4								//R30.6 ADDED MARINE SPRITES
-		PLAY V 35									//r30.9 added
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)		//R8 ADDED
-		PLAY V -1 A_SpawnItem("GrowingBloodPool")									//R30.6 ADDED MARINE SPRITES
+		TNT1 A 0 A_XScream
+		PLAY NOPQRSTU 4
+		PLAY V 35
+//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
+		PLAY V -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Plasma:
 		TNT1 A 0 A_XScream
@@ -733,39 +714,36 @@ Player.WeaponSlot 9,"LasergunTactical"
 		TNT1 AA 0 A_CustomMissile("CarbonizedSmoke1",30,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
 		TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumn")
-		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)		//R11 WAS "BurningFleshEffect"
+		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)
 		TNT1 AAA 0 A_SpawnItemEx("Blood",0,0,30)
-		CRB1 ABCDEFG 4
+		CRB1 ABCDEFGH 4
 		CRB1 H -1
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)		//R8 ADDED
+//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
-		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")		//R30.5 WAS 0 TIC
+		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
-		PLAY G 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")	//R30.5 WAS 0 TIC
+		PLAY G 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")				//R30.5 WAS 0 TIC
+		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")
 		Goto Death
-	Death.SuperFists:							//R30.5 ADDED	//R30.6 MOVED FROM DEATH HEAVY
-	Death.SuperKick:							//R30.5 ADDED	//R30.6 MOVED FROM DEATH HEAVY
-		TNT1 A 0 A_Jump(170,"Death.Heavy")		//R30.6 ADDED JUMP
-	Death.Chainsaw:								//R30.5 ADDED
+	Death.SuperFists:
+	Death.SuperKick:
+		TNT1 A 0 A_Jump(170,"Death.Heavy")
+	Death.Chainsaw:
 	Death.SplatteredOnWall:
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))	//R30.5 WAS A
-		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))	//R30.6 ADDED MARINE ARM
-		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(150,210),2,random(10,50))	//R30.6 ADDED MARINE LEG
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
@@ -773,27 +751,26 @@ Player.WeaponSlot 9,"LasergunTactical"
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 ThrustThingZ(0,40,0,1)
-		CPOG A 2 A_ChangeFlag("THRUACTORS",1)
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)		//R8 ADDED
+		CPOG A 2 ThrustThingZ(0,40,0,1)
+//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
 		CPOG B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		CPOG B -1 A_SpawnItem("GrowingBloodPool")
+		CPOG B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	LandAfterXDeath2:
 		CPOG C 1
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
-		CPOG C -1 A_SpawnItem("GrowingBloodPool")
+		CPOG C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
-	Death.Cutless:		//R30.5 new death cutless
+	Death.Cutless:
 		PLAY G 5
 		TNT1 A 0 A_jump(64,"Death")
-		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))	//R30.6 ADDED MARINE ARM
-		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",25,0,random(150,210),2,random(10,50))	//R30.6 ADDED MARINE LEG
+		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",25,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
@@ -801,11 +778,10 @@ Player.WeaponSlot 9,"LasergunTactical"
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		CPOG A 2 A_ChangeFlag("THRUACTORS",1)
+		CPOG A 2 ThrustThingZ(0,20,0,1)
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
-	Death.Heavy:		//R30.5 revised
+	Death.Heavy:
 		PLAY G 5 A_XScream
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))

@@ -43,13 +43,8 @@ Dropitem "DemonEssenceSpawner"
 		FATT I 3
 		FATT I 3 A_Pain
 		Goto See
-	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		FATT I 3
-		FATT I 3 A_Pain
-		Goto See
 	Death:
-		FATT J 6 A_FaceTarget
+		FATT J 5
 		TNT1 A 0 A_CustomMissile("XDeath1",72,0,random(150,210),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("XDeath1",72,0,random(0,360),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("XDeath2b",72,0,random(0,360),2,random(10,50))
@@ -58,9 +53,9 @@ Dropitem "DemonEssenceSpawner"
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",72,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("Brains3",70,0,random(150,210),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",75,0,random(0,360),2,random(0,90))
-		FATT K 6 A_Scream
-		FATT L 6 A_NoBlocking
-		FATT M 6
+		FATT K 5 A_Scream
+		FATT L 5 A_NoBlocking
+		FATT M 5
 		TNT1 A 0 A_KillMaster("None")
 		FATT N 35 A_BossDeath
 		FATT N -1 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
@@ -81,8 +76,7 @@ Dropitem "DemonEssenceSpawner"
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_FaceTarget
-		TNT1 A 0 A_Scream
+		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_BossDeath
 		TNT1 A 0 A_KillMaster("None")
@@ -92,7 +86,6 @@ Dropitem "DemonEssenceSpawner"
 	Death.SuperKick:
 		TNT1 A 0 A_Jump(170,"Death")
 	Xdeath:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",72,0,random(150,210),2,random(10,50))
 		TNT1 AAAAA 0 A_CustomMissile("XDeath1",72,0,random(0,360),2,random(10,50))
 		TNT1 AAAAA 0 A_CustomMissile("XDeath2",72,0,random(0,360),2,random(10,50))
@@ -109,22 +102,23 @@ Dropitem "DemonEssenceSpawner"
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_Jump(128,"XDeath2")
-		FTX1 A 6 A_XScream
-		FTX1 B 6 A_NoBlocking
-		FTX1 C 6
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		FTX1 ABC 5
 		TNT1 A 0 A_KillMaster("None")
 		FTX1 D 35 A_BossDeath
 		FTX1 D -1 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
 		Stop
 	Xdeath2:
-		FTX2 A 6 A_XScream
-		FTX2 B 6 A_NoBlocking
-		FTX2 C 6
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		FTX2 ABC 5
 		TNT1 A 0 A_KillMaster("None")
 		FTX2 D 35 A_BossDeath
 		FTX2 D -1 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Plasma:
+		TNT1 A 0 A_SetScale(1.2,1.2)
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop
@@ -145,6 +139,7 @@ Dropitem "DemonEssenceSpawner"
 		CRB1 H -1 A_BossDeath
 		Stop
 	Raise:
+		TNT1 A 0 A_SetScale(0.8,0.8)
 		FATT ONMLKJ 5
 		Goto See
 	Crush:
@@ -270,7 +265,6 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",72,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		FTNG CDEF 5
@@ -282,7 +276,6 @@ DropItem "None"
 	Death.Heavy:
 	Death.CutLess:
 	Death.Chainsaw:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",72,0,random(150,210),2,random(10,50))
 		TNT1 AAAAA 0 A_CustomMissile("XDeath1",72,0,random(0,360),2,random(10,50))
 		TNT1 AAAAA 0 A_CustomMissile("XDeath2",72,0,random(0,360),2,random(10,50))
@@ -297,13 +290,14 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
-		FTX1 A 6 A_XScream
-		FTX1 B 6 A_NoBlocking
-		FTX1 C 6
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		FTX1 ABC 5
 		FTX1 D 35 A_BossDeath
 		FTX1 D -1 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
 		Stop
 	Raise:
+		TNT1 A 0 A_SetScale(0.8,0.8)
 		FATT ONMLKJ 5
 		TNT1 A 0 A_SpawnItemEx("64Fatso",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop

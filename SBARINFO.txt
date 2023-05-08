@@ -7,18 +7,18 @@ statusbar fullscreen,forcescaled,0.5
 	{
 		InInventory "PowerStrength",1
 		{
-		drawimage "pstra0", 18,191,none, 15, 15;
+		drawimage "pstra0",18,191,none,15,15;
 		}
 		else
 		{
-		drawimage "media0", 18,191,none, 15, 15;
+		drawimage "media0",18,191,none,15,15;
 		}
 		drawnumber 3,HUDFONT_DOOM,untranslated,health,69,180;
-		drawimage armoricon, 18,178,none, 15, 15;
+		drawimage armoricon,18,178,none,15,15;
 		drawnumber 3,HUDFONT_DOOM,untranslated,armor,WhenNotZero,69,166;
-		drawimage ammoicon1, 288,190,none, 15, 15;
+		drawimage ammoicon1,288,190,none,15,15;
 		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;
-		drawimage ammoicon2, 288,174,none, 20, 20;
+		drawimage ammoicon2,288,174,none,20,20;
 		drawnumber 3,HUDFONT_DOOM,untranslated,ammo2,276,166;
 		drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),175,180;
 	}

@@ -62,11 +62,6 @@ DropItem "DemonEssenceSpawner"
 		TROO H 2
 		TROO H 2 A_Pain
 		Goto See
-	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		TROO H 2
-		TROO H 2 A_Pain
-		Goto See
 	Death:
 		TROO L 5 A_NoBlocking
 		TROO M 5 A_Scream
@@ -96,7 +91,6 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_Jump(64,"Death")
 		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Death.Heavy")
 		TNT1 A 0 A_CustomMissile("XDeathImpArm1",50,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
@@ -145,14 +139,12 @@ DropItem "DemonEssenceSpawner"
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		TROO H 1 A_JumpIfCloser(210,"Death.Heavy")
 		TNT1 A 0 A_Jump(128,"Death")
 		TROO H 1 A_JumpIfCloser(1000,"Death.CutLess")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		TROO H 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
@@ -288,7 +280,6 @@ DropItem "None"
 	Death:
 	Death.Bullet:
 		TNT1 A 0 A_Die
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		TRDM GHI 5
@@ -312,12 +303,10 @@ DropItem "None"
 		TROH F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		TRDM A 1 A_JumpIfCloser(170,"Death.SplatSmall")
 		Goto Death.Heavy
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		TRDM A 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 	Death.Heavy:
@@ -364,7 +353,6 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathImpArm1",50,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TRDM B 1 A_SpawnItemEx("BrutalizedImp64_2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
@@ -427,8 +415,7 @@ DropItem "None"
 		TNT1 AAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 ThrustThingZ(0,40,0,1)
-		GBMI A 2 A_ChangeFlag("THRUACTORS",1)
+		GBMI A 2 ThrustThingZ(0,40,0,1)
 		GBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Pain:
@@ -487,7 +474,6 @@ DropItem "None"
 	Death:
 	Death.Bullet:
 		TNT1 A 0 A_Die
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		TRDM CDE 5
@@ -510,12 +496,10 @@ DropItem "None"
 		TROH F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		TRDM B 1 A_JumpIfCloser(170,"Death.SplatSmall")
 		Goto Death.Heavy
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		TRDM B 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 	Death.Heavy:
@@ -761,7 +745,6 @@ Tag "Nightmare Imp"
 		TNT1 A 0 A_Jump(64,"Death")
 		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Death.Heavy")
 		TNT1 A 0 A_CustomMissile("XDeathNImpArm1",50,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
@@ -825,14 +808,12 @@ Tag "Nightmare Imp"
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		TRO2 H 1 A_JumpIfCloser(210,"Death.Heavy")
 		TNT1 A 0 A_Jump(128,"Death")
 		TRO2 H 1 A_JumpIfCloser(1000,"Death.CutLess")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		TRO2 H 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
@@ -968,7 +949,6 @@ DropItem "None"
 	Death:
 	Death.Bullet:
 		TNT1 A 0 A_Die
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		TRNM GHI 5
@@ -992,12 +972,10 @@ DropItem "None"
 		TR2H F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		TRNM A 1 A_JumpIfCloser(170,"Death.SplatSmall")
 		Goto Death.Heavy
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		TRNM A 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 	Death.Heavy:
@@ -1024,7 +1002,6 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathNImpArm1",50,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TRNM B 1 A_SpawnItemEx("BrutalizedNImp64_2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
@@ -1165,7 +1142,6 @@ DropItem "None"
 	Death.Bullet:
 	Death:
 		TNT1 A 0 A_Die
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		TRNM CDE 5
@@ -1188,12 +1164,10 @@ DropItem "None"
 		TR2H F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(8)
 		TRNM B 1 A_JumpIfCloser(170,"Death.SplatSmall")
 		Goto Death.Heavy
 	Death.SSG:
-		TNT1 A 0 A_FaceTarget
 		TNT1 A 0 A_Recoil(12)
 		TRNM B 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 	Death.Heavy:
