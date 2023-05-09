@@ -897,6 +897,36 @@ brightmap sprite BOS3R3R7	{map "brightmaps/Belphegor_BR/BOS3R3R7_BR.png"}
 brightmap sprite BOS3R4R6	{map "brightmaps/Belphegor_BR/BOS3R4R6_BR.png"}
 brightmap sprite BOS3R5		{map "brightmaps/Belphegor_BR/BOS3R5_BR.png"}
 
+//forgotten one
+brightmap sprite ESKUA1		{map "brightmaps/ForgottenOne/ESKUA1_BR.png"}
+brightmap sprite ESKUA2A8	{map "brightmaps/ForgottenOne/ESKUA2A8_BR.png"}
+brightmap sprite ESKUA3A7	{map "brightmaps/ForgottenOne/ESKUA3A7_BR.png"}
+brightmap sprite ESKUB1		{map "brightmaps/ForgottenOne/ESKUB1_BR.png"}
+brightmap sprite ESKUB2B8	{map "brightmaps/ForgottenOne/ESKUB2B8_BR.png"}
+brightmap sprite ESKUB3B7	{map "brightmaps/ForgottenOne/ESKUB3B7_BR.png"}
+brightmap sprite ESKUB4B6	{map "brightmaps/ForgottenOne/ESKUB4B6_BR.png"}
+brightmap sprite ESKUB5		{map "brightmaps/ForgottenOne/ESKUB5_BR.png"}
+brightmap sprite ESKUC1		{map "brightmaps/ForgottenOne/ESKUC1_BR.png"}
+brightmap sprite ESKUC2C8	{map "brightmaps/ForgottenOne/ESKUC2C8_BR.png"}
+brightmap sprite ESKUC3C7	{map "brightmaps/ForgottenOne/ESKUC3C7_BR.png"}
+brightmap sprite ESKUC4C6	{map "brightmaps/ForgottenOne/ESKUC4C6_BR.png"}
+brightmap sprite ESKUC5		{map "brightmaps/ForgottenOne/ESKUC5_BR.png"}
+brightmap sprite ESKUD1		{map "brightmaps/ForgottenOne/ESKUD1_BR.png"}
+brightmap sprite ESKUD2D8	{map "brightmaps/ForgottenOne/ESKUD2D8_BR.png"}
+brightmap sprite ESKUD3D7	{map "brightmaps/ForgottenOne/ESKUD3D7_BR.png"}
+brightmap sprite ESKUD4D6	{map "brightmaps/ForgottenOne/ESKUD4D6_BR.png"}
+brightmap sprite ESKUD5		{map "brightmaps/ForgottenOne/ESKUD5_BR.png"}
+brightmap sprite ESKUE1		{map "brightmaps/ForgottenOne/ESKUE1_BR.png"}
+brightmap sprite ESKUE2E8	{map "brightmaps/ForgottenOne/ESKUE2E8_BR.png"}
+brightmap sprite ESKUE3E7	{map "brightmaps/ForgottenOne/ESKUE3E7_BR.png"}
+brightmap sprite ESKUE4E6	{map "brightmaps/ForgottenOne/ESKUE4E6_BR.png"}
+brightmap sprite ESKUE5		{map "brightmaps/ForgottenOne/ESKUE5_BR.png"}
+brightmap sprite ESKUF1		{map "brightmaps/ForgottenOne/ESKUF1_BR.png"}
+brightmap sprite ESKUF2F8	{map "brightmaps/ForgottenOne/ESKUF2F8_BR.png"}
+brightmap sprite ESKUF3F7	{map "brightmaps/ForgottenOne/ESKUF3F7_BR.png"}
+brightmap sprite ESKUF4F6	{map "brightmaps/ForgottenOne/ESKUF4F6_BR.png"}
+brightmap sprite ESKUF5		{map "brightmaps/ForgottenOne/ESKUF5_BR.png"}
+
 //LIQUID TEXTURES
 brightmap sprite LAVA1		{map "brightmaps/256SQ_BR.png"}
 brightmap sprite LAVA2		{map "brightmaps/256SQ_BR.png"}

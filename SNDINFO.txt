@@ -580,6 +580,12 @@ TheHusk/Pain		64ZMPAI
 TheHusk/Death		64ZMDTH
 TheHusk/Attack		64ZMMIS
 
+//forgotton one
+alphasoul/active	Z0ULACT
+alphasoul/pain		Z0ULPAIN
+alphasoul/melee		Z0ULATK
+alphasoul/death		Z0ULDIE
+
 //---------------------------
 //**********GORE*************
 //---------------------------

@@ -1,7 +1,7 @@
 #library "BD64ACS"
 #include "zcommon.acs"
 
-script "KickKeyPress" (VOID) NET		//TRIGGERED FROM KEYPRESS	//R8 revised Stamina check	//R28 added modern class check	//r31 was script 301
+script "KickKeyPress" (VOID) NET
 {
 	if(CheckInventory("IsModern") > 0)
 	{
@@ -46,7 +46,7 @@ Script "WeaponSpecialAction" (VOID) NET
 }
 
 #libdefine PLAYER_VIEWHEIGHT 50		//BD64 default player height
-script "CheckIfCrouching"(void)		//New check for crouching
+script "CheckIfCrouching"(void)
 {
 	if(GetActorViewHeight(0) <= PLAYER_VIEWHEIGHT / 2 << 16)
 		SetResultValue(TRUE);
@@ -54,26 +54,26 @@ script "CheckIfCrouching"(void)		//New check for crouching
 		SetResultValue(FALSE);
 }
 
-Script "DM_SpawnACS" (VOID)	//R31 WAS 119
+Script "DM_SpawnACS" (VOID)
 {
 if	(GameType() == GAME_NET_DEATHMATCH)
 	GiveInventory("IsDM",1);
 }
 
-script "SetBloodAmountACS" (void)		//R31 REPLACES SCRIPT 799
+script "SetBloodAmountACS" (void)
 {
 SetResultValue(GetCVar("zdoombrutalblood"));
 }
 
-Script "LowBloodCheckerACS" (VOID)	//r31 was 798
+Script "LowBloodCheckerACS" (VOID)
 {
 if	(GetCvar("bd_lowgraphicsmode") == 1) {GiveInventory("LowGraphicsMode",1);}
 if	(GetCvar("zdoombrutaljanitor") == 1) {GiveInventory("LowGraphicsMode",1);}
-if	(GameType() == GAME_NET_DEATHMATCH) {GiveInventory("LowGraphicsMode",1);}		//R29 ADDED
+if	(GameType() == GAME_NET_DEATHMATCH) {GiveInventory("LowGraphicsMode",1);}
 terminate;
 }
 
-script "Zandro_Check" OPEN		//R31 WAS script 822
+script "Zandro_Check" OPEN
 {
 if (GetCvar("isrunningzandronum") == 1)
 	{
@@ -81,10 +81,9 @@ if (GetCvar("isrunningzandronum") == 1)
 	}
 }
 
-//SPRINTING
-script "Sprinting" ENTER		//	R31 WAS script 851
+script "Sprinting" ENTER
 {
-if(CheckInventory("IsTacticalClass") == 1)		//r31 leads to terminates if not tacticalclass
+if(CheckInventory("IsTacticalClass") == 1)
 	{
 	int buttons;
 
@@ -101,102 +100,101 @@ if(CheckInventory("IsTacticalClass") == 1)		//r31 leads to terminates if not tac
 		TakeInventory("IsRunning",1);
 		}
 	}
-	else			//r31 terminates if not tacticalclass
+	else
 	terminate;
 }
 
-script "TacticalPlayerFasterACS" (void)		//r31 was script 852
+script "TacticalPlayerFasterACS" (void)
 {
 SetActorProperty(0,APROP_Speed,2.0);
 delay (1);
 }
 
-script "TacticalPlayerSlowerACS" (void)		//r31 was script 853
+script "TacticalPlayerSlowerACS" (void)
 {
 SetActorProperty(0,APROP_Speed,1.0);
 delay (1);
 }
 
-//V2.5 SCRIPTS BELOW
-script "VanillaMapChecker" ENTER												//R31 GIVES DUMMY ITEM ON MAP07 TO EXIT TO VANILLA MAP08
+script "VanillaMapChecker" ENTER	//gives dummy item to exit to vanilla map08
 {
 if	(GetCvar("VMapCheckCvar") == 0) {TakeInventory("VMapCheck",1);}
 if	(GetCvar("VMapCheckCvar") == 1) {GiveInventory("VMapCheck",1);}
 }
 
-script "AbsolutionMapChecker" ENTER	//R31 GIVES DUMMY ITEM TO ACCESS MAP28A
+script "AbsolutionMapChecker" ENTER	//gives dummy item to access vanilla map28
 {
 if	(GetCvar("AbsMapCheckCvar") == 0) {TakeInventory("AbsMapCheck",1);}
 if	(GetCvar("AbsMapCheckCvar") == 1) {GiveInventory("AbsMapCheck",1);}
 }
 
-script "TCMapChecker" ENTER														//R31 GIVES DUMMY ITEM ON MAP07 TO EXIT TO TC MAPS
+script "TCMapChecker" ENTER			//gives dummy item on map07 to exit to abolsolution tc maps
 {
 if	(GetCvar("TCMapCheckCvar") == 0) {TakeInventory("TCMapCheck",1);}
 if	(GetCvar("TCMapCheckCvar") == 1) {GiveInventory("TCMapCheck",1);}
 }
 
-script "VanillaWeapons" (void)			//R31 Vanilla weapon animations
+script "VanillaWeapons" (void)		//vanilla weapon animations
 {
 SetResultValue(GetCVar("VWeaponCvar"));
 }
 
-script "GaussCannonRandom" (void)		//R31 Replaces script 1485
+script "GaussCannonRandom" (void)
 {
 SetResultValue(GetCVar("GaussCannon_Spawner_Cvar"));
 }
 
-script "BFGRandom" (void)				//R31 Replaces script 1486
+script "BFGRandom" (void)
 {
 SetResultValue(GetCVar("BFG_Spawner_Cvar"));
 }
 
-script "WpnPowerRandom" (void)			//R31 Replaces script 1478
+script "WpnPowerRandom" (void)
 {
 SetResultValue(GetCVar("WpnPower_Spawner_Cvar"));
 }
 
-script "NImpRandom" (void)				//R31 Replaces script 1490
+script "NImpRandom" (void)
 {
 SetResultValue(GetCVar("NImp_Spawner_Cvar"));
 }
 
-script "NSpectreRandom" (void)			//R31 Replaces script 1491
+script "NSpectreRandom" (void)
 {
 SetResultValue(GetCVar("NSpectre_Spawner_Cvar"));
 }
 
-script "NCacoRandom" (void)				//R31 Replaces script 1492
+script "NCacoRandom" (void)
 {
 SetResultValue(GetCVar("NCaco_Spawner_Cvar"));
 }
 
-script "HellHoundRandom" (void)			//R31 Replaces script 1493
+script "HellHoundRandom" (void)
 {
 SetResultValue(GetCVar("Hellhound_Spawner_Cvar"));
 }
 
-script "AnnihilatorRandom" (void)		//R31 Replaces script 1494
+script "AnnihilatorRandom" (void)
 {
 SetResultValue(GetCVar("Annihilator_Spawner_Cvar"));
 }
 
-script "MotherDemonRandom" (void)		//R31 Replaces script 1495
+script "MotherDemonRandom" (void)
 {
 SetResultValue(GetCVar("Motherdemon_Spawner_Cvar"));
 }
 
-script "HoundChooserACS" (void)			//R31 new choice between GEC and Cerberus style hellhound
+script "HoundChooserACS" (void)
 {
 SetResultValue(GetCVar("HoundChooserCvar"));
 }
 
-script "RevenantChooserACS" (void)		//R31 new choice between Pyspy and Tchernobog style revenent
+script "RevenantChooserACS" (void)
 {
 SetResultValue(GetCVar("RevenantChooserCvar"));
 }
 
-script "D64MonstersOnlyReplacer" (void)	//R31 Replaces script 1481
+script "D64MonstersOnlyReplacer" (void)
 {
 SetResultValue(GetCVar("D64MonstersOnlyCvar"));
 }
@@ -206,31 +204,31 @@ script "D64WeaponsOnlyReplacer" (void)
 SetResultValue(GetCVar("D64WeaponsOnlyCvar"));
 }
 
-script "Light_Fog_Remover" (void)		//R31 Replaces script 17002
+script "Light_Fog_Remover" (void)
 {
 SetResultValue(GetCVar("LFog_Cvar"));
 }
 
-script "Flat_Decal_Remover" (void)		//R31 Replaces script 17001
+script "Flat_Decal_Remover" (void)
 {
 SetResultValue(GetCVar("FloorDecal_Cvar"));
 }
 
-script "SoulHandler" ENTER			//r31 part of soulammo spawn
+script "SoulHandler" ENTER			//unmaker ammo set ThingID
 {
-	Thing_ChangeTID(0,2337+PlayerNumber());	//was 1337
+	Thing_ChangeTID(0,2337+PlayerNumber());
 }
 
-Script "TUnmakerChecker" (void)		//r31 checks if you have tactical unmaker
+Script "TUnmakerChecker" (void)		//checks if you have tactical unmaker to allow spawn of tactical unmaker ammo
 {
-	for(int i = 2337; i < 2400; i++)	//was 1337,< 1400
+	for(int i = 2337; i < 2400; i++)
 	{
 		if(CheckActorInventory(i,"UnmakerTACTICAL") && CheckActorInventory(i,"WpnPower1Icon") && CheckActorInventory(i,"WpnPower2Icon") && CheckActorInventory(i,"WpnPower3Icon"))		//r31 checks if you have tactical unmaker & demon keys
 		{
 			SetResultValue(3);
 			break;
 		}
-		if(CheckActorInventory(i,"UnmakerTACTICAL"))		//r31 checks if you have tactical unmaker
+		if(CheckActorInventory(i,"UnmakerTACTICAL"))
 		{
 			SetResultValue(2);
 			break;
@@ -238,22 +236,22 @@ Script "TUnmakerChecker" (void)		//r31 checks if you have tactical unmaker
 	}
 }
 
-Script "AlternativeRifleSkin" (void) //r31 added alternative rifle skin
+Script "AlternativeRifleSkin" (void)
 {
 SetResultValue(getCvar("AlternativeRifleSkinCvar"));
 }
 
-Script "AlternativeLaserSkin" (void) //r31 added alternative Laser skin
+Script "AlternativeLaserSkin" (void)
 {
 SetResultValue(getCvar("AlternativeLaserSkinCvar"));
 }
 
-script "SSGZombieRandomACS" (void)	//R31 added
+script "SSGZombieRandomACS" (void)
 {
 SetResultValue(GetCVar("SSGZombieRandom_Cvar"));
 }
 
-script "SSGinDoom1" (void)	//R31 added
+script "SSGinDoom1" (void)
 {
 SetResultValue(GetCVar("SSGinDoom1_Cvar"));
 	if	(GetCvar("SSGinDoom1_Cvar") == 3)
@@ -285,57 +283,57 @@ script "ZombieBFGRandomACS" (void)
 SetResultValue(GetCVar("ZombieBFGRandom_Cvar"));
 }
 
-script "AcidDemonRandomACS" (void)	//R31 added
+script "AcidDemonRandomACS" (void)
 {
 SetResultValue(GetCVar("AcidDemonRandom_Cvar"));
 }
 
-script "ChaingunRandomACS" (void)	//R31 added
+script "ChaingunRandomACS" (void)
 {
 SetResultValue(GetCVar("Chaingun_Spawner_Cvar"));
 }
 
-Script "ClassicRLACS" (void) //r31 added
+Script "ClassicRLACS" (void)
 {
 SetResultValue(getCvar("ClassicRLCvar"));
 }
 
-Script "AlternativeAmmoPickupSpritesACS" (void) //r31 added alternative ammo pickup
+Script "AlternativeAmmoPickupSpritesACS" (void)
 {
 SetResultValue(getCvar("AlternativeAmmoPickupSpritesCvar"));
 }
 
-Script "BerserkSwitchFistsACS" (void) //r31 added option to restore fist switch on berserk
+Script "BerserkSwitchFistsACS" (void)
 {
 SetResultValue(getCvar("BerserkSwitchFistsCvar"));
 }
 
-script "StalkerRandomACS" (void)	//R31 added
+script "StalkerRandomACS" (void)
 {
 SetResultValue(GetCVar("StalkerRandom_Cvar"));
 }
 
-script "NightCrawlerRandomACS" (void)	//R31 added
+script "NightCrawlerRandomACS" (void)
 {
 SetResultValue(GetCVar("NightCrawlerRandom_Cvar"));
 }
 
-script "FootStepCheck" (void)	//R31 added for footstep sounds
+script "FootStepCheck" (void)	//footstep sound check for player decorate
 {
 SetResultValue(GetCVar("FootStepCheckCvar"));
 }
 
-script "CensoredHealing_ACS" (void)	//R31 added to switch to censored healing sprites
+script "CensoredHealing_ACS" (void)
 {
 SetResultValue(GetCVar("CensoredHealing_Cvar"));
 }
 
-script "BruiserRandom_ACS" (void)	//R31 added
+script "BruiserRandom_ACS" (void)
 {
 SetResultValue(GetCVar("BruiserRandom_Cvar"));
 }
 
-script "PainStalkerRandomACS" (void)	//R31 added for pain elemantal stalker attack
+script "PainStalkerRandomACS" (void)
 {
 SetResultValue(GetCVar("PainStalkerRandom_Cvar"));
 }
@@ -348,7 +346,7 @@ Delay(35);
 Restart;
 }
 
-Script "ArragendHUDSwitching" ENTER	//option to set vanilla normal HUD
+Script "ArragendHUDSwitching" ENTER	//option to set vanilla full HUD
 {
 if(GetUserCvar(0,"ArragendHUDCvar") == 1) {GiveInventory("ArrangedHud",1);}
 if(GetUserCvar(0,"ArragendHUDCvar") == 0) {TakeInventory("ArrangedHud",1);}
@@ -356,7 +354,7 @@ Delay(35);
 Restart;
 }
 
-Script "VanillaChainsawACS" ENTER 	//option to set vanilla Chainsaw
+Script "VanillaChainsawACS" ENTER 	//option to set vanilla chainsaw
 {
 if (CheckInventory("64ChainsawTACTICAL") == 1 && GetCvar("VanillaChainsawCvar") == 1)
 	{
@@ -393,7 +391,7 @@ script "ClassicCSAWCheck" (void)	//cvar check for chainsaw pickup
 SetResultValue(GetCVar("VanillaChainsawCvar"));
 }
 
-script "KnightmareRandom" (void)	//cvar check to random spawn knightmare from hellknight
+script "KnightmareRandom" (void)
 {
 SetResultValue(GetCVar("KnightmareRandomCvar"));
 }
@@ -436,7 +434,7 @@ Script "FleshWizardRandomACS" (void)
 SetResultValue(GetCVar("FleshWizardRandomCvar"));
 }
 
-script "HordeMultiplier" (void)		//Husk
+script "HordeMultiplier" (void)		//husk zombie multiplier option
 {
 SetResultValue(GetCVar("TheHorde_Multiplier_Cvar"));
 }

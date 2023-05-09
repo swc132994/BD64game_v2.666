@@ -1,4 +1,3 @@
-//R1 NEW 03.11.17
 LISTMENU "MainMenu"
 {
 	IfGame(Doom,Chex)
@@ -73,9 +72,9 @@ OptionMenu "BD64Menu" //R31
 	Submenu "Item/Weapon Options",			"BrutalDoom64Item/WeaponOptions"
 }
 
-OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
+OptionMenu "BrutalDoom64OptionsPerformance"
 {
-	Title "Performance & Miscellaneous Options"	//R31
+	Title "Performance & Miscellaneous Options"
 		StaticText " "
 		StaticText "Enable this option only if hosting a server on a multiplayer game,",1
 		StaticText "If playing on single player then set to Off",1
@@ -86,20 +85,20 @@ OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 		StaticText " "
 	Option "Select blood amount =","zdoombrutalblood","BrutalBlood"
 	Option "Enable gore remover for flats (30s) =","zdoombrutaljanitor","YesOrNo"
-	Option "Enable floor/ceiling shot/blast decals =","FloorDecal_Cvar","YesOrNoFalse"		//R29 ADDED
-	Option "Disable Light Fog & Halos =","LFog_Cvar","LFog_Value"			//R30 ADDED	//R30.9 REVISED LINE //R31 was YesOrNoFalse
+	Option "Enable floor/ceiling shot/blast decals =","FloorDecal_Cvar","YesOrNoFalse"
+	Option "Disable Light Fog & Halos =","LFog_Cvar","LFog_Value"
 		StaticText " "
-		Slider "Set max wall decals","cl_maxdecals",0,9999,100,0	//R31 16/08/22 new slider
-		textfield "input value manually","cl_maxdecals"				//R31 16/08/22 new slider
+		Slider "Set max wall decals","cl_maxdecals",0,9999,100,0
+		textfield "input value manually","cl_maxdecals"
 		StaticText " "
-		Slider "Set max gore amount","sv_corpsequeuesize",25,9999,100,0		//R31 16/08/22 new slider
-		textfield "input value manually","sv_corpsequeuesize"				//R31 16/08/22 new slider
+		Slider "Set max gore amount","sv_corpsequeuesize",25,9999,100,0
+		textfield "input value manually","sv_corpsequeuesize"
 		StaticText " "
 		StaticText "Miscellaneous Options!",1
 		StaticText " "
 	Option "Enable footstep sounds =","FootStepCheckCvar","YesOrNo"
 	Option "Set Normal size HUD to Doom style =","VanillaStatusBarCvar","YesorNo"
-	Option "Set Fullscreen size HUD to Doom style =","ArragendHUDCvar","YesorNo"	
+	Option "Set Fullscreen size HUD to Doom style =","ArragendHUDCvar","YesorNo"
 	Option "Screen Effects =", "bd64_ScreenFX", "ScreenTypes"
 		StaticText "Enables Screen Effects on HUD, such as Blood Splashing and Bullet Holes."
 		StaticText " "
@@ -109,16 +108,16 @@ OptionMenu "BrutalDoom64OptionsPerformance" //R1 WAS OptionsMenu 03.11.17
 		StaticText "Does not work for the BDv21 Mode."
 }
 
-OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
+OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner"
 {
 	Title "Item/Weapon Spawner Options"
 		StaticText " "
 		StaticText "Options to choose replacements of weapons and powerups",1
 		StaticText "or set to appear randomly",1
 		StaticText " "
-	Option "Randomly replace Power-ups with Unmaker Power-ups =","WpnPower_Spawner_Cvar","WpnPower_Spawner_Value"		//r31 was DynamicSpawnCvar and YesOrNo
-	Option "Randomly replace Plasma Rifle with Gauss Cannon =","GaussCannon_Spawner_Cvar","GaussCannon_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace BFG9000 with Unmaker/Lasergun =","BFG_Spawner_Cvar","BFG_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Power-ups with Unmaker Power-ups =","WpnPower_Spawner_Cvar","WpnPower_Spawner_Value"
+	Option "Randomly replace Plasma Rifle with Gauss Cannon =","GaussCannon_Spawner_Cvar","GaussCannon_Spawner_Value"
+	Option "Randomly replace BFG9000 with Unmaker/Lasergun =","BFG_Spawner_Cvar","BFG_Spawner_Value"
 	Option "Randomly replace Chaingun with SMG or Rifle =","Chaingun_Spawner_Cvar","Chaingun_Spawner_Value"
 		StaticText " "
 		StaticText "Option to replace shotguns with super shotguns",1
@@ -127,7 +126,7 @@ OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner" //R31
 	Option "SSG in Doom 1 =","SSGinDoom1_Cvar","SSGinDoom1Menu"
 }
 
-OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
+OptionMenu "BrutalDoom64OptionsMonsterSpawner"
 {
 	Title "Monster Spawner Options"
 		StaticText " "
@@ -135,32 +134,32 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner" //R31
 		StaticText "outcast monsters,or set to appear randomly",1
 		StaticText "(Enabling the D64 monsters only option will override these settings)",1
 		StaticText " "
-	Option "Randomly replace Shotgun Zombies with SSG Zombies =","SSGZombieRandom_Cvar","SSGZombieRandom_Value"		//R31 was YesOrNo
-	Option "Randomly replace ZombieMen with Zombie Marines =","ZMarineRandom_Cvar","ZMarineRandom_Value"			//R31 was YesOrNo
+	Option "Randomly replace Shotgun Zombies with SSG Zombies =","SSGZombieRandom_Cvar","SSGZombieRandom_Value"
+	Option "Randomly replace ZombieMen with Zombie Marines =","ZMarineRandom_Cvar","ZMarineRandom_Value"
 	Option "Randomly replace Chaingun Zombies with BFG Zombies =","ZombieBFGRandom_Cvar","BFGZombie_Value"
-	Option "Randomly replace Imps with Nightmare Imps =","NImp_Spawner_Cvar","NImp_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Spectres with Nightmare Spectres or Wraiths =","NSpectre_Spawner_Cvar","NSpectre_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Cacodemons with Nightmare Cacodemons =","NCaco_Spawner_Cvar","NCaco_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Demons with Acid Demons =","AcidDemonRandom_Cvar","AcidDemon_Spawner_Value"	//Split from Demons with Hellhounds
-	Option "Randomly replace Lost Souls with Stalkers =","StalkerRandom_Cvar","Stalker_Spawner_Value"
+	Option "Randomly replace Imps with Nightmare Imps =","NImp_Spawner_Cvar","NImp_Spawner_Value"
+	Option "Randomly replace Spectres with Nightmare Spectres or Wraiths =","NSpectre_Spawner_Cvar","NSpectre_Spawner_Value"
+	Option "Randomly replace Cacodemons with Nightmare Cacodemons =","NCaco_Spawner_Cvar","NCaco_Spawner_Value"
+	Option "Randomly replace Demons with Acid Demons =","AcidDemonRandom_Cvar","AcidDemon_Spawner_Value"
+	Option "Randomly replace Lost Souls with Stalkers or Forgotten Ones =","StalkerRandom_Cvar","Stalker_Spawner_Value"
 	Option "Randomly replace Arachnotrons with Nightcrawlers =","NightCrawlerRandom_Cvar","NightCrawler_Spawner_Value"
 	Option "Randomly replace HellKnights with Knightmares =","KnightmareRandomCvar","Knightmare_Spawner_Value"
-	Option "Randomly replace Barons with Hellhounds or Belphegors =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"	//R31 was YesOrNo
+	Option "Randomly replace Barons with Hellhounds or Belphegors =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"
 	Option "Randomly replace Mancubi with Bruisers =","BruiserRandom_Cvar","Bruiser_Spawner_Value"
 	Option "Randomly replace Pain Elementals with Nightmare Elementals =","NightElementalRandomCvar","NightElemental_Spawner_Value"
 	Option "Randomly replace Archviles with Flesh Wizards =","FleshWizardRandomCvar","FleshWizardRandom_Value"
-	Option "Randomly replace Cyberdemons with Annihilators =","Annihilator_Spawner_Cvar","Annihilator_Spawner_Value"	//R31 was YesOrNo
-	Option "Randomly replace Masterminds with Motherdemons or Eradicators =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"	//R27 //R31 was YesOrNo
+	Option "Randomly replace Cyberdemons with Annihilators =","Annihilator_Spawner_Cvar","Annihilator_Spawner_Value"
+	Option "Randomly replace Masterminds with Motherdemons or Eradicators =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"
 }
 
-OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
+OptionMenu "BrutalDoom64OptionsOtherMonster"
 {
 	Title "Other Monster Options"
 		StaticText " "
 	StaticText "Option to ONLY spawn Doom 64 monsters i.e. no cut monsters.",1
 		StaticText "(Enabling this option will override all alternate monster spawns)",1
 		StaticText " "
-	Option "Spawn Doom 64 vanilla monsters ONLY =","D64MonstersOnlyCvar","YesOrNo"	//R31 was DynamicSpawnCvar4
+	Option "Spawn Doom 64 vanilla monsters ONLY =","D64MonstersOnlyCvar","YesOrNo"
 		StaticText " "
 		StaticText "Option to switch to alternate spawns for the Revenant and Hellhound",1
 		StaticText " "
@@ -174,7 +173,7 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 		StaticText "Option to allow pain elementals to randomly spit stalkers",1
 		StaticText "(Enabling the D64 monsters only option will override these setting)",1
 		StaticText " "
-	Option "Allow Pain Elemental Stalker attack =","PainStalkerRandom_Cvar","YesOrNo"
+	Option "Allow Pain Elemental Stalker and Forgotten One attacks =","PainStalkerRandom_Cvar","YesOrNo"
 		StaticText " "
 		StaticText "Allow limb loss death states",1
 		StaticText " "
@@ -183,7 +182,7 @@ OptionMenu "BrutalDoom64OptionsOtherMonster" //R31
 	Option "Tweak The Horde's Husk multiplier =","TheHorde_Multiplier_Cvar","TheHorde_Multiplier_Value"
 }
 
-OptionMenu "BD64MapOptions" //R31 added
+OptionMenu "BD64MapOptions"
 {
 	Title "Map Options"
 		StaticText " "
@@ -196,7 +195,7 @@ OptionMenu "BD64MapOptions" //R31 added
 	Option "Show Opening Title Map (Restart Required) =","D64_SkipTitleMap","YesOrNoFalse"
 }
 
-OptionMenu "BrutalDoom64Item/WeaponOptions" //R31 added
+OptionMenu "BrutalDoom64Item/WeaponOptions"
 {
 	Title "Item/Weapon Options"
 	StaticText "Option to ONLY spawn Doom 64 weapons i.e. no cut or extra weapons.",1
@@ -226,7 +225,7 @@ OptionValue "BrutalBlood"
 	2,"Normal"
 	3,"Lots"
 	4,"Comical"
-	666,"Maximum"		//R29 was "Overdrawn at Blood Bank"
+	666,"Maximum"
 }
 
 OptionValue "YesOrNo"
@@ -314,6 +313,7 @@ OptionValue "Stalker_Spawner_Value"
 {
 	0,"Lost Soul"
 	1,"Stalker"
+	2,"Forgotten One"
 	10,"10%"
 	20,"20%"
 	30,"30%"
@@ -433,7 +433,7 @@ OptionValue "FleshWizardRandom_Value"
 	50,"50%"
 }
 
-OptionValue "TheHorde_Multiplier_Value"		//Husk
+OptionValue "TheHorde_Multiplier_Value"		//Husk zombie
 {
 	0,"Disable Husks"
 	1,"x1 Husks"

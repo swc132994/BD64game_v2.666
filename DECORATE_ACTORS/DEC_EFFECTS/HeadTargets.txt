@@ -24,8 +24,8 @@ actor HeadshotTargetBase
 {
 Health 300
 GibHealth 10000
-Radius 5	//was 7
-Height 10	//was 18
+Radius 7
+Height 18
 DamageType head
 BloodType "Brutal_Blood"
 PainChance 255

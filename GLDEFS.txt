@@ -1932,6 +1932,138 @@ object MotherFireTrail	//R31 added
 	frame MPUF {light ARCHATK5}
 }
 
+//forgotton one
+flickerlight AlphaShock
+{
+	color 1.0 1.0 0.0
+	size 32
+	secondarysize 40
+	chance 0.25
+}
+
+flickerlight AlphaShock_X1
+{
+	color 0.8 0.8 0.0
+	size 42
+	secondarySize 50
+	chance 0.25
+}
+
+flickerlight AlphaShock_X2
+{
+	color 0.7 0.7 0.0
+	size 52
+	secondarySize 60
+	chance 0.25
+}
+
+flickerlight AlphaShock_X3
+{
+	color 0.6 0.6 0.0
+	size 62
+	secondarySize 70
+	chance 0.25
+}
+
+flickerlight AlphaPain
+{
+	color 0.0 1.0 1.0
+	size 56
+	secondarysize 64
+	chance 0.25
+}
+
+flickerlight AlphaPain_X1
+{
+	color 0.0 0.8 0.8
+	size 72
+	secondarySize 80
+	chance 0.25
+}
+
+flickerlight AlphaPain_X2
+{
+	color 0.0 0.7 0.7
+	size 88
+	secondarySize 96
+	chance 0.25
+}
+
+flickerlight AlphaPain_X3
+{
+	color 0.0 0.6 0.6
+	size 104
+	secondarySize 112
+	chance 0.25
+}
+
+flickerlight AlphaPain_X4
+{
+	color 0.0 0.5 0.5
+	size 112
+	secondarySize 120
+	chance 0.25
+}
+
+flickerlight AlphaPain_X5
+{
+	color 0.0 0.4 0.4
+	size 112
+	secondarySize 120
+	chance 0.25
+}
+
+flickerlight AlphaPain_X6
+{
+	color 0.0 0.3 0.3
+	size 112
+	secondarySize 120
+	chance 0.25
+}
+
+flickerlight AlphaPain_X7
+{
+	color 0.0 0.2 0.2
+	size 112
+	secondarySize 120
+	chance 0.25
+}
+
+flickerlight AlphaPain_X8
+{
+	color 0.0 0.1 0.1
+	size 112
+	secondarySize 120
+	chance 0.25
+}
+
+object 64ForgottenOne
+{
+	frame ESKUB {light AlphaShock}
+	frame ESKUC {light AlphaShock_X1}
+	frame ESKUD {light AlphaShock_X2}
+	frame ESKUE {light AlphaShock_X3}
+
+	frame ESKUF {light AlphaPain}
+	frame ESKUG {light AlphaPain}
+	frame ESKUH {light AlphaPain_X1}
+	frame ESKUI {light AlphaPain_X2}
+	frame ESKUJ {light AlphaPain_X3}
+	frame ESKUK {light AlphaPain_X4}
+	frame ESKUL {light AlphaPain_X5}
+	frame ESKUM {light AlphaPain_X6}
+	frame ESKUN {light AlphaPain_X7}
+	frame ESKUO {light AlphaPain_X8}
+}
+
+object 64AlphaShock
+{
+	frame SH9KC {light AlphaShock}
+	frame SH9KD {light AlphaShock_X1}
+	frame SH9KE {light AlphaShock_X2}
+	frame SH9KF {light AlphaShock_X3}
+}
+
 //Doom Teleport fog
 flickerlight DTFOG1
 {
