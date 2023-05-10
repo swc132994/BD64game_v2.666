@@ -192,6 +192,7 @@ MONSTER
 		Goto Hide
 	Raise:
 		3WRT LKJIH 5
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
 		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
@@ -279,6 +280,7 @@ MONSTER
 		TNT1 A 0 A_XScream
 		PTXB JK 2
 		PTXB L 2 ThrustThingZ(0,50,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		PTXB L 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:

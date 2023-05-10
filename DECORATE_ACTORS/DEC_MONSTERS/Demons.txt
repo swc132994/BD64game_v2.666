@@ -48,6 +48,7 @@ DropItem "DemonEssenceSpawner"
 		Stop
 	Raise:
 		SARG NMLKJI 5
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
 		Goto See
 	Death:
 		SARG I 5 A_NoBlocking
@@ -136,6 +137,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBM2 A 2 ThrustThingZ(0,40,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		GBM2 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
@@ -324,6 +326,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBM2 A 2 ThrustThingZ(0,40,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		GBM2 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Pain:
@@ -417,6 +420,7 @@ DropItem "DemonEssenceSpawner"
 		Stop
 	Raise:
 		SAR2 NMLKJI 5 A_FadeTo(0.25,0.1667,false)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
 		goto See+12
 	Death:
 		SAR2 I 5 A_NoBlocking
@@ -506,6 +510,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		PBM2 A 2 ThrustThingZ(0,40,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		PBM2 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
@@ -694,6 +699,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		PBM2 A 2 ThrustThingZ(0,40,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		PBM2 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Pain:
@@ -827,6 +833,7 @@ Obituary "%o was hunted down by a nightmare spectre."
 		Goto See+12
 	Raise:
 		SAR3 NMLKJI 5 A_FadeTo(0.25,0.1667,false)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
 		goto See+12
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
@@ -919,6 +926,7 @@ Obituary "%o was hunted down by a nightmare spectre."
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		PBM3 A 2 ThrustThingZ(0,40,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		PBM3 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
@@ -1106,6 +1114,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		PBM3 A 2 ThrustThingZ(0,40,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		PBM3 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Pain:

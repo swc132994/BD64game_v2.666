@@ -103,6 +103,7 @@ states
 	Raise:
 		TNT1 A 0 A_SetScale(0.7)
 		64ZF NMLKJI 5
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
 		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
@@ -327,6 +328,7 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		GBM1 A 2 ThrustThingZ(0,30,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.SuperFists:
@@ -350,6 +352,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBM1 A 2 ThrustThingZ(0,40,0,1)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Heavy:
@@ -454,6 +457,7 @@ Actor BrutalizedHuskZombie_2 : BrutalizedHuskZombie_1
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		GBM1 A 2 ThrustThingZ(0,30,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.SplatteredOnWall:
@@ -473,6 +477,7 @@ Actor BrutalizedHuskZombie_2 : BrutalizedHuskZombie_1
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBM1 A 2 ThrustThingZ(0,40,0,1)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Raise:

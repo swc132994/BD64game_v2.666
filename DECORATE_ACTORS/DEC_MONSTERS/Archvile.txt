@@ -117,6 +117,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		VID5 A 2 ThrustThingZ(0,40,0,1)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		VID5 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Rifle:
@@ -143,6 +144,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		VID6 A 2 ThrustThingZ(0,30,0,1)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		VID6 A 2 A_CheckFloor(1)
 		Wait
 		VID6 B 5 A_ChangeFlag("FORCEXYBILLBOARD",1)
@@ -272,6 +274,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		VID5 A 2 ThrustThingZ(0,40,0,1)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		VID5 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.SuperFists:
@@ -287,6 +290,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		VID7 W 2 ThrustThingZ(0,30,0,1)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		VID7 W 2 A_CheckFloor(1)
 		Wait
 		VID7 X 5 A_ChangeFlag("FORCEXYBILLBOARD",1)
@@ -371,6 +375,7 @@ Actor BrutalizedArchvile_2 : BrutalizedArchvile_1
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		VID5 A 2 ThrustThingZ(0,40,0,1)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		VID5 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.SuperFists:
@@ -386,6 +391,7 @@ Actor BrutalizedArchvile_2 : BrutalizedArchvile_1
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		VID8 W 2 ThrustThingZ(0,30,0,1)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		VID8 W 2 A_CheckFloor(1)
 		Wait
 		VID8 X 5 A_ChangeFlag("FORCEXYBILLBOARD",1)

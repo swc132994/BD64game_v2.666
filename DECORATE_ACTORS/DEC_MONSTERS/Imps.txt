@@ -100,7 +100,8 @@ DropItem "DemonEssenceSpawner"
 		TRDM A 1 A_SpawnItemEx("BrutalizedImp64",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Raise:
-		TROO PONML 7
+		TROO PONML 5
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
 		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
@@ -124,6 +125,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBMI A 2 ThrustThingZ(0,30,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		GBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
@@ -172,6 +174,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBMI A 2 ThrustThingZ(0,40,0,1)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		GBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Heavy:
@@ -375,6 +378,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBMI A 2 ThrustThingZ(0,30,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		GBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Chainsaw:
@@ -416,6 +420,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBMI A 2 ThrustThingZ(0,40,0,1)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		GBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Pain:
@@ -423,7 +428,7 @@ DropItem "None"
 		TRDM A 1
 		Goto Spawn
 	raise:
-		TROO PONML 7
+		TROO PONML 5
 		TNT1 A 0 A_SpawnItemEx("64DoomImp",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
@@ -559,6 +564,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBMI A 2 ThrustThingZ(0,40,0,1)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		GBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	XDeath:
@@ -578,6 +584,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBMI A 2 ThrustThingZ(0,30,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		GBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Chainsaw:
@@ -606,7 +613,7 @@ DropItem "None"
 		TRDM B 1
 		Goto Spawn
 	raise:
-		TROO PONML 7
+		TROO PONML 5
 		TNT1 A 0 A_SpawnItemEx("64DoomImp",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
@@ -728,8 +735,8 @@ Tag "Nightmare Imp"
 		TRO2 H 2 A_Pain
 		Goto See
 	Raise:
-		TRO2 PO 8
-		TRO2 NML 6
+		TRO2 PONML 5
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
 		Goto See
 	Death:
 		TRO2 L 5 A_NoBlocking
@@ -768,9 +775,6 @@ Tag "Nightmare Imp"
 		TR2H F 35
 		TR2H F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
-	Raise:
-		TRO2 PONML 7
-		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
 		POL5 A -1
@@ -793,6 +797,7 @@ Tag "Nightmare Imp"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		NBMI A 2 ThrustThingZ(0,30,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		NBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
@@ -841,6 +846,7 @@ Tag "Nightmare Imp"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		NBMI A 2 ThrustThingZ(0,40,0,1)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		NBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Heavy:
@@ -1043,6 +1049,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		NBMI A 2 ThrustThingZ(0,40,0,1)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		NBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	XDeath:
@@ -1063,6 +1070,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		NBMI A 2 ThrustThingZ(0,30,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		NBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.BFG:
@@ -1091,7 +1099,7 @@ DropItem "None"
 		TRNM A 1
 		Goto Spawn
 	raise:
-		TRO2 PONML 7
+		TRO2 PONML 5
 		TNT1 A 0 A_SpawnItemEx("NightmareImp",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
@@ -1227,6 +1235,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		NBMI A 2 ThrustThingZ(0,40,0,1)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		NBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	XDeath:
@@ -1246,6 +1255,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		NBMI A 2 ThrustThingZ(0,30,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		NBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.BFG:
@@ -1273,7 +1283,7 @@ DropItem "None"
 		TRNM B 1
 		Goto Spawn
 	raise:
-		TRO2 PONML 7
+		TRO2 PONML 5
 		TNT1 A 0 A_SpawnItemEx("NightmareImp",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
