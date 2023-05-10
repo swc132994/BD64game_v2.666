@@ -523,13 +523,13 @@ DSBOSPIT DSBOSPIT	//Stalker teleport
 //BRUISER
 BREATHOF	BREATHOF
 
-64Bruiser/sight			SNDDHATK	//snddhsit
-64Bruiser/active		SNDZACT		//snddhzact
-64Bruiser/pain			SNDDHHIT	//snddhhit
-64Bruiser/raiseguns		SNDDHATK	//snddhatk
-64Bruiser/death			SNDDHDIE	//snddhdie
-64Bruiser/attack		SNDBDMSL	//snddhbdmsl
-64Bruiser/shotx			SNDIMPCT	//snddhimpct
+64Bruiser/sight			SNDDHATK
+64Bruiser/active		SNDZACT
+64Bruiser/pain			SNDDHHIT
+64Bruiser/raiseguns		SNDDHATK
+64Bruiser/death			SNDDHDIE
+64Bruiser/attack		SNDBDMSL
+64Bruiser/shotx			SNDIMPCT
 
 //THING
 64Thing/sight		HEADRIP3
@@ -540,6 +540,8 @@ BREATHOF	BREATHOF
 
 64ThingActive		SBR1C
 64ThingActive1		BLROAM2A
+
+$volume 64ThingActive1 0.75
 
 //BFG Zombie
 $random chainguy/sight		{ bfgguy/sight1  bfgguy/sight2 }

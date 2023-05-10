@@ -764,6 +764,9 @@ DropItem "64DeadMarine"
 DropItem "64DeadMarine"
 DropItem "64DeadMarine"
 DropItem "64DeadMarine"
+DropItem "64DeadMarine"
+DropItem "64DeadMarine"
+DropItem "64DeadMarine"
 }
 
 actor 64GibbedMarineReplacer : RandomSpawner Replaces GibbedMarine
@@ -773,11 +776,17 @@ DropItem "64GibbedMarine"
 DropItem "64GibbedMarine"
 DropItem "64GibbedMarine"
 DropItem "64GibbedMarine"
+DropItem "64GibbedMarine"
+DropItem "64GibbedMarine"
+DropItem "64GibbedMarine"
 }
 
 actor 64GibbedMarineExtraReplacer : RandomSpawner Replaces GibbedMarineExtra
 {
 DropItem "64Thing"
+DropItem "64GibbedMarineExtra"
+DropItem "64GibbedMarineExtra"
+DropItem "64GibbedMarineExtra"
 DropItem "64GibbedMarineExtra"
 DropItem "64GibbedMarineExtra"
 DropItem "64GibbedMarineExtra"
