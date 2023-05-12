@@ -644,3 +644,99 @@ actor NewScanner : PowerScanner replaces PowerScanner
 {
 Powerup.Duration 0x7FFFFFFF
 }
+
+ACTOR GLBlueCard : CustomInventory Replaces Bluecard
+{
+Inventory.PickupMessage "$GOTBLUECARD"
++COUNTITEM
+	States
+	{
+	Spawn:
+		BKEY AAAAA 3 BRIGHT A_SpawnItem("LensFlareTorchBlue",0,10)
+		BKEY B 12
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("BlueCard",1)
+		Stop
+	}
+}
+
+ACTOR GLBlueSkull : CustomInventory Replaces BlueSkull
+{
+Inventory.PickupMessage "$GOTBLUESKULL"
++COUNTITEM
+	States
+	{
+	Spawn:
+		BSKU AAAAA 3 BRIGHT A_SpawnItem("LensFlareTorchBlue",0,10)
+		BSKU B 12
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("BlueSkull",1)
+		Stop
+	}
+}
+
+ACTOR GLRedCard : CustomInventory Replaces Redcard
+{
+Inventory.PickupMessage "$GOTREDCARD"
++COUNTITEM
+	States
+	{
+	Spawn:
+		RKEY AAAAA 3 BRIGHT A_SpawnItem("LensFlareTorchRed",0,10)
+		RKEY B 12
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("RedCard",1)
+		Stop
+	}
+}
+
+ACTOR GLRedSkull : CustomInventory Replaces RedSkull
+{
+Inventory.PickupMessage "$GOTREDSKULL"
++COUNTITEM
+	States
+	{
+	Spawn:
+		RSKU AAAAA 3 BRIGHT A_SpawnItem("LensFlareTorchRed",0,10)
+		RSKU B 12
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("RedSkull",1)
+		Stop
+	}
+}
+
+ACTOR GLYellowCard : CustomInventory Replaces Yellowcard
+{
+Inventory.PickupMessage "$GOTYELLOWCARD"
++COUNTITEM
+	States
+	{
+	Spawn:
+		YKEY AAAAA 3 BRIGHT A_SpawnItem("LensFlareTorchYellow",0,10)
+		YKEY B 12
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("YellowCard",1)
+		Stop
+	}
+}
+
+ACTOR GLYellowSkull : CustomInventory Replaces YellowSkull
+{
+Inventory.PickupMessage "$GOTYELLOWSKULL"
++COUNTITEM
+	States
+	{
+	Spawn:
+		YSKU AAAAA 3 BRIGHT A_SpawnItem("LensFlareTorchYellow",0,10)
+		YSKU B 12
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("YellowSkull",1)
+		Stop
+	}
+}

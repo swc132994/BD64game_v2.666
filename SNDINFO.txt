@@ -441,7 +441,7 @@ $volume wizard/pain 0.8
 $volume wizard/death 0.8
 $volume wizard/tele 0.4
 
-//Annihilator	BY ONOX792
+//Annihilator
 monster/annsit dsannsit
 monster/anndth dsanndth
 monster/anhoof dsanhoof
@@ -449,7 +449,7 @@ monster/anhoof dsanhoof
 weapons/hrlexp dshrlexp
 weapons/hrlfir dshrlfir
 
-//Old Hellhound Sounds from Styd051
+//Hellhound Cerberus
 $random HellHound/pain {CERBPN1 CERBPN2}
 CERBPN1 CERBPN1
 CERBPN2 CERBPN2
@@ -459,7 +459,7 @@ HellHound/die CERBDIE
 HellHound/active CERBROAM
 hellhound/melee DOGGATT
 
-//R31 New Hellhound
+//Hellhound Alt
 $random Dog/pain {DOGGPN1 DOGGPN2}
 DOGGPN1 DOGGPN1
 DOGGPN2 DOGGPN2

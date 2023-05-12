@@ -1,13 +1,13 @@
-gameinfo	//R4 REMOVED RANDOM PLAYER CLASS	//R31 15/08/22 added colours
+gameinfo
 {
-MenuFontColor_Title = "Red"//	Color used for the titles of menu pages.
-MenuFontColor_Label = "Green"//	Color used for setting labels in menu pages.
-MenuFontColor_Value = "White"//	Color used for setting values in menu pages.
-MenuFontColor_Action = "White"//Color used for actions in menu pages.
-MenuFontColor_Header = "Gold"//	Color used for section headers in menu pages.
+MenuFontColor_Title = "Red"		//Colour used for the titles of menu pages
+MenuFontColor_Label = "Green"	//Colour used for setting labels in menu pages
+MenuFontColor_Value = "White"	//Colour used for setting values in menu pages
+MenuFontColor_Action = "White"	//Colour used for actions in menu pages
+MenuFontColor_Header = "Gold"	//Colour used for section headers in menu pages
 
 	NoRandomPlayerClass = true
-	playerclasses = "64DoomPlayer","Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"	//R16	//R27 ADDED MODERN
+	playerclasses = "64DoomPlayer","Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 }
 
 clearskills
@@ -15,7 +15,7 @@ clearskills
 Skill Baby
 {
 	SpawnFilter = Easy
-	Name = "Be Gentle!"		//R13
+	Name = "Be Gentle!"
 	AmmoFactor = 2.0
 	EasyBossBrain
 	mustconfirm = "Are you kidding me? This is barely a challenge."
@@ -24,7 +24,7 @@ Skill Baby
 Skill Easy
 {
 	SpawnFilter = Easy
-	Name = "Bring it on!"	//R13
+	Name = "Bring it on!"
 	Key = "n"
 	EasyBossBrain
 	mustconfirm = "Don't complain if you find it boring."
@@ -33,7 +33,7 @@ Skill Easy
 Skill Normal
 {
 	SpawnFilter = Normal
-	Name = "I own Doom!"	//R13
+	Name = "I own Doom!"
 	mustconfirm = "Normal difficulty."
 	defaultskill
 }
@@ -41,7 +41,7 @@ Skill Normal
 Skill Hard
 {
 	SpawnFilter = Hard
-	MonsterHealth = 1.0		//R15 ADDED
+	MonsterHealth = 1.0
 	Name = "Watch me die!"
 	mustconfirm = "Equivalent to Ultra Violence."
 }
@@ -49,63 +49,12 @@ Skill Hard
 Skill Nightmare
 {
 	SpawnFilter = Hard
-	DamageFactor = 1.5		//R18 WAS 2
-	MonsterHealth = 1.25	//R15 was 0.75
-	FastMonsters 			//R1 WAS FastMonsters 1
+	DamageFactor = 1.5
+	MonsterHealth = 1.25
+	FastMonsters
 	Name = "Hardcore!"
 	mustconfirm = "Monsters are faster, more durarble. All damage increased by 50%."
 }
-
-/*
-Skill Nightmare2			//R19 NEW LEVEL
-{
-	SpawnFilter = Hard
-	DamageFactor = 1.0
-	MonsterHealth = 1.0
-	Name = "Nightmare!"
-	mustconfirm = "All monsters replaced with Nightmare counterparts. Press Y or N"
-	ReplaceActor = "Zombieman","64ZombieMarine"
-	ReplaceActor = "ShotgunGuy","64SSGGuy"
-	ReplaceActor = "64ZombieMarine","64ChaingunGuy"
-	ReplaceActor = "DoomImp","NightmareImp"
-	ReplaceActor = "Demon","64AcidDemon"
-	ReplaceActor = "spectre","64NightmareSpectre"
-	ReplaceActor = "HellKnight","64Knightmare"
-	ReplaceActor = "BaronOfHell","64Belphegor"
-	ReplaceActor = "Cacodemon","NightmareCacodemon"
-	ReplaceActor = "Fatso","64Bruiser"
-	ReplaceActor = "LostSoul","64Stalker"
-	ReplaceActor = "Cyberdemon","Annihilator64"
-	ReplaceActor = "PainElemental","64NightmareElemental"
-	ReplaceActor = "Spidermastermind","64Eradicator"
-}
-
-Skill Nightmare3			//R19 NEW LEVEL
-{
-	SpawnFilter = Hard
-	DamageFactor = 1.0
-	MonsterHealth = 1.0
-	FastMonsters
-	Name = "Torment!"
-	mustconfirm = "Similar to Nightmare diffiuclty but with fast monsters Press Y or N"
-	ReplaceActor = "Zombieman","64ZombieMarine"
-	ReplaceActor = "ShotgunGuy","64SSGGuy"
-	ReplaceActor = "64ZombieMarine","64ChaingunGuy"
-	ReplaceActor = "DoomImp","NightmareImp"
-	ReplaceActor = "Demon","64AcidDemon"
-	ReplaceActor = "spectre","64NightmareSpectre"
-	ReplaceActor = "HellKnight","64Knightmare"
-	ReplaceActor = "BaronOfHell","64Belphegor"
-	ReplaceActor = "Cacodemon","NightmareCacodemon"
-	ReplaceActor = "Fatso","64Bruiser"
-	ReplaceActor = "LostSoul","64Stalker"
-	ReplaceActor = "Cyberdemon","Annihilator64"
-	ReplaceActor = "PainElemental","64NightmareElemental"
-	ReplaceActor = "Spidermastermind","64Eradicator"
-}
-*/
-
-// CAST ENDING FIX R31
 
 Intermission Doom2Cast
 {
@@ -114,6 +63,13 @@ Intermission Doom2Cast
 		CastClass = "D64ZombiemanCast"
 		CastName = "Zombie Man"
 		AttackSound = "Missile",1,"grunt/attack"
+	}
+	Cast
+	{
+		CastClass = "D64HuskZombieCast"
+		CastName = "Husk Zombie"
+		AttackSound = "Melee",1,"imp/melee"
+		AttackSound = "Missile",1,"imp/melee"
 	}
 	Cast
 	{
@@ -215,6 +171,12 @@ Intermission Doom2Cast
 	}
 	Cast
 	{
+		CastClass = "D64ForgottenOneCast"
+		CastName = "Forgotten One"
+		AttackSound = "Missile",1,"alphasoul/melee"
+	}
+	Cast
+	{
 		CastClass = "D64CacodemonCast"
 		CastName = "Cacodemon"
 		AttackSound = "Missile",1,"caco/attack"
@@ -225,8 +187,8 @@ Intermission Doom2Cast
 		CastClass = "D64NightmareCacodemonCast"
 		CastName = "Nightmare Cacodemon"
 		AttackSound = "Missile",1,"caco/attack"
-		AttackSound = "Missile",2,"caco/attack"
 		AttackSound = "Missile",3,"caco/attack"
+		AttackSound = "Missile",5,"caco/attack"
 		AttackSound = "Melee",1,"weapons/gswing"
 	}
 	Cast
@@ -291,8 +253,8 @@ Intermission Doom2Cast
 		CastClass = "D64FatsoCast"
 		CastName = "Mancubus"
 		AttackSound = "Missile",1,"fatso/attack"
-		AttackSound = "Missile",4,"fatso/attack"
-		AttackSound = "Missile",7,"fatso/attack"
+		AttackSound = "Missile",3,"fatso/attack"
+		AttackSound = "Missile",5,"fatso/attack"
 	}
 	Cast
 	{
@@ -314,6 +276,18 @@ Intermission Doom2Cast
 		CastName = "Belphegor"
 		AttackSound = "Missile",1,"baron/attack"
 		AttackSound = "Melee",1,"imp/melee"
+	}
+	Cast
+	{
+		CastClass = "D64ArchvileCast"
+		CastName = "Archvile"
+		AttackSound = "Missile",1,"vile/firecrkl"
+	}
+	Cast
+	{
+		CastClass = "D64FleshWizardCast"
+		CastName = "Flesh Wizard"
+		AttackSound = "Missile",1,"vile/firecrkl"
 	}
 	Cast
 	{
@@ -359,7 +333,10 @@ Intermission Doom2Cast
 	{
 		CastClass = "D64DoomPlayerCast"
 		CastName = "Our Hero"
-		AttackSound = "Missile",0,"SGFIRE"
+		AttackSound = "Missile",1,"SMG"
+		AttackSound = "Missile",2,"SMG"
+		AttackSound = "Missile",3,"SMG"
+		AttackSound = "Missile",4,"SMG"
 	}
 	Link = Doom2Cast // restart cast call
 }

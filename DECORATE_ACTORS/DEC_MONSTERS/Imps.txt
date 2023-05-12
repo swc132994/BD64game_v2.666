@@ -85,7 +85,7 @@ DropItem "DemonEssenceSpawner"
 		TROH F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Bullet:
-		TNT1 A 0 A_Jump(168,"Death")
+		TNT1 A 0 A_Jump(205,"Death")//80%
 	Death.Rifle:
 	Death.CutLess:
 		TNT1 A 0 A_Jump(64,"Death")
@@ -746,7 +746,7 @@ Tag "Nightmare Imp"
 		TRO2 P -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Bullet:
-		TNT1 A 0 A_Jump(168,"Death")
+		TNT1 A 0 A_Jump(205,"Death")//80%
 	Death.Rifle:
 	Death.CutLess:
 		TNT1 A 0 A_Jump(64,"Death")

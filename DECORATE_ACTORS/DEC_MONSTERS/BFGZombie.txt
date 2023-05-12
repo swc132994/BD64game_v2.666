@@ -90,7 +90,7 @@ MeleeRange 120
 		64BZ G 1 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.Bullet:
-		TNT1 A 0 A_Jump(168,"Death")
+		TNT1 A 0 A_Jump(205,"Death")//80%
 	Death.Rifle:
 	Death.Cutless:
 		TNT1 A 0 A_Jump(64,"Death")
@@ -204,6 +204,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		ZBF1 A 9 A_SpawnItem("HeadshotTarget10",0,50,0)
 	Death:
+	Death.Bullet:
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Die
@@ -304,6 +305,7 @@ Actor BrutalizedBFGDude_2 : BrutalizedBFGDude_1
 	See:
 		ZBF2 A 10
 	Death:
+	Death.Bullet:
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Die

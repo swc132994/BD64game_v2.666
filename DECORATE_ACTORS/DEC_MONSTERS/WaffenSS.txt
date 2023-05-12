@@ -109,7 +109,6 @@ DropItem "SOULSPAWNER"
 		SSWV H 3
 		SSWV H 3 A_Pain
 		Goto See
-	Death.Bullet:
 	Death:
 		SSWV I 5 A_Scream
 		SSWV J 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
@@ -200,7 +199,7 @@ DropItem "SOULSPAWNER"
 		NDM3 F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Bullet:
-		TNT1 A 0 A_Jump(168,"Death")
+		TNT1 A 0 A_Jump(205,"Death")//80%
 	Death.Rifle:
 	Death.Cutless:
 		TNT1 A 0 A_Jump(64,"Death")
@@ -263,6 +262,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		NDM1 A 9 A_SpawnItem("HeadshotTarget10",0,50,0)
 	Death:
+	Death.Bullet:
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Die
@@ -364,6 +364,7 @@ Actor BrutalisedWaffenSS_2 : BrutalisedWaffenSS_1
 	See:
 		NDM2 A 10
 	Death:
+	Death.Bullet:
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Die

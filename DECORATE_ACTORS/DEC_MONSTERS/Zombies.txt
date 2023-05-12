@@ -234,7 +234,7 @@ states
 		PO2D E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Bullet:
-		TNT1 A 0 A_Jump(168,"Death")
+		TNT1 A 0 A_Jump(205,"Death")//80%
 	Death.Rifle:
 	Death.Cutless:
 		TNT1 A 0 A_Jump(64,"Death")
@@ -625,7 +625,7 @@ DropItem "SOULSPAWNER"
 		SPOS L -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Bullet:
-		TNT1 A 0 A_Jump(168,"Death")
+		TNT1 A 0 A_Jump(205,"Death")//80%
 	Death.Rifle:
 	Death.Cutless:
 		TNT1 A 0 A_Jump(64,"Death")
@@ -812,7 +812,7 @@ Obituary "%o was blown apart by an SSG Zombie."
 		POS4 L -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Bullet:
-		TNT1 A 0 A_Jump(168,"Death")
+		TNT1 A 0 A_Jump(205,"Death")//80%
 	Death.Rifle:
 	Death.Cutless:
 		TNT1 A 0 A_Jump(64,"Death")
@@ -1362,7 +1362,7 @@ DropItem "SOULSPAWNER"
 		MPOS G 1 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.Bullet:
-		TNT1 A 0 A_Jump(168,"Death")
+		TNT1 A 0 A_Jump(205,"Death")//80%
 	Death.Rifle:
 	Death.Cutless:
 		TNT1 A 0 A_Jump(64,"Death")
@@ -1482,6 +1482,7 @@ DropItem "None"
 		ZDM1 A 9 A_SpawnItem("HeadshotTarget10",0,50,0)
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		ZDM1 A 9 A_SpawnItem("HeadshotTarget10",0,50,0)
+	Death.Bullet:
 	Death:
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
@@ -1582,6 +1583,7 @@ Actor BrutalizedChaingunner_2 : BrutalizedChaingunner_1
 	Spawn:
 	See:
 		ZDM2 A 10
+	Death.Bullet:
 	Death:
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
@@ -1741,7 +1743,6 @@ Obituary "%o was gunned down by a zombie marine."
 		CPOS G 3
 		CPOS G 3 A_Pain
 		Goto See
-	Death.Bullet:
 	Death:
 		CPOS H 5 A_Scream
 		CPOS I 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
@@ -1857,6 +1858,7 @@ Obituary "%o was gunned down by a zombie marine."
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Bullet:
+		TNT1 A 0 A_Jump(205,"Death")//80%
 	Death.Rifle:
 		TNT1 A 0 A_Jump(168,"Death")
 	Death.Heavy:
@@ -1960,7 +1962,6 @@ Obituary "%o was gunned down by a marine."
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
 		POL5 A -1
 		Stop
-	Death.Bullet:
 	Death:
 		TNT1 A 0 A_Scream
 		PLAY H 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
@@ -2040,6 +2041,10 @@ Obituary "%o was gunned down by a marine."
 		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
+	Death.Bullet:
+		TNT1 A 0 A_Jump(205,"Death")//80%
+	Death.Rifle:
+		TNT1 A 0 A_Jump(168,"Death")
 	Death.Heavy:
 		PLAY G 3 A_XScream
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
