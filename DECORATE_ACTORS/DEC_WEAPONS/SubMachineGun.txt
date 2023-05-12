@@ -97,7 +97,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(2.0,2.0,-1,7,"HitPuff")
 		TNT1 A 0 A_PlaySound("SMG",1)
-		SMGF CD 1 A_SetPitch(pitch+0.6)
+		SMGF CD 1 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
 		SMGG A 1
@@ -109,7 +109,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(4.0,4.0,-1,7,"HitPuff")
 		TNT1 A 0 A_PlaySound("SMG",1)
-		SMGF CD 1 A_SetPitch(pitch+0.6)
+		SMGF CD 1 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
 		SMGG A 1
@@ -121,7 +121,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(7.0,7.0,-1,7,"HitPuff")
 		TNT1 A 0 A_PlaySound("SMG",1)
-		SMGF CD 1 A_SetPitch(pitch+0.6)
+		SMGF CD 1 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
 		SMGG A 1
@@ -287,7 +287,7 @@ Tag "Sub-machine gun"
 		SMGF A 1 Bright
 		TNT1 A 0 A_Jump(255, 2)
 		SMGF B 1 Bright
-		SMGF CD 1 A_SetPitch(pitch+0.4)
+		SMGF CD 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredSMG",1)
 		SMGG A 1 A_SetAngle(angle + random(-1,1))
@@ -305,7 +305,7 @@ Tag "Sub-machine gun"
 		SMGF A 1 Bright
 		TNT1 A 0 A_Jump(255, 2)
 		SMGF B 1 Bright
-		SMGF CD 1 A_SetPitch(pitch+0.4)
+		SMGF CD 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredSMG",1)
 		SMGG A 1 A_SetAngle(angle + random(-1,1))
@@ -323,7 +323,7 @@ Tag "Sub-machine gun"
 		SMGF A 1 Bright
 		TNT1 A 0 A_Jump(255, 2)
 		SMGF B 1 Bright
-		SMGF CD 1 A_SetPitch(pitch+0.4)
+		SMGF CD 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredSMG",1)
 		SMGG A 1 A_SetAngle(angle + random(-1,1))
@@ -341,7 +341,7 @@ Tag "Sub-machine gun"
 		SMGF A 1 Bright
 		TNT1 A 0 A_Jump(255, 2)
 		SMGF B 1 Bright
-		SMGF CD 1 A_SetPitch(pitch+0.4)
+		SMGF CD 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredSMG",1)
 		SMGG A 1 A_SetAngle(angle + random(-1,1))
@@ -359,7 +359,7 @@ Tag "Sub-machine gun"
 		SMGF A 1 Bright
 		TNT1 A 0 A_Jump(255, 2)
 		SMGF B 1 Bright
-		SMGF CD 1 A_SetPitch(pitch+0.4)
+		SMGF CD 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredSMG",1)
 		SMGG A 1 A_SetAngle(angle + random(-1,1))

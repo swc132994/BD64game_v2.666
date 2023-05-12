@@ -58,7 +58,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		MP4G A 1 A_Lower
 		Wait
 	Fire:
-		TNT1 A 0 A_SetPitch(pitch-1.2)
+		TNT1 A 0 A_SetPitch(pitch-1.2, SPF_INTERPOLATE)
 		MP4F AB 1 Bright
 		TNT1 A 0 A_JumpIfInventory("FiredMP40",4,"Fire4")
 		TNT1 A 0 A_JumpIfInventory("FiredMP40",3,"Fire3")
@@ -70,7 +70,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.0,0.0,-1,7,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",1)
-		TNT1 A 0 A_SetPitch(pitch+0.6)
+		TNT1 A 0 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
 		MP4F CDEF 1
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredMP40",1)
@@ -84,7 +84,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.6,0.6,-1,7,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",1)
-		TNT1 A 0 A_SetPitch(pitch-0.6)
+		TNT1 A 0 A_SetPitch(pitch-0.6, SPF_INTERPOLATE)
 		MP4F CDEF 1
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
@@ -98,7 +98,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(2.0,2.0,-1,7,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",1)
-		TNT1 A 0 A_SetPitch(pitch+0.6)
+		TNT1 A 0 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
 		MP4F CDEF 1
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
@@ -112,7 +112,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(4.0,4.0,-1,7,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",1)
-		TNT1 A 0 A_SetPitch(pitch-0.6)
+		TNT1 A 0 A_SetPitch(pitch-0.6, SPF_INTERPOLATE)
 		MP4F CDEF 1
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
@@ -126,7 +126,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(7.0,7.0,-1,7,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",1)
-		TNT1 A 0 A_SetPitch(pitch+0.6)
+		TNT1 A 0 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
 		MP4F CDEF 1
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
@@ -242,7 +242,7 @@ Tag "MP40"
 	Fire:
 		TNT1 A 0 A_JumpIfInventory("MP40Ammo",1,1)
 		Goto Reload
-		TNT1 A 0 A_SetPitch(pitch-1.2)
+		TNT1 A 0 A_SetPitch(pitch-1.2, SPF_INTERPOLATE)
 		TNT1 A 0 A_JumpIfInventory("FiredMP40",4,"Fire4")
 		TNT1 A 0 A_JumpIfInventory("FiredMP40",3,"Fire3")
 		TNT1 A 0 A_JumpIfInventory("FiredMP40",2,"Fire2")
@@ -256,7 +256,7 @@ Tag "MP40"
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",1)
 		MP4F AB 1 Bright
-		TNT1 A 0 A_SetPitch(pitch+0.4)
+		TNT1 A 0 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
 		MP4F CDEF 1
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredMP40",1)
@@ -273,7 +273,7 @@ Tag "MP40"
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",1)
 		MP4F AB 1 Bright
-		TNT1 A 0 A_SetPitch(pitch+0.4)
+		TNT1 A 0 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
 		MP4F CDEF 1
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredMP40",1)
@@ -290,7 +290,7 @@ Tag "MP40"
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",1)
 		MP4F AB 1 Bright
-		TNT1 A 0 A_SetPitch(pitch-0.4)
+		TNT1 A 0 A_SetPitch(pitch-0.4, SPF_INTERPOLATE)
 		MP4F CDEF 1
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredMP40",1)
@@ -307,7 +307,7 @@ Tag "MP40"
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",1)
 		MP4F AB 1 Bright
-		TNT1 A 0 A_SetPitch(pitch+0.4)
+		TNT1 A 0 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
 		MP4F CDEF 1
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredMP40",1)
@@ -324,7 +324,7 @@ Tag "MP40"
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",1)
 		MP4F AB 1 Bright
-		TNT1 A 0 A_SetPitch(pitch-0.4)
+		TNT1 A 0 A_SetPitch(pitch-0.4, SPF_INTERPOLATE)
 		MP4F CDEF 1
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredMP40",1)

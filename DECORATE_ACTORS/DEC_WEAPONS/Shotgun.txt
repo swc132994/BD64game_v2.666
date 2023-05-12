@@ -54,11 +54,11 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		TNT1 A 0 A_ZoomFactor(0.95)
 		SHTF AB 1 Bright
 		TNT1 A 0 A_ZoomFactor(1.0)
-		SHTF C 3 A_SetPitch(pitch-2)
-		SHTF D 1 A_SetPitch(pitch+0.8)
-		SHTF E 1 A_SetPitch(pitch+0.6)
-		SHTG A 1 A_SetPitch(pitch+0.4)
-		SHTG A 1 A_SetPitch(pitch+0.2)
+		SHTF C 3 A_SetPitch(pitch-2, SPF_INTERPOLATE)
+		SHTF D 1 A_SetPitch(pitch+0.8, SPF_INTERPOLATE)
+		SHTF E 1 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
+		SHTG A 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
+		SHTG A 1 A_SetPitch(pitch+0.2, SPF_INTERPOLATE)
 		SHTG BCDEFG 1
 		TNT1 A 0 A_FireCustomMissile("ShotCaseSpawn",0,0,-4,-4)
 		TNT1 A 0 A_PlaySound("STGNPUMP",4)
@@ -225,11 +225,11 @@ Tag "$TAG_SHOTGUN"
 		TNT1 A 0 A_ZoomFactor(0.95)
 		SHTF AB 1 Bright
 		TNT1 A 0 A_ZoomFactor(1.0)
-		SHTF C 3 A_SetPitch(pitch-2)
-		SHTF D 1 A_SetPitch(pitch+0.8)
-		SHTF E 1 A_SetPitch(pitch+0.6)
-		SHTG A 1 A_SetPitch(pitch+0.4)
-		SHTG A 1 A_SetPitch(pitch+0.2)
+		SHTF C 3 A_SetPitch(pitch-2, SPF_INTERPOLATE)
+		SHTF D 1 A_SetPitch(pitch+0.8, SPF_INTERPOLATE)
+		SHTF E 1 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
+		SHTG A 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
+		SHTG A 1 A_SetPitch(pitch+0.2, SPF_INTERPOLATE)
 		Goto Pump
 	Pump://R31 Pump System
 		SHTG BCDEFG 1 A_WeaponReady(WRF_NOPRIMARY)
