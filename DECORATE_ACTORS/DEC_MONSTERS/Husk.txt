@@ -168,11 +168,11 @@ states
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
 		FZ2D A 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_SetScale(0.8)
-		PO2D B 5 A_XScream
-		PO2D C 5 A_NoBlocking
-		PO2D D 5
-		PO2D E 35
-		PO2D E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		FZ2D B 5 A_XScream
+		FZ2D C 5 A_NoBlocking
+		FZ2D D 5
+		FZ2D E 35
+		FZ2D E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Bullet:
 		TNT1 A 0 A_Jump(205,"Death")//80%
@@ -364,11 +364,11 @@ DropItem "None"
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
 		FZ2D A 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_SetScale(0.8)
-		PO2D B 5 A_XScream
-		PO2D C 5 A_NoBlocking
-		PO2D D 5
-		PO2D E 35
-		PO2D E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		FZ2D B 5 A_XScream
+		FZ2D C 5 A_NoBlocking
+		FZ2D D 5
+		FZ2D E 35
+		FZ2D E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Raise:
 		TNT1 A 0 A_SetScale(0.7)
