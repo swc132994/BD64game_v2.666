@@ -111,7 +111,6 @@ RenderStyle Translucent
 	}
 }
 
-
 actor 64DeadShotgunGuy : DeadShotgunGuy Replaces DeadShotgunGuy
 {
 scale 0.75

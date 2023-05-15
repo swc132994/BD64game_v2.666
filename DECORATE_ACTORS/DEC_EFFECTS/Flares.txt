@@ -220,6 +220,12 @@ YScale 0.07
 alpha 0.3
 }
 
+Actor RedFlareSmallItem : RedFlare
+{
+XScale 0.15
+YScale 0.07
+alpha 0.3
+}
 
 Actor PlasmaFlare : Flare_General
 {

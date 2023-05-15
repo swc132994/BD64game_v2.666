@@ -927,7 +927,7 @@ brightmap sprite ESKUF3F7	{map "brightmaps/ForgottenOne/ESKUF3F7_BR.png"}
 brightmap sprite ESKUF4F6	{map "brightmaps/ForgottenOne/ESKUF4F6_BR.png"}
 brightmap sprite ESKUF5		{map "brightmaps/ForgottenOne/ESKUF5_BR.png"}
 
-//LIQUID TEXTURES
+/*//LIQUID TEXTURES
 brightmap sprite LAVA1		{map "brightmaps/256SQ_BR.png"}
 brightmap sprite LAVA2		{map "brightmaps/256SQ_BR.png"}
 brightmap sprite LAVA3		{map "brightmaps/256SQ_BR.png"}
@@ -935,3 +935,4 @@ brightmap sprite LAVA4		{map "brightmaps/256SQ_BR.png"}
 brightmap sprite NUKAGE1	{map "brightmaps/256SQ_BR.png"}
 brightmap sprite NUKAGE2	{map "brightmaps/256SQ_BR.png"}
 brightmap sprite NUKAGE3	{map "brightmaps/256SQ_BR.png"}
+*/

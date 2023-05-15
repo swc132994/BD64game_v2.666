@@ -1,6 +1,5 @@
 #INCLUDE Brightmaps.gl
 
-//start import doomdefs
 //Bullet puff
 flickerlight BPUFF1
 {
@@ -18,7 +17,7 @@ flickerlight BPUFF2
 	chance 0.8
 }
 
-object HitPuff		//R10.1 WAS 64BulletPuff
+object HitPuff
 {
 	frame PUFFA {light BPUFF1}
 	frame PUFFB {light BPUFF2}
@@ -81,7 +80,7 @@ object 64Rocket
 	frame MISLF {light ROCKET_X5}
 }
 
-object TacticalRocket	//R31 Added
+object TacticalRocket
 {
 	frame MISLA {light ROCKET}
 
@@ -92,7 +91,7 @@ object TacticalRocket	//R31 Added
 	frame MISLF {light ROCKET_X5}
 }
 
-object CyberRocket	//R31 Added
+object CyberRocket
 {
 	frame MISLA {light ROCKET}
 
@@ -103,7 +102,7 @@ object CyberRocket	//R31 Added
 	frame MISLF {light ROCKET_X5}
 }
 
-object 64NightcrawlerGrenade	//R31 Added
+object 64NightcrawlerGrenade
 {
 	frame MISLB {light ROCKET_X1}
 	frame MISLC {light ROCKET_X2}
@@ -213,7 +212,7 @@ object UnmakerLaser
 frame ULAZ {light UNMAKERSHOT}
 }
 
-object UnmakerLaser2	//R31 added
+object UnmakerLaser2
 {
 frame ULAZ {light UNMAKERSHOT}
 }
@@ -223,7 +222,7 @@ object EradicatorLaser
 frame ULAZ {light UNMAKERSHOT}
 }
 
-object UnmakerLaserTrail	//R31 added
+object UnmakerLaserTrail
 {
 frame ULAZ {light UNMAKERSHOT}
 }
@@ -341,7 +340,7 @@ pulselight SMALLLAMP
 	offset 0 44 0
 }
 
-object 64TechLamp2B			//R10.1 WAS 64TechLamp2
+object 64TechLamp2B
 {
 	frame TLP2 {light SMALLLAMP}
 }
@@ -356,7 +355,7 @@ pulselight BIGLAMP
 	offset 0 72 0
 }
 
-object 64TechLampB			//R10.1 64TechLamp
+object 64TechLampB
 {
 	frame TLMP {light BIGLAMP}
 }
@@ -391,7 +390,7 @@ object 64GreenTorch
 	frame TGRE {light BIGGREENTORCH}
 }
 
-object BruiserFlame	//R31 added
+object BruiserFlame
 {
 	frame FIR3 {light BIGGREENTORCH}
 }
@@ -411,21 +410,6 @@ object 64BlueTorch
 	frame TBLU {light BIGBLUETORCH}
 }
 
-//Tall yellow torch
-/*flickerlight2 BIGYELLOWTORCH
-{
-	color 1.0 0.9 0.0
-	size 64
-	secondarySize 72
-	interval 0.1
-	offset 0 60 0
-}
-
-object 64YellowTorch		//R16 MOVED TO MAPS.PK3
-{
-	frame TYRN {light BIGYELLOWTORCH}
-}*/
-
 // Small red torch
 flickerlight2 SMALLREDTORCH
 {
@@ -436,7 +420,7 @@ flickerlight2 SMALLREDTORCH
 	offset 0 35 0
 }
 
-object 64RedTorchSmall			//R10.1 WAS 64ShortRedTorch
+object 64RedTorchSmall
 {
 	frame TRED {light SMALLREDTORCH}
 }
@@ -466,7 +450,7 @@ flickerlight2 SMALLBLUETORCH
 	offset 0 35 0
 }
 
-object 64BlueTorchSmall 		//R10.1 WAS 64ShortBlueTorch
+object 64BlueTorchSmall
 {
 	frame TBLU {light SMALLBLUETORCH}
 }
@@ -506,12 +490,6 @@ pulselight SOULSPHERE
 	offset 0 16 0
 }
 
-object 64SoulSphere
-{
-	frame SOUL {light SOULSPHERE}
-	frame 2OUL {light SOULSPHERE}
-}
-
 //Invulnerability Sphere
 pulselight INVULN
 {
@@ -520,12 +498,6 @@ pulselight INVULN
 	secondarySize 24
 	interval 2.0
 	offset 0 16 0
-}
-
-object 64InvulnerabilitySphere
-{
-	frame PINV {light INVULN}
-	frame P1NV {light INVULN}
 }
 
 //Blur Sphere
@@ -538,12 +510,6 @@ pulselight BLURSPHERE
 	offset 0 16 0
 }
 
-object 64BlurSphere
-{
-	frame PINS {light BLURSPHERE}
-	frame PIN2 {light BLURSPHERE}
-}
-
 //Mega Sphere
 pulselight MEGASPHERE
 {
@@ -552,12 +518,6 @@ pulselight MEGASPHERE
 	secondarySize 24
 	interval 2.0
 	offset 0 16 0
-}
-
-object 64MegaSphere
-{
-	frame MEGA {light MEGASPHERE}
-	frame M3GA {light MEGASPHERE}
 }
 
 //Health Potion
@@ -569,9 +529,13 @@ pulselight HEALTHPOTION
 	interval 2.0
 }
 
-object 64HealthBonus
+//Hell Potion
+pulselight HELLPOTION
 {
-	frame BON1 {light HEALTHPOTION}
+	color 0.6 0.0 0.0
+	size 10
+	secondarySize 12
+	interval 2.0
 }
 
 //Armour Helmet
@@ -583,13 +547,8 @@ pulselight ARMORBONUS
 	interval 1.0
 }
 
-object 64ArmorBonus
-{
-	frame BON2 {light ARMORBONUS}
-}
-
 //Blue Keys
-pulselight BLUEKEY					//R28.3 added
+pulselight BLUEKEY
 {
 	color 0.0 0.0 0.6
 	size 10
@@ -597,33 +556,13 @@ pulselight BLUEKEY					//R28.3 added
 	interval 0.57
 }
 
-object BlueCard						//R29 WAS GLBlueCard
-{
-	frame BKEY {light BLUEKEY}		//R28.3 WAS LIGHT HEALTHPOTION
-}
-
-object BlueSkull					//R29 WAS GLBlueSkull
-{
-	frame BSKU {light BLUEKEY}		//R28.3 WAS LIGHT HEALTHPOTION
-}
-
 //Yellow Keys
 pulselight YELLOWKEY
 {
 	color 0.6 0.6 0.0
 	size 10
-	secondarySize 14			//R28.3 WAS 18
-	interval 0.57				//R28.3 WAS 2
-}
-
-object YellowCard				//R29 WAS GLYellowCard
-{
-	frame YKEY {light YELLOWKEY}
-}
-
-object YellowSkull				//R29 WAS GLYellowSkull
-{
-	frame YSKU {light YELLOWKEY}
+	secondarySize 14
+	interval 0.57
 }
 
 //Red Keys
@@ -631,18 +570,8 @@ pulselight REDKEY
 {
 	color 0.6 0.0 0.0
 	size 10
-	secondarySize 14		//R28.3 WAS 18
-	interval 0.57			//R28.3 WAS 2
-}
-
-object RedCard				//R29 WAS GLRedCard
-{
-	frame RKEY {light REDKEY}
-}
-
-object RedSkull				//R29 WAS GLRedSkull
-{
-	frame RSKU {light REDKEY}
+	secondarySize 14
+	interval 0.57
 }
 
 //Green armour
@@ -658,14 +587,6 @@ pointlight GREENARMOR2
 	size 24
 }
 
-object 64GreenArmor
-{
-	frame ARM1A {light GREENARMOR1}
-	frame ARM1B {light GREENARMOR2}
-	frame ARM3A {light GREENARMOR1}
-	frame ARM3B {light GREENARMOR2}
-}
-
 //Blue armour
 pointlight BLUEARMOR1
 {
@@ -679,155 +600,32 @@ pointlight BLUEARMOR2
 	size 24
 }
 
-object 64BlueArmor
-{
-	frame ARM2A {light BLUEARMOR1}
-	frame ARM2B {light BLUEARMOR2}
-	frame ARM4A {light BLUEARMOR1}
-	frame ARM4B {light BLUEARMOR2}
-}
+//Unmaker key 1 Red
 
-//Pentagram Red
-pointlight WEAPONPOWERRED1
+pulselight WEAPONPOWERRED
 {
 	color 1.0 0.0 0.0
-	size 24
-}
-
-pointlight WEAPONPOWERRED2
-{
-	color 0.7 0.0 0.0
-	size 22
-}
-
-pointlight WEAPONPOWERRED3
-{
-	color 0.5 0.0 0.0
-	size 20
-}
-
-pointlight WEAPONPOWERRED4
-{
-	color 0.3 0.0 0.0
-	size 18
-}
-
-pointlight WEAPONPOWERRED5
-{
-	color 0.1 0.0 0.0
 	size 16
+	secondarySize 20
+	interval 1.14
 }
 
-object WpnPower1
-{
-	frame POW1A {light WEAPONPOWERRED5}
-	frame POW1B {light WEAPONPOWERRED4}
-	frame POW1C {light WEAPONPOWERRED3}
-	frame POW1D {light WEAPONPOWERRED2}
-	frame POW1E {light WEAPONPOWERRED1}
-}
-
-//Pentagram Teal
-pointlight WEAPONPOWERTEAL1
+//Unmaker key 3 Teal
+pulselight WEAPONPOWERTEAL
 {
 	color 0.0 1.0 1.0
-	size 24
-}
-
-pointlight WEAPONPOWERTEAL2
-{
-	color 0.0 0.7 0.7
-	size 22
-}
-
-pointlight WEAPONPOWERTEAL3
-{
-	color 0.0 0.5 0.5
-	size 20
-}
-
-pointlight WEAPONPOWERTEAL4
-{
-	color 0.0 0.3 0.3
-	size 18
-}
-
-pointlight WEAPONPOWERTEAL5
-{
-	color 0.0 0.1 0.1
 	size 16
+	secondarySize 20
+	interval 1.14
 }
 
-object WpnPower3
-{
-	frame POW3A {light WEAPONPOWERTEAL5}
-	frame POW3B {light WEAPONPOWERTEAL4}
-	frame POW3C {light WEAPONPOWERTEAL3}
-	frame POW3D {light WEAPONPOWERTEAL2}
-	frame POW3E {light WEAPONPOWERTEAL1}
-}
-
-//Pentragram Purple
-pointlight WEAPONPOWERPURPLE1
+//Unmaker key 2 Purple
+pulselight WEAPONPOWERPURPLE
 {
 	color 0.5 0.0 1.0
-	size 24
-}
-
-pointlight WEAPONPOWERPURPLE2
-{
-	color 0.4 0.0 0.8
-	size 22
-}
-
-pointlight WEAPONPOWERPURPLE3
-{
-	color 0.35 0.0 0.7
-	size 20
-}
-
-pointlight WEAPONPOWERPURPLE4
-{
-	color 0.15 0.0 0.3
-	size 18
-}
-
-pointlight WEAPONPOWERPURPLE5
-{
-	color 0.05 0.0 0.1
 	size 16
-}
-
-object WpnPower2
-{
-	frame POW2A {light WEAPONPOWERPURPLE5}
-	frame POW2B {light WEAPONPOWERPURPLE4}
-	frame POW2C {light WEAPONPOWERPURPLE3}
-	frame POW2D {light WEAPONPOWERPURPLE2}
-	frame POW2E {light WEAPONPOWERPURPLE1}
-}
-
-//Radiation Suit
-object 64RadSuit
-{
-	frame SUITA {light GREENARMOR1}
-	frame SUITB {light GREENARMOR2}
-}
-
-//Unmaker soul ammo
-object SoulAmmo	//R31 added
-{
-	frame D4RFL {light WEAPONPOWERTEAL3}
-}
-
-object DemonEssence	//R31 added
-{
-	frame D4RFL {light WEAPONPOWERRED3}
-}
-
-object DemonEssenceLarge	//R31 added
-{
-	frame D4RFL {light WEAPONPOWERRED1}
+	secondarySize 20
+	interval 1.14
 }
 
 //Zombies
@@ -850,7 +648,7 @@ flickerlight2 ZOMBIEATK2
 
 object 64ZombieMan
 {
-	frame PPOSF {light ZOMBIEATK}	//r31 was POSSF
+	frame PPOSF {light ZOMBIEATK}
 }
 
 object 64ShotgunGuy
@@ -858,7 +656,7 @@ object 64ShotgunGuy
 	frame SPOSF {light ZOMBIEATK}
 }
 
-object 64Zombiemarine	//R31 added
+object 64Zombiemarine
 {
 	frame CPOSE {light ZOMBIEATK}
 	frame CPOSF {light ZOMBIEATK}
@@ -866,12 +664,12 @@ object 64Zombiemarine	//R31 added
 
 object IntroMarine
 {
-frame PLAYF {light ZOMBIEATK}	//R31 was frame PL7YF {light BIGREDLIGHTPOINT}
+frame PLAYF {light ZOMBIEATK}
 }
 
-object 64SSGGuy		//R10.2 unused	//r31 active was SuperShotgunGuy
+object 64SSGGuy
 {
-	frame POS4F {light ZOMBIEATK}	//R31 added frame
+	frame POS4F {light ZOMBIEATK}
 }
 
 object 64DoomPlayer
@@ -963,7 +761,7 @@ flickerlight IMPBALL_X6
 	chance 0.25
 }
 
-object 64ImpBall	//R10.1 WAS 64DoomImpBall
+object 64ImpBall
 {
 	frame BAL1A {light IMPBALL}
 	frame BAL1B {light IMPBALL}
@@ -1094,7 +892,7 @@ flickerlight CACOBALL_X5
 	chance 0.25
 }
 
-object 64CacodemonBall	//R31 added frames
+object 64CacodemonBall
 {
 	frame BAL2A {light CACOBALL}
 	frame BAL2B {light CACOBALL}
@@ -1158,7 +956,7 @@ flickerlight NCACOBALL_X5
 	chance 0.25
 }
 
-object NCacoBall		//R10.2 unused //R11 active	//R31 added frames
+object NCacoBall
 {
 	frame NCACA {light NCACOBALL}
 	frame NCACB {light NCACOBALL}
@@ -1228,7 +1026,7 @@ flickerlight BARONBALL_X6
 	chance 0.25
 }
 
-object 64BaronBallGreen	//r31 fixed frames
+object 64BaronBallGreen
 {
 	frame BAL7A {light BARONBALL}
 	frame BAL7B {light BARONBALL}
@@ -1241,7 +1039,7 @@ object 64BaronBallGreen	//r31 fixed frames
 	frame BAL7H {light BARONBALL_X6}
 }
 
-object 64BruiserBall	//R31 added
+object 64BruiserBall
 {
 	frame BAL7A {light BARONBALL}
 	frame BAL7B {light BARONBALL}
@@ -1322,7 +1120,7 @@ flickerlight BARONBALL2_X6
 	chance 0.25
 }
 
-object 64BaronBall		//R10 WAS BaronBall2
+object 64BaronBall
 {
 	frame BRNRA {light BARONBALL2}
 	frame BRNRB {light BARONBALL2}
@@ -1558,7 +1356,7 @@ object 64Stalker
 }
 
 //Mancubus Fireball
-object 64FatShot	//R31 fixed frames
+object 64FatShot
 {
 	frame MTB1A {light IMPBALL}
 	frame MTB1B {light IMPBALL}
@@ -1653,7 +1451,7 @@ flickerlight TRACER_X3
 	chance 0.25
 }
 
-object 64RevenantTracer3	//R10.1 WAS 64RevenantTracer
+object 64RevenantTracer3
 {
 	frame M5B1A {light TRACER}
 	frame M5B1B {light TRACER}
@@ -1667,7 +1465,7 @@ object 64RevenantTracer3	//R10.1 WAS 64RevenantTracer
 	frame MBALH {light TRACER_X3}
 }
 
-object 64RevenantTracer2	//R31 added
+object 64RevenantTracer2
 {
 	frame M5B1A {light TRACER}
 	frame M5B1B {light TRACER}
@@ -1681,7 +1479,7 @@ object 64RevenantTracer2	//R31 added
 	frame MBALH {light TRACER_X3}
 }
 
-object 64StalkerShot1	//R31 added
+object 64StalkerShot1
 {
 	frame M5B1A {light TRACER}
 	frame M5B1B {light TRACER}
@@ -1694,7 +1492,7 @@ object 64StalkerShot1	//R31 added
 	frame MBALG {light TRACER_X3}
 	frame MBALH {light TRACER_X3}
 }
-object 64StalkerShot2	//R31 added
+object 64StalkerShot2
 {
 	frame M5B1A {light TRACER}
 	frame M5B1B {light TRACER}
@@ -1912,7 +1710,7 @@ object MotherBall
 	frame MBALH {light BARONBALL2_X6}
 }
 
-object SuperMotherBall	//R31 added
+object SuperMotherBall
 {
 	frame BAL2 {light TRACER}
 }
@@ -1927,7 +1725,7 @@ object MotherFire
 	frame MFIRE {light ARCHATK5}
 }
 
-object MotherFireTrail	//R31 added
+object MotherFireTrail
 {
 	frame MPUF {light ARCHATK5}
 }
@@ -2097,16 +1895,16 @@ flickerlight DTFOG4
 	chance 0.4
 }
 
-object TeleportationFog				//R10.1 WAS 64TeleportFog
+object TeleportationFog
 {
-	frame TPFGA {light DTFOG1}		//R30.4 WAS TFOGA
-	frame TPFGB {light DTFOG1}		//R30.4 WAS TFOGB
-	frame TPFGC {light DTFOG2}		//R30.4 WAS TFOGC
-	frame TPFGD {light DTFOG2}		//R30.4 WAS TFOGD
-	frame TPFGE {light DTFOG3}		//R30.4 WAS TFOGE
-	frame TPFGF {light DTFOG3}		//R30.4 WAS TFOGF
-	frame TPFGG {light DTFOG4}		//R30.4 WAS TFOGG
-	frame TPFGH {light DTFOG4}		//R30.4 WAS TFOGH
+	frame TPFGA {light DTFOG1}
+	frame TPFGB {light DTFOG1}
+	frame TPFGC {light DTFOG2}
+	frame TPFGD {light DTFOG2}
+	frame TPFGE {light DTFOG3}
+	frame TPFGF {light DTFOG3}
+	frame TPFGG {light DTFOG4}
+	frame TPFGH {light DTFOG4}
 }
 
 //Tiny red torch
@@ -2147,8 +1945,6 @@ object TinyGreenTorch
 {
 	frame SMGT {light TINYGREENTORCH}
 }
-
-//end import doomdefs
 
 //TORCH-FLASHLIGHT
 object FlashlightProjectile
@@ -2230,7 +2026,7 @@ interval 0.1
 offset 0 80 0
 }
 
-pulselight SMALLGREENTORCH //R31 added
+pulselight SMALLGREENTORCH
 {
 color 0.2 1.0 0.0
 size 64
@@ -2248,7 +2044,7 @@ interval 0.1
 offset 0 80 0
 }
 
-pulselight SMALLYELLOWTORCH //R31 added
+pulselight SMALLYELLOWTORCH
 {
 color 1.0 1.0 0.0
 size 64
@@ -2329,32 +2125,32 @@ object 64ShortGreenTorch
 frame SSTI {light SMALLGREENTORCH}
 }
 
-object 64ShortYellowTorch //R31 added
+object 64ShortYellowTorch
 {
 frame SSTI {light SMALLYELLOWTORCH}
 }
 
-object 64BlueTorchSmall //R31 revised
+object 64BlueTorchSmall
 {
 frame SSTI {light SMALLBLUETORCH}
 }
 
-object 64WallTorchRed  //R31 added
+object 64WallTorchRed
 {
 frame SMYY {light SMALLREDTORCH}
 }
 
-object 64WallTorchBlue  //R31 added
+object 64WallTorchBlue
 {
 frame SMYY {light SMALLBLUETORCH}
 }
 
-object 64WallTorchGreen  //R31 added
+object 64WallTorchGreen
 {
 frame SMYY {light SMALLGREENTORCH}
 }
 
-object 64WallTorchYellow  //R31 added
+object 64WallTorchYellow
 {
 frame SMYY {light SMALLYELLOWTORCH}
 }
@@ -2368,7 +2164,7 @@ interval 0.1
 offset 0 0 0
 }
 
-pointlight REDLASER		//R31 added
+pointlight REDLASER
 {
 color 1.0 0.0 0.0
 size 40
@@ -2376,7 +2172,7 @@ offset 0 0 0
 dontlightself 0
 }
 
-pointlight WHITELASER	//R31 added
+pointlight WHITELASER
 {
 color 1.0 1.0 1.0
 size 30
@@ -2389,12 +2185,12 @@ object AlphaLZRGkerLaser
 frame TNT1 {light BIGREDLASER}
 }
 
-object UnmakerLaserWhite	//R31 added for unmaker alt
+object UnmakerLaserWhite
 {
 frame SHWK {light WHITELASER}
 }
 
-object UnmakerLaserTrailWhite	//R31 added for unmaker alt
+object UnmakerLaserTrailWhite
 {
 frame LENS {light WHITELASER}
 }
@@ -2437,7 +2233,7 @@ object MarineMuzzle1
 frame PLMZ { light HUEHUE }
 }
 
-object EnergyBlast		//R31 added for laser gun alt
+object EnergyBlast
 {
 frame TNT1 {light BIGREDLASER}
 frame TNT1 {light BIGREDLASER}
@@ -2483,7 +2279,7 @@ secondarySize 16
 chance 0.25
 }
 
-Object BFGBetaBall	//r31 added for BFG Alt
+Object BFGBetaBall
 {
 Frame BFE2A {light BETABALL1}
 Frame BFE2B {light BETABALL1}
