@@ -438,3 +438,18 @@ script "HordeMultiplier" (void)		//husk zombie multiplier option
 {
 SetResultValue(GetCVar("TheHorde_Multiplier_Cvar"));
 }
+
+script "BonusRandomACS" (void)
+{
+SetResultValue(GetCVar("BonusRandomCvar"));
+}
+
+script "ThingRandomACS" (void)
+{
+SetResultValue(GetCVar("ThingRandomCvar"));
+}
+
+script "AltRadSuitACS" (void)
+{
+SetResultValue(GetCVar("AltRadSuitCvar"));
+}

@@ -1749,6 +1749,8 @@ Obituary "%o was gunned down by a zombie marine."
 		CPOS J 5 A_NoBlocking
 		CPOS KL 5
 		CPOS M 3500 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,4)
+		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,3)
 		TNT1 A 0 A_Jump(224,2)//(87.5%)
 		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
@@ -1968,6 +1970,8 @@ Obituary "%o was gunned down by a marine."
 		PLAY I 5 A_NoBlocking
 		PLAY JKL 5
 		PLAY M 3500 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,5)
+		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,4)
 		TNT1 A 0 A_Jump(224,3)//(87.5%)
 		THT1 A 0 A_ChangeFlag("FRIENDLY",0)
 		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)

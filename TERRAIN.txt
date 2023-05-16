@@ -83,35 +83,35 @@ NoAlert
 terrain nukage
 {
 splash nukage
-footclip 10//was 1
+footclip 10
 liquid
 }
 
 terrain	water
 {
 splash water
-footclip 10//was 1
+footclip 10
 liquid
 }
 
 terrain	lava
 {
 splash lava
-footclip 5//was 1
+footclip 5
 liquid
 damagetype "Fire"
 }
 
 terrain blood
 {
-footclip 10//was 1
+footclip 10
 liquid
 splash blood
 }
 
 terrain Slime
 {
-footclip 10//was 1
+footclip 10
 liquid
 splash Slime
 }
@@ -312,84 +312,72 @@ terrain carpet
 {
 splash carpet
 footclip 0
-//liquid//
 }
 
 terrain dirt
 {
 splash dirt
 footclip 0
-//liquid//
 }
 
 terrain gravel
 {
 splash gravel
 footclip 0
-//liquid//
 }
 
 terrain metal
 {
 splash metal
 footclip 0
-//liquid//
 }
 
 terrain metal2
 {
 splash metal2
 footclip 0
-//liquid//
 }
 
 terrain rock
 {
 splash rock
 footclip 0
-//liquid//
 }
 
 terrain snow
 {
 splash snow
 footclip 0
-//liquid//
 }
 
 terrain slimy
 {
 splash slimy
 footclip 0
-//liquid//
 }
 
 terrain hard
 {
 splash hard
 footclip 0
-//liquid//
 }
 
 terrain tile
 {
 splash tile
 footclip 0
-//liquid//
 }
 
 terrain tile2
 {
 splash tile2
 footclip 0
-//liquid//
 }
 
 terrain wood
 {
 splash wood
 footclip 0
-//liquid//
 }
 
 ifdoom
@@ -536,7 +524,7 @@ floor REDWALL rock
 //floor CEMENTBL rock
 //floor CEMENTRE rock
 floor CEMENT9 rock
-//floor CAUTION3 rock	//R16 MAPS ONLY
+//floor CAUTION3 rock
 //floor A-MOULD rock
 //floor REDCARTO metal2
 //floor BLUECART metal2
@@ -572,7 +560,6 @@ floor WOODVERT wood
 floor WOOD1 wood
 //floor DNBLDG03 wood
 
-//DOOM 64	R16 DOOM 64 FLOOR TEXTURES MOVED TO MAPS
 endif
 
-DefaultTerrain Hard	//R31 added for footstep sounds for other/non-defined flats
+DefaultTerrain Hard	//added for footstep sounds for other/non-defined flats

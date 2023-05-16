@@ -6,21 +6,22 @@ Inventory.PickupSound "WPICK"
 	States
 	{
 	Spawn:
-		LAUN A 1
-		TNT1 A 0 ACS_NamedExecuteAlways("DM_SpawnACS")		//r31 was ACS_ExecuteAlways(119)
 		LAUN A 2
-		TNT1 A 0 A_JumpIfInventory("ISDM",1,"DMSpawn")		//r31 removed
+		TNT1 A 0 ACS_NamedExecuteAlways("DM_SpawnACS")
+		LAUN A 2
+		TNT1 A 0 A_JumpIfInventory("ISDM",1,"DMSpawn")
 		LAUN A -1
 		Stop
 	Pickup:
 		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")			//R28 ADDED
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
 		TNT1 A 0 A_GiveInventory("64RocketLauncher",1)
 		Stop
 	Pickup2:
 		TNT1 A 0 A_GiveInventory("64RocketLauncherTactical",1)
 		Stop
 	DMSpawn:
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",1)
 		TNT1 A 0 A_SpawnItem("64RocketLauncherDM")
 		TNT1 A 1000
 		Loop
@@ -30,15 +31,15 @@ Inventory.PickupSound "WPICK"
 Actor 64RocketLauncher : DoomWeapon
 {
 Scale 0.82
-Weapon.SelectionOrder 2500		//R21 WAS 1000
+Weapon.SelectionOrder 2500
 Weapon.AmmoUse 1
-Weapon.AmmoGive 2				//R11 WAS 0
+Weapon.AmmoGive 2
 Weapon.AmmoType "RocketAmmo"
 Inventory.PickupMessage "$GOTLAUNCHER"
 Tag "$TAG_ROCKETLAUNCHER"
-VisibleToPlayerClass "64DoomPlayer"		//R11 ADDED
-Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	//R11 ADDED	//R15 ADDED TACTICAL P	//R28 ADDED MODERN
-+INVENTORY.RESTRICTABSOLUTELY			//R12.1 ADDED
+VisibleToPlayerClass "64DoomPlayer"
+Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
++INVENTORY.RESTRICTABSOLUTELY
 	States
 	{
 	Ready:
@@ -50,7 +51,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 	Select:
 		MISG A 1 A_Raise
 		Wait
-	Fire:	//R31 New smooth animation(Taken from Smooth Doom by gifty)
+	Fire:
 		MISG B 2 Bright Offset(0,36)
 		MISG C 2 Bright Offset(0,37) A_GunFlash
 		TNT1 A 0 A_FireMissile
@@ -64,7 +65,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 		MISG A 4
 		TNT1 A 0 A_ReFire
 		Goto Ready
-	Flash:	//R31 New smooth animation(Taken from Smooth Doom by gifty)
+	Flash:
 		TNT1 A 3 Bright A_Light1
 		TNT1 A 2 Bright
 		TNT1 A 2 Bright A_Light2
@@ -79,12 +80,12 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"	/
 Actor 64Rocket : Rocket Replaces Rocket
 {
 scale 0.75
-Damage 40		//R13 ADDED
-Speed 35		//R13 WAS 50
+Damage 40
+Speed 35
 Radius 4
 Height 4
 Species "Marines"
-Decal "BigScorch"		//R28.2	ADDED	//R28.3 WAS SCORCH
+Decal "BigScorch"
 -DEHEXPLOSION
 -ROCKETTRAIL
 +EXTREMEDEATH
@@ -105,8 +106,8 @@ Decal "BigScorch"		//R28.2	ADDED	//R28.3 WAS SCORCH
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("64ExplosionFireBase",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
-		TNT1 A 0 A_SpawnItem("DetectFloorCrater")		//R28.2 ADDED
-		TNT1 A 0 A_SpawnItem("DetectCeilCrater")		//R28.2 ADDED
+		TNT1 A 0 A_SpawnItem("DetectFloorCrater")
+		TNT1 A 0 A_SpawnItem("DetectCeilCrater")
 		TNT1 A 0 A_SpawnItem("ExplosionAirDisplacementEffect")
 		TNT1 A 0 A_PlaySound("EXPLO3",2)
 		TNT1 A 0 A_PlaySound("EXPLOSION",1)
@@ -114,17 +115,17 @@ Decal "BigScorch"		//R28.2	ADDED	//R28.3 WAS SCORCH
 		TNT1 A 2
 		TNT1 A 0 A_Explode
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		MISL BCDEF 2 Bright	//R31 Added frames
+		MISL BCDEF 2 Bright
 		stop
 	}
 }
 
-Actor AltMode : Inventory	//R31 Added
+Actor AltMode : Inventory
 {
 Inventory.MaxAmount 1
 }
 
-Actor SisterWeaponSelector : PowerWeaponLevel2	//R31 18/08/22 added for classic tactical r_launcher
+Actor SisterWeaponSelector : PowerWeaponLevel2
 {
 +UNDROPPABLE
 +UNTOSSABLE
@@ -134,7 +135,7 @@ Actor SisterWeaponSelector : PowerWeaponLevel2	//R31 18/08/22 added for classic 
 powerup.duration 2147483647
 }
 
-Actor RLAmmo : Ammo	//R31 added by IDDQD_1337
+Actor RLAmmo : Ammo
 {
 Inventory.Amount 0
 Inventory.MaxAmount 6
@@ -144,10 +145,10 @@ Inventory.Icon "LAUNA0"
 +IGNORESKILL
 }
 
-Actor 64RocketLauncherTactical : Brutal64Weapon //R31 Rocket Launcher Tactical and Modern Overhaul
+Actor 64RocketLauncherTactical : Brutal64Weapon
 {
 Scale 0.82
-Weapon.SelectionOrder 2501		//R21 was 10
+Weapon.SelectionOrder 2501
 Weapon.AmmoUse1 1
 Weapon.AmmoGive1 2
 Weapon.AmmoType1 "RocketAmmo"
@@ -169,7 +170,7 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		TNT1 A 18
 		RLTS ABCD 1
 		Stop
-	KickingFlash:	//r31 new kick animations
+	KickingFlash:
 		TNT1 B 0 A_JumpIfInventory("RLAmmo",1,1)
 		Goto KickNoRockets
 		RLTG B 0 A_JumpIfInventory("AltMode",1,2)
@@ -241,7 +242,7 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		Loop
-	Select: //R31 Select Animation Improvement(Modern and Tactical)
+	Select:
 		TNT1 A 0 A_JumpIf(CallACS("ClassicRLACS")==true,"ClassicRLSelected")
 		TNT1 A 0 A_PlaySound("ROCKPKUP")
 		TNT1 AAAAAAA 0 A_Raise
@@ -258,12 +259,12 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		RLTS DCBA 1
 		TNT1 A 1 A_Lower
 		Wait
-	Fire:	//R31 New smooth animation(Taken from Smooth Doom by gifty)
+	Fire:
 		TNT1 A 0 A_JumpIfInventory("RLAmmo",1,1)
 		Goto Reload
 		RLTF A 0 A_JumpIfInventory("AltMode",1,2)
 		RLLF A 0
-		TNT1 A 0 A_AlertMonsters	//R31 ADDED
+		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_Recoil(2)
 		TNT1 A 0 A_ZoomFactor(0.97)
 		TNT1 A 0 A_JumpIfInventory("AltMode",1,"HeavyFire")
@@ -329,7 +330,7 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		RLTL A 0
 		"####" A 1 A_Refire
 		Goto Ready
-	Altfire:	//R31 ADDED
+	Altfire:
 		TNT1 A 0 A_JumpIfInventory("RLAmmo",1,1)
 		Goto Reload
 		TNT1 A 0 A_JumpIfInventory("AltMode",1,"ReturnToClassic")
@@ -351,10 +352,10 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 	}
 }
 
-Actor 64ClassicRocketLauncherTactical : Brutal64Weapon //R31 Restored
+Actor 64ClassicRocketLauncherTactical : Brutal64Weapon
 {
 Scale 0.82
-Weapon.SelectionOrder 2501		//R21 WAS 10
+Weapon.SelectionOrder 2501
 Weapon.AmmoUse1 1
 Weapon.AmmoGive1 0
 Weapon.AmmoType1 "RocketAmmo"
@@ -372,7 +373,7 @@ Weapon.SisterWeapon "64RocketLauncherTactical"
 		TNT1 A 18
 		MISS ABCD 1
 		Stop
-	KickingFlash:	//r31 new kick animations
+	KickingFlash:
 		MISS DCBA 1
 		MISS A 8
 		MISS ABCD 1
@@ -401,7 +402,7 @@ Weapon.SisterWeapon "64RocketLauncherTactical"
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		Loop
-	Select: //R31 Select Animation Improvement(Modern and Tactical)
+	Select:
 		TNT1 A 0 A_JumpIf(CallACS("ClassicRLACS")==true,2)
 		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",1)
 		TNT1 A 0 A_PlaySound("ROCKPKUP")
@@ -418,7 +419,7 @@ Weapon.SisterWeapon "64RocketLauncherTactical"
 		MISS DCBA 1
 		TNT1 A 1 A_Lower
 		Wait
-	Fire:	//R31 New smooth animation(Taken from Smooth Doom by gifty)
+	Fire:
 		MISG B 2 Bright Offset(0,36)
 		MISG C 2 Bright Offset(0,37) A_GunFlash
 		TNT1 A 0 A_AlertMonsters
@@ -452,13 +453,13 @@ Weapon.SisterWeapon "64RocketLauncherTactical"
 		MISR CCCCBA 2
 		TNT1 A 0 A_ReFire
 		Goto Ready
-	Flash:	//R31 New smooth animation(Taken from Smooth Doom by gifty)
+	Flash:
 		TNT1 A 3 Bright A_Light1
 		TNT1 A 2 Bright
 		TNT1 A 2 Bright A_Light2
 		TNT1 A 6 Bright
 		Goto LightDone
-	Altfire:	//R31 ADDED
+	Altfire:
 		MISR ABCCCCC 2
 		TNT1 A 0 A_JumpIfInventory("AltMode",1,"ReturnToClassic")
 		TNT1 A 0 A_PlaySound("ROCKLOAD",1)
@@ -494,8 +495,8 @@ Gravity 0.2
 		TNT1 AAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("64ExplosionFireBaseTactical",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
-		TNT1 A 0 A_SpawnItem("DetectFloorCrater")		//R28.2 ADDED
-		TNT1 A 0 A_SpawnItem("DetectCeilCrater")		//R28.2 ADDED
+		TNT1 A 0 A_SpawnItem("DetectFloorCrater")
+		TNT1 A 0 A_SpawnItem("DetectCeilCrater")
 		TNT1 A 0 A_SpawnItem("ExplosionAirDisplacementEffect")
 		TNT1 A 0 A_PlaySound("EXPLO3",2)
 		TNT1 A 0 A_PlaySound("EXPLOSION",1)
@@ -503,7 +504,7 @@ Gravity 0.2
 		TNT1 A 2
 		TNT1 A 0 A_Explode
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		MISL BCDEF 2 Bright	//R31 Added frames
+		MISL BCDEF 2 Bright
 		stop
 	}
 }

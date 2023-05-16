@@ -4,10 +4,9 @@ server int zdoombrutalblood	= 2;
 server int zdoombrutaljanitor = 0;
 server int isrunningzandronum = 0;
 
-//V2.5 VARIABLES BELOW
 server int WpnPower_Spawner_Cvar = 0;		//unmaker powerups
 server int D64MonstersOnlyCvar = 0;			//D64 monsters only
-server int D64WeaponsOnlyCvar = 0;			//D64 weapons only
+server int D64WeaponsOnlyCvar = 0;			//D64 weapons/items only
 server int NImp_Spawner_Cvar = 0;			//nightmare imp replaces imp
 server int NSpectre_Spawner_Cvar = 0;		//nightmare spectre replaces spectre
 server int NCaco_Spawner_Cvar = 0;			//nightmare caco replaces caco
@@ -55,5 +54,8 @@ server int ZombieMarineNaziCvar = 0;		//choose between zombie marine or nazi map
 server int NightElementalRandomCvar = 0;	//night elemental replaces pain elemental
 server int FleshWizardRandomCvar = 0;		//flesh wizard replaces archvile
 server int TheHorde_Multiplier_Cvar = 0;	//husk zombie spawns near bodies
+server int BonusRandomCvar = 0;				//Replace armor and health bonus
+server int ThingRandomCvar = 0;				//allow the thing spawning
+server int AltRadSuitCvar = 0;				//alt Rad suit sprite
 
 //Leave blank end line to prevent UDB error warning

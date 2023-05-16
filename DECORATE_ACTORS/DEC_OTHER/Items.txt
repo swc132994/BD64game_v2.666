@@ -133,9 +133,14 @@ powerup.color "green",0.15
 	States
 	{
 	Spawn:
+		SUIT A 0 NoDelay A_JumpIf(CallACS("AltRadSuitACS")==1,"AltSpawn")
 		SUIT A 6 Bright Light("GREENARMOR1")
 		SUIT B 5 Light("GREENARMOR2")
 		loop
+	AltSpawn:
+		SUIT C 5 bright
+		SUIT C 5
+		Loop
 	}
 }
 
@@ -143,7 +148,6 @@ Actor 64Soulsphere : CustomInventory Replaces Soulsphere
 {
 Scale 0.7
 +COUNTITEM
-+INVENTORY.AUTOACTIVATE
 +INVENTORY.ALWAYSPICKUP
 +INVENTORY.FANCYPICKUPSOUND
 Inventory.PickupMessage "$GOTSUPER"
@@ -159,17 +163,10 @@ Inventory.PickupAnnouncerEntry "soulsphere"
 		2OUL AAABBBCCCDDDCCCBBB 1 Bright Light("SOULSPHERE") A_SpawnItemEx("BlueFlareSmall",0,0,22)
 		Loop
 	Pickup:
-		TNT1 A 0 A_GiveInventory("64SoulsphereHealth",1)
+		TNT1 A 0 A_GiveInventory("SoulSphere",1)
 		TNT1 A 0 A_TakeInventory("Stamina",0)
 		Stop
 	}
-}
-
-ACTOR 64SoulsphereHealth : Health
-{
-Inventory.Amount 100
-Inventory.MaxAmount 200
-+INVENTORY.ALWAYSPICKUP
 }
 
 Actor 64Stimpack : Stimpack Replaces Stimpack
@@ -218,17 +215,6 @@ Scale 0.82
 	}
 }
 
-Actor 64BackpackGive : Backpack
-{
-Scale 0.82
-	States
-	{
-	Spawn:
-		BPAK A -1
-		Stop
-	}
-}
-
 Actor PistolSilencerPickup : Inventory
 {
 inventory.maxamount 1
@@ -246,7 +232,7 @@ Inventory.PickupMessage "$GOTBACKPACK"
 		BPAK A -1
 		Stop
 	Pickup:
-		TNT1 A 0 A_GiveInventory("64BackpackGive",1)
+		TNT1 A 0 A_GiveInventory("Backpack",1)
 		TNT1 A 0 A_JumpIf(CallACS("D64WeaponsOnlyReplacer")==1,4)	//if D64 weapons only is enabled no proxy mine is collected
 		TNT1 A 0 A_Jump(192,2)//75% or 25% chance to collect 2 mines.
 		TNT1 A 0 A_GiveInventory("64ProximityMine",1)
@@ -258,7 +244,7 @@ Inventory.PickupMessage "$GOTBACKPACK"
 		TNT1 A 0 A_Print("You got a pistol silencer!")
 		Stop
 	FinishPickup:
-		TNT1 A 0
+		TNT1 A 1
 		Stop
 	}
 }
@@ -400,10 +386,10 @@ Scale 0.82
 	{
 	Spawn:
 		PMAP A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
-		PMAP ABCBAD 6 Bright
+		PMAP ABCBAD 6 Bright Light("HellPotion")
 		loop
 	AlphaSpawn:
-		PMAP E -1 Bright
+		PMAP E -1 Bright Light("ARMORBONUS")
 		Stop
 	}
 }
@@ -434,14 +420,35 @@ Armor.Savepercent 50
 	}
 }
 
+ACTOR 64HellPotion : CustomInventory 1657
+{
+Translation "0:255=%[0,0,0]:[1,0,0]"//Red
+Inventory.PickupMessage "Picked up a Hell Potion."
+Inventory.PickupSound "misc/i_pkup"
+inventory.respawntics 1050
++INVENTORY.BIGPOWERUP
++COUNTITEM
+Scale 0.82
+Inventory.Amount 2
+	States
+	{
+	Spawn:
+		BON1 AABBCCDD 2 BRIGHT LIGHT("HellPotion") A_SpawnItem("RedFlareSmallItem",0,7)
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("64HealthBonus",1)
+		TNT1 A 0 A_GiveInventory("64ArmorBonus",1)
+		stop
+	}
+}
+
 ACTOR 64Infrared : Infrared Replaces Infrared
 {
 Scale 0.82
 	States
 	{
 	Spawn:
-		PVIS A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
-		PVIS A 6
+		PVIS A 6 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
 		PVIS B 6 Bright
 		Loop
 	AlphaSpawn:
@@ -554,8 +561,6 @@ Inventory.PickupSound "misc/p_pkup"
 
 ACTOR WpnPower2 : CustomInventory 9906
 {
-Inventory.Amount 1
-inventory.MaxAmount 1
 Inventory.Icon POW2E0
 Inventory.PickupMessage "It must do something..."
 Inventory.PickupSound "misc/p_pkup"
@@ -577,8 +582,6 @@ Inventory.PickupSound "misc/p_pkup"
 
 ACTOR WpnPower3 : CustomInventory 9907
 {
-Inventory.Amount 1
-inventory.MaxAmount 1
 Inventory.Icon POW3E0
 Inventory.PickupMessage "Whatever it is, it doesn't belong in this world."
 Inventory.PickupSound "misc/p_pkup"
@@ -598,33 +601,29 @@ Inventory.PickupSound "misc/p_pkup"
 	}
 }
 
-Actor 64Scanner : CustomInventory 9967
+Actor 64Scanner : CustomInventory replaces PowerScanner 9967
 {
 Scale 0.82
 Inventory.Amount 0
 Inventory.MaxAmount 0
 Inventory.PickupSound "misc/p_pkup"
-Inventory.PickupMessage "Computer Area Scanner"
+Inventory.PickupMessage "Computer Area & Object Scanner"
 +INVENTORY.ALWAYSPICKUP
 +INVENTORY.FANCYPICKUPSOUND
 +COUNTITEM
 	States
 	{
 	Spawn:
-		PSCN A 15 Bright
-		PSCN BCD 3 Bright
-		PSCN E 15 Bright
-		PSCN DCB 3 Bright
+		PSCN A 15 Bright Light("ARMORBONUS")
+		PSCN BCD 3 Bright Light("ARMORBONUS")
+		PSCN E 15 Bright Light("ARMORBONUS")
+		PSCN DCB 3 Bright Light("ARMORBONUS")
 		loop
 	Pickup:
-		TNT1 A 0 A_GiveInventory("NewScanner",1)
+		TNT1 A 0 A_GiveInventory("PowerScanner",1)
+		TNT1 A 0 A_GiveInventory("AllMap",1)
 		Stop
 	}
-}
-
-actor NewScanner : PowerScanner replaces PowerScanner
-{
-Powerup.Duration 0x7FFFFFFF
 }
 
 ACTOR GLBlueCard : CustomInventory Replaces Bluecard
@@ -720,27 +719,5 @@ Inventory.PickupMessage "$GOTYELWSKUL"
 	Pickup:
 		TNT1 A 0 A_GiveInventory("YellowSkull",1)
 		Stop
-	}
-}
-
-ACTOR 64HellPotion : CustomInventory 1657
-{
-Translation "0:255=%[0,0,0]:[1,0,0]"//Red
-Inventory.PickupMessage "Picked up a Hell Potion."
-Inventory.PickupSound "misc/i_pkup"
-inventory.respawntics 1050
-+INVENTORY.BIGPOWERUP
-+COUNTITEM
-Scale 0.82
-Inventory.Amount 2
-	States
-	{
-	Spawn:
-		BON1 AABBCCDD 2 BRIGHT LIGHT("HellPotion") A_SpawnItem("RedFlareSmallItem",0,7)
-		Loop
-	Pickup:
-		TNT1 A 0 A_GiveInventory("64HealthBonus",1)
-		TNT1 A 0 A_GiveInventory("64ArmorBonus",1)
-		stop
 	}
 }

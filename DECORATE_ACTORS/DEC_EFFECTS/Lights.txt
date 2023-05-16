@@ -153,7 +153,7 @@ scale 0.75
 	{
 	Spawn:
 		POSS L 0 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3","Rest4","Rest5","Rest6","Rest7","Rest8","Rest9")
+		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3","Rest4","Rest5","Rest6","Rest7","Rest8")
 	Rest1:
 		POSS L -1
 		Stop
@@ -170,7 +170,7 @@ scale 0.8
 		//TNT1 A 0 A_PlaySoundEx("misc/gibbed","Body",0,0)
 		TNT1 A 0 A_SpawnItem("Swarm")
 		TNT1 A 0 A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_Jump(256,"SpawnLive1","SpawnLive2","SpawnLive3")	//R31 added spawn live3
+		TNT1 A 0 A_Jump(256,"SpawnLive1","SpawnLive2","SpawnLive3")
 		Goto SpawnLive1
 	SpawnLive1:
 		POL5 A 1
@@ -305,13 +305,13 @@ States
 		TNT1 A 0 NoDelay A_Jump(256,"Spawn1","Spawn2","Spawn3")
 		Goto Spawn1
 	Spawn1:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration12")	//was decor 1 moved to GoreDecorationShortSpawner
+		TNT1 A 0 A_SpawnItem("GoreLongDecoration12")
 		Stop
 	Spawn2:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration13")	//was decor 4 moved to GoreDecorationShortSpawner
+		TNT1 A 0 A_SpawnItem("GoreLongDecoration13")
 		Stop
 	Spawn3:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration14")	//was decor 15 moved to GoreDecorationShortSpawner
+		TNT1 A 0 A_SpawnItem("GoreLongDecoration14")
 		Stop
 	}
 }
@@ -323,7 +323,7 @@ actor GoreDecorationShortSpawner : GoreLongDecoration1
 States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6","Spawn7")	//R31 corrected order
+		TNT1 A 0 NoDelay A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6","Spawn7")
 		Goto Spawn1
 	Spawn1:
 		TNT1 A 0 A_SpawnItem("GoreLongDecoration1")
@@ -753,82 +753,46 @@ actor 64NonsolidMeat5 : 64Meat5 Replaces NonsolidMeat5
 -SOLID
 }
 
-actor 64DeadMarineReplacer : RandomSpawner Replaces DeadMarine
-{
-DropItem "64Thing"
-DropItem "64DeadMarine"
-DropItem "64DeadMarine"
-DropItem "64DeadMarine"
-DropItem "64DeadMarine"
-DropItem "64DeadMarine"
-DropItem "64DeadMarine"
-DropItem "64DeadMarine"
-}
-
-actor 64GibbedMarineReplacer : RandomSpawner Replaces GibbedMarine
-{
-DropItem "64Thing"
-DropItem "64GibbedMarine"
-DropItem "64GibbedMarine"
-DropItem "64GibbedMarine"
-DropItem "64GibbedMarine"
-DropItem "64GibbedMarine"
-DropItem "64GibbedMarine"
-DropItem "64GibbedMarine"
-}
-
-actor 64GibbedMarineExtraReplacer : RandomSpawner Replaces GibbedMarineExtra
-{
-DropItem "64Thing"
-DropItem "64GibbedMarineExtra"
-DropItem "64GibbedMarineExtra"
-DropItem "64GibbedMarineExtra"
-DropItem "64GibbedMarineExtra"
-DropItem "64GibbedMarineExtra"
-DropItem "64GibbedMarineExtra"
-DropItem "64GibbedMarineExtra"
-}
-
-actor 64DeadMarine : DeadMarine
+actor 64DeadMarine : DeadMarine	//replaced with random spawner
 {
 scale 0.8
-+ISMONSTER		//R30.7 added for infrared
++ISMONSTER		//Infrared
 	States
 	{
 	Spawn:
 		PLAY M 0 NoDelay A_SpawnItem("64SmallBloodPool")
 		TNT1 A 0 A_Jump(128,2)
-		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//flip image horz
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//flip horzizontal
 		PLAY M -1
 		Stop
 	}
 }
 
-actor 64GibbedMarine : GibbedMarine
+actor 64GibbedMarine : GibbedMarine	//replaced with random spawner
 {
 scale 0.8
-+ISMONSTER
++ISMONSTER		//Infrared
 	States
 	{
 	Spawn:
 		PLAY V 0 NoDelay A_SpawnItem("64SmallBloodPool")
 		TNT1 A 0 A_Jump(128,2)
-		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//flip image horz
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//flip horzizontal
 		PLAY V -1
 		Stop
 	}
 }
 
-actor 64GibbedMarineExtra : GibbedMarineExtra
+actor 64GibbedMarineExtra : GibbedMarineExtra	//replaced with random spawner
 {
 scale 0.8
-+ISMONSTER
++ISMONSTER		//Infrared
 	States
 	{
 	Spawn:
 		CPOG B 0 NoDelay A_SpawnItem("64SmallBloodPool")
 		TNT1 A 0 A_Jump(128,2)
-		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//flip image horz
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//flip horzizontal
 		CPOG B -1
 		Stop
 	}
@@ -907,7 +871,7 @@ ProjectilePassHeight -8
 	}
 }
 
-ACTOR 64TorchTree : TorchTree Replaces TorchTree	//r31 added
+ACTOR 64TorchTree : TorchTree Replaces TorchTree
 {
 	States
 	{
@@ -1315,21 +1279,21 @@ Alpha 0.15
 		TNT1 A 0 A_Recoil(3)
 		TNT1 A 2
 		TNT1 A 0 A_Stop
-	SPAWNCP:		//R30.9 added
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")	//r31 added
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")	//r31 added
+	SPAWNCP:
+		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")
+		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")
 	Live:
 		TNT1 A 0 A_CheckSight("WaitSight")
 		FBB3 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
 		FBB4 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
 		FBB5 ABCDEFGHIJKL 2
-		GOTO SPAWNCP	//R30.9 WAS LOOP
+		GOTO SPAWNCP
 	WaitSight:
 		TNT1 A 5
 		Goto Live
-	SpawnNo:			//R30 added
-		TNT1 A 525		//R30 added	//r31 was 0
-		GOTO SPAWNCP	//R30 added	//R30.9 WAS Stop
+	SpawnNo:
+		TNT1 A 525
+		GOTO SPAWNCP
 	}
 }
 
@@ -1340,20 +1304,20 @@ Alpha 0.25
 	states
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")	//r31 added
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")	//r31 added
-	Live:		//R30.9 ADDED STATE FROM LIGHTSHAFT 1
+		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")
+		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")
+	Live:
 		TNT1 A 0 A_CheckSight("WaitSight")
 		FBB3 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
 		FBB4 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
 		FBB5 ABCDEFGHIJKL 2
-		Goto Spawn		//R30.9 WAS LIVE
+		Goto Spawn
 	WaitSight:
 		TNT1 A 5
 		Goto Live
-	SpawnNo:			//R30.1 added
-		TNT1 A 525		//R30.1 added	//r31 was 0
-		Goto Spawn		//R30.1 added	//R30.9 WAS Stop
+	SpawnNo:
+		TNT1 A 525
+		Goto Spawn
 	}
 }
 
@@ -1364,20 +1328,20 @@ Alpha 0.19
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")	//r31 added
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")	//r31 added
-	Live:		//R30.9 ADDED STATE FROM LIGHTSHAFT 1
+		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")
+		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")
+	Live:
 		TNT1 A 0 A_CheckSight("WaitSight")
 		FBB3 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
 		FBB4 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
 		FBB5 ABCDEFGHIJKL 2
-		Goto Spawn	//R30.9 WAS LIVE
+		Goto Spawn
 	WaitSight:
 		TNT1 A 5
 		Goto Live
-	SpawnNo:			//R30.1 added
-		TNT1 A 525		//R30.1 added	//r31 was 0
-		Goto Spawn		//R30.1 added	//R30.9 WAS Stop
+	SpawnNo:
+		TNT1 A 525
+		Goto Spawn
 	}
 }
 
@@ -1392,20 +1356,20 @@ Alpha 0.25
 		TNT1 A 0 A_Recoil(2)
 		TNT1 A 2
 		TNT1 A 0 A_Stop
-	SPAWNCP:		//R30.9 added
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")	//r31 added
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")	//r31 added
+	SPAWNCP:
+		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")
+		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")
 	Live:
 		TNT1 A 0 A_CheckSight("WaitSight")
 		FBB1 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
 		FBB2 ABCDE 2
-		GOTO SPAWNCP	//R30.9 WAS LOOP
+		GOTO SPAWNCP
 	WaitSight:
 		TNT1 A 5
 		Goto Live
-	SpawnNo:			//R30.1 added
-		TNT1 A 525		//R30.1 added	//r31 was 0
-		GOTO SPAWNCP	//R30.1 added	//R30.9 WAS Stop
+	SpawnNo:
+		TNT1 A 525
+		GOTO SPAWNCP
 	}
 }
 
@@ -1451,7 +1415,7 @@ Scale 0.75
 	}
 }
 
-actor 64WallTorchRed 9930		//R31 ADDED
+actor 64WallTorchRed 9930
 {
 Game Doom
 Scale 0.75
@@ -1480,7 +1444,7 @@ Radius 5
 	}
 }
 
-actor 64WallTorchBlue 9933		//R31 ADDED
+actor 64WallTorchBlue 9933
 {
 Game Doom
 Scale 0.75
@@ -1509,7 +1473,7 @@ Radius 5
 	}
 }
 
-actor 64WallTorchGreen 9935		//R31 ADDED
+actor 64WallTorchGreen 9935
 {
 Game Doom
 Scale 0.75
@@ -1538,7 +1502,7 @@ Radius 5
 	}
 }
 
-actor 64WallTorchYellow 9936		//R31 ADDED
+actor 64WallTorchYellow 9936
 {
 Game Doom
 Scale 0.75
@@ -1605,7 +1569,7 @@ height 56
 	}
 }
 
-actor BurningBarrelSmoke : LightShaft2	//R31 added burningbarrel smoke
+actor BurningBarrelSmoke : LightShaft2	//non-permanent smoke
 {
 XScale 1.8
 YScale 3
@@ -1621,7 +1585,7 @@ Alpha 0.19
 	}
 }
 
-Actor BurningBarrelSmokeCheck : Inventory	//R31 acts as a timer for smoke reset
+Actor BurningBarrelSmokeCheck : Inventory	//acts as a timer for smoke reset
 {
 inventory.maxamount 8
 }
@@ -1631,15 +1595,15 @@ actor 64BurningBarrel : BurningBarrel Replaces BurningBarrel
 scale 0.75
 health 20
 mass 125
-Damagefactor "Melee",0		//R31 ADDED
-Damagefactor "Kick",0		//R31 ADDED
+Damagefactor "Melee",0
+Damagefactor "Kick",0
 -ISMONSTER
 +SOLID
 +SHOOTABLE
 +NOBLOOD
 +EXTREMEDEATH
-+PUSHABLE		//R31 ADDED
-+SLIDESONWALLS	//R31 ADDED
++PUSHABLE
++SLIDESONWALLS
 	States
 	{
 	Spawn:
@@ -1749,7 +1713,7 @@ SCALE 0.8
 		EYE2 ABCB 6 Bright Light("SMALLGREENTORCH")
 		Goto Stay2
 	}
-}	//R31 added CEYE and EYE2 sprites to HELL folder
+}
 
 ACTOR 64Stalagmite : Stalagmite Replaces Stalagmite
 {
