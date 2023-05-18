@@ -29,14 +29,10 @@ Height 18
 DamageType head
 BloodType "Brutal_Blood"
 PainChance 255
-damagefactor "Taunt",0.0
 damagefactor "Blood",0.0
-damagefactor "BlueBlood",0.0
 damagefactor "Head",0.0
 damagefactor "MinorHead",0.0
-damagefactor "KillMe",0.0
 damagefactor "Control",0.0
-damagefactor "Trample",0.0
 damagefactor "GibRemoving",0.0
 damagefactor "Alert",0.0
 damagefactor "SSG",1.0

@@ -3,34 +3,6 @@ Actor lowgraphicsmode : Inventory
 inventory.maxamount 1
 }
 
-Actor ExplosionParticle2
-{
-Scale 0.1
-Height 1
-Radius 1
-Mass 0
-RenderStyle Add
-+Missile
-+NoBlockMap
-+NoGravity
-+DontSplash
-+FORCEXYBILLBOARD
-+CLIENTSIDEONLY
-+THRUACTORS
-+GHOST
-+THRUGHOST
-	States
-	{
-	Spawn:
-		SPRK SSSSSSSS 1 Bright
-		SPRK S 1 Bright A_FadeOut(0.02)
-		Wait
-	Death:
-		TNT1 A 0
-		Stop
-	}
-}
-
 ACTOR ExplosionParticleHeavy
 {
 game Doom
@@ -60,19 +32,19 @@ BounceFactor 0.01
 		SPRK S 1 Bright A_FadeOut(0.02)
 		Wait
 	Death:
-		TNT1 A 0
+		TNT1 A 1
 		Stop
 	}
 }
 
-ACTOR ExplosionParticleVeryFast: ExplosionParticleHeavy
+ACTOR ExplosionParticleVeryFast : ExplosionParticleHeavy
 {
 game Doom
 speed 18
 Gravity 0.9
 }
 
-ACTOR ExplosionParticleLaser: ExplosionParticleHeavy
+ACTOR ExplosionParticleLaser : ExplosionParticleHeavy
 {
 game Doom
 Scale 0.1
@@ -80,109 +52,7 @@ speed 6
 Gravity 0.9
 }
 
-ACTOR ExplosionParticleVerySlow: ExplosionParticleHeavy
-{
-game Doom
-Scale 0.05
-speed 3
-Gravity 0.2
-Scale 0.03
-}
-
-ACTOR ShrapnelParticle: ExplosionParticleHeavy
-{
-Scale 0.12
-speed 20
-Damage 0
-radius 10
-height 10
-Gravity 0.0
-alpha 1.0
--DOOMBOUNCE
-+NOGRAVITY
-	States
-	{
-	Spawn:
-		SPKO A 1 Bright A_FadeOut(0.05)
-		wait
-	Death:
-		TNT1 A 0
-		Stop
-	}
-}
-
-ACTOR ShrapnelParticle2: ShrapnelParticle
-{
-Speed 20
-}
-
-Actor SuperExpensiveParticle: ExplosionParticle2
-{
-Scale 0.1
-Speed 2
-Gravity 0.1
-+DOOMBOUNCE
-+FASTER
-	States
-	{
-	Spawn:
-		SPRK SSSSSS 1 Bright A_Recoil(1)
-		TNT1 A 0 A_ChangeFLag("FASTER",0)
-	Spawn2:
-		SPRK SSSS 1 Bright A_SetAngle(random(angle-60,angle+60))
-		TNT1 A 0 A_FadeOut(0.1)
-		TNT1 A 0 A_Recoil(1)
-		Loop
-	}
-}
-
-Actor SuperExpensiveParticleSpawner
-{
-+THRUACTORS
-States
-{
-	Spawn:
-		TNT1 A 0
-		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("SuperExpensiveParticle",2,0,random(0,360),2,random(0,360))
-		Stop
-	}
-}
-
-ACTOR ShotgunParticles
-{
-game Doom
-Scale 0.1
-speed 20
-radius 8
-height 1
-Gravity 0.6
-Damage 0
-Alpha 0.9
-RenderStyle Add
--RIPPER
-+MISSILE
-+CLIENTSIDEONLY
-+NOTELEPORT
-+NOBLOCKMAP
-+BLOODLESSIMPACT
-+FORCEXYBILLBOARD
-+DONTSPLASH
-+GHOST
-+NOGRAVITY
-	States
-	{
-	Spawn:
-		TNT1 A 2
-		SPRK SSS 1 Bright A_FadeOut(0.02)
-		TNT1 A 0 A_ChangeFlag(NOGRAVITY,0)
-		SPRK S 1 Bright A_FadeOut(0.03)
-		Wait
-	Death:
-		Stop
-	}
-}
-
-ACTOR HitSpark: ExplosionParticleHeavy
+ACTOR HitSpark : ExplosionParticleHeavy
 {
 Scale 0.02
 speed 10
@@ -190,7 +60,7 @@ Gravity 0.7
 rADIUS 1
 HEIGHT 1
 -NOCLIP
-+doomBOUNCE
++DOOMBOUNCE
 BOUNCEFACTOR 0.5
 	States
 	{
@@ -199,12 +69,12 @@ BOUNCEFACTOR 0.5
 		SPKO S 1 Bright A_FadeOut(0.1)
 		Wait
 	Death:
-		TNT1 A 0
+		TNT1 A 1
 		Stop
 	}
 }
 
-ACTOR HitSpark22: HitSpark
+ACTOR HitSpark22 : HitSpark
 {
 Scale 0.03
 speed 8
@@ -219,7 +89,7 @@ Bouncefactor 0.01
 	}
 }
 
-ACTOR HitSpark23: HitSpark
+ACTOR HitSpark23 : HitSpark
 {
 Scale 0.06
 speed 8
@@ -234,124 +104,6 @@ Gravity 1.0
 	}
 }
 
-Actor ExplosionParticleSpawner
-{
-+NoClip
-+NoBlockMap
-+NoGravity
-+Missile
-+FORCEXYBILLBOARD
-	States
-	{
-	Spawn:
-		TNT1 AAAAA 0 NoDelay A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
-		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,180),2,random(0,180))
-		TNT1 A 1
-		Stop
-	}
-}
-
-Actor ExplosionParticle
-{
-Scale 0.05
-Height 0
-Radius 0
-Mass 0
-RenderStyle Add
-+Missile
-+NoBlockMap
-+NoGravity
-+DontSplash
-+FORCEXYBILLBOARD
-+CLIENTSIDEONLY
-	States
-	{
-	Spawn:
-		SPKO A 1 Bright A_FadeOut(0.02)
-		Loop
-	}
-}
-
-Actor ExplosionParticle5
-{
-Scale 0.04
-Height 0
-Radius 0
-Mass 0
-Speed 12
-RenderStyle Add
--NoGravity
-+Missile
-+NoBlockMap
-+LowGravity
-+DontSplash
-+FORCEXYBILLBOARD
-+DoomBounce
-BounceFactor 0.2
-	States
-	{
-	Spawn:
-	Death:
-		SPKO A 2 Bright A_FadeOut(0.02)
-		Loop
-	}
-}
-
-Actor RocketParticle
-{
-Scale 0.05
-Height 0
-Radius 0
-Mass 0
-RenderStyle Add
-+Missile
-+NoBlockMap
-+NoGravity
-+DontSplash
-+FORCEXYBILLBOARD
-+CLIENTSIDEONLY
-	States
-	{
-	Spawn:
-		SPKO A 1 Bright A_FadeOut(0.06)
-		Loop
-	}
-}
-
-Actor BluePlasmaParticleSpawner
-{
-Scale 1.1
-Alpha 0.95
-RenderStyle Add
-+NoClip
-+NoBlockMap
-+NoGravity
-+Missile
-+FORCEXYBILLBOARD
-	States
-	{
-	Spawn:
-		TNT1 AA 0 NoDelay A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(50,130))
-		//TNT1 AAA 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
-		TNT1 AA 0 A_CustomMissile("PlasmaSmoke",0,0,random(0,360),2,random(0,360))
-		PBEX A 4 Bright //A_SpawnItem("BlueFlare" ,0)
-		TNT1 A 1
-		Stop
-	}
-}
-
-Actor PlasmaParticleSpawner: BluePlasmaParticleSpawner
-{
-	States
-	{
-	Spawn:
-		TNT1 AAAA 0 NoDelay A_SpawnItemEx("PlasmaParticle",0,0,14,(0.1)*Random(10,40),0,(0.1)*Random(-40,40),Random(0,360),128)
-		TNT1 AAAA 0 A_CustomMissile("PlasmaSmoke",32,0,random(0,360),2,random(0,360))
-		TNT1 A 1
-		Stop
-	}
-}
-
 Actor BluePlasmaParticle
 {
 Scale 0.035
@@ -362,7 +114,6 @@ Speed 12
 Gravity 0.8
 RenderStyle Add
 -NoGravity
-//+LowGravity
 +Missile
 +NoBlockMap
 +DontSplash
@@ -378,7 +129,7 @@ BounceFactor 0.2
 	}
 }
 
-Actor BluePlasmaFire: BluePlasmaParticle
+Actor BluePlasmaFire : BluePlasmaParticle
 {
 Scale 0.7
 Speed 0
@@ -396,383 +147,32 @@ RenderStyle Add
 	}
 }
 
-Actor BluePlasmaFireMove: BluePlasmaFire
-{
-Speed 1
-Scale 0.3
-}
-
-Actor BluePlasmaFireMove2: BluePlasmaFire
-{
-Speed 2
-Scale 0.6
-}
-
-Actor HotPlasmaGas: BluePlasmaParticle
-{
-Scale 0.1
-Damage 1
-Speed 18
-Radius 8
-Height 8
-Alpha 0.9
-RenderStyle Add
-Damagetype Plasma
-Decal "Scorch"
-SeeSound "PLSTHRW"
-DeathSound "imp/shotx"
--DOOMBOUNCE
--NOCLIP
--NOBLOCKMAP
-+NoGravity
-	States
-	{
-	Spawn:
-		FIR5 AAABB 1 Bright
-		FIR5 CDEFGH 1 Bright A_CustomMissile("BluePlasmaFireMove",0,0,0,2,random(-30,30))
-		FIR5 IJKL 1 Bright A_CustomMissile("BluePlasmaFireMove2",0,0,0,2,random(-60,60))
-		FIR5 MNOP 1 Bright A_CustomMissile("BluePlasmaFireMove2",0,0,random(0,360),2,random(0,360))
-		Stop
-	Death:
-		TNT1 A 0 A_Explode(5,180,0)
-		FIR5 BCDEFGHIJKLMNOP 1 Bright A_CustomMissile("BluePlasmaFireMove2",0,0,random(0,360),2,random(0,360))
-		Stop
-	}
-}
-
-Actor BluePlasmaFireNonStatic: BluePlasmaFire
-{
-Speed 2
-Alpha 0.5
-}
-
-Actor PlasmaParticleX
-{
-Scale 1.0
-Height 0
-Radius 0
-Mass 0
-Gravity 0.4
-Speed 2
-RenderStyle Add
--NoGravity
-+Missile
-+NoBlockMap
-+DontSplash
-+FORCEXYBILLBOARD
-+DoomBounce
-BounceFactor 0.1
-	States
-	{
-	Spawn:
-		SPKB A 1 Bright
-		TNT1 A 0 A_ChangeFlag(DOOMBOUNCE,0)
-		Goto Stand
-	Stand:
-		SPKB B 2 Bright A_FadeOut(0.06)
-		Loop
-	Death:
-		TNT1 A 1
-		TNT1 A 0
-		Stop
-	}
-}
-
-Actor BigPlasmaParticleX: PlasmaParticleX
-{
-Scale 2.0
-Speed 3
-}
-
-Actor PlasmaParticle: BluePlasmaParticle
-
-{
-	States
-	{
-	Spawn:
-	Death:
-		SPKG A 2 Bright A_FadeOut(0.02)
-		Loop
-	}
-}
-
-ACTOR RailPuff: BulletPuff
-{
-Scale 1.3
-alpha 0.9
-renderstyle Translucent
-+NOBLOCKMAP
-+NOGRAVITY
-+NOEXTREMEDEATH
-	states
-	{
-	Death:
-	Xdeath:
-	Melee:
-	Spawn:
-		TNT1 AAAA 0 NoDelay A_SpawnItemEx("BluePlasmaParticleSpawner",0,0,0,0,0,0,0,128)
-		//TNT1 AAAA 0 A_CustomMissile("SmallSmoke",0,0,random(0,360),2,random(0,360))
-		TNT1 ABCDE 2 Bright A_SpawnItem("BlueFlare" ,0)
-		Stop
-	}
-}
-
-ACTOR ShortRailPuff: BulletPuff
-{
-Scale 1.6
-alpha 0.9
-renderstyle Translucent
-Damagetype SSG
-+NOBLOCKMAP
-+NOGRAVITY
-+NOEXTREMEDEATH
-+PUFFONACTORS
-	states
-	{
-	Spawn:
-		TNT1 AAA 0 NoDelay A_SpawnItemEx("BluePlasmaParticleSpawner",0,0,0,0,0,0,0,128)
-		PLSE ABCDE 5 Bright A_SpawnItem("BlueFlareMedium",0,0)
-		Stop
-	}
-}
-
-ACTOR PlasmaPuff: BulletPuff
-{
-Scale 1.1
-Alpha 0.95
-RenderStyle Add
-+NOBLOCKMAP
-+NOGRAVITY
-+CLIENTSIDEONLY
-	states
-	{
-	Spawn:
-		PBEX A 0 Bright// A_SpawnItem("BlueFlare",0,0)
-		TNT1 AA 0 A_CustomMissile("PlasmaParticleX",12,0,random(0,360),2,random(0,360))
-		TNT1 A 0 A_SpawnItemEx("BluePlasmaParticleSpawner",0,0,0,0,0,0,0,128)
-		//TNT1 AAAA 0 A_CustomMissile("SmallSmoke",0,0,random(0,360),2,random(0,360))
-		PLSE ABCDE 2 Bright A_SpawnItem("BlueFlare" ,0)
-		stop
-	}
-}
-
-ACTOR RailgunPuff: BulletPuff
-{
-Scale 1.1
-Alpha 0.95
-RenderStyle Add
-+NOBLOCKMAP
-+NOGRAVITY
-+CLIENTSIDEONLY
-	states
-	{
-	Spawn:
-		PBEX A 0 Bright// A_SpawnItem("BlueFlare",0,0)
-		TNT1 AA 0 A_CustomMissile("PlasmaParticleX",12,0,random(0,360),2,random(0,360))
-		TNT1 A 0 A_SpawnItemEx("BluePlasmaParticleSpawner",0,0,0,0,0,0,0,128)
-		//TNT1 AAAA 0 A_CustomMissile("SmallSmoke",0,0,random(0,360),2,random(0,360))
-		PLSE ABCDE 2 Bright A_SpawnItem("BlueFlare" ,0)
-		stop
-	}
-}
-
-ACTOR PlasmaFog
-{
-Scale 0.5
-Radius 1
-Height 1
-Speed 3
-Gravity 0
-Alpha 0.7
-RenderStyle Add
-+NOBLOCKMAP
-+NOTELEPORT
-+DONTSPLASH
-+MISSILE
-+FORCEXYBILLBOARD
-+CLIENTSIDEONLY
-	States
-	{
-	Spawn:
-		BFOG ABCDEF 2 Bright A_SpawnItem("GreenFlareMedium",0,0)
-		Goto Death
-	Death:
-		BFOG G 2 Bright// A_SpawnItem("BlueFlareMedium",0,0)
-		Stop
-	}
-}
-
-ACTOR BarrelParticle
-{
-Scale 0.6
-Radius 8
-Height 8
-Speed 7
-Mass 1
-gravity 0.5
-+MISSILE
-+MOVEWITHSECTOR
-+CLIENTSIDEONLY
-+NOBLOCKMAP
-+NOTELEPORT
-+DOOMBOUNCE
-BounceFactor 0.6
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Death")
-//		TNT1 A 0 A_SpawnItemEx("AltSmoke",0,0)
-		BPRT ABCDEFGH 4
-		Loop
-	Death:
-		BPRT GGGGGGGGGGGGG 20 //A_CustomMissile("PlasmaSmoke",1,0,random(0,360),2,random(0,160))
-		Stop
-	}
-}
-
-ACTOR Shrapnel: BarrelParticle
-{
-Scale 0.02
-Gravity 0.8
-Speed 13
-RenderStyle Add
--DOOMBOUNCE
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Death")
-		LENY AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2 A_SpawnItemEx("AltSmoke",0,0)
-		Stop
-	Death:
-		TNT1 A 0
-		Stop
-	}
-}
-
-Actor GlassPart : BarrelParticle
-{
-scale 0.2
-speed 6
-alpha 0.4
-renderstyle translucent
-seesound ""
-translation "0:255=4:4"
-bouncefactor 0.2
-states
-	{
-	Spawn:
-		TNT1 A 0 NoDelay Thing_ChangeTID(0,390)
-		BPRT ABCDEFGH 2
-		loop
-	Death:
-		TNT1 A 0 A_Jump(256,"death1","death2","death3","death4","death5","death6")
-	Death1:
-		BPRT A 1 A_Fadeout(0.001)
-		loop
-	Death2:
-		BPRT C 1 A_Fadeout(0.001)
-		loop
-	Death3:
-		BPRT E 1 A_Fadeout(0.001)
-		loop
-	Death4:
-		BPRT G 1 A_Fadeout(0.001)
-		loop
-	Death5:
-		BPRT B 1 A_Fadeout(0.001)
-		loop
-	Death6:
-		BPRT D 1 A_Fadeout(0.001)
-		loop
-	}
-}
-
-ACTOR SparkX: ExplosionParticleHeavy
-{
-Scale 0.05
-speed 10
-Gravity 0.8
-radius 1
-height 1
-Damage 0
-alpha 1.0
--NOGRAVITY
-+GHOST
-+DOOMBOUNCE
-BounceFactor 0.5
-	States
-	{
-	Spawn:
-		SPKO AAA 1 Bright
-		SPKO A 1 Bright A_FadeOut(0.20)
-		wait
-	Death:
-		TNT1 A 0
-		Stop
-	}
-}
-
-ACTOR SparkXNoModel: SparkX
-{
-Gravity 0.7
-}
-
-ACTOR MetalShard1: BarrelParticle
-{
-Scale 0.2
-Speed 7
-Gravity 0.5
-BounceFactor 0.4
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Death")
-		JNK1 ABCDEFGH 3
-		Loop
-	Death:
-		JNK1 H 200
-		Stop
-	}
-}
-
-ACTOR MetalShard2: MetalShard1
-{
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Death")
-		JNK2 ABCDEFGH 3
-		Loop
-	Death:
-		JNK2 H 200
-		Stop
-	}
-}
-
-ACTOR MetalShard3: MetalShard1
-{
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Death")
-		JNK3 ABCDEFGH 3
-		Loop
-	Death:
-		JNK3 H 200
-		Stop
-	}
-}
-
-ACTOR ExplosionParticleGreen : ExplosionParticle2
+ACTOR ExplosionParticleGreen
 {
 SCALE 0.05
 SPEED 9
+Height 1
+Radius 1
+Mass 0
+RenderStyle Add
++Missile
++NoBlockMap
++NoGravity
++DontSplash
++FORCEXYBILLBOARD
++CLIENTSIDEONLY
++THRUACTORS
++GHOST
++THRUGHOST
 	States
 	{
 	Spawn:
-	SPRG SSSSSSSS 1 Bright
-	SPRG S 1 Bright A_FadeOut(0.02)
-	wait
+		SPRG SSSSSSSS 1 Bright
+		SPRG S 1 Bright A_FadeOut(0.02)
+		wait
+	Death:
+		TNT1 A 1
+		Stop
 	}
 }
 
@@ -793,7 +193,7 @@ SCALE 0.2
 	}
 }
 
-ACTOR ExplosionParticleGreenHeavySmall: ExplosionParticleHeavy
+ACTOR ExplosionParticleGreenHeavySmall : ExplosionParticleHeavy
 {
 SCALE 0.1
 	States
@@ -810,7 +210,7 @@ ACTOR ExplosionParticleBlueHeavySmall : ExplosionParticleGreenHeavySmall
 Translation "0:255=%[0,0,0]:[0,0,1]"//Blue
 }
 
-ACTOR ExplosionParticleGreenVeryFast: ExplosionParticleHeavy
+ACTOR ExplosionParticleGreenVeryFast : ExplosionParticleHeavy
 {
 game Doom
 SCALE 0.1
@@ -830,34 +230,12 @@ ACTOR ExplosionParticleBlueVeryFast : ExplosionParticleGreenVeryFast
 Translation "0:255=%[0,0,0]:[0,0,1]"//Blue
 }
 
-ACTOR ExplosionParticleYellow: ExplosionParticle2
+ACTOR ExplosionParticleYellow : ExplosionParticleGreen
 {
-SCALE 0.05
-SPEED 9
 Translation "0:255=%[0,0,0]:[1,1,0]"
-	States
-	{
-	Spawn:
-	SPRG SSSSSSSS 1 Bright
-	SPRG S 1 Bright A_FadeOut(0.02)
-	wait
-	}
 }
 
-ACTOR ExplosionParticleYellowHeavy: ExplosionParticleHeavy
-{
-SCALE 0.2
-Translation "0:255=%[0,0,0]:[1,1,0]"
-	States
-	{
-	Spawn:
-		SPRG SSSSSSSS 1 Bright
-		SPRG S 1 Bright A_FadeOut(0.02)
-		wait
-	}
-}
-
-ACTOR ExplosionParticleYellowHeavySmall: ExplosionParticleHeavy
+ACTOR ExplosionParticleYellowHeavySmall : ExplosionParticleHeavy
 {
 SCALE 0.1
 Translation "0:255=%[0,0,0]:[1,1,0]"
@@ -870,7 +248,7 @@ Translation "0:255=%[0,0,0]:[1,1,0]"
 	}
 }
 
-ACTOR ExplosionParticleYellowVeryFast: ExplosionParticleHeavy
+ACTOR ExplosionParticleYellowVeryFast : ExplosionParticleHeavy
 {
 game Doom
 SCALE 0.1
@@ -886,7 +264,7 @@ Translation "0:255=%[0,0,0]:[1,1,0]"
 	}
 }
 
-ACTOR BurnParticlesNoDamage//: BurnParticles									//R11 ADDED
+ACTOR BurnParticlesNoDamage
 {
 	States
 	{

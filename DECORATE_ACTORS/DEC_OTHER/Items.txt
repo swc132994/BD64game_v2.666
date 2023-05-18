@@ -138,7 +138,6 @@ powerup.color "green",0.15
 		SUIT B 5 Light("GREENARMOR2")
 		loop
 	AltSpawn:
-		SUIT C 5 bright
 		SUIT C 5
 		Loop
 	}

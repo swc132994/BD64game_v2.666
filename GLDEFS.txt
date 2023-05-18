@@ -1,6 +1,6 @@
 #INCLUDE Brightmaps.gl
 
-//Bullet puff
+//Bullet puff/HitPuff
 flickerlight BPUFF1
 {
 	color 0.5 0.5 0.0
@@ -15,12 +15,6 @@ flickerlight BPUFF2
 	size 3
 	secondarySize 4
 	chance 0.8
-}
-
-object HitPuff
-{
-	frame PUFFA {light BPUFF1}
-	frame PUFFB {light BPUFF2}
 }
 
 //Rocket
@@ -71,8 +65,6 @@ flickerlight ROCKET_X5
 
 object 64Rocket
 {
-	frame MISLA {light ROCKET}
-
 	frame MISLB {light ROCKET_X1}
 	frame MISLC {light ROCKET_X2}
 	frame MISLD {light ROCKET_X3}
@@ -82,8 +74,6 @@ object 64Rocket
 
 object TacticalRocket
 {
-	frame MISLA {light ROCKET}
-
 	frame MISLB {light ROCKET_X1}
 	frame MISLC {light ROCKET_X2}
 	frame MISLD {light ROCKET_X3}
@@ -93,8 +83,6 @@ object TacticalRocket
 
 object CyberRocket
 {
-	frame MISLA {light ROCKET}
-
 	frame MISLB {light ROCKET_X1}
 	frame MISLC {light ROCKET_X2}
 	frame MISLD {light ROCKET_X3}
@@ -103,6 +91,33 @@ object CyberRocket
 }
 
 object 64NightcrawlerGrenade
+{
+	frame MISLB {light ROCKET_X1}
+	frame MISLC {light ROCKET_X2}
+	frame MISLD {light ROCKET_X3}
+	frame MISLE {light ROCKET_X4}
+	frame MISLF {light ROCKET_X5}
+}
+
+object 64StickGrenade
+{
+	frame MISLB {light ROCKET_X1}
+	frame MISLC {light ROCKET_X2}
+	frame MISLD {light ROCKET_X3}
+	frame MISLE {light ROCKET_X4}
+	frame MISLF {light ROCKET_X5}
+}
+
+object 64ThrownActiveProxMine
+{
+	frame MISLB {light ROCKET_X1}
+	frame MISLC {light ROCKET_X2}
+	frame MISLD {light ROCKET_X3}
+	frame MISLE {light ROCKET_X4}
+	frame MISLF {light ROCKET_X5}
+}
+
+object 64GroundProxMine
 {
 	frame MISLB {light ROCKET_X1}
 	frame MISLC {light ROCKET_X2}
@@ -601,7 +616,6 @@ pointlight BLUEARMOR2
 }
 
 //Unmaker key 1 Red
-
 pulselight WEAPONPOWERRED
 {
 	color 1.0 0.0 0.0

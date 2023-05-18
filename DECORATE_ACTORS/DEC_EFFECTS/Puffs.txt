@@ -6,7 +6,7 @@ height 0
 Mass 500
 Gravity 0.01
 alpha 0.4
-renderstyle Translucent
+renderstyle Add
 DamageType Bullet
 Decal "BulletDecalNew1"
 +NOBLOCKMAP
@@ -16,11 +16,31 @@ Decal "BulletDecalNew1"
 	states
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItemEx("RicoChet",0,0,-5,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		PUFF A 2 BRIGHT Light("BPUFF1")
+		PUFF B 2 BRIGHT Light("BPUFF2") A_SpawnItemEx("RicoChet",0,0,-5)
 		//Intentional fall-through
 	Melee:
+		PUFF CDEF 2
+		Stop
+	}
+}
+
+Actor UnderwaterHitPuff
+{
++NOCLIP
++NOGRAVITY
+	states
+	{
+	Spawn:
 		TNT1 A 1
-		stop
+		TNT1 A 0 A_JumpIf(waterlevel < 1,"Stap")
+		TNT1 A 0 A_CustomMissile("WaterParticleXTinySpawner",0,0,random(0,360),2,random(60,130))
+		TNT1 A 0 A_CustomMissile("BUBULZ",0,0,random(0,360),2,random(0,180))
+		TNT1 A 0 A_CustomMissile("EXPLOSIONBUBULZ",0,0,random(0,360),2,random(180,360))
+		Stop
+	Stap:
+		TNT1 A 1
+		Stop
 	}
 }
 
@@ -54,9 +74,9 @@ Obituary "%o ate bullet shrapnel."
 	{
 	Spawn:
 		IPF2 A 0 NoDelay A_SpawnItem("YellowFlareSmall",0)
-		TNT1 A 0 A_SpawnItemEx("DetectFloorBullet",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 0 A_SpawnItemEx("DetectCeilBullet",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 0 A_SpawnItemEx("UnderwaterHitPuff",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_SpawnItemEx("DetectFloorBullet")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilBullet")
+		TNT1 A 0 A_SpawnItemEx("UnderwaterHitPuff")
 		TNT1 AAAA 0 A_CustomMissile("HitSpark",2,0,random(0,360),2,random(30,360))
 		TNT1 AA 0 A_CustomMissile("HitSpark22",2,0,random(0,360),2,random(30,360))
 		TNT1 A 0 A_CustomMissile("HitSpark23",2,0,random(0,360),2,random(30,360))
@@ -83,7 +103,7 @@ Actor MachineGunBulletPuff : HitPuff
 DamageType CutLess
 }
 
-Actor RifleBulletPuff : HitPuff		//R30.5 added
+Actor RifleBulletPuff : HitPuff
 {
 DamageType Rifle
 }
@@ -115,7 +135,7 @@ damagetype Cut
 	}
 }
 
-Actor Tracer : FastProjectile	//R11 ADDED TRACER
+Actor Tracer : FastProjectile
 {
 scale 0.15
 damage 0

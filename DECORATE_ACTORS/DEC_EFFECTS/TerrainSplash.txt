@@ -1,23 +1,4 @@
 //WATER
-Actor UnderwaterHitPuff
-{
-+NOCLIP
-+NOGRAVITY
-	states
-	{
-	Spawn:
-		TNT1 A 1
-		TNT1 A 0 A_JumpIf(waterlevel < 1,"Stap")
-		TNT1 A 0 A_CustomMissile("WaterParticleXTinySpawner",0,0,random(0,360),2,random(60,130))
-		TNT1 A 0 A_CustomMissile("BUBULZ",0,0,random(0,360),2,random(0,180))
-		TNT1 A 0 A_CustomMissile("EXPLOSIONBUBULZ",0,0,random(0,360),2,random(180,360))
-		Stop
-	Stap:
-		TNT1 A 1
-		Stop
-	}
-}
-
 Actor LiquidParticleX
 {
 Scale 4.0
@@ -50,7 +31,7 @@ BounceFactor 0.1
 		Stop
 	Death:
 		TNT1 A 1
-		TNT1 AAA 0 A_CustomMissile("WaterParticleX",2,random(-5,5),random(0,360),2,random(50,140))	//WAS FFF
+		TNT1 AAA 0 A_CustomMissile("WaterParticleX",2,random(-5,5),random(0,360),2,random(50,140))
 		Stop
 	}
 }
@@ -392,7 +373,7 @@ Damagetype "CauseObjectsToSplash"
 	}
 }
 
-actor LiquidExplosionEffectSpawner		//R11 ADDED
+actor LiquidExplosionEffectSpawner
 {
 Radius 2
 Height 2
@@ -408,7 +389,6 @@ Damagetype CauseWaterSplash
 	}
 }
 
-//Moved from Terrain.wad
 //Blood
 Actor LiquidBloodParticleX : LiquidParticleX
 {
@@ -426,7 +406,7 @@ Translation "0:255=187:191"	//Red
 		Stop
 	Death:
 		TNT1 A 1
-		TNT1 AAA 0 A_CustomMissile("BloodParticleX",2,random(-5,5),random(0,360),2,random(50,140))	//WAS FFF
+		TNT1 AAA 0 A_CustomMissile("BloodParticleX",2,random(-5,5),random(0,360),2,random(50,140))
 		Stop
 	}
 }
@@ -525,7 +505,7 @@ Translation "0:255=%[0,0,0]:[0,1,0]"//Green
 		Stop
 	Death:
 		TNT1 A 1
-		TNT1 AAA 0 A_CustomMissile("NukageParticleX",2,random(-5,5),random(0,360),2,random(50,140))	//WAS FFF
+		TNT1 AAA 0 A_CustomMissile("NukageParticleX",2,random(-5,5),random(0,360),2,random(50,140))
 		Stop
 	}
 }
@@ -623,7 +603,7 @@ Alpha 0.9
 		Stop
 	Death:
 		TNT1 A 1
-		TNT1 AAA 0 A_CustomMissile("SlimeParticleX",2,random(-5,5),random(0,360),2,random(50,140))	//WAS FFF
+		TNT1 AAA 0 A_CustomMissile("SlimeParticleX",2,random(-5,5),random(0,360),2,random(50,140))
 		Stop
 	}
 }
