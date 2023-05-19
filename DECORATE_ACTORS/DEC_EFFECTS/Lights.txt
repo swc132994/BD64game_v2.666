@@ -192,7 +192,7 @@ Actor 64Gibs : 64RealGibs Replaces Gibs
 Game Doom
 }
 
-Actor 64SmallBloodPool : SmallBloodPool Replaces SmallBloodPool
+Actor 64SmallBloodPool : SmallBloodPool Replaces SmallBloodPool		//oldblood model
 {
 Scale 0.82
 Radius 20
@@ -203,7 +203,19 @@ Height 1
 	States
 	{
 	Spawn:
+		TNT1 A 0 NoDelay A_Jump(256,"Rest1","Rest2","Rest3","Rest4")
+		Stop
+	Rest1:
 		POB2 A -1
+		Stop
+	Rest2:
+		POB2 B -1
+		Stop
+	Rest3:
+		POB2 C -1
+		Stop
+	Rest4:
+		POB2 D -1
 		Stop
 	}
 }

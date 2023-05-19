@@ -55,8 +55,8 @@ damagefactor "TeleportRemover",0.0
 	States
 	{
 	Spawn:
-		XXXX A 3
-		XXXX A 1 A_NoBlocking
+		TNT1 A 3
+		TNT1 A 1 A_NoBlocking
 		Stop
 	Pain.Explosive:
 		TNT1 A 3
@@ -157,8 +157,8 @@ actor HeadshotTarget4 : HeadshotTargetBase
 States
 	{
 	Spawn:
-		XXXX A 5
-		XXXX A 1 A_NoBlocking
+		TNT1 A 5
+		TNT1 A 1 A_NoBlocking
 		Stop
 	}
 }
@@ -169,8 +169,8 @@ BloodType "Brutal_BloodGreen"
 States
 	{
 	Spawn:
-		XXXX A 5
-		XXXX A 1 A_NoBlocking
+		TNT1 A 5
+		TNT1 A 1 A_NoBlocking
 		Stop
 	}
 }
@@ -180,8 +180,8 @@ actor HeadshotTarget6 : HeadshotTargetBase
 States
 	{
 	Spawn:
-		XXXX A 6
-		XXXX A 1 A_NoBlocking
+		TNT1 A 6
+		TNT1 A 1 A_NoBlocking
 		Stop
 	}
 }
@@ -191,8 +191,8 @@ actor HeadshotTarget2 : HeadshotTargetBase
 States
 	{
 	Spawn:
-		XXXX A 5
-		XXXX A 1 A_NoBlocking
+		TNT1 A 5
+		TNT1 A 1 A_NoBlocking
 		Stop
 	}
 }
@@ -202,8 +202,8 @@ actor HeadshotTarget8 : HeadshotTargetBase
 States
 	{
 	Spawn:
-		XXXX A 11
-		XXXX A 1 A_NoBlocking
+		TNT1 A 11
+		TNT1 A 1 A_NoBlocking
 		Stop
 	}
 }
@@ -225,8 +225,8 @@ actor HeadshotTarget10 : HeadshotTargetBase
 States
 	{
 	Spawn:
-		XXXX A 12
-		XXXX A 1 A_NoBlocking
+		TNT1 A 12
+		TNT1 A 1 A_NoBlocking
 		Stop
 	}
 }
@@ -237,8 +237,8 @@ actor HeadshotTarget20 : HeadshotTargetBase
 States
 	{
 	Spawn:
-		XXXX A 22
-		XXXX A 1 A_NoBlocking
+		TNT1 A 22
+		TNT1 A 1 A_NoBlocking
 		Stop
 	}
 }
@@ -250,8 +250,8 @@ BloodType "Brutal_BloodGreen"
 States
 	{
 	Spawn:
-		XXXX A 22
-		XXXX A 1 A_NoBlocking
+		TNT1 A 22
+		TNT1 A 1 A_NoBlocking
 		Stop
 	}
 }
@@ -262,8 +262,8 @@ actor HeadshotTarget23 : HeadshotTargetBase
 	States
 	{
 	Spawn:
-		XXXX A 25
-		XXXX A 1 A_NoBlocking
+		TNT1 A 25
+		TNT1 A 1 A_NoBlocking
 		Stop
 	}
 }
@@ -274,8 +274,8 @@ actor HeadshotTarget30 : HeadshotTargetBase
 	States
 	{
 	Spawn:
-		XXXX A 33
-		XXXX A 1 A_NoBlocking
+		TNT1 A 33
+		TNT1 A 1 A_NoBlocking
 		Stop
 	}
 }
@@ -287,8 +287,8 @@ BloodType "Brutal_BloodGreen"
 	States
 	{
 	Spawn:
-		XXXX A 33
-		XXXX A 1 A_NoBlocking
+		TNT1 A 33
+		TNT1 A 1 A_NoBlocking
 		Stop
 	}
 }
@@ -299,8 +299,8 @@ actor HeadshotTarget60 : HeadshotTargetBase
 	States
 	{
 	Spawn:
-		XXXX A 63
-		XXXX A 1 A_NoBlocking
+		TNT1 A 63
+		TNT1 A 1 A_NoBlocking
 		Stop
 	}
 }
@@ -311,8 +311,8 @@ actor HeadshotTarget50 : HeadshotTargetBase
 States
 	{
 	Spawn:
-		XXXX A 53
-		XXXX A 1 A_NoBlocking
+		TNT1 A 53
+		TNT1 A 1 A_NoBlocking
 		Stop
 	}
 }
@@ -323,8 +323,8 @@ actor HeadshotTarget100 : HeadshotTargetBase
 	States
 	{
 	Spawn:
-		XXXX A 100
-		XXXX A 1 A_NoBlocking
+		TNT1 A 100
+		TNT1 A 1 A_NoBlocking
 		Stop
 	}
 }
@@ -335,8 +335,8 @@ actor HeadshotTarget200 : HeadshotTargetBase
 	States
 	{
 	Spawn:
-		XXXX A 200
-		XXXX A 1 A_NoBlocking
+		TNT1 A 200
+		TNT1 A 1 A_NoBlocking
 		Stop
 	}
 }
