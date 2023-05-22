@@ -28,7 +28,7 @@ BounceFactor 0.01
 		XXX1 A 1 A_FadeOut(0.01)
 		Wait
 	Off:
-		TNT1 A 0
+		TNT1 A 1
 		Stop
 	}
 }
@@ -58,7 +58,7 @@ Renderstyle Translucent
 		TNT1 AA 1 A_CheckCeiling("Death")
 		Stop
 	Off:
-		TNT1 A 0
+		TNT1 A 1
 		Stop
 	Death:
 		XXX1 A 2000
