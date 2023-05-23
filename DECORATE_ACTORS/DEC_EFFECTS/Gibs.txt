@@ -75,6 +75,7 @@ SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
 Decal BrutalBloodSuper
 +CLIENTSIDEONLY
+-DOOMBOUNCE
 	States
 	{
 	Spawn:
@@ -84,8 +85,8 @@ Decal BrutalBloodSuper
 	Death:
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5",0,0,random(0,180),2,random(0,180))
 		TNT1 A 0 A_CheckFloor("SpawnFloor")
-		TNT1 A 0 A_SpawnItemEx("DetectCeilBloodSimplerLarge",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 0 A_SpawnItemEx("DetectCeilXDeath2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_SpawnItemEx("DetectCeilBloodSimplerLarge")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilXDeath2")
 		TNT1 A 1
 		Stop
 	SpawnFloor:
@@ -117,8 +118,8 @@ Decal BrutalBloodSuperGreen
 	Death:
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5Green",0,0,random(0,180),2,random(0,180))
 		TNT1 A 0 A_CheckFloor("SpawnFloor")
-		TNT1 A 0 A_SpawnItemEx("DetectCeilBloodSimplerLargeGreen",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 0 A_SpawnItemEx("DetectCeilXDeath2Green",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_SpawnItemEx("DetectCeilBloodSimplerLargeGreen")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilXDeath2Green")
 		TNT1 A 1
 		Stop
 	SpawnFloor:
@@ -157,8 +158,8 @@ Decal BrutalBloodSuper
 	Death:
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5",0,0,random(0,180),2,random(0,180))
 		TNT1 A 0 A_CheckFloor("SpawnFloor")
-		TNT1 A 0 A_SpawnItemEx("DetectCeilBloodSimplerLarge",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 0 A_SpawnItemEx("DetectCeilXDeath3",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_SpawnItemEx("DetectCeilBloodSimplerLarge")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilXDeath3")
 		TNT1 A 1
 		Stop
 	SpawnFloor:
@@ -192,8 +193,8 @@ Decal BrutalBloodSuperGreen
 	Death:
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5Green",0,0,random(0,180),2,random(0,180))
 		TNT1 A 0 A_CheckFloor("SpawnFloor")
-		TNT1 A 0 A_SpawnItemEx("DetectCeilBloodSimplerLargeGreen",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT1 A 0 A_SpawnItemEx("DetectCeilXDeath3Green",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 0 A_SpawnItemEx("DetectCeilBloodSimplerLargeGreen")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilXDeath3Green")
 		TNT1 A 1
 		Stop
 	SpawnFloor:

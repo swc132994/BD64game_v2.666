@@ -79,6 +79,8 @@ LASERGUN SPAWNER	9351	180
 WPNPOWER1			9905
 WPNPOWER2			9906
 WPNPOWER3			9907
+WPNPOWER4			9908
+WPNPOWER5			9909
 
 CREDITS v2.666 (here for now until I find a better place)
 --------------

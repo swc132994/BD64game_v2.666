@@ -117,7 +117,7 @@ OB_CYBORG = %o was splattered by a cyberdemon.
 OB_WOLFSS = %o met a Nazi.
 OB_DOG = %o was mauled by a dog.
 
-TAG_FIST = Brass Knuckles
+TAG_FIST = Fists
 TAG_CHAINSAW = Chainsaw
 TAG_PISTOL = Pistol
 TAG_SHOTGUN = Shotgun

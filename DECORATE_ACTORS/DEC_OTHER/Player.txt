@@ -75,7 +75,7 @@ Mass 1
 		TNT1 A 1 A_Explode(1,1,0)
 		Stop
 	NoSound:
-		TNT1 A 0
+		TNT1 A 1
 		Stop
 	}
 }

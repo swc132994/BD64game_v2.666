@@ -25,9 +25,11 @@ DamageType Blood
 		TNT1 A 0 NoDelay ThrustThingZ(0,25,0,1)
 		TNT1 A 2
 		TNT1 A 0 A_SpawnItem("SmearingXDeath2",0,-25)
+		TNT1 A 1
 		Stop
 	Death:
 		TNT1 A 0 A_CustomMissile("CeilXDeath2Checker",-15,0,90,2,90)
+		TNT1 A 1
 		Stop
 	}
 }
@@ -40,9 +42,11 @@ ACTOR DetectCeilXDeath2Green : DetectCeilXDeath2
 		TNT1 A 0 NoDelay ThrustThingZ(0,25,0,1)
 		TNT1 A 2
 		TNT1 A 0 A_SpawnItem("SmearingXDeath2Green",0,-25)
+		TNT1 A 1
 		Stop
 	Death:
 		TNT1 A 0 A_CustomMissile("CeilXDeath2CheckerGreen",-15,0,90,2,90)
+		TNT1 A 1
 		Stop
 	}
 }
@@ -62,7 +66,7 @@ Mass 1
 +MOVEWITHSECTOR
 +FORCEXYBILLBOARD
 +QUARTERGRAVITY
-+ISMONSTER		//R30.7 INFRARED
++ISMONSTER		//INFRARED
 	States
 	{
 	Spawn:
@@ -84,11 +88,12 @@ Mass 1
 		Goto Death
 	Death:
 		TNT1 A 0 A_SpawnItem("XDeath2NoStick")
+		TNT1 A 1
 		Stop
 	Rest:
 		XME1 E 1
-		TNT1 A 0 A_QueueCorpse													//R29.1 ADDED
-		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects	//r31 replaces ACS 798
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		XME1 E 3
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
 	Living:
@@ -125,6 +130,7 @@ Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
 		Goto Death
 	Death:
 		TNT1 A 0 A_SpawnItem("XDeath2NoStick")
+		TNT1 A 1
 		Stop
 	Rest:
 		XME1 E 1
@@ -158,7 +164,7 @@ Decal BrutalBloodSuper
 		TNT1 A 4
 		Stop
 	Splash:
-		TNT1 A 0
+		TNT1 A 1
 		stop
 	Death:
 		TNT1 A 1 A_SpawnItem("CeilXDeath2",0,0,0,1)
@@ -186,7 +192,7 @@ Decal BrutalBloodSuperGreen
 		TNT1 A 4
 		Stop
 	Splash:
-		TNT1 A 0
+		TNT1 A 1
 		stop
 	Death:
 		TNT1 A 1 A_SpawnItem("CeilXDeath2Green",0,0,0,1)
@@ -207,7 +213,7 @@ Renderstyle Normal
 +MOVEWITHSECTOR
 +NOGRAVITY
 +MISSILE
-+ISMONSTER		//R30.7 INFRARED
++ISMONSTER		//INFRARED
 	states
 	{
 	Spawn:
@@ -228,9 +234,10 @@ Renderstyle Normal
 		Goto Fall
 	Fall:
 		TNT1 A 0 A_SpawnItem("XDeath2NoStick")
+		TNT1 A 1
 		stop
 	Splash:
-		TNT1 A 0
+		TNT1 A 1
 		stop
 	}
 }
@@ -266,9 +273,10 @@ Renderstyle Normal
 		Goto Fall
 	Fall:
 		TNT1 A 0 A_SpawnItem("XDeath2NoStickGreen")
+		TNT1 A 1
 		stop
 	Splash:
-		TNT1 A 0
+		TNT1 A 1
 		stop
 	}
 }
@@ -283,7 +291,7 @@ Gravity 0.4
 Decal BrutalBloodSplat
 DeathSound "misc/xdeath2"
 +CLIENTSIDEONLY
-+ISMONSTER		//R30.7 INFRARED
++ISMONSTER		//INFRARED
 	States
 	{
 	Spawn:
@@ -294,8 +302,8 @@ DeathSound "misc/xdeath2"
 	Death:
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5",0,0,random(0,180),2,random(0,180))
 		XME1 E 1
-		TNT1 A 0 A_QueueCorpse													//R29.1 ADDED
-		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects	//r31 replaces ACS 798
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		XME1 E 3
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
 	Living:
@@ -370,9 +378,11 @@ DamageType Blood
 		TNT1 A 0 NoDelay ThrustThingZ(0,35,0,1)
 		TNT1 A 2
 		TNT1 A 0 A_SpawnItem("SmearingXDeath3",0,-25)
+		TNT1 A 1
 		Stop
 	Death:
 		TNT1 A 0 A_CustomMissile("CeilXDeath3Checker",-15,0,90,2,90)
+		TNT1 A 1
 		Stop
 	}
 }
@@ -385,9 +395,11 @@ ACTOR DetectCeilXDeath3Green : DetectCeilXDeath3
 		TNT1 A 0 NoDelay ThrustThingZ(0,35,0,1)
 		TNT1 A 2
 		TNT1 A 0 A_SpawnItem("SmearingXDeath3Green",0,-25)
+		TNT1 A 1
 		Stop
 	Death:
 		TNT1 A 0 A_CustomMissile("CeilXDeath3CheckerGreen",-15,0,90,2,90)
+		TNT1 A 1
 		Stop
 	}
 }
@@ -407,7 +419,7 @@ Mass 1
 +MOVEWITHSECTOR
 +FORCEXYBILLBOARD
 +QUARTERGRAVITY
-+ISMONSTER	//R30.7 INFRARED
++ISMONSTER	//INFRARED
 	States
 	{
 	Spawn:
@@ -430,11 +442,12 @@ Mass 1
 		Goto Death
 	Death:
 		TNT1 A 0 A_SpawnItem("XDeath3NoStick")
+		TNT1 A 1
 		Stop
 	Rest:
 		XME1 E 1
-		TNT1 A 0 A_QueueCorpse													//R29.1 ADDED
-		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects	//r31 replaces ACS 798
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		XME2 E 3
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
 	Living:
@@ -472,6 +485,7 @@ Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Partial Green
 		Goto Death
 	Death:
 		TNT1 A 0 A_SpawnItem("XDeath3NoStickGreen")
+		TNT1 A 1
 		Stop
 	Rest:
 		XME1 E 1
@@ -505,7 +519,7 @@ damagetype Blood
 		TNT1 A 4
 		Stop
 	Splash:
-		TNT1 A 0
+		TNT1 A 1
 		stop
 	Death:
 		TNT1 A 1 A_SpawnItem("CeilXDeath3",0,0,0,1)
@@ -534,7 +548,7 @@ damagetype Blood
 		TNT1 A 4
 		Stop
 	Splash:
-		TNT1 A 0
+		TNT1 A 1
 		stop
 	Death:
 		TNT1 A 1 A_SpawnItem("CeilXDeath3Green",0,0,0,1)
@@ -555,7 +569,7 @@ Renderstyle Normal
 +MOVEWITHSECTOR
 +NOGRAVITY
 +MISSILE
-+ISMONSTER		//R30.7 INFRARED
++ISMONSTER		//INFRARED
 	states
 	{
 	Spawn:
@@ -577,9 +591,10 @@ Renderstyle Normal
 		Goto Fall
 	Fall:
 		TNT1 A 0 A_SpawnItem("XDeath3NoStick")
+		TNT1 A 1
 		stop
 	Splash:
-		TNT1 A 0
+		TNT1 A 1
 		stop
 	}
 }
@@ -616,9 +631,10 @@ Renderstyle Normal
 		Goto Fall
 	Fall:
 		TNT1 A 0 A_SpawnItem("XDeath3NoStickGreen")
+		TNT1 A 1
 		stop
 	Splash:
-		TNT1 A 0
+		TNT1 A 1
 		stop
 	}
 }
@@ -633,7 +649,7 @@ Height 0
 DeathSound "misc/XDeath3"
 Decal BrutalBloodSplat
 +CLIENTSIDEONLY
-+ISMONSTER		//R30.7 INFRARED
++ISMONSTER		//INFRARED
 	States
 	{
 	Spawn:
@@ -644,8 +660,8 @@ Decal BrutalBloodSplat
 	Death:
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5",0,0,random(0,180),2,random(0,180))
 		XME2 E 1
-		TNT1 A 0 A_QueueCorpse													//R29.1 ADDED
-		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects	//r31 replaces ACS 798
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		XME2 E 3
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
 	Living:
@@ -722,7 +738,7 @@ DamageType Blood
 +FORCEXYBILLBOARD
 +NODAMAGETHRUST
 +NOGRAVITY
-+ISMONSTER		//R30.7 INFRARED
++ISMONSTER		//INFRARED
 	States
 	{
 	Spawn:
@@ -732,6 +748,7 @@ DamageType Blood
 		Stop
 	Death:
 		TNT1 A 0 A_CustomMissile("SmallBrainPiece",-15,0,90,2,90)
+		TNT1 A 1
 		Stop
 	}
 }
@@ -747,6 +764,7 @@ ACTOR DetectCeilBrainGreen : DetectCeilBrain
 		Stop
 	Death:
 		TNT1 A 0 A_CustomMissile("SmallBrainPieceGreen",-15,0,90,2,90)
+		TNT1 A 1
 		Stop
 	}
 }
@@ -766,7 +784,7 @@ Mass 1
 +MOVEWITHSECTOR
 +FORCEXYBILLBOARD
 +QUARTERGRAVITY
-+ISMONSTER		//R30.7 INFRARED
++ISMONSTER		//INFRARED
 	States
 	{
 	Spawn:
@@ -787,7 +805,7 @@ Mass 1
 		Goto Death
 	Death:
 	Rest:
-		TNT1 A 0 A_QueueCorpse		//R29.1 ADDED
+		TNT1 A 0 A_QueueCorpse
 		TNT1 A 0 A_ChangeFlag("QUARTERGRAVITY",0)
 		XDB5 A 2 ThrustThingZ(0,-2,0,1)
 		TNT1 A 0 A_CheckFloor("Sleep")
@@ -797,7 +815,7 @@ Mass 1
 		XDT5 B 2002
 		Stop
 	DoNothing:
-		TNT1 A 0
+		TNT1 A 1
 		Stop
 	}
 }
@@ -835,7 +853,7 @@ Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
 		XDT5 B 2002
 		Stop
 	DoNothing:
-		TNT1 A 0
+		TNT1 A 1
 		Stop
 	}
 }

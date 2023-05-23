@@ -1,7 +1,7 @@
 Actor Swarm
 {
 +NoClip
-+NOGRAVITY		//R31 added
++NOGRAVITY
 	States
 	{
 	Spawn:
@@ -9,7 +9,7 @@ Actor Swarm
 		TNT1 AAAAAAA 2 A_CustomMissile("FlyDecor",32,0,random(0,360),2,random(-40,40))
 	Done:
 		TNT1 A -1
-		STOP																	//R31 WAS LOOP
+		STOP
 	}
 }
 
@@ -17,7 +17,7 @@ Actor FlyDecor
 {
 Scale 0.3
 Radius 2
-Height 4//WAS 60
+Height 4
 Speed 3
 Projectile
 +DontSplash

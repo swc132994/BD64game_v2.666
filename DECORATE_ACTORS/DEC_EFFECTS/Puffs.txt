@@ -37,6 +37,7 @@ Actor UnderwaterHitPuff
 		TNT1 A 0 A_CustomMissile("WaterParticleXTinySpawner",0,0,random(0,360),2,random(60,130))
 		TNT1 A 0 A_CustomMissile("BUBULZ",0,0,random(0,360),2,random(0,180))
 		TNT1 A 0 A_CustomMissile("EXPLOSIONBUBULZ",0,0,random(0,360),2,random(180,360))
+		TNT1 A 1
 		Stop
 	Stap:
 		TNT1 A 1

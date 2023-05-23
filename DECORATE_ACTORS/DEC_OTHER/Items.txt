@@ -720,3 +720,58 @@ Inventory.PickupMessage "$GOTYELWSKUL"
 		Stop
 	}
 }
+
+//OUTCAST UNMAKER POWERUPS - UNFINISHED
+ACTOR WpnPower4Icon : Inventory
+{
+Inventory.MaxAmount 1
++UNDROPPABLE
+}
+
+ACTOR WpnPower4 : CustomInventory 9908	//GREEN ARTIFACT
+{
+Translation "0:255=%[0,0,0]:[0,1,0]"//Green
+Inventory.Icon POW3E0
+Inventory.PickupMessage "It looks like some sort of key...."
+Inventory.PickupSound "misc/p_pkup"
++COUNTITEM
+-INTERHUBSTRIP
+	States
+	{
+	Spawn:
+		POW3 ABCDEDCB 5 Bright Light("INVULN")
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("WpnPower4Icon",1)
+		TNT1 A 0 HealThing(100,0)
+		Stop
+	}
+}
+
+ACTOR WpnPower5Icon : Inventory
+{
+Inventory.MaxAmount 1
++UNDROPPABLE
+}
+
+ACTOR WpnPower5 : CustomInventory 9909	//RED ARTIFACT
+{
+Translation "0:255=%[0,0,0]:[1,0,0]"//Red
+Inventory.Icon POW3E0
+Inventory.PickupMessage "What is this used for?"
+Inventory.PickupSound "misc/p_pkup"
++COUNTITEM
+-INTERHUBSTRIP
+	States
+	{
+	Spawn:
+		POW3 ABCDEDCB 5 Bright Light("BLURSPHERE")
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("WpnPower5Icon",1)
+		TNT1 A 0 HealThing(100,0)
+			TNT1 A 0 A_GiveInventory("PowerTimeFreezer",1)	//helltime
+			TNT1 A 0 A_GiveInventory("PowerStrength",1)		//helltime
+		Stop
+	}
+}
