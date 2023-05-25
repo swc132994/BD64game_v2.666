@@ -133,60 +133,61 @@ Tag "Unmaker"
 
 Actor SoulAmmo : Ammo	//For humans/zombies
 {
-Scale 0.45
+SCALE 0.8
 Inventory.PickupMessage "Soul Collected"
 Inventory.Amount 1
 Inventory.MaxAmount 30
 Ammo.BackpackAmount 0
 Ammo.BackpackMaxAmount 30
 Inventory.PickupSound "misc/p_pkup"
-Inventory.Icon "LAZRB0"
-ReactionTime 30
-+ALWAYSPICKUP
-Translation "Ice"
+Inventory.Icon "SAMMZ0"
 RenderStyle Add
 Alpha 0.99
++ALWAYSPICKUP
++FLOATBOB
+ReactionTime 90
 	States
 	{
 	Spawn:
-		SINI ABCDEFGHIJKLMNONLKJIHGFEDCBA 2 Light("SMALLBLUETORCH")
+		SAMM AABBCCDD 2 Bright Light("HealthPotion") A_SpawnItem("BlueFlareSmallItem",0,7)
 		TNT1 A 0 A_Countdown
 		Loop
 	Death:
-		SINI L 4 A_FadeOut(0.05)
-		Loop
+		SAMM AABBCCDD 2 A_FadeOut(0.05)
+		Wait
 	}
 }
 
 Actor DemonEssence : Ammo	//For demons
 {
-Scale 0.45
+Scale 0.8
 Inventory.PickupMessage "Demonic Essence Collected"
 Inventory.Amount 1
 Inventory.MaxAmount 25
 Ammo.BackpackAmount 0
 Ammo.BackpackMaxAmount 25
 Inventory.PickupSound "misc/p_pkup"
-Inventory.Icon "LAZWB0"
-ReactionTime 30
-+ALWAYSPICKUP
+Inventory.Icon "DESSZ0"
 RenderStyle Add
 Alpha 0.9
++ALWAYSPICKUP
++FLOATBOB
+ReactionTime 90
 	States
 	{
 	Spawn:
-		SINI ABCDEFGHIJKLMNONLKJIHGFEDCBA 2 Light("SMALLREDTORCH")
+		DESS AABBCCDD 2 Bright Light("HellPotion") A_SpawnItem("RedFlareSmallItem",0,7)
 		TNT1 A 0 A_Countdown
 		Loop
 	Death:
-		SINI L 4 A_FadeOut(0.05)
-		Loop
+		DESS AABBCCDD 2 A_FadeOut(0.05)
+		Wait
 	}
 }
 
 Actor DemonEssenceLarge : DemonEssence		//For boss demons
 {
-Scale 0.75
+Scale 1.2
 Inventory.PickupMessage "Large Demonic Essence Collected"
 Inventory.Amount 10
 }
@@ -200,9 +201,11 @@ Height 16
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("TUnmakerChecker",0,0,0) == 2,"ShowSoul")
 		TNT1 A 0 A_JumpIf(CallACS("TUnmakerChecker",0,0,0) == 3,"ShowSoul")
+		TNT1 A 1
 		Stop
 	ShowSoul:
 		TNT1 A 0 A_SpawnItemEx("SoulAmmo",0,0,0,random(0,5),random(0,5),5,random(0,360))
+		TNT1 A 1
 		Stop
 	}
 }
@@ -215,9 +218,11 @@ Height 16
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("TUnmakerChecker",0,0,0) == 3,"ShowEssence")
+		TNT1 A 1
 		Stop
 	ShowEssence:
 		TNT1 A 0 A_SpawnItemEx("DemonEssence",0,0,0,random(0,5),random(0,5),5,random(0,360))
+		TNT1 A 1
 		Stop
 	}
 }
@@ -230,9 +235,11 @@ Height 16
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("TUnmakerChecker",0,0,0) == 3,"ShowEssence")
+		TNT1 A 1
 		Stop
 	ShowEssence:
 		TNT1 A 0 A_SpawnItemEx("DemonEssenceLarge",0,0,0,random(0,5),random(0,5),5,random(0,360))
+		TNT1 A 1
 		Stop
 	}
 }
@@ -251,10 +258,13 @@ Height 10
 	states
 	{
 	Spawn:
-		TNT1 A 5
+		PNTG A 5 Bright Light("BLURSPHERE")
+		TNT1 A 0 A_PlaySound("TORTURE6",CHAN_BODY,1,1)
 		TNT1 A 0 ThrustThingZ(0,2,0,1)
-		TNT5 A 100
-		Stop
+		PNTG AAAAAAAAAAAAAAAAAA 5 Bright Light("BLURSPHERE") A_CustomMissile("ExplosionParticleLaser",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_StopSound(CHAN_BODY)
+		PNTG A 1 A_FadeOut(0.1)
+		Wait
 	}
 }
 
@@ -309,7 +319,7 @@ Tag "Unmaker"
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"FireSpecial")
+		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
 		TNT1 A 0 A_PlaySound("UNMKLP",CHAN_WEAPON,1,1)
 		Loop
 	Select:
@@ -367,7 +377,8 @@ Tag "Unmaker"
 		UNMA JKLDE 1
 		UNMA A 18
 		Goto Ready
-	AltFire:
+	Special:
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
 		TNT1 A 0 A_JumpIfInventory("UnAltMode",3,"NoAim")
 		TNT1 A 0 A_Giveinventory("UnAltMode",1)
 		TNT1 A 0 A_JumpIfInventory("UnAltMode",2,"ReadyRed")
@@ -378,18 +389,20 @@ Tag "Unmaker"
 		Goto Ready
 	ReadyGreen:
 		TNT1 A 0 A_JumpIfInventory("WpnPower4Icon",1,1)
-		Goto AltFire
+		Goto Special
 		TNT1 A 0 A_Print("Levitation Mode!",1)
 		UNMG ABCB 3 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
 		Loop
 	ReadyRed:
 		TNT1 A 0 A_JumpIfInventory("WpnPower5Icon",1,1)
-		Goto AltFire
+		Goto Special
 		TNT1 A 0 A_Giveinventory("UnAltMode",2)
 		TNT1 A 0 A_Print("Hell Time Mode!",1)
 		UNMR ABCB 3 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
 		Loop
 	FireAltGreen:
 		TNT1 A 0 A_JumpIfInventory("DemonEssence",5,1)
@@ -406,13 +419,14 @@ Tag "Unmaker"
 		Goto NotReady2
 		TNT1 A 0 A_PlaySound("OutHelltime",4)
 		TNT1 A 0 A_TakeInventory("DemonEssence",10,TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_Print("Time Comes to a Stop!",1)
 		UNMR C 3 Bright A_SetPitch(-1.0 + pitch)
 		UNMR CBA 5 A_SetPitch(0.5 + pitch)
 		TNT1 A 0 A_GiveInventory("PowerTimeFreezer",1)
 		TNT1 A 0 A_GiveInventory("PowerStrength",1)
-		Goto NoAim
-	FireSpecial:
-		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
+		TNT1 A 0 A_SelectWeapon("64Fisttactical")
+		Goto Deselect
+	AltFire:
 		TNT1 A 0 A_JumpIfInventory("DemonEssence",25,1)
 		Goto NotReady2
 		TNT1 A 0 A_ZoomFactor(0.9)
@@ -630,7 +644,7 @@ RenderStyle Normal
 		ULAZ A 2 Bright
 		Stop
 	Death:
-		TNT1 A 0
+		TNT1 A 1
 		Stop
 	}
 }

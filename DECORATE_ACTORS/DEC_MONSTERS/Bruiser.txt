@@ -310,7 +310,7 @@ Decal "SmallerScorch"
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
 		FIR3 P 1 Bright A_SetScale(3.5,3.5)
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
-		TNT1 A 0 A_CustomMissile("BigBlackSmoke",0,0,random(0,360),2,random(40,160))
+		TNT1 A 1 A_CustomMissile("BigBlackSmoke",0,0,random(0,360),2,random(40,160))
 		Stop
 	Death:
 		TNT1 A 0 A_SpawnItem("DetectCeilCraterSmall")
@@ -318,6 +318,7 @@ Decal "SmallerScorch"
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPieceGreen2",random(-25,25),random(-15,15))
 		TNT1 A 0 A_SpawnItemEx("TinyBurningPieceGreen",random(-15,15),random(-15,15))
 		TNT1 AA 0 A_CustomMissile("FlamethrowerFireParticlesGreen",6,0,random(0,360),2,random(10,90))
+		TNT1 A 1
 		Stop
 	}
 }

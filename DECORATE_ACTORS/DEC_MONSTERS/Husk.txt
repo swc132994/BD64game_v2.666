@@ -373,7 +373,7 @@ DropItem "None"
 	Raise:
 		TNT1 A 0 A_SetScale(0.7)
 		64ZF NMLKJI 5
-		TNT1 A 0 A_SpawnItemEx("64HuskZombie",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		64ZF I 1 A_SpawnItemEx("64HuskZombie",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
 }
@@ -482,7 +482,7 @@ Actor BrutalizedHuskZombie_2 : BrutalizedHuskZombie_1
 	Raise:
 		TNT1 A 0 A_SetScale(0.7)
 		64ZF NMLKJI 5
-		TNT1 A 0 A_SpawnItemEx("64HuskZombie",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		64ZF I 1 A_SpawnItemEx("64HuskZombie",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
 }
@@ -496,6 +496,7 @@ Actor 64TheHorde_x4
 		TNT1 A 0 A_SpawnItemex("64HuskZombie",60,-30,0,0,0,0,180,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
 		TNT1 A 0 A_SpawnItemex("64HuskZombie",0,60,0,0,0,0,-90,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
 		TNT1 A 0 A_SpawnItemex("64HuskZombie",-30,-80,0,0,0,0,90,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
+		TNT1 A 1
 		stop
 	}
 }
@@ -508,6 +509,7 @@ Actor 64TheHorde_x3
 		TNT1 A 0 NoDelay A_SpawnItemex("64HuskZombie",-40,0,0,0,0,0,0,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
 		TNT1 A 0 A_SpawnItemex("64HuskZombie",0,40,0,0,0,0,-90,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
 		TNT1 A 0 A_SpawnItemex("64HuskZombie",0,-40,0,0,0,0,90,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
+		TNT1 A 1
 		stop
 	}
 }
@@ -519,6 +521,7 @@ Actor 64TheHorde_x2
 	Spawn:
 		TNT1 A 0 NoDelay A_SpawnItemex("64HuskZombie",-40,-20,0,0,0,0,0,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
 		TNT1 A 0 A_SpawnItemex("64HuskZombie",40,20,0,0,0,0,90,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
+		TNT1 A 1
 		stop
 	}
 }
@@ -529,6 +532,7 @@ Actor 64TheHorde_x1
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_SpawnItemex("64HuskZombie",0,0,0,0,0,0,0,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
+		TNT1 A 1
 		stop
 	}
 }
@@ -540,6 +544,7 @@ Actor HordeEatingBodies1 replaces DeadMarine
 	Spawn:
 		TNT1 A 0 NoDelay A_SpawnItemex("64DeadMarineReplacer")
 		TNT1 A 0 A_SpawnItemex("64TheHorde_Spawner")
+		TNT1 A 1
 		stop
 	}
 }
@@ -551,6 +556,7 @@ Actor HordeEatingBodies2 replaces GibbedMarine
 	Spawn:
 		TNT1 A 0 NoDelay A_SpawnItemex("64GibbedMarineReplacer")
 		TNT1 A 0 A_SpawnItemex("64TheHorde_Spawner")
+		TNT1 A 1
 		stop
 	}
 }
@@ -562,6 +568,7 @@ Actor HordeEatingBodies3 replaces GibbedMarineExtra
 	Spawn:
 		TNT1 A 0 NoDelay A_SpawnItemex("64GibbedMarineExtraReplacer")
 		TNT1 A 0 A_SpawnItemex("64TheHorde_Spawner")
+		TNT1 A 1
 		stop
 	}
 }
@@ -573,6 +580,7 @@ Actor HordeEatingBodies4 replaces DeadZombieMan
 	Spawn:
 		TNT1 A 0 NoDelay A_SpawnItemex("64DeadZombieMan")
 		TNT1 A 0 A_SpawnItemex("64TheHorde_Spawner")
+		TNT1 A 1
 		stop
 	}
 }
@@ -584,6 +592,7 @@ Actor HordeEatingBodies5 replaces DeadShotgunGuy
 	Spawn:
 		TNT1 A 0 NoDelay A_SpawnItemex("64DeadShotgunGuy")
 		TNT1 A 0 A_SpawnItemex("64TheHorde_Spawner")
+		TNT1 A 1
 		stop
 	}
 }

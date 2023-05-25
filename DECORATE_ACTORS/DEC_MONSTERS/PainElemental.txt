@@ -71,7 +71,7 @@ DropItem "DemonEssenceSpawner"
 
 Actor 64NightmareElemental : 64PainElemental 19126
 {
-Speed 18
+Speed 12
 HitObituary "%o was tormented by a nightmare elemental."
 Tag "Nightmare Elemental"
 Alpha 0.5
@@ -85,25 +85,37 @@ Health 600
 		NPEL AD 10 A_Look
 		Loop
 	See:
-		NPEL AAAAAA 2 A_Chase("","")
-		NPEL A 2 A_Chase
-		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
+		TNT1 A 1 A_Wander
+		TNT1 A 0 A_SpawnItem("NightmarePainSprite1")
+		TNT1 A 1 A_Wander
+		TNT1 A 0 A_SpawnItem("NightmarePainSprite1")
+		TNT1 A 1 A_Wander
+		TNT1 A 0 A_SpawnItem("NightmarePainSprite1")
+		TNT1 A 1 A_Wander
+		TNT1 A 0 A_SpawnItem("NightmarePainSprite1")
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItem("NightmarePainSprite1")
+		TNT1 A 1 A_Wander
+		TNT1 A 0 A_SpawnItem("NightmarePainSprite1")
+		TNT1 A 1 A_Wander
+		TNT1 A 0 A_SpawnItem("NightmarePainSprite1")
+		TNT1 A 1 A_Wander
+		TNT1 A 0 A_SpawnItem("NightmarePainSprite1")
+		TNT1 A 1 A_Wander
+		TNT1 AAAA 3 A_chase
 		Loop
-	Forget:
-		TNT1 A 0 A_ClearTarget
-		Goto Spawn
 	Missile:
-		NPEL BB 6 A_FaceTarget
-		NPEL C 6 Bright A_FaceTarget
+		NPEL BB 7 A_FaceTarget
+		NPEL C 7 Bright A_FaceTarget
 		TNT1 A 0 A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,2)
 		TNT1 A 0 A_JumpIf(CallACS("PainStalkerRandomACS")==1,5)
 		TNT1 A 0 A_PainAttack("64LostSoul")
 		TNT1 A 0 A_DualPainAttack("64LostSoul")
-		NPEL CB 3 A_FaceTarget
+		NPEL CB 6 A_FaceTarget
 		Goto See
 		TNT1 A 0 A_PainAttack
 		TNT1 A 0 A_DualPainAttack
-		NPEL CB 3 A_FaceTarget
+		NPEL CB 6 A_FaceTarget
 		Goto See
 	Pain:
 		NPEL D 6
@@ -135,6 +147,24 @@ Health 600
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")
 		POL5 A -1
+		Stop
+	}
+}
+
+Actor NightmarePainSprite1
+{
+Scale 0.75
+Alpha 0.08
+RenderStyle Translucent
++NOBLOCKMAP
++CLIENTSIDEONLY
++ISMONSTER		//Infrared
+	States
+	{
+	Spawn:
+		NPEL AAAA 1 A_FadeIn(0.09)
+		NPEL A 4
+		NPEL AAAAAA 1 A_FadeOut(0.09)
 		Stop
 	}
 }

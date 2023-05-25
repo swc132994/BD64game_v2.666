@@ -245,7 +245,7 @@ PROJECTILE
 		XDT1 K 5 Bright A_SpawnItem("PlasmaSmoke")
 		TNT1 A 0 A_Explode(1,20)
 		XDT1 K 5 Bright
-		TNT1 A 0 A_StopSoundEx(4)
+		TNT1 A 1 A_StopSoundEx(4)
 		Stop
 	}
 }

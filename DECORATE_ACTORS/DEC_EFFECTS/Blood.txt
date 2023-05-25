@@ -1410,7 +1410,7 @@ actor BloodSPlatterReplacer : Brutal_Blood Replaces BloodSplatter
 {
 }
 
-actor GrowingBloodPool : Brutal_BloodSpot
+actor GrowingBloodPool : Brutal_BloodSpot	//modelled
 {
 game Doom
 Scale 0.5
@@ -1431,14 +1431,14 @@ Decal BrutalBloodSplat
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
-		TNT5 A 1
-		TNT5 A 2 A_QueueCorpse
+		FBB1 A 1
+		FBB1 A 2 A_QueueCorpse
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		TNT1 A 0 //A_SpawnItemEx("BootSmearerRed",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
-		TNT5 A 30
-		TNT5 BCDEFGHIJKLMNOPQRTUVWXYZ 3
+		FBB1 A 30
+		FBB1 BCDEFGHIJKLMNOPQRTUVWXYZ 3
 	Live:
-		TNT5 Z 900//duration
+		FBB1 Z 900//duration
 		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Splash")
 		loop
 	Splash:
@@ -1447,13 +1447,13 @@ Decal BrutalBloodSplat
 	}
 }
 
-actor GrowingBloodPoolGreen : GrowingBloodPool
+actor GrowingBloodPoolGreen : GrowingBloodPool	//modelled
 {
 Decal BrutalBloodSplatGreen
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 }
 
-actor GrowingBloodPoolBig : GrowingBloodPool
+actor GrowingBloodPoolBig : GrowingBloodPool	//modelled
 {}	//size determined from modeldef
 
 ACTOR XDeath1Trail : Brutal_FlyingBlood

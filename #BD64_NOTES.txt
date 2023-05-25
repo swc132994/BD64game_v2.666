@@ -164,7 +164,7 @@ Screen effects - Added by IDDQD_1337, Original creator Mechanical-Sanity
 
 Items:
 Alt cell packs - DrDoctor (sprites)
-Soul ammo - DrDoctor (sprites)
+Soul ammo & Demon essence - Craneo (sprites)
 
 Maps:
 Converting Hexen format maps to UDMF - IDDQD_1337

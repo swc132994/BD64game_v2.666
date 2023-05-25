@@ -190,7 +190,7 @@ RenderStyle Translucent
 		TNT1 A 0 A_Explode(15,35,1)
 		MPUF A 5 Bright A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		TNT1 A 0 A_SpawnItem("DetectFloorCraterSmallMotherdemon")
+		TNT1 A 1 A_SpawnItem("DetectFloorCraterSmallMotherdemon")
 		Stop
 	}
 }
@@ -226,6 +226,7 @@ PROJECTILE
 		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,225,CMF_AIMDIRECTION)
 		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,270,CMF_AIMDIRECTION)
 		TNT1 A 0 A_CustomMissile("CacodemonBall",10,0,315,CMF_AIMDIRECTION)
+		TNT1 A 1
 		Stop
 	}
 }
