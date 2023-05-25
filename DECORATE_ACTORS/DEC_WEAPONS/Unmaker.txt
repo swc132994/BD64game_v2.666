@@ -380,7 +380,7 @@ Tag "Unmaker"
 		TNT1 A 0 A_JumpIfInventory("WpnPower4Icon",1,1)
 		Goto AltFire
 		TNT1 A 0 A_Print("Levitation Mode!",1)
-		UNMA A 3 A_WeaponReady
+		UNMG ABCB 3 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		Loop
 	ReadyRed:
@@ -388,29 +388,28 @@ Tag "Unmaker"
 		Goto AltFire
 		TNT1 A 0 A_Giveinventory("UnAltMode",2)
 		TNT1 A 0 A_Print("Hell Time Mode!",1)
-		UNMA A 3 A_WeaponReady
+		UNMR ABCB 3 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		Loop
 	FireAltGreen:
 		TNT1 A 0 A_JumpIfInventory("DemonEssence",5,1)
 		Goto NotReady2
-		TNT1 A 0 A_PlaySound("UNMAKER",4)
+		TNT1 A 0 A_PlaySound("DSBOSPIT",4)
+		TNT1 A 0 ThrustThingZ(0,5,0,0)
 		TNT1 A 0 A_SpawnItemEx("64LevitatingPlatform",0,0,0,0,0,0,0)
 		TNT1 A 0 A_TakeInventory("DemonEssence",5,TIF_NOTAKEINFINITE)
-		UNMA J 3 Bright A_SetPitch(-1.0 + pitch)
-		UNMA J 7 A_SetPitch(0.5 + pitch)
-		UNMA J 20
+		UNMG C 3 Bright A_SetPitch(-1.0 + pitch)
+		UNMG CBA 5 A_SetPitch(0.5 + pitch)
 		Goto ReadyGreen
 	FireAltRed:
 		TNT1 A 0 A_JumpIfInventory("DemonEssence",10,1)
 		Goto NotReady2
-		TNT1 A 0 A_PlaySound("UNMAKER",4)
+		TNT1 A 0 A_PlaySound("OutHelltime",4)
+		TNT1 A 0 A_TakeInventory("DemonEssence",10,TIF_NOTAKEINFINITE)
+		UNMR C 3 Bright A_SetPitch(-1.0 + pitch)
+		UNMR CBA 5 A_SetPitch(0.5 + pitch)
 		TNT1 A 0 A_GiveInventory("PowerTimeFreezer",1)
 		TNT1 A 0 A_GiveInventory("PowerStrength",1)
-		TNT1 A 0 A_TakeInventory("DemonEssence",10,TIF_NOTAKEINFINITE)
-		UNMA J 3 Bright A_SetPitch(-1.0 + pitch)
-		UNMA J 7 A_SetPitch(0.5 + pitch)
-		UNMA J 20
 		Goto NoAim
 	FireSpecial:
 		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
@@ -432,6 +431,7 @@ Tag "Unmaker"
 		TNT1 A 0 A_Print("Not Enough Souls!",1)
 		Goto Ready
 	NotReady2:
+		TNT1 A 0 A_Takeinventory("UnAltMode",0)
 		TNT1 A 0 A_Print("Not Enough Demonic Essence!",1)
 		Goto Ready
 	}

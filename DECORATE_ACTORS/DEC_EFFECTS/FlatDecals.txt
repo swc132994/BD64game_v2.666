@@ -7,7 +7,7 @@ height 1
 Alpha 0.9
 Renderstyle Translucent
 +FLOORCLIP
--DONTSPLASH
++DONTSPLASH
 +MISSILE
 +CLIENTSIDEONLY
 +NOTELEPORT
@@ -42,7 +42,7 @@ height 1
 Alpha 0.9
 Renderstyle Translucent
 +FLOORCLIP
--DONTSPLASH
++DONTSPLASH
 +MISSILE
 +NOTELEPORT
 +NOBLOCKMAP

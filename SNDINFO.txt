@@ -211,6 +211,8 @@ UNMKLP UNMKLP
 weapons/unmaker dslaser
 $limit weapons/unmaker 0
 
+OutHelltime	DSHTIME
+
 //MP40
 MP40 64MP40
 RELOAN RELOAN

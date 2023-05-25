@@ -620,7 +620,7 @@ Model 64LevitatingPlatform
 Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "bloodpool2.png"
-Scale 20.0 20.0 1.0
+Scale 25.0 25.0 1.0
 ZOffset 0.65
 FrameIndex TNT5 A 0 0
 }

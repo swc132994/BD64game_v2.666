@@ -394,6 +394,7 @@ PROJECTILE
 		TNT1 A 0 A_SpawnItem("DetectCeilCraterSmall")
 		TNT1 A 0 A_PlaySound("SlimeBall/Splat",4)
 		XDT1 F 3 Bright A_CustomMissile("64AcidPuff",0,0,0,2,0)
+		TNT1 A 0 A_ChangeFlag("DONTSPLASH",1)
 		TNT1 A 0 A_Explode(1,20)
 		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		XDT1 G 3 Bright
@@ -441,7 +442,7 @@ PROJECTILE
 		XDT1 K 5 Bright A_SpawnItem("PlasmaSmoke")
 		TNT1 A 0 A_Explode(1,20)
 		XDT1 K 5 Bright
-		TNT1 A 0 A_StopSoundEx(4)
+		TNT1 A 1 A_StopSoundEx(4)
 		Stop
 	}
 }
