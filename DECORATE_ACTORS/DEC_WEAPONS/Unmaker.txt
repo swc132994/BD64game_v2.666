@@ -41,26 +41,33 @@ Tag "Unmaker"
 		Stop
 	Ready:
 		UNMA A 1 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
 		Loop
 	Deselect:
+		TNT1 A 0 A_Takeinventory("UnAltMode",0)
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
 		UNMA A 1 A_Lower
 		Wait
 	Select:
 		UNMA A 1 A_Raise
 		Loop
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("WeaponPower",1,5)
+		TNT1 A 0 A_JumpIfInventory("UnAltMode",2,"FireAltRed")
+		TNT1 A 0 A_JumpIfInventory("UnAltMode",1,"FireAltGreen")
+		TNT1 A 0 A_JumpIfInventory("WeaponPower",1,"Fire1")
 		UNMA A 1 Offset(0,40)
 		TNT1 A 0 A_GunFlash
 		UNMA A 3 A_FireCustomMissile("UnmakerLaser2")
 		UNMA A 7
 		Goto Ready
-		TNT1 A 0 A_JumpIfInventory("WeaponPower",2,5)
+	Fire1:
+		TNT1 A 0 A_JumpIfInventory("WeaponPower",2,"Fire2")
 		UNMA A 1 Offset(0,40)
 		TNT1 A 0 A_GunFlash
 		UNMA A 3 A_FireCustomMissile("Unmakerlaser2")
 		UNMA A 2
 		Goto Ready
+	Fire2:
 		TNT1 A 0 A_JumpIfInventory("WeaponPower",3,"Hold1")
 		UNMA A 1 Offset(0,40)
 		TNT1 A 0 A_GunFlash
@@ -128,6 +135,57 @@ Tag "Unmaker"
 	Flash:
 		UNMA B 3 Bright
 		goto LightDone
+	Special:
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
+		TNT1 A 0 A_JumpIfInventory("UnAltMode",3,"NoAim")
+		TNT1 A 0 A_Giveinventory("UnAltMode",1)
+		TNT1 A 0 A_JumpIfInventory("UnAltMode",2,"ReadyRed")
+		Goto ReadyGreen
+	NoAim:
+		TNT1 A 0 A_Print("Normal Mode!",2)
+		TNT1 A 0 A_Takeinventory("UnAltMode",0)
+		Goto Ready
+	ReadyGreen:
+		TNT1 A 0 A_JumpIfInventory("WpnPower4Icon",1,1)
+		Goto Special
+		TNT1 A 0 A_Print("Levitation Mode!",2)
+	ReadyGreenLoop:
+		UNMG ABCB 3 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
+		Loop
+	ReadyRed:
+		TNT1 A 0 A_JumpIfInventory("WpnPower5Icon",1,1)
+		Goto Special
+		TNT1 A 0 A_Giveinventory("UnAltMode",2)
+		TNT1 A 0 A_Print("Hell Time Mode!",2)
+	ReadyRedLoop:
+		UNMR ABCB 3 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
+		Loop
+	FireAltGreen:
+		TNT1 A 0 A_JumpIfInventory("Cell",15,4)
+		TNT1 A 0 A_Print("Not Enough Ammo!",1)
+		TNT1 A 0 A_Takeinventory("UnAltMode",0)
+		Goto Ready
+		TNT1 A 0 A_PlaySound("DSBOSPIT",4)
+		TNT1 A 0 ThrustThingZ(0,5,0,0)
+		TNT1 A 0 A_SpawnItemEx("64LevitatingPlatform",0,0,0,0,0,0,0)
+		TNT1 A 0 A_TakeInventory("Cell",15,TIF_NOTAKEINFINITE)
+		UNMG C 3 Bright A_SetPitch(-1.0 + pitch)
+		UNMG CBA 5 A_SetPitch(0.5 + pitch)
+		Goto ReadyGreen
+	FireAltRed:
+		TNT1 A 0 A_Explode(20,10,XF_HURTSOURCE,0)
+		TNT1 A 0 A_PlaySound("OutHelltime",4)
+		TNT1 A 0 A_Print("Time Comes to a Stop!",2)
+		UNMR C 3 Bright A_SetPitch(-1.0 + pitch)
+		UNMR CBA 5 A_SetPitch(0.5 + pitch)
+		TNT1 A 0 A_GiveInventory("PowerTimeFreezer",1)
+		TNT1 A 0 A_GiveInventory("PowerStrength",1)
+		TNT1 A 0 A_SelectWeapon("64Fist")
+		Goto Deselect
 	}
 }
 
@@ -204,8 +262,7 @@ Height 16
 		TNT1 A 1
 		Stop
 	ShowSoul:
-		TNT1 A 0 A_SpawnItemEx("SoulAmmo",0,0,0,random(0,5),random(0,5),5,random(0,360))
-		TNT1 A 1
+		TNT1 A 1 A_SpawnItemEx("SoulAmmo",0,0,0,random(0,5),random(0,5),5,random(0,360))
 		Stop
 	}
 }
@@ -221,8 +278,7 @@ Height 16
 		TNT1 A 1
 		Stop
 	ShowEssence:
-		TNT1 A 0 A_SpawnItemEx("DemonEssence",0,0,0,random(0,5),random(0,5),5,random(0,360))
-		TNT1 A 1
+		TNT1 A 1 A_SpawnItemEx("DemonEssence",0,0,0,random(0,5),random(0,5),5,random(0,360))
 		Stop
 	}
 }
@@ -238,8 +294,7 @@ Height 16
 		TNT1 A 1
 		Stop
 	ShowEssence:
-		TNT1 A 0 A_SpawnItemEx("DemonEssenceLarge",0,0,0,random(0,5),random(0,5),5,random(0,360))
-		TNT1 A 1
+		TNT1 A 1 A_SpawnItemEx("DemonEssenceLarge",0,0,0,random(0,5),random(0,5),5,random(0,360))
 		Stop
 	}
 }
@@ -384,13 +439,14 @@ Tag "Unmaker"
 		TNT1 A 0 A_JumpIfInventory("UnAltMode",2,"ReadyRed")
 		Goto ReadyGreen
 	NoAim:
-		TNT1 A 0 A_Print("Normal Mode!",1)
+		TNT1 A 0 A_Print("Normal Mode!",2)
 		TNT1 A 0 A_Takeinventory("UnAltMode",0)
 		Goto Ready
 	ReadyGreen:
 		TNT1 A 0 A_JumpIfInventory("WpnPower4Icon",1,1)
 		Goto Special
-		TNT1 A 0 A_Print("Levitation Mode!",1)
+		TNT1 A 0 A_Print("Levitation Mode!",2)
+	ReadyGreenLoop:
 		UNMG ABCB 3 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
@@ -399,7 +455,8 @@ Tag "Unmaker"
 		TNT1 A 0 A_JumpIfInventory("WpnPower5Icon",1,1)
 		Goto Special
 		TNT1 A 0 A_Giveinventory("UnAltMode",2)
-		TNT1 A 0 A_Print("Hell Time Mode!",1)
+		TNT1 A 0 A_Print("Hell Time Mode!",2)
+	ReadyRedLoop:
 		UNMR ABCB 3 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
@@ -419,7 +476,7 @@ Tag "Unmaker"
 		Goto NotReady2
 		TNT1 A 0 A_PlaySound("OutHelltime",4)
 		TNT1 A 0 A_TakeInventory("DemonEssence",10,TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_Print("Time Comes to a Stop!",1)
+		TNT1 A 0 A_Print("Time Comes to a Stop!",2)
 		UNMR C 3 Bright A_SetPitch(-1.0 + pitch)
 		UNMR CBA 5 A_SetPitch(0.5 + pitch)
 		TNT1 A 0 A_GiveInventory("PowerTimeFreezer",1)
