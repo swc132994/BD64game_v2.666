@@ -1,9 +1,6 @@
-//R16 PLAYER CLASSES MOVED MAPINFO
-//R16 WEAPON SLOTS MOVED TO Decorate Players
-
 AddKeySection "Brutal Doom 64" BrutalDoomInteractions
 
-Alias "kickem" "pukeName KickKeyPress"			//r31 was puke 301
+Alias "kickem" "pukeName KickKeyPress"
 AddMenuKey "Kick" "kickem"
 DefaultBind "Q" "kickem"
 

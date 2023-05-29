@@ -615,7 +615,7 @@ Texture FIRELAV3
 	pic FIRELAV3 rand 3 3
 
 //WATERFALL
-texture WFALL1		//R23.2 ADDED
+texture WFALL1
 	pic WFALL1 tics 1
 	pic WFALL2 tics 1
 	pic WFALL3 tics 1

@@ -74,8 +74,8 @@ decal BigScorch
 {
 pic SCORCH1
 shade "00 00 00"
-x-scale 0.6			//R28.3 WAS 1.5
-y-scale 0.6			//R28.3 WAS 1.5
+x-scale 0.6
+y-scale 0.6
 randomflipx
 randomflipy
 Animator ScorchFader
@@ -107,8 +107,8 @@ decal SmallerScorch
 {
 pic SCORCH1
 shade "00 00 00"
-x-scale 0.3			//R28.3 WAS 0.6
-y-scale 0.3			//R28.3 WAS 0.6
+x-scale 0.3
+y-scale 0.3
 randomflipx
 randomflipy
 Animator ScorchFader
@@ -118,14 +118,14 @@ decal MedScorch
 {
 pic SCORCH1
 shade "00 00 00"
-x-scale 0.45		//R28.3 WAS 0.6
-y-scale 0.45		//R28.3 WAS 0.6
+x-scale 0.45
+y-scale 0.45
 randomflipx
 randomflipy
 Animator ScorchFader
 }
 
-decal LaserDecal	//R31 added
+decal LaserDecal
 {
 pic SCORCH1
 shade "00 00 00"
@@ -137,7 +137,7 @@ Animator ScorchFader
 }
 
 //Saw Decal
-decal SawVertical	//R28.2 added
+decal SawVertical
 {
 pic SawVert
 shade "00 00 00"
@@ -148,16 +148,7 @@ randomflipx
 Animator ScorchFader
 }
 
-//R31 Bullet Decals from SMK4SIMPLEDECALS.WAD
-/*decal BulletDecalNew1		//R28.2 added	//R31 Old Decal
-{
-	pic BULDE1
-	x-scale 0.5
-	y-scale 0.5
-	translucent 0.9
-	shade "0 0 0"
-	randomflipx
-}*/
+//Bullet Decals imported from SMK4SIMPLEDECALS.WAD
 
 decal BDBulletChip1
 {
@@ -195,7 +186,7 @@ randomflipx
 Animator ScorchFader
 }
 
-decalgroup BulletDecalNew1	//WAS BulletChip
+decalgroup BulletDecalNew1
 {
 BDBulletChip1	1
 BDBulletChip2	1

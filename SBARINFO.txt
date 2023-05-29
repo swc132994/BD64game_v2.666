@@ -3,7 +3,7 @@ completeborder true;
 
 statusbar fullscreen,forcescaled,0.5
 {
-	InInventory "ArrangedHud",1 //R31 Fullscreen HUD
+	InInventory "ArrangedHud",1 //Fullscreen HUD
 	{
 		InInventory "PowerStrength",1
 		{
@@ -24,15 +24,14 @@ statusbar fullscreen,forcescaled,0.5
 	}
 	else
 	{
-		drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),88,183;	//R4 Added WhenNotZero //R31 untranslated
+		drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),88,183;
 		drawimage "HTEXA0",30,170;
 		drawnumber 3,HUDFONT_DOOM,untranslated,health,69,180;
 		drawimage "ATEXA0",246,170;
 		drawnumber 3,HUDFONT_DOOM,untranslated,armor,283,180;
 		drawimage "nullimage",306,196;
 		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
-	//	drawimage ammoicon2,306,172;
-		drawnumber 3,SMALLFONT,red,ammo2,192,183; //R31 untranslated
+		drawnumber 3,SMALLFONT,red,ammo2,192,183;
 	}
 	
 	PlayerType "Tactical64DoomPlayer","Modern"
@@ -50,7 +49,7 @@ statusbar fullscreen,forcescaled,0.5
 	}
 	gamemode cooperative,singleplayer
 	{
-		//R31 Icon Card and Skull fix
+		//Icon Card and Skull fix
 		drawswitchableimage BlueCard,"nullimage","STKEYS0",90,181;
 		drawswitchableimage YellowCard,"nullimage","STKEYS1",100,181;
 		drawswitchableimage RedCard,"nullimage","STKEYS2",110,181;
@@ -58,9 +57,8 @@ statusbar fullscreen,forcescaled,0.5
 		drawswitchableimage YellowSkull,"nullimage","STKEYS4",99,169;
 		drawswitchableimage RedSkull,"nullimage","STKEYS5",109,169;
 	}
-//	drawselectedinventory INDEXFONT,306,148;								//R27 WAS INDEXFON & DISABLED
-//	drawselectedinventory SMALLFONT,58,161;									//R27 ALTERNATIVE POSITION NEXT TO HEALTH
-
+//	drawselectedinventory INDEXFONT,306,148;
+//	drawselectedinventory SMALLFONT,58,161;		//ALTERNATIVE POSITION NEXT TO HEALTH
 }
 
 statusbar normal
@@ -70,13 +68,13 @@ statusbar normal
 	drawswitchableimage WpnPower3Icon,"nullimage","POW3E0",261,215; //This is out of order on purpose
 	drawswitchableimage WpnPower2Icon,"nullimage","POW2E0",300,215;
 	drawimage "HTEXA0",6,165;
-	drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),45,186;	//R1 45 WAS 25,186 WAS 177		//R4 Added WhenNotZero
-	drawnumber 3,HUDFONT_DOOM,untranslated,health,45,174;					//R1 174 WAS 177
-	drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;					//R1 WAS 97,181
-	drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;					//R1 WAS 97,181
+	drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),45,186;
+	drawnumber 3,HUDFONT_DOOM,untranslated,health,45,174;
+	drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
+	drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
 	drawimage "ATEXA0",108,165;
 	drawnumber 3,HUDFONT_DOOM,untranslated,armor,145,177;
-	//R31 Icon Card and Skull fix
+	//Icon Card and Skull fix
 	drawswitchableimage BlueCard,"nullimage","STKEYS0",59,166,center,10,6;
 	drawswitchableimage YellowCard,"nullimage","STKEYS1",75,166,center,10,6;
 	drawswitchableimage RedCard,"nullimage","STKEYS2",91,166,center,10,6;
@@ -154,8 +152,6 @@ statusbar normal
 		drawmugshot 5,143,160;
 		drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),166,193;
 
-
-
 		gamemode deathmatch,teamgame
 		{
 			drawnumber 2,HUDFONT_DOOM,untranslated,frags,138,171;
@@ -191,13 +187,12 @@ statusbar automap
 	drawswitchableimage WpnPower3Icon,"nullimage","POW3E0",261,215; //This is out of order on purpose
 	drawswitchableimage WpnPower2Icon,"nullimage","POW2E0",300,215;
 	drawimage "HTEXA0",6,165;
-//	drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),45,186;	//R1 45 WAS 25,186 WAS 177		//R4 Added Whennnot zero
-	drawnumber 3,HUDFONT_DOOM,untranslated,health,45,174;					//R1 174 WAS 177
-	drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;					//R1 WAS 97,181
-	drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;					//R1 WAS 97,181
+	drawnumber 3,HUDFONT_DOOM,untranslated,health,45,174;
+	drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
+	drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
 	drawimage "ATEXA0",108,165;
 	drawnumber 3,HUDFONT_DOOM,untranslated,armor,145,177;
-	//R31 Icon Card and Skull fix
+	//Icon Card and Skull fix
 	drawswitchableimage BlueCard,"nullimage","STKEYS0",59,166,center,10,6;
 	drawswitchableimage YellowCard,"nullimage","STKEYS1",75,166,center,10,6;
 	drawswitchableimage RedCard,"nullimage","STKEYS2",91,166,center,10,6;

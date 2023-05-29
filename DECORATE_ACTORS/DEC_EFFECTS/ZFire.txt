@@ -111,7 +111,7 @@ Speed 2
 	Spawn:
 		EXPL AA 3 Bright A_SpawnItem("RedFlare",0,0)
 		TNT1 AAA 0 A_CustomMissile("ExplosionSmoke",0,0,random(0,360),2,random(0,360))
-		EXPL GHII 3 Bright
+		EXPL FGHH 3 Bright
 		Stop
 	}
 }
@@ -125,7 +125,7 @@ Speed 4
 	Spawn:
 		EXPL AA 6 Bright A_SpawnItem("ExplosionFlareSpawner",0,0)
 		TNT1 AAA 0 A_CustomMissile("ExplosionSmoke",0,0,random(0,360),2,random(0,360))
-		EXPL GHII 6 Bright
+		EXPL FGHH 6 Bright
 		Stop
 	}
 }
@@ -139,7 +139,7 @@ Speed 4
 	Spawn:
 		EXPL AA 6 Bright A_SpawnItem("ExplosionFlareSpawner",0,0)
 		TNT1 AAA 0 A_CustomMissile("ExplosionSmoke",0,0,random(0,360),2,random(0,360))
-		EXPL GHII 6 Bright
+		EXPL FGHH 6 Bright
 		Stop
 	}
 }
@@ -153,7 +153,7 @@ Speed 5
 	Spawn:
 		EXPL AA 8 Bright A_SpawnItem("ExplosionFlareSpawner",0,0)
 		TNT1 AAA 0 A_CustomMissile("ExplosionSmoke",0,0,random(0,360),2,random(0,360))
-		EXPL GHII 10 Bright
+		EXPL FGHH 10 Bright
 		Stop
 	}
 }
@@ -167,7 +167,7 @@ Speed 3
 	Spawn:
 		EXPL AA 2 Bright A_SpawnItem("RedFlare",0,0)
 		EXPL BCDF 1 Bright
-		EXPL GHII 1 Bright
+		EXPL FGHH 1 Bright
 		Stop
 	}
 }
@@ -181,8 +181,8 @@ Speed 4
 	Spawn:
 		EXPL AA 2 Bright A_SpawnItem("RedFlare",0,0)
 		TNT1 A 0 A_CustomMissile("ExplosionSmoke",0,0,random(0,360),2,random(0,360))
-		EXPL BCDF 1 Bright
-		EXPL GHII 1 Bright
+		EXPL BCDE 1 Bright
+		EXPL FGHH 1 Bright
 		Stop
 	}
 }

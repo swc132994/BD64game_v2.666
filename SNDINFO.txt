@@ -291,16 +291,16 @@ menu/clear dsempty
 menu/activate dsempty
 menu/backup dspistol
 
-player/male/death1		DSPLDETH	//R31 added
-knight/death			DSKNTDTH	//R31 added
-skeleton/swing			DSSKESWG	//R31 added
-misc/gibbed				DSSLOP		//R31 added
-misc/teleport			DSTELEPT	//R31 added
-baby/active				DSBSPACT	//R31 added
-misc/p_pkup				dsgetpow	//R31 added // Pickup powerup
-grunt/pain				DSPOPAIN	//R31 added
-grunt/sight1			DSPOSIT1	//R31 added
-grunt/sight3			DSPOSIT3	//R31 added
+player/male/death1		DSPLDETH
+knight/death			DSKNTDTH
+skeleton/swing			DSSKESWG
+misc/gibbed				DSSLOP
+misc/teleport			DSTELEPT
+baby/active				DSBSPACT
+misc/p_pkup				dsgetpow	// Pickup powerup
+grunt/pain				DSPOPAIN
+grunt/sight1			DSPOSIT1
+grunt/sight3			DSPOSIT3
 
 $random menu/quit1		{player/male/death1 demon/pain grunt/pain misc/gibbed misc/teleport grunt/sight1 grunt/sight3 demon/melee}
 $random menu/quit2		{misc/p_pkup misc/gibbed skeleton/swing knight/death baby/active demon/melee}
@@ -471,7 +471,7 @@ Dog/die DOGGDIE
 Dog/active DOGGROAM
 Dog/melee DOGGATT
 
-//R30.10 TELEPORT NEW
+//TELEPORT
 DSTELEPT DSTELEPT
 
 //Demon
@@ -547,11 +547,11 @@ $volume 64ThingActive1 0.75
 
 //BFG Zombie
 $random chainguy/sight		{ bfgguy/sight1  bfgguy/sight2 }
-bfgguy/sight1 	DSBFZSIT	// SeeSound
-bfgguy/sight2		DSBFZATK	// SeeSound 2 
-bfgguy/pain  		DSBZPAIN	// PainSound 
-bfgguy/death 		DSBFZDTH	// DeathSound 
-bfgguy/active		DSBFZACT	// ActiveSound 
+bfgguy/sight1 	DSBFZSIT		// SeeSound
+bfgguy/sight2		DSBFZATK	// SeeSound 2
+bfgguy/pain  		DSBZPAIN	// PainSound
+bfgguy/death 		DSBFZDTH	// DeathSound
+bfgguy/active		DSBFZACT	// ActiveSound
 $volume bfgguy/sight1 0.8
 $volume bfgguy/sight2 0.8
 $volume bfgguy/pain 0.8
