@@ -40,7 +40,7 @@ States
 	Death:
 	XDeath:
 		TNT2 A 3
-		TNT1 A 0 A_AlertMonsters(150)
+		TNT2 A 1 A_AlertMonsters(150)
 		Stop
 	}
 }
@@ -77,6 +77,7 @@ Alpha 0.9
 		Stop
 	Death:
 	Xdeath:
+		TNT1 A 1
 		Stop
 	}
 }
@@ -86,7 +87,10 @@ ACTOR FlashlightSpawner : CustomInventory
 	States
 	{
 	Pickup:
-		TNT1 A 1 BRIGHT
+		TNT1 A 1 A_JumpIfInventory("FlashlightPickup",1,"FlashLightEnabled")
+		TNT1 A 0 A_Print("You need a flashlight! This can be found in backpacks",2)
+		Stop
+	FlashLightEnabled:
 		TNT1 A 0 A_SpawnItemEx("FlashlightSource",25,8,39)
 		TNT1 A 0 A_FireCustomMissile("FlashlightAlerter",0,0,0,0,0,0)
 		TNT1 A 0 A_FireCustomMissile("FlashlightProjectile",0,0,0,0,0,0)
