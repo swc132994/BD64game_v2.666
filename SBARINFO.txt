@@ -17,9 +17,21 @@ statusbar fullscreen,forcescaled,0.5
 		drawimage armoricon,18,178,none,15,15;
 		drawnumber 3,HUDFONT_DOOM,untranslated,armor,WhenNotZero,69,166;
 		drawimage ammoicon1,288,190,none,15,15;
-		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;
+		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;	
+		InInventory "NoReloading",1
+		{
+			IsSelected  "UnmakerTactical"
+			{
+			drawimage ammoicon2,288,174,none,20,20;
+			drawnumber 3,HUDFONT_DOOM,untranslated,ammo2,276,166;
+			}	
+		}
+		else
+		{
 		drawimage ammoicon2,288,174,none,20,20;
 		drawnumber 3,HUDFONT_DOOM,untranslated,ammo2,276,166;
+		}		
+		
 		drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),175,180;
 	}
 	else
@@ -30,8 +42,18 @@ statusbar fullscreen,forcescaled,0.5
 		drawimage "ATEXA0",246,170;
 		drawnumber 3,HUDFONT_DOOM,untranslated,armor,283,180;
 		drawimage "nullimage",306,196;
-		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
+		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;		
+		InInventory "NoReloading",1
+		{	
+		IsSelected  "UnmakerTactical"
+		{
 		drawnumber 3,SMALLFONT,red,ammo2,192,183;
+		}	
+		}
+		else
+		{
+		drawnumber 3,SMALLFONT,red,ammo2,192,183;
+		}
 	}
 	
 	PlayerType "Tactical64DoomPlayer","Modern"
@@ -70,7 +92,18 @@ statusbar normal
 	drawimage "HTEXA0",6,165;
 	drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),45,186;
 	drawnumber 3,HUDFONT_DOOM,untranslated,health,45,174;
+	InInventory "NoReloading",1
+	{
+	IsSelected  "UnmakerTactical"
+	{
 	drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
+	}
+	}
+	else
+	{
+	drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
+	}
+
 	drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
 	drawimage "ATEXA0",108,165;
 	drawnumber 3,HUDFONT_DOOM,untranslated,armor,145,177;
@@ -111,9 +144,23 @@ statusbar normal
 
 		PlayerType "Tactical64DoomPlayer","Modern"
 			{
+			InInventory "NoReloading",1
+			{
+			IsSelected  "UnmakerTactical"
+			{
 			drawstring SMALLFONT,untranslated,"CL",15,169;
 			drawnumber 3,HUDFONT_DOOM,Red,ammo2,44,164;
 			drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;
+			}			
+			else
+			drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,171;
+			}
+			else
+			{
+			drawstring SMALLFONT,untranslated,"CL",15,169;
+			drawnumber 3,HUDFONT_DOOM,Red,ammo2,44,164;
+			drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;
+			}					
 			}
 
 		drawstring SMALLFONT,untranslated,"AMMO",38,191;
@@ -188,7 +235,17 @@ statusbar automap
 	drawswitchableimage WpnPower2Icon,"nullimage","POW2E0",300,215;
 	drawimage "HTEXA0",6,165;
 	drawnumber 3,HUDFONT_DOOM,untranslated,health,45,174;
+	InInventory "NoReloading",1
+	{
+	IsSelected  "UnmakerTactical"
+	{
 	drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
+	}	
+	}
+	else
+	{
+	drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
+	}
 	drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
 	drawimage "ATEXA0",108,165;
 	drawnumber 3,HUDFONT_DOOM,untranslated,armor,145,177;

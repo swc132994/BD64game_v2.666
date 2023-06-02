@@ -240,8 +240,8 @@ Tag "MP40"
 		TNT1 A 1 A_Lower
 		Wait
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("MP40Ammo",1,1)
-		Goto Reload
+		Goto AmmoCheck
+	ResumeFire:
 		TNT1 A 0 A_SetPitch(pitch-1.2, SPF_INTERPOLATE)
 		TNT1 A 0 A_JumpIfInventory("FiredMP40",4,"Fire4")
 		TNT1 A 0 A_JumpIfInventory("FiredMP40",3,"Fire3")
@@ -252,7 +252,6 @@ Tag "MP40"
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.0,0.0,1,8,"HitPuff",0)
-		TNT1 A 0 A_TakeInventory("MP40Ammo",1,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",1)
 		MP4F AB 1 Bright
@@ -269,7 +268,6 @@ Tag "MP40"
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.6,0.6,1,8,"HitPuff",0)
-		TNT1 A 0 A_TakeInventory("MP40Ammo",1,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",1)
 		MP4F AB 1 Bright
@@ -286,7 +284,6 @@ Tag "MP40"
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(2.0,2.0,1,8,"HitPuff",0)
-		TNT1 A 0 A_TakeInventory("MP40Ammo",1,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",1)
 		MP4F AB 1 Bright
@@ -303,7 +300,6 @@ Tag "MP40"
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(4.0,4.0,1,8,"HitPuff",0)
-		TNT1 A 0 A_TakeInventory("MP40Ammo",1,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",1)
 		MP4F AB 1 Bright
@@ -320,7 +316,6 @@ Tag "MP40"
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(7.0,7.0,1,8,"HitPuff",0)
-		TNT1 A 0 A_TakeInventory("MP40Ammo",1,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",1)
 		MP4F AB 1 Bright
@@ -336,14 +331,13 @@ Tag "MP40"
 		TNT1 A 0 A_TakeInventory("FiredMP40",4)
 		Goto Ready
 	AltFire:
-		TNT1 A 0 A_JumpIfInventory("MP40Ammo",5,1)
-		Goto Reload
+		Goto AltAmmoCheck
+	ResumeAltFire:
 		MP4G BCDEF 1
 		TNT1 A 0 A_GunFlash("GrenadeThrowFlash")
 		MP4G G 28
 		TNT1 A 0 A_FireCustomMissile("64StickGrenadePlayer",0,1,0,0,0,0)
 		MP4G G 6
-		TNT1 A 0 A_TakeInventory("MP40Ammo",5,TIF_NOTAKEINFINITE)
 		MP4G EDCB 1
 		TNT1 A 0 A_Refire
 		Goto Ready
@@ -378,5 +372,27 @@ Tag "MP40"
 		Goto InsertBullets2
 		TNT1 A 0 A_Refire
 		Goto Ready
+	AmmoCheck:
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReload")
+		TNT1 A 0 A_JumpIfInventory("MP40Ammo",1,1)
+		Goto Reload
+		TNT1 A 0 A_TakeInventory("MP40Ammo",1,TIF_NOTAKEINFINITE)
+		Goto ResumeFire
+	NoReload:
+		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
+		Goto NoAmmo
+		TNT1 A 0 A_TakeInventory("Clip",1,TIF_NOTAKEINFINITE)
+		Goto ResumeFire
+	AltAmmoCheck:
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"AltNoReload")
+		TNT1 A 0 A_JumpIfInventory("MP40Ammo",5,1)
+		Goto Reload
+		TNT1 A 0 A_TakeInventory("MP40Ammo",5,TIF_NOTAKEINFINITE)
+		Goto ResumeAltFire
+	AltNoReload:
+		TNT1 A 0 A_JumpIfInventory("Clip",5,1)
+		Goto NoAmmo
+		TNT1 A 0 A_TakeInventory("Clip",5,TIF_NOTAKEINFINITE)
+		Goto ResumeAltFire
 	}
 }
