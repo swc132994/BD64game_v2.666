@@ -443,14 +443,10 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_TakeInventory("BurstFiredSMG",3)
 		Goto Ready
 	FireZoomed:
-		TNT1 A 0 A_JumpIfInventory("SMGBurstMode",1,"BurstFireZoomed")
-		TNT1 A 0 A_JumpIfInventory("SMGAmmo",1,1)
-		Goto Reload
 		TNT1 A 0 A_JumpIfInventory("SMGBurstMode",1,"BurstFireZoomed")	
 		Goto AmmoCheck
 		TNT1 A 0 A_FireCustomMissile("Tracer",0,0,0,-6,0,0)
 		TNT1 A 0 A_FireBullets(0.0,0.0,1,8,"HitPuff",0)
-		TNT1 A 0 A_Takeinventory("SMGAmmo",1,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("SMG",1)
@@ -468,9 +464,6 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_FireBullets(0.6,0.6,1,8,"HitPuff",0)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("SMG",1)
-		TNT1 A 0 A_TakeInventory("SMGAmmo",1,TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_JumpIfInventory("SMGAmmo",1,1)
-		Goto Reload
 		TNT1 A 0 A_GiveInventory("BurstFiredSMG",1)
 		Goto AmmoCheckIfBurst
 	ResumeBurstFireZoomed1:	
@@ -482,9 +475,6 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_FireCustomMissile("Tracer",0,0,0,-6,0,0)
 		TNT1 A 0 A_FireBullets(2.0,2.0,1,8,"HitPuff",0)
 		TNT1 A 0 A_PlaySound("SMG",1)
-		TNT1 A 0 A_TakeInventory("SMGAmmo",1,TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_JumpIfInventory("SMGAmmo",1,1)
-		Goto Reload
 		TNT1 A 0 A_GiveInventory("BurstFiredSMG",1)
 		Goto AmmoCheckIfBurst
 	ResumeBurstFireZoomed2:	
@@ -496,9 +486,6 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_FireCustomMissile("Tracer",0,0,0,-6,0,0)
 		TNT1 A 0 A_FireBullets(4.0,4.0,1,8,"HitPuff",0)
 		TNT1 A 0 A_PlaySound("SMG",1)
-		TNT1 A 0 A_TakeInventory("SMGAmmo",1,TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_JumpIfInventory("SMGAmmo",1,1)
-		Goto Reload
 		TNT1 A 0 A_GiveInventory("BurstFiredSMG",1)
 		Goto AmmoCheckIfBurst
 	ResumeBurstFireZoomed3:	
