@@ -17,6 +17,7 @@ Decal BrutalBloodSplat
 +NOBLOCKMAP
 +FORCEXYBILLBOARD
 +DOOMBOUNCE
++THRUACTORS
 BounceCount 0
 BounceFactor 0.01
 	States

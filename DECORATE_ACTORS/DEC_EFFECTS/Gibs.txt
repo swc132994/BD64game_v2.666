@@ -86,8 +86,7 @@ Decal BrutalBloodSuper
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5",0,0,random(0,180),2,random(0,180))
 		TNT1 A 0 A_CheckFloor("SpawnFloor")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilBloodSimplerLarge")
-		TNT1 A 0 A_SpawnItemEx("DetectCeilXDeath2")
-		TNT1 A 1
+		TNT1 A 1 A_SpawnItemEx("DetectCeilXDeath2")
 		Stop
 	SpawnFloor:
 		XME1 E 1
@@ -119,8 +118,7 @@ Decal BrutalBloodSuperGreen
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5Green",0,0,random(0,180),2,random(0,180))
 		TNT1 A 0 A_CheckFloor("SpawnFloor")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilBloodSimplerLargeGreen")
-		TNT1 A 0 A_SpawnItemEx("DetectCeilXDeath2Green")
-		TNT1 A 1
+		TNT1 A 1 A_SpawnItemEx("DetectCeilXDeath2Green")
 		Stop
 	SpawnFloor:
 		XME1 E 1
@@ -159,8 +157,7 @@ Decal BrutalBloodSuper
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5",0,0,random(0,180),2,random(0,180))
 		TNT1 A 0 A_CheckFloor("SpawnFloor")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilBloodSimplerLarge")
-		TNT1 A 0 A_SpawnItemEx("DetectCeilXDeath3")
-		TNT1 A 1
+		TNT1 A 1 A_SpawnItemEx("DetectCeilXDeath3")
 		Stop
 	SpawnFloor:
 		XME2 E 1
@@ -194,8 +191,7 @@ Decal BrutalBloodSuperGreen
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5Green",0,0,random(0,180),2,random(0,180))
 		TNT1 A 0 A_CheckFloor("SpawnFloor")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilBloodSimplerLargeGreen")
-		TNT1 A 0 A_SpawnItemEx("DetectCeilXDeath3Green")
-		TNT1 A 1
+		TNT1 A 1 A_SpawnItemEx("DetectCeilXDeath3Green")
 		Stop
 	SpawnFloor:
 		XME2 E 1
@@ -233,7 +229,6 @@ wallbouncefactor 0.2
 		XME3 ABCDEFGH 3 A_CustomMissile("Brutal_FlyingBloodTrail",0,0,random(0,360),2,random(0,360))
 		Loop
 	Death:
-		TNT1 A 0
 		TNT1 A 0 A_Jump(256,"Death1","Death2")
 		GOto Death1
 	Death1:

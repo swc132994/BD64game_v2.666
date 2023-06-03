@@ -637,7 +637,7 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
 		Goto NoAmmo
 		TNT1 A 0 A_Takeinventory("Clip",1,TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"ResumeFireZoomed")	
+		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"ResumeFireZoomed")
 		Goto ResumeFire
 	AmmoCheckIfBurst:	
 		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReloadIfBurst")
@@ -652,12 +652,12 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
 		Goto NoAmmo
 		TNT1 A 0 A_Takeinventory("Clip",1,TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"ResumeBurstFireZoomed")	
+		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"ResumeBurstFireZoomed")
 		TNT1 A 0 A_JumpIfInventory("BurstFiredSMG",3,"ResumeBurstFire3")
 		TNT1 A 0 A_JumpIfInventory("BurstFiredSMG",2,"ResumeBurstFire2")
 		TNT1 A 0 A_JumpIfInventory("BurstFiredSMG",1,"ResumeBurstFire1")
 	ResumeBurstFireZoomed:
-		TNT1 A 0 A_JumpIfInventory("BurstFiredSMG",3,"ResumeBurstFireZoomed3")		
+		TNT1 A 0 A_JumpIfInventory("BurstFiredSMG",3,"ResumeBurstFireZoomed3")
 		TNT1 A 0 A_JumpIfInventory("BurstFiredSMG",2,"ResumeBurstFireZoomed2")
 		TNT1 A 0 A_JumpIfInventory("BurstFiredSMG",1,"ResumeBurstFireZoomed1")
 	}

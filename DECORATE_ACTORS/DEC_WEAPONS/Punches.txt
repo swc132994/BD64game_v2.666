@@ -22,21 +22,21 @@ Inventory.Amount 0
 Inventory.MaxAmount 100
 Ammo.BackpackAmount 0
 Ammo.BackpackMaxAmount 100
-Inventory.Icon ""			//R27 WAS PUN1A0	//R28 WAS PLMZA5
-+INVBAR						//R27 added
+Inventory.Icon ""
++INVBAR
 +IGNORESKILL
 }
 
-Actor 64Fist : Fist Replaces Fist	//R8 MERGED FISTS BACK TOGETHER
+Actor 64Fist : Fist Replaces Fist
 {
-Weapon.SelectionOrder 3700	//R21 added
-Tag "Fists"					//R11 added TAG
-Inventory.Icon "PUN1A0"		//R27 added
+Weapon.SelectionOrder 3700
+Tag "Fists"
+Inventory.Icon "PUN1A0"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
-+INVENTORY.UNDROPPABLE		//R11 added
-+WEAPON.NOALERT				//R9.1 restored //R1 added
++INVENTORY.UNDROPPABLE
++WEAPON.NOALERT
 	States
 	{
 	Ready:
@@ -90,16 +90,16 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 	}
 }
 
-Actor 64FistTactical : Brutal64Weapon	//R31 fists diverged into seperate
+Actor 64FistTactical : Brutal64Weapon
 {
-Weapon.SelectionOrder 3700	//R21 added
-Tag "Fists"					//R11 added TAG
-Inventory.Icon "PUN1A0"		//R27 added
+Weapon.SelectionOrder 3700
+Tag "Fists"
+Inventory.Icon "PUN1A0"
 Inventory.forbiddento "64DoomPlayer"
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
-+INVENTORY.UNDROPPABLE		//R11 added
-+WEAPON.NOALERT				//R9.1 restored //R1 added
++INVENTORY.UNDROPPABLE
++WEAPON.NOALERT
 	States
 	{
 	MineThrowFlash:
@@ -107,7 +107,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 A 18
 		PUN6 ABCD 1
 		Stop
-	KickingFlash:	//r31 new kick animations
+	KickingFlash:
 		PUN6 CBA 1
 		TNT1 A 10
 		PUN6 ABC 1
@@ -125,7 +125,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		PUN6 ABC 1
 		Stop
 	v1Ready:
-	Ready: //R31 added ALLOWRELOAD
+	Ready:
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
@@ -186,9 +186,9 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		Wait
 	Fire:
 		PUN1 A 1
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,2)	//R8 added	r31 was jump 1
-		TNT1 A 0 A_JumpIfInventory("isModern",1,3)	//r31 added
-		Goto punch1	//R8 added
+		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,2)
+		TNT1 A 0 A_JumpIfInventory("isModern",1,3)
+		Goto punch1
 		TNT1 A 0 A_JumpIfInventory("Stamina",91,"Tired")
 		TNT1 A 0 A_GiveInventory("Stamina",9)
 		TNT1 A 0 A_Jump(128,"Punch2")
@@ -235,7 +235,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		PUNS I 7 A_PlaySound("Knuckled")
 		PUNS JKJI 3
 		Goto Ready
-	Altfire://r31 added
+	Altfire:
 		PALT ABCDE 1
 	AltHold:
 		TNT1 A 0 A_JumpIfInventory("IsModern",1,3)
@@ -315,7 +315,7 @@ RenderStyle Add
 SeeSound "none"
 DeathSound "none"
 Decal "none"
-Obituary "$OB_MPFIST"		//r30.10 added
+Obituary "$OB_MPFIST"
 Projectile
 +FORCEXYBILLBOARD
 +NOEXTREMEDEATH
@@ -336,9 +336,9 @@ Projectile
 
 Actor SuperPunchAttack : PunchAttack
 {
-Damage(2*random(60,80))		//R26.1 added 2*
+Damage(2*random(60,80))
 DamageType SuperFists
-Obituary "$OB_MPFIST"		//r30.10 added
+Obituary "$OB_MPFIST"
 Decal Crack
 +EXTREMEDEATH
 	States
@@ -365,7 +365,7 @@ Decal Crack
 
 Actor KickAttack : FastProjectile
 {
-Damage(random(15,25))		//R14 WAS 10,15
+Damage(random(15,25))
 DamageType Kick
 Speed 30
 Radius 18
@@ -375,7 +375,7 @@ RenderStyle Add
 SeeSound "none"
 DeathSound "none"
 Decal "none"
-Obituary "%o chewed on %k's foot."		//r30.10 added
+Obituary "%o chewed on %k's foot."
 Projectile
 +FORCEXYBILLBOARD
 +NOEXTREMEDEATH
@@ -383,7 +383,6 @@ Projectile
 	{
 	Spawn:
 		TNT1 A 1
-		TNT1 A 1 //A_PlaySound("weapons/gswing")
 		Stop
 	Death:
 	XDeath:
@@ -403,11 +402,11 @@ Projectile
 	}
 }
 
-Actor SuperKickAttack : KickAttack		//R10.1 NEW SUPERKICK
+Actor SuperKickAttack : KickAttack
 {
-Damage(2*random(70,90))					//R14 WAS 62,62	//R26.1 added 2*
+Damage(2*random(70,90))
 DamageType SuperKick
-Obituary "%o chewed on %k's foot."		//r30.10 added
+Obituary "%o chewed on %k's foot."
 Decal Crack
 +EXTREMEDEATH
 	States
@@ -436,17 +435,17 @@ Actor AirKickAttack : KickAttack
 Damage(random(54,62))
 Radius 20
 Height 32
-Obituary "%o chewed on %k's foot."		//r30.10 added
+Obituary "%o chewed on %k's foot."
 +NOEXTREMEDEATH
 }
 
 Actor SuperAirKickAttack : KickAttack
 {
-Damage(2*random(92,110))				//R26.1 added 2*
+Damage(2*random(92,110))
 DamageType SuperKick
 Radius 20
 Height 32
-Obituary "%o chewed on %k's foot."		//r30.10 added
+Obituary "%o chewed on %k's foot."
 Decal Crack
 +EXTREMEDEATH
 	States
@@ -457,7 +456,7 @@ Decal Crack
 		TNT1 A 0 Radius_Quake(4,10,0,5,0)
 		TNT1 A 10
 		Stop
-	XDeath:			//R10.1 NEW SUPERAIRKICK XDEATH
+	XDeath:
 		TNT1 A 0 A_PlaySound("FOOTWALL",4)
 		TNT1 A 0 A_PlaySound("SUPERFIST",3)
 		TNT1 AAAAAA 0 A_CustomMissile("MeleeSmoke",0,0,random(0,360),2,random(0,360))
@@ -467,7 +466,7 @@ Decal Crack
 	}
 }
 
-Actor KickAttackDetectDowned : KickAttack	//R11 added
+Actor KickAttackDetectDowned : KickAttack
 {
 Damage(random(2,2))
 Speed 40
@@ -501,14 +500,14 @@ Obituary "%o tripped on %k's slide kick."
 		TNT1 A 0 A_PlaySound("FOOTWALL",4)
 		TNT1 A 0 A_PlaySound("SUPERFIST",3)
 		TNT1 AAAAAA 0 A_CustomMissile("MeleeSmoke",0,0,random(0,360),2,random(0,360))
-		TNT1 A 0 Radius_Quake(2,6,0,5,0)//(intensity,duration,damrad,tremrad,tid)
+		TNT1 A 0 Radius_Quake(2,6,0,5,0)
 		TNT1 A 10
 		Stop
 	Death:
 		TNT1 A 0 A_PlaySound("FOOTWALL",3)
 		TNT1 AAAAAA 0 A_CustomMissile("MeleeSmoke",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_GiveToTarget("KickHasHit",1)
-		TNT1 A 0 Radius_Quake(2,6,0,5,0)//(intensity,duration,damrad,tremrad,tid)
+		TNT1 A 0 Radius_Quake(2,6,0,5,0)
 		TNT1 A 10
 		Stop
 	}
@@ -521,5 +520,5 @@ Damage(random(10,15))
 
 Actor SuperAltPunchAttack : SuperPunchAttack
 {
-Damage(2*random(62,62))		//R26.1 added 2*
+Damage(2*random(62,62))
 }

@@ -18,32 +18,32 @@ Actor AbsMapCheck : Inventory	//option switch to final map now Map28A
 Inventory.MaxAmount 1
 }
 
-Actor TCMapCheck : Inventory		//option to switch to TC maps
+Actor TCMapCheck : Inventory	//option to switch to TC maps
 {
 Inventory.MaxAmount 1
 }
 
-Actor VanillaSBar : Inventory		//option to switch to vanilla Statusbar
+Actor VanillaSBar : Inventory	//option to switch to vanilla Statusbar
 {
 Inventory.MaxAmount 1
 }
 
-Actor ArrangedHud : Inventory		//option to switch to arranged HUD
+Actor ArrangedHud : Inventory	//option to switch to arranged HUD
 {
 Inventory.MaxAmount 1
 }
 
-Actor StartWeapon : Inventory		//option to show starting weapon warm-up
+Actor StartWeapon : Inventory	//option to show starting weapon warm-up
 {
 Inventory.MaxAmount 1
 }
 
-Actor ScreenFX : Inventory			//option to HUD blood splash
+Actor ScreenFX : Inventory		//option to HUD blood splash
 {
 inventory.maxamount 1
 }
 
-Actor BloodTrail: Inventory			//option to HUD blood trail
+Actor BloodTrail: Inventory		//option to HUD blood trail
 {
 inventory.maxamount 1
 }
@@ -160,7 +160,6 @@ Player.WeaponSlot 9,"Lasergun"
 		TNT1 A 0 A_XScream
 		PLAY NOPQRSTU 4
 		PLAY V 35
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
 		PLAY V -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Plasma:
@@ -180,7 +179,6 @@ Player.WeaponSlot 9,"Lasergun"
 		TNT1 AAA 0 A_SpawnItemEx("Blood",0,0,30)
 		CRB1 ABCDEFGH 4
 		CRB1 H -1
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
@@ -214,7 +212,6 @@ Player.WeaponSlot 9,"Lasergun"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		CPOG A 2 ThrustThingZ(0,40,0,1)
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
@@ -417,7 +414,6 @@ Player.WeaponSlot 9,"LasergunTactical"
 		TNT1 A 0 A_Scream
 		PLAY NOPQRSTU 4
 		PLAY V 35
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
 		PLAY V -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Plasma:
@@ -437,7 +433,6 @@ Player.WeaponSlot 9,"LasergunTactical"
 		TNT1 AAA 0 A_SpawnItemEx("Blood",0,0,30)
 		CRB1 ABCDEFGH 4
 		CRB1 H -1
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
@@ -471,7 +466,6 @@ Player.WeaponSlot 9,"LasergunTactical"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		CPOG A 2 ThrustThingZ(0,40,0,1)
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
@@ -631,7 +625,6 @@ Player.WeaponSlot 9,"LasergunTactical"
 		TNT1 A 0 A_XScream
 		PLAY NOPQRSTU 4
 		PLAY V 35
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
 		PLAY V -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Plasma:
@@ -651,7 +644,6 @@ Player.WeaponSlot 9,"LasergunTactical"
 		TNT1 AAA 0 A_SpawnItemEx("Blood",0,0,30)
 		CRB1 ABCDEFGH 4
 		CRB1 H -1
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
 		Stop
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
@@ -685,7 +677,6 @@ Player.WeaponSlot 9,"LasergunTactical"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		CPOG A 2 ThrustThingZ(0,40,0,1)
-//		TNT1 A 0 A_GiveToTarget("SoulAmmo",1)
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:

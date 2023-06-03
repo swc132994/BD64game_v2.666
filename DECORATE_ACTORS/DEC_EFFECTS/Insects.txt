@@ -37,7 +37,6 @@ ReactionTime 4
 		Stop
 	Death.Crush:
 	Crush:
-		TNT1 A 1
 		TNT1 A 1 A_NoBlocking
 		Stop
 	}

@@ -140,7 +140,7 @@ BounceType "Doom"
 BounceFactor 0.3
 BounceCount 3
 Gravity 0.95
-SeeSound "GRNTOSS"		//WAS "MINE001"
+SeeSound "GRNTOSS"
 DeathSound "MINE002"
 PROJECTILE
 -NOTELEPORT

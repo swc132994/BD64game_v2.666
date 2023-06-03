@@ -6,10 +6,10 @@ Actor ShotgunDrop
 		TNT1 A 0 NoDelay A_Jump(128,"Spawn2")
 		Goto Spawn1
 	Spawn1:
-		TNT1 A 0 A_CustomMissile("DropedShotgun",20,0,0,2,random(30,50))
+		TNT1 A 1 A_CustomMissile("DropedShotgun",20,0,0,2,random(30,50))
 		stop
 	Spawn2:
-		TNT1 A 0 A_CustomMissile("DropedShotgun2",20,0,180,2,random(30,50))
+		TNT1 A 1 A_CustomMissile("DropedShotgun2",20,0,180,2,random(30,50))
 		stop
 	}
 }
@@ -45,8 +45,7 @@ Gravity 0.9
 		Loop
 	Death:
 		TNT1 A 0 A_DropItem("64Shotgun")
-		TNT1 A 0 A_DropItem("64ShotgunTactical")
-		TNT1 A 1
+		TNT1 A 1 A_DropItem("64ShotgunTactical")
 		Stop
 	}
 }
@@ -61,8 +60,7 @@ Actor DropedShotgun2 : DropedShotgun
 		TRII GFEDCBA 4
 	Death:
 		TNT1 A 0 A_DropItem("64Shotgun")
-		TNT1 A 0 A_DropItem("64ShotgunTactical")
-		TNT1 A 1
+		TNT1 A 1 A_DropItem("64ShotgunTactical")
 		Stop
 	}
 }
@@ -75,10 +73,10 @@ Actor SSGDrop : ShotgunDrop
 		TNT1 A 0 NoDelay A_Jump(128,"Spawn2")
 		Goto Spawn1
 	Spawn1:
-		TNT1 A 0 A_CustomMissile("DropedSSG",20,0,0,2,random(30,50))
+		TNT1 A 1 A_CustomMissile("DropedSSG",20,0,0,2,random(30,50))
 		stop
 	Spawn2:
-		TNT1 A 0 A_CustomMissile("DropedSSG2",20,0,180,2,random(30,50))
+		TNT1 A 1 A_CustomMissile("DropedSSG2",20,0,180,2,random(30,50))
 		stop
 	}
 }
@@ -93,8 +91,7 @@ ACTOR DropedSSG : DropedShotgun
 		TRI1 BCDEFGH 4
 	Death:
 		TNT1 A 0 A_DropItem("64SuperShotgun")
-		TNT1 A 0 A_DropItem("64SuperShotgunTactical")
-		TNT1 A 1
+		TNT1 A 1 A_DropItem("64SuperShotgunTactical")
 		Stop
 	}
 }
@@ -109,8 +106,7 @@ ACTOR DropedSSG2 : DropedShotgun
 		TRI1 GFEDCBA 4
 	Death:
 		TNT1 A 0 A_DropItem("64SuperShotgun")
-		TNT1 A 0 A_DropItem("64SuperShotgunTactical")
-		TNT1 A 1
+		TNT1 A 1 A_DropItem("64SuperShotgunTactical")
 		Stop
 	}
 }
@@ -124,16 +120,16 @@ actor RifleDrop : ShotgunDrop
 		TNT1 A 0 A_Jump(128,"Spawn2")
 		Goto Spawn1
 	Spawn1:
-		TNT1 A 0 A_CustomMissile("DropedRifle",20,0,0,2,random(30,50))
+		TNT1 A 1 A_CustomMissile("DropedRifle",20,0,0,2,random(30,50))
 		stop
 	Spawn2:
-		TNT1 A 0 A_CustomMissile("DropedRifle2",20,0,180,2,random(30,50))
+		TNT1 A 1 A_CustomMissile("DropedRifle2",20,0,180,2,random(30,50))
 		stop
 	SpawnClip:
 		TNT1 A 0 A_Jump(128,2)
-		TNT1 A 0 A_CustomMissile("64Clip",20,0,0,2,random(30,50))
+		TNT1 A 1 A_CustomMissile("64Clip",20,0,0,2,random(30,50))
 		stop
-		TNT1 A 0 A_CustomMissile("64Clip",20,0,180,2,random(30,50))
+		TNT1 A 1 A_CustomMissile("64Clip",20,0,180,2,random(30,50))
 		Stop
 	}
 }
@@ -152,8 +148,7 @@ ACTOR DropedRifle : DropedShotgun
 		"####" BCDEFGH 4
 	Death:
 		TNT1 A 0 A_DropItem("64Rifle")
-		TNT1 A 0 A_DropItem("64RifleTactical")
-		TNT1 A 1
+		TNT1 A 1 A_DropItem("64RifleTactical")
 		Stop
 	}
 }
@@ -172,8 +167,7 @@ ACTOR DropedRifle2 : DropedShotgun
 		"####" GFEDCBA 4
 	Death:
 		TNT1 A 0 A_DropItem("64Rifle")
-		TNT1 A 0 A_DropItem("64RifleTactical")
-		TNT1 A 1
+		TNT1 A 1 A_DropItem("64RifleTactical")
 		Stop
 	}
 }
@@ -186,10 +180,10 @@ actor ChaingunDrop : ShotgunDrop
 		TNT1 A 0 NoDelay A_Jump(128,"Spawn2")
 		Goto Spawn1
 	SPawn1:
-		TNT1 A 0 A_CustomMissile("DropedChaingun",20,0,0,2,random(30,50))
+		TNT1 A 1 A_CustomMissile("DropedChaingun",20,0,0,2,random(30,50))
 		stop
 	SPawn2:
-		TNT1 A 0 A_CustomMissile("DropedChaingun2",20,0,180,2,random(30,50))
+		TNT1 A 1 A_CustomMissile("DropedChaingun2",20,0,180,2,random(30,50))
 		stop
 	}
 }
@@ -204,8 +198,7 @@ ACTOR DropedChaingun : DropedShotgun
 		TRI3 BCDEFGH 4
 	Death:
 		TNT1 A 0 A_DropItem("64Chaingun")
-		TNT1 A 0 A_DropItem("64ChaingunTactical")
-		TNT1 A 1
+		TNT1 A 1 A_DropItem("64ChaingunTactical")
 		Stop
 	}
 }
@@ -220,8 +213,7 @@ ACTOR DropedChaingun2 : DropedShotgun
 		TRI3 GFEDCBA 4
 	Death:
 		TNT1 A 0 A_DropItem("64Chaingun")
-		TNT1 A 0 A_DropItem("64ChaingunTactical")
-		TNT1 A 1
+		TNT1 A 1 A_DropItem("64ChaingunTactical")
 		Stop
 	}
 }

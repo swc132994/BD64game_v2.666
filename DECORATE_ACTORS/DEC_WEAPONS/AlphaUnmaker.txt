@@ -286,9 +286,9 @@ PROJECTILE
 	Death:
 		TNT1 AAAAAAAA 0 A_CustomMissile("ExplosionParticleLaser",0,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
-		TNT1 AA 1 A_SpawnItem("RocketFlare")
+		TNT1 AA 0 A_SpawnItem("RocketFlare")
 		TNT1 A 0 A_SpawnItem("DetectFloorLaser")
-		TNT1 A 0 A_SpawnItem("DetectCeilLaser")
+		TNT1 A 1 A_SpawnItem("DetectCeilLaser")
 		Stop
 	}
 }
