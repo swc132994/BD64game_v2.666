@@ -2,7 +2,7 @@ Actor 64ForgottenOne : LostSoul
 {
 Scale 0.8
 Health 70
-Alpha 0.99
+Alpha 0.5
 Speed 16
 PainChance 128
 AttackSound "alphasoul/melee"
@@ -10,7 +10,7 @@ PainSound "alphasoul/pain"
 DeathSound "alphasoul/death"
 ActiveSound "alphasoul/active"
 Obituary "%o was electrocuted by a Forgotten One."
-RenderStyle Normal
+RenderStyle Translucent
 PainChance "SuperFists",200
 PainChance "Kick",255
 PainChance "SuperKick",255
@@ -18,17 +18,56 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 +NOBLOOD
 +FORCEXYBILLBOARD
+-MISSILEMORE
 	states
 	{
 	Spawn:
 		ESKU AAA 2 A_Look
 		Loop
 	See:
-		ESKU AAAA 2 A_Chase("Melee","Missile",CHF_FASTCHASE)
+		TNT1 A 0 A_JumpIfHealthLower(40,"PossessSee")
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItem("ForgottenOneSprite")
+		TNT1 A 0 A_JumpIfHealthLower(40,"PossessSee")
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItem("ForgottenOneSprite")
+		TNT1 A 0 A_JumpIfHealthLower(40,"PossessSee")
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItem("ForgottenOneSprite")
+		TNT1 A 0 A_JumpIfHealthLower(40,"PossessSee")
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItem("ForgottenOneSprite")
+		TNT1 A 0 A_JumpIfHealthLower(40,"PossessSee")
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItem("ForgottenOneSprite")
+		TNT1 A 0 A_JumpIfHealthLower(40,"PossessSee")
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItem("ForgottenOneSprite")
+		TNT1 A 0 A_JumpIfHealthLower(40,"PossessSee")
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItem("ForgottenOneSprite")
+		TNT1 A 0 A_JumpIfHealthLower(40,"PossessSee")
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItem("ForgottenOneSprite")
+		TNT1 A 0 A_JumpIfHealthLower(40,"PossessSee")
+		TNT1 A 1 A_chase
+		TNT1 AAAA 3 A_chase
 		Loop
-	Forget:
-		TNT1 A 0 A_ClearTarget
-		Goto Spawn
+	PossessSee:
+		TNT1 A 1 A_VileChase
+		TNT1 A 0 A_SpawnItem("ForgottenOneSprite")
+		TNT1 A 1 A_VileChase
+		TNT1 A 1 A_VileChase
+		TNT1 A 1 A_VileChase
+		TNT1 A 1 A_VileChase
+		TNT1 A 1 A_VileChase
+		TNT1 A 1 A_VileChase
+		Loop
+	Heal:
+		TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+		ESKU BC 10
+		ESKU BC 10 A_Die("PossessCorpse")
+		Goto See
 	Melee:
 		TNT1 A 0 ThrustThingZ(0,15,0,0)
 		ESKU AA 4 A_Recoil(4)
@@ -45,11 +84,6 @@ DamageFactor "CauseObjectsToSplash",0.0
 		ESKU FF 2
 		ESKU F 1 A_Pain
 		goto See
-	Pain.Vertigo:
-		TNT1 A 0 ThrustThingZ(0,55,0,0)
-		ESKU F 3
-		ESKU F 3 A_Pain
-		Goto See
 	Death:
 		ESKU G 2 Bright
 		TNT1 A 0 A_PlaySound("alphasoul/death",1)
@@ -64,6 +98,17 @@ DamageFactor "CauseObjectsToSplash",0.0
 		ESKU KLMN 4 A_FadeOut(0.1667)
 		ESKU O 4 A_FadeOut(0.1667)
 		Wait
+	Death.PossessCorpse:
+		ESKU P 2 Bright
+		TNT1 A 0 A_PlaySound("alphasoul/melee",1)
+		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleYellowHeavySmall",30,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleYellowVeryFast",30,0,random(0,360),2,random(0,360))
+		ESKU Q 4 Bright A_Scream
+		ESKU R 4 Bright A_NoBlocking
+		ESKU S 4 Bright A_FadeOut(0.1)
+		ESKU TU 4 Bright A_FadeOut(0.1)
+		ESKU V 4 Bright A_FadeOut(0.1)
+		Stop
 	}
 }
 
@@ -83,5 +128,24 @@ RenderStyle Add
 		SH9K FEDCB 2 A_FadeOut(0.1667)
 		SH9K A 2 A_FadeOut(0.1667)
 		Wait
+	}
+}
+
+Actor ForgottenOneSprite
+{
+Scale 0.8
+Alpha 0.08
+RenderStyle Translucent
++NOBLOCKMAP
++CLIENTSIDEONLY
++ISMONSTER
++NOGRAVITY
+	States
+	{
+	Spawn:
+		ESKU AAAA 1 A_FadeIn(0.09)
+		ESKU A 4
+		ESKU AAAAAA 1 A_FadeOut(0.09)
+		Stop
 	}
 }
