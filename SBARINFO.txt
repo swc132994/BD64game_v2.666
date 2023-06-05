@@ -5,6 +5,13 @@ statusbar fullscreen,forcescaled,0.5
 {
 	InInventory "ArrangedHud",1 //Fullscreen HUD
 	{
+		drawswitchableimage BlueCard,"nullimage","STKEYS0",101,181;
+		drawswitchableimage YellowCard,"nullimage","STKEYS1",111,181;
+		drawswitchableimage RedCard,"nullimage","STKEYS2",121,181;
+		drawswitchableimage BlueSkull,"nullimage","STKEYS3",100,169;
+		drawswitchableimage YellowSkull,"nullimage","STKEYS4",110,169;
+		drawswitchableimage RedSkull,"nullimage","STKEYS5",120,169;
+		
 		InInventory "PowerStrength",1
 		{
 		drawimage "pstra0",18,191,none,15,15;
@@ -17,38 +24,45 @@ statusbar fullscreen,forcescaled,0.5
 		drawimage armoricon,18,178,none,15,15;
 		drawnumber 3,HUDFONT_DOOM,untranslated,armor,WhenNotZero,69,166;
 		drawimage ammoicon1,288,190,none,15,15;
-		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;	
+		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;
 		InInventory "NoReloading",1
 		{
-			IsSelected  "UnmakerTactical"
+			IsSelected "UnmakerTactical"
 			{
 			drawimage ammoicon2,288,174,none,20,20;
 			drawnumber 3,HUDFONT_DOOM,untranslated,ammo2,276,166;
-			}	
+			}
 		}
 		else
 		{
 		drawimage ammoicon2,288,174,none,20,20;
 		drawnumber 3,HUDFONT_DOOM,untranslated,ammo2,276,166;
-		}		
+		}
 		
-		drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),175,180;
+		drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero|interpolate(4),175,180;
+		drawmugshot 5,68,160;
 	}
 	else
 	{
-		drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),88,183;
+		drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero|interpolate(4),88,183;
 		drawimage "HTEXA0",30,170;
 		drawnumber 3,HUDFONT_DOOM,untranslated,health,69,180;
 		drawimage "ATEXA0",246,170;
 		drawnumber 3,HUDFONT_DOOM,untranslated,armor,283,180;
 		drawimage "nullimage",306,196;
-		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;		
+		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
+		drawswitchableimage BlueCard,"nullimage","STKEYS0",90,181;
+		drawswitchableimage YellowCard,"nullimage","STKEYS1",100,181;
+		drawswitchableimage RedCard,"nullimage","STKEYS2",110,181;
+		drawswitchableimage BlueSkull,"nullimage","STKEYS3",89,169;
+		drawswitchableimage YellowSkull,"nullimage","STKEYS4",99,169;
+		drawswitchableimage RedSkull,"nullimage","STKEYS5",109,169;
 		InInventory "NoReloading",1
-		{	
-		IsSelected  "UnmakerTactical"
 		{
-		drawnumber 3,SMALLFONT,red,ammo2,192,183;
-		}	
+		IsSelected  "UnmakerTactical"
+			{
+			drawnumber 3,SMALLFONT,red,ammo2,192,183;
+			}
 		}
 		else
 		{
@@ -67,20 +81,9 @@ statusbar fullscreen,forcescaled,0.5
 	
 	gamemode deathmatch,teamgame
 	{
-		drawnumber 2,HUDFONT_DOOM,untranslated,frags,120,180;
-	}
-	gamemode cooperative,singleplayer
-	{
-		//Icon Card and Skull fix
-		drawswitchableimage BlueCard,"nullimage","STKEYS0",90,181;
-		drawswitchableimage YellowCard,"nullimage","STKEYS1",100,181;
-		drawswitchableimage RedCard,"nullimage","STKEYS2",110,181;
-		drawswitchableimage BlueSkull,"nullimage","STKEYS3",89,169;
-		drawswitchableimage YellowSkull,"nullimage","STKEYS4",99,169;
-		drawswitchableimage RedSkull,"nullimage","STKEYS5",109,169;
+		drawnumber 2,HUDFONT_DOOM,Gold,frags,175,168;
 	}
 //	drawselectedinventory INDEXFONT,306,148;
-//	drawselectedinventory SMALLFONT,58,161;		//ALTERNATIVE POSITION NEXT TO HEALTH
 }
 
 statusbar normal
@@ -90,14 +93,14 @@ statusbar normal
 	drawswitchableimage WpnPower3Icon,"nullimage","POW3E0",261,215; //This is out of order on purpose
 	drawswitchableimage WpnPower2Icon,"nullimage","POW2E0",300,215;
 	drawimage "HTEXA0",6,165;
-	drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),45,186;
+	drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero|interpolate(4),45,186;
 	drawnumber 3,HUDFONT_DOOM,untranslated,health,45,174;
 	InInventory "NoReloading",1
 	{
 	IsSelected  "UnmakerTactical"
-	{
-	drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
-	}
+		{
+		drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
+		}
 	}
 	else
 	{
@@ -138,20 +141,20 @@ statusbar normal
 		drawimage "STTPRCNT",219,171;
 
 		PlayerType "64DoomPlayer"
-			{
+		{
 			drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,171;
-			}
+		}
 
 		PlayerType "Tactical64DoomPlayer","Modern"
-			{
+		{
 			InInventory "NoReloading",1
 			{
 			IsSelected  "UnmakerTactical"
-			{
-			drawstring SMALLFONT,untranslated,"CL",15,169;
-			drawnumber 3,HUDFONT_DOOM,Red,ammo2,44,164;
-			drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;
-			}			
+				{
+				drawstring SMALLFONT,untranslated,"CL",15,169;
+				drawnumber 3,HUDFONT_DOOM,Red,ammo2,44,164;
+				drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;
+				}
 			else
 			drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,171;
 			}
@@ -160,8 +163,8 @@ statusbar normal
 			drawstring SMALLFONT,untranslated,"CL",15,169;
 			drawnumber 3,HUDFONT_DOOM,Red,ammo2,44,164;
 			drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;
-			}					
 			}
+		}
 
 		drawstring SMALLFONT,untranslated,"AMMO",38,191;
 
@@ -197,7 +200,7 @@ statusbar normal
 		drawnumber 3,INDEXFONT,gold,ammocapacity Cell,306,192;
 
 		drawmugshot 5,143,160;
-		drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero | interpolate(4),166,193;
+		drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero|interpolate(4),166,193;
 
 		gamemode deathmatch,teamgame
 		{

@@ -617,17 +617,22 @@ Scale 0.82
 Inventory.Amount 0
 Inventory.MaxAmount 0
 Inventory.PickupSound "misc/p_pkup"
-Inventory.PickupMessage "Computer Area & Object Scanner"
+Inventory.PickupMessage "Advanced Area Scanner"
 +INVENTORY.ALWAYSPICKUP
 +INVENTORY.FANCYPICKUPSOUND
 +COUNTITEM
 	States
 	{
 	Spawn:
+		PSCN A 0 NoDelay A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")>0,"AlternativeSprite")
 		PSCN A 15 Bright Light("ARMORBONUS")
 		PSCN BCD 3 Bright Light("ARMORBONUS")
 		PSCN E 15 Bright Light("ARMORBONUS")
 		PSCN DCB 3 Bright Light("ARMORBONUS")
+		loop
+	AlternativeSprite:
+		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,"Spawn")
+		MMAP ABCDCB 6 Bright Light("HealthPotion")
 		loop
 	Pickup:
 		TNT1 A 0 A_GiveInventory("PowerScanner",1)

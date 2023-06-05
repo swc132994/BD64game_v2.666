@@ -1866,6 +1866,14 @@ object 64ForgottenOne
 	frame ESKUM {light AlphaPain_X6}
 	frame ESKUN {light AlphaPain_X7}
 	frame ESKUO {light AlphaPain_X8}
+
+	frame ESKUP {light AlphaShock}
+	frame ESKUQ {light AlphaShock_X1}
+	frame ESKUR {light AlphaShock_X2}
+	frame ESKUS {light AlphaShock_X3}
+	frame ESKUT {light AlphaShock_X2}
+	frame ESKUU {light AlphaShock_X1}
+	frame ESKUV {light AlphaShock}
 }
 
 object 64AlphaShock
