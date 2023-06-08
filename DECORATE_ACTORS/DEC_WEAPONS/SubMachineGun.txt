@@ -102,7 +102,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(2.0,2.0,-1,7,"HitPuff")
 		TNT1 A 0 A_PlaySound("SMG",1)
-		SMGF CD 1 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
+		SMGF CD 1 A_SetPitch(pitch+0.6,SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
 		SMGG A 1
@@ -126,7 +126,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(7.0,7.0,-1,7,"HitPuff")
 		TNT1 A 0 A_PlaySound("SMG",1)
-		SMGF CD 1 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
+		SMGF CD 1 A_SetPitch(pitch+0.6,SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
 		SMGG A 1
@@ -226,13 +226,13 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_Jump(69,"Fidget2")
 		SMGG A 1 A_WeaponReady
 		SMGI ABCDEF 1 A_WeaponReady
-		SMGI GG 2  A_WeaponReady
+		SMGI GG 2 A_WeaponReady
 		SMGI HI 1 A_WeaponReady
 		TNT1 A 0 A_PlaySound("SMGBACK",CHAN_WEAPON)
 		SMGI J 5 A_WeaponReady
 		TNT1 A 0 A_PlaySound("SMGFORW",CHAN_WEAPON)
 		SMGI IH 1 A_WeaponReady
-		SMGI GG 2  A_WeaponReady
+		SMGI GG 2 A_WeaponReady
 		SMGI EFDCBA 1 A_WeaponReady
 		Goto Ready
 	Fidget2:
@@ -287,9 +287,9 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_FireBullets(0.0,0.0,1,8,"HitPuff",0)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("SMG",1)
-		TNT1 A 0 A_Jump(128, 3)
+		TNT1 A 0 A_Jump(128,3)
 		SMGF A 1 Bright
-		TNT1 A 0 A_Jump(255, 2)
+		TNT1 A 0 A_Jump(255,2)
 		SMGF B 1 Bright
 		SMGF CD 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
@@ -321,11 +321,11 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_FireBullets(2.0,2.0,1,8,"HitPuff",0)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("SMG",1)
-		TNT1 A 0 A_Jump(128, 3)
+		TNT1 A 0 A_Jump(128,3)
 		SMGF A 1 Bright
-		TNT1 A 0 A_Jump(255, 2)
+		TNT1 A 0 A_Jump(255,2)
 		SMGF B 1 Bright
-		SMGF CD 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
+		SMGF CD 1 A_SetPitch(pitch+0.4,SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredSMG",1)
 		SMGG A 1 A_SetAngle(angle + random(-1,1))
@@ -338,11 +338,11 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_FireBullets(4.0,4.0,1,8,"HitPuff",0)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("SMG",1)
-		TNT1 A 0 A_Jump(128, 3)
+		TNT1 A 0 A_Jump(128,3)
 		SMGF A 1 Bright
-		TNT1 A 0 A_Jump(255, 2)
+		TNT1 A 0 A_Jump(255,2)
 		SMGF B 1 Bright
-		SMGF CD 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
+		SMGF CD 1 A_SetPitch(pitch+0.4,SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredSMG",1)
 		SMGG A 1 A_SetAngle(angle + random(-1,1))
@@ -355,23 +355,23 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_FireBullets(7.0,7.0,1,8,"HitPuff",0)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("SMG",1)
-		TNT1 A 0 A_Jump(128, 3)
+		TNT1 A 0 A_Jump(128,3)
 		SMGF A 1 Bright
-		TNT1 A 0 A_Jump(255, 2)
+		TNT1 A 0 A_Jump(255,2)
 		SMGF B 1 Bright
-		SMGF CD 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
+		SMGF CD 1 A_SetPitch(pitch+0.4,SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredSMG",1)
 		SMGG A 1 A_SetAngle(angle + random(-1,1))
 		TNT1 A 0 A_Refire
 		Goto FinishFire
 	FinishFire:
-		TNT1 A 0 A_TakeInventory("FiredSMG",4)
+		TNT1 A 0 A_TakeInventory("FiredSMG",0)
 		Goto Ready
 	FireZoomed:
 		TNT1 A 0 A_JumpIfInventory("SMGBurstMode",1,"BurstFireZoomed")
 		Goto AmmoCheck
-	ResumeFireZoomed:	
+	ResumeFireZoomed:
 		TNT1 A 0 A_FireCustomMissile("Tracer",0,0,0,-6,0,0)
 		TNT1 A 0 A_FireBullets(0.0,0.0,1,8,"RifleBulletPuff",0)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
@@ -383,7 +383,7 @@ Tag "Sub-machine gun"
 		SMGA A 1 A_SetPitch(0.5 + pitch)
 		SMGA A 0 A_Refire
 		SMGA A 5 A_WeaponReady
-		Goto Ready2	
+		Goto Ready2
 	AltFire:
 		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"NoAim")
 		SMGG A 0 A_Giveinventory("Zoomed",1)
@@ -391,23 +391,17 @@ Tag "Sub-machine gun"
 		SMGP ABC 1
 		Goto Ready2
 	NoAim:
-		SMGG A 0 A_Takeinventory("Zoomed",1)
+		SMGG A 0 A_Takeinventory("Zoomed",0)
 		SMGG A 0 A_ZoomFactor(1.0)
 		SMGP CBA 1
 		Goto Ready
 	BurstFire:
-		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
-		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
-		TNT1 A 0 A_FireBullets(0.6,0.6,1,8,"HitPuff",0)
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("SMG",1)
 		TNT1 A 0 A_GiveInventory("BurstFiredSMG",1)
 		Goto AmmoCheckIfBurst
-	ResumeBurstFire1:	
-		TNT1 A 0 A_Jump(128, 3)
+	ResumeBurstFire1:
+		TNT1 A 0 A_Jump(128,3)
 		SMGF A 1 Bright
-		TNT1 A 0 A_Jump(255, 2)
+		TNT1 A 0 A_Jump(255,2)
 		SMGF B 1 Bright
 		SMGF C 1 A_SetPitch(pitch-0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
@@ -415,13 +409,14 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(2.0,2.0,1,8,"HitPuff",0)
+		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("SMG",1)
 		TNT1 A 0 A_GiveInventory("BurstFiredSMG",1)
 		Goto AmmoCheckIfBurst
 	ResumeBurstFire2:
-		TNT1 A 0 A_Jump(128, 3)
+		TNT1 A 0 A_Jump(128,3)
 		SMGF A 1 Bright
-		TNT1 A 0 A_Jump(255, 2)
+		TNT1 A 0 A_Jump(255,2)
 		SMGF B 1 Bright
 		SMGF C 1 A_SetPitch(pitch-0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
@@ -429,21 +424,28 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(4.0,4.0,1,8,"HitPuff",0)
+		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("SMG",1)
 		TNT1 A 0 A_GiveInventory("BurstFiredSMG",1)
 		Goto AmmoCheckIfBurst
 	ResumeBurstFire3:
-		TNT1 A 0 A_Jump(128, 3)
+		TNT1 A 0 A_Jump(128,3)
 		SMGF A 1 Bright
-		TNT1 A 0 A_Jump(255, 2)
+		TNT1 A 0 A_Jump(255,2)
 		SMGF B 1 Bright
 		SMGF CD 1 A_SetPitch(pitch-0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
+		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
+		TNT1 A 0 A_FireBullets(0.6,0.6,1,8,"HitPuff",0)
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("SMG",1)
 		SMGG A 1 A_SetAngle(angle + random(-1,1))
-		TNT1 A 0 A_TakeInventory("BurstFiredSMG",3)
+		TNT1 A 0 A_TakeInventory("BurstFiredSMG",0)
 		Goto Ready
 	FireZoomed:
-		TNT1 A 0 A_JumpIfInventory("SMGBurstMode",1,"BurstFireZoomed")	
+		TNT1 A 0 A_JumpIfInventory("SMGBurstMode",1,"BurstFireZoomed")
 		Goto AmmoCheck
 		TNT1 A 0 A_FireCustomMissile("Tracer",0,0,0,-6,0,0)
 		TNT1 A 0 A_FireBullets(0.0,0.0,1,8,"HitPuff",0)
@@ -458,15 +460,9 @@ Tag "Sub-machine gun"
 		SMGA A 5 A_WeaponReady
 		Goto Ready2
 	BurstFireZoomed:
-		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
-		TNT1 A 0 A_FireCustomMissile("Tracer",0,0,0,-6,0,0)
-		TNT1 A 0 A_FireBullets(0.6,0.6,1,8,"HitPuff",0)
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("SMG",1)
 		TNT1 A 0 A_GiveInventory("BurstFiredSMG",1)
 		Goto AmmoCheckIfBurst
-	ResumeBurstFireZoomed1:	
+	ResumeBurstFireZoomed1:
 		SMGA B 1 Bright
 		SMGA C 1 A_SetPitch(pitch-0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
@@ -474,10 +470,11 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",0,0,0,-6,0,0)
 		TNT1 A 0 A_FireBullets(2.0,2.0,1,8,"HitPuff",0)
+		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("SMG",1)
 		TNT1 A 0 A_GiveInventory("BurstFiredSMG",1)
 		Goto AmmoCheckIfBurst
-	ResumeBurstFireZoomed2:	
+	ResumeBurstFireZoomed2:
 		SMGA B 1 Bright
 		SMGA C 1 A_SetPitch(pitch-0.4)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
@@ -485,19 +482,26 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",0,0,0,-6,0,0)
 		TNT1 A 0 A_FireBullets(4.0,4.0,1,8,"HitPuff",0)
+		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("SMG",1)
 		TNT1 A 0 A_GiveInventory("BurstFiredSMG",1)
 		Goto AmmoCheckIfBurst
-	ResumeBurstFireZoomed3:	
+	ResumeBurstFireZoomed3:
 		SMGA B 1 Bright
 		SMGA CD 1 A_SetPitch(pitch-0.4)
+		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_FireCustomMissile("Tracer",0,0,0,-6,0,0)
+		TNT1 A 0 A_FireBullets(0.6,0.6,1,8,"HitPuff",0)
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("SMG",1)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		SMGA A 1 A_SetAngle(angle + random(-1,1))
-		TNT1 A 0 A_TakeInventory("BurstFiredSMG",3)
+		TNT1 A 0 A_TakeInventory("BurstFiredSMG",0)
 		Goto Ready2
 	BurstFireMode:
 		TNT1 A 0 A_JumpIFInventory("SMGBurstMode",1,"AutomaticMode")
-		TNT1 A 0 A_TakeInventory("WeaponSpecialAction")
+		TNT1 A 0 A_TakeInventory("WeaponSpecialAction",0)
 		TNT1 A 0 A_GiveInventory("SMGBurstMode",1)
 		TNT1 A 0 A_Print("Burst fire mode")
 		TNT1 A 0 A_PlaySound("SMGBURST")
@@ -509,7 +513,7 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"Ready2")
 		Goto Ready
 	AutomaticMode:
-		TNT1 A 0 A_TakeInventory("WeaponSpecialAction")
+		TNT1 A 0 A_TakeInventory("WeaponSpecialAction",0)
 		TNT1 A 0 A_TakeInventory("SMGBurstMode",1)
 		TNT1 A 0 A_Print("Automatic Mode")
 		TNT1 A 0 A_PlaySound("SMGAUTO")
@@ -553,6 +557,7 @@ Tag "Sub-machine gun"
 		2MGR P 2
 		2MGR QRST 1
 	InsertBullets:
+		TNT1 A 0 A_TakeInventory("BurstFiredSMG",0)
 		TNT1 A 0 A_JumpIfInventory("SMGAmmo",45,"Ready")
 		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
 		Goto Ready
@@ -596,6 +601,7 @@ Tag "Sub-machine gun"
 		SMGA V 2
 		SMGA UTSR 1
 	ADSInsertBullets:
+		TNT1 A 0 A_TakeInventory("BurstFiredSMG",0)
 		TNT1 A 0 A_JumpIfInventory("SMGAmmo",45,"Ready2")
 		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
 		Goto Ready2
@@ -613,7 +619,7 @@ Tag "Sub-machine gun"
 		Goto ADSInsertBullets2
 		TNT1 A 0 A_Refire
 		Goto Ready2
-	AmmoCheck:	
+	AmmoCheck:
 		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReload")
 		TNT1 A 0 A_JumpIfInventory("SMGAmmo",1,1)
 		Goto Reload
@@ -626,7 +632,7 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_Takeinventory("Clip",1,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"ResumeFireZoomed")
 		Goto ResumeFire
-	AmmoCheckIfBurst:	
+	AmmoCheckIfBurst:
 		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReloadIfBurst")
 		TNT1 A 0 A_JumpIfInventory("SMGAmmo",1,1)
 		Goto Reload

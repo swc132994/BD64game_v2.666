@@ -209,8 +209,8 @@ OptionMenu "BrutalDoom64Item/WeaponOptions"
 		StaticText "Also you can restore Classic Rocket Launcher for Tactical/Modern.",1
 		StaticText " "
 	Option "Play Vanilla Weapon Animations (Classical Only) =","VWeaponCvar","YesOrNo"
-	Option "Play Start Warm Up Weapons (Tactical/Modern Only)=","WeaponsWarmUpCvar","YesOrNo"
-	Option "No Reloading (Tactical/Modern Only)=","NoReloadCvar","YesOrNo"	
+	Option "Play Start Warm Up Weapons (Tactical/Modern Only) =","WeaponsWarmUpCvar","YesOrNo"
+	Option "No Reloading for Tactical/Modern (Need Map Start) =","NoReloadCvar","YesOrNo"
 	Option "Alternative Rifle Skin =","AlternativeRifleSkinCvar","YesOrNo"
 	Option "Alternative Laser Skin =","AlternativeLaserSkinCvar","YesOrNo"
 	Option "Classic Rocket Launcher for Tactical/Modern =","ClassicRLCvar","YesOrNo"
@@ -516,54 +516,54 @@ OptionValue "ScreenTypes"	//HUD effects
 //Item/Weapon values
 OptionValue "Chaingun_Spawner_Value"
 {
-	0,"Chaingun Only"
-	1,"Rifle Only"
-	2,"SMG Only"
+	0,"Chaingun"
+	1,"Assault Rifle"
+	2,"Sub Machinegun"
 	3,"Random"
 }
 
 OptionValue "BFG_Spawner_Value"
 {
-	0,"BFG9000 Only"
-	1,"Unmaker Only"
-	2,"Lasergun Only"
+	0,"BFG9000"
+	1,"Unmaker"
+	2,"Lasergun"
 	3,"Random"
 }
 
 OptionValue "GaussCannon_Spawner_Value"
 {
-	0,"Plasmagun Only"
-	1,"Gauss Cannon Only"
+	0,"Plasma Rifle"
+	1,"Gauss Cannon"
 	2,"Random"
 }
 
 OptionValue "SSGinDoom1Menu"
 {
-	0,"Shotgun Only"
-	1,"SSG Only"
+	0,"Shotgun"
+	1,"Super Shotgun"
 	2,"Random"
 	3,"Automatic"
 }
 
 OptionValue "BonusRandomValue"	//Health/Armor bonus replacement
 {
-	0,"Bonus Only"
-	1,"Hell Potion Only"
+	0,"Standard Bonus"
+	1,"Hell Potion"
 	2,"Random"
 }
 
 OptionValue "WpnPower_Spawner_Value"
 {
-	0,"Power-ups only"
-	1,"Unmaker Power-ups only"
+	0,"Power-ups"
+	1,"Unmaker Power-ups"
 	2,"Random"
 }
 
 OptionValue "AlternativeAmmoPickupSpritesValue"
 {
-	0,"Default Only"
-	1,"Alternative Only"
-	2,"Alpha Build Only"
+	0,"Default"
+	1,"Alternative"
+	2,"Alpha Build"
 	3,"Random (No Alpha Build)"
 }
 

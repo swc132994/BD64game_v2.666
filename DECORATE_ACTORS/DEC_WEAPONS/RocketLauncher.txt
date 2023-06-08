@@ -237,7 +237,7 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		TNT1 A 0 A_JumpIfInventory("RLAmmo",1,"Ready")
 		Goto NoRockets
 	NoRockets:
-		RLTN A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_NOFIRE)
+		RLTN A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
@@ -260,7 +260,11 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		TNT1 A 1 A_Lower
 		Wait
 	Fire:
-		Goto AmmoCheck
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReload")
+		TNT1 A 0 A_JumpIfInventory("RLAmmo",1,1)
+		Goto Reload
+		TNT1 A 0 A_TakeInventory("RLAmmo",1,TIF_NOTAKEINFINITE)
+		Goto ResumeFire
 	ResumeFire:
 		RLTF A 0 A_JumpIfInventory("AltMode",1,2)
 		RLLF A 0
@@ -347,13 +351,7 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		TNT1 A 0 A_PlaySound("LASERON",1)
 		RLTM EEDBCA 1
 		Goto Ready
-	AmmoCheck:
-		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReload")	
-		TNT1 A 0 A_JumpIfInventory("RLAmmo",1,1)
-		Goto Reload
-		TNT1 A 0 A_TakeInventory("RLAmmo",1,TIF_NOTAKEINFINITE)
-		Goto ResumeFire
-	NoReload:	
+	NoReload:
 		TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,1)
 		Goto NoRockets
 		TNT1 A 0 A_TakeInventory("RocketAmmo",1,TIF_NOTAKEINFINITE)
