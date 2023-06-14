@@ -181,7 +181,7 @@ Tag "$TAG_CHAINGUN"
 		Stop
 	v1Ready:
 	Ready:
-		CHNG A 1 A_WeaponReady
+		CHNG A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
@@ -190,9 +190,18 @@ Tag "$TAG_CHAINGUN"
 	Ready2: //Minigun Spinning
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("CHAINSPI",5)
-		CHNG ABCD 1 A_WeaponReady
+		CHNG A 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		CHNG B 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")		
+		CHNG C 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")		
+		CHNG D 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")		
 		Loop
 	Select:
 		TNT1 A 0 A_PlaySound("CHGNPKUP")
@@ -269,5 +278,16 @@ Tag "$TAG_CHAINGUN"
 		CHNG ABCD 2 A_WeaponReady
 		CHNG ABCD 3 A_WeaponReady
 		Goto Ready
+	Reload:
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"FidgetSpinner")
+		CHNI ABCDE 1 A_WeaponReady
+		CHNI F 7 A_WeaponReady
+		TNT1 A 0 A_PlaySound("CHAINSTO", 6)
+		CHNI GHIJ 1 A_WeaponReady
+		CHNG AABBCCDDAAABBBCCCDDD 1
+		Goto Ready
+	FidgetSpinner:
+		TNT1 A 0 A_Print("No one in their right mind would touch a spinning chaingun.")
+		Goto Ready2
 	}
 }
