@@ -1,5 +1,6 @@
 Actor 64CHellHound : Demon 19115	//Cerberus hellhound
 {
+//$category "Game/BD64_Monsters
 SpawnID 175
 Scale 0.9
 Health 800

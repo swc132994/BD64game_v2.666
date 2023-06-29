@@ -1,5 +1,6 @@
 Actor 64Arachnotron : Arachnotron Replaces Arachnotron
 {
+//$category "Game/BD64_Monsters
 Scale 0.8
 Radius 40
 Speed 11

@@ -1,5 +1,6 @@
 Actor 64HellHoundGEC : Demon 19117
 {
+//$category "Game/BD64_Monsters
 SpawnID 177
 Scale 0.8
 Health 800

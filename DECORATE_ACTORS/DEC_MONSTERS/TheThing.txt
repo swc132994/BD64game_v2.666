@@ -1,5 +1,6 @@
-Actor 64Thing
+Actor 64Thing 19130
 {
+//$category "Game/BD64_Monsters
 Scale 0.8
 Health 500
 Height 64

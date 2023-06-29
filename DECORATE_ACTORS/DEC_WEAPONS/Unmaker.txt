@@ -1,5 +1,6 @@
 Actor UnmakerSpawner : CustomInventory 9901
 {
+//$category "Game/BD64_Weapons
 Inventory.PickupMessage "What the !@# is this!"
 Inventory.PickupSound "WPICK"
 SpawnID 84

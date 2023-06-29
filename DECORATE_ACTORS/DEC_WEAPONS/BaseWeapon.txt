@@ -1,4 +1,3 @@
-//R31
 //Own Weapon Base for Tactical and Modern Classes
 //restored bob from v1
 

@@ -1,5 +1,6 @@
 Actor ChaingunSpawner : CustomInventory Replaces Chaingun
 {
+//$category "Game/BD64_Weapons
 Scale 0.82
 Inventory.PickupMessage "$GOTCHAINGUN"
 Inventory.PickupSound "WPICK"

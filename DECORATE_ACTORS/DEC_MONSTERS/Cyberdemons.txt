@@ -1,5 +1,6 @@
 Actor 64Cyberdemon : Cyberdemon Replaces Cyberdemon
 {
+//$category "Game/BD64_Monsters
 Scale 0.80
 Health 5000
 Speed 13
@@ -85,6 +86,7 @@ DropItem "Soulsphere",32
 
 Actor Annihilator64 : Cyberdemon 1001
 {
+//$category "Game/BD64_Monsters
 SpawnID 157
 Scale 0.85
 Health 6000

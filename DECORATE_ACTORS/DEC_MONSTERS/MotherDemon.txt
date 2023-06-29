@@ -1,5 +1,6 @@
 Actor Motherdemon 9897
 {
+//$category "Game/BD64_Monsters
 Game Doom
 SpawnID 17
 Scale 1.0

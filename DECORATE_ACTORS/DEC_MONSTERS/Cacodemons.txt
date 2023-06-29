@@ -1,5 +1,6 @@
 Actor 64Cacodemon : Cacodemon Replaces Cacodemon
 {
+//$category "Game/BD64_Monsters
 Scale 0.8
 Health 350
 PainChance "SuperFists",255
@@ -401,6 +402,7 @@ Actor 64StealthCacodemon : 64Cacodemon Replaces StealthCacodemon
 
 Actor NightmareCacodemon : Cacodemon 19990
 {
+//$category "Game/BD64_Monsters
 SpawnID 156
 Scale 0.8
 Health 700

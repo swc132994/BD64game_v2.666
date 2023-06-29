@@ -1,5 +1,6 @@
 Actor ChainsawSpawner : CustomInventory Replaces Chainsaw
 {
+//$category "Game/BD64_Weapons
 Scale 0.82
 Inventory.PickupMessage "$GOTCHAINSAW"
 Inventory.PickupSound "weapons/chainsaw/draw"

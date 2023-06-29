@@ -1,5 +1,6 @@
 Actor 64Belphegor 11053
 {
+//$category "Game/BD64_Monsters
 Scale 1
 Health 1500
 Speed 8

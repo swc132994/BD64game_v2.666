@@ -1,5 +1,6 @@
 Actor 64Bruiser 19111
 {
+//$category "Game/BD64_Monsters
 Scale 0.8
 Health 1000
 Speed 12

@@ -1,5 +1,6 @@
 Actor ShotgunSpawner : CustomInventory	//replaced by new spawner
 {
+//$category "Game/BD64_Weapons
 Scale 0.87
 Inventory.PickupMessage "$GOTSHOTGUN"
 Inventory.PickupSound "WPICK"

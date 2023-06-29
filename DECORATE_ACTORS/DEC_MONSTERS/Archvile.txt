@@ -1,5 +1,6 @@
 Actor 64Archvile : Archvile Replaces Archvile
 {
+//$category "Game/BD64_Monsters
 Height 70
 Scale 0.7
 PainChance "SuperFists",220

@@ -1,5 +1,6 @@
-Actor 64HuskZombie : 64ZombieMan
+Actor 64HuskZombie : 64ZombieMan 19128
 {
+//$category "Game/BD64_Monsters
 Scale 0.7
 Height 50
 GibHealth 15
@@ -8,7 +9,7 @@ MeleeRange 60
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "chainsaw",0.4
-Tag "Husk"
+Tag "Husk Zombie"
 HitObituary "The Horde consumed %o."
 SeeSound "TheHusk/See"
 PainSound "TheHusk/Pain"

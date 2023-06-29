@@ -1,5 +1,6 @@
 Actor 64LostSoul : LostSoul Replaces LostSoul
 {
+//$category "Game/BD64_Monsters
 Scale 0.8
 Health 50
 Alpha 0.99

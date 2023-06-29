@@ -1,5 +1,6 @@
 ACTOR 64WaffenSS : 64ZombieMan	//WolfensteinSS
 {
+//$category "Game/BD64_Monsters
 Health 75
 Mass 100
 Speed 12

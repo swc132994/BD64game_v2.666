@@ -1,5 +1,6 @@
 Actor 64TRevenant : Revenant	//Tchernobog style revenant
 {
+//$category "Game/BD64_Monsters
 Scale 0.74
 Health 350
 Height 65

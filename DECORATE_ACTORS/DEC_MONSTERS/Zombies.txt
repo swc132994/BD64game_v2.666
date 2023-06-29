@@ -1,5 +1,6 @@
 Actor 64ZombieMan : ZombieMan Replaces ZombieMan
 {
+//$category "Game/BD64Monsters
 Scale 0.8
 Height 50
 GibHealth 15
@@ -542,6 +543,7 @@ Actor 64StealthZombieMan : 64Zombieman Replaces StealthZombieMan
 
 Actor 64ShotgunGuy : 64Zombieman Replaces ShotgunGuy
 {
+//$category "Game/BD64_Monsters
 Speed 6
 GibHealth 15
 Tag "Shotgun Zombie"
@@ -715,6 +717,7 @@ Actor SSGZombieDrop
 
 Actor 64SSGGuy : 64ShotgunGuy 19110
 {
+//$category "Game/BD64_Monsters
 DropItem "SSGZombieDrop"
 DropItem "SOULSPAWNER"
 Tag "SSG Zombie"
@@ -1227,6 +1230,7 @@ Actor BrutalizedSSGGuy_2 : BrutalizedSSGGuy_1
 
 Actor 64ChaingunGuy : 64Zombieman Replaces Chaingunguy
 {
+//$category "Game/BD64_Monsters
 Health 120
 Speed 4
 AttackSound "grunt/attack"
@@ -1657,6 +1661,7 @@ Actor EnemyProjectileExtreme : EnemyProjectile
 
 Actor 64ZombieMarine : 64Zombieman Replaces WolfensteinSS
 {
+//$category "Game/BD64_Monsters
 Health 90
 Speed 12
 AttackSound "grunt/attack"
@@ -1881,6 +1886,7 @@ Obituary "%o was gunned down by a zombie marine."
 
 Actor IntroMarine : 64ZombieMarine Replaces MarinePistol
 {
+//$category "BD64Allies"
 Health 15
 GibHealth 30
 Speed 7

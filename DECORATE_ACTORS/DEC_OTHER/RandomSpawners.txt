@@ -1287,6 +1287,7 @@ MONSTER
 
 Actor Hound_Chooser	19125	//Used for direct hound placement on maps. Tag 666 fix (A_KillMaster must be called from spawned monster)
 {
+//$category "Game/BD64_Monsters
 SpawnID 185
 Scale 0.8
 MONSTER

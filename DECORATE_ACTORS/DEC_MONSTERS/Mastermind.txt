@@ -1,5 +1,6 @@
 Actor 64SpiderMastermind : SpiderMastermind Replaces SpiderMastermind
 {
+//$category "Game/BD64_Monsters
 Scale 0.9
 Radius 62
 PainChance "SuperFists",200
@@ -158,6 +159,7 @@ FastSpeed 60
 
 Actor 64Eradicator : SpiderMastermind 19119
 {
+//$category "Game/BD64_Monsters
 Scale 0.9
 Health 4000
 Speed 14

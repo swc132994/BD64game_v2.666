@@ -1,5 +1,6 @@
 Actor 64Demon : Demon Replaces Demon
 {
+//$category "Game/BD64_Monsters
 Scale 0.8
 GibHealth 20
 Speed 14
@@ -347,6 +348,7 @@ Actor 64StealthDemon : 64Demon Replaces StealthDemon
 
 Actor 64Spectre : Spectre Replaces Spectre
 {
+//$category "Game/BD64_Monsters
 Scale 0.8
 GibHealth 20
 Speed 16
@@ -769,6 +771,7 @@ Actor SpectreSprite4: SpectreSprite1
 
 Actor 64NightmareSpectre : 64Spectre 1000
 {
+//$category "Game/BD64_Monsters
 SpawnID 155
 Scale 0.85
 Health 500

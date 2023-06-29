@@ -1,5 +1,6 @@
-Actor 64ForgottenOne : LostSoul
+Actor 64ForgottenOne : LostSoul 19129
 {
+//$category "Game/BD64_Monsters
 Scale 0.8
 Health 70
 Alpha 0.5
@@ -16,6 +17,7 @@ PainChance "Kick",255
 PainChance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
+Tag "Forgotten One"
 +NOBLOOD
 +FORCEXYBILLBOARD
 -MISSILEMORE

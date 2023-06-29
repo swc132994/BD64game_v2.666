@@ -1,5 +1,6 @@
 Actor BFG9000Spawner : CustomInventory Replaces BFG9000
 {
+//$category "Game/BD64_Weapons
 Scale 0.9
 Inventory.PickupMessage "$GOTBFG9000"
 Inventory.PickupSound "WPICK"

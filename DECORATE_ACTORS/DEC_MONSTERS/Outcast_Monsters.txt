@@ -1,5 +1,6 @@
 Actor 64AcidDemon : Demon 19106
 {
+//$category "Game/BD64_Monsters
 SpawnID 158
 Scale 0.8
 Health 200
@@ -461,6 +462,7 @@ Alpha 0.30
 
 Actor 64Nightcrawler : 64Arachnotron 19105
 {
+//$category "Game/BD64_Monsters
 Health 750
 PainChance 96
 PainChance "SuperFists",200
@@ -596,6 +598,7 @@ Actor SmallBrainPieceBlue : SmallBrainPiece	{Translation "Ice"}
 
 Actor 64Stalker : 64LostSoul 19107
 {
+//$category "Game/BD64_Monsters
 Health 200
 Speed 16
 FastSpeed 24

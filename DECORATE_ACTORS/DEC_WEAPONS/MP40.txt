@@ -1,6 +1,6 @@
-//R31 MP40(based on Rifle code) by IDDQD_1337
 Actor MP40Spawner : CustomInventory 19124
 {
+//$category "Game/BD64_Weapons
 Scale 0.45
 Inventory.PickupMessage "You got the MP40!"
 Inventory.PickupSound "WPICK"

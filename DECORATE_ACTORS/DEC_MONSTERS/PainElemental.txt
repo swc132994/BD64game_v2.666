@@ -1,5 +1,6 @@
 Actor 64PainElemental : PainElemental Replaces PainElemental
 {
+//$category "Game/BD64_Monsters
 Scale 0.8
 Speed 6
 PainChance "SuperFists",255
@@ -71,6 +72,7 @@ DropItem "DemonEssenceSpawner"
 
 Actor 64NightmareElemental : 64PainElemental 19126
 {
+//$category "Game/BD64_Monsters
 Speed 12
 HitObituary "%o was tormented by a nightmare elemental."
 Tag "Nightmare Elemental"

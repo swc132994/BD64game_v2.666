@@ -1,5 +1,6 @@
 Actor 64FleshWizard 19127
 {
+//$category "Game/BD64_Monsters
 Scale 0.7
 Health 400
 Height 70

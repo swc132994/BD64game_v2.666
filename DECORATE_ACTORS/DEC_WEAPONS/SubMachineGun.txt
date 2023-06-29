@@ -1,6 +1,7 @@
 //SMG(based on Rifle code) by IDDQD_1337
 Actor SMGSpawner : CustomInventory 19121
 {
+//$category "Game/BD64_Weapons
 Scale 0.82
 Inventory.PickupMessage "You got the SMG!"
 Inventory.PickupSound "WPICK"

@@ -433,6 +433,7 @@ Armor.Savepercent 50
 
 ACTOR 64HellPotion : CustomInventory 1657
 {
+//$category "Game/BD64_Artifacts
 Inventory.PickupMessage "Picked up a Hell Potion."
 Inventory.PickupSound "misc/i_pkup"
 inventory.respawntics 1050
@@ -550,6 +551,7 @@ Inventory.MaxAmount 1
 
 ACTOR WpnPower1 : CustomInventory 9905
 {
+//$category "Game/BD64_Artifacts
 Inventory.Icon POW1E0
 Inventory.PickupMessage "You have a feeling that it wasn't meant to be touched."
 Inventory.PickupSound "misc/p_pkup"
@@ -571,6 +573,7 @@ Inventory.PickupSound "misc/p_pkup"
 
 ACTOR WpnPower2 : CustomInventory 9906
 {
+//$category "Game/BD64_Artifacts
 Inventory.Icon POW2E0
 Inventory.PickupMessage "It must do something..."
 Inventory.PickupSound "misc/p_pkup"
@@ -592,6 +595,7 @@ Inventory.PickupSound "misc/p_pkup"
 
 ACTOR WpnPower3 : CustomInventory 9907
 {
+//$category "Game/BD64_Artifacts
 Inventory.Icon POW3E0
 Inventory.PickupMessage "Whatever it is, it doesn't belong in this world."
 Inventory.PickupSound "misc/p_pkup"
@@ -613,6 +617,7 @@ Inventory.PickupSound "misc/p_pkup"
 
 Actor 64Scanner : CustomInventory replaces PowerScanner 9967
 {
+//$category "Game/BD64_Artifacts
 Scale 0.82
 Inventory.Amount 0
 Inventory.MaxAmount 0
@@ -746,6 +751,7 @@ Inventory.MaxAmount 1
 
 ACTOR WpnPower4 : CustomInventory 9908	//GREEN ARTIFACT
 {
+//$category "Game/BD64_Artifacts
 Translation "0:255=%[0,0,0]:[0,1,0]"//Green
 Inventory.Icon POW3E0
 Inventory.PickupMessage "It looks like some sort of key...."
@@ -773,6 +779,7 @@ Inventory.MaxAmount 1
 
 ACTOR WpnPower5 : CustomInventory 9909	//RED ARTIFACT
 {
+//$category "Game/BD64_Artifacts
 Translation "0:255=%[0,0,0]:[1,0,0]"//Red
 Inventory.Icon POW3E0
 Inventory.PickupMessage "What is this used for?"

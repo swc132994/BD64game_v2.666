@@ -1,5 +1,6 @@
 Actor BD64_GaussCannonSpawner : CustomInventory
 {
+//$category "Game/BD64_Weapons
 Scale 0.9
 Inventory.PickupMessage "You picked up the Gauss Cannon"
 Inventory.PickupSound "WPICK"

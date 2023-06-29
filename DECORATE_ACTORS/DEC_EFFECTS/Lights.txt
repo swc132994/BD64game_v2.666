@@ -882,6 +882,7 @@ scale 0.8
 
 actor TweezerGore : Meat2 9913
 {
+//$category "Game/BD64_Props
 Scale 0.82
 Height 83
 	States
@@ -905,16 +906,19 @@ Height 83
 
 actor TweezerGoreNonSolid : TweezerGore 9928
 {
+//$category "Game/BD64_Props
 -SOLID
 }
 
 actor BloodyRibs : 64Gibs 9914
 {
+//$category "Game/BD64_Props
 Scale 0.82
 }
 
 actor BloodyStick : HeadOnAStick 9915
 {
+//$category "Game/BD64_Props
 Scale 0.82
 	States
 	{
@@ -932,6 +936,7 @@ Scale 0.82
 
 actor GoreRibs : Gibs 9916
 {
+//$category "Game/BD64_Props
 Scale 0.82
 	States
 	{
@@ -980,6 +985,7 @@ Scale 0.7
 
 actor 64Gargoyle1 9921
 {
+//$category "Game/BD64_Props
 Game Doom
 Scale 0.82
 Height 56
@@ -996,6 +1002,7 @@ ProjectilePassHeight -8
 
 actor 64Gargoyle2 9922
 {
+//$category "Game/BD64_Props
 Game Doom
 Scale 0.82
 Height 56
@@ -1068,6 +1075,7 @@ Scale 0.7
 
 actor TallTorchStick 9919
 {
+//$category "Game/BD64_Props
 Game Doom
 Scale 0.75
 Radius 16
@@ -1084,6 +1092,7 @@ ProjectilePassHeight -8
 
 actor ShortTorchStick 9920
 {
+//$category "Game/BD64_Props
 Game Doom
 Scale 0.75
 Radius 16
@@ -1258,8 +1267,9 @@ RenderStyle Translucent
 	}
 }
 
-actor 64ShortYellowTorch : ShortRedTorch 9918 //R31 revised
+actor 64ShortYellowTorch : ShortRedTorch 9918
 {
+//$category "Game/BD64_Props
 Scale 0.75
 Alpha 0.6
 RenderStyle Translucent
@@ -1467,6 +1477,7 @@ Alpha 0.25
 
 actor TinyRedTorch 9925
 {
+//$category "Game/BD64_Props
 Game Doom
 scale 0.75
 +NOGRAVITY
@@ -1481,6 +1492,7 @@ scale 0.75
 
 actor TinyBlueTorch 9926
 {
+//$category "Game/BD64_Props
 Game Doom
 Scale 0.75
 +NOGRAVITY
@@ -1495,6 +1507,7 @@ Scale 0.75
 
 actor TinyGreenTorch 9927
 {
+//$category "Game/BD64_Props
 Game Doom
 Scale 0.75
 +NOGRAVITY
@@ -1509,6 +1522,7 @@ Scale 0.75
 
 actor 64WallTorchRed 9930
 {
+//$category "Game/BD64_Props
 Game Doom
 Scale 0.75
 Radius 5
@@ -1538,6 +1552,7 @@ Radius 5
 
 actor 64WallTorchBlue 9933
 {
+//$category "Game/BD64_Props
 Game Doom
 Scale 0.75
 Radius 5
@@ -1567,6 +1582,7 @@ Radius 5
 
 actor 64WallTorchGreen 9935
 {
+//$category "Game/BD64_Props
 Game Doom
 Scale 0.75
 Radius 5
@@ -1596,6 +1612,7 @@ Radius 5
 
 actor 64WallTorchYellow 9936
 {
+//$category "Game/BD64_Props
 Game Doom
 Scale 0.75
 Radius 5
@@ -1625,6 +1642,7 @@ Radius 5
 
 actor ImpaledHead2 : HeadOnAStick 9931
 {
+//$category "Game/BD64_Props
 scale 0.82
 ProjectilePassHeight -8
 	states
@@ -1639,6 +1657,7 @@ ProjectilePassHeight -8
 
 actor HangingMace : HangTLookingDown 9932
 {
+//$category "Game/BD64_Props
 scale 0.82
 height 56
 -SOLID

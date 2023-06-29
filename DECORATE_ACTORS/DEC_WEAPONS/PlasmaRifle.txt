@@ -1,5 +1,6 @@
 Actor PlasmaRifleSpawner : CustomInventory Replaces PlasmaRifle
 {
+//$category "Game/BD64_Weapons
 Scale 0.82
 Inventory.PickupMessage "$GOTPLASMA"
 Inventory.PickupSound "WPICK"

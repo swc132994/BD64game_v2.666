@@ -1,5 +1,6 @@
 ACTOR PistolSpawner : CustomInventory Replaces Pistol
 {
+//$category "Game/BD64_Weapons
 Scale 0.82
 Inventory.PickupMessage "$PICKUP_PISTOL_DROPPED"
 Inventory.PickupSound "WPICK"

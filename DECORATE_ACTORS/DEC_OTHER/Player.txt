@@ -782,6 +782,7 @@ Scale 0.8
 
 Actor 64MarineUnmaker : ScriptedMarine 9940
 {
+//$category "Game/BD64_Marine_Bots
 Scale 0.8
 Game Doom
 	States
@@ -796,6 +797,7 @@ Game Doom
 
 Actor 64MarineUnmaker1 : ScriptedMarine 9941
 {
+//$category "Game/BD64_Marine_Bots
 Scale 0.8
 Game Doom
 	States
@@ -810,6 +812,7 @@ Game Doom
 
 Actor 64MarineUnmaker2 : ScriptedMarine 9942
 {
+//$category "Game/BD64_Marine_Bots
 Scale 0.8
 Game Doom
 	States
@@ -825,6 +828,7 @@ Game Doom
 
 Actor 64MarineUnmaker3 : ScriptedMarine 9943
 {
+//$category "Game/BD64_Marine_Bots
 Scale 0.8
 Game Doom
 	States
