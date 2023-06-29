@@ -459,3 +459,8 @@ script "NoReloadACS" ENTER
 if(GetCvar("NoReloadCvar") == 1) {GiveInventory("NoReloading",1);}
 if(GetCvar("NoReloadCvar") == 0) {TakeInventory("NoReloading",1);}
 }
+
+script "ClassicChaingun" (void)
+{
+SetResultValue(GetCVar("ClassicChaingunCvar"));
+}

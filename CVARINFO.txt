@@ -59,5 +59,6 @@ server int ThingRandomCvar = 0;				//allow the thing spawning
 server int AltRadSuitCvar = 0;				//alt Rad suit sprite
 Server int FlashlightStartCvar = 0;			//start with flashlight/torch
 server bool NoReloadCvar = FALSE;		//No Reload System
+server bool ClassicChaingunCvar = FALSE;		//Classic Chaingun 
 
 //Leave blank end line to prevent UDB error warning
