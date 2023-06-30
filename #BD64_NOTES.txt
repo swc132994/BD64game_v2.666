@@ -98,9 +98,10 @@ Tactical Chainsaw - IDDQD_1337 (animation)
 Tactical Pistol - IDDQD_1337 (animation) & I'M (sprites)
 Alt Lasergun - IDDQD_1337 (animation)
 Alt Rifle - IDDQD_1337 (animation) & I'M (sprites)
-Tactical Shotgun Alt attack - IDDQD_1337 (animation) & I'M (sprites)
+Tactical Shotgun Alt attack - IDDQD_1337 (animation) & I'M (sprites). Smoother alt fire animation by Doomer Blazkowicz.
 Laser Mine (unused) - Sprite rework by Craneo, Animations extra sprites and decorate by IDDQD_1337. Sounds from Brutal Hellfest by Gni. Orginally created by Capt. J and Ezequiel-TM's tripwire lasermine
-Proxy Mine (Tactical and Modern) - CaptJ and Apocalyptic Studios, edited by Craneo and IDDQD_1337.
+Proxy Mine (Tactical & Modern) - CaptJ and Apocalyptic Studios, edited by Craneo and IDDQD_1337.
+Chaingun (tactical & Modern) - Doomer Blazkowicz (sprite rework), IDDQD_1337 (Animation), taken from Sgt Mark IV's BD Chaingun.
 
 New weapon kicking and slide kicking animations by IDDQD_1337
 
