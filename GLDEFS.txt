@@ -108,7 +108,25 @@ object 64StickGrenade
 	frame MISLF {light ROCKET_X5}
 }
 
-object 64ThrownActiveProxMine
+object 64ThrownActiveProxMine1
+{
+	frame MISLB {light ROCKET_X1}
+	frame MISLC {light ROCKET_X2}
+	frame MISLD {light ROCKET_X3}
+	frame MISLE {light ROCKET_X4}
+	frame MISLF {light ROCKET_X5}
+}
+
+object 64ThrownActiveProxMine2
+{
+	frame MISLB {light ROCKET_X1}
+	frame MISLC {light ROCKET_X2}
+	frame MISLD {light ROCKET_X3}
+	frame MISLE {light ROCKET_X4}
+	frame MISLF {light ROCKET_X5}
+}
+
+object 64ThrownActiveProxMine3
 {
 	frame MISLB {light ROCKET_X1}
 	frame MISLC {light ROCKET_X2}
