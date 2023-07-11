@@ -222,6 +222,7 @@ OptionMenu "BrutalDoom64Item/WeaponOptions"
 	Option "Alpha Build Items Pickup =","AlphaPickupCvar","YesOrNo"
 	Option "Alternative Rad Suit Pickup =","AltRadSuitCvar","YesOrNo"
 	Option "Start with Flashlight/Torch (Need Map Start) =","FlashlightStartCvar","YesOrNo"
+	Option "Doom 3 Shotgun =","Doom3ShotgunCvar","YesOrNo"	
 }
 
 //Misc values

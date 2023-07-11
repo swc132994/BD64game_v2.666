@@ -103,7 +103,7 @@ Player.DisplayName "Classical"
 Player.CrouchSprite "PLYC"
 Player.WeaponSlot 1,"64Chainsaw","64Fist"
 Player.WeaponSlot 2,"64Pistol","64SMG", "64MP40"
-Player.WeaponSlot 3,"64Shotgun","64SuperShotgun"
+Player.WeaponSlot 3,"64Shotgun","D3Shotgun","64SuperShotgun"
 Player.WeaponSlot 4,"64Rifle","64Chaingun"
 Player.WeaponSlot 5,"64RocketLauncher","64RocketLauncherDM"
 Player.WeaponSlot 6,"64PlasmaRifle","BD64_GaussCannon","64PlasmaRifleDM"
@@ -278,6 +278,7 @@ Player.StartItem "64RifleTactical"
 Player.StartItem "64PistolTactical"
 Player.StartItem "64FistTactical"
 Player.StartItem "ShotgunAmmo",9
+Player.StartItem "D3ShotgunAmmo",8
 Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40
 Player.StartItem "RLAmmo",6
@@ -295,7 +296,7 @@ Player.DisplayName "Tactical (Rifle)"
 Player.CrouchSprite "PLYC"
 Player.WeaponSlot 1,"64ChainsawTACTICAL","64ChainsawTACTICAL_Classic","64FistTactical"
 Player.WeaponSlot 2,"64PistolTACTICAL","64SMGTactical", "64MP40Tactical"
-Player.WeaponSlot 3,"64ShotgunTACTICAL","64SuperShotgunTACTICAL"
+Player.WeaponSlot 3,"64ShotgunTACTICAL","D3ShotgunTACTICAL","64SuperShotgunTACTICAL"
 Player.WeaponSlot 4,"64RifleTACTICAL","64ChaingunTACTICAL"
 Player.WeaponSlot 5,"64ProximityMine","64RocketLauncherTACTICAL","64RocketLauncherDM"
 Player.WeaponSlot 6,"64PlasmaRifleTACTICAL","BD64_GaussCannonTACTICAL","64PlasmaRifleDM"
@@ -551,6 +552,7 @@ Player.StartItem "64PistolTactical"
 Player.StartItem "Pistolammo",10
 Player.StartItem "64FistTactical"
 Player.StartItem "ShotgunAmmo",9
+Player.StartItem "D3ShotgunAmmo",8
 Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40
 Player.StartItem "RLAmmo",6
@@ -568,7 +570,7 @@ Player.DisplayName "Modern"
 Player.CrouchSprite "PLYC"
 Player.WeaponSlot 1,"64ChainsawModern","64ChainsawModern_Classic","64FistTactical"
 Player.WeaponSlot 2,"64PistolTACTICAL","64SMGTactical", "64MP40Tactical"
-Player.WeaponSlot 3,"64ShotgunTACTICAL","64SuperShotgunTACTICAL"
+Player.WeaponSlot 3,"64ShotgunTACTICAL","D3ShotgunTACTICAL","64SuperShotgunTACTICAL"
 Player.WeaponSlot 4,"64RifleTACTICAL","64ChaingunTACTICAL"
 Player.WeaponSlot 5,"64ProximityMine","64RocketLauncherTACTICAL","64RocketLauncherDM"
 Player.WeaponSlot 6,"64PlasmaRifleTACTICAL","BD64_GaussCannonTACTICAL","64PlasmaRifleDM"

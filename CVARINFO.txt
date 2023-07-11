@@ -60,5 +60,6 @@ server int AltRadSuitCvar = 0;				//alt Rad suit sprite
 Server int FlashlightStartCvar = 0;			//start with flashlight/torch
 server bool NoReloadCvar = FALSE;		//No Reload System
 server bool ClassicChaingunCvar = FALSE;		//Classic Chaingun 
+server bool Doom3ShotgunCvar = FALSE;		//Doom 3 Shotgun (Wut!?)
 
 //Leave blank end line to prevent UDB error warning
