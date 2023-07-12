@@ -816,28 +816,3 @@ $limit floor/slimy 20
 floor/elec1	dselec1
 
 $limit floor/elec1 20
-
-//Doom 3 Shotgun
-$random Doom3Shotgun/Fire {Doom3Shotgun/Fire1 Doom3Shotgun/Fire2 Doom3Shotgun/Fire3}
-Doom3Shotgun/Fire1 D3FIRE1
-Doom3Shotgun/Fire2 D3FIRE2
-Doom3Shotgun/Fire3 D3FIRE3
-
-$random Doom3Shotgun/WetFire {Doom3Shotgun/WetFire1 Doom3Shotgun/WetFire2 Doom3Shotgun/WetFire3}
-Doom3Shotgun/WetFire1 WTFIRE1
-Doom3Shotgun/WetFire2 WTFIRE2
-Doom3Shotgun/WetFire3 WTFIRE3
-
-D3SGPUMP D3SGPUMP
-D3SGSEL D3SGSEL
-
-$random Doom3Shotgun/StartReload {Doom3Shotgun/StartReload1 Doom3Shotgun/StartReload2 Doom3Shotgun/StartReload3}
-Doom3Shotgun/StartReload1 D3RLST1
-Doom3Shotgun/StartReload2 D3RLST2
-Doom3Shotgun/StartReload3 D3RLST3
-
-$random Doom3Shotgun/ShellIn {Doom3Shotgun/ShellIn1 Doom3Shotgun/ShellIn2 Doom3Shotgun/ShellIn3 Doom3Shotgun/ShellIn4}
-Doom3Shotgun/ShellIn1 D3SHELL1
-Doom3Shotgun/ShellIn2 D3SHELL2
-Doom3Shotgun/ShellIn3 D3SHELL3
-Doom3Shotgun/ShellIn4 D3SHELL4

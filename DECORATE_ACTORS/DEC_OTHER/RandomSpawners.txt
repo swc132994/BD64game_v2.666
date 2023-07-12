@@ -126,13 +126,16 @@ Scale 0.87
 	Spawn:
 		SHOT A 0 NoDelay A_JumpIf(CallACS("SSGinDoom1")==0,"SpawnShotgun")
 		TNT1 A 0 A_JumpIf(CallACS("SSGinDoom1")==1,"SpawnSSG")
-		TNT1 A 0 A_Jump(64,"SpawnSSG") //(25%)
+		TNT1 A 0 A_Jump(64,"SpawnSSG","SpawnPistolSilencer") //(25%)
 	SpawnShotgun:
 		TNT1 A 1 A_SpawnItemEx("Shotgunspawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	SpawnSSG:
 		TNT1 A 1 A_SpawnItemEx("SuperShotgunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
+	SpawnPistolSilencer:
+		TNT1 A 1 A_SpawnItemEx("PistolSilencerItem",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop		
 	}
 }
 
@@ -259,6 +262,7 @@ Scale 0.7
 	Spawn:
 		PINV A 0 NoDelay A_JumpIf(CallACS("WpnPowerRandom")==0,"SpawnInvulnerabilitySphere")
 		TNT1 A 0 A_JumpIf(CallACS("WpnPowerRandom")==1,"SpawnDemonKey")
+		TNT1 A 0 A_Jump(64,"SpawnFlashlight")
 		TNT1 A 0 A_Jump(39,"SpawnDemonKey") //(15%)
 	SpawnInvulnerabilitySphere:
 		TNT1 A 1 A_SpawnItemEx("64InvulnerabilitySphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -266,6 +270,9 @@ Scale 0.7
 	SpawnDemonKey:
 		TNT1 A 0 A_SpawnItemEx("64InvulnerabilitySphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		TNT1 A 1 A_SpawnItem("WpnPower5")
+		Stop
+	SpawnFlashlight:
+		TNT1 A 0 A_SpawnItemEx("FlashlightItem",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	}
 }

@@ -464,29 +464,3 @@ script "ClassicChaingun" (void)
 {
 SetResultValue(GetCVar("ClassicChaingunCvar"));
 }
-
-script "Doom3Shotgun" ENTER
-{
-if (CheckInventory("64Shotgun") == 1 && GetCvar("Doom3ShotgunCvar") == 1)
-	{
-	GiveInventory("D3Shotgun",1);
-	TakeInventory("64Shotgun",1);
-	}
-if (CheckInventory("D3Shotgun") == 1 && GetCvar("Doom3ShotgunCvar") == 0)
-	{
-	GiveInventory("64Shotgun",1);
-	TakeInventory("D3Shotgun",1);
-	}
-if (CheckInventory("64ShotgunTactical") == 1 && GetCvar("Doom3ShotgunCvar") == 1)
-	{
-	GiveInventory("D3ShotgunTACTICAL",1);
-	TakeInventory("64ShotgunTactical",1);
-	}
-if (CheckInventory("D3ShotgunTACTICAL") == 1 && GetCvar("Doom3ShotgunCvar") == 0)
-	{
-	GiveInventory("64ShotgunTactical",1);
-	TakeInventory("D3ShotgunTACTICAL",1);
-	}
-Delay(40);
-Restart;
-}

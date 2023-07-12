@@ -3,33 +3,13 @@ Actor ShotgunDrop
 	states
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("Doom3Shotgun")==1,"DropD3Shotgun")	//Spawn Doom 3 Shotgun
-		TNT1 A 0 A_Jump(128,"Spawn2")
+		TNT1 A 0 NoDelay  A_Jump(128,"Spawn2")
 		Goto Spawn1
 	Spawn1:
 		TNT1 A 1 A_CustomMissile("DropedShotgun",20,0,0,2,random(30,50))
 		stop
 	Spawn2:
 		TNT1 A 1 A_CustomMissile("DropedShotgun2",20,0,180,2,random(30,50))
-		stop
-	DropD3Shotgun:
-		TNT1 A 0 A_SpawnItemEx("D3ShotgunDrop",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		stop		
-	}
-}
-
-Actor D3ShotgunDrop : ShotgunDrop
-{
-	states
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_Jump(128,"Spawn2")
-		Goto Spawn1
-	Spawn1:
-		TNT1 A 1 A_CustomMissile("DropedD3Shotgun",20,0,0,2,random(30,50))
-		stop
-	Spawn2:
-		TNT1 A 1 A_CustomMissile("DropedD3Shotgun2",20,0,180,2,random(30,50))
 		stop
 	}
 }
@@ -81,36 +61,6 @@ Actor DropedShotgun2 : DropedShotgun
 	Death:
 		TNT1 A 0 A_DropItem("64Shotgun")
 		TNT1 A 1 A_DropItem("64ShotgunTactical")
-		Stop
-	}
-}
-
-Actor DropedD3Shotgun : DropedShotgun
-{
-	States
-	{
-	Spawn:
-		D3II H 4
-		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
-		D3II GFEDCBA 4
-	Death:
-		TNT1 A 0 A_DropItem("D3Shotgun")
-		TNT1 A 1 A_DropItem("D3ShotgunTactical")
-		Stop
-	}
-}
-
-Actor DropedD3Shotgun2 : DropedShotgun
-{
-	States
-	{
-	Spawn:
-		D3II H 4
-		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
-		D3II GFEDCBA 4
-	Death:
-		TNT1 A 0 A_DropItem("D3Shotgun")
-		TNT1 A 1 A_DropItem("D3ShotgunTactical")
 		Stop
 	}
 }
