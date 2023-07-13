@@ -38,7 +38,7 @@ Weapon.AmmoType "Cell"
 Inventory.Pickupmessage "You picked up the Gauss Cannon"
 Obituary "%o was pierced by %k's Gauss Cannon"
 Tag "Gauss Cannon"
-//Weapon.SlotNumber 7
+Weapon.SlotNumber 6
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 Decal BigScorch
@@ -101,7 +101,7 @@ Weapon.AmmoType2 "GaussAmmo"
 Inventory.Pickupmessage "You picked up the Gauss Cannon"
 Obituary "%o was pierced by %k's Gauss Cannon"
 Tag "Gauss Cannon"
-//Weapon.SlotNumber 7
+Weapon.SlotNumber 6
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 Inventory.ForbiddenTo "64DoomPlayer"
 Decal BigScorch

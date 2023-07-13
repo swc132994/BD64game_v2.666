@@ -35,6 +35,7 @@ AttackSound "None"
 Inventory.PickupSound "IPick"
 Inventory.Pickupmessage "You got a Multi-Purpose Mine!"
 Tag "Multi-Purpose Mine"
+Weapon.SlotNumber 6
 +WEAPON.NOAUTOAIM
 +WEAPON.NOALERT
 +WEAPON.NOAUTOFIRE

@@ -38,6 +38,7 @@ Weapon.AmmoGive 40
 Weapon.AmmoType "Cell"
 Inventory.Icon LGUNB0
 Tag "Laser Gun"
+Weapon.SlotNumber 9
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -96,6 +97,7 @@ Weapon.AmmoGive 40
 Weapon.AmmoType "Cell"
 Inventory.Icon LGUNB0
 Tag "Laser Gun"
+Weapon.SlotNumber 9
 +WEAPON.ALT_USES_BOTH
 +WEAPON.NOALERT
 +INVENTORY.RESTRICTABSOLUTELY

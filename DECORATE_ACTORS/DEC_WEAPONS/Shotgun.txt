@@ -29,6 +29,7 @@ Weapon.AmmoType "Shell"
 Inventory.PickupMessage "$GOTSHOTGUN"
 Obituary "$OB_MPSHOTGUN"
 Tag "$TAG_SHOTGUN"
+Weapon.SlotNumber 3
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -116,6 +117,7 @@ Weapon.AmmoType2 "ShotgunAmmo"
 Inventory.PickupMessage "$GOTSHOTGUN"
 Obituary "$OB_MPSHOTGUN"
 Tag "$TAG_SHOTGUN"
+Weapon.SlotNumber 3
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AMMO_CHECKBOTH
 +NOALERT

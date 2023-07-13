@@ -30,6 +30,7 @@ Weapon.AmmoGive 40
 Weapon.AmmoType "Cell"
 Inventory.PickupMessage "$GOTBFG9000"
 Tag "$TAG_BFG9000"
+Weapon.SlotNumber 7
 +WEAPON.NOAUTOFIRE
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
@@ -76,6 +77,7 @@ Weapon.AmmoGive 40
 Weapon.AmmoType "Cell"
 Inventory.PickupMessage "$GOTBFG9000"
 Tag "$TAG_BFG9000"
+Weapon.SlotNumber 7
 +WEAPON.NOAUTOFIRE
 +WEAPON.ALT_USES_BOTH
 +WEAPON.NOALERT

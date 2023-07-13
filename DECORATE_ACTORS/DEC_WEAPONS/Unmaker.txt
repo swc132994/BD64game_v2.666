@@ -31,6 +31,7 @@ Weapon.AmmoUse 1
 Weapon.AmmoGive 20
 Weapon.AmmoType "Cell"
 Inventory.Icon LGUNA0
+Weapon.SlotNumber 8
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -337,6 +338,7 @@ Weapon.AmmoType2 "DemonEssence"
 Inventory.Icon LGUNA0
 +INVENTORY.RESTRICTABSOLUTELY
 Tag "Unmaker"
+Weapon.SlotNumber 8
 +WEAPON.AMMO_CHECKBOTH
 +WEAPON.NOALERT
 +WEAPON.NOAUTOFIRE

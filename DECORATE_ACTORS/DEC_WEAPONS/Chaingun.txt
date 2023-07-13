@@ -30,6 +30,7 @@ Weapon.AmmoType "Clip"
 Inventory.PickupMessage "$GOTCHAINGUN"
 Obituary "$OB_MPCHAINGUN"
 Tag "$TAG_CHAINGUN"
+Weapon.SlotNumber 4
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -94,6 +95,7 @@ Weapon.AmmoType "Clip"
 Inventory.PickupMessage "$GOTCHAINGUN"
 Obituary "$OB_MPCHAINGUN"
 Tag "$TAG_CHAINGUN"
+Weapon.SlotNumber 4
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.ALT_USES_BOTH
 	States

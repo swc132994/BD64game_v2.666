@@ -32,6 +32,7 @@ Actor 64Fist : Fist Replaces Fist
 Weapon.SelectionOrder 3700
 Tag "Fists"
 Inventory.Icon "PUN1A0"
+Weapon.SlotNumber 1
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -95,6 +96,7 @@ Actor 64FistTactical : Brutal64Weapon
 Weapon.SelectionOrder 3700
 Tag "Fists"
 Inventory.Icon "PUN1A0"
+Weapon.SlotNumber 1
 Inventory.forbiddento "64DoomPlayer"
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 +INVENTORY.RESTRICTABSOLUTELY

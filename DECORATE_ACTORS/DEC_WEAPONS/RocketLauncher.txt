@@ -38,6 +38,7 @@ Weapon.AmmoGive 2
 Weapon.AmmoType "RocketAmmo"
 Inventory.PickupMessage "$GOTLAUNCHER"
 Tag "$TAG_ROCKETLAUNCHER"
+Weapon.SlotNumber 5
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -158,6 +159,7 @@ Weapon.AmmoGive2 0
 Weapon.AmmoType2 "RLAmmo"
 Inventory.PickupMessage "$GOTLAUNCHER"
 Tag "$TAG_ROCKETLAUNCHER"
+Weapon.SlotNumber 5
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.NOAUTOFIRE
 +WEAPON.NOALERT
@@ -544,6 +546,7 @@ Weapon.SelectionOrder 1100
 Weapon.AmmoUse 1
 Weapon.AmmoGive 2
 Weapon.AmmoType "RocketAmmo"
+Weapon.SlotNumber 5
 +WEAPON.CHEATNOTWEAPON
 Inventory.PickupMessage "$GOTLAUNCHER"
 Tag "$TAG_ROCKETLAUNCHER"

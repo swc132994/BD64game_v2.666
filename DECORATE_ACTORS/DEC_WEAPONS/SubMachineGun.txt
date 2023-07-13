@@ -46,6 +46,7 @@ Weapon.AmmoType "Clip"
 Inventory.PickupMessage "You got the SMG!"
 Obituary "%o was picked off by %k."
 Tag "Sub-Machine Gun"
+Weapon.SlotNumber 2
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -166,6 +167,7 @@ Weapon.AmmoType2 "SMGAmmo"
 Inventory.PickupMessage "You got the SMG!"
 Obituary "%o was picked off by %k SMG."
 Tag "Sub-machine gun"
+Weapon.SlotNumber 2
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AMMO_CHECKBOTH
 +WEAPON.NOALERT
