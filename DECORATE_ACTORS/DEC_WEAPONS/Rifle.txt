@@ -10,6 +10,10 @@ Inventory.PickupSound "WPICK"
 		ARSD A 0 NoDelay A_JumpIf(CallACS("D64WeaponsOnlyReplacer")==1,"SpawnChaingun")	//D64 weapon only
 		ARSD A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)
 		RIFD A 0
+		"####" A 2
+		"####" A 0 ACS_NamedExecuteAlways("DM_SpawnACS")
+		"####" A 2
+		"####" A 0 A_JumpIfInventory("ISDM",1,"DMSpawn")
 		"####" A 1
 		Loop
 	Pickup:
@@ -23,6 +27,13 @@ Inventory.PickupSound "WPICK"
 	SpawnChaingun:
 		TNT1 A 0 A_SpawnItemEx("ChaingunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
+	DMSpawn:
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",1)
+		TNT1 A 0 A_SpawnItemEx("TeleportationFog")
+		TNT1 A 0 A_SpawnItemEx("64Rifle")
+		TNT1 A 0 A_SpawnItemEx("64RifleTactical")
+		TNT1 A 1050
+		Loop
 	}
 }
 

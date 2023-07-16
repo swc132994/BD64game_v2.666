@@ -135,7 +135,7 @@ Scale 0.87
 		Stop
 	SpawnPistolSilencer:
 		TNT1 A 1 A_SpawnItemEx("PistolSilencerItem",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop		
+		Stop
 	}
 }
 

@@ -269,7 +269,6 @@ Player.StartItem "64RifleTactical"
 Player.StartItem "64PistolTactical"
 Player.StartItem "64FistTactical"
 Player.StartItem "ShotgunAmmo",9
-Player.StartItem "D3ShotgunAmmo",8
 Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40
 Player.StartItem "RLAmmo",6
@@ -534,7 +533,6 @@ Player.StartItem "64PistolTactical"
 Player.StartItem "Pistolammo",10
 Player.StartItem "64FistTactical"
 Player.StartItem "ShotgunAmmo",9
-Player.StartItem "D3ShotgunAmmo",8
 Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40
 Player.StartItem "RLAmmo",6

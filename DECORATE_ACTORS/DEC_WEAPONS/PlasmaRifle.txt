@@ -1,9 +1,12 @@
-Actor PlasmaRifleSpawner : CustomInventory Replaces PlasmaRifle
+Actor PlasmaRifleSpawner : CustomInventory// Replaces PlasmaRifle		//spawned from randomspawners
 {
 //$category "Game/BD64_Weapons
 Scale 0.82
 Inventory.PickupMessage "$GOTPLASMA"
 Inventory.PickupSound "WPICK"
+MONSTER
+-SOLID
+-COUNTKILL
 	States
 	{
 	Spawn:
@@ -23,8 +26,10 @@ Inventory.PickupSound "WPICK"
 		Stop
 	DMSpawn:
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",1)
-		TNT1 A 0 A_SpawnItem("64PlasmaRifleDM")
-		TNT1 A 1000
+		TNT1 A 0 A_SpawnItemEx("TeleportationFog")
+		TNT1 A 0 A_SpawnItemEx("64PlasmaRifle")
+		TNT1 A 0 A_SpawnItemEx("64PlasmaRifleTACTICAL")
+		TNT1 A 1050
 		Loop
 	}
 }
@@ -425,54 +430,6 @@ Actor PlasmaBallTrail9: PlasmaBallTrail2
 Alpha 0.1
 }
 
-//DEATHMATCH STUFF
-Actor 64PlasmaRifleDM : DoomWeapon
-{
-Scale 0.82
-Weapon.SelectionOrder 100
-Weapon.AmmoUse 1
-Weapon.AmmoGive 40
-Weapon.AmmoType "Cell"
-Weapon.SlotNumber 6
-+WEAPON.CHEATNOTWEAPON
-Inventory.PickupMessage "$GOTPLASMA"
-Tag "$TAG_PLASMARIFLE"
-	States
-	{
-	Select:
-		TNT1 AAAAA 1 A_Raise
-		Goto SelectAnimation
-	SelectAnimation:
-		PLSG JKLM 1
-		TNT1 A 0 A_GiveInventory("HasPlasmaWeapon",1)
-		Goto Ready
-	Deselect:
-		PLSG MLKJ 1
-		TNT1 A 0 A_TakeInventory("HasPlasmaWeapon",1)
-		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 1 A_Lower
-		Wait
-	Ready:
-		TNT1 A 0 A_PlaySound("weapon/plasmaidle",CHAN_WEAPON,1,1)
-		PLSG ABC 2 A_WeaponReady
-		Loop
-	Fire:
-		PLSF A 1 Bright A_FireCustomMissile("64PlasmaBallDM",0,1)
-		PLSF BCDE 1
-		TNT1 A 0 A_ReFire
-		Goto Ready
-	Spawn:
-		PLAS ABC 2
-		Loop
-	}
-}
-
-Actor 64PlasmaBallDM: 64PlasmaBall
-{
-Species "None"
--THRUSPECIES
-}
-
 //Alt Fire Plasma Thrower
 Actor FlamethrowerFireParticlesBlue : FlamethrowerFireParticles
 {
@@ -496,9 +453,8 @@ Translation "0:255=%[0,0,0]:[0,0,1]"
 
 Actor PlasmaFlame
 {
-Scale 1
 Damage(random(5,7))
-Speed 35
+Speed 30
 Height 8
 Radius 8
 Gravity 1.0

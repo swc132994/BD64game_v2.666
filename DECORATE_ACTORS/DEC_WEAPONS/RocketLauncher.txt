@@ -7,25 +7,16 @@ Inventory.PickupSound "WPICK"
 	States
 	{
 	Spawn:
-		LAUN A 2
-		TNT1 A 0 ACS_NamedExecuteAlways("DM_SpawnACS")
-		LAUN A 2
-		TNT1 A 0 A_JumpIfInventory("ISDM",1,"DMSpawn")
 		LAUN A -1
 		Stop
 	Pickup:
-		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
-		TNT1 A 0 A_GiveInventory("64RocketLauncher",1)
+		TNT1 A 0 A_Jumpifinventory("IsTacticalClass",1,"Pickup2")
+		TNT1 A 0 A_Jumpifinventory("IsModern",1,"Pickup2")
+		TNT1 A 0 A_GiveInventory("64RocketLauncher")
 		Stop
 	Pickup2:
 		TNT1 A 0 A_GiveInventory("64RocketLauncherTactical",1)
 		Stop
-	DMSpawn:
-		TNT1 A 0 A_ChangeFlag("THRUACTORS",1)
-		TNT1 A 0 A_SpawnItem("64RocketLauncherDM")
-		TNT1 A 1000
-		Loop
 	}
 }
 
@@ -529,67 +520,6 @@ Actor CyberRocket : 64Rocket
 Damage 40
 Speed 30
 FastSpeed 35
-Species "none"
--THRUSPECIES
-}
-
-//DEATHMATCH STUFF
-Actor ISDM : Inventory
-{
-Inventory.MaxAmount 1
-}
-
-Actor 64RocketLauncherDM : DoomWeapon
-{
-Scale 0.82
-Weapon.SelectionOrder 1100
-Weapon.AmmoUse 1
-Weapon.AmmoGive 2
-Weapon.AmmoType "RocketAmmo"
-Weapon.SlotNumber 5
-+WEAPON.CHEATNOTWEAPON
-Inventory.PickupMessage "$GOTLAUNCHER"
-Tag "$TAG_ROCKETLAUNCHER"
-	States
-	{
-	Ready:
-		MISG A 1 A_WeaponReady
-		Wait
-	Deselect:
-		MISG A 1 A_Lower
-		Wait
-	Select:
-		MISG A 1 A_Raise
-		Loop
-	Fire:
-		MISG A 1
-		TNT1 A 0 A_PlaySound("ROCKE3",1)
-		MISG B 1 A_GunFlash
-		TNT1 A 0 A_Recoil(2)
-		TNT1 A 0 A_FireCustomMissile("DMRocket",0,1)
-		MISG B 1 A_SetPitch(pitch-2)
-		MISG B 1 A_SetPitch(pitch+0.8)
-		MISG B 1 A_SetPitch(pitch+0.6)
-		MISG B 1 A_SetPitch(pitch+0.4)
-		MISG B 1 A_SetPitch(pitch+0.2)
-		MISG B 1
-		MISG A 15
-		TNT1 A 0 A_ReFire
-		Goto Ready
-	Flash:
-		MISF A 2 Bright
-		MISF B 2 Bright
-		MISF CD 2 Bright
-		Goto LightDone
-	Spawn:
-		LAUN A -1
-		Stop
-	}
-}
-
-Actor DMRocket : 64Rocket
-{
-Speed 30
 Species "none"
 -THRUSPECIES
 }
