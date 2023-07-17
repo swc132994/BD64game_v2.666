@@ -139,6 +139,46 @@ Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 		Code Credits: swc132994, Sgt_Mark_IV
 		}
 
+//Anomaly events
+Poltergeist original credits:
+
+Submitted: David Raven
+Decorate: David Raven
+GLDefs: David Raven, the Skulltag Team
+Sounds: freesounds.org, Midway
+Sprites: id Software
+Sprite Edit: Captain Toenail
+Idea Base: David Raven
+
+Baphomet Eye original credits:
+
+Decorate: Osiris, Espi, Supersonix07
+GLDEFs: Ghastly Dragon
+Sounds: Id Software, Raven Software, Monolith
+Sprites: Id Software, Raven Software
+Idea Base: Doom floating eye decoration
+
+Pain and Death sounds taken from the Bloodskull monster, credits:
+Sounds: 3DRealms, Rogue Entertainment
+Sight and Active sounds taken from the Deep One monster, credits:
+Sounds: Shadowman (Acclaim Entertainment)
+
+Hell's Rose original code and sprites credits: 3DRealms, Neoworm
+
+Demon Tree sounds credits: 3DRealms, FreeRadical Design, Eriance
+
+Squire sight sounds credits:  Id Software, Woolie Wool
+
+Wall break sounds taken from "Destructible Fantasy Props" by whirledtsar, sounds originally made by Raven Software.
+
+Hangman original credits:
+Code: Captain Toenail, Ghastly (ZScript conversion)
+GLDefs: Captain Toenail
+Sounds: Xatrix, Id Software
+Sprites: Captain Toenail
+
+Edits by (Craneo)
+
 Add-ons:
 BD64HUD_Ashton (Paladin-julio (ModDB))
 D64PSX_HQ_SFX (SFX Marine (Nate))

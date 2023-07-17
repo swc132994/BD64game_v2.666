@@ -1325,3 +1325,172 @@ MONSTER
 		Stop
 	}
 }
+
+//Anomaly Events
+//Prop replacements
+Actor 64DemonicTreeReplacer replaces BigTree
+{
+Scale 0.7
+	States
+	{
+	Spawn:
+		LTRI A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnBigTree")	//if D64 monsters only enabled spawn props
+		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnBigTree")
+		TNT1 A 0 A_Jump(32,"SpawnDemonTree") //(12.5%)
+	SpawnBigTree:
+		TNT1 A 1 A_SpawnItemEx("64BigTree",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnDemonTree:
+		TNT1 A 1 A_SpawnItemEx("64PossessedTree",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
+Actor 64EvilEyeReplacer replaces EvilEye
+{
+Scale 0.7
+	States
+	{
+	Spawn:
+		CEYE A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnEvilEye")	//if D64 monsters only enabled spawn props
+		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnEvilEye")
+		TNT1 A 0 A_Jump(32,"SpawnVenomEye1", "SpawnVenomEye2") //(12.5%)
+	SpawnEvilEye:
+		TNT1 A 1 A_SpawnItemEx("64EvilEye",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnVenomEye1:
+		TNT1 A 1 A_SpawnItemEx("64BruiserFireCandle",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		TNT1 A 1 A_SpawnItemEx("64VenomEye1",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnVenomEye2:
+		TNT1 A 1 A_SpawnItemEx("64BruiserFireCandle",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		TNT1 A 1 A_SpawnItemEx("64VenomEye1",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
+Actor 64CandlestickReplacer replaces Candlestick
+{
+Scale 0.7
+	States
+	{
+	Spawn:
+		CAND C 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnCandlestick")	//if D64 monsters only enabled spawn props
+		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnCandlestick")
+		TNT1 A 0 A_Jump(32,"SpawnHellCandle") //(12.5%)
+	SpawnCandlestick:
+		TNT1 A 1 A_SpawnItemEx("64Candlestick",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnHellCandle:
+		TNT1 A 1 A_SpawnItemEx("64Poltergeist1",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
+Actor 64CandelabraGhostReplacer replaces Candelabra
+{
+Scale 0.7
+	States
+	{
+	Spawn:
+		64CN A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnCandelabra")	//if D64 monsters only enabled spawn props
+		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnCandelabra")
+		TNT1 A 0 A_Jump(32,"SpawnHellCandle") //(12.5%)
+	SpawnCandelabra:
+		TNT1 A 1 A_SpawnItemEx("64Candelabra",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnHellCandle:
+		TNT1 A 1 A_SpawnItemEx("64Poltergeist3",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
+Actor 64KillerBarrelReplacer replaces ExplosiveBarrel
+{
+Scale 0.7
+	States
+	{
+	Spawn:
+		BAR1 A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnNormalBarrel")	//if D64 monsters only enabled spawn props
+		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnNormalBarrel")
+		TNT1 A 0 A_Jump(32,"SpawnKillerBarrel") //(12.5%)
+	SpawnNormalBarrel:
+		TNT1 A 1 A_SpawnItemEx("64ExplosiveBarrel",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnKillerBarrel:
+		TNT1 A 1 A_SpawnItemEx("64Poltergeist2",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
+Actor 64HangmanReplacer replaces BloodyTwitch
+{
+Scale 0.7
+	States
+	{
+	Spawn:
+		DAM1 D 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnNormalHangmen")	//if D64 monsters only enabled spawn props
+		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnNormalHangmen")
+		TNT1 A 0 A_Jump(32,"SpawnHangedManEnemy") //(12.5%)
+	SpawnNormalHangmen:
+		TNT1 A 1 A_SpawnItemEx("BloodyTwitchReplacer",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnHangedManEnemy:
+		TNT1 A 1 A_SpawnItemEx("64Hangman",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
+Actor 64PossessedStatueReplacer Replaces HeartColumn
+{
+Scale 0.8
+	States
+	{
+	Spawn:
+		64HC A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnNormalStatue")	//if D64 monsters only enabled spawn props
+		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnNormalStatue")
+		TNT1 A 0 A_Jump(32,"SpawnPossessedStatue") //(12.5%)
+	SpawnNormalStatue:
+		TNT1 A 1 A_SpawnItemEx("64HeartColumn",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnPossessedStatue:
+		TNT1 A 1 A_SpawnItemEx("64Poltergeist4",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
+Actor 64PHauntedFireskullReplacer Replaces FloatingSkull
+{
+Scale 0.8
+	States
+	{
+	Spawn:
+		FSKU A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnNormalFloatingSkull")	//if D64 monsters only enabled spawn props
+		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnNormalFloatingSkull")
+		TNT1 A 0 A_Jump(32,"SpawnAggressiveFloatingSkull") //(12.5%)
+	SpawnNormalFloatingSkull:
+		TNT1 A 1 A_SpawnItemEx("64FloatingSkull",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnAggressiveFloatingSkull:
+		TNT1 A 1 A_SpawnItemEx("64Poltergeist5",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
+Actor 64NonSolidHangmanReplacer replaces NonSolidTwitch
+{
+Scale 0.7
+	States
+	{
+	Spawn:
+		DAM1 D 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnNormalHangmen")	//if D64 monsters only enabled spawn props
+		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnNormalHangmen")
+		TNT1 A 0 A_Jump(32,"SpawnHangedManEnemy") //(12.5%)
+	SpawnNormalHangmen:
+		TNT1 A 1 A_SpawnItemEx("NonSolidTwitchReplacer",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnHangedManEnemy:
+		TNT1 A 1 A_SpawnItemEx("64Hangman",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
