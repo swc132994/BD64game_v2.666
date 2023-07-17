@@ -2398,3 +2398,108 @@ Glow
 	Texture "NUKAGE2",#00FF00,80,fullbright
 	Texture "NUKAGE3",#00FF00,80,fullbright
 }
+
+//Anomaly Events
+pulselight POLTCANDLE
+{
+	color 1.0 1.0 0.0
+	size 8
+	secondarySize 12
+	interval 1.0
+	offset 0 0 0
+}
+
+object 64Poltergeist1
+{
+	frame PLTGB { light POLTCANDLE }
+	frame PLTGC { light POLTCANDLE }
+}
+
+object Poltshot1
+{
+	frame PLTGB { light POLTCANDLE }
+	frame PLTGC { light POLTCANDLE }
+}
+
+PulseLight GreenEye1
+{
+	Color 0.0 0.5 0.0
+	Size 32
+	SecondarySize 64
+	Interval 4
+	Offset 0 24 0
+}
+
+PointLight GreenEye2
+{
+	Color 0.0 0.6 0.0
+	Size 48
+	Offset 0 24 0
+}
+
+PointLight GreenEye3
+{
+	Color 0.0 0.7 0.0
+	Size 56
+	Offset 0 24 0
+}
+
+PointLight GreenEye4
+{
+	Color 0.0 1.0 0.0
+	Size 64
+	Offset 0 24 0
+}
+
+PointLight GreenEye5
+{
+	Color 0.0 0.8 0.0
+	Size 56
+	Offset 0 24 0
+}
+
+PointLight GreenEye6
+{
+	Color 0.0 0.5 0.0
+	Size 48
+	Offset 0 24 0
+}
+
+PointLight GreenEye7
+{
+	Color 0.0 0.3 0.0
+	Size 32
+	Offset 0 24 0
+}
+
+Object 64VenomEye1
+{
+	Frame ESYMA { Light GreenEye1 }
+	Frame ESYMB { Light GreenEye1 }
+	Frame ESYMC { Light GreenEye1 }
+	Frame ESYMF { Light GreenEye1 }
+	Frame ESYMO { Light GreenEye1 }
+	Frame ESXMA { Light GreenEye1 }
+	Frame ESXMB { Light GreenEye2 }
+	Frame ESXMC { Light GreenEye3 }
+	Frame ESXMD { Light GreenEye4 }
+	Frame ESXME { Light GreenEye5 }
+	Frame ESXMF { Light GreenEye6 }
+	Frame ESXMG { Light GreenEye7 }
+}
+
+Object 64VenomEye2
+{
+	Frame ES2MA { Light GreenEye1 }
+	Frame ES2MB { Light GreenEye1 }
+	Frame ES2MC { Light GreenEye1 }
+	Frame ES2MF { Light GreenEye1 }
+	Frame ES2MO { Light GreenEye1 }
+	Frame ESXMA { Light GreenEye1 }
+	Frame ESXMB { Light GreenEye2 }
+	Frame ESXMC { Light GreenEye3 }
+	Frame ESXMD { Light GreenEye4 }
+	Frame ESXME { Light GreenEye5 }
+	Frame ESXMF { Light GreenEye6 }
+	Frame ESXMG { Light GreenEye7 }
+}

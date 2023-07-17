@@ -39,6 +39,7 @@ Weapon.AmmoType "Clip"
 Inventory.PickupMessage "You got the MP40!"
 Obituary "%o was picked off by %k."
 Tag "MP-40"
+Weapon.SlotNumber 2
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -162,6 +163,7 @@ Weapon.AmmoType2 "MP40Ammo"
 Inventory.PickupMessage "You got the MP40!"
 Obituary "%o was picked off by %k MP40."
 Tag "MP40"
+Weapon.SlotNumber 2
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AMMO_CHECKBOTH
 +WEAPON.NOALERT

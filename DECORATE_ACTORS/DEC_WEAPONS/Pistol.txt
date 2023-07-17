@@ -32,6 +32,7 @@ Obituary "$OB_MPPISTOL"
 +WEAPON.NOAUTOFIRE
 Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
 Tag "$TAG_PISTOL"
+Weapon.SlotNumber 2
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -102,6 +103,7 @@ Weapon.AmmoType2 "PistolAmmo"
 Obituary "$OB_MPPISTOL"
 Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
 Tag "$TAG_PISTOL"
+Weapon.SlotNumber 2
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.NOALERT
 +WEAPON.NOAUTOFIRE

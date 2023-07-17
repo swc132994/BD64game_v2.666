@@ -37,6 +37,7 @@ Inventory.PickupMessage "$GOTCHAINSAW"
 Weapon.UpSound "null"
 +WEAPON.AXEBLOOD
 Tag "$TAG_CHAINSAW"
+Weapon.SlotNumber 1
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -119,9 +120,12 @@ Weapon.AmmoType "SawGas"
 Inventory.PickupMessage "$GOTCHAINSAW"
 Obituary "$OB_MPCHAINSAW"
 Tag "$TAG_CHAINSAW"
+Weapon.SlotNumber 1
 +WEAPON.MELEEWEAPON
 +WEAPON.AXEBLOOD
 +INVENTORY.RESTRICTABSOLUTELY
+Inventory.forbiddento "64DoomPlayer","Modern"
+VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P"
 +NOAUTOFIRE
 +NOALERT
 	States
@@ -358,6 +362,9 @@ Weapon.UpSound "null"
 +WEAPON.AXEBLOOD
 Tag "$TAG_CHAINSAW"
 +INVENTORY.RESTRICTABSOLUTELY
+Weapon.SlotNumber 1
+Inventory.forbiddento "64DoomPlayer","Tactical64DoomPlayer","Tactical64DoomPlayer_P"
+VisibleToPlayerClass "Modern"
 +NOAUTOFIRE
 +NOALERT
 	States
@@ -558,9 +565,12 @@ Weapon.AmmoType "SawGas"
 Inventory.PickupMessage "$GOTCHAINSAW"
 Obituary "$OB_MPCHAINSAW"
 Tag "$TAG_CHAINSAW"
+Weapon.SlotNumber 1
 +WEAPON.MELEEWEAPON
 +WEAPON.AXEBLOOD
 +INVENTORY.RESTRICTABSOLUTELY
+Inventory.forbiddento "64DoomPlayer","Modern"
+VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P"
 	States
 	{
 	MineThrowFlash:
@@ -647,7 +657,10 @@ Weapon.UpSound "null"
 +WEAPON.MELEEWEAPON
 +WEAPON.AXEBLOOD
 Tag "$TAG_CHAINSAW"
+Weapon.SlotNumber 1
 +INVENTORY.RESTRICTABSOLUTELY
+Inventory.forbiddento "64DoomPlayer","Tactical64DoomPlayer","Tactical64DoomPlayer_P"
+VisibleToPlayerClass "Modern"
 	States
 	{
 	MineThrowFlash:

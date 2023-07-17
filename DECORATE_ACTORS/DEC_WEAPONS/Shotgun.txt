@@ -1,4 +1,4 @@
-Actor ShotgunSpawner : CustomInventory	//replaced by new spawner
+Actor ShotgunSpawner : CustomInventory		//spawned from randomspawners
 {
 Scale 0.87
 Inventory.PickupMessage "$GOTSHOTGUN"
@@ -6,6 +6,10 @@ Inventory.PickupSound "WPICK"
 	States
 	{
 	Spawn:
+		SHOT A 2
+		TNT1 A 0 ACS_NamedExecuteAlways("DM_SpawnACS")
+		SHOT A 2
+		TNT1 A 0 A_JumpIfInventory("ISDM",1,"DMSpawn")
 		SHOT A -1
 		Stop
 	Pickup:
@@ -15,7 +19,14 @@ Inventory.PickupSound "WPICK"
 		Stop
 	Pickup2:
 		TNT1 A 0 A_GiveInventory("64ShotgunTactical",1)
-		Stop	
+		Stop
+	DMSpawn:
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",1)
+		TNT1 A 0 A_SpawnItemEx("TeleportationFog")
+		TNT1 A 0 A_SpawnItemEx("64Shotgun")
+		TNT1 A 0 A_SpawnItemEx("64ShotgunTACTICAL")
+		TNT1 A 1050
+		Loop
 	}
 }
 
@@ -29,6 +40,7 @@ Weapon.AmmoType "Shell"
 Inventory.PickupMessage "$GOTSHOTGUN"
 Obituary "$OB_MPSHOTGUN"
 Tag "$TAG_SHOTGUN"
+Weapon.SlotNumber 3
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -116,6 +128,7 @@ Weapon.AmmoType2 "ShotgunAmmo"
 Inventory.PickupMessage "$GOTSHOTGUN"
 Obituary "$OB_MPSHOTGUN"
 Tag "$TAG_SHOTGUN"
+Weapon.SlotNumber 3
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AMMO_CHECKBOTH
 +NOALERT

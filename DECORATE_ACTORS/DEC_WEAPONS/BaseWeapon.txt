@@ -1,6 +1,11 @@
 //Own Weapon Base for Tactical and Modern Classes
 //restored bob from v1
 
+Actor ISDM : Inventory	//DEATHMATCH STUFF
+{
+Inventory.MaxAmount 1
+}
+
 Actor KickHasHit : Inventory
 {
 inventory.maxamount 1
