@@ -245,7 +245,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 	StayAlpha:
 		TNT1 A 0 A_LookEx(LOF_NOSOUNDCHECK,0,192,0,360)
 		BAR1 A 6 A_SpawnItem("GreenLensFlareAltSmall",0,35)
-		BAR1 B 0 A_LookEx(LOF_NOSOUNDCHECK,0,192,0,360)
+		TNT1 A 0 A_LookEx(LOF_NOSOUNDCHECK,0,192,0,360)
 		BAR1 B 6 A_SpawnItem("GreenLensFlareAltSmall",0,35)
 		Loop
 	See:
@@ -278,7 +278,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 		TNT1 A 0 A_PlaySoundEx("polt/throw","Auto")
 		Goto Missile
 	Missile:
-		BAR1 A 0 A_Facetarget
+		TNT1 A 0 A_Facetarget
 		TNT1 A 0 A_Changeflag("NOGRAVITY",0)
 		TNT1 A 0 A_SpawnItemEx("Poltshot2",0,0,0,Random(25,45),0,Random(-6,-9))
 		TNT1 A 0 A_GiveInventory("PoltDeath",1)
@@ -351,8 +351,8 @@ Height 42
 Speed 1
 FastSpeed 1
 Damage 5
-DeathSound "world/barrelx"
 Projectile
+DeathSound "world/barrelx"
 +RANDOMIZE
 -FLOAT
 -NOGRAVITY
@@ -439,12 +439,12 @@ Mass 0x7FFFFFFF
 Speed 0
 Painchance 0
 Scale 0.7
+Monster
 Damage 3
 DeathSound "polt/break1"
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was killed by a poltergeist."
-Monster
 +NOBLOOD
 +DONTMORPH
 +DONTSQUASH
@@ -548,12 +548,12 @@ Mass 0x7FFFFFFF
 Speed 0
 Painchance 0
 Scale 0.8
+Monster
 Damage 3
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was killed by a poltergeist."
 DeathSound "polt/break2"
-Monster
 +NOBLOOD
 +DONTMORPH
 +DONTSQUASH
@@ -604,9 +604,9 @@ Height 14
 Speed 1
 FastSpeed 1
 Damage 3
+Projectile
 Scale 0.8
 DeathSound "SlimeBall/Splat"
-Projectile
 +RANDOMIZE
 -FLOAT
 -NOGRAVITY
@@ -663,23 +663,23 @@ Obituary "%o was killed by a poltergeist."
 		FSKU B 5 Bright
 		7R0K L 2 Bright
 		7R0K K 2 Bright
-		7R0K J 2 Bright
-		7R0K I 2 Bright
-		7R0K I 3 Bright A_ChangeFlag("FLOATBOB",0)
-		7R0K I 3 Bright ThrustThingZ(0,Random(20,24),0,0)
-		7R0K I 3 Bright ThrustThingZ(0,Random(20,24),0,0)
-		7R0K I 3 Bright ThrustThingZ(0,Random(-7,-9),0,0)
-		7R0K I 3 Bright ThrustThingZ(0,Random(-7,-9),0,0)
-		7R0K I 3 Bright ThrustThingZ(0,Random(9,7),0,0)
-		7R0K I 3 Bright ThrustThingZ(0,Random(9,7),0,0)
-		7R0K I 3 Bright ThrustThingZ(0,Random(-7,-9),0,0)
-		7R0K I 3 Bright ThrustThingZ(0,Random(-7,-9),0,0)
-		7R0K I 3 Bright ThrustThingZ(0,Random(9,7),0,0)
-		7R0K I 3 Bright ThrustThingZ(0,Random(9,7),0,0)
-		7R0K I 3 Bright ThrustThingZ(0,Random(-7,-9),0,0)
-		7R0K I 3 Bright ThrustThingZ(0,Random(-7,-9),0,0)
-		7R0K I 3 Bright ThrustThingZ(0,Random(9,7),0,0)
-		7R0K I 3 Bright ThrustThingZ(0,Random(9,7),0,0)
+		7R0K J 2
+		7R0K I 2
+		7R0K I 3 A_ChangeFlag("FLOATBOB",0)
+		7R0K I 3 ThrustThingZ(0,Random(20,24),0,0)
+		7R0K I 3 ThrustThingZ(0,Random(20,24),0,0)
+		7R0K I 3 ThrustThingZ(0,Random(-7,-9),0,0)
+		7R0K I 3 ThrustThingZ(0,Random(-7,-9),0,0)
+		7R0K I 3 ThrustThingZ(0,Random(9,7),0,0)
+		7R0K I 3 ThrustThingZ(0,Random(9,7),0,0)
+		7R0K I 3 ThrustThingZ(0,Random(-7,-9),0,0)
+		7R0K I 3 ThrustThingZ(0,Random(-7,-9),0,0)
+		7R0K I 3 ThrustThingZ(0,Random(9,7),0,0)
+		7R0K I 3 ThrustThingZ(0,Random(9,7),0,0)
+		7R0K I 3 ThrustThingZ(0,Random(-7,-9),0,0)
+		7R0K I 3 ThrustThingZ(0,Random(-7,-9),0,0)
+		7R0K I 3 ThrustThingZ(0,Random(9,7),0,0)
+		7R0K I 3 ThrustThingZ(0,Random(9,7),0,0)
 		TNT1 A 0 ThrustThingZ(0,0,0,0)
 		TNT1 A 0 A_PlaySoundEx("polt/throw","Auto")
 		Goto Missile
@@ -712,9 +712,9 @@ Height 26
 Speed 1
 FastSpeed 1
 Damage 8
+Projectile
 DeathSound "polt/break2"
 SCALE 0.8
-Projectile
 +RANDOMIZE
 -FLOAT
 -NOGRAVITY
@@ -743,7 +743,7 @@ Actor 64VenomEye1 : LostSoul
 SCALE 0.8
 Alpha 0.99
 RenderStyle Normal
-obituary "%o stared into an Evil Eye for too long..."
+Obituary "%o stared into an Evil Eye for too long..."
 Damage 0
 PainSound "EvilEye/pain"
 DeathSound "EvilEye/death"
@@ -754,12 +754,11 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 -DONTFALL
 +LOOKALLAROUND
-+FLOATBOB
 -COUNTKILL
 	States
 	{
 	Spawn:
-		ESYM AB 10 bright A_Look
+		ESYM AB 10 bright A_LookEx(LOF_NOSOUNDCHECK,0,192,0,256)
 		Loop
 	See:
 		ESYM ABCB 6 bright A_Chase
@@ -778,11 +777,13 @@ DamageFactor "CauseObjectsToSplash",0.0
 	Death:
 		ESYM F 4 bright A_Scream
 		ESYM O 4 bright A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
+		TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumn")
 		TNT1 AAA 0 A_CustomMissile("ExplosionParticleGreenHeavySmall",0,0,random(0,360),2,random(10,70))
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleGreenHeavySmall",0,0,random(0,360),2,random(20,50))
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleGreenVeryFast",0,0,random(0,360),2,random(20,40))
 		TNT1 AAAA 0 A_CustomMissile("ExplosionParticleGreen",0,0,random(0,360),2,random(0,360))
-		TNT1 A 0 A_CustomMissile("XDeathCacodemonGIb3",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("XDeathCacodemonGib3",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("PoisonShotCloud1",0,0,90)
 		TNT1 A 0 A_CustomMissile("PoisonShotCloud1",0,0,-90)
 		TNT1 A 0 A_CustomMissile("PoisonShotCloud1",0,0,180)
@@ -798,7 +799,7 @@ Actor 64VenomEye2 : 64VenomEye1
 	States
 	{
 	Spawn:
-		ES2M AB 10 bright A_Look
+		ES2M AB 10 bright A_LookEx(LOF_NOSOUNDCHECK,0,192,0,256)
 		Loop
 	See:
 		ES2M ABCB 6 bright A_Chase
@@ -817,6 +818,8 @@ Actor 64VenomEye2 : 64VenomEye1
 	Death:
 		ES2M F 4 bright A_Scream
 		ES2M O 4 bright A_NoBlocking
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
+		TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumn")
 		TNT1 AAA 0 A_CustomMissile("ExplosionParticleGreenHeavySmall",0,0,random(0,360),2,random(10,70))
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleGreenHeavySmall",0,0,random(0,360),2,random(20,50))
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleGreenVeryFast",0,0,random(0,360),2,random(20,40))
@@ -860,21 +863,22 @@ Speed 16
 Mass 2000
 Damage(3)
 Obituary "%o stared into an Evil Eye for too long..."
-PoisonDamage 30
-RenderStyle Translucent
-Alpha 0.67
 PROJECTILE
 -NOGRAVITY
 +RIPPER
 +BLOODLESSIMPACT
 +NODAMAGETHRUST
 +NOTARGET
+PoisonDamage 30
+RenderStyle Translucent
+Alpha 0.67
 	States
 	{
 	Spawn:
 		PSNE A 1 Bright
 		Loop
 	Death:
+		TNT1 AAA 0 A_SpawnItem("PoisonGasSmoke")
 		PSNE A 3 Bright
 		PSNE B 4 Bright
 		PSNE C 1 Bright
@@ -914,6 +918,7 @@ PROJECTILE
 		PSNE A 1 Bright
 		Loop
 	Death:
+		TNT1 AA 0 A_SpawnItem("PoisonGasSmoke")
 		PSNE A 3 Bright
 		PSNE B 4 Bright
 		PSNE C 1 Bright
@@ -953,12 +958,19 @@ PROJECTILE
 		PSNE A 1 Bright
 		Loop
 	Death:
+		TNT1 A 0 A_SpawnItem("PoisonGasSmoke")
 		PSNE A 3 Bright
 		PSNE B 4 Bright
 		PSNE C 5 Bright
 		PSNE DEFGCBA 6 Bright
 		Stop
 	}
+}
+
+Actor PoisonGasSmoke : ExplosionSmoke
+{
+renderstyle stencil
+stencilcolor DarkGreen
 }
 
 ACTOR 64PossessedTree
@@ -1039,8 +1051,7 @@ MONSTER
 		3TRE E 5 A_KillChildren
 		3TRE F 5
 		3TRE G 103
-		TNT1 A 0 A_KillChildren
-		3TRE G -1
+		3TRE G -1 A_KillChildren
 		Stop
 	}
 }
@@ -1157,7 +1168,7 @@ MONSTER
 		R0OT N 5
 		R0OT O 5 A_Scream
 		TNT1 AAA 0 A_CustomMissile("Brutal_BloodGreen",35,0,random(0,360),2,random(0,90))
-		R0OT P 5 A_Fall
+		R0OT P 5 A_NoBlocking
 		R0OT QQRR 5
 		R0OT AAAAAAAAAA 2 A_FadeOut(0.1)
 		stop
@@ -1178,7 +1189,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		DIRT A 0 A_SetGravity(0.5)
+		DIRT A 0 NoDelay A_SetGravity(0.5)
 		TNT1 A 0 ThrustThingZ(0,15,0,1)
 		goto See
 	See:
@@ -1204,7 +1215,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		DIRT D 0 A_SetGravity(0.5)
+		DIRT A 0 NoDelay A_SetGravity(0.5)
 		TNT1 A 0 ThrustThingZ(0,15,0,1)
 		goto See
 	See:
@@ -1230,7 +1241,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_SetGravity(0.5)
+		DIRT A 0 NoDelay A_SetGravity(0.5)
 		TNT1 A 0 ThrustThingZ(0,15,0,1)
 		goto See
 	See:
@@ -1251,6 +1262,7 @@ height 56
 mass 0x7fffffff
 speed 0
 painchance 75
+Scale 0.7
 seesound "hanger/sight"
 painsound "hanger/pain"
 deathsound "hanger/death"
@@ -1270,7 +1282,7 @@ MONSTER
 	states
 	{
 	Spawn:
-		HANG B 10 A_Look
+		HANG B 10 A_LookEx(LOF_NOSOUNDCHECK,0,256,0,360)
 		loop
 	See:
 		HANG B 1 A_FaceTarget

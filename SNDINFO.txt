@@ -818,7 +818,7 @@ floor/elec1	dselec1
 $limit floor/elec1 20
 
 //Anomaly Events
-$random polt/see		{ polt/whisp1 polt/whisp2 polt/helpme polt/please polt/godplease polt/followme polt/overhere }
+$random polt/see		{polt/whisp1 polt/whisp2 polt/helpme polt/please polt/godplease polt/followme polt/overhere}
 polt/whisp1			PLTW1
 polt/whisp2			PLTW2
 polt/helpme			D3HELPM
@@ -827,7 +827,7 @@ polt/godplease		D3GODPLS
 polt/followme		D3FOLLOW
 polt/overhere		D3OVERHERE
 
-$random polt/laugh		{ polt/laugh1 polt/laugh2 polt/creep1 polt/creep2 polt/creep3 polt/creep4 polt/creep5 polt/creep6 polt/creep7 polt/creep8 polt/voices1 polt/voices2 polt/hellbaby }
+$random polt/laugh		{polt/laugh1 polt/laugh2 polt/creep1 polt/creep2 polt/creep3 polt/creep4 polt/creep5 polt/creep6 polt/creep7 polt/creep8 polt/voices1 polt/voices2 polt/hellbaby}
 polt/laugh1			PLTL1
 polt/laugh2			PLTL2
 polt/creep1			D3CREEP1
@@ -847,19 +847,19 @@ polt/break2			WALLBRK
 polt/throw			PLTTH
 polt/light			PLTLGT
 
-EvilEye/Seeing 		DEEPSEE
+EvilEye/Seeing		DEEPSEE
 EvilEye/Pain		BSKULPIN
-EvilEye/Death	    BSKULEXP
+EvilEye/Death		BSKULEXP
 EvilEye/Attack		DEEPFHIT
 
 UNMNROAM UNMNROAM
 UNMNPAIN UNMNPAIN
 UNMNDYIN UNMNDYIN
 
-Hanger/Gib	DSQ2GIB
+Hanger/Gib		DSQ2GIB
 Hanger/Sight	GK_SGHT1
 Hanger/Active	GK_IDLE
-Hanger/Pain	GK_PAIN1
+Hanger/Pain		GK_PAIN1
 Hanger/Death	GK_DETH1
 
 statue/possessed DSSQRSIT

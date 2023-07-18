@@ -2411,14 +2411,14 @@ pulselight POLTCANDLE
 
 object 64Poltergeist1
 {
-	frame PLTGB { light POLTCANDLE }
-	frame PLTGC { light POLTCANDLE }
+	frame PLTGB {light POLTCANDLE}
+	frame PLTGC {light POLTCANDLE}
 }
 
 object Poltshot1
 {
-	frame PLTGB { light POLTCANDLE }
-	frame PLTGC { light POLTCANDLE }
+	frame PLTGB {light POLTCANDLE}
+	frame PLTGC {light POLTCANDLE}
 }
 
 PulseLight GreenEye1
@@ -2474,32 +2474,32 @@ PointLight GreenEye7
 
 Object 64VenomEye1
 {
-	Frame ESYMA { Light GreenEye1 }
-	Frame ESYMB { Light GreenEye1 }
-	Frame ESYMC { Light GreenEye1 }
-	Frame ESYMF { Light GreenEye1 }
-	Frame ESYMO { Light GreenEye1 }
-	Frame ESXMA { Light GreenEye1 }
-	Frame ESXMB { Light GreenEye2 }
-	Frame ESXMC { Light GreenEye3 }
-	Frame ESXMD { Light GreenEye4 }
-	Frame ESXME { Light GreenEye5 }
-	Frame ESXMF { Light GreenEye6 }
-	Frame ESXMG { Light GreenEye7 }
+	Frame ESYMA {Light GreenEye1}
+	Frame ESYMB {Light GreenEye1}
+	Frame ESYMC {Light GreenEye1}
+	Frame ESYMF {Light GreenEye1}
+	Frame ESYMO {Light GreenEye1}
+	Frame ESXMA {Light GreenEye1}
+	Frame ESXMB {Light GreenEye2}
+	Frame ESXMC {Light GreenEye3}
+	Frame ESXMD {Light GreenEye4}
+	Frame ESXME {Light GreenEye5}
+	Frame ESXMF {Light GreenEye6}
+	Frame ESXMG {Light GreenEye7}
 }
 
 Object 64VenomEye2
 {
-	Frame ES2MA { Light GreenEye1 }
-	Frame ES2MB { Light GreenEye1 }
-	Frame ES2MC { Light GreenEye1 }
-	Frame ES2MF { Light GreenEye1 }
-	Frame ES2MO { Light GreenEye1 }
-	Frame ESXMA { Light GreenEye1 }
-	Frame ESXMB { Light GreenEye2 }
-	Frame ESXMC { Light GreenEye3 }
-	Frame ESXMD { Light GreenEye4 }
-	Frame ESXME { Light GreenEye5 }
-	Frame ESXMF { Light GreenEye6 }
-	Frame ESXMG { Light GreenEye7 }
+	Frame ES2MA {Light GreenEye1}
+	Frame ES2MB {Light GreenEye1}
+	Frame ES2MC {Light GreenEye1}
+	Frame ES2MF {Light GreenEye1}
+	Frame ES2MO {Light GreenEye1}
+	Frame ESXMA {Light GreenEye1}
+	Frame ESXMB {Light GreenEye2}
+	Frame ESXMC {Light GreenEye3}
+	Frame ESXMD {Light GreenEye4}
+	Frame ESXME {Light GreenEye5}
+	Frame ESXMF {Light GreenEye6}
+	Frame ESXMG {Light GreenEye7}
 }
