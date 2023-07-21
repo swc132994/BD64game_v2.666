@@ -224,6 +224,11 @@ Actor FlashLightPickup : Inventory
 Inventory.MaxAmount 1
 }
 
+Actor BothIsPickedUp : Inventory
+{
+Inventory.MaxAmount 1
+}
+
 Actor 64Backpack : CustomInventory Replaces Backpack
 {
 Game Doom
@@ -315,11 +320,23 @@ Inventory.PickupMessage "Picked up a backpack full of ammo with pistol silencer 
 		TNT1 A 0 A_Jump(192,2)//75% or 25% chance to collect 2 mines.
 		TNT1 A 0 A_GiveInventory("64ProximityMine",1)
 		TNT1 A 0 A_GiveInventory("64ProximityMine",1)
-		TNT1 A 0 A_JumpIfInventory("PistolSilencerPickup",1,"AlreadyPickup")
-		TNT1 A 0 A_JumpIfInventory("FlashLightPickup",1,"AlreadyPickup")
+		TNT1 A 0 A_JumpIfInventory("BothIsPickedUp",1,"AlreadyPickup")
+		TNT1 A 0 A_JumpIfInventory("PistolSilencerPickup",1,"PickupFlashlightOnly")
+		TNT1 A 0 A_JumpIfInventory("FlashLightPickup",1,"PickupPistolSilencerOnly")
 		TNT1 A 0 A_GiveInventory("PistolSilencerPickup",1)
 		TNT1 A 0 A_GiveInventory("FlashLightPickup",1)
+		TNT1 A 0 A_GiveInventory("BothIsPickedUp",1)
 		Stop
+	PickupFlashlightOnly:
+		TNT1 A 0 A_JumpIfInventory("BothIsPickedUp",1,"AlreadyPickup")
+		TNT1 A 0 A_GiveInventory("FlashLightPickup",1)
+		TNT1 A 0 A_GiveInventory("BothIsPickedUp",1)
+		Stop
+	PickupPistolSilencerOnly:
+		TNT1 A 0 A_JumpIfInventory("BothIsPickedUp",1,"AlreadyPickup")
+		TNT1 A 0 A_GiveInventory("PistolSilencerPickup",1)
+		TNT1 A 0 A_GiveInventory("BothIsPickedUp",1)
+		Stop		
 	AlreadyPickup:
 		TNT1 A 1
 		Stop
