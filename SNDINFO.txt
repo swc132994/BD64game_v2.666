@@ -590,6 +590,12 @@ alphasoul/pain		Z0ULPAIN
 alphasoul/melee		Z0ULATK
 alphasoul/death		Z0ULDIE
 
+//Butcher
+sawcubus/sight		SWCBSIT
+sawcubus/pain		SWCBPAIN
+sawcubus/death		SWCBDEAD
+sawcubus/active		SWCBACT
+
 //---------------------------
 //**********GORE*************
 //---------------------------

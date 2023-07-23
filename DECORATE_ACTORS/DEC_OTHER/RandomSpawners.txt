@@ -262,7 +262,6 @@ Scale 0.7
 	Spawn:
 		PINV A 0 NoDelay A_JumpIf(CallACS("WpnPowerRandom")==0,"SpawnInvulnerabilitySphere")
 		TNT1 A 0 A_JumpIf(CallACS("WpnPowerRandom")==1,"SpawnDemonKey")
-		TNT1 A 0 A_Jump(64,"SpawnFlashlight")
 		TNT1 A 0 A_Jump(39,"SpawnDemonKey") //(15%)
 	SpawnInvulnerabilitySphere:
 		TNT1 A 1 A_SpawnItemEx("64InvulnerabilitySphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -270,6 +269,20 @@ Scale 0.7
 	SpawnDemonKey:
 		TNT1 A 0 A_SpawnItemEx("64InvulnerabilitySphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		TNT1 A 1 A_SpawnItem("WpnPower5")
+		Stop
+	}
+}
+
+Actor InfraredReplacer Replaces Infrared
+{
+Scale 0.82
+	States
+	{
+	Spawn:
+		PVIS A 0 NoDelay A_JumpIf(CallACS("D64WeaponsOnlyReplacer")==1,"SpawnInfrared")
+		TNT1 A 0 A_Jump(64,"SpawnFlashlight")
+	SpawnInfrared:
+		TNT1 A 1 A_SpawnItemEx("64Infrared",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	SpawnFlashlight:
 		TNT1 A 0 A_SpawnItemEx("FlashlightItem",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -984,7 +997,7 @@ MONSTER
 	}
 }
 
-Actor D64AcidDemonRandom Replaces Demon
+Actor D64AcidButcherDemonRandom Replaces Demon
 {
 Scale 0.9
 MONSTER
@@ -996,6 +1009,7 @@ MONSTER
 		SARG A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnPinky")	//if D64 monsters only enabled spawn pinky demon
 		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==0,"SpawnPinky")
 		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==1,"SpawnAcidDemon")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==2,"SpawnButcher")
 		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==5,"P05")
 		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==10,"P10")
 		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==15,"P15")
@@ -1006,34 +1020,37 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==50,"P50")
 		Goto SpawnPinky
 	P05:
-		TNT1 A 0 A_Jump(13,"SpawnAcidDemon")//(5%)
+		TNT1 A 0 A_Jump(13,"SpawnAcidDemon","SpawnButcher")//(5%)
 		Goto SpawnPinky
 	P10:
-		TNT1 A 0 A_Jump(26,"SpawnAcidDemon")//(10%)
+		TNT1 A 0 A_Jump(26,"SpawnAcidDemon","SpawnButcher")//(10%)
 		Goto SpawnPinky
 	P15:
-		TNT1 A 0 A_Jump(39,"SpawnAcidDemon")//(15%)
+		TNT1 A 0 A_Jump(39,"SpawnAcidDemon","SpawnButcher")//(15%)
 		Goto SpawnPinky
 	P20:
-		TNT1 A 0 A_Jump(51,"SpawnAcidDemon")//(20%)
+		TNT1 A 0 A_Jump(51,"SpawnAcidDemon","SpawnButcher")//(20%)
 		Goto SpawnPinky
 	P25:
-		TNT1 A 0 A_Jump(64,"SpawnAcidDemon")//(25%)
+		TNT1 A 0 A_Jump(64,"SpawnAcidDemon","SpawnButcher")//(25%)
 		Goto SpawnPinky
 	P30:
-		TNT1 A 0 A_Jump(77,"SpawnAcidDemon")//(30%)
+		TNT1 A 0 A_Jump(77,"SpawnAcidDemon","SpawnButcher")//(30%)
 		Goto SpawnPinky
 	P40:
-		TNT1 A 0 A_Jump(102,"SpawnAcidDemon")//(40%)
+		TNT1 A 0 A_Jump(102,"SpawnAcidDemon","SpawnButcher")//(40%)
 		Goto SpawnPinky
 	P50:
-		TNT1 A 0 A_Jump(128,"SpawnAcidDemon")//(50%)
+		TNT1 A 0 A_Jump(128,"SpawnAcidDemon","SpawnButcher")//(50%)
 		Goto SpawnPinky
 	SpawnPinky:
 		TNT1 A 1 A_SpawnItemEx("64Demon",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	SpawnAcidDemon:
 		TNT1 A 1 A_SpawnItemEx("64AcidDemon",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnButcher:
+		TNT1 A 1 A_SpawnItemEx("64Butcher",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	}
 }

@@ -61,7 +61,6 @@ ERADICATOR			19119
 BELPHEGOR 			11053
 64BFGGUY			19122
 WAFFEN-SS			TO REPLACE WOLFENSTEINSS
-
 NIGHTCRAWLER		19105	181
 ACID DEMON			19106	158
 STALKER				19107	183
@@ -73,6 +72,7 @@ FLESH WIZARD		19127
 Husk Zombie			19128
 Forgotten One		19129
 Thing				19130
+Butcher				19131
 
 MP40 SPAWNER		19124
 SMG SPAWNER			19121
@@ -138,6 +138,11 @@ Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 		Sound Credits: Midway, HorrorMovieRei
 		Code Credits: swc132994, Sgt_Mark_IV
 		}
+		
+64Butcher
+	Code: Bouncy, Graf Zahl, Ganbare-Lucifer, heavily edited for BD64 by Craneo
+	Sounds: Ganbare-Lucifer
+	Sprites: id Software, Captain J, aeea7835, Eriance, ItsNatureToDie, Midway Entertainment, Kinsie, D64 edit by Craneo
 
 //Anomaly events
 Poltergeist original credits:

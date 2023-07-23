@@ -536,7 +536,7 @@ Inventory.Amount 2
 	}
 }
 
-ACTOR 64Infrared : Infrared Replaces Infrared
+ACTOR 64Infrared : Infrared //Replaces Infrared		//Replaced by optional spawner
 {
 Scale 0.82
 	States
