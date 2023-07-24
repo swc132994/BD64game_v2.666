@@ -360,9 +360,9 @@ Weapon.SlotNumber 3
 		SGAA E 1 A_FireCustomMissile("KickAttack",0,0,0,-7)
 		TNT1 A 0 A_RadiusThrust(4500,70,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
 		SGAA EFGH 1
-		SGAA IJJJJJJI 1	
+		SGAA IJJJJJJI 1
 		SGAA HGFE 1
-		TNT1 A 0 A_Refire		
+		TNT1 A 0 A_Refire
 		SGAA KLMN 1
 		SGAA CBA 1 A_WeaponReady(WRF_NOSECONDARY)
 		Goto Ready
@@ -371,13 +371,13 @@ Weapon.SlotNumber 3
 		TNT1 A 0 A_JumpIfInventory("Stamina",88,"Tired")
 		TNT1 A 0 A_GiveInventory("Stamina",12)
 		TNT1 A 0 A_playsound("fstatk")
-		SGAA N 1 A_FireCustomMissile("SuperKickAttack",0,0,0,-7)
+		SGAA E 1 A_FireCustomMissile("SuperKickAttack",0,0,0,-7)
 		TNT1 A 0 A_RadiusThrust(9000,70,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
 		SGAA EFGH 1
-		SGAA IJJJJI 1	
+		SGAA IJJJJI 1
 		SGAA HGFE 1
-		TNT1 A 0 A_ReFire("AltHold2")		
-		SGAA HGFE 1		
+		TNT1 A 0 A_ReFire("AltHold2")
+		SGAA HGFE 1
 		SGAA DC 1 A_WeaponReady(WRF_NOSECONDARY)
 		SGAA BA 1 A_WeaponReady(WRF_NOSECONDARY)
 		Goto Ready

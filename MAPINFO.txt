@@ -141,6 +141,12 @@ Intermission Doom2Cast
 	}
 	Cast
 	{
+		CastClass = "64ButcherCast"
+		CastName = "Butcher"
+		AttackSound = "Melee",1,"weapons/sawhit"
+	}
+	Cast
+	{
 		CastClass = "D64SpectreCast"
 		CastName = "Spectre"
 		AttackSound = "Melee",1,"demon/melee"

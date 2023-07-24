@@ -1,6 +1,7 @@
 ACTOR DetectFloorBullet
 {
 Mass 1
+Gravity 1
 scale 0.4
 radius 12
 height 1
@@ -8,21 +9,18 @@ Alpha 0.9
 Renderstyle Translucent
 +FLOORCLIP
 +DONTSPLASH
-+MISSILE
 +CLIENTSIDEONLY
 +NOTELEPORT
 +NOBLOCKMAP
 +FORCEXYBILLBOARD
 +NODAMAGETHRUST
 +MOVEWITHSECTOR
-+DOOMBOUNCE
-BounceFactor 0.01
 	States
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(CallACS("Flat_Decal_Remover")==1,"Off")
-		TNT1 A 0 A_JumpIf(CallACS("FloorCheck")==FALSE,"Off")	//replaces A_CheckFloor
-		TNT1 A 0 ThrustThingZ(0,10,1,0)
+		TNT1 AA 1 A_CheckFloor("Death")
+		Goto Off
 	Death:
 		XXX1 A 2000
 		XXX1 A 1 A_FadeOut(0.01)
@@ -156,7 +154,7 @@ StencilColor "Black"
 	states
 	{
 	Death:
-		XXX1 A 350	//shorter duration
+		XXX1 A 175	//shorter duration
 		XXX1 A 1 A_FadeOut(0.01)
 		Wait
 	}

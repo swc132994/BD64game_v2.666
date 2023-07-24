@@ -297,6 +297,29 @@ YScale 0.9
 	}
 }
 
+ACTOR 64ButcherCast : 64Butcher
+{
+XScale 0.9
+YScale 0.9
+	States
+	{
+	See:
+		SWCB ABCD 4 A_Chase
+		Loop
+	Melee:
+		SWCB E 8 A_FaceTarget
+		SWCB E 8 A_MeleeAttack
+		SWCB E 8 A_FaceTarget
+		Goto See
+	Death:
+		SWCB G 5
+		SWCB H 5 A_Scream
+		SWCB IJ 5
+		SWCB K -1
+		Stop
+	}
+}
+
 actor D64SpectreCast : 64Spectre
 {
 XScale 1.0

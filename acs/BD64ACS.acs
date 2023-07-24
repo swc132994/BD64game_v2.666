@@ -406,14 +406,6 @@ script "AlphaPickupACS" (void)
 SetResultValue(GetCVar("AlphaPickupCvar"));
 }
 
-script "FloorCheck" (Void)
-{
-	if(GetActorZ(0) == GetActorFloorZ(0))
-		SetResultValue(TRUE);
-	else
-		SetResultValue(FALSE);
-}
-
 Script "SevereredLimbDeathACS" (void)
 {
 SetResultValue(GetCVar("SevereredLimbDeathCvar"));
