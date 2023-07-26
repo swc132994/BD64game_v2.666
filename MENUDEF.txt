@@ -100,7 +100,7 @@ OptionMenu "BrutalDoom64OptionsPerformance"
 	Option "Set Normal size HUD to Doom style =","VanillaStatusBarCvar","YesorNo"
 	Option "Set Fullscreen size HUD to Doom style =","ArragendHUDCvar","YesorNo"
 	Option "Screen Effects =", "bd64_ScreenFX", "ScreenTypes"
-		StaticText "Enables Screen Effects on HUD, such as Blood Splashing and Bullet Holes."
+		StaticText "Enable Screen Effects on HUD, such as Blood Splashing and Bullet Holes."
 		StaticText " "
 	Option "Blood Trail Splash =", "bd64_BloodTrail", "YesOrNoFalse"
 		StaticText "Enables Blood Splashing when Enemies are bleeding out."
@@ -112,17 +112,17 @@ OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner"
 {
 	Title "Item/Weapon Spawner Options"
 		StaticText " "
-		StaticText "Options to choose replacements of weapons and powerups",1
+		StaticText "Options to choose replacements of weapons and power-ups",1
 		StaticText "or set to appear randomly",1
 		StaticText " "
-	Option "Randomly replace Armor and Health Bonuses with Hell Potions =","BonusRandomCvar","BonusRandomValue"
+	Option "Randomly replace Armour/Health Bonuses with Hell Potions =","BonusRandomCvar","BonusRandomValue"
 	Option "Randomly replace Power-ups with Unmaker Power-ups =","WpnPower_Spawner_Cvar","WpnPower_Spawner_Value"
-	Option "Randomly replace Plasma Rifle with Gauss Cannon =","GaussCannon_Spawner_Cvar","GaussCannon_Spawner_Value"
-	Option "Randomly replace BFG9000 with Unmaker/Lasergun =","BFG_Spawner_Cvar","BFG_Spawner_Value"
-	Option "Randomly replace Chaingun with SMG or Rifle =","Chaingun_Spawner_Cvar","Chaingun_Spawner_Value"
+	Option "Plasma Rifle, Gauss Cannon or random =","GaussCannon_Spawner_Cvar","GaussCannon_Spawner_Value"
+	Option "BFG9000, Unmaker, Lasergun or random =","BFG_Spawner_Cvar","BFG_Spawner_Value"
+	Option "Chaingun, Sub Machingun, Rifle or random =","Chaingun_Spawner_Cvar","Chaingun_Spawner_Value"
 		StaticText " "
 		StaticText "Option to replace shotguns with super shotguns",1
-		StaticText "(setting to shotgun only will cause SSG Zombies to drop shells instead of SSG)",1
+		StaticText "('shotgun only' will set SSG Zombies to drop shells instead of SSG)",1
 		StaticText " "
 	Option "SSG in Doom 1 =","SSGinDoom1_Cvar","SSGinDoom1Menu"
 }
@@ -131,26 +131,26 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner"
 {
 	Title "Monster Spawner Options"
 		StaticText " "
-	StaticText "These options allow you to set monster replacements for nightmare and",1
-		StaticText "outcast monsters, or set to appear randomly",1
+	StaticText "These options allow setting the monster replacements to nightmare,",1
+		StaticText "outcast and extra monsters, or set to appear randomly",1
 		StaticText "(Enabling the D64 monsters only option will override these settings)",1
 		StaticText " "
-	Option "Randomly replace Shotgun Zombies with SSG Zombies =","SSGZombieRandom_Cvar","SSGZombieRandom_Value"
-	Option "Randomly replace ZombieMen with Zombie Marines =","ZMarineRandom_Cvar","ZMarineRandom_Value"
-	Option "Randomly replace Chaingun Zombies with BFG Zombies =","ZombieBFGRandom_Cvar","BFGZombie_Value"
-	Option "Randomly replace Imps with Nightmare Imps =","NImp_Spawner_Cvar","NImp_Spawner_Value"
-	Option "Randomly replace Spectres with Nightmare Spectres or Wraiths =","NSpectre_Spawner_Cvar","NSpectre_Spawner_Value"
-	Option "Randomly replace Cacodemons with Nightmare Cacodemons =","NCaco_Spawner_Cvar","NCaco_Spawner_Value"
-	Option "Randomly replace Demons with Acid Demons or Butchers =","AcidDemonRandom_Cvar","AcidDemon_Spawner_Value"
-	Option "Randomly replace Lost Souls with Stalkers or Forgotten Ones =","StalkerRandom_Cvar","Stalker_Spawner_Value"
-	Option "Randomly replace Arachnotrons with Nightcrawlers =","NightCrawlerRandom_Cvar","NightCrawler_Spawner_Value"
-	Option "Randomly replace HellKnights with Knightmares =","KnightmareRandomCvar","Knightmare_Spawner_Value"
-	Option "Randomly replace Barons with Hellhounds or Belphegors =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"
-	Option "Randomly replace Mancubi with Bruisers =","BruiserRandom_Cvar","Bruiser_Spawner_Value"
-	Option "Randomly replace Pain Elementals with Nightmare Elementals =","NightElementalRandomCvar","NightElemental_Spawner_Value"
-	Option "Randomly replace Archviles with Flesh Wizards =","FleshWizardRandomCvar","FleshWizardRandom_Value"
-	Option "Randomly replace Cyberdemons with Annihilators =","Annihilator_Spawner_Cvar","Annihilator_Spawner_Value"
-	Option "Randomly replace Masterminds with Motherdemons or Eradicators =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"
+	Option "Shotgun Zombie, SSG Zombie or random =","SSGZombieRandom_Cvar","SSGZombieRandom_Value"
+	Option "Pistol Zombie, Marine Zombie or random =","ZMarineRandom_Cvar","ZMarineRandom_Value"
+	Option "Chaingun Zombie, BFG Zombie or random =","ZombieBFGRandom_Cvar","BFGZombie_Value"
+	Option "Imp, Nightmare Imp or random =","NImp_Spawner_Cvar","NImp_Spawner_Value"
+	Option "Pinky Demon, Acid Demon, Butcher or random =","AcidDemonRandom_Cvar","AcidDemon_Spawner_Value"
+	Option "Spectre, Nightmare Spectre, Wraith or random =","NSpectre_Spawner_Cvar","NSpectre_Spawner_Value"
+	Option "Cacodemon, Nightmare Cacodemon or random =","NCaco_Spawner_Cvar","NCaco_Spawner_Value"
+	Option "Lost Soul, Stalker, Forgotten One or random =","StalkerRandom_Cvar","Stalker_Spawner_Value"
+	Option "Arachnotron, Nightcrawler or random =","NightCrawlerRandom_Cvar","NightCrawler_Spawner_Value"
+	Option "HellKnight, Knightmare or random =","KnightmareRandomCvar","Knightmare_Spawner_Value"
+	Option "Baron, Hellhound, Belphegor or random =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"
+	Option "Mancubus, Bruiser or random =","BruiserRandom_Cvar","Bruiser_Spawner_Value"
+	Option "Pain Elemental, Nightmare Elemental or random =","NightElementalRandomCvar","NightElemental_Spawner_Value"
+	Option "Archvile, Flesh Wizard or random =","FleshWizardRandomCvar","FleshWizardRandom_Value"
+	Option "Cyberdemon, Annihilator or random =","Annihilator_Spawner_Cvar","Annihilator_Spawner_Value"
+	Option "Mastermind, Eradicator, Motherdemon or random =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"
 }
 
 OptionMenu "BrutalDoom64OptionsOtherMonster"
@@ -167,21 +167,21 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 	Option "Select between Cerberus, Alternate and GEC Hellhound =","HoundChooserCvar","HoundChooser"
 	Option "Revert back to Tchernobog Revenant =","RevenantChooserCvar","YesOrNo"
 		StaticText " "
-		StaticText "Option to replace all Zombie Marines map spawns with Waffen-SS",1
+		StaticText "(Vanilla Doom Maps ONLY) Option to replace all Marine Zombies with Waffen-SS",1
 		StaticText " "
-	Option "Select between Zombie Marines or Waffen-SS =","ZombieMarineNaziCvar","ZombieMarineNazi"
+	Option "Select between Marine Zombie or Waffen-SS =","ZombieMarineNaziCvar","ZombieMarineNazi"
 		StaticText " "
-		StaticText "Option to allow pain elementals to randomly spit stalkers",1
-		StaticText "(Enabling the D64 monsters only option will override these setting)",1
+		StaticText "Option to allow elementals to randomly spit stalkers or forgotten ones",1
+		StaticText "(Enabling the D64 monsters only option will override this setting)",1
 		StaticText " "
-	Option "Allow Pain Elemental Stalker and Forgotten One attacks =","PainStalkerRandom_Cvar","YesOrNo"
+	Option "Enable Pain Elemental Stalker and Forgotten One attacks =","PainStalkerRandom_Cvar","YesOrNo"
 		StaticText " "
-		StaticText "Allow limb loss death states",1
+		StaticText "Enable monster limb loss death states",1
 		StaticText " "
-	Option "Allow Severed Limb Deaths =","SevereredLimbDeathCvar","YesOrNo"
+	Option "Enable Severed Limb Deaths =","SevereredLimbDeathCvar","YesOrNo"
 		StaticText " "
-	Option "Tweak The Horde's Husk multiplier =","TheHorde_Multiplier_Cvar","TheHorde_Multiplier_Value"
-	Option "Allow The Thing spawning from dead Marines =","ThingRandomCvar","YesOrNo"
+	Option "Tweak Husk Zombie horde multiplier =","TheHorde_Multiplier_Cvar","TheHorde_Multiplier_Value"
+	Option "Enable 'The Thing' to spawn from dead Marines =","ThingRandomCvar","YesOrNo"
 }
 
 OptionMenu "BD64MapOptions"
@@ -205,8 +205,8 @@ OptionMenu "BrutalDoom64Item/WeaponOptions"
 	Option "Spawn Doom64 vanilla weapons/items ONLY =","D64WeaponsOnlyCvar","YesOrNo"
 		StaticText " "
 		StaticText "These options allow changing the skin for the Rifle and Laser Gun,",1
-		StaticText "as well as D64 vanilla style firing (Only for Classical).",1
-		StaticText "Also you can restore Classic Rocket Launcher for Tactical/Modern.",1
+		StaticText "as well as enable D64 vanilla style firing (Only for Classical).",1
+		StaticText "Classic weapon look for Rocket Launcher and Chaingun for Tactical/Modern.",1
 		StaticText " "
 	Option "Play Vanilla Weapon Animations (Classical Only) =","VWeaponCvar","YesOrNo"
 	Option "Play Start Warm Up Weapons (Tactical/Modern Only) =","WeaponsWarmUpCvar","YesOrNo"
@@ -240,7 +240,7 @@ OptionValue "YesOrNoFalse"
 //Monster values
 OptionValue "ZombieMarineNazi"
 {
-	0,"Zombie Marine"
+	0,"Marine Zombie"
 	1,"Waffen-SS"
 }
 
@@ -426,8 +426,8 @@ OptionValue "NightElemental_Spawner_Value"
 
 OptionValue "SSGZombieRandom_Value"
 {
-	0,"Shotgun Guy"
-	1,"SSG Guy"
+	0,"Shotgun Zombie"
+	1,"SSG Zombie"
 	5,"5%"
 	10,"10%"
 	15,"15%"
@@ -440,8 +440,8 @@ OptionValue "SSGZombieRandom_Value"
 
 OptionValue "ZMarineRandom_Value"
 {
-	0,"Zombie Man"
-	1,"Zombie Marine"
+	0,"Pistol Zombie"
+	1,"Marine Zombie"
 	5,"5%"
 	10,"10%"
 	15,"15%"
@@ -454,8 +454,8 @@ OptionValue "ZMarineRandom_Value"
 
 OptionValue "BFGZombie_Value"
 {
-	0,"Chaingun Guy"
-	1,"BFG Guy"
+	0,"Chaingun Zombie"
+	1,"BFG Zombie"
 	5,"5%"
 	10,"10%"
 	15,"15%"

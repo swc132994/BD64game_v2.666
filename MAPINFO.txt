@@ -61,7 +61,7 @@ Intermission Doom2Cast
 	Cast
 	{
 		CastClass = "D64ZombiemanCast"
-		CastName = "Zombie Man"
+		CastName = "Pistol Zombie"
 		AttackSound = "Missile",1,"grunt/attack"
 	}
 	Cast
@@ -74,19 +74,19 @@ Intermission Doom2Cast
 	Cast
 	{
 		CastClass = "D64ShotgunGuyCast"
-		CastName = "Shotgun Guy"
+		CastName = "Shotgun Zombie"
 		AttackSound = "Missile",1,"shotguy/attack"
 	}
 	Cast
 	{
 		CastClass = "D64SSGGuyCast"
-		CastName = "SSG Guy"
+		CastName = "SSG Zombie"
 		AttackSound = "Missile",1,"SSGFIRE"
 	}
 	Cast
 	{
 		CastClass = "D64ChaingunGuyCast"
-		CastName = "Chaingun Guy"
+		CastName = "Chaingun Zombie"
 		AttackSound = "Missile",1,"MGUNFIR"
 		AttackSound = "Missile",2,"MGUNFIR"
 		AttackSound = "Missile",3,"MGUNFIR"
@@ -94,7 +94,7 @@ Intermission Doom2Cast
 	Cast
 	{
 		CastClass = "D64ZombiemarineCast"
-		CastName = "Zombie Marine"
+		CastName = "Marine Zombie"
 		AttackSound = "Missile",1,"PISTOLF2"
 		AttackSound = "Missile",2,"PISTOLF2"
 		AttackSound = "Missile",3,"PISTOLF2"

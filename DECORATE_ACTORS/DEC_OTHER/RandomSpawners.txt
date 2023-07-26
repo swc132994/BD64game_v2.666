@@ -280,6 +280,7 @@ Scale 0.82
 	{
 	Spawn:
 		PVIS A 0 NoDelay A_JumpIf(CallACS("D64WeaponsOnlyReplacer")==1,"SpawnInfrared")
+		TNT1 A 0 A_JumpIf(CallACS("FlashlightStartCvar")==1,"SpawnInfrared")
 		TNT1 A 0 A_Jump(64,"SpawnFlashlight")
 	SpawnInfrared:
 		TNT1 A 1 A_SpawnItemEx("64Infrared",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
