@@ -1632,8 +1632,8 @@ Scale 0.05
 Damage(random(4,6))
 Radius 1
 Height 1
-Speed 60
-FastSpeed 70
+Speed 65
+FastSpeed 75
 Alpha 0.5
 RenderStyle Add
 Decal "BulletDecalNew1"
@@ -1662,7 +1662,7 @@ Actor EnemyProjectileExtreme : EnemyProjectile
 Actor 64ZombieMarine : 64Zombieman Replaces WolfensteinSS
 {
 //$category "Game/BD64_Monsters
-Health 90
+Health 80
 Speed 12
 AttackSound "grunt/attack"
 Tag "Marine Zombie"

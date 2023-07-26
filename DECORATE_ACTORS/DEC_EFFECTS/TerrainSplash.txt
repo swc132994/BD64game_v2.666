@@ -32,6 +32,7 @@ BounceFactor 0.1
 	Death:
 		TNT1 A 1
 		TNT1 AAA 0 A_CustomMissile("WaterParticleX",2,random(-5,5),random(0,360),2,random(50,140))
+		TNT1 A 1
 		Stop
 	}
 }
@@ -76,6 +77,7 @@ Actor SpawnLiquidParticleX
 	{
 	Spawn:
 		TNT1 AAAAAA 0 NoDelay A_CustomMissile("LiquidParticleX",0,0,random(0,360),2,random(0,360)) //WAS AAAAAAAAAAAA
+		TNT1 A 1
 		Stop
 	}
 }
@@ -197,6 +199,7 @@ speed 20
 		Stop
 	SurfaceSpawn:
 		TNT1 AAAAAAA 0 A_CustomMissile("LiquidParticleXSmall",0,0,random(0,360),2,random(0,360))
+		TNT1 A 1
 		Stop
 	Death:
 		TNT1 A 1
@@ -359,16 +362,15 @@ Damagetype "CauseObjectsToSplash"
 		TNT1 AAAAAA 0 A_CustomMissile("WaterParticleXFaster",2,random(-5,5),random(0,360),2,random(50,140)) //WAS TNT1 FFFFFFFFF
 		TNT1 A 0 A_Explode(2,6)
 		TNT1 AA 6
-		TNT1 A 0 A_ChangeFLag("SHOOTABLE",0)
+		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
 		TNT1 AA 6
-		TNT1 A 0 A_NoBlocking
+		TNT1 A 1 A_NoBlocking
 		Stop
 	Death.CauseWaterSplash:
 		TNT1 A 0 A_CustomMissile("WaterParticleXSpawner",0,0,random(0,360),2,random(80,110))
 		TNT1 A 0 A_SpawnItem("GiantWaterRicochet")
 		//TNT1 A 0 A_PlaySound("bigspl1")
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 30
+		TNT1 A 30 A_NoBlocking
 		Stop
 	}
 }
@@ -384,7 +386,7 @@ Damagetype CauseWaterSplash
 	{
 	Spawn:
 		TNT1 A 1
-		TNT1 A 0 A_Explode(3,9)
+		TNT1 A 1 A_Explode(3,9)
 		Stop
 	}
 }
@@ -407,6 +409,7 @@ Translation "0:255=187:191"	//Red
 	Death:
 		TNT1 A 1
 		TNT1 AAA 0 A_CustomMissile("BloodParticleX",2,random(-5,5),random(0,360),2,random(50,140))
+		TNT1 A 1
 		Stop
 	}
 }
@@ -431,6 +434,7 @@ Actor SpawnLiquidBloodParticleX : SpawnLiquidParticleX
 	{
 	Spawn:
 		TNT1 AAAAAA 0 NoDelay A_CustomMissile("LiquidBloodParticleX",0,0,random(0,360),2,random(0,360)) //WAS AAAAAAAAAAAA
+		TNT1 A 1
 		Stop
 	}
 }
@@ -477,14 +481,13 @@ actor BloodSplashBase3 : WaterSplashBase2
 		TNT1 AA 6
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
 		TNT1 AA 6
-		TNT1 A 0 A_NoBlocking
+		TNT1 A 1 A_NoBlocking
 		Stop
 	Death.CauseWaterSplash:
 		TNT1 A 0 A_CustomMissile("BloodParticleXSpawner",0,0,random(0,360),2,random(80,110))
 		TNT1 A 0 A_SpawnItem("GiantBloodRicochet")
 		//TNT1 A 0 A_PlaySound("bigspl1")
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 30
+		TNT1 A 30 A_NoBlocking
 		Stop
 	}
 }
@@ -506,6 +509,7 @@ Translation "0:255=%[0,0,0]:[0,1,0]"//Green
 	Death:
 		TNT1 A 1
 		TNT1 AAA 0 A_CustomMissile("NukageParticleX",2,random(-5,5),random(0,360),2,random(50,140))
+		TNT1 A 1
 		Stop
 	}
 }
@@ -530,6 +534,7 @@ Actor SpawnLiquidNukageParticleX : SpawnLiquidParticleX
 	{
 	Spawn:
 		TNT1 AAAAAA 0 NoDelay A_CustomMissile("LiquidNukageParticleX",0,0,random(0,360),2,random(0,360)) //WAS AAAAAAAAAAAA
+		TNT1 A 1
 		Stop
 	}
 }
@@ -574,14 +579,13 @@ Actor NukageSplashBase : WaterSplashBase2
 		TNT1 AA 6
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
 		TNT1 AA 6
-		TNT1 A 0 A_NoBlocking
+		TNT1 A 1 A_NoBlocking
 		Stop
 	Death.CauseWaterSplash:
 		TNT1 A 0 A_CustomMissile("NukageParticleXSpawner",0,0,random(0,360),2,random(80,110))
 		TNT1 A 0 A_SpawnItem("GiantNukageRicochet")
 		//TNT1 A 0 A_PlaySound("bigspl1")
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 30
+		TNT1 A 30 A_NoBlocking
 		Stop
 	}
 }
@@ -604,6 +608,7 @@ Alpha 0.9
 	Death:
 		TNT1 A 1
 		TNT1 AAA 0 A_CustomMissile("SlimeParticleX",2,random(-5,5),random(0,360),2,random(50,140))
+		TNT1 A 1
 		Stop
 	}
 }
@@ -628,6 +633,7 @@ Actor SpawnLiquidSlimeParticleX : SpawnLiquidParticleX
 	{
 	Spawn:
 		TNT1 AAAAAA 0 NoDelay A_CustomMissile("LiquidSlimeParticleX",0,0,random(0,360),2,random(0,360)) //WAS AAAAAAAAAAAA
+		TNT1 A 1
 		Stop
 	}
 }
@@ -672,14 +678,13 @@ actor SlimeSplashBase : WaterSplashBase2
 		TNT1 AA 6
 		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
 		TNT1 AA 6
-		TNT1 A 0 A_NoBlocking
+		TNT1 A 1 A_NoBlocking
 		Stop
 	Death.CauseWaterSplash:
 		TNT1 A 0 A_CustomMissile("SlimeParticleXSpawner",0,0,random(0,360),2,random(80,110))
 		TNT1 A 0 A_SpawnItem("GiantSlimeRicochet")
 		//TNT1 A 0 A_PlaySound("bigspl1")
-		TNT1 A 0 A_NoBlocking
-		TNT1 A 30
+		TNT1 A 30 A_NoBlocking
 		Stop
 	}
 }

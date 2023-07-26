@@ -35,7 +35,7 @@ AttackSound "None"
 Inventory.PickupSound "IPick"
 Inventory.Pickupmessage "You got a Multi-Purpose Mine!"
 Tag "Multi-Purpose Mine"
-Weapon.SlotNumber 6
+Weapon.SlotNumber 5
 +WEAPON.NOAUTOAIM
 +WEAPON.NOALERT
 +WEAPON.NOAUTOFIRE
@@ -91,8 +91,10 @@ Weapon.SlotNumber 6
 		PMNS ABCDE 1
 		Goto Ready
 	Deselect:
-		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
-		TNT1 A 0 A_Takeinventory("Kicking",1)
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
+		TNT1 A 0 A_Takeinventory("Kicking",0)
+		TNT1 A 0 A_Takeinventory("TossMine",0)
+		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_TakeInventory("MineHold",0)
 		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,1)
 		Goto DeselectNoMines
@@ -100,8 +102,7 @@ Weapon.SlotNumber 6
 		TNT1 A 1 A_Lower
 		Wait
 	DeselectNoMines:
-		TNT1 A 0 A_SetCrosshair(0)
-		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+		TNT1 AAAAAAAAA 0 A_Lower
 		Wait
 	v1Ready:
 	Ready:

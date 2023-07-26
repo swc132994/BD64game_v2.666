@@ -243,15 +243,12 @@ scale 0.8
 		TNT1 A 0 A_Jump(256,"SpawnLive1","SpawnLive2","SpawnLive3")
 		Goto SpawnLive1
 	SpawnLive1:
-		POL5 A 1
 		POL5 A -1
 		Stop
 	SpawnLive2:
-		MGD1 V 1
 		MGD1 V -1
 		Stop
 	SpawnLive3:
-		MGD1 W 1
 		MGD1 W -1
 		Stop
 	}
@@ -387,13 +384,13 @@ States
 		TNT1 A 0 NoDelay A_Jump(256,"Spawn1","Spawn2","Spawn3")
 		Goto Spawn1
 	Spawn1:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration12")
+		TNT1 A 1 A_SpawnItem("GoreLongDecoration12")
 		Stop
 	Spawn2:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration13")
+		TNT1 A 1 A_SpawnItem("GoreLongDecoration13")
 		Stop
 	Spawn3:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration14")
+		TNT1 A 1 A_SpawnItem("GoreLongDecoration14")
 		Stop
 	}
 }
@@ -408,25 +405,25 @@ States
 		TNT1 A 0 NoDelay A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6","Spawn7")
 		Goto Spawn1
 	Spawn1:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration1")
+		TNT1 A 1 A_SpawnItem("GoreLongDecoration1")
 		Stop
 	Spawn2:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration2")
+		TNT1 A 1 A_SpawnItem("GoreLongDecoration2")
 		Stop
 	Spawn3:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration3")
+		TNT1 A 1 A_SpawnItem("GoreLongDecoration3")
 		Stop
 	Spawn4:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration4")
+		TNT1 A 1 A_SpawnItem("GoreLongDecoration4")
 		Stop
 	Spawn5:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration5")
+		TNT1 A 1 A_SpawnItem("GoreLongDecoration5")
 		Stop
 	Spawn6:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration6")
+		TNT1 A 1 A_SpawnItem("GoreLongDecoration6")
 		Stop
 	Spawn7:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration15")
+		TNT1 A 1 A_SpawnItem("GoreLongDecoration15")
 		Stop
 	}
 }
@@ -441,19 +438,19 @@ actor GoreDecorationLongSpawner : GoreLongDecoration1
 		TNT1 A 0 NoDelay A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5")
 		Goto Spawn1
 	Spawn1:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration7")
+		TNT1 A 1 A_SpawnItem("GoreLongDecoration7")
 		Stop
 	Spawn2:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration8")
+		TNT1 A 1 A_SpawnItem("GoreLongDecoration8")
 		Stop
 	Spawn3:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration9")
+		TNT1 A 1 A_SpawnItem("GoreLongDecoration9")
 		Stop
 	Spawn4:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration10")
+		TNT1 A 1 A_SpawnItem("GoreLongDecoration10")
 		Stop
 	Spawn5:
-		TNT1 A 0 A_SpawnItem("GoreLongDecoration11")
+		TNT1 A 1 A_SpawnItem("GoreLongDecoration11")
 		Stop
 	}
 }
@@ -583,7 +580,7 @@ actor 64HeadOnAStick : HeadOnAStick Replaces HeadOnAStick
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItem("GoreDecorationHeadsSpawner")
+		TNT1 A 1 NoDelay A_SpawnItem("GoreDecorationHeadsSpawner")
 		Stop
 	}
 }
@@ -593,7 +590,7 @@ actor 64HeadsOnAStick : HeadsOnAStick Replaces HeadsOnAStick
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItem("GoreDecorationShortSpawner")
+		TNT1 A 1 NoDelay A_SpawnItem("GoreDecorationShortSpawner")
 		Stop
 	}
 }
@@ -603,7 +600,7 @@ actor 64DeadStick : DeadStick Replaces DeadStick
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItem("GoreDecorationShortSpawner")
+		TNT1 A 1 NoDelay A_SpawnItem("GoreDecorationShortSpawner")
 		Stop
 	}
 }
@@ -1485,7 +1482,7 @@ scale 0.75
 	{
 	Spawn:
 		SMRT A 0 NoDelay A_NoBlocking
-		TNT1 A 0 A_SpawnItem("ShortRedTorch")
+		TNT1 A 1 A_SpawnItem("ShortRedTorch")
 		Stop
 	}
 }
@@ -1500,7 +1497,7 @@ Scale 0.75
 	{
 	Spawn:
 		SMBT A 0 NoDelay A_NoBlocking
-		TNT1 A 0 A_SpawnItem("ShortBlueTorch")
+		TNT1 A 1 A_SpawnItem("ShortBlueTorch")
 		Stop
 	}
 }
@@ -1515,7 +1512,7 @@ Scale 0.75
 	{
 	Spawn:
 		SMGT A 0 NoDelay A_NoBlocking
-		TNT1 A 0 A_SpawnItem("ShortGreenTorch")
+		TNT1 A 1 A_SpawnItem("ShortGreenTorch")
 		Stop
 	}
 }
@@ -1758,7 +1755,7 @@ actor 64LiveStick : LiveStick Replaces LiveStick
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItem("GoreDecorationLongSpawner")
+		TNT1 A 1 NoDelay A_SpawnItem("GoreDecorationLongSpawner")
 		Stop
 	}
 }

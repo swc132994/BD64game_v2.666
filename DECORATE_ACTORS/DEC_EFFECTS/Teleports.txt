@@ -21,7 +21,6 @@ DamageFactor "CancelTeleportFog",9999.0
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleGreenHeavySmall",10,0,random(0,360),2,random(20,50))
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleGreenVeryFast",10,0,random(0,360),2,random(20,40))
 		TPFG ABCDEFG 1 Bright
-		TNT1 A 1 A_NoBlocking
 		Stop
 	Death:
 		TNT1 A 1
