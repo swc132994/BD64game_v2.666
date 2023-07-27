@@ -184,6 +184,18 @@ Sprites: Captain Toenail
 
 Edits by (Craneo)
 
+DoomerBlazkowicz Edits to:
+Fists - sprites & sounds
+Pistol - sprites & decorate
+Shotgun - alt attack decorate, sprites & sounds
+SSG - sounds
+SMG - decorate (speed adjustment)
+Rifle - decorate (speed adjustment)
+Unmaker & demon key - sprites & sounds
+BFG	- pickup sprite
+Key pickup sprites
+Backpack pickup sprites
+
 Add-ons:
 BD64HUD_Ashton (Paladin-julio (ModDB))
 D64PSX_HQ_SFX (SFX Marine (Nate))

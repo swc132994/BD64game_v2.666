@@ -219,6 +219,35 @@ RELOAN RELOAN
 MP40BACK MP40BACK
 GRNPIN GRNPIN
 
+//New Shotgun Melee sounds (From Cry of Fear)	//DoomerBlazkowicz revisions
+SGSWING SGSWING
+SGSWING2 SGSWING2
+
+//Alt SSG sound (From Left 4 Dead 2) //DoomerBlazkowicz revisions
+SSGALTFI SSGALTFI
+
+//Human Soul Pickup (From Doom 3) //DoomerBlazkowicz revisions
+HUMAMMO HUMAMMO
+
+//Demon Essense Pickup (From Painkiller) //DoomerBlazkowicz revisions
+$random DemonSoulUp {DEMSOUL1 DEMSOUL2 DEMSOUL3 DEMSOUL4 DEMSOUL5}
+
+DEMSOUL1 DEMSOUL1
+DEMSOUL2 DEMSOUL2
+DEMSOUL3 DEMSOUL3
+DEMSOUL4 DEMSOUL4
+DEMSOUL5 DEMSOUL5
+
+//Key Pickups (From Quake) //DoomerBlazkowicz revisions
+KCRPKUP KCRPKUP
+SKLPKUP SKLPKUP
+
+//Demon Rune Pickup (From Quake) //DoomerBlazkowicz revisions
+DEMKEYUP DEMKEYUP
+
+//Backpack Pickup (From Half Life/Counter Strike) //DoomerBlazkowicz revisions
+BPPICK BPPICK
+
 //Flies
 Flies	DSBUZZ
 

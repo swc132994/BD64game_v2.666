@@ -235,6 +235,7 @@ Game Doom
 Scale 0.82
 Height 26
 Inventory.PickupMessage "$GOTBACKPACK"
+Inventory.PickupSound "BPPICK"
 	States
 	{
 	Spawn:
@@ -263,6 +264,7 @@ Inventory.PickupMessage "$GOTBACKPACK"
 Actor 64BackpackPistolSilencer : 64Backpack
 {
 Inventory.PickupMessage "Picked up a backpack full of ammo with pistol silencer!"
+Inventory.PickupSound "BPPICK"
 	States
 	{
 	Spawn:
@@ -286,6 +288,7 @@ Inventory.PickupMessage "Picked up a backpack full of ammo with pistol silencer!
 Actor 64BackpackFlashlight : 64Backpack
 {
 Inventory.PickupMessage "Picked up a backpack full of ammo with flashlight!"
+Inventory.PickupSound "BPPICK"
 	States
 	{
 	Spawn:
@@ -309,6 +312,7 @@ Inventory.PickupMessage "Picked up a backpack full of ammo with flashlight!"
 Actor 64BackpackPistolSilencerandFlashlight : 64Backpack
 {
 Inventory.PickupMessage "Picked up a backpack full of ammo with pistol silencer and flashlight!"
+Inventory.PickupSound "BPPICK"
 	States
 	{
 	Spawn:
@@ -637,7 +641,7 @@ ACTOR WpnPower1 : CustomInventory 9905
 //$category "Game/BD64_Artifacts
 Inventory.Icon POW1E0
 Inventory.PickupMessage "You have a feeling that it wasn't meant to be touched."
-Inventory.PickupSound "misc/p_pkup"
+Inventory.PickupSound "DEMKEYUP"
 +COUNTITEM
 -INTERHUBSTRIP
 	States
@@ -659,7 +663,7 @@ ACTOR WpnPower2 : CustomInventory 9906
 //$category "Game/BD64_Artifacts
 Inventory.Icon POW2E0
 Inventory.PickupMessage "It must do something..."
-Inventory.PickupSound "misc/p_pkup"
+Inventory.PickupSound "DEMKEYUP"
 +COUNTITEM
 -INTERHUBSTRIP
 	States
@@ -681,7 +685,7 @@ ACTOR WpnPower3 : CustomInventory 9907
 //$category "Game/BD64_Artifacts
 Inventory.Icon POW3E0
 Inventory.PickupMessage "Whatever it is, it doesn't belong in this world."
-Inventory.PickupSound "misc/p_pkup"
+Inventory.PickupSound "DEMKEYUP"
 +COUNTITEM
 -INTERHUBSTRIP
 	States
@@ -732,6 +736,7 @@ Inventory.PickupMessage "Advanced Area Scanner"
 ACTOR GLBlueCard : CustomInventory Replaces Bluecard
 {
 Inventory.PickupMessage "$GOTBLUECARD"
+Inventory.PickupSound "KCRPKUP"
 +COUNTITEM
 	States
 	{
@@ -748,6 +753,7 @@ Inventory.PickupMessage "$GOTBLUECARD"
 ACTOR GLBlueSkull : CustomInventory Replaces BlueSkull
 {
 Inventory.PickupMessage "$GOTBLUESKUL"
+Inventory.PickupSound "SKLPKUP"
 +COUNTITEM
 	States
 	{
@@ -764,6 +770,7 @@ Inventory.PickupMessage "$GOTBLUESKUL"
 ACTOR GLRedCard : CustomInventory Replaces Redcard
 {
 Inventory.PickupMessage "$GOTREDCARD"
+Inventory.PickupSound "KCRPKUP"
 +COUNTITEM
 	States
 	{
@@ -780,6 +787,7 @@ Inventory.PickupMessage "$GOTREDCARD"
 ACTOR GLRedSkull : CustomInventory Replaces RedSkull
 {
 Inventory.PickupMessage "$GOTREDSKUL"
+Inventory.PickupSound "SKLPKUP"
 +COUNTITEM
 	States
 	{
@@ -796,6 +804,7 @@ Inventory.PickupMessage "$GOTREDSKUL"
 ACTOR GLYellowCard : CustomInventory Replaces Yellowcard
 {
 Inventory.PickupMessage "$GOTYELWCARD"
+Inventory.PickupSound "KCRPKUP"
 +COUNTITEM
 	States
 	{
@@ -812,6 +821,7 @@ Inventory.PickupMessage "$GOTYELWCARD"
 ACTOR GLYellowSkull : CustomInventory Replaces YellowSkull
 {
 Inventory.PickupMessage "$GOTYELWSKUL"
+Inventory.PickupSound "SKLPKUP"
 +COUNTITEM
 	States
 	{
@@ -838,7 +848,7 @@ ACTOR WpnPower4 : CustomInventory 9908	//GREEN ARTIFACT
 Translation "0:255=%[0,0,0]:[0,1,0]"//Green
 Inventory.Icon POW3E0
 Inventory.PickupMessage "It looks like some sort of key...."
-Inventory.PickupSound "misc/p_pkup"
+Inventory.PickupSound "DEMKEYUP"
 +COUNTITEM
 +FANCYPICKUPSOUND
 -INTERHUBSTRIP
@@ -866,7 +876,7 @@ ACTOR WpnPower5 : CustomInventory 9909	//RED ARTIFACT
 Translation "0:255=%[0,0,0]:[1,0,0]"//Red
 Inventory.Icon POW3E0
 Inventory.PickupMessage "What is this used for?"
-Inventory.PickupSound "misc/p_pkup"
+Inventory.PickupSound "DEMKEYUP"
 +COUNTITEM
 +FANCYPICKUPSOUND
 -INTERHUBSTRIP

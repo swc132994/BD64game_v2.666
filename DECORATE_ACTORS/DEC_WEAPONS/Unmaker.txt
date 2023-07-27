@@ -208,7 +208,7 @@ Inventory.Amount 1
 Inventory.MaxAmount 30
 Ammo.BackpackAmount 0
 Ammo.BackpackMaxAmount 30
-Inventory.PickupSound "misc/p_pkup"
+Inventory.PickupSound "HUMAMMO"
 Inventory.Icon "SAMMZ0"
 RenderStyle Add
 Alpha 0.99
@@ -235,7 +235,7 @@ Inventory.Amount 1
 Inventory.MaxAmount 25
 Ammo.BackpackAmount 0
 Ammo.BackpackMaxAmount 25
-Inventory.PickupSound "misc/p_pkup"
+Inventory.PickupSound "DemonSoulUp"
 Inventory.Icon "DESSZ0"
 RenderStyle Add
 Alpha 0.9
