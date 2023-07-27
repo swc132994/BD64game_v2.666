@@ -27,7 +27,7 @@ Inventory.PickupSound "WPICK"
 		TNT1 A 0 A_GiveInventory("LasergunTactical")
 		Stop
 	SpawnPlasmaRifle:
-		TNT1 A 0 A_SpawnItemEx("PlasmaRifleSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		TNT1 A 1 A_SpawnItemEx("PlasmaRifleSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	DMSpawn:
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",1)

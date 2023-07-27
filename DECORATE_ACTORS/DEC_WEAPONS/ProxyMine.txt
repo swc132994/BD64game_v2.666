@@ -191,7 +191,7 @@ PROJECTILE
 		Goto Spawn+1
 	Death:
 	XDeath:
-		TNT1 A 0 A_SpawnItemEx("64GroundProxMine",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 1 A_SpawnItemEx("64GroundProxMine",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		Stop
 	}
 }
@@ -301,7 +301,7 @@ Obituary "%o was shreded by %k's Mine."
 	{
 	Pain:
 		TNT1 A 0 A_FaceTarget
-		TNT1 A 0 A_CustomMissile("64ThrownProxMine",5,0,random(170,190),2,random(20,40))
+		TNT1 A 1 A_CustomMissile("64ThrownProxMine",5,0,random(170,190),2,random(20,40))
 		Stop
 	Active:
 		TNT1 A 0 A_PlaySound("Weapons/StickyBombTick")
@@ -316,7 +316,7 @@ Obituary "%o was shreded by %k's Mine."
 		PMNE D 4
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_ChangeFLag("SHOOTABLE",0)
-		TNT1 A 0 A_SpawnItemEx("64MineAmmo",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
+		TNT1 A 1 A_SpawnItemEx("64MineAmmo",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		Stop
 	Spawn:
 		PMNE D 10

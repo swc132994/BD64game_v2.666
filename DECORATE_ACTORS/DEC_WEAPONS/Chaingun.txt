@@ -146,9 +146,9 @@ Weapon.SlotNumber 4
 		CHNG NOPQ 1
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("CHAINSPI",5)
-		CHNG RSTU 1 //16
+		CHNG RST 1 //16
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",5)
+		CHNG U 1 A_PlaySound("CHAINSPI",5)
 		Stop
 	ClassicKickSpin:
 		LCGS DEFG 1
@@ -160,9 +160,9 @@ Weapon.SlotNumber 4
 		LCGS HIJK 1
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("CHAINSPI",5)
-		LCGS ALMN 1 //16
+		LCGS ALM 1 //16
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",5)
+		LCGS N 1 A_PlaySound("CHAINSPI",5)
 		Stop
 	AirKickingFlash:
 		TNT1 A 0 A_JumpIf(CallACS("ClassicChaingun")==True,"ClassicAirKickingFlash")
