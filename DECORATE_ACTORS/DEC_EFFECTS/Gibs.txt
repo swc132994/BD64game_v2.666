@@ -75,7 +75,8 @@ SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
 Decal BrutalBloodSuper
 +CLIENTSIDEONLY
--DOOMBOUNCE
+BounceFactor 0.3
+wallbouncefactor 0.2
 	States
 	{
 	Spawn:
@@ -219,9 +220,6 @@ ACTOR XDeath4 : XDeath2
 Scale 1.1
 SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
-BounceFactor 0.3
-wallbouncefactor 0.2
-+DOOMBOUNCE
 	States
 	{
 	Spawn:

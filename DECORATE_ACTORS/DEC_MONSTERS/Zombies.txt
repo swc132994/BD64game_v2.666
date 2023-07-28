@@ -260,6 +260,7 @@ DropItem "None"
 +FRIENDLY
 +NOTARGET
 +NOPAIN
++THRUACTORS
 	States
 	{
 	Spawn:
@@ -953,6 +954,7 @@ DropItem "None"
 +FRIENDLY
 +NOTARGET
 +NOPAIN
++THRUACTORS
 	States
 	{
 	Spawn:
@@ -1466,6 +1468,7 @@ DropItem "None"
 +FRIENDLY
 +NOTARGET
 +NOPAIN
++THRUACTORS
 	States
 	{
 	Spawn:
@@ -1637,9 +1640,7 @@ FastSpeed 75
 Alpha 0.5
 RenderStyle Add
 Decal "BulletDecalNew1"
-PROJECTILE
 +RANDOMIZE
-+MISSILE
 	States
 	{
 	Spawn:

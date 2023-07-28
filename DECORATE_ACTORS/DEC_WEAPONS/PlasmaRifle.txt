@@ -4,9 +4,6 @@ Actor PlasmaRifleSpawner : CustomInventory// Replaces PlasmaRifle		//spawned fro
 Scale 0.82
 Inventory.PickupMessage "$GOTPLASMA"
 Inventory.PickupSound "WPICK"
-MONSTER
--SOLID
--COUNTKILL
 	States
 	{
 	Spawn:

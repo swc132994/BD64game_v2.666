@@ -262,6 +262,7 @@ DropItem "None"
 +FRIENDLY
 +NOTARGET
 +NOPAIN
++THRUACTORS
 	states
 	{
 	See:
@@ -350,6 +351,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 DropItem "None"
 -COUNTKILL
 +FLOORCLIP
++THRUACTORS
 	States
 	{
 	Spawn:
@@ -443,6 +445,7 @@ DropItem "None"
 +FRIENDLY
 +NOTARGET
 +NOPAIN
++THRUACTORS
 	States
 	{
 	Spawn:

@@ -165,6 +165,7 @@ DropItem "None"
 +FRIENDLY
 +NOTARGET
 +NOPAIN
++THRUACTORS
 	States
 	{
 	Spawn:
@@ -245,6 +246,7 @@ DropItem "None"
 +FRIENDLY
 +NOTARGET
 +NOPAIN
++THRUACTORS
 	States
 	{
 	Spawn:
@@ -320,6 +322,7 @@ DropItem "None"
 +FRIENDLY
 +NOTARGET
 +NOPAIN
++THRUACTORS
 	States
 	{
 	Spawn:
@@ -592,6 +595,7 @@ DropItem "None"
 +FRIENDLY
 +NOTARGET
 +NOPAIN
++THRUACTORS
 	States
 	{
 	Spawn:
@@ -672,6 +676,7 @@ DropItem "None"
 +FRIENDLY
 +NOTARGET
 +NOPAIN
++THRUACTORS
 	States
 	{
 	Spawn:
@@ -747,6 +752,7 @@ DropItem "None"
 +FRIENDLY
 +NOTARGET
 +NOPAIN
++THRUACTORS
 	States
 	{
 	Spawn:
