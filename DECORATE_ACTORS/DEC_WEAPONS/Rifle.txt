@@ -287,19 +287,21 @@ Weapon.SlotNumber 4
 	WarmUp:
 		ARSS A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,"AltWarmUp")
 		TNT1 A 0 A_TakeInventory("FirstTimeRifle")
-		RIFR G 1 Offset(-56,53)
-		RIFR G 1 Offset(-48,39)
-		RIFR G 1 Offset(-38,34)
-		RIFR G 1 Offset(-24,32)
-		RIFR G 10 A_WeaponReady
-		RIFR HI 1 A_WeaponReady
-		RIFR H 1 A_PlaySound("RIFLOAD",CHAN_WEAPON)
-		RIFR G 3 A_WeaponReady
-		RIFI ABCC 1 A_WeaponReady
-		TNT1 A 0 A_PlaySound("RIFBOLT",CHAN_WEAPON)
-		RIFI DDEE 1 A_WeaponReady
-		RIFI FGH 1 A_WeaponReady
-		RIFR FEDCBA 1 A_WeaponReady
+		RIFW A 1 Offset(-56,53)
+		RIFW A 1 Offset(-48,39)
+		RIFW A 1 Offset(-38,34)
+		RIFW A 1 Offset(-24,32)
+		RIFW A 10 A_WeaponReady
+		RIFW BCDEFGHH 1 A_WeaponReady
+		RIFW IJK 2
+		RIFW LMNO 1
+		RIFW P 1 A_PlaySound("RIFLOAD",CHAN_WEAPON)
+		RIFW QR 2 A_WeaponReady
+		RIFW STUV 1 A_WeaponReady
+		RIFW W 3 A_PlaySound("RIFBOLT",CHAN_WEAPON)
+		RIFW XYZ 1 A_WeaponReady
+		R1FW ABCDDDD 1 A_WeaponReady
+		R1FR ABC 1 A_WeaponReady
 		Goto Ready
 	AltWarmUp:
 		TNT1 A 0 A_TakeInventory("FirstTimeRifle")
@@ -429,7 +431,7 @@ Weapon.SlotNumber 4
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)
 		RIFF A 0
-		"####" D 1 Bright
+		"####" A 1 Bright
 		"####" BC 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
@@ -465,7 +467,7 @@ Weapon.SlotNumber 4
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)
 		RIFF A 0
-		"####" D 1 Bright
+		"####" A 1 Bright
 		"####" BC 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
@@ -510,8 +512,11 @@ Weapon.SlotNumber 4
 		RIFR I 1 A_FireCustomMissile("EmptyClipSpawn",-5,0,8,-18)
 		RIFR JK 1
 		RIFR L 11 A_JumpIfInventory("Kicking",1,"DoKick")
-		RIFR KJ 1
-		RIFR GGGGGEDCBA 1 A_JumpIfInventory("Kicking",1,"DoKick")
+		RIFR MNO 1
+		RIFR PQRS 1
+		RIFR TUV 2
+		RIFR WXYZ 1
+		R1FR ABC 1 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",1,"InsertBullets2")//30+1 effect
 		Goto InsertBullets
 	ADSReload:
