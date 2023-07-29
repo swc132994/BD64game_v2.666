@@ -456,3 +456,8 @@ script "ClassicChaingun" (void)
 {
 SetResultValue(GetCVar("ClassicChaingunCvar"));
 }
+
+script "FlashlightCheck" (void)
+{
+SetResultValue(GetCVar("FlashlightStartCvar"));
+}
