@@ -182,6 +182,13 @@ GLDefs: Captain Toenail
 Sounds: Xatrix, Id Software
 Sprites: Captain Toenail
 
+Decorate: Mor'ladim
+Sounds: Fate
+Sprites: id Software, Raven Software, Mor'ladim
+Sprite Edit: Mor'ladim
+
+buzzing noises from Quake 1
+
 Edits by (Craneo)
 
 DoomerBlazkowicz Edits to:

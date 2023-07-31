@@ -1512,3 +1512,54 @@ Scale 0.7
 		Stop
 	}
 }
+
+Actor 64FailingTechLampReplacer replaces TechLamp
+{
+	States
+	{
+	Spawn:
+		TLMP A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnTechLamp")	//if D64 monsters only enabled spawn props
+		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnTechLamp")
+		TNT1 A 0 A_Jump(32,"SpawnHellLamp") //(12.5%)
+	SpawnTechLamp:
+		TNT1 A 1 A_SpawnItemEx("64TechLampB",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnHellLamp:
+		TNT1 A 1 A_SpawnItemEx("64Poltergeist7",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
+Actor 64FailingTechLamp2Replacer replaces TechLamp2
+{
+	States
+	{
+	Spawn:
+		TLP2 A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnTechLamp")	//if D64 monsters only enabled spawn props
+		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnTechLamp")
+		TNT1 A 0 A_Jump(32,"SpawnHellLamp") //(12.5%)
+	SpawnTechLamp:
+		TNT1 A 1 A_SpawnItemEx("64TechLamp2B",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnHellLamp:
+		TNT1 A 1 A_SpawnItemEx("64Poltergeist6",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
+Actor 64FailingColumnReplacer replaces Column
+{
+	States
+	{
+	Spawn:
+		TLP1 A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnTechLamp")	//if D64 monsters only enabled spawn props
+		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnTechLamp")
+		TNT1 A 0 A_Jump(32,"SpawnHellLamp") //(12.5%)
+	SpawnTechLamp:
+		TNT1 A 1 A_SpawnItemEx("64TechColumn",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnHellLamp:
+		TNT1 A 1 A_SpawnItemEx("64Poltergeist8",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}

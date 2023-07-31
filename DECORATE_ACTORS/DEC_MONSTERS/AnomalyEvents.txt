@@ -732,6 +732,530 @@ SCALE 0.8
 	}
 }
 
+actor 64BruiserFireCandle : EvilEye
+{
+SCALE 0.8
++RANDOMIZE
+-SOLID
+	States
+	{
+	Spawn:
+		ES7M A 0 NoDelay A_SpawnItemEx("LightShaft2BrighterLess",0,0,20)
+		Goto Stay
+	Stay:
+		TNT1 A 0 A_CheckSight("StayBlank")
+		ES7M ABCB 6 Bright Light("SMALLGREENTORCH") A_SpawnItemEx("LensFlareTorchGreen",0,0,20)	//added light
+		Loop
+	StayBlank:
+		ES7M ABCB 6 Bright Light("SMALLGREENTORCH")
+		Goto Stay
+	}
+}
+
+Actor PoisonShotCloud1 //Weapon: Poison Gun,By: Daniel,using the gas clouds from it.
+{
+Radius 24
+Height 16
+Speed 16
+Mass 2000
+Damage(3)
+PoisonDamage 30
+DamageType Poison
+Obituary "%o stared into an Evil Eye for too long..."
+PROJECTILE
+-NOGRAVITY
++RIPPER
++BLOODLESSIMPACT
++NODAMAGETHRUST
++NOTARGET
++DONTSPLASH
+RenderStyle Translucent
+Alpha 0.67
+
+	States
+	{
+	Spawn:
+		PSNE A 1 Bright
+		Loop
+	Death:
+		TNT1 AAA 0 A_SpawnItem("PoisonGasSmoke")
+		PSNE A 3 Bright
+		PSNE B 4 Bright
+		PSNE C 1 Bright
+		TNT1 A 0 A_Jump(16,2)
+		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud2",5,0,0)
+		TNT1 A 0 A_Jump(16,2)
+		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud2",5,0,90)
+		TNT1 A 0 A_Jump(16,2)
+		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud2",5,0,180)
+		TNT1 A 0 A_Jump(16,2)
+		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud2",5,0,270)
+		PSNE DEFGCBA 6 Bright
+		Stop
+	}
+}
+
+Actor PoisonShotCloud2
+{
+Radius 16
+Height 8
+Speed 8
+Mass 3000
+Damage(2)
+PoisonDamage 20
+DamageType Poison
+Obituary "%o stared into an Evil Eye for too long..."
+RenderStyle Translucent
+Alpha 0.33
+PROJECTILE
+-NOGRAVITY
++RIPPER
++BLOODLESSIMPACT
++NODAMAGETHRUST
++NOTARGET
++DONTSPLASH
+	States
+	{
+	Spawn:
+		PSNE A 1 Bright
+		Loop
+	Death:
+		TNT1 AA 0 A_SpawnItem("PoisonGasSmoke")
+		PSNE A 3 Bright
+		PSNE B 4 Bright
+		PSNE C 1 Bright
+		TNT1 A 0 A_Jump(32,2)
+		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud3",5,0,0)
+		TNT1 A 0 A_Jump(32,2)
+		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud3",5,0,90)
+		TNT1 A 0 A_Jump(32,2)
+		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud3",5,0,180)
+		TNT1 A 0 A_Jump(32,2)
+		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud3",5,0,270)
+		PSNE DEFGCBA 6 Bright
+		Stop
+	}
+}
+
+Actor PoisonShotCloud3
+{
+Radius 10
+Height 8
+Speed 8
+Mass 4000
+Damage(1)
+PoisonDamage 10
+DamageType Poison
+Obituary "%o stared into an Evil Eye for too long..."
+RenderStyle Translucent
+Alpha 0.15
+PROJECTILE
+-NOGRAVITY
++RIPPER
++BLOODLESSIMPACT
++NODAMAGETHRUST
++NOTARGET
++DONTSPLASH
+	States
+	{
+	Spawn:
+		PSNE A 1 Bright
+		Loop
+	Death:
+		TNT1 A 0 A_SpawnItem("PoisonGasSmoke")
+		PSNE A 3 Bright
+		PSNE B 4 Bright
+		PSNE C 5 Bright
+		PSNE DEFGCBA 6 Bright
+		Stop
+	}
+}
+
+Actor PoisonGasSmoke : ExplosionSmoke
+{
+renderstyle stencil
+stencilcolor DarkGreen
+}
+
+actor Drt1
+{
+Radius 2
+Scale 0.7
+Damage 0
+Speed 5
+PROJECTILE
+-NOGRAVITY
+-NOBLOCKMAP
+-NOTELEPORT
++RANDOMIZE
+	States
+	{
+	Spawn:
+		DIRT A 0 NoDelay A_SetGravity(0.5)
+		TNT1 A 0 ThrustThingZ(0,15,0,1)
+		goto See
+	See:
+		DIRT ABC 5
+		loop
+	Death:
+		DIRT JKL 3
+		Stop
+	}
+}
+
+actor Drt2
+{
+Radius 2
+Scale 0.7
+Damage 0
+Speed 5
+PROJECTILE
+-NOGRAVITY
+-NOBLOCKMAP
+-NOTELEPORT
++RANDOMIZE
+	States
+	{
+	Spawn:
+		DIRT A 0 NoDelay A_SetGravity(0.5)
+		TNT1 A 0 ThrustThingZ(0,15,0,1)
+		goto See
+	See:
+		DIRT DEF 5
+		loop
+	Death:
+		DIRT JKL 3
+		Stop
+	}
+}
+
+actor Drt3
+{
+Radius 2
+Scale 0.7
+Damage 0
+Speed 5
+PROJECTILE
+-NOGRAVITY
+-NOBLOCKMAP
+-NOTELEPORT
++RANDOMIZE
+	States
+	{
+	Spawn:
+		DIRT A 0 NoDelay A_SetGravity(0.5)
+		TNT1 A 0 ThrustThingZ(0,15,0,1)
+		goto See
+	See:
+		DIRT GHI 5
+		loop
+	Death:
+		DIRT JKL 3
+		Stop
+	}
+}
+
+ACTOR 64Poltergeist6
+{
+Health 20
+Radius 16
+Height 60
+DeathHeight 60
+Mass 0x7FFFFFFF
+Speed 0
+Painchance 0
+Monster
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+Obituary "%o was killed by a poltergeist."
++NOBLOOD
++DONTMORPH
++DONTSQUASH
++DONTCORPSE
+-COUNTKILL
+-NOGRAVITY
+	States
+	{
+	Spawn:
+		TLP2 AA 0 NoDelay A_SpawnItemEx("LightShaft2",0,0,0)
+	Stay:
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,6,55)
+		TLP2 A 3 Light("LampBasic") A_LookEx(LOF_NOSOUNDCHECK,0,192,0,360)
+		TNT1 A 0 A_Jump(8,"Stay2")
+		Loop
+	Stay2:
+		TLP2 B 3 A_LookEx(LOF_NOSOUNDCHECK,0,192,0,360)
+		Goto Stay
+	See:
+		TLP2 A 1 A_PlaySoundEx("polt/see","Auto")
+		TNT1 A 0 A_PlaySoundEx("polt/buzz","Auto")
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,55)
+		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,55)
+		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,55)
+		TLP2 B 3
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,55)
+		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,55)
+		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,55)
+		TLP2 B 3
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,55)
+		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,55)
+		TLP2 B 3
+		TLP2 B 3
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,55)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,55)
+		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,55)
+		TLP2 B 3
+		Goto Missile
+	Missile:
+		TLP2 B 8 A_Facetarget
+		TNT1 A 0 A_PlaySound("PillarGlassBreak")
+		TNT1 A 0 A_Explode(4,192)
+		TNT1 AAAAAAAAA 0 A_SpawnItemEx("64PolterGlassShard",0,0,55,random(-2,2),random(-2,2),random(3,9),random(0,359),32)
+		TNT1 A 0 A_SpawnItemEx("ExplosionSmoke",0,0,55,Random(25,45),0,Random(-6,-9))
+		TLP2 CCC 8
+		TLP2 C 1 A_PlaySoundEx("polt/laugh","Auto")
+		TLP2 C 8 A_Die("DidAttack")
+		Stop
+	Death:
+		TNT1 A 0 A_PlaySound("PillarGlassBreak")
+		TNT1 AAAAAAAAA 0 A_SpawnItemEx("64PolterGlassShard",0,0,55,random(-2,2),random(-2,2),random(3,9),random(0,359),32)
+		TNT1 A 0 A_SpawnItemEx("ExplosionSmoke",0,0,55,Random(25,45),0,Random(-6,-9))
+	Death.DidAttack:
+		TLP2 C -1
+		Stop
+	}
+}
+
+ACTOR 64PolterGlassShard
+{
+Radius 1
+Height 1
+Speed 15
+PROJECTILE
+-NOGRAVITY
++THRUACTORS
++MOVEWITHSECTOR
+Gravity 0.6
+RenderStyle Add
+Alpha 0.6
+Scale 1.3
+DeathSound "GlassShardImpact"
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_Jump(255,"Standard","Small","Tiny","XLarge") //Randomly selects a glass shard size.
+	Standard:
+		PGSD ABCD 1
+		Loop
+	Small:
+		TNT1 A 0 A_SetScale(0.8)
+		PGSD ABCD 1
+		Loop
+	Tiny:
+		TNT1 A 0 A_SetScale(0.4)
+		PGSD ABCD 1
+		Loop
+	XLarge:
+		TNT1 A 0 A_SetScale(1.6)
+		PGSD ABCD 1
+		Loop
+	Death:
+		TNT1 A 0 A_SetTranslucent(0.3)
+		PGSD E 125
+		Stop
+	}
+}
+
+ACTOR 64Poltergeist7
+{
+Health 30
+Radius 16
+Height 80
+DeathHeight 80
+Mass 0x7FFFFFFF
+Speed 0
+Painchance 0
+Monster
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+Obituary "%o was killed by a poltergeist."
++NOBLOOD
++DONTMORPH
++DONTSQUASH
++DONTCORPSE
+-COUNTKILL
+-NOGRAVITY
+	States
+	{
+	Spawn:
+		TLMP AA 0 NoDelay A_SpawnItemEx("LightShaft2",0,0,0)
+	Stay:
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,6,71)
+		TLMP A 3 Light("LampBasic") A_LookEx(LOF_NOSOUNDCHECK,0,192,0,360)
+		TNT1 A 0 A_Jump(8,"Stay2")
+		Loop
+	Stay2:
+		TLMP B 3 A_LookEx(LOF_NOSOUNDCHECK,0,192,0,360)
+		Goto Stay
+	See:
+		TLMP A 1 A_PlaySoundEx("polt/see","Auto")
+		TNT1 A 0 A_PlaySoundEx("polt/buzz","Auto")
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,71)
+		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,71)
+		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,71)
+		TLMP B 3
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,71)
+		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,71)
+		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,71)
+		TLMP B 3
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,71)
+		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,71)
+		TLMP B 3
+		TLMP B 3
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,71)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,71)
+		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,71)
+		TLMP B 3
+		Goto Missile
+	Missile:
+		TLMP B 8 A_Facetarget
+		TNT1 A 0 A_PlaySound("PillarGlassBreak")
+		TNT1 A 0 A_Explode(7,192)
+		TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("64PolterGlassShard",0,0,71,random(-2,2),random(-2,2),random(3,9),random(0,359),32)
+		TNT1 A 0 A_SpawnItemEx("ExplosionSmoke",0,0,71,Random(25,45),0,Random(-6,-9))
+		TLMP CCC 8
+		TLMP C 1 A_PlaySoundEx("polt/laugh","Auto")
+		TLMP C 8 A_Die("DidAttack")
+		Stop
+	Death:
+		TNT1 A 0 A_PlaySound("PillarGlassBreak")
+		TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("64PolterGlassShard",0,0,71,random(-2,2),random(-2,2),random(3,9),random(0,359),32)
+		TNT1 A 0 A_SpawnItemEx("ExplosionSmoke",0,0,71,Random(25,45),0,Random(-6,-9))
+	Death.DidAttack:
+		TLMP C -1
+		Stop
+	}
+}
+
+ACTOR 64Poltergeist8
+{
+Health 20
+Radius 16
+Height 48
+DeathHeight 48
+Mass 0x7FFFFFFF
+Speed 0
+Painchance 0
+Monster
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+Obituary "%o was killed by a poltergeist."
++NOBLOOD
++DONTMORPH
++DONTSQUASH
++DONTCORPSE
+-COUNTKILL
+-NOGRAVITY
+	States
+	{
+	Spawn:
+		TLP1 AA 0 NoDelay A_SpawnItemEx("LightShaft2",0,0,0)
+	Stay:
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,6,52)
+		TLP1 A 3 Light("LampBasic") A_LookEx(LOF_NOSOUNDCHECK,0,192,0,360)
+		TNT1 A 0 A_Jump(8,"Stay2")
+		Loop
+	Stay2:
+		TLP1 B 3 A_LookEx(LOF_NOSOUNDCHECK,0,192,0,360)
+		Goto Stay
+	See:
+		TLP1 A 1 A_PlaySoundEx("polt/see","Auto")
+		TNT1 A 0 A_PlaySoundEx("polt/buzz","Auto")
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,52)
+		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,52)
+		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,52)
+		TLP1 B 3
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,52)
+		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,52)
+		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,52)
+		TLP1 B 3
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,52)
+		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,52)
+		TLP1 B 3
+		TLP1 B 3
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,-6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",6,-6,52)
+		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",-6,6,52)
+		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",6,6,52)
+		TLP1 B 3
+		Goto Missile
+	Missile:
+		TLP1 B 8 A_Facetarget
+		TNT1 A 0 A_PlaySound("PillarGlassBreak")
+		TNT1 A 0 A_Explode(4,192)
+		TNT1 AAAAAAAAA 0 A_SpawnItemEx("64PolterGlassShard",0,0,52,random(-2,2),random(-2,2),random(3,9),random(0,359),32)
+		TNT1 A 0 A_SpawnItemEx("ExplosionSmoke",0,0,52,Random(25,45),0,Random(-6,-9))
+		TLP1 CCC 8
+		TLP1 C 1 A_PlaySoundEx("polt/laugh","Auto")
+		TLP1 C 8 A_Die("DidAttack")
+		Stop
+	Death:
+		TNT1 A 0 A_PlaySound("PillarGlassBreak")
+		TNT1 AAAAAAAAA 0 A_SpawnItemEx("64PolterGlassShard",0,0,52,random(-2,2),random(-2,2),random(3,9),random(0,359),32)
+		TNT1 A 0 A_SpawnItemEx("ExplosionSmoke",0,0,52,Random(25,45),0,Random(-6,-9))
+	Death.DidAttack:
+		TLP1 C -1
+		Stop
+	}
+}
+
 Actor 64VenomEye1 : LostSoul
 {
 SCALE 0.8
@@ -748,6 +1272,7 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 -DONTFALL
 +LOOKALLAROUND
++NOBLOODDECALS
 -COUNTKILL
 	States
 	{
@@ -756,7 +1281,11 @@ DamageFactor "CauseObjectsToSplash",0.0
 		Loop
 	See:
 		ESYM ABCB 6 bright A_Chase
-		Loop
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
+		loop
+	Forget:
+		TNT1 A 0 A_ClearTarget
+		Goto Spawn
 	Missile:
 		ESYM C 10 bright A_FaceTarget
 		ESYM B 2 bright A_SkullAttack
@@ -797,7 +1326,11 @@ Actor 64VenomEye2 : 64VenomEye1
 		Loop
 	See:
 		ES2M ABCB 6 bright A_Chase
-		Loop
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
+		loop
+	Forget:
+		TNT1 A 0 A_ClearTarget
+		Goto Spawn
 	Missile:
 		ES2M C 10 bright A_FaceTarget
 		ES2M B 2 bright A_SkullAttack
@@ -829,147 +1362,6 @@ Actor 64VenomEye2 : 64VenomEye1
 	}
 }
 
-actor 64BruiserFireCandle : EvilEye
-{
-SCALE 0.8
-+RANDOMIZE
--SOLID
-	States
-	{
-	Spawn:
-		ES7M A 0 NoDelay A_SpawnItemEx("LightShaft2BrighterLess",0,0,20)
-		Goto Stay
-	Stay:
-		TNT1 A 0 A_CheckSight("StayBlank")
-		ES7M ABCB 6 Bright Light("SMALLGREENTORCH") A_SpawnItemEx("LensFlareTorchGreen",0,0,20)	//added light
-		Loop
-	StayBlank:
-		ES7M ABCB 6 Bright Light("SMALLGREENTORCH")
-		Goto Stay
-	}
-}
-
-Actor PoisonShotCloud1 //Weapon: Poison Gun,By: Daniel,using the gas clouds from it.
-{
-Radius 24
-Height 16
-Speed 16
-Mass 2000
-Damage(3)
-Obituary "%o stared into an Evil Eye for too long..."
-PROJECTILE
--NOGRAVITY
-+RIPPER
-+BLOODLESSIMPACT
-+NODAMAGETHRUST
-+NOTARGET
-+DONTSPLASH
-PoisonDamage 30
-RenderStyle Translucent
-Alpha 0.67
-	States
-	{
-	Spawn:
-		PSNE A 1 Bright
-		Loop
-	Death:
-		TNT1 AAA 0 A_SpawnItem("PoisonGasSmoke")
-		PSNE A 3 Bright
-		PSNE B 4 Bright
-		PSNE C 1 Bright
-		TNT1 A 0 A_Jump(16,2)
-		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud2",5,0,0)
-		TNT1 A 0 A_Jump(16,2)
-		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud2",5,0,90)
-		TNT1 A 0 A_Jump(16,2)
-		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud2",5,0,180)
-		TNT1 A 0 A_Jump(16,2)
-		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud2",5,0,270)
-		PSNE DEFGCBA 6 Bright
-		Stop
-	}
-}
-
-Actor PoisonShotCloud2
-{
-Radius 16
-Height 8
-Speed 8
-Mass 3000
-Damage(2)
-Obituary "%o stared into an Evil Eye for too long..."
-PoisonDamage 20
-RenderStyle Translucent
-Alpha 0.33
-PROJECTILE
--NOGRAVITY
-+RIPPER
-+BLOODLESSIMPACT
-+NODAMAGETHRUST
-+NOTARGET
-+DONTSPLASH
-	States
-	{
-	Spawn:
-		PSNE A 1 Bright
-		Loop
-	Death:
-		TNT1 AA 0 A_SpawnItem("PoisonGasSmoke")
-		PSNE A 3 Bright
-		PSNE B 4 Bright
-		PSNE C 1 Bright
-		TNT1 A 0 A_Jump(32,2)
-		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud3",5,0,0)
-		TNT1 A 0 A_Jump(32,2)
-		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud3",5,0,90)
-		TNT1 A 0 A_Jump(32,2)
-		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud3",5,0,180)
-		TNT1 A 0 A_Jump(32,2)
-		PSNE C 1 Bright A_CustomMissile("PoisonShotCloud3",5,0,270)
-		PSNE DEFGCBA 6 Bright
-		Stop
-	}
-}
-
-Actor PoisonShotCloud3
-{
-Radius 10
-Height 8
-Speed 8
-Mass 4000
-Damage(1)
-Obituary "%o stared into an Evil Eye for too long..."
-PoisonDamage 10
-RenderStyle Translucent
-Alpha 0.15
-PROJECTILE
--NOGRAVITY
-+RIPPER
-+BLOODLESSIMPACT
-+NODAMAGETHRUST
-+NOTARGET
-+DONTSPLASH
-	States
-	{
-	Spawn:
-		PSNE A 1 Bright
-		Loop
-	Death:
-		TNT1 A 0 A_SpawnItem("PoisonGasSmoke")
-		PSNE A 3 Bright
-		PSNE B 4 Bright
-		PSNE C 5 Bright
-		PSNE DEFGCBA 6 Bright
-		Stop
-	}
-}
-
-Actor PoisonGasSmoke : ExplosionSmoke
-{
-renderstyle stencil
-stencilcolor DarkGreen
-}
-
 ACTOR 64PossessedTree
 {
 Health 250
@@ -993,6 +1385,7 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 MONSTER
 +DONTMORPH
++NOBLOODDECALS
 +NOICEDEATH
 +FLOORCLIP
 +STANDSTILL
@@ -1078,6 +1471,7 @@ MONSTER
 -SOLID
 -COUNTKILL
 +NOTARGETSWITCH
++NOBLOODDECALS
 +NOICEDEATH
 +FLOORCLIP
 +LOOKALLAROUND
@@ -1172,84 +1566,6 @@ MONSTER
 	}
 }
 
-actor Drt1
-{
-Radius 2
-Scale 0.7
-Damage 0
-Speed 5
-PROJECTILE
--NOGRAVITY
--NOBLOCKMAP
--NOTELEPORT
-+RANDOMIZE
-	States
-	{
-	Spawn:
-		DIRT A 0 NoDelay A_SetGravity(0.5)
-		TNT1 A 0 ThrustThingZ(0,15,0,1)
-		goto See
-	See:
-		DIRT ABC 5
-		loop
-	Death:
-		DIRT JKL 3
-		Stop
-	}
-}
-
-actor Drt2
-{
-Radius 2
-Scale 0.7
-Damage 0
-Speed 5
-PROJECTILE
--NOGRAVITY
--NOBLOCKMAP
--NOTELEPORT
-+RANDOMIZE
-	States
-	{
-	Spawn:
-		DIRT A 0 NoDelay A_SetGravity(0.5)
-		TNT1 A 0 ThrustThingZ(0,15,0,1)
-		goto See
-	See:
-		DIRT DEF 5
-		loop
-	Death:
-		DIRT JKL 3
-		Stop
-	}
-}
-
-actor Drt3
-{
-Radius 2
-Scale 0.7
-Damage 0
-Speed 5
-PROJECTILE
--NOGRAVITY
--NOBLOCKMAP
--NOTELEPORT
-+RANDOMIZE
-	States
-	{
-	Spawn:
-		DIRT A 0 NoDelay A_SetGravity(0.5)
-		TNT1 A 0 ThrustThingZ(0,15,0,1)
-		goto See
-	See:
-		DIRT GHI 5
-		loop
-	Death:
-		DIRT JKL 3
-		Stop
-	}
-}
-
 actor 64Hangman
 {
 obituary "%o was ambushed by a hangedman."
@@ -1275,16 +1591,22 @@ MONSTER
 +DONTFALL
 +LookAllAround
 +SHORTMISSILERANGE
++NOBLOODDECALS
 -COUNTKILL
 	states
 	{
 	Spawn:
-		HANG B 10 A_LookEx(LOF_NOSOUNDCHECK,0,256,0,360)
+		TNT1 A 0 A_Wander
+		HANG A 1 A_LookEx(LOF_NOSOUNDCHECK,0,256,0,360)
 		loop
 	See:
-		HANG B 1 A_FaceTarget
+		HANG A 1 A_FaceTarget
 		TNT1 A 0 A_Chase
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		loop
+	Forget:
+		TNT1 A 0 A_ClearTarget
+		Goto Spawn
 	Melee:
 	Missile:
 		HANG B 8 A_FaceTarget
