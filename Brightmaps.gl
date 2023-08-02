@@ -72,6 +72,7 @@ brightmap sprite PLASB0		{map "brightmaps/PGUNB1.png"disablefullbright}
 brightmap sprite PLASC0		{map "brightmaps/PGUNB2.png"disablefullbright}
 
 //WEAPONS
+/*	need reworking for new rifle sprites
 //RIFLE ("I LOVE BRIGHTMAPS YEAH" - BigStronk  4th April 2023, UTC+00  (UK Time) 22:54)
 brightmap sprite RIFSA0		{map "BRIGHTMAPS/RifleBM/RIFSA0_BR.png" Disablefullbright}//Selection
 brightmap sprite RIFSB0		{map "BRIGHTMAPS/RifleBM/RIFSB0_BR.png" Disablefullbright}//Selection
@@ -108,6 +109,7 @@ brightmap sprite RIFIE0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIE0_BR.png" Disablef
 brightmap sprite RIFIF0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIF0_BR.png" Disablefullbright}//Fidgeting
 brightmap sprite RIFIG0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIG0_BR.png" Disablefullbright}//Fidgeting
 brightmap sprite RIFIH0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIH0_BR.png" Disablefullbright}//Fidgeting
+*/
 
 //GAUSS CANNON
 brightmap sprite GCPCA0		{map "BRIGHTMAPS/GCPCA0_BR.png" Disablefullbright}//Pick-Up

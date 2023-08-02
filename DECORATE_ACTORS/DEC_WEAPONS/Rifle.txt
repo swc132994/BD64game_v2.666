@@ -292,9 +292,9 @@ Weapon.SlotNumber 4
 		RIFW A 1 Offset(-38,34)
 		RIFW A 1 Offset(-24,32)
 		RIFW A 10 A_WeaponReady
-		RIFW BCDEFGHH 1 A_WeaponReady
-		RIFW IJK 2
-		RIFW LMNO 1
+		RIFW BCDEFGHH 2 A_WeaponReady
+		RIFW IJK 2 A_WeaponReady
+		RIFW LMNO 1 A_WeaponReady
 		RIFW P 1 A_PlaySound("RIFLOAD",CHAN_WEAPON)
 		RIFW QR 2 A_WeaponReady
 		RIFW STUV 1 A_WeaponReady
@@ -310,23 +310,23 @@ Weapon.SlotNumber 4
 		ARSR D 1 Offset(-46,40)
 		ARSR D 1 Offset(-27,35)
 		ARSR D 1 Offset(-19,32)
-		ARSR EFF 1
+		ARSR EFF 1 A_WeaponReady
 		ARSR GG 1 Offset(0,32)
 		ARSR HIJKLMNNOPPPQ 1
 		RIFL C 0 A_PlaySound("Relo2")
-		ARSR RST 1
+		ARSR RST 1 A_WeaponReady
 		TNT1 A 0 A_PlaySound("Relo3")
-		ARSR U 1
-		AR2R CDEGHII 1
-		AR2R J 3
+		ARSR U 1 A_WeaponReady
+		AR2R CDEGHII 1 A_WeaponReady
+		AR2R J 3 A_WeaponReady
 		TNT1 A 0 A_PlaySound("ARSBOLT",CHAN_WEAPON)
-		AR2R LM 1
-		AR2R N 4
-		AR2R OPQ 1
-		AR2R R 3
-		AR2R SSTUV 1
-		ARSR Z 1
-		AR2R AB 1
+		AR2R LM 1 A_WeaponReady
+		AR2R N 4 A_WeaponReady
+		AR2R OPQ 1 A_WeaponReady
+		AR2R R 3 A_WeaponReady
+		AR2R SSTUV 1 A_WeaponReady
+		ARSR Z 1 A_WeaponReady
+		AR2R AB 1 A_WeaponReady
 		Goto Ready
 	Select:
 		TNT1 A 0 A_JumpIf(CallACS("WeaponsWarmUpACS")==false,3)

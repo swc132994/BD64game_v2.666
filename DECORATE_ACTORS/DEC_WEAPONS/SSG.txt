@@ -175,22 +175,22 @@ Weapon.SlotNumber 3
 		SSGG E 1 Offset(40,53)
 		SSGG E 1 Offset(25,40)
 		SSGG E 1 Offset(16,32)
-		SSGG EFGH 1
-		SSGG I 3
-		SSGG JKLMNOP 1
+		SSGG EFGH 1 A_WeaponReady
+		SSGG I 3 A_WeaponReady
+		SSGG JKLMNOP 1 A_WeaponReady
 		TNT1 A 0 A_PlaySound("weapons/sshoto")
 		TNT1 A 1
-		SSGW A 1
-		SSGG RR 1
-		SSGG S 3
-		SSGW BCDEFGH 1
+		SSGW A 1 A_WeaponReady
+		SSGG RR 1 A_WeaponReady
+		SSGG S 3 A_WeaponReady
+		SSGW BCDEFGH 1 A_WeaponReady
 		TNT1 A 0 A_PlaySound("weapons/sshotl")
-		SSGW IJKLM 1
-		SSGW OPPQRST 1
+		SSGW IJKLM 1 A_WeaponReady
+		SSGW OPPQRST 1 A_WeaponReady
 		TNT1 A 0 A_PlaySound("weapons/sshotl")
-		SSGW UUVWXY 1
+		SSGW UUVWXY 1 A_WeaponReady
 		TNT1 A 0 A_PlaySound("weapons/sshotc")
-		SSGH FGHIJKLM 1
+		SSGH FGHIJKLM 1 A_WeaponReady
 		Goto Ready
 	v1Ready:
 	Ready:

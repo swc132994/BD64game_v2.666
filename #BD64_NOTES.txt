@@ -105,6 +105,8 @@ Chaingun (tactical & Modern) - Doomer Blazkowicz (sprite rework), IDDQD_1337 (An
 
 New weapon kicking and slide kicking animations by IDDQD_1337
 
+New Flashlight/torch pickup by IDDQD and Craneo (Sprites)
+
 Monsters:
 64Thing - Craneo(D64 sprites), based on the Mimic by StopSignal, sounds from Duke Nukem 3D by 3D Realms
 64 Revenant - DrPyspy (sprites)
