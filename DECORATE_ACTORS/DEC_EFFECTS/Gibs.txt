@@ -1,16 +1,16 @@
 ACTOR XDeath1
 {
 Scale 1.2
-Radius 8
-Height 8
+Radius 4
+Height 4
 Speed 10
 Mass 1
 SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
 Decal BrutalBloodSuper
 damagetype Blood
-+NOBLOCKMAP
 +MISSILE
++NOBLOCKMAP
 +NOTELEPORT
 +MOVEWITHSECTOR
 +CLIENTSIDEONLY
@@ -20,8 +20,8 @@ damagetype Blood
 +FLOORCLIP
 +ISMONSTER		//INFRARED
 +DOOMBOUNCE
-BounceCount 0
-BounceFactor 0.1
+BounceCount 1
+BounceFactor 1
 	States
 	{
 	Spawn:
@@ -74,9 +74,6 @@ Gravity 0.8
 SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
 Decal BrutalBloodSuper
-+CLIENTSIDEONLY
-BounceFactor 0.3
-wallbouncefactor 0.2
 	States
 	{
 	Spawn:
@@ -265,6 +262,11 @@ DeathSound "misc/xdeath3"
 		Loop
 	Death:
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5",0,0,random(0,180),2,random(0,180))
+		TNT1 A 0 A_CheckFloor("SpawnFloor")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilBloodSimplerLarge")
+		TNT1 A 1 A_SpawnItemEx("DetectCeilXDeath2")
+		Stop
+	SpawnFloor:
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
 		TNT1 A 0 A_QueueCorpse
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
@@ -380,7 +382,6 @@ Scale 0.8
 Radius 8
 Height 12
 Speed 6
-Mass 1
 Alpha 0.9
 Renderstyle Translucent
 DeathSound "misc/xdeath1"
@@ -476,7 +477,6 @@ Gravity 0.4
 SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
 Decal BrutalBloodSuper
-+CLIENTSIDEONLY
 +BOUNCEONWALLS
 	States
 	{

@@ -159,11 +159,11 @@ SeeSound "none"
 	Spawn:
 		BLUD C 0 NoDelay ThrustThingZ(0,7,1,0)
 		CAS3 ABCD 3
-		BLUD C 0 ThrustThingZ(0,7,1,0)
+		TNT1 A 0 ThrustThingZ(0,7,1,0)
 		CAS3 EFGH 3
-		BLUD C 0 ThrustThingZ(0,7,1,0)
+		TNT1 A 0 ThrustThingZ(0,7,1,0)
 		CAS3 ABCD 3
-		BLUD C 0 ThrustThingZ(0,7,1,0)
+		TNT1 A 0 ThrustThingZ(0,7,1,0)
 		CAS3 EFGH 3
 		TNT1 A 0 A_SpawnItem("BUBULZ")
 		Loop
