@@ -292,8 +292,7 @@ Weapon.SlotNumber 4
 		RIFW A 1 Offset(-38,34)
 		RIFW A 1 Offset(-24,32)
 		RIFW A 10 A_WeaponReady
-		RIFW BCDEFGHH 2 A_WeaponReady
-		RIFW IJK 2 A_WeaponReady
+		RIFW BCDEFGHHIJK 2 A_WeaponReady
 		RIFW LMNO 1 A_WeaponReady
 		RIFW P 1 A_PlaySound("RIFLOAD",CHAN_WEAPON)
 		RIFW QR 2 A_WeaponReady
