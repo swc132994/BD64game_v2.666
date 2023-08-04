@@ -625,6 +625,13 @@ sawcubus/pain		SWCBPAIN
 sawcubus/death		SWCBDEAD
 sawcubus/active		SWCBACT
 
+//Hellstorm
+tornado/form Q2WIND
+tornado/see NA_TAUNT
+tornado/death NA_DEATH
+tornado/pain NA_PAIN
+tornado/active NA_IDLE
+
 //---------------------------
 //**********GORE*************
 //---------------------------

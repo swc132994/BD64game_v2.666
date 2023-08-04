@@ -661,6 +661,7 @@ MONSTER
 		VILE A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"D64MonsterOnly")		//if D64 monsters only enabled spawn fatso
 		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==0,"SpawnArchvile")
 		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==1,"SpawnFleshWizard")
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==2,"SpawnHellstorm")
 		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==5,"P05")
 		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==10,"P10")
 		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==15,"P15")
@@ -671,34 +672,37 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==50,"P50")
 		Goto SpawnArchvile
 	P05:
-		TNT1 A 0 A_Jump(13,"SpawnFleshWizard")//(5%)
+		TNT1 A 0 A_Jump(13,"SpawnFleshWizard","SpawnHellstorm")//(5%)
 		Goto SpawnArchvile
 	P10:
-		TNT1 A 0 A_Jump(26,"SpawnFleshWizard")//(10%)
+		TNT1 A 0 A_Jump(26,"SpawnFleshWizard","SpawnHellstorm")//(10%)
 		Goto SpawnArchvile
 	P15:
-		TNT1 A 0 A_Jump(39,"SpawnFleshWizard")//(15%)
+		TNT1 A 0 A_Jump(39,"SpawnFleshWizard","SpawnHellstorm")//(15%)
 		Goto SpawnArchvile
 	P20:
-		TNT1 A 0 A_Jump(51,"SpawnFleshWizard")//(20%)
+		TNT1 A 0 A_Jump(51,"SpawnFleshWizard","SpawnHellstorm")//(20%)
 		Goto SpawnArchvile
 	P25:
-		TNT1 A 0 A_Jump(64,"SpawnFleshWizard")//(25%)
+		TNT1 A 0 A_Jump(64,"SpawnFleshWizard","SpawnHellstorm")//(25%)
 		Goto SpawnArchvile
 	P30:
-		TNT1 A 0 A_Jump(77,"SpawnFleshWizard")//(30%)
+		TNT1 A 0 A_Jump(77,"SpawnFleshWizard","SpawnHellstorm")//(30%)
 		Goto SpawnArchvile
 	P40:
-		TNT1 A 0 A_Jump(102,"SpawnFleshWizard")//(40%)
+		TNT1 A 0 A_Jump(102,"SpawnFleshWizard","SpawnHellstorm")//(40%)
 		Goto SpawnArchvile
 	P50:
-		TNT1 A 0 A_Jump(128,"SpawnFleshWizard")//(50%)
+		TNT1 A 0 A_Jump(128,"SpawnFleshWizard","SpawnHellstorm")//(50%)
 		Goto SpawnArchvile
 	SpawnArchvile:
 		TNT1 A 1 A_SpawnItemEx("64Archvile",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	SpawnFleshWizard:
 		TNT1 A 1 A_SpawnItemEx("64FleshWizard",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	SpawnHellstorm:
+		TNT1 A 1 A_SpawnItemEx("64Hellstorm",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	D64MonsterOnly:
 		TNT1 A 1 A_SpawnItemEx("64Fatso",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)

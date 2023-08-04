@@ -124,31 +124,33 @@ Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 64Wraith - Vader, Captain Toenail, Midway, Id Software, Gregor Punchatz, Craneo (D64 style sprites)
 64WaffenSS - Sounds from Return to Castle Wolfenstein, uploaded by Labtec Speakers to The Sounds Resource.
 64Nightmare Elemental - Sprites by Styd051, Decorate script by Craneo.
-64FleshWizard{
+64FleshWizard by Craneo
 		Code: Melvin (base Flesh Wizard decorate), swc132994 (default BD64 code bits reused), Amuscaria (Diabolist projectile decorate)
 		Sprites: Freedoom (Flesh Wizard base), Monolith (Blood Zombie), Craneo (Flesh Wizard 64 conversion), HAUNT folder sprites taken from LCA DUST's Bloody Frandle
 		Sounds: 64FWSITx, 64FWDTHx (Dead Space), 64FWACTx (Doom 3), 64FWPAIx (Dying Light), 64FWTELx (System Shock 2)
-		}
-64Husk{
+64Husk by Craneo
 		Sprite Credits: Amuscaria, DrDoctor, Midway
 		Code Credits: HorrorMovieRei, swc132994, Sgt_Mark_IV (most likely), Lagi (zombie group spawn code)
 		Sounds Credits: Id Software, Immorpher
 		Frankensprite by Craneo.
-		}
-64Forgotton One
-		{Sprite Credits: Midway, DrDoctor, DrPyspy, Craneo
+64Forgotton One by Craneo
+		Sprite Credits: Midway, DrDoctor, DrPyspy, Craneo
 		Sound Credits: Midway, HorrorMovieRei
 		Code Credits: swc132994, Sgt_Mark_IV
-		}
-		
-64Butcher
+64Butcher by Craneo
 	Code: Bouncy, Graf Zahl, Ganbare-Lucifer, heavily edited for BD64 by Craneo
 	Sounds: Ganbare-Lucifer
 	Sprites: id Software, Captain J, aeea7835, Eriance, ItsNatureToDie, Midway Entertainment, Kinsie, D64 edit by Craneo
 
+64Hellstorm by Craneo
+	Decorate: Maelstrom & Craneo edits
+	GLDEFs: Dreadopp
+	Sounds: Id Software, Monolith Games
+	Sprites: Immorpher, Craneo, Atomic Frog, Witan Entertainment BV, MagicMaker
+
 //Anomaly events
 Poltergeist original credits:
-
+----------------------------
 Submitted: David Raven
 Decorate: David Raven
 GLDefs: David Raven, the Skulltag Team
@@ -158,7 +160,7 @@ Sprite Edit: Captain Toenail
 Idea Base: David Raven
 
 Baphomet Eye original credits:
-
+-----------------------------
 Decorate: Osiris, Espi, Supersonix07
 GLDEFs: Ghastly Dragon
 Sounds: Id Software, Raven Software, Monolith
@@ -179,6 +181,7 @@ Squire sight sounds credits:  Id Software, Woolie Wool
 Wall break sounds taken from "Destructible Fantasy Props" by whirledtsar, sounds originally made by Raven Software.
 
 Hangman original credits:
+------------------------
 Code: Captain Toenail, Ghastly (ZScript conversion)
 GLDefs: Captain Toenail
 Sounds: Xatrix, Id Software
@@ -193,7 +196,7 @@ buzzing noises from Quake 1
 
 Edits by (Craneo)
 
-DoomerBlazkowicz Edits to:
+//DoomerBlazkowicz Edits to:
 Fists - sprites & sounds
 Pistol - sprites & decorate
 Shotgun - alt attack decorate, sprites & sounds

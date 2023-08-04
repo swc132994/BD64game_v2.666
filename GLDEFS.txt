@@ -1902,6 +1902,75 @@ object 64AlphaShock
 	frame SH9KF {light AlphaShock_X3}
 }
 
+//Hellstorm
+Flickerlight2 TornadoDemonLeaves
+{
+Color 0.4 0.2 0.3
+Size 40
+SecondarySize 48
+Interval 1
+Offset 0 40 0
+}
+
+Flickerlight2 TornadoDemonLeavesWeaker
+{
+Color 0.4 0.2 0.3
+Size 30
+SecondarySize 38
+Interval 1
+Offset 0 40 0
+}
+
+Object 64Hellstorm
+{
+Frame S1R3F {Light TornadoDemonLeavesWeaker}
+Frame S1R3G {Light TornadoDemonLeavesWeaker}
+Frame S1R3H {Light TornadoDemonLeaves}
+Frame S1R3K {Light TornadoDemonLeaves}
+Frame S1R3L {Light TornadoDemonLeaves}
+Frame S1R3M {Light TornadoDemonLeavesWeaker}
+Frame SP1N {Light TornadoDemonLeavesWeaker}
+Frame ZP1N {Light TornadoDemonLeaves}
+}
+
+object 64HellstormSoulBall1
+{
+frame ZT63A {light NIMPBALL}
+frame ZT63B {light NIMPBALL}
+frame ZT63C {light NIMPBALL_X1}
+frame ZT63D {light NIMPBALL_X2}
+frame ZT63E {light NIMPBALL_X3}
+frame ZT63F {light NIMPBALL_X4}
+frame ZT63G {light NIMPBALL_X5}
+frame ZT63H {light NIMPBALL_X6}
+}
+
+object 64HellstormSoulBall2
+{
+frame ZT63A {light NIMPBALL}
+frame ZT63B {light NIMPBALL}
+frame ZT63C {light NIMPBALL_X1}
+frame ZT63D {light NIMPBALL_X2}
+frame ZT63E {light NIMPBALL_X3}
+frame ZT63F {light NIMPBALL_X4}
+frame ZT63G {light NIMPBALL_X5}
+frame ZT63H {light NIMPBALL_X6}
+}
+
+object 64HellstormFire
+{
+frame ZFYRA {light NIMPBALL}
+frame ZFYRB {light NIMPBALL_X1}
+frame ZFYRC {light NIMPBALL_X2}
+frame ZFYRD {light NIMPBALL_X3}
+frame ZFYRE {light NIMPBALL_X4}
+}
+
+object 64HellstormFireTrail
+{
+	frame MPUF {light NIMPBALL_X4}
+}
+
 //Doom Teleport fog
 flickerlight DTFOG1
 {
@@ -2377,28 +2446,6 @@ Frame REDBE {light BETABALL2_X3}
 Frame REDBF {light BETABALL2_X4}
 }
 
-//TEXTURES
-Glow
-{
-	Walls
-	{
-		LAVA1
-		LAVA2
-		LAVA3
-		LAVA4
-		NUKAGE1
-		NUKAGE2
-		NUKAGE3
-	}
-	Texture "LAVA1",#FF3200,40,fullbright
-	Texture "LAVA2",#FF3200,40,fullbright
-	Texture "LAVA3",#FF3200,40,fullbright
-	Texture "LAVA4",#FF3200,40,fullbright
-	Texture "NUKAGE1",#00FF00,80,fullbright
-	Texture "NUKAGE2",#00FF00,80,fullbright
-	Texture "NUKAGE3",#00FF00,80,fullbright
-}
-
 //Anomaly Events
 pulselight POLTCANDLE
 {
@@ -2502,4 +2549,26 @@ Object 64VenomEye2
 	Frame ESXME {Light GreenEye5}
 	Frame ESXMF {Light GreenEye6}
 	Frame ESXMG {Light GreenEye7}
+}
+
+//TEXTURES
+Glow
+{
+	Walls
+	{
+		LAVA1
+		LAVA2
+		LAVA3
+		LAVA4
+		NUKAGE1
+		NUKAGE2
+		NUKAGE3
+	}
+	Texture "LAVA1",#FF3200,40,fullbright
+	Texture "LAVA2",#FF3200,40,fullbright
+	Texture "LAVA3",#FF3200,40,fullbright
+	Texture "LAVA4",#FF3200,40,fullbright
+	Texture "NUKAGE1",#00FF00,80,fullbright
+	Texture "NUKAGE2",#00FF00,80,fullbright
+	Texture "NUKAGE3",#00FF00,80,fullbright
 }
