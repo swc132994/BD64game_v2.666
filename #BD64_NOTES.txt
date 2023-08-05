@@ -128,6 +128,7 @@ Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 		Code: Melvin (base Flesh Wizard decorate), swc132994 (default BD64 code bits reused), Amuscaria (Diabolist projectile decorate)
 		Sprites: Freedoom (Flesh Wizard base), Monolith (Blood Zombie), Craneo (Flesh Wizard 64 conversion), HAUNT folder sprites taken from LCA DUST's Bloody Frandle
 		Sounds: 64FWSITx, 64FWDTHx (Dead Space), 64FWACTx (Doom 3), 64FWPAIx (Dying Light), 64FWTELx (System Shock 2)
+		Extra Deaths: Edited by Craneo and based on sprites by David G
 64Husk by Craneo
 		Sprite Credits: Amuscaria, DrDoctor, Midway
 		Code Credits: HorrorMovieRei, swc132994, Sgt_Mark_IV (most likely), Lagi (zombie group spawn code)
@@ -141,7 +142,6 @@ Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 	Code: Bouncy, Graf Zahl, Ganbare-Lucifer, heavily edited for BD64 by Craneo
 	Sounds: Ganbare-Lucifer
 	Sprites: id Software, Captain J, aeea7835, Eriance, ItsNatureToDie, Midway Entertainment, Kinsie, D64 edit by Craneo
-
 64Hellstorm by Craneo
 	Decorate: Maelstrom & Craneo edits
 	GLDEFs: Dreadopp

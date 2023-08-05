@@ -929,6 +929,47 @@ brightmap sprite ESKUF3F7	{map "brightmaps/ForgottenOne/ESKUF3F7_BR.png"}
 brightmap sprite ESKUF4F6	{map "brightmaps/ForgottenOne/ESKUF4F6_BR.png"}
 brightmap sprite ESKUF5		{map "brightmaps/ForgottenOne/ESKUF5_BR.png"}
 
+//Hellstorm
+brightmap sprite S1R3A1		{map "brightmaps/Hellstorm/S1R3A1_BR.png"}
+brightmap sprite S1R3A2A8	{map "brightmaps/Hellstorm/S1R3A2A8_BR.png"}
+brightmap sprite S1R3A3A7	{map "brightmaps/Hellstorm/S1R3A3A7_BR.png"}
+brightmap sprite S1R3B1		{map "brightmaps/Hellstorm/S1R3B1_BR.png"}
+brightmap sprite S1R3B2B8	{map "brightmaps/Hellstorm/S1R3B2B8_BR.png"}
+brightmap sprite S1R3B3B7	{map "brightmaps/Hellstorm/S1R3B3B7_BR.png"}
+brightmap sprite S1R3C1		{map "brightmaps/Hellstorm/S1R3C1_BR.png"}
+brightmap sprite S1R3C2C8	{map "brightmaps/Hellstorm/S1R3C2C8_BR.png"}
+brightmap sprite S1R3C3C7	{map "brightmaps/Hellstorm/S1R3C3C7_BR.png"}
+brightmap sprite S1R3D1		{map "brightmaps/Hellstorm/S1R3D1_BR.png"}
+brightmap sprite S1R3D2D8	{map "brightmaps/Hellstorm/S1R3D2D8_BR.png"}
+brightmap sprite S1R3D3D7	{map "brightmaps/Hellstorm/S1R3D3D7_BR.png"}
+brightmap sprite S1R3F1		{map "brightmaps/Hellstorm/S1R3F1_BR.png"}
+brightmap sprite S1R3F2F8	{map "brightmaps/Hellstorm/S1R3F2F8_BR.png"}
+brightmap sprite S1R3F3F7	{map "brightmaps/Hellstorm/S1R3F3F7_BR.png"}
+brightmap sprite S1R3G1		{map "brightmaps/Hellstorm/S1R3G1_BR.png"}
+brightmap sprite S1R3G2G8	{map "brightmaps/Hellstorm/S1R3G2G8_BR.png"}
+brightmap sprite S1R3G3G7	{map "brightmaps/Hellstorm/S1R3G3G7_BR.png"}
+brightmap sprite S1R3H1		{map "brightmaps/Hellstorm/S1R3H1_BR.png"}
+brightmap sprite S1R3H2H8	{map "brightmaps/Hellstorm/S1R3H2H8_BR.png"}
+brightmap sprite S1R3H3H7	{map "brightmaps/Hellstorm/S1R3H3H7_BR.png"}
+brightmap sprite S1R3K1		{map "brightmaps/Hellstorm/S1R3K1_BR.png"}
+brightmap sprite S1R3K2K8	{map "brightmaps/Hellstorm/S1R3K2K8_BR.png"}
+brightmap sprite S1R3K3K7	{map "brightmaps/Hellstorm/S1R3K3K7_BR.png"}
+brightmap sprite S1R3L1		{map "brightmaps/Hellstorm/S1R3L1_BR.png"}
+brightmap sprite S1R3L2L8	{map "brightmaps/Hellstorm/S1R3L2L8_BR.png"}
+brightmap sprite S1R3L3L7	{map "brightmaps/Hellstorm/S1R3L3L7_BR.png"}
+brightmap sprite S1R3M1		{map "brightmaps/Hellstorm/S1R3M1_BR.png"}
+brightmap sprite S1R3M2M8	{map "brightmaps/Hellstorm/S1R3M2M8_BR.png"}
+brightmap sprite S1R3M3M7	{map "brightmaps/Hellstorm/S1R3M3M7_BR.png"}
+brightmap sprite S1R3Q1		{map "brightmaps/Hellstorm/S1R3Q1_BR.png"}
+brightmap sprite S1R3Q2Q8	{map "brightmaps/Hellstorm/S1R3Q2Q8_BR.png"}
+brightmap sprite S1R3Q3Q7	{map "brightmaps/Hellstorm/S1R3Q3Q7_BR.png"}
+brightmap sprite S1R3R0		{map "brightmaps/Hellstorm/S1R3R0_BR.png"}
+brightmap sprite SP1NA0		{map "brightmaps/Hellstorm/SP1NA0_BR.png"}
+brightmap sprite SP1NB0		{map "brightmaps/Hellstorm/SP1NB0_BR.png"}
+brightmap sprite SP1NC0		{map "brightmaps/Hellstorm/SP1NC0_BR.png"}
+brightmap sprite SP1NG0		{map "brightmaps/Hellstorm/SP1NG0_BR.png"}
+brightmap sprite SP1NH0		{map "brightmaps/Hellstorm/SP1NH0_BR.png"}
+
 /*//LIQUID TEXTURES
 brightmap sprite LAVA1		{map "brightmaps/256SQ_BR.png"}
 brightmap sprite LAVA2		{map "brightmaps/256SQ_BR.png"}

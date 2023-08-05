@@ -18,43 +18,43 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",12,71,0)
 		Loop
 	See:
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,71,0)
 		VILE AA 2 A_VileChase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,71,0)
 		VILE BB 2 A_VileChase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,71,0)
 		VILE CC 2 A_VileChase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,71,0)
 		VILE DD 2 A_VileChase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,71,0)
 		VILE EE 2 A_VileChase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,71,0)
 		VILE FF 2 A_VileChase
 		Loop
 	Missile:
 		TNT1 A 0 A_VileStart
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23",0,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,71,0)
 		VILE G 10 Bright A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23",0,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,71,0)
 		VILE H 8 Bright A_VileStart
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23",0,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,71,0)
 		VILE IJ 8 Bright A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23",0,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,71,0)
 		VILE KL 8 Bright a_viletarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23",0,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,71,0)
 		VILE MN 8 Bright A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23",0,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,71,0)
 		VILE OP 8 Bright A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23",0,71,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,71,0)
 		VILE Q 12 Bright A_VileAttack
 		Goto See
 	Heal:
+		TNT1 A 0 A_SpawnItem("HeadshotTarget30",12,71,0)
 		VILE Z 10 Bright
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23",12,71,0)
 		VILH AB 10 Bright
 		Goto See
 	Pain:
 		VILE R 5
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,71,0)
 		VILE R 5 A_Pain
 		Goto See
 	Death:
@@ -193,10 +193,10 @@ DropItem "None"
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(128,2)
+		VID7 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//Flip horizontal
 	See:
-		VID7 A 9
+		VID7 A 9 A_SpawnItem("HeadshotTarget10",0,71,0)
 		TNT1 A 0 A_Pain
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		VID7 B 9 A_SpawnItem("HeadshotTarget10",0,71,0)
@@ -304,10 +304,10 @@ Actor BrutalizedArchvile_2 : BrutalizedArchvile_1
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(128,2)
+		VID8 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//Flip horizontal
 	See:
-		VID8 A 9
+		VID8 A 9 A_SpawnItem("HeadshotTarget10",0,71,0)
 		TNT1 A 0 A_Pain
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		VID8 B 9 A_SpawnItem("HeadshotTarget10",0,71,0)
