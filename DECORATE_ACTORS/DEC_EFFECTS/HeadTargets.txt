@@ -24,8 +24,8 @@ actor HeadshotTargetBase
 {
 Health 300
 GibHealth 10000
-Radius 7
-Height 18
+Radius 10
+Height 20
 DamageType head
 BloodType "Brutal_Blood"
 PainChance 255
@@ -39,7 +39,6 @@ damagefactor "SSG",1.0
 damagefactor "ExplosiveImpact",0.0
 damagefactor "Bullet",1.5
 damagefactor "TeleportRemover",0.0
-//damagefactor "Melee",0.3
 -SOLID
 +NOGRAVITY
 +SHOOTABLE
@@ -56,7 +55,6 @@ damagefactor "TeleportRemover",0.0
 	{
 	Spawn:
 		TNT1 A 3
-		TNT1 A 1 A_NoBlocking
 		Stop
 	Pain.Explosive:
 		TNT1 A 3
@@ -150,6 +148,27 @@ damagefactor "TeleportRemover",0.0
 	}
 }
 
+actor HeadshotTarget2 : HeadshotTargetBase
+{
+States
+	{
+	Spawn:
+		TNT1 A 2
+		Stop
+	}
+}
+
+actor HeadshotTarget2Green : HeadshotTargetBase
+{
+BloodType "Brutal_BloodGreen"
+States
+	{
+	Spawn:
+		TNT1 A 2
+		Stop
+	}
+}
+
 actor HeadshotTarget4 : HeadshotTargetBase
 {
 States
@@ -181,12 +200,13 @@ States
 	}
 }
 
-actor HeadshotTarget2 : HeadshotTargetBase
+actor HeadshotTarget6Green : HeadshotTargetBase
 {
+BloodType "Brutal_BloodGreen"
 States
 	{
 	Spawn:
-		TNT1 A 2
+		TNT1 A 6
 		Stop
 	}
 }
@@ -202,6 +222,17 @@ States
 }
 
 actor HeadshotTarget10 : HeadshotTargetBase
+{
+BloodType "Brutal_BloodGreen"
+States
+	{
+	Spawn:
+		TNT1 A 10
+		Stop
+	}
+}
+
+actor HeadshotTarget10Green : HeadshotTargetBase
 {
 States
 	{
@@ -221,8 +252,30 @@ States
 	}
 }
 
+actor HeadshotTarget12Green : HeadshotTargetBase
+{
+BloodType "Brutal_BloodGreen"
+States
+	{
+	Spawn:
+		TNT1 A 12
+		Stop
+	}
+}
+
 actor HeadshotTarget16 : HeadshotTargetBase
 {
+States
+	{
+	Spawn:
+		TNT1 A 16
+		Stop
+	}
+}
+
+actor HeadshotTarget16Green : HeadshotTargetBase
+{
+BloodType "Brutal_BloodGreen"
 States
 	{
 	Spawn:
@@ -283,6 +336,16 @@ actor HeadshotTarget30 : HeadshotTargetBase
 	}
 }
 
+actor HeadshotTarget32 : HeadshotTargetBase
+{
+	States
+	{
+	Spawn:
+		TNT1 A 32
+		Stop
+	}
+}
+
 actor HeadshotTarget30Green : HeadshotTargetBase
 {
 BloodType "Brutal_BloodGreen"
@@ -294,22 +357,22 @@ BloodType "Brutal_BloodGreen"
 	}
 }
 
-actor HeadshotTarget60 : HeadshotTargetBase
-{
-	States
-	{
-	Spawn:
-		TNT1 A 60
-		Stop
-	}
-}
-
 actor HeadshotTarget50 : HeadshotTargetBase
 {
 States
 	{
 	Spawn:
 		TNT1 A 50
+		Stop
+	}
+}
+
+actor HeadshotTarget60 : HeadshotTargetBase
+{
+	States
+	{
+	Spawn:
+		TNT1 A 60
 		Stop
 	}
 }

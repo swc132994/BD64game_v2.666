@@ -1,4 +1,4 @@
-ACTOR 64Hellstorm
+ACTOR 64Hellstorm 19132
 {
 Scale 0.8
 Health 800

@@ -165,44 +165,35 @@ DropItem "None"
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(128,2)
+		GH1H A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//flip horzizontal
 	See:
 		GH1H A 8 A_FaceTarget
 		TNT1 A 0 A_Pain
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
-		GH1H B 8 A_FaceTarget
-		GH1H A 8 A_FaceTarget
+		GH1H BA 8 A_FaceTarget
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
-		GH1H C 8 A_FaceTarget
-		GH1H A 8 A_FaceTarget
+		GH1H CA 8 A_FaceTarget
 		TNT1 A 0 A_Pain
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
-		GH1H B 8 A_FaceTarget
-		GH1H A 8 A_FaceTarget
+		GH1H BA 8 A_FaceTarget
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
-		GH1H C 8 A_FaceTarget
-		GH1H A 8 A_FaceTarget
+		GH1H CA 8 A_FaceTarget
 		TNT1 A 0 A_Pain
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
-		GH1H B 6 A_FaceTarget
-		GH1H A 8 A_FaceTarget
+		GH1H BA 8 A_FaceTarget
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
-		GH1H C 8 A_FaceTarget
-		GH1H A 8 A_FaceTarget
+		GH1H CA 8 A_FaceTarget
 		TNT1 A 0 A_Pain
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
-		GH1H B 8
-		GH1H A 8 A_FaceTarget
+		GH1H BA 8 A_FaceTarget
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
-		GH1H C 8
-		GH1H A 8 A_FaceTarget
+		GH1H CA 8 A_FaceTarget
 		TNT1 A 0 A_Pain
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
-		GH1H B 8
-		GH1H A 8 A_FaceTarget
+		GH1H BA 8 A_FaceTarget
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
-		GH1H A 8
+		GH1H A 8 A_FaceTarget
 		Goto Death
 	Death:
 		TNT1 A 0 A_Die
