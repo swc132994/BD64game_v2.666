@@ -74,8 +74,8 @@ Actor 64NightmareElemental : 64PainElemental 19126
 {
 //$category "Game/BD64_Monsters
 Speed 12
-HitObituary "%o was tormented by a nightmare elemental."
-Tag "Nightmare Elemental"
+HitObituary "%o was tormented by an Agony Elemental."
+Tag "Agony Elemental"
 Alpha 0.5
 RenderStyle Translucent
 PainChance 64

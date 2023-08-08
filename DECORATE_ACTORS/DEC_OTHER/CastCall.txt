@@ -112,8 +112,8 @@ YScale 1.0
 	Death:
 		MPOS H 5
 		MPOS I 5 A_Scream
-		MPOS JKL 5
-		MPOS M -1
+		MPOS JKLM 5
+		MPOS N -1
 		Stop
 	}
 }
@@ -896,6 +896,31 @@ YScale 1.0
 		LMWZ K 6
 		LMWZ LMNO 6
 		LMWZ P -1
+		Stop
+	}
+}
+
+Actor D64HellstormCast : 64Hellstorm
+{
+XScale 1.0
+YScale 1.0
+	States
+	{
+	See:
+		S1R3 AABBCCDD 3
+		loop
+	Missile:
+		S1R3 FGHKL 8
+		S1R3 M 20
+		Goto See
+	Melee:
+		SP1N ABCDEFGHABCDEFGHABCDEFGHABCDEFGH 1
+		ZP1N ABC 1
+	Death:
+		S1R3 R 7
+		S1R3 S 7 A_Scream
+		S1R3 TUVW 7
+		S1R3 X 5
 		Stop
 	}
 }

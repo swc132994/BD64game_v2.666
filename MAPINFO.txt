@@ -243,7 +243,7 @@ Intermission Doom2Cast
 	Cast
 	{
 		CastClass = "64NightmareElementalCast"
-		CastName = "Nightmare Elemental"
+		CastName = "Agony Elemental"
 		AttackSound = "Missile",2,"skull/melee"
 	}
 	Cast
@@ -294,6 +294,13 @@ Intermission Doom2Cast
 		CastClass = "D64FleshWizardCast"
 		CastName = "Flesh Wizard"
 		AttackSound = "Missile",1,"vile/firecrkl"
+	}
+	Cast
+	{
+		CastClass = "D64HellstormCast"
+		CastName = "Hellstorm"
+		AttackSound = "Missile",1,"vile/firecrkl"
+		AttackSound = "Melee",2,"tornado/form"
 	}
 	Cast
 	{

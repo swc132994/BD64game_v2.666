@@ -142,7 +142,7 @@ states
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
 		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
-		TNT1 AA 0 A_CustomMissile("XDeathZombieArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathHuskArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
@@ -155,6 +155,29 @@ states
 		SPOS U 35
 		SPOS U -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
+	XDeath:
+		64ZF O 3
+		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("Brains2",56,0,random(0,360),2,random(0,90))	//teeth
+		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
+		TNT1 AA 0 A_CustomMissile("XDeathHuskArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathZombieLeg1",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		GBM1 A 2 ThrustThingZ(0,30,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
+		Wait
 	Death.Shotgun:
 		TNT1 A 0 A_Recoil(8)
 		ZFM1 A 1 A_JumpIfCloser(170,"Death.Heavy")
@@ -191,7 +214,7 @@ states
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
 		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
-		TNT1 AA 0 A_CustomMissile("XDeathZombieArm1",50,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeathHuskArm1",50,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLeg1",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -215,7 +238,7 @@ states
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2b",32,0,random(0,360),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3b",32,0,random(0,360),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("XDeathZombieArm1",50,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathHuskArm1",50,0,random(150,210),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
 		ZFM1 A 1 A_SpawnItemEx("BrutalizedHuskZombie_1",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
@@ -299,7 +322,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2b",32,0,random(0,360),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3b",32,0,random(0,360),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("XDeathZombieArm1",50,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathHuskArm1",50,0,random(150,210),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
 		ZFM2 A 1 A_SpawnItemEx("BrutalizedHuskZombie_2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
@@ -315,7 +338,7 @@ DropItem "None"
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
 		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
-		TNT1 A 0 A_CustomMissile("XDeathZombieArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("XDeathHuskArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
@@ -338,7 +361,7 @@ DropItem "None"
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
 		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
-		TNT1 A 0 A_CustomMissile("XDeathZombieArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("XDeathHuskArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLeg1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -361,7 +384,7 @@ DropItem "None"
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
 		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
-		TNT1 A 0 A_CustomMissile("XDeathZombieArm1",50,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathHuskArm1",50,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLeg1",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -563,5 +586,30 @@ Actor HordeEatingDeadShotgunGuy replaces DeadShotgunGuy
 		TNT1 A 0 NoDelay A_SpawnItemex("64TheHorde_Spawner")
 		TNT1 A 1 A_SpawnItemex("64DeadShotgunGuy")
 		stop
+	}
+}
+
+ACTOR XDeathHuskArm1 : XDeath1
+{
+Scale 0.8
+Health 0
++DONTSPLASH
++CORPSE
+-MISSILE
+	States
+	{
+	Spawn:
+		HKAR A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
+		HKAR ABCDEFGH 4 A_CheckFloor("Death")
+		Wait
+	Death:
+		HKAR I 1
+		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
+		HKAR I -1
+		Stop
+	Crush:
+		TNT1 A 1
+		Stop
 	}
 }
