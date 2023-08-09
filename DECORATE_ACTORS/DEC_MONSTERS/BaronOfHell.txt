@@ -135,6 +135,7 @@ BloodType "Brutal_Blood"
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
 		TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumn")
 		TNT1 A 0 A_SpawnItemEx("BurningFleshEffect2",0,0,5)
+		TNT1 A 0 A_SpawnItem("DetectFloorCrater")
 		BOSR IJKLMN 4
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		BOSR N -1 A_BossDeath

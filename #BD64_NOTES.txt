@@ -148,6 +148,7 @@ Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 	GLDEFs: Dreadopp
 	Sounds: Id Software, Monolith Games
 	Sprites: Immorpher, Craneo, Atomic Frog, Witan Entertainment BV, MagicMaker
+64Zombie Burning death improvement - Sprites rework by Craneo
 
 //Anomaly events
 Poltergeist original credits:
