@@ -155,7 +155,7 @@ Poltergeist original credits:
 Submitted: David Raven
 Decorate: David Raven
 GLDefs: David Raven, the Skulltag Team
-Sounds: freesounds.org, Midway
+Sounds: freesounds.org, Midway, id
 Sprites: id Software
 Sprite Edit: Captain Toenail
 Idea Base: David Raven

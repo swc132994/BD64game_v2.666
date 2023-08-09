@@ -860,7 +860,7 @@ floor/elec1	dselec1
 $limit floor/elec1 20
 
 //Anomaly Events
-$random polt/see		{polt/whisp1 polt/whisp2 polt/helpme polt/please polt/godplease polt/followme polt/overhere}
+$random polt/see		{polt/whisp1 polt/whisp2 polt/helpme polt/please polt/godplease polt/followme polt/overhere polt/babycry}
 polt/whisp1			PLTW1
 polt/whisp2			PLTW2
 polt/helpme			D3HELPM
@@ -868,6 +868,7 @@ polt/please			D3PLEASE
 polt/godplease		D3GODPLS
 polt/followme		D3FOLLOW
 polt/overhere		D3OVERHERE
+polt/babycry		D3BABCRY
 
 $random polt/laugh		{polt/laugh1 polt/laugh2 polt/creep1 polt/creep2 polt/creep3 polt/creep4 polt/creep5 polt/creep6 polt/creep7 polt/creep8 polt/voices1 polt/voices2 polt/hellbaby}
 polt/laugh1			PLTL1
