@@ -36,7 +36,6 @@ ACTOR GaussScopeLightAmp : PowerLightAmp
 Powerup.Duration 2147483647
 }
 
-
 ACTOR BD64_GaussCannon : DoomWeapon
 {
 SpawnID 164

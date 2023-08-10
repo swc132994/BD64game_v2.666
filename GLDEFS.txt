@@ -358,11 +358,6 @@ pointlight LAMP
 	offset 0 44 0
 }
 
-object Column
-{
-	frame COLU {light LAMP}
-}
-
 // Short tech lamp
 pulselight SMALLLAMP
 {
