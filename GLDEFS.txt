@@ -1966,6 +1966,47 @@ object 64HellstormFireTrail
 	frame MPUF {light NIMPBALL_X4}
 }
 
+//Fallen
+FlickerLight2 FallenLight
+{
+Color 1.0 0.5 0.2
+Size 128
+SecondarySize 64
+Interval 8
+}
+
+Pointlight FallenLight2
+{
+Color 1.0 0.5 0.2
+Size 96
+}
+
+Pointlight FallenLight3
+{
+Color 1.0 0.5 0.2
+Size 64
+}
+
+Pointlight FallenLight4
+{
+Color 1.0 0.5 0.2
+Size 32
+}
+
+Object 64Fallen
+{
+Frame FALNA {Light FallenLight}
+Frame FALNB {Light FallenLight}
+Frame FALNC {Light FallenLight}
+Frame FALND {Light FallenLight}
+Frame FALNE {Light FallenLight}
+Frame FALNF {Light FallenLight}
+Frame FALNG {Light FallenLight}
+Frame FALNH {Light FallenLight2}
+Frame FALNI {Light FallenLight3}
+Frame FALNJ {Light FallenLight4}
+}
+
 //Doom Teleport fog
 flickerlight DTFOG1
 {

@@ -524,6 +524,32 @@ YScale 1.0
 	}
 }
 
+actor 64FallenCast : 64Fallen
+{
+XScale 1.0
+YScale 1.0
+	States
+	{
+	See:
+		FALN AABBCCDDCCBB 2 Bright A_Chase
+		Loop
+	Missile:
+		FALN CE 4 Bright
+		FALN F 4 Bright
+		FALN EF 4 Bright
+		FALN E 4 Bright
+		FALN FE 4 Bright
+		FALN F 4 Bright
+		Goto See
+	Death:
+		FALN H 5 Bright A_Scream
+		FALN IJK 5 Bright
+		FALN LM 5 Bright
+		FALN M -1
+		Stop
+	}
+}
+
 actor D64HellKnightCast : 64HellKnight
 {
 XScale 1.0

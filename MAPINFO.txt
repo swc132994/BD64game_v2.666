@@ -199,6 +199,14 @@ Intermission Doom2Cast
 	}
 	Cast
 	{
+		CastClass = "64FallenCast"
+		CastName = "Fallen"
+		AttackSound = "Missile",1,"caco/attack"
+		AttackSound = "Missile",3,"caco/attack"
+		AttackSound = "Missile",5,"caco/attack"
+	}
+	Cast
+	{
 		CastClass = "D64HellKnightCast"
 		CastName = "Hellknight"
 		AttackSound = "Missile",1,"baron/attack"

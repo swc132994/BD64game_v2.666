@@ -549,7 +549,7 @@ $volume TORTURE5 0.4
 //Stalker
 DSSTLKPN	DSSTLKPN
 DSSTLKST	DSSTLKST
-DSBOSPIT DSBOSPIT	//Stalker teleport
+DSBOSPIT	DSBOSPIT	//Stalker teleport
 
 //BRUISER
 BREATHOF	BREATHOF
@@ -575,12 +575,12 @@ BREATHOF	BREATHOF
 $volume 64ThingActive1 0.75
 
 //BFG Zombie
-$random chainguy/sight		{ bfgguy/sight1  bfgguy/sight2 }
-bfgguy/sight1 	DSBFZSIT		// SeeSound
-bfgguy/sight2		DSBFZATK	// SeeSound 2
-bfgguy/pain  		DSBZPAIN	// PainSound
-bfgguy/death 		DSBFZDTH	// DeathSound
-bfgguy/active		DSBFZACT	// ActiveSound
+$random chainguy/sight		{bfgguy/sight1 bfgguy/sight2}
+bfgguy/sight1		DSBFZSIT		//SeeSound
+bfgguy/sight2		DSBFZATK		//SeeSound 2
+bfgguy/pain			DSBZPAIN		//PainSound
+bfgguy/death		DSBFZDTH		//DeathSound
+bfgguy/active		DSBFZACT		//ActiveSound
 $volume bfgguy/sight1 0.8
 $volume bfgguy/sight2 0.8
 $volume bfgguy/pain 0.8
@@ -631,6 +631,20 @@ tornado/see NA_TAUNT
 tornado/death NA_DEATH
 tornado/pain NA_PAIN
 tornado/active NA_IDLE
+
+//Fallen
+$random monster/falsit {fallsight1 fallsight2 fallsight3}
+fallsight1 DSFALST1
+fallsight2 DSFALST2
+fallsight3 DSFALST3
+
+monster/falpai dsfalpai
+monster/faldth dsfaldth
+monster/falact dsfalact
+monster/falwng dsfalwng
+
+$volume monster/falsit 0.5
+$volume monster/falwng 0.5
 
 //---------------------------
 //**********GORE*************
