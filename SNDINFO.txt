@@ -324,9 +324,9 @@ player/male/death1		DSPLDETH
 knight/death			DSKNTDTH
 skeleton/swing			DSSKESWG
 misc/gibbed				DSSLOP
-misc/teleport			DSTELEPT
+misc/teleport			DSTELEPT	$volume misc/teleport 0.9	//teleportation
 baby/active				DSBSPACT
-misc/p_pkup				dsgetpow	// Pickup powerup
+misc/p_pkup				dsgetpow	//Pickup powerup
 grunt/pain				DSPOPAIN
 grunt/sight1			DSPOSIT1
 grunt/sight3			DSPOSIT3
@@ -499,9 +499,6 @@ Dog/See DOGGSEE
 Dog/die DOGGDIE
 Dog/active DOGGROAM
 Dog/melee DOGGATT
-
-//TELEPORT
-DSTELEPT DSTELEPT
 
 //Demon
 demon/sight			dssgtsit
@@ -881,10 +878,11 @@ polt/helpme			D3HELPM
 polt/please			D3PLEASE
 polt/godplease		D3GODPLS
 polt/followme		D3FOLLOW
-polt/overhere		D3OVERHERE
+polt/overhere		D3OVHERE
 polt/babycry		D3BABCRY
 
-$random polt/laugh		{polt/laugh1 polt/laugh2 polt/creep1 polt/creep2 polt/creep3 polt/creep4 polt/creep5 polt/creep6 polt/creep7 polt/creep8 polt/voices1 polt/voices2 polt/hellbaby}
+
+$random polt/laugh		{polt/laugh1 polt/laugh2 polt/creep1 polt/creep2 polt/creep3 polt/creep4 polt/creep5 polt/creep6 polt/creep7 polt/creep8 polt/voices1 polt/voices2 polt/hellbaby polt/wail}
 polt/laugh1			PLTL1
 polt/laugh2			PLTL2
 polt/creep1			D3CREEP1
@@ -895,9 +893,10 @@ polt/creep5			D3CREEP5
 polt/creep6			D3CREEP6
 polt/creep7			D3CREEP7
 polt/creep8			D3CREEP8
-polt/voices1		D3VOICES1
-polt/voices2		D3VOICES2
-polt/hellbaby		D3HELLBBY
+polt/voices1		D3VOICE1
+polt/voices2		D3VOICE2
+polt/hellbaby		D3HELBBY
+polt/wail			LWCFX
 
 polt/break1			PLTDT
 polt/break2			WALLBRK
