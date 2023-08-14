@@ -3,7 +3,7 @@ ACTOR 64Butcher 19131
 Scale 0.85
 Health 300
 Radius 20
-Height 60
+Height 57
 Speed 16
 MeleeDamage 2
 MeleeRange 64
@@ -31,21 +31,21 @@ DropItem "DemonEssenceSpawner"
 	Spawn:
 		SWCB A 1
 	Spawned:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",5,54,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,62,0)
 		SWCB A 4 A_Look
 		TNT1 A 0 A_PlayWeaponSound("weapons/sawidle")
 		Loop
 	See:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,62,0)
 		SWCB A 4 A_Chase
 		TNT1 A 0 A_PlayWeaponSound("weapons/sawidle")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,62,0)
 		SWCB B 4 A_Chase
 		TNT1 A 0 A_PlayWeaponSound("weapons/sawidle")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,62,0)
 		SWCB C 4 A_Chase
 		TNT1 A 0 A_PlayWeaponSound("weapons/sawidle")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,62,0)
 		SWCB D 4 A_Chase
 		TNT1 A 0 A_PlayWeaponSound("weapons/sawidle")
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
@@ -56,7 +56,7 @@ DropItem "DemonEssenceSpawner"
 	Melee:
 		TNT1 A 0 A_Recoil(-2)
 		TNT1 A 0 A_MeleeAttack
-		TNT1 A 0 A_SpawnItem("HeadshotTarget2",12,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget2",12,62,0)
 		SWCB E 2 A_FaceTarget
 		Goto See
 	Pain:
@@ -198,59 +198,6 @@ DropItem "DemonEssenceSpawner"
 		Stop
 	}
 }
-ACTOR XDeathButcherLeg1 : XDeathZombieArm1
-{
-Scale 0.85
-	States
-	{
-	Spawn:
-		SWG6 A 0 NoDelay A_Jump(128,2)
-		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		SWG6 ABCDEFGH 4 A_CheckFloor("Death")
-		Wait
-	Death:
-		SWG6 I 1
-		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
-		SWG6 I -1
-		Stop
-	}
-}
-
-ACTOR XDeathButcherNormalArm : XDeathZombieArm1
-{
-Scale 0.85
-	States
-	{
-	Spawn:
-		SWKB A 0 NoDelay A_Jump(128,2)
-		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		SWKB A 4 A_CheckFloor("Death")
-		Wait
-	Death:
-		SWKB B 1
-		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot")
-		SWKB B -1
-		Stop
-	}
-}
-
-ACTOR XDeathButcherSawArm : XDeathZombieArm1
-{
-Scale 0.85
-	States
-	{
-	Spawn:
-		SWKB C 0 NoDelay A_Jump(128,2)
-		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		SWKB C 4 A_CheckFloor("Death")
-		Wait
-	Death:
-		SWKB D 1
-		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot")
-		SWKB D -1
-		Stop
-	}
-}
 
 Actor 64ButcherNoArm : 64Butcher
 {
@@ -267,32 +214,32 @@ DropItem "None"
 	Spawn:
 		S4WC A 0
 	See:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",12,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,62,0)
 		S4WC A 8 A_FaceTarget
 		TNT1 A 0 A_Pain
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",12,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,62,0)
 		S4WC BA 8 A_FaceTarget
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",12,60,0)
-		S4WC BA 8 A_FaceTarget
-		TNT1 A 0 A_Pain
-		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",12,60,0)
-		S4WC BA 8 A_FaceTarget
-		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",12,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,62,0)
 		S4WC BA 8 A_FaceTarget
 		TNT1 A 0 A_Pain
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget6",12,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,62,0)
 		S4WC BA 8 A_FaceTarget
 		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",12,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,62,0)
+		S4WC BA 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItem("HeadshotTarget6",0,62,0)
+		S4WC BA 8 A_FaceTarget
+		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,62,0)
 		S4WC BA 8 A_FaceTarget
 		TNT1 A 0 A_Pain
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",12,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,62,0)
 		S4WC B 8 A_FaceTarget
 	Death.Bullet:
 	Death:

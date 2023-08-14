@@ -1343,6 +1343,7 @@ BounceCount 0
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		Goto Rest
 	Rest:
+		TNT1 A 0 A_SpawnItem("MinuscleBloodSpot")
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3","Rest4")
 	Rest1:
 		TNT1 A 0 A_SpawnItem("MinuscleBloodSpot")
@@ -1389,6 +1390,7 @@ Decal BrutalBloodSplatGreen
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		Goto Rest
 	Rest:
+		TNT1 A 0 A_SpawnItem("MinuscleBloodSpotGreen")
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3","Rest4")
 	Rest1:
 		TNT1 A 0 A_SpawnItem("MinuscleBloodSpotGreen")

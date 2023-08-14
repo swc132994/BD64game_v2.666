@@ -463,7 +463,7 @@ MONSTER
 
 Actor Hellhound_Random Replaces BaronOfHell		//tag 666 fix (A_KillMaster must be called from spawned monster)
 {
-Scale 0.9
+Scale 0.8
 MONSTER
 -SOLID
 -COUNTKILL
