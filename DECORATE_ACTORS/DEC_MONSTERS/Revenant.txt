@@ -18,40 +18,41 @@ DropItem "DemonEssenceSpawner"
 	{
 	Spawn:
 		SKEL DE 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget20",12,65,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget20",10,70,0)
 		Loop
 	Forget:
 		TNT1 A 0 A_ClearTarget
 		Goto Spawn
 	See:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,65,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",10,70,0)
 		SKEL AABBC 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget2",12,65,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget2",10,70,0)
 		SKEL C 2
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,65,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",10,70,0)
 		SKEL DDEEF 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget2",12,65,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget2",10,70,0)
 		SKEL F 2
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		Loop
 	Melee:
 		TNT1 A 0 A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget6",0,65,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget6",-8,65,0)
 		SKEL G 6 A_SkelWhoosh
-		TNT1 A 0 A_SpawnItem("HeadshotTarget6",0,65,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget6",10,70,0)
 		SKEL H 6 A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget6",0,65,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget6",15,63,0)
 		SKEL I 6 A_SkelFist
 		Goto See
 	Missile:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,65,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12",8,65,0)
 		SKEL J 12 Bright A_FaceTarget
 		TNT1 A 0 A_CustomMissile("64RevenantTracer3",65,18,0,0)
-		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,65,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget6",8,65,0)
 		SKEL J 6 Bright
 		TNT1 A 0 A_CustomMissile("64RevenantTracer2",65,-18,0,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget6",-4,70,0)
 		SKEL K 6
-		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,65,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12",-4,70,0)
 		SKEL K 12 A_FaceTarget
 		Goto See
 	Pain:

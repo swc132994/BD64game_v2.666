@@ -1269,7 +1269,6 @@ Translation "16:31=%[0,0,0]:[0,1,0]","176:191=%[0,0,0]:[0,1,0]","32:47=%[0,0,0]:
 //BARON
 ACTOR XDeathBaronArm : XDeathZombieArm1
 {
-Scale 0.9
 	States
 	{
 	Spawn:
@@ -1753,7 +1752,7 @@ RenderStyle Translucent
 //Flesh Wizard
 ACTOR FleshWizardArmGib : XDeathZombieArm1
 {
-Scale 0.7
+Scale 0.66
 Alpha 0.6
 RenderStyle Translucent
 	States
@@ -1777,7 +1776,7 @@ RenderStyle Translucent
 
 ACTOR FleshWizardUpperBodyXDeath : XDeathZombieArm1
 {
-Scale 0.7
+Scale 0.66
 Alpha 0.6
 RenderStyle Translucent
 	States

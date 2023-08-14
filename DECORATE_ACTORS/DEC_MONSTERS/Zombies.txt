@@ -21,52 +21,52 @@ states
 	Stand:
 		TNT1 A 0 A_CheckSight("Stand2")
 		TNT1 A 0 A_Jump(64,"Idle")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget20",8,55,0)
 		PSSS AB 10 A_Look
 		Loop
 	Stand2:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget20",8,55,0)
 		PSSS AB 10 A_Look
 		TNT1 A 0 A_CheckSight("Stand2")
 		Goto Stand
 	Idle:
 		TNT1 A 0 A_ClearTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		PSSS A 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		PSSS B 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		PSSS A 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		PSSS C 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		PSSS A 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		PSSS D 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		PSSS A 10 A_Look
 		Goto Stand
 	See:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		PPOS AAAA 2 A_Chase("","")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		PPOS BBBB 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		PPOS CCCC 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		PPOS DDDD 2 A_Chase
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Idle")
 		Loop
 	Missile:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,55,0)
 		PPOS EE 5 A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,55,0)
 		TNT1 A 0 A_PlaySound("PISTOLF",1)
 		PPOS F 2 Bright A_CustomMissile("EnemyProjectile",45,0,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,45,0,0)
 		PPOS GE 5
 		TNT1 A 0 A_Jump(64,"Missile")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		PPOS E 4
 		Goto See
 	Pain:
@@ -308,21 +308,21 @@ DropItem "None"
 		PDM1 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//Flip horizontal
 	See:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		PDM1 A 8 A_FaceTarget
 		TNT1 A 0 A_Pain
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,55,0)
 		PDM1 AA 8 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,55,0)
 		PDM1 AA 8 A_FaceTarget
 		TNT1 A 0 A_Pain
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,55,0)
 		PDM1 AA 8 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		PDM1 A 8 A_FaceTarget
 	Death:
 	Death.Bullet:
@@ -611,53 +611,53 @@ DropItem "SOULSPAWNER"
 	Stand:
 		TNT1 A 0 A_CheckSight("Stand2")
 		TNT1 A 0 A_Jump(64,"Idle")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget20",8,55,0)
 		SSSS AB 10 A_Look
 		Loop
 	Stand2:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget20",8,55,0)
 		SSSS AB 10 A_Look
 		TNT1 A 0 A_CheckSight("Stand2")
 		Goto Stand
 	Idle:
 		TNT1 A 0 A_ClearTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		SSSS A 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		SSSS B 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		SSSS A 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		SSSS C 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		SSSS A 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		SSSS D 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		SSSS A 10 A_Look
 		Goto Stand
 	See:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		SPOS AAAA 2 A_Chase("","")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		SPOS BBBB 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		SPOS CCCC 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		SPOS DDDD 2 A_Chase
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Idle")
 		Loop
 	Missile:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,55,0)
 		SPOS EE 8 A_FaceTarget
 		TNT1 A 0 A_PlaySound("SGFIRE",1)
 		TNT1 AAAAAA 0 A_CustomMissile("EnemyProjectile",40,-7,random(-7,7),1,random(-4,4))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,55,0)
 		SPOS F 5 Bright
 		SPOS E 5
 		TNT1 A 0 A_CustomMissile("ShotCaseSpawn",36,0,random(-7,7),1,random(-4,4))
 		TNT1 A 0 A_PlaySound("STGNPUMP",4)
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,55,0)
 		POSS RSRS 4
 		Goto See
 	Pain:
@@ -782,63 +782,63 @@ Obituary "%o was blown apart by an SSG Zombie."
 	Stand:
 		TNT1 A 0 A_CheckSight("Stand2")
 		TNT1 A 0 A_Jump(64,"Idle")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget20",8,55,0)
 		SSS4 AB 10 A_Look
 		Loop
 	Stand2:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget20",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget20",8,55,0)
 		SSS4 AB 10 A_Look
 		TNT1 A 0 A_CheckSight("Stand2")
 		Goto Stand
 	Idle:
 		TNT1 A 0 A_ClearTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		SSS4 A 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		SSS4 B 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		SSS4 A 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		SSS4 C 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		SSS4 A 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		SSS4 D 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",4,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",8,55,0)
 		SSS4 A 10 A_Look
 		Goto Stand
 	See:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		POS4 AAAA 2 A_Chase("","")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		POS4 BBBB 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		POS4 CCCC 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		POS4 DDDD 2 A_Chase
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Idle")
 		Loop
 	Missile:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,55,0)
 		POS4 EE 8 A_FaceTarget
 		TNT1 A 0 A_PlaySound("SSGFIRE",1)
 		POS4 E 1 A_JumpIfCloser(150,"MissileClose")
 		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("EnemyProjectile",36,-5,random(-7,7),1,random(-4,4))
 	MissileCP:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,55,0)
 		POS4 F 5 Bright
 		POS4 E 5
-		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,40,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,55,0)
 		TNT1 A 0 A_PlaySound("weapons/sshoto")
 		PO4R ABC 4
 		TNT1 AA 0 A_CustomMissile("SSGCaseSpawner",36,0,random(-7,7),1,random(-4,4))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,40,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,55,0)
 		PO4R DE 5
 		TNT1 A 0 A_playsound("weapons/sshotl")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,40,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,55,0)
 		PO4R DE 5
 		TNT1 A 0 A_playsound("weapons/sshotl")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,40,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		TNT1 A 0 A_playsound("weapons/sshotc")
 		PO4R FG 4
 		Goto See
@@ -1012,21 +1012,21 @@ DropItem "None"
 		SDM1 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//Flip horizontal
 	See:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		SDM1 A 8 A_FaceTarget
 		TNT1 A 0 A_Pain
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,55,0)
 		SDM1 AA 8 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,55,0)
 		SDM1 AA 8 A_FaceTarget
 		TNT1 A 0 A_Pain
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,55,0)
 		SDM1 AA 8 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		SDM1 A 8 A_FaceTarget
 	Death:
 	Death.Bullet:
@@ -1309,34 +1309,34 @@ DropItem "SOULSPAWNER"
 	Idle:	//placeholder
 	Spawn:
 		MPOS A 8 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",4,55,0)
 		Loop
 	Forget:
 		TNT1 A 0 A_ClearTarget
 		Goto Spawn
 	See:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		MPOS AA 2 A_Chase("","")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		MPOS BB 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		MPOS CC 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		MPOS DD 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		MPOS AA 2 A_Chase("","")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		MPOS BB 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		MPOS CC 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		MPOS DD 2 A_Chase
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		Loop
 	Missile:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,55,0)
 		MPOS EE 5 A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,55,0)
 		MPOS F 1 Bright Light("ZOMBIEATK2") A_CustomMissile("EnemyProjectile",36,6,random(-6,6),1,random(-3,3))
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
 		TNT1 A 0 A_PlaySound("MGUNFIR",1)
@@ -1353,7 +1353,7 @@ DropItem "SOULSPAWNER"
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
 		TNT1 A 0 A_PlaySound("MGUNFIR",1)
 		MPOS E 2 A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,55,0)
 		MPOS F 1 Bright Light("ZOMBIEATK2") A_CustomMissile("EnemyProjectile",36,6,random(-6,6),1,random(-3,3))
 		TNT1 A 0 A_PlaySound("MGUNFIR",1)
 		MPOS E 2 A_FaceTarget
@@ -1369,7 +1369,7 @@ DropItem "SOULSPAWNER"
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
 		TNT1 A 0 A_PlaySound("MGUNFIR",1)
 		MPOS E 2 A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,55,0)
 		MPOS F 1 Bright Light("ZOMBIEATK2") A_CustomMissile("EnemyProjectile",36,6,random(-6,6),1,random(-3,3))
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
 		TNT1 A 0 A_PlaySound("MGUNFIR",1)
@@ -1386,7 +1386,7 @@ DropItem "SOULSPAWNER"
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
 		TNT1 A 0 A_PlaySound("MGUNFIR",1)
 		MPOS E 2 A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,55,0)
 		MPOS F 1 Bright Light("ZOMBIEATK2") A_CustomMissile("EnemyProjectile",36,6,random(-6,6),1,random(-3,3))
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
 		TNT1 A 0 A_PlaySound("MGUNFIR",1)
@@ -1542,21 +1542,21 @@ DropItem "None"
 		ZDM1 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//Flip horizontal
 	See:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		ZDM1 A 8 A_FaceTarget
 		TNT1 A 0 A_Pain
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,55,0)
 		ZDM1 AA 8 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,55,0)
 		ZDM1 AA 8 A_FaceTarget
 		TNT1 A 0 A_Pain
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget16",0,55,0)
 		ZDM1 AA 8 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,55,0)
 		ZDM1 A 8 A_FaceTarget
 	Death.Bullet:
 	Death:
@@ -1624,7 +1624,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeath3b",32,0,random(0,360),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArmRed",50,0,random(150,210),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
-		ZDM2 A 1 A_SpawnItemEx("BrutalizedChaingunner_2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)	//R30.7 added
+		ZDM2 A 1 A_SpawnItemEx("BrutalizedChaingunner_2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.Chainsaw:
 	Death.BFG:
@@ -1749,32 +1749,32 @@ Obituary "%o was gunned down by a zombie marine."
 	Idle:	//placeholder
 	Spawn:
 		CPOS A 8 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget8",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget8",4,55,0)
 		Loop
 	Forget:
 		TNT1 A 0 A_ClearTarget
 		Goto Spawn
 	See:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		CPOS AA 2 A_Chase("","")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		CPOS BB 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		CPOS CC 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		CPOS DD 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		CPOS AA 2 A_Chase("","")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		CPOS BB 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		CPOS CC 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		CPOS DD 2 A_Chase
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		Loop
 	Missile:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,55,0)
 		CPOS E 8 A_FaceTarget
 		CPOS F 1 Bright A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
@@ -1783,13 +1783,13 @@ Obituary "%o was gunned down by a zombie marine."
 		CPOS F 1 Bright A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		TNT1 A 0 A_SpawnItem("HeadshotTarget6",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget6",0,55,0)
 		CPOS E 2 A_FaceTarget
 		CPOS F 1 Bright A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		CPOS E 3 A_FaceTarget
-		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,55,0)
 		CPOS E 8 A_FaceTarget
 		CPOS F 1 Bright A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
@@ -1798,14 +1798,14 @@ Obituary "%o was gunned down by a zombie marine."
 		CPOS F 1 Bright A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		TNT1 A 0 A_SpawnItem("HeadshotTarget6",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget6",0,55,0)
 		CPOS E 2 A_FaceTarget
 		CPOS F 1 Bright A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		CPOS E 3 A_FaceTarget
 		TNT1 A 0 A_Jump(128,"See")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,55,0)
 		CPOS E 8 A_FaceTarget
 		CPOS F 1 Bright A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
@@ -1814,7 +1814,7 @@ Obituary "%o was gunned down by a zombie marine."
 		CPOS F 1 Bright A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,55,0)
 		CPOS E 2 A_FaceTarget
 		CPOS F 1 Bright A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
@@ -1990,39 +1990,39 @@ Obituary "%o was gunned down by a marine."
 	{
 	Spawn:
 		PLAY A 0 NoDelay A_CheckSight("Spawn2")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget6",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget6",4,55,0)
 		PLAY A 6 A_Look
 		Goto See
 	Spawn2:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget6",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget6",4,55,0)
 		PLAY A 6
 		Goto Spawn
 	See:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		PLAY AA 2 A_Chase("","")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		PLAY BB 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		PLAY CC 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		PLAY DD 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		PLAY AA 2 A_Chase("","")
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		PLAY BB 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		PLAY CC 2 A_Chase
-		TNT1 A 0 A_SpawnItem("HeadshotTarget4",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget4",0,55,0)
 		PLAY DD 2 A_Chase
 		TNT1 A 0 A_ClearTarget
 		Loop
 	Missile:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget12",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,55,0)
 		PLAY EE 5 A_FaceTarget
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		PLAY F 2 Bright A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
-		TNT1 A 0 A_SpawnItem("HeadshotTarget10",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget10",0,55,0)
 		PLAY E 2 A_FaceTarget
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		PLAY F 2 Bright A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
@@ -2033,7 +2033,7 @@ Obituary "%o was gunned down by a marine."
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
 		PLAY E 2 A_FaceTarget
 		TNT1 A 0 A_PlaySound("RIFLE",1)
-		TNT1 A 0 A_SpawnItem("HeadshotTarget12",12,50,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12",0,55,0)
 		PLAY F 2 Bright A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItem("50CaseSpawn",0,30,0,0)
 		PLAY E 2 A_FaceTarget

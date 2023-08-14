@@ -2,8 +2,6 @@ Actor 64HellKnight : HellKnight Replaces HellKnight
 {
 //$category "Game/BD64_Monsters
 Scale 0.8
-Height 64
-Radius 24
 PainChance "SuperFists",220
 PainChance "Kick",255
 PainChance "SuperKick",255
@@ -18,24 +16,26 @@ BloodColor "00 64 00"	//Hex value
 	states
 	{
 	Spawn:
-		BOS2 AB 10 A_Look
-		TNT1 A 0 A_SpawnItem("HeadshotTarget20Green",12,60,0)
+		BOS2 A 10 A_Look
+		TNT1 A 0 A_SpawnItem("HeadshotTarget20Green",12,70,0)
 		Loop
 	See:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23Green",12,60,0)
-		BOS2 AABBCCDD 3 A_Chase
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12Green",20,70,0)
+		BOS2 AABB 3 A_Chase
+		TNT1 A 0 A_SpawnItem("HeadshotTarget12Green",20,70,0)
+		BOS2 CCDD 3 A_Chase
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		Loop
 	Forget:
 		TNT1 A 0 A_ClearTarget
 		Goto Spawn
 	Melee:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23Green",12,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget23Green",12,70,0)
 		BOS2 EF 8 A_FaceTarget
 		BOS2 G 8 A_CustomMeleeAttack(10*random(1,8),"baron/melee")	//Melee and Missile seperated
 		Goto See
 	Missile:
-		TNT1 A 0 A_SpawnItem("HeadshotTarget23Green",0,60,0)
+		TNT1 A 0 A_SpawnItem("HeadshotTarget23Green",0,70,0)
 		BOS2 EF 8 A_FaceTarget
 		BOS2 G 8 Bright A_CustomMissile("64BaronBallGreen",32)	//Melee and Missile seperated
 		Goto See
