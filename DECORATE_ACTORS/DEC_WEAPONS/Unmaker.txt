@@ -1,10 +1,10 @@
 Actor UnmakerSpawner : CustomInventory 9901
 {
 //$category "Game/BD64_Weapons
-Inventory.PickupMessage "What the !@# is this!"
-Inventory.PickupSound "WPICK"
 SpawnID 84
 Scale 0.9
+Inventory.PickupMessage "What the !@# is this!"
+Inventory.PickupSound "WPICK"
 	States
 	{
 	Spawn:
@@ -35,18 +35,18 @@ Scale 0.9
 Actor Unmaker : DoomWeapon
 {
 Scale 0.9
+Weapon.SlotNumber 8
 Weapon.SelectionOrder 2900
-Inventory.PickupMessage "What the !@# is this!"
-AttackSound "weapons/unmaker"
+Weapon.AmmoType "Cell"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 20
-Weapon.AmmoType "Cell"
+AttackSound "weapons/unmaker"
+Inventory.PickupMessage "What the !@# is this!"
 Inventory.Icon LGUNA0
-Weapon.SlotNumber 8
+Tag "Unmaker"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
-Tag "Unmaker"
 	States
 	{
 	Spawn:
@@ -211,7 +211,7 @@ Ammo.BackpackMaxAmount 30
 Inventory.PickupSound "HUMAMMO"
 Inventory.Icon "SAMMZ0"
 RenderStyle Add
-Alpha 0.99
+Alpha 0.9
 +ALWAYSPICKUP
 +FLOATBOB
 ReactionTime 90
@@ -263,8 +263,6 @@ Inventory.Amount 10
 
 Actor SoulSpawner
 {
-Radius 16
-Height 16
 	States
 	{
 	Spawn:
@@ -280,8 +278,6 @@ Height 16
 
 Actor DemonEssenceSpawner
 {
-Radius 16
-Height 16
 	States
 	{
 	Spawn:
@@ -296,8 +292,6 @@ Height 16
 
 Actor DemonEssenceLargeSpawner
 {
-Radius 16
-Height 16
 	States
 	{
 	Spawn:
@@ -337,19 +331,19 @@ Height 10
 Actor UnmakerTACTICAL : Brutal64Weapon
 {
 Scale 0.9
-Weapon.SelectionOrder 2901
-Inventory.PickupMessage "What the !@# is this!"
-AttackSound "weapons/unmaker"
+Weapon.SlotNumber 8
+Weapon.SelectionOrder 2900
+Weapon.AmmoType1 "SoulAmmo"
 Weapon.AmmoUse1 1
 Weapon.AmmoGive1 15
-Weapon.AmmoType1 "SoulAmmo"
+Weapon.AmmoType2 "DemonEssence"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Weapon.AmmoType2 "DemonEssence"
+Inventory.PickupMessage "What the !@# is this!"
 Inventory.Icon LGUNA0
-+INVENTORY.RESTRICTABSOLUTELY
+AttackSound "weapons/unmaker"
 Tag "Unmaker"
-Weapon.SlotNumber 8
++INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AMMO_CHECKBOTH
 +WEAPON.NOALERT
 +WEAPON.NOAUTOFIRE

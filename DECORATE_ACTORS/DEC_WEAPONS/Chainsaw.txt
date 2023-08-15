@@ -32,12 +32,14 @@ Inventory.PickupSound "weapons/chainsaw/draw"
 Actor 64Chainsaw : Weapon	//RETAIN CLASSIC LOOK
 {
 Scale 0.82
+Weapon.SlotNumber 1
+Weapon.SlotPriority 2
 Weapon.SelectionOrder 2200
+Weapon.Kickback 0
 Inventory.PickupMessage "$GOTCHAINSAW"
 Weapon.UpSound "null"
 +WEAPON.AXEBLOOD
 Tag "$TAG_CHAINSAW"
-Weapon.SlotNumber 1
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -86,7 +88,6 @@ Decal "SawVertical"
 SeeSound "none"
 DeathSound "none"
 Obituary "$OB_MPCHAINSAW"
-Projectile
 +FORCEXYBILLBOARD
 +EXTREMEDEATH
 +BLOODSPLATTER
@@ -112,15 +113,16 @@ Projectile
 Actor 64ChainsawTACTICAL : Brutal64Weapon	//CHAINSAW FOR TACTICAL CLASS
 {
 Scale 0.82
+Weapon.SlotNumber 1
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 2200
 Weapon.Kickback 0
-Weapon.SelectionOrder 2201
+Weapon.AmmoType "SawGas"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 100
-Weapon.AmmoType "SawGas"
 Inventory.PickupMessage "$GOTCHAINSAW"
 Obituary "$OB_MPCHAINSAW"
 Tag "$TAG_CHAINSAW"
-Weapon.SlotNumber 1
 +WEAPON.MELEEWEAPON
 +WEAPON.AXEBLOOD
 +INVENTORY.RESTRICTABSOLUTELY
@@ -356,14 +358,16 @@ Inventory.ForbiddenTo "64DoomPlayer","Modern"
 Actor 64ChainsawModern : Brutal64Weapon 
 {
 Scale 0.82
-Weapon.SelectionOrder 2202
+Weapon.SlotNumber 1
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 2200
+Weapon.Kickback 0
 Inventory.PickupMessage "$GOTCHAINSAW"
 Weapon.UpSound "null"
 +WEAPON.MELEEWEAPON
 +WEAPON.AXEBLOOD
 Tag "$TAG_CHAINSAW"
 +INVENTORY.RESTRICTABSOLUTELY
-Weapon.SlotNumber 1
 Inventory.forbiddento "64DoomPlayer","Tactical64DoomPlayer","Tactical64DoomPlayer_P"
 VisibleToPlayerClass "Modern"
 +NOAUTOFIRE
@@ -462,11 +466,11 @@ VisibleToPlayerClass "Modern"
 		TNT1 A 0 A_JumpIfInventory("64SuperShotgunTactical",1,"AmmoCheck")
 		TNT1 A 0 A_Print("You Need a Super Shotgun",1)
 		Goto Ready
-	NeedReloading:	
+	NeedReloading:
 		TNT1 A 0 A_PlaySound("DRYFIRE")
 		TNT1 A 0 A_Print("Super Shotgun Needs Reloading",1)
 		Goto Ready
-	SSGFire:	
+	SSGFire:
 		TNT1 A 0 A_JumpIfInventory("SSGAlt",1,"AltFire2")
 		TNT1 A 10 A_GunFlash("SSGFlash")
 		OSSS ABCD 1 Offset(0,50)
@@ -559,15 +563,16 @@ VisibleToPlayerClass "Modern"
 Actor 64ChainsawTactical_Classic : Brutal64Weapon
 {
 Scale 0.82
+Weapon.SlotNumber 1
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 2200
 Weapon.Kickback 0
-Weapon.SelectionOrder 2201
+Weapon.AmmoType "SawGas"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 100
-Weapon.AmmoType "SawGas"
 Inventory.PickupMessage "$GOTCHAINSAW"
 Obituary "$OB_MPCHAINSAW"
 Tag "$TAG_CHAINSAW"
-Weapon.SlotNumber 1
 +WEAPON.MELEEWEAPON
 +WEAPON.AXEBLOOD
 +INVENTORY.RESTRICTABSOLUTELY
@@ -653,13 +658,15 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P"
 Actor 64ChainsawModern_Classic : Brutal64Weapon
 {
 Scale 0.82
-Weapon.SelectionOrder 2202
+Weapon.SlotNumber 1
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 2200
+Weapon.Kickback 0
 Inventory.PickupMessage "$GOTCHAINSAW"
 Weapon.UpSound "null"
 +WEAPON.MELEEWEAPON
 +WEAPON.AXEBLOOD
 Tag "$TAG_CHAINSAW"
-Weapon.SlotNumber 1
 +INVENTORY.RESTRICTABSOLUTELY
 Inventory.forbiddento "64DoomPlayer","Tactical64DoomPlayer","Tactical64DoomPlayer_P"
 VisibleToPlayerClass "Modern"

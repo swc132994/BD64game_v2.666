@@ -17,8 +17,6 @@ PainChance "Kick",255
 PainChance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-DamageFactor "chainsaw",1
-DamageFactor "Head",1
 Alpha 0.6
 RenderStyle Translucent
 Obituary "%o was slit open by a Wraith"

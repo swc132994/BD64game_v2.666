@@ -50,14 +50,15 @@ inventory.maxamount 1
 Actor 64SMG : DoomWeapon
 {
 Scale 0.82
+Weapon.SlotNumber 2
+Weapon.SlotPriority 3
 Weapon.SelectionOrder 800
+Weapon.AmmoType "Clip"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 20
-Weapon.AmmoType "Clip"
 Inventory.PickupMessage "You got the SMG!"
 Obituary "%o was picked off by %k."
 Tag "Sub-Machine Gun"
-Weapon.SlotNumber 2
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -259,16 +260,18 @@ inventory.maxamount 1
 Actor 64SMGTactical : Brutal64Weapon
 {
 Scale 0.82
-Weapon.SelectionOrder 801
+Weapon.SlotNumber 2
+Weapon.SlotPriority 3
+Weapon.SelectionOrder 800
+Weapon.AmmoType1 "Clip"
 Weapon.AmmoUse1 1
 Weapon.AmmoGive1 20
-Weapon.AmmoUse2 1
-Weapon.AmmoType1 "Clip"
 Weapon.AmmoType2 "SMGAmmo"
+Weapon.AmmoUse2 1
+Weapon.AmmoGive2 0
 Inventory.PickupMessage "You got the SMG!"
 Obituary "%o was picked off by %k SMG."
 Tag "Sub-machine gun"
-Weapon.SlotNumber 2
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AMMO_CHECKBOTH
 +WEAPON.NOALERT

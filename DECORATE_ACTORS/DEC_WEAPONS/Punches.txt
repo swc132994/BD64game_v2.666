@@ -16,7 +16,6 @@ inventory.maxamount 100
 Actor Stamina : Ammo
 {
 Game Doom
-SpawnID 11
 Inventory.PickupMessage ""
 Inventory.Amount 0
 Inventory.MaxAmount 100
@@ -29,10 +28,11 @@ Inventory.Icon ""
 
 Actor 64Fist : Fist Replaces Fist
 {
+Weapon.SlotNumber 1
+Weapon.SlotPriority 1
 Weapon.SelectionOrder 3700
 Tag "Fists"
 Inventory.Icon "PUN1A0"
-Weapon.SlotNumber 1
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -93,10 +93,11 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 
 Actor 64FistTactical : Brutal64Weapon
 {
+Weapon.SlotNumber 1
+Weapon.SlotPriority 1
 Weapon.SelectionOrder 3700
 Tag "Fists"
 Inventory.Icon "PUN1A0"
-Weapon.SlotNumber 1
 Inventory.forbiddento "64DoomPlayer"
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 +INVENTORY.RESTRICTABSOLUTELY

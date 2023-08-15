@@ -19,7 +19,7 @@ PainChance "Kick",255
 PainChance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-DamageFactor "Head",0.35
+DamageFactor "Head",0.5
 DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodGreen"
 BloodColor "00 64 00"	//Hex value

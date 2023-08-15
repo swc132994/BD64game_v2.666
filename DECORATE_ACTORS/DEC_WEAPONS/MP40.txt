@@ -32,14 +32,15 @@ inventory.maxamount 4
 Actor 64MP40 : DoomWeapon
 {
 Scale 0.45
-Weapon.SelectionOrder 800
+Weapon.SlotNumber 2
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 850
+Weapon.AmmoType "Clip"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 20
-Weapon.AmmoType "Clip"
 Inventory.PickupMessage "You got the MP40!"
 Obituary "%o was picked off by %k."
 Tag "MP-40"
-Weapon.SlotNumber 2
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -154,7 +155,9 @@ Inventory.Icon "MP4PA0"
 Actor 64MP40Tactical : Brutal64Weapon
 {
 Scale 0.45
-Weapon.SelectionOrder 801
+Weapon.SlotNumber 2
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 850
 Weapon.AmmoUse1 1
 Weapon.AmmoGive1 20
 Weapon.AmmoUse2 0
@@ -163,7 +166,6 @@ Weapon.AmmoType2 "MP40Ammo"
 Inventory.PickupMessage "You got the MP40!"
 Obituary "%o was picked off by %k MP40."
 Tag "MP40"
-Weapon.SlotNumber 2
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AMMO_CHECKBOTH
 +WEAPON.NOALERT

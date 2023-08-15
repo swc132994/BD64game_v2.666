@@ -23,15 +23,16 @@ Inventory.PickupSound "WPICK"
 Actor 64SuperShotgun : DoomWeapon
 {
 Scale 0.87
+Weapon.SlotNumber 3
+Weapon.SlotPriority 2
 Weapon.SelectionOrder 400
+Weapon.AmmoType "Shell"
 Weapon.AmmoUse 2
 Weapon.AmmoGive 8
-Weapon.AmmoType "Shell"
 +WEAPON.NOAUTOFIRE
 Inventory.PickupMessage "$GOTSHOTGUN2"
 Obituary "$OB_MPSSHOTGUN"
 Tag "$TAG_SUPERSHOTGUN"
-Weapon.SlotNumber 3
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -127,17 +128,18 @@ inventory.maxamount 1
 Actor 64SuperShotgunTACTICAL : Brutal64Weapon
 {
 Scale 0.87
-Weapon.SelectionOrder 401
+Weapon.SlotNumber 3
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 400
 Weapon.AmmoType1 "Shell"
-Weapon.AmmoGive1 8
 Weapon.AmmoUse1 1
+Weapon.AmmoGive1 8
 Weapon.AmmoType2 "SSGAmmo"
-Weapon.AmmoGive2 0
 Weapon.AmmoUse2 1
+Weapon.AmmoGive2 0
 Inventory.PickupMessage "$GOTSHOTGUN2"
 Obituary "$OB_MPSSHOTGUN"
 Tag "$TAG_SUPERSHOTGUN"
-Weapon.SlotNumber 3
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AMMO_CHECKBOTH
 +WEAPON.NOAUTOFIRE

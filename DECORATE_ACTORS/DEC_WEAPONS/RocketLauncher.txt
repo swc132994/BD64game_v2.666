@@ -23,13 +23,14 @@ Inventory.PickupSound "WPICK"
 Actor 64RocketLauncher : DoomWeapon
 {
 Scale 0.82
+Weapon.SlotNumber 5
+Weapon.SlotPriority 2
 Weapon.SelectionOrder 2500
+Weapon.AmmoType "RocketAmmo"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 2
-Weapon.AmmoType "RocketAmmo"
 Inventory.PickupMessage "$GOTLAUNCHER"
 Tag "$TAG_ROCKETLAUNCHER"
-Weapon.SlotNumber 5
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -70,8 +71,6 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 	}
 }
 
-
-
 Actor AltMode : Inventory
 {
 Inventory.MaxAmount 1
@@ -100,16 +99,17 @@ Inventory.Icon "LAUNA0"
 Actor 64RocketLauncherTactical : Brutal64Weapon
 {
 Scale 0.82
-Weapon.SelectionOrder 2501
+Weapon.SlotNumber 5
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 2500
+Weapon.AmmoType1 "RocketAmmo"
 Weapon.AmmoUse1 1
 Weapon.AmmoGive1 2
-Weapon.AmmoType1 "RocketAmmo"
+Weapon.AmmoType2 "RLAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Weapon.AmmoType2 "RLAmmo"
 Inventory.PickupMessage "$GOTLAUNCHER"
 Tag "$TAG_ROCKETLAUNCHER"
-Weapon.SlotNumber 5
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.NOAUTOFIRE
 +WEAPON.NOALERT
@@ -316,10 +316,12 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 Actor 64ClassicRocketLauncherTactical : Brutal64Weapon
 {
 Scale 0.82
-Weapon.SelectionOrder 2501
-Weapon.AmmoUse1 1
-Weapon.AmmoGive1 0
-Weapon.AmmoType1 "RocketAmmo"
+Weapon.SlotNumber 5
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 2500
+Weapon.AmmoType "RocketAmmo"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 0
 Inventory.PickupMessage "$GOTLAUNCHER"
 Tag "$TAG_ROCKETLAUNCHER"
 +INVENTORY.RESTRICTABSOLUTELY

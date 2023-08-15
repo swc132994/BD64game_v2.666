@@ -262,7 +262,7 @@ Scale 0.7
 	Spawn:
 		PINV A 0 NoDelay A_JumpIf(CallACS("WpnPowerRandom")==0,"SpawnInvulnerabilitySphere")
 		TNT1 A 0 A_JumpIf(CallACS("WpnPowerRandom")==1,"SpawnDemonKey")
-		TNT1 A 0 A_Jump(39,"SpawnDemonKey") //(15%)
+		TNT1 A 0 A_Jump(45,"SpawnDemonKey") //(17.5%)
 	SpawnInvulnerabilitySphere:
 		TNT1 A 1 A_SpawnItemEx("64InvulnerabilitySphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop

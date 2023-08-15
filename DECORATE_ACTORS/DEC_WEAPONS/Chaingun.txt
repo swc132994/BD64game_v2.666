@@ -34,14 +34,15 @@ Inventory.PickupSound "WPICK"
 Actor 64Chaingun : DoomWeapon
 {
 Scale 0.82
+Weapon.SlotNumber 4
+Weapon.SlotPriority 2
 Weapon.SelectionOrder 700
+Weapon.AmmoType "Clip"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 20
-Weapon.AmmoType "Clip"
 Inventory.PickupMessage "$GOTCHAINGUN"
 Obituary "$OB_MPCHAINGUN"
 Tag "$TAG_CHAINGUN"
-Weapon.SlotNumber 4
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -100,14 +101,15 @@ inventory.maxamount 1
 Actor 64ChaingunTACTICAL : Brutal64Weapon
 {
 Scale 0.82
-Weapon.SelectionOrder 701
+Weapon.SlotNumber 4
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 700
+Weapon.AmmoType "Clip"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 20
-Weapon.AmmoType "Clip"
 Inventory.PickupMessage "$GOTCHAINGUN"
 Obituary "$OB_MPCHAINGUN"
 Tag "$TAG_CHAINGUN"
-Weapon.SlotNumber 4
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.ALT_USES_BOTH
 	States

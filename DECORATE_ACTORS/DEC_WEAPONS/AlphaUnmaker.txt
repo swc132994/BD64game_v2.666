@@ -3,7 +3,7 @@ Actor LasergunSpawner : CustomInventory 9351
 //$category "Game/BD64_Weapons
 SpawnID 180
 Scale 0.9
-Inventory.PickupMessage "You got the Experimental Laser Gun"
+Inventory.PickupMessage "You got the Laser Rifle"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -42,15 +42,15 @@ Inventory.PickupSound "WPICK"
 Actor Lasergun : DoomWeapon
 {
 Scale 0.9
+Weapon.SlotNumber 9
 Weapon.SelectionOrder 200
-Inventory.PickupMessage "You got the Experimental Laser Gun"
+Inventory.PickupMessage "You got the Laser Rifle"
 AttackSound "weapons/AlphaLZRGker"
+Weapon.AmmoType "Cell"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 40
-Weapon.AmmoType "Cell"
 Inventory.Icon LGUNB0
-Tag "Laser Gun"
-Weapon.SlotNumber 9
+Tag "Laser Rifle"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -102,15 +102,15 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 Actor LasergunTactical : Brutal64Weapon
 {
 Scale 0.9
+Weapon.SlotNumber 9
 Weapon.SelectionOrder 200
-Inventory.PickupMessage "You got the Experimental Laser Gun"
+Inventory.PickupMessage "You got the Laser Rifle"
 AttackSound "weapons/AlphaLZRGker"
+Weapon.AmmoType "Cell"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 40
-Weapon.AmmoType "Cell"
 Inventory.Icon LGUNB0
-Tag "Laser Gun"
-Weapon.SlotNumber 9
+Tag "Laser Rifle"
 +WEAPON.ALT_USES_BOTH
 +WEAPON.NOALERT
 +INVENTORY.RESTRICTABSOLUTELY
@@ -276,7 +276,7 @@ Weapon.SlotNumber 9
 	}
 }
 
-Actor AlphaLZRGkerLaser : FastProjectile 9954
+Actor AlphaLZRGkerLaser : FastProjectile
 {
 Scale 0.6
 radius 1

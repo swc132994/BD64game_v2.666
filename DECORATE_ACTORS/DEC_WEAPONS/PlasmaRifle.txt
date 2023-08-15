@@ -39,13 +39,14 @@ inventory.maxamount 1
 Actor 64PlasmaRifle : DoomWeapon
 {
 Scale 0.82
+Weapon.SlotNumber 6
+Weapon.SlotPriority 2
 Weapon.SelectionOrder 100
+Weapon.AmmoType "Cell"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 40
-Weapon.AmmoType "Cell"
 Inventory.PickupMessage "$GOTPLASMA"
 Tag "$TAG_PLASMARIFLE"
-Weapon.SlotNumber 6
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -95,16 +96,17 @@ Inventory.Icon "plasa0"
 Actor 64PlasmaRifleTACTICAL : Brutal64Weapon
 {
 Scale 0.82
-Weapon.SelectionOrder 101
+Weapon.SlotNumber 6
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 100
+Weapon.AmmoType1 "Cell"
 Weapon.AmmoUse1 1
 Weapon.AmmoGive1 40
-Weapon.AmmoType1 "Cell"
+Weapon.AmmoType2 "PlasmaRifleAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Weapon.AmmoType2 "PlasmaRifleAmmo"
 Inventory.PickupMessage "$GOTPLASMA"
 Tag "$TAG_PLASMARIFLE"
-Weapon.SlotNumber 6
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AMMO_CHECKBOTH
 +WEAPON.NOALERT
@@ -309,7 +311,6 @@ Weapon.SlotNumber 6
 
 Actor 64PlasmaBall Replaces PlasmaBall
 {
-SpawnID 99
 Scale 0.5
 Radius 4
 Height 4

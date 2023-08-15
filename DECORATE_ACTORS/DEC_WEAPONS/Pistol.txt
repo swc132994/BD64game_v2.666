@@ -23,16 +23,17 @@ Inventory.PickupSound "WPICK"
 Actor 64Pistol : DoomWeapon
 {
 Scale 0.82
+Weapon.SlotNumber 2
+Weapon.SlotPriority 1
 Weapon.SelectionOrder 1900
+Weapon.AmmoType "Clip"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 10
-Weapon.AmmoType "Clip"
 Obituary "$OB_MPPISTOL"
 +WEAPON.WIMPY_WEAPON
 +WEAPON.NOAUTOFIRE
 Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
 Tag "$TAG_PISTOL"
-Weapon.SlotNumber 2
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -95,17 +96,18 @@ inventory.maxamount 1
 Actor 64PistolTACTICAL : Brutal64Weapon
 {
 Scale 0.82
-Weapon.SelectionOrder 1901
+Weapon.SlotNumber 2
+Weapon.SlotPriority 1
+Weapon.SelectionOrder 1900
+Weapon.AmmoType1 "Clip"
 Weapon.AmmoUse1 1
 Weapon.AmmoGive1 10
-Weapon.AmmoType1 "Clip"
+Weapon.AmmoType2 "PistolAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Weapon.AmmoType2 "PistolAmmo"
 Obituary "$OB_MPPISTOL"
 Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
 Tag "$TAG_PISTOL"
-Weapon.SlotNumber 2
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.NOALERT
 +WEAPON.NOAUTOFIRE

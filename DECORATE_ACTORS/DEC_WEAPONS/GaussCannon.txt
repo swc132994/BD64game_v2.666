@@ -1,4 +1,4 @@
-Actor BD64_GaussCannonSpawner : CustomInventory		//spawned from randomspawners
+Actor BD64_GaussCannonSpawner : CustomInventory	19134	//spawned from randomspawners
 {
 //$category "Game/BD64_Weapons
 Scale 0.9
@@ -38,17 +38,16 @@ Powerup.Duration 2147483647
 
 ACTOR BD64_GaussCannon : DoomWeapon
 {
-SpawnID 164
-Radius 20
-Height 16
-Weapon.Selectionorder 100
+Scale 0.9
+Weapon.SlotNumber 6
+Weapon.SlotPriority 1
+Weapon.Selectionorder 2000
+Weapon.AmmoType "Cell"
 Weapon.AmmoUse 10
 Weapon.AmmoGive 40
-Weapon.AmmoType "Cell"
 Inventory.Pickupmessage "You picked up the Gauss Cannon"
 Obituary "%o was pierced by %k's Gauss Cannon"
 Tag "Gauss Cannon"
-Weapon.SlotNumber 6
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 Decal BigScorch
@@ -98,20 +97,19 @@ Inventory.Icon "GCPCA0"
 
 ACTOR BD64_GaussCannonTACTICAL : Brutal64Weapon
 {
-SpawnID 164
-Radius 20
-Height 16
-Weapon.Selectionorder 100
+Scale 0.9
+Weapon.SlotNumber 6
+Weapon.SlotPriority 1
+Weapon.Selectionorder 2000
+Weapon.AmmoType1 "Cell"
 Weapon.AmmoUse1 1
 Weapon.AmmoGive1 40
-Weapon.AmmoType1 "Cell"
+Weapon.AmmoType2 "GaussAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Weapon.AmmoType2 "GaussAmmo"
 Inventory.Pickupmessage "You picked up the Gauss Cannon"
 Obituary "%o was pierced by %k's Gauss Cannon"
 Tag "Gauss Cannon"
-Weapon.SlotNumber 6
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 Inventory.ForbiddenTo "64DoomPlayer"
 Decal BigScorch

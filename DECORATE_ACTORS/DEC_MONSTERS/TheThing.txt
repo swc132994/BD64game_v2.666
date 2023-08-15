@@ -17,9 +17,9 @@ Tag "Thing"
 PainChance "SuperFists",255
 PainChance "SuperKick",255
 DamageFactor 0.50
-DamageFactor "Fire",1.0
-DamageFactor "chainsaw",1.0
-DamageFactor "Plasma",1.2
+DamageFactor "Fire",1.5
+DamageFactor "Plasma",1.5
+DamageFactor "BFG",1.5
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 MeleeRange 75
