@@ -1000,6 +1000,9 @@ brightmap sprite SP1NC0		{map "brightmaps/Hellstorm/SP1NC0_BR.png"}
 brightmap sprite SP1NG0		{map "brightmaps/Hellstorm/SP1NG0_BR.png"}
 brightmap sprite SP1NH0		{map "brightmaps/Hellstorm/SP1NH0_BR.png"}
 
+//Keen Replacement
+brightmap sprite SC0RL0		{map "brightmaps/KeenReplace/BMFATALY.png"}
+
 /*//LIQUID TEXTURES
 brightmap sprite LAVA1		{map "brightmaps/256SQ_BR.png"}
 brightmap sprite LAVA2		{map "brightmaps/256SQ_BR.png"}

@@ -164,7 +164,7 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 		StaticText " "
 		StaticText "Option to switch to alternate spawns for the Revenant and Hellhound",1
 		StaticText " "
-	Option "Select between Cerberus, Alternate and GEC Hellhound =","HoundChooserCvar","HoundChooser"
+	Option "Select between Cerberus, Alternate or GEC Hellhound =","HoundChooserCvar","HoundChooser"
 	Option "Revert back to Tchernobog Revenant =","RevenantChooserCvar","YesOrNo"
 		StaticText " "
 		StaticText "(Vanilla Doom Maps ONLY) Option to replace all Marine Zombies with Waffen-SS",1
@@ -182,6 +182,11 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 		StaticText " "
 	Option "Tweak Husk Zombie horde multiplier =","TheHorde_Multiplier_Cvar","TheHorde_Multiplier_Value"
 	Option "Enable 'The Thing' to spawn from dead Marines =","ThingRandomCvar","YesOrNo"
+		StaticText " "
+		StaticText "Replace the super secret map easter egg with a normal monster",1
+		StaticText "Useful when playing PWADs like Scythe 2",1
+		StaticText " "
+	Option "Replace MAP32 hanging easter egg with normal monster =","Keen_Spawner_Cvar","Keen_Spawner_Value"
 }
 
 OptionMenu "BD64MapOptions"
@@ -504,6 +509,13 @@ OptionValue "TheHorde_Multiplier_Value"		//Husk zombie
 	3,"x3 Husks"
 	4,"x4 Husks"
 	5,"Random"
+}
+
+OptionValue "Keen_Spawner_Value"
+{
+	0,"Hanging Secret"
+	1,"Fallen (normal health)"
+	2,"Fallen (boss health)"
 }
 
 //Performance values

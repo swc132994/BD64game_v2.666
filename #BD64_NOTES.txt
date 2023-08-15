@@ -165,6 +165,14 @@ Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 
 	old sounds, Brightmaps and ZScript version not used.
 
+//Keen Replacement
+MK4 HANGED SCORPION FOR D64 CREDITS:
+- Midway (everything lol)
+- TEPA6ANT (MK4 Scorpion ragdoll for Gmod)
+- Ultimecia (MK4 fatality text rip)
+- LordRaptor (ripping MK4 sounds)
+Frankensprite by Craneo.
+
 //Anomaly events
 Poltergeist original credits:
 ----------------------------

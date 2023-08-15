@@ -461,3 +461,8 @@ script "FlashlightCheck" (void)
 {
 SetResultValue(GetCVar("FlashlightStartCvar"));
 }
+
+script "KeenRandom" (void)
+{
+SetResultValue(GetCVar("Keen_Spawner_Cvar"));
+}

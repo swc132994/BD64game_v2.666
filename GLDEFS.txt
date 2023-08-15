@@ -2587,6 +2587,35 @@ Object 64VenomEye2
 	Frame ESXMG {Light GreenEye7}
 }
 
+//Keen Replacement
+Object 64NOTAFRIT
+{
+Frame FALNA {Light FallenLight}
+Frame FALNB {Light FallenLight}
+Frame FALNC {Light FallenLight}
+Frame FALND {Light FallenLight}
+Frame FALNE {Light FallenLight}
+Frame FALNF {Light FallenLight}
+Frame FALNG {Light FallenLight}
+Frame FALNH {Light FallenLight2}
+Frame FALNI {Light FallenLight3}
+Frame FALNJ {Light FallenLight4}
+}
+
+Object 64YESAFRIT
+{
+Frame F2LNA {Light FallenLight}
+Frame F2LNB {Light FallenLight}
+Frame F2LNC {Light FallenLight}
+Frame F2LND {Light FallenLight}
+Frame F2LNE {Light FallenLight}
+Frame F2LNF {Light FallenLight}
+Frame F2LNG {Light FallenLight}
+Frame F2LNH {Light FallenLight2}
+Frame F2LNI {Light FallenLight3}
+Frame F2LNJ {Light FallenLight4}
+}
+
 //TEXTURES
 Glow
 {

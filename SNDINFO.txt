@@ -643,6 +643,10 @@ monster/falwng dsfalwng
 $volume monster/falsit 0.5
 $volume monster/falwng 0.5
 
+//Keen Replacement
+scorpion/pain		64keenpn
+scorpion/death		64keendt
+
 //---------------------------
 //**********GORE*************
 //---------------------------
