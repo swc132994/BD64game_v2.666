@@ -64,77 +64,88 @@ LISTMENU "MainMenu"
 OptionMenu "BD64Menu"
 {
 	Title "BRUTAL DOOM 64 OPTIONS"
-	Submenu "Performance Options",			"BrutalDoom64OptionsPerformance"
-	Submenu "Item/Weapon Spawner Options",	"BrutalDoom64OptionsItem/WeaponSpawner"
-	Submenu "Monster Spawner Options",		"BrutalDoom64OptionsMonsterSpawner"
-	Submenu "Other Monster Options",		"BrutalDoom64OptionsOtherMonster"
-	Submenu "Map Options",					"BD64MapOptions"
-	Submenu "Item/Weapon Options",			"BrutalDoom64Item/WeaponOptions"
-}
-
-OptionMenu "BrutalDoom64OptionsPerformance"
-{
-	Title "Performance & Miscellaneous Options"
-		StaticText " "
-		StaticText "Enable this option only if hosting a server on a multiplayer game,",1
-		StaticText "If playing on single player then set to Off",1
-		StaticText " "
-	Option "Enable Zandronum specific multiplayer scripts =","isrunningzandronum","OnOff"
-		StaticText " "
-		StaticText "Options to adjust game performance!",1
-		StaticText " "
-	Option "Select blood amount =","zdoombrutalblood","BrutalBlood"
-	Option "Enable gore remover for flats (30s) =","zdoombrutaljanitor","YesOrNo"
-	Option "Enable floor/ceiling shot/blast decals =","FloorDecal_Cvar","YesOrNoFalse"
-	Option "Disable Light Fog & Halos =","LFog_Cvar","LFog_Value"
-		StaticText " "
-		Slider "Set max wall decals","cl_maxdecals",0,9999,100,0
-		textfield "input value manually","cl_maxdecals"
-		StaticText " "
-		Slider "Set max gore amount","sv_corpsequeuesize",25,9999,100,0
-		textfield "input value manually","sv_corpsequeuesize"
-		StaticText " "
-		StaticText "Miscellaneous Options!",1
-		StaticText " "
-	Option "Enable footstep sounds =","FootStepCheckCvar","YesOrNo"
-	Option "Set Normal size HUD to Doom style =","VanillaStatusBarCvar","YesorNo"
-	Option "Set Fullscreen size HUD to Doom style =","ArragendHUDCvar","YesorNo"
-	Option "Screen Effects =", "bd64_ScreenFX", "ScreenTypes"
-		StaticText "Enable Screen Effects on HUD, such as Blood Splashing and Bullet Holes."
-		StaticText " "
-	Option "Blood Trail Splash =", "bd64_BloodTrail", "YesOrNoFalse"
-		StaticText "Enables Blood Splashing when Enemies are bleeding out."
-		StaticText "If Screen Effects is disabled, this option will also be disabled."
-		StaticText "Does not work for the BDv21 Mode."
+	Submenu "Item/Weapon Spawner Options",		"BrutalDoom64OptionsItem/WeaponSpawner"
+	Submenu "Other Item/Weapon Options",		"BrutalDoom64Item/WeaponOptions"
+	Submenu "Monster Spawner Options",			"BrutalDoom64OptionsMonsterSpawner"
+	Submenu "Other Monster Options",			"BrutalDoom64OptionsOtherMonster"
+	Submenu "Performance & Misc. Options",		"BrutalDoom64OptionsPerformance"
+	Submenu "Map Options",						"BD64MapOptions"
 }
 
 OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner"
 {
 	Title "Item/Weapon Spawner Options"
-		StaticText " "
+		StaticText ""
 		StaticText "Options to choose replacements of weapons and power-ups",1
 		StaticText "or set to appear randomly",1
-		StaticText " "
+		StaticText ""
 	Option "Randomly replace Armour/Health Bonuses with Hell Potions =","BonusRandomCvar","BonusRandomValue"
+		StaticText "(hell potions are combined armour/health pickups)",1
+		StaticText ""
 	Option "Randomly replace Power-ups with Unmaker Power-ups =","WpnPower_Spawner_Cvar","WpnPower_Spawner_Value"
 	Option "Plasma Rifle, Gauss Cannon or random =","GaussCannon_Spawner_Cvar","GaussCannon_Spawner_Value"
 	Option "BFG9000, Unmaker, Laser Rifle or random =","BFG_Spawner_Cvar","BFG_Spawner_Value"
 	Option "Chaingun, Sub Machingun, Rifle or random =","Chaingun_Spawner_Cvar","Chaingun_Spawner_Value"
-		StaticText " "
+		StaticText ""
 		StaticText "Option to replace shotguns with super shotguns",1
 		StaticText "('shotgun only' will set SSG Zombies to drop shells instead of SSG)",1
-		StaticText " "
+		StaticText ""
 	Option "SSG in Doom 1 =","SSGinDoom1_Cvar","SSGinDoom1Menu"
+}
+
+OptionMenu "BrutalDoom64Item/WeaponOptions"
+{
+	Title "Other Item/Weapon Options"
+		StaticText ""
+		StaticText "Option to ONLY spawn classic Doom 64 items & weapons.",1
+		StaticText "(enabling this option will override all alternative spawns & drops)",1
+		StaticText ""
+	Option "ONLY Spawn Weapons & Items From Vanilla Doom 64 =","D64WeaponsOnlyCvar","YesOrNo"
+		StaticText ""
+		StaticText "Show classic Doom 64 weapon animations (classical mode ONLY).",1
+		StaticText ""
+	Option "Enable Vanilla Weapon Animations =","VWeaponCvar","YesOrNo"
+		StaticText ""
+		StaticText "Show weapon warm up animations on first pickup (tactical/modern modes ONLY).",1
+		StaticText ""
+	Option "Enable Weapon Warm Up Animations =","WeaponsWarmUpCvar","YesOrNo"
+		StaticText ""
+		StaticText "Options for classic or modernised weapon looks.",1
+		StaticText ""
+	Option "Classic Style Chainsaw for Tactical/Modern =","VanillaChainsawCvar","YesOrNo"
+	Option "Classic Style Chaingun for Tactical/Modern =","ClassicChaingunCvar","YesOrNo"
+	Option "Classic Style Rocket Launcher for Tactical/Modern =","ClassicRLCvar","YesOrNo"
+		StaticText ""
+		StaticText "Options for alternative or some alpha build looks for items & weapons.",1
+		StaticText ""
+	Option "Alternative Rifle Skin =","AlternativeRifleSkinCvar","YesOrNo"
+	Option "Alternative Laser Skin =","AlternativeLaserSkinCvar","YesOrNo"
+	Option "Alternative Ammo & Item Pickups =","AlternativeAmmoPickupSpritesCvar","AlternativeAmmoPickupSpritesValue"
+	Option "Alternative Radiation Suit Pickup =","AltRadSuitCvar","YesOrNo"
+	Option "Alternative Healing Kits & Berserk Pickups =","CensoredHealing_Cvar","CensoredHealing_Value"
+	Option "Alpha Build Item Pickups =","AlphaPickupCvar","YesOrNo"
+		StaticText ""
+		StaticText "Option to disable switching to fists on berserk pack pickup.",1
+		StaticText ""
+	Option "Switch to Fists on Berserk Pickup =","BerserkSwitchFistsCvar","YesOrNo"
+		StaticText ""
+		StaticText "Flashlight/torch can either be started with or picked up in game.",1
+		StaticText ""
+	Option "Start with Flashlight/Torch (Need Map Restart) =","FlashlightStartCvar","YesOrNo"
+		StaticText ""
+		StaticText "Skip weapon reload animation sequences (tactical/modern modes ONLY).",1
+		StaticText ""
+	Option "Skip Weapon Reload Sequences (Need Map Restart) =","NoReloadCvar","YesOrNo"
 }
 
 OptionMenu "BrutalDoom64OptionsMonsterSpawner"
 {
 	Title "Monster Spawner Options"
-		StaticText " "
+		StaticText ""
 	StaticText "These options allow setting the monster replacements to nightmare,",1
 		StaticText "outcast and extra monsters, or set to appear randomly",1
 		StaticText "(Enabling the D64 monsters only option will override these settings)",1
-		StaticText " "
+		StaticText ""
 	Option "Shotgun Zombie, SSG Zombie or random =","SSGZombieRandom_Cvar","SSGZombieRandom_Value"
 	Option "Pistol Zombie, Marine Zombie or random =","ZMarineRandom_Cvar","ZMarineRandom_Value"
 	Option "Chaingun Zombie, BFG Zombie or random =","ZombieBFGRandom_Cvar","BFGZombie_Value"
@@ -156,77 +167,99 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner"
 OptionMenu "BrutalDoom64OptionsOtherMonster"
 {
 	Title "Other Monster Options"
-		StaticText " "
-	StaticText "Option to ONLY spawn Doom64 monsters i.e. no cut monsters.",1
+		StaticText ""
+	StaticText "Option to ONLY spawn Doom 64 monsters i.e. no cut monsters.",1
 		StaticText "(Enabling this option will override all alternate monster spawns)",1
-		StaticText " "
+		StaticText ""
 	Option "Spawn Doom 64 vanilla monsters ONLY =","D64MonstersOnlyCvar","YesOrNo"
-		StaticText " "
+		StaticText ""
 		StaticText "Option to switch to alternate spawns for the Revenant and Hellhound",1
-		StaticText " "
+		StaticText ""
 	Option "Select between Cerberus, Alternate or GEC Hellhound =","HoundChooserCvar","HoundChooser"
 	Option "Revert back to Tchernobog Revenant =","RevenantChooserCvar","YesOrNo"
-		StaticText " "
+		StaticText ""
 		StaticText "(Vanilla Doom Maps ONLY) Option to replace all Marine Zombies with Waffen-SS",1
-		StaticText " "
+		StaticText ""
 	Option "Select between Marine Zombie or Waffen-SS =","ZombieMarineNaziCvar","ZombieMarineNazi"
-		StaticText " "
+		StaticText ""
 		StaticText "Option to allow elementals to randomly spit stalkers or forgotten ones",1
 		StaticText "(Enabling the D64 monsters only option will override this setting)",1
-		StaticText " "
+		StaticText ""
 	Option "Enable Pain Elemental Stalker and Forgotten One attacks =","PainStalkerRandom_Cvar","YesOrNo"
-		StaticText " "
+		StaticText ""
 		StaticText "Enable monster limb loss death states",1
-		StaticText " "
+		StaticText ""
 	Option "Enable Severed Limb Deaths =","SevereredLimbDeathCvar","YesOrNo"
-		StaticText " "
-	Option "Tweak Husk Zombie horde multiplier =","TheHorde_Multiplier_Cvar","TheHorde_Multiplier_Value"
-	Option "Enable 'The Thing' to spawn from dead Marines =","ThingRandomCvar","YesOrNo"
-		StaticText " "
-		StaticText "Replace the super secret map easter egg with a normal monster",1
-		StaticText "Useful when playing PWADs like Scythe 2",1
-		StaticText " "
-	Option "Replace MAP32 hanging easter egg with normal monster =","Keen_Spawner_Cvar","Keen_Spawner_Value"
+		StaticText ""
+		StaticText "Map Prop replacements!",1
+		StaticText ""
+		StaticText "Option to spawn 'Husk Zombies' near dead zombie props.",1
+	Option "Enable Husk Zombie Horde Multiplier =","TheHorde_Multiplier_Cvar","TheHorde_Multiplier_Value"
+		StaticText ""
+		StaticText "Option to replace dead marines with 'The Thing' monsters.",1
+		StaticText "(poltergeist spawns are temporarily linked to this option)",1
+		StaticText "Poltergeists are hostile map props that can attack the player.",1
+	Option "Enable Random Spawning of 'The Thing' From Dead Marines =","ThingRandomCvar","YesOrNo"
+		StaticText ""
+		StaticText "Keen Doll Easter Eggs are replaced with hanging MK Scorpions by default.",1
+		StaticText "These can be switched with a special Fallen monster to fight.",1
+		StaticText "(Useful when playing PWADs like Scythe 2)",1
+	Option "Replace Easter Eggs With Monsters =","Keen_Spawner_Cvar","Keen_Spawner_Value"
+}
+
+OptionMenu "BrutalDoom64OptionsPerformance"
+{
+	Title "Performance & Miscellaneous Options"
+		StaticText ""
+		StaticText "Enable this option ONLY if hosting a server on a multiplayer game.",1
+		StaticText "(enabling this option will generate an error message if using GZDoom)",1
+		StaticText ""
+	Option "Enable Zandronum specific multiplayer scripts =","isrunningzandronum","OnOff"
+		StaticText ""
+		StaticText "Options to adjust game performance!",1
+		StaticText ""
+	Option "Select blood amount =","zdoombrutalblood","BrutalBlood"
+	Option "Enable gore remover for flats (30s) =","zdoombrutaljanitor","YesOrNo"
+	Option "Enable floor/ceiling shot/blast decals =","FloorDecal_Cvar","YesOrNoFalse"
+	Option "Disable Light Fog & Halos =","LFog_Cvar","LFog_Value"
+		StaticText ""
+		Slider "Set max wall decals","cl_maxdecals",0,9999,100,0
+		textfield "input value manually","cl_maxdecals"
+		StaticText ""
+		Slider "Set max gore amount","sv_corpsequeuesize",25,9999,100,0
+		textfield "input value manually","sv_corpsequeuesize"
+		StaticText ""
+		StaticText "HUD Options!",1
+		StaticText ""
+	Option "Set Normal size HUD to Doom style =","VanillaStatusBarCvar","YesorNo"
+	Option "Set Fullscreen size HUD to Doom style =","ArragendHUDCvar","YesorNo"
+		StaticText ""
+	Option "Enable HUD Screen Effects =", "bd64_ScreenFX", "ScreenTypes"
+		StaticText "Enables screen effects on HUD, such as blood splashes and bullet holes."
+		StaticText ""
+	Option "Enable HUD Screen Blood Trail Splashes =", "bd64_BloodTrail", "YesOrNoFalse"
+		StaticText "Close up bleeding monsters will create HUD blood splashes."
+		StaticText "(If screen effects are disabled, this option will also be disabled)"
+		StaticText "(Does not work for BDv21 screen effects mode)"
+		StaticText ""
+		StaticText "Sound Options!",1
+		StaticText ""
+	Option "Enable footstep sounds =","FootStepCheckCvar","YesOrNo"
 }
 
 OptionMenu "BD64MapOptions"
 {
 	Title "Map Options"
-		StaticText " "
-		StaticText "(Only available when playing the BD64 Campaign)",1
-		StaticText " "
-	Option "Play Vanilla Map08 =","VMapCheckCvar","YesOrNo"
-	Option "Add TC Maps to Campaign =","TCMapCheckCvar","YesOrNo"
-	Option "Revert Back to Original Map28 =","AbsMapCheckCvar","YesOrNo"
+		StaticText ""
+		StaticText "(These options ONLY work with the BD64 Maps)",1
+		StaticText ""
+	Option "Play Easier Map08 (No Boss Fight) =","VMapCheckCvar","YesOrNo"
+	Option "Play Easier Map28 (No Extended Final Boss Fight) =","AbsMapCheckCvar","YesOrNo"
+	Option "Add Absolution TC Maps to Campaign =","TCMapCheckCvar","YesOrNo"
+		StaticText ""
+		StaticText "Show orignal Doom 64 opening title sequence at startup",1
+		StaticText ""
 	Option "Show Opening Title Map (Restart Required) =","D64_SkipTitleMap","YesOrNoFalse"
-}
-
-OptionMenu "BrutalDoom64Item/WeaponOptions"
-{
-	Title "Item/Weapon Options"
-	StaticText "Option to ONLY spawn Doom64 Items/weapons.",1
-		StaticText "(Enabling this option will override all alternative spawns/drops)",1
-		StaticText " "
-	Option "Spawn Doom64 vanilla weapons/items ONLY =","D64WeaponsOnlyCvar","YesOrNo"
-		StaticText " "
-		StaticText "These options allow changing the skin for the Rifle and Laser Rifle,",1
-		StaticText "as well as enable D64 vanilla style firing (Only for Classical).",1
-		StaticText "Classic weapon look for Rocket Launcher and Chaingun for Tactical/Modern.",1
-		StaticText " "
-	Option "Play Vanilla Weapon Animations (Classical Only) =","VWeaponCvar","YesOrNo"
-	Option "Play Start Warm Up Weapons (Tactical/Modern Only) =","WeaponsWarmUpCvar","YesOrNo"
-	Option "No Reloading for Tactical/Modern (Need Map Start) =","NoReloadCvar","YesOrNo"
-	Option "Alternative Rifle Skin =","AlternativeRifleSkinCvar","YesOrNo"
-	Option "Alternative Laser Skin =","AlternativeLaserSkinCvar","YesOrNo"
-	Option "Classic Rocket Launcher for Tactical/Modern =","ClassicRLCvar","YesOrNo"
-	Option "Classic Chainsaw for Tactical/Modern =","VanillaChainsawCvar","YesOrNo"
-	Option "Classic Chaingun for Tactical/Modern =","ClassicChaingunCvar","YesOrNo"	
-	Option "Alternative Ammo/Item Pickup Sprites =","AlternativeAmmoPickupSpritesCvar","AlternativeAmmoPickupSpritesValue"
-	Option "Switch to Fists on Berserk Pickup =","BerserkSwitchFistsCvar","YesOrNo"
-	Option "Show alpha/censored healing kits/berserk =","CensoredHealing_Cvar","CensoredHealing_Value"
-	Option "Alpha Build Items Pickup =","AlphaPickupCvar","YesOrNo"
-	Option "Alternative Rad Suit Pickup =","AltRadSuitCvar","YesOrNo"
-	Option "Start with Flashlight/Torch (Need Map Start) =","FlashlightStartCvar","YesOrNo"
 }
 
 //Misc values
