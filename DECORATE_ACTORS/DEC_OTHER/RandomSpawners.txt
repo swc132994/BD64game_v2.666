@@ -1361,7 +1361,7 @@ Scale 0.7
 	{
 	Spawn:
 		LTRI A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnBigTree")	//if D64 monsters only enabled spawn props
-		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnBigTree")
+		TNT1 A 0 A_JumpIf(CallACS("PoltergeistEnablerACS")==0,"SpawnBigTree")
 		TNT1 A 0 A_Jump(26,"SpawnDemonTree") //(10%)
 	SpawnBigTree:
 		TNT1 A 1 A_SpawnItemEx("64BigTree",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1379,7 +1379,7 @@ Scale 0.7
 	{
 	Spawn:
 		CEYE A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnEvilEye")	//if D64 monsters only enabled spawn props
-		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnEvilEye")
+		TNT1 A 0 A_JumpIf(CallACS("PoltergeistEnablerACS")==0,"SpawnEvilEye")
 		TNT1 A 0 A_Jump(26,"SpawnVenomEye1", "SpawnVenomEye2") //(10%)
 	SpawnEvilEye:
 		TNT1 A 1 A_SpawnItemEx("64EvilEye",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1402,7 +1402,7 @@ Scale 0.7
 	{
 	Spawn:
 		CAND C 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnCandlestick")	//if D64 monsters only enabled spawn props
-		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnCandlestick")
+		TNT1 A 0 A_JumpIf(CallACS("PoltergeistEnablerACS")==0,"SpawnCandlestick")
 		TNT1 A 0 A_Jump(26,"SpawnHellCandle") //(10%)
 	SpawnCandlestick:
 		TNT1 A 1 A_SpawnItemEx("64Candlestick",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1420,7 +1420,7 @@ Scale 0.7
 	{
 	Spawn:
 		64CN A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnCandelabra")	//if D64 monsters only enabled spawn props
-		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnCandelabra")
+		TNT1 A 0 A_JumpIf(CallACS("PoltergeistEnablerACS")==0,"SpawnCandelabra")
 		TNT1 A 0 A_Jump(26,"SpawnHellCandle") //(10%)
 	SpawnCandelabra:
 		TNT1 A 1 A_SpawnItemEx("64Candelabra",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1438,7 +1438,7 @@ Scale 0.7
 	{
 	Spawn:
 		BAR1 A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnNormalBarrel")	//if D64 monsters only enabled spawn props
-		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnNormalBarrel")
+		TNT1 A 0 A_JumpIf(CallACS("PoltergeistEnablerACS")==0,"SpawnNormalBarrel")
 		TNT1 A 0 A_Jump(26,"SpawnKillerBarrel") //(10%)
 	SpawnNormalBarrel:
 		TNT1 A 1 A_SpawnItemEx("64ExplosiveBarrel",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1456,7 +1456,7 @@ Scale 0.7
 	{
 	Spawn:
 		DAM1 D 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnNormalHangmen")	//if D64 monsters only enabled spawn props
-		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnNormalHangmen")
+		TNT1 A 0 A_JumpIf(CallACS("PoltergeistEnablerACS")==0,"SpawnNormalHangmen")
 		TNT1 A 0 A_Jump(26,"SpawnHangedManEnemy") //(10%)
 	SpawnNormalHangmen:
 		TNT1 A 1 A_SpawnItemEx("BloodyTwitchReplacer",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1474,7 +1474,7 @@ Scale 0.8
 	{
 	Spawn:
 		64HC A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnNormalStatue")	//if D64 monsters only enabled spawn props
-		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnNormalStatue")
+		TNT1 A 0 A_JumpIf(CallACS("PoltergeistEnablerACS")==0,"SpawnNormalStatue")
 		TNT1 A 0 A_Jump(26,"SpawnPossessedStatue") //(10%)
 	SpawnNormalStatue:
 		TNT1 A 1 A_SpawnItemEx("64HeartColumn",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1492,7 +1492,7 @@ Scale 0.8
 	{
 	Spawn:
 		FSKU A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnNormalFloatingSkull")	//if D64 monsters only enabled spawn props
-		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnNormalFloatingSkull")
+		TNT1 A 0 A_JumpIf(CallACS("PoltergeistEnablerACS")==0,"SpawnNormalFloatingSkull")
 		TNT1 A 0 A_Jump(26,"SpawnAggressiveFloatingSkull") //(10%)
 	SpawnNormalFloatingSkull:
 		TNT1 A 1 A_SpawnItemEx("64FloatingSkull",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1510,7 +1510,7 @@ Scale 0.7
 	{
 	Spawn:
 		DAM1 D 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnNormalHangmen")	//if D64 monsters only enabled spawn props
-		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnNormalHangmen")
+		TNT1 A 0 A_JumpIf(CallACS("PoltergeistEnablerACS")==0,"SpawnNormalHangmen")
 		TNT1 A 0 A_Jump(26,"SpawnHangedManEnemy") //(10%)
 	SpawnNormalHangmen:
 		TNT1 A 1 A_SpawnItemEx("NonSolidTwitchReplacer",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1527,7 +1527,7 @@ Actor 64FailingTechLampReplacer replaces TechLamp
 	{
 	Spawn:
 		TLMP A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnTechLamp")	//if D64 monsters only enabled spawn props
-		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnTechLamp")
+		TNT1 A 0 A_JumpIf(CallACS("PoltergeistEnablerACS")==0,"SpawnTechLamp")
 		TNT1 A 0 A_Jump(32,"SpawnHellLamp") //(12.5%)
 	SpawnTechLamp:
 		TNT1 A 1 A_SpawnItemEx("64TechLampB",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1544,7 +1544,7 @@ Actor 64FailingTechLamp2Replacer replaces TechLamp2
 	{
 	Spawn:
 		TLP2 A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnTechLamp")	//if D64 monsters only enabled spawn props
-		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnTechLamp")
+		TNT1 A 0 A_JumpIf(CallACS("PoltergeistEnablerACS")==0,"SpawnTechLamp")
 		TNT1 A 0 A_Jump(32,"SpawnHellLamp") //(12.5%)
 	SpawnTechLamp:
 		TNT1 A 1 A_SpawnItemEx("64TechLamp2B",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1561,7 +1561,7 @@ Actor 64FailingColumnReplacer replaces Column
 	{
 	Spawn:
 		TLP1 A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnTechLamp")	//if D64 monsters only enabled spawn props
-		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnTechLamp")
+		TNT1 A 0 A_JumpIf(CallACS("PoltergeistEnablerACS")==0,"SpawnTechLamp")
 		TNT1 A 0 A_Jump(32,"SpawnHellLamp") //(12.5%)
 	SpawnTechLamp:
 		TNT1 A 1 A_SpawnItemEx("64TechColumn",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)

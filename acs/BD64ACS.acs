@@ -32,17 +32,17 @@ script "KickKeyPress" (VOID) NET
 
 Script "TossingMine" (VOID) NET
 {
-	GiveInventory("TossMine",1);
+GiveInventory("TossMine",1);
 }
 
 Script "PlacingMine" (VOID) NET
 {
-	GiveInventory("PlaceMine",1);
+GiveInventory("PlaceMine",1);
 }
 
 Script "WeaponSpecialAction" (VOID) NET
 {
-	GiveInventory("WeaponSpecialAction",1);
+GiveInventory("WeaponSpecialAction",1);
 }
 
 #libdefine PLAYER_VIEWHEIGHT 50		//BD64 default player height
@@ -216,7 +216,7 @@ SetResultValue(GetCVar("FloorDecal_Cvar"));
 
 script "SoulHandler" ENTER			//unmaker ammo set ThingID
 {
-	Thing_ChangeTID(0,2337+PlayerNumber());
+Thing_ChangeTID(0,2337+PlayerNumber());
 }
 
 Script "TUnmakerChecker" (void)		//checks if you have tactical unmaker to allow spawn of tactical unmaker ammo
@@ -465,4 +465,9 @@ SetResultValue(GetCVar("FlashlightStartCvar"));
 script "KeenRandom" (void)
 {
 SetResultValue(GetCVar("Keen_Spawner_Cvar"));
+}
+
+script "PoltergeistEnablerACS" (void)
+{
+SetResultValue(GetCVar("PoltergeistCvar"));
 }

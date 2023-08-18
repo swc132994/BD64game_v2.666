@@ -87,7 +87,7 @@ Speed 0.9 //Doom 64 has reduced player speed
 Health 100
 Radius 16
 Height 56
-Mass 225
+Mass 200
 PainChance 255
 Species Marines
 DamageFactor "CauseWaterSplash",0.0
@@ -271,7 +271,7 @@ Health 100
 Speed 1.0
 Radius 16
 Height 56
-Mass 225
+Mass 200
 PainChance 255
 Player.RunHealth 500
 DamageFactor "CauseWaterSplash",0.0
@@ -555,7 +555,7 @@ Speed 0.9	//Doom 64 has reduced player speed
 Health 100
 Radius 16
 Height 56
-Mass 225
+Mass 200
 PainChance 255
 Species Marines
 DamageFactor "CauseWaterSplash",0.0

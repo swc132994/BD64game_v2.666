@@ -57,12 +57,12 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 A 0 A_PlaySound("PISTOLF",1)
 		TNT1 A 0 A_ZoomFactor(0.95)
 		PISF A 1 Bright
-		TNT1 A 0 A_SetPitch(pitch-1.5, SPF_INTERPOLATE)
+		TNT1 A 0 A_SetPitch(pitch-1.5,SPF_INTERPOLATE)
 		TNT1 A 0 A_ZoomFactor(1.0)
 		PISF B 2 Bright
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,0,0)
-		PISF CD 1 A_SetPitch(pitch+0.5, SPF_INTERPOLATE)
-		PISF E 1 A_SetPitch(pitch+0.5, SPF_INTERPOLATE)
+		PISF CD 1 A_SetPitch(pitch+0.5,SPF_INTERPOLATE)
+		PISF E 1 A_SetPitch(pitch+0.5,SPF_INTERPOLATE)
 		PISF F 1
 		PISG A 6 A_WeaponReady(1)
 		TNT1 A 0 A_Refire
@@ -171,8 +171,9 @@ Tag "$TAG_PISTOL"
 		TNT1 A 1 A_Lower
 		Wait
 	NoAmmo:
-		PISG A 1
-		PISG A 10 A_PlaySound("DRYFIRE",1)
+		P1SG A 0 A_JumpIfInventory("IsSilencer",1,2)
+		PISG A 0
+		"####" A 10 A_PlaySound("DRYFIRE",1)
 		Goto Ready
 	Fidget:
 		P1SI A 0 A_JumpIfInventory("IsSilencer",1,2)
@@ -188,8 +189,7 @@ Tag "$TAG_PISTOL"
 		TNT1 A 0 A_PlaySound("PISFORW",CHAN_WEAPON)
 		P1SI S 0 A_JumpIfInventory("IsSilencer",1,2)
 		PISI S 0
-		"####" STU 1 A_WeaponReady
-		"####" DCBA 1 A_WeaponReady
+		"####" STUDCBA 1 A_WeaponReady
 		Goto Ready
 	MineThrowFlash:
 		P1SS A 0 A_JumpIfInventory("IsSilencer",1,2)
@@ -233,7 +233,16 @@ Tag "$TAG_PISTOL"
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		Loop
 	Fire:
-		Goto AmmoCheck
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReload")
+		TNT1 A 0 A_JumpIfInventory("PistolAmmo",1,1)
+		Goto Reload
+		TNT1 A 0 A_TakeInventory("PistolAmmo",1,TIF_NOTAKEINFINITE)
+		Goto ResumeFire
+	NoReload:
+		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
+		Goto NoAmmo
+		TNT1 A 0 A_TakeInventory("Clip",1,TIF_NOTAKEINFINITE)
+		Goto ResumeFire
 	ResumeFire:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
@@ -244,12 +253,12 @@ Tag "$TAG_PISTOL"
 		TNT1 A 0 A_PlaySound("PISTOLF",CHAN_WEAPON)
 		TNT1 A 0 A_ZoomFactor(0.95)
 		PISF A 1 Bright
-		TNT1 A 0 A_SetPitch(pitch-1.5, SPF_INTERPOLATE)
+		TNT1 A 0 A_SetPitch(pitch-1.5,SPF_INTERPOLATE)
 		TNT1 A 0 A_ZoomFactor(1.0)
 		PISF B 2 Bright
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,0,0)
-		PISF CD 1 A_SetPitch(pitch+0.5, SPF_INTERPOLATE)
-		PISF E 1 A_SetPitch(pitch+0.5, SPF_INTERPOLATE)
+		PISF CD 1 A_SetPitch(pitch+0.5,SPF_INTERPOLATE)
+		PISF E 1 A_SetPitch(pitch+0.5,SPF_INTERPOLATE)
 		PISF F 1
 		PISG A 6 A_WeaponReady(1|WRF_ALLOWRELOAD)
 		TNT1 A 0 A_Refire
@@ -258,12 +267,12 @@ Tag "$TAG_PISTOL"
 		TNT1 A 0 A_PlaySound("PISTOLF3",CHAN_WEAPON)
 		TNT1 A 0 A_ZoomFactor(0.95)
 		P1SF A 1 Bright
-		TNT1 A 0 A_SetPitch(pitch-1.5, SPF_INTERPOLATE)
+		TNT1 A 0 A_SetPitch(pitch-1.5,SPF_INTERPOLATE)
 		TNT1 A 0 A_ZoomFactor(1.0)
 		P1SF B 2 Bright
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,0,0)
-		P1SF CD 1 A_SetPitch(pitch+0.5, SPF_INTERPOLATE)
-		P1SF E 1 A_SetPitch(pitch+0.5, SPF_INTERPOLATE)
+		P1SF CD 1 A_SetPitch(pitch+0.5,SPF_INTERPOLATE)
+		P1SF E 1 A_SetPitch(pitch+0.5,SPF_INTERPOLATE)
 		P1SF F 1
 		P1SG A 6 A_WeaponReady(1|WRF_ALLOWRELOAD)
 		TNT1 A 0 A_Refire
@@ -307,8 +316,7 @@ Tag "$TAG_PISTOL"
 		TNT1 A 0 A_PlaySound("prel")
 		P1SR J 0 A_JumpIfInventory("IsSilencer",1,2)
 		PISR J 0
-		"####" JKLMNOPPP 1
-		"####" QRSTUV 1
+		"####" JKLMNOPPPQRSTUV 1
 		Goto ReloadLoop
 	ReloadLoop:
 		TNT1 A 0 A_GiveInventory("PistolAmmo",1)
@@ -316,16 +324,5 @@ Tag "$TAG_PISTOL"
 		TNT1 A 0 A_JumpIfInventory("PistolAmmo",10,"Ready")
 		TNT1 A 0 A_JumpIfInventory("Clip",1,"Reloadloop")
 		Goto Ready
-	AmmoCheck:
-		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReload")
-		TNT1 A 0 A_JumpIfInventory("PistolAmmo",1,1)
-		Goto Reload
-		TNT1 A 0 A_TakeInventory("PistolAmmo",1,TIF_NOTAKEINFINITE)
-		Goto ResumeFire
-	NoReload:
-		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
-		Goto NoAmmo
-		TNT1 A 0 A_TakeInventory("Clip",1,TIF_NOTAKEINFINITE)
-		Goto ResumeFire
 	}
 }

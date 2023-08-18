@@ -113,7 +113,7 @@ OptionMenu "BrutalDoom64Item/WeaponOptions"
 		StaticText "Options for classic or modernised weapon looks.",1
 		StaticText ""
 	Option "Classic Style Chainsaw for Tactical/Modern =","VanillaChainsawCvar","YesOrNo"
-	Option "Classic Style Chaingun for Tactical/Modern =","ClassicChaingunCvar","YesOrNo"
+	Option "Classic Style Chaingun =","ClassicChaingunCvar","YesOrNo"
 	Option "Classic Style Rocket Launcher for Tactical/Modern =","ClassicRLCvar","YesOrNo"
 		StaticText ""
 		StaticText "Options for alternative or some alpha build looks for items & weapons.",1
@@ -196,10 +196,12 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 		StaticText "Option to spawn 'Husk Zombies' near dead zombie props.",1
 	Option "Enable Husk Zombie Horde Multiplier =","TheHorde_Multiplier_Cvar","TheHorde_Multiplier_Value"
 		StaticText ""
-		StaticText "Option to replace dead marines with 'The Thing' monsters.",1
-		StaticText "(poltergeist spawns are temporarily linked to this option)",1
-		StaticText "Poltergeists are hostile map props that can attack the player.",1
+		StaticText "Replace dead marines & dead marine props with 'The Thing' monsters.",1
 	Option "Enable Random Spawning of 'The Thing' From Dead Marines =","ThingRandomCvar","YesOrNo"
+		StaticText ""
+		StaticText "Replace map props with hostile poltergeists props.",1
+		StaticText "(poltergeists are hostile map props that can attack the player)",1
+	Option "Enable Random Replacement of Map Props =","PoltergeistCvar","YesOrNo"
 		StaticText ""
 		StaticText "Keen Doll Easter Eggs are replaced with hanging MK Scorpions by default.",1
 		StaticText "These can be switched with a special Fallen monster to fight.",1
@@ -214,25 +216,25 @@ OptionMenu "BrutalDoom64OptionsPerformance"
 		StaticText "Enable this option ONLY if hosting a server on a multiplayer game.",1
 		StaticText "(enabling this option will generate an error message if using GZDoom)",1
 		StaticText ""
-	Option "Enable Zandronum specific multiplayer scripts =","isrunningzandronum","OnOff"
+	Option "Enable Zandronum Specific Multiplayer Scripts =","isrunningzandronum","OnOff"
 		StaticText ""
 		StaticText "Options to adjust game performance!",1
 		StaticText ""
-	Option "Select blood amount =","zdoombrutalblood","BrutalBlood"
-	Option "Enable gore remover for flats (30s) =","zdoombrutaljanitor","YesOrNo"
-	Option "Enable floor/ceiling shot/blast decals =","FloorDecal_Cvar","YesOrNoFalse"
+	Option "Select Blood Amount =","zdoombrutalblood","BrutalBlood"
+	Option "Enable Gore Removing on Flats (30s) =","zdoombrutaljanitor","YesOrNo"
+	Option "Enable Floor/Ceiling Shot/Blast Decals =","FloorDecal_Cvar","YesOrNoFalse"
 	Option "Disable Light Fog & Halos =","LFog_Cvar","LFog_Value"
 		StaticText ""
-		Slider "Set max wall decals","cl_maxdecals",0,9999,100,0
+	Slider "Set Max Wall Decals","cl_maxdecals",0,9999,100,0
 		textfield "input value manually","cl_maxdecals"
 		StaticText ""
-		Slider "Set max gore amount","sv_corpsequeuesize",25,9999,100,0
+	Slider "Set Max Gore Amount","sv_corpsequeuesize",25,9999,100,0
 		textfield "input value manually","sv_corpsequeuesize"
 		StaticText ""
 		StaticText "HUD Options!",1
 		StaticText ""
-	Option "Set Normal size HUD to Doom style =","VanillaStatusBarCvar","YesorNo"
-	Option "Set Fullscreen size HUD to Doom style =","ArragendHUDCvar","YesorNo"
+	Option "Set Normal Size HUD to Doom Style =","VanillaStatusBarCvar","YesorNo"
+	Option "Set Fullscreen Size HUD to Doom Style =","ArragendHUDCvar","YesorNo"
 		StaticText ""
 	Option "Enable HUD Screen Effects =", "bd64_ScreenFX", "ScreenTypes"
 		StaticText "Enables screen effects on HUD, such as blood splashes and bullet holes."
@@ -244,7 +246,7 @@ OptionMenu "BrutalDoom64OptionsPerformance"
 		StaticText ""
 		StaticText "Sound Options!",1
 		StaticText ""
-	Option "Enable footstep sounds =","FootStepCheckCvar","YesOrNo"
+	Option "Enable Footstep Sounds =","FootStepCheckCvar","YesOrNo"
 }
 
 OptionMenu "BD64MapOptions"
