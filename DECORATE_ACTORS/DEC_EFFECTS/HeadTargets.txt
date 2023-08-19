@@ -24,8 +24,8 @@ actor HeadshotTargetBase
 {
 Health 300
 GibHealth 10000
-Radius 9
-Height 18
+Radius 8
+Height 16
 DamageType head
 BloodType "Brutal_Blood"
 PainChance 255
@@ -46,6 +46,7 @@ damagefactor "Bullet",1.5
 +GHOST
 +NOTARGET
 +SERVERSIDEONLY
++ISMONSTER
 	States
 	{
 	Spawn:
