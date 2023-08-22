@@ -1017,6 +1017,30 @@ YScale 1.0
 	}
 }
 
+actor 64InfernalCast : 64Infernal
+{
+XScale 1.0
+YScale 1.0
+	States
+	{
+	See:
+		DIAB AABBCCDD 6
+		Goto See
+	Melee:
+	Missile:
+		DIAB EEEE 5
+		Goto See
+	Death:
+		DIAB I 10 A_Scream
+		DIAB JKLM 10
+		DIAB N 6
+		DIAB OPQ 5
+		DIAB RSTUV 5
+		DIAB W -1
+		Stop
+	}
+}
+
 actor D64SpiderMastermindCast : 64SpiderMastermind
 {
 XScale 1.0

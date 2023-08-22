@@ -2007,6 +2007,45 @@ Frame FALNI {Light FallenLight3}
 Frame FALNJ {Light FallenLight4}
 }
 
+//Infernal
+object 64SisShot
+{
+	frame F51AZ {light IMPBALL}
+
+	frame MANFD {light TRACER_X1}
+	frame MANFE {light TRACER_X1}
+	frame MANFF {light TRACER_X2}
+	frame MANFG {light TRACER_X2}
+	frame MANFH {light TRACER_X3}
+	frame MANFI {light TRACER_X3}
+}
+
+object 64SisterTracer3
+{
+	frame MZ39A {light TRACER}
+	frame MZ39B {light TRACER}
+
+	frame MZ39C {light TRACER_X1}
+	frame MZ39D {light TRACER_X1}
+	frame MZ39E {light TRACER_X2}
+	frame MZ39F {light TRACER_X2}
+	frame MZ39G {light TRACER_X3}
+	frame MZ39H {light TRACER_X3}
+}
+
+object 64SisterTracer2
+{
+	frame MZ39A {light TRACER}
+	frame MZ39B {light TRACER}
+
+	frame MZ39C {light TRACER_X1}
+	frame MZ39D {light TRACER_X1}
+	frame MZ39E {light TRACER_X2}
+	frame MZ39F {light TRACER_X2}
+	frame MZ39G {light TRACER_X3}
+	frame MZ39H {light TRACER_X3}
+}
+
 //Doom Teleport fog
 flickerlight DTFOG1
 {

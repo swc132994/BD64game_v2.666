@@ -328,6 +328,13 @@ Intermission Doom2Cast
 	}
 	Cast
 	{
+		CastClass = "64InfernalCast"
+		CastName = "Infernal Resurrector"
+		AttackSound = "Missile",1,"SisDemon/see"
+		AttackSound = "Melee",1,"SisDemon/active"
+	}
+	Cast
+	{
 		CastClass = "D64SpiderMastermindCast"
 		CastName = "The Spider Mastermind"
 		AttackSound = "Missile",1,"CHGNSHOT"

@@ -75,6 +75,7 @@ Thing				19130
 Butcher				19131
 HellStorm			19132
 Fallen				19133
+Infernal			19135
 
 Gauss Cannon spawn	19134
 MP40 SPAWNER		19124
@@ -164,6 +165,11 @@ Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 	GLDefs: Ghastly Dragon
 
 	old sounds, Brightmaps and ZScript version not used.
+
+//Infernal
+Code: Maelstrom, Sgt_Mark_IV
+Sprites: Ittrav (monster sprites), Atomic Frog (Seeker Missile sprites), DrDoctor, DrPyspy, Craneo (Fireball sprites)
+Sounds: SEGA, Cooper B. Chance, downbeataura
 
 //Keen Replacement
 MK4 HANGED SCORPION FOR D64 CREDITS:

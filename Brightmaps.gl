@@ -1000,6 +1000,24 @@ brightmap sprite SP1NC0		{map "brightmaps/Hellstorm/SP1NC0_BR.png"}
 brightmap sprite SP1NG0		{map "brightmaps/Hellstorm/SP1NG0_BR.png"}
 brightmap sprite SP1NH0		{map "brightmaps/Hellstorm/SP1NH0_BR.png"}
 
+//Infernal
+brightmap sprite DIABA1		{map "BRIGHTMAPS/Infernal/DIABA1_BR.png"disablefullbright}
+brightmap sprite DIABA2		{map "BRIGHTMAPS/Infernal/DIABA2_BR.png"disablefullbright}
+brightmap sprite DIABA8		{map "BRIGHTMAPS/Infernal/DIABA8_BR.png"disablefullbright}
+brightmap sprite DIABB1		{map "BRIGHTMAPS/Infernal/DIABB1_BR.png"disablefullbright}
+brightmap sprite DIABB2		{map "BRIGHTMAPS/Infernal/DIABB2_BR.png"disablefullbright}
+brightmap sprite DIABB8		{map "BRIGHTMAPS/Infernal/DIABB8_BR.png"disablefullbright}
+brightmap sprite DIABC1		{map "BRIGHTMAPS/Infernal/DIABC1_BR.png"disablefullbright}
+brightmap sprite DIABC2		{map "BRIGHTMAPS/Infernal/DIABC2_BR.png"disablefullbright}
+brightmap sprite DIABC8		{map "BRIGHTMAPS/Infernal/DIABC8_BR.png"disablefullbright}
+brightmap sprite DIABD1		{map "BRIGHTMAPS/Infernal/DIABD1_BR.png"disablefullbright}
+brightmap sprite DIABD2		{map "BRIGHTMAPS/Infernal/DIABD2_BR.png"disablefullbright}
+brightmap sprite DIABD8		{map "BRIGHTMAPS/Infernal/DIABD8_BR.png"disablefullbright}
+brightmap sprite DIABE1		{map "BRIGHTMAPS/Infernal/DIABE1_BR.png"disablefullbright}
+brightmap sprite DIABE2		{map "BRIGHTMAPS/Infernal/DIABE2_BR.png"disablefullbright}
+brightmap sprite DIABE8		{map "BRIGHTMAPS/Infernal/DIABE8_BR.png"disablefullbright}
+
+
 //Keen Replacement
 brightmap sprite SC0RL0		{map "brightmaps/KeenReplace/BMFATALY.png"}
 
