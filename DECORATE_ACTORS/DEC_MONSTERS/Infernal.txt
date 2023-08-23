@@ -8,8 +8,9 @@ Radius 40
 Height 110
 Mass 5000
 Damage 15
-MeleeRange 200
 PainChance 10
+MeleeThreshold 200
+MeleeRange 100
 Obituary "%o met eternal damnation at the hands of the Infernal Resurrector."
 Tag "Infernal Resurrector"
 PainChance "SuperFists",200
@@ -32,75 +33,80 @@ MONSTER
 +QUICKTORETALIATE
 +NOBLOODDECALS
 +LOOKALLAROUND
++DONTMORPH
++NOTARGET
 	States
 	{
 	Spawn:
 		DIAB A 5 A_Look
 		Loop
 	See:
-		DIAB A 0 A_Hoof
+		TNT1 A 0 A_PlaysoundEx("HEDBON1","Auto",0,2)
 		DIAB A 6 A_Chase("Melee","Missile",CHF_RESURRECT)
 		DIAB B 6 A_Chase("Melee","Missile",CHF_RESURRECT)
-		TNT1 A 0 A_Hoof
+		TNT1 A 0 A_PlaysoundEx("HEDBON2","Auto",0,2)
 		DIAB C 6 A_Chase("Melee","Missile",CHF_RESURRECT)
 		DIAB D 6 A_Chase("Melee","Missile",CHF_RESURRECT)
 		Goto See
 	Missile:
-		TNT1 A 0 A_Jump(128,"FireBall")
-		TNT1 A 0 A_Jump(64,"Melee")
-		Goto Meteor
+		TNT1 A 0 A_Jump(256,"FireBall","Meteor","FireAttack")
 	Fireball:
-		DIAB H 10 A_FaceTarget
-		TNT1 A 0 A_CustomMissile("64SisShot",random (50,90),60)
-		DIAB E 10 A_FaceTarget
-		DIAB H 10 A_FaceTarget
-		TNT1 A 0 A_CustomMissile("64SisShot",random (50,90),-60)
-		DIAB E 10 A_FaceTarget
-		DIAB H 10 A_FaceTarget
-		TNT1 A 0 A_CustomMissile("64SisShot",random (50,90),60)
-		DIAB E 10 A_FaceTarget
-		DIAB H 10 A_FaceTarget
-		TNT1 A 0 A_CustomMissile("64SisShot",random (50,90),-60)
-		DIAB E 10 A_FaceTarget
+		TNT1 A 0 A_PlaysoundEx("DEMONSMK","Auto")
+		DIAB G 10 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("64SisShot",random(50,90),60)
+		DIAB E 20 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("64SisShot",random(50,90),-60)
+		DIAB G 20 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("64SisShot",random(50,90),60)
+		DIAB E 20 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("64SisShot",random(50,90),-60)
+		DIAB G 10 A_FaceTarget
 		Goto See
 	Meteor:
-		DIAB F 5 A_FaceTarget
+		TNT1 A 0 A_PlaysoundEx("DEMONSMK","Auto")
+		DIAB F 10 A_FaceTarget
 		DIAB G 5 Bright A_CustomMissile("64SisterTracer3",90,60)
-		DIAB F 5 A_FaceTarget
-		DIAB F 5 A_FaceTarget
+		DIAB F 10 A_FaceTarget
 		DIAB G 5 Bright A_CustomMissile("64SisterTracer2",90,-60)
-		DIAB F 5 A_FaceTarget
-		DIAB F 5 A_FaceTarget
+		DIAB F 10 A_FaceTarget
 		DIAB G 5 Bright A_CustomMissile("64SisterTracer3",90,60)
-		DIAB F 5 A_FaceTarget
-		DIAB F 5 A_FaceTarget
+		DIAB F 10 A_FaceTarget
 		DIAB G 5 Bright A_CustomMissile("64SisterTracer2",90,-60)
-		DIAB F 5 A_FaceTarget
-		DIAB F 5 A_FaceTarget
-		DIAB G 5 Bright A_CustomMissile("64SisterTracer3",90,60)
-		DIAB F 5 A_FaceTarget
-		DIAB F 20 A_FaceTarget
+		DIAB F 10 A_FaceTarget
 		Goto See
-	Melee:
-		DIAB B 20 Bright A_FaceTarget
+	FireAttack:
+		TNT1 A 0 A_PlaysoundEx("DEMONSMK","Auto")
+		DIAB FG 20 Bright A_FaceTarget
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,0,2,0)
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,20,2,0)
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,60,2,0)
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,-20,2,0)
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,-60,2,0)
-		TNT1 A 0 Radius_Quake(10,15,0,40,0)
-		DIAB C 20 Bright
-		DIAB B 20 Bright A_FaceTarget
+		DIAB FG 20 Bright A_FaceTarget
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,0,2,0)
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,40,2,0)
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,80,2,0)
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,-40,2,0)
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,-80,2,0)
+		Goto See
+	Melee:
+		DIAB B 20 A_FaceTarget
+		TNT1 A 0 A_SpawnItem("ExplosionAirDisplacementEffect")
+		TNT1 A 0 A_Playsound("misc/xdeath4b","Auto")
+		DIAB E 10 A_CustomMeleeAttack(50)
 		TNT1 A 0 Radius_Quake(10,15,0,40,0)
-		DIAB C 20 Bright
+		TNT1 A 0 A_Recoil(-8)
 		Goto See
 	Heal:
-		DIAB FFGGGFFGGG 2 Bright
+		DIAB F 5 Bright
+		TNT1 AAAA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
+		DIAB F 5 Bright
+		TNT1 AAAA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
+		DIAB F 5 Bright
+		TNT1 AAAA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
+		DIAB F 5 Bright
+		TNT1 AAAA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
+		DIAB GGGG 5 Bright A_SpawnItem("ExplosionFlareSpawner")
 		Goto See
 	Pain:
 		DIAB H 10

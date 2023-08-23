@@ -649,6 +649,13 @@ SisDemon/active SISREACT
 SisDemon/pain SISREPN
 SisDemon/death SISREDTH
 
+DEMONSMK	DEMONSMK
+HEDBON1	HEDBON1
+HEDBON2	HEDBON2
+
+$volume HEDBON1 0.4
+$volume HEDBON2 0.4
+
 //Keen Replacement
 scorpion/pain		64keenpn
 scorpion/death		64keendt
