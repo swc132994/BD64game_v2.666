@@ -72,7 +72,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
-		TNT1 A 0 A_FireBullets(0.0,0.0,-1,7,"HitPuff")
+		TNT1 A 0 A_FireBullets(0.0,0.0,-1,5,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",1)
 		TNT1 A 0 A_SetPitch(pitch+0.6,SPF_INTERPOLATE)
 		MP4F CDEF 1
@@ -86,7 +86,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
-		TNT1 A 0 A_FireBullets(0.6,0.6,-1,7,"HitPuff")
+		TNT1 A 0 A_FireBullets(0.6,0.6,-1,5,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",1)
 		TNT1 A 0 A_SetPitch(pitch-0.6,SPF_INTERPOLATE)
 		MP4F CDEF 1
@@ -100,7 +100,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
-		TNT1 A 0 A_FireBullets(2.0,2.0,-1,7,"HitPuff")
+		TNT1 A 0 A_FireBullets(2.0,2.0,-1,5,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",1)
 		TNT1 A 0 A_SetPitch(pitch+0.6,SPF_INTERPOLATE)
 		MP4F CDEF 1
@@ -114,7 +114,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
-		TNT1 A 0 A_FireBullets(4.0,4.0,-1,7,"HitPuff")
+		TNT1 A 0 A_FireBullets(4.0,4.0,-1,5,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",1)
 		TNT1 A 0 A_SetPitch(pitch-0.6,SPF_INTERPOLATE)
 		MP4F CDEF 1
@@ -128,7 +128,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
-		TNT1 A 0 A_FireBullets(7.0,7.0,-1,7,"HitPuff")
+		TNT1 A 0 A_FireBullets(7.0,7.0,-1,5,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",1)
 		TNT1 A 0 A_SetPitch(pitch+0.6,SPF_INTERPOLATE)
 		MP4F CDEF 1
@@ -266,7 +266,7 @@ Tag "MP40"
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
-		TNT1 A 0 A_FireBullets(0.0,0.0,1,8,"HitPuff",0)
+		TNT1 A 0 A_FireBullets(0.0,0.0,1,5,"HitPuff",0)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",1)
 		MP4F A 1 Bright
@@ -282,7 +282,7 @@ Tag "MP40"
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
-		TNT1 A 0 A_FireBullets(0.6,0.6,1,8,"HitPuff",0)
+		TNT1 A 0 A_FireBullets(0.6,0.6,1,5,"HitPuff",0)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",1)
 		MP4F B 1 Bright
@@ -298,7 +298,7 @@ Tag "MP40"
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
-		TNT1 A 0 A_FireBullets(2.0,2.0,1,8,"HitPuff",0)
+		TNT1 A 0 A_FireBullets(2.0,2.0,1,5,"HitPuff",0)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",1)
 		MP4F A 1 Bright
@@ -314,7 +314,7 @@ Tag "MP40"
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
-		TNT1 A 0 A_FireBullets(4.0,4.0,1,8,"HitPuff",0)
+		TNT1 A 0 A_FireBullets(4.0,4.0,1,5,"HitPuff",0)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",1)
 		MP4F B 1 Bright
@@ -330,7 +330,7 @@ Tag "MP40"
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
-		TNT1 A 0 A_FireBullets(7.0,7.0,1,8,"HitPuff",0)
+		TNT1 A 0 A_FireBullets(7.0,7.0,1,5,"HitPuff",0)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",1)
 		MP4F A 1 Bright

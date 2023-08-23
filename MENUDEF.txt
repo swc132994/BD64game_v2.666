@@ -110,7 +110,7 @@ OptionMenu "BrutalDoom64Item/WeaponOptions"
 		StaticText ""
 	Option "Enable Weapon Warm Up Animations =","WeaponsWarmUpCvar","YesOrNo"
 		StaticText ""
-		StaticText "Options for classic or modernised weapon looks.",1
+		StaticText "Options to switch between classic or modernised weapons.",1
 		StaticText ""
 	Option "Classic Style Chainsaw for Tactical/Modern =","VanillaChainsawCvar","YesOrNo"
 	Option "Classic Style Chaingun =","ClassicChaingunCvar","YesOrNo"
@@ -191,7 +191,7 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 		StaticText ""
 	Option "Enable Severed Limb Deaths =","SevereredLimbDeathCvar","YesOrNo"
 		StaticText ""
-		StaticText "Map Prop replacements!",1
+		StaticText "Map Prop Replacement Options!",1
 		StaticText ""
 		StaticText "Option to spawn 'Husk Zombies' near dead zombie props.",1
 	Option "Enable Husk Zombie Horde Multiplier =","TheHorde_Multiplier_Cvar","TheHorde_Multiplier_Value"
@@ -218,7 +218,7 @@ OptionMenu "BrutalDoom64OptionsPerformance"
 		StaticText ""
 	Option "Enable Zandronum Specific Multiplayer Scripts =","isrunningzandronum","OnOff"
 		StaticText ""
-		StaticText "Options to adjust game performance!",1
+		StaticText "Performance & Gore Options!",1
 		StaticText ""
 	Option "Select Blood Amount =","zdoombrutalblood","BrutalBlood"
 	Option "Enable Gore Removing on Flats (30s) =","zdoombrutaljanitor","YesOrNo"

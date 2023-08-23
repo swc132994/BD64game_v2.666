@@ -267,6 +267,8 @@ New Bullet decals from SMK4SIMPLEDECALS.wad by Sgt Mark IV
 Screen effects - Added by IDDQD_1337, Original creator Mechanical-Sanity
 Mugshot - Id Software (Doom 2 Slayer model for Doom Eternal), Stefano (porting said model to Garry's Mod), Craneo (Rework)
 
+Widescreen HUD bar for display size 10 (normal) by Unmaker23
+
 Items:
 Alt cell packs - DrDoctor (sprites)
 Soul ammo & Demon essence - Craneo (sprites)

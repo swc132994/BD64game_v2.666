@@ -528,8 +528,6 @@ Decal LaserDecal
 SeeSound "weapons/unmaker"
 DeathSound ""
 Obituary "%o was unmade by %k."
-PROJECTILE
-+RANDOMIZE
 +EXTREMEDEATH
 +FORCERADIUSDMG
 	States
