@@ -87,7 +87,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_XScream
 		RVNC ABC 5
 		TNT1 A 0 ThrustThing(random(0,360),5,0,0)
-		TNT1 AAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_SpawnItemEx("XDeathRevenantLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
@@ -361,7 +361,7 @@ DropItem "None"
 	Spawn:
 		SND1 A 10 A_Look
 		TNT1 A 0 A_CustomMissile("XDeath1",5,-17,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("Instestin",5,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("Intestine",5,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath1",5,17,random(0,360),2,random(0,90))
 		Goto See
 	See:
@@ -369,7 +369,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeath1",5,-17,random(0,360),2,random(0,90))
 		SND1 AABB 5 A_Chase
 		TNT1 A 0 A_Jump(128,2)
-		TNT1 A 0 A_CustomMissile("Instestin",5,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("Intestine",5,0,random(0,360),2,random(0,90))
 		SND1 AABB 5 A_Chase
 		TNT1 A 0 A_Jump(128,2)
 		TNT1 A 0 A_CustomMissile("XDeath1",5,17,random(0,360),2,random(0,90))

@@ -377,33 +377,25 @@ BounceCount 1
 	SpawnNormally:
 		TNT1 A 0 A_QueueCorpse
 		TNT1 A 0 A_Jump(256,"SpawnAFrameOnly","SpawnBFrameOnly","SpawnCFrameOnly","SpawnDFrameOnly")
+		Goto SpawnAFrameOnly
 	SpawnAFrameOnly:
 		BPDL A 800	//duration
-		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"FadeA")
+		"####" "#" 0 A_JumpIfInventory("lowgraphicsmode",1,"Fade")
 		Loop
 	SpawnBFrameOnly:
 		BPDL B 800	//duration
-		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"FadeB")
+		"####" "#" 0 A_JumpIfInventory("lowgraphicsmode",1,"Fade")
 		Loop
-	FadeA:
-		BPDL A 1 A_FadeOut(0.05)
-		Wait
-	FadeB:
-		BPDL B 1 A_FadeOut(0.05)
-		Wait
 	SpawnCFrameOnly:
 		BPDL C 800	//duration
-		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"FadeC")
+		"####" "#" 0 A_JumpIfInventory("lowgraphicsmode",1,"Fade")
 		Loop
 	SpawnDFrameOnly:
 		BPDL D 800	//duration
-		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"FadeD")
+		"####" "#" 0 A_JumpIfInventory("lowgraphicsmode",1,"Fade")
 		Loop
-	FadeC:
-		BPDL C 1 A_FadeOut(0.05)
-		Wait
-	FadeD:
-		BPDL D 1 A_FadeOut(0.05)
+	Fade:
+		"####" "#" 2 A_FadeOut(0.01)
 		Wait
 	Splash:
 		TNT1 A 1
@@ -433,7 +425,6 @@ Scale 1.1
 
 actor GiantBloodSpotGreen : Brutal_BloodSpotGreen
 {
-
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 Scale 1.1
 	States

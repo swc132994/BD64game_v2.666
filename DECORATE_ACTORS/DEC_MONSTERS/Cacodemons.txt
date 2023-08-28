@@ -62,7 +62,7 @@ MeleeRange 60 //default 44
 		TNT1 A 0 A_CustomMissile("XDeathCacodemonGIb5",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_XScream
@@ -89,7 +89,7 @@ MeleeRange 60 //default 44
 		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathCacodemonGib4",50,0,random(150,210),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
@@ -116,7 +116,7 @@ MeleeRange 60 //default 44
 		TNT1 A 0 A_CustomMissile("XDeathCacodemonGIb5",50,0,random(150,210),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
@@ -194,7 +194,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathCacodemonGib3",50,0,random(150,210),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
@@ -215,7 +215,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathCacodemonGIb5",50,0,random(150,210),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
@@ -272,7 +272,7 @@ DropItem "None"
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
@@ -291,7 +291,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathCacodemonGIb2",50,0,random(150,210),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
@@ -353,7 +353,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathCacodemonGIb2",50,0,random(150,210),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
@@ -493,7 +493,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_CustomMissile("XDeathNCacodemonGib5",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_XScream
@@ -520,7 +520,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathNCacodemonGib4",50,0,random(150,210),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
@@ -547,7 +547,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_CustomMissile("XDeathNCacodemonGib5",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
@@ -625,7 +625,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathNCacodemonGib3",50,0,random(150,210),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
@@ -646,7 +646,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathNCacodemonGIb5",50,0,random(150,210),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
@@ -703,7 +703,7 @@ DropItem "None"
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
@@ -722,7 +722,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathNCacodemonGIb2",50,0,random(150,210),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
@@ -784,7 +784,7 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeathNCacodemonGIb2",50,0,random(150,210),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
-		TNT1 AAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream

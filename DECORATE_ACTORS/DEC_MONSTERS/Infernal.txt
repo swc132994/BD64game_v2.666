@@ -145,7 +145,7 @@ MONSTER
 		TNT1 AAAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAAAAAA 0 A_CustomMissile("Instestin",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,32)
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion",0,90)
 		TNT1 AAAAAAAAA 0 A_CustomMissile("BurningXDeath1",42,0,random(0,360),2,random(0,90))

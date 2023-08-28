@@ -30,7 +30,7 @@ BounceFactor 1
 		Loop
 	Death:
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
-		XDT1 EFGHIJKL 5
+		XDT1 EFGHIJKL 2
 		Stop
 	Underwater:
 	Splash:
@@ -325,7 +325,14 @@ DeathSound "misc/xdeath3"
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
 		XME8 A 1
 		TNT1 A 0 A_QueueCorpse
-		XME8 A -1
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME8 A 3
+	Living:
+		XME8 A 800//duration
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	Vanish:
+		TNT1 A 1
 		Stop
 	}
 }
@@ -347,7 +354,14 @@ DeathSound "misc/xdeath3"
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpotGreen",0,0,0,1)
 		XME8 A 1
 		TNT1 A 0 A_QueueCorpse
-		XME8 A -1
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME8 A 3
+	Living:
+		XME8 A 800//duration
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	Vanish:
+		TNT1 A 1
 		Stop
 	}
 }
@@ -363,7 +377,14 @@ States
 		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
 		XME8 B 1
 		TNT1 A 0 A_QueueCorpse
-		XME8 B -1
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME8 B 3
+	Living:
+		XME8 B 800//duration
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	Vanish:
+		TNT1 A 1
 		Stop
 	}
 }
@@ -376,22 +397,27 @@ States
 		XME8 B 4 A_CustomMissile("Brutal_FlyingBloodTrailGreen",0,0,random(0,360),2,random(0,360))
 		Loop
 	Death:
-		TNT1 A 0 A_SpawnItem("Brutal_BloodSpot",0,0,0,1)
+		TNT1 A 0 A_SpawnItem("Brutal_BloodSpotGreen",0,0,0,1)
 		XME8 B 1
 		TNT1 A 0 A_QueueCorpse
-		XME8 B -1
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME8 B 3
+	Living:
+		XME8 B 800//duration
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	Vanish:
+		TNT1 A 1
 		Stop
 	}
 }
 
-ACTOR Instestin : XDeath1
+ACTOR Intestine : XDeath1
 {
 Scale 0.8
 Radius 8
 Height 12
 Speed 6
-Alpha 0.9
-Renderstyle Translucent
 DeathSound "misc/xdeath1"
 Decal BrutalBloodSplat
 	States
@@ -472,7 +498,7 @@ Decal BrutalBloodSplat
 	}
 }
 
-ACTOR InstestinGreen : Instestin
+ACTOR IntestineGreen : Intestine
 {
 Translation "16:31=%[0,0,0]:[0,1,0]","176:191=%[0,0,0]:[0,1,0]","32:47=%[0,0,0]:[0,1,0]"//Green
 Decal BrutalBloodSplatGreen
