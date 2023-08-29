@@ -398,11 +398,6 @@ flickerlight2 BIGREDTORCH
 	offset 0 60 0
 }
 
-object 64RedTorch
-{
-	frame TRED {light BIGREDTORCH}
-}
-
 //Tall green torch
 flickerlight2 BIGGREENTORCH
 {
@@ -411,11 +406,6 @@ flickerlight2 BIGGREENTORCH
 	secondarySize 72
 	interval 0.1
 	offset 0 60 0
-}
-
-object 64GreenTorch
-{
-	frame TGRE {light BIGGREENTORCH}
 }
 
 object BruiserFlame
@@ -433,11 +423,6 @@ flickerlight2 BIGBLUETORCH
 	offset 0 60 0
 }
 
-object 64BlueTorch
-{
-	frame TBLU {light BIGBLUETORCH}
-}
-
 // Small red torch
 flickerlight2 SMALLREDTORCH
 {
@@ -446,11 +431,6 @@ flickerlight2 SMALLREDTORCH
 	secondarySize 54
 	interval 0.1
 	offset 0 35 0
-}
-
-object 64RedTorchSmall
-{
-	frame TRED {light SMALLREDTORCH}
 }
 
 // Small green torch
@@ -463,11 +443,6 @@ flickerlight2 SMALLGREENTORCH
 	offset 0 35 0
 }
 
-object 64ShortGreenTorch
-{
-	frame TGRE {light SMALLGREENTORCH}
-}
-
 // Small blue torch
 flickerlight2 SMALLBLUETORCH
 {
@@ -478,11 +453,6 @@ flickerlight2 SMALLBLUETORCH
 	offset 0 35 0
 }
 
-object 64BlueTorchSmall
-{
-	frame TBLU {light SMALLBLUETORCH}
-}
-
 // Small yellow torch
 flickerlight2 SMALLYELLOWTORCH
 {
@@ -491,11 +461,6 @@ flickerlight2 SMALLYELLOWTORCH
 	secondarySize 54
 	interval 0.1
 	offset 0 35 0
-}
-
-object 64ShortYellowTorch
-{
-	frame TYRN {light SMALLYELLOWTORCH}
 }
 
 // Skulls w/candles
@@ -2304,12 +2269,12 @@ object 64RedTorchSmall
 frame SSTI {light SMALLREDTORCH}
 }
 
-object 64ShortGreenTorch
+object 64GreenTorchSmall
 {
 frame SSTI {light SMALLGREENTORCH}
 }
 
-object 64ShortYellowTorch
+object 64YellowTorchSmall
 {
 frame SSTI {light SMALLYELLOWTORCH}
 }

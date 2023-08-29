@@ -471,3 +471,8 @@ script "PoltergeistEnablerACS" (void)
 {
 SetResultValue(GetCVar("PoltergeistCvar"));
 }
+
+script "ClassicTorchACS" (void)
+{
+SetResultValue(GetCVar("ClassicTorchCvar"));
+}
