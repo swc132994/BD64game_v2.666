@@ -15,7 +15,7 @@ DropItem "DemonEssenceSpawner"
 	states
 	{
 	Spawn:
-		BSPI BA 10 A_Look
+		BSPI BA 10 A_LookEx
 		Loop
 	See:
 		BSPI A 20

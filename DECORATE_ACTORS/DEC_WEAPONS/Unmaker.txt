@@ -245,7 +245,7 @@ ReactionTime 90
 	States
 	{
 	Spawn:
-		DESS AABBCCDD 2 Bright Light("HellPotion") A_SpawnItem("RedFlareSmallItem",0,7)
+		DESS AABBCCDD 2 Bright Light("HellPotion") A_SpawnItemEx("RedFlareSmallItem",0,0,7)
 		TNT1 A 0 A_Countdown
 		Loop
 	Death:
@@ -473,7 +473,7 @@ Tag "Unmaker"
 		Goto NotReady2
 		TNT1 A 0 A_PlaySound("DSBOSPIT",4)
 		TNT1 A 0 ThrustThingZ(0,5,0,0)
-		TNT1 A 0 A_SpawnItemEx("64LevitatingPlatform",0,0,0,0,0,0,0)
+		TNT1 A 0 A_SpawnItemEx("64LevitatingPlatform")
 		TNT1 A 0 A_TakeInventory("DemonEssence",5,TIF_NOTAKEINFINITE)
 		UNMG C 3 Bright A_SetPitch(-1.0 + pitch)
 		UNMG CBA 5 A_SetPitch(0.5 + pitch)
@@ -573,13 +573,13 @@ Obituary "%o was unmade by %k."
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(90*momx)/35.0,-(90*momy)/35.0,0+(90*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		Loop
 	Death:
-		TNT1 A 0 A_SpawnItem("DetectFloorLaser")
-		TNT1 A 0 A_SpawnItem("DetectCeilLaser")
+		TNT1 A 0 A_SpawnItemEx("DetectFloorLaser")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilLaser")
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_Explode(100,15,0)
-		TNT1 AAAAA 1 A_SpawnItem("RocketFlare")
+		TNT1 AAAAA 1 A_SpawnItemEx("RocketFlare")
 		TNT1 AAAAA 0 A_CustomMissile("PlasmaSmoke",0,0,random(0,360),2,random(0,360))
 		LPUF ABC 4 Bright
 		Stop
@@ -593,7 +593,7 @@ Damage(Random(25,50))
 	{
 	Spawn:
 		ULAZ A 1 Bright
-		TNT1 A 0 A_SpawnItem("SuperGore")
+		TNT1 A 0 A_SpawnItemEx("SuperGore")
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-21*momx)/35.0,-(-21*momy)/35.0,0+(-21*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-18*momx)/35.0,-(-18*momy)/35.0,0+(-18*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-15*momx)/35.0,-(-15*momy)/35.0,0+(-15*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
@@ -680,8 +680,8 @@ DamageType "UnmakerWhite"
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrailWhite",(90*momx)/35.0,-(90*momy)/35.0,0+(90*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		Loop
 	Death:
-		TNT1 A 0 A_SpawnItem("DetectCeilCraterMed")
-		TNT1 A 0 A_SpawnItem("DetectFloorCraterMed")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterMed")
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterMed")
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))

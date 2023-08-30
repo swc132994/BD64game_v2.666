@@ -1025,7 +1025,7 @@ damagetype Fire
 		TNT1 A 2 A_CustomMissile("FlameTrails",0,0,random(0,360),2,random(0,180))
 		Loop
 	Death:
-		TNT1 A 0 A_SpawnItem("DetectFloorCraterSmall")
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmall")
 		TNT1 AAAAAA 0 A_CustomMissile("FlameTrails",0,0,random(0,360),2,random(0,180))
 		TNT1 A 0 A_SpawnItemEx("ExplosionSimpleSmokeColumn",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION,0)
 		TNT1 A 0 A_Playsound("props/redfire")
@@ -1288,7 +1288,7 @@ Damagetype "Plasma"
 		TNT1 A 0 A_Jump(24,"StopBurning")
 		Loop
 	StopBurning:
-		TNT1 A 0 A_SpawnItem("DetectFloorCraterSmallMotherdemon")
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon")
 		CFCF NOP 1 Bright A_SpawnItem("RedFlareSmall",0,5)
 		Stop
 	}
@@ -1311,7 +1311,7 @@ Scale 0.7
 		TNT1 A 0 A_Jump(24,"StopBurning")
 		Loop
 	StopBurning:
-		TNT1 A 0 A_SpawnItem("DetectFloorCraterSmallMotherdemon")
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon")
 		CFCF NOP 1 Bright A_SpawnItem("RedFlareSmall",0,5)
 		Stop
 	}

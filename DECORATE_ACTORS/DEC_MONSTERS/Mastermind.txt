@@ -19,7 +19,7 @@ AttackSound "weapons/gswing"
 	States
 	{
 	Spawn:
-		MSMN AB 10 A_Look
+		MSMN AB 10 A_LookEx
 		Loop
 	See:
 		MSMN A 3 A_Metal
@@ -183,7 +183,7 @@ Tag "Eradicator"
 	States
 	{
 	Spawn:
-		BSGI AB 10 A_Look
+		BSGI AB 10 A_LookEx
 		Loop
 	See:
 		BSGI A 3 A_Metal
@@ -296,13 +296,13 @@ Speed 100
 	States
 	{
 	Death:
-		TNT1 A 0 A_SpawnItem("DetectFloorLaser")
-		TNT1 A 0 A_SpawnItem("DetectCeilLaser")
+		TNT1 A 0 A_SpawnItemEx("DetectFloorLaser")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilLaser")
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_Explode(40,15,1)
-		TNT1 AAAAA 1 A_SpawnItem("RocketFlare")
+		TNT1 AAAAA 1 A_SpawnItemEx("RocketFlare")
 		TNT1 AAAAA 0 A_CustomMissile("PlasmaSmoke",0,0,random(0,360),2,random(0,360))
 		LPUF ABC 4 Bright
 		Stop

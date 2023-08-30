@@ -97,7 +97,7 @@ Obituary "$OB_MPCHAINSAW"
 		TNT1 A 1
 		Stop
 	Death:
-		TNT1 A 0 A_SpawnItem("SSawPuff")
+		TNT1 A 0 A_SpawnItemEx("SSawPuff")
 		TNT1 A 0 A_PlaySound("DSSAWAL",1)
 		TNT1 A 1 Radius_Quake(2,3,0,4,0)
 		TNT1 A 10

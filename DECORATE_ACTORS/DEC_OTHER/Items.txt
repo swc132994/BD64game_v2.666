@@ -531,7 +531,7 @@ Inventory.Amount 2
 	States
 	{
 	Spawn:
-		BON3 AABBCCDD 2 BRIGHT LIGHT("HellPotion") A_SpawnItem("RedFlareSmallItem",0,7)
+		BON3 AABBCCDD 2 BRIGHT LIGHT("HellPotion") A_SpawnItemEx("RedFlareSmallItem",0,0,7)
 		Loop
 	Pickup:
 		TNT1 A 0 A_GiveInventory("64HealthBonus",1)

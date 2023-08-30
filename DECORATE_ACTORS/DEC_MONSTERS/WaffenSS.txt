@@ -22,7 +22,7 @@ DropItem "SOULSPAWNER"
 	{
 	Idle:	//placeholder
 	Spawn:
-		SSWV A 8 A_Look
+		SSWV A 8 A_LookEx
 		TNT1 A 0 A_SpawnItem("HeadshotTarget8",8,55,0)
 		Loop
 	Forget:
@@ -493,9 +493,9 @@ ReactionTime 35
 		TNT1 AAAAAAA 0 A_CustomMissile("MediumExplosionFlames",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_Explode(64,136)
-		TNT1 A 0 A_SpawnItem("DetectFloorCrater")
-		TNT1 A 0 A_SpawnItem("DetectCeilCrater")
-		TNT1 A 0 A_SpawnItem("ExplosionFlareSpawner")
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilCrater")
+		TNT1 A 0 A_SpawnItemEx("ExplosionFlareSpawner")
 		TNT1 AAAAAAA 0 A_CustomMissile("ExplosionFlames",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
 		TNT1 A 0 Radius_Quake(2,24,0,15,0)

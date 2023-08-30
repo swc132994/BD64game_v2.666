@@ -27,29 +27,29 @@ states
 		TNT1 A 0 A_CheckSight("Stand2")
 		TNT1 A 0 A_Jump(64,"Idle")
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",20,50,0)
-		64ZF AA 10 A_Look
+		64ZF AA 10 A_LookEx
 		Loop
 	Stand2:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget20",20,50,0)
-		64ZF AA 10 A_Look
+		64ZF AA 10 A_LookEx
 		TNT1 A 0 A_CheckSight("Stand2")
 		Goto Stand
 	Idle:
 		TNT1 A 0 A_ClearTarget
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",20,50,0)
-		64ZF A 10 A_Look
+		64ZF A 10 A_LookEx
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",16,50,0)
-		64ZF B 10 A_Look
+		64ZF B 10 A_LookEx
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",20,50,0)
-		64ZF A 10 A_Look
+		64ZF A 10 A_LookEx
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",20,50,0)
-		64ZF C 10 A_Look
+		64ZF C 10 A_LookEx
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",20,50,0)
-		64ZF A 10 A_Look
+		64ZF A 10 A_LookEx
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",16,50,0)
-		64ZF D 10 A_Look
+		64ZF D 10 A_LookEx
 		TNT1 A 0 A_SpawnItem("HeadshotTarget10",20,50,0)
-		64ZF A 10 A_Look
+		64ZF A 10 A_LookEx
 		Goto Stand
 	See:
 		TNT1 A 0 A_SpawnItem("HeadshotTarget8",20,50,0)

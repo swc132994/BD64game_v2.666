@@ -15,7 +15,7 @@ DropItem "DemonEssenceSpawner"
 	states
 	{
 	Spawn:
-		PAIN AD 10 A_Look
+		PAIN AD 10 A_LookEx
 		Loop
 	See:
 		PAIN AAAAAA 2 A_Chase("","")
@@ -84,7 +84,7 @@ Health 600
 	states
 	{
 	Spawn:
-		NPEL AD 10 A_Look
+		NPEL AD 10 A_LookEx
 		Loop
 	See:
 		TNT1 A 1 A_Wander

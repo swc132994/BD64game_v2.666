@@ -43,21 +43,21 @@ Monster
 		TNT1 A 0 A_CheckSight("SpawnedBlank")
 		FALN A 1 Bright A_Playsound("monster/falwng")
 		TNT1 AA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
-		FALN A 4 Bright A_Look
+		FALN A 4 Bright A_LookEx
 		TNT1 AA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
-		FALN B 4 Bright A_Look
+		FALN B 4 Bright A_LookEx
 		TNT1 AA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
-		FALN C 4 Bright A_Look
+		FALN C 4 Bright A_LookEx
 		TNT1 AA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
-		FALN D 4 Bright A_Look
+		FALN D 4 Bright A_LookEx
 		TNT1 AA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
-		FALN C 4 Bright A_Look
+		FALN C 4 Bright A_LookEx
 		TNT1 AA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
-		FALN B 4 Bright A_Look
+		FALN B 4 Bright A_LookEx
 		Loop
 	SpawnedBlank:
 		FALN A 1 Bright A_Playsound("monster/falwng")
-		FALN ABCDCB 4 Bright A_Look
+		FALN ABCDCB 4 Bright A_LookEx
 		Goto Spawned
 	See:
 		TNT1 A 0 A_CheckSight("ChaseBlank")
@@ -151,7 +151,7 @@ Monster
 		TNT1 A 2
 		TNT1 A 0 A_Explode(100,200)
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
-		TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumn")
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn")
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
 		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)

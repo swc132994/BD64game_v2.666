@@ -476,3 +476,8 @@ script "ClassicTorchACS" (void)
 {
 SetResultValue(GetCVar("ClassicTorchCvar"));
 }
+
+script "LiquidSplashCvarACS" (void)
+{
+SetResultValue(GetCVar("LiquidSplashCvar"));
+}

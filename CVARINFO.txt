@@ -63,3 +63,4 @@ server bool ClassicChaingunCvar = FALSE;	//Classic Chaingun
 server int Keen_Spawner_Cvar = 0;			//Hanging Scorpion or Fallen
 server int PoltergeistCvar = 0;				//Enable poltergiest props
 server int ClassicTorchCvar = 0;			//Enable classic style torces
+server int LiquidSplashCvar = 0;			//Enable liquid splashes

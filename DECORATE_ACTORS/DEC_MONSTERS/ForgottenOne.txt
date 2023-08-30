@@ -24,7 +24,7 @@ Tag "Forgotten One"
 	states
 	{
 	Spawn:
-		ESKU AAA 2 A_Look
+		ESKU AAA 2 A_LookEx
 		Loop
 	See:
 		TNT1 A 0 A_JumpIfHealthLower(40,"PossessSee")

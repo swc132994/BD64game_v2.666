@@ -39,7 +39,7 @@ MONSTER
 	States
 	{
 	Spawn:
-		MOTH ABCD 9 A_Look
+		MOTH ABCD 9 A_LookEx
 		Loop
 	See:
 		MOTH AAABBBCCCDDD 3 A_Chase("Melee","Missile",CHF_RESURRECT)
@@ -193,7 +193,7 @@ RenderStyle Translucent
 		TNT1 A 0 A_Explode(15,35,1)
 		MPUF A 5 Bright A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_Explode(15,35,1)
-		TNT1 A 1 A_SpawnItem("DetectFloorCraterSmallMotherdemon")
+		TNT1 A 1 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon")
 		Stop
 	}
 }
@@ -217,7 +217,7 @@ PROJECTILE
 		Loop
 	Death:
 		TNT1 AAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
-		TNT1 A 0 A_SpawnItem("DetectFloorCraterMed")
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterMed")
 		TNT1 AAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,180))
 		TNT1 A 0 A_SpawnItem("64BarrelExplosion")
 		TNT1 A 0 A_Explode(200,200,1)

@@ -225,6 +225,7 @@ OptionMenu "BrutalDoom64OptionsPerformance"
 	Option "Enable Floor/Ceiling Shot/Blast Decals =","FloorDecal_Cvar","YesOrNoFalse"
 	Option "Disable Light Fog & Halos =","LFog_Cvar","LFog_Value"
 	Option "Enable Classic Style Torches (Need Map Restart) =","ClassicTorchCvar","YesOrNo"
+	Option "Disable Liquid Splashes =","LiquidSplashCvar","YesOrNo"
 		StaticText ""
 	Slider "Set Max Wall Decals","cl_maxdecals",0,9999,100,0
 		textfield "input value manually","cl_maxdecals"

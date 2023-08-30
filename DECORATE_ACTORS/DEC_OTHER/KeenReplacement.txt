@@ -82,7 +82,7 @@ Actor 64NOTAFRIT : 64Fallen //generic new enemy keen replacement
 		TNT1 A 2
 		TNT1 A 0 A_Explode(100,200)
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
-		TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumn")
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn")
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
 		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
@@ -147,21 +147,21 @@ Obituary "%o was incinerated by a Supreme Fallen."
 		TNT1 A 0 A_CheckSight("SpawnedBlank")
 		F2LN A 1 Bright A_Playsound("monster/falwng")
 		TNT1 AA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
-		F2LN A 4 Bright A_Look
+		F2LN A 4 Bright A_LookEx
 		TNT1 AA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
-		F2LN B 4 Bright A_Look
+		F2LN B 4 Bright A_LookEx
 		TNT1 AA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
-		F2LN C 4 Bright A_Look
+		F2LN C 4 Bright A_LookEx
 		TNT1 AA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
-		F2LN D 4 Bright A_Look
+		F2LN D 4 Bright A_LookEx
 		TNT1 AA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
-		F2LN C 4 Bright A_Look
+		F2LN C 4 Bright A_LookEx
 		TNT1 AA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
-		F2LN B 4 Bright A_Look
+		F2LN B 4 Bright A_LookEx
 		Loop
 	SpawnedBlank:
 		F2LN A 1 Bright A_Playsound("monster/falwng")
-		F2LN ABCDCB 4 Bright A_Look
+		F2LN ABCDCB 4 Bright A_LookEx
 		Goto Spawned
 	See:
 		TNT1 A 0 A_CheckSight("ChaseBlank")
@@ -244,7 +244,7 @@ Obituary "%o was incinerated by a Supreme Fallen."
 		TNT1 A 2
 		TNT1 A 0 A_Explode(100,200)
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
-		TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumn")
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn")
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
 		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)

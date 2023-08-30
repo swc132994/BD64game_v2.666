@@ -74,7 +74,7 @@ Obituary "%o ate bullet shrapnel."
 	states
 	{
 	Spawn:
-		IPF2 A 0 NoDelay A_SpawnItem("YellowFlareSmall",0)
+		IPF2 A 0 NoDelay A_SpawnItemEx("YellowFlareSmall")
 		TNT1 A 0 A_SpawnItemEx("DetectFloorBullet")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilBullet")
 		TNT1 A 0 A_SpawnItemEx("UnderwaterHitPuff")
@@ -85,16 +85,16 @@ Obituary "%o ate bullet shrapnel."
 		TNT1 AAA 0 A_CustomMissile("OldschoolRocketSmokeTrail2",2,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
 	Spawn1:
-		IPF2 AABB 1 Bright A_SpawnItem("YellowFlareSmall",0)
+		IPF2 AABB 1 Bright A_SpawnItemEx("YellowFlareSmall")
 		Stop
 	Spawn2:
-		IPF2 CCDD 1 Bright A_SpawnItem("YellowFlareSmall",0)
+		IPF2 CCDD 1 Bright A_SpawnItemEx("YellowFlareSmall")
 		Stop
 	Spawn3:
-		IPF2 EEFF 1 Bright A_SpawnItem("YellowFlareSmall",0)
+		IPF2 EEFF 1 Bright A_SpawnItemEx("YellowFlareSmall")
 		Stop
 	Spawn4:
-		IPF2 GGHH 1 Bright A_SpawnItem("YellowFlareSmall",0)
+		IPF2 GGHH 1 Bright A_SpawnItemEx("YellowFlareSmall")
 		Stop
 	}
 }

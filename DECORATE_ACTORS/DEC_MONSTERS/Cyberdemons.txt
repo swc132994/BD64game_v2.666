@@ -16,7 +16,7 @@ DropItem "Soulsphere",32
 	states
 	{
 	Spawn:
-		CYBR A 10 A_Look
+		CYBR A 10 A_LookEx
 		Loop
 	See:
 		CYBR A 3 A_Metal
@@ -112,7 +112,7 @@ DropItem "Soulsphere",32
 	States
 	{
 	Spawn:
-		A64A A 10 A_Look
+		A64A A 10 A_LookEx
 		Loop
 	See:
 		A64A A 3 A_Playsound("monster/anhoof")

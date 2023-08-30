@@ -9,7 +9,7 @@ scale 0.75
 		HEAD M 3 A_LookEx(0,0,150,100)
 		Wait
 	Spawn:
-		HEAD M 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		HEAD M 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
 		TNT1 A 0 A_Jump(51,"Spawn2")//20%
 	Death:
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3")
@@ -60,7 +60,7 @@ scale 0.75
 		SARG N 3 A_LookEx(0,0,150,100)
 		Wait
 	Spawn:
-		SARG N 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		SARG N 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
 		TNT1 A 0 A_Jump(51,"Spawn2")//20%
 	Death:
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3","Rest4","Rest5","Rest6")
@@ -104,7 +104,7 @@ scale 0.75
 		Wait
 	Spawn:
 		TROO P 0 NoDelay A_Jump(128,"SpawnDeadNightImp")
-		TNT1 A 0 A_SpawnItem("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("64SmallBloodPool")
 		TNT1 A 0 A_Jump(51,"Spawn2")//20%
 	Death:
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3","Rest4","Rest5","Rest6")
@@ -149,7 +149,7 @@ RenderStyle Translucent
 		TRO2 P 3 A_LookEx(0,0,150,100)
 		Wait
 	Spawn:
-		TRO2 P 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		TRO2 P 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
 		TNT1 A 0 A_Jump(51,"Spawn2")//20%
 	Death:
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3","Rest4","Rest5","Rest6")
@@ -187,7 +187,7 @@ scale 0.75
 	states
 	{
 	Spawn:
-		SPOS L 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		SPOS L 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3","Rest4","Rest5","Rest6","Rest7","Rest8")
 	Rest1:
 		SPOS L -1
@@ -222,7 +222,7 @@ scale 0.75
 	states
 	{
 	Spawn:
-		POSS L 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		POSS L 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3","Rest4","Rest5","Rest6","Rest7","Rest8")
 	Rest1:
 		POSS L -1
@@ -238,8 +238,8 @@ scale 0.8
 	Spawn:
 		POL5 A 0 NoDelay A_NoBlocking
 		//TNT1 A 0 A_PlaySoundEx("misc/gibbed","Body",0,0)
-		TNT1 A 0 A_SpawnItem("Swarm")
-		TNT1 A 0 A_SpawnItem("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm")
+		TNT1 A 0 A_SpawnItemEx("64SmallBloodPool")
 		TNT1 A 0 A_Jump(256,"SpawnLive1","SpawnLive2","SpawnLive3")
 		Goto SpawnLive1
 	SpawnLive1:
@@ -301,8 +301,8 @@ Height 64
 	States
 	{
 	Spawn:
-		POL4 A 1  NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,15)
+		POL4 A 1  NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,15)
 		POL4 A -1
 		Stop
 	}
@@ -313,8 +313,8 @@ actor GoreLongDecoration2 : GoreLongDecoration1
 States
 	{
 	Spawn:
-		POL2 A 1  NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,10)
+		POL2 A 1  NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,10)
 		POL2 A -1
 		Stop
 	}
@@ -325,8 +325,8 @@ actor GoreLongDecoration3 : GoreLongDecoration1
 States
 	{
 	Spawn:
-		POL1 A 1 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,10)
+		POL1 A 1 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,10)
 		POL1 A -1
 		Stop
 	}
@@ -338,8 +338,8 @@ actor GoreLongDecoration4 : GoreLongDecoration1
 States
 	{
 	Spawn:
-		MGD1 O 1 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm")
+		MGD1 O 1 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm")
 		MGD1 O -1
 		Stop
 	}
@@ -353,8 +353,8 @@ Height 48
 States
 	{
 	Spawn:
-		MGD1 Q 1 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,15)
+		MGD1 Q 1 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,15)
 		MGD1 Q -1
 		Stop
 	}
@@ -367,8 +367,8 @@ Height 32
 States
 	{
 	Spawn:
-		MGD1 R 1 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm")
+		MGD1 R 1 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm")
 		MGD1 R -1
 		Stop
 	}
@@ -384,13 +384,13 @@ States
 		TNT1 A 0 NoDelay A_Jump(256,"Spawn1","Spawn2","Spawn3")
 		Goto Spawn1
 	Spawn1:
-		TNT1 A 1 A_SpawnItem("GoreLongDecoration12")
+		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration12")
 		Stop
 	Spawn2:
-		TNT1 A 1 A_SpawnItem("GoreLongDecoration13")
+		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration13")
 		Stop
 	Spawn3:
-		TNT1 A 1 A_SpawnItem("GoreLongDecoration14")
+		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration14")
 		Stop
 	}
 }
@@ -405,25 +405,25 @@ States
 		TNT1 A 0 NoDelay A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5","Spawn6","Spawn7")
 		Goto Spawn1
 	Spawn1:
-		TNT1 A 1 A_SpawnItem("GoreLongDecoration1")
+		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration1")
 		Stop
 	Spawn2:
-		TNT1 A 1 A_SpawnItem("GoreLongDecoration2")
+		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration2")
 		Stop
 	Spawn3:
-		TNT1 A 1 A_SpawnItem("GoreLongDecoration3")
+		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration3")
 		Stop
 	Spawn4:
-		TNT1 A 1 A_SpawnItem("GoreLongDecoration4")
+		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration4")
 		Stop
 	Spawn5:
-		TNT1 A 1 A_SpawnItem("GoreLongDecoration5")
+		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration5")
 		Stop
 	Spawn6:
-		TNT1 A 1 A_SpawnItem("GoreLongDecoration6")
+		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration6")
 		Stop
 	Spawn7:
-		TNT1 A 1 A_SpawnItem("GoreLongDecoration15")
+		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration15")
 		Stop
 	}
 }
@@ -438,19 +438,19 @@ actor GoreDecorationLongSpawner : GoreLongDecoration1
 		TNT1 A 0 NoDelay A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4","Spawn5")
 		Goto Spawn1
 	Spawn1:
-		TNT1 A 1 A_SpawnItem("GoreLongDecoration7")
+		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration7")
 		Stop
 	Spawn2:
-		TNT1 A 1 A_SpawnItem("GoreLongDecoration8")
+		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration8")
 		Stop
 	Spawn3:
-		TNT1 A 1 A_SpawnItem("GoreLongDecoration9")
+		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration9")
 		Stop
 	Spawn4:
-		TNT1 A 1 A_SpawnItem("GoreLongDecoration10")
+		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration10")
 		Stop
 	Spawn5:
-		TNT1 A 1 A_SpawnItem("GoreLongDecoration11")
+		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration11")
 		Stop
 	}
 }
@@ -461,8 +461,8 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		MGD1 D 1 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,30)
+		MGD1 D 1 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,30)
 		MGD1 D -1
 		Stop
 	}
@@ -474,8 +474,8 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		MGD1 E 1 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,30)
+		MGD1 E 1 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,30)
 		MGD1 E -1
 		Stop
 	}
@@ -487,8 +487,8 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		MGD1 F 1 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,30)
+		MGD1 F 1 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,30)
 		MGD1 F -1
 		Stop
 	}
@@ -500,8 +500,8 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		MGD1 G 1 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,30)
+		MGD1 G 1 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,30)
 		MGD1 G -1
 		Stop
 	}
@@ -513,8 +513,8 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		MGD1 H 1 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,30)
+		MGD1 H 1 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,30)
 		MGD1 H -1
 		Stop
 	}
@@ -526,9 +526,9 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		MGD1 A 1 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,10)
-		TNT1 A 0 A_SpawnItem("Swarm",0,70)
+		MGD1 A 1 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,10)
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,70)
 		MGD1 A -1
 		Stop
 	}
@@ -540,9 +540,9 @@ Scale 0.8
 	states
 	{
 	Spawn:
-		MGD1 B 1 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,10)
-		TNT1 A 0 A_SpawnItem("Swarm",0,70)
+		MGD1 B 1 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,10)
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,70)
 		MGD1 B -1
 		Stop
 	}
@@ -554,9 +554,9 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		MGD1 C 1 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,10)
-		TNT1 A 0 A_SpawnItem("Swarm",0,70)
+		MGD1 C 1 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,10)
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,70)
 		MGD1 C -1
 		Stop
 	}
@@ -567,9 +567,9 @@ actor GoreLongDecoration15 : GoreLongDecoration1
 	States
 	{
 	Spawn:
-		MGD1 T 1 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,0)
-		TNT1 A 0 A_SpawnItem("Swarm",0,25)
+		MGD1 T 1 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,25)
 		MGD1 T -1
 		Stop
 	}
@@ -580,7 +580,7 @@ actor 64HeadOnAStick : HeadOnAStick Replaces HeadOnAStick
 	States
 	{
 	Spawn:
-		TNT1 A 1 NoDelay A_SpawnItem("GoreDecorationHeadsSpawner")
+		TNT1 A 1 NoDelay A_SpawnItemEx("GoreDecorationHeadsSpawner")
 		Stop
 	}
 }
@@ -590,7 +590,7 @@ actor 64HeadsOnAStick : HeadsOnAStick Replaces HeadsOnAStick
 	States
 	{
 	Spawn:
-		TNT1 A 1 NoDelay A_SpawnItem("GoreDecorationShortSpawner")
+		TNT1 A 1 NoDelay A_SpawnItemEx("GoreDecorationShortSpawner")
 		Stop
 	}
 }
@@ -600,7 +600,7 @@ actor 64DeadStick : DeadStick Replaces DeadStick
 	States
 	{
 	Spawn:
-		TNT1 A 1 NoDelay A_SpawnItem("GoreDecorationShortSpawner")
+		TNT1 A 1 NoDelay A_SpawnItemEx("GoreDecorationShortSpawner")
 		Stop
 	}
 }
@@ -612,11 +612,11 @@ Height 68
 	States
 	{
 	Spawn:
-		HDB2 A 0 NoDelay A_SpawnItem("Swarm",0,0)
+		HDB2 A 0 NoDelay A_SpawnItemEx("Swarm")
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItem("DripingBlood",0,-5)
+		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		HDB2 A 70
 		Loop
@@ -635,11 +635,11 @@ Height 52
 	States
 	{
 	Spawn:
-		HDB1 A 0 NoDelay A_SpawnItem("Swarm",0,0)
+		HDB1 A 0 NoDelay A_SpawnItemEx("Swarm")
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItem("DripingBlood",0,-5)
+		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		HDB1 A 70
 		Loop
@@ -658,11 +658,11 @@ Height 49
 	States
 	{
 	Spawn:
-		HDB3 A 0 NoDelay A_SpawnItem("Swarm",0,0)
+		HDB3 A 0 NoDelay A_SpawnItemEx("Swarm")
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItem("DripingBlood",0,-5)
+		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		HDB3 A 70
 		Loop
@@ -682,7 +682,7 @@ Height 47
 	{
 	Spawn:
 		HDB5 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItem("DripingBlood",0,-5)
+		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		HDB5 A 70
 		Loop
@@ -701,11 +701,11 @@ Height 74
 	States
 	{
 	Spawn:
-		HDB6 A 0 NoDelay A_SpawnItem("Swarm",0,-10)
+		HDB6 A 0 NoDelay A_SpawnItemEx("Swarm",0,0,-10)
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItem("DripingBlood",0,-5)
+		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		HDB6 A 70
 		Loop
@@ -724,11 +724,11 @@ Height 71
 	States
 	{
 	Spawn:
-		HDB4 A 0 NoDelay A_SpawnItem("Swarm",0,5)
+		HDB4 A 0 NoDelay A_SpawnItemEx("Swarm",0,0,5)
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItem("DripingBlood",0,-5)
+		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		HDB4 A 70
 		Loop
@@ -761,11 +761,11 @@ Height 79
 	States
 	{
 	Spawn:
-		GOR2 A 0 NoDelay A_SpawnItem("Swarm",0,0)
+		GOR2 A 0 NoDelay A_SpawnItemEx("Swarm")
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItem("DripingBlood",0,-5)
+		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		GOR2 A 70
 		Loop
@@ -790,7 +790,7 @@ Height 65
 	{
 	Spawn:
 		GOR4 A 0 NoDelay A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItem("DripingBlood",0,-3)
+		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-3)
 		TNT1 A 0 A_Jump(128,2)
 		GOR4 A 70
 		Loop
@@ -815,7 +815,7 @@ Height 79
 	{
 	Spawn:
 		GOR5 A 0 NoDelay A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItem("DripingBlood",0,-3)
+		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-3)
 		TNT1 A 0 A_Jump(128,2)
 		GOR5 A 70
 		Loop
@@ -839,7 +839,7 @@ scale 0.8
 	States
 	{
 	Spawn:
-		PLAY M 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		PLAY M 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
 		TNT1 A 0 A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//flip horzizontal
 		PLAY M -1
@@ -854,7 +854,7 @@ scale 0.8
 	States
 	{
 	Spawn:
-		PLAY V 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		PLAY V 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
 		TNT1 A 0 A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//flip horzizontal
 		PLAY V -1
@@ -869,7 +869,7 @@ scale 0.8
 	States
 	{
 	Spawn:
-		CPOG B 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		CPOG B 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
 		TNT1 A 0 A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//flip horzizontal
 		CPOG B -1
@@ -885,11 +885,11 @@ Height 83
 	States
 	{
 	Spawn:
-		TWEG A 0 NoDelay A_SpawnItem("Swarm",0,5)
+		TWEG A 0 NoDelay A_SpawnItemEx("Swarm",0,0,5)
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItem("DripingBlood",0,-5)
+		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		TWEG A 70
 		Loop
@@ -924,8 +924,8 @@ Scale 0.82
 		BSTK A 0 NoDelay A_Jump(128,2)
 		BSTK A -1
 		Stop
-		TNT1 A 0 A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,15)
+		TNT1 A 0 A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,15)
 		BSTK B -1
 		stop
 	}
@@ -973,8 +973,8 @@ Scale 0.7
 		Stop
 		LTRI C -1
 		stop
-		TNT1 A 0 A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,15)
+		TNT1 A 0 A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,15)
 		LTRI D -1
 		Stop
 	}
@@ -1022,7 +1022,7 @@ Scale 0.7
 	States
 	{
 	Spawn:
-		CAND C 0 NoDelay A_SpawnItem("LightShaft2Brighter")
+		CAND C 0 NoDelay A_SpawnItemEx("LightShaft2Brighter")
 		TNT1 A 0 A_SpawnItemEx("LensFlareAltLongOrangeForever",3,3,20)
 		TNT1 A 0 A_SpawnItemEx("LensFlareAltLongOrangeForever",-3,3,20)
 		TNT1 A 0 A_SpawnItemEx("LensFlareAltLongOrangeForever",3,-3,20)
@@ -1048,22 +1048,22 @@ Scale 0.7
 		TNT1 A 0 A_CheckSight("StayBlank")
 		64CN A 3 Light("SMALLREDTORCH") A_CustomMissile("RealFlameTrailsWallTorch",45,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("ImBallGettingReady",50,0,random(0,140),2,random(0,160))
-		TNT1 A 0 A_SpawnItem("LensFlareTorchOrange",0,50)
+		TNT1 A 0 A_SpawnItemEx("LensFlareTorchOrange",0,0,50)
 		64CN B 3 Light("SMALLREDTORCH") A_CustomMissile("RealFlameTrailsWallTorch",45,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("ImBallGettingReady",50,0,random(0,140),2,random(0,160))
-		TNT1 A 0 A_SpawnItem("LensFlareTorchOrange",0,50)
+		TNT1 A 0 A_SpawnItemEx("LensFlareTorchOrange",0,0,50)
 		64CN A 3 Light("SMALLREDTORCH") A_CustomMissile("RealFlameTrailsWallTorch",45,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("ImBallGettingReady",50,0,random(0,140),2,random(0,160))
-		TNT1 A 0 A_SpawnItem("LensFlareTorchOrange",0,50)
+		TNT1 A 0 A_SpawnItemEx("LensFlareTorchOrange",0,0,50)
 		64CN B 3 Light("SMALLREDTORCH") A_CustomMissile("RealFlameTrailsWallTorch",45,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("ImBallGettingReady",50,0,random(0,140),2,random(0,160))
-		TNT1 A 0 A_SpawnItem("LensFlareTorchOrange",0,50)
+		TNT1 A 0 A_SpawnItemEx("LensFlareTorchOrange",0,0,50)
 		64CN A 3 Light("SMALLREDTORCH") A_CustomMissile("RealFlameTrailsWallTorch",45,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("ImBallGettingReady",50,0,random(0,140),2,random(0,160))
-		TNT1 A 0 A_SpawnItem("LensFlareTorchOrange",0,50)
+		TNT1 A 0 A_SpawnItemEx("LensFlareTorchOrange",0,0,50)
 		64CN B 3 Light("SMALLREDTORCH") A_CustomMissile("RealFlameTrailsWallTorch",45,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("ImBallGettingReady",50,0,random(0,140),2,random(0,160))
-		TNT1 A 0 A_SpawnItem("LensFlareTorchOrange",0,50)
+		TNT1 A 0 A_SpawnItemEx("LensFlareTorchOrange",0,0,50)
 		Loop
 	StayBlank:
 		64CN AB 3
@@ -1315,7 +1315,7 @@ actor 64TechLampB : TechLamp Replaces TechLamp
 		TNT1 A 0 A_SpawnItemEx("LightShaft2",36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2",-36,-36,0)
 	Live:
-		TLMP A 1 Light("LampBasic") A_SpawnItem("ShortWhiteFlareSmallPermanent",0,66)
+		TLMP A 1 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmallPermanent",0,0,66)
 		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmallPermanent",6,6,66)
 		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmallPermanent",-6,-6,66)
 		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmallPermanent",6,-6,66)
@@ -1493,7 +1493,7 @@ scale 0.75
 	{
 	Spawn:
 		SMRT A 0 NoDelay A_NoBlocking
-		TNT1 A 1 A_SpawnItem("ShortRedTorch")
+		TNT1 A 1 A_SpawnItemEx("ShortRedTorch")
 		Stop
 	}
 }
@@ -1508,7 +1508,7 @@ Scale 0.75
 	{
 	Spawn:
 		SMBT A 0 NoDelay A_NoBlocking
-		TNT1 A 1 A_SpawnItem("ShortBlueTorch")
+		TNT1 A 1 A_SpawnItemEx("ShortBlueTorch")
 		Stop
 	}
 }
@@ -1523,7 +1523,7 @@ Scale 0.75
 	{
 	Spawn:
 		SMGT A 0 NoDelay A_NoBlocking
-		TNT1 A 1 A_SpawnItem("ShortGreenTorch")
+		TNT1 A 1 A_SpawnItemEx("ShortGreenTorch")
 		Stop
 	}
 }
@@ -1549,7 +1549,7 @@ Radius 5
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsWallTorch",20,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("ImBallGettingReadyWallTorch",20,0,random(0,140),2,random(0,160))
-		SMYY AA 2 A_SpawnItem("LensFlareTorchOrangeWallTorch",0,20)
+		SMYY AA 2 A_SpawnItemEx("LensFlareTorchOrangeWallTorch",0,0,20)
 		Loop
 	StayBlank:
 		SMYY A 3
@@ -1581,7 +1581,7 @@ Radius 5
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsBlueWallTorch",20,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("BallGettingReadyBlueWallTorch",20,0,random(0,140),2,random(0,160))
-		SMYY AA 2 A_SpawnItem("LensFlareTorchBlueWallTorch",0,20)
+		SMYY AA 2 A_SpawnItemEx("LensFlareTorchBlueWallTorch",0,0,20)
 		Loop
 	StayBlank:
 		SMYY A 3
@@ -1613,7 +1613,7 @@ Radius 5
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsGreenWallTorch",20,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("BallGettingReadyGreenWallTorch",20,0,random(0,140),2,random(0,160))
-		SMYY AA 2 A_SpawnItem("LensFlareTorchGreenWallTorch",0,20)
+		SMYY AA 2 A_SpawnItemEx("LensFlareTorchGreenWallTorch",0,0,20)
 		Loop
 	StayBlank:
 		SMYY A 3
@@ -1645,7 +1645,7 @@ Radius 5
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsYellowWallTorch",20,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("BallGettingReadyYellowWallTorch",20,0,random(0,140),2,random(0,160))
-		SMYY AA 2 A_SpawnItem("LensFlareTorchYellowWallTorch",0,20)
+		SMYY AA 2 A_SpawnItemEx("LensFlareTorchYellowWallTorch",0,0,20)
 		Loop
 	StayBlank:
 		SMYY A 3
@@ -1664,8 +1664,8 @@ ProjectilePassHeight -8
 	states
 	{
 	Spawn:
-		A017 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,10)
+		A017 A 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,10)
 		A017 A -1
 		Stop
 	}
@@ -1680,11 +1680,11 @@ height 56
 	states
 	{
 	Spawn:
-		A019 A 0 NoDelay A_SpawnItem("Swarm",0,5)
+		A019 A 0 NoDelay A_SpawnItemEx("Swarm",0,0,5)
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItem("DripingBlood",0,-5)
+		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		A019 A 70
 		Loop
@@ -1777,7 +1777,7 @@ actor 64LiveStick : LiveStick Replaces LiveStick
 	States
 	{
 	Spawn:
-		TNT1 A 1 NoDelay A_SpawnItem("GoreDecorationLongSpawner")
+		TNT1 A 1 NoDelay A_SpawnItemEx("GoreDecorationLongSpawner")
 		Stop
 	}
 }
@@ -1789,10 +1789,10 @@ Scale 0.8
 	{
 	Spawn:
 		HDCA A 0 NoDelay A_Jump(128,"Spawn2")
-		TNT1 A 0 A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("LightShaft2BrighterLess")
-		TNT1 A 0 A_SpawnItem("LightShaft2Fast")
-		TNT1 A 0 A_SpawnItem("Swarm",0,20)
+		TNT1 A 0 A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess")
+		TNT1 A 0 A_SpawnItemEx("LightShaft2Fast")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,20)
 		Goto Stay
 	Stay:
 		HDCA AB 3 Bright Light("SKULLCANDLES")
@@ -1879,8 +1879,8 @@ SCALE 0.8
 	States
 	{
 	Spawn:
-		BODY A 0 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,10)
+		BODY A 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,10)
 		TNT1 A 0 A_Jump(128,2)
 		BODY A -1
 		Stop
@@ -1896,9 +1896,9 @@ Height 67
 	States
 	{
 	Spawn:
-		64HC A 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		64HC A 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
 		TNT1 A 0 A_Jump(128,"Spawn2")
-		TNT1 A 0 A_SpawnItem("Swarm",0,25)
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,25)
 		64HC A -1
 		Stop
 	Spawn2:
@@ -1913,8 +1913,8 @@ SCALE 0.8
 	States
 	{
 	Spawn:
-		BODY E 0 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm")
+		BODY E 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm")
 		TNT1 A 0 A_Jump(128,2)
 		BODY E -1
 		Stop
@@ -1930,8 +1930,8 @@ SCALE 0.8
 	States
 	{
 	Spawn:
-		BODY D 0 NoDelay A_SpawnItem("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItem("Swarm",0,10)
+		BODY D 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,10)
 		BODY D -1
 		Stop
 	}
@@ -1982,7 +1982,7 @@ Height 19
 	States
 	{
 	Spawn:
-		A014 A 0 NoDelay A_SpawnItem("64SmallBloodPool")
+		A014 A 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
 		Goto SpawnLive
 	SpawnLive:
 		A014 AB 8

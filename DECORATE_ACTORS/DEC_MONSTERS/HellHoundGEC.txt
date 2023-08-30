@@ -27,7 +27,7 @@ DropItem "DemonEssenceSpawner"
 	States
 	{
 	Spawn:
-		GECH BA 10 A_Look
+		GECH BA 10 A_LookEx
 		Loop
 	See:
 		GECH AABBCCDD 2 A_Chase
@@ -77,10 +77,10 @@ DropItem "DemonEssenceSpawner"
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",30,0,random(0,360),2,random(0,360))
 		TNT1 AA 0 A_CustomMissile("CarbonizedSmoke1",30,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
-		TNT1 A 0 A_SpawnItem("BarrelExplosionSmokeColumn")
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn")
 		TNT1 A 0 A_SpawnItemEx("BurningFleshEffect2",0,0,5)
 		TNT1 AAA 0 A_SpawnItemEx("Blood",0,0,30)
-		TNT1 A 0 A_SpawnItem("DetectFloorCrater")
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
 		CRB1 ABCDEFGH 4
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		CRB1 H -1

@@ -1453,7 +1453,7 @@ Decal BrutalBloodSplat
 	states
 	{
 	Spawn:
-		TNT1 A 1 NoDelay A_Look
+		TNT1 A 1 NoDelay A_LookEx
 	See:
 		TNT1 A 0 Radius_Quake(4,4,0,2,0)
 		TNT1 A 0 A_PlaySOund("misc/xdeath4",1)
@@ -1782,7 +1782,7 @@ Height 0
 	{
 	Spawn:
 		//TNT1 A 0 A_GiveInventory("TargetIsAMarine",1)
-		TNT1 A 1 NoDelay A_Look
+		TNT1 A 1 NoDelay A_LookEx
 		Goto See
 	See:
 		TNT1 A 1 A_Chase("","")
@@ -1812,7 +1812,7 @@ Height 0
 	{
 	Spawn:
 		//TNT1 A 0 A_GiveInventory("TargetIsAMarine",1)
-		TNT1 A 1 NoDelay A_Look
+		TNT1 A 1 NoDelay A_LookEx
 		Goto See
 	See:
 		TNT1 A 1 A_Chase("","")
@@ -1907,7 +1907,7 @@ Projectile
 	states
 	{
 	Spawn:
-		TNT1 AAAAAAAA 3 A_SpawnItem("SuperGore")
+		TNT1 AAAAAAAA 3 A_SpawnItemEx("SuperGore")
 		Stop
 	Death:
 		TNT1 A 1
@@ -1941,7 +1941,7 @@ Actor SuperGoreSpawner2 : SuperGoreSpawner
 	states
 	{
 	Spawn:
-		TNT1 AAAAAAAAA 2 A_SpawnItem("SuperGore")
+		TNT1 AAAAAAAAA 2 A_SpawnItemEx("SuperGore")
 		Stop
 	}
 }

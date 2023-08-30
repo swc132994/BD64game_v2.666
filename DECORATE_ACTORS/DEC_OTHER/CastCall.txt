@@ -151,7 +151,7 @@ YScale 1.0
 	{
 	Idle:
 	Spawn:
-		64BZ A 8 A_Look
+		64BZ A 8 A_LookEx
 		Loop
 	See:
 		64BZ AA 4 A_Chase("","")

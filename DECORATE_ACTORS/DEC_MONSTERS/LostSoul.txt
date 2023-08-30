@@ -15,7 +15,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 	states
 	{
 	Spawn:
-		SKUL ABC 2 A_Look
+		SKUL ABC 2 A_LookEx
 		Loop
 	See:
 		SKUL A 1 Bright A_Chase

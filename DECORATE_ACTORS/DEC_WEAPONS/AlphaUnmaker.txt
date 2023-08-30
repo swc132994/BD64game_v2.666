@@ -302,9 +302,9 @@ PROJECTILE
 	Death:
 		TNT1 AAAAAAAA 0 A_CustomMissile("ExplosionParticleLaser",0,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
-		TNT1 AA 0 A_SpawnItem("RocketFlare")
-		TNT1 A 0 A_SpawnItem("DetectFloorLaser")
-		TNT1 A 1 A_SpawnItem("DetectCeilLaser")
+		TNT1 AA 0 A_SpawnItemEx("RocketFlare")
+		TNT1 A 0 A_SpawnItemEx("DetectFloorLaser")
+		TNT1 A 1 A_SpawnItemEx("DetectCeilLaser")
 		Stop
 	}
 }
@@ -356,22 +356,22 @@ ReactionTime 45
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_CountDown
-		TNT1 A 0 A_SpawnItem("RocketFlare")
-		TNT1 A 0 A_SpawnItem("LaserTrail")
-		LEYS R 1 Bright A_SpawnItem("LaserTrail")
+		TNT1 A 0 A_SpawnItemEx("RocketFlare")
+		TNT1 A 0 A_SpawnItemEx("LaserTrail")
+		LEYS R 1 Bright A_SpawnItemEx("LaserTrail")
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleLaser",0,0,random(0,360))
-		TNT1 A 0 A_SpawnItem("Shoque")
+		TNT1 A 0 A_SpawnItemEx("Shoque")
 		Loop
 	Death:
 		TNT1 A 0 A_PlaySound("DSFIRXPL",3)
-		L2NR AB 3 Bright A_SpawnItem("RocketFlare")
-		LENR AB 1 Bright A_SpawnItem("RocketFlare")
+		L2NR AB 3 Bright A_SpawnItemEx("RocketFlare")
+		LENR AB 1 Bright A_SpawnItemEx("RocketFlare")
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",2,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleLaser",0,0,random(0,360),2,random(0,360))
 		TNT1 A 1 A_Explode(100,75)
-		TNT1 A 0 A_SpawnItem("Shoque")
-		TNT1 A 0 A_SpawnItem("DetectFloorCraterMed")
-		TNT1 A 0 A_SpawnItem("DetectCeilCraterMed")
+		TNT1 A 0 A_SpawnItemEx("Shoque")
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterMed")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterMed")
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
 		TNT1 A 0 A_SetScale(1.2)
 		LPUF ABC 7 Bright A_CustomMissile("PlasmaSmoke",1,0,random(0,360),2,random(0,160))
@@ -393,7 +393,7 @@ PROJECTILE
 	states
 	{
 	Spawn:
-		LAZR AB 1 Bright A_SpawnItem("RocketFlare")
+		LAZR AB 1 Bright A_SpawnItemEx("RocketFlare")
 		Stop
 	Death:
 		LPUF A 1 Bright
