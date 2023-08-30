@@ -73,6 +73,11 @@ Intermission Doom2Cast
 	}
 	Cast
 	{
+		CastClass = "64CarrionCast"
+		CastName = "Carrion Zombie"
+	}
+	Cast
+	{
 		CastClass = "D64ShotgunGuyCast"
 		CastName = "Shotgun Zombie"
 		AttackSound = "Missile",1,"shotguy/attack"

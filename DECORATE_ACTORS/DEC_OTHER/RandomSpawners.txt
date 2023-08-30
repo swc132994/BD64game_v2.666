@@ -1240,6 +1240,59 @@ MONSTER
 	}
 }
 
+Actor HuskLeader_Random
+{
+Scale 0.7
+MONSTER
+-SOLID
+-COUNTKILL
+	States
+	{
+	Spawn:
+		64ZF A 0 NoDelay A_JumpIf(CallACS("HordeLeaderRandom")==0,"SpawnHusk")
+		TNT1 A 0 A_JumpIf(CallACS("HordeLeaderRandom")==1,"SpawnCarrion")
+		TNT1 A 0 A_JumpIf(CallACS("HordeLeaderRandom")==5,"P05")
+		TNT1 A 0 A_JumpIf(CallACS("HordeLeaderRandom")==10,"P10")
+		TNT1 A 0 A_JumpIf(CallACS("HordeLeaderRandom")==15,"P15")
+		TNT1 A 0 A_JumpIf(CallACS("HordeLeaderRandom")==20,"P20")
+		TNT1 A 0 A_JumpIf(CallACS("HordeLeaderRandom")==25,"P25")
+		TNT1 A 0 A_JumpIf(CallACS("HordeLeaderRandom")==30,"P30")
+		TNT1 A 0 A_JumpIf(CallACS("HordeLeaderRandom")==40,"P40")
+		TNT1 A 0 A_JumpIf(CallACS("HordeLeaderRandom")==50,"P50")
+		Goto SpawnHusk
+	P05:
+		TNT1 A 0 A_Jump(13,"SpawnCarrion")//(5%)
+		Goto SpawnHusk
+	P10:
+		TNT1 A 0 A_Jump(26,"SpawnCarrion")//(10%)
+		Goto SpawnHusk
+	P15:
+		TNT1 A 0 A_Jump(39,"SpawnCarrion")//(15%)
+		Goto SpawnHusk
+	P20:
+		TNT1 A 0 A_Jump(51,"SpawnCarrion")//(20%)
+		Goto SpawnHusk
+	P25:
+		TNT1 A 0 A_Jump(64,"SpawnCarrion")//(25%)
+		Goto SpawnHusk
+	P30:
+		TNT1 A 0 A_Jump(77,"SpawnCarrion")//(30%)
+		Goto SpawnHusk
+	P40:
+		TNT1 A 0 A_Jump(102,"SpawnCarrion")//(40%)
+		Goto SpawnHusk
+	P50:
+		TNT1 A 0 A_Jump(128,"SpawnCarrion")//(50%)
+		Goto SpawnHusk
+	SpawnHusk:
+		TNT1 A 1 A_SpawnItemEx("64HuskZombie",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	SpawnCarrion:
+		TNT1 A 1 A_SpawnItemEx("64Carrion",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	}
+}
+
 Actor 64TheHorde_Spawner	//Spawns husk zombies near dead body props
 {
 Scale 0.7
@@ -1258,22 +1311,22 @@ MONSTER
 		TNT1 A 0 A_Jump(256,"Hordex1","Hordex2","Hordex3","Hordex4","Disabled")
 		Goto Disabled
 	Hordex1:
-		TNT1 A 1 A_SpawnItemex("64HuskZombie",0,0,0,0,0,0,0,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
+		TNT1 A 1 A_SpawnItemex("64HuskZombie",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
 		Stop
 	Hordex2:
-		TNT1 A 0 A_SpawnItemex("64HuskZombie",-40,0,0,0,0,0,0,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
-		TNT1 A 1 A_SpawnItemex("64HuskZombie",40,0,0,0,0,0,90,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
+		TNT1 A 0 A_SpawnItemex("64HuskZombie",-35,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
+		TNT1 A 1 A_SpawnItemex("64HuskZombie",35,0,0,0,0,0,180,SXF_NOCHECKPOSITION|SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
 		Stop
 	Hordex3:
-		TNT1 A 0 A_SpawnItemex("64HuskZombie",-40,0,0,0,0,0,0,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
-		TNT1 A 0 A_SpawnItemex("64HuskZombie",0,40,0,0,0,0,-90,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
-		TNT1 A 1 A_SpawnItemex("64HuskZombie",0,-40,0,0,0,0,90,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
+		TNT1 A 0 A_SpawnItemex("64HuskZombie",-35,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
+		TNT1 A 0 A_SpawnItemex("64HuskZombie",0,35,0,0,0,0,270,SXF_NOCHECKPOSITION|SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
+		TNT1 A 1 A_SpawnItemex("HuskLeader_Random",0,-35,0,0,0,0,90,SXF_NOCHECKPOSITION|SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
 		stop
 	Hordex4:
-		TNT1 A 0 A_SpawnItemex("64HuskZombie",-40,0,0,0,0,0,0,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
-		TNT1 A 0 A_SpawnItemex("64HuskZombie",0,40,0,0,0,0,180,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
-		TNT1 A 0 A_SpawnItemex("64HuskZombie",40,0,0,0,0,0,-90,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
-		TNT1 A 1 A_SpawnItemex("64HuskZombie",0,-40,0,0,0,0,90,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
+		TNT1 A 0 A_SpawnItemex("64HuskZombie",-35,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
+		TNT1 A 0 A_SpawnItemex("64HuskZombie",0,35,0,0,0,0,270,SXF_NOCHECKPOSITION|SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
+		TNT1 A 0 A_SpawnItemex("64HuskZombie",35,0,0,0,0,0,180,SXF_NOCHECKPOSITION|SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
+		TNT1 A 1 A_SpawnItemex("HuskLeader_Random",0,-35,0,0,0,0,90,SXF_NOCHECKPOSITION|SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
 		Stop
 	Disabled:
 		TNT1 A 4

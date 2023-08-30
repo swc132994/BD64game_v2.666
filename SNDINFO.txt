@@ -656,6 +656,15 @@ HEDBON2	HEDBON2
 $volume HEDBON1 0.4
 $volume HEDBON2 0.4
 
+//Carrion
+$random Carrion/SCREAMING {Carrion/SCREAM1 Carrion/SCREAM2 Carrion/SCREAM3}
+Carrion/SCREAM1			CARRISC1
+Carrion/SCREAM2			CARRISC2
+Carrion/SCREAM3			CARRISC3
+
+Carrion/Active			CARRIACT
+Carrion/Detonate		CARRIDET
+
 //Keen Replacement
 scorpion/pain		64keenpn
 scorpion/death		64keendt

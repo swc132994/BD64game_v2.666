@@ -481,3 +481,8 @@ script "LiquidSplashCvarACS" (void)
 {
 SetResultValue(GetCVar("LiquidSplashCvar"));
 }
+
+script "HordeLeaderRandom" (void)
+{
+SetResultValue(GetCVar("HordeLeader_Spawner_Cvar"));
+}

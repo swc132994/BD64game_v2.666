@@ -76,6 +76,7 @@ Butcher				19131
 HellStorm			19132
 Fallen				19133
 Infernal			19135
+Carrion				19136
 
 Gauss Cannon spawn	19134
 MP40 SPAWNER		19124
@@ -127,30 +128,36 @@ BFG Zombie - Sprites: Id Software, Midway, DrDoctor, Immorpher, Footman, Atomic 
 Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 64Wraith - Vader, Captain Toenail, Midway, Id Software, Gregor Punchatz, Craneo (D64 style sprites)
 64WaffenSS - Sounds from Return to Castle Wolfenstein, uploaded by Labtec Speakers to The Sounds Resource.
-64Nightmare Elemental - Sprites by Styd051, Decorate script by Craneo.
+64Nightmare Elemental - Sprites by Styd051, Decorate by Craneo.
+
 64FleshWizard by Craneo
 		Code: Melvin (base Flesh Wizard decorate), swc132994 (default BD64 code bits reused), Amuscaria (Diabolist projectile decorate)
 		Sprites: Freedoom (Flesh Wizard base), Monolith (Blood Zombie), Craneo (Flesh Wizard 64 conversion), HAUNT folder sprites taken from LCA DUST's Bloody Frandle
 		Sounds: 64FWSITx, 64FWDTHx (Dead Space), 64FWACTx (Doom 3), 64FWPAIx (Dying Light), 64FWTELx (System Shock 2)
 		Extra Deaths: Edited by Craneo and based on sprites by David G
 64Husk by Craneo
+
 		Sprite Credits: Amuscaria, DrDoctor, Midway
 		Code Credits: HorrorMovieRei, swc132994, Sgt_Mark_IV (most likely), Lagi (zombie group spawn code)
 		Sounds Credits: Id Software, Immorpher
 		Frankensprite by Craneo.
+		
 64Forgotton One by Craneo
 		Sprite Credits: Midway, DrDoctor, DrPyspy, Craneo
 		Sound Credits: Midway, HorrorMovieRei
 		Code Credits: swc132994, Sgt_Mark_IV
+		
 64Butcher by Craneo
 	Code: Bouncy, Graf Zahl, Ganbare-Lucifer, heavily edited for BD64 by Craneo
 	Sounds: Ganbare-Lucifer
 	Sprites: id Software, Captain J, aeea7835, Eriance, ItsNatureToDie, Midway Entertainment, Kinsie, D64 edit by Craneo
+	
 64Hellstorm by Craneo
 	Decorate: Maelstrom & Craneo edits
 	GLDEFs: Dreadopp
 	Sounds: Id Software, Monolith Games
 	Sprites: Immorpher, Craneo, Atomic Frog, Witan Entertainment BV, MagicMaker
+
 64Zombie Burning death improvement - Midway, DrDoctor, Monolith, sprite rework by Craneo
 
 64Fallen
@@ -159,7 +166,6 @@ Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 	Sounds: Dead Space, Doom Eternal
 	mew sounds taken from Project Malice
 
-
 	Old credits bits:
 	Code: Amuscaria
 	GLDefs: Ghastly Dragon
@@ -167,17 +173,22 @@ Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 	old sounds, Brightmaps and ZScript version not used.
 
 //Infernal
-Code: Maelstrom, Sgt_Mark_IV
-Sprites: Ittrav (monster sprites), Atomic Frog (Seeker Missile sprites), DrDoctor, DrPyspy, Craneo (Fireball sprites)
-Sounds: SEGA, Cooper B. Chance, downbeataura
+	Code: Maelstrom, Sgt_Mark_IV
+	Sprites: Ittrav (monster sprites), Atomic Frog (Seeker Missile sprites), DrDoctor, DrPyspy, Craneo (Fireball sprites)
+	Sounds: SEGA, Cooper B. Chance, downbeataura
+
+//Carrion
+	Hellforged zombie used as a base by Amuscaria
+	Frankensprite by Craneo
+	Sounds taken from Project Malice, originary from Dying Light
 
 //Keen Replacement
-MK4 HANGED SCORPION FOR D64 CREDITS:
-- Midway (everything lol)
-- TEPA6ANT (MK4 Scorpion ragdoll for Gmod)
-- Ultimecia (MK4 fatality text rip)
-- LordRaptor (ripping MK4 sounds)
-Frankensprite by Craneo.
+	MK4 HANGED SCORPION FOR D64 CREDITS:
+	Midway (everything)
+	TEPA6ANT (MK4 Scorpion ragdoll for Gmod)
+	Ultimecia (MK4 fatality text rip)
+	LordRaptor (ripping MK4 sounds)
+	Frankensprite by Craneo.
 
 //Anomaly events
 Poltergeist original credits:

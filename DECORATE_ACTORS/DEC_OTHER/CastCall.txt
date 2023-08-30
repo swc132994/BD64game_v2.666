@@ -45,6 +45,26 @@ YScale 1.0
 	}
 }
 
+Actor 64CarrionCast : 64Carrion
+{
+XScale 1.0
+YScale 1.0
+	states
+	{
+	Missile:
+	Melee:
+	See:
+		CRRI AAAABBBBCCCCDDDD 2 A_Chase
+		Loop
+	Death:
+		CRRI G 4
+		CRRI H 4 A_XScream
+		CRRI IJKLMNP 3
+		CRRI P -1
+		Stop
+	}
+}
+
 actor D64ShotgunGuyCast : 64ShotgunGuy
 {
 XScale 1.0

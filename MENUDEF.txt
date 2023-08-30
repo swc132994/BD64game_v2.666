@@ -162,6 +162,7 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner"
 	Option "Archvile, Flesh Wizard, Hellstorm or Random =","FleshWizardRandomCvar","FleshWizardRandom_Value"
 	Option "Cyberdemon, Annihilator, Infernal or Random =","Annihilator_Spawner_Cvar","Annihilator_Spawner_Value"
 	Option "Mastermind, Eradicator, Motherdemon or Random =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"
+	Option "Husk, Carrion or Random [x3, x4 and random Horde only] =","HordeLeader_Spawner_Cvar","HordeLeader_Spawner_Value"
 }
 
 OptionMenu "BrutalDoom64OptionsOtherMonster"
@@ -529,6 +530,20 @@ OptionValue "FleshWizardRandom_Value"
 	0,"Archvile"
 	1,"Flesh Wizard"
 	2,"Hellstorm"
+	5,"5%"
+	10,"10%"
+	15,"15%"
+	20,"20%"
+	25,"25%"
+	30,"30%"
+	40,"40%"
+	50,"50%"
+}
+
+OptionValue "HordeLeader_Spawner_Value"
+{
+	0,"Husk"
+	1,"Carrion"
 	5,"5%"
 	10,"10%"
 	15,"15%"
