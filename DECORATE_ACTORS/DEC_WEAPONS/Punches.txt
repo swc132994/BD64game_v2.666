@@ -320,7 +320,6 @@ SeeSound "none"
 DeathSound "none"
 Decal "none"
 Obituary "$OB_MPFIST"
-Projectile
 +FORCEXYBILLBOARD
 +NOEXTREMEDEATH
 	States
@@ -380,7 +379,6 @@ SeeSound "none"
 DeathSound "none"
 Decal "none"
 Obituary "%o chewed on %k's foot."
-Projectile
 +FORCEXYBILLBOARD
 +NOEXTREMEDEATH
 	States

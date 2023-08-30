@@ -56,8 +56,8 @@ Projectile
 		TNT1 AAAAA 1 A_JumpIf(waterlevel < 1,"SurfaceSpawn")
 		Stop
 	SurfaceSpawn:
-		TNT1 AAAAA 0 A_SpawnItem("SpawnLiquidParticleX") //WAS AAAAAAAAAAAA
-		TNT1 AAAA 1 A_SpawnItem("SpawnLiquidParticleX")
+		TNT1 AAAAA 0 A_SpawnItemEx("SpawnLiquidParticleX") //WAS AAAAAAAAAAAA
+		TNT1 AAAA 1 A_SpawnItemEx("SpawnLiquidParticleX")
 		Stop
 	Death:
 		TNT1 A 1
@@ -369,7 +369,7 @@ Damagetype "CauseObjectsToSplash"
 		Stop
 	Death.CauseWaterSplash:
 		TNT1 A 0 A_CustomMissile("WaterParticleXSpawner",0,0,random(0,360),2,random(80,110))
-		TNT1 A 0 A_SpawnItem("GiantWaterRicochet")
+		TNT1 A 0 A_SpawnItemEx("GiantWaterRicochet")
 		//TNT1 A 0 A_PlaySound("bigspl1")
 		TNT1 A 30 A_NoBlocking
 		Stop
@@ -429,8 +429,8 @@ Actor BloodParticleXSpawner : WaterParticleXSpawner
 		TNT1 AAAAA 1 A_JumpIf(waterlevel < 1,"SurfaceSpawn")
 		Stop
 	SurfaceSpawn:
-		TNT1 AAAAA 0 A_SpawnItem("SpawnLiquidBloodParticleX") //WAS AAAAAAAAAAAA
-		TNT1 AAAA 1 A_SpawnItem("SpawnLiquidBloodParticleX")
+		TNT1 AAAAA 0 A_SpawnItemEx("SpawnLiquidBloodParticleX") //WAS AAAAAAAAAAAA
+		TNT1 AAAA 1 A_SpawnItemEx("SpawnLiquidBloodParticleX")
 		Stop
 	}
 }
@@ -493,7 +493,7 @@ actor BloodSplashBase3 : WaterSplashBase2
 		Stop
 	Death.CauseWaterSplash:
 		TNT1 A 0 A_CustomMissile("BloodParticleXSpawner",0,0,random(0,360),2,random(80,110))
-		TNT1 A 0 A_SpawnItem("GiantBloodRicochet")
+		TNT1 A 0 A_SpawnItemEx("GiantBloodRicochet")
 		//TNT1 A 0 A_PlaySound("bigspl1")
 		TNT1 A 30 A_NoBlocking
 		Stop
@@ -530,8 +530,8 @@ Actor NukageParticleXSpawner : WaterParticleXSpawner
 		TNT1 AAAAA 1 A_JumpIf(waterlevel < 1,"SurfaceSpawn")
 		Stop
 	SurfaceSpawn:
-		TNT1 AAAAA 0 A_SpawnItem("SpawnLiquidNukageParticleX") //WAS AAAAAAAAAAAA
-		TNT1 AAAA 1 A_SpawnItem("SpawnLiquidNukageParticleX")
+		TNT1 AAAAA 0 A_SpawnItemEx("SpawnLiquidNukageParticleX") //WAS AAAAAAAAAAAA
+		TNT1 AAAA 1 A_SpawnItemEx("SpawnLiquidNukageParticleX")
 		Stop
 	}
 }
@@ -592,7 +592,7 @@ Actor NukageSplashBase : WaterSplashBase2
 		Stop
 	Death.CauseWaterSplash:
 		TNT1 A 0 A_CustomMissile("NukageParticleXSpawner",0,0,random(0,360),2,random(80,110))
-		TNT1 A 0 A_SpawnItem("GiantNukageRicochet")
+		TNT1 A 0 A_SpawnItemEx("GiantNukageRicochet")
 		//TNT1 A 0 A_PlaySound("bigspl1")
 		TNT1 A 30 A_NoBlocking
 		Stop
@@ -630,8 +630,8 @@ Actor SlimeParticleXSpawner : WaterParticleXSpawner
 		TNT1 AAAAA 1 A_JumpIf(waterlevel < 1,"SurfaceSpawn")
 		Stop
 	SurfaceSpawn:
-		TNT1 AAAAA 0 A_SpawnItem("SpawnLiquidSlimeParticleX") //WAS AAAAAAAAAAAA
-		TNT1 AAAA 1 A_SpawnItem("SpawnLiquidSlimeParticleX")
+		TNT1 AAAAA 0 A_SpawnItemEx("SpawnLiquidSlimeParticleX") //WAS AAAAAAAAAAAA
+		TNT1 AAAA 1 A_SpawnItemEx("SpawnLiquidSlimeParticleX")
 		Stop
 	}
 }
@@ -692,7 +692,7 @@ actor SlimeSplashBase : WaterSplashBase2
 		Stop
 	Death.CauseWaterSplash:
 		TNT1 A 0 A_CustomMissile("SlimeParticleXSpawner",0,0,random(0,360),2,random(80,110))
-		TNT1 A 0 A_SpawnItem("GiantSlimeRicochet")
+		TNT1 A 0 A_SpawnItemEx("GiantSlimeRicochet")
 		//TNT1 A 0 A_PlaySound("bigspl1")
 		TNT1 A 30 A_NoBlocking
 		Stop

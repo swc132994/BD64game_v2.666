@@ -16,14 +16,14 @@ Damagefactor "Kick",0
 		BEXP A -1
 		Stop
 	StayAlpha:
-		BAR1 AB 6 A_SpawnItem("GreenLensFlareAltSmall",0,35)
+		BAR1 AB 6 A_SpawnItemEx("GreenLensFlareAltSmall",0,0,35)
 		Loop
 	Death:
 		BEXP ABC 3 Bright
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
-		TNT1 A 0 A_SpawnItem("64BarrelExplosion")
-		TNT1 A 0 A_SpawnItem("DetectBarrelCrater")
+		TNT1 A 0 A_SpawnItemEx("64BarrelExplosion")
+		TNT1 A 0 A_SpawnItemEx("DetectBarrelCrater")
 		TNT1 A 2
 		TNT1 A 0 A_Explode(100,200)
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)

@@ -81,10 +81,10 @@ powerup.strength 50
 	{
 	Spawn:
 		PINS A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
-		PINS ABCD 2 Bright Light("BLURSPHERE") A_SpawnItem("RedFlareSmall",0,25)
+		PINS ABCD 2 Bright Light("BLURSPHERE") A_SpawnItemEx("RedFlareSmall",0,0,25)
 		loop
 	AlphaSpawn:
-		PIN2 ABCD 2 Bright Light("BLURSPHERE") A_SpawnItem("RedFlareSmall",0,25)
+		PIN2 ABCD 2 Bright Light("BLURSPHERE") A_SpawnItemEx("RedFlareSmall",0,0,25)
 		loop
 	}
 }
@@ -499,7 +499,7 @@ Inventory.Amount 2
 	states
 	{
 	Spawn:
-		BON1 AABBCCDD 2 Bright Light("HealthPotion") A_SpawnItem("BlueFlareSmallItem",0,7)
+		BON1 AABBCCDD 2 Bright Light("HealthPotion") A_SpawnItemEx("BlueFlareSmallItem",0,0,7)
 		loop
 	}
 }
@@ -513,7 +513,7 @@ Armor.Savepercent 50
 	{
 	Spawn:
 		BON2 A 6 Light("ARMORBONUS")
-		BON2 BBCCDDCCBB 2 Light("ARMORBONUS") A_SpawnItem("GreenFlareSmallItem",0,7)
+		BON2 BBCCDDCCBB 2 Light("ARMORBONUS") A_SpawnItemEx("GreenFlareSmallItem",0,0,7)
 		loop
 	}
 }
@@ -741,7 +741,7 @@ Inventory.PickupSound "KCRPKUP"
 	States
 	{
 	Spawn:
-		BKEY AAAAA 3 BRIGHT Light("BLUEKEY") A_SpawnItem("LensFlareTorchBlue",0,10)
+		BKEY AAAAA 3 BRIGHT Light("BLUEKEY") A_SpawnItemEx("LensFlareTorchBlue",0,0,10)
 		BKEY B 12 Light("BLUEKEY")
 		Loop
 	Pickup:
@@ -758,7 +758,7 @@ Inventory.PickupSound "SKLPKUP"
 	States
 	{
 	Spawn:
-		BSKU AAAAA 3 BRIGHT Light("BLUEKEY") A_SpawnItem("LensFlareTorchBlue",0,10)
+		BSKU AAAAA 3 BRIGHT Light("BLUEKEY") A_SpawnItemEx("LensFlareTorchBlue",0,0,10)
 		BSKU B 12 Light("BLUEKEY")
 		Loop
 	Pickup:
@@ -775,7 +775,7 @@ Inventory.PickupSound "KCRPKUP"
 	States
 	{
 	Spawn:
-		RKEY AAAAA 3 BRIGHT Light("REDKEY") A_SpawnItem("LensFlareTorchRed",0,10)
+		RKEY AAAAA 3 BRIGHT Light("REDKEY") A_SpawnItemEx("LensFlareTorchRed",0,0,10)
 		RKEY B 12 Light("REDKEY")
 		Loop
 	Pickup:
@@ -792,7 +792,7 @@ Inventory.PickupSound "SKLPKUP"
 	States
 	{
 	Spawn:
-		RSKU AAAAA 3 BRIGHT Light("REDKEY") A_SpawnItem("LensFlareTorchRed",0,10)
+		RSKU AAAAA 3 BRIGHT Light("REDKEY") A_SpawnItemEx("LensFlareTorchRed",0,0,10)
 		RSKU B 12 Light("REDKEY")
 		Loop
 	Pickup:
@@ -809,7 +809,7 @@ Inventory.PickupSound "KCRPKUP"
 	States
 	{
 	Spawn:
-		YKEY AAAAA 3 BRIGHT Light("YELLOWKEY") A_SpawnItem("LensFlareTorchYellow",0,10)
+		YKEY AAAAA 3 BRIGHT Light("YELLOWKEY") A_SpawnItemEx("LensFlareTorchYellow",0,0,10)
 		YKEY B 12 Light("YELLOWKEY")
 		Loop
 	Pickup:
@@ -826,7 +826,7 @@ Inventory.PickupSound "SKLPKUP"
 	States
 	{
 	Spawn:
-		YSKU AAAAA 3 BRIGHT Light("YELLOWKEY") A_SpawnItem("LensFlareTorchYellow",0,10)
+		YSKU AAAAA 3 BRIGHT Light("YELLOWKEY") A_SpawnItemEx("LensFlareTorchYellow",0,0,10)
 		YSKU B 12 Light("YELLOWKEY")
 		Loop
 	Pickup:

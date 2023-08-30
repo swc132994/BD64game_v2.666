@@ -290,7 +290,6 @@ DamageType Plasma
 SeeSound "weapons/AlphaLZRGker"
 DeathSound ""
 Obituary "%o was fried by %k's laser."
-PROJECTILE
 +RANDOMIZE
 +EXTREMEDEATH
 +FORCERADIUSDMG

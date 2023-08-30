@@ -24,7 +24,7 @@ DamageType Blood
 	Spawn:
 		TNT1 A 0 NoDelay ThrustThingZ(0,25,0,1)
 		TNT1 A 2
-		TNT1 A 1 A_SpawnItem("SmearingXDeath2",0,-6)
+		TNT1 A 1 A_SpawnItemEx("SmearingXDeath2",0,0,-6)
 		Stop
 	Death:
 		TNT1 A 1 A_CustomMissile("CeilXDeath2Checker",-15,0,90,2,90)
@@ -39,7 +39,7 @@ ACTOR DetectCeilXDeath2Green : DetectCeilXDeath2
 	Spawn:
 		TNT1 A 0 NoDelay ThrustThingZ(0,25,0,1)
 		TNT1 A 2
-		TNT1 A 1 A_SpawnItem("SmearingXDeath2Green",0,-6)
+		TNT1 A 1 A_SpawnItemEx("SmearingXDeath2Green",0,0,-6)
 		Stop
 	Death:
 		TNT1 A 1 A_CustomMissile("CeilXDeath2CheckerGreen",-15,0,90,2,90)
@@ -370,7 +370,7 @@ DamageType Blood
 	Spawn:
 		TNT1 A 0 NoDelay ThrustThingZ(0,35,0,1)
 		TNT1 A 2
-		TNT1 A 1 A_SpawnItem("SmearingXDeath3",0,-6)
+		TNT1 A 1 A_SpawnItemEx("SmearingXDeath3",0,0,-6)
 		Stop
 	Death:
 		TNT1 A 1 A_CustomMissile("CeilXDeath3Checker",-15,0,90,2,90)
@@ -385,7 +385,7 @@ ACTOR DetectCeilXDeath3Green : DetectCeilXDeath3
 	Spawn:
 		TNT1 A 0 NoDelay ThrustThingZ(0,35,0,1)
 		TNT1 A 2
-		TNT1 A 1 A_SpawnItem("SmearingXDeath3Green",0,-6)
+		TNT1 A 1 A_SpawnItemEx("SmearingXDeath3Green",0,0,-6)
 		Stop
 	Death:
 		TNT1 A 1 A_CustomMissile("CeilXDeath3CheckerGreen",-15,0,90,2,90)
@@ -745,7 +745,7 @@ DamageType Blood
 	Spawn:
 		TNT1 A 0 NoDelay ThrustThingZ(0,35,0,1)
 		TNT1 A 2
-		TNT1 A 1 A_SpawnItem("SmearingBrain",0,-6)
+		TNT1 A 1 A_SpawnItemEx("SmearingBrain",0,0,-6)
 		Stop
 	Death:
 		TNT1 A 1 A_CustomMissile("SmallBrainPiece",-15,0,90,2,90)
@@ -760,7 +760,7 @@ ACTOR DetectCeilBrainGreen : DetectCeilBrain
 	Spawn:
 		TNT1 A 0 NoDelay ThrustThingZ(0,35,0,1)
 		TNT1 A 2
-		TNT1 A 1 A_SpawnItem("SmearingBrainGreen",0,-6)
+		TNT1 A 1 A_SpawnItemEx("SmearingBrainGreen",0,0,-6)
 		Stop
 	Death:
 		TNT1 A 1 A_CustomMissile("SmallBrainPieceGreen",-15,0,90,2,90)

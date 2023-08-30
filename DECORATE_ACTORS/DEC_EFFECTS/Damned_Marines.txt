@@ -114,8 +114,8 @@ Mass 999999
 		TNT1 A 0 A_PlaySound("TORTURE4")
 		TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
 		TTR7 FGHI 10
-		TNT1 A 0 A_SpawnItem("DripingBloodLeavesSmallPool")
-		TNT1 A 0 A_SpawnItem("CeilBloodLargeBloodSpawner")
+		TNT1 A 0 A_SpawnItemEx("DripingBloodLeavesSmallPool")
+		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
 		TTR7 J -1
 		Stop
 	}
@@ -156,8 +156,8 @@ Mass 999999
 		TNT1 A 0 A_PlaySound("TORTURE4")
 		TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
 		TTR8 FGH 10
-		TNT1 A 0 A_SpawnItem("DripingBloodLeavesSmallPool")
-		TNT1 A 0 A_SpawnItem("CeilBloodLargeBloodSpawner")
+		TNT1 A 0 A_SpawnItemEx("DripingBloodLeavesSmallPool")
+		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
 		TTR8 I -1
 		Stop
 	}
@@ -205,8 +205,8 @@ Mass 999999
 		TNT1 A 0 A_PlaySound("TORTURE4")
 		TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
 		TTR9 FGHI 10
-		TNT1 A 0 A_SpawnItem("DripingBloodLeavesSmallPool")
-		TNT1 A 0 A_SpawnItem("CeilBloodLargeBloodSpawner")
+		TNT1 A 0 A_SpawnItemEx("DripingBloodLeavesSmallPool")
+		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
 		TTR9 J -1
 		Stop
 	}
@@ -239,8 +239,8 @@ Mass 999999
 		TNT1 A 0 A_PlaySound("TORTURE4")
 		TNT1 A 0 A_ChangeFlag("NOGRAVITY",1)
 		TTR6 DE 10
-		TNT1 A 0 A_SpawnItem("DripingBloodLeavesSmallPool")
-		TNT1 A 0 A_SpawnItem("CeilBloodLargeBloodSpawner")
+		TNT1 A 0 A_SpawnItemEx("DripingBloodLeavesSmallPool")
+		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
 		TTR6 F -1
 		Stop
 	}
@@ -309,8 +309,7 @@ Mass 999999
 	Death:
 		TNT1 A 0 A_PlaySound("TORTURE4")
 		TTR5 DEFGH 10
-		TNT1 A 0 A_SpawnItem("GrowingBloodPool")
-		TTR5 H -1
+		TTR5 H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	}
 }

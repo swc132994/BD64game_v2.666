@@ -3,7 +3,7 @@ Actor ShotgunDrop
 	states
 	{
 	Spawn:
-		TNT1 A 0 NoDelay  A_Jump(128,"Spawn2")
+		TNT1 A 0 NoDelay A_Jump(128,"Spawn2")
 		Goto Spawn1
 	Spawn1:
 		TNT1 A 1 A_CustomMissile("DropedShotgun",20,0,0,2,random(30,50))

@@ -528,7 +528,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		PLMZ A 0 NoDelay A_SpawnItem("DistantRifleFireSound")
+		PLMZ A 0 NoDelay A_SpawnItemEx("DistantRifleFireSound")
 		TNT1 A 4
 		TNT1 A 0 A_Stop
 		PLMZ A 2 Bright
@@ -546,7 +546,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		PLMZ A 0 NoDelay A_SpawnItem("DistantMinigunFireSound")
+		PLMZ A 0 NoDelay A_SpawnItemEx("DistantMinigunFireSound")
 		TNT1 A 4
 		TNT1 A 0 A_Stop
 		PLMZ A 2 Bright
