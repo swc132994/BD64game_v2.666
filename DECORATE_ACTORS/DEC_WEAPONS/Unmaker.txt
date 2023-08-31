@@ -154,25 +154,34 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_Giveinventory("UnAltMode",1)
 		TNT1 A 0 A_JumpIfInventory("UnAltMode",2,"ReadyRed")
 		Goto ReadyGreen
+	NoAimFlash:
+		UNFS ABCDEF 3
+		Stop		
 	NoAim:
 		TNT1 A 0 A_Print("Normal Mode!",2)
+		TNT1 A 0 A_GunFlash("NoAimFlash")	
 		TNT1 A 0 A_Takeinventory("UnAltMode",0)
 		Goto Ready
+	ReadyGreenFlash:
+		UNFG ABCDEF 3
+		Stop
 	ReadyGreen:
 		TNT1 A 0 A_JumpIfInventory("WpnPower4Icon",1,1)
 		Goto Special
+		TNT1 A 0 A_GunFlash("ReadyGreenFlash")
 		TNT1 A 0 A_Print("Levitation Mode!",2)
 	ReadyGreenLoop:
-		UNMG ABCB 3 A_WeaponReady
+		UNMG ABCDCBA 2 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
 		Loop
 	ReadyRed:
 		TNT1 A 0 A_JumpIfInventory("WpnPower5Icon",1,1)
 		Goto Special
 		TNT1 A 0 A_Giveinventory("UnAltMode",2)
+		TNT1 A 0 A_GunFlash("ReadyRedFlash")
 		TNT1 A 0 A_Print("Hell Time Mode!",2)
 	ReadyRedLoop:
-		UNMR ABCB 3 A_WeaponReady
+		UNMR ABCDCBA 2 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
 		Loop
 	FireAltGreen:
@@ -184,15 +193,15 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 ThrustThingZ(0,5,0,0)
 		TNT1 A 0 A_SpawnItemEx("64LevitatingPlatform",0,0,0,0,0,0,0)
 		TNT1 A 0 A_TakeInventory("Cell",15,TIF_NOTAKEINFINITE)
-		UNMG C 3 Bright A_SetPitch(-1.0 + pitch)
-		UNMG CBA 5 A_SetPitch(0.5 + pitch)
+		UNMG D 2 Bright A_SetPitch(-1.0 + pitch)
+		UNMG DCBA 4 A_SetPitch(0.5 + pitch)
 		Goto ReadyGreen
 	FireAltRed:
 		TNT1 A 0 A_Explode(20,10,XF_HURTSOURCE,0)
 		TNT1 A 0 A_PlaySound("OutHelltime",4)
 		TNT1 A 0 A_Print("Time Comes to a Stop!",2)
-		UNMR C 3 Bright A_SetPitch(-1.0 + pitch)
-		UNMR CBA 5 A_SetPitch(0.5 + pitch)
+		UNMR D 2 Bright A_SetPitch(-1.0 + pitch)
+		UNMR DCBA 4 A_SetPitch(0.5 + pitch)
 		TNT1 A 0 A_GiveInventory("PowerTimeFreezer",1)
 		TNT1 A 0 A_GiveInventory("PowerStrength",1)
 		TNT1 A 0 A_SelectWeapon("64Fist")
@@ -218,7 +227,7 @@ ReactionTime 90
 	States
 	{
 	Spawn:
-		SAMM AABBCCDD 2 Bright Light("HealthPotion") A_SpawnItem("BlueFlareSmallItem",0,7)
+		SAMM AABBCCDD 2 Bright Light("HealthPotion") A_SpawnItemEx("BlueFlareSmallItem",0,0,7)
 		TNT1 A 0 A_Countdown
 		Loop
 	Death:
@@ -376,7 +385,12 @@ Tag "Unmaker"
 		Loop
 	v1Ready:
 	Ready:
-		UNMA A 1 A_WeaponReady
+		UNM2 A 0 A_JumpIfInventory("DemonEssence",5,5)
+		UNM2 B 0 A_JumpIfInventory("DemonEssence",10,4)
+		UNM2 C 0 A_JumpIfInventory("DemonEssence",15,3)
+		UNM2 D 0 A_JumpIfInventory("DemonEssence",25,2)
+		UNMA A 0
+		"####" "#" 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
@@ -435,8 +449,8 @@ Tag "Unmaker"
 		Goto FireAnimation
 	FireAnimation:
 		TNT1 A 0 A_ZoomFactor(1.0)
-		UNMA C 3 Bright
-		UNMA JKLDE 1
+		UNMA BC 2 Bright
+		UNMA DEFGH 1
 		UNMA A 18
 		Goto Ready
 	Special:
@@ -445,26 +459,60 @@ Tag "Unmaker"
 		TNT1 A 0 A_Giveinventory("UnAltMode",1)
 		TNT1 A 0 A_JumpIfInventory("UnAltMode",2,"ReadyRed")
 		Goto ReadyGreen
+	NoAimFlash:
+		UNFS ABCDEF 3
+		Stop		
 	NoAim:
 		TNT1 A 0 A_Print("Normal Mode!",2)
+		TNT1 A 0 A_GunFlash("NoAimFlash")	
 		TNT1 A 0 A_Takeinventory("UnAltMode",0)
 		Goto Ready
+	ReadyGreenFlash:
+		UNFG ABCDEF 3
+		Stop
 	ReadyGreen:
 		TNT1 A 0 A_JumpIfInventory("WpnPower4Icon",1,1)
 		Goto Special
+		TNT1 A 0 A_GunFlash("ReadyGreenFlash")		
 		TNT1 A 0 A_Print("Levitation Mode!",2)
 	ReadyGreenLoop:
-		UNMG ABCB 3 A_WeaponReady
+		UNMB E 0 A_JumpIfInventory("DemonEssence",25,5)
+		UNMB D 0 A_JumpIfInventory("DemonEssence",15,4)
+		UNMB C 0 A_JumpIfInventory("DemonEssence",10,3)
+		UNMB B 0 A_JumpIfInventory("DemonEssence",5,2)
+		UNMB A 0
+		"####" "#" 1 A_WeaponReady
+		UN4G A 0 A_JumpIfInventory("DemonEssence",25,5)
+		UN3G A 0 A_JumpIfInventory("DemonEssence",15,4)
+		UN2G A 0 A_JumpIfInventory("DemonEssence",10,3)
+		UN1G A 0 A_JumpIfInventory("DemonEssence",5,2)
+		UNMG A 0
+		"####" ABCDCBA 2 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
 		Loop
+	ReadyRedFlash:
+		UNFR ABCDEF 3
+		Stop
 	ReadyRed:
 		TNT1 A 0 A_JumpIfInventory("WpnPower5Icon",1,1)
 		Goto Special
 		TNT1 A 0 A_Giveinventory("UnAltMode",2)
+		TNT1 A 0 A_GunFlash("ReadyRedFlash")
 		TNT1 A 0 A_Print("Hell Time Mode!",2)
 	ReadyRedLoop:
-		UNMR ABCB 3 A_WeaponReady
+		UNMB E 0 A_JumpIfInventory("DemonEssence",25,5)
+		UNMB D 0 A_JumpIfInventory("DemonEssence",15,4)
+		UNMB C 0 A_JumpIfInventory("DemonEssence",10,3)
+		UNMB B 0 A_JumpIfInventory("DemonEssence",5,2)
+		UNMB A 0
+		"####" "#" 1 A_WeaponReady	
+		UN4R A 0 A_JumpIfInventory("DemonEssence",25,5)
+		UN3R A 0 A_JumpIfInventory("DemonEssence",15,4)
+		UN2R A 0 A_JumpIfInventory("DemonEssence",10,3)
+		UN1R A 0 A_JumpIfInventory("DemonEssence",5,2)
+		UNMR A 0
+		"####" ABCDCBA 2 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
 		Loop
@@ -475,8 +523,8 @@ Tag "Unmaker"
 		TNT1 A 0 ThrustThingZ(0,5,0,0)
 		TNT1 A 0 A_SpawnItemEx("64LevitatingPlatform")
 		TNT1 A 0 A_TakeInventory("DemonEssence",5,TIF_NOTAKEINFINITE)
-		UNMG C 3 Bright A_SetPitch(-1.0 + pitch)
-		UNMG CBA 5 A_SetPitch(0.5 + pitch)
+		UNMG D 2 Bright A_SetPitch(-1.0 + pitch)
+		UNMG DCBA 4 A_SetPitch(0.5 + pitch)
 		Goto ReadyGreen
 	FireAltRed:
 		TNT1 A 0 A_JumpIfInventory("DemonEssence",10,1)
@@ -484,8 +532,8 @@ Tag "Unmaker"
 		TNT1 A 0 A_PlaySound("OutHelltime",4)
 		TNT1 A 0 A_TakeInventory("DemonEssence",10,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_Print("Time Comes to a Stop!",2)
-		UNMR C 3 Bright A_SetPitch(-1.0 + pitch)
-		UNMR CBA 5 A_SetPitch(0.5 + pitch)
+		UNMR D 2 Bright A_SetPitch(-1.0 + pitch)
+		UNMR DCBA 4 A_SetPitch(0.5 + pitch)
 		TNT1 A 0 A_GiveInventory("PowerTimeFreezer",1)
 		TNT1 A 0 A_GiveInventory("PowerStrength",1)
 		TNT1 A 0 A_SelectWeapon("64Fisttactical")
@@ -502,7 +550,7 @@ Tag "Unmaker"
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_ZoomFactor(1.0)
 		UNM2 A 3 Bright
-		UNMA JKLDE 1
+		UNMA DEFGH 1
 		UNMA A 18
 		Goto Ready
 	NotReady1:

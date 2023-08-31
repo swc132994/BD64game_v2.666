@@ -71,8 +71,9 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		SHTF C 3 A_SetPitch(pitch-2, SPF_INTERPOLATE)
 		SHTF D 1 A_SetPitch(pitch+0.8, SPF_INTERPOLATE)
 		SHTF E 1 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
-		SHTG A 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
-		SHTG A 1 A_SetPitch(pitch+0.2, SPF_INTERPOLATE)
+		SHTF F 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
+		SHTF G 1 A_SetPitch(pitch+0.2, SPF_INTERPOLATE)
+		SHTG A 1
 		SHTG BCDEFG 1
 		TNT1 A 0 A_FireCustomMissile("ShotCaseSpawn",0,0,-4,-4)
 		TNT1 A 0 A_PlaySound("STGNPUMP",4)
@@ -237,8 +238,9 @@ Tag "$TAG_SHOTGUN"
 		SHTF C 3 A_SetPitch(pitch-2, SPF_INTERPOLATE)
 		SHTF D 1 A_SetPitch(pitch+0.8, SPF_INTERPOLATE)
 		SHTF E 1 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
-		SHTG A 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
-		SHTG A 1 A_SetPitch(pitch+0.2, SPF_INTERPOLATE)
+		SHTF F 1 A_SetPitch(pitch+0.4, SPF_INTERPOLATE)
+		SHTF G 1 A_SetPitch(pitch+0.2, SPF_INTERPOLATE)
+		SHTG A 1
 		Goto Pump
 	Pump:
 		SHTG BCDEFG 1 A_WeaponReady(WRF_NOPRIMARY)
