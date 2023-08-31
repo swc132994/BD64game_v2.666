@@ -53,16 +53,12 @@ MONSTER
 	ChargeStart:
 		TNT1 A 0 A_PlaySound("KICK",CHAN_AUTO)
 		TNT1 A 0 A_JumpIfCloser(90,"ChargeStop")
-		TNT1 A 0 A_Chase
 		BOS3 OOO 1 A_Chase
 		TNT1 A 0 A_JumpIfCloser(90,"ChargeStop")
-		TNT1 A 0 A_Chase
 		BOS3 PPP 1 A_Chase
 		TNT1 A 0 A_JumpIfCloser(90,"ChargeStop")
-		TNT1 A 0 A_Chase
 		BOS3 QQQ 1 A_Chase
 		TNT1 A 0 A_JumpIfCloser(90,"ChargeStop")
-		TNT1 A 0 A_Chase
 		BOS3 RRR 1 A_Chase
 		TNT1 A 0 A_JumpIfCloser(320,"ChargeStart")
 		Goto See

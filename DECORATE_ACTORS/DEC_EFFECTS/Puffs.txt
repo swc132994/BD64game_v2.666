@@ -146,7 +146,6 @@ speed 140
 alpha 0.9
 renderstyle ADD
 Damagetype "Weak"
-Projectile
 +RANDOMIZE
 +FORCEXYBILLBOARD
 +DONTSPLASH
