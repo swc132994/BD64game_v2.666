@@ -227,17 +227,18 @@ ReactionTime 90
 	States
 	{
 	Spawn:
-		SAMM AABBCCDD 2 Bright Light("HealthPotion") A_SpawnItemEx("BlueFlareSmallItem",0,0,7)
+		SAMM AABBCCDDEE 2 Bright Light("HealthPotion") A_SpawnItemEx("BlueFlareSmallItem",0,0,7)
 		TNT1 A 0 A_Countdown
 		Loop
 	Death:
-		SAMM AABBCCDD 2 A_FadeOut(0.05)
+		SAMM AABBCCDDEE 2 A_FadeOut(0.05)
 		Wait
 	}
 }
 
 Actor DemonEssence : Ammo	//from demons
 {
+Translation "0:255=187:191"	//Red
 Scale 0.8
 Inventory.PickupMessage "Demonic Essence Collected"
 Inventory.Amount 1
@@ -254,11 +255,11 @@ ReactionTime 90
 	States
 	{
 	Spawn:
-		DESS AABBCCDD 2 Bright Light("HellPotion") A_SpawnItemEx("RedFlareSmallItem",0,0,7)
+		SAMM AABBCCDD 2 Bright Light("HellPotion") A_SpawnItemEx("RedFlareSmallItem",0,0,7)
 		TNT1 A 0 A_Countdown
 		Loop
 	Death:
-		DESS AABBCCDD 2 A_FadeOut(0.05)
+		SAMM AABBCCDD 2 A_FadeOut(0.05)
 		Wait
 	}
 }

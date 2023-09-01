@@ -371,34 +371,6 @@ DropItem "None"
 	}
 }
 
-Actor 64CacodemonBall : CacodemonBall Replaces CacodemonBall
-{
-Height 2
-Radius 2
-Speed 13
-FastSpeed 26
-Alpha 1
-RenderStyle Add
-Decal "SmallerScorch"
-PROJECTILE
-+RANDOMIZE
-	States
-	{
-	Spawn:
-		BAL2 AABBCC 1 Bright A_SpawnItemEx("LensFlareProjectileOrange")
-		Loop
-	Death:
-		TNT1 AA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
-		TNT1 AAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,180))
-		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
-		TNT1 AAAAAA 0 A_CustomMissile("SmallFireballFireTrail",0,0,random(0,360),2,random(0,360))
-		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmall")
-		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterSmall")
-		BAL2 DEFGHIJ 1 Bright A_SpawnItemEx("LensFlareTorchOrange")
-		Stop
-	}
-}
-
 Actor 64StealthCacodemon : 64Cacodemon Replaces StealthCacodemon
 {
 +STEALTH
@@ -802,16 +774,17 @@ DropItem "None"
 	}
 }
 
-Actor NCacoBall : CacodemonBall
+Actor 64CacodemonBall : CacodemonBall Replaces CacodemonBall
 {
-Scale 0.75
-Alpha 0.6
+Speed 13
+FastSpeed 26
+Alpha 0.9
 RenderStyle Translucent
 Decal "SmallerScorch"
 	States
 	{
 	Spawn:
-		NCAC ABC 4 Bright A_SpawnItemEx("LensFlareProjectileOrange")
+		NCAC AABBCC 1 Bright A_SpawnItemEx("LensFlareProjectileOrange")
 		Loop
 	Death:
 		TNT1 AA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
@@ -821,10 +794,22 @@ Decal "SmallerScorch"
 		TNT1 AAAAAA 0 A_CustomMissile("SmallFireballFireTrail",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmall")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterSmall")
-		NCAC D 5 Bright
+		NCAC D 5 Bright A_SpawnItemEx("LensFlareTorchOrange")
 		NCAC EFGHI 3 Bright A_FadeOut(0.142857)
 		NCAC J 3 Bright A_FadeOut(0.142857)
-		Wait
+		Stop
+	}
+}
+
+Actor NCacoBall : 64CacodemonBall
+{
+Scale 1.1
+Alpha 0.8
+	States
+	{
+	Spawn:
+		BAL9 AABBCC 1 Bright A_SpawnItemEx("LensFlareProjectileOrange")
+		Loop
 	}
 }
 

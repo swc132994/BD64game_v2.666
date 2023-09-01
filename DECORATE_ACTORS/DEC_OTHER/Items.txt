@@ -44,12 +44,12 @@ Inventory.PickupSound "ARMOR"
 	{
 	Spawn:
 		ARM1 A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
-		ARM1 A 6 Light("GREENARMOR1")
-		ARM1 B 7 Bright Light("GREENARMOR2")
+		ARM1 A 6 Light("INVULN")
+		ARM1 B 6 Bright Light("INVULN")
 		Loop
 	AlphaSpawn:
-		ARM3 A 6 Light("GREENARMOR1")
-		ARM3 B 7 Bright Light("GREENARMOR2")
+		ARM3 A 6 Light("INVULN")
+		ARM3 B 6 Bright Light("INVULN")
 		Loop
 	}
 }
@@ -62,12 +62,12 @@ Inventory.PickupSound "ARMOR"
 	{
 	Spawn:
 		ARM2 A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
-		ARM2 A 6 Light("BLUEARMOR1")
-		ARM2 B 6 Bright Light("BLUEARMOR2")
+		ARM2 A 6 Light("SOULSPHERE")
+		ARM2 B 6 Bright Light("SOULSPHERE")
 		Loop
 	AlphaSpawn:
-		ARM4 A 6 Light("BLUEARMOR1")
-		ARM4 B 6 Bright Light("BLUEARMOR2")
+		ARM4 A 6 Light("SOULSPHERE")
+		ARM4 B 6 Bright Light("SOULSPHERE")
 		Loop
 	}
 }
@@ -134,12 +134,12 @@ powerup.color "green",0.15
 	{
 	Spawn:
 		SUIT A 0 NoDelay A_JumpIf(CallACS("AltRadSuitACS")==1,"AltSpawn")
-		SUIT A 6 Bright Light("GREENARMOR1")
-		SUIT B 5 Light("GREENARMOR2")
+		SUIT A 6 Bright Light("INVULN")
+		SUIT B 6 Light("INVULN")
 		loop
 	AltSpawn:
-		SUIT C 5
-		Loop
+		SUIT C -1
+		Stop
 	}
 }
 

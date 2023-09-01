@@ -107,6 +107,7 @@ Tactical Shotgun Alt attack - IDDQD_1337 (animation) & I'M (sprites). Smoother a
 Laser Mine (unused) - Sprite rework by Craneo, Animations extra sprites and decorate by IDDQD_1337. Sounds from Brutal Hellfest by Gni. Orginally created by Capt. J and Ezequiel-TM's tripwire lasermine
 Proxy Mine (Tactical & Modern) - CaptJ and Apocalyptic Studios, edited by Craneo and IDDQD_1337.
 Chaingun (tactical & Modern) - Doomer Blazkowicz (sprite rework), IDDQD_1337 (Animation), taken from Sgt Mark IV's BD Chaingun.
+Unmaker (tactical/modern) edits - Frankensprites and sounds by DoomerBlazcowicz. Muzzle flashes by BigStronk. Animations by IDDQD_1337.
 
 New weapon kicking and slide kicking animations by IDDQD_1337
 
@@ -114,39 +115,52 @@ New Flashlight/torch pickup by IDDQD and Craneo (Sprites)
 
 Monsters:
 64Thing - Craneo(D64 sprites), based on the Mimic by StopSignal, sounds from Duke Nukem 3D by 3D Realms
+
 64 Revenant - DrPyspy (sprites)
+
 64 Archvile - DrPyspy (sprites)
+
 Hellhound Alt - I'M (sprites)
+
 Hellhound GEC - Gerardo194 (sprites)
+
 Bruiser a.k.a Duke of Hell - Gerardo194 (sprites)
+
 Knightmare a.k.a. DreadKnight - Dr Doctor (Original sprites) Craneo (Rework)
+
 Eradicator a.k.a unmaker mastermind - Craneo (sprite rework), Midway, 3DRealms, Immorpher, Sgt_Mark_IV, DrPyspy
+
 Chaingunner - Craneo (reworked sprites), Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim
+
 Acid Demon sounds from REALM667 - SLIME WORM by Captain Toenail
+
 Spider Mastermind - Craneo (sprite rework), Midway, 3DRealms, Immorpher, Sgt_Mark_IV, DrPyspy
+
 BFG Zombie - Sprites: Id Software, Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim, Korp, ItsNatureToDie, neoworm, Craneo. Sounds: Immorpher
 Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
+
 64Wraith - Vader, Captain Toenail, Midway, Id Software, Gregor Punchatz, Craneo (D64 style sprites)
 64WaffenSS - Sounds from Return to Castle Wolfenstein, uploaded by Labtec Speakers to The Sounds Resource.
+
 64Nightmare Elemental - Sprites by Styd051, Decorate by Craneo.
 
 64FleshWizard by Craneo
-		Code: Melvin (base Flesh Wizard decorate), swc132994 (default BD64 code bits reused), Amuscaria (Diabolist projectile decorate)
-		Sprites: Freedoom (Flesh Wizard base), Monolith (Blood Zombie), Craneo (Flesh Wizard 64 conversion), HAUNT folder sprites taken from LCA DUST's Bloody Frandle
-		Sounds: 64FWSITx, 64FWDTHx (Dead Space), 64FWACTx (Doom 3), 64FWPAIx (Dying Light), 64FWTELx (System Shock 2)
-		Extra Deaths: Edited by Craneo and based on sprites by David G
-64Husk by Craneo
+	Code: Melvin (base Flesh Wizard decorate), swc132994 (default BD64 code bits reused), Amuscaria (Diabolist projectile decorate)
+	Sprites: Freedoom (Flesh Wizard base), Monolith (Blood Zombie), Craneo (Flesh Wizard 64 conversion), HAUNT folder sprites taken from LCA DUST's Bloody Frandle
+	Sounds: 64FWSITx, 64FWDTHx (Dead Space), 64FWACTx (Doom 3), 64FWPAIx (Dying Light), 64FWTELx (System Shock 2)
+	Extra Deaths: Edited by Craneo and based on sprites by David G
 
-		Sprite Credits: Amuscaria, DrDoctor, Midway
-		Code Credits: HorrorMovieRei, swc132994, Sgt_Mark_IV (most likely), Lagi (zombie group spawn code)
-		Sounds Credits: Id Software, Immorpher
-		Frankensprite by Craneo.
-		
+64Husk by Craneo
+	Sprite Credits: Amuscaria, DrDoctor, Midway
+	Code Credits: HorrorMovieRei, swc132994, Sgt_Mark_IV (most likely), Lagi (zombie group spawn code)
+	Sounds Credits: Id Software, Immorpher
+	Frankensprite by Craneo.
+
 64Forgotton One by Craneo
-		Sprite Credits: Midway, DrDoctor, DrPyspy, Craneo
-		Sound Credits: Midway, HorrorMovieRei
-		Code Credits: swc132994, Sgt_Mark_IV
-		
+	Sprite Credits: Midway, DrDoctor, DrPyspy, Craneo
+	Sound Credits: Midway, HorrorMovieRei
+	Code Credits: swc132994, Sgt_Mark_IV
+
 64Butcher by Craneo
 	Code: Bouncy, Graf Zahl, Ganbare-Lucifer, heavily edited for BD64 by Craneo
 	Sounds: Ganbare-Lucifer
@@ -245,7 +259,6 @@ Shotgun - alt attack decorate, sprites & sounds
 SSG - sounds
 SMG - decorate (speed adjustment)
 Rifle - decorate (speed adjustment)
-Unmaker & demon key - sprites & sounds
 Chaingun - modern/tactical sprites and decorate changes
 BFG - pickup sprite
 Rocket Launcher - pickup sprite
@@ -282,7 +295,7 @@ Widescreen HUD bar for display size 10 (normal) by Unmaker23
 
 Items:
 Alt cell packs - DrDoctor (sprites)
-Soul ammo & Demon essence - Craneo (sprites)
+Soul ammo & Demon essence - Craneo (sprites)	EDIT: Added Hitodama sprites by DoomerBlazcowicz
 
 Maps:
 Converting Hexen format maps to UDMF - IDDQD_1337

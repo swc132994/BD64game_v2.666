@@ -83,7 +83,7 @@ Tag "Multi-Purpose Mine"
 		PMNE C -1
 		Stop
 	Select:
-		TNT1 AAAAAAAAA 0 A_Raise
+		TNT1 AAAAAAAAAA 0 A_Raise
 		Goto SelectAnimation
 	SelectAnimation:
 		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,1)

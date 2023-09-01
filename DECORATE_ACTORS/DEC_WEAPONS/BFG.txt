@@ -95,26 +95,26 @@ Tag "$TAG_BFG9000"
 	States
 	{
 	MineThrowFlash:
-		BFGS DCBA 1
-		TNT1 A 18
-		BFGS ABCD 1
+		BFGZ ABCD 1
+		TNT1 D 18
+		BFGZ DCBA 1
 		Stop
 	KickingFlash:
-		BFGS DCBA 1
-		BFGS A 8
-		BFGS ABCD 1
+		BFGZ ABCD 1
+		BFGZ D 8
+		BFGZ DCBA 1
 		Stop
 	AirKickingFlash:
-		BFGS DCBA 1
-		BFGS A 10
-		BFGS ABCD 1
+		BFGZ ABCD 1
+		BFGZ D 10
+		BFGZ DCBA 1
 		Stop
 	SlideKickingStart:
-		BFGS DCBA 1
-		BFGS A 18
+		BFGZ ABCD 1
+		BFGZ D 18
 	SlideKickingEnd:
-		BFGS A 6
-		BFGS ABCD 1
+		BFGZ D 6
+		BFGZ DCBA 1
 		Stop
 	v1Ready:
 	Ready:
@@ -136,7 +136,7 @@ Tag "$TAG_BFG9000"
 		Wait
 	Select:
 		TNT1 A 0 A_PlaySound("BFGREADY")
-		TNT1 AAAAAAAA 0 A_Raise
+		TNT1 AAAAAAAAAA 0 A_Raise
 	SelectAnimation:
 		BFGS ABCDE 1
 		Goto Ready

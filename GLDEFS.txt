@@ -886,17 +886,17 @@ flickerlight CACOBALL_X5
 
 object 64CacodemonBall
 {
-	frame BAL2A {light CACOBALL}
-	frame BAL2B {light CACOBALL}
-	frame BAL2C {light CACOBALL}
+	frame NCACA {light CACOBALL}
+	frame NCACB {light CACOBALL}
+	frame NCACC {light CACOBALL}
 
-	frame BAL2D {light CACOBALL_X1}
-	frame BAL2E {light CACOBALL_X2}
-	frame BAL2F {light CACOBALL_X3}
-	frame BAL2G {light CACOBALL_X4}
-	frame BAL2H {light CACOBALL_X5}
-	frame BAL2I {light CACOBALL_X5}
-	frame BAL2J {light CACOBALL_X5}
+	frame NCACD {light CACOBALL_X1}
+	frame NCACE {light CACOBALL_X2}
+	frame NCACF {light CACOBALL_X3}
+	frame NCACG {light CACOBALL_X4}
+	frame NCACH {light CACOBALL_X5}
+	frame NCACI {light CACOBALL_X5}
+	frame NCACJ {light CACOBALL_X5}
 }
 
 //Nightmare Cacodemon Fireball
@@ -950,9 +950,9 @@ flickerlight NCACOBALL_X5
 
 object NCacoBall
 {
-	frame NCACA {light NCACOBALL}
-	frame NCACB {light NCACOBALL}
-	frame NCACC {light NCACOBALL}
+	frame BAL9A {light NCACOBALL}
+	frame BAL9B {light NCACOBALL}
+	frame BAL9C {light NCACOBALL}
 
 	frame NCACD {light NCACOBALL_X1}
 	frame NCACE {light NCACOBALL_X2}
