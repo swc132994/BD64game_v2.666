@@ -156,10 +156,10 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		Goto ReadyGreen
 	NoAimFlash:
 		UNFS ABCDEF 3
-		Stop		
+		Stop
 	NoAim:
 		TNT1 A 0 A_Print("Normal Mode!",2)
-		TNT1 A 0 A_GunFlash("NoAimFlash")	
+		TNT1 A 0 A_GunFlash("NoAimFlash")
 		TNT1 A 0 A_Takeinventory("UnAltMode",0)
 		Goto Ready
 	ReadyGreenFlash:
@@ -399,12 +399,10 @@ Tag "Unmaker"
 		TNT1 A 0 A_PlaySound("UNMKLP",CHAN_WEAPON,1,1)
 		Loop
 	Select:
-		TNT1 AAAAAAAAAA 0 A_Raise
 		UNMA A 0 A_PlaySound("UNMAKSEL")
-		Goto SelectAnimation
-	SelectAnimation:
-		UNMS ABCD 1
-		Goto Ready
+		UNMS ABCD 1 offset(0,32)
+		TNT1 A 0 A_Raise
+		Wait
 	Deselect:
 		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
@@ -462,10 +460,10 @@ Tag "Unmaker"
 		Goto ReadyGreen
 	NoAimFlash:
 		UNFS ABCDEF 3
-		Stop		
+		Stop
 	NoAim:
 		TNT1 A 0 A_Print("Normal Mode!",2)
-		TNT1 A 0 A_GunFlash("NoAimFlash")	
+		TNT1 A 0 A_GunFlash("NoAimFlash")
 		TNT1 A 0 A_Takeinventory("UnAltMode",0)
 		Goto Ready
 	ReadyGreenFlash:
@@ -474,7 +472,7 @@ Tag "Unmaker"
 	ReadyGreen:
 		TNT1 A 0 A_JumpIfInventory("WpnPower4Icon",1,1)
 		Goto Special
-		TNT1 A 0 A_GunFlash("ReadyGreenFlash")		
+		TNT1 A 0 A_GunFlash("ReadyGreenFlash")
 		TNT1 A 0 A_Print("Levitation Mode!",2)
 	ReadyGreenLoop:
 		UNMB E 0 A_JumpIfInventory("DemonEssence",25,5)

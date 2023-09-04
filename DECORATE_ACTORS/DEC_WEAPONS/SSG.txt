@@ -28,7 +28,7 @@ Weapon.SlotPriority 2
 Weapon.SelectionOrder 400
 Weapon.AmmoType "Shell"
 Weapon.AmmoUse 2
-Weapon.AmmoGive 8
+Weapon.AmmoGive 2
 +WEAPON.NOAUTOFIRE
 Inventory.PickupMessage "$GOTSHOTGUN2"
 Obituary "$OB_MPSSHOTGUN"
@@ -133,7 +133,7 @@ Weapon.SlotPriority 2
 Weapon.SelectionOrder 400
 Weapon.AmmoType1 "Shell"
 Weapon.AmmoUse1 1
-Weapon.AmmoGive1 8
+Weapon.AmmoGive1 2
 Weapon.AmmoType2 "SSGAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
@@ -203,22 +203,20 @@ Tag "$TAG_SUPERSHOTGUN"
 	Select:
 		TNT1 A 0 A_JumpIf(CallACS("WeaponsWarmUpACS")==false,2)
 		TNT1 A 0 A_JumpIfInventory("FirstTimeSSG",1,"WarmUp")
-		TNT1 AAAAAAAAAA 0 A_Raise
-		Goto SelectAnimation
-	SelectAnimation:
 		TNT1 A 0 A_JumpIfInventory("SSGReloading",1,"RaiseReloading")
 		TNT1 A 0 A_PlaySound("weapons/sshotc")
-		SSGH EF 1
+		SSGH EF 1 Offset(0,32)
 		TNT1 A 0 A_PlaySound("CLIPINSS",CHAN_WEAPON)
-		SSGH GHIJKLM 1
-		Goto Ready
+		SSGH GHIJKLM 1 Offset(0,32)
+		TNT1 A 0 A_Raise
+		Wait
 	RaiseReloading:
 		TNT1 A 0 A_JumpIfInventory("Shell",2,1)
 		Goto RaiseNoAmmo
-		SSGS ABCD 1
+		SSGS ABCD 1 Offset(0,32)
 		Goto Reload
 	RaiseNoAmmo:
-		SSGS ABCD 1
+		SSGS ABCD 1 Offset(0,32)
 		Goto Ready
 	Deselect:
 		TNT1 A 0 A_ZoomFactor(1.0)

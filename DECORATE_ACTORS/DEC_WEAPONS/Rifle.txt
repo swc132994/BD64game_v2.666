@@ -335,13 +335,11 @@ Tag "Assault Rifle"
 		TNT1 A 0 A_JumpIfInventory("StartWeapon",1,"LetsGetStarted")
 		TNT1 A 0 A_JumpIfInventory("FirstTimeRifle",1,"WarmUp")
 		TNT1 A 0 A_PlaySound("RIFBOLT")
-		TNT1 AAAAAAAAAA 0 A_Raise
-		Goto SelectAnimation
-	SelectAnimation:
 		ARSS A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)
 		RIFS A 0
-		"####" ABCD 1
-		Goto Ready
+		"####" ABCD 1 Offset(0,32)
+		TNT1 A 0 A_Raise
+		Wait
 	Fidget:
 		RIFR ABCDE 1 A_WeaponReady
 		RIFI ABCDD 1 A_WeaponReady
@@ -589,7 +587,7 @@ Tag "Assault Rifle"
 		Goto Ready
 		TNT1 A 0 A_Giveinventory("RifleAmmo",1)
 		TNT1 A 0 A_Takeinventory("Clip",1,TIF_NOTAKEINFINITE)
-		Goto InsertBullets2	
+		Goto InsertBullets2
 		TNT1 A 0 A_Refire
 		Goto Ready
 	ADSAlternativeReload:

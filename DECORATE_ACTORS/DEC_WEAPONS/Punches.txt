@@ -175,10 +175,9 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		PALT AAAAAA 3
 		Goto Ready
 	Select:
-		TNT1 AAAAAAAAAA 0 A_Raise
-	SelectAnimation:
-		PUN6 ABCD 1
-		Goto Ready
+		PUN6 ABCD 1 Offset(0,32)
+		TNT1 A 0 A_Raise
+		Wait
 	Deselect:
 		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
 		TNT1 A 0 A_Takeinventory("TossMine",1)

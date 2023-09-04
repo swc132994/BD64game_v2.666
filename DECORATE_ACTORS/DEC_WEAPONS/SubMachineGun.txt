@@ -324,11 +324,9 @@ Tag "Sub-machine gun"
 		Goto Ready
 	Select:
 		TNT1 A 0 A_PlaySound("RIFBOLT")
-		TNT1 AAAAAAAAAA 0 A_Raise
-		Goto SelectAnimation
-	SelectAnimation:
-		SMGS ABCDE 1
-		Goto Ready
+		SMGS ABCDE 1 offset(0,32)
+		TNT1 A 0 A_Raise
+		Wait
 	Fidget:
 		TNT1 A 0 A_Jump(69,"Fidget2")
 		SMGG A 1 A_WeaponReady
