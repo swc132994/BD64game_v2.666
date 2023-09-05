@@ -452,7 +452,7 @@ VisibleToPlayerClass "Modern"
 		TNT1 A 0 A_SetCrosshair(0)
 		TNT1 A 0 A_StopSound(5)
 		TNT1 A 0 A_StopsoundEx("Weapon")
-		TNT1 AAAAAAAAAA 0 A_Lower
+		TNT1 A 0 A_Lower
 		Wait
 	AltFire:
 		TNT1 A 0 A_JumpIfInventory("64SuperShotgunTactical",1,"AmmoCheck")

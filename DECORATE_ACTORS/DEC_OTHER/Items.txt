@@ -395,7 +395,24 @@ Inventory.PickupSound "IPICK"
 	}
 }
 
-Actor 64ClipBox : ClipBox Replaces ClipBox
+Actor 64ClipBoxReplacer : CustomInventory Replaces Clipbox
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_Jump(256,"Spawn2","Spawn3")
+		TNT1 A 1
+		Stop
+	Spawn2:
+		TNT1 A 1 A_SpawnItemEx("64ClipBox",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	Spawn3:
+		TNT1 A 1 A_SpawnItemEx("64HighCaliberBox",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	}
+}
+
+Actor 64ClipBox : ClipBox
 {
 Scale 0.82
 Inventory.PickupSound "IPICK"
@@ -410,6 +427,24 @@ Inventory.PickupSound "IPICK"
 		Stop
 	Spawn2:
 		AMO2 A -1
+		Stop
+	}
+}
+
+Actor 64HighCaliberBox : Ammo	//new ammo for rifle and chaingun
+{
+Scale 0.82
+Inventory.PickupSound "IPICK"
+Inventory.PickupMessage "Picked up a high-caliber ammo box."
+Inventory.Amount 40
+Inventory.MaxAmount 150
+Ammo.BackpackAmount 20
+Ammo.BackpackMaxAmount 300
+Inventory.Icon "HI04X0"
+	states
+	{
+	Spawn:
+		HI04 X -1
 		Stop
 	}
 }
@@ -439,6 +474,7 @@ Inventory.PickupSound "IPICK"
 Actor 64ShellBox : ShellBox Replaces ShellBox
 {
 Scale 0.82
+Inventory.Amount 16
 Inventory.PickupSound "IPICK"
 	states
 	{
