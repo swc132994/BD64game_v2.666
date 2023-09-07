@@ -301,7 +301,7 @@ MONSTER
 	States
 	{
 	Spawn:
-		TROO A 0 NoDelay A_JumpIf(CallACS("NImpRandom")==0,"SpawnImp")
+		DI64 A 0 NoDelay A_JumpIf(CallACS("NImpRandom")==0,"SpawnImp")
 		TNT1 A 0 A_JumpIf(CallACS("NImpRandom")==1,"SpawnNightImp")
 		TNT1 A 0 A_JumpIf(CallACS("NImpRandom")==5,"P05")
 		TNT1 A 0 A_JumpIf(CallACS("NImpRandom")==10,"P10")

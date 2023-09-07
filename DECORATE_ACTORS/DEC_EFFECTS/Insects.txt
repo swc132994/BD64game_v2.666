@@ -1,6 +1,6 @@
 Actor Swarm
 {
-+NoClip
++NOCLIP
 +NOGRAVITY
 	States
 	{
@@ -16,12 +16,9 @@ Actor Swarm
 Actor FlyDecor
 {
 Scale 0.3
-Radius 2
-Height 4
 Speed 3
-Projectile
-+DontSplash
-+THRUACTORS
+PROJECTILE
++DONTSPLASH
 +DOOMBOUNCE
 +CLIENTSIDEONLY
 +NOCLIP

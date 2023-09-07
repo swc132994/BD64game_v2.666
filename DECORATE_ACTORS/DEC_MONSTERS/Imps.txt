@@ -33,13 +33,13 @@ DropItem "DemonEssenceSpawner"
 		Goto Stand
 	See:
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8",0,0,60)
-		TROO AABB 2 A_Chase
+		DI64 AABB 2 A_Chase
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8",0,0,60)
-		TROO CCDD 2 A_Chase
+		DI64 CCDD 2 A_Chase
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8",0,0,60)
-		TROO AABB 2 A_Chase
+		DI64 AABB 2 A_Chase
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8",0,0,60)
-		TROO CCDD 2 A_Chase
+		DI64 CCDD 2 A_Chase
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		Loop
 	Forget:
@@ -47,28 +47,28 @@ DropItem "DemonEssenceSpawner"
 		Goto Spawn
 	Melee:
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,60)
-		TROO EF 8 A_FaceTarget
+		DI64 EF 8 A_FaceTarget
 		TNT1 A 0 A_Recoil(-8)
 		TNT1 A 0 ThrustThingZ(0,15,0,0)
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget6",0,0,60)
-		TROO G 6 A_CustomMeleeAttack(3*random(1,8),"imp/melee")
+		DI64 G 6 A_CustomMeleeAttack(3*random(1,8),"imp/melee")
 		Goto See
 	Missile:
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,60)
-		TROO IJ 8 A_FaceTarget
+		DI64 IJ 8 A_FaceTarget
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget6",0,0,60)
-		TROO K 6 Bright A_CustomMissile("64ImpBall",32)
+		DI64 K 6 Bright A_CustomMissile("64ImpBall",32)
 		Goto See
 	Pain:
-		TROO H 2
-		TROO H 2 A_Pain
+		DI64 H 2
+		DI64 H 2 A_Pain
 		Goto See
 	Death:
-		TROO L 5 A_NoBlocking
-		TROO M 5 A_Scream
-		TROO NO 5
-		TROO P 35
-		TROO P -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		DI64 L 5 A_NoBlocking
+		DI64 M 5 A_Scream
+		DI64 NO 5
+		DI64 P 35
+		DI64 P -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Head:
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
@@ -101,7 +101,7 @@ DropItem "DemonEssenceSpawner"
 		TRDM A 1 A_SpawnItemEx("BrutalizedImp64",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Raise:
-		TROO PONML 5
+		DI64 PONML 5
 		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
 		Goto See
 	Crush:
@@ -143,17 +143,17 @@ DropItem "DemonEssenceSpawner"
 	Death.Shotgun:
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
 		TNT1 A 0 A_Recoil(8)
-		TROO H 1 A_JumpIfCloser(210,"Death.Heavy")
+		DI64 H 1 A_JumpIfCloser(210,"Death.Heavy")
 		TNT1 A 0 A_Jump(128,"Death")
-		TROO H 1 A_JumpIfCloser(1000,"Death.CutLess")
+		DI64 H 1 A_JumpIfCloser(1000,"Death.CutLess")
 		Goto Death
 	Death.SSG:
 		TNT1 A 0 A_Recoil(12)
-		TROO H 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
+		DI64 H 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TROO H 1 A_JumpIfCloser(210,"Death.Heavy")
+		DI64 H 1 A_JumpIfCloser(210,"Death.Heavy")
 		TNT1 A 0 A_Jump(128,"Death")
-		TROO H 1 A_JumpIfCloser(1000,"Death.CutLess")
+		DI64 H 1 A_JumpIfCloser(1000,"Death.CutLess")
 		Goto Death
 	Death.SuperFists:
 	Death.SuperKick:
@@ -179,7 +179,7 @@ DropItem "DemonEssenceSpawner"
 		GBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Heavy:
-		TROO H 3
+		DI64 H 3
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
@@ -216,7 +216,7 @@ DropItem "DemonEssenceSpawner"
 		Stop
 	Death.Chainsaw:
 	Death.BFG:
-		TROO Q 3
+		DI64 Q 3
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -232,9 +232,9 @@ DropItem "DemonEssenceSpawner"
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
-		TROO RSTUVW 5
-		TROO X 35
-		TROO X -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		DI64 RSTUVW 5
+		DI64 X 35
+		DI64 X -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	}
 }
@@ -388,7 +388,7 @@ DropItem "None"
 		Wait
 	Death.Chainsaw:
 	Death.BFG:
-		TROO Q 3
+		DI64 Q 3
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -404,9 +404,9 @@ DropItem "None"
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
-		TROO RSTUVW 5
-		TROO X 35
-		TROO X -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		DI64 RSTUVW 5
+		DI64 X 35
+		DI64 X -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.SplatteredOnWall:
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
@@ -433,8 +433,8 @@ DropItem "None"
 		TRDM A 1
 		Goto Spawn
 	raise:
-		TROO PONML 5
-		TROO L 1 A_SpawnItemEx("64DoomImp",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		DI64 PONML 5
+		DI64 L 1 A_SpawnItemEx("64DoomImp",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
 }
@@ -598,7 +598,7 @@ DropItem "None"
 		Wait
 	Death.Chainsaw:
 	Death.BFG:
-		TROO Q 3
+		DI64 Q 3
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -613,17 +613,17 @@ DropItem "None"
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
-		TROO RSTUVW 5
-		TROO X 35
-		TROO X -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		DI64 RSTUVW 5
+		DI64 X 35
+		DI64 X -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Pain:
 		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
 		TRDM B 1
 		Goto Spawn
 	raise:
-		TROO PONML 5
-		TROO L 1 A_SpawnItemEx("64DoomImp",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		DI64 PONML 5
+		DI64 L 1 A_SpawnItemEx("64DoomImp",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
 }
@@ -1272,7 +1272,7 @@ DropItem "None"
 		NBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.BFG:
-		TROO Q 3
+		DI64 Q 3
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))

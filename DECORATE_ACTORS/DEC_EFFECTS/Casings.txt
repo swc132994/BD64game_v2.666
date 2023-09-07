@@ -191,6 +191,7 @@ SeeSound "weapons/shell"
 +GHOST
 +ISMONSTER		//INFRARED
 +DOOMBOUNCE
++THRUACTORS
 BounceFactor 0.3
 	States
 	{
@@ -241,6 +242,7 @@ SeeSound "weapons/largemagdrop"
 +NOTDMATCH
 +GHOST
 +ISMONSTER		//INFRARED
++THRUACTORS
 	States
 	{
 	Spawn:
@@ -283,6 +285,7 @@ SeeSound "weapons/largemagdrop"
 +NOTDMATCH
 +GHOST
 +ISMONSTER
++THRUACTORS
 	States
 	{
 	Spawn:
@@ -324,6 +327,7 @@ SeeSound "weapons/barrelpain"
 +GHOST
 +ISMONSTER		//INFRARED
 +DOOMBOUNCE
++THRUACTORS
 	States
 	{
 	Spawn:
@@ -362,6 +366,7 @@ SeeSound "weapons/largemagdrop"
 +NOTDMATCH
 +GHOST
 +ISMONSTER		//INFRARED
++THRUACTORS
 	States
 	{
 	Spawn:

@@ -202,20 +202,20 @@ YScale 1.0
 	States
 	{
 	See:
-		TROO AABBCCDD 3
+		DI64 AABBCCDD 3
 		Loop
 	Melee:
-		TROO EF 8
-		TROO G 6
+		DI64 EF 8
+		DI64 G 6
 		Goto See
 	Missile:
-		TROO IJ 8
-		TROO K 6
+		DI64 IJ 8
+		DI64 K 6
 		Goto See
 	Death:
-		TROO LM 8
-		TROO NO 6
-		TROO P -1
+		DI64 LM 8
+		DI64 NO 6
+		DI64 P -1
 		Stop
 	}
 }
