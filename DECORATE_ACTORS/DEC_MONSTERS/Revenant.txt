@@ -198,10 +198,16 @@ DamageType Fire
 PROJECTILE
 +SEEKERMISSILE
 +EXTREMEDEATH
+Health 10
++NOBLOOD
 	States
 	{
 	Spawn:
-		M5B1 A 2 NoDelay Bright A_SpawnItemEx("RedFlareSmall")
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("ShootableProjectiles")==False, "SpawnContinue")
+		TNT1 A 0 A_ChangeFlag(NOBLOCKMAP,0)
+		TNT1 A 0 A_ChangeFlag(SHOOTABLE,1)
+	SpawnContinue:
+		M5B1 A 2 Bright A_SpawnItemEx("RedFlareSmall")
 		TNT1 A 0 A_SeekerMissile(15,15)
 		TNT1 A 0 A_SpawnItemEx("RevenantFireTrailparticle")
 		TNT1 A 0 A_SpawnItemEx("OldschoolRocketSmokeTrail2")

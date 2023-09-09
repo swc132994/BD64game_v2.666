@@ -486,3 +486,8 @@ script "HordeLeaderRandom" (void)
 {
 SetResultValue(GetCVar("HordeLeader_Spawner_Cvar"));
 }
+
+script "ShootableProjectiles" (void)
+{
+SetResultValue(GetCVar("ShootableProjectilesCVAR"));
+}
