@@ -315,7 +315,6 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 		stop
 	Death:
 		TNT1 A 0 A_PlaySound("blooddrop2")
-		TNT1 A 0
 		TNT1 A 0 A_CustomMissile("Brutal_BloodSpotGreen",0,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_SpawnItemEx("DetectCeilBloodSimplerGreen")
 		TNT1 A 1
@@ -1039,8 +1038,7 @@ Decal BrutalBloodSplat
 	states
 	{
 	Spawn:
-		BLOD F 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
-		BLOD FFFFFFFFFF 4 A_JumpIf(waterlevel > 1,"Splash")
+		BLOD FFFFFFFFFF 4 Nodelay A_JumpIf(waterlevel > 1,"Splash")
 		stop
 	Death:
 		TNT1 A 1
@@ -1296,8 +1294,6 @@ BounceFactor 1
 		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
 		Loop
 	DoNothing:
-		TNT1 A 1
-		Stop
 	Crush:
 		TNT1 A 1
 		Stop
@@ -1361,8 +1357,6 @@ BounceCount 0
 		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
 		Loop
 	DoNothing:
-		TNT1 A 1
-		Stop
 	Crush:
 		TNT1 A 1
 		Stop
@@ -1569,7 +1563,6 @@ Alpha 0.95
 Renderstyle Translucent
 Decal BrutalBloodSplat
 DamageType Blood
-//-DONTSPLASH
 +DONTSPLASH
 +MISSILE
 +CLIENTSIDEONLY
@@ -1870,12 +1863,6 @@ speed 0
 	Spawn:
 		BSP4 ABCDEFGHIJKLMNOPQRSTUVWXYZ 1 A_JumpIf(waterlevel < 1,"Splash")
 		Stop
-	Splash:
-		TNT1 A 1
-		stop
-	Death:
-		TNT1 A 1
-		Stop
 	}
 }
 
@@ -1910,9 +1897,7 @@ Projectile
 		TNT1 AAAAAAAA 3 A_SpawnItemEx("SuperGore")
 		Stop
 	Death:
-		TNT1 A 1
-		Stop
-	XDeath:
+	Xdeath:
 		TNT1 A 1
 		Stop
 	}
@@ -1926,12 +1911,6 @@ Decal BloodSuperGreen
 	{
 	Spawn:
 		TNT1 AAAAAAAA 3 A_SpawnItemEx("SuperGoreGreen")
-		Stop
-	Death:
-		TNT1 A 1
-		Stop
-	XDeath:
-		TNT1 A 1
 		Stop
 	}
 }
