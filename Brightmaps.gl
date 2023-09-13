@@ -275,6 +275,84 @@ brightmap sprite 22SRV0		{map "brightmaps/22SRU0_BR.png"disablefullbright}//DIMM
 brightmap sprite 22SRW0		{map "brightmaps/PLSMBMP1.png"disablefullbright}//DIMMED RELOAD 2
 brightmap sprite 22SRX0		{map "brightmaps/PLSMBMP1.png"disablefullbright}//DIMMED RELOAD 2
 
+//UNMAKER
+brightmap sprite UNFSA0		{map "BRIGHTMAPS/Unmaker/UNFSA0_BR.png"disablefullbright}	//White exhaust
+brightmap sprite UNFSB0		{map "BRIGHTMAPS/Unmaker/UNFSB0_BR.png"disablefullbright}
+brightmap sprite UNFSC0		{map "BRIGHTMAPS/Unmaker/UNFSC0_BR.png"disablefullbright}
+brightmap sprite UNFSD0		{map "BRIGHTMAPS/Unmaker/UNFSD0_BR.png"disablefullbright}
+brightmap sprite UNFSE0		{map "BRIGHTMAPS/Unmaker/UNFSE0_BR.png"disablefullbright}
+brightmap sprite UNFSF0		{map "BRIGHTMAPS/Unmaker/UNFSF0_BR.png"disablefullbright}
+
+brightmap sprite UNFGA0		{map "BRIGHTMAPS/Unmaker/UNFSA0_BR.png"disablefullbright}	//Green exhaust
+brightmap sprite UNFGB0		{map "BRIGHTMAPS/Unmaker/UNFSB0_BR.png"disablefullbright}
+brightmap sprite UNFGC0		{map "BRIGHTMAPS/Unmaker/UNFSC0_BR.png"disablefullbright}
+brightmap sprite UNFGD0		{map "BRIGHTMAPS/Unmaker/UNFSD0_BR.png"disablefullbright}
+brightmap sprite UNFGE0		{map "BRIGHTMAPS/Unmaker/UNFSE0_BR.png"disablefullbright}
+brightmap sprite UNFGF0		{map "BRIGHTMAPS/Unmaker/UNFSF0_BR.png"disablefullbright}
+
+brightmap sprite UNFRA0		{map "BRIGHTMAPS/Unmaker/UNFSA0_BR.png"disablefullbright}	//Red exhaust
+brightmap sprite UNFRB0		{map "BRIGHTMAPS/Unmaker/UNFSB0_BR.png"disablefullbright}
+brightmap sprite UNFRC0		{map "BRIGHTMAPS/Unmaker/UNFSC0_BR.png"disablefullbright}
+brightmap sprite UNFRD0		{map "BRIGHTMAPS/Unmaker/UNFSD0_BR.png"disablefullbright}
+brightmap sprite UNFRE0		{map "BRIGHTMAPS/Unmaker/UNFSE0_BR.png"disablefullbright}
+brightmap sprite UNFRF0		{map "BRIGHTMAPS/Unmaker/UNFSF0_BR.png"disablefullbright}
+
+brightmap sprite UNM2A0		{map "BRIGHTMAPS/Unmaker/UNMBB0_BR.png"disablefullbright}	//Default
+brightmap sprite UN1GA0		{map "BRIGHTMAPS/Unmaker/UNMBB0_BR.png"disablefullbright}	//Green
+brightmap sprite UN1RA0		{map "BRIGHTMAPS/Unmaker/UNMBB0_BR.png"disablefullbright}	//Red
+
+brightmap sprite UNMRB0		{map "BRIGHTMAPS/Unmaker/UNMRD0_BR.png"disablefullbright}	//Green
+brightmap sprite UNMRC0		{map "BRIGHTMAPS/Unmaker/UNMRD0_BR.png"disablefullbright}	//Green
+brightmap sprite UNMRD0		{map "BRIGHTMAPS/Unmaker/UNMRD0_BR.png"disablefullbright}	//Green
+brightmap sprite UNMGB0		{map "BRIGHTMAPS/Unmaker/UNMRD0_BR.png"disablefullbright}	//Red
+brightmap sprite UNMGC0		{map "BRIGHTMAPS/Unmaker/UNMRD0_BR.png"disablefullbright}	//Red
+brightmap sprite UNMGD0		{map "BRIGHTMAPS/Unmaker/UNMRD0_BR.png"disablefullbright}	//Red
+
+brightmap sprite UNM2B0		{map "BRIGHTMAPS/Unmaker/UNMBC0_BR.png"disablefullbright}	//Illuminated pentogram normal
+brightmap sprite UNM2C0		{map "BRIGHTMAPS/Unmaker/UNMBD0_BR.png"disablefullbright}
+brightmap sprite UNM2D0		{map "BRIGHTMAPS/Unmaker/UNMBE0_BR.png"disablefullbright}
+
+brightmap sprite UNMBB0		{map "BRIGHTMAPS/Unmaker/UNMBB0_BR.png"disablefullbright}
+brightmap sprite UNMBC0		{map "BRIGHTMAPS/Unmaker/UNMBC0_BR.png"disablefullbright}
+brightmap sprite UNMBD0		{map "BRIGHTMAPS/Unmaker/UNMBD0_BR.png"disablefullbright}
+brightmap sprite UNMBE0		{map "BRIGHTMAPS/Unmaker/UNMBE0_BR.png"disablefullbright}
+
+brightmap sprite UN1RA0		{map "BRIGHTMAPS/Unmaker/UNMBB0_BR.png"disablefullbright}	//Red
+brightmap sprite UN1RB0		{map "BRIGHTMAPS/Unmaker/UN1RB0_BR.png"disablefullbright}	//Red
+brightmap sprite UN1RC0		{map "BRIGHTMAPS/Unmaker/UN1RB0_BR.png"disablefullbright}	//Red
+brightmap sprite UN1RD0		{map "BRIGHTMAPS/Unmaker/UN1RB0_BR.png"disablefullbright}	//Red
+brightmap sprite UN1GA0		{map "BRIGHTMAPS/Unmaker/UNMBB0_BR.png"disablefullbright}	//Green
+brightmap sprite UN1GB0		{map "BRIGHTMAPS/Unmaker/UN1RB0_BR.png"disablefullbright}	//Green
+brightmap sprite UN1GC0		{map "BRIGHTMAPS/Unmaker/UN1RB0_BR.png"disablefullbright}	//Green
+brightmap sprite UN1GD0		{map "BRIGHTMAPS/Unmaker/UN1RB0_BR.png"disablefullbright}	//Green
+
+brightmap sprite UN2RA0		{map "BRIGHTMAPS/Unmaker/UNMBC0_BR.png"disablefullbright}	//Red
+brightmap sprite UN2RB0		{map "BRIGHTMAPS/Unmaker/UN2RB0_BR.png"disablefullbright}	//Red
+brightmap sprite UN2RC0		{map "BRIGHTMAPS/Unmaker/UN2RB0_BR.png"disablefullbright}	//Red
+brightmap sprite UN2RD0		{map "BRIGHTMAPS/Unmaker/UN2RB0_BR.png"disablefullbright}	//Red
+brightmap sprite UN2GA0		{map "BRIGHTMAPS/Unmaker/UNMBC0_BR.png"disablefullbright}	//Green
+brightmap sprite UN2GB0		{map "BRIGHTMAPS/Unmaker/UN2RB0_BR.png"disablefullbright}	//Green
+brightmap sprite UN2GC0		{map "BRIGHTMAPS/Unmaker/UN2RB0_BR.png"disablefullbright}	//Green
+brightmap sprite UN2GD0		{map "BRIGHTMAPS/Unmaker/UN2RB0_BR.png"disablefullbright}	//Green
+
+brightmap sprite UN3RA0		{map "BRIGHTMAPS/Unmaker/UNMBD0_BR.png"disablefullbright}	//Red
+brightmap sprite UN3RB0		{map "BRIGHTMAPS/Unmaker/UN3RB0_BR.png"disablefullbright}	//Red
+brightmap sprite UN3RC0		{map "BRIGHTMAPS/Unmaker/UN3RB0_BR.png"disablefullbright}	//Red
+brightmap sprite UN3RD0		{map "BRIGHTMAPS/Unmaker/UN3RB0_BR.png"disablefullbright}	//Red
+brightmap sprite UN3GA0		{map "BRIGHTMAPS/Unmaker/UNMBD0_BR.png"disablefullbright}	//Green
+brightmap sprite UN3GB0		{map "BRIGHTMAPS/Unmaker/UN3RB0_BR.png"disablefullbright}	//Green
+brightmap sprite UN3GC0		{map "BRIGHTMAPS/Unmaker/UN3RB0_BR.png"disablefullbright}	//Green
+brightmap sprite UN3GD0		{map "BRIGHTMAPS/Unmaker/UN3RB0_BR.png"disablefullbright}	//Green
+
+brightmap sprite UN4RA0		{map "BRIGHTMAPS/Unmaker/UNMBE0_BR.png"disablefullbright}	//Red
+brightmap sprite UN4RB0		{map "BRIGHTMAPS/Unmaker/UN4RB0_BR.png"disablefullbright}	//Red
+brightmap sprite UN4RC0		{map "BRIGHTMAPS/Unmaker/UN4RB0_BR.png"disablefullbright}	//Red
+brightmap sprite UN4RD0		{map "BRIGHTMAPS/Unmaker/UN4RB0_BR.png"disablefullbright}	//Red
+brightmap sprite UN4GA0		{map "BRIGHTMAPS/Unmaker/UNMBE0_BR.png"disablefullbright}	//Green
+brightmap sprite UN4GB0		{map "BRIGHTMAPS/Unmaker/UN4RB0_BR.png"disablefullbright}	//Green
+brightmap sprite UN4GC0		{map "BRIGHTMAPS/Unmaker/UN4RB0_BR.png"disablefullbright}	//Green
+brightmap sprite UN4GD0		{map "BRIGHTMAPS/Unmaker/UN4RB0_BR.png"disablefullbright}	//Green
+
 //MONSTERS
 //IMP
 brightmap sprite DI64A1		{map "brightmaps/DI64A1B.png"}

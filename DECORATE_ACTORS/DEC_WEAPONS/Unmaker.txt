@@ -386,10 +386,10 @@ Tag "Unmaker"
 		Loop
 	v1Ready:
 	Ready:
-		UNM2 A 0 A_JumpIfInventory("DemonEssence",5,5)
-		UNM2 B 0 A_JumpIfInventory("DemonEssence",10,4)
-		UNM2 C 0 A_JumpIfInventory("DemonEssence",15,3)
-		UNM2 D 0 A_JumpIfInventory("DemonEssence",25,2)
+		UNM2 D 0 A_JumpIfInventory("DemonEssence",25,5)
+		UNM2 C 0 A_JumpIfInventory("DemonEssence",15,4)
+		UNM2 B 0 A_JumpIfInventory("DemonEssence",10,3)
+		UNM2 A 0 A_JumpIfInventory("DemonEssence",5,2)
 		UNMA A 0
 		"####" "#" 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
@@ -544,11 +544,12 @@ Tag "Unmaker"
 		TNT1 A 0 A_PlaySound("UNMAKER",4)
 		TNT1 A 0 A_AlertMonsters
 		UNMA A 1
+		UNM2 E 2 Bright
 		TNT1 A 0 A_FireCustomMissile("UnmakerLaserWhite",0,0)
 		TNT1 A 0 A_TakeInventory("DemonEssence",25,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
+		UNM2 F 2 Bright
 		TNT1 A 0 A_ZoomFactor(1.0)
-		UNM2 A 3 Bright
 		UNMA DEFGH 1
 		UNMA A 18
 		Goto Ready
