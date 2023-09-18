@@ -145,6 +145,17 @@ States
 	}
 }
 
+actor HeadshotTarget2BLUE : HeadshotTargetBase
+{
+BloodType "Brutal_BloodBLUE"
+States
+	{
+	Spawn:
+		TNT1 A 3
+		Stop
+	}
+}
+
 actor HeadshotTarget4 : HeadshotTargetBase
 {
 States
@@ -187,8 +198,30 @@ States
 	}
 }
 
+actor HeadshotTarget6BLUE : HeadshotTargetBase
+{
+BloodType "Brutal_BloodBLUE"
+States
+	{
+	Spawn:
+		TNT1 A 7
+		Stop
+	}
+}
+
 actor HeadshotTarget8 : HeadshotTargetBase
 {
+States
+	{
+	Spawn:
+		TNT1 A 9
+		Stop
+	}
+}
+
+actor HeadshotTarget8BLUE : HeadshotTargetBase
+{
+BloodType "Brutal_BloodBLUE"
 States
 	{
 	Spawn:
@@ -260,6 +293,17 @@ States
 	}
 }
 
+actor HeadshotTarget16BLUE : HeadshotTargetBase
+{
+BloodType "Brutal_BloodBLUE"
+States
+	{
+	Spawn:
+		TNT1 A 17
+		Stop
+	}
+}
+
 actor HeadshotTarget20 : HeadshotTargetBase
 {
 States
@@ -273,6 +317,17 @@ States
 actor HeadshotTarget20Green : HeadshotTargetBase
 {
 BloodType "Brutal_BloodGreen"
+States
+	{
+	Spawn:
+		TNT1 A 21
+		Stop
+	}
+}
+
+actor HeadshotTarget20BLUE : HeadshotTargetBase
+{
+BloodType "Brutal_BloodBLUE"
 States
 	{
 	Spawn:

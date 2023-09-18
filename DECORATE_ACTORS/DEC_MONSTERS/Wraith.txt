@@ -199,7 +199,7 @@ MONSTER
 		Stop
 	Death:
 		TNT1 A 0 A_Scream
-		TNT1 AA 0 A_CustomMissile("Blood",25,0,random(0,360),2,random(0,180))
+		TNT1 AA 0 A_CustomMissile("Brutal_Blood",25,0,random(0,360),2,random(0,180))
 		TNT1 AA 0 A_CustomMissile("BloodMistSmall",25,0,random(0,360),2,random(0,180))
 		3WRT HIJK 5 A_CustomMissile("Brutal_FlyingBlood",20,0,random(0,360),2,random(0,180))
 		TNT1 A 0 A_NoBlocking
@@ -216,22 +216,22 @@ MONSTER
 		TNT1 A 0 A_NoBlocking
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,160))
-		TNT1 AA 0 A_CustomMissile("Blood",21,random(-7,7),random(0,360),2,random(0,180))
+		TNT1 AA 0 A_CustomMissile("Brutal_Blood",21,random(-7,7),random(0,360),2,random(0,180))
 		TNT1 AA 0 A_CustomMissile("BloodmistBig",25,random(-7,7),random(0,360),2,random(0,180))
 		PTXC ABC 2 A_CustomMissile("Brutal_FlyingBlood",25,0,random(0,360),2,random(0,180))
-		TNT1 A 0 A_CustomMissile("Blood",18,random(-7,7),random(0,360),2,random(0,180))
+		TNT1 A 0 A_CustomMissile("Brutal_Blood",18,random(-7,7),random(0,360),2,random(0,180))
 		TNT1 AA 0 A_CustomMissile("BloodMistSmall",21,random(-7,7),random(0,360),2,random(0,180))
 		PTXC DEF 2 A_CustomMissile("Brutal_FlyingBlood",20,0,random(0,360),2,random(40,90))
 		TNT1 AA 0 A_CustomMissile("WraithArm",45,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("WraithHead",60,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("WraithGib",30,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("Blood",15,random(-7,7),random(0,360),2,random(0,180))
+		TNT1 A 0 A_CustomMissile("Brutal_Blood",15,random(-7,7),random(0,360),2,random(0,180))
 		TNT1 AA 0 A_CustomMissile("BloodMistSmall",17,random(-7,7),random(0,360),2,random(0,180))
 		PTXC GHI 2 A_CustomMissile("Brutal_FlyingBlood",16,0,random(0,360),2,random(55,90))
-		TNT1 A 0 A_CustomMissile("Blood",12,random(-7,7),random(0,360),2,random(0,180))
+		TNT1 A 0 A_CustomMissile("Brutal_Blood",12,random(-7,7),random(0,360),2,random(0,180))
 		TNT1 A 0 A_CustomMissile("BloodMistSmall",13,random(-7,7),random(0,360),2,random(0,180))
 		PTXC JK 2 A_CustomMissile("Brutal_FlyingBlood",12,0,random(0,360),2,random(70,90))
-		TNT1 A 0 A_CustomMissile("Blood",9,random(-7,7),random(0,360),2,random(0,180))
+		TNT1 A 0 A_CustomMissile("Brutal_Blood",9,random(-7,7),random(0,360),2,random(0,180))
 		TNT1 A 0 A_CustomMissile("BloodMistSmall",9,0,random(0,360),2,random(0,180))
 		PTXC L 35
 		PTXC L -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
@@ -301,7 +301,7 @@ MONSTER
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn")
 		TNT1 A 0 A_SpawnItemEx("BurningFleshEffect2",0,0,5)
-		TNT1 AAA 0 A_SpawnItemEx("Blood",0,0,30)
+		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
 		CRB1 ABCDEFGH 4
 		CRB1 H -1

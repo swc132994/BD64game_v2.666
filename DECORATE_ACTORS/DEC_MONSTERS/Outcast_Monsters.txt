@@ -505,7 +505,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 AAA 0 A_CustomMissile("XDeath2b",52,0,random(0,360),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2b",52,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",52,0,random(150,210),2,random(10,50))
-		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPieceBlue",52,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPieceStalker",52,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("Brains3",50,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_Scream
@@ -521,7 +521,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 AAAA 0 A_CustomMissile("XDeath2b",52,0,random(0,360),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("XDeath2b",52,0,random(150,210),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("XDeath3",52,0,random(150,210),2,random(10,50))
-		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPieceBlue",52,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPieceStalker",52,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("Brains3",50,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
@@ -589,7 +589,7 @@ BounceSound "dart/shotx"
 	}
 }
 
-Actor SmallBrainPieceBlue : SmallBrainPiece	{Translation "Ice"}
+Actor SmallBrainPieceStalker : SmallBrainPiece	{Translation "Ice"}
 
 Actor 64Stalker : 64LostSoul 19107
 {

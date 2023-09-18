@@ -146,7 +146,7 @@ MeleeRange 60 //default 44
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn")
 		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)
-		TNT1 AAA 0 A_SpawnItemEx("Blood",0,0,30)
+		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
 		CRB1 ABCDEFGH 4
 		CRB1 H -1
@@ -549,7 +549,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn")
 		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)
-		TNT1 AAA 0 A_SpawnItemEx("Blood",0,0,30)
+		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
 		CRB1 ABCDEFGH 4
 		CRB1 H -1

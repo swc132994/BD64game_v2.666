@@ -500,3 +500,104 @@ decalgroup BrutalBloodSuperGreen
 BrutalBloodSuperGreen01 6
 BrutalBloodSuperGreen02 6
 }
+
+//BLUE-----------------------
+decal BrutalBloodSmearBLUE1
+{
+pic PSPLNEW4
+x-scale 0.4
+y-scale 0.4
+randomflipx
+animator BrutalBloodSmearer
+}
+
+decal BrutalBloodSmearBLUE2
+{
+pic PSPLNEW5
+x-scale 0.4
+y-scale 0.4
+randomflipx
+animator BrutalBloodSmearer
+}
+
+decalgroup BrutalBloodSmearBLUE
+{
+BrutalBloodSmearBLUE1 1
+BrutalBloodSmearBLUE2 1
+}
+
+decal BrutalBloodSmearSmallBLUE1
+{
+pic PSPLNEW8
+x-scale 0.25
+y-scale 0.25
+randomflipx
+animator BrutalBloodSmearer
+}
+
+decal BrutalBloodSmearSmallBLUE2
+{
+pic PSPLNEW7
+x-scale 0.2
+y-scale 0.2
+randomflipx
+animator BrutalBloodSmearer
+}
+
+decalgroup BrutalBloodSmearSmallBLUE
+{
+BrutalBloodSmearSmallBLUE1 1
+BrutalBloodSmearSmallBLUE2 1
+}
+
+// BLUE Blood
+decal BrutalBloodSplatBLUE01
+{
+pic PSPLNEW
+x-scale 0.25
+y-scale 0.25
+randomflipx
+randomflipy
+//lowerdecal BrutalBloodSmearSmall
+}
+
+decal BrutalBloodSplatBLUE02
+{
+pic PSPLNEW2
+x-scale 0.25
+y-scale 0.25
+randomflipx
+randomflipy
+//lowerdecal BrutalBloodSmear
+}
+
+decalgroup BrutalBloodSplatBLUE
+{
+BrutalBloodSplatBLUE01 6
+BrutalBloodSplatBLUE02 6
+}
+
+decal BrutalBloodSuperBLUE01
+{
+pic PSPLBIG1
+x-scale 0.45
+y-scale 0.45
+randomflipx
+randomflipy
+lowerdecal BrutalBloodSmearBLUE
+}
+
+decal BrutalBloodSuperBLUE02
+{
+pic PSPLBIG2
+x-scale 0.45
+y-scale 0.45
+randomflipx
+lowerdecal BrutalBloodSmearBLUE
+}
+
+decalgroup BrutalBloodSuperBLUE
+{
+BrutalBloodSuperBLUE01 6
+BrutalBloodSuperBLUE02 6
+}
