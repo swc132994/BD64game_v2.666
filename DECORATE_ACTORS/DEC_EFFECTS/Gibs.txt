@@ -1461,7 +1461,6 @@ renderstyle translucent
 //HELLKNIGHT
 ACTOR XDeathHKArm : XDeathZombieArm1
 {
-Translation "16:31=%[0,0,0]:[0,1,0]","176:191=%[0,0,0]:[0,1,0]","32:47=%[0,0,0]:[0,1,0]"
 	States
 	{
 	Spawn:
@@ -1489,7 +1488,7 @@ ACTOR XDeathBaronArm : XDeathZombieArm1
 		Wait
 	Death:
 		BGB2 B 35
-		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpot")
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotGREEN")
 		BGB2 B -1
 		Stop
 	}
@@ -1498,7 +1497,6 @@ ACTOR XDeathBaronArm : XDeathZombieArm1
 //KNIGHTMARE
 ACTOR KnightmareArm : XDeathZombieArm1
 {
-Translation "16:31=%[0,0,0]:[0,1,0]","176:191=%[0,0,0]:[0,1,0]","32:47=%[0,0,0]:[0,1,0]"
 Alpha 0.6
 RenderStyle Translucent
 	States
@@ -1830,7 +1828,6 @@ Scale 0.9
 //Belphegor
 ACTOR BelphegorLeg : XDeathZombieArm1
 {
-Translation "16:31=%[0,0,0]:[0,1,0]","176:191=%[0,0,0]:[0,1,0]","32:47=%[0,0,0]:[0,1,0]"
 Scale 1
 	States
 	{
@@ -1849,7 +1846,6 @@ Scale 1
 
 ACTOR BelphegorArm : XDeathHKArm
 {
-Translation "16:31=%[0,0,0]:[0,1,0]","176:191=%[0,0,0]:[0,1,0]","32:47=%[0,0,0]:[0,1,0]"
 Scale 1
 }
 
