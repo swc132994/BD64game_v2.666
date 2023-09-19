@@ -177,6 +177,8 @@ DropItem "DemonEssenceLargeSpawner"
 DropItem "Soulsphere",64
 Obituary "The Eradicator unmade %o."
 Tag "Eradicator"
+BloodType "Brutal_BloodBLUE"
+BloodColor "45 34 7F"	//Hex value
 +EXTREMEDEATH
 +AVOIDMELEE
 +QUICKTORETALIATE
@@ -261,17 +263,17 @@ Tag "Eradicator"
 		BSGI G 4 Bright A_SpawnItemEx("64BossExplosion",-64,-64,0,0,0,0,0,130)
 		BSGI G 4 Bright A_SpawnItemEx("64BossExplosion",-64,-64,50,0,0,0,0,130)
 		TNT1 A 0 A_NoBlocking
-		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
-		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
-		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncherBLUE",0,0,random(0,360),2,random(50,130))
+		TNT1 AA 0 A_CustomMissile("XDeath1BLUE",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2BLUE",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3BLUE",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPieceBLUE",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_SpawnItemEx("64BarrelExplosion",0,0,32)
 		TNT1 A 0 A_SpawnItemEx("64BarrelExplosion",0,0,90)
-		TNT1 AAAAAAAAA 0 A_CustomMissile("BurningXDeath1",42,0,random(0,360),2,random(0,90))
-		TNT1 AAAAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
-		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("SuperGoreSpawner",45,0,random(0,360),2,random(10,90))
+		TNT1 AAAAAAAAA 0 A_CustomMissile("BurningXDeath1BLUE",42,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBLUE",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("BloodmistExtraBigBLUE",45,0,random(0,360),2,random(10,90))
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("SuperGoreSpawnerBLUE",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_CustomMissile("EradicatorHead",55,0,random(0,360),2,random(40,90))
 		BSGI H 4 Bright A_SpawnItemEx("64BossExplosion",64,64,100,0,0,0,0,130)
 		BSGI I 4 Bright A_SpawnItemEx("64BossExplosion",-64,-64,0,0,0,0,0,130)
@@ -281,7 +283,7 @@ Tag "Eradicator"
 		TNT1 A 0 A_BossDeath
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		BSGI P 35
-		BSGI P -1 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
+		BSGI P -1 A_CustomMissile("GrowingBloodPoolBigBLUE",0,0,random(0,360),2,random(0,90))
 		Stop
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed")

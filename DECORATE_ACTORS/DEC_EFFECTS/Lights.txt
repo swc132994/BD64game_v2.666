@@ -289,7 +289,7 @@ Height 1
 
 Actor 64SmallBloodPoolBLUE : 64SmallBloodPool		//oldblood model
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 }
 
 actor 64BrainStem : 64Gibs Replaces BrainStem

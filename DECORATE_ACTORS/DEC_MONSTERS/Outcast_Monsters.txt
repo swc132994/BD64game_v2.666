@@ -468,6 +468,8 @@ DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was blown up by a nightcrawler."
 Tag "Nightcrawler"
 DropItem "DemonEssenceSpawner"
+BloodType "Brutal_BloodBLUE"
+BloodColor "45 34 7F"	//Hex value
 +DONTHARMSPECIES
 	States
 	{
@@ -500,32 +502,30 @@ DropItem "DemonEssenceSpawner"
 		NTCR F 3 A_Pain
 		goto See+1
 	Death:
-		TNT1 A 0 A_CustomMissile("XDeath1",52,0,random(150,210),2,random(10,50))
-		TNT1 AAA 0 A_CustomMissile("XDeath1",52,0,random(0,360),2,random(10,50))
-		TNT1 AAA 0 A_CustomMissile("XDeath2b",52,0,random(0,360),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("XDeath2b",52,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("XDeath3",52,0,random(150,210),2,random(10,50))
-		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPieceStalker",52,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("Brains3",50,0,random(150,210),2,random(10,50))
-		TNT1 AAAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath1BLUE",52,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("XDeath1BLUE",52,0,random(0,360),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("XDeath2bBLUE",52,0,random(0,360),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath2bBLUE",52,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath3BLUE",52,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPieceBLUE",52,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAAA 0 A_CustomMissile("Brutal_BloodBLUE",55,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		NTCR GHIJ 5
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		NTCR K 35 A_BossDeath
-		NTCR K -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		NTCR K -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
 		Stop
 	XDeath:
-		TNT1 A 0 A_CustomMissile("XDeath1",52,0,random(150,210),2,random(10,50))
-		TNT1 AAAA 0 A_CustomMissile("XDeath1",52,0,random(0,360),2,random(10,50))
-		TNT1 AAAA 0 A_CustomMissile("XDeath2b",52,0,random(0,360),2,random(10,50))
-		TNT1 AAA 0 A_CustomMissile("XDeath2b",52,0,random(150,210),2,random(10,50))
-		TNT1 AAA 0 A_CustomMissile("XDeath3",52,0,random(150,210),2,random(10,50))
-		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPieceStalker",52,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("Brains3",50,0,random(150,210),2,random(10,50))
-		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
-		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
-		TNT1 AAAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath1BLUE",52,0,random(150,210),2,random(10,50))
+		TNT1 AAAA 0 A_CustomMissile("XDeath1BLUE",52,0,random(0,360),2,random(10,50))
+		TNT1 AAAA 0 A_CustomMissile("XDeath2bBLUE",52,0,random(0,360),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("XDeath2bBLUE",52,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("XDeath3BLUE",52,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPieceBLUE",52,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistBLUE",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBigBLUE",45,0,random(0,360),2,random(10,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("Brutal_BloodBLUE",55,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeathBlueSpiderLeg1",35,0,random(0,360),2,random(10,60))
 		TNT1 A 0 A_CustomMissile("XDeathBlueSpiderLeg2",35,0,random(0,360),2,random(30,60))
 		TNT1 A 0 A_CustomMissile("XDeathBlueSpiderLeg3",35,0,random(0,360),2,random(20,60))
@@ -534,7 +534,7 @@ DropItem "DemonEssenceSpawner"
 		XBBR B 5 A_NoBlocking
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		XBBR C 35 A_BossDeath
-		XBBR C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		XBBR C -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
 		Stop
 	Raise:
 		NTCR KJIHG 5
@@ -588,8 +588,6 @@ BounceSound "dart/shotx"
 		Stop
 	}
 }
-
-Actor SmallBrainPieceStalker : SmallBrainPiece	{Translation "Ice"}
 
 Actor 64Stalker : 64LostSoul 19107
 {

@@ -174,7 +174,7 @@ Decal BrutalBloodSplatGreen
 
 Actor Brutal_BloodBLUE : Brutal_Blood
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 Decal BrutalBloodSplatBLUE
 	states
 	{
@@ -282,7 +282,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 
 Actor BloodHitBLUE : BloodHit
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 }
 
 actor Big_Blood : Brutal_Blood
@@ -390,7 +390,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 ACTOR Brutal_FlyingBloodBLUE : Brutal_FlyingBlood
 {
 Decal BloodSplatBLUE
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 	States
 	{
 	Spawn:
@@ -434,7 +434,7 @@ Speed 7
 
 ACTOR Brutal_FlyingBloodLevel3BLUE : Brutal_FlyingBloodBLUE
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 Scale 1.0
 Speed 7
 }
@@ -514,7 +514,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 ACTOR Brutal_BloodSpotBLUE : Brutal_BloodSpot
 {
 Decal BrutalBloodSplatBLUE
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 }
 
 actor GiantBloodSpot : Brutal_BloodSpot
@@ -548,7 +548,7 @@ Scale 1.1
 
 actor GiantBloodSpotBLUE : Brutal_BloodSpotBLUE
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 Scale 1.1
 	States
 	{
@@ -574,7 +574,7 @@ Scale 0.7
 
 actor BigBloodSpotBLUE : GiantBloodSpotBLUE
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 Scale 0.7
 }
 
@@ -593,7 +593,7 @@ Scale 0.4
 
 actor MediumBloodSpotBlue : GiantBloodSpot
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 game Doom
 Scale 0.4
 }
@@ -670,7 +670,7 @@ Decal BrutalBloodSplatGreen
 
 ACTOR CeilBloodLauncherBLUE : CeilBloodLauncher
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 Decal BrutalBloodSplatBLUE
 	States
 	{
@@ -746,7 +746,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 ACTOR DetectCeilBloodSimplerBLUE : DetectCeilBloodSimpler
 {
 
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 	States
 	{
 	Spawn:
@@ -785,7 +785,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 
 ACTOR DetectCeilBloodSimplerLargeBLUE : DetectCeilBloodSimplerBLUE
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 	States
 	{
 	Death:
@@ -868,7 +868,7 @@ Decal BrutalBloodSuperBLUE
 damagetype Blood
 +THRUACTORS
 +BLOODLESSIMPACT
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 	States
 	{
 	Spawn:
@@ -988,7 +988,7 @@ Projectile
 +MOVEWITHSECTOR
 +NOGRAVITY
 +DontSplash
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 	states
 	{
 	Spawn:
@@ -1065,7 +1065,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 
 actor CeilBloodSpotLargeBLUE : CeilBloodSpotBLUE
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 	states
 	{
 	Spawn:
@@ -1126,7 +1126,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 
 ACTOR CeilBloodTinyBloodSpawnerBLUE : TinyBlood
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 +NOGRAVITY
 +THRUACTORS
 +NOCLIP
@@ -1176,7 +1176,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 
 ACTOR CeilBloodLargeBloodSpawnerBLUE : TinyBlood
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 +NOGRAVITY
 +THRUACTORS
 +NOCLIP
@@ -1226,7 +1226,7 @@ BounceFactor 0.1
 
 ACTOR BloodDripingFromCeilingBLUE : TinyBlood
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 BounceFactor 0.1
 +DOOMBOUNCE
 +THRUACTORS
@@ -1276,7 +1276,7 @@ BounceFactor 0.1
 
 ACTOR BloodDripingFromCeilingBigBLUE : TinyBlood
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 XScale 0.4
 YScale 0.8
 BounceFactor 0.1
@@ -1353,7 +1353,7 @@ scale 0.3
 
 ACTOR DripingBloodLeavesPoolBLUE : TinyBlood
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 scale 0.3
 	States
 	{
@@ -1401,7 +1401,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 
 ACTOR DripingBloodLeavesSmallPoolBLUE : DripingBloodLeavesPool
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 -DONTSPLASH
 	States
 	{
@@ -1456,7 +1456,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 actor Brutal_FlyingBloodTrailBLUE : Brutal_FlyingBloodTrail
 {
 Decal BrutalBloodSplatBLUE
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 }
 
 actor Brutal_FlyingBloodTrail5 : Brutal_FlyingBloodTrail
@@ -1472,7 +1472,7 @@ Decal "None"
 
 actor Brutal_FlyingBloodTrail5BLUE : Brutal_FlyingBloodTrailBLUE
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 Decal "None"
 }
 
@@ -2041,11 +2041,16 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 actor GrowingBloodPoolBLUE : GrowingBloodPool	//modelled
 {
 Decal BrutalBloodSplatBLUE
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 }
 
 actor GrowingBloodPoolBig : GrowingBloodPool	//modelled
 {}	//size determined from modeldef
+
+actor GrowingBloodPoolBigBLUE : GrowingBloodPool	//modelled
+{
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
+}	//size determined from modeldef
 
 ACTOR XDeath1Trail : Brutal_FlyingBlood
 {
@@ -2082,7 +2087,7 @@ Speed 0
 
 ACTOR XDeath1TrailBLUE : Brutal_FlyingBloodBLUE
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 scale 0.8
 gravity 1
 Speed 0
@@ -2148,7 +2153,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 ACTOR Brutal_FlyingBloodFakeBLUE : Brutal_FlyingBloodFake
 {
 Decal BrutalBloodSplatBLUE
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 }
 
 actor Bloodmist : Brutal_FlyingBlood
@@ -2194,7 +2199,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 actor BloodmistBLUE : Bloodmist
 {
 Decal BrutalBloodSuperBLUE
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 }
 
 actor BloodmistBig : Bloodmist
@@ -2214,7 +2219,7 @@ GRAVITY 0.4
 
 actor BloodmistBigBLUE : BloodmistBLUE
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 scale 0.9
 speed 4
 GRAVITY 0.4
@@ -2235,7 +2240,7 @@ Gravity 0.8
 
 actor BloodmistSmallBLUE : BloodmistBLUE
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 scale 0.45
 Gravity 0.8
 }
@@ -2253,7 +2258,7 @@ scale 1.4
 
 actor BloodmistExtraBigBLUE : BloodmistBLUE
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 scale 1.4
 }
 
@@ -2526,7 +2531,7 @@ Decal BloodSuperGreen
 
 Actor SuperGoreSpawnerBLUE : SuperGoreSpawner
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 Decal BloodSuperBLUE
 	states
 	{
@@ -2559,7 +2564,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 
 Actor SuperGoreSpawner2BLUE : SuperGoreSpawnerBLUE
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 	states
 	{
 	Spawn:
@@ -2606,7 +2611,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 actor SuperGoreBLUE : SuperGore
 {
 Decal BloodSplatBLUE
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 }
 
 Actor SuperGoreMistSmall : SuperGore
@@ -2628,7 +2633,7 @@ Gravity 0.1
 Actor SuperGoreMistSmallBLUE : SuperGoreBLUE
 {
 bloodcolor "18 8c 31"
-Translation "0:255=%[0,0,0]:[0,1,2]"//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 Scale 1.0
 Speed 2
 Gravity 0.1
