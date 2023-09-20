@@ -212,6 +212,7 @@ weapons/unmaker dslaser
 $limit weapons/unmaker 0
 
 OutHelltime	DSHTIME
+UnmakerFireModeSwitch	UNFMSW
 
 //MP40
 MP40 64MP40

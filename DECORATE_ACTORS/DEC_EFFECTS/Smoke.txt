@@ -291,7 +291,7 @@ BounceFactor 0.5
 		SMK1 K 2 A_FadeOut(0.01)
 		wait
 	Death:
-		TNT1 A 1
+		TNT1 A 5
 		Stop
 	Stap:
 		TNT1 A 1
@@ -299,26 +299,29 @@ BounceFactor 0.5
 	}
 }
 
+ACTOR MediumBlackSmoke : BigBlackSmoke
+{
+Scale 0.3
+}
+
 ACTOR BarrelExplosionFire : BigBlackSmoke
 {
 Scale 1.0
 Speed 3
+Height 10
+Radius 5
 Alpha 1.0
 Renderstyle Add
+Decal FireworxScorch
+PROJECTILE
 -NOCLIP
 +DOOMBOUNCE
 +THRUACTORS
 	States
 	{
 	Spawn:
-		FIR3 ABCDEFGHIJKLMNOP 1 Bright
+		FIR3 ABCDEFGHIJKLMNOP 1 Bright light(ROCKET_X1)
 		Goto Death
-	Death:
-		TNT1 A 1
-		Stop
-	Stap:
-		TNT1 A 1
-		Stop
 	}
 }
 
@@ -330,12 +333,7 @@ Speed 24
 	States
 	{
 	Spawn:
-		FIR3 ABCDEFG 1 Bright A_CustomMissile("BarrelExplosionFire",0,0,random(0,360),2,random(10,40))
+		FIR3 ABCDEFG 1 NoDelay Bright light(ROCKET_X2) A_CustomMissile("BarrelExplosionFire",0,0,random(0,360),2,random(10,40))
 		Goto Death
 	}
-}
-
-ACTOR MediumBlackSmoke : BigBlackSmoke
-{
-Scale 0.3
 }
