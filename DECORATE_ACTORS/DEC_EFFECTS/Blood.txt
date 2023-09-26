@@ -27,9 +27,6 @@ BounceFactor 0.01
 		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
 		BLUD Z 500
 		Stop
-	NoSpawn:
-		TNT1 A 1
-		Stop
 	Splash:
 		TNT1 AAA 0 A_CustomMissile("Underblood1",7,0,random(0,360),2,random(30,150))
 		TNT1 A 1
@@ -38,8 +35,9 @@ BounceFactor 0.01
 		TNT1 A 0 A_PlaySound("blooddrop3")
 		XDT1 EFGHIJKL 2
 		stop
+	NoSpawn:
 	Crush:
-		TNT1 A 1
+		TNT1 A 3
 		Stop
 	}
 }
@@ -1194,9 +1192,11 @@ Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 ACTOR BloodDripingFromCeiling : TinyBlood
 {
 BounceFactor 0.1
+HEALTH 0
 +DOOMBOUNCE
 +THRUACTORS
 +CLIENTSIDEONLY
++CORPSE
 	States
 	{
 	Spawn:
@@ -1207,13 +1207,9 @@ BounceFactor 0.1
 	}
 }
 
-ACTOR BloodDripingFromCeilingGreen : TinyBlood
+ACTOR BloodDripingFromCeilingGreen : BloodDripingFromCeiling
 {
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
-BounceFactor 0.1
-+DOOMBOUNCE
-+THRUACTORS
-+CLIENTSIDEONLY
 	States
 	{
 	Spawn:
@@ -1224,13 +1220,9 @@ BounceFactor 0.1
 	}
 }
 
-ACTOR BloodDripingFromCeilingBLUE : TinyBlood
+ACTOR BloodDripingFromCeilingBLUE : BloodDripingFromCeiling
 {
 Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
-BounceFactor 0.1
-+DOOMBOUNCE
-+THRUACTORS
-+CLIENTSIDEONLY
 	States
 	{
 	Spawn:
@@ -1241,12 +1233,10 @@ BounceFactor 0.1
 	}
 }
 
-ACTOR BloodDripingFromCeilingBig : TinyBlood
+ACTOR BloodDripingFromCeilingBig : BloodDripingFromCeiling
 {
 XScale 0.4
 YScale 0.8
-BounceFactor 0.1
-+DOOMBOUNCE
 	States
 	{
 	Spawn:
@@ -1257,13 +1247,11 @@ BounceFactor 0.1
 	}
 }
 
-ACTOR BloodDripingFromCeilingBigGreen : TinyBlood
+ACTOR BloodDripingFromCeilingBigGreen : BloodDripingFromCeiling
 {
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 XScale 0.4
 YScale 0.8
-BounceFactor 0.1
-+DOOMBOUNCE
 	States
 	{
 	Spawn:
@@ -1274,13 +1262,11 @@ BounceFactor 0.1
 	}
 }
 
-ACTOR BloodDripingFromCeilingBigBLUE : TinyBlood
+ACTOR BloodDripingFromCeilingBigBLUE : BloodDripingFromCeiling
 {
 Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 XScale 0.4
 YScale 0.8
-BounceFactor 0.1
-+DOOMBOUNCE
 	States
 	{
 	Spawn:
@@ -1494,7 +1480,6 @@ Decal BloodSplat
 +THRUGHOST
 +THRUACTORS
 +FLOORCLIP
-+ISMONSTER		//INFRARED
 +NOGRAVITY
 +DOOMBOUNCE
 +CORPSE
@@ -1529,8 +1514,10 @@ BounceFactor 1
 		XDT5 O 800
 		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
 		Loop
+	Crush:
+		TNT1 A 1 A_SpawnItemEx("MinuscleBloodSpot",0,0,0,0,0,0,0,SXF_TRANSFERTRANSLATION)
 	DoNothing:
-		TNT1 A 1
+		TNT1 A 3
 		Stop
 	}
 }
@@ -1628,7 +1615,6 @@ Mass 1
 +THRUGHOST
 +THRUACTORS
 +FLOORCLIP
-+ISMONSTER		//INFRARED
 +DOOMBOUNCE
 +CORPSE
 Bouncefactor 1
@@ -1656,8 +1642,10 @@ BounceCount 1
 		XDT5 O 800
 		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
 		Loop
+	Crush:
+		TNT1 A 1 A_SpawnItemEx("MinuscleBloodSpot",0,0,0,0,0,0,0,SXF_TRANSFERTRANSLATION)
 	DoNothing:
-		TNT1 A 1
+		TNT1 A 3
 		Stop
 	}
 }
@@ -1688,9 +1676,6 @@ Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
 		XDT5 O 800
 		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
 		Loop
-	DoNothing:
-		TNT1 A 1
-		Stop
 	}
 }
 
@@ -1720,9 +1705,6 @@ Translation "Ice"//BLUE
 		XDT5 O 800
 		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
 		Loop
-	DoNothing:
-		TNT1 A 1
-		Stop
 	}
 }
 
@@ -1747,7 +1729,6 @@ BounceFactor 1
 +THRUGHOST
 +THRUACTORS
 +FLOORCLIP
-+ISMONSTER		//INFRARED
 +CORPSE
 	States
 	{
@@ -1799,7 +1780,6 @@ BounceCount 0
 +THRUGHOST
 +THRUACTORS
 +FLOORCLIP
-+ISMONSTER		//INFRARED
 +CORPSE
 	States
 	{
