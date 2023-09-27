@@ -1863,34 +1863,76 @@ object 64AlphaShock
 }
 
 //Hellstorm
-Flickerlight2 TornadoDemonLeaves
+flickerlight STORMATK4
 {
-Color 0.4 0.2 0.3
-Size 40
-SecondarySize 48
-Interval 1
-Offset 0 40 0
+color 1.0 0.0 1.0
+size 64
+secondarySize 72
+chance 0.3
+offset 0 48 0
 }
 
-Flickerlight2 TornadoDemonLeavesWeaker
+flickerlight STORMATK5
 {
-Color 0.4 0.2 0.3
-Size 30
-SecondarySize 38
-Interval 1
-Offset 0 40 0
+color 1.0 0.0 1.0
+size 80
+secondarySize 88
+chance 0.3
+offset 0 40 0
 }
 
-Object 64Hellstorm
+flickerlight STORMATK6
 {
-Frame S1R3F {Light TornadoDemonLeavesWeaker}
-Frame S1R3G {Light TornadoDemonLeavesWeaker}
-Frame S1R3H {Light TornadoDemonLeaves}
-Frame S1R3K {Light TornadoDemonLeaves}
-Frame S1R3L {Light TornadoDemonLeaves}
-Frame S1R3M {Light TornadoDemonLeavesWeaker}
-Frame SP1N {Light TornadoDemonLeavesWeaker}
-Frame ZP1N {Light TornadoDemonLeaves}
+color 0.7 0.0 0.7
+size 96
+secondarySize 104
+chance 0.3
+offset 0 40 0
+}
+
+flickerlight STORMATK7
+{
+color 0.3 0.0 0.3
+size 104
+secondarySize 112
+chance 0.3
+offset 0 40 0
+}
+
+pulselight STORWIND
+{
+color 0.5 0.0 0.5
+size 32
+secondarySize 40
+interval 0.5
+offset 0 36 0
+}
+
+pulselight STORNADO
+{
+color 0.6 0.0 0.6
+size 64
+secondarySize 70
+interval 0.5
+offset 0 36 0
+}
+
+object 64Hellstorm
+{
+frame S1R3G {light STORMATK4}
+frame S1R3H {light STORMATK4}
+frame S1R3I {light STORMATK4}
+frame S1R3J {light STORMATK4}
+frame S1R3K {light STORMATK4}
+frame S1R3L {light STORMATK4}
+frame S1R3M {light STORMATK5}
+frame S1R3N {light STORMATK5}
+frame S1R3O {light STORMATK6}
+frame S1R3P {light STORMATK6}
+frame S1R3Q {light STORMATK7}
+
+frame SP1N {light STORWIND}
+frame ZP1N {light STORNADO}
 }
 
 object 64HellstormSoulBall1

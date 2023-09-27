@@ -148,7 +148,6 @@ Actor 64Soulsphere : CustomInventory Replaces Soulsphere
 Scale 0.7
 +COUNTITEM
 +INVENTORY.ALWAYSPICKUP
-+INVENTORY.FANCYPICKUPSOUND
 Inventory.PickupMessage "$GOTSUPER"
 Inventory.PickupSound "misc/p_pkup"
 Inventory.PickupAnnouncerEntry "soulsphere"
@@ -747,7 +746,6 @@ Inventory.MaxAmount 0
 Inventory.PickupSound "misc/p_pkup"
 Inventory.PickupMessage "Advanced Area Scanner"
 +INVENTORY.ALWAYSPICKUP
-+INVENTORY.FANCYPICKUPSOUND
 +COUNTITEM
 	States
 	{
