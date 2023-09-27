@@ -13,8 +13,8 @@ height 1
 Gravity 0.5
 Damage 0
 RenderStyle Add
+BounceType "Doom"
 BounceFactor 0.01
-+DOOMBOUNCE
 +MISSILE
 +NOTELEPORT
 +NOBLOCKMAP
@@ -60,8 +60,8 @@ Gravity 0.7
 rADIUS 1
 HEIGHT 1
 -NOCLIP
-+DOOMBOUNCE
-BOUNCEFACTOR 0.5
+BounceType "Doom"
+BounceFactor 0.5
 	States
 	{
 	Spawn:
@@ -79,7 +79,7 @@ ACTOR HitSpark22 : HitSpark
 Scale 0.03
 speed 8
 Gravity 0.8
-Bouncefactor 0.01
+BounceFactor 0.01
 	States
 	{
 	Spawn:
@@ -94,7 +94,7 @@ ACTOR HitSpark23 : HitSpark
 Scale 0.06
 speed 8
 Gravity 1.0
--DOOMBOUNCE
+BounceType "None"
 	States
 	{
 	Spawn:
@@ -113,12 +113,12 @@ Mass 0
 Speed 12
 Gravity 0.8
 RenderStyle Add
--NoGravity
-+Missile
-+NoBlockMap
-+DontSplash
+-NOGRAVITY
++MISSILE
++NOBLOCKMAP
++DONTSPLASH
 +FORCEXYBILLBOARD
-+DoomBounce
+BounceType "Doom"
 BounceFactor 0.2
 	States
 	{
@@ -135,8 +135,8 @@ Scale 0.7
 Speed 0
 Alpha 0.9
 RenderStyle Add
--DOOMBOUNCE
-+NoGravity
+BounceType "None"
++NOGRAVITY
 	States
 	{
 	Spawn:

@@ -249,8 +249,8 @@ Radius 1
 Height 1
 Alpha 0.8
 RenderStyle Add
+BounceType "Doom"
 BounceFactor 0.5
-+DOOMBOUNCE
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH

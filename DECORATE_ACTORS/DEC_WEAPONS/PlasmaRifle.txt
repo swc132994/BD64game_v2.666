@@ -510,7 +510,10 @@ Decal "SmallerScorch"
 		PLSE E 1 Bright
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_JumpIf(waterlevel > 0,"Death")
-		TNT1 A 0 A_ChangeFlag("DOOMBOUNCE",1)
+		TNT1 A 0 A_ChangeFlag("BOUNCEONWALLS",1)
+		TNT1 A 0 A_ChangeFlag("BOUNCEONFLOORS",1)
+		TNT1 A 0 A_ChangeFlag("ALLOWBOUNCEONACTORS",1)
+		TNT1 A 0 A_ChangeFlag("BOUNCEAUTOOFF",1)
 		TNT1 A 0 A_CustomMissile("ExplosionParticleHeavyBlue",0,0,random(-30,30),2,random(40,160))
 		PLSE K 1 Bright A_SetScale(2.0,3.0)
 		TNT1 A 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))

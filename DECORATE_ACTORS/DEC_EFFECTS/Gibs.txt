@@ -19,7 +19,7 @@ damagetype Blood
 +THRUACTORS
 +FLOORCLIP
 +ISMONSTER		//INFRARED
-+DOOMBOUNCE
+BounceType "Doom"
 BounceCount 1
 BounceFactor 1
 	States

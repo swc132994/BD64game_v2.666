@@ -940,11 +940,11 @@ Height 8
 Speed 11
 Mass 1
 Damage 3
-damagetype Fire
+damagetype "Fire"
 Decal BigScorch
+BounceType "None"
 BounceFactor 0.1
 +DONTSPLASH
--DOOMBOUNCE
 +NOBLOCKMAP
 +MISSILE
 +NOTELEPORT

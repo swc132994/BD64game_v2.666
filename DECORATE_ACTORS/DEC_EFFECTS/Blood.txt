@@ -4,21 +4,21 @@ ACTOR TinyBlood
 game Doom
 scale 0.2
 speed 7
-health 1
+health 0
 radius 8
 height 1
 Gravity 0.7
 Decal BrutalBloodSplat
 -EXPLODEONWATER
-+DontSplash
++DONTSPLASH
 +MISSILE
 +CLIENTSIDEONLY
 +NOTELEPORT
 +NOBLOCKMAP
 +FORCEXYBILLBOARD
-+DOOMBOUNCE
 +THRUACTORS
-+ISMONSTER
++CORPSE
+BounceType "Doom"
 BounceCount 0
 BounceFactor 0.01
 	States
@@ -619,7 +619,7 @@ Speed 15
 Gravity 0.0
 damagetype Blood
 Decal BrutalBloodSplat
--DOOMBOUNCE
+BounceType "None"
 +THRUACTORS
 +BLOODLESSIMPACT
 	States
@@ -922,13 +922,13 @@ ACTOR CeilBloodCheckerLargeBLUE : CeilBloodCheckerBLUE
 // The Ceil Blood Spot.
 actor CeilBloodSpot : Brutal_BloodSpot
 {
-Projectile
--DOOMBOUNCE
+BounceType "None"
+PROJECTILE
 +SPAWNCEILING
 +CEILINGHUGGER
 +MOVEWITHSECTOR
 +NOGRAVITY
-+DontSplash
++DONTSPLASH
 	states
 	{
 	Spawn:
@@ -950,13 +950,13 @@ Projectile
 
 actor CeilBloodSpotGreen : Brutal_BloodSpotGreen
 {
-Projectile
--DOOMBOUNCE
+BounceType "None"
+PROJECTILE
 +SPAWNCEILING
 +CEILINGHUGGER
 +MOVEWITHSECTOR
 +NOGRAVITY
-+DontSplash
++DONTSPLASH
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 	states
 	{
@@ -979,13 +979,13 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 
 actor CeilBloodSpotBLUE : Brutal_BloodSpotBLUE
 {
-Projectile
--DOOMBOUNCE
+BounceType "None"
+PROJECTILE
 +SPAWNCEILING
 +CEILINGHUGGER
 +MOVEWITHSECTOR
 +NOGRAVITY
-+DontSplash
++DONTSPLASH
 Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 	states
 	{
@@ -1191,9 +1191,9 @@ Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 
 ACTOR BloodDripingFromCeiling : TinyBlood
 {
+BounceType "Doom"
 BounceFactor 0.1
 HEALTH 0
-+DOOMBOUNCE
 +THRUACTORS
 +CLIENTSIDEONLY
 +CORPSE
@@ -1202,7 +1202,7 @@ HEALTH 0
 	Spawn:
 		BLUD Z 0 NoDelay A_Jump(230,"NoSpawn")
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		BLUD Z 500
+		BLUD Z 500 A_CheckFloor("Death")
 		Stop
 	}
 }
@@ -1215,7 +1215,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 	Spawn:
 		BLUD Z 0 NoDelay A_Jump(230,"NoSpawn")
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		BLUD Z 500
+		BLUD Z 500 A_CheckFloor("Death")
 		Stop
 	}
 }
@@ -1228,7 +1228,7 @@ Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 	Spawn:
 		BLUD Z 0 NoDelay A_Jump(230,"NoSpawn")
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		BLUD Z 500
+		BLUD Z 500 A_CheckFloor("Death")
 		Stop
 	}
 }
@@ -1242,7 +1242,7 @@ YScale 0.8
 	Spawn:
 		BLUD Z 0 NoDelay A_Jump(160,"NoSpawn")
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		BLUD Z 500
+		BLUD Z 500 A_CheckFloor("Death")
 		Stop
 	}
 }
@@ -1257,7 +1257,7 @@ YScale 0.8
 	Spawn:
 		BLUD Z 0 NoDelay A_Jump(160,"NoSpawn")
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		BLUD Z 500
+		BLUD Z 500 A_CheckFloor("Death")
 		Stop
 	}
 }
@@ -1272,7 +1272,7 @@ YScale 0.8
 	Spawn:
 		BLUD Z 0 NoDelay A_Jump(160,"NoSpawn")
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		BLUD Z 500
+		BLUD Z 500 A_CheckFloor("Death")
 		Stop
 	}
 }
@@ -1406,11 +1406,11 @@ game Doom
 scale 0.70
 mass 1
 Speed 2
+Gravity 0.125
 alpha 0.7
 renderstyle Translucent
 Decal BrutalBloodSplat
 -NOGRAVITY
-+LOWGRAVITY
 +CLIENTSIDEONLY
 +NOTELEPORT
 +NOBLOCKMAP
@@ -1471,7 +1471,6 @@ Height 2
 Speed 10
 Mass 1
 Decal BloodSplat
-+NOBLOCKMAP
 +MISSILE
 +NOTELEPORT
 +MOVEWITHSECTOR
@@ -1480,22 +1479,19 @@ Decal BloodSplat
 +THRUGHOST
 +THRUACTORS
 +FLOORCLIP
-+NOGRAVITY
-+DOOMBOUNCE
 +CORPSE
+BounceType "Doom"
 BounceCount 1
 BounceFactor 1
 	States
 	{
 	Spawn:
 		XDB5 A 0 NoDelay A_Jump(32,"DoNothing")
-		TNT1 A 0 A_ChangeFlag("NOGRAVITY",0)
 		Goto See
 	See:
-		XDB5 ABCD 3
+		XDB5 ABCD 3 A_CheckFloor("SpawnFloor")
 		Loop
 	Death:
-		TNT1 "#" 0 A_CheckFloor("SpawnFloor")
 		TNT1 "#" 1 A_SpawnItemEx("DetectCeilBrain")
 		Stop
 	SpawnFloor:
@@ -1615,8 +1611,8 @@ Mass 1
 +THRUGHOST
 +THRUACTORS
 +FLOORCLIP
-+DOOMBOUNCE
 +CORPSE
+BounceType "Doom"
 Bouncefactor 1
 BounceCount 1
 	States
@@ -1717,7 +1713,7 @@ Height 5
 Speed 7
 Mass 1
 Decal BrutalBloodSplat
-+DOOMBOUNCE
+BounceType "Doom"
 BounceCount 1
 BounceFactor 1
 +NOBLOCKMAP
@@ -1769,7 +1765,7 @@ Height 2
 Speed 6
 Mass 1
 Decal BrutalBloodSplat
-+DOOMBOUNCE
+BounceType "Doom"
 BounceCount 0
 +NOBLOCKMAP
 +MISSILE

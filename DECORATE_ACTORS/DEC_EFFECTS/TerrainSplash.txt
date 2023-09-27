@@ -17,13 +17,10 @@ decal watersplash
 +THRUACTORS
 +CLIENTSIDEONLY
 +NOTELEPORT
-+DoomBounce
 BounceFactor 0.1
 	States
 	{
 	Spawn:
-		TNT1 A 1
-		TNT1 A 0 A_ChangeFlag(DOOMBOUNCE,0)
 		TNT1 A 1
 		Goto Stand
 	Stand:
@@ -90,14 +87,14 @@ Radius 0
 Mass 0
 Speed 2
 RenderStyle Add
-+Missile
-+NoBlockMap
-+NoGravity
-+DontSplash
++MISSILE
++NOBLOCKMAP
++NOGRAVITY
++DONTSPLASH
 +FORCEXYBILLBOARD
 +CLIENTSIDEONLY
-+DOOMBOUNCE
 +NOTELEPORT
+BounceType "Doom"
 	States
 	{
 	Spawn:
@@ -220,11 +217,10 @@ Speed 7
 Gravity 0.5
 Alpha 0.4
 RenderStyle Add
-+Missile
-+NoBlockMap
--NoGravity
-+DontSplash
-+DoomBounce
+-NOGRAVITY
++MISSILE
++NOBLOCKMAP
++DONTSPLASH
 +FORCEXYBILLBOARD
 +THRUACTORS
 +CLIENTSIDEONLY
@@ -233,8 +229,6 @@ BounceFactor 0.1
 	States
 	{
 	Spawn:
-		TNT1 A 1
-		TNT1 A 0 A_ChangeFlag(DOOMBOUNCE,0)
 		TNT1 A 1
 		Goto Stand
 	Stand:
@@ -257,9 +251,9 @@ Gravity 0.5
 Alpha 0.5
 RenderStyle Add
 decal watersplash
-+Missile
--NoGravity
-+DontSplash
+-NOGRAVITY
++MISSILE
++DONTSPLASH
 +FORCEXYBILLBOARD
 +THRUACTORS
 +CLIENTSIDEONLY
@@ -268,8 +262,6 @@ BounceFactor 0.1
 	States
 	{
 	Spawn:
-		TNT1 A 1
-		TNT1 A 0 A_ChangeFlag(DOOMBOUNCE,0)
 		TNT1 A 1
 		Goto Stand
 	Stand:
@@ -288,8 +280,6 @@ Speed 4
 	{
 	Spawn:
 		TNT1 A 1
-		TNT1 A 0 A_ChangeFlag(DOOMBOUNCE,0)
-		TNT1 A 1
 		Goto Stand
 	Stand:
 		WSPH ABCDDDDDDDDD 4
@@ -302,7 +292,6 @@ Actor WaterParticleXSuperFast : WaterParticleX
 Scale 1.2
 Speed 6
 Mass 0
--DOOMBOUNCE
 -DONTSPLASH
 -NOBLOCKMAP
 -NOCLIP
@@ -310,8 +299,6 @@ Mass 0
 	States
 	{
 	Spawn:
-		TNT1 A 1
-		TNT1 A 0 A_ChangeFlag(DOOMBOUNCE,0)
 		TNT1 A 1
 		Goto Stand
 	Stand:
@@ -407,8 +394,6 @@ Translation "0:255=187:191"	//Red
 	{
 	Spawn:
 		TNT1 A 1
-		TNT1 A 0 A_ChangeFlag(DOOMBOUNCE,0)
-		TNT1 A 1
 		Goto Stand
 	Stand:
 		LIQU ABCDDDDDDDDDDDDDDDDDDD 4
@@ -453,8 +438,6 @@ decal bloodsplash
 	States
 	{
 	Spawn:
-		TNT1 A 1
-		TNT1 A 0 A_ChangeFlag(DOOMBOUNCE,0)
 		TNT1 A 1
 		Goto Stand
 	Stand:
@@ -508,8 +491,6 @@ Translation "0:255=%[0,0,0]:[0,1,0]"//Green
 	{
 	Spawn:
 		TNT1 A 1
-		TNT1 A 0 A_ChangeFlag(DOOMBOUNCE,0)
-		TNT1 A 1
 		Goto Stand
 	Stand:
 		LIQU ABCDDDDDDDDDDDDDDDDDDD 4
@@ -553,8 +534,6 @@ decal slimesplash
 	States
 	{
 	Spawn:
-		TNT1 A 1
-		TNT1 A 0 A_ChangeFlag(DOOMBOUNCE,0)
 		TNT1 A 1
 		Goto Stand
 	Stand:
@@ -608,8 +587,6 @@ Alpha 0.9
 	{
 	Spawn:
 		TNT1 A 1
-		TNT1 A 0 A_ChangeFlag(DOOMBOUNCE,0)
-		TNT1 A 1
 		Goto Stand
 	Stand:
 		LIQU ABCDDDDDDDDDDDDDDDDDDD 4
@@ -652,8 +629,6 @@ Actor SlimeParticleX : WaterParticleX
 	States
 	{
 	Spawn:
-		TNT1 A 1
-		TNT1 A 0 A_ChangeFlag(DOOMBOUNCE,0)
 		TNT1 A 1
 		Goto Stand
 	Stand:

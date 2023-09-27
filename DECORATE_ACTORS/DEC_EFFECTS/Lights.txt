@@ -237,7 +237,6 @@ scale 0.8
 	{
 	Spawn:
 		POL5 A 0 NoDelay A_NoBlocking
-		//TNT1 A 0 A_PlaySoundEx("misc/gibbed","Body",0,0)
 		TNT1 A 0 A_SpawnItemEx("Swarm")
 		TNT1 A 0 A_SpawnItemEx("64SmallBloodPool")
 		TNT1 A 0 A_Jump(256,"SpawnLive1","SpawnLive2","SpawnLive3")
@@ -1763,7 +1762,7 @@ Damagefactor "Kick",0
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("64ExplosionFireBase",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_SpawnItemEx("ExplosionAirDisplacementEffect")
-		TNT1 A 0 A_playSound("EXPLOSIO3",2)
+		TNT1 A 0 A_playSound("EXPLOSIO3",CHAN_VOICE)
 		TNT1 A 0 Radius_Quake(2,8,0,12,0)
 		TNT1 A 2
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")

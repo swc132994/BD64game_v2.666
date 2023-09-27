@@ -7,8 +7,7 @@ Radius 0
 Height 0
 Alpha 0.1
 RenderStyle Translucent
-BounceFactor 0.5
-+DOOMBOUNCE
+BounceType "Doom"
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -269,8 +268,8 @@ Height 1
 Speed 2
 Alpha 1.0
 RenderStyle Translucent
+BounceType "Doom"
 BounceFactor 0.5
-+DOOMBOUNCE
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -312,10 +311,10 @@ Height 10
 Radius 5
 Alpha 1.0
 Renderstyle Add
+BounceType "Doom"
 Decal FireworxScorch
 PROJECTILE
 -NOCLIP
-+DOOMBOUNCE
 +THRUACTORS
 	States
 	{

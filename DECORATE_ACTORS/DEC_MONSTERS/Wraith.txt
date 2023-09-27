@@ -407,8 +407,8 @@ Renderstyle Add
 +CLIENTSIDEONLY
 +NOINTERACTION
 +NOGRAVITY
-+DOOMBOUNCE
 +THRUACTORS
+BounceType "Doom"
 BounceFactor 0.5
 	States
 	{
