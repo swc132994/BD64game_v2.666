@@ -354,6 +354,7 @@ Delay(35);
 Restart;
 }
 
+/*
 Script "VanillaChainsawACS" ENTER 	//option to set vanilla chainsaw
 {
 if (CheckInventory("64ChainsawTACTICAL") == 1 && GetCvar("VanillaChainsawCvar") == 1)
@@ -385,6 +386,7 @@ if (CheckInventory("64ChainsawMODERN_Classic") == 1 && GetCvar("VanillaChainsawC
 Delay(40);
 Restart;
 }
+*/
 
 script "ClassicCSAWCheck" (void)	//cvar check for chainsaw pickup
 {

@@ -11,21 +11,21 @@ Inventory.PickupSound "weapons/chainsaw/draw"
 		Stop
 	Pickup:
 		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup3")
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
 		TNT1 A 0 A_GiveInventory("64Chainsaw")
 		Stop
 	Pickup2:
-		TNT1 A 0 A_JumpIf(CallACS("ClassicCSAWCheck")==1,2)
+//		TNT1 A 0 A_JumpIf(CallACS("ClassicCSAWCheck")==1,2)
 		TNT1 A 0 A_GiveInventory("64ChainsawTactical",1)
 		stop
-		TNT1 A 0 A_GiveInventory("64ChainsawTactical_Classic",1)
-		Stop
-	Pickup3:
+//		TNT1 A 0 A_GiveInventory("64ChainsawTactical_Classic",1)
+//		Stop
+/*	Pickup3:
 		TNT1 A 0 A_JumpIf(CallACS("ClassicCSAWCheck")==1,2)
 		TNT1 A 0 A_GiveInventory("64ChainsawModern",1)
 		stop
 		TNT1 A 0 A_GiveInventory("64ChainsawModern_Classic",1)
-		Stop
+		Stop*/
 	}
 }
 
@@ -36,8 +36,8 @@ Weapon.SlotNumber 1
 Weapon.SlotPriority 2
 Weapon.SelectionOrder 2200
 Weapon.Kickback 0
+Weapon.ReadySound "weapons/sawidle"
 Inventory.PickupMessage "$GOTCHAINSAW"
-Weapon.UpSound "null"
 +WEAPON.AXEBLOOD
 Tag "$TAG_CHAINSAW"
 VisibleToPlayerClass "64DoomPlayer"
@@ -49,12 +49,11 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		CWAS A -1
 		Stop
 	Select:
-		TNT1 A 0 A_PlaySound("weapons/sawup",CHAN_7)
+		TNT1 A 0 A_PlaySound("weapons/sawup",CHAN_AUTO)
 		WASG C 1 A_Raise
 		Wait
 	Ready:
 		WASG CD 5 A_WeaponReady
-		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_5)
 		Loop
 	Fire:
 		WASG HI 1
@@ -95,7 +94,7 @@ Obituary "$OB_MPCHAINSAW"
 	States
 	{
 	Spawn:
-		TNT1 A 1
+		TNT1 A 2
 		Stop
 	Death:
 		TNT1 A 0 A_SpawnItemEx("SSawPuff")
@@ -128,8 +127,9 @@ Tag "$TAG_CHAINSAW"
 +WEAPON.AXEBLOOD
 +WEAPON.ALT_USES_BOTH
 +INVENTORY.RESTRICTABSOLUTELY
-Inventory.forbiddento "64DoomPlayer","Modern"
-VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P"
+Inventory.forbiddento "64DoomPlayer"
+VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
+Weapon.SisterWeapon "64ChainsawTactical_Classic"
 +NOAUTOFIRE
 +NOALERT
 	States
@@ -165,6 +165,13 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P"
 		SAWS D 6
 		SAWS NOPQR 1
 		Stop
+	ClassicSawSelected:	//Deselect animation
+		SAWS RQPONDCBA 1 Offset(0,32)
+		TNT1 A 3
+	ClassicSawSelected2:	//Classic select animation
+		TNT1 A 0 A_PlaySound("weapons/sawup",CHAN_7)
+		WASS DCBA 1 Offset(0,32)
+		TNT1 A 0 A_GiveInventory("SisterWeaponSelector",1)
 	Spawn:
 		CSAW A -1
 		Stop
@@ -179,6 +186,8 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P"
 		TNT1 A 1 A_Lower
 		Wait
 	Select:
+		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
+		TNT1 A 0 A_JumpIf(CallACS("ClassicCSAWCheck")==1,"ClassicSawSelected2")
 		TNT1 A 0 A_JumpIfInventory("SawGas",1,"Select2")
 		SAWS ABCDNOPQR 1 Offset(0,32)
 		TNT1 A 0 A_Raise
@@ -195,17 +204,37 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P"
 		Wait
 	v1Ready:
 	Ready:
+		TNT1 A 0 A_JumpIf(CallACS("ClassicCSAWCheck")==1,"ClassicSawSelected")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		TNT1 A 0 A_JumpIfInventory("SawGas",1,1)
 		Goto NotReady
-		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_5)
 		SAWG ABCD 2 A_WeaponReady(WRF_ALLOWRELOAD)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_5)
+		SAWG ABCD 2 A_WeaponReady(WRF_ALLOWRELOAD)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_5)
+		SAWG ABCD 2 A_WeaponReady(WRF_ALLOWRELOAD)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_5)
+		SAWG ABCD 2 A_WeaponReady(WRF_ALLOWRELOAD)
+		TNT1 A 0 A_TakeInventory("SawGas",1)
 		Loop
 	NotReady:
+		TNT1 A 0 A_JumpIf(CallACS("ClassicCSAWCheck")==1,"ClassicSawSelected")
 		SAWG A 5 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		TNT1 A 0 A_JumpIfInventory("SawGas",1,"Select")
 		Loop
 	Fire:
@@ -329,7 +358,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P"
 
 Actor SawGas : Ammo
 {
-Game Doom
+Scale 0.9
 SpawnID 11
 Inventory.PickupMessage "You found some fuel!"
 Inventory.Amount 50
@@ -338,8 +367,8 @@ Ammo.BackpackAmount 100
 Ammo.BackpackMaxAmount 600
 Inventory.Icon "GSLNA0"
 +IGNORESKILL
-VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_p"
-Inventory.ForbiddenTo "64DoomPlayer","Modern"
+VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
+Inventory.ForbiddenTo "64DoomPlayer"
 +INVENTORY.RESTRICTABSOLUTELY
 	States
 	{
@@ -349,7 +378,7 @@ Inventory.ForbiddenTo "64DoomPlayer","Modern"
 	}
 }
 
-Actor 64ChainsawModern : Brutal64Weapon 
+/*Actor 64ChainsawModern : Brutal64Weapon 
 {
 Scale 0.82
 Weapon.SlotNumber 1
@@ -546,7 +575,7 @@ VisibleToPlayerClass "Modern"
 		TNT1 A 0 A_GiveInventory("SSGReloading",1)
 		Goto ResumeAltFire
 	}
-}
+}*/
 
 //CLASSICAL LOOK
 Actor 64ChainsawTactical_Classic : Brutal64Weapon
@@ -564,9 +593,11 @@ Obituary "$OB_MPCHAINSAW"
 Tag "$TAG_CHAINSAW"
 +WEAPON.MELEEWEAPON
 +WEAPON.AXEBLOOD
++POWERED_UP
 +INVENTORY.RESTRICTABSOLUTELY
-Inventory.forbiddento "64DoomPlayer","Modern"
-VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P"
+Inventory.forbiddento "64DoomPlayer"
+VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
+Weapon.SisterWeapon "64ChainsawTactical"
 	States
 	{
 	MineThrowFlash:
@@ -601,31 +632,53 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P"
 		TNT1 A 0 A_Takeinventory("TossMine",0)
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
-		WASG C 1 A_Lower
-		Loop
-	Select:
-		TNT1 A 0 A_JumpIfInventory("SawGas",1,"SELECT2")
-		WASG C 1 A_Raise
+		WASS ABCD 1
+		TNT1 A 1 A_Lower
 		Wait
-	Select2:
+	Select:
+		TNT1 A 0 A_JumpIf(CallACS("ClassicCSAWCheck")==1,2)
+		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
+		TNT1 A 0 A_JumpIfInventory("SawGas",1,1)
+		Goto SelectNoFuel
 		TNT1 A 0 A_PlaySound("weapons/sawup",CHAN_7)
-		WASG C 1 A_Raise
+	SelectNoFuel:
+		WASS DCBA 1 Offset(0,32)
+		TNT1 A 0 A_Raise
 		Wait
 	v1Ready:
 	Ready:
+		TNT1 A 0 A_JumpIf(CallACS("ClassicCSAWCheck")==1,2)
+		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		TNT1 A 0 A_JumpIfInventory("SawGas",1,1)
 		Goto NotReady
-		WASG C 5 A_WeaponReady
 		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_5)
-		WASG D 5 A_WeaponReady
+		WASG CD 4 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_5)
+		WASG CD 4 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_5)
+		WASG CD 4 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_5)
+		WASG CD 4 A_WeaponReady
+		TNT1 A 0 A_TakeInventory("SawGas",1)
 		Loop
 	NotReady:
 		WASG C 5 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("SawGas",1,"Select")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		Loop
 	Fire:
 		WASG HI 1
@@ -644,7 +697,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P"
 	}
 }
 
-Actor 64ChainsawModern_Classic : Brutal64Weapon
+/*Actor 64ChainsawModern_Classic : Brutal64Weapon
 {
 Scale 0.82
 Weapon.SlotNumber 1
@@ -723,4 +776,4 @@ VisibleToPlayerClass "Modern"
 		WASG C 1 A_Lower
 		Wait
 	}
-}
+}*/
