@@ -113,8 +113,8 @@ states
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains2",56,0,random(0,360),2,random(0,90))	//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(0,360),2,random(-5,5))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -135,8 +135,8 @@ states
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("Brains2",56,0,random(0,360),2,random(0,90))	//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(0,360),2,random(-5,5))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLeg1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -226,8 +226,8 @@ states
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieArm1",50,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLeg1",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -258,8 +258,8 @@ states
 		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArm1",50,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
@@ -363,8 +363,8 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArm1",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -397,8 +397,8 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -419,8 +419,8 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLeg1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -444,8 +444,8 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArm1",50,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLeg1",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -465,8 +465,8 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
@@ -507,8 +507,8 @@ Actor BrutalizedZombieman_2 : BrutalizedZombieman_1
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
@@ -528,8 +528,8 @@ Actor BrutalizedZombieman_2 : BrutalizedZombieman_1
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
@@ -548,8 +548,8 @@ Actor BrutalizedZombieman_2 : BrutalizedZombieman_1
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLeg1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -568,8 +568,8 @@ Actor BrutalizedZombieman_2 : BrutalizedZombieman_1
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLeg1",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -699,8 +699,8 @@ DropItem "SOULSPAWNER"
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -885,8 +885,8 @@ Obituary "%o was blown apart by an SSG Zombie."
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieArmBlack",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -906,8 +906,8 @@ Obituary "%o was blown apart by an SSG Zombie."
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieArmBlack",50,0,random(0,360),2,random(20,90))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLegBlack",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -927,8 +927,8 @@ Obituary "%o was blown apart by an SSG Zombie."
 		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
@@ -962,8 +962,8 @@ Obituary "%o was blown apart by an SSG Zombie."
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieArmBlack",50,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLegBlack",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -983,8 +983,8 @@ Obituary "%o was blown apart by an SSG Zombie."
 		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArmBlack",50,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
@@ -1043,8 +1043,8 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
@@ -1068,8 +1068,8 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArmBlack",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -1102,8 +1102,8 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArmBlack",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -1123,8 +1123,8 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArmBlack",50,0,random(0,360),2,random(20,90))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLegBlack",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -1147,8 +1147,8 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArmBlack",50,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLegBlack",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -1168,8 +1168,8 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
@@ -1213,8 +1213,8 @@ Actor BrutalizedSSGGuy_2 : BrutalizedSSGGuy_1
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 AA 0 A_CustomMissile("Brains2",56,0,random(0,360),2,random(0,90))	//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
@@ -1234,8 +1234,8 @@ Actor BrutalizedSSGGuy_2 : BrutalizedSSGGuy_1
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
@@ -1254,8 +1254,8 @@ Actor BrutalizedSSGGuy_2 : BrutalizedSSGGuy_1
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLegBlack",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -1277,8 +1277,8 @@ Actor BrutalizedSSGGuy_2 : BrutalizedSSGGuy_1
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLegBlack",50,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -1453,8 +1453,8 @@ DropItem "SOULSPAWNER"
 		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
@@ -1473,8 +1473,8 @@ DropItem "SOULSPAWNER"
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieArmRed",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -1573,8 +1573,8 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
@@ -1599,8 +1599,8 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArmRed",50,0,random(0,360),2,random(20,90))
 		TNT1 AA 0 A_CustomMissile("XDeathZombieLegRed",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
@@ -1635,8 +1635,8 @@ DropItem "None"
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathZombieArmRed",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -1683,8 +1683,8 @@ Actor BrutalizedChaingunner_2 : BrutalizedChaingunner_1
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
 		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
@@ -1847,8 +1847,8 @@ Obituary "%o was gunned down by a zombie marine."
 		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
-		TNT1 A 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 A 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 A 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
@@ -1875,8 +1875,8 @@ Obituary "%o was gunned down by a zombie marine."
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
@@ -2081,8 +2081,8 @@ Obituary "%o was gunned down by a marine."
 		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
-		TNT1 AA 0 A_CustomMissile("Brains2",40,0,random(150,210),2,random(10,50))//teeth
-		TNT1 AA 0 A_CustomMissile("Brains3",40,0,random(150,210),2,random(10,50))//eyes
+		TNT1 AA 0 A_CustomMissile("XdeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XdeathEyes",40,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
 		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))

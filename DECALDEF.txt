@@ -253,55 +253,6 @@ BrutalBloodSmearSmall1 1
 BrutalBloodSmearSmall2 1
 }
 
-//Blood Base
-decal BloodSplat001
-{
-pic BSPLBLNK	//blank graphic
-x-scale 1
-y-scale 1
-randomflipx
-randomflipy
-}
-
-decal BloodSplat002
-{
-pic BSPLBLNK	//blank graphic
-x-scale 1
-y-scale 1
-randomflipx
-randomflipy
-}
-
-decalgroup BloodSplat
-{
-BloodSplat001 6
-BloodSplat002 6
-}
-
-decal BloodSmear001
-{
-pic BSPLBLNK	//blank graphic
-x-scale 1
-y-scale 1
-randomflipx
-randomflipy
-}
-
-decal BloodSmear002
-{
-pic BSPLBLNK	//blank graphic
-x-scale 1
-y-scale 1
-randomflipx
-randomflipy
-}
-
-decalgroup BloodSmear
-{
-	BloodSmear001	1
-	BloodSmear002	1
-}
-
 // Red Blood
 decal BrutalBloodSplat01
 {
