@@ -559,7 +559,11 @@ floor METAL1 metal2
 floor WOODVERT wood
 floor WOOD1 wood
 //floor DNBLDG03 wood
-
+floor LPBLOOD Blood
+floor LPWATER Water
+floor LPLAVA Lava
+floor LPNNUKE Nukage
+floor LPSLIME SLIME
 endif
 
 DefaultTerrain Hard	//added for footstep sounds for other/non-defined flats

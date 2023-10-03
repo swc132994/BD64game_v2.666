@@ -7,6 +7,17 @@ WPICK WPICK
 IPICK APICK
 ROCKE3 ROCKE3
 
+//Manual Healing
+$random firstaidkit/bandaging {64HEAL1 64HEAL2 64HEAL3 64HEAL4}
+
+64HEAL1 64HEAL1
+64HEAL2 64HEAL2
+64HEAL3 64HEAL3
+64HEAL4 64HEAL4
+
+firstaidkit/raise	HEALUP
+firstaidkit/zerk	64ADREN
+
 //Fidget sounds
 Knuckled Knuckled
 

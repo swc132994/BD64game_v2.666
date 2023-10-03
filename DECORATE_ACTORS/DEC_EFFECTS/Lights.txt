@@ -620,7 +620,7 @@ Height 68
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
+		TNT1 A 0 A_SpawnItemEx("drippingblood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		HDB2 A 70
 		Loop
@@ -643,7 +643,7 @@ Height 52
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
+		TNT1 A 0 A_SpawnItemEx("drippingblood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		HDB1 A 70
 		Loop
@@ -666,7 +666,7 @@ Height 49
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
+		TNT1 A 0 A_SpawnItemEx("drippingblood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		HDB3 A 70
 		Loop
@@ -686,7 +686,7 @@ Height 47
 	{
 	Spawn:
 		HDB5 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
+		TNT1 A 0 A_SpawnItemEx("drippingblood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		HDB5 A 70
 		Loop
@@ -709,7 +709,7 @@ Height 74
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
+		TNT1 A 0 A_SpawnItemEx("drippingblood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		HDB6 A 70
 		Loop
@@ -732,7 +732,7 @@ Height 71
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
+		TNT1 A 0 A_SpawnItemEx("drippingblood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		HDB4 A 70
 		Loop
@@ -769,7 +769,7 @@ Height 79
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
+		TNT1 A 0 A_SpawnItemEx("drippingblood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		GOR2 A 70
 		Loop
@@ -794,7 +794,7 @@ Height 65
 	{
 	Spawn:
 		GOR4 A 0 NoDelay A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-3)
+		TNT1 A 0 A_SpawnItemEx("drippingblood",0,0,-3)
 		TNT1 A 0 A_Jump(128,2)
 		GOR4 A 70
 		Loop
@@ -819,7 +819,7 @@ Height 79
 	{
 	Spawn:
 		GOR5 A 0 NoDelay A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-3)
+		TNT1 A 0 A_SpawnItemEx("drippingblood",0,0,-3)
 		TNT1 A 0 A_Jump(128,2)
 		GOR5 A 70
 		Loop
@@ -893,7 +893,7 @@ Height 83
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
+		TNT1 A 0 A_SpawnItemEx("drippingblood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		TWEG A 70
 		Loop
@@ -1688,7 +1688,7 @@ height 56
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItemEx("DripingBlood",0,0,-5)
+		TNT1 A 0 A_SpawnItemEx("drippingblood",0,0,-5)
 		TNT1 A 0 A_Jump(128,2)
 		A019 A 70
 		Loop

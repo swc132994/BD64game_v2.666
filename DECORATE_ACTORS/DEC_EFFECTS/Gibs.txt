@@ -2098,3 +2098,1019 @@ ACTOR XDeathHuskArm1 : XDeathZombieArm1
 		Stop
 	}
 }
+
+//STICKY GIBS
+
+ACTOR DetectCeilXDeath2
+{
+game Doom
+scale 0.4
+speed 0
+health 1
+radius 1
+height 1
+Gravity 0.0
+damage 0
+Alpha 0.95
+Renderstyle Translucent
+DamageType Blood
++MISSILE
++CLIENTSIDEONLY
++NOTELEPORT
++NOBLOCKMAP
++FORCEXYBILLBOARD
++NODAMAGETHRUST
+-DONTSPLASH
++NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay ThrustThingZ(0,25,0,1)
+		TNT1 A 2
+		TNT1 A 1 A_SpawnItemEx("SmearingXDeath2",0,0,-6)
+		Stop
+	Death:
+		TNT1 A 1 A_CustomMissile("CeilXDeath2Checker",-15,0,90,2,90)
+		Stop
+	}
+}
+
+ACTOR DetectCeilXDeath2Green : DetectCeilXDeath2
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay ThrustThingZ(0,25,0,1)
+		TNT1 A 2
+		TNT1 A 1 A_SpawnItemEx("SmearingXDeath2Green",0,0,-6)
+		Stop
+	Death:
+		TNT1 A 1 A_CustomMissile("CeilXDeath2CheckerGreen",-15,0,90,2,90)
+		Stop
+	}
+}
+
+ACTOR DetectCeilXDeath2BLUE : DetectCeilXDeath2
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay ThrustThingZ(0,25,0,1)
+		TNT1 A 2
+		TNT1 A 1 A_SpawnItemEx("SmearingXDeath2BLUE",0,0,-6)
+		Stop
+	Death:
+		TNT1 A 1 A_CustomMissile("CeilXDeath2CheckerBLUE",-15,0,90,2,90)
+		Stop
+	}
+}
+
+ACTOR SmearingXDeath2
+{
+Scale 1.0
+Radius 2
+Height 2
+Speed 10
+Mass 1
+Health 0
+Gravity 0.25
+-DONTSPLASH
++NOBLOCKMAP
++NOTELEPORT
++THRUGHOST
++CLIENTSIDEONLY
++MOVEWITHSECTOR
++FORCEXYBILLBOARD
++CORPSE
++THRUACTORS
+BounceType "Doom"
+BOUNCEFACTOR 1
+BOUNCECOUNT 1
+	States
+	{
+	Spawn:
+		XME1 G 0 NoDelay A_ChangeFlag("NOGRAVITY",1)
+		TNT1 A 0 A_Recoil(-25)
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
+		Goto Spawn1
+	Spawn1:
+		XME1 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn2:
+		XME1 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn3:
+		XME1 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn4:
+		XME1 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Death:
+		TNT1 A 1 A_SpawnItemEx("XDeath2NoStick")
+		Stop
+	Rest:
+		XME1 E 1
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME1 E 3
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpot")
+	Living:
+		XME1 E 600
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	Crush:
+	Vanish:
+		TNT1 A 5
+		Stop
+	}
+}
+
+ACTOR SmearingXDeath2Green : SmearingXDeath2
+{
+Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
+	States
+	{
+	Spawn:
+		XME1 G 0 NoDelay A_ChangeFlag("NOGRAVITY",1)
+		TNT1 A 0 A_Recoil(-25)
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
+		Goto Spawn1
+	Spawn1:
+		XME1 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn2:
+		XME1 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn3:
+		XME1 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn4:
+		XME1 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Death:
+		TNT1 A 1 A_SpawnItemEx("XDeath2NoStickGreen")
+		Stop
+	Rest:
+		XME1 E 1
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME1 E 3
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotGreen")
+	Living:
+		XME1 E 600
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	}
+}
+
+ACTOR SmearingXDeath2BLUE : SmearingXDeath2
+{
+Translation "Ice"//BLUE
+	States
+	{
+	Spawn:
+		XME1 G 0 NoDelay A_ChangeFlag("NOGRAVITY",1)
+		TNT1 A 0 A_Recoil(-25)
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
+		Goto Spawn1
+	Spawn1:
+		XME1 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn2:
+		XME1 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn3:
+		XME1 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn4:
+		XME1 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Death:
+		TNT1 A 1 A_SpawnItemEx("XDeath2NoStickBLUE")
+		Stop
+	Rest:
+		XME1 E 1
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME1 E 3
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotBLUE")
+	Living:
+		XME1 E 600
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	}
+}
+
+ACTOR CeilXDeath2Checker : Brutal_FlyingBlood
+{
+damage 0
+Radius 0
+Height 0
+Speed 400
+Gravity 0.0
+damagetype Blood
+Decal BrutalBloodSuper
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
+		TNT1 A 4
+		Stop
+	Splash:
+		TNT1 A 1
+		stop
+	Death:
+		TNT1 A 5 A_SpawnItemEx("CeilXDeath2")
+		stop
+	Xdeath:
+		TNT1 A 1
+		Stop
+	}
+}
+
+ACTOR CeilXDeath2CheckerGreen : Brutal_FlyingBloodGreen
+{
+damage 0
+Radius 0
+Height 0
+Speed 400
+Gravity 0.0
+damagetype Blood
+Decal BrutalBloodSuperGreen
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
+		TNT1 A 4
+		Stop
+	Splash:
+		TNT1 A 1
+		stop
+	Death:
+		TNT1 A 5 A_SpawnItemEx("CeilXDeath2Green")
+		stop
+	Xdeath:
+		TNT1 A 1
+		Stop
+	}
+}
+
+ACTOR CeilXDeath2CheckerBLUE : Brutal_FlyingBloodBLUE
+{
+damage 0
+Radius 0
+Height 0
+Speed 400
+Gravity 0.0
+damagetype Blood
+Decal BrutalBloodSuperBLUE
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
+		TNT1 A 4
+		Stop
+	Splash:
+		TNT1 A 1
+		stop
+	Death:
+		TNT1 A 5 A_SpawnItemEx("CeilXDeath2BLUE")
+		stop
+	Xdeath:
+		TNT1 A 1
+		Stop
+	}
+}
+
+actor CeilXDeath2 : Brutal_BloodSpot
+{
+Scale 1.1
+Renderstyle Normal
+BounceType "None"
++SPAWNCEILING
++MOVEWITHSECTOR
++NOGRAVITY
++MISSILE
++ISMONSTER		//INFRARED
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		Goto Crash
+	Death:
+	Crash:
+		TNT1 A 0 A_Jump(256,"Live1","Live2","Live3")
+		Goto Live1
+	Live1:
+		XME1 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Live2:
+		XME1 FFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Live3:
+		XME1 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Fall:
+		TNT1 A 1 A_SpawnItemEx("XDeath2NoStick")
+		stop
+	Splash:
+		TNT1 A 1
+		stop
+	}
+}
+
+actor CeilXDeath2Green : Brutal_BloodSpotGreen
+{
+Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Partial Green
+Scale 1.1
+Renderstyle Normal
+BounceType "None"
++SPAWNCEILING
++MOVEWITHSECTOR
++NOGRAVITY
++MISSILE
++ISMONSTER	//INFRARED
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		Goto Crash
+	Death:
+	Crash:
+		TNT1 A 0 A_Jump(256,"Live1","Live2","Live3")
+		Goto Live1
+	Live1:
+		XME1 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Live2:
+		XME1 FFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Live3:
+		XME1 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Fall:
+		TNT1 A 1 A_SpawnItemEx("XDeath2NoStickGreen")
+		stop
+	Splash:
+		TNT1 A 1
+		stop
+	}
+}
+
+actor CeilXDeath2BLUE : Brutal_BloodSpotBLUE
+{
+Translation "Ice"	//BLUE
+Scale 1.1
+Renderstyle Normal
+BounceType "None"
++SPAWNCEILING
++MOVEWITHSECTOR
++NOGRAVITY
++MISSILE
++ISMONSTER	//INFRARED
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		Goto Crash
+	Death:
+	Crash:
+		TNT1 A 0 A_Jump(256,"Live1","Live2","Live3")
+		Goto Live1
+	Live1:
+		XME1 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Live2:
+		XME1 FFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Live3:
+		XME1 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Fall:
+		TNT1 A 1 A_SpawnItemEx("XDeath2NoStickBLUE")
+		stop
+	Splash:
+		TNT1 A 1
+		stop
+	}
+}
+
+ACTOR XDeath2NoStick : XDeath1
+{
+Scale 1.1
+Radius 1
+Height 0
+Speed 0
+Gravity 0.4
+Decal BrutalBloodSplat
+DeathSound "misc/xdeath2"
++CLIENTSIDEONLY
++ISMONSTER		//INFRARED
+	States
+	{
+	Spawn:
+		XME1 H 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
+		TNT1 A 0 A_CheckFloor("Death")
+		XME1 H 3 //A_CustomMissile("Brutal_FlyingBloodTrail",0,0,random(0,360),2,random(0,360))
+		Loop
+	Death:
+		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5",0,0,random(0,180),2,random(0,180))
+		XME1 E 1
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME1 E 3
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpot")
+	Living:
+		XME1 E 600
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	Vanish:
+		TNT1 A 5
+		Stop
+	}
+}
+
+ACTOR XDeath2NoStickGreen : XDeath1Green
+{
+Scale 1.1
+Radius 1
+Height 0
+Speed 0
+Gravity 0.4
+Decal BrutalBloodSplatGreen
+DeathSound "misc/xdeath2"
++CLIENTSIDEONLY
++ISMONSTER	//INFRARED
+	States
+	{
+	Spawn:
+		XME1 H 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
+		TNT1 A 0 A_CheckFloor("Death")
+		XME1 H 3 //A_CustomMissile("Brutal_FlyingBloodTrailGREEN",0,0,random(0,360),2,random(0,360))
+		Loop
+	Death:
+		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5Green",0,0,random(0,180),2,random(0,180))
+		XME1 E 1
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME1 E 3
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotGreen")
+	Living:
+		XME1 E 600
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	Vanish:
+		TNT1 A 5
+		Stop
+	}
+}
+
+ACTOR XDeath2NoStickBLUE : XDeath1BLUE
+{
+Scale 1.1
+Radius 1
+Height 0
+Speed 0
+Gravity 0.4
+Decal BrutalBloodSplatBLUE
+DeathSound "misc/xdeath2"
++CLIENTSIDEONLY
++ISMONSTER	//INFRARED
+	States
+	{
+	Spawn:
+		XME1 H 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
+		TNT1 A 0 A_CheckFloor("Death")
+		XME1 H 3 //A_CustomMissile("Brutal_FlyingBloodTrailBLUE",0,0,random(0,360),2,random(0,360))
+		Loop
+	Death:
+		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5BLUE",0,0,random(0,180),2,random(0,180))
+		XME1 E 1
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME1 E 3
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotBLUE")
+	Living:
+		XME1 E 600
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	Vanish:
+		TNT1 A 5
+		Stop
+	}
+}
+
+ACTOR DetectCeilXDeath3
+{
+game Doom
+scale 0.4
+speed 0
+health 1
+radius 1
+height 1
+Gravity 0.0
+damage 0
+Alpha 0.95
+Renderstyle Translucent
+DamageType Blood
+-DONTSPLASH
++MISSILE
++CLIENTSIDEONLY
++NOTELEPORT
++NOBLOCKMAP
++FORCEXYBILLBOARD
++NODAMAGETHRUST
++NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay ThrustThingZ(0,35,0,1)
+		TNT1 A 2
+		TNT1 A 1 A_SpawnItemEx("SmearingXDeath3",0,0,-6)
+		Stop
+	Death:
+		TNT1 A 1 A_CustomMissile("CeilXDeath3Checker",-15,0,90,2,90)
+		Stop
+	}
+}
+
+ACTOR DetectCeilXDeath3Green : DetectCeilXDeath3
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay ThrustThingZ(0,35,0,1)
+		TNT1 A 2
+		TNT1 A 1 A_SpawnItemEx("SmearingXDeath3Green",0,0,-6)
+		Stop
+	Death:
+		TNT1 A 1 A_CustomMissile("CeilXDeath3CheckerGreen",-15,0,90,2,90)
+		Stop
+	}
+}
+
+ACTOR DetectCeilXDeath3BLUE : DetectCeilXDeath3
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay ThrustThingZ(0,35,0,1)
+		TNT1 A 2
+		TNT1 A 1 A_SpawnItemEx("SmearingXDeath3BLUE",0,0,-6)
+		Stop
+	Death:
+		TNT1 A 1 A_CustomMissile("CeilXDeath3CheckerBLUE",-15,0,90,2,90)
+		Stop
+	}
+}
+
+ACTOR SmearingXDeath3
+{
+Scale 1.0
+Radius 2
+Height 2
+Speed 10
+Mass 1
+Health 0
+gravity 0.25
+-DONTSPLASH
++NOBLOCKMAP
++NOTELEPORT
++THRUGHOST
++CLIENTSIDEONLY
++MOVEWITHSECTOR
++FORCEXYBILLBOARD
++CORPSE
+BounceType "Doom"
+BOUNCEFACTOR 1
+BOUNCECOUNT 1
+	States
+	{
+	Spawn:
+		XME2 G 0 NoDelay A_ChangeFlag("NOGRAVITY",1)
+		TNT1 A 0 A_Recoil(-25)
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
+		Goto Spawn1
+	Spawn1:
+		XME2 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn2:
+		XME2 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn3:
+		XME2 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn4:
+		XME2 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Death:
+		TNT1 A 1 A_SpawnItemEx("XDeath3NoStick")
+		Stop
+	Rest:
+		XME2 E 1
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME2 E 3
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpot")
+	Living:
+		XME2 E 600
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	Crush:
+	Vanish:
+		TNT1 A 5
+		Stop
+	}
+}
+
+ACTOR SmearingXDeath3Green : SmearingXDeath3
+{
+Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Partial Green
+	States
+	{
+	Spawn:
+		XME2 G 0 NoDelay A_ChangeFlag("NOGRAVITY",1)
+		TNT1 A 0 A_Recoil(-25)
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
+		Goto Spawn1
+	Spawn1:
+		XME2 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn2:
+		XME2 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn3:
+		XME2 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn4:
+		XME2 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Death:
+		TNT1 A 1 A_SpawnItemEx("XDeath3NoStickGreen")
+		Stop
+	Rest:
+		XME2 E 1
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME2 E 3
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotGreen")
+	Living:
+		XME2 E 600
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	}
+}
+
+ACTOR SmearingXDeath3BLUE : SmearingXDeath3
+{
+Translation "Ice"	//BLUE
+	States
+	{
+	Spawn:
+		XME2 G 0 NoDelay A_ChangeFlag("NOGRAVITY",1)
+		TNT1 A 0 A_Recoil(-25)
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
+		Goto Spawn1
+	Spawn1:
+		XME2 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn2:
+		XME2 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn3:
+		XME2 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Spawn4:
+		XME2 GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG 1 A_CheckFloor("Rest")
+		Goto Death
+	Death:
+		TNT1 A 1 A_SpawnItemEx("XDeath3NoStickBLUE")
+		Stop
+	Rest:
+		XME2 E 1
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME2 E 3
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotBLUE")
+	Living:
+		XME2 E 600
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	}
+}
+
+ACTOR CeilXDeath3Checker : Brutal_FlyingBlood
+{
+damage 0
+Radius 0
+Height 0
+Speed 400
+Gravity 0.0
+Decal BrutalBloodSuper
+damagetype Blood
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
+		TNT1 A 4
+		Stop
+	Splash:
+		TNT1 A 1
+		stop
+	Death:
+		TNT1 A 5 A_SpawnItemEx("CeilXDeath3")
+		stop
+	Xdeath:
+		TNT1 A 1
+		Stop
+	}
+}
+
+ACTOR CeilXDeath3CheckerGreen : Brutal_FlyingBloodGreen
+{
+Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
+damage 0
+Radius 0
+Height 0
+Speed 400
+Gravity 0.0
+Decal BrutalBloodSuperGreen
+damagetype Blood
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
+		TNT1 A 4
+		Stop
+	Splash:
+		TNT1 A 1
+		stop
+	Death:
+		TNT1 A 5 A_SpawnItemEx("CeilXDeath3Green")
+		stop
+	Xdeath:
+		TNT1 A 1
+		Stop
+	}
+}
+
+ACTOR CeilXDeath3CheckerBLUE : Brutal_FlyingBloodBLUE
+{
+Translation "ICE"	//BLUE
+damage 0
+Radius 0
+Height 0
+Speed 400
+Gravity 0.0
+Decal BrutalBloodSuperBLUE
+damagetype Blood
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
+		TNT1 A 4
+		Stop
+	Splash:
+		TNT1 A 1
+		stop
+	Death:
+		TNT1 A 5 A_SpawnItemEx("CeilXDeath3BLUE")
+		stop
+	Xdeath:
+		TNT1 A 1
+		Stop
+	}
+}
+
+actor CeilXDeath3 : Brutal_BloodSpot
+{
+Scale 1.0
+Renderstyle Normal
+BounceType "None"
++SPAWNCEILING
++MOVEWITHSECTOR
++NOGRAVITY
++MISSILE
++ISMONSTER		//INFRARED
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		Goto Crash
+	Death:
+	Crash:
+		TNT1 A 0 A_JumpIf(waterlevel > 1,"Death")
+		TNT1 A 0 A_Jump(256,"Live1","Live2","Live3")
+		Goto Live1
+	Live1:
+		XME2 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Live2:
+		XME2 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Live3:
+		XME2 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Fall:
+		TNT1 A 1 A_SpawnItemEx("XDeath3NoStick")
+		stop
+	Splash:
+		TNT1 A 1
+		stop
+	}
+}
+
+actor CeilXDeath3Green : Brutal_BloodSpotGreen
+{
+Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
+Scale 1.0
+Renderstyle Normal
+BounceType "None"
++SPAWNCEILING
++MOVEWITHSECTOR
++NOGRAVITY
++MISSILE
++ISMONSTER	//INFRARED
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		Goto Crash
+	Death:
+	Crash:
+		TNT1 A 0 A_JumpIf(waterlevel > 1,"Death")
+		TNT1 A 0 A_Jump(256,"Live1","Live2","Live3")
+		Goto Live1
+	Live1:
+		XME2 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Live2:
+		XME2 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Live3:
+		XME2 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Fall:
+		TNT1 A 1 A_SpawnItemEx("XDeath3NoStickGreen")
+		stop
+	Splash:
+		TNT1 A 1
+		stop
+	}
+}
+
+actor CeilXDeath3BLUE : Brutal_BloodSpotBLUE
+{
+Translation "Ice"	//BLUE
+Scale 1.0
+Renderstyle Normal
+BounceType "None"
++SPAWNCEILING
++MOVEWITHSECTOR
++NOGRAVITY
++MISSILE
++ISMONSTER	//INFRARED
+	states
+	{
+	Spawn:
+		TNT1 A 0
+		Goto Crash
+	Death:
+	Crash:
+		TNT1 A 0 A_JumpIf(waterlevel > 1,"Death")
+		TNT1 A 0 A_Jump(256,"Live1","Live2","Live3")
+		Goto Live1
+	Live1:
+		XME2 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Live2:
+		XME2 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Live3:
+		XME2 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF 3 ThrustThingZ(0,35,0,1)
+		Goto Fall
+	Fall:
+		TNT1 A 1 A_SpawnItemEx("XDeath3NoStickBLUE")
+		stop
+	Splash:
+		TNT1 A 1
+		stop
+	}
+}
+
+ACTOR XDeath3NoStick : XDeath1
+{
+Scale 1.0
+Speed 0
+Gravity 0.4
+Radius 1
+Height 0
+DeathSound "misc/XDeath3"
+Decal BrutalBloodSplat
++CLIENTSIDEONLY
++ISMONSTER		//INFRARED
+	States
+	{
+	Spawn:
+		XME2 H 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
+		TNT1 A 0 A_CheckFloor("Death")
+		XME2 H 3 //A_CustomMissile("Brutal_FlyingBloodTrail",0,0,random(0,360),2,random(0,360))
+		Loop
+	Death:
+		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5",0,0,random(0,180),2,random(0,180))
+		XME2 E 1
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME2 E 3
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpot")
+	Living:
+		XME2 E 600
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	Vanish:
+		TNT1 A 5
+		Stop
+	Splash:
+		TNT1 A 1
+		XME2 E 2002
+		Stop
+	}
+}
+
+ACTOR XDeath3NoStickGreen : XDeath1Green
+{
+Scale 1.0
+Speed 0
+Gravity 0.4
+Radius 1
+Height 0
+DeathSound "misc/XDeath3"
+Decal BrutalBloodSplatGreen
++CLIENTSIDEONLY
++ISMONSTER	//INFRARED
+	States
+	{
+	Spawn:
+		XME2 H 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
+		TNT1 A 0 A_CheckFloor("Death")
+		XME2 H 3 //A_CustomMissile("Brutal_FlyingBloodTrail",0,0,random(0,360),2,random(0,360))
+		Loop
+	Death:
+		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5Green",0,0,random(0,180),2,random(0,180))
+		XME2 E 1
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME2 E 3
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotGreen")
+	Living:
+		XME2 E 600
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	Vanish:
+		TNT1 A 5
+		Stop
+	Splash:
+		TNT1 A 1
+		XME2 E 2002
+		Stop
+	}
+}
+
+ACTOR XDeath3NoStickBLUE : XDeath1BLUE
+{
+Scale 1.0
+Speed 0
+Gravity 0.4
+Radius 1
+Height 0
+DeathSound "misc/XDeath3"
+Decal BrutalBloodSplatBLUE
++CLIENTSIDEONLY
++ISMONSTER	//INFRARED
+	States
+	{
+	Spawn:
+		XME2 H 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
+		TNT1 A 0 A_CheckFloor("Death")
+		XME2 H 3 //A_CustomMissile("Brutal_FlyingBloodTrail",0,0,random(0,360),2,random(0,360))
+		Loop
+	Death:
+		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodTrail5BLUE",0,0,random(0,180),2,random(0,180))
+		XME2 E 1
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		XME2 E 3
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotBLUE")
+	Living:
+		XME2 E 600
+		TNT1 A 0 A_JumpIfInventory("lowgraphicsmode",1,"Vanish")
+		Loop
+	Vanish:
+		TNT1 A 5
+		Stop
+	Splash:
+		TNT1 A 1
+		XME2 E 2002
+		Stop
+	}
+}

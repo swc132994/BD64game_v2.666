@@ -114,67 +114,69 @@ New weapon kicking and slide kicking animations by IDDQD_1337
 New Flashlight/torch pickup by IDDQD and Craneo (Sprites)
 
 Monsters:
-64Thing - Craneo(D64 sprites), based on the Mimic by StopSignal, sounds from Duke Nukem 3D by 3D Realms
+//64Thing - Craneo(D64 sprites), based on the Mimic by StopSignal, sounds from Duke Nukem 3D by 3D Realms
 
-64 Revenant - DrPyspy (sprites)
+//64 Revenant - DrPyspy (sprites)
 
-64 Archvile - DrPyspy (sprites)
+//64 Archvile - DrPyspy (sprites)
 
-Hellhound Alt - I'M (sprites)
+//Hellhound Alt - I'M (sprites)
 
-Hellhound GEC - Gerardo194 (sprites)
+//Hellhound GEC - Gerardo194 (sprites)
 
-Bruiser a.k.a Duke of Hell - Gerardo194 (sprites)
+//Bruiser a.k.a Duke of Hell - Gerardo194 (sprites)
 
-Knightmare a.k.a. DreadKnight - Dr Doctor (Original sprites) Craneo (Rework)
+//Knightmare a.k.a. DreadKnight - Dr Doctor (Original sprites) Craneo (Rework)
 
-Eradicator a.k.a unmaker mastermind - Craneo (sprite rework), Midway, 3DRealms, Immorpher, Sgt_Mark_IV, DrPyspy
+//Eradicator a.k.a unmaker mastermind - Craneo (sprite rework), Midway, 3DRealms, Immorpher, Sgt_Mark_IV, DrPyspy
 
-Chaingunner - Craneo (reworked sprites), Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim
+//64Chaingunner - Craneo (reworked sprites), Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim
 
-Acid Demon sounds from REALM667 - SLIME WORM by Captain Toenail
+//64Acid Demon sounds from REALM667 - SLIME WORM by Captain Toenail
 
-Spider Mastermind - Craneo (sprite rework), Midway, 3DRealms, Immorpher, Sgt_Mark_IV, DrPyspy
+//64Spider Mastermind - Craneo (sprite rework), Midway, 3DRealms, Immorpher, Sgt_Mark_IV, DrPyspy
 
-BFG Zombie - Sprites: Id Software, Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim, Korp, ItsNatureToDie, neoworm, Craneo. Sounds: Immorpher
-Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
+//64BFGZombie - Sprites: Id Software, Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim, Korp, ItsNatureToDie, neoworm, Craneo. Sounds: Immorpher
 
-64Wraith - Vader, Captain Toenail, Midway, Id Software, Gregor Punchatz, Craneo (D64 style sprites)
-64WaffenSS - Sounds from Return to Castle Wolfenstein, uploaded by Labtec Speakers to The Sounds Resource.
+//64Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 
-64Nightmare Elemental - Sprites by Styd051, Decorate by Craneo.
+//64Wraith - Vader, Captain Toenail, Midway, Id Software, Gregor Punchatz, Craneo (D64 style sprites)
 
-64FleshWizard by Craneo
+//64WaffenSS - Sounds from Return to Castle Wolfenstein, uploaded by Labtec Speakers to The Sounds Resource.
+
+//64Nightmare Elemental - Sprites by Styd051, Decorate by Craneo.
+
+//64FleshWizard by Craneo
 	Code: Melvin (base Flesh Wizard decorate), swc132994 (default BD64 code bits reused), Amuscaria (Diabolist projectile decorate)
 	Sprites: Freedoom (Flesh Wizard base), Monolith (Blood Zombie), Craneo (Flesh Wizard 64 conversion), HAUNT folder sprites taken from LCA DUST's Bloody Frandle
 	Sounds: 64FWSITx, 64FWDTHx (Dead Space), 64FWACTx (Doom 3), 64FWPAIx (Dying Light), 64FWTELx (System Shock 2)
 	Extra Deaths: Edited by Craneo and based on sprites by David G
 
-64Husk by Craneo
+//64Husk by Craneo
 	Sprite Credits: Amuscaria, DrDoctor, Midway
 	Code Credits: HorrorMovieRei, swc132994, Sgt_Mark_IV (most likely), Lagi (zombie group spawn code)
 	Sounds Credits: Id Software, Immorpher
 	Frankensprite by Craneo.
 
-64Forgotton One by Craneo
+//64Forgotton One by Craneo
 	Sprite Credits: Midway, DrDoctor, DrPyspy, Craneo
 	Sound Credits: Midway, HorrorMovieRei
 	Code Credits: swc132994, Sgt_Mark_IV
 
-64Butcher by Craneo
+//64Butcher by Craneo
 	Code: Bouncy, Graf Zahl, Ganbare-Lucifer, heavily edited for BD64 by Craneo
 	Sounds: Ganbare-Lucifer
 	Sprites: id Software, Captain J, aeea7835, Eriance, ItsNatureToDie, Midway Entertainment, Kinsie, D64 edit by Craneo
 	
-64Hellstorm by Craneo
+//64Hellstorm by Craneo
 	Decorate: Maelstrom & Craneo edits
 	GLDEFs: Dreadopp
 	Sounds: Id Software, Monolith Games
 	Sprites: Immorpher, Craneo, Atomic Frog, Witan Entertainment BV, MagicMaker
 
-64Zombie Burning death improvement - Midway, DrDoctor, Monolith, sprite rework by Craneo
+//64Zombies burning death improvement - Midway, DrDoctor, Monolith, sprite rework by Craneo
 
-64Fallen
+//64Fallen
 	Sprites: Amuscaria, DrDoctor, DrPyspy, Monolith Productions
 	Frankensprite by Craneo
 	Sounds: Dead Space, Doom Eternal
@@ -186,17 +188,17 @@ Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
 
 	old sounds, Brightmaps and ZScript version not used.
 
-//Infernal
+//64Infernal
 	Code: Maelstrom, Sgt_Mark_IV
 	Sprites: Ittrav (monster sprites), Atomic Frog (Seeker Missile sprites), DrDoctor, DrPyspy, Craneo (Fireball sprites)
 	Sounds: SEGA, Cooper B. Chance, downbeataura
 
-//Carrion
+//64Carrion
 	Hellforged zombie used as a base by Amuscaria
 	Frankensprite by Craneo
 	Sounds taken from Project Malice, originary from Dying Light
 
-//Keen Replacement
+//64Keen Replacement
 	MK4 HANGED SCORPION FOR D64 CREDITS:
 	Midway (everything)
 	TEPA6ANT (MK4 Scorpion ragdoll for Gmod)
@@ -251,6 +253,14 @@ Sprite Edit: Mor'ladim
 buzzing noises from Quake 1
 
 Edits by (Craneo)
+
+//ITEMS
+//Manual Healing Kit
+	MDKI- and M2KI- originally by  GhostKillahZero, FireHusky and PillowBlaster, animation parts taken from IDDQD_1337
+	WMEDP0 originally by TypicalSF
+	sounds from L4D2 and Doom 3
+	Special thanks to Empyre for coding help
+	edited by Craneo
 
 //DoomerBlazkowicz Edits to:
 Fists - sprites & sounds

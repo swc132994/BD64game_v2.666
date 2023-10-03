@@ -1,0 +1,364 @@
+ACTOR 64PortableFirstAidKit : DoomWeapon
+{
+Scale 0.8
+Obituary "How did you die from health. Are you a vampire?"
+Tag "First Aid Kit"
+Inventory.Icon "WMEDP0"
+Weapon.SlotNumber 1
+Weapon.SelectionOrder 9999
+Weapon.AmmoType1 "64Bandages"
+Weapon.AmmoUse1 1
+Weapon.AmmoGive1 0
+Weapon.AmmoType2 "64AdrenalineStim"
+Weapon.AmmoUse2 1
+Weapon.AmmoGive2 0
++WEAPON.AMMO_CHECKBOTH
++WEAPON.AMMO_OPTIONAL
++WEAPON.WIMPY_WEAPON
++WEAPON.CHEATNOTWEAPON
++WEAPON.NOALERT
+VisibleToPlayerClass "64DoomPlayer"
+Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
++INVENTORY.RESTRICTABSOLUTELY
++INVENTORY.UNDROPPABLE
+	States
+	{
+	Ready:
+		MDKI A 1 A_WeaponReady
+		Loop
+	Select:
+		MDKI A 1 A_Raise
+		Wait
+	Deselect:
+		MDKI A 1 A_Lower
+		Wait
+	Fire:
+		MDKI BCDEFG 2
+		TNT1 A 0 A_ReFire
+		Goto StopHealAnimation
+	Hold:
+		TNT1 A 0 A_JumpIfHealthLower(100,"CheckForBandages2")
+		MDKI H 1 A_Print("You Are Healthy")
+		MDKI H 25
+		Goto StopHealAnimation
+	CheckForBandages2:
+		TNT1 A 0 A_JumpIfInventory("64Bandages",1,"RealHealingAnimation")
+		MDKI H 1 A_Print("Not Enough Bandages!")
+		MDKI H 25
+		Goto StopHealAnimation
+	RealHealingAnimation:
+		TNT1 A 0 A_PlaySound("firstaidkit/bandaging",1)
+		TNT1 A 0 A_Stop
+		MDKI H 4 A_TakeInventory("64Bandages",1)
+		TNT1 A 0 A_Stop
+		MDKI I 4 HealThing(1,100)
+		TNT1 A 0 A_Stop
+		MDKI J 4
+		TNT1 A 0 A_Stop
+		TNT1 A 0 A_ReFire
+		Goto StopHealAnimation
+	StopHealAnimation:
+		MDKI GFEDCB 1
+		Goto Ready
+	AltFire:
+		TNT1 A 0 A_JumpIfInventory("64AdrenalineStim",1,"UseBerserkerAdrenaline")
+		MDKI A 1 A_Print("You look inside your First Aid Kit for Berserk Syringes and find nothing...")
+		MDKI A 25
+		Goto Ready
+	UseBerserkerAdrenaline:
+		MDQ1 ABCDEFGHIJKL 1
+		MDQ1 L 2
+		MDQ1 M 1 A_TakeInventory("64AdrenalineStim",1)
+		TNT1 A 0 A_Stop
+		TNT1 A 0 A_PlaySound("firstaidkit/zerk",1)
+		TNT1 A 0 HealThing(100,0)
+		TNT1 A 0 A_SetBlend("ff0000",0.75,70)
+		TNT1 A 0 A_GiveInventory("PowerStrength")
+		MDQ1 N 2
+		MDQ1 NOPQHGFDCB 1
+		MDQ1 A 1 A_FireCustomMissile("EmptySyringeSpawn",-5,0,8,-18)
+		Goto Ready
+	}
+}
+
+ACTOR 64PortableFirstAidKitTACTICAL : Brutal64Weapon
+{
+Scale 0.8
+Obituary "How did you die from health. Are you a vampire?"
+Tag "First Aid Kit"
+Inventory.Icon "WMEDP0"
+Weapon.SlotNumber 1
+Weapon.SelectionOrder 9999
+Weapon.AmmoType1 "64Bandages"
+Weapon.AmmoUse1 1
+Weapon.AmmoGive1 0
+Weapon.AmmoType2 "64AdrenalineStim"
+Weapon.AmmoUse2 1
+Weapon.AmmoGive2 0
++WEAPON.AMMO_CHECKBOTH
++WEAPON.AMMO_OPTIONAL
++WEAPON.WIMPY_WEAPON
++WEAPON.NOALERT
++WEAPON.CHEATNOTWEAPON
++INVENTORY.RESTRICTABSOLUTELY
++INVENTORY.UNDROPPABLE
+	States
+	{
+	MineThrowFlash:
+		M0KI DCBA 1
+		TNT1 A 18
+		M0KI ABCD 1
+		Stop
+	KickingFlash:
+		M0KI DCBA 1
+		M0KI A 8
+		M0KI ABCD 1
+		Stop
+	AirKickingFlash:
+		M0KI DCBA 1
+		M0KI A 10
+		M0KI ABCD 1
+		Stop
+	SlideKickingStart:
+		M0KI DCBA 1
+		M0KI A 18
+	SlideKickingEnd:
+		M0KI A 6
+		M0KI ABCD 1
+		Stop
+	v1Ready:
+	Ready:
+		MDKI A 1 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		Loop
+	Select:
+		TNT1 A 0 A_PlaySound("firstaidkit/raise")
+		M0KI ABCD 1 Offset(0,32)
+		TNT1 A 0 A_Raise
+		Wait
+	Deselect:
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
+		TNT1 A 0 A_Takeinventory("TossMine",0)
+		TNT1 A 0 A_Takeinventory("PlaceMine",0)
+		TNT1 A 0 A_Takeinventory("Kicking",0)
+		M0KI DCBA 1
+		TNT1 A 1 A_Lower
+		Wait
+	Fire:
+		MDKI BCDEFG 2
+		TNT1 A 0 A_ReFire
+		Goto StopHealAnimation
+	Hold:
+		TNT1 A 0 A_JumpIfHealthLower(100,"CheckForBandages2")
+		MDKI H 1 A_Print("You Are Healthy")
+		MDKI H 25
+		Goto StopHealAnimation
+	CheckForBandages2:
+		TNT1 A 0 A_JumpIfInventory("64Bandages",1,"RealHealingAnimation")
+		MDKI H 1 A_Print("Not Enough Bandages!")
+		MDKI H 25
+		Goto StopHealAnimation
+	RealHealingAnimation:
+		TNT1 A 0 A_PlaySound("firstaidkit/bandaging",1)
+		TNT1 A 0 A_Stop
+		MDKI H 4 A_TakeInventory("64Bandages",1)
+		TNT1 A 0 A_Stop
+		MDKI I 4 HealThing(1,100)
+		TNT1 A 0 A_Stop
+		MDKI J 4
+		TNT1 A 0 A_Stop
+		TNT1 A 0 A_ReFire
+		Goto StopHealAnimation
+	StopHealAnimation:
+		MDKI GFEDCB 1
+		Goto Ready
+	AltFire:
+		TNT1 A 0 A_JumpIfInventory("64AdrenalineStim",1,"UseBerserkerAdrenaline")
+		MDKI A 1 A_Print("You look inside your First Aid Kit for Berserk Syringes and find nothing...")
+		MDKI A 25
+		Goto Ready
+	UseBerserkerAdrenaline:
+		MDQ1 ABCDEFGHIJKL 1
+		MDQ1 L 2
+		MDQ1 M 1 A_TakeInventory("64AdrenalineStim",1)
+		TNT1 A 0 A_Stop
+		TNT1 A 0 A_PlaySound("firstaidkit/zerk",1)
+		TNT1 A 0 HealThing(100,0)
+		TNT1 A 0 A_SetBlend("ff0000",0.75,70)
+		TNT1 A 0 A_GiveInventory("PowerStrength")
+		MDQ1 N 2
+		MDQ1 NOPQHGFDCB 1
+		MDQ1 A 1 A_FireCustomMissile("EmptySyringeSpawn",-5,0,8,-18)
+		Goto Ready
+	}
+}
+
+ACTOR EmptySyringeSpawn : 50CaseSpawn
+{
+	States
+	{
+	Spawn:
+		TNT1 A 1 NoDelay A_CustomMissile("EmptySyringe",1,0,random(-85,-95),2,1)
+		Stop
+	}
+}
+
+ACTOR EmptySyringe
+{
+Scale 0.5
+Height 2
+Radius 2
+Speed 4
+Mass 6
+SeeSound "weapons/shell"
+-DROPOFF
+-NOGRAVITY
++WINDTHRUST
++CLIENTSIDEONLY
++MOVEWITHSECTOR
++MISSILE
++NOBLOCKMAP
++NOTELEPORT
++FORCEXYBILLBOARD
++NOTDMATCH
++GHOST
++ISMONSTER		//INFRARED
+	States
+	{
+	Spawn:
+		ZRKS U 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)		//FLIP IMAGE HORZ
+		ZRKS U 4 A_CheckFloor("Death")
+		WAIT
+	Death:
+		ZRKS W 4
+	rest:
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		ZRKS X 400
+		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
+		Loop
+	Stoping:
+		TNT1 A 1
+		Stop
+	}
+}
+
+//Ammotypes not meant to be visible during normal gameplay. Items given by Medikit & Stimpack pickups
+Actor 64Bandages : Ammo
+{
+Scale 0.82
+Inventory.PickupMessage "Found Some Bandages."
+Inventory.Icon "BNDGZ0"
++IGNORESKILL
+Inventory.Amount 1
+Inventory.MaxAmount 100
+Ammo.BackpackAmount 0
+Ammo.BackpackMaxAmount 100
+	States
+	{
+	Spawn:
+		BNDG Z -1
+		Stop
+	}
+}
+
+Actor 64AdrenalineStim : Ammo
+{
+Scale 0.5
+Inventory.PickupMessage "Found a BERSERK syringe."
+Inventory.Icon "ZRKSZ0"
++IGNORESKILL
+Inventory.Amount 1
+Inventory.MaxAmount 1
+Ammo.BackpackAmount 0
+Ammo.BackpackMaxAmount 1
+	States
+	{
+	Spawn:
+		ZRKS Z -1
+		Stop
+	}
+}
+
+Actor BandagedStimSpawner : CustomInventory
+{
+scale 0.82
+Inventory.PickupMessage "You scavenge 10 bandages from this Stimpack."
+	States
+	{
+	Spawn:
+		STIM A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"AlphaSpawn")
+		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"CensoredSpawn")
+		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==3,"BFGStyleSpawn")
+		STIM A -1
+		Stop
+	CensoredSpawn:
+		STIM B -1
+		Stop
+	BFGStyleSpawn:
+		STIM C -1
+		Stop
+	AlphaSpawn:
+		STIM D -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("64Bandages",10)
+		Stop
+	}
+}
+
+Actor BandagedMedikitSpawner : CustomInventory
+{
+scale 0.82
+Inventory.PickupMessage "You scavenge 25 bandages from this Medikit."
+	States
+	{
+	Spawn:
+		MEDI A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"AlphaSpawn")
+		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"CensoredSpawn")
+		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==3,"BFGStyleSpawn")
+		MEDI A -1
+		Stop
+	CensoredSpawn:
+		MEDI B -1
+		Stop
+	BFGStyleSpawn:
+		MEDI C -1
+		Stop
+	AlphaSpawn:
+		MEDI D -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("64Bandages",25)
+		Stop
+	}
+}
+
+Actor BerserkerSyringeSpawner : CustomInventory
+{
+scale 0.82
+Inventory.PickupMessage "You scavenge a Berserk syringe from this Medikit."
+	States
+	{
+	Spawn:
+		PSTR A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"AlphaSpawn")
+		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"CensoredSpawn")
+		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==3,"BFGStyleSpawn")
+		PSTR A -1
+		Stop
+	CensoredSpawn:
+		PSTR B -1
+		Stop
+	BFGStyleSpawn:
+		PSTR C -1
+		Stop
+	AlphaSpawn:
+		PSTR D -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("64AdrenalineStim",1)
+		Stop
+	}
+}

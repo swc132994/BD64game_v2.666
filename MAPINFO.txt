@@ -18,7 +18,7 @@ Skill Baby
 	Name = "Be Gentle!"
 	AmmoFactor = 2.0
 	EasyBossBrain
-	mustconfirm = "Are you kidding me? This is barely a challenge."
+	mustconfirm = "Are you kidding me? This is barely a challenge"
 }
 
 Skill Easy
@@ -27,14 +27,14 @@ Skill Easy
 	Name = "Bring it on!"
 	Key = "n"
 	EasyBossBrain
-	mustconfirm = "Don't complain if you find it boring."
+	mustconfirm = "Don't complain if you find it boring"
 }
 
 Skill Normal
 {
 	SpawnFilter = Normal
 	Name = "I own Doom!"
-	mustconfirm = "Normal difficulty."
+	mustconfirm = "Normal difficulty"
 	defaultskill
 }
 
@@ -43,7 +43,7 @@ Skill Hard
 	SpawnFilter = Hard
 	MonsterHealth = 1.0
 	Name = "Watch me die!"
-	mustconfirm = "Equivalent to Ultra Violence."
+	mustconfirm = "Equivalent to Ultra Violence"
 }
 
 Skill Nightmare
@@ -51,9 +51,24 @@ Skill Nightmare
 	SpawnFilter = Hard
 	DamageFactor = 1.5
 	MonsterHealth = 1.25
-	FastMonsters
+//	FastMonsters
 	Name = "Hardcore!"
-	mustconfirm = "Monsters are faster, more durarble. All damage increased by 50%."
+	mustconfirm = "Monsters are more durarble. All damage increased by 50%"
+}
+
+Skill Horror
+{
+	SpawnFilter = Hard
+	DamageFactor = 1.5
+	MonsterHealth = 1.25
+	ReplaceActor = "64HealthBonus","64Bandages"
+	ReplaceActor = "Stimpack","BandagedStimSpawner"
+	ReplaceActor = "Medikit","BandagedMedikitSpawner"
+	ReplaceActor = "64Berserk","BerserkerSyringeSpawner"
+//	FastMonsters
+	Name = "Survival!"
+	textcolor = Gray
+	mustconfirm = "Monsters are more durarble and inflict more damage. Healing done manually"
 }
 
 Intermission Doom2Cast
