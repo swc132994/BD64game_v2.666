@@ -1,0 +1,637 @@
+Actor 64Revenant : Revenant Replaces Revenant	//DrPyspy 64 stlye revenant
+{
+//$category "Game/BD64_Monsters
+Scale 0.68
+Health 350
+Height 65
+MeleeThreshold 146	//default 196
+MeleeRange 60		//default 44
+PainChance "SuperFists",255
+PainChance "Kick",255
+PainChance "SuperKick",255
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+DropItem "DemonEssenceSpawner"
++DONTHARMSPECIES
++NOBLOODDECALS
+	States
+	{
+	Spawn:
+		SKEL DE 10 A_LookEx
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget20",10,0,70)
+		Loop
+	Forget:
+		TNT1 A 0 A_ClearTarget
+		Goto Spawn
+	See:
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget10",10,0,70)
+		SKEL AABBC 2 A_Chase
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2",10,0,70)
+		SKEL C 2
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget10",10,0,70)
+		SKEL DDEEF 2 A_Chase
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2",10,0,70)
+		SKEL F 2
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
+		Loop
+	Melee:
+		TNT1 A 0 A_FaceTarget
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget6",-8,0,65)
+		SKEL G 6 A_SkelWhoosh
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget6",10,0,70)
+		SKEL H 6 A_FaceTarget
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget6",15,0,63)
+		SKEL I 6 A_SkelFist
+		Goto See
+	Missile:
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget12",8,0,65)
+		SKEL J 12 Bright A_FaceTarget
+		TNT1 A 0 A_CustomMissile("64RevenantTracer3",65,19,0,0)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget6",8,0,65)
+		SKEL J 6 Bright
+		TNT1 A 0 A_CustomMissile("64RevenantTracer2",65,-19,0,0)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget6",-4,0,70)
+		SKEL K 6
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget12",-4,0,70)
+		SKEL K 12 A_FaceTarget
+		Goto See
+	Pain:
+		SKEL L 5
+		SKEL L 5 A_Pain
+		Goto See
+	Raise:
+		SKEL QPONM 5
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
+		Goto See
+	Death:
+		SKEL M 5 A_NoBlocking
+		SKEL N 5 A_Scream
+		SKEL OP 5
+		SKEL Q 35
+		SKEL Q -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		Stop
+	AlmostDead:
+		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"XDeath")
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
+		SND1 A 1 A_SpawnItemEx("LegsWalkAbout",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		SND1 A 1 A_SpawnItemEx("AlmostDead64Revenant",0,0,40,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	Death.CutLess:
+		TNT1 A 0 A_Jump(152,"AlmostDead")//60%
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		RVNC ABC 5
+		TNT1 A 0 ThrustThing(random(0,360),5,0,0)
+		TNT1 AAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_SpawnItemEx("XDeathRevenantLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
+		SND1 C 4 A_CheckFloor(1)
+		Wait
+		SND1 D 4
+		SND1 E 35
+		SND1 E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		Stop
+	Death.Cutless2:
+		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Xdeath")
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeathRevenantArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("XDeathRevenantLauncher",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		SND2 A 1 A_SpawnItemEx("Brutalized64Revenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	Death.Shotgun:
+		TNT1 A 0 A_Jump(85,"Death")//33%
+		SKEL L 1 A_JumpIfCloser(1000,"Death.CutLess2")
+	Death.SSG:
+		SKEL L 1 A_JumpIfCloser(250,"XDeath")
+		TNT1 A 0 A_Jump(64,"Death")//25%
+		SKEL L 1 A_JumpIfCloser(1000,"Death.CutLess2")
+		TNT1 A 0 A_Recoil(6)
+		Goto Death
+	Death.Head:
+		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Death")
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
+		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
+		SKNH A 1 A_SpawnItemEx("Dying64revenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	Death.Plasma:
+		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmall",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,360))
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",30,0,random(0,360),2,random(0,360))
+		TNT1 AA 0 A_CustomMissile("CarbonizedSmoke1",30,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
+		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
+	XDeath:
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeathRevenantArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_SpawnItemEx("XDeathRevenantLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		SKG3 A 2 ThrustThingZ(0,40,0,0)
+		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		SKG3 A 2 A_CheckFloor("LANDAFTERXDEATH")
+		Wait
+	LandAfterXDeath:
+		SKG3 B 1 A_Stop
+		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		SKG3 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		Stop
+	LandAfterXDeath2:
+		SKG3 C 1
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		SKG3 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		Stop
+	Death.Superkick:
+	Death.SuperFists:
+		SKEL L 1 A_Jump(256,"Death","Death.CutLess2","XDeath")
+		Stop
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		POL5 A -1
+		Stop
+	}
+}
+
+Actor 64StealthRevenant : 64Revenant Replaces StealthRevenant
+{
++STEALTH
+}
+
+Actor 64RevenantTracer3 Replaces RevenantTracer
+{
+Game Doom
+SpawnID 53
+Scale 0.4
+Damage 8
+Speed 10
+Height 12
+Radius 6
+SeeSound "skeleton/attack"
+DeathSound "skeleton/tracex"
+Decal "SmallerScorch"
+DamageType Fire
+PROJECTILE
++SEEKERMISSILE
++EXTREMEDEATH
+Health 10
++NOBLOOD
+	States
+	{
+	Spawn:
+		TNT1 A 2
+		TNT1 A 0 A_JumpIf(CallACS("ShootableProjectiles")==False, "SpawnContinue")
+		TNT1 A 0 A_ChangeFlag(NOBLOCKMAP,0)
+		TNT1 A 0 A_ChangeFlag(SHOOTABLE,1)
+	SpawnContinue:
+		M5B1 A 2 Bright A_SpawnItemEx("RedFlareSmall")
+		TNT1 A 0 A_SeekerMissile(15,15)
+		TNT1 A 0 A_SpawnItemEx("RevenantFireTrailparticle")
+		TNT1 A 0 A_SpawnItemEx("OldschoolRocketSmokeTrail2")
+		M5B1 B 2 Bright A_SpawnItemEx("RedFlareSmall")
+		TNT1 A 0 A_SeekerMissile(15,15)
+		TNT1 A 0 A_SpawnItemEx("RevenantFireTrailparticle")
+		TNT1 A 0 A_SpawnItemEx("OldschoolRocketSmokeTrail2")
+		M5B1 C 2 Bright A_SpawnItemEx("RedFlareSmall")
+		TNT1 A 0 A_SeekerMissile(15,15)
+		TNT1 A 0 A_SpawnItemEx("RevenantFireTrailparticle")
+		TNT1 A 0 A_SpawnItemEx("OldschoolRocketSmokeTrail2")
+		Loop
+	Death:
+		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile("64ExplosionFireBase",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmall")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterSmall")
+		TNT1 A 0 A_SpawnItemEx("ExplosionAirDisplacementEffect")
+		TNT1 A 0 A_playSound("EXPLOSIO3",2)
+		TNT1 A 0 Radius_Quake(2,8,0,12,0)
+		TNT1 A 2
+		TNT1 A 0 A_Explode(5,100)
+		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
+		MBAL CDEFGH 2 Bright
+		Stop
+	}
+}
+
+Actor 64RevenantTracer2 : 64RevenantTracer3
+{
+Speed 9
+}
+
+Actor RevenantFireTrailparticle
+{
+scale 0.4
+Alpha 0.9
+RenderStyle Add
++FORCEXYBILLBOARD
++NOINTERACTION
++CLIENTSIDEONLY
+	States
+	{
+	Spawn:
+		TNT1 A 2
+		M5B2 ABCA 1 Bright
+		Stop
+	}
+}
+
+Actor Dying64revenant : 64revenant
+{
+Health 100
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+DropItem "None"
+-COUNTKILL
++FLOORCLIP
++FRIENDLY
++NOTARGET
++NOPAIN
++THRUACTORS
+	states
+	{
+	See:
+	Spawn:
+		SKNH ABCDEDCBFGHIHGFABCDEDCBFGHIHGF 3 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		Goto Death
+	Death:
+		TNT1 A 0 A_Die
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeathRevenantArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_SpawnItemEx("XDeathRevenantLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn")
+		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
+		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_PlaySound("world/barrelx")
+		TNT1 AA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
+		TNT1 AA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
+		TNT1 AA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_CustomMissile("64ExplosionFireBase",20,0,random(0,360),2,random(0,360))
+		TNT1 AAA 0 A_CustomMissile("BarrelExplosionFire",20,0,random(0,360),2,random(10,40))
+		TNT1 A 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_playSound("EXPLO3",2)
+		TNT1 A 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 Radius_Quake(2,8,0,12,0)
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		SKD1 A 2
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		SKD1 A 2
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		SKD1 A 2
+		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		SKD1 A 2
+		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 AA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
+		TNT1 AA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
+		TNT1 AA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_CustomMissile("64ExplosionFireBase",20,0,random(0,360),2,random(0,360))
+		TNT1 AAA 0 A_CustomMissile("BarrelExplosionFire",20,0,random(0,360),2,random(10,40))
+		TNT1 A 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_playSound("EXPLO3",2)
+		TNT1 A 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 Radius_Quake(2,8,0,12,0)
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		SKG3 A 2 ThrustThingZ(0,40,0,0)
+		TNT1 A 0 ThrustThing(RANDOM(0,360),5)
+		SKG3 A 2 A_CheckFloor("LANDAFTERXDEATH")
+		Wait
+	Raise:
+		SKEL QPONM 5
+		SKEL M 1 A_SpawnItemEx("64Revenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	}
+}
+
+Actor AlmostDead64Revenant : 64revenant
+{
+Speed 5
+Health 150
+Height 44
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+DropItem "None"
+-COUNTKILL
++FLOORCLIP
++THRUACTORS
+	States
+	{
+	Spawn:
+		SND1 A 10 A_LookEx
+		TNT1 A 0 A_CustomMissile("XDeath1",5,-17,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("Intestine",5,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath1",5,17,random(0,360),2,random(0,90))
+		Goto See
+	See:
+		TNT1 A 0 A_Jump(128,2)
+		TNT1 A 0 A_CustomMissile("XDeath1",5,-17,random(0,360),2,random(0,90))
+		SND1 AABB 5 A_Chase
+		TNT1 A 0 A_Jump(128,2)
+		TNT1 A 0 A_CustomMissile("Intestine",5,0,random(0,360),2,random(0,90))
+		SND1 AABB 5 A_Chase
+		TNT1 A 0 A_Jump(128,2)
+		TNT1 A 0 A_CustomMissile("XDeath1",5,17,random(0,360),2,random(0,90))
+		Loop
+	Pain:
+		SND1 A 5
+		SND1 B 5 A_Pain
+		Goto See
+	Melee:
+	Missile:
+		SND1 A 3 A_FaceTarget
+		SND1 J 8 Bright A_CustomMissile("64RevenantTracer3",35,18,0,0)
+		SND1 J 8 Bright A_CustomMissile("64RevenantTracer2",35,-18,0,0)
+		SND1 A 3 A_FaceTarget
+		Goto See
+	Death.Shotgun:
+		TNT1 A 0 A_Jump(86,"XDeath")
+		SND1 A 1 A_JumpIfCloser(170,"XDeath")
+		Goto Death
+	Death.SSG:
+		SND1 A 1 A_JumpIfCloser(250,"XDeath")
+	Death:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		SND1 CD 5
+		SND1 E 35
+		SND1 E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		Stop
+	Death.Plasma:
+	Death.BFG:
+		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmall",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,360))
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",30,0,random(0,360),2,random(0,360))
+		TNT1 AA 0 A_CustomMissile("CarbonizedSmoke1",30,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
+		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
+		Goto XDeath
+	Death.CutLess:
+	Death.Superkick:
+	Death.SuperFists:
+	XDeath:
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeathRevenantArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		SKG3 A 2 ThrustThingZ(0,40,0,0)
+		SKG3 A 2 A_CheckFloor(1)
+		Wait
+		TNT1 A 0 A_Stop
+		TNT1 A 0 A_Jump(128,2)
+		SKG3 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		Stop
+		SKG3 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		Stop
+	Raise:
+		SKEL QPONM 5
+		SKEL M 1 A_SpawnItemEx("64Revenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	}
+}
+
+Actor Brutalized64Revenant : 64revenant
+{
+Health 150
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+DamageFactor "CutLess",1
+DropItem "None"
+-COUNTKILL
++FLOORCLIP
++FRIENDLY
++NOTARGET
++NOPAIN
++THRUACTORS
+	States
+	{
+	Spawn:
+		SND2 A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//Flip horizontal
+	See:
+		TNT1 A 0 A_Pain
+		TNT1 A 0 A_Jump(85,8,15,21,28)//33%
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
+		SND2 ABAC 5 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
+		SND2 ACAB 5 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_Pain
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
+		SND2 ABAC 5 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_Jump(64,"Attack")//25%
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
+		SND2 ACAB 5 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_Pain
+		SND2 ABAB 5 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
+		SND2 CABC 5 A_FaceTarget
+		TNT1 A 0 A_Jump(64,"Attack")//25%
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_Pain
+		SND2 ABAC 5 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
+		SND2 BCAB 5 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",50,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_Pain
+		SND2 ACABABC 5 A_FaceTarget
+		Goto Death
+	Attack:
+		TNT1 A 0 A_CustomMissile("64RevenantTracer3",65,0,0,0)
+		SND2 A 6 A_FaceTarget
+		SND2 BC 4 A_FaceTarget
+		Goto See+9
+	Death.Shotgun:
+		TNT1 A 0 A_Jump(86,"XDeath")
+		SND2 A 1 A_JumpIfCloser(170,"XDeath")
+		Goto Death
+	Death.SSG:
+		SND2 A 1 A_JumpIfCloser(250,"XDeath")
+	Death:
+		TNT1 A 0 A_Die
+		TNT1 A 0 A_Scream
+		SND2 D 5 A_NoBlocking
+		SND2 EF 5
+		SND2 G 35
+		SND2 G -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		Stop
+	Death.Plasma:
+	Death.BFG:
+		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmall",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,360))
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",30,0,random(0,360),2,random(0,360))
+		TNT1 AA 0 A_CustomMissile("CarbonizedSmoke1",30,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
+		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
+		Goto XDeath
+	Death.CutLess:
+	Death.Superkick:
+	Death.SuperFists:
+	XDeath:
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeathRevenantArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_SpawnItemEx("XDeathRevenantLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		SKG4 A 2 ThrustThingZ(0,40,0,0)
+		SKG4 A 2 A_CheckFloor("LANDAFTERXDEATH")
+		Wait
+	LandAfterXDeath:
+		SKG4 B 1 A_Stop
+		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		SKG4 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		Stop
+	LandAfterXDeath2:
+		SKG4 C 1
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		SKG4 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		Stop
+	raise:
+		SKEL QPONM 5
+		SKEL M 1 A_SpawnItemEx("64Revenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	}
+}
+
+Actor LegsWalkAbout
+{
+Scale 0.68
+Health 80
+Height 40
+Radius 8
+Speed 5
+SeeSound ""
+PainSound ""
+DeathSound ""
+ActiveSound ""
+AttackSound ""
+DropItem "None"
+MeleeThreshold 146	//default 196
+MeleeRange 60		//default 44
+PainChance "SuperFists",255
+PainChance "Kick",255
+PainChance "SuperKick",255
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+MONSTER
+-COUNTKILL
++SHOOTABLE
++FLOORCLIP
++LOOKALLAROUND
++FRIENDLY
++NOTARGET
++NOPAIN
++THRUACTORS
+	States
+	{
+	Spawn:
+		DKEL A 1
+		Goto See
+	See:
+		DKEL AABBCCDD 2 A_Wander
+		TNT1 A 0 A_SpawnItemEx("Brutal_Blood",0,0,40)
+		DKEL AABBCCDD 2 A_Wander
+		TNT1 A 0 A_SpawnItemEx("Brutal_Blood",0,0,40)
+		DKEL AABBCCDD 2 A_Wander
+		TNT1 A 0 A_SpawnItemEx("Brutal_Blood",0,0,40)
+		DKEL AABBCCDD 2 A_Wander
+		TNT1 A 0 A_SpawnItemEx("Brutal_Blood",0,0,40)
+		DKEL AABBCCDD 2 A_Wander
+		TNT1 A 0 A_SpawnItemEx("Brutal_Blood",0,0,40)
+		DKEL AABBCCDD 2 A_Wander
+		TNT1 A 0 A_SpawnItemEx("Brutal_Blood",0,0,40)
+		DKEL AABBCCDD 2 A_Wander
+		TNT1 A 0 A_SpawnItemEx("Brutal_Blood",0,0,40)
+		DKEL AABBCCDD 2 A_Wander
+		TNT1 A 0 A_SpawnItemEx("Brutal_Blood",0,0,40)
+		DKEL AABBCCDD 2 A_Wander
+		TNT1 A 0 A_SpawnItemEx("Brutal_Blood",0,0,40)
+		DKEL AABBCCDD 2 A_Wander
+		TNT1 A 0 A_SpawnItemEx("Brutal_Blood",0,0,40)
+		DKEL AABBCCDD 2 A_Wander
+		Goto Death
+	Death:
+		TNT1 A 0 A_Die
+		TNT1 A 0 A_NoBlocking
+		SKD1 ABCDE 5
+		SKD1 E -1 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
+		Stop
+	Death.Plasma:
+	Death.BFG:
+	Death.Shotgun:
+	Death.SSG:
+	Death.Cutless:
+	Death.Superkick:
+	Death.SuperFists:
+	XDeath:
+		TNT1 A 0 A_NoBlocking
+		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
+		TNT1 A 0 A_CustomMissile("XDeathRevenantLegL",20,0,random(0,360),2,random(20,90))
+		SKD1 A 1 A_CustomMissile("XDeathRevenantLegR",20,0,random(0,360),2,random(20,90))
+		Stop
+	}
+}
