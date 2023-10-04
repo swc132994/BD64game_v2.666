@@ -1437,7 +1437,7 @@ Scale 0.7
 	Spawn:
 		CEYE A 0 NoDelay A_JumpIf(CallACS("D64MonstersOnlyReplacer")==1,"SpawnEvilEye")	//if D64 monsters only enabled spawn props
 		TNT1 A 0 A_JumpIf(CallACS("PoltergeistEnablerACS")==0,"SpawnEvilEye")
-		TNT1 A 0 A_Jump(32,"SpawnVenomEye1", "SpawnVenomEye2")//12.5%
+		TNT1 A 0 A_Jump(32,"SpawnVenomEye1","SpawnVenomEye2")//12.5%
 	SpawnEvilEye:
 		TNT1 A 1 A_SpawnItemEx("64EvilEye",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
