@@ -126,3 +126,15 @@ TAG_CHAINGUN = Chaingun
 TAG_ROCKETLAUNCHER = Rocket Launcher
 TAG_PLASMARIFLE = Plasma Rifle
 TAG_BFG9000 = BFG9000
+
+FN_ARACH =	Arachnotron
+FN_ARCH =	Archvile
+FN_BARON =	Baron of Hell
+FN_CACO =	Cacodemon
+FN_DEMON =	Demon
+FN_HELL =	Hell Knight
+FN_IMP =	Imp
+FN_LOST =	Lost Soul
+FN_MANCU =	Mancubus
+FN_PAIN =	Pain Elemental
+FN_REVEN =	Revenant

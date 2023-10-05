@@ -55,7 +55,7 @@ SSG GUY				19110	170
 HELLHOUND GEC		19117	177		{-------------------
 HELLHOUND ALT		19116	176		{Hound Chooser 19125 185
 HELLHOUND CER		19115	175		{-------------------
-ANNIHILATOR			1001	157
+ANNIHILATOR			19991	157
 MOTHERDEMON			9897	17
 ERADICATOR			19119
 BELPHEGOR 			11053
@@ -287,6 +287,7 @@ BD64v2.666_Rework_D4_Weapons_&_Voxels - Reworked version of "DOOM4 Voxels and We
 BD64v2.666 Xtra goodies pack - Created and maintained by Craneo. Various sprite animations by IDDQD_1337
 
 Props and misc:
+Triangular automap arrow method taken from "PSX Doom TC"
 Impaled Doom 64 guys - Craneo
 64 Floating skull - Craneo (extra sprites), DrDoctor (original)
 64 EvilEye and Evileye2 - Craneo

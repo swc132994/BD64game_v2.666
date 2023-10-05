@@ -84,7 +84,7 @@ DropItem "Soulsphere",32
 	}
 }
 
-Actor Annihilator64 : Cyberdemon 1001
+Actor Annihilator64 : Cyberdemon 19991
 {
 //$category "Game/BD64_Monsters
 SpawnID 157
