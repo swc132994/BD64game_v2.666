@@ -33,50 +33,54 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		MDKI A 1 A_Lower
 		Wait
 	Fire:
-		MDKI BCDEFG 2
-		TNT1 A 0 A_ReFire
-		Goto StopHealAnimation
-	Hold:
-		TNT1 A 0 A_JumpIfHealthLower(100,"CheckForBandages2")
-		MDKI H 1 A_Print("You Are Healthy")
-		MDKI H 25
-		Goto StopHealAnimation
-	CheckForBandages2:
-		TNT1 A 0 A_JumpIfInventory("64Bandages",1,"RealHealingAnimation")
-		MDKI H 1 A_Print("Not Enough Bandages!")
-		MDKI H 25
-		Goto StopHealAnimation
-	RealHealingAnimation:
-		TNT1 A 0 A_PlaySound("firstaidkit/bandaging",1)
-		TNT1 A 0 A_Stop
-		MDKI H 4 A_TakeInventory("64Bandages",1)
-		TNT1 A 0 A_Stop
-		MDKI I 4 HealThing(1,100)
-		TNT1 A 0 A_Stop
-		MDKI J 4
-		TNT1 A 0 A_Stop
-		TNT1 A 0 A_ReFire
-		Goto StopHealAnimation
-	StopHealAnimation:
-		MDKI GFEDCB 1
+		TNT1 A 0 A_JumpIfHealthLower(100,"CheckingBandages")
+		MDKI A 1 A_Print("You Are Healthy")
+		MDKI A 25
 		Goto Ready
+	CheckingBandages:
+		TNT1 A 0 A_JumpIfInventory("64Bandages",1,"StartHealAnimation")
+		MDKI A 1 A_Print("Not Enough Bandages!")
+		MDKI A 25
+		Goto Ready		
+	StartHealAnimation:
+		MDKI BCD 1
+	RealHealingAnimation:
+		TNT1 A 0 SetPlayerProperty(0,1,4)
+		MDKI EFGHIJ 1
+		MDKI KLM 2
+		MDKI NOPQRSTUVW 1
+		TNT1 A 10		
+	Healing:
+		TNT1 A 0 A_PlaySound("firstaidkit/bandaging",1)	
+		TNT1 A 0 HealThing(1,100)	
+		TNT1 A 0 A_TakeInventory("64Bandages",1)
+		TNT1 A 0 A_JumpIfInventory("64Bandages",1,"Healing")
+		Goto FinishHealingAnimation
+	FinishHealingAnimation:	
+		TNT1 A 0 SetPlayerProperty(0,0,4)
+		Goto Select
 	AltFire:
 		TNT1 A 0 A_JumpIfInventory("64AdrenalineStim",1,"UseBerserkerAdrenaline")
 		MDKI A 1 A_Print("You look inside your First Aid Kit for Berserk Syringes and find nothing...")
 		MDKI A 25
 		Goto Ready
 	UseBerserkerAdrenaline:
-		MDQ1 ABCDEFGHIJKL 1
-		MDQ1 L 2
-		MDQ1 M 1 A_TakeInventory("64AdrenalineStim",1)
+		TNT1 A 0 A_JumpIfInventory("PowerStrength",1,"NoMoreBerserk")
+		MDQ1 ABCDEF 1
+		MDK1 ABCDEFGH 1
+		MDK1 I 1 A_TakeInventory("64AdrenalineStim",1)
 		TNT1 A 0 A_Stop
 		TNT1 A 0 A_PlaySound("firstaidkit/zerk",1)
-		TNT1 A 0 HealThing(100,0)
+		TNT1 A 0 HealThing(100)
 		TNT1 A 0 A_SetBlend("ff0000",0.75,70)
 		TNT1 A 0 A_GiveInventory("PowerStrength")
-		MDQ1 N 2
-		MDQ1 NOPQHGFDCB 1
-		MDQ1 A 1 A_FireCustomMissile("EmptySyringeSpawn",-5,0,8,-18)
+		MDK1 JKL 2
+		MDK1 MNOPQRSTU 1
+		TNT1 A 1 A_FireCustomMissile("EmptySyringeSpawn",-5,0,8,-18)	
+		Goto Select
+	NoMoreBerserk:
+		MDKI A 1 A_Print("We do not advise you to use the berserk syringe more than once!")
+		MDKI A 25
 		Goto Ready
 	}
 }
@@ -105,9 +109,9 @@ Weapon.AmmoGive2 0
 	States
 	{
 	MineThrowFlash:
-		M0KI DCBA 1
-		TNT1 A 18
-		M0KI ABCD 1
+		M0KI EDCBA 1
+		TNT1 A 16
+		M0KI ABCDE 1
 		Stop
 	KickingFlash:
 		M0KI DCBA 1
@@ -135,7 +139,7 @@ Weapon.AmmoGive2 0
 		Loop
 	Select:
 		TNT1 A 0 A_PlaySound("firstaidkit/raise")
-		M0KI ABCD 1 Offset(0,32)
+		M0KI ABCDE 1 Offset(0,32)
 		TNT1 A 0 A_Raise
 		Wait
 	Deselect:
@@ -143,55 +147,60 @@ Weapon.AmmoGive2 0
 		TNT1 A 0 A_Takeinventory("TossMine",0)
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
-		M0KI DCBA 1
+		M0KI EDCBA 1
 		TNT1 A 1 A_Lower
 		Wait
 	Fire:
-		MDKI BCDEFG 2
-		TNT1 A 0 A_ReFire
-		Goto StopHealAnimation
-	Hold:
-		TNT1 A 0 A_JumpIfHealthLower(100,"CheckForBandages2")
-		MDKI H 1 A_Print("You Are Healthy")
-		MDKI H 25
-		Goto StopHealAnimation
-	CheckForBandages2:
-		TNT1 A 0 A_JumpIfInventory("64Bandages",1,"RealHealingAnimation")
-		MDKI H 1 A_Print("Not Enough Bandages!")
-		MDKI H 25
-		Goto StopHealAnimation
-	RealHealingAnimation:
-		TNT1 A 0 A_PlaySound("firstaidkit/bandaging",1)
-		TNT1 A 0 A_Stop
-		MDKI H 4 A_TakeInventory("64Bandages",1)
-		TNT1 A 0 A_Stop
-		MDKI I 4 HealThing(1,100)
-		TNT1 A 0 A_Stop
-		MDKI J 4
-		TNT1 A 0 A_Stop
-		TNT1 A 0 A_ReFire
-		Goto StopHealAnimation
-	StopHealAnimation:
-		MDKI GFEDCB 1
+		TNT1 A 0 A_JumpIfHealthLower(100,"CheckingBandages")
+		MDKI A 1 A_Print("You Are Healthy")
+		MDKI A 25
 		Goto Ready
+	CheckingBandages:
+		TNT1 A 0 A_JumpIfInventory("64Bandages",1,"StartHealAnimation")
+		MDKI A 1 A_Print("Not Enough Bandages!")
+		MDKI A 25
+		Goto Ready		
+	StartHealAnimation:
+		MDKI BCD 1
+	RealHealingAnimation:
+		TNT1 A 0 SetPlayerProperty(0,1,4)
+		MDKI EFGHIJ 1
+		MDKI KLM 2
+		MDKI NOPQRSTUVW 1
+		TNT1 A 10		
+	Healing:
+		TNT1 A 0 A_PlaySound("firstaidkit/bandaging",1)	
+		TNT1 A 0 HealThing(1,100)
+		TNT1 A 0 A_TakeInventory("64Bandages",1,TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_JumpIfInventory("Health",100,"FinishHealingAnimation")		
+		TNT1 A 0 A_JumpIfInventory("64Bandages",1,"Healing")
+		Goto FinishHealingAnimation
+	FinishHealingAnimation:	
+		TNT1 A 0 SetPlayerProperty(0,0,4)
+		Goto Select
 	AltFire:
 		TNT1 A 0 A_JumpIfInventory("64AdrenalineStim",1,"UseBerserkerAdrenaline")
 		MDKI A 1 A_Print("You look inside your First Aid Kit for Berserk Syringes and find nothing...")
 		MDKI A 25
 		Goto Ready
 	UseBerserkerAdrenaline:
-		MDQ1 ABCDEFGHIJKL 1
-		MDQ1 L 2
-		MDQ1 M 1 A_TakeInventory("64AdrenalineStim",1)
+		TNT1 A 0 A_JumpIfInventory("PowerStrength",1,"NoMoreBerserk")	
+		MDQ1 ABCDEF 1
+		MDK1 ABCDEFGH 1
+		MDK1 I 1 A_TakeInventory("64AdrenalineStim",1)
 		TNT1 A 0 A_Stop
 		TNT1 A 0 A_PlaySound("firstaidkit/zerk",1)
-		TNT1 A 0 HealThing(100,0)
+		TNT1 A 0 HealThing(100)
 		TNT1 A 0 A_SetBlend("ff0000",0.75,70)
 		TNT1 A 0 A_GiveInventory("PowerStrength")
-		MDQ1 N 2
-		MDQ1 NOPQHGFDCB 1
-		MDQ1 A 1 A_FireCustomMissile("EmptySyringeSpawn",-5,0,8,-18)
-		Goto Ready
+		MDK1 JKL 2
+		MDK1 MNOPQRSTU 1
+		TNT1 A 1 A_FireCustomMissile("EmptySyringeSpawn",-5,0,8,-18)	
+		Goto Select
+	NoMoreBerserk:
+		MDKI A 1 A_Print("We do not advise you to use the berserk syringe more than once!")
+		MDKI A 25
+		Goto Ready		
 	}
 }
 
@@ -271,9 +280,9 @@ Inventory.PickupMessage "Found a BERSERK syringe."
 Inventory.Icon "ZRKSZ0"
 +IGNORESKILL
 Inventory.Amount 1
-Inventory.MaxAmount 1
+Inventory.MaxAmount 3
 Ammo.BackpackAmount 0
-Ammo.BackpackMaxAmount 1
+Ammo.BackpackMaxAmount 5
 	States
 	{
 	Spawn:

@@ -46,9 +46,19 @@ Skill Hard
 	mustconfirm = "Equivalent to Ultra Violence"
 }
 
-Skill Nightmare
+Skill HardPlus
 {
 	SpawnFilter = Hard
+	MonsterHealth = 1.0
+	Name = "Watch me die+!"
+	FastMonsters
+	SpawnMulti //This command works correctly in GZDoom, but has no effect on Zandronum
+	mustconfirm = "Equivalent to Ultra Violence+, Fast Monsters, (GZDoom only) Spawn Multiplayer weapons"
+}
+
+Skill Nightmare
+{
+	SpawnFilter = Nightmare
 	DamageFactor = 1.5
 	MonsterHealth = 1.25
 //	FastMonsters
@@ -56,7 +66,7 @@ Skill Nightmare
 	mustconfirm = "Monsters are more durarble. All damage increased by 50%"
 }
 
-Skill Horror
+Skill Survival
 {
 	SpawnFilter = Hard
 	DamageFactor = 1.5
@@ -70,6 +80,22 @@ Skill Horror
 	textcolor = Gray
 	mustconfirm = "Monsters are more durarble and inflict more damage. Healing done manually"
 }
+
+Skill SurvivalRealism
+{
+	SpawnFilter = Nightmare
+	DamageFactor = 5.0
+	MonsterHealth = 0.5
+	ReplaceActor = "64HealthBonus","64Bandages"
+	ReplaceActor = "Stimpack","BandagedStimSpawner"
+	ReplaceActor = "Medikit","BandagedMedikitSpawner"
+	ReplaceActor = "64Berserk","BerserkerSyringeSpawner"
+	FastMonsters
+	Name = "Survival! (Realism)"
+	textcolor = Gray
+	mustconfirm = "Monsters are less durarble but faster and inflict more damage. Healing done manually"
+}
+
 
 Intermission Doom2Cast
 {

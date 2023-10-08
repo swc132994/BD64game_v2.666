@@ -496,9 +496,14 @@ SetResultValue(GetCVar("ShootableProjectilesCVAR"));
 
 script "EnableManualHealing" ENTER
 {
-	if(GameSkill() == 5)
+	if(GameSkill() == 6)
 	if(PlayerClass(PlayerNumber()) == 0)
 		GiveInventory("64PortableFirstAidKit",1);
 	else
 	GiveInventory("64PortableFirstAidKitTACTICAL",1);
+	else if(GameSkill() == 7)	
+	if(PlayerClass(PlayerNumber()) == 0)
+		GiveInventory("64PortableFirstAidKit",1);
+	else
+	GiveInventory("64PortableFirstAidKitTACTICAL",1);	
 }
