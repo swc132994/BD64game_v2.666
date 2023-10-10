@@ -1826,7 +1826,7 @@ Scale 0.25
 
 actor MinuscleBloodSpotBLUE : Brutal_BloodSpotBLUE
 {
-Translation "0:255=%[0,0,0]:[0,1,2]"	//BLUE
+Translation "0:255=%[0,0,0]:[1,0,2]"	//BLUE
 Scale 0.25
 }
 
