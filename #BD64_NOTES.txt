@@ -285,6 +285,7 @@ BD64v2.666_Beefy_SFX (BigStronk)
 BD64v2.666_SkiesHD - Slightly edited version of "High Quality Skies for BD 64" by Marklegg (https://www.moddb.com/mods/brutal-doom-64/addons/high-quality-skies-for-brutal-doom-64)
 BD64v2.666_Rework_D4_Weapons_&_Voxels - Reworked version of "DOOM4 Voxels and Weapons For BD64-V3.3" by KEENO7 (https://www.moddb.com/mods/brutal-doom-64/addons/doom4-voxels-and-weapons-for-bd64v3)
 BD64v2.666 Xtra goodies pack - Created and maintained by Craneo. Various sprite animations by IDDQD_1337
+PSX64_RandomMusic - Random Doom 64 Music Selector by Unmaker23 (Discord)
 
 Props and misc:
 Triangular automap arrow method taken from "PSX Doom TC"

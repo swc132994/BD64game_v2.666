@@ -64,11 +64,19 @@ DropItem "DemonEssenceSpawner"
 		DI64 H 2 A_Pain
 		Goto See
 	Death:
+		TNT1 A 0 A_Jump(128,"Death2")
 		DI64 L 5 A_NoBlocking
 		DI64 M 5 A_Scream
 		DI64 NO 5
 		DI64 P 35
 		DI64 P -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		Stop
+	Death2:
+		TIMD A 5 A_NoBlocking
+		TIMD B 5 A_Scream
+		TIMD CDE 5
+		TIMD F 35
+		TIMD F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Head:
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
@@ -746,11 +754,19 @@ BloodColor "45 34 7F"	//Hex value
 		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
 		Goto See
 	Death:
+		TNT1 A 0 A_Jump(128,"Death2")
 		TRO2 L 5 A_NoBlocking
 		TRO2 M 5 A_Scream
 		TRO2 NO 5
 		TRO2 P 35
 		TRO2 P -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		Stop
+	Death2:
+		NIMD A 5 A_NoBlocking
+		NIMD B 5 A_Scream
+		NIMD CDE 5
+		NIMD F 35
+		NIMD F -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Bullet:
 		TNT1 A 0 A_Jump(205,"Death")//80%
