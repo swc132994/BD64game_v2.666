@@ -1480,7 +1480,8 @@ Decal BrutalBloodSplat
 +THRUACTORS
 +FLOORCLIP
 +CORPSE
-BounceType "Doom"
++BOUNCEONWALLS
++BOUNCEONFLOORS
 BounceCount 1
 BounceFactor 1
 	States
