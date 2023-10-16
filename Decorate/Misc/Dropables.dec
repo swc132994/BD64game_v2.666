@@ -217,3 +217,49 @@ ACTOR DropedChaingun2 : DropedShotgun
 		Stop
 	}
 }
+
+actor ChainsawDrop : ShotgunDrop
+{
+	states
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_Jump(128,"Spawn2")
+		Goto Spawn1
+	Spawn1:
+		TNT1 A 1 A_CustomMissile("DropedChainsaw",20,0,0,2,random(30,50))
+		stop
+	Spawn2:
+		TNT1 A 1 A_CustomMissile("DropedChainsaw2",20,0,180,2,random(30,50))
+		stop
+	}
+}
+
+ACTOR DropedChainsaw : DropedShotgun
+{
+	States
+	{
+	Spawn:
+		CWAS A 4
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
+		CWAS BCDEFGH 4
+	Death:
+		TNT1 A 0 A_DropItem("64Chainsaw")
+		TNT1 A 1 A_DropItem("64ChainsawTactical")
+		Stop
+	}
+}
+
+ACTOR DropedChainsaw2 : DropedShotgun
+{
+	States
+	{
+	Spawn:
+		CWAS H 4
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
+		CWAS GFEDCBA 4
+	Death:
+		TNT1 A 0 A_DropItem("64Chainsaw")
+		TNT1 A 1 A_DropItem("64ChainsawTactical")
+		Stop
+	}
+}

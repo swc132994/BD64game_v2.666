@@ -4,11 +4,20 @@ Speed 20
 PROJECTILE
 +NOCLIP
 +CLIENTSIDEONLY
-+ISMONSTER		//INFRARED
 	States
 	{
 	Spawn:
 		TNT1 A 1 NoDelay A_CustomMissile("EmptyBrass",-2,0,random(80,100),2,random(40,80))
+		Stop
+	}
+}
+
+ACTOR BulletCaseSpawn : 50CaseSpawn
+{
+	States
+	{
+	Spawn:
+		TNT1 A 1 NoDelay A_CustomMissile("BulletCase",-2,0,random(80,100),2,random(40,80))
 		Stop
 	}
 }
@@ -86,7 +95,7 @@ Scale 0.8
 
 ACTOR EmptyBrass
 {
-Scale 0.15
+Scale 0.2
 Height 3
 Radius 3
 Speed 6
@@ -159,6 +168,39 @@ BounceFactor 0.3
 	Crush:
 		TNT1 A 1
 		Stop
+	}
+}
+
+ACTOR BulletCase : EmptyBrass
+{
+Scale 0.1
+Speed 12
+Mass 4
+	States
+	{
+	Spawn:
+		C4S1 A 0 NoDelay A_Jump(128,2)
+		"####" "#" 0 A_SetScale(0-ScaleX,ScaleY)		//FLIP IMAGE HORZ
+	SpawnHold:
+		"####" "#" 0 A_JumpIf(waterlevel > 1,"Splash")
+		C4S1 ABCDEFGH 3 A_CheckFloor("Death")
+		Loop
+	Death:
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3")
+		Goto Rest1
+	Rest1:
+		C4S1 I 400
+		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
+		Loop
+	Rest2:
+		C4S1 J 400
+		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
+		Loop
+	Rest3:
+		C4S1 K 400
+		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
+		Loop
 	}
 }
 

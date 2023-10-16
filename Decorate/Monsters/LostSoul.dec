@@ -56,6 +56,9 @@ DamageFactor "CauseObjectsToSplash",0.0
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionSmokeFast22",30,0,random(0,360),2,random(0,360))
 		SKUL H 4 Bright A_Scream
 		SKUL I 4 Bright
+		TNT1 AA 0 A_CustomMissile("LostSoulPiece1",42,0,random(0,360),2,random(0,160))
+		TNT1 AA 0 A_CustomMissile("LostSoulPiece2",42,0,random(0,360),2,random(0,160))
+		TNT1 AAAAA 0 A_CustomMissile("LostSoulPiece3",42,0,random(0,360),2,random(0,160))
 		SKUL J 4 A_NoBlocking
 		SKUL KLMNO 4 A_FadeOut(0.1667)
 		SKUL P 4 A_FadeOut(0.1667)

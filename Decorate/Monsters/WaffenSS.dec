@@ -64,44 +64,44 @@ DropItem "SOULSPAWNER"
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,55)
 		SSWV F 7 A_FaceTarget
 		SSWV G 1 Bright Light("ZOMBIEATK") A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",0,0,30)
+		TNT1 A 0 A_SpawnItemEx("BulletCaseSpawn",0,0,30)
 		TNT1 A 0 A_PlaySound("MP40",1)
 		SSWV F 2 A_FaceTarget
 		SSWV G 1 Bright Light("ZOMBIEATK") A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",0,0,30)
+		TNT1 A 0 A_SpawnItemEx("BulletCaseSpawn",0,0,30)
 		TNT1 A 0 A_PlaySound("MP40",1)
 		SSWV F 2 A_FaceTarget
 		SSWV G 1 Bright Light("ZOMBIEATK") A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",0,0,30)
+		TNT1 A 0 A_SpawnItemEx("BulletCaseSpawn",0,0,30)
 		TNT1 A 0 A_PlaySound("MP40",1)
 		SSWV F 2 A_FaceTarget
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,55)
 		SSWV F 7 A_FaceTarget
 		SSWV G 1 Bright Light("ZOMBIEATK") A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",0,0,30)
+		TNT1 A 0 A_SpawnItemEx("BulletCaseSpawn",0,0,30)
 		TNT1 A 0 A_PlaySound("MP40",1)
 		SSWV F 2 A_FaceTarget
 		SSWV G 1 Bright Light("ZOMBIEATK") A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",0,0,30)
+		TNT1 A 0 A_SpawnItemEx("BulletCaseSpawn",0,0,30)
 		TNT1 A 0 A_PlaySound("MP40",1)
 		SSWV F 2 A_FaceTarget
 		SSWV G 1 Bright Light("ZOMBIEATK") A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",0,0,30)
+		TNT1 A 0 A_SpawnItemEx("BulletCaseSpawn",0,0,30)
 		TNT1 A 0 A_PlaySound("MP40",1)
 		SSWV F 2 A_FaceTarget
 		TNT1 A 0 A_Jump(128,"See")
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,55)
 		SSWV F 7 A_FaceTarget
 		SSWV G 1 Bright Light("ZOMBIEATK") A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",0,0,30)
+		TNT1 A 0 A_SpawnItemEx("BulletCaseSpawn",0,0,30)
 		TNT1 A 0 A_PlaySound("MP40",1)
 		SSWV F 2 A_FaceTarget
 		SSWV G 1 Bright Light("ZOMBIEATK") A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",0,0,30)
+		TNT1 A 0 A_SpawnItemEx("BulletCaseSpawn",0,0,30)
 		TNT1 A 0 A_PlaySound("MP40",1)
 		SSWV F 2 A_FaceTarget
 		SSWV G 1 Bright Light("ZOMBIEATK") A_CustomMissile("EnemyProjectile",36,5,random(-3,3),1,random(-3,3))
-		TNT1 A 0 A_SpawnItemEx("50CaseSpawn",0,0,30)
+		TNT1 A 0 A_SpawnItemEx("BulletCaseSpawn",0,0,30)
 		TNT1 A 0 A_PlaySound("MP40",1)
 		SSWV F 2 A_FaceTarget
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget6",0,0,55)
