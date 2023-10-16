@@ -23,7 +23,7 @@
 
 //WEAPONS & AMMO
 #INCLUDE "Decorate/Weapons/BaseWeapon.dec"
-#INCLUDE "Decorate/Weapons/Punches.dec"
+#INCLUDE "Decorate/Weapons/Fists.dec"
 #INCLUDE "Decorate/Weapons/Chainsaw.dec"
 #INCLUDE "Decorate/Weapons/Pistol.dec"
 #INCLUDE "Decorate/Weapons/SubMachineGun.dec"
@@ -35,7 +35,7 @@
 #INCLUDE "Decorate/Weapons/PlasmaRifle.dec"
 #INCLUDE "Decorate/Weapons/BFG.dec"
 #INCLUDE "Decorate/Weapons/Unmaker.dec"
-#INCLUDE "Decorate/Weapons/AlphaUnmaker.dec"
+#INCLUDE "Decorate/Weapons/Lasergun.dec"
 #INCLUDE "Decorate/Weapons/GaussCannon.dec"
 #INCLUDE "Decorate/Weapons/ProxyMine.dec"
 #INCLUDE "Decorate/Weapons/MP40.dec"

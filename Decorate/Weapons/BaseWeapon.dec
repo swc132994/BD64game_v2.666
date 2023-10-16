@@ -1,6 +1,11 @@
 //Own Weapon Base for Tactical and Modern Classes
 //restored bob from v1
 
+Actor Kicking : Inventory
+{
+inventory.maxamount 1
+}
+
 Actor ISDM : Inventory	//DEATHMATCH STUFF
 {
 Inventory.MaxAmount 1
@@ -269,5 +274,145 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 A 0 A_FireCustomMissile("64GroundProxMine")
 		TNT1 A 13
 		Goto GetReady
+	}
+}
+
+Actor KickAttack : FastProjectile
+{
+Damage(random(15,25))
+DamageType Kick
+Speed 32
+Radius 18
+Height 6
+Alpha 0.6
+RenderStyle Add
+SeeSound "none"
+DeathSound "none"
+Decal "none"
+Obituary "%o chewed on %k's foot."
++NOEXTREMEDEATH
+	States
+	{
+	Spawn:
+		TNT1 A 1
+		Stop
+	Death:
+	XDeath:
+		TNT1 A 0 A_CheckFloor("DeathOnGround")
+		TNT1 A 0 A_PlaySound("FOOTWALL",3)
+		TNT1 AAAAAA 0 A_CustomMissile("MeleeSmoke",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 Radius_Quake(2,6,0,5,0)
+		TNT1 A 10
+		Stop
+	DeathOnGround:
+		TNT1 A 0 A_PlaySound("FOOTWALL",3)
+		TNT1 AAAAAA 0 A_CustomMissile("MeleeSmoke",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 Radius_Quake(2,6,0,5,0)
+		TNT1 A 0 A_Explode(10,40,0)
+		TNT1 A 10
+		Stop
+	}
+}
+
+Actor SuperKickAttack : KickAttack
+{
+Damage(2*random(70,90))
+DamageType SuperKick
+Decal Crack
++EXTREMEDEATH
+	States
+	{
+	Death:
+		TNT1 A 0 A_PlaySound("FOOTWALL",3)
+		TNT1 AAAAAA 0 A_CustomMissile("MeleeSmoke",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 Radius_Quake(4,6,0,5,0)
+		TNT1 A 15
+		Stop
+	XDeath:
+		TNT1 A 0 A_PlaySound("FOOTWALL",4)
+		TNT1 A 0 A_PlaySound("SUPERFIST",3)
+		TNT1 AAAAAA 0 A_CustomMissile("MeleeSmoke",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 Radius_Quake(4,6,0,5,0)
+		TNT1 A 15
+		Stop
+	}
+}
+
+Actor AirKickAttack : KickAttack
+{
+Damage(random(54,62))
+Radius 20
+Height 32
+}
+
+Actor SuperAirKickAttack : KickAttack
+{
+Damage(2*random(92,110))
+DamageType SuperKick
+Radius 20
+Height 32
+Decal Crack
++EXTREMEDEATH
+	States
+	{
+	Death:
+		TNT1 A 0 A_PlaySound("FOOTWALL",3)
+		TNT1 AAAAAA 0 A_CustomMissile("MeleeSmoke",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 Radius_Quake(4,10,0,5,0)
+		TNT1 A 10
+		Stop
+	XDeath:
+		TNT1 A 0 A_PlaySound("FOOTWALL",4)
+		TNT1 A 0 A_PlaySound("SUPERFIST",3)
+		TNT1 AAAAAA 0 A_CustomMissile("MeleeSmoke",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 Radius_Quake(4,6,0,5,0)
+		TNT1 A 15
+		Stop
+	}
+}
+
+Actor KickAttackDetectDowned : KickAttack
+{
+Damage(random(2,2))
+Speed 40
+Radius 4
+Height 4
+-ACTIVATEIMPACT
++NOBLOOD
++BLOODLESSIMPACT
+	States
+	{
+	Death:
+		TNT1 A 1
+		Stop
+	}
+}
+
+Actor SlideAttack : KickAttack
+{
+Damage(random(4,5))
+Speed 37
+Obituary "%o tripped on %k's slide kick."
++GHOST
++THRUGHOST
+	States
+	{
+	Spawn:
+		TNT1 A 1
+		Stop
+	XDeath:
+		TNT1 A 0 A_PlaySound("FOOTWALL",4)
+		TNT1 A 0 A_PlaySound("SUPERFIST",3)
+		TNT1 AAAAAA 0 A_CustomMissile("MeleeSmoke",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 Radius_Quake(2,6,0,5,0)
+		TNT1 A 10
+		Stop
+	Death:
+		TNT1 A 0 A_PlaySound("FOOTWALL",3)
+		TNT1 AAAAAA 0 A_CustomMissile("MeleeSmoke",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_GiveToTarget("KickHasHit",1)
+		TNT1 A 0 Radius_Quake(2,6,0,5,0)
+		TNT1 A 10
+		Stop
 	}
 }
