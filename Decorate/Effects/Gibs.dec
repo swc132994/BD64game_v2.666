@@ -2111,8 +2111,6 @@ Scale 1
 		LSP1 ABCDEFGH 4 A_CheckFloor("Death")
 		Wait
 	Death:
-		LSP1 A 35
-		TNT1 A 0 A_SpawnItemEX("BarrelExplosionSmokeColumn",0,0,1)
 		LSP1 A -1
 		Stop
 	}
@@ -2128,8 +2126,6 @@ ACTOR LostSoulPiece2 : XDeathZombieArm1
 		LSP2 ABCDEFGH 4 A_CheckFloor("Death")
 		Wait
 	Death:
-		LSP2 A 35
-		TNT1 A 0 A_SpawnItemEX("BarrelExplosionSmokeColumn",0,0,1)
 		LSP2 A -1
 		Stop
 	}
@@ -2146,8 +2142,6 @@ Scale 1
 		LSP3 ABCDEFGH 4 A_CheckFloor("Death")
 		Wait
 	Death:
-		LSP3 A 35
-		TNT1 A 0 A_SpawnItemEX("BarrelExplosionSmokeColumn",0,0,1)
 		LSP3 A -1
 		Stop
 	}
