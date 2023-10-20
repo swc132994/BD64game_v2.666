@@ -53,7 +53,7 @@ Scale 0.82
 Weapon.SlotNumber 4
 Weapon.SlotPriority 1
 Weapon.SelectionOrder 800
-Weapon.AmmoType "64HighCaliberBox"
+Weapon.AmmoType "Clip"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 10
 Inventory.PickupMessage "You got the assault rifle!"

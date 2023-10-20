@@ -37,7 +37,7 @@ Scale 0.82
 Weapon.SlotNumber 4
 Weapon.SlotPriority 2
 Weapon.SelectionOrder 700
-Weapon.AmmoType "64HighCaliberBox"
+Weapon.AmmoType "Clip"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 20
 Inventory.PickupMessage "$GOTCHAINGUN"

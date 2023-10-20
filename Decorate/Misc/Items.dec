@@ -399,13 +399,15 @@ Actor 64ClipBoxReplacer : CustomInventory Replaces Clipbox
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(256,"Spawn2","Spawn3")
-		TNT1 A 1
-		Stop
-	Spawn2:
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("CheckPlayerClass",0,0,0) == 1,"RandomSpawn")
+		Goto SpawnClipBox
+	RandomSpawn:
+		TNT1 A 1 A_Jump(128,"SpawnHighCalibreBox")
+		Goto SpawnClipBox
+	SpawnClipBox:
 		TNT1 A 1 A_SpawnItemEx("64ClipBox",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
-	Spawn3:
+	SpawnHighCalibreBox:
 		TNT1 A 1 A_SpawnItemEx("64HighCaliberBox",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	}
@@ -440,6 +442,7 @@ Inventory.MaxAmount 150
 Ammo.BackpackAmount 20
 Ammo.BackpackMaxAmount 300
 Inventory.Icon "HI04X0"
+Tag "High Calibre Ammo Box"
 	states
 	{
 	Spawn:

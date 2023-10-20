@@ -254,15 +254,15 @@ SetResultValue(GetCVar("SSGZombieRandom_Cvar"));
 script "SSGinDoom1" (void)
 {
 SetResultValue(GetCVar("SSGinDoom1_Cvar"));
-	if	(GetCvar("SSGinDoom1_Cvar") == 3)
+	if(GetCvar("SSGinDoom1_Cvar") == 3)
 	{
 		str maplump = StrParam(n:PRINTNAME_LEVEL);
 		
-		if (StrCmp(StrLeft(maplump, 2), "E1") == 0 | StrCmp(StrLeft(maplump, 2), "E2") == 0 | StrCmp(StrLeft(maplump, 2), "E3") == 0 | StrCmp(StrLeft(maplump, 2), "E4") == 0)
+		if(StrCmp(StrLeft(maplump,2),"E1") == 0 | StrCmp(StrLeft(maplump,2),"E2") == 0 | StrCmp(StrLeft(maplump,2),"E3") == 0 | StrCmp(StrLeft(maplump,2),"E4") == 0)
 		{
 			SetActorState(0,"SSG_Shotgun_Replacer");
 		}
-		else if (StrCmp(StrLeft(maplump, 5), "LEVEL") == 0 | StrCmp(StrLeft(maplump, 3), "NV_") == 0 )
+		else if(StrCmp(StrLeft(maplump,5),"LEVEL") == 0 | StrCmp(StrLeft(maplump,3),"NV_") == 0)
 		{
 			SetActorState(0,"ShotgunSpawner");
 		}
@@ -501,9 +501,31 @@ script "EnableManualHealing" ENTER
 		GiveInventory("64PortableFirstAidKit",1);
 	else
 	GiveInventory("64PortableFirstAidKitTACTICAL",1);
-	else if(GameSkill() == 7)	
+	else if(GameSkill() == 7)
 	if(PlayerClass(PlayerNumber()) == 0)
 		GiveInventory("64PortableFirstAidKit",1);
 	else
-	GiveInventory("64PortableFirstAidKitTACTICAL",1);	
+	GiveInventory("64PortableFirstAidKitTACTICAL",1);
+}
+
+Script "CheckPlayerClass" (void)
+{
+	for(int i = 2337; i < 2400; i++)
+	{
+		if(CheckActorInventory(i,"IsTacticalClass"))
+		{
+			SetResultValue(1);
+			break;
+		}
+		if(CheckActorInventory(i,"IsModern"))
+		{
+			SetResultValue(1);
+			break;
+		}
+		else
+		{
+			SetResultValue(0);
+			break;
+		}
+	}
 }
