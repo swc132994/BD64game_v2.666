@@ -533,39 +533,6 @@ Actor BrutalizedHuskZombie_2 : BrutalizedHuskZombie_1
 	}
 }
 
-Actor HordeEatingDeadMarine replaces DeadMarine
-{
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItemex("64TheHorde_Spawner")
-		TNT1 A 1 A_SpawnItemex("64DeadMarineReplacer")
-		stop
-	}
-}
-
-Actor HordeEatingGibbedMarine replaces GibbedMarine
-{
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItemex("64TheHorde_Spawner")
-		TNT1 A 1 A_SpawnItemex("64GibbedMarineReplacer")
-		stop
-	}
-}
-
-Actor HordeEatingGibbedMarineExtra replaces GibbedMarineExtra
-{
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItemex("64TheHorde_Spawner")
-		TNT1 A 1 A_SpawnItemex("64GibbedMarineExtraReplacer")
-		stop
-	}
-}
-
 Actor HordeEatingDeadZombieMan replaces DeadZombieMan
 {
 	States

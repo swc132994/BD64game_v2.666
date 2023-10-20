@@ -689,8 +689,10 @@ Tag "Stalker"
 		STKR H 7 Bright A_Scream
 		STKR I 5 Bright
 		TNT1 AA 0 A_CustomMissile("LostSoulPiece1",42,0,random(0,360),2,random(0,160))
-		TNT1 AA 0 A_CustomMissile("LostSoulPiece2",42,0,random(0,360),2,random(0,160))
-		TNT1 AAAAA 0 A_CustomMissile("LostSoulPiece3",42,0,random(0,360),2,random(0,160))
+		TNT1 A 0 A_CustomMissile("LostSoulPiece2",42,0,random(0,360),2,random(0,160))
+		TNT1 A 0 A_CustomMissile("LostSoulPiece3",42,0,random(0,360),2,random(0,160))
+		TNT1 A 0 A_CustomMissile("LostSoulPiece4",42,0,random(0,360),2,random(0,160))
+		TNT1 A 0 A_CustomMissile("LostSoulPiece5",42,0,random(0,360),2,random(0,160))
 		STKR J 4 A_NoBlocking
 		STKR KLMO 4 A_FadeOut(0.1667)
 		STKR P 4 A_FadeOut(0.1667)

@@ -1,5 +1,5 @@
 //Prop replacements
-Actor 64DeadMarineReplacer	//N.B. HUSK SPAWNER REPLACES PROP
+Actor 64DeadMarineReplacer replaces DeadMarine
 {
 Scale 0.8
 	States
@@ -9,7 +9,8 @@ Scale 0.8
 		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnDeadMarine")
 		TNT1 A 0 A_Jump(32,"SpawnThing")//12.5%
 	SpawnDeadMarine:
-		TNT1 A 1 A_SpawnItemEx("64DeadMarine",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		TNT1 A 0 A_SpawnItemEx("64DeadMarine",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		TNT1 A 1 A_SpawnItemex("64TheHorde_Spawner")
 		Stop
 	SpawnThing:
 		TNT1 A 1 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -17,7 +18,7 @@ Scale 0.8
 	}
 }
 
-Actor 64GibbedMarineReplacer	//N.B. HUSK SPAWNER REPLACES PROP
+Actor 64GibbedMarineReplacer replaces GibbedMarine
 {
 Scale 0.8
 	States
@@ -27,7 +28,8 @@ Scale 0.8
 		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnGibbedMarine")
 		TNT1 A 0 A_Jump(32,"SpawnThing")//12.5%
 	SpawnGibbedMarine:
-		TNT1 A 1 A_SpawnItemEx("64GibbedMarine",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		TNT1 A 0 A_SpawnItemEx("64GibbedMarine",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		TNT1 A 1 A_SpawnItemex("64TheHorde_Spawner")
 		Stop
 	SpawnThing:
 		TNT1 A 1 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -35,7 +37,7 @@ Scale 0.8
 	}
 }
 
-Actor 64GibbedMarineExtraReplacer	//N.B. HUSK SPAWNER REPLACES PROP
+Actor 64GibbedMarineExtraReplacer replaces GibbedMarineExtra
 {
 Scale 0.8
 	States
@@ -45,7 +47,8 @@ Scale 0.8
 		TNT1 A 0 A_JumpIf(CallACS("ThingRandomACS")==0,"SpawnGibbedMarineExtra")
 		TNT1 A 0 A_Jump(32,"SpawnThing")//12.5%
 	SpawnGibbedMarineExtra:
-		TNT1 A 1 A_SpawnItemEx("64GibbedMarineExtra",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		TNT1 A 0 A_SpawnItemEx("64GibbedMarineExtra",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		TNT1 A 1 A_SpawnItemex("64TheHorde_Spawner")
 		Stop
 	SpawnThing:
 		TNT1 A 1 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
