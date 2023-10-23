@@ -242,12 +242,13 @@ DropItem "SOULSPAWNER"
 Actor BrutalisedWaffenSS_1 : 64WaffenSS
 {
 Health 30
+Mass 1500
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:

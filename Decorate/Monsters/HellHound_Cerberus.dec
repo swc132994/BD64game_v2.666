@@ -137,13 +137,14 @@ DropItem "DemonEssenceSpawner"
 
 Actor Brutalized_CHound : 64CHellHound
 {
-Health 125
+Health 70
+Mass 1500
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:

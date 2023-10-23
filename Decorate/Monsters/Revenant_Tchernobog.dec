@@ -119,16 +119,17 @@ DropItem "DemonEssenceSpawner"
 
 Actor DyingTRevenant : 64TRevenant
 {
-Health 100
+Health 60
+Mass 1500
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FLOORCLIP
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	See:
@@ -209,16 +210,17 @@ DropItem "None"
 
 Actor AlmostDeadTRevenant : 64TRevenant
 {
-Health 150
+Health 60
+Mass 1500
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FLOORCLIP
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	See:
@@ -247,17 +249,18 @@ DropItem "None"
 
 Actor BrutalisedTRevenant : 64TRevenant
 {
-Health 150
+Health 60
+Mass 1500
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "CutLess",1
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FLOORCLIP
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:

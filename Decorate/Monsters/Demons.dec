@@ -197,14 +197,14 @@ DropItem "DemonEssenceSpawner"
 
 Actor 64DemonNoArm : 64Demon
 {
-Health 80
-Height 60
+Health 60
+Mass 1500
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:
@@ -567,14 +567,14 @@ DropItem "DemonEssenceSpawner"
 
 Actor 64SpectreNoArm : 64Spectre
 {
-Health 80
-Height 60
+Health 60
+Mass 1500
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:
@@ -980,13 +980,14 @@ Obituary "%o was hunted down by a nightmare spectre."
 
 Actor 64NightmareSpectreNoArm : 64NightmareSpectre
 {
-Health 80
+Health 60
+Mass 1500
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:

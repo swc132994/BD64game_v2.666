@@ -199,14 +199,14 @@ MONSTER
 
 Actor 64BrutalizedFleshWizard1 : 64FleshWizard //will eventually add headshot gibs and more
 {
-Health 60
-Height 70
+Health 70
+Mass 1500
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:
@@ -317,16 +317,8 @@ DropItem "None"
 	}
 }
 
-Actor 64BrutalizedFleshWizard2 : 64FleshWizard //will eventually add headshot gibs and more
+Actor 64BrutalizedFleshWizard2 : 64BrutalizedFleshWizard1 //will eventually add headshot gibs and more
 {
-Health 60
-Height 70
-DropItem "None"
--COUNTKILL
-+FRIENDLY
-+NOTARGET
-+NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:

@@ -252,13 +252,14 @@ MONSTER
 
 Actor BrutalizedHellstorm_1 : 64Hellstorm
 {
-Health 80
+Health 70
+Mass 1500
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:

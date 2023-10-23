@@ -295,13 +295,14 @@ Inventory.Amount 1
 
 Actor BrutalizedZombieman_1 : 64Zombieman
 {
+Mass 1500
 Health 30
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:
@@ -999,13 +1000,14 @@ Obituary "%o was blown apart by an SSG Zombie."
 
 Actor BrutalizedSSGGuy_1 : 64SSGGuy
 {
+Mass 1500
 Health 30
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:
@@ -1530,12 +1532,13 @@ RenderStyle Translucent
 Actor BrutalizedChaingunner_1 : 64ChaingunGuy
 {
 Health 30
+Mass 1500
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:

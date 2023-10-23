@@ -249,17 +249,18 @@ DropItem "DemonEssenceSpawner"
 
 Actor BrutalizedImp64 : 64DoomImp
 {
-Health 50
+Health 40
+Mass 1500
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Head",2
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FLOORCLIP
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:
@@ -447,20 +448,8 @@ DropItem "None"
 	}
 }
 
-Actor BrutalizedImp64_2 : 64DoomImp
+Actor BrutalizedImp64_2 : BrutalizedImp64
 {
-Health 50
-DamageFactor "CauseWaterSplash",0.0
-DamageFactor "CauseObjectsToSplash",0.0
-DamageFactor "Head",2
-DropItem "None"
--COUNTKILL
-+FLOORCLIP
-+SHOOTABLE
-+FRIENDLY
-+NOTARGET
-+NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:
@@ -935,17 +924,18 @@ BloodColor "45 34 7F"	//Hex value
 
 Actor BrutalizedNImp64 : NightmareImp
 {
-Health 50
+Health 40
+Mass 1500
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Head",2
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FLOORCLIP
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:
@@ -1132,20 +1122,8 @@ DropItem "None"
 	}
 }
 
-Actor BrutalizedNImp64_2 : NightmareImp
+Actor BrutalizedNImp64_2 : BrutalizedNImp64
 {
-Health 50
-DamageFactor "CauseWaterSplash",0.0
-DamageFactor "CauseObjectsToSplash",0.0
-DamageFactor "Head",2
-DropItem "None"
--COUNTKILL
-+FLOORCLIP
-+SHOOTABLE
-+FRIENDLY
-+NOTARGET
-+NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:

@@ -247,12 +247,13 @@ states
 Actor BrutalizedHuskZombie_1 : 64HuskZombie
 {
 Health 30
+Mass 1500
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:

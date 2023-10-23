@@ -366,7 +366,7 @@ Tag "$TAG_SHOTGUN"
 		TNT1 A 0 A_GiveInventory("Stamina",15)
 		TNT1 A 0 A_playsound("SGSWING")
 		SGAA E 1 A_FireCustomMissile("KickAttack",0,0,0,-7)
-		TNT1 A 0 A_RadiusThrust(4500,70,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
+		TNT1 A 0 A_RadiusThrust(4500,65,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
 		SGAA EFGH 1
 		SGAA IJ 3
 		SGAA KLMN 2
@@ -380,7 +380,7 @@ Tag "$TAG_SHOTGUN"
 		TNT1 A 0 A_GiveInventory("Stamina",12)
 		TNT1 A 0 A_playsound("SGSWING2")
 		SGAA N 1 A_FireCustomMissile("SuperKickAttack",0,0,0,-7)
-		TNT1 A 0 A_RadiusThrust(9000,70,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
+		TNT1 A 0 A_RadiusThrust(6750,65,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
 		SGAA NMLK 1
 		SGAA JI 3
 		SGAA HGFE 1

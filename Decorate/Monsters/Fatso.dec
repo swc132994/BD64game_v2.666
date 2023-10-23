@@ -226,16 +226,17 @@ RenderStyle Add
 
 Actor Brutalized64Fatso : 64Fatso
 {
-Health 175
+Health 70
+Mass 1500
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Chainsaw",2.0
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:

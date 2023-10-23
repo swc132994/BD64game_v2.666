@@ -211,14 +211,15 @@ BloodType "Brutal_BloodGreen"
 
 Actor 64AcidDemonNoArm : 64AcidDemon
 {
-Health 80
+Health 60
 Height 60
+Mass 1500
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:

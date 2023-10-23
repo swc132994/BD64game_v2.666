@@ -153,17 +153,19 @@ MeleeRange 60 //default 44
 
 Actor Brutalized64Caco : 64Cacodemon
 {
-Health 50
+Health 60
+Mass 1500
+Gravity 0.7
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DropItem "None"
+-SOLID
 -COUNTKILL
 -FLOAT
 -NOGRAVITY
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:
@@ -228,21 +230,8 @@ DropItem "None"
 	}
 }
 
-Actor Brutalized64Caco_2 : 64Cacodemon
+Actor Brutalized64Caco_2 : Brutalized64Caco
 {
-Health 75
-DamageFactor "CauseWaterSplash",0.0
-DamageFactor "CauseObjectsToSplash",0.0
-DropItem "None"
--COUNTKILL
--FLOAT
--NOGRAVITY
-+FLOORCLIP
-+SHOOTABLE
-+FRIENDLY
-+NOTARGET
-+NOPAIN
-+THRUACTORS
 	States
 	{
 	See:
@@ -302,21 +291,8 @@ DropItem "None"
 	}
 }
 
-Actor Brutalized64Caco_3 : 64Cacodemon
+Actor Brutalized64Caco_3 : Brutalized64Caco
 {
-Health 75
-DamageFactor "CauseWaterSplash",0.0
-DamageFactor "CauseObjectsToSplash",0.0
-DropItem "None"
--COUNTKILL
--FLOAT
--NOGRAVITY
-+FLOORCLIP
-+SHOOTABLE
-+FRIENDLY
-+NOTARGET
-+NOPAIN
-+THRUACTORS
 	States
 	{
 	See:
@@ -550,17 +526,19 @@ BloodColor "45 34 7F"	//Hex value
 
 Actor BrutalizedNCaco : NightmareCacodemon
 {
-Health 50
+Health 60
+Mass 1500
+Gravity 0.7
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DropItem "None"
+-SOLID
 -COUNTKILL
 -FLOAT
 -NOGRAVITY
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:
@@ -625,21 +603,8 @@ DropItem "None"
 	}
 }
 
-Actor BrutalizedNCaco_2 : NightmareCacodemon
+Actor BrutalizedNCaco_2 : BrutalizedNCaco
 {
-Health 75
-DamageFactor "CauseWaterSplash",0.0
-DamageFactor "CauseObjectsToSplash",0.0
-DropItem "None"
--COUNTKILL
--FLOAT
--NOGRAVITY
-+FLOORCLIP
-+SHOOTABLE
-+FRIENDLY
-+NOTARGET
-+NOPAIN
-+THRUACTORS
 	States
 	{
 	See:
@@ -699,21 +664,8 @@ DropItem "None"
 	}
 }
 
-Actor BrutalizedNCaco_3 : NightmareCacodemon
+Actor BrutalizedNCaco_3 : BrutalizedNCaco
 {
-Health 75
-DamageFactor "CauseWaterSplash",0.0
-DamageFactor "CauseObjectsToSplash",0.0
-DropItem "None"
--COUNTKILL
--FLOAT
--NOGRAVITY
-+FLOORCLIP
-+SHOOTABLE
-+FRIENDLY
-+NOTARGET
-+NOPAIN
-+THRUACTORS
 	States
 	{
 	See:

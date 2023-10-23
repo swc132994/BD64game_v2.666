@@ -182,12 +182,13 @@ MeleeRange 120
 Actor BrutalizedBFGDude_1 : 64BFGGuy
 {
 Health 30
+Mass 1500
 DropItem "None"
+-SOLID
 -COUNTKILL
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:
