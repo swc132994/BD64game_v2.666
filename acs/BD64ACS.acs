@@ -70,7 +70,6 @@ Script "LowBloodCheckerACS" (VOID)
 if	(GetCvar("bd_lowgraphicsmode") == 1) {GiveInventory("LowGraphicsMode",1);}
 if	(GetCvar("zdoombrutaljanitor") == 1) {GiveInventory("LowGraphicsMode",1);}
 if	(GameType() == GAME_NET_DEATHMATCH) {GiveInventory("LowGraphicsMode",1);}
-terminate;
 }
 
 script "Zandro_Check" OPEN
@@ -257,7 +256,7 @@ SetResultValue(GetCVar("SSGinDoom1_Cvar"));
 	if(GetCvar("SSGinDoom1_Cvar") == 3)
 	{
 		str maplump = StrParam(n:PRINTNAME_LEVEL);
-		
+
 		if(StrCmp(StrLeft(maplump,2),"E1") == 0 | StrCmp(StrLeft(maplump,2),"E2") == 0 | StrCmp(StrLeft(maplump,2),"E3") == 0 | StrCmp(StrLeft(maplump,2),"E4") == 0)
 		{
 			SetActorState(0,"SSG_Shotgun_Replacer");
