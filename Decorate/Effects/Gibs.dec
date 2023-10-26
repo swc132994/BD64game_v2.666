@@ -68,7 +68,7 @@ Decal BrutalBloodSuperGreen
 
 ACTOR XDeath1BLUE : XDeath1
 {
-Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
+Translation "ICE"//BLUE
 Decal BrutalBloodSuperBLUE
 	States
 	{
@@ -198,7 +198,7 @@ Decal BrutalBloodSuperGreen
 
 ACTOR XDeath2BLUE : XDeath2
 {
-Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
+Translation "ICE"//BLUE
 Decal BrutalBloodSuperBLUE
 	States
 	{
@@ -365,7 +365,7 @@ Decal BrutalBloodSplatGREEN
 
 ACTOR XDeath3BLUE : XDeath3
 {
-Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
+Translation "ICE"//BLUE
 Decal BrutalBloodSplatBLUE
 	States
 	{
@@ -567,7 +567,7 @@ Decal BrutalBloodSuperGREEN
 
 ACTOR XDeath5BLUE : XDeath1
 {
-Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
+Translation "ICE"//BLUE
 Scale 1.1
 Speed 15
 Gravity 1
@@ -801,12 +801,11 @@ Decal BrutalBloodSplat
 	Spawn:
 		GUTS ABCD 0 NoDelay A_Jump(64,"SpawnLoop")//Random frame ABCD
 	SpawnLoop:
-		GUTS "#" 3
+		GUTS "#" 3 A_JumpIf(waterlevel > 1,"Water")
 		Loop
 	Death:
 		TNT1 A 0 A_QueueCorpse
-		TNT1 A 0 A_JumpIf(waterlevel > 1,"Water")
-		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpot",0,0,0,0,0,0,0,SXF_TRANSFERTRANSLATION)
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpot")
 		TNT1 A 0 A_Jump(128,"Model2")//Random model 1 or 2
 	Model1:
 		MDL1 ABCD 0 A_Jump(64,"Rest")//Random frame A B C D
@@ -831,16 +830,90 @@ Decal BrutalBloodSplat
 	}
 }
 
-ACTOR IntestineGreen : Intestine	//modelled
+ACTOR IntestineGREEN : XDeath1	//modelled
 {
 Translation "16:31=%[0,0,0]:[0,1,0]","176:191=%[0,0,0]:[0,1,0]","32:47=%[0,0,0]:[0,1,0]"//Green
-Decal BrutalBloodSplatGreen
+Scale 0.8
+Radius 8
+Height 12
+Speed 6
+DeathSound "misc/xdeath1"
+Decal BrutalBloodSplatGREEN
+	States
+	{
+	Spawn:
+		GUTS ABCD 0 NoDelay A_Jump(64,"SpawnLoop")//Random frame ABCD
+	SpawnLoop:
+		GUTS "#" 3 A_JumpIf(waterlevel > 1,"Water")
+		Loop
+	Death:
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotGREEN")
+		TNT1 A 0 A_Jump(128,"Model2")//Random model 1 or 2
+	Model1:
+		MDL1 ABCD 0 A_Jump(64,"Rest")//Random frame A B C D
+		Goto Rest
+	Model2:
+		MDL2 ABCD 0 A_Jump(64,"Rest")//Random frame A B C D
+	Rest:
+		"####" "#" 3 ACS_NamedExecuteAlways("LowBloodCheckerACS")
+		"####" "#" 800
+		"####" "#" 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
+		Loop
+	Water:
+		TNT1 A 0 A_Jump(128,"Water2")
+		GUTS GH 10
+		Loop
+	Water2:
+		GUTS IJ 10
+		Loop
+	DoNothing:
+		TNT1 A 3
+		Stop
+	}
 }
 
-ACTOR IntestineBLUE : Intestine		//modelled
+ACTOR IntestineBLUE : XDeath1	//modelled
 {
-Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
+Translation "ICE"//BLUE
+Scale 0.8
+Radius 8
+Height 12
+Speed 6
+DeathSound "misc/xdeath1"
 Decal BrutalBloodSplatBLUE
+	States
+	{
+	Spawn:
+		GUTS ABCD 0 NoDelay A_Jump(64,"SpawnLoop")//Random frame ABCD
+	SpawnLoop:
+		GUTS "#" 3 A_JumpIf(waterlevel > 1,"Water")
+		Loop
+	Death:
+		TNT1 A 0 A_QueueCorpse
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotBLUE")
+		TNT1 A 0 A_Jump(128,"Model2")//Random model 1 or 2
+	Model1:
+		MDL1 ABCD 0 A_Jump(64,"Rest")//Random frame A B C D
+		Goto Rest
+	Model2:
+		MDL2 ABCD 0 A_Jump(64,"Rest")//Random frame A B C D
+	Rest:
+		"####" "#" 3 ACS_NamedExecuteAlways("LowBloodCheckerACS")
+		"####" "#" 800
+		"####" "#" 0 A_JumpIfInventory("lowgraphicsmode",1,"DoNothing")
+		Loop
+	Water:
+		TNT1 A 0 A_Jump(128,"Water2")
+		GUTS GH 10
+		Loop
+	Water2:
+		GUTS IJ 10
+		Loop
+	DoNothing:
+		TNT1 A 3
+		Stop
+	}
 }
 
 ACTOR BurningXDeath1 : XDeath1
@@ -903,8 +976,8 @@ ACTOR SmallBrainPiece
 {
 Scale 0.5
 Health 0
-Radius 3
-Height 6
+Radius 4
+Height 4
 Speed 10
 Mass 1
 Gravity 0.7
@@ -1610,7 +1683,6 @@ ACTOR XDeathFatsoCannon : XDeathZombieArm1
 		Wait
 	Death:
 		FTX3 I 35
-		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpot")
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		FTX3 I -1
 		Stop
@@ -1630,7 +1702,6 @@ ACTOR XDeathBruiserCannonGreen : XDeathZombieArm1
 		Wait
 	Death:
 		BTX3 I 35
-		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotGreen")
 		TNT1 A 0 A_CustomMissile("BigBloodSpotGreen",0,0,random(0,360),2,random(0,90))
 		BTX3 I -1
 		Stop
@@ -1700,7 +1771,6 @@ Scale 0.68
 		Wait
 	Death:
 		SKLG D 35
-		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpot")
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		SKLG D -1
 		Stop
@@ -1717,7 +1787,6 @@ Scale 0.68
 		Wait
 	Death:
 		RLAU B 35
-		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpot")
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		RLAU B -1
 		Stop
@@ -1773,7 +1842,6 @@ Scale 0.74
 		Wait
 	Death:
 		RVG3 B 35
-		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpot")
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		RVG3 B -1
 		Stop
@@ -2108,7 +2176,6 @@ ACTOR XDeathSpiderHead : XDeathSpiderLeg1
 		SPIH ABCDEFGH 4 A_CheckFloor("Death")
 		Wait
 	Death:
-		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpot")
 		TNT1 A 0 A_Jump(128,"Death2")
 		SPIH I 35
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
@@ -2133,7 +2200,6 @@ ACTOR XDeathBlueSpiderHead : XDeathSpiderHead
 		BBRH ABCDEFGH 4 A_CheckFloor("Death")
 		Wait
 	Death:
-		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotBLUE")
 		TNT1 A 0 A_Jump(128,"Death2")
 		BBRH I 35
 		TNT1 A 0 A_CustomMissile("BigBloodSpotBLUE",0,0,random(0,360),2,random(0,90))

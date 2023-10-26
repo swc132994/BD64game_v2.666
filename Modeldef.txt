@@ -1,35 +1,138 @@
+//PROJECTILE MARKS FLOOR
+Model DetectFloorBullet
+{
+Path "models"
+Model 0 "buldecground1.md3"
+Skin 0 "BULLETDECAL1.png"
+Scale 5.0 5.0 5.0
+ZOffset 0.01
+FrameIndex XXX1 A 0 0
+}
+
+Model DetectFloorCraterSmallMotherdemon
+{
+Path "models"
+Model 0 "buldecground1.md3"
+Skin 0 "SCORCH1.png"
+Scale 6.0 6.0 6.0
+ZOffset 0.01
+FrameIndex XXX1 A 0 0
+}
+
+Model DetectFloorCraterSmall
+{
+Path "models"
+Model 0 "buldecground1.md3"
+Skin 0 "SCORCH1.png"
+Scale 6.0 6.0 6.0
+ZOffset 0.01
+FrameIndex XXX1 A 0 0
+}
+
+Model DetectFloorCraterMed
+{
+Path "models"
+Model 0 "buldecground1.md3"
+Skin 0 "SCORCH1.png"
+Scale 8.0 8.0 8.0
+ZOffset 0.01
+FrameIndex XXX1 A 0 0
+}
+
+Model DetectFloorCrater
+{
+Path "models"
+Model 0 "buldecground1.md3"
+Skin 0 "SCORCH1.png"
+Scale 10.0 10.0 10.0
+ZOffset 0.01
+FrameIndex XXX1 A 0 0
+}
+
+Model DetectFloorCraterNoSplashes
+{
+Path "models"
+Model 0 "buldecground1.md3"
+Skin 0 "SCORCH1.png"
+Scale 10.0 10.0 10.0
+ZOffset 0.01
+FrameIndex XXX1 A 0 0
+}
+
+Model DetectBarrelCrater
+{
+Path "models"
+Model 0 "buldecground1.md3"
+Skin 0 "SCORCH1.png"
+Scale 20.0 20.0 20.0
+ZOffset 0.01
+FrameIndex XXX1 A 0 0
+}
+
+Model DetectFloorLaser
+{
+Path "models"
+Model 0 "buldecground1.md3"
+Skin 0 "SCORCH1.png"
+Scale 3 3 3
+ZOffset 0.01
+FrameIndex XXX1 A 0 0
+}
+
+//PROJECTILE MARKS CEILING
+Model DetectCeilBullet
+{
+Path "models"
+Model 0 "buldecceil1.md3"
+Skin 0 "BULLETDECAL1.png"
+Scale 5.0 5.0 5.0
+ZOffset -0.01
+FrameIndex XXX1 A 0 0
+}
+
+Model DetectCeilCrater
+{
+Path "models"
+Model 0 "buldecceil1.md3"
+Skin 0 "SCORCH1.png"
+Scale 10.0 10.0 10.0
+ZOffset -0.01
+FrameIndex XXX1 A 0 0
+}
+
+Model DetectCeilCraterSmall
+{
+Path "models"
+Model 0 "buldecceil1.md3"
+Skin 0 "SCORCH1.png"
+Scale 6.0 6.0 6.0
+ZOffset -0.01
+FrameIndex XXX1 A 0 0
+}
+
+Model DetectCeilCraterMed
+{
+Path "models"
+Model 0 "buldecceil1.md3"
+Skin 0 "SCORCH1.png"
+Scale 8.0 8.0 8.0
+ZOffset -0.01
+FrameIndex XXX1 A 0 0
+}
+
+Model DetectCeilLaser
+{
+Path "models"
+Model 0 "buldecceil1.md3"
+Skin 0 "SCORCH1.png"
+Scale 3 3 3
+ZOffset -0.01
+FrameIndex XXX1 A 0 0
+}
+
 //BLOOD & GORE
-Model GiantBloodSpot
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "bigbloodpool32.png"
-Scale 90.0 90.0 90.0
-ZOffset 0.11
-FrameIndex BPDL A 0 0
-}
-
-Model GiantBloodSpotGreen
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "bigbloodpool32.png"
-Scale 90.0 90.0 90.0
-ZOffset 0.12
-FrameIndex BPDL A 0 0
-}
-
-Model GiantBloodSpotBLUE
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "bigbloodpool32.png"
-Scale 90.0 90.0 90.0
-ZOffset 0.13
-FrameIndex BPDL A 0 0
-}
-
-/*Model RedBloodFootPrintLeft		//unused footprint models
+/*
+Model RedBloodFootPrintLeft		//unused footprint models
 {
 Path "models"
 Model 0 "bloodspot.md3"
@@ -49,117 +152,16 @@ ZOffset 0.6
 FrameIndex BPDL A 0 0
 }*/
 
-Model BigBloodSpot
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "bigbloodpool32.png"
-Scale 80.0 80.0 80.0
-ZOffset 0.14
-FrameIndex BPDL A 0 0
-}
-
-Model BigBloodSpotGreen
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "bigbloodpool32.png"
-Scale 80.0 80.0 80.0
-ZOffset 0.15
-FrameIndex BPDL A 0 0
-}
-
-Model BigBloodSpotBLUE
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "bigbloodpool32.png"
-Scale 80.0 80.0 80.0
-ZOffset 0.16
-FrameIndex BPDL A 0 0
-}
-
-Model Brutal_BloodSpot	//MODEL1
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "bloodspothd.png"
-Scale 50.0 50.0 1.0
-ZOffset 0.17
-FrameIndex BPDL A 0 0
-ZOffset 0.18
-FrameIndex BPDL B 0 0
-}
-
-Model Brutal_BloodSpot	//MODEL2
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "bloodspothd2.png"
-Scale 50.0 50.0 1.0
-ZOffset 0.19
-FrameIndex BPDL C 0 0
-ZOffset 0.20
-FrameIndex BPDL D 0 0
-}
-
-Model Brutal_BloodSpotGreen	//MODEL1
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "bloodspothd.png"
-Scale 50.0 50.0 1.0
-ZOffset 0.21
-FrameIndex BPDL A 0 0
-ZOffset 0.22
-FrameIndex BPDL B 0 0
-}
-
-Model Brutal_BloodSpotGreen	//MODEL2
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "bloodspothd2.png"
-Scale 50.0 50.0 1.0
-ZOffset 0.23
-FrameIndex BPDL C 0 0
-ZOffset 0.24
-FrameIndex BPDL D 0 0
-}
-
-Model Brutal_BloodSpotBLUE	//MODEL1
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "bloodspothd.png"
-Scale 50.0 50.0 1.0
-ZOffset 0.25
-FrameIndex BPDL A 0 0
-ZOffset 0.26
-FrameIndex BPDL B 0 0
-}
-
-Model Brutal_BloodSpotBLUE	//MODEL2
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "bloodspothd2.png"
-Scale 50.0 50.0 1.0
-ZOffset 0.27
-FrameIndex BPDL C 0 0
-ZOffset 0.28
-FrameIndex BPDL D 0 0
-}
-
 Model MinuscleBloodSpot	//MODEL1
 {
 Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "bloodspothd.png"
 Scale 30.0 30.0 30.0
-ZOffset 0.29
+ZOffset 0.1
 FrameIndex BPDL A 0 0
-ZOffset 0.30
+AngleOffset 90
+ZOffset 0.11
 FrameIndex BPDL B 0 0
 }
 
@@ -169,9 +171,10 @@ Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "bloodpool.png"
 Scale 20.0 20.0 20.0
-ZOffset 0.31
+ZOffset 0.12
 FrameIndex BPDL C 0 0
-ZOffset 0.32
+AngleOffset 90
+ZOffset 0.13
 FrameIndex BPDL D 0 0
 }
 
@@ -181,9 +184,10 @@ Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "bloodspothd.png"
 Scale 30.0 30.0 30.0
-ZOffset 0.33
+ZOffset 0.14
 FrameIndex BPDL A 0 0
-ZOffset 0.34
+AngleOffset 90
+ZOffset 0.15
 FrameIndex BPDL B 0 0
 }
 
@@ -193,9 +197,10 @@ Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "bloodpool.png"
 Scale 20.0 20.0 20.0
-ZOffset 0.35
+ZOffset 0.16
 FrameIndex BPDL C 0 0
-ZOffset 0.36
+AngleOffset 90
+ZOffset 0.17
 FrameIndex BPDL D 0 0
 }
 
@@ -205,9 +210,10 @@ Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "bloodspothd.png"
 Scale 30.0 30.0 30.0
-ZOffset 0.37
+ZOffset 0.18
 FrameIndex BPDL A 0 0
-ZOffset 0.38
+AngleOffset 90
+ZOffset 0.19
 FrameIndex BPDL B 0 0
 }
 
@@ -217,70 +223,89 @@ Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "bloodpool.png"
 Scale 20.0 20.0 20.0
-ZOffset 0.39
+ZOffset 0.20
 FrameIndex BPDL C 0 0
-ZOffset 0.40
+AngleOffset 90
+ZOffset 0.21
 FrameIndex BPDL D 0 0
 }
 
-Model Brutal_FlyingBlood	//MODEL1
+Model Brutal_BloodSpot	//MODEL1
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodpool.png"
-Scale 50.0 50.0 50.0
-ZOffset 0.41
+Skin 0 "bloodspothd.png"
+Scale 50.0 50.0 1.0
+ZOffset 0.22
+FrameIndex BPDL A 0 0
+AngleOffset 90
+ZOffset 0.23
 FrameIndex BPDL B 0 0
 }
 
-Model Brutal_FlyingBlood	//MODEL2
+Model Brutal_BloodSpot	//MODEL2
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodpool2.png"
-Scale 46.0 46.0 46.0
-ZOffset 0.42
-FrameIndex BPDL A 0 0
+Skin 0 "bloodspothd2.png"
+Scale 50.0 50.0 1.0
+ZOffset 0.24
+FrameIndex BPDL C 0 0
+AngleOffset 90
+ZOffset 0.25
+FrameIndex BPDL D 0 0
 }
 
-Model Brutal_FlyingBloodGreen	//MODEL1
+Model Brutal_BloodSpotGreen	//MODEL1
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodpool.png"
-Scale 50.0 50.0 50.0
-ZOffset 0.43
+Skin 0 "bloodspothd.png"
+Scale 50.0 50.0 1.0
+ZOffset 0.26
+FrameIndex BPDL A 0 0
+AngleOffset 90
+ZOffset 0.27
 FrameIndex BPDL B 0 0
 }
 
-Model Brutal_FlyingBloodGreen	//MODEL2
+Model Brutal_BloodSpotGreen	//MODEL2
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodpool2.png"
-Scale 46.0 46.0 46.0
-ZOffset 0.44
-FrameIndex BPDL A 0 0
+Skin 0 "bloodspothd2.png"
+Scale 50.0 50.0 1.0
+ZOffset 0.29
+FrameIndex BPDL C 0 0
+AngleOffset 90
+ZOffset 0.29
+FrameIndex BPDL D 0 0
 }
 
-Model Brutal_FlyingBloodBLUE	//MODEL1
+Model Brutal_BloodSpotBLUE	//MODEL1
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodpool.png"
-Scale 50.0 50.0 50.0
-ZOffset 0.45
+Skin 0 "bloodspothd.png"
+Scale 50.0 50.0 1.0
+ZOffset 0.30
+FrameIndex BPDL A 0 0
+AngleOffset 90
+ZOffset 0.31
 FrameIndex BPDL B 0 0
 }
 
-Model Brutal_FlyingBloodBLUE	//MODEL2
+Model Brutal_BloodSpotBLUE	//MODEL2
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodpool2.png"
-Scale 46.0 46.0 46.0
-ZOffset 0.46
-FrameIndex BPDL A 0 0
+Skin 0 "bloodspothd2.png"
+Scale 50.0 50.0 1.0
+ZOffset 0.32
+FrameIndex BPDL C 0 0
+AngleOffset 90
+ZOffset 0.33
+FrameIndex BPDL D 0 0
 }
 
 Model MediumBloodSpot
@@ -289,8 +314,55 @@ Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "bloodspot2.png"
 Scale 80.0 80.0 80.0
-ZOffset 0.47
+ZOffset 0.34
 FrameIndex BPDL A 0 0
+AngleOffset 90
+ZOffset 0.35
+FrameIndex BPDL B 0 0
+AngleOffset 180
+ZOffset 0.36
+FrameIndex BPDL C 0 0
+AngleOffset 270
+ZOffset 0.37
+FrameIndex BPDL D 0 0
+}
+
+Model MediumBloodSpotGREEN
+{
+Path "models"
+Model 0 "bloodspot.md3"
+Skin 0 "bloodspot2.png"
+Scale 80.0 80.0 80.0
+ZOffset 0.38
+FrameIndex BPDL A 0 0
+AngleOffset 90
+ZOffset 0.39
+FrameIndex BPDL B 0 0
+AngleOffset 180
+ZOffset 0.40
+FrameIndex BPDL C 0 0
+AngleOffset 270
+ZOffset 0.41
+FrameIndex BPDL D 0 0
+}
+
+Model MediumBloodSpotBLUE
+{
+Path "models"
+Model 0 "bloodspot.md3"
+Skin 0 "bloodspot2.png"
+Scale 80.0 80.0 80.0
+ZOffset 0.42
+FrameIndex BPDL A 0 0
+AngleOffset 90
+ZOffset 0.43
+FrameIndex BPDL B 0 0
+AngleOffset 180
+ZOffset 0.44
+FrameIndex BPDL C 0 0
+AngleOffset 270
+ZOffset 0.45
+FrameIndex BPDL D 0 0
 }
 
 Model MediumAcidSpot
@@ -299,142 +371,131 @@ Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "bloodspot2.png"
 Scale 40.0 40.0 40.0
+ZOffset 0.46
+FrameIndex BPDL A 0 0
+AngleOffset 90
+ZOffset 0.47
+FrameIndex BPDL B 0 0
+AngleOffset 180
 ZOffset 0.48
-FrameIndex BPDL A 0 0
-}
-
-Model Intestine		//MODEL 1
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "gut1.png"
-Scale 18.0 18.0 85.0
+FrameIndex BPDL C 0 0
+AngleOffset 270
 ZOffset 0.49
-FrameIndex MDL1 A 0 0
-AngleOffset 90
-ZOffset 0.50
-FrameIndex MDL1 B 0 0
-AngleOffset 180
-ZOffset 0.51
-FrameIndex MDL1 C 0 0
-AngleOffset 270
-ZOffset 0.52
-FrameIndex MDL1 D 0 0
+FrameIndex BPDL D 0 0
 }
 
-Model Intestine		//MODEL 2
+Model BigBloodSpot
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "gut2.png"
-Scale 18.0 18.0 85.0
-ZOffset 0.53
-FrameIndex MDL2 A 0 0
-AngleOffset 90
-ZOffset 0.54
-FrameIndex MDL2 B 0 0
-AngleOffset 180
-ZOffset 0.55
-FrameIndex MDL2 C 0 0
-AngleOffset 270
-ZOffset 0.56
-FrameIndex MDL2 D 0 0
-}
-
-Model IntestineGreen	//MODEL 1
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "gut1.png"
-Scale 18.0 18.0 85.0
-ZOffset 0.57
-FrameIndex MDL1 A 0 0
-AngleOffset 90
-ZOffset 0.58
-FrameIndex MDL1 B 0 0
-AngleOffset 180
-ZOffset 0.59
-FrameIndex MDL1 C 0 0
-AngleOffset 270
-ZOffset 0.60
-FrameIndex MDL1 D 0 0
-}
-
-Model IntestineGreen	//MODEL 2
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "gut2.png"
-Scale 18.0 18.0 85.0
-ZOffset 0.61
-FrameIndex MDL2 A 0 0
-AngleOffset 90
-ZOffset 0.62
-FrameIndex MDL2 B 0 0
-AngleOffset 180
-ZOffset 0.63
-FrameIndex MDL2 C 0 0
-AngleOffset 270
-ZOffset 0.64
-FrameIndex MDL2 D 0 0
-}
-
-Model IntestineBLUE	//MODEL 1
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "gut1.png"
-Scale 18.0 18.0 85.0
-ZOffset 0.65
-FrameIndex MDL1 A 0 0
-AngleOffset 90
-ZOffset 0.66
-FrameIndex MDL1 B 0 0
-AngleOffset 180
-ZOffset 0.67
-FrameIndex MDL1 C 0 0
-AngleOffset 270
-ZOffset 0.68
-FrameIndex MDL1 D 0 0
-}
-
-Model IntestineBLUE	//MODEL 2
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "gut2.png"
-Scale 18.0 18.0 85.0
-ZOffset 0.69
-FrameIndex MDL2 A 0 0
-AngleOffset 90
-ZOffset 0.70
-FrameIndex MDL2 B 0 0
-AngleOffset 180
-ZOffset 0.71
-FrameIndex MDL2 C 0 0
-AngleOffset 270
-ZOffset 0.72
-FrameIndex MDL2 D 0 0
-}
-
-Model SplatteredSmall
-{
-Path "models"
-Model 0 "bloodspot.md3"
-Skin 0 "SMSHD.png"
+Skin 0 "bigbloodpool32.png"
 Scale 80.0 80.0 80.0
-ZOffset 0.73
+ZOffset 0.50
 FrameIndex BPDL A 0 0
+AngleOffset 90
+ZOffset 0.51
+FrameIndex BPDL B 0 0
+AngleOffset 180
+ZOffset 0.52
+FrameIndex BPDL C 0 0
+AngleOffset 270
+ZOffset 0.53
+FrameIndex BPDL D 0 0
 }
 
-Model SplatteredLarge
+Model BigBloodSpotGreen
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "SMSHD.png"
-Scale 140.0 140.0 140.0
-ZOffset 0.74
+Skin 0 "bigbloodpool32.png"
+Scale 80.0 80.0 80.0
+ZOffset 0.54
 FrameIndex BPDL A 0 0
+AngleOffset 90
+ZOffset 0.55
+FrameIndex BPDL B 0 0
+AngleOffset 180
+ZOffset 0.56
+FrameIndex BPDL C 0 0
+AngleOffset 270
+ZOffset 0.57
+FrameIndex BPDL D 0 0
+}
+
+Model BigBloodSpotBLUE
+{
+Path "models"
+Model 0 "bloodspot.md3"
+Skin 0 "bigbloodpool32.png"
+Scale 80.0 80.0 80.0
+ZOffset 0.58
+FrameIndex BPDL A 0 0
+AngleOffset 90
+ZOffset 0.59
+FrameIndex BPDL B 0 0
+AngleOffset 180
+ZOffset 0.60
+FrameIndex BPDL C 0 0
+AngleOffset 270
+ZOffset 0.61
+FrameIndex BPDL D 0 0
+}
+
+Model GiantBloodSpot
+{
+Path "models"
+Model 0 "bloodspot.md3"
+Skin 0 "bigbloodpool32.png"
+Scale 90.0 90.0 90.0
+ZOffset 0.62
+FrameIndex BPDL A 0 0
+AngleOffset 90
+ZOffset 0.63
+FrameIndex BPDL B 0 0
+AngleOffset 180
+ZOffset 0.64
+FrameIndex BPDL C 0 0
+AngleOffset 270
+ZOffset 0.65
+FrameIndex BPDL D 0 0
+}
+
+Model GiantBloodSpotGreen
+{
+Path "models"
+Model 0 "bloodspot.md3"
+Skin 0 "bigbloodpool32.png"
+Scale 90.0 90.0 90.0
+ZOffset 0.66
+FrameIndex BPDL A 0 0
+AngleOffset 90
+ZOffset 0.67
+FrameIndex BPDL B 0 0
+AngleOffset 180
+ZOffset 0.68
+FrameIndex BPDL C 0 0
+AngleOffset 270
+ZOffset 0.69
+FrameIndex BPDL D 0 0
+}
+
+Model GiantBloodSpotBLUE
+{
+Path "models"
+Model 0 "bloodspot.md3"
+Skin 0 "bigbloodpool32.png"
+Scale 90.0 90.0 90.0
+ZOffset 0.70
+FrameIndex BPDL A 0 0
+AngleOffset 90
+ZOffset 0.71
+FrameIndex BPDL B 0 0
+AngleOffset 180
+ZOffset 0.72
+FrameIndex BPDL C 0 0
+AngleOffset 270
+ZOffset 0.73
+FrameIndex BPDL D 0 0
 }
 
 Model 64SmallBloodPool
@@ -443,16 +504,16 @@ Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "oldblood.png"
 Scale 60.0 60.0 60.0
-ZOffset 0.75
+ZOffset 0.76
 FrameIndex POB2 A 0 0
 AngleOffset 90
-ZOffset 0.76
+ZOffset 0.77
 FrameIndex POB2 B 0 0
 AngleOffset 180
-ZOffset 0.77
+ZOffset 0.78
 FrameIndex POB2 C 0 0
 AngleOffset 270
-ZOffset 0.78
+ZOffset 0.79
 FrameIndex POB2 D 0 0
 }
 
@@ -462,16 +523,16 @@ Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "oldblood.png"
 Scale 60.0 60.0 60.0
-ZOffset 0.79
+ZOffset 0.80
 FrameIndex POB2 A 0 0
 AngleOffset 90
-ZOffset 0.80
+ZOffset 0.81
 FrameIndex POB2 B 0 0
 AngleOffset 180
-ZOffset 0.81
+ZOffset 0.82
 FrameIndex POB2 C 0 0
 AngleOffset 270
-ZOffset 0.82
+ZOffset 0.83
 FrameIndex POB2 D 0 0
 }
 
@@ -482,7 +543,7 @@ Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "bloodpool2.png"
 Scale 20.0 20.0 1.0
-ZOffset 0.83
+ZOffset 0.84
 rotating
 INTERPOLATEDOUBLEDFRAMES
 Rotation-Center 0 0 0
@@ -547,7 +608,7 @@ Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "bloodpool2.png"
 Scale 35.0 35.0 1.0
-ZOffset 0.84
+ZOffset 0.85
 rotating
 INTERPOLATEDOUBLEDFRAMES
 Rotation-Center 0 0 0
@@ -612,7 +673,7 @@ Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "bloodpool2.png"
 Scale 35.0 35.0 1.0
-ZOffset 0.85
+ZOffset 0.86
 rotating
 INTERPOLATEDOUBLEDFRAMES
 Rotation-Center 0 0 0
@@ -677,7 +738,7 @@ Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "bloodpool2.png"
 Scale 20.0 20.0 1.0
-ZOffset 0.86
+ZOffset 0.87
 rotating
 INTERPOLATEDOUBLEDFRAMES
 Rotation-Center 0 0 0
@@ -742,7 +803,7 @@ Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "bloodpool2.png"
 Scale 20.0 20.0 1.0
-ZOffset 0.87
+ZOffset 0.88
 rotating
 INTERPOLATEDOUBLEDFRAMES
 Rotation-Center 0 0 0
@@ -799,6 +860,120 @@ FrameIndex FBB1 Y 0 0
 Scale 45.0 45.0 1.0
 rotation-speed 0.00
 FrameIndex FBB1 Z 0 0
+}
+
+Model Intestine		//MODEL 1
+{
+Path "models"
+Model 0 "bloodspot.md3"
+Skin 0 "gut1.png"
+Scale 18.0 18.0 85.0
+ZOffset 0.89
+FrameIndex MDL1 A 0 0
+AngleOffset 90
+ZOffset 0.90
+FrameIndex MDL1 B 0 0
+AngleOffset 180
+ZOffset 0.91
+FrameIndex MDL1 C 0 0
+AngleOffset 270
+ZOffset 0.92
+FrameIndex MDL1 D 0 0
+}
+
+Model Intestine		//MODEL 2
+{
+Path "models"
+Model 0 "bloodspot.md3"
+Skin 0 "gut2.png"
+Scale 18.0 18.0 85.0
+ZOffset 0.93
+FrameIndex MDL2 A 0 0
+AngleOffset 90
+ZOffset 0.94
+FrameIndex MDL2 B 0 0
+AngleOffset 180
+ZOffset 0.95
+FrameIndex MDL2 C 0 0
+AngleOffset 270
+ZOffset 0.96
+FrameIndex MDL2 D 0 0
+}
+
+Model IntestineGreen	//MODEL 1
+{
+Path "models"
+Model 0 "bloodspot.md3"
+Skin 0 "gut1.png"
+Scale 18.0 18.0 85.0
+ZOffset 0.97
+FrameIndex MDL1 A 0 0
+AngleOffset 90
+ZOffset 0.98
+FrameIndex MDL1 B 0 0
+AngleOffset 180
+ZOffset 0.99
+FrameIndex MDL1 C 0 0
+AngleOffset 270
+ZOffset 1.00
+FrameIndex MDL1 D 0 0
+}
+
+Model IntestineGreen	//MODEL 2
+{
+Path "models"
+Model 0 "bloodspot.md3"
+Skin 0 "gut2.png"
+Scale 18.0 18.0 85.0
+ZOffset 1.01
+FrameIndex MDL2 A 0 0
+AngleOffset 90
+ZOffset 1.02
+FrameIndex MDL2 B 0 0
+AngleOffset 180
+ZOffset 1.03
+FrameIndex MDL2 C 0 0
+AngleOffset 270
+ZOffset 1.04
+FrameIndex MDL2 D 0 0
+}
+
+Model IntestineBLUE	//MODEL 1
+{
+Path "models"
+Model 0 "bloodspot.md3"
+Skin 0 "gut1.png"
+Scale 18.0 18.0 85.0
+ZOffset 1.05
+FrameIndex MDL1 A 0 0
+AngleOffset 90
+ZOffset 1.06
+FrameIndex MDL1 B 0 0
+AngleOffset 180
+ZOffset 1.07
+FrameIndex MDL1 C 0 0
+AngleOffset 270
+ZOffset 1.08
+FrameIndex MDL1 D 0 0
+}
+
+Model IntestineBLUE	//MODEL 2
+{
+Path "models"
+Model 0 "bloodspot.md3"
+Skin 0 "gut2.png"
+Scale 18.0 18.0 85.0
+ZOffset 1.09
+FrameIndex MDL2 A 0 0
+AngleOffset 90
+ZOffset 1.10
+FrameIndex MDL2 B 0 0
+AngleOffset 180
+ZOffset 1.11
+FrameIndex MDL2 C 0 0
+AngleOffset 270
+ZOffset 1.12
+FrameIndex MDL2 D 0 0
 }
 
 //CEILING BLOOD
@@ -976,135 +1151,4 @@ Skin 0 "LFLARE.PNG"
 Scale 90.0 90.0 90.0
 ZOffset 1.0
 FrameIndex LENS A 0 0
-}
-
-//PROJECTILE MARKS
-Model DetectFloorBullet
-{
-Path "models"
-Model 0 "buldecground1.md3"
-Skin 0 "BULLETDECAL1.png"
-Scale 5.0 5.0 5.0
-ZOffset 0.01
-FrameIndex XXX1 A 0 0
-}
-
-Model DetectCeilBullet
-{
-Path "models"
-Model 0 "buldecceil1.md3"
-Skin 0 "BULLETDECAL1.png"
-Scale 5.0 5.0 5.0
-ZOffset -0.01
-FrameIndex XXX1 A 0 0
-}
-
-Model DetectFloorCrater
-{
-Path "models"
-Model 0 "buldecground1.md3"
-Skin 0 "SCORCH1.png"
-Scale 10.0 10.0 10.0
-ZOffset 0.01
-FrameIndex XXX1 A 0 0
-}
-
-Model DetectCeilCrater
-{
-Path "models"
-Model 0 "buldecceil1.md3"
-Skin 0 "SCORCH1.png"
-Scale 10.0 10.0 10.0
-ZOffset -0.01
-FrameIndex XXX1 A 0 0
-}
-
-Model DetectFloorCraterSmall
-{
-Path "models"
-Model 0 "buldecground1.md3"
-Skin 0 "SCORCH1.png"
-Scale 6.0 6.0 6.0
-ZOffset 0.01
-FrameIndex XXX1 A 0 0
-}
-
-Model DetectCeilCraterSmall
-{
-Path "models"
-Model 0 "buldecceil1.md3"
-Skin 0 "SCORCH1.png"
-Scale 6.0 6.0 6.0
-ZOffset -0.01
-FrameIndex XXX1 A 0 0
-}
-
-Model DetectFloorCraterNoSplashes
-{
-Path "models"
-Model 0 "buldecground1.md3"
-Skin 0 "SCORCH1.png"
-Scale 10.0 10.0 10.0
-ZOffset 0.01
-FrameIndex XXX1 A 0 0
-}
-
-Model DetectBarrelCrater
-{
-Path "models"
-Model 0 "buldecground1.md3"
-Skin 0 "SCORCH1.png"
-Scale 20.0 20.0 20.0
-ZOffset 0.01
-FrameIndex XXX1 A 0 0
-}
-
-Model DetectFloorCraterMed
-{
-Path "models"
-Model 0 "buldecground1.md3"
-Skin 0 "SCORCH1.png"
-Scale 8.0 8.0 8.0
-ZOffset 0.01
-FrameIndex XXX1 A 0 0
-}
-
-Model DetectCeilCraterMed
-{
-Path "models"
-Model 0 "buldecceil1.md3"
-Skin 0 "SCORCH1.png"
-Scale 8.0 8.0 8.0
-ZOffset -0.01
-FrameIndex XXX1 A 0 0
-}
-
-Model DetectFloorLaser
-{
-Path "models"
-Model 0 "buldecground1.md3"
-Skin 0 "SCORCH1.png"
-Scale 3 3 3
-ZOffset 0.01
-FrameIndex XXX1 A 0 0
-}
-
-Model DetectCeilLaser
-{
-Path "models"
-Model 0 "buldecceil1.md3"
-Skin 0 "SCORCH1.png"
-Scale 3 3 3
-ZOffset -0.01
-FrameIndex XXX1 A 0 0
-}
-
-Model DetectFloorCraterSmallMotherdemon
-{
-Path "models"
-Model 0 "buldecground1.md3"
-Skin 0 "SCORCH1.png"
-Scale 6.0 6.0 6.0
-ZOffset 0.01
-FrameIndex XXX1 A 0 0
 }

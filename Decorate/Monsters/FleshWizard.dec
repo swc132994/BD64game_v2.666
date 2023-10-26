@@ -481,13 +481,20 @@ PROJECTILE
 		BLUD B 2 Bright
 		BLUD C 2 Bright A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		BLUD D 2 Bright
-		Goto Spawn2
-	Spawn2:
+		Goto SpawnLoop
+	SpawnLoop:
 		BLUD D 2 Bright A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
-		BLUD D 2 Bright
+		BLUD D 2 Bright A_JumpIf(waterlevel > 1,"Splash")
 		Loop
 	Death:
+		TNT1 A 0 A_CheckCeiling("SpawnCeiling")
+		BLUD D 3 Bright A_CheckFloor("Rest")
+		Wait
+	SpawnCeiling:
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterSmall")
+		BLUD D 3 Bright A_CheckFloor("Rest")
+		Wait
+	Rest:
 		TNT1 A 0 A_PlaySound("SlimeBall/Splat",CHAN_BODY)
 		XDT1 F 3 Bright A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		TNT1 A 0 A_ChangeFlag("DONTSPLASH",1)
@@ -540,6 +547,9 @@ PROJECTILE
 		XDT1 K 5 Bright
 		TNT1 A 1 A_StopSound(CHAN_BODY)
 		Stop
+	Splash:
+		TNT1 A 1 A_SpawnItemEx("Underblood2",0,0,0,0,0,0,0,SXF_TRANSFERTRANSLATION)
+		stop
 	}
 }
 
