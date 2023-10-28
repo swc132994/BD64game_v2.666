@@ -1,3 +1,38 @@
+actor 64DeadClassicCacodemon : DeadCacodemon
+{
++LOOKALLAROUND
++FLOORCLIP
+scale 0.75
+	states
+	{
+	Spawn2:
+		HEA3 K 3 A_LookEx(0,0,150,100)
+		Wait
+	Spawn:
+		HEA3 K 0 NoDelay A_SpawnItemEx("64SmallBloodPoolBLUE")
+		TNT1 A 0 A_Jump(51,"Spawn2")//20%
+	Death:
+		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3")
+		Goto Rest1
+	Rest1:
+		HEA3 K -1
+		Stop
+	Rest2:
+		CLHE E -1
+		stop
+	Rest3:
+		CLGM A -1
+		stop
+	See:
+		HEA3 K 3 A_SpawnItemEx("MotherDemon_Ghost")
+	Raise:
+		HEA3 K 5 A_UnSetFloorClip
+		HEA3 JIHG 5 A_FaceTarget
+		HEA3 G 1 A_SpawnItemEx("64ClassicCacodemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	}
+}
+
 actor 64DeadCacodemon : DeadCacodemon Replaces DeadCacodemon
 {
 +LOOKALLAROUND

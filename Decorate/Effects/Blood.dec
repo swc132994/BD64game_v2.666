@@ -574,7 +574,7 @@ BounceType "None"
 	Spawn:
 		TNT1 A 1
 		TNT1 A 0 ThrustThingZ(0,35,0,0)
-		TNT1 A 3
+		TNT1 A 2
 		Stop
 	Death:
 		TNT1 A 1 A_CheckCeiling("SpawnCeiling")
@@ -594,7 +594,7 @@ Decal BrutalBloodSplatGreen
 	Spawn:
 		TNT1 A 1
 		TNT1 A 0 ThrustThingZ(0,35,0,0)
-		TNT1 A 3
+		TNT1 A 2
 		Stop
 	Death:
 		TNT1 A 1 A_CheckCeiling("SpawnCeiling")
@@ -614,7 +614,7 @@ Decal BrutalBloodSplatBLUE
 	Spawn:
 		TNT1 A 1
 		TNT1 A 0 ThrustThingZ(0,35,0,0)
-		TNT1 A 3
+		TNT1 A 2
 		Stop
 	Death:
 		TNT1 A 1 A_CheckCeiling("SpawnCeiling")

@@ -1,7 +1,7 @@
 ACTOR 64WaffenSS : 64ZombieMan	//WolfensteinSS
 {
 //$category "Game/BD64_Monsters
-Health 50
+Health 60
 Mass 100
 Speed 12
 MeleeRange 500

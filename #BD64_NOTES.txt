@@ -146,6 +146,10 @@ Monsters:
 
 //64Nightmare Elemental - Sprites by Styd051, Decorate by Craneo.
 
+//Classic Style Cacodemons - Original "HD classic Caco" taken from Thief666's Doom 8x sprite project, credits to Charles Heathman & Thief666
+	Recolour, downscale, death sprites, alt palette and a few extra tweaks by Craneo
+	paletted by Immorpher
+
 //64FleshWizard by Craneo
 	Code: Melvin (base Flesh Wizard decorate), swc132994 (default BD64 code bits reused), Amuscaria (Diabolist projectile decorate)
 	Sprites: Freedoom (Flesh Wizard base), Monolith (Blood Zombie), Craneo (Flesh Wizard 64 conversion), HAUNT folder sprites taken from LCA DUST's Bloody Frandle

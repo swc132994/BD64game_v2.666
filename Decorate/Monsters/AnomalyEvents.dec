@@ -12,6 +12,7 @@ DeathSound "polt/break1"
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was killed by a poltergeist."
+Tag "Poltergeist"
 MONSTER
 +NOBLOOD
 +DONTMORPH
@@ -215,6 +216,7 @@ DeathSound "world/barrelx"
 Obituary "%o was killed by a poltergeist."
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
+Tag "Poltergeist"
 MONSTER
 +NOBLOOD
 +DONTMORPH
@@ -430,6 +432,7 @@ DeathSound "polt/break1"
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was killed by a poltergeist."
+Tag "Poltergeist"
 MONSTER
 +NOBLOOD
 +DONTMORPH
@@ -534,6 +537,7 @@ Mass 0x7FFFFFFF
 Speed 0
 Painchance 0
 Damage 3
+Tag "Poltergeist"
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was killed by a poltergeist."
@@ -621,6 +625,7 @@ DeathSound "polt/break2"
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was killed by a poltergeist."
+Tag "Poltergeist"
 MONSTER
 +NOBLOOD
 +DONTMORPH
@@ -946,6 +951,7 @@ Painchance 0
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was killed by a poltergeist."
+Tag "Poltergeist"
 MONSTER
 +NOBLOOD
 +DONTMORPH
@@ -1072,6 +1078,7 @@ Painchance 0
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was killed by a poltergeist."
+Tag "Poltergeist"
 MONSTER
 +NOBLOOD
 +DONTMORPH
@@ -1158,6 +1165,7 @@ Painchance 0
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was killed by a poltergeist."
+Tag "Poltergeist"
 MONSTER
 +NOBLOOD
 +DONTMORPH
@@ -1237,6 +1245,7 @@ Actor 64VenomEye1 : LostSoul
 scale 0.8
 Alpha 0.99
 RenderStyle Normal
+Tag "Venom Eye"
 Obituary "%o stared into an Evil Eye for too long..."
 Damage 0
 PainSound "EvilEye/pain"
@@ -1348,6 +1357,7 @@ DeathHeight 56
 radius 32
 Mass 5000
 Speed 0
+Tag "Possessed Tree"
 Obituary "%o was impaled by a Yateveo."
 BloodType "Brutal_BloodGreen"
 BloodColor "00 64 00"	//Hex value
@@ -1436,6 +1446,7 @@ DamageFactor "chainsaw",2.0
 DamageFactor "Plasma",1.5
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
+Tag "Possessed Tree Bramble"
 MONSTER
 -SHOOTABLE
 -SOLID
@@ -1538,7 +1549,7 @@ MONSTER
 actor 64Hangman
 {
 Scale 0.7
-obituary "%o was ambushed by a hangedman."
+obituary "%o was ambushed by a hanged man."
 health 150
 radius 13
 height 46
@@ -1553,6 +1564,7 @@ MaxTargetRange 256
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 MaxTargetRange 896
+Tag "Hanged Man"
 MONSTER
 +NOGRAVITY
 +SPAWNCEILING

@@ -7,7 +7,8 @@ GibHealth 15
 Speed 6
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-DamageFactor "chainsaw",0.4
+DamageFactor "Head",1.5
+DamageFactor "Chainsaw",0.7
 Tag "Pistol Zombie"
 DropItem "SOULSPAWNER"
 DropItem "64Clip"
@@ -1742,6 +1743,7 @@ Actor 64ZombieMarine : 64Zombieman Replaces WolfensteinSS
 //$category "Game/BD64_Monsters
 Health 80
 Speed 12
+DamageFactor "Head",1.25
 AttackSound "grunt/attack"
 Tag "Marine Zombie"
 DropItem "RifleDrop"

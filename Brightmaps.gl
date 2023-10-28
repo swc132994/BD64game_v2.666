@@ -1095,6 +1095,55 @@ brightmap sprite DIABE1		{map "BRIGHTMAPS/Infernal/DIABE1_BR.png"disablefullbrig
 brightmap sprite DIABE2		{map "BRIGHTMAPS/Infernal/DIABE2_BR.png"disablefullbright}
 brightmap sprite DIABE8		{map "BRIGHTMAPS/Infernal/DIABE8_BR.png"disablefullbright}
 
+//Classic Cacodemom
+brightmap sprite HEA3A1			{map "brightmaps/Cacodemon_Classic/HEA3A1_BR.png"}
+brightmap sprite HEA3A2A8		{map "brightmaps/Cacodemon_Classic/HEA3A2A8_BR.png"}
+brightmap sprite HEA3B1			{map "brightmaps/Cacodemon_Classic/HEA3B1_BR.png"}
+brightmap sprite HEA3B2B8		{map "brightmaps/Cacodemon_Classic/HEA3B2B8_BR.png"}
+brightmap sprite HEA3B3B7		{map "brightmaps/Cacodemon_Classic/HEA3B3B7_BR.png"}
+brightmap sprite HEA3B4B6		{map "brightmaps/Cacodemon_Classic/HEA3B4B6_BR.png"}
+brightmap sprite HEA3B5			{map "brightmaps/Cacodemon_Classic/HEA3B5_BR.png"}
+brightmap sprite HEA3C1			{map "brightmaps/Cacodemon_Classic/HEA3C1_BR.png"}
+brightmap sprite HEA3C2C8		{map "brightmaps/Cacodemon_Classic/HEA3C2C8_BR.png"}
+brightmap sprite HEA3C3C7		{map "brightmaps/Cacodemon_Classic/HEA3C3C7_BR.png"}
+brightmap sprite HEA3C4C6		{map "brightmaps/Cacodemon_Classic/HEA3C4C6_BR.png"}
+brightmap sprite HEA3C5			{map "brightmaps/Cacodemon_Classic/HEA3C5_BR.png"}
+brightmap sprite HEA3D1			{map "brightmaps/Cacodemon_Classic/HEA3D1_BR.png"}
+brightmap sprite HEA3D2D8		{map "brightmaps/Cacodemon_Classic/HEA3D2D8_BR.png"}
+brightmap sprite HEA3D3D7		{map "brightmaps/Cacodemon_Classic/HEA3D3D7_BR.png"}
+brightmap sprite HEA3D4D6		{map "brightmaps/Cacodemon_Classic/HEA3D4D6_BR.png"}
+brightmap sprite HEA3D5			{map "brightmaps/Cacodemon_Classic/HEA3D5_BR.png"}
+brightmap sprite HEA3L1			{map "brightmaps/Cacodemon_Classic/HEA3L1_BR.png"}
+brightmap sprite HEA3L2L8		{map "brightmaps/Cacodemon_Classic/HEA3L2L8_BR.png"}
+brightmap sprite HEA3N1			{map "brightmaps/Cacodemon_Classic/HEA3N1_BR.png"}
+brightmap sprite HEA3N2N8		{map "brightmaps/Cacodemon_Classic/HEA3N2N8_BR.png"}
+brightmap sprite HEA3M1			{map "brightmaps/Cacodemon_Classic/HEA3M1_BR.png"}
+brightmap sprite HEA3M2M8		{map "brightmaps/Cacodemon_Classic/HEA3M2M8_BR.png"}
+
+//Classic Nightmare Cacodemom
+brightmap sprite HEA4A1			{map "brightmaps/Cacodemon_Classic/HEA3A1_BR.png"}
+brightmap sprite HEA4A2A8		{map "brightmaps/Cacodemon_Classic/HEA3A2A8_BR.png"}
+brightmap sprite HEA4B1			{map "brightmaps/Cacodemon_Classic/HEA3B1_BR.png"}
+brightmap sprite HEA4B2B8		{map "brightmaps/Cacodemon_Classic/HEA3B2B8_BR.png"}
+brightmap sprite HEA4B3B7		{map "brightmaps/Cacodemon_Classic/HEA3B3B7_BR.png"}
+brightmap sprite HEA4B4B6		{map "brightmaps/Cacodemon_Classic/HEA3B4B6_BR.png"}
+brightmap sprite HEA4B5			{map "brightmaps/Cacodemon_Classic/HEA3B5_BR.png"}
+brightmap sprite HEA4C1			{map "brightmaps/Cacodemon_Classic/HEA3C1_BR.png"}
+brightmap sprite HEA4C2C8		{map "brightmaps/Cacodemon_Classic/HEA3C2C8_BR.png"}
+brightmap sprite HEA4C3C7		{map "brightmaps/Cacodemon_Classic/HEA3C3C7_BR.png"}
+brightmap sprite HEA4C4C6		{map "brightmaps/Cacodemon_Classic/HEA3C4C6_BR.png"}
+brightmap sprite HEA4C5			{map "brightmaps/Cacodemon_Classic/HEA3C5_BR.png"}
+brightmap sprite HEA4D1			{map "brightmaps/Cacodemon_Classic/HEA3D1_BR.png"}
+brightmap sprite HEA4D2D8		{map "brightmaps/Cacodemon_Classic/HEA3D2D8_BR.png"}
+brightmap sprite HEA4D3D7		{map "brightmaps/Cacodemon_Classic/HEA3D3D7_BR.png"}
+brightmap sprite HEA4D4D6		{map "brightmaps/Cacodemon_Classic/HEA3D4D6_BR.png"}
+brightmap sprite HEA4D5			{map "brightmaps/Cacodemon_Classic/HEA3D5_BR.png"}
+brightmap sprite HEA4L1			{map "brightmaps/Cacodemon_Classic/HEA3L1_BR.png"}
+brightmap sprite HEA4L2L8		{map "brightmaps/Cacodemon_Classic/HEA3L2L8_BR.png"}
+brightmap sprite HEA4N1			{map "brightmaps/Cacodemon_Classic/HEA3N1_BR.png"}
+brightmap sprite HEA4N2N8		{map "brightmaps/Cacodemon_Classic/HEA3N2N8_BR.png"}
+brightmap sprite HEA4M1			{map "brightmaps/Cacodemon_Classic/HEA3M1_BR.png"}
+brightmap sprite HEA4M2M8		{map "brightmaps/Cacodemon_Classic/HEA3M2M8_BR.png"}
 
 //Keen Replacement
 brightmap sprite SC0RL0		{map "brightmaps/KeenReplace/BMFATALY.png"}

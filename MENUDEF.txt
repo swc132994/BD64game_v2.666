@@ -174,9 +174,10 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 		StaticText ""
 	Option "Spawn Doom 64 vanilla monsters ONLY =","D64MonstersOnlyCvar","YesOrNo"
 		StaticText ""
-		StaticText "Option to switch to alternate spawns for the Revenant and Hellhound",1
+		StaticText "Option to switch to alternate spawns for the Revenant, Cacodemon and Hellhound",1
 		StaticText ""
 	Option "Select between Cerberus, Alternate or GEC Hellhound =","HoundChooserCvar","HoundChooser"
+	Option "Select between Doom 64 vanilla or Classic-styled Cacodemon =","CacoChooserCvar","CacoSkinChooser"
 	Option "Revert back to Tchernobog Revenant =","RevenantChooserCvar","YesOrNo"
 		StaticText ""
 		StaticText "(Vanilla Doom Maps ONLY) Option to replace all Marine Zombies with Waffen-SS",1
@@ -210,8 +211,7 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 	Option "Replace Easter Eggs With Monsters =","Keen_Spawner_Cvar","Keen_Spawner_Value"
 			StaticText ""
 	Option "Enable Shootable Projectiles =","ShootableProjectilesCVAR","YesOrNo"
-		StaticText ""	
-	
+		StaticText ""
 }
 
 OptionMenu "BrutalDoom64OptionsPerformance"
@@ -296,6 +296,12 @@ OptionValue "HoundChooser"
 	0,"Alternate"
 	1,"GEC"
 	2,"Cerberus"
+}
+
+OptionValue "CacoSkinChooser"
+{
+	0,"Vanilla"
+	1,"Classic"
 }
 
 OptionValue "Annihilator_Spawner_Value"

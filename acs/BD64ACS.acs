@@ -528,3 +528,8 @@ Script "CheckPlayerClass" (void)
 		}
 	}
 }
+
+script "CacoChooserACS" (void)
+{
+SetResultValue(GetCVar("CacoChooserCvar"));
+}
