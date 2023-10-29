@@ -521,19 +521,6 @@ OptionValue "BFGZombie_Value"
 	50,"50%"
 }
 
-OptionValue "FleshWizardRandom_Value"
-{
-	0,"Archvile"
-	1,"Flesh Wizard"
-	5,"5%"
-	10,"10%"
-	15,"15%"
-	20,"20%"
-	25,"25%"
-	30,"30%"
-	40,"40%"
-	50,"50%"
-}
 
 OptionValue "FleshWizardRandom_Value"
 {

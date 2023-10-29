@@ -909,7 +909,7 @@ floor/elec1	dselec1
 $limit floor/elec1 20
 
 //Anomaly Events
-$random polt/see		{polt/whisp1 polt/whisp2 polt/helpme polt/please polt/godplease polt/followme polt/overhere polt/babycry}
+$random polt/see		{polt/whisp1 polt/whisp2 polt/helpme polt/please polt/godplease polt/followme polt/overhere polt/babycry ATTGET04 ATTGET05 meow_01 meow_02 meow_03 meow_04 meow_05 meow_06 meow_08 stab_01 stab_02 stab_03 stab_04 stab_05}
 polt/whisp1			PLTW1
 polt/whisp2			PLTW2
 polt/helpme			D3HELPM
@@ -918,9 +918,23 @@ polt/godplease		D3GODPLS
 polt/followme		D3FOLLOW
 polt/overhere		D3OVHERE
 polt/babycry		D3BABCRY
+ATTGET04	ATTGET04
+ATTGET05	ATTGET05
+meow_01		meow_01
+meow_02		meow_02
+meow_03		meow_03
+meow_04		meow_04
+meow_05		meow_05
+meow_06		meow_06
+meow_08		meow_08
+stab_01		stab_01
+stab_02		stab_02
+stab_03		stab_03
+stab_04		stab_04
+stab_05		stab_05
 
 
-$random polt/laugh		{polt/laugh1 polt/laugh2 polt/creep1 polt/creep2 polt/creep3 polt/creep4 polt/creep5 polt/creep6 polt/creep7 polt/creep8 polt/voices1 polt/voices2 polt/hellbaby polt/wail}
+$random polt/laugh		{polt/laugh1 polt/laugh2 polt/creep1 polt/creep2 polt/creep3 polt/creep4 polt/creep5 polt/creep6 polt/creep7 polt/creep8 polt/voices1 polt/voices2 polt/hellbaby polt/wail blaugh01 blaugh06 laugh03 laugh05 laugh06 laugh07 laugh08 laugh09 laugh13 moan01 moan02 moan03 moan04 satan}
 polt/laugh1			PLTL1
 polt/laugh2			PLTL2
 polt/creep1			D3CREEP1
@@ -935,6 +949,20 @@ polt/voices1		D3VOICE1
 polt/voices2		D3VOICE2
 polt/hellbaby		D3HELBBY
 polt/wail			LWCFX
+blaugh01	blaugh01
+blaugh06	blaugh06
+laugh03	laugh03
+laugh05	laugh05
+laugh06	laugh06
+laugh07	laugh07
+laugh08	laugh08
+laugh09	laugh09
+laugh13	laugh13
+moan01	moan01
+moan02	moan02
+moan03	moan03
+moan04	moan04
+satan	satan
 
 polt/break1			PLTDT
 polt/break2			WALLBRK
