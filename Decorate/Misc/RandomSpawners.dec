@@ -938,7 +938,7 @@ MONSTER
 	P20:
 		TNT1 A 0 A_Jump(51,"SpawnSSGGuy")
 		Goto SpawnShotgunGuy
-	25:
+	P25:
 		TNT1 A 0 A_Jump(64,"SpawnSSGGuy")
 		Goto SpawnShotgunGuy
 	P30:

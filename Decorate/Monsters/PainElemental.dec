@@ -12,6 +12,7 @@ HitObituary "%o got too close to a Pain Elemental."
 DropItem "DemonEssenceSpawner"
 +FORCEXYBILLBOARD
 +NOBLOODDECALS
++NOBLOOD
 	states
 	{
 	Spawn:
@@ -73,14 +74,14 @@ DropItem "DemonEssenceSpawner"
 Actor 64NightmareElemental : 64PainElemental 19126
 {
 //$category "Game/BD64_Monsters
+Health 600
 Speed 12
-HitObituary "%o was tormented by an Agony Elemental."
-Tag "Agony Elemental"
+PainChance 64
 Alpha 0.5
 RenderStyle Translucent
-PainChance 64
-Health 600
-+MissileMore
+HitObituary "%o was tormented by an Agony Elemental."
+Tag "Agony Elemental"
++MISSILEMORE
 	states
 	{
 	Spawn:

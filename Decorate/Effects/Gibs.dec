@@ -2379,7 +2379,6 @@ Scale 0.9
 //Belphegor
 ACTOR BelphegorLeg : XDeathZombieArm1
 {
-Scale 1
 	States
 	{
 	Spawn:
@@ -2397,7 +2396,19 @@ Scale 1
 
 ACTOR BelphegorArm : XDeathHKArm
 {
-Scale 1
+	States
+	{
+	Spawn:
+		KGB6 A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
+		KGB6 A 4 A_CheckFloor("Death")
+		Wait
+	Death:
+		KGB6 B 35
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotGreen")
+		KGB6 B -1
+		Stop
+	}
 }
 
 //BFG Guy
