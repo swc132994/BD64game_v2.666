@@ -368,11 +368,6 @@ pulselight SMALLLAMP
 	offset 0 44 0
 }
 
-object 64TechLamp2B
-{
-	frame TLP2 {light SMALLLAMP}
-}
-
 //Tall tech lamp
 pulselight BIGLAMP
 {
@@ -381,11 +376,6 @@ pulselight BIGLAMP
 	secondarySize 66
 	interval 0.4
 	offset 0 72 0
-}
-
-object 64TechLampB
-{
-	frame TLMP {light BIGLAMP}
 }
 
 // Tall red torch
@@ -411,6 +401,16 @@ flickerlight2 BIGGREENTORCH
 object BruiserFlame
 {
 	frame FIR3 {light BIGGREENTORCH}
+}
+
+//Tall yellow torch
+flickerlight2 BIGYELLOWTORCH
+{
+color 1.0 0.9 0.0
+size 64
+secondarySize 72
+interval 0.1
+offset 0 60 0
 }
 
 //Tall blue torch
@@ -2279,71 +2279,6 @@ color 0.4 0.4 0.4
 size 16
 offset 0 0 0
 dontlightself 1
-}
-
-object 64Candlestick
-{
-frame CAND {light SMALLREDTORCH}
-}
-
-object 64Candelabra
-{
-frame CAND {light BIGREDTORCH}
-}
-
-object 64RedTorch
-{
-frame TSTI {light BIGREDTORCH}
-}
-
-object 64GreenTorch
-{
-frame TSTI {light BIGGREENTORCH}
-}
-
-object 64BlueTorch
-{
-frame TSTI {light BIGBLUETORCH}
-}
-
-object 64RedTorchSmall
-{
-frame SSTI {light SMALLREDTORCH}
-}
-
-object 64GreenTorchSmall
-{
-frame SSTI {light SMALLGREENTORCH}
-}
-
-object 64YellowTorchSmall
-{
-frame SSTI {light SMALLYELLOWTORCH}
-}
-
-object 64BlueTorchSmall
-{
-frame SSTI {light SMALLBLUETORCH}
-}
-
-object 64WallTorchRed
-{
-frame SMYY {light SMALLREDTORCH}
-}
-
-object 64WallTorchBlue
-{
-frame SMYY {light SMALLBLUETORCH}
-}
-
-object 64WallTorchGreen
-{
-frame SMYY {light SMALLGREENTORCH}
-}
-
-object 64WallTorchYellow
-{
-frame SMYY {light SMALLYELLOWTORCH}
 }
 
 pulselight BIGREDLASER

@@ -1056,8 +1056,6 @@ ProjectilePassHeight -8
 actor 64Candlestick : Candlestick replaces Candlestick
 {
 Scale 0.7
-+LOOKALLAROUND
-+RANDOMIZE
 	States
 	{
 	Spawn:
@@ -1067,8 +1065,7 @@ Scale 0.7
 		TNT1 A 0 A_SpawnItemEx("LensFlareAltLongOrangeForever",3,-3,20)
 		TNT1 A 0 A_SpawnItemEx("LensFlareAltLongOrangeForever",-3,-3,20)
 	Stay:
-		CAND CCCB 1 Bright
-		CAND BCBB 1 Bright
+		CAND CCCBBCBB 1 Bright Light("SMALLREDTORCH")
 		Loop
 	}
 }
@@ -1076,8 +1073,6 @@ Scale 0.7
 actor 64Candelabra : Candelabra replaces Candelabra
 {
 Scale 0.7
-+LOOKALLAROUND
-+RANDOMIZE
 	States
 	{
 	Spawn:
@@ -1159,12 +1154,12 @@ Scale 0.75
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2Fast",0,0,64)
-		TSTI A 1
+		TSTI A 1 Light("BIGREDTORCH")
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsSmall",60,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("ImBallGettingReady",60,0,random(0,140),2,random(0,160))
-		TSTI AA 2 A_SpawnItemEx("LensFlareTorchOrange",0,0,60)
+		TSTI AA 2 Light("BIGREDTORCH") A_SpawnItemEx("LensFlareTorchOrange",0,0,60)
 		Loop
 	StayBlank:
 		TSTI A 3
@@ -1187,12 +1182,12 @@ Scale 0.75
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2Fast",0,0,64)
-		TSTI A 1
+		TSTI A 1 Light("BIGBLUETORCH")
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsBlue",60,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("BallGettingReadyBlue",60,0,random(0,140),2,random(0,160))
-		TSTI AA 2 A_SpawnItemEx("LensFlareTorchBlue",0,0,60)
+		TSTI AA 2 Light("BIGBLUETORCH") A_SpawnItemEx("LensFlareTorchBlue",0,0,60)
 		Loop
 	StayBlank:
 		TSTI A 3
@@ -1200,6 +1195,34 @@ Scale 0.75
 	ClassicTorch:
 		TLBL ABCDE 4 Light("SMALLBLUETORCH")
 		Loop
+	}
+}
+
+actor 64YellowTorch : RedTorch 9917
+{
+//$category "Game/BD64_Props
+Scale 0.75
+	States
+	{
+	Spawn:
+		TSTI A 0 Bright
+		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,36,0)
+		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,36,0)
+		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
+		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,-36,0)
+		TNT1 A 0 A_SpawnItemEx("LightShaft2Fast",0,0,64)
+		TSTI A 1 Light("BIGYELLOWTORCH")
+	Stay:
+		TNT1 A 0 A_CheckSight("StayBlank")
+		//TNT1 A 0 A_Playsound("BDfireplace")
+		TNT1 A 0 A_CustomMissile("YellowFlameTrailsSmall",60,0,random(0,360),2,random(70,110))
+		TNT1 A 0 A_CustomMissile("BallGettingReadyYellow",60,0,random(0,140),2,random(0,160))
+		TSTI AA 2 Light("BIGYELLOWTORCH") A_SpawnItemEx("LensFlareTorchYellow",0,0,60)
+		Loop
+	StayBlank:
+		//TNT1 A 0 A_Playsound("BDfireplace")
+		TSTI A 3
+		Goto Stay
 	}
 }
 
@@ -1215,12 +1238,12 @@ Scale 0.75
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2Fast",0,0,64)
-		TSTI A 1
+		TSTI A 1 Light("BIGGREENTORCH")
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsGreen",60,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("BallGettingReadyGreen",60,0,random(0,140),2,random(0,160))
-		TSTI AA 2 A_SpawnItemEx("LensFlareTorchGreen",0,0,60)
+		TSTI AA 2 Light("BIGGREENTORCH") A_SpawnItemEx("LensFlareTorchGreen",0,0,60)
 		Loop
 	StayBlank:
 		TSTI A 3
@@ -1243,12 +1266,12 @@ Scale 0.75
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2Fast",0,0,64)
-		SSTI A 1
+		SSTI A 1 Light("SMALLREDTORCH")
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsSmall",44,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("ImBallGettingReady",44,0,random(0,140),2,random(0,160))
-		SSTI AA 2 A_SpawnItemEx("LensFlareTorchOrange",0,0,44)
+		SSTI AA 2 Light("SMALLREDTORCH") A_SpawnItemEx("LensFlareTorchOrange",0,0,44)
 		Loop
 	StayBlank:
 		SSTI A 3
@@ -1271,12 +1294,12 @@ Scale 0.75
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2Fast",0,0,64)
-		SSTI A 1
+		SSTI A 1 Light("SMALLBLUETORCH")
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsBlue",44,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("BallGettingReadyBlue",44,0,random(0,140),2,random(0,160))
-		SSTI AA 2 A_SpawnItemEx("LensFlareTorchBlue",0,0,44)
+		SSTI AA 2 Light("SMALLBLUETORCH") A_SpawnItemEx("LensFlareTorchBlue",0,0,44)
 		Loop
 	StayBlank:
 		SSTI A 3
@@ -1299,12 +1322,12 @@ Scale 0.75
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2Fast",0,0,64)
-		SSTI A 1
+		SSTI A 1 Light("SMALLGREENTORCH")
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsGreen",44,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("BallGettingReadyGreen",44,0,random(0,140),2,random(0,160))
-		SSTI AA 2 A_SpawnItemEx("LensFlareTorchGreen",0,0,44)
+		SSTI AA 2 Light("SMALLGREENTORCH") A_SpawnItemEx("LensFlareTorchGreen",0,0,44)
 		Loop
 	StayBlank:
 		SSTI A 3
@@ -1328,12 +1351,12 @@ Scale 0.75
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2Fast",0,0,64)
-		SSTI A 1
+		SSTI A 1 Light("SMALLYELLOWTORCH")
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsYellow",44,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("BallGettingReadyYellow",44,0,random(0,140),2,random(0,160))
-		SSTI AA 2 A_SpawnItemEx("LensFlareTorchYellow",0,0,44)
+		SSTI AA 2 Light("SMALLYELLOWTORCH") A_SpawnItemEx("LensFlareTorchYellow",0,0,44)
 		Loop
 	StayBlank:
 		SSTI A 3
@@ -1354,12 +1377,12 @@ actor 64TechLampB : TechLamp Replaces TechLamp
 		TNT1 A 0 A_SpawnItemEx("LightShaft2",36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2",-36,-36,0)
 	Live:
-		TLMP A 1 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmallPermanent",0,0,66)
+		TLMP A 1 Light("BIGLAMP") A_SpawnItemEx("ShortWhiteFlareSmallPermanent",0,0,66)
 		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmallPermanent",6,6,66)
 		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmallPermanent",-6,-6,66)
 		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmallPermanent",6,-6,66)
 		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmallPermanent",-6,6,66)
-		TLMP A -1 Light("LampBasic")
+		TLMP A -1 Light("BIGLAMP")
 		Stop
 	}
 }
@@ -1375,11 +1398,11 @@ Game Doom
 		TNT1 A 0 A_SpawnItemEx("LightShaft2",36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2",-36,-36,0)
 	Live:
-		TLP2 A 1 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmallPermanent",6,6,50)
+		TLP2 A 1 Light("SMALLLAMP") A_SpawnItemEx("ShortWhiteFlareSmallPermanent",6,6,50)
 		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmallPermanent",-6,-6,50)
 		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmallPermanent",6,-6,50)
 		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmallPermanent",-6,6,50)
-		TLP2 A -1 Light("LampBasic")
+		TLP2 A -1 Light("SMALLLAMP")
 		Stop
 	}
 }
@@ -1583,12 +1606,12 @@ Radius 5
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2Fast",0,0,64)
-		SMYY A 1
+		SMYY A 1 Light("SMALLREDTORCH")
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsWallTorch",20,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("ImBallGettingReadyWallTorch",20,0,random(0,140),2,random(0,160))
-		SMYY AA 2 A_SpawnItemEx("LensFlareTorchOrangeWallTorch",0,0,20)
+		SMYY AA 2 Light("SMALLREDTORCH") A_SpawnItemEx("LensFlareTorchOrangeWallTorch",0,0,20)
 		Loop
 	StayBlank:
 		SMYY A 3
@@ -1615,12 +1638,12 @@ Radius 5
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2Fast",0,0,64)
-		SMYY A 1
+		SMYY A 1 Light("SMALLBLUETORCH")
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsBlueWallTorch",20,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("BallGettingReadyBlueWallTorch",20,0,random(0,140),2,random(0,160))
-		SMYY AA 2 A_SpawnItemEx("LensFlareTorchBlueWallTorch",0,0,20)
+		SMYY AA 2 Light("SMALLBLUETORCH") A_SpawnItemEx("LensFlareTorchBlueWallTorch",0,0,20)
 		Loop
 	StayBlank:
 		SMYY A 3
@@ -1647,12 +1670,12 @@ Radius 5
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2Fast",0,0,64)
-		SMYY A 1
+		SMYY A 1 Light("SMALLGREENTORCH")
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsGreenWallTorch",20,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("BallGettingReadyGreenWallTorch",20,0,random(0,140),2,random(0,160))
-		SMYY AA 2 A_SpawnItemEx("LensFlareTorchGreenWallTorch",0,0,20)
+		SMYY AA 2 Light("SMALLGREENTORCH") A_SpawnItemEx("LensFlareTorchGreenWallTorch",0,0,20)
 		Loop
 	StayBlank:
 		SMYY A 3
@@ -1679,12 +1702,12 @@ Radius 5
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2Fast",0,0,64)
-		SMYY A 1
+		SMYY A 1 Light("SMALLYELLOWTORCH")
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsYellowWallTorch",20,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("BallGettingReadyYellowWallTorch",20,0,random(0,140),2,random(0,160))
-		SMYY AA 2 A_SpawnItemEx("LensFlareTorchYellowWallTorch",0,0,20)
+		SMYY AA 2 Light("SMALLYELLOWTORCH") A_SpawnItemEx("LensFlareTorchYellowWallTorch",0,0,20)
 		Loop
 	StayBlank:
 		SMYY A 3

@@ -362,6 +362,11 @@ DamageType Flames
 	}
 }
 
+ACTOR YellowFlameTrailsSmall : RealFlameTrailsSmall
+{
+Translation "0:255=%[0,0,0]:[1,1,0]"	//Yellow
+}
+
 Actor RealFlameTrailsWallTorch : RealFlameTrailsSmall
 {
 xScale 0.4
