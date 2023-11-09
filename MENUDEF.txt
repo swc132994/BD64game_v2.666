@@ -177,7 +177,7 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 		StaticText "Option to switch to alternate spawns for the Revenant, Cacodemon and Hellhound",1
 		StaticText ""
 	Option "Select between Cerberus, Alternate or GEC Hellhound =","HoundChooserCvar","HoundChooser"
-	Option "Select between Doom 64 vanilla or Classic-styled Cacodemon =","CacoChooserCvar","CacoSkinChooser"
+	Option "Select between Doom64 or Doom styled Cacodemon =","CacoChooserCvar","CacoSkinChooser"
 	Option "Revert back to Tchernobog Revenant =","RevenantChooserCvar","YesOrNo"
 		StaticText ""
 		StaticText "(Vanilla Doom Maps ONLY) Option to replace all Marine Zombies with Waffen-SS",1
@@ -300,8 +300,8 @@ OptionValue "HoundChooser"
 
 OptionValue "CacoSkinChooser"
 {
-	0,"Vanilla"
-	1,"Classic"
+	0,"Doom64"
+	1,"Doom"
 }
 
 OptionValue "Annihilator_Spawner_Value"

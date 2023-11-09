@@ -38,7 +38,7 @@ MONSTER
 	See:
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2",0,0,70)
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("64FleshWizardSprite")
+		TNT1 A 0 A_SpawnItemEx("64FleshWizardSprite",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2",0,0,70)
 		TNT1 AA 1 A_Chase
@@ -72,7 +72,7 @@ MONSTER
 	Pain.CowardlyPain:
 		LMWZ I 5
 		LMWZ I 5 A_Pain
-		TNT1 A 0 A_SpawnItemEx("64FleshWizardFalseDeath")
+		TNT1 A 0 A_SpawnItemEx("64FleshWizardFalseDeath",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 0 A_ChangeFlag("NOPAIN",1)
 		TNT1 AAAA 6 A_Wander
 		TNT1 AAAA 6 A_Wander
@@ -568,6 +568,7 @@ RenderStyle Translucent
 +NOBLOCKMAP
 +CLIENTSIDEONLY
 +ISMONSTER
++FLOORCLIP
 	States
 	{
 	Spawn:
@@ -578,14 +579,9 @@ RenderStyle Translucent
 	}
 }
 
-Actor 64FleshWizardFalseDeath
+Actor 64FleshWizardFalseDeath : 64FleshWizardSprite
 {
-Scale 0.66
 Alpha 0.6
-RenderStyle Translucent
-+NOBLOCKMAP
-+CLIENTSIDEONLY
-+ISMONSTER
 	States
 	{
 	Spawn:

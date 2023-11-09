@@ -236,6 +236,22 @@ DropItem "SOULSPAWNER"
 		SSW2 E 35
 		SSW2 E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
+	Death.PlasmaBurningZombie:
+		BURN A 1 A_SpawnItemEx("BurningWaffenSS",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	}
+}
+
+ACTOR BurningWaffenSS : BurningZombieman
+{
+PainSound "Waffen/Pain"
+DeathSound "Waffen/Death"
+	States
+	{
+	Raise:
+		SSWV MLKJ 5
+		SSWV I 1 A_SpawnItemEx("64WaffenSS",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
 	}
 }
 

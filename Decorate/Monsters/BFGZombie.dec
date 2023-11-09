@@ -1,7 +1,7 @@
 Actor 64BFGGuy : 64Zombieman 19122
 {
 //$category "Game/BD64_Monsters
-Health 180
+Health 150
 Speed 4
 AttackSound "bfgguy/sight"
 SeeSound "bfgguy/sight"
@@ -175,6 +175,22 @@ MeleeRange 120
 		BZ66 C 1
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
 		BZ66 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		Stop
+	Death.PlasmaBurningZombie:
+		BURN A 1 A_SpawnItemEx("BurningBFGZombie",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	}
+}
+
+ACTOR BurningBFGZombie : BurningZombieman
+{
+PainSound "bfgguy/pain"
+DeathSound "bfgguy/death"
+	States
+	{
+	Raise:
+		64BZ NMLKJI 5
+		64BZ H 1 A_SpawnItemEx("64BFGGuy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
 }

@@ -372,21 +372,21 @@ DropItem "DemonEssenceSpawner"
 		Loop
 	ChaseSee:
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("SpectreSprite1")
+		TNT1 A 0 A_SpawnItemEx("SpectreSprite1",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("SpectreSprite2")
+		TNT1 A 0 A_SpawnItemEx("SpectreSprite2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("SpectreSprite3")
+		TNT1 A 0 A_SpawnItemEx("SpectreSprite3",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("SpectreSprite4")
+		TNT1 A 0 A_SpawnItemEx("SpectreSprite4",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("SpectreSprite1")
+		TNT1 A 0 A_SpawnItemEx("SpectreSprite1",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("SpectreSprite2")
+		TNT1 A 0 A_SpawnItemEx("SpectreSprite2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("SpectreSprite3")
+		TNT1 A 0 A_SpawnItemEx("SpectreSprite3",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("SpectreSprite4")
+		TNT1 A 0 A_SpawnItemEx("SpectreSprite4",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
 		TNT1 AAAAA 2 A_Chase
 		Goto See
@@ -786,21 +786,21 @@ Obituary "%o was hunted down by a nightmare spectre."
 		Loop
 	ChaseSee:
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite1")
+		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite1",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite2")
+		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite3")
+		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite3",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite4")
+		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite4",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite1")
+		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite1",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite2")
+		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite3")
+		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite3",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
-		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite4")
+		TNT1 A 0 A_SpawnItemEx("NightmareSpectreSprite4",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Chase
 		TNT1 AAAAA 2 A_Chase
 		Goto See
@@ -1128,6 +1128,7 @@ RenderStyle Translucent
 +NOBLOCKMAP
 +CLIENTSIDEONLY
 +ISMONSTER		//Infrared
++FLOORCLIP
 	States
 	{
 	Spawn:

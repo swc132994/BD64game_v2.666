@@ -7,7 +7,7 @@ MeleeRange 60
 Radius 18
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-DamageFactor "chainsaw",0.4
+DamageFactor "chainsaw",0.6
 Tag "Husk Zombie"
 HitObituary "The Horde consumed %o."
 SeeSound "TheHusk/See"
@@ -16,7 +16,6 @@ DeathSound "TheHusk/Death"
 ActiveSound "TheHusk/Active"
 AttackSound "TheHusk/Attack"
 DropItem "SOULSPAWNER"
-+NOBLOODDECALS
 -COUNTKILL
 states
 	{
@@ -240,6 +239,22 @@ states
 		TNT1 A 0 A_CustomMissile("XDeathHuskArm1",50,0,random(150,210),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
 		ZFM1 A 1 A_SpawnItemEx("BrutalizedHuskZombie_1",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	Death.PlasmaBurningZombie:
+		BURN A 1 A_SpawnItemEx("BurningHuskZombie",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	}
+}
+
+ACTOR BurningHuskZombie : BurningZombieman
+{
+PainSound "TheHusk/Pain"
+DeathSound "TheHusk/Death"
+	States
+	{
+	Raise:
+		64ZF NMLKJ 5
+		64ZF I 1 A_SpawnItemEx("64HuskZombie",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
 }

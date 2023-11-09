@@ -151,17 +151,19 @@ BloodColor "45 34 7F"	//Hex value
 
 Actor Brutalized64ClassicCaco : 64ClassicCacodemon
 {
-Health 50
+Health 60
+Mass 1500
+Gravity 0.7
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DropItem "None"
+-SOLID
 -COUNTKILL
 -FLOAT
 -NOGRAVITY
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:
@@ -224,21 +226,8 @@ DropItem "None"
 	}
 }
 
-Actor Brutalized64ClassicCaco_2 : 64ClassicCacodemon
+Actor Brutalized64ClassicCaco_2 : Brutalized64ClassicCaco
 {
-Health 75
-DamageFactor "CauseWaterSplash",0.0
-DamageFactor "CauseObjectsToSplash",0.0
-DropItem "None"
--COUNTKILL
--FLOAT
--NOGRAVITY
-+FLOORCLIP
-+SHOOTABLE
-+FRIENDLY
-+NOTARGET
-+NOPAIN
-+THRUACTORS
 	States
 	{
 	See:
@@ -296,21 +285,8 @@ DropItem "None"
 	}
 }
 
-Actor Brutalized64ClassicCaco_3 : 64ClassicCacodemon
+Actor Brutalized64ClassicCaco_3 : Brutalized64ClassicCaco
 {
-Health 75
-DamageFactor "CauseWaterSplash",0.0
-DamageFactor "CauseObjectsToSplash",0.0
-DropItem "None"
--COUNTKILL
--FLOAT
--NOGRAVITY
-+FLOORCLIP
-+SHOOTABLE
-+FRIENDLY
-+NOTARGET
-+NOPAIN
-+THRUACTORS
 	States
 	{
 	See:
@@ -388,21 +364,21 @@ BloodColor "45 34 7F"	//Hex value
 		Loop
 	See:
 		TNT1 A 1 A_Wander
-		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite")
+		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Wander
-		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite")
+		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Wander
-		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite")
+		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Wander
-		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite")
+		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_chase
-		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite")
+		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Wander
-		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite")
+		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Wander
-		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite")
+		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Wander
-		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite")
+		TNT1 A 0 A_SpawnItemEx("NightmareClassicCacoSprite",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 1 A_Wander
 		TNT1 AAAA 3 A_chase
 		Loop
@@ -533,17 +509,19 @@ BloodColor "45 34 7F"	//Hex value
 
 Actor BrutalizedNClassicCaco : NightmareClassicCacodemon
 {
-Health 50
+Health 60
+Mass 1500
+Gravity 0.7
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DropItem "None"
+-SOLID
 -COUNTKILL
 -FLOAT
 -NOGRAVITY
 +FRIENDLY
 +NOTARGET
 +NOPAIN
-+THRUACTORS
 	States
 	{
 	Spawn:
@@ -606,21 +584,8 @@ DropItem "None"
 	}
 }
 
-Actor BrutalizedNClassicCaco_2 : NightmareClassicCacodemon
+Actor BrutalizedNClassicCaco_2 : BrutalizedNClassicCaco
 {
-Health 75
-DamageFactor "CauseWaterSplash",0.0
-DamageFactor "CauseObjectsToSplash",0.0
-DropItem "None"
--COUNTKILL
--FLOAT
--NOGRAVITY
-+FLOORCLIP
-+SHOOTABLE
-+FRIENDLY
-+NOTARGET
-+NOPAIN
-+THRUACTORS
 	States
 	{
 	See:
@@ -678,21 +643,8 @@ DropItem "None"
 	}
 }
 
-Actor BrutalizedNClassicCaco_3 : NightmareClassicCacodemon
+Actor BrutalizedNClassicCaco_3 : BrutalizedNClassicCaco
 {
-Health 75
-DamageFactor "CauseWaterSplash",0.0
-DamageFactor "CauseObjectsToSplash",0.0
-DropItem "None"
--COUNTKILL
--FLOAT
--NOGRAVITY
-+FLOORCLIP
-+SHOOTABLE
-+FRIENDLY
-+NOTARGET
-+NOPAIN
-+THRUACTORS
 	States
 	{
 	See:
@@ -745,6 +697,7 @@ RenderStyle Translucent
 +NOBLOCKMAP
 +CLIENTSIDEONLY
 +ISMONSTER		//Infrared
++NOGRAVITY
 	States
 	{
 	Spawn:
