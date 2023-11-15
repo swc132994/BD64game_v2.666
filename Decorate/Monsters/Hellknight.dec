@@ -111,7 +111,7 @@ BloodColor "00 64 00"	//Hex value
 		TNT1 AAAA 0 A_CustomMissile("IntestineGreen",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("BloodmistGreen",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBigGreen",45,0,random(0,360),2,random(10,90))
-		TNT1 A 0 A_CustomMissile("XDeathHKARm",52,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeathHKArm",52,0,random(0,360),2,random(0,90))
 		BOS2 H 1 A_SpawnItemEx("XDeathHKLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking

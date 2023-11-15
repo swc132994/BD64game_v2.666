@@ -23,6 +23,7 @@ DropItem "DemonEssenceSpawner"
 MONSTER
 +FLOORCLIP
 +NOBLOODDECALS
++EXTREMEDEATH
 	States
 	{
 	Spawn:
