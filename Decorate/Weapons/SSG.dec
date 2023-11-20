@@ -291,7 +291,7 @@ Tag "$TAG_SUPERSHOTGUN"
 		TNT1 A 0 Offset(0,32)
 		Goto Ready
 	AltFire2:
-		Goto AltAmmoCheck2
+		Goto AltAmmoCheck
 	ResumeAltFire2:
 		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
@@ -387,22 +387,15 @@ Tag "$TAG_SUPERSHOTGUN"
 		TNT1 A 0 A_Jumpifinventory("SSGAmmo",1,1)
 		Goto Reload
 		TNT1 A 0 A_TakeInventory("SSGAmmo",1,TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_JumpIfInventory("SSGAlt",1,"ResumeAltFire2")
 		Goto ResumeAltFire
 	AltNoReload:
 		TNT1 A 0 A_Jumpifinventory("Shell",1,1)
 		Goto NoAmmo
 		TNT1 A 0 A_TakeInventory("Shell",1,TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_JumpIfInventory("SSGAlt",1,"AltNoReload2")		
 		Goto ResumeAltFire
-	AltAmmoCheck2:
-		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"AltNoReload2")
-		TNT1 A 0 A_Jumpifinventory("SSGAmmo",1,1)
-		Goto Reload
-		TNT1 A 0 A_TakeInventory("SSGAmmo",1,TIF_NOTAKEINFINITE)
-		Goto ResumeAltFire2
-	AltNoReload2:
-		TNT1 A 0 A_Jumpifinventory("Shell",1,1)
-		Goto NoAmmo
-		TNT1 A 0 A_TakeInventory("Shell",1,TIF_NOTAKEINFINITE)
+	AltNoReload2:	
 		TNT1 A 0 A_GiveInventory("SSGReloading",1)
 		Goto ResumeAltFire2
 	}
