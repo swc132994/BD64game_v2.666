@@ -297,7 +297,7 @@ SeeSound "weapons/largemagdrop"
 		ECLP B 4
 	rest:
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
-		ECLP C 400
+		ECLP G 400
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	}
