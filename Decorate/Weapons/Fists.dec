@@ -162,7 +162,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 A 0 A_Takeinventory("Kicking",0)
 		TNT1 A 0 A_TakeInventory("AltPunchCharge",0)
 		PUN6 DCBA 1
-		TNT1 A 1 A_Lower
+		TNT1 A 0 A_Lower
 		Wait
 	Fire:
 		PUN1 A 1

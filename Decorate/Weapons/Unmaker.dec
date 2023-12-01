@@ -361,7 +361,7 @@ Tag "Unmaker"
 	States
 	{
 	MineThrowFlash:
-		UNMS DCBA 1
+		UNMS EFGH 1
 		TNT1 A 18
 		UNMS ABCD 1
 		Stop
@@ -411,9 +411,9 @@ Tag "Unmaker"
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
 		TNT1 A 0 A_TakeInventory("UnAltMode",0)
-		UNMS DCBA 1
+		UNMS EFGH 1
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		TNT1 A 1 A_Lower
+		TNT1 A 0 A_Lower
 		Wait
 	Fire:
 		TNT1 A 0 A_JumpIfInventory("UnAltMode",2,"FireAltRed")

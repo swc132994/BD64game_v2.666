@@ -165,8 +165,8 @@ Tag "$TAG_PISTOL"
 		TNT1 A 0 A_Takeinventory("Kicking",0)
 		P1SS D 0 A_JumpIfInventory("IsSilencer",1,2)
 		PISS D 0
-		"####" DCBA 1
-		TNT1 A 1 A_Lower
+		"####" EFGH 1
+		TNT1 A 0 A_Lower
 		Wait
 	NoAmmo:
 		P1SG A 0 A_JumpIfInventory("IsSilencer",1,2)
@@ -192,7 +192,7 @@ Tag "$TAG_PISTOL"
 	MineThrowFlash:
 		P1SS A 0 A_JumpIfInventory("IsSilencer",1,2)
 		PISS A 0
-		"####" DCBA 1
+		"####" EFGH 1
 		TNT1 A 18
 		P1SS D 0 A_JumpIfInventory("IsSilencer",1,2)
 		PISS D 0

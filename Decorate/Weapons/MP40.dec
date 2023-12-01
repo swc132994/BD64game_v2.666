@@ -177,7 +177,7 @@ Tag "MP40"
 	States
 	{
 	MineThrowFlash:	//26
-		MP4S DCBA 1
+		MP4S EFGH 1
 		TNT1 A 18
 		MP4S ABCD 1
 		Stop
@@ -240,8 +240,8 @@ Tag "MP40"
 		TNT1 A 0 A_Takeinventory("TossMine",0)
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
-		MP4S DCBA 1
-		TNT1 A 1 A_Lower
+		MP4S EFGH 1
+		TNT1 A 0 A_Lower
 		Wait
 	Fire:
 		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReload")

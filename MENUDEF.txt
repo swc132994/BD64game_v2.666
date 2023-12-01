@@ -113,7 +113,7 @@ OptionMenu "BrutalDoom64Item/WeaponOptions"
 		StaticText "Options to switch between classic or modernised weapons.",1
 		StaticText ""
 	Option "Classic Style Chainsaw for Tactical/Modern =","VanillaChainsawCvar","YesOrNo"
-	Option "Classic Style Chaingun =","ClassicChaingunCvar","YesOrNo"
+	Option "Classic Style Chaingun for Tactical/Modern =","ClassicChaingunCvar","YesOrNo"
 	Option "Classic Style Rocket Launcher for Tactical/Modern =","ClassicRLCvar","YesOrNo"
 		StaticText ""
 		StaticText "Options for alternative or some alpha build looks for items & weapons.",1

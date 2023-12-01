@@ -52,20 +52,14 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		MGUN B -1
 		Stop
 	Ready:
-		LCGG A 0 A_JumpIf(CallACS("ClassicChaingun")==True,2)
-		CHNG A 0
-		"####" A 1 A_WeaponReady
+		LCGG A 1 A_WeaponReady
 		Loop
 	Select:
-		LCGG A 0 A_JumpIf(CallACS("ClassicChaingun")==True,2)
-		CHNG A 0
-		"####" A 1 A_Raise
+		LCGG A 1 A_Raise
 		Wait
 	Deselect:
 		TNT1 A 0 A_ZoomFactor(1.0)
-		LCGG A 0 A_JumpIf(CallACS("ClassicChaingun")==True,2)
-		CHNG A 0
-		"####" A 1 A_Lower
+		LCGG A 1 A_Lower
 		Wait
 	Fire:
 		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
@@ -73,30 +67,26 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(5.0,3.5,-1,8,"MachineGunBulletPuff")
 		TNT1 A 0 A_PlaySound("MGUNFIR",1)
-		LCGF A 0 A_JumpIf(CallACS("ClassicChaingun")==True,2)
-		CHNF A 0
-		"####" A 1 Bright
-		"####" A 0 A_ZoomFactor(0.98)
-		"####" B 2 Bright
-		"####" A 0 A_ZoomFactor(1.0)
-		"####" A 0 A_FireCustomMissile("50CaseSpawn",0,0,-6,-18)
-		"####" AA 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
-		"####" A 0 A_SpawnItemEx("PlayerMuzzle3",30,5,40)
-		"####" A 0 A_FireCustomMissile("Tracer",random(-3,5),0,-1,-12,0,random(-2,2))
-		"####" A 0 A_FireBullets(5.0,3.5,-1,8,"MachineGunBulletPuff")
-		"####" A 0 A_PlaySound("MGUNFIR",1)
-		"####" C 1 Bright
-		"####" A 0 A_ZoomFactor(0.98)
-		"####" D 2 Bright
+		LCGF A 1 Bright
+		LCGF A 0 A_ZoomFactor(0.98)
+		LCGF B 2 Bright
+		LCGF A 0 A_ZoomFactor(1.0)
+		LCGF A 0 A_FireCustomMissile("50CaseSpawn",0,0,-6,-18)
+		LCGF AA 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
+		LCGF A 0 A_SpawnItemEx("PlayerMuzzle3",30,5,40)
+		LCGF A 0 A_FireCustomMissile("Tracer",random(-3,5),0,-1,-12,0,random(-2,2))
+		LCGF A 0 A_FireBullets(5.0,3.5,-1,8,"MachineGunBulletPuff")
+		LCGF A 0 A_PlaySound("MGUNFIR",1)
+		LCGF C 1 Bright
+		LCGF A 0 A_ZoomFactor(0.98)
+		LCGF D 2 Bright
 		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 0 A_FireCustomMissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_Refire
 		TNT1 A 0 A_PlaySound("CHAINSTO",5)
-		LCGG A 0 A_JumpIf(CallACS("ClassicChaingun")==True,2)
-		CHNG A 0
-		"####" ABCD 1 A_WeaponReady
-		"####" ABCD 2 A_WeaponReady
-		"####" ABCD 3 A_weaponReady
+		LCGG ABCD 1 A_WeaponReady
+		LCGG ABCD 2 A_WeaponReady
+		LCGG ABCD 3 A_weaponReady
 		Goto Ready
 	}
 }
@@ -129,7 +119,7 @@ Tag "$TAG_CHAINGUN"
 		CHNS ABCDE 1
 		Stop
 	ClassicMineThrowFlash:
-		LCGS DCBA 1
+		LCGS OPQR 1
 		TNT1 A 18
 		LCGS ABCD 1
 		Stop
@@ -343,12 +333,12 @@ Tag "$TAG_CHAINGUN"
 		TNT1 A 0 A_TakeInventory("Spin",0)
 		TNT1 A 0 A_StopSound(5)
 		TNT1 A 0 A_JumpIf(CallACS("ClassicChaingun")==True,"ClassicDeSelectAnimation")
-		CHNS EDCBA 1
-		TNT1 A 1 A_Lower
+		CHNS FGHIJ 1
+		TNT1 A 0 A_Lower
 		Wait
 	ClassicDeSelectAnimation:
-		LCGS DCBA 1
-		TNT1 A 1 A_Lower
+		LCGS OPQR 1
+		TNT1 A 0 A_Lower
 		Wait
 	Fire:
 		TNT1 A 0 A_JumpIf(CallACS("ClassicChaingun")==True,"ClassicFire")

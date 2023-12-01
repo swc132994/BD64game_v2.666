@@ -373,7 +373,7 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
 		SMGS EDCBA 1
-		TNT1 A 1 A_Lower
+		TNT1 A 0 A_Lower
 		Wait
 	Fire:
 		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"FireZoomed")

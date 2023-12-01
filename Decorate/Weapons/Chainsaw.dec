@@ -183,7 +183,7 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 		TNT1 A 0 A_Takeinventory("Kicking",0)
 		TNT1 A 0 A_SetCrosshair(0)
 		SAWS RQPONDCBA 1
-		TNT1 A 1 A_Lower
+		TNT1 A 0 A_Lower
 		Wait
 	Select:
 		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
