@@ -337,19 +337,17 @@ script "PainStalkerRandomACS" (void)
 SetResultValue(GetCVar("PainStalkerRandom_Cvar"));
 }
 
-Script "VanillaHUDSwitching" ENTER	//option to set vanilla normal HUD
+Script "HUDSwitching" ENTER
 {
-if(GetUserCvar(0,"VanillaStatusBarCvar") == 1) {GiveInventory("VanillaSBar",1);}
-if(GetUserCvar(0,"VanillaStatusBarCvar") == 0) {TakeInventory("VanillaSBar",1);}
-Delay(35);
-Restart;
+if(GetUserCvar(0,"HUDSwitchCvar") ==1)
+{
+GiveInventory("HUDSwitch",1);
 }
-
-Script "ArragendHUDSwitching" ENTER	//option to set vanilla full HUD
+else
 {
-if(GetUserCvar(0,"ArragendHUDCvar") == 1) {GiveInventory("ArrangedHud",1);}
-if(GetUserCvar(0,"ArragendHUDCvar") == 0) {TakeInventory("ArrangedHud",1);}
-Delay(35);
+TakeInventory("HUDSwitch",1);
+}
+Delay(1);
 Restart;
 }
 

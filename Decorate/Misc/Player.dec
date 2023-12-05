@@ -28,12 +28,7 @@ Actor TCMapCheck : Inventory	//option to switch to TC maps
 Inventory.MaxAmount 1
 }
 
-Actor VanillaSBar : Inventory	//option to switch to vanilla Statusbar
-{
-Inventory.MaxAmount 1
-}
-
-Actor ArrangedHud : Inventory	//option to switch to arranged HUD
+Actor HudSwitch : Inventory	//option to switch to arranged HUD
 {
 Inventory.MaxAmount 1
 }

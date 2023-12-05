@@ -240,8 +240,7 @@ OptionMenu "BrutalDoom64OptionsPerformance"
 		StaticText ""
 		StaticText "HUD Options!",1
 		StaticText ""
-	Option "Set Normal Size HUD to Doom Style =","VanillaStatusBarCvar","YesorNo"
-	Option "Set Fullscreen Size HUD to Doom Style =","ArragendHUDCvar","YesorNo"
+	Option "Set HUD Style =","HUDSwitchCvar","HUDValue"
 		StaticText ""
 	Option "Enable HUD Screen Effects =", "bd64_ScreenFX", "ScreenTypes"
 		StaticText "Enables screen effects on HUD, such as blood splashes and bullet holes."
@@ -653,4 +652,10 @@ OptionValue "CensoredHealing_Value"
 	1,"Alpha Build"
 	2,"Censored (Nightdive)"
 	3,"Alternative (BFG Style)"
+}
+
+OptionValue "HUDValue"
+{
+	0,"Default"
+	1,"Doom Style"
 }

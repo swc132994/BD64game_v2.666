@@ -3,7 +3,7 @@ completeborder true;
 
 statusbar fullscreen,forcescaled,0.5
 {
-	InInventory "ArrangedHud",1 //Fullscreen HUD
+	InInventory "HUDSwitch",1 //Fullscreen HUD
 	{
 		drawswitchableimage BlueCard,"nullimage","STKEYS0",101,181;
 		drawswitchableimage YellowCard,"nullimage","STKEYS1",111,181;
@@ -134,7 +134,7 @@ statusbar normal
 	drawnumber 3,INDEXFONT,darkgray,ammo cell,182,193;
 	drawnumber 3,INDEXFONT,darkgray,ammocapacity cell,203,193;
 
-	InInventory "VanillaSBar",1	//Vanilla status bar
+	InInventory "HUDSwitch",1	//Vanilla status bar
 		{
 		drawimage "STBAR1",0,160;
 		drawimage "STTPRCNT",88,171;
