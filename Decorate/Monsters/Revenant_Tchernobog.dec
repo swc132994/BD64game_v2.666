@@ -136,7 +136,11 @@ DropItem "None"
 	Spawn:
 		RVNH ABCDEDCBFGHIHGFABCDEDCBFGHIHGF 3 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		Goto Death
-	death:
+	Death:
+	Death.CutLess:
+	Death.Shotgun:
+	Death.SSG:
+	Death.Head:
 		TNT1 A 0 A_Die
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
