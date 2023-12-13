@@ -31,6 +31,14 @@ While(1)
 
 Script "FlashLightStartACS" ENTER	//give flashlight at map start
 {
-if(GetCvar("FlashlightStartCvar") == 1)	{GiveInventory("FlashlightPickup",1);}
-Delay(5);
+	While(true)
+	{
+		int type = GetCvar("FlashlightStartCvar");
+		Switch(type)
+		{
+			Case 1:
+			GiveInventory("FlashlightPickup",1);
+		}
+		Delay(1);
+	}
 }

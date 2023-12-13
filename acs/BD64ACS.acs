@@ -1,6 +1,13 @@
 #library "BD64ACS"
 #include "zcommon.acs"
 
+function void SetInventory(str item, int amount)
+{
+    int diff = amount - CheckInventory(item);
+    if (diff > 0) { GiveInventory(item, diff); }
+    else if (diff < 0) { TakeInventory(item, -diff); }
+}
+
 script "KickKeyPress" (VOID) NET
 {
 	if(CheckInventory("IsModern") > 0)
@@ -115,22 +122,11 @@ SetActorProperty(0,APROP_Speed,1.0);
 delay (1);
 }
 
-script "VanillaMapChecker" ENTER	//gives dummy item to exit to vanilla map08
+script "MapCheckers" ENTER
 {
-if	(GetCvar("VMapCheckCvar") == 0) {TakeInventory("VMapCheck",1);}
-if	(GetCvar("VMapCheckCvar") == 1) {GiveInventory("VMapCheck",1);}
-}
-
-script "AbsolutionMapChecker" ENTER	//gives dummy item to access vanilla map28
-{
-if	(GetCvar("AbsMapCheckCvar") == 0) {TakeInventory("AbsMapCheck",1);}
-if	(GetCvar("AbsMapCheckCvar") == 1) {GiveInventory("AbsMapCheck",1);}
-}
-
-script "TCMapChecker" ENTER			//gives dummy item on map07 to exit to abolsolution tc maps
-{
-if	(GetCvar("TCMapCheckCvar") == 0) {TakeInventory("TCMapCheck",1);}
-if	(GetCvar("TCMapCheckCvar") == 1) {GiveInventory("TCMapCheck",1);}
+  SetInventory("VmapCheck", GetCvar("VMapCheckCvar"));
+  SetInventory("AbsMapCheck", GetCvar("AbsMapCheckCvar"));
+  SetInventory("TCMapCheck", GetCvar("TCMapCheckCvar"));
 }
 
 script "VanillaWeapons" (void)		//vanilla weapon animations
@@ -339,16 +335,38 @@ SetResultValue(GetCVar("PainStalkerRandom_Cvar"));
 
 Script "HUDSwitching" ENTER
 {
-if(GetUserCvar(0,"HUDSwitchCvar") ==1)
-{
-GiveInventory("HUDSwitch",1);
+	While(true)
+	{
+		int type = GetUserCvar(0,"HUDSwitchCvar");
+		Switch(type)
+		{
+			Case 1:
+			GiveInventory("HUDSwitch",1);
+			break;
+			Case 0:
+			TakeInventory("HUDSwitch",1);
+			break;
+		}	
+		Delay(1);
+	}
 }
-else
+
+script "NoReloadACS" ENTER
 {
-TakeInventory("HUDSwitch",1);
-}
-Delay(1);
-Restart;
+	While(true)
+	{
+		int type = GetCvar("NoReloadCvar");
+		Switch(type)
+		{
+			Case 1:
+			GiveInventory("NoReloading",1);
+			break;
+			Case 0:
+			TakeInventory("NoReloading",1);
+			break;
+		}
+		Delay(1);
+	}
 }
 
 /*
@@ -443,12 +461,6 @@ SetResultValue(GetCVar("ThingRandomCvar"));
 script "AltRadSuitACS" (void)
 {
 SetResultValue(GetCVar("AltRadSuitCvar"));
-}
-
-script "NoReloadACS" ENTER
-{
-if(GetCvar("NoReloadCvar") == 1) {GiveInventory("NoReloading",1);}
-if(GetCvar("NoReloadCvar") == 0) {TakeInventory("NoReloading",1);}
 }
 
 script "ClassicChaingun" (void)
