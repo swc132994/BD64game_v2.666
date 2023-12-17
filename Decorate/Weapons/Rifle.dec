@@ -85,7 +85,6 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		"####" A 1 A_Lower
 		Wait
 	Fire:
-		TNT1 A 0 A_SetPitch(pitch-1.2)
 		ARSF A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)
 		RIFF A 0
 		"####" A 1 Bright
@@ -101,7 +100,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)
 		RIFF B 0
-		"####" BC 1 A_SetPitch(pitch+0.6)
+		"####" BC 1
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)
@@ -117,7 +116,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)
 		RIFF B 0
-		"####" BC 1 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
+		"####" BC 1
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)
@@ -133,7 +132,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)
 		RIFF B 0
-		"####" BC 1 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
+		"####" BC 1
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)
@@ -149,7 +148,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)
 		RIFF B 0
-		"####" BC 1 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
+		"####" BC 1
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)
@@ -165,7 +164,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_PlaySound("RIFLE",1)
 		ARSF B 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)
 		RIFF B 0
-		"####" BC 1 A_SetPitch(pitch+0.6, SPF_INTERPOLATE)
+		"####" BC 1
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
 		ARSG A 0 A_JumpIf(CallACS("AlternativeRifleSkin")==true,2)

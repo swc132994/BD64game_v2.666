@@ -59,7 +59,6 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		MP4G A 1 A_Lower
 		Wait
 	Fire:
-		TNT1 A 0 A_SetPitch(pitch-1.2,SPF_INTERPOLATE)
 		TNT1 A 0 A_Jump(128,3)
 		MP4F A 1 Bright
 		TNT1 A 0 A_Jump(256,2)
@@ -74,11 +73,9 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.0,0.0,-1,5,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",1)
-		TNT1 A 0 A_SetPitch(pitch+0.6,SPF_INTERPOLATE)
 		MP4F CDEF 1
 		TNT1 A 0 A_Firecustommissile("BulletCaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredMP40",1)
-		MP4G A 0
 		TNT1 A 0 A_Refire
 		MP4G A 1
 		Goto FinishFire
@@ -88,11 +85,9 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.6,0.6,-1,5,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",1)
-		TNT1 A 0 A_SetPitch(pitch-0.6,SPF_INTERPOLATE)
 		MP4F CDEF 1
 		TNT1 A 0 A_Firecustommissile("BulletCaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
-		MP4G A 0
 		TNT1 A 0 A_Refire
 		MP4G A 1
 		Goto FinishFire
@@ -102,11 +97,9 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(2.0,2.0,-1,5,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",1)
-		TNT1 A 0 A_SetPitch(pitch+0.6,SPF_INTERPOLATE)
 		MP4F CDEF 1
 		TNT1 A 0 A_Firecustommissile("BulletCaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
-		MP4G A 0
 		TNT1 A 0 A_Refire
 		MP4G A 1
 		Goto FinishFire
@@ -116,11 +109,9 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(4.0,4.0,-1,5,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",1)
-		TNT1 A 0 A_SetPitch(pitch-0.6,SPF_INTERPOLATE)
 		MP4F CDEF 1
 		TNT1 A 0 A_Firecustommissile("BulletCaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
-		MP4G A 0
 		TNT1 A 0 A_Refire
 		MP4G A 1
 		Goto FinishFire
@@ -130,11 +121,9 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(7.0,7.0,-1,5,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",1)
-		TNT1 A 0 A_SetPitch(pitch+0.6,SPF_INTERPOLATE)
 		MP4F CDEF 1
 		TNT1 A 0 A_Firecustommissile("BulletCaseSpawn",0,0,-6,-18)
 		TNT1 A 0 A_GiveInventory("FiredRifle",1)
-		MP4G A 0
 		TNT1 A 0 A_Refire
 		MP4G A 1
 		Goto FinishFire
