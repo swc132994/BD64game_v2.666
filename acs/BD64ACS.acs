@@ -110,23 +110,34 @@ if(CheckInventory("IsTacticalClass") == 1)
 	terminate;
 }
 
+script "StaminaRecovery" (VOID)
+{
+SetActorProperty(0,APROP_Speed,0.9);
+if(CheckInventory("PowerStrength") > 0)
+	{
+	TakeInventory("Stamina",2);
+	}
+else
+TakeInventory("Stamina",1);
+}
+
 script "TacticalPlayerFasterACS" (void)
 {
 SetActorProperty(0,APROP_Speed,2.0);
 delay (1);
 }
 
-script "TacticalPlayerSlowerACS" (void)
+/*script "TacticalPlayerSlowerACS" (void)
 {
-SetActorProperty(0,APROP_Speed,1.0);
+SetActorProperty(0,APROP_Speed,0.9);
 delay (1);
-}
+}*/
 
 script "MapCheckers" ENTER
 {
-  SetInventory("VmapCheck", GetCvar("VMapCheckCvar"));
-  SetInventory("AbsMapCheck", GetCvar("AbsMapCheckCvar"));
-  SetInventory("TCMapCheck", GetCvar("TCMapCheckCvar"));
+SetInventory("VmapCheck",GetCvar("VMapCheckCvar"));
+SetInventory("AbsMapCheck",GetCvar("AbsMapCheckCvar"));
+SetInventory("TCMapCheck",GetCvar("TCMapCheckCvar"));
 }
 
 script "VanillaWeapons" (void)		//vanilla weapon animations
@@ -346,7 +357,7 @@ Script "HUDSwitching" ENTER
 			Case 0:
 			TakeInventory("HUDSwitch",1);
 			break;
-		}	
+		}
 		Delay(1);
 	}
 }
