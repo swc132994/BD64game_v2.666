@@ -3,8 +3,8 @@ Actor 64Thing 19130
 //$category "Game/BD64_Monsters
 Scale 0.8
 Health 500
-Height 64
-Radius 24
+Height 56
+Radius 20
 Mass 300
 Speed 10
 PainChance 50

@@ -219,6 +219,17 @@ States
 	}
 }
 
+actor HeadshotTarget8Green : HeadshotTargetBase
+{
+BloodType "Brutal_BloodGreen"
+States
+	{
+	Spawn:
+		TNT1 A 9
+		Stop
+	}
+}
+
 actor HeadshotTarget8BLUE : HeadshotTargetBase
 {
 BloodType "Brutal_BloodBLUE"

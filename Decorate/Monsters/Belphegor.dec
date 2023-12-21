@@ -3,10 +3,10 @@ Actor 64Belphegor 11053
 //$category "Game/BD64_Monsters
 Scale 0.8
 Health 1500
+Height 64
+Radius 24
 Speed 8
 FastSpeed 12
-Height 75
-Radius 25
 PainChance 15
 Mass 1200
 SeeSound "64Bruiser/sight"

@@ -2,7 +2,6 @@ Actor 64DoomImp : DoomImp Replaces DoomImp
 {
 //$category "Game/BD64_Monsters
 Scale 0.75
-Height 56
 GibHealth 15
 Speed 9	//default 8
 MeleeRange 60 //default 44
@@ -665,9 +664,6 @@ Actor NightmareImp : 64Doomimp 19989
 SpawnID 13
 Scale 0.75
 Health 60
-Height 56
-Radius 20
-Mass 100
 Speed 15
 MeleeRange 60 //default 44
 PainChance 200

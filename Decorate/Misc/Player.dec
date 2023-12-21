@@ -284,6 +284,7 @@ Player.CrouchSprite "PLYC"
 Actor Tactical64DoomPlayer : PlayerPawn Replaces DoomPlayer		//TACTICAL PLAYER CLASS
 {
 Scale 0.8
+Speed 0.9 //Doom 64 has reduced player speed
 Health 100
 Radius 16
 Height 56
