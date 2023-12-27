@@ -507,7 +507,7 @@ Tag "Unmaker"
 		UNMB C 0 A_JumpIfInventory("DemonEssence",10,3)
 		UNMB B 0 A_JumpIfInventory("DemonEssence",5,2)
 		UNMB A 0
-		"####" "#" 1 A_WeaponReady	
+		"####" "#" 1 A_WeaponReady
 		UN4R A 0 A_JumpIfInventory("DemonEssence",25,5)
 		UN3R A 0 A_JumpIfInventory("DemonEssence",15,4)
 		UN2R A 0 A_JumpIfInventory("DemonEssence",10,3)
@@ -567,12 +567,12 @@ Tag "Unmaker"
 
 Actor UnmakerLaser2 : FastProjectile
 {
-Scale 1
+Scale 1.5
 Radius 2
 Height 4
-Speed 120
+Speed 150
 Damage 10
-DamageType "BFG"
+DamageType "Unmaker"
 RenderStyle Normal
 Decal LaserDecal
 SeeSound "weapons/unmaker"
@@ -583,7 +583,9 @@ Obituary "%o was unmade by %k."
 	States
 	{
 	Spawn:
-		ULAZ A 1 Bright
+		ULAZ A 1 Bright A_SeekerMissile(5,45,0,0,5000)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-27*momx)/35.0,-(-27*momy)/35.0,0+(-27*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-24*momx)/35.0,-(-24*momy)/35.0,0+(-24*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-21*momx)/35.0,-(-21*momy)/35.0,0+(-21*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-18*momx)/35.0,-(-18*momy)/35.0,0+(-18*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-15*momx)/35.0,-(-15*momy)/35.0,0+(-15*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
@@ -642,8 +644,10 @@ Damage(Random(25,50))
 	States
 	{
 	Spawn:
-		ULAZ A 1 Bright
+		ULAZ A 1 Bright A_SeekerMissile(5,45,0,0,5000)
 		TNT1 A 0 A_SpawnItemEx("SuperGore")
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-27*momx)/35.0,-(-27*momy)/35.0,0+(-27*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
+		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-24*momx)/35.0,-(-24*momy)/35.0,0+(-24*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-21*momx)/35.0,-(-21*momy)/35.0,0+(-21*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-18*momx)/35.0,-(-18*momy)/35.0,0+(-18*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
 		TNT1 A 0 A_SpawnItemEx("UnmakerLaserTrail",(-15*momx)/35.0,-(-15*momy)/35.0,0+(-15*momz)/35.0,0,0,0,0,SXF_ABSOLUTEANGLE)
@@ -744,7 +748,7 @@ DamageType "UnmakerWhite"
 
 Actor UnmakerLaserTrail
 {
-Scale 1.0
+Scale 1.5
 Height 4
 Radius 2
 Speed 0
