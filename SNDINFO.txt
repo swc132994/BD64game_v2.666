@@ -55,18 +55,18 @@ VUP VUP
 weapons/gswing	dsswing	//Fist swing
 
 //Sliding kick
-$random SlideKickStart { SLIDSTRT1 SLIDSTRT2 SLIDSTRT3 }
+$random SlideKickStart {SLIDSTRT1 SLIDSTRT2 SLIDSTRT3}
 SLIDSTRT1	SLIDSTR1
 SLIDSTRT2	SLIDSTR2
 SLIDSTRT3	SLIDSTR3
 
-$random SlideKickLoop { SLIDLOP1 SLIDLOP2 SLIDLOP3 SLIDLOP4 }
+$random SlideKickLoop {SLIDLOP1 SLIDLOP2 SLIDLOP3 SLIDLOP4}
 SLIDLOP1	SLIDLOP1
 SLIDLOP2	SLIDLOP2
 SLIDLOP3	SLIDLOP3
 SLIDLOP4	SLIDLOP4
 
-$random SlideKickStop { SLIDEND1 SLIDEND2 }
+$random SlideKickStop {SLIDEND1 SLIDEND2}
 SLIDEND1	SLIDEND1
 SLIDEND2	SLIDEND2
 
@@ -101,8 +101,7 @@ CSAWCUT					CSAWCUT
 DSSAWZIP DSSAWZIP
 
 //Pistol
-EAGLEFI EAGLEFI
-prel prel		//R31 FROM IDDQD1337
+prel prel
 PISTOLF PISTOLF
 PISTOLF2 PISTOLF2
 PISTOLF3 PISTOLF3
@@ -133,15 +132,14 @@ fstatk3 fstatk3
 //SSG
 SSGFIRE SSGFIRE
 weapons/sshoto dsdbopn
-weapons/sshotl dsdbload //R31 fixed
+weapons/sshotl dsdbload
 weapons/sshotc dsdbcls
 
 //Rifle
 DRYFIRE DRYFIRE
 RELOAD RELOAD
 RIFLOAD RIFLOAD
-RIFLE RIFLE
-$volume RIFLE 0.9
+RIFLE RIFLE		$volume RIFLE 0.9
 
 //Rifle reload alt skin
 RELO1 RELO1
@@ -157,7 +155,7 @@ CHAINSTA CHAINSTA
 CHAINSPI CHAINSPI
 CHAINSTO CHAINSTO
 
-//Masermind chaingun
+//Mastermind chaingun
 CHGNSHOT CHGNSHOT
 
 //Rocket launcher
@@ -585,16 +583,11 @@ $volume 64ThingActive1 0.75
 
 //BFG Zombie
 $random chainguy/sight		{bfgguy/sight1 bfgguy/sight2}
-bfgguy/sight1		DSBFZSIT		//SeeSound
-bfgguy/sight2		DSBFZATK		//SeeSound 2
-bfgguy/pain			DSBZPAIN		//PainSound
-bfgguy/death		DSBFZDTH		//DeathSound
-bfgguy/active		DSBFZACT		//ActiveSound
-$volume bfgguy/sight1 0.8
-$volume bfgguy/sight2 0.8
-$volume bfgguy/pain 0.8
-$volume bfgguy/death 0.8
-$volume bfgguy/active 0.8
+bfgguy/sight1		DSBFZSIT	$volume bfgguy/sight1 0.8	//SeeSound
+bfgguy/sight2		DSBFZATK	$volume bfgguy/sight2 0.8	//SeeSound 2
+bfgguy/pain			DSBZPAIN	$volume bfgguy/pain 0.8		//PainSound
+bfgguy/death		DSBFZDTH	$volume bfgguy/death 0.8	//DeathSound
+bfgguy/active		DSBFZACT	$volume bfgguy/active 0.8	//ActiveSound
 
 //Wraith
 D3Wraith/Death	3WRTDEAT
@@ -681,32 +674,126 @@ Carrion/Detonate		CARRIDET
 scorpion/pain		64keenpn
 scorpion/death		64keendt
 
+//Anomaly Events
+$random polt/see		{polt/whisp1 polt/whisp2 polt/helpme polt/please polt/godplease polt/followme polt/overhere polt/babycry ATTGET04 ATTGET05 meow_01 meow_02 meow_03 meow_04 meow_05 meow_06 meow_08 stab_01 stab_02 stab_03 stab_04 stab_05}
+polt/whisp1			PLTW1
+polt/whisp2			PLTW2
+polt/helpme			D3HELPM
+polt/please			D3PLEASE
+polt/godplease		D3GODPLS
+polt/followme		D3FOLLOW
+polt/overhere		D3OVHERE
+polt/babycry		D3BABCRY
+ATTGET04	ATTGET04
+ATTGET05	ATTGET05
+meow_01		meow_01
+meow_02		meow_02
+meow_03		meow_03
+meow_04		meow_04
+meow_05		meow_05
+meow_06		meow_06
+meow_08		meow_08
+stab_01		stab_01
+stab_02		stab_02
+stab_03		stab_03
+stab_04		stab_04
+stab_05		stab_05
+
+
+$random polt/laugh		{polt/laugh1 polt/laugh2 polt/creep1 polt/creep2 polt/creep3 polt/creep4 polt/creep5 polt/creep6 polt/creep7 polt/creep8 polt/voices1 polt/voices2 polt/hellbaby polt/wail blaugh01 blaugh06 laugh03 laugh05 laugh06 laugh07 laugh08 laugh09 laugh13 moan01 moan02 moan03 moan04 satan}
+polt/laugh1			PLTL1
+polt/laugh2			PLTL2
+polt/creep1			D3CREEP1
+polt/creep2			D3CREEP2
+polt/creep3			D3CREEP3
+polt/creep4			D3CREEP4
+polt/creep5			D3CREEP5
+polt/creep6			D3CREEP6
+polt/creep7			D3CREEP7
+polt/creep8			D3CREEP8
+polt/voices1		D3VOICE1
+polt/voices2		D3VOICE2
+polt/hellbaby		D3HELBBY
+polt/wail			LWCFX
+blaugh01	blaugh01
+blaugh06	blaugh06
+laugh03	laugh03
+laugh05	laugh05
+laugh06	laugh06
+laugh07	laugh07
+laugh08	laugh08
+laugh09	laugh09
+laugh13	laugh13
+moan01	moan01
+moan02	moan02
+moan03	moan03
+moan04	moan04
+satan	satan
+
+polt/break1			PLTDT
+polt/break2			WALLBRK
+polt/throw			PLTTH
+polt/light			PLTLGT
+
+EvilEye/Seeing		DEEPSEE
+EvilEye/Pain		BSKULPIN
+EvilEye/Death		BSKULEXP
+EvilEye/Attack		DEEPFHIT
+
+UNMNROAM UNMNROAM
+UNMNPAIN UNMNPAIN
+UNMNDYIN UNMNDYIN
+
+Hanger/Gib		DSQ2GIB
+Hanger/Sight	GK_SGHT1
+Hanger/Active	GK_IDLE
+Hanger/Pain		GK_PAIN1
+Hanger/Death	GK_DETH1
+
+statue/possessed DSSQRSIT
+
+PILRGLSS PILRGLSS
+PILRGLSB PILRGLSB
+
+$RANDOM PillarGlassBreak {PILRGLSS PILRGLSB}
+
+FLORGLS1 FLORGLS1
+FLORGLS2 FLORGLS2
+
+$RANDOM GlassShardImpact {FLORGLS1 FLORGLS2}
+
+polt/buzz PLBUZZIN
+
 //---------------------------
 //**********GORE*************
 //---------------------------
 $random misc/xdeath		{misc/xdeath1a misc/xdeath1b misc/xdeath1c misc/xdeath1d misc/xdeath1e misc/xdeath1f misc/xdeath2a misc/xdeath2b misc/xdeath2c misc/xdeath2d misc/xdeath2e misc/xdeath2f misc/xdeath3a misc/xdeath3b misc/xdeath3c misc/xdeath4a misc/xdeath4b misc/xdeath4c}
+$random misc/xdeath1	{misc/xdeath1a misc/xdeath1b misc/xdeath1c misc/xdeath1d misc/xdeath1e misc/xdeath1f}
+$random misc/xdeath2	{misc/xdeath2a misc/xdeath2b misc/xdeath2c misc/xdeath2d misc/xdeath2e misc/xdeath2f}
+$random misc/xdeath3	{misc/xdeath3a misc/xdeath3b misc/xdeath3c}
+$random misc/xdeath4	{misc/xdeath4a misc/xdeath4b misc/xdeath4c}
+
 misc/xdeath1a			dsxdth1a
 misc/xdeath1b			dsxdth1b
 misc/xdeath1c			dsxdth1c
 misc/xdeath1d			dsxdth1d
 misc/xdeath1e			dsxdth1e
 misc/xdeath1f			dsxdth1f
-$random misc/xdeath1	{misc/xdeath1a misc/xdeath1b misc/xdeath1c misc/xdeath1d misc/xdeath1e misc/xdeath1f}
+
 misc/xdeath2a			dsxdth2a
 misc/xdeath2b			dsxdth2b
 misc/xdeath2c			dsxdth2c
 misc/xdeath2d			dsxdth2d
 misc/xdeath2e			dsxdth2e
 misc/xdeath2f			dsxdth2f
-$random misc/xdeath2	{misc/xdeath2a misc/xdeath2b misc/xdeath2c misc/xdeath2d misc/xdeath2e misc/xdeath2f}
+
 misc/xdeath3a			dsxdth3a
 misc/xdeath3b			dsxdth3b
 misc/xdeath3c			dsxdth3c
-$random misc/xdeath3	{misc/xdeath3a misc/xdeath3b misc/xdeath3c}
+
 misc/xdeath4a			dsxdth4a
 misc/xdeath4b			dsxdth4b
 misc/xdeath4c			dsxdth4c
-$random misc/xdeath4	{misc/xdeath4a misc/xdeath4b misc/xdeath4c}
 
 $volume misc/xdeath 0.4
 $volume misc/xdeath1 0.4
@@ -749,7 +836,7 @@ bloodsmall1			dssplat3
 bloodsmall2			dssplat4
 $RANDOM bloodsmall {bloodsmall1 bloodsmall2}
 
-// World Sounds / Terrain sounds
+// World Sounds/Terrain sounds
 world/drip					dsempty
 $random world/watersplash		{dssplash dssplas2 water}
 dssplash	dssplash
@@ -907,93 +994,3 @@ $limit floor/slimy 20
 floor/elec1	dselec1
 
 $limit floor/elec1 20
-
-//Anomaly Events
-$random polt/see		{polt/whisp1 polt/whisp2 polt/helpme polt/please polt/godplease polt/followme polt/overhere polt/babycry ATTGET04 ATTGET05 meow_01 meow_02 meow_03 meow_04 meow_05 meow_06 meow_08 stab_01 stab_02 stab_03 stab_04 stab_05}
-polt/whisp1			PLTW1
-polt/whisp2			PLTW2
-polt/helpme			D3HELPM
-polt/please			D3PLEASE
-polt/godplease		D3GODPLS
-polt/followme		D3FOLLOW
-polt/overhere		D3OVHERE
-polt/babycry		D3BABCRY
-ATTGET04	ATTGET04
-ATTGET05	ATTGET05
-meow_01		meow_01
-meow_02		meow_02
-meow_03		meow_03
-meow_04		meow_04
-meow_05		meow_05
-meow_06		meow_06
-meow_08		meow_08
-stab_01		stab_01
-stab_02		stab_02
-stab_03		stab_03
-stab_04		stab_04
-stab_05		stab_05
-
-
-$random polt/laugh		{polt/laugh1 polt/laugh2 polt/creep1 polt/creep2 polt/creep3 polt/creep4 polt/creep5 polt/creep6 polt/creep7 polt/creep8 polt/voices1 polt/voices2 polt/hellbaby polt/wail blaugh01 blaugh06 laugh03 laugh05 laugh06 laugh07 laugh08 laugh09 laugh13 moan01 moan02 moan03 moan04 satan}
-polt/laugh1			PLTL1
-polt/laugh2			PLTL2
-polt/creep1			D3CREEP1
-polt/creep2			D3CREEP2
-polt/creep3			D3CREEP3
-polt/creep4			D3CREEP4
-polt/creep5			D3CREEP5
-polt/creep6			D3CREEP6
-polt/creep7			D3CREEP7
-polt/creep8			D3CREEP8
-polt/voices1		D3VOICE1
-polt/voices2		D3VOICE2
-polt/hellbaby		D3HELBBY
-polt/wail			LWCFX
-blaugh01	blaugh01
-blaugh06	blaugh06
-laugh03	laugh03
-laugh05	laugh05
-laugh06	laugh06
-laugh07	laugh07
-laugh08	laugh08
-laugh09	laugh09
-laugh13	laugh13
-moan01	moan01
-moan02	moan02
-moan03	moan03
-moan04	moan04
-satan	satan
-
-polt/break1			PLTDT
-polt/break2			WALLBRK
-polt/throw			PLTTH
-polt/light			PLTLGT
-
-EvilEye/Seeing		DEEPSEE
-EvilEye/Pain		BSKULPIN
-EvilEye/Death		BSKULEXP
-EvilEye/Attack		DEEPFHIT
-
-UNMNROAM UNMNROAM
-UNMNPAIN UNMNPAIN
-UNMNDYIN UNMNDYIN
-
-Hanger/Gib		DSQ2GIB
-Hanger/Sight	GK_SGHT1
-Hanger/Active	GK_IDLE
-Hanger/Pain		GK_PAIN1
-Hanger/Death	GK_DETH1
-
-statue/possessed DSSQRSIT
-
-PILRGLSS PILRGLSS
-PILRGLSB PILRGLSB
-
-$RANDOM PillarGlassBreak {PILRGLSS PILRGLSB}
-
-FLORGLS1 FLORGLS1
-FLORGLS2 FLORGLS2
-
-$RANDOM GlassShardImpact {FLORGLS1 FLORGLS2}
-
-polt/buzz PLBUZZIN
