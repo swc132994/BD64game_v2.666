@@ -1112,6 +1112,39 @@ PITCHFROMMOMENTUM
 FrameIndex SPKO S 0 0
 }
 
+Model UnmakerLaser
+{
+Path "models"
+Model 0 "tracer.md3"
+Skin 0 "LaserTracer.png"
+Scale 8 1.0 0.5
+Offset 550 0 0
+PITCHFROMMOMENTUM
+FrameIndex ULAZ A 0 0
+}
+
+Model UnmakerLaser2
+{
+Path "models"
+Model 0 "tracer.md3"
+Skin 0 "LaserTracer.png"
+Scale 8 1.0 0.5
+Offset 550 0 0
+PITCHFROMMOMENTUM
+FrameIndex ULAZ A 0 0
+}
+
+Model UnmakerLaserPierce
+{
+Path "models"
+Model 0 "tracer.md3"
+Skin 0 "LaserTracer.png"
+Scale 8 1.0 0.5
+Offset 550 0 0
+PITCHFROMMOMENTUM
+FrameIndex ULAZ A 0 0
+}
+
 Model BurningPentagram
 {
 Path "models"
