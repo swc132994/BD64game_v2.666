@@ -814,21 +814,21 @@ brightmap sprite DKHLJ0		{map "brightmaps/DKHLJ0_BR.png"}
 brightmap sprite DKHLK0		{map "brightmaps/DKHLK0_BR.png"}
 
 //CYBERDEMON
-brightmap sprite CYBRA1		{map "brightmaps/CYBRA1B.png"}
-brightmap sprite CYBRA2		{map "brightmaps/CYBRA2B.png"}
-brightmap sprite CYBRA8		{map "brightmaps/CYBRA8B.png"}
-brightmap sprite CYBRB1		{map "brightmaps/CYBRB1B.png"}
-brightmap sprite CYBRB2		{map "brightmaps/CYBRB2B.png"}
-brightmap sprite CYBRB8		{map "brightmaps/CYBRB8B.png"}
-brightmap sprite CYBRC1		{map "brightmaps/CYBRC1B.png"}
-brightmap sprite CYBRC2		{map "brightmaps/CYBRC2B.png"}
-brightmap sprite CYBRC8		{map "brightmaps/CYBRC8B.png"}
-brightmap sprite CYBRD1		{map "brightmaps/CYBRD1B.png"}
-brightmap sprite CYBRD2		{map "brightmaps/CYBRD2B.png"}
-brightmap sprite CYBRD8		{map "brightmaps/CYBRD8B.png"}
-brightmap sprite CYBRF1		{map "brightmaps/CYBRF1B.png"}
-brightmap sprite CYBRF2		{map "brightmaps/CYBRF2B.png"}
-brightmap sprite CYBRF8		{map "brightmaps/CYBRF8B.png"}
+brightmap sprite CYBRA1		{map "brightmaps/Cyberdemon/CYBRA1B.png"}
+brightmap sprite CYBRA2		{map "brightmaps/Cyberdemon/CYBRA2B.png"}
+brightmap sprite CYBRA8		{map "brightmaps/Cyberdemon/CYBRA8B.png"}
+brightmap sprite CYBRB1		{map "brightmaps/Cyberdemon/CYBRB1B.png"}
+brightmap sprite CYBRB2		{map "brightmaps/Cyberdemon/CYBRB2B.png"}
+brightmap sprite CYBRB8		{map "brightmaps/Cyberdemon/CYBRB8B.png"}
+brightmap sprite CYBRC1		{map "brightmaps/Cyberdemon/CYBRC1B.png"}
+brightmap sprite CYBRC2		{map "brightmaps/Cyberdemon/CYBRC2B.png"}
+brightmap sprite CYBRC8		{map "brightmaps/Cyberdemon/CYBRC8B.png"}
+brightmap sprite CYBRD1		{map "brightmaps/Cyberdemon/CYBRD1B.png"}
+brightmap sprite CYBRD2		{map "brightmaps/Cyberdemon/CYBRD2B.png"}
+brightmap sprite CYBRD8		{map "brightmaps/Cyberdemon/CYBRD8B.png"}
+brightmap sprite CYBRF1		{map "brightmaps/Cyberdemon/CYBRF1B.png"}
+brightmap sprite CYBRF2		{map "brightmaps/Cyberdemon/CYBRF2B.png"}
+brightmap sprite CYBRF8		{map "brightmaps/Cyberdemon/CYBRF8B.png"}
 
 //ANNIHILATOR
 brightmap sprite A64AA1C1	{map "brightmaps/A64AA1C1_B.png"}

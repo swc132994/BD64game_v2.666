@@ -2139,6 +2139,25 @@ ACTOR XDeathCyberLeg : XDeathZombieArm1
 	}
 }
 
+//ANNIHILATOR
+ACTOR XDeathAnniLeg : XDeathZombieArm1
+{
+Scale 0.85
+	States
+	{
+	Spawn:
+		ANLG A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
+		ANLG A 4 A_CheckFloor("Death")
+		Wait
+	Death:
+		ANLG A 35
+		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
+		ANLG A -1
+		Stop
+	}
+}
+
 //ARACHNOTRON
 ACTOR XDeathSpiderLeg1 : XDeathZombieArm1
 {

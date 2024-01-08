@@ -1082,6 +1082,16 @@ PITCHFROMMOMENTUM
 FrameIndex SPKO S 0 0
 }
 
+Model Tracer
+{
+Path "models"
+Model 0 "tracer.md3"
+Skin 0 "tracer3.png"
+Scale 5.5 10.0 10.0
+PITCHFROMMOMENTUM
+FrameIndex SPKO S 0 0
+}
+
 Model EnemyProjectile
 {
 Path "models"
@@ -1115,33 +1125,48 @@ FrameIndex SPKO S 0 0
 Model UnmakerLaser
 {
 Path "models"
-Model 0 "tracer.md3"
-Skin 0 "LaserTracer.png"
-Scale 8 1.0 0.5
-Offset 550 0 0
+Model 0 "tracer.md2"
+Skin 0 "Laser01.png"
 PITCHFROMMOMENTUM
+Scale 12 3 3
+Offset 280 0 0
+ZOffset -4
 FrameIndex ULAZ A 0 0
 }
 
 Model UnmakerLaser2
 {
 Path "models"
-Model 0 "tracer.md3"
-Skin 0 "LaserTracer.png"
-Scale 8 1.0 0.5
-Offset 550 0 0
+Model 0 "tracer.md2"
+Skin 0 "Laser01.png"
 PITCHFROMMOMENTUM
+Scale 12 3 3
+Offset 280 0 0
+ZOffset -4
 FrameIndex ULAZ A 0 0
 }
 
 Model UnmakerLaserPierce
 {
 Path "models"
-Model 0 "tracer.md3"
-Skin 0 "LaserTracer.png"
-Scale 8 1.0 0.5
-Offset 550 0 0
+Model 0 "tracer.md2"
+Skin 0 "Laser01.png"
 PITCHFROMMOMENTUM
+Scale 12 3 3
+Offset 280 0 0
+ZOffset -4
+FrameIndex ULAZ A 0 0
+}
+
+Model EradicatorLaser
+{
+Path "models"
+Model 0 "tracer.md2"
+Skin 0 "Laser01.png"
+PITCHFROMMOMENTUM
+Scale 12 3 3
+Offset 280 0 0
+ZOffset -4
 FrameIndex ULAZ A 0 0
 }
 

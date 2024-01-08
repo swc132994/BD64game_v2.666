@@ -570,7 +570,7 @@ Actor UnmakerLaser2 : FastProjectile
 Scale 1.5
 Radius 5
 Height 10
-Speed 150
+Speed 140
 Damage 10
 DamageType "Unmaker"
 RenderStyle Normal
@@ -581,10 +581,11 @@ Obituary "%o was unmade by %k."
 +EXTREMEDEATH
 +FORCERADIUSDMG
 +SCREENSEEKER
++PAINLESS
 	States
 	{
 	Spawn:
-		ULAZ A 5 NoDelay Bright A_SeekerMissile(5,45,SMF_LOOK,0,5000)
+		ULAZ A 3 NoDelay Bright A_SeekerMissile(5,40,SMF_LOOK,256,10)
 		ULAZ A -1 Bright
 		stop
 	Death:

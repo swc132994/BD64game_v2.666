@@ -259,7 +259,7 @@ DEMKEYUP DEMKEYUP
 BPPICK BPPICK
 
 //Flies
-Flies	DSBUZZ
+Flies	DSBUZZ				$volume Flies 0.85
 
 $random world/ricochet		{ricochet/hit world/blank1}
 $random ricochet/hit		{world/ricochet1 world/ricochet2 world/ricochet3 world/ricochet4 world/ricochet5 world/ricochet6 world/ricochet7}
@@ -299,12 +299,6 @@ weapons/casing2	dscasin1
 weapons/casing2	dscasin2
 weapons/casing3	dscasin3
 
-$random LSOD {LSOD1 LSOD2 LSOD3 LSOD4}
-LSOD1 LSOD1
-LSOD2 LSOD2
-LSOD3 LSOD3
-LSOD4 LSOD4
-
 $random Explosion			{dsbarex1 dsbarex2 dsbarex3 dsbarex4 dsbarex5 dsbarex6 dsbarex7}
 dsbarex1 dsbarex1
 dsbarex2 dsbarex2
@@ -334,7 +328,7 @@ player/male/death1		DSPLDETH
 knight/death			DSKNTDTH
 skeleton/swing			DSSKESWG
 misc/gibbed				DSSLOP
-misc/teleport			DSTELEPT	$volume misc/teleport 0.9	//teleportation
+misc/teleport			DSTELEPT	$volume misc/teleport 0.9
 baby/active				DSBSPACT
 misc/p_pkup				dsgetpow	//Pickup powerup
 grunt/pain				DSPOPAIN
@@ -351,6 +345,13 @@ $limit misc/p_pkup 0
 
 //Door need key
 misc/keytry		dsnokey
+
+//Lost Soul
+$random LSOD {LSOD1 LSOD2 LSOD3 LSOD4}
+LSOD1 LSOD1
+LSOD2 LSOD2
+LSOD3 LSOD3
+LSOD4 LSOD4
 
 //Mother Demon
 mother/sight dsmthsit
