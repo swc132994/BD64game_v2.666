@@ -36,11 +36,10 @@ Actor UnderwaterHitPuff
 		TNT1 A 0 A_JumpIf(waterlevel < 1,"Stap")
 		TNT1 A 0 A_CustomMissile("WaterParticleXTinySpawner",0,0,random(0,360),2,random(60,130))
 		TNT1 A 0 A_CustomMissile("BUBULZ",0,0,random(0,360),2,random(0,180))
-		TNT1 A 0 A_CustomMissile("EXPLOSIONBUBULZ",0,0,random(0,360),2,random(180,360))
-		TNT1 A 1
+		TNT1 A 1 A_CustomMissile("EXPLOSIONBUBULZ",0,0,random(0,360),2,random(180,360))
 		Stop
 	Stap:
-		TNT1 A 1
+		TNT1 A 3
 		Stop
 	}
 }
@@ -123,7 +122,7 @@ damagetype Cut
 	states
 	{
 	Spawn:
-		BPUF C 0
+		BPUF C 1 Bright
 	Death:
 	XDeath:
 	Melee:
@@ -143,18 +142,17 @@ damage 0
 radius 2
 height 2
 speed 140
-alpha 0.9
+alpha 0.5
 renderstyle ADD
 Damagetype "Weak"
-+RANDOMIZE
 +FORCEXYBILLBOARD
 +DONTSPLASH
 +NOEXTREMEDEATH
 	states
 	{
 	Spawn:
-		SPKO S 1 Bright
-		Loop
+		SPKO S -1 Bright
+		Stop
 	XDeath:
 	Death:
 		TNT1 A 3

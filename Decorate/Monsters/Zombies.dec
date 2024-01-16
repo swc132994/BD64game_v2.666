@@ -14,7 +14,8 @@ DropItem "SOULSPAWNER"
 DropItem "64Clip"
 +DOHARMSPECIES
 +NOBLOODDECALS
-states
++NEVERFAST
+	states
 	{
 	Spawn:
 		PSSS B 1
@@ -1790,24 +1791,23 @@ Actor EnemyProjectile : FastProjectile
 {
 Scale 0.05
 Damage(random(4,6))
-Radius 1
-Height 1
+Radius 2
+Height 2
 Speed 65
-FastSpeed 75
+FastSpeed 80
 Alpha 0.5
 RenderStyle Add
 Decal "BulletDecalNew1"
-+RANDOMIZE
 	States
 	{
 	Spawn:
-		SPKO S 1 Bright
-		Loop
+		SPKO S -1 Bright
+		Stop
 	Death:
-		TNT1 A 1 A_SpawnItemEx("RicoChet")
+		TNT1 A 3 A_SpawnItemEx("RicoChet")
 		Stop
 	XDeath:
-		TNT1 A 1
+		TNT1 A 3
 		Stop
 	}
 }

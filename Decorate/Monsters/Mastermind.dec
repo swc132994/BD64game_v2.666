@@ -16,6 +16,7 @@ AttackSound "weapons/gswing"
 +EXTREMEDEATH
 +AVOIDMELEE
 +QUICKTORETALIATE
++NEVERFAST
 	States
 	{
 	Spawn:
@@ -182,6 +183,7 @@ BloodColor "45 34 7F"	//Hex value
 +EXTREMEDEATH
 +AVOIDMELEE
 +QUICKTORETALIATE
++NEVERFAST
 	States
 	{
 	Spawn:

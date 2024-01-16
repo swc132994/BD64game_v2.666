@@ -3,7 +3,6 @@ Actor 64Demon : Demon Replaces Demon
 //$category "Game/BD64_Monsters
 Scale 0.8
 GibHealth 20
-Speed 14
 MeleeRange 55 //default 44
 PainChance "SuperFists",200
 PainChance "Kick",255
@@ -13,6 +12,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "chainsaw",0.9
 DropItem "DemonEssenceSpawner"
 +NOBLOODDECALS
++NEVERFAST
 	States
 	{
 	Spawn:
@@ -347,7 +347,6 @@ Actor 64Spectre : Spectre Replaces Spectre
 //$category "Game/BD64_Monsters
 Scale 0.8
 GibHealth 20
-Speed 16
 Alpha 0.5
 MeleeRange 55 //default 44
 RenderStyle Translucent
@@ -767,7 +766,7 @@ Actor 64NightmareSpectre : 64Spectre 1000
 SpawnID 155
 Scale 0.85
 Health 500
-Speed 18
+Speed 14
 Alpha 0.5
 MeleeRange 55 //default 44
 RenderStyle Translucent

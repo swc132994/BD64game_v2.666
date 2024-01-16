@@ -24,6 +24,7 @@ Species "Dog"
 Tag "Hell Hound"
 DropItem "DemonEssenceSpawner"
 +NOBLOODDECALS
++NEVERFAST
 	States
 	{
 	Spawn:

@@ -13,6 +13,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 DropItem "DemonEssenceSpawner"
 +DONTHARMSPECIES
 +NOBLOODDECALS
++NEVERFAST
 	States
 	{
 	Spawn:
@@ -593,6 +594,7 @@ MONSTER
 +FRIENDLY
 +NOTARGET
 +NOPAIN
++NEVERFAST
 	States
 	{
 	Spawn:

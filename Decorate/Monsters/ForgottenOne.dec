@@ -21,6 +21,7 @@ Tag "Forgotten One"
 +NOBLOOD
 +FORCEXYBILLBOARD
 -MISSILEMORE
++NEVERFAST
 	states
 	{
 	Spawn:

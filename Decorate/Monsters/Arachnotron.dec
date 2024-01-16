@@ -12,6 +12,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 BloodType "BD64ArachnotronBlood"
 DropItem "DemonEssenceSpawner"
 +NOBLOODDECALS
++NEVERFAST
 	states
 	{
 	Spawn:

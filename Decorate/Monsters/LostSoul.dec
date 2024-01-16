@@ -12,6 +12,7 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 +NOBLOOD
 +FORCEXYBILLBOARD
++NEVERFAST
 	states
 	{
 	Spawn:

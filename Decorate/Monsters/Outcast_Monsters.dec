@@ -22,6 +22,7 @@ BloodType "Brutal_BloodGreen"
 +DONTHARMSPECIES
 +MISSILEMORE
 +NOBLOODDECALS
++NEVERFAST
 	States
 	{
 	Spawn:

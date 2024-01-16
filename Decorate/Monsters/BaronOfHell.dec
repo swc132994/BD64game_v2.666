@@ -12,6 +12,7 @@ MeleeRange 60	//default 44
 BloodType "Brutal_BloodGreen"
 BloodColor "00 64 00"	//Hex value
 +NOBLOODDECALS
++NEVERFAST
 	States
 	{
 	Spawn:

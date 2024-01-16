@@ -17,7 +17,7 @@ ActiveSound "TheHusk/Active"
 AttackSound "TheHusk/Attack"
 DropItem "SOULSPAWNER"
 -COUNTKILL
-states
+	states
 	{
 	Spawn:
 		64ZF A 1
@@ -75,7 +75,6 @@ states
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",16,0,50)
 		64ZF DD 2 A_Chase
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Idle")
-		TNT1 A 0 A_Jump(128,"Missile")
 		Goto See
 	Melee:
 		TNT1 A 0 A_Recoil(-6)

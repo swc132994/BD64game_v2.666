@@ -2,7 +2,6 @@ Actor 64PainElemental : PainElemental Replaces PainElemental
 {
 //$category "Game/BD64_Monsters
 Scale 0.8
-Speed 6
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255
@@ -13,6 +12,7 @@ DropItem "DemonEssenceSpawner"
 +FORCEXYBILLBOARD
 +NOBLOODDECALS
 +NOBLOOD
++NEVERFAST
 	states
 	{
 	Spawn:
@@ -75,7 +75,7 @@ Actor 64NightmareElemental : 64PainElemental 19126
 {
 //$category "Game/BD64_Monsters
 Health 600
-Speed 12
+Speed 10
 PainChance 64
 Alpha 0.5
 RenderStyle Translucent

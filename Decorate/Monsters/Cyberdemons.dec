@@ -13,6 +13,7 @@ DropItem "DemonEssenceLargeSpawner"
 DropItem "Soulsphere",32
 +NOBLOODDECALS
 +QUICKTORETALIATE
++NEVERFAST
 	states
 	{
 	Spawn:
@@ -109,6 +110,7 @@ DropItem "DemonEssenceLargeSpawner"
 DropItem "Soulsphere",32
 +NOBLOODDECALS
 +QUICKTORETALIATE
++NEVERFAST
 	States
 	{
 	Spawn:

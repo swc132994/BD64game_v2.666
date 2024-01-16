@@ -13,6 +13,7 @@ Dropitem "SawGas"
 Dropitem "DemonEssenceSpawner"
 +DONTHARMSPECIES
 +NOBLOODDECALS
++NEVERFAST
 	States
 	{
 	Spawn:

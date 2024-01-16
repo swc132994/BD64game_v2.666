@@ -36,6 +36,7 @@ Monster
 +NORADIUSDMG
 +NOICEDEATH
 +NOBLOOD
++NEVERFAST
 	States
 	{
 	Spawn:

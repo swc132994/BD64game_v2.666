@@ -16,6 +16,7 @@ BloodColor "45 34 7F"	//Hex value
 +FORCEXYBILLBOARD
 +MISSILEMORE
 +NOBLOODDECALS
++NEVERFAST
 	States
 	{
 	Spawn:
@@ -357,6 +358,7 @@ BloodColor "45 34 7F"	//Hex value
 +MISSILEMORE
 +MISSILEEVENMORE
 +NOBLOODDECALS
++NEVERFAST
 	States
 	{
 	Spawn:
