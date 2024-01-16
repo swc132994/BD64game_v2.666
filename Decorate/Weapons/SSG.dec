@@ -62,16 +62,14 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 AA 0 A_SpawnItemEx("PlayerMuzzle1",30,5,30)
 		TNT1 A 0 A_JumpIf(CallACS("VanillaWeapons")==1,"VanillaFire")
 		TNT1 AAAAAAAAAA 0 A_FireCustomMissile("Tracer",random(-6,6),0,-1,-12,0,random(-5,5))
-		TNT1 A 0 A_FireBullets(8.0,6.0,20,5,"ShotPuff")
+		TNT1 A 0 A_FireBullets(8,4,20,5,"ShotPuff")
 		TNT1 A 0 A_PlaySound("SSGFIRE",1)
 		TNT1 A 0 A_ZoomFactor(0.75)
-		SSGF AB 1 Bright
+		SSGF AB 2 Bright
 		TNT1 A 0 A_ZoomFactor(1.0)
-		SSGF C 3
-		SSGF DEF 1
-		SSGG AABCDEFGH 1
-		SSGG I 3
-		SSGG JKLMNOP 1
+		SSGF EF 1
+		SSGG AAABCD 1
+		SSGG MNOP 1
 		TNT1 A 0 A_PlaySound("weapons/sshoto")
 		TNT1 A 1
 		SSGG Q 1
@@ -83,7 +81,8 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		SSGG YZ 1
 		SSGH ABCD 1
 		TNT1 A 0 A_PlaySound("weapons/sshotc")
-		SSGH EFGHIJKLM 1
+		SSGH EFGHILM 1
+		SSGG A 2
 		TNT1 A 0 A_Refire
 		Goto Ready
 	VanillaFire:
@@ -91,7 +90,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 AAAAAAAAAA 0 A_FireCustomMissile("Tracer",random(-6,6),0,-1,-12,0,random(-5,5))
 		TNT1 A 0 A_FireBullets(8.0,6.0,20,5,"ShotPuff")
 		TNT1 A 0 A_PlaySound("weapons/sshotf",1)
-		CSGG A 1 Bright
+		CSGG A 2 Bright
 		CSGG B 30
 		TNT1 A 0 A_PlaySound("weapons/sshoto")
 		CSGG B 5
@@ -102,7 +101,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_Refire
 		Goto Ready
 	VanillaFireFlash:
-		CSGF A 1 Bright A_Light1
+		CSGF A 2 Bright A_Light1
 		CSGF A 0 A_Light0
 		Goto LightDone
 	}
@@ -239,7 +238,7 @@ Tag "$TAG_SUPERSHOTGUN"
 		SSGR ABCDEF 1 A_WeaponReady
 		SSGI AB 1 A_WeaponReady
 		TNT1 A 0 A_PlaySound("weapons/sshoto")
-		SSGI B 15 A_WeaponReady
+		SSGI B 10 A_WeaponReady
 		SSGI A 1 A_WeaponReady
 		TNT1 A 0 A_PlaySound("weapons/sshotc")
 		SSGH EFGHIJKLM 1
@@ -251,16 +250,15 @@ Tag "$TAG_SUPERSHOTGUN"
 		TNT1 AAAA 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 AA 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 AAAAAAAAAA 0 A_FireCustomMissile("Tracer",random(-6,6),0,-1,-12,0,random(-5,5))
-		TNT1 A 0 A_FireBullets(8.0,6.0,20,5,"ShotPuff",0)
+		TNT1 A 0 A_FireBullets(8,4,20,5,"ShotPuff",0)
 		TNT1 A 0 A_PlaySound("SSGFIRE",1)
 		TNT1 A 0 A_ZoomFactor(0.75)
-		SSGF AB 1 Bright
+		SSGF AB 2 Bright
 		TNT1 A 0 A_ZoomFactor(1.0)
-		SSGF C 3 A_SetPitch(pitch-4,SPF_INTERPOLATE)
-		SSGF DE 1 A_SetPitch(pitch+2.6,SPF_INTERPOLATE)
-		SSGF F 1 A_SetPitch(pitch+1.2,SPF_INTERPOLATE)
-		SSGG A 1 A_SetPitch(pitch+0.8,SPF_INTERPOLATE)
-		SSGG A 1 A_SetPitch(pitch+0.4,SPF_INTERPOLATE)
+		SSGF E 1 A_SetPitch(pitch-2.6,SPF_INTERPOLATE)
+		SSGF F 1 A_SetPitch(pitch-1.2,SPF_INTERPOLATE)
+		SSGG A 1 A_SetPitch(pitch-0.8,SPF_INTERPOLATE)
+		SSGG A 1 A_SetPitch(pitch-0.4,SPF_INTERPOLATE)
 		SSGG A 1 A_WeaponReady
 		Goto Reload
 	AltFire:
@@ -270,11 +268,11 @@ Tag "$TAG_SUPERSHOTGUN"
 		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 AAAAA 0 A_FireCustomMissile("Tracer",random(-6,6),0,-1,-12,0,random(-5,5))
-		TNT1 A 0 A_FireBullets(7.0,5.0,10,5,"ShotgunPuff",0)
+		TNT1 A 0 A_FireBullets(4,4,10,5,"ShotgunPuff",0)
 		TNT1 A 0 A_GiveInventory("SSGAlt",1)
 		TNT1 A 0 A_PlaySound("SSGALTFI",1)
 		TNT1 A 0 A_ZoomFactor(0.95)
-		SSGU AB 1 Bright
+		SSGU AB 2 Bright
 		TNT1 A 0 A_ZoomFactor(1.0)
 		SSGF E 3 A_SetPitch(pitch-2,SPF_INTERPOLATE)
 		TNT1 A 0 Offset(4,32)
@@ -293,11 +291,11 @@ Tag "$TAG_SUPERSHOTGUN"
 		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0,0,0,0,0)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
 		TNT1 AAAAA 0 A_FireCustomMissile("Tracer",random(-6,6),0,-1,-12,0,random(-5,5))
-		TNT1 A 0 A_FireBullets(7.0,5.0,10,5,"ShotgunPuff",0)
+		TNT1 A 0 A_FireBullets(4,4,10,5,"ShotgunPuff",0)
 		TNT1 A 0 A_TakeInventory("SSGAlt",1)
 		TNT1 A 0 A_PlaySound("SSGALTFI",1)
 		TNT1 A 0 A_ZoomFactor(0.95)
-		SSGU CD 1 Bright
+		SSGU CD 2 Bright
 		TNT1 A 0 A_ZoomFactor(1.0)
 		SSGF E 3 A_SetPitch(pitch-2,SPF_INTERPOLATE)
 		TNT1 A 0 Offset(-4,32)
@@ -320,14 +318,13 @@ Tag "$TAG_SUPERSHOTGUN"
 		Goto NoAmmo
 		TNT1 A 0 A_Jumpifinventory("Shell",2,1)
 		Goto Reload1
-		SSGG BCDEFGH 1
-		SSGG I 3
-		SSGG JKLMNOP 1
+		SSGG BCDD 1
+		SSGG MMNOP 1
 		TNT1 A 0 A_PlaySound("weapons/sshoto")
 		TNT1 A 1
 		SSGG Q 1
 		TNT1 AA 0 A_FireCustomMissile("SSGCaseSpawner",0,0,-5,-15)
-		SSGG RR 1
+		SSGG R 3
 		SSGG S 3
 		SSGG TUVWX 1
 		TNT1 A 0 A_PlaySound("weapons/sshotl",4)
@@ -337,8 +334,7 @@ Tag "$TAG_SUPERSHOTGUN"
 		TNT1 A 0 A_GiveInventory("SSGAmmo",2)
 		TNT1 A 0 A_TakeInventory("SSGReloading",1)
 		SSGH ABCD 1
-		TNT1 A 0 A_PlaySound("weapons/sshotc")
-		SSGH EFGHIJKLM 1
+		SSGH EFGHILLMM 1
 		TNT1 A 0 A_Refire
 		Goto Ready
 	Reload1:
@@ -350,7 +346,7 @@ Tag "$TAG_SUPERSHOTGUN"
 		TNT1 A 0 A_PlaySound("weapons/sshoto")
 		TNT1 A 0 A_FireCustomMissile("SSGCaseSpawner",0,0,-5,-15)
 		SSGZ B 3
-		SSGZ CDEFGGGHH 1
+		SSGZ CDEFGH 1
 		TNT1 A 0 A_PlaySound("weapons/sshotl",4)
 		TNT1 A 0 A_JumpIfInventory("NoReloading",1,4)
 		TNT1 A 0 A_TakeInventory("SSGAlt",1)
@@ -358,8 +354,6 @@ Tag "$TAG_SUPERSHOTGUN"
 		TNT1 A 0 A_GiveInventory("SSGAmmo",1)
 		TNT1 A 0 A_TakeInventory("SSGReloading",1)
 		SSGZ IJKL 1
-		TNT1 A 2
-		TNT1 A 0 A_PlaySound("weapons/sshotc")
 		SSGH FGHIJKLM 1
 		TNT1 A 0 A_Refire
 		Goto Ready
@@ -372,7 +366,7 @@ Tag "$TAG_SUPERSHOTGUN"
 		TNT1 A 0 A_Jumpifinventory("SSGAmmo",1,1)
 		Goto Reload
 		TNT1 A 0 A_TakeInventory("SSGAmmo",2,TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_GiveInventory("SSGReloading",1)		
+		TNT1 A 0 A_GiveInventory("SSGReloading",1)
 		Goto ResumeFire
 	NoReload:
 		TNT1 A 0 A_Jumpifinventory("Shell",1,1)
@@ -391,9 +385,9 @@ Tag "$TAG_SUPERSHOTGUN"
 		TNT1 A 0 A_Jumpifinventory("Shell",1,1)
 		Goto NoAmmo
 		TNT1 A 0 A_TakeInventory("Shell",1,TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_JumpIfInventory("SSGAlt",1,"AltNoReload2")		
+		TNT1 A 0 A_JumpIfInventory("SSGAlt",1,"AltNoReload2")
 		Goto ResumeAltFire
-	AltNoReload2:	
+	AltNoReload2:
 		TNT1 A 0 A_GiveInventory("SSGReloading",1)
 		Goto ResumeAltFire2
 	}
