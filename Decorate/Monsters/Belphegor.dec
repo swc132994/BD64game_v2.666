@@ -7,7 +7,6 @@ Height 64
 Radius 24
 Speed 8
 FastSpeed 12
-PainChance 15
 Mass 1200
 SeeSound "64Bruiser/sight"
 PainSound "64Bruiser/pain"
