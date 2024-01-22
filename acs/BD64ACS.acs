@@ -229,7 +229,7 @@ Script "TUnmakerChecker" (void)		//checks if you have tactical unmaker to allow 
 {
 	for(int i = 2337; i < 2400; i++)
 	{
-		if(CheckActorInventory(i,"UnmakerTACTICAL") && CheckActorInventory(i,"WpnPower1Icon") && CheckActorInventory(i,"WpnPower2Icon") && CheckActorInventory(i,"WpnPower3Icon"))		//r31 checks if you have tactical unmaker & demon keys
+		if(CheckActorInventory(i,"UnmakerTACTICAL") && CheckActorInventory(i,"WpnPower1Icon") && CheckActorInventory(i,"WpnPower2Icon") && CheckActorInventory(i,"WpnPower3Icon"))		//Checks if you have tactical unmaker & demon keys
 		{
 			SetResultValue(3);
 			break;

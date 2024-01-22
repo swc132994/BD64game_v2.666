@@ -645,7 +645,7 @@ YScale 1.0
 	}
 }
 
-actor 64NightmareElementalCast : 64NightmareElemental
+actor 64AgonyElementalCast : 64AgonyElemental
 {
 XScale 1.0
 YScale 1.0

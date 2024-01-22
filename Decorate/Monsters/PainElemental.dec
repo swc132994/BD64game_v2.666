@@ -72,7 +72,7 @@ DropItem "DemonEssenceSpawner"
 	}
 }
 
-Actor 64NightmareElemental : 64PainElemental 19126
+Actor 64AgonyElemental : 64PainElemental 19126
 {
 //$category "Game/BD64_Monsters
 Health 600

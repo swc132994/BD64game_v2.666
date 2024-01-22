@@ -365,38 +365,70 @@ States
 		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==0,"SpawnSpectre")
 		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==1,"SpawnNightSpectre")
 		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==2,"SpawnWraith")
-		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==5,"P05")
-		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==10,"P10")
-		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==15,"P15")
-		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==20,"P20")
-		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==25,"P25")
-		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==30,"P30")
-		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==40,"P40")
-		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==50,"P50")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==5,"P05A")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==10,"P10A")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==15,"P15A")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==20,"P20A")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==25,"P25A")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==30,"P30A")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==40,"P40A")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==50,"P50A")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==51,"P05B")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==101,"P10B")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==151,"P15B")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==201,"P20B")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==251,"P25B")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==301,"P30B")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==401,"P40B")
+		TNT1 A 0 A_JumpIf(CallACS("NSpectreRandom")==501,"P50B")
 		Goto SpawnSpectre
-	P05:
+	P05A:
 		TNT1 A 0 A_Jump(13,"SpawnNightSpectre","SpawnWraith")
 		Goto SpawnSpectre
-	P10:
+	P10A:
 		TNT1 A 0 A_Jump(26,"SpawnNightSpectre","SpawnWraith")
 		Goto SpawnSpectre
-	P15:
+	P15A:
 		TNT1 A 0 A_Jump(39,"SpawnNightSpectre","SpawnWraith")
 		Goto SpawnSpectre
-	P20:
+	P20A:
 		TNT1 A 0 A_Jump(51,"SpawnNightSpectre","SpawnWraith")
 		Goto SpawnSpectre
-	P25:
+	P25A:
 		TNT1 A 0 A_Jump(64,"SpawnNightSpectre","SpawnWraith")
 		Goto SpawnSpectre
-	P30:
+	P30A:
 		TNT1 A 0 A_Jump(77,"SpawnNightSpectre","SpawnWraith")
 		Goto SpawnSpectre
-	P40:
+	P40A:
 		TNT1 A 0 A_Jump(102,"SpawnNightSpectre","SpawnWraith")
 		Goto SpawnSpectre
-	P50:
+	P50A:
 		TNT1 A 0 A_Jump(128,"SpawnNightSpectre","SpawnWraith")
+		Goto SpawnSpectre
+	P05B:
+		TNT1 A 0 A_Jump(13,"SpawnNightSpectre")
+		Goto SpawnSpectre
+	P10B:
+		TNT1 A 0 A_Jump(26,"SpawnNightSpectre")
+		Goto SpawnSpectre
+	P15B:
+		TNT1 A 0 A_Jump(39,"SpawnNightSpectre")
+		Goto SpawnSpectre
+	P20B:
+		TNT1 A 0 A_Jump(51,"SpawnNightSpectre")
+		Goto SpawnSpectre
+	P25B:
+		TNT1 A 0 A_Jump(64,"SpawnNightSpectre")
+		Goto SpawnSpectre
+	P30B:
+		TNT1 A 0 A_Jump(77,"SpawnNightSpectre")
+		Goto SpawnSpectre
+	P40B:
+		TNT1 A 0 A_Jump(102,"SpawnNightSpectre")
+		Goto SpawnSpectre
+	P50B:
+		TNT1 A 0 A_Jump(128,"SpawnNightSpectre")
 		Goto SpawnSpectre
 	SpawnSpectre:
 		TNT1 A 1 A_SpawnItemEx("64Spectre",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -480,38 +512,70 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==0,"SpawnCacodemon")
 		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==1,"SpawnNightCacodemon")
 		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==2,"SpawnFallen")
-		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==5,"P05")
-		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==10,"P10")
-		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==15,"P15")
-		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==20,"P20")
-		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==25,"P25")
-		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==30,"P30")
-		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==40,"P40")
-		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==50,"P50")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==5,"P05A")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==10,"P10A")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==15,"P15A")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==20,"P20A")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==25,"P25A")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==30,"P30A")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==40,"P40A")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==50,"P50A")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==51,"P05B")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==101,"P10B")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==151,"P15B")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==201,"P20B")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==251,"P25B")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==301,"P30B")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==401,"P40B")
+		TNT1 A 0 A_JumpIf(CallACS("NCacoRandom")==501,"P50B")
 		Goto SpawnCacodemon
-	P05:
+	P05A:
 		TNT1 A 0 A_Jump(13,"SpawnNightCacodemon","SpawnFallen")
 		Goto SpawnCacodemon
-	P10:
+	P10A:
 		TNT1 A 0 A_Jump(26,"SpawnNightCacodemon","SpawnFallen")
 		Goto SpawnCacodemon
-	P15:
+	P15A:
 		TNT1 A 0 A_Jump(39,"SpawnNightCacodemon","SpawnFallen")
 		Goto SpawnCacodemon
-	P20:
+	P20A:
 		TNT1 A 0 A_Jump(51,"SpawnNightCacodemon","SpawnFallen")
 		Goto SpawnCacodemon
-	P25:
+	P25A:
 		TNT1 A 0 A_Jump(64,"SpawnNightCacodemon","SpawnFallen")
 		Goto SpawnCacodemon
-	P30:
+	P30A:
 		TNT1 A 0 A_Jump(77,"SpawnNightCacodemon","SpawnFallen")
 		Goto SpawnCacodemon
-	P40:
+	P40A:
 		TNT1 A 0 A_Jump(102,"SpawnNightCacodemon","SpawnFallen")
 		Goto SpawnCacodemon
-	P50:
+	P50A:
 		TNT1 A 0 A_Jump(128,"SpawnNightCacodemon","SpawnFallen")
+		Goto SpawnCacodemon
+	P05B:
+		TNT1 A 0 A_Jump(13,"SpawnNightCacodemon")
+		Goto SpawnCacodemon
+	P10B:
+		TNT1 A 0 A_Jump(26,"SpawnNightCacodemon")
+		Goto SpawnCacodemon
+	P15B:
+		TNT1 A 0 A_Jump(39,"SpawnNightCacodemon")
+		Goto SpawnCacodemon
+	P20B:
+		TNT1 A 0 A_Jump(51,"SpawnNightCacodemon")
+		Goto SpawnCacodemon
+	P25B:
+		TNT1 A 0 A_Jump(64,"SpawnNightCacodemon")
+		Goto SpawnCacodemon
+	P30B:
+		TNT1 A 0 A_Jump(77,"SpawnNightCacodemon")
+		Goto SpawnCacodemon
+	P40B:
+		TNT1 A 0 A_Jump(102,"SpawnNightCacodemon")
+		Goto SpawnCacodemon
+	P50B:
+		TNT1 A 0 A_Jump(128,"SpawnNightCacodemon")
 		Goto SpawnCacodemon
 	SpawnCacodemon:
 		TNT1 A 1 A_SpawnItemEx("Caco_SkinChooser",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -546,38 +610,70 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==0,"SpawnBaron")	//Baron only
 		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==1,"HoundChooser")	//Hound Chooser
 		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==2,"SpawnBelp")	//Belphegor only
-		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==5,"P05")
-		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==10,"P10")
-		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==15,"P15")
-		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==20,"P20")
-		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==25,"P25")
-		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==30,"P30")
-		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==40,"P40")
-		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==50,"P50")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==5,"P05A")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==10,"P10A")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==15,"P15A")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==20,"P20A")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==25,"P25A")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==30,"P30A")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==40,"P40A")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==50,"P50A")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==51,"P05B")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==101,"P10B")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==151,"P15B")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==201,"P20B")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==251,"P25B")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==301,"P30B")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==401,"P40B")
+		TNT1 A 0 A_JumpIf(CallACS("HellHoundRandom")==501,"P50B")
 		Goto SpawnBaron
-	P05:
+	P05A:
 		TNT1 A 0 A_Jump(13,"HoundChooser","SpawnBelp")
 		Goto SpawnBaron
-	P10:
+	P10A:
 		TNT1 A 0 A_Jump(26,"HoundChooser","SpawnBelp")
 		Goto SpawnBaron
-	P15:
+	P15A:
 		TNT1 A 0 A_Jump(39,"HoundChooser","SpawnBelp")
 		Goto SpawnBaron
-	P20:
+	P20A:
 		TNT1 A 0 A_Jump(51,"HoundChooser","SpawnBelp")
 		Goto SpawnBaron
-	P25:
+	P25A:
 		TNT1 A 0 A_Jump(64,"HoundChooser","SpawnBelp")
 		Goto SpawnBaron
-	P30:
+	P30A:
 		TNT1 A 0 A_Jump(77,"HoundChooser","SpawnBelp")
 		Goto SpawnBaron
-	P40:
+	P40A:
 		TNT1 A 0 A_Jump(102,"HoundChooser","SpawnBelp")
 		Goto SpawnBaron
-	P50:
+	P50A:
 		TNT1 A 0 A_Jump(128,"HoundChooser","SpawnBelp")
+		Goto SpawnBaron
+	P05B:
+		TNT1 A 0 A_Jump(13,"HoundChooser")
+		Goto SpawnBaron
+	P10B:
+		TNT1 A 0 A_Jump(26,"HoundChooser")
+		Goto SpawnBaron
+	P15B:
+		TNT1 A 0 A_Jump(39,"HoundChooser")
+		Goto SpawnBaron
+	P20B:
+		TNT1 A 0 A_Jump(51,"HoundChooser")
+		Goto SpawnBaron
+	P25B:
+		TNT1 A 0 A_Jump(64,"HoundChooser")
+		Goto SpawnBaron
+	P30B:
+		TNT1 A 0 A_Jump(77,"HoundChooser")
+		Goto SpawnBaron
+	P40B:
+		TNT1 A 0 A_Jump(102,"HoundChooser")
+		Goto SpawnBaron
+	P50B:
+		TNT1 A 0 A_Jump(128,"HoundChooser")
 		Goto SpawnBaron
 	SpawnBaron:
 		TNT1 A -1 A_SpawnItemEx("64BaronOfHell",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -682,38 +778,70 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==0,"SpawnCyberdemon")
 		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==1,"SpawnAnnihilator")
 		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==2,"SpawnInfernal")
-		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==5,"P05")
-		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==10,"P10")
-		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==15,"P15")
-		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==20,"P20")
-		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==25,"P25")
-		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==30,"P30")
-		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==40,"P40")
-		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==50,"P50")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==5,"P05A")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==10,"P10A")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==15,"P15A")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==20,"P20A")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==25,"P25A")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==30,"P30A")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==40,"P40A")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==50,"P50A")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==51,"P05B")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==101,"P10B")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==151,"P15B")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==201,"P20B")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==251,"P25B")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==301,"P30B")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==401,"P40B")
+		TNT1 A 0 A_JumpIf(CallACS("AnnihilatorRandom")==501,"P50B")
 		Goto SpawnCyberdemon
-	P05:
+	P05A:
 		TNT1 A 0 A_Jump(13,"SpawnAnnihilator","SpawnInfernal")
 		Goto SpawnCyberdemon
-	P10:
+	P10A:
 		TNT1 A 0 A_Jump(26,"SpawnAnnihilator","SpawnInfernal")
 		Goto SpawnCyberdemon
-	P15:
+	P15A:
 		TNT1 A 0 A_Jump(39,"SpawnAnnihilator","SpawnInfernal")
 		Goto SpawnCyberdemon
-	P20:
+	P20A:
 		TNT1 A 0 A_Jump(51,"SpawnAnnihilator","SpawnInfernal")
 		Goto SpawnCyberdemon
-	P25:
+	P25A:
 		TNT1 A 0 A_Jump(64,"SpawnAnnihilator","SpawnInfernal")
 		Goto SpawnCyberdemon
-	P30:
+	P30A:
 		TNT1 A 0 A_Jump(77,"SpawnAnnihilator","SpawnInfernal")
 		Goto SpawnCyberdemon
-	P40:
+	P40A:
 		TNT1 A 0 A_Jump(102,"SpawnAnnihilator","SpawnInfernal")
 		Goto SpawnCyberdemon
-	P50:
+	P50A:
 		TNT1 A 0 A_Jump(128,"SpawnAnnihilator","SpawnInfernal")
+		Goto SpawnCyberdemon
+	P05B:
+		TNT1 A 0 A_Jump(13,"SpawnAnnihilator")
+		Goto SpawnCyberdemon
+	P10B:
+		TNT1 A 0 A_Jump(26,"SpawnAnnihilator")
+		Goto SpawnCyberdemon
+	P15B:
+		TNT1 A 0 A_Jump(39,"SpawnAnnihilator")
+		Goto SpawnCyberdemon
+	P20B:
+		TNT1 A 0 A_Jump(51,"SpawnAnnihilator")
+		Goto SpawnCyberdemon
+	P25B:
+		TNT1 A 0 A_Jump(64,"SpawnAnnihilator")
+		Goto SpawnCyberdemon
+	P30B:
+		TNT1 A 0 A_Jump(77,"SpawnAnnihilator")
+		Goto SpawnCyberdemon
+	P40B:
+		TNT1 A 0 A_Jump(102,"SpawnAnnihilator")
+		Goto SpawnCyberdemon
+	P50B:
+		TNT1 A 0 A_Jump(128,"SpawnAnnihilator")
 		Goto SpawnCyberdemon
 	SpawnCyberdemon:
 		TNT1 A -1 A_SpawnItemEx("64Cyberdemon",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -741,38 +869,86 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==0,"SpawnArchvile")
 		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==1,"SpawnFleshWizard")
 		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==2,"SpawnHellstorm")
-		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==5,"P05")
-		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==10,"P10")
-		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==15,"P15")
-		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==20,"P20")
-		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==25,"P25")
-		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==30,"P30")
-		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==40,"P40")
-		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==50,"P50")
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==5,"P05A")
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==10,"P10A")
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==15,"P15A")
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==20,"P20A")
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==25,"P25A")
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==30,"P30A")
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==40,"P40A")
+		TNT1 A 0 A_JumpIf(CallACS("FleshWizardRandomACS")==50,"P50A")
 		Goto SpawnArchvile
-	P05:
+	P05A:
 		TNT1 A 0 A_Jump(13,"SpawnFleshWizard","SpawnHellstorm")
 		Goto SpawnArchvile
-	P10:
+	P10A:
 		TNT1 A 0 A_Jump(26,"SpawnFleshWizard","SpawnHellstorm")
 		Goto SpawnArchvile
-	P15:
+	P15A:
 		TNT1 A 0 A_Jump(39,"SpawnFleshWizard","SpawnHellstorm")
 		Goto SpawnArchvile
-	P20:
+	P20A:
 		TNT1 A 0 A_Jump(51,"SpawnFleshWizard","SpawnHellstorm")
 		Goto SpawnArchvile
-	P25:
+	P25A:
 		TNT1 A 0 A_Jump(64,"SpawnFleshWizard","SpawnHellstorm")
 		Goto SpawnArchvile
-	P30:
+	P30A:
 		TNT1 A 0 A_Jump(77,"SpawnFleshWizard","SpawnHellstorm")
 		Goto SpawnArchvile
-	P40:
+	P40A:
 		TNT1 A 0 A_Jump(102,"SpawnFleshWizard","SpawnHellstorm")
 		Goto SpawnArchvile
-	P50:
+	P50A:
 		TNT1 A 0 A_Jump(128,"SpawnFleshWizard","SpawnHellstorm")
+		Goto SpawnArchvile
+	P05B:
+		TNT1 A 0 A_Jump(13,"SpawnHellstorm")
+		Goto SpawnArchvile
+	P10B:
+		TNT1 A 0 A_Jump(26,"SpawnHellstorm")
+		Goto SpawnArchvile
+	P15B:
+		TNT1 A 0 A_Jump(39,"SpawnHellstorm")
+		Goto SpawnArchvile
+	P20B:
+		TNT1 A 0 A_Jump(51,"SpawnHellstorm")
+		Goto SpawnArchvile
+	P25B:
+		TNT1 A 0 A_Jump(64,"SpawnHellstorm")
+		Goto SpawnArchvile
+	P30B:
+		TNT1 A 0 A_Jump(77,"SpawnHellstorm")
+		Goto SpawnArchvile
+	P40B:
+		TNT1 A 0 A_Jump(102,"SpawnHellstorm")
+		Goto SpawnArchvile
+	P50B:
+		TNT1 A 0 A_Jump(128,"SpawnHellstorm")
+		Goto SpawnArchvile
+	P05C:
+		TNT1 A 0 A_Jump(13,"SpawnFleshWizard")
+		Goto SpawnArchvile
+	P10C:
+		TNT1 A 0 A_Jump(26,"SpawnFleshWizard")
+		Goto SpawnArchvile
+	P15C:
+		TNT1 A 0 A_Jump(39,"SpawnFleshWizard")
+		Goto SpawnArchvile
+	P20C:
+		TNT1 A 0 A_Jump(51,"SpawnFleshWizard")
+		Goto SpawnArchvile
+	P25C:
+		TNT1 A 0 A_Jump(64,"SpawnFleshWizard")
+		Goto SpawnArchvile
+	P30C:
+		TNT1 A 0 A_Jump(77,"SpawnFleshWizard")
+		Goto SpawnArchvile
+	P40C:
+		TNT1 A 0 A_Jump(102,"SpawnFleshWizard")
+		Goto SpawnArchvile
+	P50C:
+		TNT1 A 0 A_Jump(128,"SpawnFleshWizard")
 		Goto SpawnArchvile
 	SpawnArchvile:
 		TNT1 A 1 A_SpawnItemEx("64Archvile",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -810,38 +986,102 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==0,"SpawnMastermind")
 		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==1,"SpawnMother")
 		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==2,"SpawnEradicator")
-		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==5,"P05")
-		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==10,"P10")
-		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==15,"P15")
-		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==20,"P20")
-		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==25,"P25")
-		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==30,"P30")
-		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==40,"P40")
-		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==50,"P50")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==5,"P05A")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==10,"P10A")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==15,"P15A")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==20,"P20A")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==25,"P25A")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==30,"P30A")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==40,"P40A")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==50,"P50A")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==51,"P05B")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==101,"P10B")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==151,"P15B")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==201,"P20B")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==251,"P25B")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==301,"P30B")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==401,"P40B")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==501,"P50B")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==52,"P05C")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==102,"P10C")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==152,"P15C")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==202,"P20C")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==252,"P25C")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==302,"P30C")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==402,"P40C")
+		TNT1 A 0 A_JumpIf(CallACS("MotherDemonRandom")==502,"P50C")
 		Goto SpawnMastermind
-	P05:
+	P05A:
 		TNT1 A 0 A_Jump(13,"SpawnEradicator","SpawnMother")
 		Goto SpawnMastermind
-	P10:
+	P10A:
 		TNT1 A 0 A_Jump(26,"SpawnEradicator","SpawnMother")
 		Goto SpawnMastermind
-	P15:
+	P15A:
 		TNT1 A 0 A_Jump(39,"SpawnEradicator","SpawnMother")
 		Goto SpawnMastermind
-	P20:
+	P20A:
 		TNT1 A 0 A_Jump(51,"SpawnEradicator","SpawnMother")
 		Goto SpawnMastermind
-	P25:
+	P25A:
 		TNT1 A 0 A_Jump(64,"SpawnEradicator","SpawnMother")
 		Goto SpawnMastermind
-	P30:
+	P30A:
 		TNT1 A 0 A_Jump(77,"SpawnEradicator","SpawnMother")
 		Goto SpawnMastermind
-	P40:
+	P40A:
 		TNT1 A 0 A_Jump(102,"SpawnEradicator","SpawnMother")
 		Goto SpawnMastermind
-	P50:
+	P50A:
 		TNT1 A 0 A_Jump(128,"SpawnEradicator","SpawnMother")
+		Goto SpawnMastermind
+	P05B:
+		TNT1 A 0 A_Jump(13,"SpawnEradicator")
+		Goto SpawnMastermind
+	P10B:
+		TNT1 A 0 A_Jump(26,"SpawnEradicator")
+		Goto SpawnMastermind
+	P15B:
+		TNT1 A 0 A_Jump(39,"SpawnEradicator")
+		Goto SpawnMastermind
+	P20B:
+		TNT1 A 0 A_Jump(51,"SpawnEradicator")
+		Goto SpawnMastermind
+	P25B:
+		TNT1 A 0 A_Jump(64,"SpawnEradicator")
+		Goto SpawnMastermind
+	P30B:
+		TNT1 A 0 A_Jump(77,"SpawnEradicator")
+		Goto SpawnMastermind
+	P40B:
+		TNT1 A 0 A_Jump(102,"SpawnEradicator")
+		Goto SpawnMastermind
+	P50B:
+		TNT1 A 0 A_Jump(128,"SpawnEradicator")
+		Goto SpawnMastermind
+	P05C:
+		TNT1 A 0 A_Jump(13,"SpawnMother")
+		Goto SpawnMastermind
+	P10C:
+		TNT1 A 0 A_Jump(26,"SpawnMother")
+		Goto SpawnMastermind
+	P15C:
+		TNT1 A 0 A_Jump(39,"SpawnMother")
+		Goto SpawnMastermind
+	P20C:
+		TNT1 A 0 A_Jump(51,"SpawnMother")
+		Goto SpawnMastermind
+	P25C:
+		TNT1 A 0 A_Jump(64,"SpawnMother")
+		Goto SpawnMastermind
+	P30C:
+		TNT1 A 0 A_Jump(77,"SpawnMother")
+		Goto SpawnMastermind
+	P40C:
+		TNT1 A 0 A_Jump(102,"SpawnMother")
+		Goto SpawnMastermind
+	P50C:
+		TNT1 A 0 A_Jump(128,"SpawnMother")
 		Goto SpawnMastermind
 	SpawnMastermind:
 		TNT1 A -1 A_SpawnItemEx("64SpiderMastermind",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1106,38 +1346,70 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==0,"SpawnPinky")
 		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==1,"SpawnAcidDemon")
 		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==2,"SpawnButcher")
-		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==5,"P05")
-		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==10,"P10")
-		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==15,"P15")
-		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==20,"P20")
-		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==25,"P25")
-		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==30,"P30")
-		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==40,"P40")
-		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==50,"P50")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==5,"P05A")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==10,"P10A")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==15,"P15A")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==20,"P20A")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==25,"P25A")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==30,"P30A")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==40,"P40A")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==50,"P50A")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==51,"P05B")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==101,"P10B")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==151,"P15B")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==201,"P20B")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==251,"P25B")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==301,"P30B")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==401,"P40B")
+		TNT1 A 0 A_JumpIf(CallACS("AcidDemonRandomACS")==501,"P50B")
 		Goto SpawnPinky
-	P05:
+	P05A:
 		TNT1 A 0 A_Jump(13,"SpawnAcidDemon","SpawnButcher")
 		Goto SpawnPinky
-	P10:
+	P10A:
 		TNT1 A 0 A_Jump(26,"SpawnAcidDemon","SpawnButcher")
 		Goto SpawnPinky
-	P15:
+	P15A:
 		TNT1 A 0 A_Jump(39,"SpawnAcidDemon","SpawnButcher")
 		Goto SpawnPinky
-	P20:
+	P20A:
 		TNT1 A 0 A_Jump(51,"SpawnAcidDemon","SpawnButcher")
 		Goto SpawnPinky
-	P25:
+	P25A:
 		TNT1 A 0 A_Jump(64,"SpawnAcidDemon","SpawnButcher")
 		Goto SpawnPinky
-	P30:
+	P30A:
 		TNT1 A 0 A_Jump(77,"SpawnAcidDemon","SpawnButcher")
 		Goto SpawnPinky
-	P40:
+	P40A:
 		TNT1 A 0 A_Jump(102,"SpawnAcidDemon","SpawnButcher")
 		Goto SpawnPinky
-	P50:
+	P50A:
 		TNT1 A 0 A_Jump(128,"SpawnAcidDemon","SpawnButcher")
+		Goto SpawnPinky
+	P05B:
+		TNT1 A 0 A_Jump(13,"SpawnAcidDemon")
+		Goto SpawnPinky
+	P10B:
+		TNT1 A 0 A_Jump(26,"SpawnAcidDemon")
+		Goto SpawnPinky
+	P15B:
+		TNT1 A 0 A_Jump(39,"SpawnAcidDemon")
+		Goto SpawnPinky
+	P20B:
+		TNT1 A 0 A_Jump(51,"SpawnAcidDemon")
+		Goto SpawnPinky
+	P25B:
+		TNT1 A 0 A_Jump(64,"SpawnAcidDemon")
+		Goto SpawnPinky
+	P30B:
+		TNT1 A 0 A_Jump(77,"SpawnAcidDemon")
+		Goto SpawnPinky
+	P40B:
+		TNT1 A 0 A_Jump(102,"SpawnAcidDemon")
+		Goto SpawnPinky
+	P50B:
+		TNT1 A 0 A_Jump(128,"SpawnAcidDemon")
 		Goto SpawnPinky
 	SpawnPinky:
 		TNT1 A 1 A_SpawnItemEx("64Demon",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1202,7 +1474,7 @@ MONSTER
 		TNT1 A 1 A_SpawnItemEx("64PainElemental",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	SpawnNightmareElemental:
-		TNT1 A 1 A_SpawnItemEx("64NightmareElemental",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		TNT1 A 1 A_SpawnItemEx("64AgonyElemental",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	}
 }
@@ -1222,38 +1494,70 @@ MONSTER
 		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==0,"SpawnLostSoul")
 		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==1,"SpawnStalker")
 		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==2,"SpawnForgottenOne")
-		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==5,"P05")
-		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==10,"P10")
-		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==15,"P15")
-		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==20,"P20")
-		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==25,"P25")
-		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==30,"P30")
-		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==40,"P40")
-		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==50,"P50")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==5,"P05A")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==10,"P10A")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==15,"P15A")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==20,"P20A")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==25,"P25A")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==30,"P30A")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==40,"P40A")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==50,"P50A")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==51,"P05B")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==101,"P10B")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==151,"P15B")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==201,"P20B")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==251,"P25B")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==301,"P30B")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==401,"P40B")
+		TNT1 A 0 A_JumpIf(CallACS("StalkerRandomACS")==501,"P50B")
 		Goto SpawnLostSoul
-	P05:
+	P05A:
 		TNT1 A 0 A_Jump(13,"SpawnStalker","SpawnForgottenOne")
 		Goto SpawnLostSoul
-	P10:
+	P10A:
 		TNT1 A 0 A_Jump(26,"SpawnStalker","SpawnForgottenOne")
 		Goto SpawnLostSoul
-	P15:
+	P15A:
 		TNT1 A 0 A_Jump(39,"SpawnStalker","SpawnForgottenOne")
 		Goto SpawnLostSoul
-	P20:
+	P20A:
 		TNT1 A 0 A_Jump(51,"SpawnStalker","SpawnForgottenOne")
 		Goto SpawnLostSoul
-	P25:
+	P25A:
 		TNT1 A 0 A_Jump(64,"SpawnStalker","SpawnForgottenOne")
 		Goto SpawnLostSoul
-	P30:
+	P30A:
 		TNT1 A 0 A_Jump(77,"SpawnStalker","SpawnForgottenOne")
 		Goto SpawnLostSoul
-	P40:
+	P40A:
 		TNT1 A 0 A_Jump(102,"SpawnStalker","SpawnForgottenOne")
 		Goto SpawnLostSoul
-	P50:
+	P50A:
 		TNT1 A 0 A_Jump(128,"SpawnStalker","SpawnForgottenOne")
+		Goto SpawnLostSoul
+	P05B:
+		TNT1 A 0 A_Jump(13,"SpawnStalker")
+		Goto SpawnLostSoul
+	P10B:
+		TNT1 A 0 A_Jump(26,"SpawnStalker")
+		Goto SpawnLostSoul
+	P15B:
+		TNT1 A 0 A_Jump(39,"SpawnStalker")
+		Goto SpawnLostSoul
+	P20B:
+		TNT1 A 0 A_Jump(51,"SpawnStalker")
+		Goto SpawnLostSoul
+	P25B:
+		TNT1 A 0 A_Jump(64,"SpawnStalker")
+		Goto SpawnLostSoul
+	P30B:
+		TNT1 A 0 A_Jump(77,"SpawnStalker")
+		Goto SpawnLostSoul
+	P40B:
+		TNT1 A 0 A_Jump(102,"SpawnStalker")
+		Goto SpawnLostSoul
+	P50B:
+		TNT1 A 0 A_Jump(128,"SpawnStalker")
 		Goto SpawnLostSoul
 	SpawnLostSoul:
 		TNT1 A 1 A_SpawnItemEx("64LostSoul",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)

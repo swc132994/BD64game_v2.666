@@ -296,7 +296,7 @@ Intermission Doom2Cast
 	}
 	Cast
 	{
-		CastClass = "64NightmareElementalCast"
+		CastClass = "64AgonyElementalCast"
 		CastName = "Agony Elemental"
 		AttackSound = "Missile",2,"skull/melee"
 	}
