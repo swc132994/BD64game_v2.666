@@ -630,21 +630,24 @@ actor CeilBloodSpot : Brutal_BloodSpot	//modelled
 {
 BounceType "None"
 PROJECTILE
-+SPAWNCEILING
-+CEILINGHUGGER
 +MOVEWITHSECTOR
 +NOGRAVITY
 +DONTSPLASH
++SKYEXPLODE
 	states
 	{
 	Spawn:
-		BPDL A 1
+		TNT1 A 3 NoDelay ThrustThingZ(0,300,0,1)
+		Stop
+	Death:
 		TNT1 A 0 A_SpawnItemEx("drippingbloodLeavesSmallPool")
 		TNT1 A 0 A_SpawnItemEx("CeilBloodTinyBloodSpawner")
-		BPDL A 4 ThrustThingZ(0,300,0,1)
 		BPDL A 1500
 		BPDL A 1 A_FadeOut(0.1)
 		wait
+	Death.Sky:
+		TNT1 A 4
+		Stop
 	}
 }
 
@@ -661,13 +664,17 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 	states
 	{
 	Spawn:
-		BPDL A 1
+		TNT1 A 3 NoDelay ThrustThingZ(0,300,0,1)
+		Stop
+	Death:
 		TNT1 A 0 A_SpawnItemEx("drippingbloodLeavesSmallPoolGreen")
 		TNT1 A 0 A_SpawnItemEx("CeilBloodTinyBloodSpawnerGreen")
-		BPDL A 4 ThrustThingZ(0,300,0,1)
 		BPDL A 1500
 		BPDL A 1 A_FadeOut(0.1)
 		wait
+	Death.Sky:
+		TNT1 A 4
+		Stop
 	}
 }
 
@@ -684,13 +691,17 @@ Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 	states
 	{
 	Spawn:
-		BPDL A 1
+		TNT1 A 3 NoDelay ThrustThingZ(0,300,0,1)
+		Stop
+	Death:
 		TNT1 A 0 A_SpawnItemEx("drippingbloodLeavesSmallPoolBLUE")
 		TNT1 A 0 A_SpawnItemEx("CeilBloodTinyBloodSpawnerBLUE")
-		BPDL A 4 ThrustThingZ(0,300,0,1)
 		BPDL A 1500
 		BPDL A 1 A_FadeOut(0.1)
 		wait
+	Death.Sky:
+		TNT1 A 4
+		Stop
 	}
 }
 
@@ -699,10 +710,11 @@ actor CeilBloodSpotLarge : CeilBloodSpot	//modelled
 	states
 	{
 	Spawn:
-		BPDL A 1
+		TNT1 A 3 NoDelay ThrustThingZ(0,300,0,1)
+		Stop
+	Death:
 		TNT1 A 0 A_SpawnItemEx("drippingbloodLeavesSmallPool")
 		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
-		BPDL A 4 ThrustThingZ(0,300,0,1)
 		BPDL A 1500
 		BPDL A 1 A_FadeOut(0.1)
 		wait
@@ -715,10 +727,11 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 	states
 	{
 	Spawn:
-		BPDL A 1
+		TNT1 A 3 NoDelay ThrustThingZ(0,300,0,1)
+		Stop
+	Death:
 		TNT1 A 0 A_SpawnItemEx("drippingbloodLeavesSmallPoolGreen")
 		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawnerGreen")
-		BPDL A 4 ThrustThingZ(0,300,0,1)
 		BPDL A 1500
 		BPDL A 1 A_FadeOut(0.1)
 		wait
@@ -731,10 +744,11 @@ Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 	states
 	{
 	Spawn:
-		BPDL A 1
+		TNT1 A 3 NoDelay ThrustThingZ(0,300,0,1)
+		Stop
+	Death:
 		TNT1 A 0 A_SpawnItemEx("drippingbloodLeavesSmallPoolBLUE")
 		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawnerBLUE")
-		BPDL A 4 ThrustThingZ(0,300,0,1)
 		BPDL A 1500
 		BPDL A 1 A_FadeOut(0.1)
 		wait

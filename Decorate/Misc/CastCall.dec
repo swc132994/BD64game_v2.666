@@ -298,6 +298,7 @@ YScale 0.9
 		SWCB ABCD 4
 		Loop
 	Melee:
+	Missile:
 		SWCB EEE 8
 		Goto See
 	Death:
