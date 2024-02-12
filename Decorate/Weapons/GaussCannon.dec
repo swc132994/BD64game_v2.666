@@ -74,11 +74,14 @@ Decal BigScorch
 		TNT1 A 0 A_ChangeVelocity(-cos(-pitch)*12,0,sin(pitch)*12,CVF_RELATIVE)
 		GCFI A 1 Bright A_ZoomFactor(0.94)
 		GCFI A 1 Bright A_ZoomFactor(0.98)
-		GCFI B 1 Bright A_ZoomFactor(0.99)
-		GCFI B 1 Bright A_ZoomFactor(1)
- 		GCFI C 5
-		GCFI DEF 1
-		GCID A 20
+		GCFI C 1 Bright A_ZoomFactor(0.99)
+		GCFI D 1 Bright A_ZoomFactor(1)
+		GCFI EFG 1
+		GCFI H 4
+		GCFI I 3
+		GCFI J 2
+		GCFI KLMNOP 2
+		GCID A 4
 		goto Ready
 	Spawn:
 		GCPC A -1
@@ -180,18 +183,21 @@ Decal BigScorch
 	ResumeFire:
 		TNT1 A 0 A_PlaySound("GaussCannon/Fire")
 		TNT1 A 0 A_ZoomFactor(0.93)
-		TNT1 A 0 A_RailAttack(random(250,400),0,0,None,None,RGF_FULLBRIGHT|RGF_CENTERZ,0,"GaussCannonProjectilePuff",0,0,0,35,5,0,"GaussCannonProjectileTrail")
+		TNT1 A 0 A_RailAttack(random(250,400),0,0,None,None,RGF_FULLBRIGHT|RGF_SILENT,0,"GaussCannonProjectilePuff",0,0,0,35,5,0,"GaussCannonProjectileTrail",-5)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_ChangeVelocity(-cos(-pitch)*2,0,sin(pitch)*2,CVF_RELATIVE)
 		TNT1 A 0 A_CheckFloor(2)
 		TNT1 A 0 A_ChangeVelocity(-cos(-pitch)*12,0,sin(pitch)*12,CVF_RELATIVE)
 		TGCF A 1 Bright A_ZoomFactor(0.94)
 		TGCF A 1 Bright A_ZoomFactor(0.98)
-		TGCF B 1 Bright A_ZoomFactor(0.99)
-		TGCF B 1 Bright A_ZoomFactor(1)
-		TGCF C 5
-		TGCF DEF 1
-		TGCI A 20
+		TGCF C 1 Bright A_ZoomFactor(0.99)
+		TGCF D 1 Bright A_ZoomFactor(1)
+		TGCF EFG 1
+		TGCF H 4
+		TGCF I 3
+		TGCF J 2
+		TGCF KLMNOP 2
+		TGCI A 4
 		goto Ready
 	Reload:
 		TNT1 A 0 A_JumpIfInventory("Cell",1,1)
