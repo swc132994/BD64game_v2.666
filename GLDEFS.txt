@@ -593,10 +593,18 @@ pointlight BLUEARMOR2
 	size 24
 }
 
-//Unmaker key 1 Red
 pulselight WEAPONPOWERRED
 {
 	color 1.0 0.0 0.0
+	size 16
+	secondarySize 20
+	interval 1.14
+}
+
+//Unmaker key 1 Orange
+pulselight WEAPONPOWERORANGE
+{
+	color 1.0 0.6 0.0
 	size 16
 	secondarySize 20
 	interval 1.14

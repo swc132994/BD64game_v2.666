@@ -5,6 +5,7 @@ Health 20
 Mass 125
 Damagefactor "Melee",0
 Damagefactor "Kick",0
+Tag "Explosive Barrel"
 +EXTREMEDEATH
 +PUSHABLE
 +SLIDESONWALLS

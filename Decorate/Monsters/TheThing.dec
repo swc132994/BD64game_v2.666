@@ -14,8 +14,8 @@ PainSound "64Thing/pain"
 DeathSound "64Thing/death"
 ActiveSound "64Thing/active"
 Tag "Thing"
-PainChance "SuperFists",255
-PainChance "SuperKick",255
+PainChance "SuperFists",128
+PainChance "SuperKick",128
 DamageFactor 0.50
 DamageFactor "Fire",1.5
 DamageFactor "Plasma",1.5

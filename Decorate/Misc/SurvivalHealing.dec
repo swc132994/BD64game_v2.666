@@ -266,11 +266,12 @@ Actor 64Bandages : Ammo
 Scale 0.82
 Inventory.PickupMessage "Found Some Bandages."
 Inventory.Icon "BNDGZ0"
-+IGNORESKILL
 Inventory.Amount 1
 Inventory.MaxAmount 100
+Tag "Bandages"
 Ammo.BackpackAmount 0
 Ammo.BackpackMaxAmount 100
++IGNORESKILL
 	States
 	{
 	Spawn:
@@ -284,11 +285,12 @@ Actor 64AdrenalineStim : Ammo
 Scale 0.5
 Inventory.PickupMessage "Found a BERSERK syringe."
 Inventory.Icon "ZRKSZ0"
-+IGNORESKILL
 Inventory.Amount 1
 Inventory.MaxAmount 3
+Tag "Berserk Syringe"
 Ammo.BackpackAmount 0
 Ammo.BackpackMaxAmount 5
++IGNORESKILL
 	States
 	{
 	Spawn:
@@ -301,6 +303,7 @@ Actor BandagedStimSpawner : CustomInventory
 {
 scale 0.82
 Inventory.PickupMessage "You scavenge 10 bandages from this Stimpack."
+Tag "Stimpack"
 	States
 	{
 	Spawn:
@@ -328,6 +331,7 @@ Actor BandagedMedikitSpawner : CustomInventory
 {
 scale 0.82
 Inventory.PickupMessage "You scavenge 25 bandages from this Medikit."
+Tag "Medikit"
 	States
 	{
 	Spawn:
@@ -354,7 +358,8 @@ Inventory.PickupMessage "You scavenge 25 bandages from this Medikit."
 Actor BerserkerSyringeSpawner : CustomInventory
 {
 scale 0.82
-Inventory.PickupMessage "You scavenge a Berserk syringe from this Medikit."
+Inventory.PickupMessage "You scavenge a Berserk syringe from this Berserk Kit."
+Tag "Berserk Kit"
 	States
 	{
 	Spawn:

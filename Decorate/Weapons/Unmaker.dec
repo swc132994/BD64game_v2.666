@@ -221,6 +221,7 @@ Ammo.BackpackAmount 0
 Ammo.BackpackMaxAmount 30
 Inventory.PickupSound "HUMAMMO"
 Inventory.Icon "SAMMZ0"
+Tag "Soul"
 RenderStyle Add
 Alpha 0.9
 +ALWAYSPICKUP
@@ -249,6 +250,7 @@ Ammo.BackpackAmount 0
 Ammo.BackpackMaxAmount 25
 Inventory.PickupSound "DemonSoulUp"
 Inventory.Icon "DESSZ0"
+Tag "Demonic Essence"
 RenderStyle Add
 Alpha 0.9
 +ALWAYSPICKUP
@@ -271,6 +273,7 @@ Actor DemonEssenceLarge : DemonEssence		//from boss demons
 Scale 1.2
 Inventory.PickupMessage "Large Demonic Essence Collected"
 Inventory.Amount 10
+Tag "Demonic Essence Large"
 }
 
 Actor SoulSpawner
