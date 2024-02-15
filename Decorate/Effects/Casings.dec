@@ -7,7 +7,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		TNT1 A 1 NoDelay A_CustomMissile("EmptyBrass",-2,0,random(80,100),2,random(40,80))
+		TNT1 A 1 NoDelay A_CustomMissile("EmptyBrass",0,0,random(-80,-100),2,random(40,60))
 		Stop
 	}
 }
@@ -17,7 +17,7 @@ ACTOR BulletCaseSpawn : 50CaseSpawn
 	States
 	{
 	Spawn:
-		TNT1 A 1 NoDelay A_CustomMissile("BulletCase",-2,0,random(80,100),2,random(40,80))
+		TNT1 A 1 NoDelay A_CustomMissile("BulletCase",0,0,random(-80,-100),2,random(40,60))
 		Stop
 	}
 }
@@ -47,7 +47,7 @@ ACTOR MastermindCaseSpawn : 50CaseSpawn
 	States
 	{
 	Spawn:
-		TNT1 A 1 NoDelay A_CustomMissile("GiantEmptyBrass",-5,0,random(-80,-100),2,random(45,80))
+		TNT1 A 1 NoDelay A_CustomMissile("GiantEmptyBrass",0,0,random(-80,-100),2,random(40,60))
 		Stop
 	}
 }
@@ -67,7 +67,7 @@ ACTOR PlasmaCaseSpawn : 50CaseSpawn
 	States
 	{
 	Spawn:
-		TNT1 A 1 NoDelay A_CustomMissile("EmptyCell",1,0,random(85,95),2,random(1,15))
+		TNT1 A 1 NoDelay A_CustomMissile("EmptyCell",0,0,random(85,95),2,random(1,15))
 		Stop
 	}
 }
@@ -77,7 +77,7 @@ ACTOR EmptyClipSpawn : 50CaseSpawn
 	States
 	{
 	Spawn:
-		TNT1 A 1 NoDelay A_CustomMissile("EmptyClip",1,0,random(85,95),2,random(1,15))
+		TNT1 A 1 NoDelay A_CustomMissile("EmptyClip",0,0,random(85,95),2,random(1,15))
 		Stop
 	}
 }
@@ -88,7 +88,7 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		TNT1 A 1 NoDelay A_CustomMissile("EmptyPistolClip",1,0,random(85,95),2,random(1,15))
+		TNT1 A 1 NoDelay A_CustomMissile("EmptyPistolClip",0,0,random(85,95),2,random(1,15))
 		Stop
 	}
 }
@@ -174,7 +174,7 @@ BounceFactor 0.3
 ACTOR BulletCase : EmptyBrass
 {
 Scale 0.1
-Speed 12
+Speed 6
 Mass 4
 	States
 	{
@@ -207,8 +207,8 @@ Mass 4
 ACTOR GiantEmptyBrass : EmptyBrass
 {
 Scale 0.3
-Speed 12
-Mass 4
+Speed 8
+Mass 6
 }
 
 ACTOR ShotgunCasing : EmptyBrass
