@@ -184,7 +184,7 @@ PLREAD1 PLREAD1
 PLREAD2 PLREAD2
 
 //Plasma rifle alt
-PlasFire	PlasFire
+PlasFire	PlasFire	$volume PlasFire 0.65
 
 //Gauss cannon
 $random GaussCannon/Fire { GaussCannon/Fire1 GaussCannon/Fire2 GaussCannon/Fire3 }
