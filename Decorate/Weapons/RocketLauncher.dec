@@ -210,7 +210,6 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		TNT1 A 0 A_Takeinventory("TossMine",0)
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
-		TNT1 A 0 A_Takeinventory("AltMode",0)
 		RLTS EFGH 1
 		TNT1 A 0 A_Lower
 		Wait
