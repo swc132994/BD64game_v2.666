@@ -1102,6 +1102,19 @@ DamageType Flames
 	}
 }
 
+Actor FlamethrowerFireParticlesBlue : FlamethrowerFireParticles
+{
+Translation "0:255=%[0,0,0]:[0,0,1]"
+	States
+	{
+	Spawn:
+		FIR3 ABCD 2 NoDelay Bright A_SpawnItemEx("BlueFlare",0,0,10)
+		TNT1 A 0 A_CustomMissile("BigBlackSmoke",40,0,random(0,360),2,random(40,160))
+		FIR3 EFGHIJKLMNOP 2 Bright A_SpawnItemEx("BlueFlare",0,0,10)
+		Stop
+	}
+}
+
 ACTOR BurningGroundHighDamage
 {
 Game Doom
@@ -1284,8 +1297,7 @@ Damagetype "Plasma"
 	{
 	Spawn:
 		CFCF ABC 1 Bright
-		CFCF D 1
-		TNT1 A 0 A_Explode(2,60)
+		CFCF D 1 A_Explode(3,60)
 		CFCF EFG 1 Bright
 		CFCF H 1
 		CFCF IJK 1 Bright
@@ -1294,7 +1306,7 @@ Damagetype "Plasma"
 		Loop
 	StopBurning:
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon")
-		CFCF NOP 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,5)
+		CFCF NOP 1 Bright
 		Stop
 	}
 }
@@ -1307,38 +1319,24 @@ Scale 0.7
 	{
 	Spawn:
 		CFCF ABC 1 Bright
-		CFCF D 1
-		TNT1 A 0 A_Explode(1,30)
+		CFCF D 1 A_Explode(2,30)
 		CFCF EFG 1 Bright
 		CFCF H 1
 		CFCF IJK 1 Bright
 		CFCF L 1
 		TNT1 A 0 A_Jump(24,"StopBurning")
 		Loop
-	StopBurning:
-		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon")
-		CFCF NOP 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,5)
-		Stop
 	}
 }
 
-ACTOR TinyBurningPiece3 : TinyBurningPiece2
+Actor TinyBurningPieceBlue : TinyBurningPiece
 {
-Scale 0.5
-+CLIENTSIDEONLY
+Translation "0:255=%[0,0,0]:[0,0,1]"
 }
 
-ACTOR HeXenFlameTrails : FlameTrails
+Actor TinyBurningPieceBlue2 : TinyBurningPiece2
 {
-Scale 1.0
-Speed 1
-Alpha 1.0
-	States
-	{
-	Spawn:
-		CFFX ABCDEFGHJKLM 1 Bright A_SpawnItemEx("RedFlareSmall")
-		Stop
-	}
+Translation "0:255=%[0,0,0]:[0,0,1]"
 }
 
 ACTOR 64ExplosionFireBase : FlameTrails
