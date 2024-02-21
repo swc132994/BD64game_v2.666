@@ -104,7 +104,7 @@ Tag "Forgotten One"
 		goto See
 	Death:
 		ESKU G 2 Bright
-		TNT1 A 0 A_PlaySound("alphasoul/death",1)
+		TNT1 A 0 A_PlaySound("alphasoul/death",CHAN_WEAPON)
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAA 0 A_CustomMissile("BarrelExplosionFire",30,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",30,0,random(0,360),2,random(0,360))
@@ -123,7 +123,7 @@ Tag "Forgotten One"
 		Wait
 	Death.PossessCorpse:
 		ESKU P 2 Bright
-		TNT1 A 0 A_PlaySound("alphasoul/melee",1)
+		TNT1 A 0 A_PlaySound("alphasoul/melee",CHAN_VOICE)
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleYellowHeavySmall",30,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleYellowVeryFast",30,0,random(0,360),2,random(0,360))
 		ESKU Q 4 Bright A_Scream
@@ -147,7 +147,7 @@ RenderStyle Add
 		TNT1 A 4 Bright A_StartFire
 		SH9K ABCDEF 4 Bright A_Fire
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleYellowVeryFast",20,0,random(0,360),2,random(0,180))
-		TNT1 A 0 A_PlaySound("LSSTART",3)
+		TNT1 A 0 A_PlaySound("LSSTART",CHAN_ITEM)
 		SH9K FEDCB 2 A_FadeOut(0.1667)
 		SH9K A 2 A_FadeOut(0.1667)
 		Wait

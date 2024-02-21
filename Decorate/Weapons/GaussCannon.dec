@@ -66,7 +66,7 @@ Decal BigScorch
 		GCID A 1 A_Raise
 		Loop
 	Fire:
-		TNT1 A 0 A_PlaySound("GaussCannon/Fire")
+		TNT1 A 0 A_PlaySound("GaussCannon/Fire",CHAN_WEAPON)
 		TNT1 A 0 A_ZoomFactor(0.93)
 		TNT1 A 0 A_RailAttack(random(250,400),0,1,None,None,RGF_FULLBRIGHT|RGF_SILENT,0,"GaussCannonProjectilePuff",0,0,0,0,5,0,"GaussCannonProjectileTrail",-5)
 		TNT1 A 0 A_ChangeVelocity(-cos(-pitch)*2,0,sin(pitch)*2,CVF_RELATIVE)
@@ -173,7 +173,7 @@ Decal BigScorch
 		TNT1 A 0 A_Lower
 		Wait
 	Select:
-		TNT1 A 0 A_PlaySound("GAUDR1")
+		TNT1 A 0 A_PlaySound("GAUDR1",CHAN_BODY)
 		TGCS ABCD 1 Offset(0,32)
 		TNT1 A 0 A_Raise
 		Wait
@@ -181,7 +181,7 @@ Decal BigScorch
 		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"FireZoomed")
 		Goto AmmoCheck
 	ResumeFire:
-		TNT1 A 0 A_PlaySound("GaussCannon/Fire")
+		TNT1 A 0 A_PlaySound("GaussCannon/Fire",CHAN_WEAPON)
 		TNT1 A 0 A_ZoomFactor(0.93)
 		TNT1 A 0 A_RailAttack(random(250,400),0,0,None,None,RGF_FULLBRIGHT|RGF_SILENT,0,"GaussCannonProjectilePuff",0,0,0,35,5,0,"GaussCannonProjectileTrail",-5)
 		TNT1 A 0 A_AlertMonsters
@@ -209,12 +209,12 @@ Decal BigScorch
 		TNT1 A 0 A_JumpIfInventory("GaussAmmo",10,"Ready")
 		GCRL ABC 1
 		GCRL C 2 Offset(0,32)
-		GCRL D 5 Offset(0,35) A_PlaySound("Railgun/Eject",CHAN_WEAPON)
+		GCRL D 5 Offset(0,35) A_PlaySound("Railgun/Eject",CHAN_VOICE)
 		GCRL D 2 Offset(0,32)
 		GCRL D 6
 		GCFL ABC 1
 		TNT1 A 0 A_JumpIfInventory("GaussAmmo",1,"FullReload")
-		TNT1 A 0 A_PlaySound("RAILMAG1",CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("RAILMAG1",CHAN_ITEM)
 		GCEL ABCDDEFGHIJKLMNOP 1
 		TNT1 A 0 A_FireCustomMissile("EmptyCellPack",-30,0,-11,-24)
 		GCEL QRR 1
@@ -264,7 +264,7 @@ Decal BigScorch
 	FireZoomed:
 		Goto AmmoCheck
 	ResumeFireZoomed:
-		TNT1 A 0 A_PlaySound("GaussCannon/Fire")
+		TNT1 A 0 A_PlaySound("GaussCannon/Fire",CHAN_BODY)
 		TNT1 A 0 A_RailAttack(random(125,175),0,0,None,None,RGF_FULLBRIGHT|RGF_SILENT,0,"GaussCannonProjectilePuff",0,0,0,35,5,0,"GaussCannonProjectileTrail")
 		TNT1 A 0 A_AlertMonsters
 		GCSC J 3 Bright A_SetPitch(-1.0 + pitch)

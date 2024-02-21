@@ -117,9 +117,9 @@ DropItem "Soulsphere",32
 		A64A A 10 A_LookEx
 		Loop
 	See:
-		A64A A 3 A_Playsound("monster/anhoof")
+		A64A A 3 A_Playsound("monster/anhoof",CHAN_BODY)
 		A64A ABBCC 3 A_Chase
-		A64A D 3 A_Playsound("monster/anhoof")
+		A64A D 3 A_Playsound("monster/anhoof",CHAN_BODY)
 		A64A D 3 A_Chase
 		Loop
 	Missile:

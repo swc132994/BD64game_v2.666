@@ -195,7 +195,7 @@ MONSTER
 		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
 		Goto See
 	Crush:
-		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
 		POL5 A -1
 		Stop
 	Death:
@@ -386,7 +386,7 @@ RenderStyle Translucent
 		PTXB H -1 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		Stop
 	Crush:
-		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
 		POL5 A -1
 		Stop
 	}

@@ -105,11 +105,11 @@ MONSTER
 		TNT1 A 0 A_ChangeFlag("NOPAIN",1)
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget30Green",-8,0,62)
 		SP1N ABCDEFGHABCDEFGHABCDEFGHABCDEFGH 1 BRIGHT
-		TNT1 A 0 A_PlaySound("tornado/form")
+		TNT1 A 0 A_PlaySound("tornado/form",CHAN_BODY)
 		ZP1N ABC 1 BRIGHT
 	TornadoSpinning:
 		TNT1 A 0 A_JumpIfInventory("HellstormTornadoStopper",30,"StopSpin")
-		TNT1 A 0 A_PlaySound("tornado/form")
+		TNT1 A 0 A_PlaySound("tornado/form",CHAN_BODY)
 		TNT1 A 0 A_Explode(8,180,XF_NOTMISSILE)
 		TNT1 AA 0 A_CustomMissile("ExplosionSmokeFast22",30,0,random(0,360),2,random(0,360))
 		TNT1 AAAA 0 A_CustomMissile("64LeavesEffect",Random(16,64),Random(-32,32),Random(0,360),0,0)
@@ -135,7 +135,7 @@ MONSTER
 		S1R3 Y -1 A_CustomMissile("GrowingBloodPoolGreen",0,0,random(0,360),2,random(0,90))
 		Stop
 	Crush:
-		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
 		POL5 A -1
 		Stop
 	Death.Plasma:
@@ -546,7 +546,7 @@ PROJECTILE
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmall")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterSmall")
 		TNT1 A 0 A_SpawnItemEx("ExplosionAirDisplacementEffect")
-		TNT1 A 0 A_playSound("EXPLOSIO3",2)
+		TNT1 A 0 A_PlaySound("EXPLOSIO3",CHAN_VOICE)
 		TNT1 A 0 Radius_Quake(2,8,0,12,0)
 		TNT1 A 2
 		TNT1 A 0 A_Explode(5,64)

@@ -125,7 +125,7 @@ BloodColor "45 34 7F"	//Hex value
 		HEA3 LKJIH 5
 		Goto See
 	Crush:
-		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
 		POL5 A -1
 		Stop
 	Death.Plasma:
@@ -484,7 +484,7 @@ BloodColor "45 34 7F"	//Hex value
 		HEA4 LKJIH 5
 		Goto See
 	Crush:
-		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
 		POL5 A -1
 		Stop
 	Death.Plasma:

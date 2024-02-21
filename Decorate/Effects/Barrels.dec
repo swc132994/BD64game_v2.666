@@ -27,6 +27,7 @@ Tag "Explosive Barrel"
 		TNT1 A 0 A_SpawnItemEx("DetectBarrelCrater")
 		TNT1 A 2
 		TNT1 A 0 A_Explode(100,200)
+		TNT1 A 0 A_CheckSight("Finish")
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn")
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
@@ -71,6 +72,7 @@ Tag "Explosive Barrel"
 		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 3
 		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+	Finish:
 		TNT1 A 10
 		stop
 	}
@@ -103,7 +105,7 @@ Renderstyle Translucent
 		TNT1 AAAAAA 0 A_CustomMissile("BarrelExplosionFireLargeSpawn",0,0,random(0,360),2,random(10,40))
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_SpawnItemEx("ExplosionAirDisplacementEffect")
-		TNT1 A 0 A_playSound("EXPLO3",1)
+		TNT1 A 0 A_PlaySound("EXPLO3",CHAN_WEAPON)
 		TNT1 A 0 Radius_Quake(2,8,0,12,0)
 		TNT1 A 10
 		stop
@@ -125,7 +127,7 @@ Renderstyle translucent
 		TNT1 A 0 A_CustomMissile("64ExplosionFireBase",20,0,random(0,360),2,random(0,360))
 		TNT1 AAA 0 A_CustomMissile("BarrelExplosionFire",20,0,random(0,360),2,random(10,40))
 		TNT1 A 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
-		TNT1 A 0 A_playSound("EXPLO3",2)
+		TNT1 A 0 A_PlaySound("EXPLO3",CHAN_WEAPON)
 		TNT1 A 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 Radius_Quake(2,8,0,12,0)
 		TNT1 A 10
@@ -145,7 +147,7 @@ actor 64BossExplosionBLUE : 64BossExplosion
 		TNT1 A 0 A_CustomMissile("64ExplosionFireBase",20,0,random(0,360),2,random(0,360))
 		TNT1 AAA 0 A_CustomMissile("BarrelExplosionFire",20,0,random(0,360),2,random(10,40))
 		TNT1 A 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
-		TNT1 A 0 A_playSound("EXPLO3",2)
+		TNT1 A 0 A_PlaySound("EXPLO3",CHAN_WEAPON)
 		TNT1 A 0 A_CustomMissile("BloodmistBigBLUE",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 Radius_Quake(2,8,0,12,0)
 		TNT1 A 10

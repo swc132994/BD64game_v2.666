@@ -61,7 +61,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		PLSG A 1 A_Lower
 		Wait
 	Ready:
-		TNT1 A 0 A_PlaySound("weapon/plasmaidle",CHAN_WEAPON,1,1)
+		TNT1 A 0 A_PlaySound("weapon/plasmaidle",CHAN_WEAPON,1,TRUE)
 		PLSG ABC 1 A_WeaponReady
 		Loop
 	Fire:
@@ -178,7 +178,7 @@ Tag "$TAG_PLASMARIFLE"
 		3LSR FEDCBA 1
 		Stop
 	Select:
-		TNT1 A 0 A_PlaySound("PLSDRAW")
+		TNT1 A 0 A_PlaySound("PLSDRAW",CHAN_BODY)
 		PLSG JKLM 1 Offset(0,32)
 		TNT1 A 0 A_Raise
 		Wait
@@ -197,7 +197,7 @@ Tag "$TAG_PLASMARIFLE"
 		Loop
 	v1Ready:
 	Ready:
-		TNT1 A 0 A_PlaySound("weapon/plasmaidle",CHAN_WEAPON,1,1)
+		TNT1 A 0 A_PlaySound("weapon/plasmaidle",CHAN_WEAPON,1,TRUE)
 		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,1)	//Cooldown if no ammo
 		Goto NoAmmo
 		PLSG A 0 A_JumpIfInventory("PlasmaRifleAmmo",21,2)	//Pseudo-Fade Effect

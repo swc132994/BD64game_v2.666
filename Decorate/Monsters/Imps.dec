@@ -112,7 +112,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
 		Goto See
 	Crush:
-		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
 		POL5 A -1
 		Stop
 	XDeath:
@@ -784,7 +784,7 @@ BloodColor "45 34 7F"	//Hex value
 		TR2H F -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
 		Stop
 	Crush:
-		TNT1 A 0 A_PlaySound("Misc/Gibbed")
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
 		POL5 A -1
 		Stop
 	XDeath:
