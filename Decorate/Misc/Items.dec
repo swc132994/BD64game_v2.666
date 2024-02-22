@@ -5,9 +5,8 @@ Tag "Berserk Pack"
 	states
 	{
 	Spawn:
-		PSTR A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"AlphaSpawn")
-		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"CensoredSpawn")
-		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==3,"BFGStyleSpawn")
+		PSTR A 0 NoDelay ACS_NamedExecuteAlways("CensoredHealing_ACS")
+		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")
 		PSTR A 32
 		Loop
 	CensoredSpawn:
@@ -23,7 +22,7 @@ Tag "Berserk Pack"
 		TNT1 A 0 A_SetBlend("ff0000",0.75,70)
 		TNT1 A 0 A_GiveInventory("PowerStrength")
 		TNT1 A 0 HealThing(100,0)
-		TNT1 A 0 A_JumpIf(CallACS("BerserkSwitchFistsACS")==0,"NoSwitch")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("BerserkSwitchFistsACS")==0,"NoSwitch")
 		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
 		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
 		TNT1 A 0 A_SelectWeapon("64Fist")
@@ -45,7 +44,7 @@ Tag "Green Armour"
 	States
 	{
 	Spawn:
-		ARM1 A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
+		ARM1 A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
 		ARM1 A 6 Light("INVULN")
 		ARM1 B 6 Bright Light("INVULN")
 		Loop
@@ -64,7 +63,7 @@ Tag "Blue Armour"
 	States
 	{
 	Spawn:
-		ARM2 A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
+		ARM2 A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
 		ARM2 A 6 Light("SOULSPHERE")
 		ARM2 B 6 Bright Light("SOULSPHERE")
 		Loop
@@ -84,7 +83,7 @@ Tag "Partial Invisibility Sphere"
 	States
 	{
 	Spawn:
-		PINS A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
+		PINS A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
 		PINS ABCD 2 Bright Light("BLURSPHERE") A_SpawnItemEx("RedFlareSmall",0,0,25)
 		loop
 	AlphaSpawn:
@@ -101,7 +100,7 @@ Tag "Invulnerability Sphere"
 	states
 	{
 	Spawn:
-		PINV A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
+		PINV A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
 		PINV ABCDCB 6 Bright Light("INVULN")
 		loop
 	AlphaSpawn:
@@ -118,7 +117,7 @@ Tag "Mega Sphere"
 	States
 	{
 	Spawn:
-		MEGA A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
+		MEGA A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
 		MEGA ABCD 6 Bright Light("MEGASPHERE")
 		Loop
 	AlphaSpawn:
@@ -140,7 +139,7 @@ Tag "Radiation Suit"
 	States
 	{
 	Spawn:
-		SUIT A 0 NoDelay A_JumpIf(CallACS("AltRadSuitACS")==1,"AltSpawn")
+		SUIT A 0 NoDelay ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
 		SUIT A 6 Bright Light("INVULN")
 		SUIT B 6 Light("INVULN")
 		loop
@@ -162,7 +161,7 @@ Tag "Soul Sphere"
 	States
 	{
 	Spawn:
-		SOUL A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
+		SOUL A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
 		SOUL AAABBBCCCDDDCCCBBB 1 Bright Light("SOULSPHERE") A_SpawnItemEx("BlueFlareSmall",0,0,22)
 		Loop
 	AlphaSpawn:
@@ -182,9 +181,8 @@ Tag "Stimpack"
 	states
 	{
 	Spawn:
-		STIM A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"AlphaSpawn")
-		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"CensoredSpawn")
-		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==3,"BFGStyleSpawn")
+		STIM A 0 NoDelay ACS_NamedExecuteAlways("CensoredHealing_ACS")
+		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")
 		STIM A 32
 		Loop
 	CensoredSpawn:
@@ -206,9 +204,8 @@ Tag "Medikit"
 	states
 	{
 	Spawn:
-		MEDI A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"AlphaSpawn")
-		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"CensoredSpawn")
-		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==3,"BFGStyleSpawn")
+		MEDI A 0 NoDelay ACS_NamedExecuteAlways("CensoredHealing_ACS")
+		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")
 		MEDI A 32
 		Loop
 	CensoredSpawn:
@@ -263,7 +260,6 @@ Tag "Backpack"
 		Stop
 	Pickup:
 		TNT1 A 0 A_GiveInventory("Backpack",1)
-		TNT1 A 0 A_JumpIf(CallACS("D64WeaponsOnlyReplacer")==1,3)	//if D64 weapons only is enabled no proxy mine is collected
 		TNT1 A 0 A_Jump(192,2)//75% or 25% chance to collect 2 mines.
 		TNT1 A 0 A_GiveInventory("64ProximityMine",1)
 		TNT1 A 0 A_GiveInventory("64ProximityMine",1)
@@ -283,7 +279,6 @@ Tag "Backpack with Pistol Silencer"
 		Stop
 	Pickup:
 		TNT1 A 0 A_GiveInventory("Backpack",1)
-		TNT1 A 0 A_JumpIf(CallACS("D64WeaponsOnlyReplacer")==1,3)	//if D64 weapons only is enabled no proxy mine is collected
 		TNT1 A 0 A_Jump(192,2)//75% or 25% chance to collect 2 mines.
 		TNT1 A 0 A_GiveInventory("64ProximityMine",1)
 		TNT1 A 0 A_GiveInventory("64ProximityMine",1)
@@ -308,7 +303,6 @@ Tag "Backpack with Flashlight"
 		Stop
 	Pickup:
 		TNT1 A 0 A_GiveInventory("Backpack",1)
-		TNT1 A 0 A_JumpIf(CallACS("D64WeaponsOnlyReplacer")==1,3)	//if D64 weapons only is enabled no proxy mine is collected
 		TNT1 A 0 A_Jump(192,2)//75% or 25% chance to collect 2 mines.
 		TNT1 A 0 A_GiveInventory("64ProximityMine",1)
 		TNT1 A 0 A_GiveInventory("64ProximityMine",1)
@@ -333,7 +327,6 @@ Tag "Backpack with Flashlight and Pistol Silencer"
 		Stop
 	Pickup:
 		TNT1 A 0 A_GiveInventory("Backpack",1)
-		TNT1 A 0 A_JumpIf(CallACS("D64WeaponsOnlyReplacer")==1,3)	//if D64 weapons only is enabled no proxy mine is collected
 		TNT1 A 0 A_Jump(192,2)//75% or 25% chance to collect 2 mines.
 		TNT1 A 0 A_GiveInventory("64ProximityMine",1)
 		TNT1 A 0 A_GiveInventory("64ProximityMine",1)
@@ -367,14 +360,15 @@ Inventory.PickupSound "IPICK"
 	states
 	{
 	Spawn:
-		CELL A 0 NoDelay A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,4)
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==2,2)
-		TNT1 A 0 A_Jump(128,"SPAWN2")
+		TNT1 A 0
+		CELL A 0 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		CELL A 2 
+		TNT1 A 0 A_Jump(128,"SPAWN2","SPAWN3")
+	Spawn1:	
 		CELL A -1
 		Stop
 	Spawn2:
-		TNT1 A 0 A_Jump(128,2)
+		TNT1 A 0 A_Jump(128,"SPAWN3")
 		CEL2 A -1
 		Stop
 	Spawn3:
@@ -391,16 +385,19 @@ Tag "Cell Pack"
 	states
 	{
 	Spawn:
-		CELP A 0 NoDelay A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,4)
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==2,"AlphaSpawn")
-		TNT1 A 0 A_Jump(128,"SPAWN2")
+		TNT1 A 0	
+		CELP A 0 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")		
+		CELP A 2
+		TNT1 A 0 A_Jump(128,"SPAWN2","Spawn3")
+	Spawn1:	
 		CELP A -1
 		Stop
 	Spawn2:
-		TNT1 A 0 A_Jump(128,2)
+		TNT1 A 0 A_Jump(128,"Spawn3")
 		CPK2 A -1
 		Stop
+	Spawn3:	
 		CELP B -1
 		Stop
 	AlphaSpawn:
@@ -436,10 +433,11 @@ Tag "Bullet Box"
 	states
 	{
 	Spawn:
-		AMMO A 0 NoDelay A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,4)
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==2,2)
+		TNT1 A 0
+		AMMO A 0 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		AMMO A 2
 		TNT1 A 0 A_Jump(128,"SPAWN2")
+	Spawn1:	
 		AMMO A -1
 		Stop
 	Spawn2:
@@ -474,10 +472,12 @@ Inventory.PickupSound "IPICK"
 	states
 	{
 	Spawn:
-		ROCK A 0 NoDelay A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,4)
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==2,"AlphaSpawn")
+		TNT1 A 0
+		ROCK A 0 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")
+		ROCK A 2
 		TNT1 A 0 A_Jump(128,"SPAWN2")
+	Spawn1:	
 		ROCK A -1
 		Stop
 	Spawn2:
@@ -498,10 +498,12 @@ Tag "Shell Box"
 	states
 	{
 	Spawn:
-		SBOX A 0 NoDelay A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,4)
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==2,"AlphaSpawn")
+		TNT1 A 0
+		SBOX A 0 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")
+		SBOX A 2
 		TNT1 A 0 A_Jump(128,"SPAWN2")
+	Spawn1:	
 		SBOX A -1
 		Stop
 	Spawn2:
@@ -521,10 +523,11 @@ Tag "Rocket Crate"
 	states
 	{
 	Spawn:
-		BROK A 0 NoDelay A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,4)
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"Spawn2")
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==2,2)
+		TNT1 A 0
+		BROK A 0 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		BROK A 2
 		TNT1 A 0 A_Jump(128,"SPAWN2")
+	Spawn1:	
 		BROK A -1
 		Stop
 	Spawn2:
@@ -540,7 +543,7 @@ Tag "Computer Area Map"
 	states
 	{
 	Spawn:
-		PMAP A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
+		PMAP A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
 		PMAP ABCBAD 6 Bright Light("HellPotion")
 		loop
 	AlphaSpawn:
@@ -607,7 +610,7 @@ Tag "Night Vision Goggles"
 	States
 	{
 	Spawn:
-		PVIS A 6 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"AlphaSpawn")
+		PVIS A 6 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
 		PVIS B 6 Bright
 		Loop
 	AlphaSpawn:
@@ -624,9 +627,8 @@ Inventory.PickupSound "IPICK"
 	states
 	{
 	Spawn:
-		SHEL A 0 NoDelay A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,4)
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"AlternativeSprite")
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==2,"AlphaSpawn")
+		SHEL A 0 NoDelay ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")
 		TNT1 A 0 A_Jump(128,"SPAWN2","SPAWN3")
 		SHEL A -1
 		Stop
@@ -652,9 +654,8 @@ Inventory.PickupSound "IPICK"
 	states
 	{
 	Spawn:
-		CLIP A 0 NoDelay A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,4)
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==1,"AlternativeSprite")
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==2,"AlphaSpawn")
+		CLIP A 0 NoDelay ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")
 		TNT1 A 0 A_Jump(128,"SPAWN2","SPAWN3")
 		CLIP A -1
 		Stop
@@ -780,14 +781,14 @@ Tag "Advanced Area Scanner"
 	States
 	{
 	Spawn:
-		PSCN A 0 NoDelay A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")>0,"AlternativeSprite")
+		PSCN A 0 NoDelay ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
 		PSCN A 15 Bright Light("ARMORBONUS")
 		PSCN BCD 3 Bright Light("ARMORBONUS")
 		PSCN E 15 Bright Light("ARMORBONUS")
 		PSCN DCB 3 Bright Light("ARMORBONUS")
 		loop
 	AlternativeSprite:
-		TNT1 A 0 A_JumpIf(CallACS("AlternativeAmmoPickupSpritesACS")==0,"Spawn")
+		TNT1 A 0 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
 		MMAP ABCDCB 6 Bright Light("HealthPotion")
 		loop
 	Pickup:

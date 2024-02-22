@@ -28,7 +28,12 @@ Actor TCMapCheck : Inventory	//option to switch to TC maps
 Inventory.MaxAmount 1
 }
 
-Actor HudSwitch : Inventory	//option to switch to arranged HUD
+Actor VWeaponMode : Inventory	//option to switch to arranged HUD
+{
+Inventory.MaxAmount 1
+}
+
+Actor HudSwitch : Inventory	//option to switch to Doom Style Hud
 {
 Inventory.MaxAmount 1
 }
@@ -312,9 +317,12 @@ Player.StartItem "64ProximityMine",1
 Player.StartItem "64HighCaliberBox",30
 Player.StartItem "MP40Ammo",31
 Player.StartItem "StartWeapon"
-Player.StartItem "FirstTimePistol"
-Player.StartItem "FirstTimeShotgun"
-Player.StartItem "FirstTimeSSG"
+Player.StartItem "NeverSelectedPistol"
+Player.StartItem "NeverSelectedShotgun"
+Player.StartItem "NeverSelectedSSG"
+Player.StartItem "NeverSelectedSMG"
+Player.StartItem "NeverSelectedRL"
+Player.StartItem "NeverSelectedGauss"
 Player.ColorRange 112,127
 Player.ViewHeight 50
 Player.AttackZOffset 23
@@ -543,9 +551,12 @@ Player.StartItem "PlasmaRifleAmmo",40
 Player.StartItem "RLAmmo",6
 Player.StartItem "MP40Ammo",31
 Player.StartItem "StartWeapon"
-Player.StartItem "FirstTimeRifle"
-Player.StartItem "FirstTimeShotgun"
-Player.StartItem "FirstTimeSSG"
+Player.StartItem "NeverSelectedRifle"
+Player.StartItem "NeverSelectedShotgun"
+Player.StartItem "NeverSelectedSSG"
+Player.StartItem "NeverSelectedSMG"
+Player.StartItem "NeverSelectedRL"
+Player.StartItem "NeverSelectedGauss"
 Player.DisplayName "Tactical (Pistol)"
 }
 
@@ -577,9 +588,12 @@ Player.StartItem "GaussAmmo",4
 Player.StartItem "MP40Ammo",31
 Player.StartItem "64ProximityMine",1
 Player.StartItem "StartWeapon"
-Player.StartItem "FirstTimeRifle"
-Player.StartItem "FirstTimeShotgun"
-Player.StartItem "FirstTimeSSG"
+Player.StartItem "NeverSelectedRifle"
+Player.StartItem "NeverSelectedShotgun"
+Player.StartItem "NeverSelectedSSG"
+Player.StartItem "NeverSelectedSMG"
+Player.StartItem "NeverSelectedRL"
+Player.StartItem "NeverSelectedGauss"
 Player.ColorRange 112,127
 Player.ViewHeight 50
 Player.AttackZOffset 23

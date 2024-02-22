@@ -12,7 +12,7 @@ Tag "Explosive Barrel"
 	States
 	{
 	Spawn:
-		BEXP A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"StayAlpha")
+		BEXP A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
 	Stay:
 		BEXP A -1
 		Stop

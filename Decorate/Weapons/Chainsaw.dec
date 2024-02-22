@@ -101,6 +101,11 @@ Obituary "$OB_MPCHAINSAW"
 	}
 }
 
+Actor ClassicChainsawToken : Inventory
+{
+	Inventory.MaxAmount 1
+}
+
 Actor 64ChainsawTACTICAL : Brutal64Weapon	//CHAINSAW FOR TACTICAL CLASS
 {
 Scale 0.82
@@ -181,7 +186,7 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 		Wait
 	Select:
 		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
-		TNT1 A 0 A_JumpIf(CallACS("ClassicCSAWCheck")==1,"ClassicSawSelected2")
+		TNT1 A 0 A_JumpIfInventory("ClassicChainsawToken",1,"ClassicSawSelected2")
 		TNT1 A 0 A_JumpIfInventory("SawGas",1,"Select2")
 		SAWS ABCDNOPQR 1 Offset(0,32)
 		TNT1 A 0 A_Raise
@@ -198,7 +203,7 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 		Wait
 	v1Ready:
 	Ready:
-		TNT1 A 0 A_JumpIf(CallACS("ClassicCSAWCheck")==1,"ClassicSawSelected")
+		TNT1 A 0 A_JumpIfInventory("ClassicChainsawToken",1,"ClassicSawSelected")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
@@ -224,7 +229,7 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 		TNT1 A 0 A_TakeInventory("SawGas",1)
 		Loop
 	NotReady:
-		TNT1 A 0 A_JumpIf(CallACS("ClassicCSAWCheck")==1,"ClassicSawSelected")
+		TNT1 A 0 A_JumpIfInventory("ClassicChainsawToken",1,"ClassicSawSelected")
 		SAWG A 5 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
@@ -321,31 +326,23 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 		SAWS NOPQR 1
 		Goto Ready
 	AmmoCheck:
-		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReload")
 		TNT1 A 0 A_JumpIfInventory("SSGAmmo",1,"SSGFire")
 		Goto NeedReloading
-	NoReload:
-		TNT1 A 0 A_JumpIfInventory("SSGReloading",1,"NeedReloading")
-		Goto SSGFire
 	SSGAmmoCheck:
-		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"SSGNoReload")
-		TNT1 A 0 A_TakeInventory("SSGAmmo",2,TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_GiveInventory("SSGReloading",1)
+		TNT1 A 0 A_TakeInventory("SSGAmmo",2)
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"SSGNoReload")		
 		Goto ResumeFire
 	SSGNoReload:
 		TNT1 A 0 A_TakeInventory("Shell",2,TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_GiveInventory("SSGReloading",1)
 		Goto ResumeFire
 	AltSSGAmmoCheck:
-		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"AltNoReload")
-		TNT1 A 0 A_TakeInventory("SSGAmmo",1,TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_TakeInventory("SSGAmmo",1)
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"AltNoReload")		
 		TNT1 A 0 A_TakeInventory("SSGAlt",1)
-		TNT1 A 0 A_GiveInventory("SSGReloading",1)
 		Goto ResumeAltFire
 	AltNoReload:
 		TNT1 A 0 A_TakeInventory("Shell",1,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_TakeInventory("SSGAlt",1)
-		TNT1 A 0 A_GiveInventory("SSGReloading",1)
 		Goto ResumeAltFire
 	}
 }
@@ -396,28 +393,28 @@ Weapon.SisterWeapon "64ChainsawTactical"
 	States
 	{
 	MineThrowFlash:
-		WASS ABCD 1
+		WASS EFGH 1
 		TNT1 A 18
-		WASS DCBA 1
+		WASS ABCD 1
 		Stop
 	KickingFlash:
 		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_5)
-		WASS ABCD 1
-		WASS D 8
-		WASS DCBA 1
+		WASS EFGH 1
+		WASS H 8
+		WASS HGFE 1
 		Stop
 	AirKickingFlash:
 		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_5)
-		WASS ABCD 1
-		WASS D 10
-		WASS DCBA 1
+		WASS EFGH 1
+		WASS H 10
+		WASS HGFE 1
 		Stop
 	SlideKickingStart:
 		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_5)
-		WASS ABCD 1
-		WASS D 18
+		WASS EFGH 1
+		WASS H 18
 	SlideKickingEnd:
-		WASS DCBA 1
+		WASS HGFE 1
 		Stop
 	Spawn:
 		CSAW A -1
@@ -427,22 +424,22 @@ Weapon.SisterWeapon "64ChainsawTactical"
 		TNT1 A 0 A_Takeinventory("TossMine",0)
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
-		WASS ABCD 1
-		TNT1 A 1 A_Lower
+		WASS EFGH 1
+		TNT1 A 0 A_Lower
 		Wait
 	Select:
-		TNT1 A 0 A_JumpIf(CallACS("ClassicCSAWCheck")==1,2)
+		TNT1 A 0 A_JumpIfInventory("ClassicChainsawToken",1,2)
 		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
 		TNT1 A 0 A_JumpIfInventory("SawGas",1,1)
 		Goto SelectNoFuel
 		TNT1 A 0 A_PlaySound("weapons/sawup",CHAN_7)
 	SelectNoFuel:
-		WASS DCBA 1 Offset(0,32)
+		WASS ABCD 1 Offset(0,32)
 		TNT1 A 0 A_Raise
 		Wait
 	v1Ready:
 	Ready:
-		TNT1 A 0 A_JumpIf(CallACS("ClassicCSAWCheck")==1,2)
+		TNT1 A 0 A_JumpIfInventory("ClassicChainsawToken",1,2)
 		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")

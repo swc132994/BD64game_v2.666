@@ -345,7 +345,7 @@ Damagetype "CauseObjectsToSplash"
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("LiquidSplashCvarACS")==1,"NoSplash")
+		TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("LiquidSplashCvarACS")==1,"NoSplash")
 		TNT1 AAAAAA 0 A_CustomMissile("WaterParticleX",2,random(-5,5),random(0,360),2,random(50,140)) //WAS TNT1 FFFFFFFFF
 		TNT1 AAAAAA 0 A_CustomMissile("WaterParticleXFaster",2,random(-5,5),random(0,360),2,random(50,140)) //WAS TNT1 FFFFFFFFF
 		TNT1 A 0 A_Explode(2,6)
@@ -376,7 +376,7 @@ Damagetype CauseWaterSplash
 	States
 	{
 	Spawn:
-		TNT1 A 1 NoDelay A_JumpIf(CallACS("LiquidSplashCvarACS")==1,"NoSplash")
+		TNT1 A 1 NoDelay  A_JumpIf(ACS_NamedExecuteWithResult("LiquidSplashCvarACS")==1,"NoSplash")
 		TNT1 A 1 A_Explode(3,9)
 		Stop
 	NoSplash:
@@ -465,7 +465,7 @@ actor BloodSplashBase3 : WaterSplashBase2
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("LiquidSplashCvarACS")==1,"NoSplash")
+		TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("LiquidSplashCvarACS")==1,"NoSplash")
 		TNT1 AAAAAA 0 A_CustomMissile("BloodParticleX",2,random(-5,5),random(0,360),2,random(50,140))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodParticleXFaster",2,random(-5,5),random(0,360),2,random(50,140))
 		TNT1 A 0 A_Explode(2,6)
@@ -560,7 +560,7 @@ Actor NukageSplashBase : WaterSplashBase2
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("LiquidSplashCvarACS")==1,"NoSplash")
+		TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("LiquidSplashCvarACS")==1,"NoSplash")
 		TNT1 AAAAAA 0 A_CustomMissile("NukageParticleX",2,random(-5,5),random(0,360),2,random(50,140))
 		TNT1 AAAAAA 0 A_CustomMissile("NukageParticleXFaster",2,random(-5,5),random(0,360),2,random(50,140))
 		TNT1 A 0 A_Explode(2,6)
@@ -656,7 +656,7 @@ actor SlimeSplashBase : WaterSplashBase2
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("LiquidSplashCvarACS")==1,"NoSplash")
+		TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("LiquidSplashCvarACS")==1,"NoSplash")
 		TNT1 AAAAAA 0 A_CustomMissile("SlimeParticleX",2,random(-5,5),random(0,360),2,random(50,140))
 		TNT1 AAAAAA 0 A_CustomMissile("SlimeParticleXFaster",2,random(-5,5),random(0,360),2,random(50,140))
 		TNT1 A 0 A_Explode(2,6)

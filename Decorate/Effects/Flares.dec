@@ -364,8 +364,9 @@ alpha 0.99
 	states
 	{
 	Spawn:
-		LENS A 0 NoDelay A_JumpIf(CallACS("Light_Fog_Remover")==2,"SpawnNo")
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")
+		TNT1 A 1
+		TNT1 A 0 ACS_NamedExecuteAlways("LightAndFogChecker",0,0,0,0)
+		TNT1 A 1
 	Live:
 		TNT1 A 0 A_CheckSight("WaitSight")
 		LENS A 525
@@ -373,9 +374,9 @@ alpha 0.99
 	WaitSight:
 		TNT1 A 3
 		Goto Live
-	SpawnNo:
-		TNT1 A 525
-		Goto Spawn
+	NoLight:
+		TNT1 A 2
+		Stop
 	}
 }
 
@@ -390,8 +391,9 @@ alpha 0.6
 	states
 	{
 	Spawn:
-		LENS A 0 NoDelay A_JumpIf(CallACS("Light_Fog_Remover")==2,"SpawnNo")
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")
+		TNT1 A 1
+		TNT1 A 0 ACS_NamedExecuteAlways("LightAndFogChecker",0,0,0,0)
+		TNT1 A 1
 	Live:
 		TNT1 A 0 A_CheckSight("WaitSight")
 		LENS A 525
@@ -399,9 +401,9 @@ alpha 0.6
 	WaitSight:
 		TNT1 A 3
 		Goto Live
-	SpawnNo:
-		TNT1 A 525
-		Goto Spawn
+	NoLight:
+		TNT1 A 2
+		Stop
 	}
 }
 
@@ -695,8 +697,9 @@ Alpha 0.25
 	states
 	{
 	Spawn:
-		LEYS O 0 NoDelay A_JumpIf(CallACS("Light_Fog_Remover")==2,"SpawnNo")
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")
+		TNT1 A 1
+		TNT1 A 0 ACS_NamedExecuteAlways("LightAndFogChecker",0,0,0,0)
+		TNT1 A 1
 	Live:
 		TNT1 A 0 A_CheckSight("WaitSight")
 		LEYS O 4 Bright
@@ -709,9 +712,9 @@ Alpha 0.25
 	WaitSight:
 		TNT1 A 3
 		Goto Live
-	SpawnNo:
-		TNT1 A 525
-		Goto Spawn
+	NoLight:
+		TNT1 A 2
+		Stop
 	}
 }
 

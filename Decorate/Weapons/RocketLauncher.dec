@@ -72,6 +72,16 @@ Actor AltMode : Inventory
 Inventory.MaxAmount 1
 }
 
+Actor ClassicRLToken : Inventory
+{
+Inventory.MaxAmount 1
+}
+
+Actor NeverSelectedRL : Inventory
+{
+Inventory.MaxAmount 1
+}
+
 Actor SisterWeaponSelector : PowerWeaponLevel2
 {
 +UNDROPPABLE
@@ -172,6 +182,22 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 	Spawn:
 		LAUN A -1
 		Stop
+	WarmUp:	
+		TNT1 A 0 A_TakeInventory("NeverSelectedRL",1)
+		RLTR F 1 Offset(112, 100)
+		RLTR F 1 Offset(90, 80)
+		RLTR F 1 Offset(60, 61)
+		RLTR F 1 Offset(29, 44)
+		RLTR F 1 Offset(18, 37)		
+		RLTR F 1 Offset(2, 33)	
+		RLTR G 1
+		RLTR HIJK 1
+		RLTR LL 8
+		TNT1 A 0 A_PlaySound("ROCKLOAD",CHAN_BODY)
+		RLTR MNOPQRST 1
+		RLTR UVWXYZ 1
+		RLTR "[\]" 1		
+		Goto Ready
 	ClassicRLSelected:	//Deselect animation
 		RLTS DCBA 1 Offset(0,32)
 		TNT1 A 3
@@ -181,7 +207,7 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		TNT1 A 0 A_GiveInventory("SisterWeaponSelector",1)
 	v1Ready:
 	Ready:
-		TNT1 A 0 A_JumpIf(CallACS("ClassicRLACS")==true,"ClassicRLSelected")
+		TNT1 A 0 A_JumpIfInventory("ClassicRLToken",1,"ClassicRLSelected")
 		RLTG A 0 A_JumpIfInventory("AltMode",1,2)
 		RLTL A 0
 		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD)
@@ -195,12 +221,13 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIf(CallACS("ClassicRLACS")==true,"ClassicRLSelected")
+		TNT1 A 0 A_JumpIfInventory("ClassicRLToken",1,"ClassicRLSelected")
 		Loop
 	Select:
+		TNT1 A 0 A_JumpIfInventory("NeverSelectedRL",1,"WarmUp")
 		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
 		TNT1 A 0 A_PlaySound("ROCKPKUP",CHAN_BODY)
-		TNT1 A 0 A_JumpIf(CallACS("ClassicRLACS")==true,"ClassicRLSelected2")
+		TNT1 A 0 A_JumpIfInventory("ClassicRLToken",1,"ClassicRLSelected2")
 		RLTS ABCD 1 Offset(0,32)
 		TNT1 A 0 A_Raise
 		Wait
@@ -366,7 +393,7 @@ Weapon.SisterWeapon "64RocketLauncherTactical"
 		Stop
 	v1Ready:
 	Ready:
-		TNT1 A 0 A_JumpIf(CallACS("ClassicRLACS")==true,2)
+		TNT1 A 0 A_JumpIfInventory("ClassicRLToken",1,2)
 		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
 		MISG A 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
@@ -375,7 +402,7 @@ Weapon.SisterWeapon "64RocketLauncherTactical"
 		Goto Ready
 	Select:
 		TNT1 A 0 A_PlaySound("ROCKPKUP",CHAN_BODY)
-		TNT1 A 0 A_JumpIf(CallACS("ClassicRLACS")==true,2)
+		TNT1 A 0 A_JumpIfInventory("ClassicRLToken",1,2)
 		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
 		MISS ABCD 1 Offset(0,32)
 		TNT1 A 0 A_Raise

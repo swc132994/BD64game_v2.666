@@ -96,7 +96,7 @@ DropItem "DemonEssenceSpawner"
 		GECH G 1 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.CutLess:
-		TNT1 A 0 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Xdeath")
+		TNT1 A 0 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 A 0 A_CustomMissile("HoundGEC_Head",50,0,random(00,360),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("XDeath2",50,0,random(00,360),2,random(10,50))
 		TNT1 A 0 A_NoBlocking

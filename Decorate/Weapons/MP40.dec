@@ -7,7 +7,7 @@ Inventory.PickupSound "WPICK"
 	States
 	{
 	Spawn:
-		MP4P A 3 NoDelay A_JumpIf(CallACS("D64WeaponsOnlyReplacer")==1,"SpawnClip")	//D64 weapon only
+		MP4P A 3
 		Loop
 	Pickup:
 		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")

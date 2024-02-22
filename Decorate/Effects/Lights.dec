@@ -1076,7 +1076,8 @@ Scale 0.7
 	States
 	{
 	Spawn:
-		64CD A 0 NoDelay A_JumpIf(CallACS("ClassicTorchACS")==1,"ClassicTorch")
+		64CD A 0 NoDelay ACS_NamedExecuteAlways("ClassicTorchACS")
+		64CD A 2
 		TNT1 AA 0 A_SpawnItemEx("LightShaft2BrighterLess",0,0,64)
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
@@ -1148,7 +1149,8 @@ Scale 0.75
 	States
 	{
 	Spawn:
-		TLRD A 0 NoDelay A_JumpIf(CallACS("ClassicTorchACS")==1,"ClassicTorch")
+		TLRD A 0 NoDelay ACS_NamedExecuteAlways("ClassicTorchACS")
+		TLRD A 2
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
@@ -1176,7 +1178,8 @@ Scale 0.75
 	States
 	{
 	Spawn:
-		TLBL A 0 NoDelay A_JumpIf(CallACS("ClassicTorchACS")==1,"ClassicTorch")
+		TLBL A 0 NoDelay ACS_NamedExecuteAlways("ClassicTorchACS")
+		TLBL A 2
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
@@ -1232,7 +1235,9 @@ Scale 0.75
 	States
 	{
 	Spawn:
-		TLGR A 0 NoDelay A_JumpIf(CallACS("ClassicTorchACS")==1,"ClassicTorch")
+		TLGR A 0
+		TLGR A 0 ACS_NamedExecuteAlways("ClassicTorchACS")
+		TLGR A 2
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
@@ -1260,7 +1265,9 @@ Scale 0.75
 	States
 	{
 	Spawn:
-		TSRD A 0 NoDelay A_JumpIf(CallACS("ClassicTorchACS")==1,"ClassicTorch")
+		TSRD A 0
+		TSRD A 0 ACS_NamedExecuteAlways("ClassicTorchACS")
+		TSRD A 2
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
@@ -1288,7 +1295,9 @@ Scale 0.75
 	States
 	{
 	Spawn:
-		TSBL A 0 NoDelay A_JumpIf(CallACS("ClassicTorchACS")==1,"ClassicTorch")
+		TSBL A 0
+		TSBL A 0 ACS_NamedExecuteAlways("ClassicTorchACS")
+		TSBL A 2
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
@@ -1316,7 +1325,9 @@ Scale 0.75
 	States
 	{
 	Spawn:
-		TSGR A 0 NoDelay A_JumpIf(CallACS("ClassicTorchACS")==1,"ClassicTorch")
+		TSGR A 0
+		TSGR A 0 ACS_NamedExecuteAlways("ClassicTorchACS")
+		TSGR A 2
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
@@ -1345,7 +1356,9 @@ Scale 0.75
 	States
 	{
 	Spawn:
-		TSYL A 0 NoDelay A_JumpIf(CallACS("ClassicTorchACS")==1,"ClassicTorch")
+		TSYL A 0	
+		TSYL A 0 ACS_NamedExecuteAlways("ClassicTorchACS")
+		TSYL A 2
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
@@ -1452,8 +1465,9 @@ Alpha 0.15
 		TNT1 A 2
 		TNT1 A 0 A_Stop
 	SPAWNCP:
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")
+		TNT1 A 1
+		TNT1 A 0 ACS_NamedExecuteAlways("LightAndFogChecker",0,0,0,0)
+		TNT1 A 1
 	Live:
 		TNT1 A 0 A_CheckSight("WaitSight")
 		FBB3 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
@@ -1463,9 +1477,9 @@ Alpha 0.15
 	WaitSight:
 		TNT1 A 5
 		Goto Live
-	SpawnNo:
-		TNT1 A 525
-		GOTO SPAWNCP
+	NoShaft:
+		TNT1 A 2
+		Stop
 	}
 }
 
@@ -1476,8 +1490,9 @@ Alpha 0.25
 	states
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")
+		TNT1 A 1
+		TNT1 A 0 ACS_NamedExecuteAlways("LightAndFogChecker",0,0,0,0)
+		TNT1 A 1
 	Live:
 		TNT1 A 0 A_CheckSight("WaitSight")
 		FBB3 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
@@ -1487,9 +1502,9 @@ Alpha 0.25
 	WaitSight:
 		TNT1 A 5
 		Goto Live
-	SpawnNo:
-		TNT1 A 525
-		Goto Spawn
+	NoShaft:
+		TNT1 A 2
+		Stop
 	}
 }
 
@@ -1500,8 +1515,9 @@ Alpha 0.19
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")
+		TNT1 A 1
+		TNT1 A 0 ACS_NamedExecuteAlways("LightAndFogChecker",0,0,0,0)
+		TNT1 A 1
 	Live:
 		TNT1 A 0 A_CheckSight("WaitSight")
 		FBB3 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
@@ -1511,9 +1527,9 @@ Alpha 0.19
 	WaitSight:
 		TNT1 A 5
 		Goto Live
-	SpawnNo:
-		TNT1 A 525
-		Goto Spawn
+	NoShaft:
+		TNT1 A 2
+		Stop
 	}
 }
 
@@ -1529,19 +1545,20 @@ Alpha 0.25
 		TNT1 A 2
 		TNT1 A 0 A_Stop
 	SPAWNCP:
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==0,"SpawnNo")
-		TNT1 A 0 A_JumpIf(CallACS("Light_Fog_Remover")==3,"SpawnNo")
+		TNT1 A 1
+		TNT1 A 0 ACS_NamedExecuteAlways("LightAndFogChecker",0,0,0,0)
+		TNT1 A 1
 	Live:
 		TNT1 A 0 A_CheckSight("WaitSight")
 		FBB1 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
 		FBB2 ABCDE 2
-		GOTO SPAWNCP
+		Loop
 	WaitSight:
 		TNT1 A 5
 		Goto Live
-	SpawnNo:
-		TNT1 A 525
-		GOTO SPAWNCP
+	NoShaft:
+		TNT1 A 2
+		Stop
 	}
 }
 
@@ -1600,7 +1617,8 @@ Radius 5
 	States
 	{
 	Spawn:
-		SMRT A 0 NoDelay A_JumpIf(CallACS("ClassicTorchACS")==1,"ClassicTorch")
+		SMRT A 0 NoDelay ACS_NamedExecuteAlways("ClassicTorchACS")
+		SMRT A 2
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
@@ -1632,7 +1650,8 @@ Radius 5
 	States
 	{
 	Spawn:
-		SMBT A 0 NoDelay A_JumpIf(CallACS("ClassicTorchACS")==1,"ClassicTorch")
+		SMBT A 0 NoDelay ACS_NamedExecuteAlways("ClassicTorchACS")
+		SMBT A 2
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
@@ -1664,7 +1683,8 @@ Radius 5
 	States
 	{
 	Spawn:
-		SMGT A 0 NoDelay A_JumpIf(CallACS("ClassicTorchACS")==1,"ClassicTorch")
+		SMGT A 0 NoDelay ACS_NamedExecuteAlways("ClassicTorchACS")
+		SMGT A 2
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
@@ -1696,7 +1716,8 @@ Radius 5
 	States
 	{
 	Spawn:
-		SMYT A 0 NoDelay A_JumpIf(CallACS("ClassicTorchACS")==1,"ClassicTorch")
+		SMYT A 0 NoDelay ACS_NamedExecuteAlways("ClassicTorchACS")
+		SMYT A 2
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",-36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2BrighterLess",36,-36,0)
@@ -1796,7 +1817,8 @@ Damagefactor "Kick",0
 	States
 	{
 	Spawn:
-		BBFA A 0 NoDelay A_JumpIf(CallACS("ClassicTorchACS")==1,"ClassicTorch")
+		BBFA A 0 NoDelay ACS_NamedExecuteAlways("ClassicTorchACS")
+		BBFA A 2
 	SemiStay:
 		TNT1 AAA 0 A_SpawnItemEx("BurningBarrelSmoke")
 		TNT1 A 0 A_TakeInventory("BurningBarrelSmokeCheck",0)
@@ -1839,7 +1861,11 @@ actor 64LiveStick : LiveStick Replaces LiveStick
 	States
 	{
 	Spawn:
-		TNT1 A 1 NoDelay A_SpawnItemEx("GoreDecorationLongSpawner")
+		TNT1 A 1 NoDelay ACS_NamedExecuteAlways("WadChecker",0,0,0,0)
+		TNT1 A 1 A_SpawnItemEx("GoreDecorationLongSpawner")
+		Stop
+	DoomZero:
+		TNT1 A 0
 		Stop
 	}
 }

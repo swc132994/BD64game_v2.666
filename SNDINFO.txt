@@ -143,7 +143,9 @@ SMGFORW			SMGFORW
 
 //Shotgun
 SGFIRE			SGFIRE
-STGNPUMP		STGNPUMP
+Shotgun/PumpIn 		SGPMPIN
+Shotgun/PumpOut 	SGPMPOUT
+Shotgun/Pump		STGNPUMP
 INSHELL			INSHELL
 
 //Shotgun alt

@@ -1,0 +1,9 @@
+#library "ACSFunc"
+#include "zcommon.acs"
+
+function void SetInventory(str item, int amount)
+{
+    int diff = amount - CheckInventory(item);
+    if (diff > 0) { GiveInventory(item, diff); }
+    else if (diff < 0) { TakeInventory(item, -diff); }
+}
