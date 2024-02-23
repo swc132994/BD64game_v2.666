@@ -746,7 +746,7 @@ script "NightCrawlerRandomACS" (void)
 
 script "FootStepCheck" (void)	//footstep sound check for player decorate
 {
-SetResultValue(GetCVar("FootStepCheckCvar"));
+if(GetCvar("FootStepCheckCvar") == 1) { GiveInventory("FootstepDisabled",1); }
 }
 
 script "CensoredHealing_ACS" (void)
@@ -979,6 +979,7 @@ script "BonusRandomACS" (void)
 
 script "ThingRandomACS" (void)
 {
+	SetResultValue(GetCVar("ThingRandomCvar"));
 	if(GetCvar("ThingRandomCvar") == 0) 
 	{ 
 		SetActorState(0,"SpawnDeadMarine"); 

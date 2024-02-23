@@ -249,7 +249,7 @@ OptionMenu "BrutalDoom64OptionsPerformance"
 		StaticText ""
 		StaticText "Sound Options!",1
 		StaticText ""
-	Option "Enable Footstep Sounds =","FootStepCheckCvar","YesOrNo"
+	Option "Enable Footstep Sounds =","FootStepCheckCvar","YesOrNoFalse"
 }
 
 OptionMenu "BD64MapOptions"
