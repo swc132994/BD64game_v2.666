@@ -128,13 +128,22 @@ Script "WeaponSpecialAction" (VOID) NET
 GiveInventory("WeaponSpecialAction",1);
 }
 
-#libdefine PLAYER_VIEWHEIGHT 50		//BD64 default player height
-script "CheckIfCrouching"(void)
-{
-	if(GetActorViewHeight(0) <= PLAYER_VIEWHEIGHT / 2 << 16)
-		SetResultValue(TRUE);
-	else
-		SetResultValue(FALSE);
+script "CheckCrouch" ENTER
+{ 
+	int buttons2;
+	while (TRUE)
+	{
+		buttons2 = GetPlayerInput(-1, INPUT_BUTTONS);
+		   
+		if ((buttons2 & BT_CROUCH)||(GetActorViewHeight(0) <= PLAYER_VIEWHEIGHT / 2 << 16))
+		{
+			GiveInventory("IsCrouching", 1);
+			delay(1);
+			restart;
+		}
+		TakeInventory("IsCrouching", 1);
+		delay(4);
+	}
 }
 
 Script "DM_SpawnACS" (VOID)
@@ -145,14 +154,42 @@ if	(GameType() == GAME_NET_DEATHMATCH)
 
 script "SetBloodAmountACS" (void)
 {
-SetResultValue(GetCVar("zdoombrutalblood"));
+	if	(GetCvar("isrunningzandronum") != 0)
+	{
+		switch( GetCvar("bd_bloodamount") )
+		{
+			Case 0: SetActorState(0,"LowBlood"); break;
+			Case 1: SetActorState(0,"LowBlood"); break;
+			Case 2: break;
+			Case 3: SetActorState(0,"LotsOfBlood"); break;
+			Case 4: SetActorState(0,"AbsurdBlood"); break;
+			Default: //at least 5
+			SetActorState(0,"AbsurdBlood"); 
+			GiveInventory("AnimuGore", 1);
+			break;
+		}
+	}
+	else 
+	{
+		switch( GetCvar("zdoombrutalblood") )
+		{
+			Case 0: SetActorState(0,"LowBlood"); break;
+			Case 1: SetActorState(0,"LowBlood"); break;
+			Case 2: break;
+			Case 3: SetActorState(0,"LotsOfBlood"); break;
+			Case 4: SetActorState(0,"AbsurdBlood"); break;
+			Default: //at least 5
+			SetActorState(0,"AbsurdBlood"); 
+			GiveInventory("AnimuGore", 1);
+			break;
+		}
+	}
 }
 
 Script "LowBloodCheckerACS" (VOID)
 {
-if	(GetCvar("bd_lowgraphicsmode") == 1) {GiveInventory("LowGraphicsMode",1);}
-if	(GetCvar("zdoombrutaljanitor") == 1) {GiveInventory("LowGraphicsMode",1);}
-if	(GameType() == GAME_NET_DEATHMATCH) {GiveInventory("LowGraphicsMode",1);}
+if	(GameType () == GAME_NET_DEATHMATCH || GetCvar("bd_lowgraphicsmode") != 0 | GetCvar("zdoombrutaljanitor") != 0 ) 
+{ GiveInventory("LowGraphicsMode", 1); }
 }
 
 script "Zandro_Check" OPEN
