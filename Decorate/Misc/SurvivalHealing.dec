@@ -307,9 +307,9 @@ Tag "Stimpack"
 	States
 	{
 	Spawn:
-		STIM A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"AlphaSpawn")
-		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"CensoredSpawn")
-		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==3,"BFGStyleSpawn")
+		STIM A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CensoredHealing_ACS")==1,"AlphaSpawn")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CensoredHealing_ACS")==2,"CensoredSpawn")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CensoredHealing_ACS")==3,"BFGStyleSpawn")
 		STIM A -1
 		Stop
 	CensoredSpawn:
@@ -335,9 +335,9 @@ Tag "Medikit"
 	States
 	{
 	Spawn:
-		MEDI A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"AlphaSpawn")
-		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"CensoredSpawn")
-		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==3,"BFGStyleSpawn")
+		MEDI A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CensoredHealing_ACS")==1,"AlphaSpawn")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CensoredHealing_ACS")==2,"CensoredSpawn")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CensoredHealing_ACS")==3,"BFGStyleSpawn")
 		MEDI A -1
 		Stop
 	CensoredSpawn:
@@ -363,9 +363,9 @@ Tag "Berserk Kit"
 	States
 	{
 	Spawn:
-		PSTR A 0 NoDelay A_JumpIf(CallACS("CensoredHealing_ACS")==1,"AlphaSpawn")
-		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==2,"CensoredSpawn")
-		TNT1 A 0 A_JumpIf(CallACS("CensoredHealing_ACS")==3,"BFGStyleSpawn")
+		PSTR A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("CensoredHealing_ACS")==1,"AlphaSpawn")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CensoredHealing_ACS")==2,"CensoredSpawn")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("CensoredHealing_ACS")==3,"BFGStyleSpawn")
 		PSTR A -1
 		Stop
 	CensoredSpawn:

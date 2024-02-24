@@ -281,8 +281,8 @@ Actor SoulSpawner
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("TUnmakerChecker",0,0,0) == 2,"ShowSoul")
-		TNT1 A 0 A_JumpIf(CallACS("TUnmakerChecker",0,0,0) == 3,"ShowSoul")
+		TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("TUnmakerChecker",0,0,0) == 2,"ShowSoul")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("TUnmakerChecker",0,0,0) == 3,"ShowSoul")
 		TNT1 A 1
 		Stop
 	ShowSoul:
@@ -296,7 +296,7 @@ Actor DemonEssenceSpawner
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("TUnmakerChecker",0,0,0) == 3,"ShowEssence")
+		TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("TUnmakerChecker",0,0,0) == 3,"ShowEssence")
 		TNT1 A 1
 		Stop
 	ShowEssence:
@@ -310,7 +310,7 @@ Actor DemonEssenceLargeSpawner
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("TUnmakerChecker",0,0,0) == 3,"ShowEssence")
+		TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("TUnmakerChecker",0,0,0) == 3,"ShowEssence")
 		TNT1 A 1
 		Stop
 	ShowEssence:

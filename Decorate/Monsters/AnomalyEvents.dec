@@ -228,7 +228,7 @@ MONSTER
 	States
 	{
 	Spawn:
-		BAR1 A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"StayAlpha")
+		BAR1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("AlphaPickupACS")==True,"StayAlpha")
 	Stay:
 		BEXP A 6 A_LookEx(LOF_NOSOUNDCHECK,0,192,0,360)
 		Loop
@@ -239,7 +239,7 @@ MONSTER
 		BAR1 B 6 A_SpawnItemEx("GreenLensFlareAltSmall",0,0,35)
 		Loop
 	See:
-		TNT1 A 0 A_JumpIf(CallACS("AlphaPickupACS")==True,"SeeAlpha")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("AlphaPickupACS")==True,"SeeAlpha")
 		BEXP A 1 A_ChangeFlag("NOGRAVITY",1)
 		BEXP A 1 A_PlaySound("polt/see",CHAN_AUTO)
 		BEXP AAAA 6
@@ -349,7 +349,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		BAR1 A 0 NoDelay A_JumpIf(CallACS("AlphaPickupACS")==True,"StayAlpha")
+		BAR1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("AlphaPickupACS")==True,"StayAlpha")
 	Stay:
 		BEXP A 6
 		Loop
