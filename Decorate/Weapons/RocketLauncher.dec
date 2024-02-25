@@ -2,6 +2,7 @@ Actor RocketLauncherSpawner : CustomInventory Replaces RocketLauncher
 {
 //$category "Game/BD64_Weapons
 Scale 0.82
+Tag "Rocket Launcher"
 Inventory.PickupMessage "$GOTLAUNCHER"
 Inventory.PickupSound "WPICK"
 	States

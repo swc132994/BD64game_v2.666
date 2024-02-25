@@ -2,6 +2,7 @@ Actor PlasmaRifleSpawner : CustomInventory// Replaces PlasmaRifle		//spawned fro
 {
 //$category "Game/BD64_Weapons
 Scale 0.82
+Tag "Plasma Rifle"
 Inventory.PickupMessage "$GOTPLASMA"
 Inventory.PickupSound "WPICK"
 	States

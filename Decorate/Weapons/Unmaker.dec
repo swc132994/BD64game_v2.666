@@ -3,6 +3,7 @@ Actor UnmakerSpawner : CustomInventory 9901
 //$category "Game/BD64_Weapons
 SpawnID 84
 Scale 0.9
+Tag "Unmaker"
 Inventory.PickupMessage "What the !@# is this!"
 Inventory.PickupSound "WPICK"
 	States

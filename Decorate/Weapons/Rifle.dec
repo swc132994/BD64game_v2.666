@@ -7,6 +7,7 @@ Actor RifleSpawner : CustomInventory 19120
 {
 //$category "Game/BD64_Weapons
 Scale 0.82
+Tag "Assault Rifle"
 Inventory.PickupMessage "You got an assault rifle!"
 Inventory.PickupSound "WPICK"
 	States

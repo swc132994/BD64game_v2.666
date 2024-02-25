@@ -2,6 +2,7 @@ Actor ChaingunSpawner : CustomInventory// Replaces Chaingun		//spawned from rand
 {
 //$category "Game/BD64_Weapons
 Scale 0.82
+Tag "Chaingun"
 Inventory.PickupMessage "$GOTCHAINGUN"
 Inventory.PickupSound "WPICK"
 	States

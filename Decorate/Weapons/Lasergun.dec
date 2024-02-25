@@ -8,6 +8,7 @@ Actor LasergunSpawner : CustomInventory 9351
 //$category "Game/BD64_Weapons
 SpawnID 180
 Scale 0.9
+Tag "Laser Rifle"
 Inventory.PickupMessage "You got the Laser Rifle"
 Inventory.PickupSound "WPICK"
 	States

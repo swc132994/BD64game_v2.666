@@ -1,6 +1,7 @@
 Actor ShotgunSpawner : CustomInventory	replaces Shotgun	//spawned from randomspawners
 {
 Scale 0.87
+Tag "Shotgun"
 Inventory.PickupMessage "$GOTSHOTGUN"
 Inventory.PickupSound "WPICK"
 	States

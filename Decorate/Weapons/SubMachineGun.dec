@@ -3,6 +3,7 @@ Actor SMGSpawner : CustomInventory 19121
 {
 //$category "Game/BD64_Weapons
 Scale 0.82
+Tag "Sub-Machine Gun"
 Inventory.PickupMessage "You got the SMG!"
 Inventory.PickupSound "WPICK"
 	States

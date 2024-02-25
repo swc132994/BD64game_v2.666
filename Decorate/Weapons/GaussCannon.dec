@@ -2,6 +2,7 @@ Actor BD64_GaussCannonSpawner : CustomInventory	19134	//spawned from randomspawn
 {
 //$category "Game/BD64_Weapons
 Scale 0.9
+Tag "Gauss Cannon"
 Inventory.PickupMessage "You picked up the Gauss Cannon"
 Inventory.PickupSound "WPICK"
 	States
