@@ -12,13 +12,14 @@ Tag "Explosive Barrel"
 	States
 	{
 	Spawn:
-		BEXP A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
-	Stay:
-		BEXP A -1
-		Stop
+		BEXP A 0
+	SpawnLoop:
+		"####" A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
+		"####" A 32
+		Loop
 	StayAlpha:
 		BAR1 AB 6 A_SpawnItemEx("GreenLensFlareAltSmall",0,0,35)
-		Loop
+		Goto Spawn
 	Death:
 		BEXP ABC 3 Bright
 		TNT1 A 0 A_NoBlocking

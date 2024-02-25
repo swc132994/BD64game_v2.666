@@ -882,6 +882,14 @@ script "AlphaPickupACS" (void)
 	}
 }
 
+script "AlphaBarrelSee" (void)
+{
+	if(GetCvar("AlphaPickupCvar") == 1)
+	{
+		SetActorState(0,"AlphaSee");	//Barrel Death
+	}
+}
+
 Script "SevereredLimbDeathACS" (void)
 {
 	if(GetCvar("SevereredLimbDeathCvar") == 0)

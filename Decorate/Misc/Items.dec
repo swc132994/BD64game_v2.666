@@ -5,19 +5,24 @@ Tag "Berserk Pack"
 	states
 	{
 	Spawn:
-		PSTR A 0 NoDelay ACS_NamedExecuteAlways("CensoredHealing_ACS")
-		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")
-		PSTR A 32
-		Loop
+		PSTR A 1
+	SpawnLoop:
+		"####" "#" 3 ACS_NamedExecuteAlways("CensoredHealing_ACS")
+		"####" "#" 3 ACS_NamedExecuteAlways("AlphaPickupACS")
+		"####" "#" 32
+		Goto NormalSpawn
 	CensoredSpawn:
 		PSTR B 32
-		Goto Spawn
+		Goto SpawnLoop
 	BFGStyleSpawn:
 		PSTR C 32
-		Goto Spawn
+		Goto SpawnLoop
 	AlphaSpawn:
 		PSTR D 32
-		Goto Spawn
+		Goto SpawnLoop
+	NormalSpawn:
+		PSTR A 32
+		Goto SpawnLoop
 	Pickup:
 		TNT1 A 0 A_SetBlend("ff0000",0.75,70)
 		TNT1 A 0 A_GiveInventory("PowerStrength")
@@ -44,9 +49,8 @@ Tag "Green Armour"
 	States
 	{
 	Spawn:
-		ARM1 A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
 		ARM1 A 6 Light("INVULN")
-		ARM1 B 6 Bright Light("INVULN")
+		ARM1 B 6 Bright Light("INVULN") ACS_NamedExecuteAlways("AlphaPickupACS")
 		Loop
 	AlphaSpawn:
 		ARM3 A 6 Light("INVULN")
@@ -63,9 +67,8 @@ Tag "Blue Armour"
 	States
 	{
 	Spawn:
-		ARM2 A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
 		ARM2 A 6 Light("SOULSPHERE")
-		ARM2 B 6 Bright Light("SOULSPHERE")
+		ARM2 B 6 Bright Light("SOULSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
 		Loop
 	AlphaSpawn:
 		ARM4 A 6 Light("SOULSPHERE")
@@ -83,11 +86,11 @@ Tag "Partial Invisibility Sphere"
 	States
 	{
 	Spawn:
-		PINS A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
-		PINS ABCD 2 Bright Light("BLURSPHERE") A_SpawnItemEx("RedFlareSmall",0,0,25)
+		PINS AB 2 Bright Light("BLURSPHERE")
+		PINS CD 2 Bright Light("BLURSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
 		loop
 	AlphaSpawn:
-		PIN2 ABCD 2 Bright Light("BLURSPHERE") A_SpawnItemEx("RedFlareSmall",0,0,25)
+		PIN2 ABCD 2 Bright Light("BLURSPHERE")
 		loop
 	}
 }
@@ -100,8 +103,8 @@ Tag "Invulnerability Sphere"
 	states
 	{
 	Spawn:
-		PINV A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
-		PINV ABCDCB 6 Bright Light("INVULN")
+		PINV ABC 6 Bright Light("INVULN")
+		PINV DCB 6 Bright Light("INVULN") ACS_NamedExecuteAlways("AlphaPickupACS")
 		loop
 	AlphaSpawn:
 		P1NV ABCDCB 6 Bright Light("INVULN")
@@ -117,8 +120,8 @@ Tag "Mega Sphere"
 	States
 	{
 	Spawn:
-		MEGA A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
-		MEGA ABCD 6 Bright Light("MEGASPHERE")
+		MEGA AB 6 Bright Light("MEGASPHERE")
+		MEGA CD 6 Bright Light("MEGASPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
 		Loop
 	AlphaSpawn:
 		MEG1 ABCD 6 Bright Light("MEGASPHERE")
@@ -161,11 +164,11 @@ Tag "Soul Sphere"
 	States
 	{
 	Spawn:
-		SOUL A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
-		SOUL AAABBBCCCDDDCCCBBB 1 Bright Light("SOULSPHERE") A_SpawnItemEx("BlueFlareSmall",0,0,22)
+		SOUL ABC 3 Bright Light("SOULSPHERE")
+		SOUL DCB 3 Bright Light("SOULSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
 		Loop
 	AlphaSpawn:
-		2OUL AAABBBCCCDDDCCCBBB 1 Bright Light("SOULSPHERE") A_SpawnItemEx("BlueFlareSmall",0,0,22)
+		2OUL ABCDCB 3 Bright Light("SOULSPHERE")
 		Loop
 	Pickup:
 		TNT1 A 0 A_GiveInventory("SoulSphere",1)
@@ -181,19 +184,24 @@ Tag "Stimpack"
 	states
 	{
 	Spawn:
-		STIM A 0 NoDelay ACS_NamedExecuteAlways("CensoredHealing_ACS")
-		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")
-		STIM A 32
-		Loop
+		STIM A 1
+	SpawnLoop:
+		"####" "#" 3 ACS_NamedExecuteAlways("CensoredHealing_ACS")
+		"####" "#" 3 ACS_NamedExecuteAlways("AlphaPickupACS")
+		"####" "#" 32
+		Goto NormalSpawn
 	CensoredSpawn:
 		STIM B 32
-		Goto Spawn
+		Goto SpawnLoop
 	BFGStyleSpawn:
 		STIM C 32
-		Goto Spawn
+		Goto SpawnLoop
 	AlphaSpawn:
 		STIM D 32
-		Goto Spawn
+		Goto SpawnLoop
+	NormalSpawn:
+		STIM A 32
+		Goto SpawnLoop
 	}
 }
 
@@ -204,19 +212,24 @@ Tag "Medikit"
 	states
 	{
 	Spawn:
-		MEDI A 0 NoDelay ACS_NamedExecuteAlways("CensoredHealing_ACS")
-		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")
-		MEDI A 32
-		Loop
+		MEDI A 1
+	SpawnLoop:
+		"####" "#" 3 ACS_NamedExecuteAlways("CensoredHealing_ACS")
+		"####" "#" 3 ACS_NamedExecuteAlways("AlphaPickupACS")
+		"####" "#" 32
+		Goto NormalSpawn
 	CensoredSpawn:
 		MEDI B 32
-		Goto Spawn
+		Goto SpawnLoop
 	BFGStyleSpawn:
 		MEDI C 32
-		Goto Spawn
+		Goto SpawnLoop
 	AlphaSpawn:
 		MEDI D 32
-		Goto Spawn
+		Goto SpawnLoop
+	NormalSpawn:
+		MEDI A 32
+		Goto SpawnLoop
 	}
 }
 
@@ -385,10 +398,9 @@ Tag "Cell Pack"
 	states
 	{
 	Spawn:
-		TNT1 A 0	
-		CELP A 0 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")		
-		CELP A 2
+		CELP A 1
+		CELP A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		CELP A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
 		TNT1 A 0 A_Jump(128,"SPAWN2","Spawn3")
 	Spawn1:	
 		CELP A -1
@@ -472,10 +484,9 @@ Inventory.PickupSound "IPICK"
 	states
 	{
 	Spawn:
-		TNT1 A 0
-		ROCK A 0 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")
-		ROCK A 2
+		ROCK A 1
+		ROCK A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		ROCK A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
 		TNT1 A 0 A_Jump(128,"SPAWN2")
 	Spawn1:	
 		ROCK A -1
@@ -498,10 +509,9 @@ Tag "Shell Box"
 	states
 	{
 	Spawn:
-		TNT1 A 0
-		SBOX A 0 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")
-		SBOX A 2
+		SBOX A 1
+		SBOX A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		SBOX A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
 		TNT1 A 0 A_Jump(128,"SPAWN2")
 	Spawn1:	
 		SBOX A -1
@@ -523,9 +533,8 @@ Tag "Rocket Crate"
 	states
 	{
 	Spawn:
-		TNT1 A 0
-		BROK A 0 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		BROK A 2
+		BROK A 1
+		BROK A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
 		TNT1 A 0 A_Jump(128,"SPAWN2")
 	Spawn1:	
 		BROK A -1
@@ -543,8 +552,8 @@ Tag "Computer Area Map"
 	states
 	{
 	Spawn:
-		PMAP A 0 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
-		PMAP ABCBAD 6 Bright Light("HellPotion")
+		PMAP ABC 6 Bright Light("HellPotion")
+		PMAP BAD 6 Bright Light("HellPotion") ACS_NamedExecuteAlways("AlphaPickupACS")
 		loop
 	AlphaSpawn:
 		PMAP E -1 Bright Light("ARMORBONUS")
@@ -610,8 +619,8 @@ Tag "Night Vision Goggles"
 	States
 	{
 	Spawn:
-		PVIS A 6 NoDelay ACS_NamedExecuteAlways("AlphaPickupACS")
-		PVIS B 6 Bright
+		PVIS A 6
+		PVIS B 6 Bright ACS_NamedExecuteAlways("AlphaPickupACS")
 		Loop
 	AlphaSpawn:
 		PVI2 A 6
@@ -627,8 +636,9 @@ Inventory.PickupSound "IPICK"
 	states
 	{
 	Spawn:
-		SHEL A 0 NoDelay ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")
+		SHEL A 1
+		SHEL A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		SHEL A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
 		TNT1 A 0 A_Jump(128,"SPAWN2","SPAWN3")
 		SHEL A -1
 		Stop
@@ -654,8 +664,9 @@ Inventory.PickupSound "IPICK"
 	states
 	{
 	Spawn:
-		CLIP A 0 NoDelay ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		TNT1 A 0 ACS_NamedExecuteAlways("AlphaPickupACS")
+		CLIP A 1
+		CLIP A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		CLIP A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
 		TNT1 A 0 A_Jump(128,"SPAWN2","SPAWN3")
 		CLIP A -1
 		Stop
