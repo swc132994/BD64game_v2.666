@@ -1054,20 +1054,19 @@ script "PoltergeistEnablerACS" (void)
 	}
 }
 
-Script "CheckPlayerClass" (void)
+Script "HighCalibreCheck" (void)
 {
 	for(int i = 2337; i < 2400; i++)
 	{
-		if(CheckActorInventory(i,"IsTacticalClass")||CheckActorInventory(i,"IsModern"))
-		{
-			SetResultValue(1);
-			break;
-		}
-		else
-		{
-			SetResultValue(0);
-			break;
-		}
+	if(CheckActorInventory(i,"IsTacticalClass")||CheckActorInventory(i,"IsModern")) {SetActorState(0,"RandomSpawn");}
+	}
+}
+
+Script "ClassCheckWeaponDrop" (void)
+{
+	for(int i = 2337; i < 2400; i++)
+	{
+	if(CheckActorInventory(i,"IsTacticalClass")||CheckActorInventory(i,"IsModern")) {SetActorState(0,"DropTactical");}
 	}
 }
 

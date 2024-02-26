@@ -50,7 +50,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 	States
 	{
 	Spawn:
-		MGUN B -1
+		MGUN A -1
 		Stop
 	Ready:
 		LCGG A 1 A_WeaponReady

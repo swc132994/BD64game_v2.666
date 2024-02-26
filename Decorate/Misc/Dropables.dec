@@ -1,3 +1,20 @@
+Actor DroppedShotgunSpawner
+{
+Scale 0.87
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("ClassCheckWeaponDrop")
+	DropClassic:
+		TNT1 A 1 A_DropItem("64Shotgun")
+		Stop
+	DropTactical:
+		TNT1 A 1 A_DropItem("64ShotgunTACTICAL")
+		Stop
+	}
+}
+
 Actor ShotgunDrop
 {
 	states
@@ -44,8 +61,7 @@ Gravity 0.9
 		TRII BCDEFGH 4
 		Loop
 	Death:
-		TNT1 A 0 A_DropItem("64Shotgun")
-		TNT1 A 1 A_DropItem("64ShotgunTactical")
+		TNT1 A 1 A_DropItem("DroppedShotgunSpawner")
 		Stop
 	}
 }
@@ -59,8 +75,26 @@ Actor DropedShotgun2 : DropedShotgun
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
 		TRII GFEDCBA 4
 	Death:
-		TNT1 A 0 A_DropItem("64Shotgun")
-		TNT1 A 1 A_DropItem("64ShotgunTactical")
+		TNT1 A 1 A_DropItem("DroppedShotgunSpawner")
+		Stop
+	}
+}
+
+Actor DroppedSuperShotgunSpawner : CustomInventory
+{
+Scale 0.87
+Tag "Super Shotgun"
++INVENTORY.QUIET
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("ClassCheckWeaponDrop")
+	DropClassic:
+		TNT1 A 1 A_DropItem("64SuperShotgun")
+		Stop
+	DropTactical:
+		TNT1 A 1 A_DropItem("64SuperShotgunTACTICAL")
 		Stop
 	}
 }
@@ -90,8 +124,7 @@ ACTOR DropedSSG : DropedShotgun
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
 		TRI1 BCDEFGH 4
 	Death:
-		TNT1 A 0 A_DropItem("64SuperShotgun")
-		TNT1 A 1 A_DropItem("64SuperShotgunTactical")
+		TNT1 A 1 A_DropItem("DroppedSuperShotgunSpawner")
 		Stop
 	}
 }
@@ -105,8 +138,24 @@ ACTOR DropedSSG2 : DropedShotgun
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
 		TRI1 GFEDCBA 4
 	Death:
-		TNT1 A 0 A_DropItem("64SuperShotgun")
-		TNT1 A 1 A_DropItem("64SuperShotgunTactical")
+		TNT1 A 1 A_DropItem("DroppedSuperShotgunSpawner")
+		Stop
+	}
+}
+
+Actor DroppedRifleSpawner
+{
+Scale 0.82
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("ClassCheckWeaponDrop")
+	DropClassic:
+		TNT1 A 1 A_DropItem("64Rifle")
+		Stop
+	DropTactical:
+		TNT1 A 1 A_DropItem("64RifleTactical")
 		Stop
 	}
 }
@@ -140,8 +189,7 @@ ACTOR DropedRifle : DropedShotgun
 		TRI2 B 0
 		"####" BCDEFGH 4
 	Death:
-		TNT1 A 0 A_DropItem("64Rifle")
-		TNT1 A 1 A_DropItem("64RifleTactical")
+		TNT1 A 1 A_DropItem("DroppedRifleSpawner")
 		Stop
 	}
 }
@@ -159,8 +207,24 @@ ACTOR DropedRifle2 : DropedShotgun
 		TRI2 G 0
 		"####" GFEDCBA 4
 	Death:
-		TNT1 A 0 A_DropItem("64Rifle")
-		TNT1 A 1 A_DropItem("64RifleTactical")
+		TNT1 A 1 A_DropItem("DroppedRifleSpawner")
+		Stop
+	}
+}
+
+Actor DroppedChaingunSpawner
+{
+Scale 0.82
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("ClassCheckWeaponDrop")
+	DropClassic:
+		TNT1 A 1 A_DropItem("64Chaingun")
+		Stop
+	DropTactical:
+		TNT1 A 1 A_DropItem("64ChaingunTACTICAL")
 		Stop
 	}
 }
@@ -172,10 +236,10 @@ actor ChaingunDrop : ShotgunDrop
 	Spawn:
 		TNT1 A 0 NoDelay A_Jump(128,"Spawn2")
 		Goto Spawn1
-	SPawn1:
+	Spawn1:
 		TNT1 A 1 A_CustomMissile("DropedChaingun",20,0,0,2,random(30,50))
 		stop
-	SPawn2:
+	Spawn2:
 		TNT1 A 1 A_CustomMissile("DropedChaingun2",20,0,180,2,random(30,50))
 		stop
 	}
@@ -190,8 +254,7 @@ ACTOR DropedChaingun : DropedShotgun
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
 		TRI3 BCDEFGH 4
 	Death:
-		TNT1 A 0 A_DropItem("64Chaingun")
-		TNT1 A 1 A_DropItem("64ChaingunTactical")
+		TNT1 A 1 A_DropItem("DroppedChaingunSpawner")
 		Stop
 	}
 }
@@ -205,8 +268,24 @@ ACTOR DropedChaingun2 : DropedShotgun
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
 		TRI3 GFEDCBA 4
 	Death:
-		TNT1 A 0 A_DropItem("64Chaingun")
-		TNT1 A 1 A_DropItem("64ChaingunTactical")
+		TNT1 A 1 A_DropItem("DroppedChaingunSpawner")
+		Stop
+	}
+}
+
+Actor DroppedChainsawSpawner
+{
+Scale 0.82
+	States
+	{
+	Spawn:
+		TNT1 A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("ClassCheckWeaponDrop")
+	DropClassic:
+		TNT1 A 1 A_DropItem("64Chainsaw")
+		Stop
+	DropTactical:
+		TNT1 A 1 A_DropItem("64ChainsawTACTICAL")
 		Stop
 	}
 }
@@ -236,8 +315,7 @@ ACTOR DropedChainsaw : DropedShotgun
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
 		CWAS BCDEFGH 4
 	Death:
-		TNT1 A 0 A_DropItem("64Chainsaw")
-		TNT1 A 1 A_DropItem("64ChainsawTactical")
+		TNT1 A 1 A_DropItem("DroppedChainsawSpawner")
 		Stop
 	}
 }
@@ -251,8 +329,7 @@ ACTOR DropedChainsaw2 : DropedShotgun
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
 		CWAS GFEDCBA 4
 	Death:
-		TNT1 A 0 A_DropItem("64Chainsaw")
-		TNT1 A 1 A_DropItem("64ChainsawTactical")
+		TNT1 A 1 A_DropItem("DroppedChainsawSpawner")
 		Stop
 	}
 }

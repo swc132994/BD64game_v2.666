@@ -9,7 +9,6 @@ Tag "Berserk Pack"
 	SpawnLoop:
 		"####" "#" 3 ACS_NamedExecuteAlways("CensoredHealing_ACS")
 		"####" "#" 3 ACS_NamedExecuteAlways("AlphaPickupACS")
-		"####" "#" 32
 		Goto NormalSpawn
 	CensoredSpawn:
 		PSTR B 32
@@ -49,13 +48,18 @@ Tag "Green Armour"
 	States
 	{
 	Spawn:
-		ARM1 A 6 Light("INVULN")
-		ARM1 B 6 Bright Light("INVULN") ACS_NamedExecuteAlways("AlphaPickupACS")
-		Loop
+		ARM1 A 1 Light("INVULN")
+	SpawnLoop:
+		"####" "#" 3 Light("INVULN") ACS_NamedExecuteAlways("AlphaPickupACS")
+		Goto SpawnNormal
 	AlphaSpawn:
 		ARM3 A 6 Light("INVULN")
 		ARM3 B 6 Bright Light("INVULN")
-		Loop
+		Goto SpawnLoop
+	SpawnNormal:
+		ARM1 A 6 Light("INVULN")
+		ARM1 B 6 Bright Light("INVULN")
+		Goto SpawnLoop
 	}
 }
 
@@ -67,13 +71,18 @@ Tag "Blue Armour"
 	States
 	{
 	Spawn:
-		ARM2 A 6 Light("SOULSPHERE")
-		ARM2 B 6 Bright Light("SOULSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
-		Loop
+		ARM2 A 1 Light("SOULSPHERE")
+	SpawnLoop:
+		"####" "#" 3 Light("SOULSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
+		Goto SpawnNormal
 	AlphaSpawn:
 		ARM4 A 6 Light("SOULSPHERE")
 		ARM4 B 6 Bright Light("SOULSPHERE")
-		Loop
+		Goto SpawnLoop
+	SpawnNormal:
+		ARM2 A 6 Light("SOULSPHERE")
+		ARM2 B 6 Bright Light("SOULSPHERE")
+		Goto SpawnLoop
 	}
 }
 
@@ -86,12 +95,16 @@ Tag "Partial Invisibility Sphere"
 	States
 	{
 	Spawn:
-		PINS AB 2 Bright Light("BLURSPHERE")
-		PINS CD 2 Bright Light("BLURSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
-		loop
+		PINS A 1 Bright Light("BLURSPHERE")
+	SpawnLoop:
+		"####" D 3 Bright Light("BLURSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
+		Goto NormalSpawn
 	AlphaSpawn:
-		PIN2 ABCD 2 Bright Light("BLURSPHERE")
-		loop
+		PIN2 ABC 3 Bright Light("BLURSPHERE")
+		Goto SpawnLoop
+	NormalSpawn:
+		PINS ABC 3 Bright Light("BLURSPHERE")
+		Goto SpawnLoop
 	}
 }
 
@@ -103,12 +116,16 @@ Tag "Invulnerability Sphere"
 	states
 	{
 	Spawn:
-		PINV ABC 6 Bright Light("INVULN")
-		PINV DCB 6 Bright Light("INVULN") ACS_NamedExecuteAlways("AlphaPickupACS")
-		loop
+		PINV A 1 Bright Light("INVULN")
+	SpawnLoop:
+		"####" "#" 3 Bright Light("INVULN") ACS_NamedExecuteAlways("AlphaPickupACS")
+		Goto NormalSpawn
 	AlphaSpawn:
 		P1NV ABCDCB 6 Bright Light("INVULN")
-		loop
+		Goto SpawnLoop
+	NormalSpawn:
+		PINV ABCDCB 6 Bright Light("INVULN")
+		Goto SpawnLoop
 	}
 }
 
@@ -120,12 +137,16 @@ Tag "Mega Sphere"
 	States
 	{
 	Spawn:
-		MEGA AB 6 Bright Light("MEGASPHERE")
-		MEGA CD 6 Bright Light("MEGASPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
-		Loop
+		MEGA A 1 Bright Light("MEGASPHERE")
+	SpawnLoop:
+		"####" "#" 3 Bright Light("MEGASPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
+		Goto NormalSpawn
 	AlphaSpawn:
 		MEG1 ABCD 6 Bright Light("MEGASPHERE")
-		Loop
+		Goto SpawnLoop
+	NormalSpawn:
+		MEGA ABCD 6 Bright Light("MEGASPHERE")
+		Goto SpawnLoop
 	Pickup:
 		TNT1 A 0 A_GiveInventory("BlueArmorForMegasphere",1)
 		TNT1 A 0 A_GiveInventory("MegasphereHealth",1)
@@ -142,13 +163,17 @@ Tag "Radiation Suit"
 	States
 	{
 	Spawn:
-		SUIT A 0 NoDelay ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		SUIT A 1 Bright Light("INVULN")
+	SpawnLoop:
+		"####" "#" 3 Bright Light("INVULN")ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		Goto NormalSpawn
+	AltSpawn:
+		SUIT C 32
+		Goto SpawnLoop
+	NormalSpawn:
 		SUIT A 6 Bright Light("INVULN")
 		SUIT B 6 Light("INVULN")
-		loop
-	AltSpawn:
-		SUIT C -1
-		Stop
+		Goto SpawnLoop
 	}
 }
 
@@ -164,12 +189,16 @@ Tag "Soul Sphere"
 	States
 	{
 	Spawn:
-		SOUL ABC 3 Bright Light("SOULSPHERE")
-		SOUL DCB 3 Bright Light("SOULSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
-		Loop
+		SOUL A 1 Bright Light("SOULSPHERE")
+	SpawnLoop:
+		"####" "#" 3 Bright Light("SOULSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
+		Goto NormalSpawn
 	AlphaSpawn:
 		2OUL ABCDCB 3 Bright Light("SOULSPHERE")
-		Loop
+		Goto SpawnLoop
+	NormalSpawn:
+		SOUL ABCDCB 3 Bright Light("SOULSPHERE")
+		Goto SpawnLoop
 	Pickup:
 		TNT1 A 0 A_GiveInventory("SoulSphere",1)
 		TNT1 A 0 A_TakeInventory("Stamina",0)
@@ -188,7 +217,6 @@ Tag "Stimpack"
 	SpawnLoop:
 		"####" "#" 3 ACS_NamedExecuteAlways("CensoredHealing_ACS")
 		"####" "#" 3 ACS_NamedExecuteAlways("AlphaPickupACS")
-		"####" "#" 32
 		Goto NormalSpawn
 	CensoredSpawn:
 		STIM B 32
@@ -216,7 +244,6 @@ Tag "Medikit"
 	SpawnLoop:
 		"####" "#" 3 ACS_NamedExecuteAlways("CensoredHealing_ACS")
 		"####" "#" 3 ACS_NamedExecuteAlways("AlphaPickupACS")
-		"####" "#" 32
 		Goto NormalSpawn
 	CensoredSpawn:
 		MEDI B 32
@@ -366,55 +393,108 @@ Tag "Backpack with Flashlight and Pistol Silencer"
 	}
 }
 
+Actor 64Clip : Clip Replaces Clip
+{
+Scale 0.82
+Inventory.PickupSound "IPICK"
+Tag "Bullet Magazine"
+	states
+	{
+	Spawn:
+		CLIP A 1
+		CLIP A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		CLIP A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
+	SpawnNormal:
+		CLIP A -1
+		Stop
+	AlternativeSprite:
+		TNT1 A 0 A_Jump(128,"SpawnNormal","SpawnAlt2")
+	SpawnAlt:
+		CLP1 A -1
+		Stop
+	SpawnAlt2:
+		CLP2 A -1
+		Stop
+	AlphaSpawn:
+		CLIP B -1
+		Stop
+	}
+}
+
+Actor 64Shell : Shell Replaces Shell
+{
+Scale 0.82
+Inventory.PickupSound "IPICK"
+Tag "Shotgun Shells"
+	states
+	{
+	Spawn:
+		SHEL A 1
+		SHEL A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		SHEL A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
+	SpawnNormal:
+		SHEL A -1
+		Stop
+	AlternativeSprite:
+		TNT1 A 0 A_Jump(128,"SpawnNormal","SpawnAlt2")
+	SpawnAlt:
+		SHL2 A -1
+		Stop
+	SpawnAlt2:
+		SHL3 A -1
+		Stop
+	AlphaSpawn:
+		SHEL B -1
+		Stop
+	}
+}
+
+Actor 64RocketAmmo : RocketAmmo Replaces RocketAmmo
+{
+Scale 0.82
+Inventory.PickupSound "IPICK"
+Tag "Rocket Shell"
+	states
+	{
+	Spawn:
+		ROCK A 1
+		ROCK A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		ROCK A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
+	SpawnNormal:
+		ROCK A -1
+		Stop
+	AlternativeSprite:
+		TNT1 A 0 A_Jump(128,"SpawnNormal")
+	SpawnAlt:
+		RCK2 A -1
+		Stop
+	AlphaSpawn:
+		ROCK B -1
+		Stop
+	}
+}
+
 Actor 64Cell : Cell Replaces Cell
 {
 Scale 0.82
 Inventory.PickupSound "IPICK"
+Tag "Energy Cell"
 	states
 	{
 	Spawn:
-		TNT1 A 0
-		CELL A 0 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		CELL A 2 
-		TNT1 A 0 A_Jump(128,"SPAWN2","SPAWN3")
-	Spawn1:	
+		CELL A 1
+		CELL A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+	SpawnNormal:
 		CELL A -1
 		Stop
-	Spawn2:
-		TNT1 A 0 A_Jump(128,"SPAWN3")
+	AlternativeSprite:
+		TNT1 A 0 A_Jump(128,"SpawnNormal","SpawnAlt2")
+	SpawnAlt:
 		CEL2 A -1
 		Stop
-	Spawn3:
+	SpawnAlt2:
 		CEL3 ABCDEFGHIJ 2
 		Loop
-	}
-}
-
-Actor 64CellPack : CellPack Replaces CellPack
-{
-Scale 0.82
-Inventory.PickupSound "IPICK"
-Tag "Cell Pack"
-	states
-	{
-	Spawn:
-		CELP A 1
-		CELP A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		CELP A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
-		TNT1 A 0 A_Jump(128,"SPAWN2","Spawn3")
-	Spawn1:	
-		CELP A -1
-		Stop
-	Spawn2:
-		TNT1 A 0 A_Jump(128,"Spawn3")
-		CPK2 A -1
-		Stop
-	Spawn3:	
-		CELP B -1
-		Stop
-	AlphaSpawn:
-		CELP C -1
-		Stop
 	}
 }
 
@@ -424,7 +504,8 @@ Scale 0.82
 	States
 	{
 	Spawn:
-		AMMO AAA 1 A_JumpIf(ACS_NamedExecuteWithResult("CheckPlayerClass")==1,"RandomSpawn")
+		AMMO A 1
+		AMMO AA 1 ACS_NamedExecuteAlways("HighCalibreCheck")
 		Goto SpawnClipBox
 	RandomSpawn:
 		TNT1 A 0 A_Jump(128,"SpawnHighCalibreBox")
@@ -445,14 +526,14 @@ Tag "Bullet Box"
 	states
 	{
 	Spawn:
-		TNT1 A 0
-		AMMO A 0 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		AMMO A 2
-		TNT1 A 0 A_Jump(128,"SPAWN2")
-	Spawn1:	
+		AMMO A 1
+		AMMO A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+	SpawnNormal:
 		AMMO A -1
 		Stop
-	Spawn2:
+	AlternativeSprite:
+		TNT1 A 0 A_Jump(128,"SpawnNormal")
+	SpawnAlt:
 		AMO2 A -1
 		Stop
 	}
@@ -468,34 +549,11 @@ Inventory.MaxAmount 150
 Ammo.BackpackAmount 20
 Ammo.BackpackMaxAmount 300
 Inventory.Icon "HI04X0"
-Tag "High Calibre Ammo Box"
+Tag "High Calibre Bullet Box"
 	states
 	{
 	Spawn:
 		HI04 X -1
-		Stop
-	}
-}
-
-Actor 64RocketAmmo : RocketAmmo Replaces RocketAmmo
-{
-Scale 0.82
-Inventory.PickupSound "IPICK"
-	states
-	{
-	Spawn:
-		ROCK A 1
-		ROCK A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		ROCK A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
-		TNT1 A 0 A_Jump(128,"SPAWN2")
-	Spawn1:	
-		ROCK A -1
-		Stop
-	Spawn2:
-		RCK2 A -1
-		Stop
-	AlphaSpawn:
-		ROCK B -1
 		Stop
 	}
 }
@@ -505,18 +563,19 @@ Actor 64ShellBox : ShellBox Replaces ShellBox
 Scale 0.82
 Inventory.Amount 16
 Inventory.PickupSound "IPICK"
-Tag "Shell Box"
+Tag "Shotgun Shell Box"
 	states
 	{
 	Spawn:
 		SBOX A 1
 		SBOX A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
 		SBOX A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
-		TNT1 A 0 A_Jump(128,"SPAWN2")
-	Spawn1:	
+	SpawnNormal:
 		SBOX A -1
 		Stop
-	Spawn2:
+	AlternativeSprite:
+		TNT1 A 0 A_Jump(128,"SpawnNormal")
+	SpawnAlt:
 		SBX2 A -1
 		Stop
 	AlphaSpawn:
@@ -529,18 +588,47 @@ ACTOR 64Rocketbox : Rocketbox replaces Rocketbox
 {
 Scale 0.82
 Inventory.PickupSound "IPICK"
-Tag "Rocket Crate"
+Tag "Rocket Shell Crate"
 	states
 	{
 	Spawn:
 		BROK A 1
 		BROK A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		TNT1 A 0 A_Jump(128,"SPAWN2")
-	Spawn1:	
+	SpawnNormal:
 		BROK A -1
 		Stop
-	Spawn2:
+	AlternativeSprite:
+		TNT1 A 0 A_Jump(128,"SpawnNormal")
+	SpawnAlt:
 		RBX2 A -1
+		Stop
+	}
+}
+
+Actor 64CellPack : CellPack Replaces CellPack
+{
+Scale 0.82
+Inventory.PickupSound "IPICK"
+Tag "Energy Cell Pack"
+	states
+	{
+	Spawn:
+		CELP A 1
+		CELP A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		CELP A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
+	SpawnNormal:
+		CELP A -1
+		Stop
+	AlternativeSprite:
+		TNT1 A 0 A_Jump(128,"SpawnNormal","SpawnAlt2")
+	SpawnAlt:
+		CPK2 A -1
+		Stop
+	SpawnAlt2:
+		CELP B -1
+		Stop
+	AlphaSpawn:
+		CELP C -1
 		Stop
 	}
 }
@@ -552,12 +640,17 @@ Tag "Computer Area Map"
 	states
 	{
 	Spawn:
-		PMAP ABC 6 Bright Light("HellPotion")
-		PMAP BAD 6 Bright Light("HellPotion") ACS_NamedExecuteAlways("AlphaPickupACS")
-		loop
+		PMAP A 1 Bright Light("HellPotion")
+	SpawnLoop:
+		"####" "#" 3 Bright Light("HellPotion") ACS_NamedExecuteAlways("AlphaPickupACS")
+		Goto SpawnNormal
 	AlphaSpawn:
-		PMAP E -1 Bright Light("ARMORBONUS")
-		Stop
+		PMAP E 32 Bright Light("ARMORBONUS")
+		Goto SpawnLoop
+	SpawnNormal:
+		PMAP ABC 6 Bright Light("HellPotion")
+		PMAP BAD 6 Bright Light("HellPotion")
+		Goto SpawnLoop
 	}
 }
 
@@ -619,69 +712,18 @@ Tag "Night Vision Goggles"
 	States
 	{
 	Spawn:
-		PVIS A 6
-		PVIS B 6 Bright ACS_NamedExecuteAlways("AlphaPickupACS")
-		Loop
+		PVIS A 1
+	SpawnLoop:
+		"####" "#" 3 Bright ACS_NamedExecuteAlways("AlphaPickupACS")
+		Goto SpawnNormal
 	AlphaSpawn:
 		PVI2 A 6
 		PVI2 B 6 Bright
-		Loop
-	}
-}
-
-Actor 64Shell : Shell Replaces Shell
-{
-Scale 0.82
-Inventory.PickupSound "IPICK"
-	states
-	{
-	Spawn:
-		SHEL A 1
-		SHEL A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		SHEL A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
-		TNT1 A 0 A_Jump(128,"SPAWN2","SPAWN3")
-		SHEL A -1
-		Stop
-	AlternativeSprite:
-		TNT1 A 0 A_Jump(128,"SPAWN2","SPAWN3")
-		Loop
-	Spawn2:
-		SHL2 A -1
-		Stop
-	Spawn3:
-		SHL3 A -1
-		Stop
-	AlphaSpawn:
-		SHEL B -1
-		Stop
-	}
-}
-
-Actor 64Clip : Clip Replaces Clip
-{
-Scale 0.82
-Inventory.PickupSound "IPICK"
-	states
-	{
-	Spawn:
-		CLIP A 1
-		CLIP A 3 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		CLIP A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
-		TNT1 A 0 A_Jump(128,"SPAWN2","SPAWN3")
-		CLIP A -1
-		Stop
-	AlternativeSprite:
-		TNT1 A 0 A_Jump(128,"SPAWN2","SPAWN3")
-		Loop
-	Spawn2:
-		CLP1 A -1
-		Stop
-	Spawn3:
-		CLP2 A -1
-		Stop
-	AlphaSpawn:
-		CLIP B -1
-		Stop
+		Goto SpawnLoop
+	SpawnNormal:
+		PVIS A 6
+		PVIS B 6 Bright
+		Goto SpawnLoop
 	}
 }
 
@@ -778,6 +820,65 @@ Tag "Demon Key Teal"
 	}
 }
 
+//OUTCAST UNMAKER POWERUPS
+ACTOR WpnPower4Icon : Inventory
+{
+Inventory.MaxAmount 1
++UNDROPPABLE
+}
+
+ACTOR WpnPower4 : CustomInventory 9908	//GREEN ARTIFACT
+{
+//$category "Game/BD64_Artifacts
+Translation "0:255=%[0,0,0]:[0,1,0]"//Green
+Inventory.Icon POW3E0
+Inventory.PickupMessage "It looks like some sort of key...."
+Inventory.PickupSound "DEMKEYUP"
+Tag "Outcast Demon Key Green"
++COUNTITEM
++FANCYPICKUPSOUND
+-INTERHUBSTRIP
+	States
+	{
+	Spawn:
+		POW3 ABCDEDCB 5 Bright Light("INVULN")
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("WpnPower4Icon",1)
+		TNT1 A 0 HealThing(100,0)
+		Stop
+	}
+}
+
+ACTOR WpnPower5Icon : Inventory
+{
+Inventory.MaxAmount 1
++UNDROPPABLE
+}
+
+ACTOR WpnPower5 : CustomInventory 9909	//RED ARTIFACT
+{
+//$category "Game/BD64_Artifacts
+Translation "0:255=%[0,0,0]:[1,0,0]"//Red
+Inventory.Icon POW3E0
+Inventory.PickupMessage "What is this used for?"
+Inventory.PickupSound "DEMKEYUP"
+Tag "Outcast Demon Key Red"
++COUNTITEM
++FANCYPICKUPSOUND
+-INTERHUBSTRIP
+	States
+	{
+	Spawn:
+		POW3 ABCDEDCB 5 Bright Light("BLURSPHERE")
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("WpnPower5Icon",1)
+		TNT1 A 0 HealThing(100,0)
+		Stop
+	}
+}
+
 Actor 64Scanner : CustomInventory replaces PowerScanner 9967
 {
 //$category "Game/BD64_Artifacts
@@ -792,16 +893,19 @@ Tag "Advanced Area Scanner"
 	States
 	{
 	Spawn:
-		PSCN A 0 NoDelay ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		PSCN A 1
+	SpawnLoop:
+		"####" "#" 3 Bright Light("ARMORBONUS") ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+		Goto SpawnNormal
+	AlternativeSprite:
+		MMAP ABCDCB 6 Bright Light("HealthPotion")
+		Goto SpawnLoop
+	SpawnNormal:
 		PSCN A 15 Bright Light("ARMORBONUS")
 		PSCN BCD 3 Bright Light("ARMORBONUS")
 		PSCN E 15 Bright Light("ARMORBONUS")
 		PSCN DCB 3 Bright Light("ARMORBONUS")
-		loop
-	AlternativeSprite:
-		TNT1 A 0 ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		MMAP ABCDCB 6 Bright Light("HealthPotion")
-		loop
+		Goto SpawnLoop
 	Pickup:
 		TNT1 A 0 A_GiveInventory("PowerScanner",1)
 		TNT1 A 0 A_GiveInventory("AllMap",1)
@@ -913,65 +1017,6 @@ Tag "Yellow Skullkey"
 		Loop
 	Pickup:
 		TNT1 A 0 A_GiveInventory("YellowSkull",1)
-		Stop
-	}
-}
-
-//OUTCAST UNMAKER POWERUPS
-ACTOR WpnPower4Icon : Inventory
-{
-Inventory.MaxAmount 1
-+UNDROPPABLE
-}
-
-ACTOR WpnPower4 : CustomInventory 9908	//GREEN ARTIFACT
-{
-//$category "Game/BD64_Artifacts
-Translation "0:255=%[0,0,0]:[0,1,0]"//Green
-Inventory.Icon POW3E0
-Inventory.PickupMessage "It looks like some sort of key...."
-Inventory.PickupSound "DEMKEYUP"
-Tag "Outcast Demon Key Green"
-+COUNTITEM
-+FANCYPICKUPSOUND
--INTERHUBSTRIP
-	States
-	{
-	Spawn:
-		POW3 ABCDEDCB 5 Bright Light("INVULN")
-		Loop
-	Pickup:
-		TNT1 A 0 A_GiveInventory("WpnPower4Icon",1)
-		TNT1 A 0 HealThing(100,0)
-		Stop
-	}
-}
-
-ACTOR WpnPower5Icon : Inventory
-{
-Inventory.MaxAmount 1
-+UNDROPPABLE
-}
-
-ACTOR WpnPower5 : CustomInventory 9909	//RED ARTIFACT
-{
-//$category "Game/BD64_Artifacts
-Translation "0:255=%[0,0,0]:[1,0,0]"//Red
-Inventory.Icon POW3E0
-Inventory.PickupMessage "What is this used for?"
-Inventory.PickupSound "DEMKEYUP"
-Tag "Outcast Demon Key Red"
-+COUNTITEM
-+FANCYPICKUPSOUND
--INTERHUBSTRIP
-	States
-	{
-	Spawn:
-		POW3 ABCDEDCB 5 Bright Light("BLURSPHERE")
-		Loop
-	Pickup:
-		TNT1 A 0 A_GiveInventory("WpnPower5Icon",1)
-		TNT1 A 0 HealThing(100,0)
 		Stop
 	}
 }
