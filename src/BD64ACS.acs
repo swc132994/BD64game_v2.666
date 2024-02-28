@@ -7,21 +7,21 @@ script "BD64Respawn" Respawn NET
 	//Hud to Doom Style
 	If(!getusercvar(0,"HUDSwitchCvar"))
 	{
-		TakeInventory("HUDSwitch",1);		
+		TakeInventory("HUDSwitch",1);
 	}
 	else
 	{
-		GiveInventory("HUDSwitch",1);		
+		GiveInventory("HUDSwitch",1);
 	}
 
 	//Reloading Mode
 	if(!getcvar("NoReloadCvar"))
 	{
-			TakeInventory("NoReloading",1);
+		TakeInventory("NoReloading",1);
 	}
 	else
 	{
-			GiveInventory("NoReloading",1);	
+		GiveInventory("NoReloading",1);
 	}
 
 	//Classic Weapons mode for Classical Mode
@@ -34,7 +34,7 @@ script "BD64Respawn" Respawn NET
 
 	//Classic Weapons Mode for Tactical and Modern Classes
 	SetInventory("ClassicRLToken",getcvar("ClassicRLCvar"));
-	SetInventory("ClassicChaingunToken",getcvar("ClassicChaingunCvar"));	
+	SetInventory("ClassicChaingunToken",getcvar("ClassicChaingunCvar"));
 	SetInventory("ClassicChainsawToken",getcvar("VanillaChainsawCvar"));
 
 	Delay(1);
@@ -46,7 +46,7 @@ Script "BD64Initilize" Enter
 
 	if(GetPlayerInfo(PlayerNumber(), PLAYERINFO_PLAYERCLASS) == 1 & 2)
 	{
-		
+
 	}
 	else
 	{
@@ -58,13 +58,13 @@ Script "BD64Initilize" Enter
 		TakeInventory("StartWeapon",1);
 		TakeInventory("NeverSelectedPistol",1);
 		TakeInventory("NeverSelectedRifle",1);
-		TakeInventory("NeverSelectedShotgun",1);	
+		TakeInventory("NeverSelectedShotgun",1);
 		TakeInventory("NeverSelectedSSG",1);
 		TakeInventory("NeverSelectedSMG",1);
-		TakeInventory("NeverSelectedRL",1);	
-		TakeInventory("NeverSelectedGauss",1);			
+		TakeInventory("NeverSelectedRL",1);
+		TakeInventory("NeverSelectedGauss",1);
 	}
-	
+
 	//Survival Mode
 	if(GameSkill() == 6)
 	if(PlayerClass(PlayerNumber()) == 0)
@@ -75,8 +75,8 @@ Script "BD64Initilize" Enter
 	if(PlayerClass(PlayerNumber()) == 0)
 		GiveInventory("64PortableFirstAidKit",1);
 	else
-	GiveInventory("64PortableFirstAidKitTACTICAL",1);	
-	
+	GiveInventory("64PortableFirstAidKitTACTICAL",1);
+
 	//Map Checker
 	SetInventory("VmapCheck",GetCvar("VMapCheckCvar"));
 	SetInventory("AbsMapCheck",GetCvar("AbsMapCheckCvar"));
@@ -129,19 +129,19 @@ GiveInventory("WeaponSpecialAction",1);
 }
 
 script "CheckCrouch" ENTER
-{ 
+{
 	int buttons2;
 	while (TRUE)
 	{
 		buttons2 = GetPlayerInput(-1, INPUT_BUTTONS);
-		   
+
 		if ((buttons2 & BT_CROUCH)||(GetActorViewHeight(0) <= PLAYER_VIEWHEIGHT / 2 << 16))
 		{
-			GiveInventory("IsCrouching", 1);
+			GiveInventory("IsCrouching",1);
 			delay(1);
 			restart;
 		}
-		TakeInventory("IsCrouching", 1);
+		TakeInventory("IsCrouching",1);
 		delay(4);
 	}
 }
@@ -156,7 +156,7 @@ script "SetBloodAmountACS" (void)
 {
 	if	(GetCvar("isrunningzandronum") != 0)
 	{
-		switch( GetCvar("bd_bloodamount") )
+		switch(GetCvar("bd_bloodamount"))
 		{
 			Case 0: SetActorState(0,"LowBlood"); break;
 			Case 1: SetActorState(0,"LowBlood"); break;
@@ -164,12 +164,12 @@ script "SetBloodAmountACS" (void)
 			Case 3: SetActorState(0,"LotsOfBlood"); break;
 			Case 4: SetActorState(0,"AbsurdBlood"); break;
 			Default: //at least 5
-			SetActorState(0,"AbsurdBlood"); 
-			GiveInventory("AnimuGore", 1);
+			SetActorState(0,"AbsurdBlood");
+			GiveInventory("AnimuGore",1);
 			break;
 		}
 	}
-	else 
+	else
 	{
 		switch( GetCvar("zdoombrutalblood") )
 		{
@@ -179,8 +179,8 @@ script "SetBloodAmountACS" (void)
 			Case 3: SetActorState(0,"LotsOfBlood"); break;
 			Case 4: SetActorState(0,"AbsurdBlood"); break;
 			Default: //at least 5
-			SetActorState(0,"AbsurdBlood"); 
-			GiveInventory("AnimuGore", 1);
+			SetActorState(0,"AbsurdBlood");
+			GiveInventory("AnimuGore",1);
 			break;
 		}
 	}
@@ -240,12 +240,6 @@ SetActorProperty(0,APROP_Speed,2.0);
 delay (1);
 }
 
-/*script "TacticalPlayerSlowerACS" (void)
-{
-SetActorProperty(0,APROP_Speed,0.9);
-delay (1);
-}*/
-
 script "GaussCannonRandom" (void)
 {
 	if(GetCvar("GaussCannon_Spawner_Cvar") == 1) { SetActorState(0,"SpawnPlasmaRifle"); }
@@ -264,12 +258,12 @@ script "BFGRandom" (void)
 
 script "WpnPowerRandom" (void)
 {
-	if(GetCvar("WpnPower_Spawner_Cvar") == 1) 
-	{ 
-		SetActorState(0,"SpawnBlurSphere"); 
-		SetActorState(0,"SpawnBerserk"); 
-		SetActorState(0,"SpawnSoulSphere"); 
-		SetActorState(0,"SpawnMegaSphere"); 
+	if(GetCvar("WpnPower_Spawner_Cvar") == 1)
+	{
+		SetActorState(0,"SpawnBlurSphere");
+		SetActorState(0,"SpawnBerserk");
+		SetActorState(0,"SpawnSoulSphere");
+		SetActorState(0,"SpawnMegaSphere");
 		SetActorState(0,"SpawnInvulnerabilitySphere");
 	}
 	else
@@ -283,20 +277,20 @@ script "NImpRandom" (void)
 	if(GetCvar("NImp_Spawner_Cvar") == 10) { SetActorState(0,"P10"); }
 	else
 	if(GetCvar("NImp_Spawner_Cvar") == 15) { SetActorState(0,"P15"); }
-	else	
+	else
 	if(GetCvar("NImp_Spawner_Cvar") == 20) { SetActorState(0,"P20"); }
-	else	
+	else
 	if(GetCvar("NImp_Spawner_Cvar") == 25) { SetActorState(0,"P25"); }
-	else	
+	else
 	if(GetCvar("NImp_Spawner_Cvar") == 30) { SetActorState(0,"P30"); }
-	else	
+	else
 	if(GetCvar("NImp_Spawner_Cvar") == 40) { SetActorState(0,"P40"); }
-	else	
-	if(GetCvar("NImp_Spawner_Cvar") == 50) { SetActorState(0,"P50"); }	
+	else
+	if(GetCvar("NImp_Spawner_Cvar") == 50) { SetActorState(0,"P50"); }
 	else
 	if(GetCvar("NImp_Spawner_Cvar") == 1) { SetActorState(0,"SpawnImp"); }
-	else	
-	if(GetCvar("NImp_Spawner_Cvar") == 2) { SetActorState(0,"SpawnNightImp"); }	
+	else
+	if(GetCvar("NImp_Spawner_Cvar") == 2) { SetActorState(0,"SpawnNightImp"); }
 }
 
 script "NSpectreRandom" (void)
@@ -306,38 +300,38 @@ script "NSpectreRandom" (void)
 	if(GetCvar("NSpectre_Spawner_Cvar") == 10) { SetActorState(0,"P10A"); }
 	else
 	if(GetCvar("NSpectre_Spawner_Cvar") == 15) { SetActorState(0,"P15A"); }
-	else	
+	else
 	if(GetCvar("NSpectre_Spawner_Cvar") == 20) { SetActorState(0,"P20A"); }
-	else	
+	else
 	if(GetCvar("NSpectre_Spawner_Cvar") == 25) { SetActorState(0,"P25A"); }
-	else	
+	else
 	if(GetCvar("NSpectre_Spawner_Cvar") == 30) { SetActorState(0,"P30A"); }
-	else	
+	else
 	if(GetCvar("NSpectre_Spawner_Cvar") == 40) { SetActorState(0,"P40A"); }
-	else	
-	if(GetCvar("NSpectre_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }	
+	else
+	if(GetCvar("NSpectre_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }
 	else
 	if(GetCvar("NSpectre_Spawner_Cvar") == 51) { SetActorState(0,"P05B"); }
 	else
 	if(GetCvar("NSpectre_Spawner_Cvar") == 101) { SetActorState(0,"P10B"); }
 	else
 	if(GetCvar("NSpectre_Spawner_Cvar") == 151) { SetActorState(0,"P15B"); }
-	else	
+	else
 	if(GetCvar("NSpectre_Spawner_Cvar") == 201) { SetActorState(0,"P20B"); }
-	else	
+	else
 	if(GetCvar("NSpectre_Spawner_Cvar") == 251) { SetActorState(0,"P25B"); }
-	else	
+	else
 	if(GetCvar("NSpectre_Spawner_Cvar") == 301) { SetActorState(0,"P30B"); }
-	else	
+	else
 	if(GetCvar("NSpectre_Spawner_Cvar") == 401) { SetActorState(0,"P40B"); }
-	else	
+	else
 	if(GetCvar("NSpectre_Spawner_Cvar") == 501) { SetActorState(0,"P50B"); }
 	else
 	if(GetCvar("NSpectre_Spawner_Cvar") == 1) { SetActorState(0,"SpawnSpectre"); }
-	else	
+	else
 	if(GetCvar("NSpectre_Spawner_Cvar") == 2) { SetActorState(0,"SpawnNightSpectre"); }
 	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 3) { SetActorState(0,"SpawnWraith"); }	
+	if(GetCvar("NSpectre_Spawner_Cvar") == 3) { SetActorState(0,"SpawnWraith"); }
 }
 
 script "NCacoRandom" (void)
@@ -347,39 +341,38 @@ script "NCacoRandom" (void)
 	if(GetCvar("NCaco_Spawner_Cvar") == 10) { SetActorState(0,"P10A"); }
 	else
 	if(GetCvar("NCaco_Spawner_Cvar") == 15) { SetActorState(0,"P15A"); }
-	else	
+	else
 	if(GetCvar("NCaco_Spawner_Cvar") == 20) { SetActorState(0,"P20A"); }
-	else	
+	else
 	if(GetCvar("NCaco_Spawner_Cvar") == 25) { SetActorState(0,"P25A"); }
-	else	
+	else
 	if(GetCvar("NCaco_Spawner_Cvar") == 30) { SetActorState(0,"P30A"); }
-	else	
+	else
 	if(GetCvar("NCaco_Spawner_Cvar") == 40) { SetActorState(0,"P40A"); }
-	else	
-	if(GetCvar("NCaco_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }	
+	else
+	if(GetCvar("NCaco_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }
 	else
 	if(GetCvar("NCaco_Spawner_Cvar") == 51) { SetActorState(0,"P05B"); }
 	else
 	if(GetCvar("NCaco_Spawner_Cvar") == 101) { SetActorState(0,"P10B"); }
 	else
 	if(GetCvar("NCaco_Spawner_Cvar") == 151) { SetActorState(0,"P15B"); }
-	else	
+	else
 	if(GetCvar("NCaco_Spawner_Cvar") == 201) { SetActorState(0,"P20B"); }
-	else	
+	else
 	if(GetCvar("NCaco_Spawner_Cvar") == 251) { SetActorState(0,"P25B"); }
-	else	
+	else
 	if(GetCvar("NCaco_Spawner_Cvar") == 301) { SetActorState(0,"P30B"); }
-	else	
+	else
 	if(GetCvar("NCaco_Spawner_Cvar") == 401) { SetActorState(0,"P40B"); }
-	else	
+	else
 	if(GetCvar("NCaco_Spawner_Cvar") == 501) { SetActorState(0,"P50B"); }
 	else
 	if(GetCvar("NCaco_Spawner_Cvar") == 1) { SetActorState(0,"SpawnCacodemon"); }
-	else	
+	else
 	if(GetCvar("NCaco_Spawner_Cvar") == 2) { SetActorState(0,"SpawnNightCacodemon"); }
 	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 3) { SetActorState(0,"SpawnFallen"); }	
-	
+	if(GetCvar("NCaco_Spawner_Cvar") == 3) { SetActorState(0,"SpawnFallen"); }
 }
 
 script "HellHoundRandom" (void)
@@ -389,56 +382,56 @@ script "HellHoundRandom" (void)
 	if(GetCvar("Hellhound_Spawner_Cvar") == 10) { SetActorState(0,"P10A"); }
 	else
 	if(GetCvar("Hellhound_Spawner_Cvar") == 15) { SetActorState(0,"P15A"); }
-	else	
+	else
 	if(GetCvar("Hellhound_Spawner_Cvar") == 20) { SetActorState(0,"P20A"); }
-	else	
+	else
 	if(GetCvar("Hellhound_Spawner_Cvar") == 25) { SetActorState(0,"P25A"); }
-	else	
+	else
 	if(GetCvar("Hellhound_Spawner_Cvar") == 30) { SetActorState(0,"P30A"); }
-	else	
+	else
 	if(GetCvar("Hellhound_Spawner_Cvar") == 40) { SetActorState(0,"P40A"); }
-	else	
-	if(GetCvar("Hellhound_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }	
+	else
+	if(GetCvar("Hellhound_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }
 	else
 	if(GetCvar("Hellhound_Spawner_Cvar") == 51) { SetActorState(0,"P05B"); }
 	else
 	if(GetCvar("Hellhound_Spawner_Cvar") == 101) { SetActorState(0,"P10B"); }
 	else
 	if(GetCvar("Hellhound_Spawner_Cvar") == 151) { SetActorState(0,"P15B"); }
-	else	
+	else
 	if(GetCvar("Hellhound_Spawner_Cvar") == 201) { SetActorState(0,"P20B"); }
-	else	
+	else
 	if(GetCvar("Hellhound_Spawner_Cvar") == 251) { SetActorState(0,"P25B"); }
-	else	
+	else
 	if(GetCvar("Hellhound_Spawner_Cvar") == 301) { SetActorState(0,"P30B"); }
-	else	
+	else
 	if(GetCvar("Hellhound_Spawner_Cvar") == 401) { SetActorState(0,"P40B"); }
-	else	
+	else
 	if(GetCvar("Hellhound_Spawner_Cvar") == 501) { SetActorState(0,"P50B"); }
 	else
 	if(GetCvar("Hellhound_Spawner_Cvar") == 1) { SetActorState(0,"SpawnBaron"); }
 	else
 	if(GetCvar("Hellhound_Spawner_Cvar") == 2) { SetActorState(0,"HoundChooser"); }
 	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 3) { SetActorState(0,"SpawnBelp"); }	
+	if(GetCvar("Hellhound_Spawner_Cvar") == 3) { SetActorState(0,"SpawnBelp"); }
 }
 
 script "AnnihilatorRandom" (void)
-{	
+{
 	if(GetCvar("Annihilator_Spawner_Cvar") == 5) { SetActorState(0,"P05A"); }
 	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 10) { SetActorState(0,"P10A"); }
 	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 15) { SetActorState(0,"P15A"); }
-	else	
+	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 20) { SetActorState(0,"P20A"); }
-	else	
+	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 25) { SetActorState(0,"P25A"); }
-	else	
+	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 30) { SetActorState(0,"P30A"); }
-	else	
+	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 40) { SetActorState(0,"P40A"); }
-	else	
+	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }	
 	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 51) { SetActorState(0,"P05B"); }
@@ -446,22 +439,22 @@ script "AnnihilatorRandom" (void)
 	if(GetCvar("Annihilator_Spawner_Cvar") == 101) { SetActorState(0,"P10B"); }
 	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 151) { SetActorState(0,"P15B"); }
-	else	
+	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 201) { SetActorState(0,"P20B"); }
-	else	
+	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 251) { SetActorState(0,"P25B"); }
-	else	
+	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 301) { SetActorState(0,"P30B"); }
-	else	
+	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 401) { SetActorState(0,"P40B"); }
-	else	
+	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 501) { SetActorState(0,"P50B"); }
 	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 1) { SetActorState(0,"SpawnCyberdemon"); }
 	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 2) { SetActorState(0,"SpawnAnnihilator"); }
 	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 3) { SetActorState(0,"SpawnInfernal"); }	
+	if(GetCvar("Annihilator_Spawner_Cvar") == 3) { SetActorState(0,"SpawnInfernal"); }
 }
 
 script "MotherDemonRandom" (void)
@@ -473,31 +466,31 @@ script "MotherDemonRandom" (void)
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 10) { SetActorState(0,"P10A"); }
 	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 15) { SetActorState(0,"P15A"); }
-	else	
+	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 20) { SetActorState(0,"P20A"); }
-	else	
+	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 25) { SetActorState(0,"P25A"); }
-	else	
+	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 30) { SetActorState(0,"P30A"); }
-	else	
+	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 40) { SetActorState(0,"P40A"); }
-	else	
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }	
+	else
+	if(GetCvar("Motherdemon_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }
 	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 51) { SetActorState(0,"P05B"); }
 	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 101) { SetActorState(0,"P10B"); }
 	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 151) { SetActorState(0,"P15B"); }
-	else	
+	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 201) { SetActorState(0,"P20B"); }
-	else	
+	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 251) { SetActorState(0,"P25B"); }
-	else	
+	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 301) { SetActorState(0,"P30B"); }
-	else	
+	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 401) { SetActorState(0,"P40B"); }
-	else	
+	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 501) { SetActorState(0,"P50B"); }
 	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 52) { SetActorState(0,"P05C"); }
@@ -505,22 +498,22 @@ script "MotherDemonRandom" (void)
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 102) { SetActorState(0,"P10C"); }
 	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 152) { SetActorState(0,"P15C"); }
-	else	
+	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 202) { SetActorState(0,"P20C"); }
-	else	
+	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 252) { SetActorState(0,"P25C"); }
-	else	
+	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 302) { SetActorState(0,"P30C"); }
-	else	
+	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 402) { SetActorState(0,"P40C"); }
-	else	
+	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 502) { SetActorState(0,"P50C"); }	
-	else	
+	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 1) { SetActorState(0,"SpawnMastermind"); }
 	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 2) { SetActorState(0,"SpawnMother"); }
 	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 3) { SetActorState(0,"SpawnEradicator"); }		
+	if(GetCvar("Motherdemon_Spawner_Cvar") == 3) { SetActorState(0,"SpawnEradicator"); }
 }
 
 script "HoundChooserACS" (void)
@@ -536,18 +529,18 @@ script "HoundChooserACS" (void)
 
 script "RevenantChooserACS" (void)
 {
-	if(GetCvar("RevenantChooserCvar") == -1) { SetActorState(0,"D64MonsterOnly"); }	
+	if(GetCvar("RevenantChooserCvar") == -1) { SetActorState(0,"D64MonsterOnly"); }
 	else
-	if(GetCvar("RevenantChooserCvar") == 1) { SetActorState(0,"Revenant"); }	
+	if(GetCvar("RevenantChooserCvar") == 1) { SetActorState(0,"Revenant"); }
 	else
 	if(GetCvar("RevenantChooserCvar") == 2) { SetActorState(0,"TRevenant"); }
 }
 
 script "LightAndFogChecker" (Void)
-{	
-	if(GetCvar("LFog_Cvar") == 1) { SetActorState(0,"NoLight"); SetActorState(0,"NoShaft"); }	
+{
+	if(GetCvar("LFog_Cvar") == 1) { SetActorState(0,"NoLight"); SetActorState(0,"NoShaft"); }
 	else
-	if(GetCvar("LFog_Cvar") == 2) { SetActorState(0,"NoLight"); }	
+	if(GetCvar("LFog_Cvar") == 2) { SetActorState(0,"NoLight"); }
 	else
 	if(GetCvar("LFog_Cvar") == 3) { SetActorState(0,"NoShaft"); }
 }
@@ -591,20 +584,20 @@ script "SSGZombieRandomACS" (void)
 	if(GetCvar("SSGZombieRandom_Cvar") == 10) { SetActorState(0,"P10"); }
 	else
 	if(GetCvar("SSGZombieRandom_Cvar") == 15) { SetActorState(0,"P15"); }
-	else	
+	else
 	if(GetCvar("SSGZombieRandom_Cvar") == 20) { SetActorState(0,"P20"); }
-	else	
+	else
 	if(GetCvar("SSGZombieRandom_Cvar") == 25) { SetActorState(0,"P25"); }
-	else	
+	else
 	if(GetCvar("SSGZombieRandom_Cvar") == 30) { SetActorState(0,"P30"); }
-	else	
+	else
 	if(GetCvar("SSGZombieRandom_Cvar") == 40) { SetActorState(0,"P40"); }
-	else	
-	if(GetCvar("SSGZombieRandom_Cvar") == 50) { SetActorState(0,"P50"); }	
-	else	
-	if(GetCvar("SSGZombieRandom_Cvar") == 1) { SetActorState(0,"SpawnShotgunGuy"); }	
-	else	
-	if(GetCvar("SSGZombieRandom_Cvar") == 2) { SetActorState(0,"SpawnSSGGuy"); }	
+	else
+	if(GetCvar("SSGZombieRandom_Cvar") == 50) { SetActorState(0,"P50"); }
+	else
+	if(GetCvar("SSGZombieRandom_Cvar") == 1) { SetActorState(0,"SpawnShotgunGuy"); }
+	else
+	if(GetCvar("SSGZombieRandom_Cvar") == 2) { SetActorState(0,"SpawnSSGGuy"); }
 }
 
 script "ZMarineRandomACS" (void)
@@ -614,20 +607,20 @@ script "ZMarineRandomACS" (void)
 	if(GetCvar("ZMarineRandom_Cvar") == 10) { SetActorState(0,"P10"); }
 	else
 	if(GetCvar("ZMarineRandom_Cvar") == 15) { SetActorState(0,"P15"); }
-	else	
+	else
 	if(GetCvar("ZMarineRandom_Cvar") == 20) { SetActorState(0,"P20"); }
-	else	
+	else
 	if(GetCvar("ZMarineRandom_Cvar") == 25) { SetActorState(0,"P25"); }
-	else	
+	else
 	if(GetCvar("ZMarineRandom_Cvar") == 30) { SetActorState(0,"P30"); }
-	else	
+	else
 	if(GetCvar("ZMarineRandom_Cvar") == 40) { SetActorState(0,"P40"); }
-	else	
-	if(GetCvar("ZMarineRandom_Cvar") == 50) { SetActorState(0,"P50"); }	
-	else	
-	if(GetCvar("ZMarineRandom_Cvar") == 1) { SetActorState(0,"SpawnZombieMan"); }	
-	else	
-	if(GetCvar("ZMarineRandom_Cvar") == 2) { SetActorState(0,"SpawnZombieMarine"); }		
+	else
+	if(GetCvar("ZMarineRandom_Cvar") == 50) { SetActorState(0,"P50"); }
+	else
+	if(GetCvar("ZMarineRandom_Cvar") == 1) { SetActorState(0,"SpawnZombieMan"); }
+	else
+	if(GetCvar("ZMarineRandom_Cvar") == 2) { SetActorState(0,"SpawnZombieMarine"); }
 }
 
 script "ZombieBFGRandomACS" (void)
@@ -639,20 +632,20 @@ script "ZombieBFGRandomACS" (void)
 	if(GetCvar("ZombieBFGRandom_Cvar") == 10) { SetActorState(0,"P10"); }
 	else
 	if(GetCvar("ZombieBFGRandom_Cvar") == 15) { SetActorState(0,"P15"); }
-	else	
+	else
 	if(GetCvar("ZombieBFGRandom_Cvar") == 20) { SetActorState(0,"P20"); }
-	else	
+	else
 	if(GetCvar("ZombieBFGRandom_Cvar") == 25) { SetActorState(0,"P25"); }
-	else	
+	else
 	if(GetCvar("ZombieBFGRandom_Cvar") == 30) { SetActorState(0,"P30"); }
-	else	
+	else
 	if(GetCvar("ZombieBFGRandom_Cvar") == 40) { SetActorState(0,"P40"); }
-	else	
-	if(GetCvar("ZombieBFGRandom_Cvar") == 50) { SetActorState(0,"P50"); }	
 	else
-	if(GetCvar("ZombieBFGRandom_Cvar") == 1) { SetActorState(0,"SpawnChaingunGuy"); }	
+	if(GetCvar("ZombieBFGRandom_Cvar") == 50) { SetActorState(0,"P50"); }
 	else
-	if(GetCvar("ZombieBFGRandom_Cvar") == 2) { SetActorState(0,"SpawnBFGGuy"); }		
+	if(GetCvar("ZombieBFGRandom_Cvar") == 1) { SetActorState(0,"SpawnChaingunGuy"); }
+	else
+	if(GetCvar("ZombieBFGRandom_Cvar") == 2) { SetActorState(0,"SpawnBFGGuy"); }
 }
 
 script "AcidDemonRandomACS" (void)
@@ -662,34 +655,34 @@ script "AcidDemonRandomACS" (void)
 	if(GetCvar("AcidDemonRandom_Cvar") == 10) { SetActorState(0,"P10A"); }
 	else
 	if(GetCvar("AcidDemonRandom_Cvar") == 15) { SetActorState(0,"P15A"); }
-	else	
+	else
 	if(GetCvar("AcidDemonRandom_Cvar") == 20) { SetActorState(0,"P20A"); }
-	else	
+	else
 	if(GetCvar("AcidDemonRandom_Cvar") == 25) { SetActorState(0,"P25A"); }
-	else	
+	else
 	if(GetCvar("AcidDemonRandom_Cvar") == 30) { SetActorState(0,"P30A"); }
-	else	
+	else
 	if(GetCvar("AcidDemonRandom_Cvar") == 40) { SetActorState(0,"P40A"); }
-	else	
-	if(GetCvar("AcidDemonRandom_Cvar") == 50) { SetActorState(0,"P50A"); }	
+	else
+	if(GetCvar("AcidDemonRandom_Cvar") == 50) { SetActorState(0,"P50A"); }
 	else
 	if(GetCvar("AcidDemonRandom_Cvar") == 51) { SetActorState(0,"P05B"); }
 	else
 	if(GetCvar("AcidDemonRandom_Cvar") == 101) { SetActorState(0,"P10B"); }
 	else
 	if(GetCvar("AcidDemonRandom_Cvar") == 151) { SetActorState(0,"P15B"); }
-	else	
+	else
 	if(GetCvar("AcidDemonRandom_Cvar") == 201) { SetActorState(0,"P20B"); }
-	else	
+	else
 	if(GetCvar("AcidDemonRandom_Cvar") == 251) { SetActorState(0,"P25B"); }
-	else	
+	else
 	if(GetCvar("AcidDemonRandom_Cvar") == 301) { SetActorState(0,"P30B"); }
-	else	
+	else
 	if(GetCvar("AcidDemonRandom_Cvar") == 401) { SetActorState(0,"P40B"); }
-	else	
+	else
 	if(GetCvar("AcidDemonRandom_Cvar") == 501) { SetActorState(0,"P50B"); }
 	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 1) { SetActorState(0,"SpawnDemon"); }	
+	if(GetCvar("AcidDemonRandom_Cvar") == 1) { SetActorState(0,"SpawnDemon"); }
 	else
 	if(GetCvar("AcidDemonRandom_Cvar") == 2) { SetActorState(0,"SpawnAcidDemon"); }
 	else
@@ -709,9 +702,9 @@ Script "AlternativeAmmoPickupSpritesACS" (void)
 {
 	if(getCvar("AlternativeAmmoPickupSpritesCvar") == 1) { SetActorState(0,"Spawn1"); }
 	else
-	if(getCvar("AlternativeAmmoPickupSpritesCvar") == 2) 
-	{ 
-		SetActorState(0,"Spawn2"); 
+	if(getCvar("AlternativeAmmoPickupSpritesCvar") == 2)
+	{
+		SetActorState(0,"Spawn2");
 		SetActorState(0,"AlternativeSprite");
 		SetActorState(0,"AltSpawn");
 	}
@@ -724,34 +717,34 @@ script "StalkerRandomACS" (void)
 	if(GetCvar("StalkerRandom_Cvar") == 10) { SetActorState(0,"P10A"); }
 	else
 	if(GetCvar("StalkerRandom_Cvar") == 15) { SetActorState(0,"P15A"); }
-	else	
+	else
 	if(GetCvar("StalkerRandom_Cvar") == 20) { SetActorState(0,"P20A"); }
-	else	
+	else
 	if(GetCvar("StalkerRandom_Cvar") == 25) { SetActorState(0,"P25A"); }
-	else	
+	else
 	if(GetCvar("StalkerRandom_Cvar") == 30) { SetActorState(0,"P30A"); }
-	else	
+	else
 	if(GetCvar("StalkerRandom_Cvar") == 40) { SetActorState(0,"P40A"); }
-	else	
-	if(GetCvar("StalkerRandom_Cvar") == 50) { SetActorState(0,"P50A"); }	
+	else
+	if(GetCvar("StalkerRandom_Cvar") == 50) { SetActorState(0,"P50A"); }
 	else
 	if(GetCvar("StalkerRandom_Cvar") == 51) { SetActorState(0,"P05B"); }
 	else
 	if(GetCvar("StalkerRandom_Cvar") == 101) { SetActorState(0,"P10B"); }
 	else
 	if(GetCvar("StalkerRandom_Cvar") == 151) { SetActorState(0,"P15B"); }
-	else	
+	else
 	if(GetCvar("StalkerRandom_Cvar") == 201) { SetActorState(0,"P20B"); }
-	else	
+	else
 	if(GetCvar("StalkerRandom_Cvar") == 251) { SetActorState(0,"P25B"); }
-	else	
+	else
 	if(GetCvar("StalkerRandom_Cvar") == 301) { SetActorState(0,"P30B"); }
-	else	
+	else
 	if(GetCvar("StalkerRandom_Cvar") == 401) { SetActorState(0,"P40B"); }
-	else	
+	else
 	if(GetCvar("StalkerRandom_Cvar") == 501) { SetActorState(0,"P50B"); }
 	else
-	if(GetCvar("StalkerRandom_Cvar") == 1) { SetActorState(0,"SpawnLostSoul"); }	
+	if(GetCvar("StalkerRandom_Cvar") == 1) { SetActorState(0,"SpawnLostSoul"); }
 	else
 	if(GetCvar("StalkerRandom_Cvar") == 2) { SetActorState(0,"SpawnStalker"); }
 	else
@@ -769,15 +762,15 @@ script "NightCrawlerRandomACS" (void)
 	if(GetCvar("NightCrawlerRandom_Cvar") == 10) { SetActorState(0,"P10"); }
 	else
 	if(GetCvar("NightCrawlerRandom_Cvar") == 15) { SetActorState(0,"P15"); }
-	else	
+	else
 	if(GetCvar("NightCrawlerRandom_Cvar") == 20) { SetActorState(0,"P20"); }
-	else	
+	else
 	if(GetCvar("NightCrawlerRandom_Cvar") == 25) { SetActorState(0,"P25"); }
-	else	
+	else
 	if(GetCvar("NightCrawlerRandom_Cvar") == 30) { SetActorState(0,"P30"); }
-	else	
+	else
 	if(GetCvar("NightCrawlerRandom_Cvar") == 40) { SetActorState(0,"P40"); }
-	else	
+	else
 	if(GetCvar("NightCrawlerRandom_Cvar") == 50) { SetActorState(0,"P50"); }
 }
 
@@ -790,7 +783,7 @@ script "CensoredHealing_ACS" (void)
 {
 	if(GetCVar("CensoredHealing_Cvar") == 1) { SetActorState(0,"CensoredSpawn"); }
 	else
-	if(GetCVar("CensoredHealing_Cvar") == 2) { SetActorState(0,"BFGStyleSpawn"); }	
+	if(GetCVar("CensoredHealing_Cvar") == 2) { SetActorState(0,"BFGStyleSpawn"); }
 }
 
 script "BruiserRandom_ACS" (void)
@@ -800,20 +793,20 @@ script "BruiserRandom_ACS" (void)
 	if(GetCvar("BruiserRandom_Cvar") == 10) { SetActorState(0,"P10"); }
 	else
 	if(GetCvar("BruiserRandom_Cvar") == 15) { SetActorState(0,"P15"); }
-	else	
+	else
 	if(GetCvar("BruiserRandom_Cvar") == 20) { SetActorState(0,"P20"); }
-	else	
+	else
 	if(GetCvar("BruiserRandom_Cvar") == 25) { SetActorState(0,"P25"); }
-	else	
+	else
 	if(GetCvar("BruiserRandom_Cvar") == 30) { SetActorState(0,"P30"); }
-	else	
+	else
 	if(GetCvar("BruiserRandom_Cvar") == 40) { SetActorState(0,"P40"); }
-	else	
+	else
 	if(GetCvar("BruiserRandom_Cvar") == 50) { SetActorState(0,"P50"); }
-	else	
+	else
 	if(GetCvar("BruiserRandom_Cvar") == 1) { SetActorState(0,"SpawnFatso"); }
 	else
-	if(GetCvar("BruiserRandom_Cvar") == 2) { SetActorState(0,"SpawnBruiser"); }	
+	if(GetCvar("BruiserRandom_Cvar") == 2) { SetActorState(0,"SpawnBruiser"); }
 }
 
 /*
@@ -821,29 +814,29 @@ Script "VanillaChainsawACS" ENTER 	//option to set vanilla chainsaw
 {
 if (CheckInventory("64ChainsawTACTICAL") == 1 && GetCvar("VanillaChainsawCvar") == 1)
 	{
-	SetAmmoCapacity("SawGas",700);
-	GiveInventory("64ChainsawTACTICAL_Classic",1);
-	TakeInventory("64ChainsawTACTICAL",1);
-	TakeInventory("SawGas",100);
-	SetAmmoCapacity("SawGas",600);
+		SetAmmoCapacity("SawGas",700);
+		GiveInventory("64ChainsawTACTICAL_Classic",1);
+		TakeInventory("64ChainsawTACTICAL",1);
+		TakeInventory("SawGas",100);
+		SetAmmoCapacity("SawGas",600);
 	}
 if (CheckInventory("64ChainsawTACTICAL_Classic") == 1 && GetCvar("VanillaChainsawCvar") == 0)
 	{
-	SetAmmoCapacity("SawGas",700);
-	GiveInventory("64ChainsawTACTICAL",1);
-	TakeInventory("64ChainsawTACTICAL_Classic",1);
-	TakeInventory("SawGas",100);
-	SetAmmoCapacity("SawGas",600);
+		SetAmmoCapacity("SawGas",700);
+		GiveInventory("64ChainsawTACTICAL",1);
+		TakeInventory("64ChainsawTACTICAL_Classic",1);
+		TakeInventory("SawGas",100);
+		SetAmmoCapacity("SawGas",600);
 	}
 if (CheckInventory("64ChainsawMODERN") == 1 && GetCvar("VanillaChainsawCvar") == 1)
 	{
-	GiveInventory("64ChainsawMODERN_Classic",1);
-	TakeInventory("64ChainsawMODERN",1);
+		GiveInventory("64ChainsawMODERN_Classic",1);
+		TakeInventory("64ChainsawMODERN",1);
 	}
 if (CheckInventory("64ChainsawMODERN_Classic") == 1 && GetCvar("VanillaChainsawCvar") == 0)
 	{
-	GiveInventory("64ChainsawMODERN",1);
-	TakeInventory("64ChainsawMODERN_Classic",1);
+		GiveInventory("64ChainsawMODERN",1);
+		TakeInventory("64ChainsawMODERN_Classic",1);
 	}
 Delay(40);
 Restart;
@@ -857,15 +850,15 @@ script "KnightmareRandom" (void)
 	if(GetCvar("KnightmareRandomCvar") == 10) { SetActorState(0,"P10"); }
 	else
 	if(GetCvar("KnightmareRandomCvar") == 15) { SetActorState(0,"P15"); }
-	else	
+	else
 	if(GetCvar("KnightmareRandomCvar") == 20) { SetActorState(0,"P20"); }
-	else	
+	else
 	if(GetCvar("KnightmareRandomCvar") == 25) { SetActorState(0,"P25"); }
-	else	
+	else
 	if(GetCvar("KnightmareRandomCvar") == 30) { SetActorState(0,"P30"); }
-	else	
+	else
 	if(GetCvar("KnightmareRandomCvar") == 40) { SetActorState(0,"P40"); }
-	else	
+	else
 	if(GetCvar("KnightmareRandomCvar") == 50) { SetActorState(0,"P50"); }
 	else
 	if(GetCvar("KnightmareRandomCvar") == 1) { SetActorState(0,"SpawnHellKnight"); }
@@ -875,10 +868,10 @@ script "KnightmareRandom" (void)
 
 script "AlphaPickupACS" (void)
 {
-	if(GetCvar("AlphaPickupCvar") == 1) 
-	{ 
-		SetActorState(0,"AlphaSpawn"); //Items
-		SetActorState(0,"StayAlpha"); 	//Barrel
+	if(GetCvar("AlphaPickupCvar") == 1)
+	{
+		SetActorState(0,"AlphaSpawn");	//Items
+		SetActorState(0,"StayAlpha");	//Barrel
 	}
 }
 
@@ -893,7 +886,7 @@ script "AlphaBarrelSee" (void)
 Script "SevereredLimbDeathACS" (void)
 {
 	if(GetCvar("SevereredLimbDeathCvar") == 0)
-	{ 
+	{
 		SetActorState(0,"Death.Head");
 		SetActorState(0,"Death.Heavy");
 		SetActorState(0,"Death");
@@ -907,13 +900,13 @@ Script "WadChecker" (void)
 	else
 	if(GetCvar("BD64_WadCheck") == 2) { SetActorState(0,"Doom64"); }
 	else
-	if(GetCvar("BD64_WadCheck") == 3) { SetActorState(0,"ScytheII"); }	
+	if(GetCvar("BD64_WadCheck") == 3) { SetActorState(0,"ScytheII"); }
 	else
-	if(GetCvar("BD64_WadCheck") == 4) { SetActorState(0,"Bloodstain"); }	
+	if(GetCvar("BD64_WadCheck") == 4) { SetActorState(0,"Bloodstain"); }
 	else
-	if(GetCvar("BD64_WadCheck") == 5) { SetActorState(0,"GoingDown"); }	
+	if(GetCvar("BD64_WadCheck") == 5) { SetActorState(0,"GoingDown"); }
 	else
-	if(GetCvar("BD64_WadCheck") == 6) { SetActorState(0,"DoomZero"); }		
+	if(GetCvar("BD64_WadCheck") == 6) { SetActorState(0,"DoomZero"); }
 }
 
 Script "NightElementalRandom_ACS" (void)
@@ -923,40 +916,40 @@ Script "NightElementalRandom_ACS" (void)
 	if(GetCvar("NightElementalRandomCvar") == 10) { SetActorState(0,"P10"); }
 	else
 	if(GetCvar("NightElementalRandomCvar") == 15) { SetActorState(0,"P15"); }
-	else	
+	else
 	if(GetCvar("NightElementalRandomCvar") == 20) { SetActorState(0,"P20"); }
-	else	
+	else
 	if(GetCvar("NightElementalRandomCvar") == 25) { SetActorState(0,"P25"); }
-	else	
+	else
 	if(GetCvar("NightElementalRandomCvar") == 30) { SetActorState(0,"P30"); }
-	else	
+	else
 	if(GetCvar("NightElementalRandomCvar") == 40) { SetActorState(0,"P40"); }
-	else	
+	else
 	if(GetCvar("NightElementalRandomCvar") == 50) { SetActorState(0,"P50"); }
 	else
 	if(GetCvar("NightElementalRandomCvar") == 1) { SetActorState(0,"SpawnPainElemental"); }
 	else
-	if(GetCvar("NightElementalRandomCvar") == 2) { SetActorState(0,"SpawnNightmareElemental"); }	
+	if(GetCvar("NightElementalRandomCvar") == 2) { SetActorState(0,"SpawnNightmareElemental"); }
 }
 
 Script "FleshWizardRandomACS" (void)
 {
 	if(GetCvar("FleshWizardRandomCvar") == -1) { SetActorState(0,"D64MonsterOnly"); }
-	else	
+	else
 	if(GetCvar("FleshWizardRandomCvar") == 5) { SetActorState(0,"P05A"); }
 	else
 	if(GetCvar("FleshWizardRandomCvar") == 10) { SetActorState(0,"P10A"); }
 	else
 	if(GetCvar("FleshWizardRandomCvar") == 15) { SetActorState(0,"P15A"); }
-	else	
+	else
 	if(GetCvar("FleshWizardRandomCvar") == 20) { SetActorState(0,"P20A"); }
-	else	
+	else
 	if(GetCvar("FleshWizardRandomCvar") == 25) { SetActorState(0,"P25A"); }
-	else	
+	else
 	if(GetCvar("FleshWizardRandomCvar") == 30) { SetActorState(0,"P30A"); }
-	else	
+	else
 	if(GetCvar("FleshWizardRandomCvar") == 40) { SetActorState(0,"P40A"); }
-	else	
+	else
 	if(GetCvar("FleshWizardRandomCvar") == 50) { SetActorState(0,"P50A"); }	
 	else
 	if(GetCvar("FleshWizardRandomCvar") == 51) { SetActorState(0,"P05B"); }
@@ -964,15 +957,15 @@ Script "FleshWizardRandomACS" (void)
 	if(GetCvar("FleshWizardRandomCvar") == 101) { SetActorState(0,"P10B"); }
 	else
 	if(GetCvar("FleshWizardRandomCvar") == 151) { SetActorState(0,"P15B"); }
-	else	
+	else
 	if(GetCvar("FleshWizardRandomCvar") == 201) { SetActorState(0,"P20B"); }
-	else	
+	else
 	if(GetCvar("FleshWizardRandomCvar") == 251) { SetActorState(0,"P25B"); }
-	else	
+	else
 	if(GetCvar("FleshWizardRandomCvar") == 301) { SetActorState(0,"P30B"); }
-	else	
+	else
 	if(GetCvar("FleshWizardRandomCvar") == 401) { SetActorState(0,"P40B"); }
-	else	
+	else
 	if(GetCvar("FleshWizardRandomCvar") == 501) { SetActorState(0,"P50B"); }
 	else
 	if(GetCvar("FleshWizardRandomCvar") == 52) { SetActorState(0,"P05C"); }
@@ -980,16 +973,16 @@ Script "FleshWizardRandomACS" (void)
 	if(GetCvar("FleshWizardRandomCvar") == 102) { SetActorState(0,"P10C"); }
 	else
 	if(GetCvar("FleshWizardRandomCvar") == 152) { SetActorState(0,"P15C"); }
-	else	
+	else
 	if(GetCvar("FleshWizardRandomCvar") == 202) { SetActorState(0,"P20C"); }
-	else	
+	else
 	if(GetCvar("FleshWizardRandomCvar") == 252) { SetActorState(0,"P25C"); }
-	else	
+	else
 	if(GetCvar("FleshWizardRandomCvar") == 302) { SetActorState(0,"P30C"); }
-	else	
+	else
 	if(GetCvar("FleshWizardRandomCvar") == 402) { SetActorState(0,"P40C"); }
-	else	
-	if(GetCvar("FleshWizardRandomCvar") == 502) { SetActorState(0,"P50C"); }	
+	else
+	if(GetCvar("FleshWizardRandomCvar") == 502) { SetActorState(0,"P50C"); }
 	else
 	if(GetCvar("FleshWizardRandomCvar") == 1) { SetActorState(0,"SpawnArchvile"); }
 	else
@@ -1001,8 +994,8 @@ Script "FleshWizardRandomACS" (void)
 script "HordeMultiplier" (void)		//husk zombie multiplier option
 {
 	if(GetCvar("TheHorde_Multiplier_Cvar") == 1) { SetActorState(0,"Disabled"); }
-	else	
-	if(GetCvar("TheHorde_Multiplier_Cvar") == 2) { SetActorState(0,"Hordex1"); }	
+	else
+	if(GetCvar("TheHorde_Multiplier_Cvar") == 2) { SetActorState(0,"Hordex1"); }
 	else
 	if(GetCvar("TheHorde_Multiplier_Cvar") == 3) { SetActorState(0,"Hordex2"); }
 	else
@@ -1013,11 +1006,11 @@ script "HordeMultiplier" (void)		//husk zombie multiplier option
 
 script "BonusRandomACS" (void)
 {
-	if(GetCvar("BonusRandomCvar") == 1) 
-	{ 
-		SetActorState(0,"SpawnHealthBonus"); 
-		SetActorState(0,"SpawnArmorBonus"); 
-	}	
+	if(GetCvar("BonusRandomCvar") == 1)
+	{
+		SetActorState(0,"SpawnHealthBonus");
+		SetActorState(0,"SpawnArmorBonus");
+	}
 	else
 	if(GetCvar("BonusRandomCvar") == 2) { SetActorState(0,"SpawnHellPotion"); }
 }
@@ -1025,11 +1018,11 @@ script "BonusRandomACS" (void)
 script "ThingRandomACS" (void)
 {
 	SetResultValue(GetCVar("ThingRandomCvar"));
-	if(GetCvar("ThingRandomCvar") == 0) 
-	{ 
-		SetActorState(0,"SpawnDeadMarine"); 
-		SetActorState(0,"SpawnGibbedMarine"); 
-		SetActorState(0,"SpawnGibbedMarineExtra"); 
+	if(GetCvar("ThingRandomCvar") == 0)
+	{
+		SetActorState(0,"SpawnDeadMarine");
+		SetActorState(0,"SpawnGibbedMarine");
+		SetActorState(0,"SpawnGibbedMarineExtra");
 	}
 }
 
@@ -1040,8 +1033,8 @@ script "FlashlightCheck" (void)
 
 script "PoltergeistEnablerACS" (void)
 {
-	if(GetCvar("PoltergeistCvar")== 0) 
-	{ 
+	if(GetCvar("PoltergeistCvar")== 0)
+	{
 		SetActorState(0,"SpawnBigTree");
 		SetActorState(0,"SpawnEvilEye");
 		SetActorState(0,"SpawnCandlestick");
@@ -1050,7 +1043,7 @@ script "PoltergeistEnablerACS" (void)
 		SetActorState(0,"SpawnNormalHangmen");
 		SetActorState(0,"SpawnNormalStatue");
 		SetActorState(0,"SpawnNormalFloatingSkull");
-		SetActorState(0,"SpawnTechLamp");		
+		SetActorState(0,"SpawnTechLamp");
 	}
 }
 
@@ -1087,20 +1080,20 @@ script "HordeLeaderRandom" (void)
 	if(GetCvar("NightElementalRandomCvar") == 10) { SetActorState(0,"P10"); }
 	else
 	if(GetCvar("NightElementalRandomCvar") == 15) { SetActorState(0,"P15"); }
-	else	
+	else
 	if(GetCvar("NightElementalRandomCvar") == 20) { SetActorState(0,"P20"); }
-	else	
+	else
 	if(GetCvar("NightElementalRandomCvar") == 25) { SetActorState(0,"P25"); }
-	else	
+	else
 	if(GetCvar("NightElementalRandomCvar") == 30) { SetActorState(0,"P30"); }
-	else	
+	else
 	if(GetCvar("NightElementalRandomCvar") == 40) { SetActorState(0,"P40"); }
-	else	
+	else
 	if(GetCvar("NightElementalRandomCvar") == 50) { SetActorState(0,"P50"); }
 	else
-	if(GetCvar("HordeLeader_Spawner_Cvar") == 1) { SetActorState(0,"SpawnHusk"); }	
+	if(GetCvar("HordeLeader_Spawner_Cvar") == 1) { SetActorState(0,"SpawnHusk"); }
 	else
-	if(GetCvar("HordeLeader_Spawner_Cvar") == 2) { SetActorState(0,"SpawnCarrion"); }		
+	if(GetCvar("HordeLeader_Spawner_Cvar") == 2) { SetActorState(0,"SpawnCarrion"); }
 }
 
 script "ShootableProjectiles" (void) Net
@@ -1110,5 +1103,5 @@ SetResultValue(GetCVar("ShootableProjectilesCVAR"));
 
 script "CacoChooserACS" (void)
 {
-	if(GetCvar("CacoChooserCvar") == 1) { SetActorState(0,"ClassicCacos"); }	
+	if(GetCvar("CacoChooserCvar") == 1) { SetActorState(0,"ClassicCacos"); }
 }

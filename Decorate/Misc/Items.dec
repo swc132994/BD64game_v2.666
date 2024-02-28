@@ -9,7 +9,9 @@ Tag "Berserk Pack"
 	SpawnLoop:
 		"####" "#" 3 ACS_NamedExecuteAlways("CensoredHealing_ACS")
 		"####" "#" 3 ACS_NamedExecuteAlways("AlphaPickupACS")
-		Goto NormalSpawn
+	SpawnNormal:
+		PSTR A 32
+		Goto SpawnLoop
 	CensoredSpawn:
 		PSTR B 32
 		Goto SpawnLoop
@@ -18,9 +20,6 @@ Tag "Berserk Pack"
 		Goto SpawnLoop
 	AlphaSpawn:
 		PSTR D 32
-		Goto SpawnLoop
-	NormalSpawn:
-		PSTR A 32
 		Goto SpawnLoop
 	Pickup:
 		TNT1 A 0 A_SetBlend("ff0000",0.75,70)
@@ -51,14 +50,13 @@ Tag "Green Armour"
 		ARM1 A 1 Light("INVULN")
 	SpawnLoop:
 		"####" "#" 3 Light("INVULN") ACS_NamedExecuteAlways("AlphaPickupACS")
-		Goto SpawnNormal
-	AlphaSpawn:
-		ARM3 A 6 Light("INVULN")
-		ARM3 B 6 Bright Light("INVULN")
-		Goto SpawnLoop
 	SpawnNormal:
 		ARM1 A 6 Light("INVULN")
 		ARM1 B 6 Bright Light("INVULN")
+		Goto SpawnLoop
+	AlphaSpawn:
+		ARM3 A 6 Light("INVULN")
+		ARM3 B 6 Bright Light("INVULN")
 		Goto SpawnLoop
 	}
 }
@@ -74,14 +72,13 @@ Tag "Blue Armour"
 		ARM2 A 1 Light("SOULSPHERE")
 	SpawnLoop:
 		"####" "#" 3 Light("SOULSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
-		Goto SpawnNormal
-	AlphaSpawn:
-		ARM4 A 6 Light("SOULSPHERE")
-		ARM4 B 6 Bright Light("SOULSPHERE")
-		Goto SpawnLoop
 	SpawnNormal:
 		ARM2 A 6 Light("SOULSPHERE")
 		ARM2 B 6 Bright Light("SOULSPHERE")
+		Goto SpawnLoop
+	AlphaSpawn:
+		ARM4 A 6 Light("SOULSPHERE")
+		ARM4 B 6 Bright Light("SOULSPHERE")
 		Goto SpawnLoop
 	}
 }
@@ -98,12 +95,11 @@ Tag "Partial Invisibility Sphere"
 		PINS A 1 Bright Light("BLURSPHERE")
 	SpawnLoop:
 		"####" D 3 Bright Light("BLURSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
-		Goto NormalSpawn
+	SpawnNormal:
+		PINS ABC 3 Bright Light("BLURSPHERE")
+		Goto SpawnLoop
 	AlphaSpawn:
 		PIN2 ABC 3 Bright Light("BLURSPHERE")
-		Goto SpawnLoop
-	NormalSpawn:
-		PINS ABC 3 Bright Light("BLURSPHERE")
 		Goto SpawnLoop
 	}
 }
@@ -119,12 +115,11 @@ Tag "Invulnerability Sphere"
 		PINV A 1 Bright Light("INVULN")
 	SpawnLoop:
 		"####" "#" 3 Bright Light("INVULN") ACS_NamedExecuteAlways("AlphaPickupACS")
-		Goto NormalSpawn
+	SpawnNormal:
+		PINV ABCDCB 6 Bright Light("INVULN")
+		Goto SpawnLoop
 	AlphaSpawn:
 		P1NV ABCDCB 6 Bright Light("INVULN")
-		Goto SpawnLoop
-	NormalSpawn:
-		PINV ABCDCB 6 Bright Light("INVULN")
 		Goto SpawnLoop
 	}
 }
@@ -140,12 +135,11 @@ Tag "Mega Sphere"
 		MEGA A 1 Bright Light("MEGASPHERE")
 	SpawnLoop:
 		"####" "#" 3 Bright Light("MEGASPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
-		Goto NormalSpawn
+	SpawnNormal:
+		MEGA ABCD 6 Bright Light("MEGASPHERE")
+		Goto SpawnLoop
 	AlphaSpawn:
 		MEG1 ABCD 6 Bright Light("MEGASPHERE")
-		Goto SpawnLoop
-	NormalSpawn:
-		MEGA ABCD 6 Bright Light("MEGASPHERE")
 		Goto SpawnLoop
 	Pickup:
 		TNT1 A 0 A_GiveInventory("BlueArmorForMegasphere",1)
@@ -165,14 +159,13 @@ Tag "Radiation Suit"
 	Spawn:
 		SUIT A 1 Bright Light("INVULN")
 	SpawnLoop:
-		"####" "#" 3 Bright Light("INVULN")ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		Goto NormalSpawn
-	AltSpawn:
-		SUIT C 32
-		Goto SpawnLoop
-	NormalSpawn:
+		"####" "#" 3 Bright Light("INVULN") ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+	SpawnNormal:
 		SUIT A 6 Bright Light("INVULN")
 		SUIT B 6 Light("INVULN")
+		Goto SpawnLoop
+	AltSpawn:
+		SUIT C 32
 		Goto SpawnLoop
 	}
 }
@@ -192,12 +185,11 @@ Tag "Soul Sphere"
 		SOUL A 1 Bright Light("SOULSPHERE")
 	SpawnLoop:
 		"####" "#" 3 Bright Light("SOULSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
-		Goto NormalSpawn
+	SpawnNormal:
+		SOUL ABCDCB 3 Bright Light("SOULSPHERE")
+		Goto SpawnLoop
 	AlphaSpawn:
 		2OUL ABCDCB 3 Bright Light("SOULSPHERE")
-		Goto SpawnLoop
-	NormalSpawn:
-		SOUL ABCDCB 3 Bright Light("SOULSPHERE")
 		Goto SpawnLoop
 	Pickup:
 		TNT1 A 0 A_GiveInventory("SoulSphere",1)
@@ -217,7 +209,9 @@ Tag "Stimpack"
 	SpawnLoop:
 		"####" "#" 3 ACS_NamedExecuteAlways("CensoredHealing_ACS")
 		"####" "#" 3 ACS_NamedExecuteAlways("AlphaPickupACS")
-		Goto NormalSpawn
+	SpawnNormal:
+		STIM A 32
+		Goto SpawnLoop
 	CensoredSpawn:
 		STIM B 32
 		Goto SpawnLoop
@@ -226,9 +220,6 @@ Tag "Stimpack"
 		Goto SpawnLoop
 	AlphaSpawn:
 		STIM D 32
-		Goto SpawnLoop
-	NormalSpawn:
-		STIM A 32
 		Goto SpawnLoop
 	}
 }
@@ -244,7 +235,9 @@ Tag "Medikit"
 	SpawnLoop:
 		"####" "#" 3 ACS_NamedExecuteAlways("CensoredHealing_ACS")
 		"####" "#" 3 ACS_NamedExecuteAlways("AlphaPickupACS")
-		Goto NormalSpawn
+	SpawnNormal:
+		MEDI A 32
+		Goto SpawnLoop
 	CensoredSpawn:
 		MEDI B 32
 		Goto SpawnLoop
@@ -253,9 +246,6 @@ Tag "Medikit"
 		Goto SpawnLoop
 	AlphaSpawn:
 		MEDI D 32
-		Goto SpawnLoop
-	NormalSpawn:
-		MEDI A 32
 		Goto SpawnLoop
 	}
 }
@@ -643,13 +633,12 @@ Tag "Computer Area Map"
 		PMAP A 1 Bright Light("HellPotion")
 	SpawnLoop:
 		"####" "#" 3 Bright Light("HellPotion") ACS_NamedExecuteAlways("AlphaPickupACS")
-		Goto SpawnNormal
-	AlphaSpawn:
-		PMAP E 32 Bright Light("ARMORBONUS")
-		Goto SpawnLoop
 	SpawnNormal:
 		PMAP ABC 6 Bright Light("HellPotion")
 		PMAP BAD 6 Bright Light("HellPotion")
+		Goto SpawnLoop
+	AlphaSpawn:
+		PMAP E 32 Bright Light("ARMORBONUS")
 		Goto SpawnLoop
 	}
 }
@@ -715,14 +704,13 @@ Tag "Night Vision Goggles"
 		PVIS A 1
 	SpawnLoop:
 		"####" "#" 3 Bright ACS_NamedExecuteAlways("AlphaPickupACS")
-		Goto SpawnNormal
-	AlphaSpawn:
-		PVI2 A 6
-		PVI2 B 6 Bright
-		Goto SpawnLoop
 	SpawnNormal:
 		PVIS A 6
 		PVIS B 6 Bright
+		Goto SpawnLoop
+	AlphaSpawn:
+		PVI2 A 6
+		PVI2 B 6 Bright
 		Goto SpawnLoop
 	}
 }
@@ -896,15 +884,14 @@ Tag "Advanced Area Scanner"
 		PSCN A 1
 	SpawnLoop:
 		"####" "#" 3 Bright Light("ARMORBONUS") ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-		Goto SpawnNormal
-	AlternativeSprite:
-		MMAP ABCDCB 6 Bright Light("HealthPotion")
-		Goto SpawnLoop
 	SpawnNormal:
 		PSCN A 15 Bright Light("ARMORBONUS")
 		PSCN BCD 3 Bright Light("ARMORBONUS")
 		PSCN E 15 Bright Light("ARMORBONUS")
 		PSCN DCB 3 Bright Light("ARMORBONUS")
+		Goto SpawnLoop
+	AlternativeSprite:
+		MMAP ABCDCB 6 Bright Light("HealthPotion")
 		Goto SpawnLoop
 	Pickup:
 		TNT1 A 0 A_GiveInventory("PowerScanner",1)

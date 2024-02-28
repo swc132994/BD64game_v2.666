@@ -1,4 +1,4 @@
-Actor BD64_GaussCannonSpawner : CustomInventory	19134	//spawned from randomspawners
+Actor GaussCannonSpawner : CustomInventory	19134	//spawned from randomspawners
 {
 //$category "Game/BD64_Weapons
 Scale 0.9
@@ -17,16 +17,16 @@ Inventory.PickupSound "WPICK"
 	Pickup:
 		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
 		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
-		TNT1 A 0 A_GiveInventory("BD64_GaussCannon",1)
+		TNT1 A 0 A_GiveInventory("64GaussCannon",1)
 		Stop
 	Pickup2:
-		TNT1 A 0 A_GiveInventory("BD64_GaussCannonTACTICAL",1)
+		TNT1 A 0 A_GiveInventory("64GaussCannonTACTICAL",1)
 		Stop
 	DMSpawn:
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",1)
 		TNT1 A 0 A_SpawnItemEx("TeleportationFog")
-		TNT1 A 0 A_SpawnItemEx("BD64_GaussCannon")
-		TNT1 A 0 A_SpawnItemEx("BD64_GaussCannonTACTICAL")
+		TNT1 A 0 A_SpawnItemEx("64GaussCannon")
+		TNT1 A 0 A_SpawnItemEx("64GaussCannonTACTICAL")
 		TNT1 A 1050
 		Loop
 	}
@@ -37,7 +37,7 @@ ACTOR GaussScopeLightAmp : PowerLightAmp
 Powerup.Duration 2147483647
 }
 
-ACTOR BD64_GaussCannon : DoomWeapon
+ACTOR 64GaussCannon : DoomWeapon
 {
 Scale 0.9
 Weapon.SlotNumber 6
@@ -105,7 +105,7 @@ Inventory.Icon "GCPCA0"
 +IGNORESKILL
 }
 
-ACTOR BD64_GaussCannonTACTICAL : Brutal64Weapon
+ACTOR 64GaussCannonTACTICAL : Brutal64Weapon
 {
 Scale 0.9
 Weapon.SlotNumber 6
@@ -185,11 +185,11 @@ Decal BigScorch
 		GCRL E 1 Offset(91, 73)
 		GCRL E 1 Offset(51, 55)
 		GCRL E 1 Offset(15, 37)
-		GCRL E 1 Offset(4, 33)		
+		GCRL E 1 Offset(4, 33)
 		GCRL E 10
 		GCBL AABBCCDEFGHIJK 1
 		TNT1 A 0 A_PlaySound("RAILMAG2",CHAN_WEAPON)
-		GCBL LLMNOPQRS 1	
+		GCBL LLMNOPQRS 1
 		Goto Ready
 	Select:
 		TNT1 A 0 A_JumpIfInventory("NeverSelectedGauss",1,"WarmUp")
