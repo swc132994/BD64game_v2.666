@@ -310,6 +310,14 @@ Intermission Doom2Cast
 	}
 	Cast
 	{
+		CastClass = "D64PestilenceCast"
+		CastName = "Pestilence"
+		AttackSound = "Missile",1,"Pestilence/attack"
+		AttackSound = "Melee",1,"Pestilence/Swing"
+		AttackSound = "Melee",3,"Pestilence/melee"
+	}
+	Cast
+	{
 		CastClass = "D64FatsoCast"
 		CastName = "Mancubus"
 		AttackSound = "Missile",1,"fatso/attack"

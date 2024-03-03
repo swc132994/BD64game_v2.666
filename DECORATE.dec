@@ -78,6 +78,7 @@
 #INCLUDE "Decorate/Monsters/Fallen.dec"
 #INCLUDE "Decorate/Monsters/Infernal.dec"
 #INCLUDE "Decorate/Monsters/Carrion.dec"
+#INCLUDE "Decorate/Monsters/Pestilence.dec"
 
 //RANDOM SPAWNERS, CAST CALL & DROPABLES
 #INCLUDE "Decorate/Misc/RandomSpawners.dec"

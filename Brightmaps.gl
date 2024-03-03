@@ -595,6 +595,7 @@ brightmap sprite REVNI1		{map "brightmaps/REVNI1_BR.png"}
 brightmap sprite REVNI2I8	{map "brightmaps/REVNI2I8_BR.png"}
 brightmap sprite REVNI3I7	{map "brightmaps/REVNI3I7_BR.png"}
 brightmap sprite REVNJ3J7	{map "brightmaps/REVNJ3J7_BR.png"}
+
 brightmap sprite RND2A0		{map "brightmaps/RND2A0_BR.png"}
 brightmap sprite RND2B0		{map "brightmaps/RND2B0_BR.png"}
 brightmap sprite RND2C0		{map "brightmaps/RND2C0_BR.png"}
@@ -604,6 +605,7 @@ brightmap sprite RND2D0		{map "brightmaps/RND2D0_BR.png"}
 brightmap sprite RVNCA0		{map "brightmaps/RVNCA0_BR.png"}
 brightmap sprite RVNCB0		{map "brightmaps/RVNCB0_BR.png"}
 brightmap sprite RVNCC0		{map "brightmaps/RVNCC0_BR.png"}
+
 brightmap sprite SKELA1		{map "brightmaps/SKELA1_BR.png"}
 brightmap sprite SKELA2		{map "brightmaps/SKELA2_BR.png"}
 brightmap sprite SKELA3		{map "brightmaps/SKELA3_BR.png"}
@@ -646,6 +648,7 @@ brightmap sprite SKELL6		{map "brightmaps/SKELL6_BR.png"}
 brightmap sprite SKELL7		{map "brightmaps/SKELL7_BR.png"}
 brightmap sprite SKELL8		{map "brightmaps/SKELL8_BR.png"}
 brightmap sprite SKELN0		{map "brightmaps/SKELN0_BR.png"}
+
 brightmap sprite SND1A1		{map "brightmaps/SND1A1_BR.png"}
 brightmap sprite SND1A2A8	{map "brightmaps/SND1A2A8_BR.png"}
 brightmap sprite SND1A3A7	{map "brightmaps/SND1A3A7_BR.png"}
@@ -654,6 +657,63 @@ brightmap sprite SND1B2B8	{map "brightmaps/SND1B2B8_BR.png"}
 brightmap sprite SND1B3B7	{map "brightmaps/SND1B3B7_BR.png"}
 brightmap sprite SND2B0		{map "brightmaps/SND2B0_BR.png"}
 brightmap sprite SND2D0		{map "brightmaps/SND2D0_BR.png"}
+
+//Pestilence
+brightmap sprite PSLCA0		{map "brightmaps/RVNCA0_BR.png"}
+brightmap sprite PSLCB0		{map "brightmaps/RVNCB0_BR.png"}
+brightmap sprite PSLCC0		{map "brightmaps/RVNCC0_BR.png"}
+
+brightmap sprite GHULA1		{map "brightmaps/SKELA1_BR.png"}
+brightmap sprite GHULA2		{map "brightmaps/SKELA2_BR.png"}
+brightmap sprite GHULA3		{map "brightmaps/SKELA3_BR.png"}
+brightmap sprite GHULB1		{map "brightmaps/SKELB1_BR.png"}
+brightmap sprite GHULB2		{map "brightmaps/SKELB2_BR.png"}
+brightmap sprite GHULB3		{map "brightmaps/SKELB3_BR.png"}
+brightmap sprite GHULB8		{map "brightmaps/SKELB8_BR.png"}
+brightmap sprite GHULC1		{map "brightmaps/SKELC1_BR.png"}
+brightmap sprite GHULC2		{map "brightmaps/SKELC2_BR.png"}
+brightmap sprite GHULC3		{map "brightmaps/SKELC3_BR.png"}
+brightmap sprite GHULC8		{map "brightmaps/SKELC8_BR.png"}
+brightmap sprite GHULD1		{map "brightmaps/SKELD1_BR.png"}
+brightmap sprite GHULD2		{map "brightmaps/SKELD2_BR.png"}
+brightmap sprite GHULD7		{map "brightmaps/SKELD7_BR.png"}
+brightmap sprite GHULD8		{map "brightmaps/SKELD8_BR.png"}
+brightmap sprite GHULE1		{map "brightmaps/SKELE1_BR.png"}
+brightmap sprite GHULE2		{map "brightmaps/SKELE2_BR.png"}
+brightmap sprite GHULE7		{map "brightmaps/SKELE7_BR.png"}
+brightmap sprite GHULE8		{map "brightmaps/SKELE8_BR.png"}
+brightmap sprite GHULF1		{map "brightmaps/SKELF1_BR.png"}
+brightmap sprite GHULF2		{map "brightmaps/SKELF2_BR.png"}
+brightmap sprite GHULF7		{map "brightmaps/SKELF7_BR.png"}
+brightmap sprite GHULF8		{map "brightmaps/SKELF8_BR.png"}
+brightmap sprite GHULG1		{map "brightmaps/SKELG1_BR.png"}
+brightmap sprite GHULG7		{map "brightmaps/SKELG7_BR.png"}
+brightmap sprite GHULG8		{map "brightmaps/SKELG8_BR.png"}
+brightmap sprite GHULH1		{map "brightmaps/SKELH1_BR.png"}
+brightmap sprite GHULH2		{map "brightmaps/SKELH2_BR.png"}
+brightmap sprite GHULH3		{map "brightmaps/SKELH3_BR.png"}
+brightmap sprite GHULH7		{map "brightmaps/SKELH7_BR.png"}
+brightmap sprite GHULH8		{map "brightmaps/SKELH8_BR.png"}
+brightmap sprite GHULI1		{map "brightmaps/SKELI1_BR.png"}
+brightmap sprite GHULI2		{map "brightmaps/SKELI2_BR.png"}
+brightmap sprite GHULI3		{map "brightmaps/SKELI3_BR.png"}
+brightmap sprite GHULI8		{map "brightmaps/SKELI8_BR.png"}
+brightmap sprite GHULK1		{map "brightmaps/SKELK1_BR.png"}
+brightmap sprite GHULK2		{map "brightmaps/SKELK2_BR.png"}
+brightmap sprite GHULK8		{map "brightmaps/SKELK8_BR.png"}
+brightmap sprite GHULL6		{map "brightmaps/SKELL6_BR.png"}
+brightmap sprite GHULL7		{map "brightmaps/SKELL7_BR.png"}
+brightmap sprite GHULL8		{map "brightmaps/SKELL8_BR.png"}
+brightmap sprite GHULN0		{map "brightmaps/SKELN0_BR.png"}
+
+brightmap sprite GHD1A1		{map "brightmaps/SND1A1_BR.png"}
+brightmap sprite GHD1A2A8	{map "brightmaps/SND1A2A8_BR.png"}
+brightmap sprite GHD1A3A7	{map "brightmaps/SND1A3A7_BR.png"}
+brightmap sprite GHD1B1		{map "brightmaps/SND1B1_BR.png"}
+brightmap sprite GHD1B2B8	{map "brightmaps/SND1B2B8_BR.png"}
+brightmap sprite GHD1B3B7	{map "brightmaps/SND1B3B7_BR.png"}
+brightmap sprite GHD2B0		{map "brightmaps/SND2B0_BR.png"}
+brightmap sprite GHD2D0		{map "brightmaps/SND2D0_BR.png"}
 
 //BARON OF HELL
 brightmap sprite BOSSA1		{map "brightmaps/BOS2A1B.png"}

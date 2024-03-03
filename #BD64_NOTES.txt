@@ -77,6 +77,7 @@ HellStorm			19132
 Fallen				19133
 Infernal			19135
 Carrion				19136
+Pestilence			19137
 
 Gauss Cannon spawn	19134
 MP40 SPAWNER		19124
@@ -108,6 +109,7 @@ Laser Mine (unused) - Sprite rework by Craneo, Animations extra sprites and deco
 Proxy Mine (Tactical & Modern) - CaptJ and Apocalyptic Studios, edited by Craneo and IDDQD_1337.
 Chaingun (tactical & Modern) - Doomer Blazkowicz (sprite rework), IDDQD_1337 (Animation), taken from Sgt Mark IV's BD Chaingun.
 Unmaker (tactical/modern) edits - Frankensprites and sounds by DoomerBlazcowicz. Muzzle flashes by BigStronk. Animations by IDDQD_1337.
+BFG9000 Alt Attack - Sprite Edit: Gothic, D3athStalker - Idea Base: Chronoseth, BFG from Doom press release beta - Sounds by - D3athStalker, New Sprites by - I'M
 
 New weapon kicking and slide kicking animations by IDDQD_1337
 
@@ -166,6 +168,15 @@ Monsters:
 	Sprite Credits: Midway, DrDoctor, DrPyspy, Craneo
 	Sound Credits: Midway, HorrorMovieRei
 	Code Credits: swc132994, Sgt_Mark_IV
+
+//64Pestilence
+	Submitted: DBJ87
+	Decorate: DBJ87, MagicWazard
+	GLDefs: DBJ87, MagicWazard
+	Sounds: Kalisto Entertainment, id Software, IMX, Raven Software
+	Projectile Sprites: id Software, Raven Software, IMX, DBJ87, MagicWazard
+	Monster Sprites: DrPyspy
+	Edited for BD64 by Craneo
 
 //64Butcher by Craneo
 	Code: Bouncy, Graf Zahl, Ganbare-Lucifer, heavily edited for BD64 by Craneo

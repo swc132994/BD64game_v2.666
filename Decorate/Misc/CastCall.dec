@@ -689,6 +689,29 @@ YScale 1.0
 	}
 }
 
+actor D64PestilenceCast : 64Pestilence
+{
+XScale 1.0
+YScale 1.0
+	States
+	{
+	See:
+		GHUL AABBCCDDEEFF 4
+		Loop
+	Melee:
+		GHUL GHI 6
+		Goto See
+	Missile:
+		GHUL J 12 BRIGHT
+		GHUL K 6
+		Goto See
+	Death:
+		GHUL LMNOP 6
+		GHUL Q -1
+		Stop
+	}
+}
+
 actor D64FatsoCast : 64Fatso
 {
 XScale 1.0

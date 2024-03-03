@@ -665,6 +665,16 @@ Carrion/Detonate		CARRIDET
 scorpion/pain			64keenpn
 scorpion/death			64keendt
 
+//Pestilence
+Pestilence/Sight		PSTSEE
+Pestilence/Pain			PSTPAIN
+Pestilence/active		PSTACT
+Pestilence/Death		PSTDIE
+Pestilence/melee		GHOULPUN
+Pestilence/Swing		GHOULSWN
+Pestilence/attack		GBALLFLY
+Pestilence/tracex		GBALLEXP
+
 //Anomaly Events
 $random polt/see
 	{

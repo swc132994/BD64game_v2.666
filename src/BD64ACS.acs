@@ -527,6 +527,31 @@ script "HoundChooserACS" (void)
 	if(GetCvar("HoundChooserCvar") == 3) { SetActorState(0,"HoundGEC"); }
 }
 
+script "RevenantRandomACS" (void)
+{
+	if(GetCvar("Revenant_Spawner_Cvar") == 0) { SetActorState(0,"D64MonsterOnly"); }
+	else
+	if(GetCvar("Revenant_Spawner_Cvar") == 5) { SetActorState(0,"P05"); }
+	else
+	if(GetCvar("Revenant_Spawner_Cvar") == 10) { SetActorState(0,"P10"); }
+	else
+	if(GetCvar("Revenant_Spawner_Cvar") == 15) { SetActorState(0,"P15"); }
+	else
+	if(GetCvar("Revenant_Spawner_Cvar") == 20) { SetActorState(0,"P20"); }
+	else
+	if(GetCvar("Revenant_Spawner_Cvar") == 25) { SetActorState(0,"P25"); }
+	else
+	if(GetCvar("Revenant_Spawner_Cvar") == 30) { SetActorState(0,"P30"); }
+	else
+	if(GetCvar("Revenant_Spawner_Cvar") == 40) { SetActorState(0,"P40"); }
+	else
+	if(GetCvar("Revenant_Spawner_Cvar") == 50) { SetActorState(0,"P50"); }
+	else
+	if(GetCvar("Revenant_Spawner_Cvar") == 1) { SetActorState(0,"RevenantChooser"); }
+	else
+	if(GetCvar("Revenant_Spawner_Cvar") == 2) { SetActorState(0,"SpawnPestilence"); }
+}
+
 script "RevenantChooserACS" (void)
 {
 	if(GetCvar("RevenantChooserCvar") == -1) { SetActorState(0,"D64MonsterOnly"); }

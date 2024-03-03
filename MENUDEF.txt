@@ -162,6 +162,8 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner"
 		StaticText ""
 	Option "HellKnight Spawner  =","KnightmareRandomCvar","Knightmare_Spawner_Value"
 		StaticText ""
+	Option "Revenant Spawner  =","Revenant_Spawner_Cvar","Revenant_Spawner_Value"
+		StaticText ""
 	Option "Baron Spawner  =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"
 		StaticText ""
 	Option "Mancubus Spawner  =","BruiserRandom_Cvar","Bruiser_Spawner_Value"
@@ -455,7 +457,7 @@ OptionValue "Stalker_Spawner_Value"
 	501,"Lost Soul/Stalker (50%)"
 	1,"Lost Soul"
 	2,"Stalker"
-	3,"Forgotten One"	
+	3,"Forgotten One"
 }
 
 OptionValue "Hellhound_Spawner_Value"
@@ -564,6 +566,21 @@ OptionValue "NImp_Spawner_Value"
 	2,"N'mare Imp"
 }
 
+OptionValue "Revenant_Spawner_Value"
+{
+	0,"Disabled"
+	5,"Random (5%)"
+	10,"Random (10%)"
+	15,"Random (15%)"
+	20,"Random (20%)"
+	25,"Random (25%)"
+	30,"Random (30%)"
+	40,"Random (40%)"
+	50,"Random (50%)"
+	1,"Revenant"
+	2,"Pestilence"
+}
+
 OptionValue "NightElemental_Spawner_Value"
 {
 	5,"Random (5%)"
@@ -664,7 +681,7 @@ OptionValue "HordeLeader_Spawner_Value"
 	40,"Random (40%)"
 	50,"Random (50%)"
 	1,"Husk"
-	2,"Carrion"	
+	2,"Carrion"
 }
 
 OptionValue "TheHorde_Multiplier_Value"		//Husk zombie

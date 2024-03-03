@@ -1487,6 +1487,16 @@ object 64StalkerShot2
 	frame MBALH {light TRACER_X3}
 }
 
+//Pestilence
+flickerlight2 PestiFire
+{
+	color 0.3 1.0 0.4
+	size 56
+	secondarySize 64
+	interval 1
+	offset 0 40 0
+}
+
 //ArchVile Fire
 flickerlight ARCHFIRE1
 {

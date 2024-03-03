@@ -26,6 +26,7 @@ server int AbsMapCheckCvar = 0;				//to access vanilla map28
 server int VWeaponCvar = 0;					//vanilla weapon animation for classical class
 server int HoundChooserCvar = 1;			//choose hellhound variant
 server int RevenantChooserCvar = 1;			//choose revenant variant
+server int Revenant_Spawner_Cvar = 1;		//Spawn Pestilence
 server int SSGZombieRandom_Cvar = 1;		//ssg zombie replaces shotgun zombie
 server int ZMarineRandom_Cvar = 1;			//zombie marine replaces zombieman
 server int ZombieBFGRandom_Cvar = 1;		//bfg zombie replaces chaingunguy
