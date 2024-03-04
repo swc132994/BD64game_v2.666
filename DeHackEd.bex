@@ -1,9 +1,9 @@
 [STRINGS]
 
-GOTARMOR = You pick up the armor.
-GOTMEGA = You got the Mega Armor!
+GOTARMOR = You pick up the armour.
+GOTMEGA = You got the Mega Armour!
 GOTHTHBONUS = You pick up a health bonus.
-GOTARMBONUS = You pick up an armor bonus.
+GOTARMBONUS = You pick up an armour bonus.
 GOTSTIM = You pick up a stimpack.
 GOTMEDINEED = You pick up a medikit that you REALLY need!
 GOTMEDIKIT = You pick up a medikit.

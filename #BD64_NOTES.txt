@@ -271,7 +271,7 @@ Edits by (Craneo)
 
 //ITEMS
 //Manual Healing Kit
-	MDKI- and M2KI- originally by  GhostKillahZero, FireHusky and PillowBlaster, animation parts taken from IDDQD_1337
+	MDKI- and M2KI- originally by GhostKillahZero, FireHusky and PillowBlaster, animation parts taken from IDDQD_1337
 	WMEDP0 originally by TypicalSF
 	sounds from L4D2 and Doom 3
 	Special thanks to Empyre for coding help
@@ -289,6 +289,8 @@ BFG - pickup sprite
 Rocket Launcher - pickup sprite
 Key pickup sprites
 Backpack pickup sprites
+
+Doom64 Alpha Item, power-up and gore prop sprites by Midway
 
 Add-ons:
 BD64HUD_Ashton (Paladin-julio (ModDB) Plus Craneo edits to icons)

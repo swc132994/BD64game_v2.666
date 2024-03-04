@@ -5,8 +5,8 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		PLAY M 1
-		PLAY M 3 ACS_NamedExecuteAlways("ThingRandomACS")
+		PLAY M 0
+		TNT1 A 3 ACS_NamedExecuteAlways("ThingRandomACS")
 		TNT1 A 0 A_Jump(32,"SpawnThing")//12.5%
 	SpawnDeadMarine:
 		TNT1 A 0 A_SpawnItemEx("64DeadMarine",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -24,8 +24,8 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		PLAY V 1
-		PLAY V 3 ACS_NamedExecuteAlways("ThingRandomACS")
+		PLAY V 0
+		TNT1 A 3 ACS_NamedExecuteAlways("ThingRandomACS")
 		TNT1 A 0 A_Jump(32,"SpawnThing")//12.5%
 	SpawnGibbedMarine:
 		TNT1 A 0 A_SpawnItemEx("64GibbedMarine",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -43,8 +43,8 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		CPOG B 1
-		CPOG B 3 ACS_NamedExecuteAlways("ThingRandomACS")
+		CPOG B 0
+		TNT1 A 3 ACS_NamedExecuteAlways("ThingRandomACS")
 		TNT1 A 0 A_Jump(32,"SpawnThing")//12.5%
 	SpawnGibbedMarineExtra:
 		TNT1 A 0 A_SpawnItemEx("64GibbedMarineExtra",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -63,8 +63,8 @@ Scale 0.82
 	States
 	{
 	Spawn:
-		PLAS A 1
-		PLAS A 3 ACS_NamedExecuteAlways("GaussCannonRandom")	//if D64 weapons only enabled spawn plasma rifle
+		PLAS A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("GaussCannonRandom")	//if D64 weapons only enabled spawn plasma rifle
 		TNT1 A 0 A_Jump(64,"SpawnGaussCannon")//25%
 	SpawnPlasmaRifle:
 		TNT1 A 1 A_SpawnItemEx("PlasmaRifleSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -81,8 +81,8 @@ Scale 0.9
 	States
 	{
 	Spawn:
-		BFUG A 1
-		BFUG A 3 ACS_NamedExecuteAlways("BFGRandom")
+		BFUG A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("BFGRandom")
 		TNT1 A 0 A_Jump(64,"SpawnUnmaker","SpawnLasergun")//25%
 	SpawnBFG9000:
 		TNT1 A 1 A_SpawnItemEx("BFG9000Spawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -102,8 +102,8 @@ Scale 0.82
 	States
 	{
 	Spawn:
-		MGUN A 1
-		MGUN A 3 ACS_NamedExecuteAlways("ChaingunRandomACS")
+		MGUN A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("ChaingunRandomACS")
 		TNT1 A 0 A_Jump(64,"SpawnSMG","SpawnRifle")//25%
 	SpawnChaingun:
 		TNT1 A 1 A_SpawnItemEx("ChaingunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -124,8 +124,8 @@ Scale 0.82
 	States
 	{
 	Spawn:
-		BON1 A 1
-		BON1 A 3 ACS_NamedExecuteAlways("BonusRandomACS")
+		BON1 A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("BonusRandomACS")
 		TNT1 A 0 A_Jump(32,"SpawnHellPotion")//12.5%
 	SpawnHealthBonus:
 		TNT1 A 1 A_SpawnItemEx("64HealthBonus",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -142,8 +142,8 @@ Scale 0.82
 	States
 	{
 	Spawn:
-		BON2 A 1
-		BON2 A 3 ACS_NamedExecuteAlways("BonusRandomACS")
+		BON2 A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("BonusRandomACS")
 		TNT1 A 0 A_Jump(32,"SpawnHellPotion")//12.5%
 	SpawnArmorBonus:
 		TNT1 A 1 A_SpawnItemEx("64ArmorBonus",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -160,8 +160,8 @@ Scale 0.82
 	States
 	{
 	Spawn:
-		PINS A 1
-		PINS A 3 ACS_NamedExecuteAlways("WpnPowerRandom")
+		PINS A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("WpnPowerRandom")
 		TNT1 A 0 A_Jump(39,"SpawnDemonKey")//15%
 	SpawnBlurSphere:
 		TNT1 A 1 A_SpawnItemEx("64Blursphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -179,8 +179,8 @@ Scale 0.82
 	States
 	{
 	Spawn:
-		PSTR A 1
-		PSTR A 3 ACS_NamedExecuteAlways("WpnPowerRandom")
+		PSTR A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("WpnPowerRandom")
 		TNT1 A 0 A_Jump(39,"SpawnDemonKey")//15%
 	SpawnBerserk:
 		TNT1 A 1 A_SpawnItemEx("64Berserk",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -198,8 +198,8 @@ Scale 0.7
 	States
 	{
 	Spawn:
-		SOUL A 1
-		SOUL A 3 ACS_NamedExecuteAlways("WpnPowerRandom")
+		SOUL A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("WpnPowerRandom")
 		TNT1 A 0 A_Jump(39,"SpawnDemonKey")//15%
 	SpawnSoulSphere:
 		TNT1 A 1 A_SpawnItemEx("64Soulsphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -217,8 +217,8 @@ Scale 0.7
 	States
 	{
 	Spawn:
-		MEGA A 1
-		MEGA A 3 ACS_NamedExecuteAlways("WpnPowerRandom")
+		MEGA A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("WpnPowerRandom")
 		TNT1 A 0 A_Jump(39,"SpawnDemonKey")//15%
 	SpawnMegaSphere:
 		TNT1 A 1 A_SpawnItemEx("64MegaSphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -236,8 +236,8 @@ Scale 0.7
 	States
 	{
 	Spawn:
-		PINV A 1
-		PINV A 3 ACS_NamedExecuteAlways("WpnPowerRandom")
+		PINV A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("WpnPowerRandom")
 		TNT1 A 0 A_Jump(45,"SpawnDemonKey")//17.5%
 	SpawnInvulnerabilitySphere:
 		TNT1 A 1 A_SpawnItemEx("64InvulnerabilitySphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -255,8 +255,8 @@ Scale 0.82
 	States
 	{
 	Spawn:
-		PVIS A 1
-		PVIS A 3 ACS_NamedExecuteAlways("FlashlightCheck")
+		PVIS A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("FlashlightCheck")
 		TNT1 A 0 A_Jump(64,"SpawnFlashlight")
 	SpawnInfrared:
 		TNT1 A 1 A_SpawnItemEx("64Infrared",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -279,8 +279,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		DI64 A 1
-		DI64 A 3 ACS_NamedExecuteAlways("NImpRandom")
+		DI64 A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("NImpRandom")
 	SpawnImp:
 		TNT1 A 1 A_SpawnItemEx("64DoomImp",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -325,8 +325,8 @@ MONSTER
 States
 {
 	Spawn:
-		SAR2 A 1
-		SAR2 A 3 ACS_NamedExecuteAlways("NSpectreRandom")
+		SAR2 A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("NSpectreRandom")
 	SpawnSpectre:
 		TNT1 A 1 A_SpawnItemEx("64Spectre",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -398,8 +398,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		HEAD M 1
-		HEAD M 3 ACS_NamedExecuteAlways("CacoChooserACS")
+		HEAD M 0
+		TNT1 A 3 ACS_NamedExecuteAlways("CacoChooserACS")
 	64Cacos:
 		TNT1 A 1 A_SpawnItemEx("64Cacodemon",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -420,8 +420,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		HEAD M 1
-		HEAD M 3 ACS_NamedExecuteAlways("CacoChooserACS")
+		HEAD M 0
+		TNT1 A 3 ACS_NamedExecuteAlways("CacoChooserACS")
 	64Cacos:
 		TNT1 A 1 A_SpawnItemEx("NightmareCacodemon",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -437,8 +437,8 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		HEAD M 1
-		HEAD M 3 ACS_NamedExecuteAlways("CacoChooserACS")
+		HEAD M 0
+		TNT1 A 3 ACS_NamedExecuteAlways("CacoChooserACS")
 	64Cacos:
 		TNT1 A 1 A_SpawnItemEx("64DeadCacodemon",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -459,8 +459,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		HEAD A 1
-		HEAD A 3 ACS_NamedExecuteAlways("NCacoRandom")
+		HEAD A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("NCacoRandom")
 	SpawnCacodemon:
 		TNT1 A 1 A_SpawnItemEx("Caco_SkinChooser",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -537,9 +537,9 @@ MONSTER
 		TNT1 A 1 A_BossDeath
 		Stop
 	Spawn:
-		BOSS A 1
+		BOSS A 0
 		TNT1 A 0 A_NoBlocking
-		BOSS A 3 ACS_NamedExecuteAlways("HellHoundRandom")	//if D64 monsters only enabled spawn Baron
+		TNT1 A 3 ACS_NamedExecuteAlways("HellHoundRandom")	//if D64 monsters only enabled spawn Baron
 	P05A:
 		TNT1 A 0 A_Jump(13,"HoundChooser","SpawnBelp")
 		Goto SpawnBaron
@@ -592,7 +592,7 @@ MONSTER
 		TNT1 A -1 A_SpawnItemEx("64BaronOfHell",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	HoundChooser:
-		BOSS A 3 ACS_NamedExecuteAlways("HoundChooserACS")
+		TNT1 A 3 ACS_NamedExecuteAlways("HoundChooserACS")
 		TNT1 A -1 A_SpawnItemEx("64Hellhound",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	HoundCerb:
@@ -623,9 +623,9 @@ MONSTER
 		TNT1 A 1 A_BossDeath
 		Stop
 	Spawn:
-		BOS2 A 1
+		BOS2 A 0
 		TNT1 A 0 A_NoBlocking
-		BOS2 A 3 ACS_NamedExecuteAlways("KnightmareRandom")	//if D64 monsters only enabled spawn Hellknight
+		TNT1 A 3 ACS_NamedExecuteAlways("KnightmareRandom")	//if D64 monsters only enabled spawn Hellknight
 	P05:
 		TNT1 A 0 A_Jump(13,"SpawnKnightmare")
 		Goto SpawnHellKnight
@@ -675,9 +675,9 @@ MONSTER
 		TNT1 A 1 A_BossDeath
 		Stop
 	Spawn:
-		CYBR A 1
+		CYBR A 0
 		TNT1 A 0 A_NoBlocking
-		CYBR A 3 ACS_NamedExecuteAlways("AnnihilatorRandom")
+		TNT1 A 3 ACS_NamedExecuteAlways("AnnihilatorRandom")
 	P05A:
 		TNT1 A 0 A_Jump(13,"SpawnAnnihilator","SpawnInfernal")
 		Goto SpawnCyberdemon
@@ -748,8 +748,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		VILE A 1
-		VILE A 3 ACS_NamedExecuteAlways("FleshWizardRandomACS")
+		VILE A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("FleshWizardRandomACS")
 	SpawnArchvile:
 		TNT1 A 1 A_SpawnItemEx("64Archvile",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -853,9 +853,9 @@ MONSTER
 		TNT1 A 1 A_BossDeath
 		Stop
 	Spawn:
-		MSMN A 1
+		MSMN A 0
 		TNT1 A 0 A_NoBlocking
-		MSMN A 3 ACS_NamedExecuteAlways("MotherDemonRandom")
+		TNT1 A 3 ACS_NamedExecuteAlways("MotherDemonRandom")
 	SpawnMastermind:
 		TNT1 A -1 A_SpawnItemEx("64SpiderMastermind",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -867,7 +867,7 @@ MONSTER
 		Stop
 	D64MonsterOnly:
 		TNT1 A -1 A_SpawnItemEx("64Cyberdemon",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop		
+		Stop
 	P05A:
 		TNT1 A 0 A_Jump(13,"SpawnEradicator","SpawnMother")
 		Goto SpawnMastermind
@@ -959,9 +959,9 @@ MONSTER
 		TNT1 A 1 A_BossDeath
 		Stop
 	Spawn:
-		BSPI A 1
+		BSPI A 0
 		TNT1 A 0 A_NoBlocking
-		BSPI A 3 ACS_NamedExecuteAlways("NightCrawlerRandomACS")
+		TNT1 A 3 ACS_NamedExecuteAlways("NightCrawlerRandomACS")
 	SpawnArachnotron:
 		TNT1 A -1 A_SpawnItemEx("64Arachnotron",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1006,8 +1006,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		SPOS A 1
-		SPOS A 3 ACS_NamedExecuteAlways("SSGZombieRandomACS")
+		SPOS A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("SSGZombieRandomACS")
 	SpawnShotgunGuy:
 		TNT1 A 1 A_SpawnItemEx("64Shotgunguy",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1052,8 +1052,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		PSSS B 1
-		PSSS B 3 ACS_NamedExecuteAlways("ZMarineRandomACS")
+		PSSS B 0
+		TNT1 A 3 ACS_NamedExecuteAlways("ZMarineRandomACS")
 	SpawnZombieMan:
 		TNT1 A 1 A_SpawnItemEx("64ZombieMan",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1098,8 +1098,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		MPOS A 1
-		MPOS A 3 ACS_NamedExecuteAlways("ZombieBFGRandomACS")
+		MPOS A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("ZombieBFGRandomACS")
 	SpawnChaingunGuy:
 		TNT1 A 1 A_SpawnItemEx("64Chaingunguy",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1147,8 +1147,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		SARG A 1
-		SARG A 3 ACS_NamedExecuteAlways("AcidDemonRandomACS")	//if D64 monsters only enabled spawn pinky demon
+		SARG A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("AcidDemonRandomACS")	//if D64 monsters only enabled spawn pinky demon
 	SpawnPinky:
 		TNT1 A 1 A_SpawnItemEx("64Demon",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1220,8 +1220,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		PAIN A 1
-		PAIN A 3 ACS_NamedExecuteAlways("NightElementalRandom_ACS")
+		PAIN A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("NightElementalRandom_ACS")
 	SpawnPainElemental:
 		TNT1 A 1 A_SpawnItemEx("64PainElemental",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1266,8 +1266,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		SKUL A 1
-		SKUL A 3 ACS_NamedExecuteAlways("StalkerRandomACS")	//if D64 monsters only enabled spawn lost soul
+		SKUL A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("StalkerRandomACS")	//if D64 monsters only enabled spawn lost soul
 	SpawnLostSoul:
 		TNT1 A 1 A_SpawnItemEx("64LostSoul",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1344,9 +1344,9 @@ MONSTER
 		TNT1 A 1 A_BossDeath
 		Stop
 	Spawn:
-		FATT A 1
+		FATT A 0
 		TNT1 A 0 A_NoBlocking
-		FATT A 3 ACS_NamedExecuteAlways("BruiserRandom_ACS",0,0,0,0)
+		TNT1 A 3 ACS_NamedExecuteAlways("BruiserRandom_ACS",0,0,0,0)
 	SpawnFatso:
 		TNT1 A -1 A_SpawnItemEx("64Fatso",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1391,8 +1391,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		64ZF A 1
-		64ZF A 3 ACS_NamedExecuteAlways("HordeLeaderRandom")
+		64ZF A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("HordeLeaderRandom")
 	SpawnHusk:
 		TNT1 A 1 A_SpawnItemEx("64HuskZombie",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
@@ -1437,8 +1437,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		64ZF A 1
-		64ZF A 3 ACS_NamedExecuteAlways("HordeMultiplier")
+		64ZF A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("HordeMultiplier")
 		TNT1 A 0 A_Jump(256,"Hordex1","Hordex2","Hordex3","Hordex4","Disabled")
 	Hordex1:
 		TNT1 A 1 A_SpawnItemex("64HuskZombie",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
@@ -1476,8 +1476,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		CPOS A 1
-		CPOS A 3 ACS_NamedExecuteAlways("WadChecker")
+		CPOS A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("WadChecker")
 	Doom2:
 		TNT1 A 1 A_SpawnItemEx("64WaffenSS",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1506,8 +1506,8 @@ MONSTER
 	States
 	{
 	Spawn:
-		SKEL A 1
-		SKEL A 3 ACS_NamedExecuteAlways("RevenantRandomACS")
+		SKEL A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("RevenantRandomACS")
 	P05:
 		TNT1 A 0 A_Jump(13,"SpawnPestilence")
 		Goto RevenantChooser
@@ -1533,7 +1533,7 @@ MONSTER
 		TNT1 A 0 A_Jump(128,"SpawnPestilence")
 		Goto RevenantChooser
 	RevenantChooser:
-		SKEL A 3 ACS_NamedExecuteAlways("RevenantChooserACS")
+		TNT1 A 3 ACS_NamedExecuteAlways("RevenantChooserACS")
 	Revenant:
 		TNT1 A 1 A_SpawnItemEx("64Revenant",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1548,31 +1548,6 @@ MONSTER
 		Stop
 	}
 }
-
-/*Actor D64_Revenant_Replacer Replaces Revenant	//option to choose revenant spawn
-{
-Scale 0.6
-MONSTER
--SOLID
--COUNTKILL
-+NOTARGET
-+NOBLOOD
-	States
-	{
-	Spawn:
-		SKEL A 1
-		SKEL A 3 ACS_NamedExecuteAlways("RevenantChooserACS")
-	Revenant:
-		TNT1 A 1 A_SpawnItemEx("64Revenant",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop
-	TRevenant:
-		TNT1 A 1 A_SpawnItemEx("64TRevenant",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop
-	D64MonsterOnly:
-		TNT1 A 1 A_SpawnItemEx("64BaronOfHell",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
-		Stop
-	}
-}*/
 
 Actor Hound_Chooser	19125	//Used for direct hound placement on maps. Tag 666 fix (A_KillMaster must be called from spawned monster)
 {
@@ -1592,9 +1567,9 @@ MONSTER
 		TNT1 A 1 A_BossDeath
 		Stop
 	Spawn:
-		GECH A 1
+		GECH A 0
 		TNT1 A 0 A_NoBlocking
-		GECH A 3 ACS_NamedExecuteAlways("HoundChooserACS")
+		TNT1 A 3 ACS_NamedExecuteAlways("HoundChooserACS")
 	HoundDefault:
 		TNT1 A -1 A_SpawnItemEx("64Hellhound",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1618,8 +1593,8 @@ Scale 0.7
 	States
 	{
 	Spawn:
-		LTRI A 1
-		LTRI A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
+		LTRI A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
 		TNT1 A 0 A_Jump(32,"SpawnDemonTree")//12.5%
 	SpawnBigTree:
 		TNT1 A 1 A_SpawnItemEx("64BigTree",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1636,8 +1611,8 @@ Scale 0.7
 	States
 	{
 	Spawn:
-		CEYE A 1
-		CEYE A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
+		CEYE A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
 		TNT1 A 0 A_Jump(32,"SpawnVenomEye1","SpawnVenomEye2")//12.5%
 	SpawnEvilEye:
 		TNT1 A 1 A_SpawnItemEx("64EvilEye",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1659,8 +1634,8 @@ Scale 0.7
 	States
 	{
 	Spawn:
-		CAND A 1
-		CAND A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
+		CAND A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
 		TNT1 A 0 A_Jump(32,"SpawnHellCandle")//12.5%
 	SpawnCandlestick:
 		TNT1 A 1 A_SpawnItemEx("64Candlestick",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1677,8 +1652,8 @@ Scale 0.7
 	States
 	{
 	Spawn:
-		64CN A 1
-		64CN A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
+		64CN A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
 		TNT1 A 0 A_Jump(32,"SpawnHellCandle")//12.5%
 	SpawnCandelabra:
 		TNT1 A 1 A_SpawnItemEx("64Candelabra",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1695,8 +1670,8 @@ Scale 0.7
 	States
 	{
 	Spawn:
-		BAR1 A 1
-		BAR1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
+		BAR1 A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
 		TNT1 A 0 A_Jump(32,"SpawnKillerBarrel")//12.5%
 	SpawnNormalBarrel:
 		TNT1 A 1 A_SpawnItemEx("64ExplosiveBarrel",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1713,8 +1688,8 @@ Scale 0.7
 	States
 	{
 	Spawn:
-		DAM1 A 1
-		DAM1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
+		DAM1 A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
 		TNT1 A 0 A_Jump(32,"SpawnHangedManEnemy")//12.5%
 	SpawnNormalHangmen:
 		TNT1 A 1 A_SpawnItemEx("BloodyTwitchReplacer",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1731,8 +1706,8 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		64HC A 1
-		64HC A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
+		64HC A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
 		TNT1 A 0 A_Jump(32,"SpawnPossessedStatue")//12.5%
 	SpawnNormalStatue:
 		TNT1 A 1 A_SpawnItemEx("64HeartColumn",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1749,8 +1724,8 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		FSKU A 1
-		FSKU A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
+		FSKU A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
 		TNT1 A 0 A_Jump(32,"SpawnAggressiveFloatingSkull")//12.5%
 	SpawnNormalFloatingSkull:
 		TNT1 A 1 A_SpawnItemEx("64FloatingSkull",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1767,8 +1742,8 @@ Scale 0.7
 	States
 	{
 	Spawn:
-		DAM1 A 1
-		DAM1 D 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
+		DAM1 A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
 		TNT1 A 0 A_Jump(32,"SpawnHangedManEnemy")//12.5%
 	SpawnNormalHangmen:
 		TNT1 A 1 A_SpawnItemEx("NonSolidTwitchReplacer",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1784,8 +1759,8 @@ Actor 64FailingTechLampReplacer replaces TechLamp
 	States
 	{
 	Spawn:
-		TLMP A 1
-		TLMP A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
+		TLMP A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
 		TNT1 A 0 A_Jump(32,"SpawnHellLamp")//12.5%
 	SpawnTechLamp:
 		TNT1 A 1 A_SpawnItemEx("64TechLampB",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1801,8 +1776,8 @@ Actor 64FailingTechLamp2Replacer replaces TechLamp2
 	States
 	{
 	Spawn:
-		TLP2 A 1
-		TLP2 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
+		TLP2 A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
 		TNT1 A 0 A_Jump(32,"SpawnHellLamp")//12.5%
 	SpawnTechLamp:
 		TNT1 A 1 A_SpawnItemEx("64TechLamp2B",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1818,8 +1793,8 @@ Actor 64FailingColumnReplacer replaces Column
 	States
 	{
 	Spawn:
-		TLP1 A 1
-		TLP1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
+		TLP1 A 0
+		TNT1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
 		TNT1 A 0 A_Jump(32,"SpawnHellLamp")//12.5%
 	SpawnTechLamp:
 		TNT1 A 1 A_SpawnItemEx("64TechColumn",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
