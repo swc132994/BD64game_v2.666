@@ -682,13 +682,12 @@ Tag "Sub-machine gun"
 		TNT1 A 0 A_TakeInventory("SMGBolt",1)
 		2MGR C 1
 		TNT1 A 0 A_PlaySound("SMGBACK",CHAN_WEAPON)
-		2MGR DEF 1
-		2MGR FGHHH 1
+		2MGR DEFFGHHH 1
 		2MGR H 3
 		2MGR IJJJ 1
 		TNT1 A 0 A_PlaySound("SMGFORW",CHAN_WEAPON)
 		2MGR K 1
-		2MGR P 2
+		2MGR L 2
 		2MGR MNOP 1
 	InsertBullets:
 		TNT1 A 0 A_TakeInventory("BurstFiredSMG",0)

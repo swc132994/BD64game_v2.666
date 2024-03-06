@@ -1401,6 +1401,14 @@ object 64ArachnotronPlasma_OLD	//arachnotron uses same as plasmaball
 	frame APBXE {light ARACHPLAS_X4}
 }*/
 
+flickerlight LavaParticle
+{
+	color 1.0 0.2 0.0
+	size 12
+	secondarySize 25
+	chance 0.25
+}
+
 //Revenant tracer
 pointlight TRACER
 {

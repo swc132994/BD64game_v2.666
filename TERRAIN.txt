@@ -65,12 +65,12 @@ NoAlert
 
 splash lava
 {
-smallclass	lavasplash
+smallclass		lavasplashbase	//was lavasplash
 smallclip		10
-//smallsound	world/lavasizzlesmall
+smallsound		world/lavasizzlesmall
 
-baseclass		lavasplash
-//chunkclass	lavasmoke2
+baseclass		lavasplashbase
+chunkclass		lavasmoke2
 chunkxvelshift	-1
 chunkyvelshift	-1
 chunkzvelshift	2

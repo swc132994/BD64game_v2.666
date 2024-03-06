@@ -673,3 +673,103 @@ actor SlimeSplashBase : WaterSplashBase2
 		Stop
 	}
 }
+
+//Lava
+Actor LiquidLavaParticleX : LiquidParticleX
+{
+Scale 8
+Translation "0:255=%[0,0,0]:[1.0,0.3,0.0]"	//Red-Orange
+Alpha 1
+	States
+	{
+	Spawn:
+		TNT1 A 1
+		Goto Stand
+	Stand:
+		LIQU ABCDDDDDDDDDDDDDDDDDDD 4 Bright Light("LavaParticle")
+		Stop
+	Death:
+		TNT1 A 1
+		TNT1 AAA 0 A_CustomMissile("LavaParticleX",2,random(-5,5),random(0,360),2,random(50,140))
+		TNT1 A 1
+		Stop
+	}
+}
+
+Actor LavaParticleXSpawner : WaterParticleXSpawner
+{
+	states
+	{
+	Spawn:
+		TNT1 AAAAA 1 A_JumpIf(waterlevel < 1,"SurfaceSpawn")
+		Stop
+	SurfaceSpawn:
+		TNT1 AAAA 0 A_SpawnItemEx("SpawnLiquidLavaParticleX") //WAS AAAAAAAAAAAA
+		TNT1 AAA 1 A_SpawnItemEx("SpawnLiquidLavaParticleX")
+		Stop
+	}
+}
+
+Actor SpawnLiquidLavaParticleX : SpawnLiquidParticleX
+{
+	states
+	{
+	Spawn:
+		TNT1 AAAAA 0 NoDelay A_CustomMissile("LiquidLavaParticleX",0,0,random(0,360),2,random(0,360)) //WAS AAAAAAAAAAAA
+		TNT1 A 1
+		Stop
+	}
+}
+
+Actor LavaParticleX : WaterParticleX
+{
+Scale 2
+Translation "0:255=%[0,0,0]:[1.0,0.3,0.0]"	//Red-Orange
+	States
+	{
+	Spawn:
+		TNT1 A 1
+		Goto Stand
+	Stand:
+		SLIM ABCD 4 Bright Light("LavaParticle")
+		Stop
+	Death:
+		TNT1 A 1
+		Stop
+	}
+}
+
+Actor LavaParticleXFaster : LavaParticleX
+{
+Scale 1.5
+Speed 5
+}
+
+ACTOR GiantLavaRicochet : GiantWaterRicochet
+{
+Translation "0:255=%[0,0,0]:[1.0,0.3,0.0]"	//Red-Orange
+YScale 0.5
+}
+
+actor LavaSplashBase : WaterSplashBase2
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("LiquidSplashCvarACS")==1,"NoSplash")
+		TNT1 AAA 0 A_CustomMissile("LavaParticleX",2,random(-5,5),random(0,360),2,random(50,140))
+		TNT1 AAA 0 A_CustomMissile("LavaParticleXFaster",2,random(-5,5),random(0,360),2,random(50,140))
+		TNT1 A 0 A_Explode(2,6)
+		TNT1 AA 6
+		TNT1 A 0 A_ChangeFlag("SHOOTABLE",0)
+		TNT1 AA 6
+		TNT1 A 1 A_NoBlocking
+		Stop
+	Death.CauseWaterSplash:
+		TNT1 A 0 A_CustomMissile("LavaParticleXSpawner",0,0,random(0,360),2,random(80,110))
+		TNT1 A 0 A_SpawnItemEx("GiantLavaRicochet")
+		//TNT1 A 0 A_PlaySound("bigspl1",CHAN_BODY)
+		TNT1 A 30 A_NoBlocking
+		Stop
+	}
+}
