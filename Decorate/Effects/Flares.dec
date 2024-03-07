@@ -697,18 +697,17 @@ Alpha 0.25
 	states
 	{
 	Spawn:
-		TNT1 A 1
-		TNT1 A 0 ACS_NamedExecuteAlways("LightAndFogChecker",0,0,0,0)
-		TNT1 A 1
+		LEYS O 0 Bright
+	SpawnLoop:
+		"####" "#" 3 Bright ACS_NamedExecuteAlways("LightAndFogChecker")
 	Live:
-		TNT1 A 0 A_CheckSight("WaitSight")
-		LEYS O 4 Bright
+		LEYS O 4 Bright A_CheckSight("WaitSight")
 		LEYZ O 2 Bright
 		LEYS O 4 Bright
 		LEYZ O 2 Bright
 		LEYS O 8 Bright
 		LEYZ O 4 Bright
-		Goto Spawn
+		Goto SpawnLoop
 	WaitSight:
 		TNT1 A 3
 		Goto Live
