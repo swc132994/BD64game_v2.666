@@ -101,27 +101,23 @@ Radius 3
 Speed 6
 Mass 3
 Health 0
-SeeSound "weapons/casing"
-+MISSILE
+BounceSound "weapons/casing"
+DeathSound "weapons/casing"
+BounceType "doom"
+BounceFactor 0.3
+BounceCount 2
+Projectile
 -NOGRAVITY
 -DROPOFF
--DONTGIB
+-CANBOUNCEWATER
 +WINDTHRUST
 +CLIENTSIDEONLY
 +MOVEWITHSECTOR
-+NOBLOCKMAP
-+NOTELEPORT
 +FORCEXYBILLBOARD
 +NOTDMATCH
 +GHOST
 +FLOORCLIP
 +THRUACTORS
-+CORPSE
-+BOUNCEONWALLS
-+BOUNCEONFLOORS
-+ALLOWBOUNCEONACTORS
-+BOUNCEAUTOOFF
-BounceFactor 0.3
 	States
 	{
 	Spawn:
@@ -218,7 +214,8 @@ Height 3
 Radius 3
 Speed 6
 Mass 2
-SeeSound "weapons/shell"
+BounceSound "weapons/shell"
+DeathSound "weapons/shell"
 	States
 	{
 	Spawn:
@@ -254,7 +251,8 @@ Height 6
 Radius 4
 Speed 4
 Mass 6
-SeeSound "weapons/largemagdrop"
+BounceSound "weapons/largemagdrop"
+DeathSound "weapons/largemagdrop"
 	States
 	{
 	Spawn:
@@ -283,7 +281,8 @@ Height 6
 Radius 4
 Speed 4
 Mass 5
-SeeSound "weapons/largemagdrop"
+BounceSound "weapons/smallmagdrop"
+DeathSound "weapons/smallmagdrop"
 	States
 	{
 	Spawn:
@@ -310,7 +309,8 @@ Height 8
 Radius 7
 Speed 4
 Mass 9
-SeeSound "weapons/barrelpain"
+BounceSound "weapons/barrelpain"
+DeathSound "weapons/barrelpain"
 	States
 	{
 	Spawn:
@@ -335,7 +335,8 @@ Height 10
 Radius 8
 Speed 4
 Mass 9
-SeeSound "weapons/largemagdrop"
+BounceSound "weapons/barrelpain"
+DeathSound "weapons/barrelpain"
 	States
 	{
 	Spawn:

@@ -142,11 +142,11 @@ SMGBACK			SMGBACK
 SMGFORW			SMGFORW
 
 //Shotgun
-SGFIRE			SGFIRE
-Shotgun/PumpIn 		SGPMPIN
-Shotgun/PumpOut 	SGPMPOUT
+SGFIRE				SGFIRE
+Shotgun/PumpIn		SGPMPIN
+Shotgun/PumpOut		SGPMPOUT
 Shotgun/Pump		STGNPUMP
-INSHELL			INSHELL
+INSHELL				INSHELL
 
 //Shotgun alt
 $random fstatk
@@ -297,11 +297,40 @@ world/blank2			blanksnd	$limit world/blank2 1
 //casings
 $random weapons/casing
 	{
-	weapons/casing2 weapons/casing3
-	}		$limit weapons/casing 5
-weapons/casing2				dscasin1
-weapons/casing2				dscasin2
-weapons/casing3				dscasin3
+	weapons/casing1 weapons/casing2 weapons/casing3
+	}	$limit weapons/casing 5	$rolloff weapons/casing 100 600	$volume weapons/casing 0.7
+weapons/casing1	dscasin1
+weapons/casing2	dscasin2
+weapons/casing3	dscasin3
+
+$random weapons/shell
+	{
+	weapons/shell1 weapons/shell2 weapons/shell3
+	}
+weapons/shell1	dsshell1
+weapons/shell2	dsshell2
+weapons/shell3	dsshell3
+
+//Mags
+$random weapons/smallmagdrop
+	{
+	weapons/smallmagdrop1 weapons/smallmagdrop2 weapons/smallmagdrop3 weapons/smallmagdrop4
+	}	$volume weapons/smallmagdrop 0.5
+weapons/smallmagdrop1		dsbounc1
+weapons/smallmagdrop2		dsbounc2
+weapons/smallmagdrop3		dsbounc3
+weapons/smallmagdrop4		dsbounc4
+
+$random weapons/largemagdrop  
+	{
+	weapons/largemagdrop1 weapons/largemagdrop2 weapons/largemagdrop3 weapons/largemagdrop4
+	}	$volume weapons/largemagdrop 0.5
+weapons/largemagdrop1		dsaounc1
+weapons/largemagdrop2		dsaounc2
+weapons/largemagdrop3		dsaounc3
+weapons/largemagdrop4		dsaounc4
+
+weapons/barrelpain		barrelz
 
 //explosiona
 $random Explosion
@@ -317,14 +346,6 @@ dsbarex6		dsbarex6
 dsbarex7		dsbarex7
 
 EXPLO3			EXPLO3		$limit EXPLO3 10	$rolloff EXPLO3 300 900
-
-$random weapons/shell
-	{
-	weapons/shell1 weapons/shell2 weapons/shell3
-	}
-weapons/shell1			dsshell1
-weapons/shell2			dsshell2
-weapons/shell3			dsshell3
 
 //menu
 $random menu/quit1

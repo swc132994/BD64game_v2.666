@@ -248,11 +248,10 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		TNT1 A 0 A_TakeInventory("RLAmmo",1,TIF_NOTAKEINFINITE)
 		Goto ResumeFire
 	ResumeFire:
-		RLTF A 0 A_JumpIfInventory("AltMode",1,2)
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_Recoil(2)
 		TNT1 A 0 A_ZoomFactor(0.97)
 		TNT1 A 0 A_JumpIfInventory("AltMode",1,"HeavyFire")
+		TNT1 A 0 A_Recoil(2)
 		TNT1 A 0 A_FireCustomMissile("64rocket",0,0)
 		RLLF A 1 Bright offset(0,33)
 		RLLF B 1 Bright offset(0,35)
@@ -271,6 +270,7 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		TNT1 A 0 A_ReFire
 		Goto Ready
 	HeavyFire:
+		TNT1 A 0 A_Recoil(3)
 		TNT1 A 0 A_FireCustomMissile("TacticalRocket",0,0)
 		RLTF A 2 Bright offset(0,33)
 		RLTF B 2 Bright offset(0,34)
@@ -421,10 +421,10 @@ Weapon.SisterWeapon "64RocketLauncherTactical"
 		MISG B 2 Bright Offset(0,36)
 		MISG C 2 Bright Offset(0,37) A_GunFlash
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_Recoil(2)
 		TNT1 A 0 A_ZoomFactor(0.97)
 		TNT1 A 0 A_JumpIfInventory("AltMode",1,"HeavyFire")	//added "Altmode" alternates rocket types
 		TNT1 A 0 A_FireCustomMissile("64rocket")
+		TNT1 A 0 A_Recoil(2)
 		MISG D 1 Bright A_SetPitch(pitch-2)
 		TNT1 A 0 A_ZoomFactor(1.0)
 		MISG E 1 Bright A_SetPitch(pitch+0.8)
@@ -436,6 +436,7 @@ Weapon.SisterWeapon "64RocketLauncherTactical"
 		TNT1 A 0 A_ReFire
 		Goto Ready
 	HeavyFire:
+		TNT1 A 0 A_Recoil(3)
 		TNT1 A 0 A_FireCustomMissile("TacticalRocket")
 		MISG D 1 Bright A_SetPitch(pitch-2,SPF_INTERPOLATE)
 		TNT1 A 0 A_ZoomFactor(1.0)
