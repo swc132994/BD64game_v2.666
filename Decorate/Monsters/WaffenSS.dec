@@ -6,6 +6,7 @@ Mass 100
 Speed 12
 MeleeRange 500
 PainChance 64
+DamageFactor "Unmaker",0.1
 Tag "Waffen-SS"
 BloodType "Brutal_Blood"
 AttackSound ""

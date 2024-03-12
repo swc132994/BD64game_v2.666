@@ -9,6 +9,7 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Head",1.5
 DamageFactor "Chainsaw",0.65
+DamageFactor "Unmaker",0.2
 Tag "Pistol Zombie"
 DropItem "SOULSPAWNER"
 DropItem "64Clip"
@@ -2068,6 +2069,7 @@ SeeSound ""
 Tag "Marine"
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
+DamageFactor "Unmaker",0.1
 DropItem "RifleDrop",5
 DropItem "64Clip"
 DropItem "SOULSPAWNER"

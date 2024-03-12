@@ -28,9 +28,9 @@ DamageFactor "Plasma",0.5
 DamageFactor "BFG",0.5
 DamageFactor "Fire",0.0
 DropItem "DemonEssenceSpawner"
-Monster
-+NoGravity
-+Float
+MONSTER
++NOGRAVITY
++FLOAT
 +NOBLOODDECALS
 +QUICKTORETALIATE
 +NORADIUSDMG

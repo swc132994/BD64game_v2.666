@@ -20,6 +20,7 @@ DamageFactor 0.50
 DamageFactor "Fire",1.5
 DamageFactor "Plasma",1.5
 DamageFactor "BFG",1.5
+DamageFactor "Unmaker",0.2
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 MeleeRange 90
@@ -34,7 +35,7 @@ MONSTER
 	States
 	{
 	Spawn:
-		PLAY M 1 A_LookEx(0,0,150,100)
+		PLAY M 3 A_LookEx(0,0,150,100)
 		Loop
 	Idle:
 		TNT1 A 0 A_ClearTarget
@@ -61,6 +62,7 @@ MONSTER
 		TNG2 ABABCDE 4
 		Goto See2
 	See2:
+		TNT1 A 0 A_JumpIfCloser(350,"SeeFast")
 		TNT1 A 0 A_ChangeFlag("NOPAIN",0)
 		TNG2 FGHI 3 A_Chase
 		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
@@ -74,7 +76,22 @@ MONSTER
 		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Idle")
 		TNT1 A 0 A_JumpIfTargetInLOS("See2")
+		TNT1 A 0 A_Jump(128,"See2")//50%
 		Goto Idle
+	SeeFast:
+		TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+		TNG2 FGHI 2 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 2 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 2 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 2 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 2 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Idle")
+		Goto See2
 	Melee:
 		TNG2 JK 4 A_FaceTarget
 		TNT1 A 0 A_Recoil(-15)

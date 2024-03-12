@@ -12,6 +12,7 @@ MaxTargetRange 250
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "chainsaw",0.4
+DamageFactor "Unmaker",0.2
 SeeSound "Carrion/SCREAMING"
 ActiveSound "Carrion/Active"
 DeathSound "Carrion/Detonate"

@@ -2,7 +2,7 @@ Actor 64Bruiser 19111
 {
 //$category "Game/BD64_Monsters
 Scale 0.8
-Health 900
+Health 1000
 Speed 12
 Height 64
 Radius 24
@@ -26,11 +26,9 @@ BloodColor "00 64 00"	//Hex value
 MONSTER
 +BOSSDEATH
 +MOVEWITHSECTOR
-+RELATIVETOFLOOR
 +NOBLOODDECALS
 +MISSILEMORE
 +MISSILEEVENMORE
-+NORADIUSDMG
 +FLOORCLIP
 +NEVERFAST
 	States
