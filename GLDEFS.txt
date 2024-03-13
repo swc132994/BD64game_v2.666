@@ -1404,8 +1404,16 @@ object 64ArachnotronPlasma_OLD	//arachnotron uses same as plasmaball
 flickerlight LavaParticle
 {
 	color 1.0 0.2 0.0
-	size 12
-	secondarySize 25
+	size 10
+	secondarySize 20
+	chance 0.25
+}
+
+flickerlight NukageParticle
+{
+	color 0.0 1.0 0.0
+	size 3
+	secondarySize 6
 	chance 0.25
 }
 
@@ -1481,6 +1489,7 @@ object 64StalkerShot1
 	frame MBALG {light TRACER_X3}
 	frame MBALH {light TRACER_X3}
 }
+
 object 64StalkerShot2
 {
 	frame M5B1A {light TRACER}

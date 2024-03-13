@@ -88,7 +88,7 @@ MONSTER
 		TNT1 A 0 A_Jump(168,"Death")
 	Death.CutLess:
 	Death.ShotgunNoArm:
-		TNT1 A 0 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
+		SWCB F 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 A 0 A_CustomMissile("XDeathButcherSawArm",50,0,random(00,360),2,random(10,50))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
@@ -129,12 +129,11 @@ MONSTER
 		S4UK G -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.SSG:
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_Recoil(12)
-		SWCB F 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
-		SWCB F 1 A_JumpIfCloser(250,"Death.Heavy")
+		SWCB F 2 A_Recoil(9)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
+		TNT1 A 0 A_JumpIfCloser(250,"Death.Heavy")
 		TNT1 A 0 A_Jump(128,"Death")
-		SWCB F 1 A_JumpIfCloser(1000,"Death.ShotgunNoArm")
+		TNT1 A 0 A_JumpIfCloser(1000,"Death.ShotgunNoArm")
 		Goto Death
 	Death.SuperFists:
 	Death.SuperKick:
@@ -266,18 +265,17 @@ DropItem "None"
 	Death.Rifle:
 		TNT1 A 0 A_Jump(128,"Death")
 	Death.CutLess:
-		TNT1 A 0 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
+		S4WC A 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 A 0 A_CustomMissile("XDeathButcherNormalArm",50,0,random(00,360),2,random(10,50))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		S4VK A 1 A_SpawnItemEx("64ButcherArmless",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.SSG:
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_Recoil(12)
-		S4VK A 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
-		S4VK A 1 A_JumpIfCloser(250,"Death.Heavy")
-		S4VK A 1 A_Jump(128,"Death")
+		S4WC A 2 A_Recoil(9)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
+		TNT1 A 0 A_JumpIfCloser(250,"Death.Heavy")
+		TNT1 A 0 A_Jump(128,"Death")
 		Goto Death
 	Death.Head:
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
@@ -399,10 +397,9 @@ Actor 64ButcherArmless : 64ButcherNoArm
 		ZAVK G -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.SSG:
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_Recoil(12)
-		S4VK A 1 A_JumpIfCloser(250,"Death.SplatteredOnWall")
-		S4VK A 1 A_Jump(128,"Death")
+		S4VK A 2 A_Recoil(9)
+		TNT1 A 0 A_JumpIfCloser(250,"Death.SplatteredOnWall")
+		TNT1 A 0 A_Jump(128,"Death")
 		Goto Death
 	XDeath:
 	Death.Chainsaw:

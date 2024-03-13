@@ -224,15 +224,13 @@ Player.CrouchSprite "PLYC"
 		BURN I -1
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_Recoil(8)
-		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")
+		PLAY G 2 A_Recoil(6)
+		TNT1 A 0 A_JumpIfCloser(210,"Death.Heavy")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_Recoil(12)
-		PLAY G 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")
+		PLAY G 2 A_Recoil(10)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
+		TNT1 A 0 A_JumpIfCloser(210,"Death.Heavy")
 		Goto Death
 	Death.SuperFists:
 	Death.SuperKick:
@@ -267,7 +265,6 @@ Player.CrouchSprite "PLYC"
 		CPOG C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Cutless:
-		PLAY G 5
 		TNT1 A 0 A_jump(64,"Death")
 		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",25,0,random(150,210),2,random(10,50))
@@ -282,7 +279,7 @@ Player.CrouchSprite "PLYC"
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Heavy:
-		PLAY G 5 A_XScream
+		TNT1 A 0 A_XScream
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("BloodMistBig",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
@@ -474,15 +471,13 @@ Player.CrouchSprite "PLYC"
 		BURN I -1
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_Recoil(8)
-		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")
+		PLAY G 2 A_Recoil(6)
+		TNT1 A 0 A_JumpIfCloser(210,"Death.Heavy")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_Recoil(12)
-		PLAY G 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")
+		PLAY G 2 A_Recoil(10)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
+		TNT1 A 0 A_JumpIfCloser(210,"Death.Heavy")
 		Goto Death
 	Death.SuperFists:
 	Death.SuperKick:
@@ -517,7 +512,6 @@ Player.CrouchSprite "PLYC"
 		CPOG C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Cutless:
-		PLAY G 5
 		TNT1 A 0 A_jump(64,"Death")
 		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",25,0,random(150,210),2,random(10,50))
@@ -532,7 +526,7 @@ Player.CrouchSprite "PLYC"
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Heavy:
-		PLAY G 5 A_XScream
+		TNT1 A 0 A_XScream
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("BloodMistBig",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
@@ -704,15 +698,13 @@ Player.CrouchSprite "PLYC"
 		BURN I -1
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_Recoil(8)
-		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")
+		PLAY G 2 A_Recoil(6)
+		TNT1 A 0 A_JumpIfCloser(210,"Death.Heavy")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_Recoil(12)
-		PLAY G 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		PLAY G 1 A_JumpIfCloser(210,"Death.Heavy")
+		PLAY G 2 A_Recoil(10)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
+		TNT1 A 0 A_JumpIfCloser(210,"Death.Heavy")
 		Goto Death
 	Death.SuperFists:
 	Death.SuperKick:
@@ -747,7 +739,6 @@ Player.CrouchSprite "PLYC"
 		CPOG C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Cutless:
-		PLAY G 5
 		TNT1 A 0 A_jump(64,"Death")
 		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))
 		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",25,0,random(150,210),2,random(10,50))
@@ -762,7 +753,7 @@ Player.CrouchSprite "PLYC"
 		CPOG A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Heavy:
-		PLAY G 5 A_XScream
+		TNT1 A 0 A_XScream
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))

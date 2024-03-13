@@ -1462,6 +1462,24 @@ ACTOR XDeathZombieLegRed : XDeathZombieArm1
 	}
 }
 
+//WAFFENSS
+ACTOR XDeathWaffenArm : XDeathZombieArm1
+{
+	States
+	{
+	Spawn:
+		NZAG A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
+		NZAG ABCDEFGH 4 A_CheckFloor("Death")
+		Wait
+	Death:
+		NZAG I 35
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpot")
+		NZAG I -1
+		Stop
+	}
+}
+
 //IMP
 ACTOR XDeathImpArm1 : XDeathZombieArm1
 {
@@ -2867,6 +2885,91 @@ Scale 0.64
 		D1A6 R 35
 		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotGreen")
 		D1A6 R -1
+		Stop
+	}
+}
+
+//Pestilence
+ACTOR XDeathPestilenceArm1 : XDeathZombieArm1
+{
+Scale 0.68
+States
+	{
+	Spawn:
+		PTG1 A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)		//FLIP IMAGE HORZ
+		PTG1 ABCDEFGH 4 A_CheckFloor("Death")
+		Wait
+	Death:
+		PTG1 I 35
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotGreen")
+		PTG1 I -1
+		Stop
+	}
+}
+
+ACTOR XDeathPestilenceLegs : XDeathZombieArm1
+{
+Scale 0.68
+	States
+	{
+	Spawn:
+		PTD1 A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
+		PTD1 ABCD 4 A_CheckFloor("Death")
+		Wait
+	Death:
+		PTD1 E 35
+		TNT1 A 0 A_CustomMissile("BigBloodSpotGreen",0,0,random(0,360),2,random(0,90))
+		PTD1 E -1
+		Stop
+	}
+}
+
+ACTOR XDeathPestilenceLegL : XDeathZombieArm1
+{
+Scale 0.68
+	States
+	{
+	Spawn:
+		PTIG A 1 NoDelay A_CheckFloor("Death")
+		Wait
+	Death:
+		PTIG C 35
+		TNT1 A 0 A_CustomMissile("BigBloodSpotGreen",0,0,random(0,360),2,random(0,90))
+		PTIG C -1
+		Stop
+	}
+}
+
+ACTOR XDeathPestilenceLegR : XDeathZombieArm1
+{
+Scale 0.68
+	States
+	{
+	Spawn:
+		PTIG B 1 NoDelay A_CheckFloor("Death")
+		Wait
+	Death:
+		PTIG D 35
+		TNT1 A 0 A_CustomMissile("BigBloodSpotGreen",0,0,random(0,360),2,random(0,90))
+		PTIG D -1
+		Stop
+	}
+}
+
+ACTOR XDeathPestilenceLauncher : XDeathZombieArm1
+{
+Scale 0.68
+	States
+	{
+	Spawn:
+		VLAU A 1 NoDelay A_CheckFloor("Death")
+		Wait
+	Death:
+		VLAU B 35
+		TNT1 A 0 A_CustomMissile("BigBloodSpotGreen",0,0,random(0,360),2,random(0,90))
+		VLAU B -1
 		Stop
 	}
 }

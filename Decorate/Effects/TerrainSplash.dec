@@ -493,7 +493,7 @@ Translation "0:255=%[0,0,0]:[0,1,0]"//Green
 		TNT1 A 1
 		Goto Stand
 	Stand:
-		LIQU ABCDDDDDDDDDDDDDDDDDDD 4
+		LIQU ABCDDDDDDDDDDDDDDDDDDD 4 Light("NukageParticle")
 		Stop
 	Death:
 		TNT1 A 1
@@ -537,7 +537,7 @@ decal slimesplash
 		TNT1 A 1
 		Goto Stand
 	Stand:
-		SLDG ABCD 4
+		SLDG ABCD 4 Light("NukageParticle")
 		Stop
 	Death:
 		TNT1 A 1

@@ -59,25 +59,23 @@ DropItem "DemonEssenceSpawner"
 		SARG N -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_Recoil(8)
-		SARG H 1 A_JumpIfCloser(170,"Death.Heavy")
+		SARG H 2 A_Recoil(5)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.Heavy")
 		TNT1 A 0 A_Jump(128,"Death")
-		SARG H 1 A_JumpIfCloser(1000,"Death.ShotgunNoArm")
+		TNT1 A 0 A_JumpIfCloser(1000,"Death.ShotgunNoArm")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_Recoil(12)
-		SARG H 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
-		SARG H 1 A_JumpIfCloser(250,"Death.Heavy")
+		SARG H 2 A_Recoil(9)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
+		TNT1 A 0 A_JumpIfCloser(250,"Death.Heavy")
 		TNT1 A 0 A_Jump(128,"Death")
-		SARG H 1 A_JumpIfCloser(1000,"Death.ShotgunNoArm")
+		TNT1 A 0 A_JumpIfCloser(1000,"Death.ShotgunNoArm")
 		Goto Death
 	Death.Rifle:
 		TNT1 A 0 A_Jump(168,"Death")
 	Death.CutLess:
 	Death.ShotgunNoArm:
-		TNT1 A 0 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
+		SARG H 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 A 0 A_CustomMissile("XDeathPinkyArm1",50,0,random(00,360),2,random(10,50))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
@@ -240,14 +238,12 @@ DropItem "None"
 		Stop
 	Death.Shotgun:
 	Death.SSG:
-		TNT1 A 0 A_Recoil(12)
-		SANA A 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
+		SANA A 2 A_Recoil(9)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 	Death.Rifle:
 		TNT1 A 0 A_Jump(64,"Death")
 	Death.CutLess:
 	Death.Heavy:
-		TNT1 A 0 A_Recoil(20)
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
@@ -427,25 +423,23 @@ DropItem "DemonEssenceSpawner"
 		SAR2 N -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_Recoil(8)
-		SAR2 H 1 A_JumpIfCloser(170,"Death.Heavy")
+		SAR2 H 2 A_Recoil(5)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.Heavy")
 		TNT1 A 0 A_Jump(128,"Death")
-		SAR2 H 1 A_JumpIfCloser(1000,"Death.ShotgunNoArm")
+		TNT1 A 0 A_JumpIfCloser(1000,"Death.ShotgunNoArm")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_Recoil(12)
-		SAR2 H 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
-		SAR2 H 1 A_JumpIfCloser(250,"Death.Heavy")
+		SAR2 H 2 A_Recoil(9)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
+		TNT1 A 0 A_JumpIfCloser(250,"Death.Heavy")
 		TNT1 A 0 A_Jump(128,"Death")
-		SAR2 H 1 A_JumpIfCloser(1000,"Death.ShotgunNoArm")
+		TNT1 A 0 A_JumpIfCloser(1000,"Death.ShotgunNoArm")
 		Goto Death
 	Death.Rifle:
 		TNT1 A 0 A_Jump(168,"Death")
 	Death.CutLess:
 	Death.ShotgunNoArm:
-		TNT1 A 0 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
+		SAR2 H 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 A 0 A_CustomMissile("XDeathSpectreArm1",50,0,random(00,360),2,random(10,50))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
@@ -609,14 +603,12 @@ DropItem "None"
 		Stop
 	Death.Shotgun:
 	Death.SSG:
-		TNT1 A 0 A_Recoil(12)
-		SPCA A 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
+		SPCA A 2 A_Recoil(9)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 	Death.Rifle:
 		TNT1 A 0 A_Jump(64,"Death")
 	Death.CutLess:
 	Death.Heavy:
-		TNT1 A 0 A_Recoil(20)
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
@@ -841,25 +833,23 @@ Obituary "%o was hunted down by a nightmare spectre."
 		SAR3 N -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_Recoil(8)
-		SAR3 H 1 A_JumpIfCloser(170,"Death.Heavy")
+		SAR3 H 2 A_Recoil(5)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.Heavy")
 		TNT1 A 0 A_Jump(128,"Death")
-		SAR3 H 1 A_JumpIfCloser(1000,"Death.ShotgunNoArm")
+		TNT1 A 0 A_JumpIfCloser(1000,"Death.ShotgunNoArm")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
-		TNT1 A 0 A_Recoil(12)
-		SAR3 H 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
-		SAR3 H 1 A_JumpIfCloser(250,"Death.Heavy")
+		SAR3 H 2 A_Recoil(9)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
+		TNT1 A 0 A_JumpIfCloser(250,"Death.Heavy")
 		TNT1 A 0 A_Jump(128,"Death")
-		SAR3 H 1 A_JumpIfCloser(1000,"Death.ShotgunNoArm")
+		TNT1 A 0 A_JumpIfCloser(1000,"Death.ShotgunNoArm")
 		Goto Death
 	Death.Rifle:
 		TNT1 A 0 A_Jump(168,"Death")
 	Death.CutLess:
 	Death.ShotgunNoArm:
-		TNT1 A 0 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
+		SAR3 H 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 A 0 A_CustomMissile("XDeathNSpectreArm1",50,0,random(00,360),2,random(10,50))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
@@ -1022,14 +1012,12 @@ DropItem "None"
 		Stop
 	Death.Shotgun:
 	Death.SSG:
-		TNT1 A 0 A_Recoil(12)
-		NMSA A 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
-		TNT1 A 0 ThrustThingZ(0,20,0,1)
+		NMSA A 2 A_Recoil(9)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 	Death.Rifle:
 		TNT1 A 0 A_Jump(64,"Death")
 	Death.CutLess:
 	Death.Heavy:
-		TNT1 A 0 A_Recoil(20)
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))

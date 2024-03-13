@@ -153,7 +153,6 @@ DropItem "SOULSPAWNER"
 		SPOS U -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	XDeath:
-		64ZF O 3
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -176,16 +175,15 @@ DropItem "SOULSPAWNER"
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Shotgun:
-		TNT1 A 0 A_Recoil(8)
-		ZFM1 A 1 A_JumpIfCloser(170,"Death.Heavy")
-		ZFM1 A 1 A_Jump(64,"Death.Cutless")
+		ZFM1 A 2 A_Recoil(6)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.Heavy")
+		TNT1 A 0 A_Jump(64,"Death.Cutless")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_Recoil(12)
-		ZFM1 A 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
+		ZFM1 A 2 A_Recoil(10)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 		Goto Death.Heavy
 	Death.Heavy:
-		FZ3D A 1
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
@@ -202,7 +200,6 @@ DropItem "SOULSPAWNER"
 	Death.SuperKick:
 		TNT1 A 0 A_Jump(170,"Death.Heavy")
 	Death.SplatteredOnWall:
-		64ZF O 3
 		TNT1 A 0 A_SetScale(0.8)
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
@@ -229,7 +226,7 @@ DropItem "SOULSPAWNER"
 	Death.Rifle:
 	Death.Cutless:
 		TNT1 A 0 A_Jump(64,"Death")
-		TNT1 A 0 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
+		64ZF H 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
@@ -320,13 +317,13 @@ DropItem "None"
 		FZ8H E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
-		TNT1 A 0 A_Recoil(8)
-		ZFM1 A 1 A_JumpIfCloser(170,"Death.Heavy")
-		ZFM1 A 1 A_Jump(64,"Death.Cutless")
+		ZFM1 A 2 A_Recoil(6)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.Heavy")
+		TNT1 A 0 A_Jump(64,"Death.Cutless")
 		Goto Death
 	Death.SSG:
-		TNT1 A 0 A_Recoil(12)
-		ZFM1 A 1 A_JumpIfCloser(170,"Death.SplatteredOnWall")
+		ZFM1 A 2 A_Recoil(10)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
 		Goto Death.Heavy
 	Death.Rifle:
 		TNT1 A 0 A_Jump(128,"Death")
@@ -343,7 +340,6 @@ DropItem "None"
 	Death.Chainsaw:
 	Death.BFG:
 		TNT1 A 0 A_SetScale(0.8)
-		SPOS M 1
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
@@ -412,7 +408,6 @@ DropItem "None"
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Heavy:
-		FZ2D A 1
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
@@ -477,7 +472,6 @@ Actor BrutalizedHuskZombie_2 : BrutalizedHuskZombie_1
 	Death.Chainsaw:
 	Death.BFG:
 		TNT1 A 0 A_SetScale(0.8)
-		SPOS M 1
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))

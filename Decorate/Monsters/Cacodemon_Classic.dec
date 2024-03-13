@@ -75,11 +75,12 @@ BloodColor "45 34 7F"	//Hex value
 		TNT1 A 0 A_Jump(168,"Death.Cutless")
 		Goto Death
 	Death.Shotgun:
+		HEA3 D 2 A_Recoil(2)
 		TNT1 A 0 A_Jump(128,"Death")
-		HEA3 D 1 A_JumpIfCloser(1000,"Death.Cutless")
+		TNT1 A 0 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.CutLess:
-		TNT1 A 0 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
+		HEA3 E 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncherBLUE",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1BLUE",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2BLUE",32,0,random(0,360),2,random(0,90))
@@ -95,10 +96,10 @@ BloodColor "45 34 7F"	//Hex value
 		CLHE A 1 A_SpawnItemEx("Brutalized64ClassicCaco",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.SSG:
-		HEA3 D 1 A_JumpIfCloser(300,"Death.Splattered")
+		HEA3 D 2 A_Recoil(3)
+		TNT1 A 0 A_JumpIfCloser(300,"Death.Splattered")
 		TNT1 A 0 A_Jump(128,"Death")
-		HEA3 D 1 A_JumpIfCloser(1000,"Death.Cutless")
-		TNT1 A 0 A_Recoil(3)
+		TNT1 A 0 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.Splattered:
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncherBLUE",0,0,random(0,360),2,random(50,130))
@@ -434,11 +435,12 @@ BloodColor "45 34 7F"	//Hex value
 		TNT1 A 0 A_Jump(168,"Death.Cutless")
 		Goto Death
 	Death.Shotgun:
+		HEA4 D 2 A_Recoil(2)
 		TNT1 A 0 A_Jump(128,"Death")
-		HEA4 D 1 A_JumpIfCloser(1000,"Death.Cutless")
+		TNT1 A 0 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.CutLess:
-		TNT1 A 0 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
+		HEA4 E 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncherBLUE",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1BLUE",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2BLUE",32,0,random(0,360),2,random(0,90))
@@ -454,10 +456,10 @@ BloodColor "45 34 7F"	//Hex value
 		CNHE A 1 A_SpawnItemEx("BrutalizedNClassicCaco",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.SSG:
-		HEA4 D 1 A_JumpIfCloser(300,"Death.Splattered")
+		HEA4 D 2 A_Recoil(3)
+		TNT1 A 0 A_JumpIfCloser(300,"Death.Splattered")
 		TNT1 A 0 A_Jump(128,"Death")
-		HEA4 D 1 A_JumpIfCloser(1000,"Death.Cutless")
-		TNT1 A 0 A_Recoil(3)
+		TNT1 A 0 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.Splattered:
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncherBLUE",0,0,random(0,360),2,random(50,130))

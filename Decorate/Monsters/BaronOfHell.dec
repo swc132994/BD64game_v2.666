@@ -32,7 +32,7 @@ BloodColor "00 64 00"	//Hex value
 	Melee:
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget23GREEN",0,0,70)
 		BOSS EF 8 A_FaceTarget
-		BOSS G 8 A_CustomMeleeAttack(10*random(1,8),"baron/melee")	//Melee and Missile seperated
+		BOSS G 8 A_CustomMeleeAttack(12*random(1,8),"baron/melee")	//Melee and Missile seperated
 		Goto See
 	Missile:
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget23GREEN",0,0,70)
@@ -68,11 +68,8 @@ BloodColor "00 64 00"	//Hex value
 		BRST G 4
 		Goto See*/
 	Death.SSG:
-		BOSS H 1
-		TNT1 A 0 A_Recoil(12)
-		BOSS H 1 A_JumpIfCloser(170,"XDeath")
-		BOSS H 1
-		TNT1 A 0 ThrustThingZ(0,10,0,1)
+		BOSS H 2 A_Recoil(6)
+		TNT1 A 0 A_JumpIfCloser(170,"XDeath")
 		Goto Death
 	Death.Head:
 		TNT1 AA 0 A_CustomMissile("XDeath1GREEN",32,0,random(0,360),2,random(0,90))
@@ -104,12 +101,13 @@ BloodColor "00 64 00"	//Hex value
 		TNT1 AAAA 0 A_CustomMissile("BloodmistGREEN",55,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBigGREEN",45,0,random(0,360),2,random(10,90))
 		TNT1 A 0 A_CustomMissile("XDeathBaronARm",52,0,random(0,360),2,random(0,90))
-		BOSS H 1 A_SpawnItemEx("XDeathBaronLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("XDeathBaronLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_BossDeath
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
-		BGB1 A 2 ThrustThingZ(0,50,0,0)
+		BGB1 A 2 A_Recoil(8)
+		BGB1 A 2 ThrustThingZ(0,45,0,0)
 		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
 		TNT1 A 0 A_Jump(128,2)
 		BGB1 A 2 A_CheckFloor("LANDAFTERXDEATH1")

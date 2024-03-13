@@ -1670,7 +1670,7 @@ Scale 0.7
 	States
 	{
 	Spawn:
-		BAR1 A 0
+		BEXP A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
 		TNT1 A 0 A_Jump(32,"SpawnKillerBarrel")//12.5%
 	SpawnNormalBarrel:
