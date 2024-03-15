@@ -85,7 +85,6 @@ MONSTER
 		GHUL Q -1 A_CustomMissile("GrowingBloodPoolGreen",0,0,random(0,360),2,random(0,90))
 		Stop
 	AlmostDead:
-		GHUL L 2 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"XDeath")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_CustomMissile("BloodmistBigGreen",45,0,random(0,360),2,random(10,90))
@@ -115,7 +114,6 @@ MONSTER
 		GHD1 E -1 A_CustomMissile("GrowingBloodPoolGreen",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Cutless2:
-		GHUL L 2 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Xdeath")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		TNT1 AAAA 0 A_CustomMissile("BloodmistGreen",35,0,random(0,360),2,random(0,90))
@@ -136,7 +134,6 @@ MONSTER
 		TNT1 A 0 A_JumpIfCloser(1000,"Death.CutLess2")
 		Goto Death
 	Death.Head:
-		GHUL L 2 A_JumpIf(CallACS("SevereredLimbDeathACS")==0,"Death")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		TNT1 AAA 0 A_CustomMissile("Brutal_BloodGreen",56,0,random(0,360),2,random(0,90))

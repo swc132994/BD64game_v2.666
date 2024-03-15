@@ -64,7 +64,7 @@ Dropitem "DemonEssenceSpawner"
 		TNT1 A 0 A_CustomMissile("XDeath2b",72,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath3",72,0,random(150,210),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",72,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("XDeathEyes",70,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeathEyesFatso",70,0,random(150,210),2,random(10,50))
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",75,0,random(0,360),2,random(0,90))
 		FATT K 5 A_Scream
 		FATT L 5 A_NoBlocking
@@ -87,7 +87,6 @@ Dropitem "DemonEssenceSpawner"
 	Death.Cut:
 	Death.Chainsaw:
 	Death.CutLess:
-		FATT I 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
@@ -108,7 +107,7 @@ Dropitem "DemonEssenceSpawner"
 		TNT1 AA 0 A_CustomMissile("XDeath3",72,0,random(0,360),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath4",72,0,random(0,360),2,random(10,50))
 		TNT1 AAAA 0 A_CustomMissile("SmallBrainPiece",72,0,random(150,210),2,random(10,50))
-		TNT1 A 0 A_CustomMissile("XDeathEyes",70,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeathEyesFatso",70,0,random(150,210),2,random(10,50))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",75,0,random(0,360),2,random(0,90))
 		TNT1 AAA 0 A_CustomMissile("SuperGoreSpawner",45,0,random(0,360),2,random(10,90))

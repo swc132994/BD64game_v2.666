@@ -70,11 +70,9 @@ DropItem "DemonEssenceSpawner"
 		REVN Q -1 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		Stop
 	AlmostDead:
-		REVN H 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		RND1 A 1 A_SpawnItemEx("AlmostDeadTRevenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.CutLess:
-		REVN H 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		RND2 A 1 A_SpawnItemEx("BrutalisedTRevenant",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
@@ -87,7 +85,6 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_JumpIfCloser(1000,"Death.CutLess")
 		Goto Death
 	Death.Head:
-		REVN H 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))

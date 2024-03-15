@@ -48,7 +48,6 @@ server bool WeaponsWarmUpCvar = TRUE;		//weapons warm up animation
 server int AlphaPickupCvar = 0;				//pickup sprites from D64 alpha build
 server int bd64_ScreenFX = 0;				//HUD ScreenFX
 server int bd64_BloodTrail = 0;				//HUD Bloodtrail
-server int SevereredLimbDeathCvar = 1;		//option to skip one arm deaths
 server int NightElementalRandomCvar = 1;	//night elemental replaces pain elemental
 server int FleshWizardRandomCvar = 1;		//flesh wizard replaces archvile
 server int TheHorde_Multiplier_Cvar = 1;	//husk zombie spawns near bodies

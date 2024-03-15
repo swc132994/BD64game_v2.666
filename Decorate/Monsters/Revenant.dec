@@ -71,7 +71,6 @@ DropItem "DemonEssenceSpawner"
 		SKEL Q -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	AlmostDead:
-		SKEL L 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
@@ -100,7 +99,6 @@ DropItem "DemonEssenceSpawner"
 		SND1 E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Cutless2:
-		SKEL L 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
@@ -121,7 +119,6 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_JumpIfCloser(1000,"Death.CutLess2")
 		Goto Death
 	Death.Head:
-		SKEL L 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))

@@ -85,7 +85,6 @@ BloodType "Brutal_BloodGreen"
 		TNT1 A 0 A_Jump(168,"Death")
 	Death.CutLess:
 	Death.ShotgunNoArm:
-		ACID H 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 A 0 A_CustomMissile("AcidDemonArm",50,0,random(00,360),2,random(10,50))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking

@@ -226,7 +226,6 @@ DropItem "SOULSPAWNER"
 	Death.Rifle:
 	Death.Cutless:
 		TNT1 A 0 A_Jump(64,"Death")
-		64ZF H 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
@@ -438,6 +437,7 @@ Actor BrutalizedHuskZombie_2 : BrutalizedHuskZombie_1
 	Spawn:
 		ZFM2 A 10
 	Death.Bullet:
+	Death.Rifle:
 	Death:
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking

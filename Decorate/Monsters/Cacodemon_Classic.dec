@@ -80,7 +80,6 @@ BloodColor "45 34 7F"	//Hex value
 		TNT1 A 0 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.CutLess:
-		HEA3 E 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncherBLUE",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1BLUE",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2BLUE",32,0,random(0,360),2,random(0,90))
@@ -440,7 +439,6 @@ BloodColor "45 34 7F"	//Hex value
 		TNT1 A 0 A_JumpIfCloser(1000,"Death.Cutless")
 		Goto Death
 	Death.CutLess:
-		HEA4 E 2 ACS_NamedExecuteAlways("SevereredLimbDeathACS")
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncherBLUE",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1BLUE",32,0,random(0,360),2,random(0,90))
 		TNT1 AA 0 A_CustomMissile("XDeath2BLUE",32,0,random(0,360),2,random(0,90))

@@ -214,9 +214,9 @@ Health 0
 Actor 64BelphegorBall : BaronBall
 {
 Translation "0:255=%[0,0,0]:[0,0,1]"//Blue
-Damage 50
+Damage 35
 Scale 1.5
-Speed 30
+Speed 25
 FastSpeed 30
 Radius 6
 Height 6

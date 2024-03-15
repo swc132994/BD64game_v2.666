@@ -908,17 +908,6 @@ script "AlphaBarrelSee" (void)
 	}
 }
 
-Script "SevereredLimbDeathACS" (void)
-{
-	if(GetCvar("SevereredLimbDeathCvar") == 0)
-	{
-		SetActorState(0,"Death.Head");
-		SetActorState(0,"Death.Heavy");
-		SetActorState(0,"Death");
-		SetActorState(0,"XDeath");
-	}
-}
-
 Script "WadChecker" (void)
 {
 	if(GetCvar("BD64_WadCheck") == 1) { SetActorState(0,"Doom2"); }

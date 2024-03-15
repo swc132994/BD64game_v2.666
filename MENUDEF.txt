@@ -197,9 +197,6 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 		StaticText "before starting a new game in one of the supported wads",1
 		StaticText "You can use Doom 2 on non-compatible wads",1
 		StaticText ""
-	Option "Severed Limb Deaths =","SevereredLimbDeathCvar","YesOrNo"
-		StaticText "Enable monster limb loss death states",1
-		StaticText ""
 		StaticText "Map Prop Replacement Options!",1
 		StaticText ""
 	Option "Husk Zombie Horde Multiplier =","TheHorde_Multiplier_Cvar","TheHorde_Multiplier_Value"
