@@ -13,7 +13,7 @@ Inventory.PickupSound "WPICK"
 	States
 	{
 	Spawn:
-		ARSD A 0 NoDelay A_JumpIfInventory("AltRifleSkin",1,2)
+		ARSD A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("RifleSkinACS")==TRUE,2)
 		RIFD A 0
 		"####" A 2
 		"####" A 0 ACS_NamedExecuteAlways("DM_SpawnACS")
@@ -33,7 +33,7 @@ Inventory.PickupSound "WPICK"
 		TNT1 A 1 A_SpawnItemEx("ChaingunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	DMSpawn:
-		TNT1 A 0 A_ChangeFlag("THRUACTORS",1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		TNT1 A 0 A_SpawnItemEx("TeleportationFog")
 		TNT1 A 0 A_SpawnItemEx("64Rifle")
 		TNT1 A 0 A_SpawnItemEx("64RifleTactical")
@@ -70,7 +70,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 	States
 	{
 	Spawn:
-		ARSD A 0 NoDelay A_JumpIfInventory("AltRifleSkin",1,2)
+		ARSD A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("RifleSkinACS")==TRUE,2)
 		RIFD A 0
 		"####" A 1
 		Loop
@@ -260,7 +260,7 @@ Tag "Assault Rifle"
 		"####" EDCB 1
 		Stop
 	Spawn:
-		ARSD A 0 NoDelay A_JumpIfInventory("AltRifleSkin",1,2)
+		ARSD A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("RifleSkinACS")==TRUE,2)
 		RIFD A 0
 		"####" A 1
 		Loop

@@ -26,6 +26,7 @@ Tag "Explosive Barrel"
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_SpawnItemEx("64BarrelExplosion")
 		TNT1 A 0 A_SpawnItemEx("DetectBarrelCrater")
+		BEXP D 3 Bright
 		TNT1 A 0 A_Explode(100,200)
 		TNT1 A 0 A_CheckSight("Finish")
 		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
@@ -33,9 +34,9 @@ Tag "Explosive Barrel"
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
 		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
-		BEXP C 3
+		BEXP E 3 Bright
 		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
-		TNT1 A 3
+		BEXP F 3 Bright
 		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
 		TNT1 A 3
 		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))

@@ -21,6 +21,7 @@ DropItem "SOULSPAWNER"
 	{
 	Spawn:
 		64ZF A 1
+		TNT1 A 0 A_ChangeFlag("AMBUSH",TRUE)
 		Goto Stand
 	Stand:
 		TNT1 A 0 A_CheckSight("Stand2")
@@ -99,7 +100,7 @@ DropItem "SOULSPAWNER"
 	Raise:
 		TNT1 A 0 A_SetScale(0.7)
 		64ZF NMLKJI 5
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		Goto See
 	Death:
 		64ZF I 5 A_Scream
@@ -171,7 +172,7 @@ DropItem "SOULSPAWNER"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBM1 A 2 ThrustThingZ(0,30,0,0)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Shotgun:
@@ -218,7 +219,7 @@ DropItem "SOULSPAWNER"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBM1 A 2 ThrustThingZ(0,40,0,1)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Bullet:
@@ -378,7 +379,7 @@ DropItem "None"
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		GBM1 A 2 ThrustThingZ(0,30,0,0)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.SuperFists:
@@ -403,7 +404,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBM1 A 2 ThrustThingZ(0,40,0,1)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Heavy:
@@ -510,7 +511,7 @@ Actor BrutalizedHuskZombie_2 : BrutalizedHuskZombie_1
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
 		GBM1 A 2 ThrustThingZ(0,30,0,0)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.SplatteredOnWall:
@@ -531,7 +532,7 @@ Actor BrutalizedHuskZombie_2 : BrutalizedHuskZombie_1
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBM1 A 2 ThrustThingZ(0,40,0,1)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		GBM1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Raise:

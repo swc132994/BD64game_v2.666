@@ -138,7 +138,7 @@ DropItem "SOULSPAWNER"
 		Stop
 	Raise:
 		SSWV MLKJI 5
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		Goto See
 	Death.BFG:
 	Death.Chainsaw:
@@ -192,7 +192,7 @@ DropItem "SOULSPAWNER"
 		TNT1 AAAA 0 A_CustomMissile("Brutal_Blood",35,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		NDM3 ABCDE 5
 		NDM3 F 35
 		NDM3 F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
@@ -482,7 +482,7 @@ ReactionTime 35
 	Spawn:
 		ZZND A 1 NoDelay ThrustThingZ(0,35,0,1)
 		ZZND BCD 1
-		TNT1 A 0 A_ChangeFlag("SOLID",1)
+		TNT1 A 0 A_SetSolid
 	Fly:
 		ZZND ABCD 1 A_CheckFloor("Rest")
 		Loop

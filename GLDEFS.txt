@@ -240,26 +240,6 @@ pointlight UNMAKERSHOT
 	size 15
 }
 
-object UnmakerLaser
-{
-frame ULAZ {light UNMAKERSHOT}
-}
-
-object UnmakerLaser2
-{
-frame ULAZ {light UNMAKERSHOT}
-}
-
-object EradicatorLaser
-{
-frame ULAZ {light UNMAKERSHOT}
-}
-
-object UnmakerLaserTrail
-{
-frame ULAZ {light UNMAKERSHOT}
-}
-
 //BFG
 pointlight BFGBALL
 {
@@ -618,72 +598,23 @@ flickerlight2 ZOMBIEATK
 	interval 1
 	offset 0 40 0
 }
-flickerlight2 ZOMBIEATK2
-{
-	color 0.8 0.8 0.8
-	size 48
-	secondarySize 56
-	interval 1
-	offset 0 40 0
-}
-
-object 64ZombieMan
-{
-	frame PPOSF {light ZOMBIEATK}
-}
-
-object 64ShotgunGuy
-{
-	frame SPOSF {light ZOMBIEATK}
-}
-
-object 64Zombiemarine
-{
-	frame CPOSE {light ZOMBIEATK}
-	frame CPOSF {light ZOMBIEATK}
-}
-
-object IntroMarine
-{
-frame PLAYF {light ZOMBIEATK}
-}
-
-object 64SSGGuy
-{
-	frame POS4F {light ZOMBIEATK}
-}
-
-object 64DoomPlayer
-{
-	frame PLAYF { light ZOMBIEATK }
-}
 
 flickerlight2 MASTERMINDATK
 {
-	color 1.0 0.8 0.8
+	color 0.35 0.2 1.0
 	size 94
 	secondarySize 56
 	interval 1
 	offset 0 40 0
 }
 
-flickerlight2 MASTERMINDATK2
+flickerlight2 ERADICATORATK
 {
 	color 1.0 0.0 0.0
 	size 94
 	secondarySize 56
 	interval 1
 	offset 0 40 0
-}
-
-object 64SpiderMastermind
-{
-	frame MSMNQ {light MASTERMINDATK}
-}
-
-object 64Eradicator
-{
-	frame BSGIQ {light MASTERMINDATK2}
 }
 
 //Doom Imp Fireball
@@ -2322,62 +2253,10 @@ offset 0 0 0
 dontlightself 0
 }
 
-object AlphaLZRGkerLaser
-{
-frame TNT1 {light BIGREDLASER}
-}
-
-object UnmakerLaserWhite
-{
-frame SHWK {light WHITELASER}
-}
-
-object UnmakerLaserTrailWhite
-{
-frame LENS {light WHITELASER}
-}
-
-pointlight HUEHUE
-{
-color 0.5 0.4 0
-size 48
-}
-
-pointlight HUEHUEHUEHUE
-{
-color 0.5 0.4 0
-size 62
-}
-
-pointlight Chaingun
+pointlight CHAINGUN
 {
 color 0.35 0.2 1
 size 48
-}
-
-object PlayerMuzzle1
-{
-frame PLMZ { light HUEHUE }
-}
-
-object PlayerMuzzle2
-{
-frame PLMZ { light HUEHUEHUEHUE }
-}
-
-object PlayerMuzzle3
-{
-frame CGMZ { light Chaingun }
-}
-
-object MarineMuzzle1
-{
-frame PLMZ { light HUEHUE }
-}
-
-object EnergyBlast
-{
-frame LEYS {light BIGREDLASER}
 }
 
 pointlight BETABALL1

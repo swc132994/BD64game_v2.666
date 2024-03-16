@@ -108,7 +108,7 @@ DropItem "DemonEssenceSpawner"
 		Stop
 	Raise:
 		DI64 PONML 5
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
@@ -132,18 +132,18 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBMI A 2 ThrustThingZ(0,30,0,0)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		GBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
 		GBMI B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
-		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
 		GBMI B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	LandAfterXDeath2:
 		GBMI C 1
-		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
 		GBMI C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
@@ -179,7 +179,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBMI A 2 ThrustThingZ(0,40,0,1)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		GBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Heavy:
@@ -385,7 +385,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBMI A 2 ThrustThingZ(0,30,0,0)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		GBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Chainsaw:
@@ -427,7 +427,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBMI A 2 ThrustThingZ(0,40,0,1)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		GBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Pain:
@@ -561,7 +561,7 @@ Actor BrutalizedImp64_2 : BrutalizedImp64
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBMI A 2 ThrustThingZ(0,40,0,1)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		GBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	XDeath:
@@ -581,7 +581,7 @@ Actor BrutalizedImp64_2 : BrutalizedImp64
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		GBMI A 2 ThrustThingZ(0,30,0,0)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		GBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Chainsaw:
@@ -728,7 +728,7 @@ BloodColor "45 34 7F"	//Hex value
 		Goto See
 	Raise:
 		TRO2 PONML 5
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		Goto See
 	Death:
 		TNT1 A 0 A_Jump(128,"Death2")
@@ -796,18 +796,18 @@ BloodColor "45 34 7F"	//Hex value
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		NBMI A 2 ThrustThingZ(0,30,0,0)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		NBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
 		NBMI B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
-		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
 		NBMI B -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
 		Stop
 	LandAfterXDeath2:
 		NBMI C 1
-		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
 		NBMI C -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Shotgun:
@@ -843,7 +843,7 @@ BloodColor "45 34 7F"	//Hex value
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		NBMI A 2 ThrustThingZ(0,40,0,1)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		NBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Heavy:
@@ -1048,7 +1048,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		NBMI A 2 ThrustThingZ(0,40,0,1)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		NBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	XDeath:
@@ -1069,7 +1069,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		NBMI A 2 ThrustThingZ(0,30,0,0)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		NBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.BFG:
@@ -1224,7 +1224,7 @@ Actor BrutalizedNImp64_2 : BrutalizedNImp64
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		NBMI A 2 ThrustThingZ(0,40,0,1)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		NBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	XDeath:
@@ -1244,7 +1244,7 @@ Actor BrutalizedNImp64_2 : BrutalizedNImp64
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		NBMI A 2 ThrustThingZ(0,30,0,0)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		NBMI A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.BFG:

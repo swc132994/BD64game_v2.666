@@ -145,10 +145,10 @@ Projectile
 		Loop
 	Splash:
 		"####" "#" 0 A_Stop
-		"####" "#" 0 A_Changeflag("BOUNCEONWALLS",0)
-		"####" "#" 0 A_Changeflag("BOUNCEONFLOORS",0)
-		"####" "#" 0 A_Changeflag("ALLOWBOUNCEONACTORS",0)
-		"####" "#" 0 A_Changeflag("BOUNCEAUTOOFF",0)
+		"####" "#" 0 A_Changeflag("BOUNCEONWALLS",FALSE)
+		"####" "#" 0 A_Changeflag("BOUNCEONFLOORS",FALSE)
+		"####" "#" 0 A_Changeflag("ALLOWBOUNCEONACTORS",FALSE)
+		"####" "#" 0 A_Changeflag("BOUNCEAUTOOFF",FALSE)
 	SplashHold:
 		"####" "#" 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		"####" "#" 12

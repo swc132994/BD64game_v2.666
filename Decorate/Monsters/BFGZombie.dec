@@ -50,7 +50,7 @@ MeleeRange 120
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget23",0,0,50)
 		TNT1 A 0 A_PlaySound("weapons/bfgf",CHAN_WEAPON)
 		TNT1 A 0 A_Recoil(4)
-		TNT1 A 0 A_ChangeFlag("NOPAIN",1)
+		TNT1 A 0 A_ChangeFlag("NOPAIN",TRUE)
 		64BZ UUU 8 Light("BFGBALL_X5") A_FaceTarget
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8",0,0,55)
 		64BZ EE 4 Bright Light("BFGBALL_X4") A_FaceTarget
@@ -58,7 +58,7 @@ MeleeRange 120
 		64BZ F 2 Bright Light("BFGBALL_X1") A_CustomMissile("64EnemyBFGBall",36,6)
 		64BZ E 2 Bright Light("BFGBALL_X4") A_FaceTarget
 		64BZ UUU 4 Light("BFGBALL_X5") A_FaceTarget
-		TNT1 A 0 A_ChangeFlag("NOPAIN",0)
+		TNT1 A 0 A_ChangeFlag("NOPAIN",FALSE)
 		Goto See
 	Pain:
 		64BZ G 3
@@ -66,7 +66,7 @@ MeleeRange 120
 		Goto See
 	Raise:
 		64BZ NMLKJIH 5
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		Goto See
 	Death:
 		64BZ H 5 A_Scream
@@ -163,18 +163,18 @@ MeleeRange 120
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		BZ66 A 2 ThrustThingZ(0,30,0,0)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		BZ66 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
 		BZ66 B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
-		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
 		BZ66 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	LandAfterXDeath2:
 		BZ66 C 1
-		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
 		BZ66 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.PlasmaBurningZombie:
@@ -278,7 +278,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		BZ69 A 2 ThrustThingZ(0,30,0,0)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		BZ69 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	Death.Rifle:

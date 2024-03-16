@@ -53,7 +53,7 @@ BloodColor "00 64 00"	//Hex value
 		Stop
 	Raise:
 		BOSS NMLKJI 5
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
@@ -108,7 +108,7 @@ BloodColor "00 64 00"	//Hex value
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		BGB1 A 2 A_Recoil(8)
 		BGB1 A 2 ThrustThingZ(0,45,0,0)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		TNT1 A 0 A_Jump(128,2)
 		BGB1 A 2 A_CheckFloor("LANDAFTERXDEATH1")
 		Wait
@@ -116,12 +116,12 @@ BloodColor "00 64 00"	//Hex value
 		Wait
 	LandAfterXDeath1:
 		BGB1 B 1 A_Stop
-		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
 		BGB1 B -1 A_CustomMissile("GrowingBloodPoolGREEN",0,0,random(0,360),2,random(0,90))
 		Stop
 	LandAfterXDeath2:
 		BGB1 D 1 A_Stop
-		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
 		BGB1 D -1 A_CustomMissile("GrowingBloodPoolGREEN",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Plasma:

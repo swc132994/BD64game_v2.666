@@ -3,9 +3,9 @@
 
 function void SetInventory(str item, int amount)
 {
-    int diff = amount - CheckInventory(item);
-    if (diff > 0) { GiveInventory(item, diff); }
-    else if (diff < 0) { TakeInventory(item, -diff); }
+	int diff = amount - CheckInventory(item);
+	if (diff > 0) {GiveInventory(item,diff);}
+	else if (diff < 0) {TakeInventory(item, -diff);}
 }
 
 #libdefine PLAYER_VIEWHEIGHT 50		//BD64 default player height

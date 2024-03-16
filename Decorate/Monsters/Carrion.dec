@@ -33,6 +33,7 @@ MONSTER
 	{
 	Spawn:
 		CRRI E 10 A_LookEx
+		TNT1 A 0 A_ChangeFlag("AMBUSH",TRUE)
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget10",0,0,56)
 		Loop
 	Idle:

@@ -57,7 +57,7 @@ Gravity 0.9
 	{
 	Spawn:
 		TRII A 4
-		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		TRII BCDEFGH 4
 		Loop
 	Death:
@@ -72,7 +72,7 @@ Actor DropedShotgun2 : DropedShotgun
 	{
 	Spawn:
 		TRII H 4
-		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		TRII GFEDCBA 4
 	Death:
 		TNT1 A 1 A_DropItem("DroppedShotgunSpawner")
@@ -121,7 +121,7 @@ ACTOR DropedSSG : DropedShotgun
 	{
 	Spawn:
 		TRI1 A 4
-		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		TRI1 BCDEFGH 4
 	Death:
 		TNT1 A 1 A_DropItem("DroppedSuperShotgunSpawner")
@@ -135,7 +135,7 @@ ACTOR DropedSSG2 : DropedShotgun
 	{
 	Spawn:
 		TRI1 H 4
-		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		TRI1 GFEDCBA 4
 	Death:
 		TNT1 A 1 A_DropItem("DroppedSuperShotgunSpawner")
@@ -184,7 +184,7 @@ ACTOR DropedRifle : DropedShotgun
 		2RI2 A 0 NoDelay A_JumpIfInventory("AltRifleSkin",1,2)
 		TRI2 A 0
 		"####" A 4
-		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		2RI2 B 0 A_JumpIfInventory("AltRifleSkin",1,2)
 		TRI2 B 0
 		"####" BCDEFGH 4
@@ -202,7 +202,7 @@ ACTOR DropedRifle2 : DropedShotgun
 		2RI2 H 0 NoDelay A_JumpIfInventory("AltRifleSkin",1,2)
 		TRI2 H 0
 		"####" H 4
-		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		2RI2 G 0 A_JumpIfInventory("AltRifleSkin",1,2)
 		TRI2 G 0
 		"####" GFEDCBA 4
@@ -251,7 +251,7 @@ ACTOR DropedChaingun : DropedShotgun
 	{
 	Spawn:
 		TRI3 A 4
-		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		TRI3 BCDEFGH 4
 	Death:
 		TNT1 A 1 A_DropItem("DroppedChaingunSpawner")
@@ -265,7 +265,7 @@ ACTOR DropedChaingun2 : DropedShotgun
 	{
 	Spawn:
 		TRI3 H 4
-		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		TRI3 GFEDCBA 4
 	Death:
 		TNT1 A 1 A_DropItem("DroppedChaingunSpawner")
@@ -312,7 +312,7 @@ ACTOR DropedChainsaw : DropedShotgun
 	{
 	Spawn:
 		CWAS A 4
-		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		CWAS BCDEFGH 4
 	Death:
 		TNT1 A 1 A_DropItem("DroppedChainsawSpawner")
@@ -326,7 +326,7 @@ ACTOR DropedChainsaw2 : DropedShotgun
 	{
 	Spawn:
 		CWAS H 4
-		TNT1 A 0 A_ChangeFlag("THRUACTORS",0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		CWAS GFEDCBA 4
 	Death:
 		TNT1 A 1 A_DropItem("DroppedChainsawSpawner")

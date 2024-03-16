@@ -61,7 +61,7 @@ DropItem "DemonEssenceSpawner"
 		Goto See
 	Raise:
 		SKEL QPONM 5
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
 		Goto See
 	Death:
 		SKEL M 5 A_NoBlocking
@@ -150,18 +150,18 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		SKG3 A 2 ThrustThingZ(0,40,0,0)
-		TNT1 A 0 A_ChangeFlag(THRUACTORS,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
 		SKG3 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
 		SKG3 B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
-		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
 		SKG3 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	LandAfterXDeath2:
 		SKG3 C 1
-		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
 		SKG3 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	Death.Superkick:
@@ -203,8 +203,8 @@ PROJECTILE
 	Spawn:
 		TNT1 A 2
 		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ShootableProjectiles")==False, "SpawnContinue")
-		TNT1 A 0 A_ChangeFlag(NOBLOCKMAP,0)
-		TNT1 A 0 A_ChangeFlag(SHOOTABLE,1)
+		TNT1 A 0 A_ChangeFlag("NOBLOCKMAP",FALSE)
+		TNT1 A 0 A_SetShootable
 	SpawnContinue:
 		TNT1 A 0 A_Jump(253,2)//99%
 		TNT1 A 0 ThrustThingZ(0,1,0,0)
@@ -552,12 +552,12 @@ DropItem "None"
 	LandAfterXDeath:
 		SKG4 B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
-		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
 		SKG4 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	LandAfterXDeath2:
 		SKG4 C 1
-		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",1)
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
 		SKG4 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
 		Stop
 	raise:

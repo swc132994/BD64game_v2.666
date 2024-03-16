@@ -83,6 +83,10 @@ Script "BD64Initilize" Enter
 	SetInventory("TCMapCheck",GetCvar("TCMapCheckCvar"));
 }
 
+script "RifleSkinACS" (void) NET
+{
+SetResultValue(GetUserCVar(0,"AlternativeRifleSkinCvar"));
+}
 
 script "KickKeyPress" (VOID) NET
 {
