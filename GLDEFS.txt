@@ -589,10 +589,54 @@ pulselight WEAPONPOWERPURPLE
 	interval 1.14
 }
 
-//Zombies
 flickerlight2 ZOMBIEATK
 {
 	color 1.0 0.8 0.2
+	size 48
+	secondarySize 56
+	interval 1
+	offset 0 40 0
+}
+
+flickerlight2 CHAINGUN
+{
+	color 0.35 0.2 1
+	size 48
+	secondarySize 56
+	interval 1
+	offset 0 40 0
+}
+
+flickerlight2 UNMAKERATK
+{
+	color 1 0 0
+	size 48
+	secondarySize 56
+	interval 1
+	offset 0 40 0
+}
+
+flickerlight2 UNMAKERALTATK
+{
+	color 1 1 1
+	size 48
+	secondarySize 56
+	interval 1
+	offset 0 40 0
+}
+
+flickerlight2 BFGATK
+{
+	color 0 1 0
+	size 48
+	secondarySize 56
+	interval 1
+	offset 0 40 0
+}
+
+flickerlight2 PLASMAATK
+{
+	color 0 0 1
 	size 48
 	secondarySize 56
 	interval 1
@@ -2251,12 +2295,6 @@ color 1.0 1.0 1.0
 size 30
 offset 0 0 0
 dontlightself 0
-}
-
-pointlight CHAINGUN
-{
-color 0.35 0.2 1
-size 48
 }
 
 pointlight BETABALL1

@@ -99,7 +99,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_JumpIfInventory("FiredRifle",1,"Fire1")
 	Fire0:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.0,0.0,-1,7,"RifleBulletPuff")
 		TNT1 A 0 A_PlaySound("RIFLE",CHAN_WEAPON)
@@ -115,7 +115,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		Goto FinishFire
 	Fire1:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.75,0.75,-1,7,"RifleBulletPuff")
 		TNT1 A 0 A_PlaySound("RIFLE",CHAN_WEAPON)
@@ -131,7 +131,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		Goto FinishFire
 	Fire2:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(1.5,1.5,-1,7,"RifleBulletPuff")
 		TNT1 A 0 A_PlaySound("RIFLE",CHAN_WEAPON)
@@ -147,7 +147,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		Goto FinishFire
 	Fire3:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(3.0,3.0,-1,7,"RifleBulletPuff")
 		TNT1 A 0 A_PlaySound("RIFLE",CHAN_WEAPON)
@@ -163,7 +163,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		Goto FinishFire
 	Fire4:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(6.0,6.0,-1,7,"RifleBulletPuff")
 		TNT1 A 0 A_PlaySound("RIFLE",CHAN_WEAPON)
@@ -302,7 +302,7 @@ Tag "Assault Rifle"
 		RIFW BCDEFGHIJKLMNOPQRSTUVWXYZ 1 A_WeaponReady
 		RIFW "[" 1 A_PlaySound("RIFLOAD",CHAN_WEAPON)
 		RIFW "\]" 1
-		R1FW ABCDEFGHIJKLMN 1		
+		R1FW ABCDEFGHIJKLMN 1
 		R1FW O 3 A_PlaySound("RIFBOLT",CHAN_WEAPON)
 		R1FW PQRSTUVWXYZ 1 A_WeaponReady
 		R1FW "[\]" 1 A_WeaponReady
@@ -405,7 +405,7 @@ Tag "Assault Rifle"
 		TNT1 A 0 A_JumpIfInventory("FiredRifle",1,"Fire1")
 	Fire0:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.0,0.0,1,7,"RifleBulletPuff",0)
 		TNT1 A 0 A_AlertMonsters
@@ -423,7 +423,7 @@ Tag "Assault Rifle"
 		Goto FinishFire
 	Fire1:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.75,0.75,1,7,"RifleBulletPuff",0)
 		TNT1 A 0 A_AlertMonsters
@@ -441,7 +441,7 @@ Tag "Assault Rifle"
 		Goto FinishFire
 	Fire2:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(1.5,1.5,1,7,"RifleBulletPuff",0)
 		TNT1 A 0 A_AlertMonsters
@@ -459,7 +459,7 @@ Tag "Assault Rifle"
 		Goto FinishFire
 	Fire3:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(3.0,3.0,1,7,"RifleBulletPuff",0)
 		TNT1 A 0 A_AlertMonsters
@@ -477,7 +477,7 @@ Tag "Assault Rifle"
 		Goto FinishFire
 	Fire4:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(6.0,6.0,1,7,"RifleBulletPuff",0)
 		TNT1 A 0 A_AlertMonsters
@@ -660,6 +660,7 @@ Tag "Assault Rifle"
 		Goto AmmoCheck
 	ResumeFireZoomed:
 		TNT1 A 0 A_FireCustomMissile("Tracer",0,0,0,-6)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireBullets(0.0,0.0,1,7,"RifleBulletPuff",0)
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,4,-5)
 		TNT1 A 0 A_AlertMonsters

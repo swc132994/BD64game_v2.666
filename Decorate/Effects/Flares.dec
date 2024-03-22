@@ -506,6 +506,66 @@ PROJECTILE
 	}
 }
 
+ACTOR PlayerMuzzle3
+{
+Translation "0:255=%[0,0,0]:[0.4,0.85,1.0]"//Maya Blue
+Speed 0
+PROJECTILE
++NOCLIP
++NOGRAVITY
+	States
+	{
+	Spawn:
+		PLMZ A 2 Bright Light("PLASMAATK")
+		Stop
+	}
+}
+
+ACTOR PlayerMuzzle4
+{
+Translation "0:255=%[0,0,0]:[1,0,0]"//Red
+Speed 0
+PROJECTILE
++NOCLIP
++NOGRAVITY
+	States
+	{
+	Spawn:
+		PLMZ A 2 Bright Light("UNMAKERATK")
+		Stop
+	}
+}
+
+ACTOR PlayerMuzzle5
+{
+Translation "0:255=%[0,0,0]:[0,1,0]"//Green
+Speed 0
+PROJECTILE
++NOCLIP
++NOGRAVITY
+	States
+	{
+	Spawn:
+		PLMZ A 2 Bright Light("BFGATK")
+		Stop
+	}
+}
+
+ACTOR PlayerMuzzle6
+{
+Translation "0:255=%[0,0,0]:[1,1,1]"//White
+Speed 0
+PROJECTILE
++NOCLIP
++NOGRAVITY
+	States
+	{
+	Spawn:
+		PLMZ A 2 Bright Light("UNMAKERALTATK")
+		Stop
+	}
+}
+
 ACTOR BlueFlareSpawn
 {
 Speed 20

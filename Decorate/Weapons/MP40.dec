@@ -70,7 +70,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_JumpIfInventory("FiredMP40",1,"Fire1")
 	Fire0:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.0,0.0,-1,5,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",CHAN_WEAPON)
@@ -82,7 +82,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		Goto FinishFire
 	Fire1:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.6,0.6,-1,5,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",CHAN_WEAPON)
@@ -94,7 +94,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		Goto FinishFire
 	Fire2:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(2.0,2.0,-1,5,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",CHAN_WEAPON)
@@ -106,7 +106,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		Goto FinishFire
 	Fire3:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(4.0,4.0,-1,5,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",CHAN_WEAPON)
@@ -118,7 +118,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		Goto FinishFire
 	Fire4:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(7.0,7.0,-1,5,"HitPuff")
 		TNT1 A 0 A_PlaySound("MP40",CHAN_WEAPON)
@@ -252,7 +252,7 @@ Tag "MP40"
 		TNT1 A 0 A_JumpIfInventory("FiredMP40",1,"Fire1")
 	Fire0:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.0,0.0,1,5,"HitPuff",0)
 		TNT1 A 0 A_AlertMonsters
@@ -268,7 +268,7 @@ Tag "MP40"
 		Goto FinishFire
 	Fire1:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(0.6,0.6,1,5,"HitPuff",0)
 		TNT1 A 0 A_AlertMonsters
@@ -284,7 +284,7 @@ Tag "MP40"
 		Goto FinishFire
 	Fire2:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(2.0,2.0,1,5,"HitPuff",0)
 		TNT1 A 0 A_AlertMonsters
@@ -300,7 +300,7 @@ Tag "MP40"
 		Goto FinishFire
 	Fire3:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(4.0,4.0,1,5,"HitPuff",0)
 		TNT1 A 0 A_AlertMonsters
@@ -316,7 +316,7 @@ Tag "MP40"
 		Goto FinishFire
 	Fire4:
 		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
-		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",30,5,40)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
 		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
 		TNT1 A 0 A_FireBullets(7.0,7.0,1,5,"HitPuff",0)
 		TNT1 A 0 A_AlertMonsters
