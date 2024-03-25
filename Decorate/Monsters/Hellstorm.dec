@@ -142,7 +142,6 @@ MONSTER
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop
-		CRB1 A 1
 		TNT1 AAAA 0 A_CustomMissile("XDeath1GREEN",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmallGreen",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,180))
@@ -154,7 +153,7 @@ MONSTER
 		TNT1 A 0 A_SpawnItemEx("BurningFleshEffect2",0,0,5)
 		TNT1 AAA 0 A_SpawnItemEx("Brutal_BloodGreen",0,0,30)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
-		CRB1 ABCDEFGH 4
+		CRB1 ABCDEFGH 3
 		CRB1 H -1
 		Stop
 	Death.Shotgun:

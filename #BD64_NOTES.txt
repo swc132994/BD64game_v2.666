@@ -115,6 +115,10 @@ New weapon kicking and slide kicking animations by IDDQD_1337
 
 New Flashlight/torch pickup by IDDQD and Craneo (Sprites)
 
+Player/Doomguy 64 crouch sprites:
+	Credits to TommyGalano5/TG5 for his classic DoomGuy crouch sprites and to Midway for the normal Doom 64 player sprites
+	D64 Frankensprites by Craneo
+
 Monsters:
 //64Thing - Craneo(D64 sprites), based on the Mimic by StopSignal, sounds from Duke Nukem 3D by 3D Realms
 

@@ -89,15 +89,11 @@ Mass 1
 	States
 	{
 	Spawn:
-		TNT1 A 0
-		TNT1 A 0 ACS_NamedExecuteAlways("FootStepCheck")
-		TNT1 A 2
+		TNT1 A 3 NoDelay ACS_NamedExecuteAlways("FootStepCheck")
 		TNT1 AA 2 A_CheckFloor("DEATH")
 		Stop
 	Death:
-		TNT1 A 0
-		TNT1 A 2
-		TNT1 A 0 A_JumpIfInventory("FootStepDisabled", 1, "NoSound")
+		TNT1 A 2 A_JumpIfInventory("FootStepDisabled",1,"NoSound")
 	Crash:
 		TNT1 A 0 A_SetMass(999)
 		TNT1 A 1 A_Explode(1,1,0)
@@ -191,7 +187,6 @@ Player.CrouchSprite "PLYC"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop
-		CRB1 A 1
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmall",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,180))
@@ -203,7 +198,7 @@ Player.CrouchSprite "PLYC"
 		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)
 		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
-		CRB1 ABCDEFGH 4
+		CRB1 ABCDEFGH 3
 		CRB1 H -1
 		Stop
 	Death.PlasmaBurningPlayer:
@@ -438,7 +433,6 @@ Player.CrouchSprite "PLYC"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop
-		CRB1 A 1
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmall",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,180))
@@ -450,7 +444,7 @@ Player.CrouchSprite "PLYC"
 		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)
 		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
-		CRB1 ABCDEFGH 4
+		CRB1 ABCDEFGH 3
 		CRB1 H -1
 		Stop
 	Death.PlasmaBurningPlayer:
@@ -666,7 +660,6 @@ Player.CrouchSprite "PLYC"
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop
-		CRB1 A 1
 		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmall",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,180))
@@ -678,7 +671,7 @@ Player.CrouchSprite "PLYC"
 		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)
 		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
-		CRB1 ABCDEFGH 4
+		CRB1 ABCDEFGH 3
 		CRB1 H -1
 		Stop
 	Death.PlasmaBurningPlayer:
