@@ -83,6 +83,13 @@ Script "BD64Initilize" Enter
 	SetInventory("TCMapCheck",GetCvar("TCMapCheckCvar"));
 }
 
+Script "PlayerDeathScript" Death
+	{
+	Delay(1);
+	TakeInventory("ClassicChainsawToken",1);
+	TakeInventory("ClassicRLToken",1);
+	}
+
 script "RifleSkinACS" (void) NET
 {
 SetResultValue(GetUserCVar(0,"AlternativeRifleSkinCvar"));

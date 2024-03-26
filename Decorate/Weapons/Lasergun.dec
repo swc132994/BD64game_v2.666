@@ -138,7 +138,6 @@ Tag "Laser Rifle"
 	KickingFlash:
 		HDLR E 0 A_JumpIfInventory("AltLaserSkin",1,2)
 		LZRS E 0
-		"####" A 0
 		"####" EFGH 1
 		"####" H 8
 		"####" HGFE 1
@@ -146,7 +145,6 @@ Tag "Laser Rifle"
 	AirKickingFlash:
 		HDLR E 0 A_JumpIfInventory("AltLaserSkin",1,2)
 		LZRS E 0
-		"####" A 0
 		"####" EFGH 1
 		"####" H 10
 		"####" HGFE 1
@@ -154,13 +152,11 @@ Tag "Laser Rifle"
 	SlideKickingStart:
 		HDLR A 0 A_JumpIfInventory("AltLaserSkin",1,2)
 		LZRS A 0
-		"####" E 0
 		"####" EFGH 1
 		"####" H 18
 	SlideKickingEnd:
 		HDLR H 0 A_JumpIfInventory("AltLaserSkin",1,2)
 		LZRS H 0
-		"####" H 0
 		"####" H 6
 		"####" HGFE 1
 		Stop

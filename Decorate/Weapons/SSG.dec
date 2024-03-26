@@ -161,21 +161,21 @@ Tag "$TAG_SUPERSHOTGUN"
 		TNT1 A 18
 		SSGS ABCD 1
 		Stop
-	KickingFlash:
+	KickingFlash:	//16
 		SSGG BCDEFGH 1
-		SSGG I 3
+		SSGG I 2
 		SSGG HGFEDCB 1
 		Stop
-	AirKickingFlash:
+	AirKickingFlash:	//18
 		SSGG BCDEFGH 1
-		SSGG I 5
-		SSGG HGFEDCB 1
-		Stop
-	SlideKickingStart:
-		SSGG BCDEFGH 1
-		SSGG I 9
-	SlideKickingEnd:
 		SSGG I 4
+		SSGG HGFEDCB 1
+		Stop
+	SlideKickingStart:	//22
+		SSGG BCDEFGH 1
+		SSGG I 15
+	SlideKickingEnd:	//10
+		SSGG I 3
 		SSGG HGFEDCB 1
 		Stop
 	Spawn:

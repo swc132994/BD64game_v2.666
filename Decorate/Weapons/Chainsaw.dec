@@ -139,13 +139,13 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 	KickingFlash:
 		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_5)
 		SAWS RQPON 1
-		SAWS D 7
+		SAWS D 6
 		SAWS NOPQR 1
 		Stop
 	AirKickingFlash:
 		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_5)
 		SAWS RQPON 1
-		SAWS D 9
+		SAWS D 8
 		SAWS NOPQR 1
 		Stop
 	SSGFlash:
@@ -157,9 +157,9 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 	SlideKickingStart:
 		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_5)
 		SAWS RQPON 1
-		SAWS D 18
+		SAWS D 17
 	SlideKickingEnd:
-		SAWS D 6
+		SAWS D 5
 		SAWS NOPQR 1
 		Stop
 	ClassicSawSelected:	//Deselect animation
@@ -167,7 +167,7 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 		TNT1 A 3
 	ClassicSawSelected2:	//Classic select animation
 		TNT1 A 0 A_PlaySound("weapons/sawup",CHAN_7)
-		WASS DCBA 1 Offset(0,32)
+		WASS ABCD 1 Offset(0,32)
 		TNT1 A 0 A_GiveInventory("SisterWeaponSelector",1)
 	Spawn:
 		CSAW A -1
@@ -183,6 +183,7 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 		TNT1 A 0 A_StopSound(CHAN_ITEM)
 		TNT1 A 0 A_StopSound(CHAN_5)
 		SAWS RQPONDCBA 1
+		TNT1 A 0 A_Takeinventory("SisterWeaponSelector",0)
 		TNT1 A 0 A_Lower
 		Wait
 	Select:
@@ -420,6 +421,7 @@ Weapon.SisterWeapon "64ChainsawTactical"
 		WASS EFGH 1
 		WASS H 18
 	SlideKickingEnd:
+		WASS H 6
 		WASS HGFE 1
 		Stop
 	Spawn:
@@ -431,6 +433,7 @@ Weapon.SisterWeapon "64ChainsawTactical"
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
 		WASS EFGH 1
+		TNT1 A 0 A_Takeinventory("SisterWeaponSelector",0)
 		TNT1 A 0 A_Lower
 		Wait
 	Select:
