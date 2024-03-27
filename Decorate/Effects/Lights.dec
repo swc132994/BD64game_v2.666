@@ -364,7 +364,7 @@ States
 		MGD1 O -1
 		Stop
 	Spawn2:
-		S005 A -1
+		S005 A -1	//alpha
 		Stop
 	}
 }
@@ -415,7 +415,7 @@ actor GoreDecorationHeadsSpawner : GoreLongDecoration1
 States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(256,"Spawn1","Spawn2","Spawn3")
+		TNT1 A 0 NoDelay A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
 		Goto Spawn1
 	Spawn1:
 		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration12")
@@ -425,6 +425,9 @@ States
 		Stop
 	Spawn3:
 		TNT1 A 1 A_SpawnItemEx("GoreLongDecoration14")
+		Stop
+	Spawn4:
+		TNT1 A 1 A_SpawnItemEx("BloodyStick")
 		Stop
 	}
 }
@@ -701,7 +704,7 @@ scale 0.85
 		POL5 A 0
 		TNT1 A 0 A_SpawnItemEx("Swarm")
 		TNT1 A 0 A_SpawnItemEx("64SmallBloodPool")
-		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3")
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3","Spawn4")
 	Spawn1:
 		POL5 A -1
 		Stop
@@ -710,6 +713,9 @@ scale 0.85
 		Stop
 	Spawn3:
 		MGD1 W -1
+		Stop
+	Spawn4:
+		GRIB A -1
 		Stop
 	}
 }
@@ -1067,8 +1073,6 @@ actor 64NonsolidMeat5 : 64Meat5 Replaces NonsolidMeat5
 -SOLID
 }
 
-
-
 actor TweezerGore : Meat2 9913
 {
 //$category "Game/BD64_Props
@@ -1100,12 +1104,6 @@ actor TweezerGoreNonSolid : TweezerGore 9928
 -SOLID
 }
 
-actor BloodyRibs : 64Gibs 9914
-{
-//$category "Game/BD64_Props
-Scale 0.82
-}
-
 actor BloodyStick : HeadOnAStick 9915
 {
 //$category "Game/BD64_Props
@@ -1115,7 +1113,7 @@ Scale 0.82
 	
 	Spawn:
 		BSTK A 1
-		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2","Spawn3")
+		TNT1 A 0 A_Jump(256,"Spawn1","Spawn2")
 	Spawn1:
 		BSTK A -1
 		Stop
@@ -1124,21 +1122,6 @@ Scale 0.82
 		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,15)
 		BSTK B -1
 		stop
-	Spawn3:	//Alpha
-		S005 A -1
-		Stop
-	}
-}
-
-actor GoreRibs : Gibs 9916
-{
-//$category "Game/BD64_Props
-Scale 0.82
-	States
-	{
-	Spawn:
-		GRIB A -1
-		Stop
 	}
 }
 
@@ -1149,10 +1132,12 @@ Actor 64TorchTree : TorchTree Replaces TorchTree
 	Spawn:
 		TRE1 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//flip horzizontal
-		TNT1 A 0 A_Jump(128,2)
+		TNT1 A 0 A_Jump(256,1,2,3)
 		TRE1 A -1
 		Stop
 		TRE2 A -1
+		stop
+		SMIT A -1
 		stop
 	}
 }
@@ -1175,40 +1160,6 @@ Scale 0.7
 		TNT1 A 0 A_SpawnItemEx("64SmallBloodPool")
 		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,15)
 		LTRI D -1
-		Stop
-	}
-}
-
-actor 64Gargoyle1 9921
-{
-//$category "Game/BD64_Props
-Game Doom
-Scale 0.82
-Height 56
-Radius 24
-ProjectilePassHeight -8
-+SOLID
-	States
-	{
-	Spawn:
-		GAR1 A -1
-		Stop
-	}
-}
-
-actor 64Gargoyle2 9922
-{
-//$category "Game/BD64_Props
-Game Doom
-Scale 0.82
-Height 56
-Radius 24
-ProjectilePassHeight -8
-+SOLID
-	States
-	{
-	Spawn:
-		GAR2 A -1
 		Stop
 	}
 }
@@ -1718,51 +1669,6 @@ Alpha 0.25
 	}
 }
 
-actor TinyRedTorch 9925
-{
-//$category "Game/BD64_Props
-Game Doom
-scale 0.75
-+NOGRAVITY
-	States
-	{
-	Spawn:
-		SMRT A 0 NoDelay A_NoBlocking
-		TNT1 A 1 A_SpawnItemEx("ShortRedTorch")
-		Stop
-	}
-}
-
-actor TinyBlueTorch 9926
-{
-//$category "Game/BD64_Props
-Game Doom
-Scale 0.75
-+NOGRAVITY
-	States
-	{
-	Spawn:
-		SMBT A 0 NoDelay A_NoBlocking
-		TNT1 A 1 A_SpawnItemEx("ShortBlueTorch")
-		Stop
-	}
-}
-
-actor TinyGreenTorch 9927
-{
-//$category "Game/BD64_Props
-Game Doom
-Scale 0.75
-+NOGRAVITY
-	States
-	{
-	Spawn:
-		SMGT A 0 NoDelay A_NoBlocking
-		TNT1 A 1 A_SpawnItemEx("ShortGreenTorch")
-		Stop
-	}
-}
-
 actor 64WallTorchRed 9930
 {
 //$category "Game/BD64_Props
@@ -1892,57 +1798,6 @@ Radius 5
 	ClassicTorch:
 		SMYT ABCDE 4 Light("SMALLYELLOWTORCH")
 		Loop
-	}
-}
-
-actor ImpaledHead2 : HeadOnAStick 9931
-{
-//$category "Game/BD64_Props
-scale 0.82
-ProjectilePassHeight -8
-	states
-	{
-	Spawn:
-		A017 A 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
-		TNT1 A 0 A_SpawnItemEx("Swarm",0,0,10)
-		TNT1 A 0 A_Jump(256,"spawn1","spawn2","spawn3","spawn4")
-	Spawn1:
-		A017 A -1
-		Stop
-	Spawn2:	//Alpha
-		S022 A -1
-		Stop
-	Spawn3:	//Alpha
-		S023 A -1
-		Stop
-	Spawn4:	//Alpha
-		S024 A -1
-		Stop
-	}
-}
-
-actor HangingMace : HangTLookingDown 9932
-{
-//$category "Game/BD64_Props
-scale 0.82
-height 56
--SOLID
-	states
-	{
-	Spawn:
-		A019 A 0 NoDelay A_SpawnItemEx("Swarm",0,0,5)
-		Goto Stay
-	Stay:
-		TNT1 A 0 A_CheckSight("StayBlank")
-		TNT1 A 0 A_SpawnItemEx("drippingblood",0,0,-5)
-		TNT1 A 0 A_Jump(128,2)
-		A019 A 70
-		Loop
-		A019 A 45
-		Loop
-	StayBlank:
-		A019 A 3
-		Goto Stay
 	}
 }
 

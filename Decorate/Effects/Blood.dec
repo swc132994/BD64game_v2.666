@@ -12,7 +12,7 @@ health 0
 radius 8
 height 1
 Gravity 0.7
-Decal BrutalBloodSplat
+Decal "BrutalBloodSplat"
 -EXPLODEONWATER
 +DONTSPLASH
 +MISSILE
@@ -32,7 +32,7 @@ BounceFactor 0.01
 		BLUD Z 500
 		Stop
 	Splash:
-		TNT1 AAA 0 A_CustomMissile("UnderBlood1",7,0,random(0,360),2,random(30,150))
+		TNT1 AAA 0 A_SpawnItemEx("UnderBlood1",0,0,0,0,0,0,0,SXF_TRANSFERTRANSLATION)
 		TNT1 A 1
 		stop
 	Death:
@@ -52,7 +52,7 @@ Scale 0.8
 Speed 0
 Mass 9999
 Alpha 1.0
-Decal BrutalBloodSplat
+Decal "BrutalBloodSplat"
 Renderstyle Translucent
 +FORCEXYBILLBOARD
 +THRUACTORS
@@ -73,7 +73,7 @@ Renderstyle Translucent
 		TNT1 A 0 A_Stop
 		Goto Splash
 	Splash:
-		TNT1 AAA 0 A_CustomMissile("UnderBlood1",7,0,random(0,360),2,random(30,150))
+		TNT1 AAA 0 A_SpawnItemEx("UnderBlood1",0,0,0,0,0,0,0,SXF_TRANSFERTRANSLATION)
 		TNT1 A 1
 		stop
 	LotsOfBlood:
@@ -113,11 +113,11 @@ Renderstyle Translucent
 Actor Brutal_BloodGreen : Brutal_Blood
 {
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
-Decal BrutalBloodSplatGreen
+Decal "BrutalBloodSplatGreen"
 	states
 	{
 	Spawn:
-		BSPR A 0	
+		BSPR A 0
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
 		TNT1 A 0 ACS_NamedExecuteAlways("SetBloodAmountACS")
 		TNT1 A 0
@@ -129,7 +129,7 @@ Decal BrutalBloodSplatGreen
 		TNT1 A 0 A_Stop
 		Goto Splash
 	Splash:
-		TNT1 AAA 0 A_CustomMissile("UnderBlood1",7,0,random(0,360),2,random(30,150))
+		TNT1 AAA 0 A_SpawnItemEx("UnderBlood1",0,0,0,0,0,0,0,SXF_TRANSFERTRANSLATION)
 		TNT1 A 1
 		stop
 	LotsOfBlood:
@@ -169,11 +169,11 @@ Decal BrutalBloodSplatGreen
 Actor Brutal_BloodBLUE : Brutal_Blood
 {
 Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
-Decal BrutalBloodSplatBLUE
+Decal "BrutalBloodSplatBLUE"
 	states
 	{
 	Spawn:
-		BSPR A 0	
+		BSPR A 0
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
 		TNT1 A 0 ACS_NamedExecuteAlways("SetBloodAmountACS")
 		TNT1 A 0
@@ -185,7 +185,7 @@ Decal BrutalBloodSplatBLUE
 		TNT1 A 0 A_Stop
 		Goto Splash
 	Splash:
-		TNT1 AAA 0 A_CustomMissile("UnderBlood1",7,0,random(0,360),2,random(30,150))
+		TNT1 AAA 0 A_SpawnItemEx("UnderBlood1",0,0,0,0,0,0,0,SXF_TRANSFERTRANSLATION)
 		TNT1 A 1
 		stop
 	LotsOfBlood:
@@ -286,8 +286,8 @@ damage 0
 Mass 1
 Alpha 0.95
 Renderstyle Translucent
-DamageType Blood
-Decal BrutalBloodSplat
+DamageType "Blood"
+Decal "BrutalBloodSplat"
 +MISSILE
 +CLIENTSIDEONLY
 +NOTELEPORT
@@ -330,7 +330,7 @@ BounceCount 1
 
 ACTOR Brutal_FlyingBloodGreen : Brutal_FlyingBlood
 {
-Decal BrutalBloodSplatGREEN
+Decal "BrutalBloodSplatGREEN"
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 	States
 	{
@@ -360,7 +360,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 
 ACTOR Brutal_FlyingBloodBLUE : Brutal_FlyingBlood
 {
-Decal BrutalBloodSplatBLUE
+Decal "BrutalBloodSplatBLUE"
 Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 	States
 	{
@@ -425,8 +425,8 @@ Health 300
 Speed 0
 Gravity 1.0
 Alpha 1.0
-Decal BrutalBloodSplat
-DamageFactor "TeleportRemover",100.0
+Decal "BrutalBloodSplat"
+DamageFactor "TeleportRemover",100
 -NOGRAVITY
 -DONTSPLASH
 -SOLID
@@ -469,13 +469,13 @@ BounceCount 1
 
 ACTOR Brutal_BloodSpotGreen : Brutal_BloodSpot	//modelled
 {
-Decal BrutalBloodSplatGreen
+Decal "BrutalBloodSplatGreen"
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 }
 
 ACTOR Brutal_BloodSpotBLUE : Brutal_BloodSpot	//modelled
 {
-Decal BrutalBloodSplatBLUE
+Decal "BrutalBloodSplatBLUE"
 Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 }
 
@@ -567,7 +567,7 @@ ACTOR CeilBloodLauncher : Brutal_FlyingBlood
 {
 Speed 15
 Gravity 0.0
-Decal BrutalBloodSplat
+Decal "BrutalBloodSplat"
 BounceType "None"
 +THRUACTORS
 +BLOODLESSIMPACT
@@ -590,7 +590,7 @@ BounceType "None"
 ACTOR CeilBloodLauncherGreen : CeilBloodLauncher
 {
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
-Decal BrutalBloodSplatGreen
+Decal "BrutalBloodSplatGreen"
 	States
 	{
 	Spawn:
@@ -610,7 +610,7 @@ Decal BrutalBloodSplatGreen
 ACTOR CeilBloodLauncherBLUE : CeilBloodLauncher
 {
 Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
-Decal BrutalBloodSplatBLUE
+Decal "BrutalBloodSplatBLUE"
 	States
 	{
 	Spawn:
@@ -1074,7 +1074,7 @@ scale 0.5
 mass 1
 Gravity 0.4
 Speed 2
-Decal BrutalBloodSplat
+Decal "BrutalBloodSplat"
 +MISSILE
 +NOTELEPORT
 +NOBLOCKMAP
@@ -1102,13 +1102,13 @@ Decal BrutalBloodSplat
 
 actor Brutal_FlyingBloodTrailGreen : Brutal_FlyingBloodTrail
 {
-Decal BrutalBloodSplatGreen
+Decal "BrutalBloodSplatGreen"
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 }
 
 actor Brutal_FlyingBloodTrailBLUE : Brutal_FlyingBloodTrail
 {
-Decal BrutalBloodSplatBLUE
+Decal "BrutalBloodSplatBLUE"
 Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 }
 
@@ -1164,7 +1164,7 @@ actor SawBlood : Blood Replaces AxeBlood
 {
 game Doom
 Speed 0
-Decal BrutalBloodSplat
+Decal "BrutalBloodSplat"
 -DONTSPLASH
 -ALLOWPARTICLES
 +FORCEXYBILLBOARD
@@ -1180,7 +1180,7 @@ Decal BrutalBloodSplat
 		TNT1 A 1 A_CustomMissile("BloodMist",0,0,random(0,360),2,random(30,90))
 		Stop
 	Splash:
-		TNT1 AAA 0 A_CustomMissile("UnderBlood1",7,0,random(0,360),2,random(30,150))
+		TNT1 AAA 0 A_SpawnItemEx("UnderBlood1",0,0,0,0,0,0,0,SXF_TRANSFERTRANSLATION)
 		TNT1 A 1
 		stop
 	}
@@ -1195,7 +1195,7 @@ height 1
 mass 1
 Health 600
 Alpha 0.99
-Decal BrutalBloodSplat
+Decal "BrutalBloodSplat"
 -DONTSPLASH
 +NOTELEPORT
 +CLIENTSIDEONLY
@@ -1227,13 +1227,13 @@ Decal BrutalBloodSplat
 
 actor GrowingBloodPoolGreen : GrowingBloodPool	//modelled
 {
-Decal BrutalBloodSplatGreen
+Decal "BrutalBloodSplatGreen"
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 }
 
 actor GrowingBloodPoolBLUE : GrowingBloodPool	//modelled
 {
-Decal BrutalBloodSplatBLUE
+Decal "BrutalBloodSplatBLUE"
 Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 }
 
@@ -1308,8 +1308,8 @@ Gravity 0.3
 damage 0
 Alpha 0.95
 Renderstyle Translucent
-Decal BrutalBloodSplat
-DamageType Blood
+Decal "BrutalBloodSplat"
+DamageType "Blood"
 +MISSILE
 +DONTSPLASH
 +CLIENTSIDEONLY
@@ -1338,13 +1338,13 @@ DamageType Blood
 
 ACTOR Brutal_FlyingBloodFakeGreen : Brutal_FlyingBloodFake
 {
-Decal BrutalBloodSplatGreen
+Decal "BrutalBloodSplatGreen"
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 }
 
 ACTOR Brutal_FlyingBloodFakeBLUE : Brutal_FlyingBloodFake
 {
-Decal BrutalBloodSplatBLUE
+Decal "BrutalBloodSplatBLUE"
 Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 }
 
@@ -1357,7 +1357,7 @@ speed 8
 Gravity 0.4
 alpha 0.9
 RenderStyle Translucent
-decal BrutalBloodSuper
+decal "BrutalBloodSuper"
 +MISSILE
 +NOTELEPORT
 +NOBLOCKMAP
@@ -1384,13 +1384,13 @@ decal BrutalBloodSuper
 
 actor BloodmistGreen : Bloodmist
 {
-Decal BrutalBloodSuperGreen
+Decal "BrutalBloodSuperGreen"
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 }
 
 actor BloodmistBLUE : Bloodmist
 {
-Decal BrutalBloodSuperBLUE
+Decal "BrutalBloodSuperBLUE"
 Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 }
 
@@ -1605,7 +1605,7 @@ Gravity 0.9
 Mass 1
 Alpha 0.2
 Renderstyle Translucent
-Decal BrutalBloodSplat
+Decal "BrutalBloodSplat"
 -DONTSPLASH
 +MISSILE
 +CLIENTSIDEONLY
@@ -1616,7 +1616,8 @@ Decal BrutalBloodSplat
 	States
 	{
 	Spawn:
-		BSP4 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2 A_JumpIf(waterlevel < 1,"Splash")
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel < 1,"Splash")
+		BSP4 ABCDEFGHIJKLMNOPQRSTUVWXYZ 2
 		Stop
 	Splash:
 	Death:
@@ -1633,7 +1634,8 @@ speed 0
 	States
 	{
 	Spawn:
-		BSP4 ABCDEFGHIJKLMNOPQRSTUVWXYZ 1 A_JumpIf(waterlevel < 1,"Splash")
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel < 1,"Splash")
+		BSP4 ABCDEFGHIJKLMNOPQRSTUVWXYZ 1
 		Stop
 	}
 }
@@ -1656,7 +1658,7 @@ speed 10
 alpha 0.9
 gravity 0.7
 renderstyle ADD
-Decal BrutalBloodSuper
+Decal "BrutalBloodSuper"
 Projectile
 -NOGRAVITY
 +RANDOMIZE
@@ -1678,7 +1680,7 @@ Projectile
 Actor SuperGoreSpawnerGreen : SuperGoreSpawner
 {
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
-Decal BrutalBloodSuperGreen
+Decal "BrutalBloodSuperGreen"
 	states
 	{
 	Spawn:
@@ -1690,7 +1692,7 @@ Decal BrutalBloodSuperGreen
 Actor SuperGoreSpawnerBLUE : SuperGoreSpawner
 {
 Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
-Decal BrutalBloodSuperBLUE
+Decal "BrutalBloodSuperBLUE"
 	states
 	{
 	Spawn:
@@ -1737,7 +1739,7 @@ game Doom
 Scale 1.0
 Gravity 0.05
 Alpha 0.6
-Decal BrutalBloodSplat
+Decal "BrutalBloodSplat"
 -EXPLODEONWATER
 -ALLOWPARTICLES
 -NOGRAVITY
@@ -1754,7 +1756,7 @@ Decal BrutalBloodSplat
 		BLER G 1 A_FadeOut(0.01)
 		Wait
 	SpawnUnderwater:
-		TNT1 AA 0 A_CustomMissile("UnderBlood3",32,0,random(0,360),2,random(0,160))
+		TNT1 AA 0 A_SpawnItemEx("UnderBlood3",0,0,0,0,0,0,0,SXF_TRANSFERTRANSLATION)
 		TNT1 A 1
 		Stop
 	}
@@ -1762,13 +1764,13 @@ Decal BrutalBloodSplat
 
 actor SuperGoreGreen : SuperGore
 {
-Decal BrutalBloodSplatGreen
+Decal "BrutalBloodSplatGreen"
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 }
 
 actor SuperGoreBLUE : SuperGore
 {
-Decal BrutalBloodSplatBLUE
+Decal "BrutalBloodSplatBLUE"
 Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
 }
 

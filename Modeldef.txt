@@ -1132,7 +1132,7 @@ Path "models"
 Model 0 "tracer.md2"
 Skin 0 "Laser01.png"
 PITCHFROMMOMENTUM
-Scale 12 3 3
+Scale 12 5 5
 Offset 280 0 0
 ZOffset -4
 FrameIndex ULAZ A 0 0
@@ -1144,7 +1144,19 @@ Path "models"
 Model 0 "tracer.md2"
 Skin 0 "Laser01.png"
 PITCHFROMMOMENTUM
-Scale 12 3 3
+Scale 12 5 5
+Offset 280 0 0
+ZOffset -4
+FrameIndex ULAZ A 0 0
+}
+
+Model UnmakerLaserIce
+{
+Path "models"
+Model 0 "tracer.md2"
+Skin 0 "Laser01.png"
+PITCHFROMMOMENTUM
+Scale 12 6 6
 Offset 280 0 0
 ZOffset -4
 FrameIndex ULAZ A 0 0
@@ -1156,7 +1168,7 @@ Path "models"
 Model 0 "tracer.md2"
 Skin 0 "Laser01.png"
 PITCHFROMMOMENTUM
-Scale 12 3 3
+Scale 12 5 5
 Offset 280 0 0
 ZOffset -4
 FrameIndex ULAZ A 0 0
@@ -1168,7 +1180,7 @@ Path "models"
 Model 0 "tracer.md2"
 Skin 0 "Laser01.png"
 PITCHFROMMOMENTUM
-Scale 12 3 3
+Scale 12 5 5
 Offset 280 0 0
 ZOffset -4
 FrameIndex ULAZ A 0 0

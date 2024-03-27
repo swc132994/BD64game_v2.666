@@ -281,7 +281,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 Actor KickAttack : FastProjectile
 {
 Damage(random(15,25))
-DamageType Kick
+DamageType "Kick"
 Speed 32
 Radius 18
 Height 6
@@ -318,8 +318,8 @@ Obituary "%o chewed on %k's foot."
 Actor SuperKickAttack : KickAttack
 {
 Damage(2*random(70,90))
-DamageType SuperKick
-Decal Crack
+DamageType "SuperKick"
+Decal "Crack"
 +EXTREMEDEATH
 	States
 	{
@@ -348,10 +348,10 @@ Height 32
 Actor SuperAirKickAttack : KickAttack
 {
 Damage(2*random(92,110))
-DamageType SuperKick
+DamageType "SuperKick"
 Radius 20
 Height 32
-Decal Crack
+Decal "Crack"
 +EXTREMEDEATH
 	States
 	{

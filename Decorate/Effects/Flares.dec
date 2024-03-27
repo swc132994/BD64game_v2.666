@@ -553,7 +553,7 @@ PROJECTILE
 
 ACTOR PlayerMuzzle6
 {
-Translation "0:255=%[0,0,0]:[1,1,1]"//White
+Translation "0:255=%[0,0,0]:[0.49,0.73,0.91]"//Aero
 Speed 0
 PROJECTILE
 +NOCLIP

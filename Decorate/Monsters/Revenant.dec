@@ -193,7 +193,7 @@ Radius 6
 SeeSound "skeleton/attack"
 DeathSound "skeleton/tracex"
 Decal "SmallerScorch"
-DamageType Fire
+DamageType "Fire"
 PROJECTILE
 +SEEKERMISSILE
 +EXTREMEDEATH

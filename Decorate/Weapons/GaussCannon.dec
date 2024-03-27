@@ -51,7 +51,7 @@ Obituary "%o was pierced by %k's Gauss Cannon"
 Tag "Gauss Cannon"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
-Decal BigScorch
+Decal "BigScorch"
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.NOAUTOFIRE
 	States
@@ -126,7 +126,7 @@ Obituary "%o was pierced by %k's Gauss Cannon"
 Tag "Gauss Cannon"
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 Inventory.ForbiddenTo "64DoomPlayer"
-Decal BigScorch
+Decal "BigScorch"
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AMMO_CHECKBOTH
 +WEAPON.NOALERT

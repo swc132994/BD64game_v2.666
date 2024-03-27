@@ -20,6 +20,7 @@ MONSTER
 -COUNTKILL
 -NOGRAVITY
 +NEVERFAST
++NOICEDEATH
 	States
 	{
 	Spawn:
@@ -134,7 +135,6 @@ Alpha 0.6
 +MISSILE
 +NOTELEPORT
 +DONTSPLASH
-+NOICEDEATH
 	States
 	{
 	Spawn:
@@ -175,7 +175,6 @@ Alpha 0.6
 +MISSILE
 +NOTELEPORT
 +DONTSPLASH
-+NOICEDEATH
 	States
 	{
 	Spawn:
@@ -225,6 +224,7 @@ MONSTER
 -NOGRAVITY
 -COUNTKILL
 +NEVERFAST
++NOICEDEATH
 	States
 	{
 	Spawn:
@@ -361,6 +361,7 @@ MONSTER
 -COUNTKILL
 -NOGRAVITY
 +NEVERFAST
++NOICEDEATH
 	States
 	{
 	Spawn:
@@ -472,6 +473,7 @@ MONSTER
 -COUNTKILL
 -NOGRAVITY
 +NEVERFAST
++NOICEDEATH
 	States
 	{
 	Spawn:
@@ -557,6 +559,7 @@ MONSTER
 -COUNTKILL
 -NOGRAVITY
 +NEVERFAST
++NOICEDEATH
 	States
 	{
 	Spawn:
@@ -667,9 +670,9 @@ Radius 24
 Height 16
 Speed 16
 Mass 2000
-Damage(3)
+Damage 3
 PoisonDamage 30
-DamageType Poison
+DamageType "Poison"
 Obituary "%o stared into an Evil Eye for too long..."
 PROJECTILE
 -NOGRAVITY
@@ -710,9 +713,9 @@ Radius 16
 Height 8
 Speed 8
 Mass 3000
-Damage(2)
+Damage 2
 PoisonDamage 20
-DamageType Poison
+DamageType "Poison"
 Obituary "%o stared into an Evil Eye for too long..."
 RenderStyle Translucent
 Alpha 0.33
@@ -753,9 +756,9 @@ Radius 10
 Height 8
 Speed 8
 Mass 4000
-Damage(1)
+Damage 1
 PoisonDamage 10
-DamageType Poison
+DamageType "Poison"
 Obituary "%o stared into an Evil Eye for too long..."
 RenderStyle Translucent
 Alpha 0.15
@@ -887,6 +890,7 @@ MONSTER
 -COUNTKILL
 -NOGRAVITY
 +NEVERFAST
++NOICEDEATH
 	States
 	{
 	Spawn:
@@ -1015,6 +1019,7 @@ MONSTER
 -COUNTKILL
 -NOGRAVITY
 +NEVERFAST
++NOICEDEATH
 	States
 	{
 	Spawn:
@@ -1103,6 +1108,7 @@ MONSTER
 -COUNTKILL
 -NOGRAVITY
 +NEVERFAST
++NOICEDEATH
 	States
 	{
 	Spawn:

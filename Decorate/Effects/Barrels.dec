@@ -21,6 +21,7 @@ Tag "Explosive Barrel"
 		BAR1 AB 6 A_SpawnItemEx("GreenLensFlareAltSmall",0,0,35)
 		Goto Spawn
 	Death:
+	Crash:
 		BEXP ABC 3 Bright
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
@@ -86,7 +87,7 @@ Radius 65
 Height 8
 Speed 20
 Damage 20
-DamageType Fire
+DamageType "Fire"
 Alpha 0.6
 Renderstyle Translucent
 +RANDOMIZE

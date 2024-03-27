@@ -306,10 +306,10 @@ Actor BFGBetaBall : PlasmaBall
 {
 Scale 0.75
 Damage 10
-DamageType Extreme
+DamageType "Extreme"
 Obituary "%o was obliterated by %k's BFG."
 SeeSound ""
-Decal MedScorch
+Decal "MedScorch"
 +BOUNCEONFLOORS
 +BOUNCEONCEILINGS
 BounceFActor 0.95

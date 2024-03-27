@@ -377,7 +377,7 @@ Scale 0.50
 DamageType "BFG"
 Damage 30
 Speed 25
-Decal BFGLIGHTNING
+Decal "BFGLIGHTNING"
 RenderStyle Add
 Alpha 0.75
 DeathSound "weapons/bfgx"

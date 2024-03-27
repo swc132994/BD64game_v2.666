@@ -332,7 +332,7 @@ Mass 999999
 Health 100
 alpha 0.6
 DamageFactor "CauseWaterSplash",99.0
-Damagetype "CauseObjectsToSplash"
+DamageType "CauseObjectsToSplash"
 +DONTSPLASH
 +NOGRAVITY
 +THRUACTORS
@@ -367,7 +367,7 @@ actor LiquidExplosionEffectSpawner
 {
 Radius 2
 Height 2
-Damagetype CauseWaterSplash
+DamageType "CauseWaterSplash"
 +NOBLOCKMAP
 +MISSILE
 	States
@@ -525,7 +525,6 @@ Actor SpawnLiquidNukageParticleX : SpawnLiquidParticleX
 
 Actor NukageParticleX : WaterParticleX
 {
-decal slimesplash
 	States
 	{
 	Spawn:

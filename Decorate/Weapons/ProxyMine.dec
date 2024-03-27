@@ -288,7 +288,7 @@ Tag "Proximity Mine"
 PainChance "SuperFists",200
 PainChance "Kick",255
 PainChance "SuperKick",255
-Damagetype Fire
+Damagetype "Fire"
 Decal "BigScorch"
 Obituary "%o was shreded by %k's Mine."
 -SHOOTABLE

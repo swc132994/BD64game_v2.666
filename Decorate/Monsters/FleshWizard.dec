@@ -471,74 +471,74 @@ PROJECTILE
 	{
 	Spawn:
 		BLUD A 0 NoDelay ThrustThingZ(0,20,0,1)
-		BLUD A 2 Bright A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
-		BLUD B 2 Bright
-		BLUD C 2 Bright A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
-		BLUD D 2 Bright
+		BLUD A 2 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
+		BLUD B 2
+		BLUD C 2 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
+		BLUD D 2
 		Goto SpawnLoop
 	SpawnLoop:
-		BLUD D 2 Bright A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
-		BLUD D 2 Bright A_JumpIf(waterlevel > 1,"Splash")
+		BLUD D 2 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
+		BLUD D 2 A_JumpIf(waterlevel > 1,"Splash")
 		Loop
 	Death:
 		TNT1 A 0 A_CheckCeiling("SpawnCeiling")
-		BLUD D 3 Bright A_CheckFloor("Rest")
+		BLUD D 3 A_CheckFloor("Rest")
 		Wait
 	SpawnCeiling:
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterSmall")
-		BLUD D 3 Bright A_CheckFloor("Rest")
+		BLUD D 3 A_CheckFloor("Rest")
 		Wait
 	Rest:
 		TNT1 A 0 A_PlaySound("SlimeBall/Splat",CHAN_BODY)
-		XDT1 F 3 Bright A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
+		XDT1 F 3 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		TNT1 A 0 A_ChangeFlag("DONTSPLASH",TRUE)
 		TNT1 A 0 A_Explode(1,20)
 		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
-		XDT1 G 3 Bright
+		XDT1 G 3
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 H 3 Bright A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
+		XDT1 H 3 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		TNT1 A 0 A_Explode(1,20)
 		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
-		XDT1 I 3 Bright
+		XDT1 I 3
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 J 3 Bright A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
+		XDT1 J 3 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		TNT1 A 0 A_Playsound("AcidPuddle/Start",CHAN_VOICE,1,TRUE)
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright A_SpawnItemEx("PlasmaSmoke")
+		XDT1 K 5 A_SpawnItemEx("PlasmaSmoke")
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright A_SpawnItemEx("MediumBloodSpot")
+		XDT1 K 5 A_SpawnItemEx("MediumBloodSpot")
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright
+		XDT1 K 5
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright
+		XDT1 K 5
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright A_SpawnItemEx("PlasmaSmoke")
+		XDT1 K 5 A_SpawnItemEx("PlasmaSmoke")
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright A_SpawnItemEx("DetectFloorCraterSmallMotherdemon")
+		XDT1 K 5 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon")
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright
+		XDT1 K 5
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright
+		XDT1 K 5
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright A_SpawnItemEx("PlasmaSmoke")
+		XDT1 K 5 A_SpawnItemEx("PlasmaSmoke")
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright
+		XDT1 K 5
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright
+		XDT1 K 5
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright
+		XDT1 K 5
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright A_SpawnItemEx("PlasmaSmoke")
+		XDT1 K 5 A_SpawnItemEx("PlasmaSmoke")
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright
+		XDT1 K 5
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright
+		XDT1 K 5
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright
+		XDT1 K 5
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright A_SpawnItemEx("PlasmaSmoke")
+		XDT1 K 5 A_SpawnItemEx("PlasmaSmoke")
 		TNT1 A 0 A_Explode(1,20)
-		XDT1 K 5 Bright
+		XDT1 K 5
 		TNT1 A 1 A_StopSound(CHAN_VOICE)
 		Stop
 	Splash:

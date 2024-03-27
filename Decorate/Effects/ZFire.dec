@@ -9,7 +9,7 @@ Damage 0
 Gravity 0
 Alpha 1
 RenderStyle Add
-DamageType Flames
+DamageType "Flames"
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -210,7 +210,7 @@ Damage 0
 Gravity 0
 Alpha 1
 RenderStyle Add
-DamageType Flames
+DamageType "Flames"
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -345,7 +345,7 @@ Damage 0
 Gravity 0
 Alpha 1.0
 RenderStyle Add
-DamageType Flames
+DamageType "Flames"
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -584,7 +584,7 @@ Speed 6
 Height 2
 Radius 2
 Gravity 0.1
-Damagetype Fire
+Damagetype "Fire"
 MaxStepHeight 64
 -NOGRAVITY
 -NOCLIP
@@ -620,7 +620,7 @@ Speed 6
 Radius 2
 Height 2
 Gravity 0.1
-Damagetype Fire
+Damagetype "Fire"
 MaxStepHeight 64
 -NOGRAVITY
 -NOCLIP
@@ -683,7 +683,7 @@ Damage 0
 Gravity 0
 Alpha 1.0
 RenderStyle Add
-DamageType Flames
+DamageType "Flames"
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -861,7 +861,7 @@ Height 8
 Speed 11
 Mass 1
 Damage 3
-damagetype Fire
+damagetype "Fire"
 +NOBLOCKMAP
 +MISSILE
 +NOTELEPORT
@@ -946,7 +946,7 @@ Speed 11
 Mass 1
 Damage 3
 damagetype "Fire"
-Decal BigScorch
+Decal "BigScorch"
 BounceType "None"
 BounceFactor 0.1
 +DONTSPLASH
@@ -1014,7 +1014,7 @@ Height 8
 Speed 11
 Mass 1
 Damage 0
-damagetype Fire
+damagetype "Fire"
 +DONTSPLASH
 +NOBLOCKMAP
 +MISSILE
@@ -1083,7 +1083,7 @@ Damage 0
 Gravity 0
 Alpha 1.0
 Renderstyle Add
-DamageType Flames
+DamageType "Flames"
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -1126,7 +1126,7 @@ Damage 0
 Gravity 0.3
 Alpha 1.0
 RenderStyle Translucent
-DamageType Fire
+DamageType "Fire"
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -1166,7 +1166,7 @@ Damage 0
 Alpha 1.0
 Gravity 0.3
 RenderStyle Translucent
-DamageType Fire
+DamageType "Fire"
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -1237,7 +1237,7 @@ Speed 25
 Damage 1
 Alpha 1.0
 RenderStyle Add
-DamageType Fire
+DamageType "Fire"
 -RIPPER
 -BLOODSPLATTER
 +NOBLOCKMAP
@@ -1291,7 +1291,7 @@ ACTOR TinyBurningPiece : BarrelExplosionSmokeColumn
 Scale 1.1
 Alpha 0.9
 RenderStyle Add
-Damagetype "Plasma"
+DamageType "Plasma"
 -CLIENTSIDEONLY
 	States
 	{
@@ -1378,7 +1378,7 @@ Damage 0
 Gravity 0
 Alpha 0.9
 Renderstyle Add
-DamageType Flames
+DamageType "Flames"
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -1443,7 +1443,7 @@ Height 0
 Speed 0
 Mass 1
 gravity 0.5
-decal BrutalBloodSplat
+decal "BrutalBloodSplat"
 seesound "bloood"
 deathsound "bloood"
 +MOVEWITHSECTOR

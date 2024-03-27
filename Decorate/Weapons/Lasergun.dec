@@ -297,8 +297,8 @@ speed 999
 damage 2
 Alpha 1
 Renderstyle Add
-Decal LaserDecal
-DamageType Plasma
+Decal "LaserDecal"
+DamageType "Plasma"
 SeeSound "weapons/AlphaLZRGker"
 DeathSound ""
 Obituary "%o was fried by %k's laser."
@@ -329,8 +329,8 @@ Height 7
 Radius 7
 Alpha 0.9
 RenderStyle Add
-Decal MedScorch
-DamageType Plasma
+Decal "MedScorch"
+DamageType "Plasma"
 +BLOODSPLATTER
 +FORCERADIUSDMG
 -DONTSPLASH
