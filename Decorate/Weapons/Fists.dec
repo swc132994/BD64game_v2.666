@@ -305,7 +305,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 Actor PunchAttack : FastProjectile
 {
 Damage(random(5,10))
-DamageType Melee
+DamageType "Melee"
 Speed 27
 Radius 14
 Height 6
@@ -333,9 +333,9 @@ Obituary "$OB_MPFIST"
 Actor SuperPunchAttack : PunchAttack
 {
 Damage(2*random(60,80))
-DamageType SuperFists
+DamageType "SuperFists"
 Obituary "$OB_MPFIST"
-Decal Crack
+Decal "Crack"
 +EXTREMEDEATH
 	States
 	{

@@ -350,7 +350,7 @@ Damagetype "Plasma"
 SeeSound "weapons/plasmaf"
 DeathSound "weapons/plasmax"
 Obituary "$OB_MPPLASMARIFLE"
-Decal SmallerScorch
+Decal "SmallerScorch"
 Projectile
 +RANDOMIZE
 +MISSILE

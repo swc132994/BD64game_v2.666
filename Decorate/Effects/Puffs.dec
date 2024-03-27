@@ -7,7 +7,7 @@ Mass 500
 Gravity 0.01
 alpha 0.4
 renderstyle Add
-DamageType Bullet
+DamageType "Bullet"
 Decal "BulletDecalNew1"
 +NOBLOCKMAP
 +NOGRAVITY
@@ -46,12 +46,12 @@ Actor UnderwaterHitPuff
 
 actor ShotPuff : HitPuff
 {
-DamageType SSG
+DamageType "SSG"
 }
 
 actor ShotgunPuff : HitPuff
 {
-DamageType Shotgun
+DamageType "Shotgun"
 }
 
 ACTOR RicoChet
@@ -100,12 +100,12 @@ Obituary "%o ate bullet shrapnel."
 
 Actor MachineGunBulletPuff : HitPuff
 {
-DamageType CutLess
+DamageType "CutLess"
 }
 
 Actor RifleBulletPuff : HitPuff
 {
-DamageType Rifle
+DamageType "Rifle"
 }
 
 ACTOR SSawPuff : HitPuff
@@ -114,7 +114,7 @@ scale 0.15
 Radius 20
 alpha 0.7
 Renderstyle Add
-damagetype Cut
+DamageType "Cut"
 +NOBLOCKMAP
 +NOGRAVITY
 +NOEXTREMEDEATH
@@ -144,7 +144,7 @@ height 2
 speed 140
 alpha 0.5
 renderstyle ADD
-Damagetype "Weak"
+DamageType "Weak"
 +FORCEXYBILLBOARD
 +DONTSPLASH
 +NOEXTREMEDEATH

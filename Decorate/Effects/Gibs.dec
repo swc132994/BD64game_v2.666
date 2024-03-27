@@ -7,8 +7,8 @@ Speed 10
 Mass 1
 SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
-Decal BrutalBloodSuper
-damagetype Blood
+Decal "BrutalBloodSuper"
+DamageType "Blood"
 +MISSILE
 +NOBLOCKMAP
 +NOTELEPORT
@@ -45,7 +45,7 @@ BounceFactor 1
 ACTOR XDeath1Green : XDeath1
 {
 Translation "16:31=152:159","176:191=112:127","32:47=152:159"//GREEN PARTIAL
-Decal BrutalBloodSuperGreen
+Decal "BrutalBloodSuperGreen"
 	States
 	{
 	Spawn:
@@ -69,7 +69,7 @@ Decal BrutalBloodSuperGreen
 ACTOR XDeath1BLUE : XDeath1
 {
 Translation "ICE"//BLUE
-Decal BrutalBloodSuperBLUE
+Decal "BrutalBloodSuperBLUE"
 	States
 	{
 	Spawn:
@@ -99,7 +99,7 @@ Speed 13
 Gravity 0.8
 SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
-Decal BrutalBloodSuper
+Decal "BrutalBloodSuper"
 BounceType "Doom"
 BounceCount 1
 BounceFactor 1
@@ -168,7 +168,7 @@ PROJECTILE
 ACTOR XDeath2Green : XDeath2
 {
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
-Decal BrutalBloodSuperGreen
+Decal "BrutalBloodSuperGreen"
 	States
 	{
 	Spawn:
@@ -219,7 +219,7 @@ Decal BrutalBloodSuperGreen
 ACTOR XDeath2BLUE : XDeath2
 {
 Translation "ICE"//BLUE
-Decal BrutalBloodSuperBLUE
+Decal "BrutalBloodSuperBLUE"
 	States
 	{
 	Spawn:
@@ -284,7 +284,7 @@ Speed 10
 Gravity 0.8
 SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
-Decal BrutalBloodSplat
+Decal "BrutalBloodSplat"
 	States
 	{
 	Spawn:
@@ -335,7 +335,7 @@ Decal BrutalBloodSplat
 ACTOR XDeath3GREEN : XDeath3
 {
 Translation "0:255=%[0,0,0]:[1,2,0]"//Green
-Decal BrutalBloodSplatGREEN
+Decal "BrutalBloodSplatGREEN"
 	States
 	{
 	Spawn:
@@ -386,7 +386,7 @@ Decal BrutalBloodSplatGREEN
 ACTOR XDeath3BLUE : XDeath3
 {
 Translation "ICE"//BLUE
-Decal BrutalBloodSplatBLUE
+Decal "BrutalBloodSplatBLUE"
 	States
 	{
 	Spawn:
@@ -483,7 +483,7 @@ Speed 15
 Gravity 1
 SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
-Decal BrutalBloodSuper
+Decal "BrutalBloodSuper"
 	States
 	{
 	Spawn:
@@ -538,7 +538,7 @@ Speed 15
 Gravity 1
 SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
-Decal BrutalBloodSuperGREEN
+Decal "BrutalBloodSuperGREEN"
 	States
 	{
 	Spawn:
@@ -593,7 +593,7 @@ Speed 15
 Gravity 1
 SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
-Decal BrutalBloodSuperBLUE
+Decal "BrutalBloodSuperBLUE"
 	States
 	{
 	Spawn:
@@ -815,7 +815,7 @@ Radius 8
 Height 12
 Speed 6
 DeathSound "misc/xdeath1"
-Decal BrutalBloodSplat
+Decal "BrutalBloodSplat"
 	States
 	{
 	Spawn:
@@ -858,7 +858,7 @@ Radius 8
 Height 12
 Speed 6
 DeathSound "misc/xdeath1"
-Decal BrutalBloodSplatGREEN
+Decal "BrutalBloodSplatGREEN"
 	States
 	{
 	Spawn:
@@ -901,7 +901,7 @@ Radius 8
 Height 12
 Speed 6
 DeathSound "misc/xdeath1"
-Decal BrutalBloodSplatBLUE
+Decal "BrutalBloodSplatBLUE"
 	States
 	{
 	Spawn:
@@ -943,7 +943,7 @@ Speed 10
 Gravity 0.4
 SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
-Decal BrutalBloodSuper
+Decal "BrutalBloodSuper"
 +BOUNCEONWALLS
 	States
 	{
@@ -971,7 +971,7 @@ Decal BrutalBloodSuper
 ACTOR BurningXDeath1BLUE : BurningXDeath1
 {
 Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
-Decal BrutalBloodSuperBLUE
+Decal "BrutalBloodSuperBLUE"
 	States
 	{
 	Spawn:
@@ -1001,7 +1001,7 @@ Height 3
 Speed 10
 Mass 1
 Gravity 0.7
-Decal BrutalBloodSplat
+Decal "BrutalBloodSplat"
 +MISSILE
 +NOTELEPORT
 +MOVEWITHSECTOR
@@ -1064,7 +1064,7 @@ BounceFactor 1
 ACTOR SmallBrainPieceGreen : SmallBrainPiece
 {
 Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
-Decal BrutalBloodSplatGreen
+Decal "BrutalBloodSplatGreen"
 	States
 	{
 	Spawn:
@@ -1114,7 +1114,7 @@ Decal BrutalBloodSplatGreen
 ACTOR SmallBrainPieceBLUE : SmallBrainPiece
 {
 Translation "Ice"//BLUE
-Decal BrutalBloodSplatBLUE
+Decal "BrutalBloodSplatBLUE"
 	States
 	{
 	Spawn:
@@ -1169,7 +1169,7 @@ Radius 3
 Height 5
 Speed 7
 Mass 1
-Decal BrutalBloodSplat
+Decal "BrutalBloodSplat"
 BounceType "Doom"
 BounceCount 1
 BounceFactor 1
@@ -1213,7 +1213,7 @@ Radius 2
 Height 2
 Speed 6
 Mass 1
-Decal BrutalBloodSplat
+Decal "BrutalBloodSplat"
 +MISSILE
 +NOBLOCKMAP
 +NOTELEPORT
@@ -1252,7 +1252,7 @@ BounceFactor 0.7
 ACTOR XDeathEyesGreen : XDeathEyes
 {
 Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
-Decal BrutalBloodSplatGreen
+Decal "BrutalBloodSplatGreen"
 	States
 	{
 	Spawn:
@@ -1278,7 +1278,7 @@ Decal BrutalBloodSplatGreen
 ACTOR XDeathEyesBlue : XDeathEyes
 {
 Translation "Ice"//BLUE
-Decal BrutalBloodSplatBLUE
+Decal "BrutalBloodSplatBLUE"
 	States
 	{
 	Spawn:
@@ -1304,7 +1304,7 @@ Decal BrutalBloodSplatBLUE
 ACTOR XDeathEyesFatso : XDeathEyes
 {
 Translation "0:255=%[0,0,0]:[0.36,0.54,0.66]"	//Cyan
-Decal BrutalBloodSplat
+Decal "BrutalBloodSplat"
 	States
 	{
 	Spawn:

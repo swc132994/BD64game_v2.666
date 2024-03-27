@@ -2,7 +2,7 @@ actor MinorHeadDamage
 {
 Radius 1
 Height 1
-DamageType Head
+DamageType "Head"
 PROJECTILE
 +NOGRAVITY
 +NOTELEPORT
@@ -26,7 +26,7 @@ Health 300
 GibHealth 10000
 Radius 8
 Height 16
-DamageType head
+DamageType "Head"
 BloodType "Brutal_Blood"
 PainChance 255
 damagefactor "Blood",0.0

@@ -212,7 +212,7 @@ Actor 64BruiserBall : 64BaronBallGreen
 Scale 1.2
 DamageType "BFG"
 Damage 50
-Decal Scorch
+Decal "Scorch"
 	states
 	{
 	Spawn:
