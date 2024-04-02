@@ -236,8 +236,8 @@ object 64ArachnotronPlasma
 //UNMAKER
 pointlight UNMAKERSHOT
 {
-	color 1.0 0.0 0.0
-	size 15
+	color 0.83 0.13 0.18
+	size 20
 }
 
 //BFG
@@ -2289,10 +2289,10 @@ offset 0 0 0
 dontlightself 0
 }
 
-pointlight WHITELASER
+pointlight ICELASER
 {
-color 1.0 1.0 1.0
-size 30
+color 0.49 0.73 0.91
+size 60
 offset 0 0 0
 dontlightself 0
 }

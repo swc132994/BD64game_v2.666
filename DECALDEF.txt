@@ -125,6 +125,17 @@ randomflipy
 Animator ScorchFader
 }
 
+decal IceScorch
+{
+pic SCORCH1
+shade "7C B9 E8"
+x-scale 0.45
+y-scale 0.45
+randomflipx
+randomflipy
+Animator ScorchFader
+}
+
 decal LaserDecal
 {
 pic SCORCH1
