@@ -68,7 +68,7 @@ DropItem "DemonEssenceSpawner"
 		SKEL N 5 A_Scream
 		SKEL OP 5
 		SKEL Q 35
-		SKEL Q -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SKEL Q -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	AlmostDead:
 		TNT1 A 0 A_NoBlocking
@@ -96,7 +96,7 @@ DropItem "DemonEssenceSpawner"
 		Wait
 		SND1 D 4
 		SND1 E 35
-		SND1 E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SND1 E -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Cutless2:
 		TNT1 A 0 A_NoBlocking
@@ -157,12 +157,12 @@ DropItem "DemonEssenceSpawner"
 		SKG3 B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		SKG3 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SKG3 B -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	LandAfterXDeath2:
 		SKG3 C 1
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		SKG3 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SKG3 C -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Superkick:
 	Death.SuperFists:
@@ -410,7 +410,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		SND1 CD 5
 		SND1 E 35
-		SND1 E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SND1 E -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Plasma:
 	Death.BFG:
@@ -440,9 +440,9 @@ DropItem "None"
 		Wait
 		TNT1 A 0 A_Stop
 		TNT1 A 0 A_Jump(128,2)
-		SKG3 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SKG3 B -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-		SKG3 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SKG3 C -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		SKEL QPONM 5
@@ -520,7 +520,7 @@ DropItem "None"
 		SND2 D 5 A_NoBlocking
 		SND2 EF 5
 		SND2 G 35
-		SND2 G -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SND2 G -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Plasma:
 	Death.BFG:
@@ -553,12 +553,12 @@ DropItem "None"
 		SKG4 B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		SKG4 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SKG4 B -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	LandAfterXDeath2:
 		SKG4 C 1
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		SKG4 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SKG4 C -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	raise:
 		SKEL QPONM 5

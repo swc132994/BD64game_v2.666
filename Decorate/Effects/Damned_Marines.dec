@@ -38,7 +38,9 @@ Mass 999999
 +FRIENDLY
 +SHOOTABLE
 +NORADIUSDMG
++NOBLOODDECALS
 +FLOAT
+BloodType "Brutal_Blood"
 	States
 	{
 	Spawn:
@@ -104,7 +106,9 @@ Mass 999999
 +NORADIUSDMG
 +SPAWNCEILING
 +NOGRAVITY
++NOBLOODDECALS
 +FLOAT
+BloodType "Brutal_Blood"
 	States
 	{
 	Spawn:
@@ -153,7 +157,9 @@ Mass 999999
 +NORADIUSDMG
 +SPAWNCEILING
 +NOGRAVITY
++NOBLOODDECALS
 +FLOAT
+BloodType "Brutal_Blood"
 	States
 	{
 	Spawn:
@@ -195,7 +201,9 @@ Mass 999999
 +NORADIUSDMG
 +SPAWNCEILING
 +NOGRAVITY
++NOBLOODDECALS
 +FLOAT
+BloodType "Brutal_Blood"
 	States
 	{
 	Spawn:
@@ -244,7 +252,9 @@ Mass 999999
 +NORADIUSDMG
 +SPAWNCEILING
 +NOGRAVITY
++NOBLOODDECALS
 +FLOAT
+BloodType "Brutal_Blood"
 	States
 	{
 	Spawn:
@@ -301,6 +311,8 @@ Mass 999999
 +SHOOTABLE
 +NORADIUSDMG
 +SOLID
++NOBLOODDECALS
+BloodType "Brutal_Blood"
 	States
 	{
 	Spawn:

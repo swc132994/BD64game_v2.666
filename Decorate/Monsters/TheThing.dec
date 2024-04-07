@@ -25,6 +25,7 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 MeleeRange 80
 DropItem "SoulSpawner"
+BloodType "Brutal_Blood"
 MONSTER
 -COUNTKILL
 +FLOORCLIP
@@ -52,7 +53,7 @@ MONSTER
 	See:
 		THNG ABABAB 4
 		TNT1 A 0 A_SetSolid
-		TNT1 A 0 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_SpawnItemEx("GrowingBloodPool")
 		TNT1 A 0 A_PlaySound("64Thing/sight",CHAN_BODY)
 		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
 		THNG CDEFGHIJKLMN 2
@@ -139,7 +140,7 @@ MONSTER
 		TNG2 S 10 A_NoBlocking
 		TNG2 TU 10
 		TNG2 V 35
-		TNG2 V -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		TNG2 V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.SSG:
 		TNT1 A 0 A_Recoil(6)
@@ -170,7 +171,7 @@ MONSTER
 		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
 		PLAY PQRSTU 4
 		PLAY V 35
-		PLAY V -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		PLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Plasma:
 		TNT1 A 0 A_XScream

@@ -68,14 +68,14 @@ DropItem "DemonEssenceSpawner"
 		DI64 M 5 A_Scream
 		DI64 NO 5
 		DI64 P 35
-		DI64 P -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		DI64 P -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death2:
 		TIMD A 5 A_NoBlocking
 		TIMD B 5 A_Scream
 		TIMD CDE 5
 		TIMD F 35
-		TIMD F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		TIMD F -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Head:
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
@@ -90,7 +90,7 @@ DropItem "DemonEssenceSpawner"
 		TROH B 5 A_NoBlocking
 		TROH CDE 5
 		TROH F 35
-		TROH F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		TROH F -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Bullet:
 		TNT1 A 0 A_Jump(205,"Death")//80%
@@ -139,12 +139,12 @@ DropItem "DemonEssenceSpawner"
 		GBMI B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		GBMI B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		GBMI B -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	LandAfterXDeath2:
 		GBMI C 1
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		GBMI C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		GBMI C -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Shotgun:
 		DI64 H 2 A_Recoil(6)
@@ -196,7 +196,7 @@ DropItem "DemonEssenceSpawner"
 		TROD C 5 A_NoBlocking
 		TROD D 5
 		TROD E 35
-		TROD E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		TROD E -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Plasma:
 		TNT1 A 0 A_XScream
@@ -236,7 +236,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_XScream
 		DI64 RSTUVW 5
 		DI64 X 35
-		DI64 X -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		DI64 X -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	}
 }
@@ -295,7 +295,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		TRDM GHI 5
 		TRDM J 35
-		TRDM J -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		TRDM J -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Head:
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
@@ -311,7 +311,7 @@ DropItem "None"
 		TR8H CD 5
 		TROH E 5
 		TROH F 35
-		TROH F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		TROH F -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Shotgun:
 		TRDM A 2 A_Recoil(6)
@@ -334,7 +334,7 @@ DropItem "None"
 		TROD C 5 A_NoBlocking
 		TROD D 5
 		TROD E 35
-		TROD E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		TROD E -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.SplatSmall:
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
@@ -353,7 +353,7 @@ DropItem "None"
 		TROD C 5 A_NoBlocking
 		TROD D 5
 		TROD E 35
-		TROD E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		TROD E -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Rifle:
 		TNT1 A 0 A_Jump(128,"Death")
@@ -407,7 +407,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		DI64 RSTUVW 5
 		DI64 X 35
-		DI64 X -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		DI64 X -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.SplatteredOnWall:
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
@@ -482,7 +482,7 @@ Actor BrutalizedImp64_2 : BrutalizedImp64
 		TNT1 A 0 A_NoBlocking
 		TRDM CDE 5
 		TRDM F 35
-		TRDM F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		TRDM F -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Head:
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
@@ -497,7 +497,7 @@ Actor BrutalizedImp64_2 : BrutalizedImp64
 		TR9H B 5 A_NoBlocking
 		TR9H CDE 5
 		TROH F 35
-		TROH F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		TROH F -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Shotgun:
 		TRDM B 2 A_Recoil(6)
@@ -523,7 +523,7 @@ Actor BrutalizedImp64_2 : BrutalizedImp64
 		TROD C 5 A_NoBlocking
 		TROD D 5
 		TROD E 35
-		TROD E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		TROD E -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.SplatSmall:
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
@@ -542,7 +542,7 @@ Actor BrutalizedImp64_2 : BrutalizedImp64
 		TROD C 5 A_NoBlocking
 		TROD D 5
 		TROD E 35
-		TROD E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		TROD E -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.SplatteredOnWall:
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
@@ -602,7 +602,7 @@ Actor BrutalizedImp64_2 : BrutalizedImp64
 		TNT1 A 0 A_XScream
 		DI64 RSTUVW 5
 		DI64 X 35
-		DI64 X -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		DI64 X -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Pain:
 		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
@@ -735,14 +735,14 @@ BloodColor "45 34 7F"	//Hex value
 		TRO2 M 5 A_Scream
 		TRO2 NO 5
 		TRO2 P 35
-		TRO2 P -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		TRO2 P -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death2:
 		NIMD A 5 A_NoBlocking
 		NIMD B 5 A_Scream
 		NIMD CDE 5
 		NIMD F 35
-		NIMD F -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NIMD F -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death.Bullet:
 		TNT1 A 0 A_Jump(205,"Death")//80%
@@ -771,7 +771,7 @@ BloodColor "45 34 7F"	//Hex value
 		TR2H B 5 A_NoBlocking
 		TR2H CDE 5
 		TR2H F 35
-		TR2H F -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		TR2H F -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
@@ -802,12 +802,12 @@ BloodColor "45 34 7F"	//Hex value
 		NBMI B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		NBMI B -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NBMI B -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	LandAfterXDeath2:
 		NBMI C 1
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		NBMI C -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NBMI C -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death.Shotgun:
 		TRO2 H 2 A_Recoil(6)
@@ -859,7 +859,7 @@ BloodColor "45 34 7F"	//Hex value
 		NROD C 5 A_NoBlocking
 		NROD D 5
 		NROD E 35
-		NROD E -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NROD E -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death.Plasma:
 		TNT1 A 0 A_XScream
@@ -899,7 +899,7 @@ BloodColor "45 34 7F"	//Hex value
 		TNT1 A 0 A_XScream
 		TRO2 RSTUVW 5
 		TRO2 X 35
-		TRO2 X -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		TRO2 X -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	}
 }
@@ -958,7 +958,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		TRNM GHI 5
 		TRNM J 35
-		TRNM J -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		TRNM J -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death.Head:
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
@@ -974,7 +974,7 @@ DropItem "None"
 		NI2H CD 5
 		TR2H E 5
 		TR2H F 35
-		TR2H F -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		TR2H F -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death.Shotgun:
 		TRNM A 2 A_Recoil(6)
@@ -997,7 +997,7 @@ DropItem "None"
 		NROD C 5 A_NoBlocking
 		NROD D 5
 		NROD E 35
-		NROD E -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NROD E -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death.Rifle:
 		TNT1 A 0 A_Jump(128,"Death")
@@ -1027,7 +1027,7 @@ DropItem "None"
 		NROD C 5 A_NoBlocking
 		NROD D 5
 		NROD E 35
-		NROD E -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NROD E -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death.SplatteredOnWall:
 		TNT1 AA 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
@@ -1089,7 +1089,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		TRO2 RSTUVW 5
 		TRO2 X 35
-		TRO2 X -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		TRO2 X -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Pain:
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistBLUE",56,0,random(0,360),2,random(0,90))
@@ -1144,7 +1144,7 @@ Actor BrutalizedNImp64_2 : BrutalizedNImp64
 		TNT1 A 0 A_NoBlocking
 		TRNM CDE 5
 		TRNM F 35
-		TRNM F -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		TRNM F -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death.Head:
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
@@ -1159,7 +1159,7 @@ Actor BrutalizedNImp64_2 : BrutalizedNImp64
 		NI9H B 5 A_NoBlocking
 		NI9H CDE 5
 		TR2H F 35
-		TR2H F -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		TR2H F -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death.Shotgun:
 		TRNM B 2 A_Recoil(6)
@@ -1185,7 +1185,7 @@ Actor BrutalizedNImp64_2 : BrutalizedNImp64
 		NROD C 5 A_NoBlocking
 		NROD D 5
 		NROD E 35
-		NROD E -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NROD E -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death.SplatSmall:
 		TNT1 AA 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
@@ -1204,7 +1204,7 @@ Actor BrutalizedNImp64_2 : BrutalizedNImp64
 		NROD C 5 A_NoBlocking
 		NROD D 5
 		NROD E 35
-		NROD E -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NROD E -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death.SplatteredOnWall:
 		TNT1 AA 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
@@ -1263,7 +1263,7 @@ Actor BrutalizedNImp64_2 : BrutalizedNImp64
 		TNT1 A 0 A_XScream
 		TRO2 RSTUVW 5
 		TRO2 X 35
-		TRO2 X -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		TRO2 X -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Pain:
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistBLUE",56,0,random(0,360),2,random(0,90))

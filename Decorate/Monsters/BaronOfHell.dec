@@ -49,7 +49,7 @@ BloodColor "00 64 00"	//Hex value
 		BOSS KLM 5
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		BOSS N 35 A_BossDeath
-		BOSS N -1 A_CustomMissile("GrowingBloodPoolGREEN",0,0,random(0,360),2,random(0,90))
+		BOSS N -1 A_SpawnItemEx("GrowingBloodPoolGreen")
 		Stop
 	Raise:
 		BOSS NMLKJI 5
@@ -82,7 +82,7 @@ BloodColor "00 64 00"	//Hex value
 		BS1H ABCDE 5
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		BS1H F 35 A_BossDeath
-		BS1H F -1 A_CustomMissile("GrowingBloodPoolGREEN",0,0,random(0,360),2,random(0,90))
+		BS1H F -1 A_SpawnItemEx("GrowingBloodPoolGreen")
 		Stop
 	Death.Cutless:
 		TNT1 A 0 A_Jump(85,"Death")
@@ -117,12 +117,12 @@ BloodColor "00 64 00"	//Hex value
 	LandAfterXDeath1:
 		BGB1 B 1 A_Stop
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		BGB1 B -1 A_CustomMissile("GrowingBloodPoolGREEN",0,0,random(0,360),2,random(0,90))
+		BGB1 B -1 A_SpawnItemEx("GrowingBloodPoolGreen")
 		Stop
 	LandAfterXDeath2:
 		BGB1 D 1 A_Stop
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		BGB1 D -1 A_CustomMissile("GrowingBloodPoolGREEN",0,0,random(0,360),2,random(0,90))
+		BGB1 D -1 A_SpawnItemEx("GrowingBloodPoolGreen")
 		Stop
 	Death.Plasma:
 		TNT1 A 0 A_XScream

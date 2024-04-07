@@ -68,7 +68,7 @@ DropItem "DemonEssenceSpawner"
 		BSPI GHIJ 5
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		BSPI K 35 A_BossDeath
-		BSPI K -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		BSPI K -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	XDeath:
 		TNT1 A 0 A_CustomMissile("XDeath1",52,0,random(150,210),2,random(10,50))
@@ -89,7 +89,7 @@ DropItem "DemonEssenceSpawner"
 		XSPI B 5 A_NoBlocking
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		XSPI C 35 A_BossDeath
-		XSPI C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		XSPI C -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		BSPI KJIHG 5

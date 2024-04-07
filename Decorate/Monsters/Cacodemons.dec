@@ -44,7 +44,7 @@ MeleeRange 60 //default 44
 		HEAD I 5 A_Scream
 		HEAD JKL 5
 		HEAD M 35 A_SetFloorClip
-		HEAD M -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		HEAD M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	XDeath:
 	Death.SuperKick:
@@ -69,7 +69,7 @@ MeleeRange 60 //default 44
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_SetFloorClip
 		CAGM A 35
-		CAGM A -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		CAGM A -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Rifle:
 		TNT1 A 0 A_Jump(168,"Death.Cutless")
@@ -120,7 +120,7 @@ MeleeRange 60 //default 44
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_SetFloorClip
 		CAGM A 35
-		CAGM A -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		CAGM A -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		HEAD M 5 A_UnSetFloorClip
@@ -179,7 +179,7 @@ DropItem "None"
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		HNHE B 35 A_SetFloorClip
-		HNHE B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		HNHE B -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Rifle:
 		TNT1 A 0 A_Jump(64,"Death")
@@ -218,7 +218,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		CAGM A 35 A_SetFloorClip
-		CAGM A -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		CAGM A -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Pain:
 		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
@@ -243,7 +243,7 @@ Actor Brutalized64Caco_2 : Brutalized64Caco
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		HNHE D 35 A_SetFloorClip
-		HNHE D -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		HNHE D -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Rifle:
 		TNT1 A 0 A_Jump(64,"Death")
@@ -279,7 +279,7 @@ Actor Brutalized64Caco_2 : Brutalized64Caco
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		CAGM A 35 A_SetFloorClip
-		CAGM A -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		CAGM A -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Pain:
 		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
@@ -304,7 +304,7 @@ Actor Brutalized64Caco_3 : Brutalized64Caco
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
 		HNHE F 35 A_SetFloorClip
-		HNHE F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		HNHE F -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Rifle:
 		TNT1 A 0 A_Jump(64,"Death")
@@ -327,7 +327,7 @@ Actor Brutalized64Caco_3 : Brutalized64Caco
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		CAGM A 35 A_SetFloorClip
-		CAGM A -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		CAGM A -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Pain:
 		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
@@ -418,7 +418,7 @@ BloodColor "45 34 7F"	//Hex value
 		HEA2 I 5 A_Scream
 		HEA2 JKL 5
 		HEA2 M 35 A_SetFloorClip
-		HEA2 M -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		HEA2 M -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	XDeath:
 	Death.SuperKick:
@@ -443,7 +443,7 @@ BloodColor "45 34 7F"	//Hex value
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_SetFloorClip
 		NCGM A 35
-		NCGM A -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NCGM A -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death.Rifle:
 		TNT1 A 0 A_Jump(168,"Death.Cutless")
@@ -494,7 +494,7 @@ BloodColor "45 34 7F"	//Hex value
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_SetFloorClip
 		NCGM A 35
-		NCGM A -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NCGM A -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Raise:
 		HEA2 M 5 A_UnSetFloorClip
@@ -553,7 +553,7 @@ DropItem "None"
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		NCHE B 35 A_SetFloorClip
-		NCHE B -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NCHE B -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death.Rifle:
 		TNT1 A 0 A_Jump(64,"Death")
@@ -592,7 +592,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		NCGM A 35 A_SetFloorClip
-		NCGM A -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NCGM A -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Pain:
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistBLUE",56,0,random(0,360),2,random(0,90))
@@ -617,7 +617,7 @@ Actor BrutalizedNCaco_2 : BrutalizedNCaco
 		TNT1 A 0 A_Scream
 		TNT1 A 0 A_NoBlocking
 		NCHE D 35 A_SetFloorClip
-		NCHE D -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NCHE D -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death.Rifle:
 		TNT1 A 0 A_Jump(64,"Death")
@@ -653,7 +653,7 @@ Actor BrutalizedNCaco_2 : BrutalizedNCaco
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		NCGM A 35 A_SetFloorClip
-		NCGM A -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NCGM A -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Pain:
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistBLUE",56,0,random(0,360),2,random(0,90))
@@ -678,7 +678,7 @@ Actor BrutalizedNCaco_3 : BrutalizedNCaco
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Scream
 		NCHE F 35 A_SetFloorClip
-		NCHE F -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NCHE F -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Death.Rifle:
 		TNT1 A 0 A_Jump(64,"Death")
@@ -701,7 +701,7 @@ Actor BrutalizedNCaco_3 : BrutalizedNCaco
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_XScream
 		NCGM A 35 A_SetFloorClip
-		NCGM A -1 A_CustomMissile("GrowingBloodPoolBLUE",0,0,random(0,360),2,random(0,90))
+		NCGM A -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Pain:
 		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistBLUE",56,0,random(0,360),2,random(0,90))

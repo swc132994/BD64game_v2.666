@@ -56,7 +56,7 @@ DropItem "DemonEssenceSpawner"
 		SARG J 5 A_Scream
 		SARG KLM 5
 		SARG N 35
-		SARG N -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SARG N -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Shotgun:
 		SARG H 2 A_Recoil(5)
@@ -100,7 +100,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_NoBlocking
 		SRGD EFG 5
 		SRGD H 35
-		SRGD H -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SRGD H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Heavy:
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
@@ -115,7 +115,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_NoBlocking
 		SRGD ABC 5
 		SRGD D 35
-		SRGD D -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SRGD D -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	XDeath:
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
@@ -142,12 +142,12 @@ DropItem "DemonEssenceSpawner"
 		GBM2 B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		GBM2 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		GBM2 B -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	LandAfterXDeath2:
 		GBM2 C 1
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		GBM2 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		GBM2 C -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Chainsaw:
 	Death.BFG:
@@ -168,7 +168,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_XScream
 		SARX ABCDEFG 5
 		SARX H 35
-		SARX H -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SARX H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Plasma:
 		TNT1 A 0 A_XScream
@@ -232,7 +232,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		SANA CDE 5
 		SANA F 35
-		SANA F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SANA F -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Shotgun:
 	Death.SSG:
@@ -254,7 +254,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		SANA GHI 5
 		SANA J 35
-		SANA J -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SANA J -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.SuperFists:
 	Death.SuperKick:
@@ -276,7 +276,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		SRGD EFG 5
 		SRGD H 35
-		SRGD H -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SRGD H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Chainsaw:
 	Death.BFG:
@@ -297,7 +297,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		SARX ABCDEFG 5
 		SARX H 35
-		SARX H -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SARX H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	XDeath:
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
@@ -418,7 +418,7 @@ DropItem "DemonEssenceSpawner"
 		SAR2 J 5 A_Scream
 		SAR2 KLM 5
 		SAR2 N 35
-		SAR2 N -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SAR2 N -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Shotgun:
 		SAR2 H 2 A_Recoil(5)
@@ -462,7 +462,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_NoBlocking
 		SR2D EFG 5
 		SR2D H 35
-		SR2D H -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SR2D H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Heavy:
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
@@ -478,7 +478,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_NoBlocking
 		SR2D ABC 5
 		SR2D D 35
-		SR2D D -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SR2D D -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	XDeath:
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
@@ -505,12 +505,12 @@ DropItem "DemonEssenceSpawner"
 		PBM2 B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		PBM2 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		PBM2 B -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	LandAfterXDeath2:
 		PBM2 C 1
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		PBM2 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		PBM2 C -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Chainsaw:
 	Death.BFG:
@@ -531,7 +531,7 @@ DropItem "DemonEssenceSpawner"
 		TNT1 A 0 A_XScream
 		SR2X ABCDEFG 5
 		SR2X H 35
-		SR2X H -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SR2X H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Plasma:
 		TNT1 A 0 A_XScream
@@ -595,7 +595,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		SPCA CDE 5
 		SPCA F 35
-		SPCA F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SPCA F -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Shotgun:
 	Death.SSG:
@@ -617,7 +617,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		SPCA GHI 5
 		SPCA J 35
-		SPCA J -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SPCA J -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.SuperFists:
 	Death.SuperKick:
@@ -639,7 +639,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		SR2D EFG 5
 		SR2D H 35
-		SR2D H -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SR2D H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Chainsaw:
 	Death.BFG:
@@ -660,7 +660,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		SR2X ABCDEFG 5
 		SR2X H 35
-		SR2X H -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SR2X H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	XDeath:
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
@@ -826,7 +826,7 @@ Obituary "%o was hunted down by a nightmare spectre."
 		SAR3 J 5 A_Scream
 		SAR3 KLM 5
 		SAR3 N 35
-		SAR3 N -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SAR3 N -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Shotgun:
 		SAR3 H 2 A_Recoil(5)
@@ -870,7 +870,7 @@ Obituary "%o was hunted down by a nightmare spectre."
 		TNT1 A 0 A_NoBlocking
 		SR3D EFG 5
 		SR3D H 35
-		SR3D H -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SR3D H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Heavy:
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
@@ -885,7 +885,7 @@ Obituary "%o was hunted down by a nightmare spectre."
 		TNT1 A 0 A_NoBlocking
 		SR3D ABC 5
 		SR3D D 35
-		SR3D D -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SR3D D -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	XDeath:
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
@@ -912,12 +912,12 @@ Obituary "%o was hunted down by a nightmare spectre."
 		PBM3 B 1 A_Stop
 		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		PBM3 B -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		PBM3 B -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	LandAfterXDeath2:
 		PBM3 C 1
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
-		PBM3 C -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		PBM3 C -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Chainsaw:
 	Death.BFG:
@@ -938,7 +938,7 @@ Obituary "%o was hunted down by a nightmare spectre."
 		TNT1 A 0 A_NoBlocking
 		SR3X ABCDEFG 5
 		SR3X H 35
-		SR3X H -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SR3X H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Plasma:
 		TNT1 A 0 A_XScream
@@ -1002,7 +1002,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		NMSA CDE 5
 		NMSA F 35
-		NMSA F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		NMSA F -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Shotgun:
 	Death.SSG:
@@ -1024,7 +1024,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		NMSA GHI 5
 		NMSA J 35
-		NMSA J -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		NMSA J -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.SuperFists:
 	Death.SuperKick:
@@ -1046,7 +1046,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		SR3D EFG 5
 		SR3D H 35
-		SR3D H -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SR3D H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Chainsaw:
 	Death.BFG:
@@ -1067,7 +1067,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		SR3X ABCDEFG 5
 		SR3X H 35
-		SR3X H -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SR3X H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	XDeath:
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))

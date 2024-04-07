@@ -12,6 +12,17 @@ PROJECTILE
 	}
 }
 
+ACTOR ChaingunCaseSpawn : 50CaseSpawn
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_CustomMissile("EmptyBrass",0,0,random(-80,-100),2,random(40,60))
+		TNT1 A 1 A_CustomMissile("ChainBeltLink",0,0,random(-80,-100),2,random(40,80))
+		Stop
+	}
+}
+
 ACTOR BulletCaseSpawn : 50CaseSpawn
 {
 	States
@@ -105,7 +116,7 @@ BounceSound "weapons/casing"
 DeathSound "weapons/casing"
 BounceType "doom"
 BounceFactor 0.3
-BounceCount 2
+BounceCount 3
 Projectile
 -NOGRAVITY
 -DROPOFF
@@ -167,10 +178,37 @@ Projectile
 	}
 }
 
+ACTOR ChainBeltLink : EmptyBrass
+{
+Scale 0.25
+Speed 4
+	States
+	{
+	Spawn:
+		CLIN A 0 NoDelay A_Jump(128,2)
+		"####" "#" 0 A_SetScale(0-ScaleX,ScaleY)		//FLIP IMAGE HORZ
+	SpawnHold:
+		"####" "#" 0 A_JumpIf(waterlevel > 1,"Splash")
+		CLIN ABCDEFGH 3 A_CheckFloor("Death")
+		Loop
+	Death:
+		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		TNT1 A 0 A_Jump(256,"Rest1","Rest2")
+		Goto Rest1
+	Rest1:
+		CLIN B 400
+		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
+		Loop
+	Rest2:
+		CLIN F 400
+		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
+		Loop
+	}
+}
+
 ACTOR BulletCase : EmptyBrass
 {
 Scale 0.1
-Speed 6
 Mass 4
 	States
 	{
@@ -212,7 +250,6 @@ ACTOR ShotgunCasing : EmptyBrass
 Scale 0.15
 Height 3
 Radius 3
-Speed 6
 Mass 2
 BounceSound "weapons/shell"
 DeathSound "weapons/shell"

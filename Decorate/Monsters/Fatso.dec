@@ -71,7 +71,7 @@ Dropitem "DemonEssenceSpawner"
 		FATT M 5
 		TNT1 A 0 A_KillMaster("None")
 		FATT N 35 A_BossDeath
-		FATT N -1 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
+		FATT N -1 A_SpawnItemEx("GrowingBloodPoolBig")
 		Stop
 	Death.Shotgun:
 		FATT I 2 A_Recoil(4)
@@ -121,7 +121,7 @@ Dropitem "DemonEssenceSpawner"
 		FTX1 ABC 5
 		TNT1 A 0 A_KillMaster("None")
 		FTX1 D 35 A_BossDeath
-		FTX1 D -1 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
+		FTX1 D -1 A_SpawnItemEx("GrowingBloodPoolBig")
 		Stop
 	Xdeath2:
 		TNT1 A 0 A_XScream
@@ -129,7 +129,7 @@ Dropitem "DemonEssenceSpawner"
 		FTX2 ABC 5
 		TNT1 A 0 A_KillMaster("None")
 		FTX2 D 35 A_BossDeath
-		FTX2 D -1 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
+		FTX2 D -1 A_SpawnItemEx("GrowingBloodPoolBig")
 		Stop
 	Death.Plasma:
 		TNT1 A 0 A_SetScale(1.2,1.2)
@@ -280,7 +280,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		FTNG CDEF 5
 		FTNG G 35
-		FTNG G -1 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
+		FTNG G -1 A_SpawnItemEx("GrowingBloodPoolBig")
 		Stop
 	Death.Shotgun:
 	Death.SSG:
@@ -305,7 +305,7 @@ DropItem "None"
 		TNT1 A 0 A_NoBlocking
 		FTX1 ABC 5
 		FTX1 D 35 A_BossDeath
-		FTX1 D -1 A_CustomMissile("GrowingBloodPoolBig",0,0,random(0,360),2,random(0,90))
+		FTX1 D -1 A_SpawnItemEx("GrowingBloodPoolBig")
 		Stop
 	Raise:
 		TNT1 A 0 A_SetScale(0.8,0.8)

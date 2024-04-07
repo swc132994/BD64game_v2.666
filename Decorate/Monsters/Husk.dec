@@ -108,7 +108,7 @@ DropItem "SOULSPAWNER"
 		64ZF K 5 A_NoBlocking
 		64ZF LM 5
 		64ZF N 35
-		64ZF N -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		64ZF N -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Head:
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
@@ -127,7 +127,7 @@ DropItem "SOULSPAWNER"
 		FZOH C 5 A_NoBlocking
 		FZOH D 5
 		FZOH E 35
-		FZOH E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		FZOH E -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Chainsaw:
 	Death.BFG:
@@ -151,7 +151,7 @@ DropItem "SOULSPAWNER"
 		TNT1 A 0 A_SetScale(0.8)
 		SPOS NOPQRST 5
 		SPOS U 35
-		SPOS U -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SPOS U -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	XDeath:
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
@@ -195,7 +195,7 @@ DropItem "SOULSPAWNER"
 		FZ3D C 5 A_NoBlocking
 		FZ3D D 5
 		FZ3D E 35
-		FZ3D E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		FZ3D E -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.SuperFists:
 	Death.SuperKick:
@@ -295,7 +295,7 @@ DropItem "None"
 		TNT1 A 0 A_SetScale(0.8)
 		ZFM1 BCDEF 5
 		ZFM1 G 35
-		ZFM1 G -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		ZFM1 G -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Head:
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
@@ -314,7 +314,7 @@ DropItem "None"
 		FZ8H C 5 A_NoBlocking
 		FZ8H D 5
 		FZ8H E 35
-		FZ8H E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		FZ8H E -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Shotgun:
 		ZFM1 A 2 A_Recoil(6)
@@ -358,7 +358,7 @@ DropItem "None"
 		TNT1 A 0 A_XScream
 		SPOS NOPQRST 5
 		SPOS U 35
-		SPOS U -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SPOS U -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	XDeath:
 		TNT1 A 0 A_SetScale(0.8)
@@ -421,7 +421,7 @@ DropItem "None"
 		FZ2D C 5 A_NoBlocking
 		FZ2D D 5
 		FZ2D E 35
-		FZ2D E -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		FZ2D E -1 A_SpawnItemEx("GrowingBloodPool")
 	Raise:
 		TNT1 A 0 A_SetScale(0.7)
 		64ZF NMLKJI 5
@@ -446,7 +446,7 @@ Actor BrutalizedHuskZombie_2 : BrutalizedHuskZombie_1
 		TNT1 A 0 A_SetScale(0.8)
 		ZFM2 BCDEF 5
 		ZFM2 G 35
-		ZFM2 G -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		ZFM2 G -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Shotgun:
 	Death.SSG:
@@ -468,7 +468,7 @@ Actor BrutalizedHuskZombie_2 : BrutalizedHuskZombie_1
 		PDM3 A 5 A_XScream
 		PDM3 BCDE 5
 		PDM3 F 35
-		PDM3 F -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		PDM3 F -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Chainsaw:
 	Death.BFG:
@@ -490,7 +490,7 @@ Actor BrutalizedHuskZombie_2 : BrutalizedHuskZombie_1
 		TNT1 A 0 A_NoBlocking
 		SPOS NOPQRST 5
 		SPOS U 35
-		SPOS U -1 A_CustomMissile("GrowingBloodPool",0,0,random(0,360),2,random(0,90))
+		SPOS U -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	XDeath:
 		TNT1 A 0 A_SetScale(0.8)
