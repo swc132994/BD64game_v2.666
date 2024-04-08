@@ -551,6 +551,10 @@ DropItem "DemonEssenceSpawner"
 		CRB1 ABCDEFGH 3
 		CRB1 H -1
 		Stop
+	Ice:
+		SAR2 "#" 5 A_GenericFreezeDeath
+		SAR2 "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 
@@ -691,6 +695,10 @@ DropItem "None"
 		SAR2 NMLKJI 5 A_FadeTo(0.25,0.1667,false)
 		SAR2 I 1 A_SpawnItemEx("64Spectre",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 
@@ -958,6 +966,10 @@ Obituary "%o was hunted down by a nightmare spectre."
 		CRB1 ABCDEFGH 3
 		CRB1 H -1
 		Stop
+	Ice:
+		SAR3 "#" 5 A_GenericFreezeDeath
+		SAR3 "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 
@@ -1098,6 +1110,10 @@ DropItem "None"
 		SAR3 NMLKJI 5 A_FadeTo(0.25,0.1667,false)
 		SAR3 I 1 A_SpawnItemEx("64NightmareSpectre",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 

@@ -244,6 +244,10 @@ MONSTER
 		VILE Y 35
 		VILE Y -1 A_SpawnItemEx("GrowingBloodPoolBLUE")
 		Stop
+	Ice:
+		S1R3 "#" 5 A_GenericFreezeDeath
+		S1R3 "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 
@@ -365,6 +369,10 @@ DropItem "None"
 		S1D7 X 5 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
 		S1D7 X -1 A_SpawnItemEx("GrowingBloodPoolBLUE")
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 

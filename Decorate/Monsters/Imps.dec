@@ -901,6 +901,10 @@ BloodColor "45 34 7F"	//Hex value
 		TRO2 X 35
 		TRO2 X -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
+	Ice:
+		TRO2 "#" 5 A_GenericFreezeDeath
+		TRO2 "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 
@@ -1099,6 +1103,10 @@ DropItem "None"
 		TRO2 PONML 5
 		TRO2 L 1 A_SpawnItemEx("NightmareImp",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 

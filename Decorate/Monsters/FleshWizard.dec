@@ -192,6 +192,10 @@ MONSTER
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
 		POL5 A -1
 		Stop
+	Ice:
+		LMWZ "#" 5 A_GenericFreezeDeath
+		LMWZ "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 
@@ -310,6 +314,10 @@ DropItem "None"
 		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
 		RMWX A 1
 		Goto Spawn
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 

@@ -59,6 +59,7 @@ ACTOR MastermindCaseSpawn : 50CaseSpawn
 	{
 	Spawn:
 		TNT1 A 1 NoDelay A_CustomMissile("GiantEmptyBrass",0,0,random(-80,-100),2,random(40,60))
+		TNT1 A 1 A_CustomMissile("ChainBeltLink",0,0,random(-80,-100),2,random(40,80))
 		Stop
 	}
 }
@@ -143,15 +144,15 @@ Projectile
 		LCPJ A 0 A_Jump(256,"Rest1","Rest2","Rest3")
 		Goto Rest1
 	Rest1:
-		CAS3 I 400
+		CAS3 I 350
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	Rest2:
-		CAS3 J 400
+		CAS3 J 350
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	Rest3:
-		CAS3 K 400
+		CAS3 K 350
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	Splash:
@@ -196,11 +197,11 @@ Speed 4
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2")
 		Goto Rest1
 	Rest1:
-		CLIN B 400
+		CLIN B 350
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	Rest2:
-		CLIN F 400
+		CLIN F 350
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	}
@@ -224,15 +225,15 @@ Mass 4
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3")
 		Goto Rest1
 	Rest1:
-		C4S1 I 400
+		C4S1 I 350
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	Rest2:
-		C4S1 J 400
+		C4S1 J 350
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	Rest3:
-		C4S1 K 400
+		C4S1 K 350
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	}
@@ -267,15 +268,15 @@ DeathSound "weapons/shell"
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3")
 		Goto Rest1
 	Rest1:
-		CAS2 I 400
+		CAS2 I 350
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	Rest2:
-		CAS2 J 400
+		CAS2 J 350
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	Rest3:
-		CAS2 K 400
+		CAS2 K 350
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	}
@@ -305,7 +306,7 @@ DeathSound "weapons/largemagdrop"
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		ECL1 G 0 A_JumpIfInventory("AltRifleSkin",1,2)
 		ECLI G 0
-		"####" G 400
+		"####" G 525
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	}
@@ -333,7 +334,7 @@ DeathSound "weapons/smallmagdrop"
 		ECLP B 4
 	rest:
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
-		ECLP C 400
+		ECLP C 525
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	}
@@ -359,7 +360,7 @@ DeathSound "weapons/barrelpain"
 		Loop
 	Death:
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
-		RCSE G 600
+		RCSE G 525
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	}
@@ -385,7 +386,7 @@ DeathSound "weapons/barrelpain"
 		Loop
 	Death:
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
-		ECEL A 600
+		ECEL A 525
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	}

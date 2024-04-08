@@ -523,6 +523,10 @@ BloodColor "45 34 7F"	//Hex value
 		CRB1 ABCDEFGH 3
 		CRB1 H -1
 		Stop
+	Ice:
+		HEA2 "#" 5 A_GenericFreezeDeath
+		HEA2 "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 
@@ -602,6 +606,10 @@ DropItem "None"
 		HEA2 LKJIH 5
 		HEA2 H 1 A_SpawnItemEx("NightmareCacodemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 

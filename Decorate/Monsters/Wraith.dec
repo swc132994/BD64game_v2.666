@@ -296,6 +296,10 @@ MONSTER
 		CRB1 ABCDEFGH 3
 		CRB1 H -1
 		Stop
+	Ice:
+		3WRT "#" 5 A_GenericFreezeDeath
+		3WRT "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 
