@@ -11,7 +11,6 @@ DamageFactor "CauseObjectsToSplash",0.0
 DropItem "DemonEssenceSpawner"
 MeleeRange 60 //default 44
 BloodType "Brutal_BloodBLUE"
-BloodColor "45 34 7F"	//Hex value
 +FLOORCLIP
 +FORCEXYBILLBOARD
 +MISSILEMORE
@@ -352,7 +351,6 @@ HitObituary "%o was chomped by a Nightmare Cacodemon."
 Tag "Nightmare Cacodemon"
 DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodBLUE"
-BloodColor "45 34 7F"	//Hex value
 +FLOORCLIP
 +FORCEXYBILLBOARD
 +MISSILEMORE
@@ -508,7 +506,7 @@ BloodColor "45 34 7F"	//Hex value
 		Stop
 	Ice:
 		HEA4 "#" 5 A_GenericFreezeDeath
-		HEA4 "#" 1 A_FreezeDeathChunks
+		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
 }

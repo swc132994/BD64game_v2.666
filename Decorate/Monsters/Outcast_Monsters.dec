@@ -475,7 +475,6 @@ Obituary "%o was blown up by a nightcrawler."
 Tag "Nightcrawler"
 DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodBLUE"
-BloodColor "45 34 7F"	//Hex value
 +DONTHARMSPECIES
 	States
 	{
@@ -545,6 +544,11 @@ BloodColor "45 34 7F"	//Hex value
 	Raise:
 		NTCR KJIHG 5
 		Goto See+1
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 0 A_KillMaster
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 

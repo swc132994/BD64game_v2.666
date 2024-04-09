@@ -298,7 +298,7 @@ MONSTER
 		Stop
 	Ice:
 		3WRT "#" 5 A_GenericFreezeDeath
-		3WRT "#" 1 A_FreezeDeathChunks
+		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
 }

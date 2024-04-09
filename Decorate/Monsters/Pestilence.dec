@@ -25,7 +25,6 @@ HitObituary "%o died by the Pestilence's poison fists"
 Obituary "%o fell to the Pestilence's chemical warfare"
 DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodGreen"
-BloodColor "00 64 00"	//Hex value
 MONSTER
 +FLOORCLIP
 +DONTHARMSPECIES
@@ -568,7 +567,6 @@ DeathSound ""
 ActiveSound ""
 AttackSound ""
 DropItem "None"
-BloodColor "00 64 00"	//Hex value
 BloodType "Brutal_BloodGreen"
 MeleeThreshold 146	//default 196
 MeleeRange 60		//default 44

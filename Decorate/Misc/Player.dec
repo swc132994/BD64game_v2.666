@@ -113,7 +113,7 @@ Radius 16
 Height 56
 Mass 200
 PainChance 255
-Species Marines
+Species "Marines"
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Head",0.0
@@ -301,7 +301,7 @@ Player.RunHealth 500
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Head",0.0
-Species Marines
+Species "Marines"
 Player.StartItem "Clip",31
 Player.StartItem "RifleAmmo",31
 Player.StartItem "SMGAmmo",46
@@ -568,7 +568,7 @@ Radius 16
 Height 56
 Mass 200
 PainChance 255
-Species Marines
+Species "Marines"
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Head",0.0

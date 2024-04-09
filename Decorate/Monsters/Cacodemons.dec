@@ -365,7 +365,6 @@ HitObituary "%o was chomped by a Nightmare Cacodemon."
 Tag "Nightmare Cacodemon"
 DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodBLUE"
-BloodColor "45 34 7F"	//Hex value
 +FLOORCLIP
 +FORCEXYBILLBOARD
 +MISSILEMORE
@@ -525,7 +524,7 @@ BloodColor "45 34 7F"	//Hex value
 		Stop
 	Ice:
 		HEA2 "#" 5 A_GenericFreezeDeath
-		HEA2 "#" 1 A_FreezeDeathChunks
+		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
 }

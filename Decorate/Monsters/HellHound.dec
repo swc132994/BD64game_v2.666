@@ -133,6 +133,11 @@ DropItem "DemonEssenceSpawner"
 		HHMI E 35 A_KillMaster("None")	//tag 666 fix
 		HHMI E -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 0 A_KillMaster
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 

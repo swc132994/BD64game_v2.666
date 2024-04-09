@@ -63,6 +63,10 @@ BloodType "Brutal_Blood"
 		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
 		DAM1 K -1
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 Actor DamnedHanging1SOLID : DamnedHanging1	{+SOLID}
@@ -91,6 +95,10 @@ Actor DamnedHanging2 : DamnedHanging1
 		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
 		DAM2 K -1
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 Actor DamnedHanging2SOLID : DamnedHanging2	{+SOLID}
@@ -142,6 +150,10 @@ BloodType "Brutal_Blood"
 		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
 		TTR7 J -1
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 Actor BD64TorturedMarine21SOLID : BD64TorturedMarine21	{+SOLID}
@@ -186,6 +198,10 @@ BloodType "Brutal_Blood"
 		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
 		TTR8 I -1
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 Actor BD64TorturedMarine32SOLID : BD64TorturedMarine32	{+SOLID}
@@ -237,6 +253,10 @@ BloodType "Brutal_Blood"
 		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
 		TTR9 J -1
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 Actor BD64TorturedMarine23SOLID : BD64TorturedMarine23	{+SOLID}
@@ -273,6 +293,10 @@ BloodType "Brutal_Blood"
 		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
 		TTR6 F -1
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 Actor BD64TorturedMarine66SOLID : BD64TorturedMarine66	{+SOLID}
@@ -343,5 +367,9 @@ BloodType "Brutal_Blood"
 		TTR5 DEFGH 10
 		TTR5 H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }

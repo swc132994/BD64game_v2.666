@@ -194,7 +194,7 @@ MONSTER
 		Stop
 	Ice:
 		LMWZ "#" 5 A_GenericFreezeDeath
-		LMWZ "#" 1 A_FreezeDeathChunks
+		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
 }

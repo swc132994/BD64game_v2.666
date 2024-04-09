@@ -120,6 +120,11 @@ MONSTER
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		MOTH MNO 3 Bright
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 0 A_KillMaster
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 

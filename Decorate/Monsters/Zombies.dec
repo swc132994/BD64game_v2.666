@@ -2389,7 +2389,7 @@ Health 15
 GibHealth 30
 Speed 7
 MaxTargetRange 600
-Species Marines
+Species "Marines"
 PainSound "player/male/pain100_1"
 DeathSound "player/male/death1"
 ActiveSound ""

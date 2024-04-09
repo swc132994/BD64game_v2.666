@@ -172,7 +172,8 @@ MONSTER
 		Stop
 	Ice:
 		BOZ3 "#" 5 A_GenericFreezeDeath
-		BOZ3 "#" 1 A_FreezeDeathChunks
+		"####" "#" 0 A_KillMaster
+		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
 }

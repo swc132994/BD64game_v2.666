@@ -26,7 +26,6 @@ deathsound "tornado/death"
 activesound "tornado/active"
 DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodBlue"
-BloodColor "00 64 00"	//Hex value
 MONSTER
 +FLOORCLIP
 +NOTARGET

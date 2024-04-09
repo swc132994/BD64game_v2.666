@@ -669,7 +669,6 @@ DeathSound "imp/death"
 ActiveSound "imp/active"
 Tag "Nightmare Imp"
 BloodType "Brutal_BloodBLUE"
-BloodColor "45 34 7F"	//Hex value
 	States
 	{
 	Spawn:
@@ -903,7 +902,7 @@ BloodColor "45 34 7F"	//Hex value
 		Stop
 	Ice:
 		TRO2 "#" 5 A_GenericFreezeDeath
-		TRO2 "#" 1 A_FreezeDeathChunks
+		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
 }

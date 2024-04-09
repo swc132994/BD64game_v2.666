@@ -1462,7 +1462,7 @@ actor 64TechLampB : TechLamp Replaces TechLamp
 	States
 	{
 	Spawn:
-		TLP2 A 0 NoDelay A_SpawnItemEx("LightShaft2",36,36,0)
+		TLMP A 0 NoDelay A_SpawnItemEx("LightShaft2",36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2",-36,36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2",36,-36,0)
 		TNT1 A 0 A_SpawnItemEx("LightShaft2",-36,-36,0)
@@ -1556,6 +1556,12 @@ Alpha 0.15
 		TNT1 A 525
 		Goto SpawnLoop
 	}
+}
+
+actor LightShaft2Killable : LightShaft2
+{
+Health 5
++SHOOTABLE
 }
 
 actor LightShaft2Brighter : LightShaft2

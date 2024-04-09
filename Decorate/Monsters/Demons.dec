@@ -552,7 +552,7 @@ DropItem "DemonEssenceSpawner"
 		CRB1 H -1
 		Stop
 	Ice:
-		SAR2 "#" 5 A_GenericFreezeDeath
+		"####" "#" 5 A_GenericFreezeDeath
 		SAR2 "#" 1 A_FreezeDeathChunks
 		wait
 	}
@@ -968,7 +968,7 @@ Obituary "%o was hunted down by a nightmare spectre."
 		Stop
 	Ice:
 		SAR3 "#" 5 A_GenericFreezeDeath
-		SAR3 "#" 1 A_FreezeDeathChunks
+		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
 }

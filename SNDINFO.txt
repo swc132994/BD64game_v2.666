@@ -548,12 +548,12 @@ $random TORTURE
 	{
 	TORTURE1 TORTURE2
 	}
-TORTURE1			TORTURE1
-TORTURE2			TORTURE2
-TORTURE3			TORTURE3
-TORTURE4			TORTURE4
+TORTURE1			TORTURE1		$volume TORTURE1 0.75
+TORTURE2			TORTURE2		$volume TORTURE2 0.75
+TORTURE3			TORTURE3		$volume TORTURE3 0.75
+TORTURE4			TORTURE4		$volume TORTURE4 0.75
 TORTURE5			TORTURE5		$volume TORTURE5 0.4
-TORTURE6			TORTURE6
+TORTURE6			TORTURE6		$volume TORTURE6 0.75
 
 //Stalker
 DSSTLKPN			DSSTLKPN
@@ -685,6 +685,7 @@ Carrion/Detonate		CARRIDET
 //Keen Replacement
 scorpion/pain			64keenpn
 scorpion/death			64keendt
+fatality				fatality
 
 //Pestilence
 Pestilence/Sight		PSTSEE

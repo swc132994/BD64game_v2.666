@@ -157,6 +157,11 @@ MONSTER
 		DIAB W 35 A_BossDeath
 		DIAB W -1 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 0 A_KillMaster
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 

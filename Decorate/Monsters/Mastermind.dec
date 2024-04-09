@@ -132,6 +132,11 @@ AttackSound "weapons/gswing"
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
 		POL5 A -1
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 0 A_KillMaster
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 
@@ -179,7 +184,6 @@ DropItem "Soulsphere",64
 Obituary "The Eradicator unmade %o."
 Tag "Eradicator"
 BloodType "Brutal_BloodBLUE"
-BloodColor "45 34 7F"	//Hex value
 +EXTREMEDEATH
 +AVOIDMELEE
 +QUICKTORETALIATE
@@ -291,6 +295,11 @@ BloodColor "45 34 7F"	//Hex value
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
 		POL5 A -1
 		Stop
+	Ice:
+		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 0 A_KillMaster
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 
