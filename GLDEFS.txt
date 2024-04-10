@@ -1444,21 +1444,7 @@ object 64RevenantTracer2
 	frame MBALH {light TRACER_X3}
 }
 
-object 64StalkerShot1
-{
-	frame M5B1A {light TRACER}
-	frame M5B1B {light TRACER}
-	frame M5B1C {light TRACER}
-
-	frame MBALC {light TRACER_X1}
-	frame MBALD {light TRACER_X1}
-	frame MBALE {light TRACER_X2}
-	frame MBALF {light TRACER_X2}
-	frame MBALG {light TRACER_X3}
-	frame MBALH {light TRACER_X3}
-}
-
-object 64StalkerShot2
+object 64StalkerShot
 {
 	frame M5B1A {light TRACER}
 	frame M5B1B {light TRACER}

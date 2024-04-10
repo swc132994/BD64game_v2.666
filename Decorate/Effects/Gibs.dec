@@ -2297,6 +2297,22 @@ ACTOR XDeathBlueSpiderHead : XDeathSpiderHead
 	}
 }
 
+ACTOR NCrawlerEye : XDeathNCacodemonGib3
+{
+renderstyle Normal
+	States
+	{
+	Spawn:
+		NCG3 A 4 A_CheckFloor("Death")
+		Wait
+	Death:
+		NCG3 B 35
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpotBLUE")
+		NCG3 B -1
+		Stop
+	}
+}
+
 //ERADICATOR - UNMAKER MASTERMIND
 Actor EradicatorHead : XDeathBlueSpiderHead
 {
