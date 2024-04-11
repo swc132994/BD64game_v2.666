@@ -10,7 +10,6 @@ DamageFactor "CauseObjectsToSplash",0.0
 HitObituary "%o got too close to a Pain Elemental."
 DropItem "DemonEssenceSpawner"
 +FORCEXYBILLBOARD
-+NOBLOODDECALS
 +NOBLOOD
 +NEVERFAST
 	states
