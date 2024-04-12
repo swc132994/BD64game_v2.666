@@ -479,19 +479,6 @@ monster/anhoof			dsanhoof
 weapons/hrlexp			dshrlexp
 weapons/hrlfir			dshrlfir
 
-//Hellhound Cerberus
-$random HellHound/pain
-	{
-	CERBPN1 CERBPN2
-	}
-CERBPN1			CERBPN1
-CERBPN2 		CERBPN2
-
-HellHound/See			CERBSEE
-HellHound/die			CERBDIE
-HellHound/active		CERBROAM
-hellhound/melee			DOGGATT
-
 //Hellhound Alt
 $random Dog/pain
 	{

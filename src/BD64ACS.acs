@@ -529,11 +529,9 @@ script "MotherDemonRandom" (void)
 
 script "HoundChooserACS" (void)
 {
-	if(GetCvar("HoundChooserCvar") == -1) { SetActorState(0,"SpawnArachnotron"); }
+	if(GetCvar("HoundChooserCvar") == -1) { SetActorState(0,"D64MonsterOnly"); }
 	else
 	if(GetCvar("HoundChooserCvar") == 1) { SetActorState(0,"HoundDefault"); }
-	else
-	if(GetCvar("HoundChooserCvar") == 2) { SetActorState(0,"HoundCerb"); }
 	else
 	if(GetCvar("HoundChooserCvar") == 3) { SetActorState(0,"HoundGEC"); }
 }
@@ -558,18 +556,9 @@ script "RevenantRandomACS" (void)
 	else
 	if(GetCvar("Revenant_Spawner_Cvar") == 50) { SetActorState(0,"P50"); }
 	else
-	if(GetCvar("Revenant_Spawner_Cvar") == 1) { SetActorState(0,"RevenantChooser"); }
+	if(GetCvar("Revenant_Spawner_Cvar") == 1) { SetActorState(0,"Revenant"); }
 	else
 	if(GetCvar("Revenant_Spawner_Cvar") == 2) { SetActorState(0,"SpawnPestilence"); }
-}
-
-script "RevenantChooserACS" (void)
-{
-	if(GetCvar("RevenantChooserCvar") == -1) { SetActorState(0,"D64MonsterOnly"); }
-	else
-	if(GetCvar("RevenantChooserCvar") == 1) { SetActorState(0,"Revenant"); }
-	else
-	if(GetCvar("RevenantChooserCvar") == 2) { SetActorState(0,"TRevenant"); }
 }
 
 script "LightAndFogChecker" (Void)

@@ -28,7 +28,7 @@ BounceFactor 0.01
 	States
 	{
 	Spawn:
-		SPRK SSSSS 1 Bright
+		SPRK S 8 Bright
 		SPRK S 1 Bright A_FadeOut(0.02)
 		Wait
 	Death:
@@ -172,7 +172,7 @@ RenderStyle Add
 	States
 	{
 	Spawn:
-		SPRG SSSSSSSS 1 Bright
+		SPRG S 8 Bright
 		SPRG S 1 Bright A_FadeOut(0.02)
 		wait
 	Death:
@@ -192,7 +192,7 @@ SCALE 0.2
 	States
 	{
 	Spawn:
-		SPRG SSSSSSSS 1 Bright
+		SPRG S 8 Bright
 		SPRG S 1 Bright A_FadeOut(0.02)
 		wait
 	}
@@ -204,7 +204,7 @@ SCALE 0.1
 	States
 	{
 	Spawn:
-		SPRG SSSSSSSS 1 Bright
+		SPRG S 8 Bright
 		SPRG S 1 Bright A_FadeOut(0.02)
 		wait
 	}
@@ -224,7 +224,7 @@ Gravity 0.9
 	States
 	{
 	Spawn:
-		SPRG SSSSSSSS 1 Bright
+		SPRG S 8 Bright
 		SPRG S 1 Bright A_FadeOut(0.02)
 		wait
 	}
@@ -247,7 +247,7 @@ Translation "0:255=%[0,0,0]:[1,1,0]"
 	States
 	{
 	Spawn:
-		SPRG SSSSSSSS 1 Bright
+		SPRG S 8 Bright
 		SPRG S 1 Bright A_FadeOut(0.02)
 		wait
 	}
@@ -263,7 +263,7 @@ Translation "0:255=%[0,0,0]:[1,1,0]"
 	States
 	{
 	Spawn:
-		SPRG SSSSSSSS 1 Bright
+		SPRG S 8 Bright
 		SPRG S 1 Bright A_FadeOut(0.02)
 		wait
 	}

@@ -57,7 +57,7 @@ BloodType "Brutal_BloodGreen"
 		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
-		POL5 A -1
+		A038 A -1
 		Stop
 	Death.Plasma:
 		TNT1 A 0 A_XScream
@@ -163,7 +163,7 @@ Health 0
 		Stop
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
-		POL5 A -1
+		A038 A -1
 		Stop
 	}
 }

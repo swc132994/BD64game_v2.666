@@ -34,7 +34,17 @@ Model DetectFloorCraterMed
 Path "models"
 Model 0 "buldecground1.md3"
 Skin 0 "SCORCH1.png"
-Scale 8.0 8.0 8.0
+Scale 8.5 8.5 8.5
+ZOffset 0.01
+FrameIndex XXX1 A 0 0
+}
+
+Model DetectFloorCraterICE
+{
+Path "models"
+Model 0 "buldecground1.md3"
+Skin 0 "SCORCH1.png"
+Scale 8.5 8.5 8.5
 ZOffset 0.01
 FrameIndex XXX1 A 0 0
 }
@@ -114,8 +124,18 @@ Model DetectCeilCraterMed
 {
 Path "models"
 Model 0 "buldecceil1.md3"
-Skin 0 "SCORCH1.png"
-Scale 8.0 8.0 8.0
+Skin 0 "Scorch1.png"
+Scale 8.5 8.5 8.5
+ZOffset -0.01
+FrameIndex XXX1 A 0 0
+}
+
+Model DetectCeilCraterICE
+{
+Path "models"
+Model 0 "buldecceil1.md3"
+Skin 0 "Scorch1.png"
+Scale 8.5 8.5 8.5
 ZOffset -0.01
 FrameIndex XXX1 A 0 0
 }

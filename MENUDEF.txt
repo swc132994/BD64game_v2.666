@@ -190,8 +190,6 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 		StaticText ""
 	Option "Cacodemon Style =","CacoChooserCvar","CacoSkinChooser"
 		StaticText ""
-	Option "Revenant Style =","RevenantChooserCvar","RevenantChooser"
-		StaticText ""
 	Option "Select Mapset =","BD64_WadCheck","WadCheck"
 		StaticText "This option is not automatic and must be configured manually",1
 		StaticText "before starting a new game in one of the supported wads",1
@@ -316,18 +314,10 @@ OptionValue "ZombieMarineNazi"
 	1,"Waffen-SS"
 }
 
-OptionValue "RevenantChooser"
-{
-	-1, "Disabled"
-	1, "DrPyspy"
-	2, "Tchernobog"
-}
-
 OptionValue "HoundChooser"
 {
-	-1, "Disabled"
+	-1,"Disabled"
 	1,"Alternate"
-	2,"Cerberus"
 	3,"GEC"
 }
 

@@ -57,7 +57,7 @@ BloodColor "00 64 00"	//Hex value
 		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
-		POL5 A -1
+		A038 A -1
 		Stop
 /*	Stomp:		//unused state
 		//BOSS A 1 A_FaceTarget
@@ -172,7 +172,7 @@ Health 0
 		Stop
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
-		POL5 A -1
+		A038 A -1
 		Stop
 	}
 }

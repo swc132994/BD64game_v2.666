@@ -501,7 +501,7 @@ BloodType "Brutal_BloodBLUE"
 		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
-		POL5 A -1
+		A040 A -1
 		Stop
 	Death.Plasma:
 		TNT1 A 0 A_XScream
@@ -519,8 +519,8 @@ BloodType "Brutal_BloodBLUE"
 		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)
 		TNT1 AAA 0 A_SpawnItemEx("Brutal_BloodBLUE",0,0,30)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
-		CRB1 ABCDEFGH 3
-		CRB1 H -1
+		CRP1 ABCDEFGH 3
+		CRP1 H -1
 		Stop
 	Ice:
 		HEA2 "#" 5 A_GenericFreezeDeath

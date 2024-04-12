@@ -115,7 +115,7 @@ StencilColor "Black"
 
 ACTOR DetectFloorCraterMed : DetectFloorBullet
 {
-scale 2.0
+scale 2.5
 Alpha 0.9
 Renderstyle Shaded
 StencilColor "Black"
@@ -123,10 +123,26 @@ StencilColor "Black"
 
 ACTOR DetectCeilCraterMed : DetectCeilBullet
 {
-scale 2.0
+scale 2.5
 Alpha 0.9
 Renderstyle Shaded
 StencilColor "Black"
+}
+
+ACTOR DetectFloorCraterICE : DetectFloorBullet
+{
+scale 2.5
+Renderstyle Shaded
+Alpha 0.9
+StencilColor "7C B9 E8"
+}
+
+ACTOR DetectCeilCraterICE : DetectCeilBullet
+{
+scale 2.5
+Renderstyle Shaded
+Alpha 0.9
+StencilColor "7C B9 E8"
 }
 
 ACTOR DetectFloorLaser : DetectFloorBullet

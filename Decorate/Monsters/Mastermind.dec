@@ -313,7 +313,7 @@ BloodType "Brutal_BloodBLUE"
 		Stop
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
-		POL5 A -1
+		A040 A -1
 		Stop
 	Ice:
 		"####" "#" 5 A_GenericFreezeDeath
