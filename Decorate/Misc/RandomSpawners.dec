@@ -83,7 +83,7 @@ Scale 0.9
 	Spawn:
 		BFUG A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("BFGRandom")
-		TNT1 A 0 A_Jump(64,"SpawnUnmaker","SpawnLasergun")//25%
+		TNT1 A 0 A_Jump(85,"SpawnUnmaker","SpawnLasergun")//3%
 	SpawnBFG9000:
 		TNT1 A 1 A_SpawnItemEx("BFG9000Spawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -104,7 +104,7 @@ Scale 0.82
 	Spawn:
 		MGUN A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("ChaingunRandomACS")
-		TNT1 A 0 A_Jump(64,"SpawnSMG","SpawnRifle")//25%
+		TNT1 A 0 A_Jump(85,"SpawnSMG","SpawnRifle")//33%
 	SpawnChaingun:
 		TNT1 A 1 A_SpawnItemEx("ChaingunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -162,7 +162,7 @@ Scale 0.82
 	Spawn:
 		PINS A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("WpnPowerRandom")
-		TNT1 A 0 A_Jump(39,"SpawnDemonKey")//15%
+		TNT1 A 0 A_Jump(45,"SpawnDemonKey")//17.5%
 	SpawnBlurSphere:
 		TNT1 A 1 A_SpawnItemEx("64Blursphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -181,7 +181,7 @@ Scale 0.82
 	Spawn:
 		PSTR A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("WpnPowerRandom")
-		TNT1 A 0 A_Jump(39,"SpawnDemonKey")//15%
+		TNT1 A 0 A_Jump(45,"SpawnDemonKey")//17.5%
 	SpawnBerserk:
 		TNT1 A 1 A_SpawnItemEx("64Berserk",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -200,7 +200,7 @@ Scale 0.7
 	Spawn:
 		SOUL A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("WpnPowerRandom")
-		TNT1 A 0 A_Jump(39,"SpawnDemonKey")//15%
+		TNT1 A 0 A_Jump(45,"SpawnDemonKey")//17.5%
 	SpawnSoulSphere:
 		TNT1 A 1 A_SpawnItemEx("64Soulsphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -219,7 +219,7 @@ Scale 0.7
 	Spawn:
 		MEGA A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("WpnPowerRandom")
-		TNT1 A 0 A_Jump(39,"SpawnDemonKey")//15%
+		TNT1 A 0 A_Jump(45,"SpawnDemonKey")//17.5%
 	SpawnMegaSphere:
 		TNT1 A 1 A_SpawnItemEx("64MegaSphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -538,7 +538,6 @@ MONSTER
 		Stop
 	Spawn:
 		BOSS A 0
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 3 ACS_NamedExecuteAlways("HellHoundRandom")	//if D64 monsters only enabled spawn Baron
 	P05A:
 		TNT1 A 0 A_Jump(13,"HoundChooser","SpawnBelp")
@@ -622,7 +621,6 @@ MONSTER
 		Stop
 	Spawn:
 		BOS2 A 0
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 3 ACS_NamedExecuteAlways("KnightmareRandom")	//if D64 monsters only enabled spawn Hellknight
 	P05:
 		TNT1 A 0 A_Jump(13,"SpawnKnightmare")
@@ -674,7 +672,6 @@ MONSTER
 		Stop
 	Spawn:
 		CYBR A 0
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 3 ACS_NamedExecuteAlways("AnnihilatorRandom")
 	P05A:
 		TNT1 A 0 A_Jump(13,"SpawnAnnihilator","SpawnInfernal")
@@ -852,7 +849,6 @@ MONSTER
 		Stop
 	Spawn:
 		MSMN A 0
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 3 ACS_NamedExecuteAlways("MotherDemonRandom")
 	SpawnMastermind:
 		TNT1 A -1 A_SpawnItemEx("64SpiderMastermind",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -958,7 +954,6 @@ MONSTER
 		Stop
 	Spawn:
 		BSPI A 0
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 3 ACS_NamedExecuteAlways("NightCrawlerRandomACS")
 	SpawnArachnotron:
 		TNT1 A -1 A_SpawnItemEx("64Arachnotron",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1343,7 +1338,6 @@ MONSTER
 		Stop
 	Spawn:
 		FATT A 0
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 3 ACS_NamedExecuteAlways("BruiserRandom_ACS",0,0,0,0)
 	SpawnFatso:
 		TNT1 A -1 A_SpawnItemEx("64Fatso",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1473,6 +1467,10 @@ MONSTER
 +NOBLOOD
 	States
 	{
+	Death:
+	XDeath:
+		TNT1 A 1 A_BossDeath
+		Stop
 	Spawn:
 		CPOS A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("WadChecker")
@@ -1484,8 +1482,8 @@ MONSTER
 	BloodStain:
 		TNT1 A 1 A_SpawnItemEx("64ZombieMarine",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
-	GoingDown: 
-		TNT1 A -1 A_SpawnItemEx("MotherDemon",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+	GoingDown:
+		TNT1 A -1 A_SpawnItemEx("Motherdemon_GD",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	DoomZero:
 		TNT1 A 1 A_SpawnItemEx("64ForgottenOne",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -1561,7 +1559,6 @@ MONSTER
 		Stop
 	Spawn:
 		GECH A 0
-		TNT1 A 0 A_NoBlocking
 		TNT1 A 3 ACS_NamedExecuteAlways("HoundChooserACS")
 	HoundDefault:
 		TNT1 A -1 A_SpawnItemEx("64Hellhound",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
