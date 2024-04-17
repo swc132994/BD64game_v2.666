@@ -32,45 +32,42 @@ MONSTER
 	Spawned:
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",12,0,62)
 		SWCB A 4 A_LookEx
-		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_WEAPON)
 		Loop
 	Missile:
-		TNT1 A 0 A_JumpIfCloser(320,"ChargeStart")
+		TNT1 A 0 A_JumpIfCloser(350,"ChargeStart")
 	See:
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",12,0,62)
 		SWCB A 4 A_Chase
-		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Chainsaw/idle",CHAN_6)
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",12,0,62)
 		SWCB B 4 A_Chase
-		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Chainsaw/idle",CHAN_6)
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",12,0,62)
 		SWCB C 4 A_Chase
-		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Chainsaw/idle",CHAN_6)
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",12,0,62)
 		SWCB D 4 A_Chase
-		TNT1 A 0 A_PlaySound("weapons/sawidle",CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Chainsaw/idle",CHAN_6)
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		Loop
 	Forget:
 		TNT1 A 0 A_ClearTarget
 		Goto Spawned
 	Melee:
-		TNT1 A 0 A_Recoil(-2)
-		TNT1 A 0 A_CustomMeleeAttack(2,"weapons/sawhit")
-		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2",12,0,62)
-		SWCB E 2 A_FaceTarget
+		TNT1 A 0 A_Recoil(-3)
+		TNT1 A 0 A_PlaySound("chainsaw/loop",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMeleeAttack(1)
+		TNT1 A 0 A_CustomMissile("SawDamage",36)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",12,0,62)
+		SWCB E 4 A_FaceTarget
 		Goto See
 	ChargeStart:
 		TNT1 A 0 A_PlaySound("KICK",CHAN_AUTO)
-		TNT1 A 0 A_JumpIfCloser(90,"See")
-		SWCB AAA 1 A_Chase
-		TNT1 A 0 A_JumpIfCloser(90,"See")
-		SWCB BBB 1 A_Chase
-		TNT1 A 0 A_JumpIfCloser(90,"See")
-		SWCB CCC 1 A_Chase
-		TNT1 A 0 A_JumpIfCloser(90,"See")
-		SWCB DDD 1 A_Chase
-		TNT1 A 0 A_JumpIfCloser(320,"ChargeStart")
+		TNT1 A 0 A_PlaySound("Chainsaw/idle",CHAN_6)
+		SWCB AABB 1 A_Chase
+		TNT1 A 0 A_PlaySound("Chainsaw/idle",CHAN_6)
+		SWCB CCDD 1 A_Chase
+		TNT1 A 0 A_JumpIfCloser(350,"ChargeStart")
 		Goto See
 	Pain:
 		SWCB F 5

@@ -28,7 +28,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		Wait
 	Fire:
 		PUN1 A 1
-		TNT1 A 0 A_Jump(128,"Punch2")
+		TNT1 A 0 A_Jump(256,"Punch1","Punch2")
 	Punch1:
 		PUN1 A 1
 		TNT1 A 0 A_JumpIfInventory("powerstrength",1,"BerserkPunch1")
@@ -172,7 +172,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		Goto punch1
 		TNT1 A 0 A_JumpIfInventory("Stamina",91,"Tired")
 		TNT1 A 0 A_GiveInventory("Stamina",9)
-		TNT1 A 0 A_Jump(128,"Punch2")
+		TNT1 A 0 A_Jump(256,"Punch1","Punch2")
 	Punch1:
 		PUN1 A 1
 		TNT1 A 0 A_JumpIfInventory("powerstrength",1,"BerserkPunch1")

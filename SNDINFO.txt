@@ -115,13 +115,13 @@ DSSAWHIT		DSSAWHIT
 DSSAWUP			DSSAWUP
 DSSAWDIE		DSSAWDIE
 
-weapons/chainsaw/draw		CSAWDRAW
-weapons/chainsaw/start		CSAWSTRT
-weapons/chainsaw/loop		CSAWFUL
-weapons/chainsaw/stop		CSAWSTOP
-weapons/chainsaw/idle		CSAWREDY
-CSAWCUT						CSAWCUT
-DSSAWZIP					DSSAWZIP
+chainsaw/draw		CSAWDRAW
+chainsaw/start		CSAWSTRT
+chainsaw/loop		CSAWFUL
+chainsaw/stop		CSAWSTOP
+chainsaw/idle		CSAWREDY
+CSAWCUT				CSAWCUT
+DSSAWZIP			DSSAWZIP
 
 //Pistol
 PREL			PREL
