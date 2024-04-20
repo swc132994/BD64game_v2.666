@@ -59,26 +59,24 @@ Skill HardPlus
 Skill Nightmare
 {
 	SpawnFilter = Nightmare
-	DamageFactor = 1.5
 	MonsterHealth = 1.25
-//	FastMonsters
+	Aggressiveness = 0.5
+	FastMonsters
 	Name = "Hardcore!"
-	mustconfirm = "Monsters are more durarble. All damage increased by 50%"
+	mustconfirm = "Monsters are more durarble and aggressive"
 }
 
 Skill Survival
 {
 	SpawnFilter = Hard
-	DamageFactor = 1.5
 	MonsterHealth = 1.25
 	ReplaceActor = "64HealthBonus","64Bandages"
 	ReplaceActor = "Stimpack","BandagedStimSpawner"
 	ReplaceActor = "Medikit","BandagedMedikitSpawner"
 	ReplaceActor = "64Berserk","BerserkerSyringeSpawner"
-//	FastMonsters
 	Name = "Survival!"
 	textcolor = Gray
-	mustconfirm = "Monsters are more durarble and inflict more damage. Healing done manually"
+	mustconfirm = "Monsters are more durarble (Manual healing)."
 }
 
 Skill SurvivalRealism
@@ -93,7 +91,7 @@ Skill SurvivalRealism
 	FastMonsters
 	Name = "Survival! (Realism)"
 	textcolor = Gray
-	mustconfirm = "Monsters are less durarble but faster and inflict more damage. Healing done manually"
+	mustconfirm = "Monsters are less durarble but faster and inflict more damage (Manual healing)."
 }
 
 
