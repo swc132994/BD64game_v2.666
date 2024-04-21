@@ -48,6 +48,11 @@ DropItem "DemonEssenceSpawner"
 	Raise:
 		PAIN LKJIHGFE 8
 		Goto See
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 
@@ -111,8 +116,9 @@ Tag "Agony Elemental"
 		NPEL LKJIHGFE 8
 		Goto See
 	Ice:
-		NPEL "#" 5 A_GenericFreezeDeath
-		NPEL "#" 1 A_FreezeDeathChunks
+		NPEL "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
 }

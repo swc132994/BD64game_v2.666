@@ -194,7 +194,8 @@ MONSTER
 		POL5 A -1
 		Stop
 	Ice:
-		LMWZ "#" 5 A_GenericFreezeDeath
+		LMWZ "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
 		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
@@ -316,7 +317,8 @@ DropItem "None"
 		RMWX A 1
 		Goto Spawn
 	Ice:
-		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
 		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}

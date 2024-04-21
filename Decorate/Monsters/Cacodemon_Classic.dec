@@ -146,6 +146,11 @@ BloodType "Brutal_BloodBLUE"
 		CRP1 ABCDEFGH 3
 		CRP1 H -1
 		Stop
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 
@@ -505,7 +510,8 @@ BloodType "Brutal_BloodBLUE"
 		CRP1 H -1
 		Stop
 	Ice:
-		HEA4 "#" 5 A_GenericFreezeDeath
+		HEA4 "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
 		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
@@ -586,7 +592,8 @@ DropItem "None"
 		HEA4 H 1 A_SpawnItemEx("NightmareClassicCacodemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Ice:
-		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
 		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}

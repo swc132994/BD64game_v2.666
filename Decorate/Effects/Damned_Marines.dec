@@ -64,7 +64,8 @@ BloodType "Brutal_Blood"
 		DAM1 K -1
 		Stop
 	Ice:
-		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
 		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
@@ -96,7 +97,8 @@ Actor DamnedHanging2 : DamnedHanging1
 		DAM2 K -1
 		Stop
 	Ice:
-		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
 		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
@@ -151,7 +153,8 @@ BloodType "Brutal_Blood"
 		TTR7 J -1
 		Stop
 	Ice:
-		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
 		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
@@ -199,7 +202,8 @@ BloodType "Brutal_Blood"
 		TTR8 I -1
 		Stop
 	Ice:
-		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
 		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
@@ -254,7 +258,8 @@ BloodType "Brutal_Blood"
 		TTR9 J -1
 		Stop
 	Ice:
-		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
 		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
@@ -294,7 +299,8 @@ BloodType "Brutal_Blood"
 		TTR6 F -1
 		Stop
 	Ice:
-		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
 		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
@@ -368,7 +374,8 @@ BloodType "Brutal_Blood"
 		TTR5 H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Ice:
-		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
 		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}

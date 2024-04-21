@@ -238,6 +238,11 @@ DropItem "DemonEssenceSpawner"
 		DI64 X 35
 		DI64 X -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 
@@ -901,7 +906,8 @@ BloodType "Brutal_BloodBLUE"
 		TRO2 X -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Ice:
-		TRO2 "#" 5 A_GenericFreezeDeath
+		TRO2 "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
 		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
@@ -1103,7 +1109,8 @@ DropItem "None"
 		TRO2 L 1 A_SpawnItemEx("NightmareImp",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Ice:
-		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
 		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}

@@ -43,6 +43,7 @@ script "BD64Respawn" Respawn NET
 Script "BD64Initilize" Enter
 {
 	ACS_NamedExecuteAlways("BD64Respawn",0);
+	CreateTranslation(2666,0:255=%[0,0,0]:[0.94,0.97,1.00]);//ALICE BLUE
 
 	if(GetPlayerInfo(PlayerNumber(), PLAYERINFO_PLAYERCLASS) == 1 & 2)
 	{
@@ -81,6 +82,12 @@ Script "BD64Initilize" Enter
 	SetInventory("VmapCheck",GetCvar("VMapCheckCvar"));
 	SetInventory("AbsMapCheck",GetCvar("AbsMapCheckCvar"));
 	SetInventory("TCMapCheck",GetCvar("TCMapCheckCvar"));
+}
+
+script "IceDeathTranslate" (VOID) NET
+{
+Thing_SetTranslation(0,2666);
+Delay(1);
 }
 
 Script "PlayerDeathScript" Death
@@ -199,7 +206,7 @@ script "SetBloodAmountACS" (void)
 
 Script "LowBloodCheckerACS" (VOID)
 {
-if	(GameType () == GAME_NET_DEATHMATCH || GetCvar("bd_lowgraphicsmode") != 0 | GetCvar("zdoombrutaljanitor") != 0 ) 
+if	(GameType () == GAME_NET_DEATHMATCH || GetCvar("bd_lowgraphicsmode") != 0 | GetCvar("zdoombrutaljanitor") != 0 )
 { GiveInventory("LowGraphicsMode", 1); }
 }
 
@@ -443,7 +450,7 @@ script "AnnihilatorRandom" (void)
 	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 40) { SetActorState(0,"P40A"); }
 	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }	
+	if(GetCvar("Annihilator_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }
 	else
 	if(GetCvar("Annihilator_Spawner_Cvar") == 51) { SetActorState(0,"P05B"); }
 	else
@@ -518,7 +525,7 @@ script "MotherDemonRandom" (void)
 	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 402) { SetActorState(0,"P40C"); }
 	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 502) { SetActorState(0,"P50C"); }	
+	if(GetCvar("Motherdemon_Spawner_Cvar") == 502) { SetActorState(0,"P50C"); }
 	else
 	if(GetCvar("Motherdemon_Spawner_Cvar") == 1) { SetActorState(0,"SpawnMastermind"); }
 	else
@@ -964,7 +971,7 @@ Script "FleshWizardRandomACS" (void)
 	else
 	if(GetCvar("FleshWizardRandomCvar") == 40) { SetActorState(0,"P40A"); }
 	else
-	if(GetCvar("FleshWizardRandomCvar") == 50) { SetActorState(0,"P50A"); }	
+	if(GetCvar("FleshWizardRandomCvar") == 50) { SetActorState(0,"P50A"); }
 	else
 	if(GetCvar("FleshWizardRandomCvar") == 51) { SetActorState(0,"P05B"); }
 	else

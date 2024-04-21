@@ -191,5 +191,10 @@ MONSTER
 		CRB1 ABCDEFGH 3
 		CRB1 H -1
 		Stop
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }

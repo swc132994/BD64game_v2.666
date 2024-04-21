@@ -190,6 +190,11 @@ MONSTER
 		GHUL Q 5
 		GHUL PONML 5
 		Goto See
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
 

@@ -244,8 +244,9 @@ MONSTER
 		VILE Y -1 A_SpawnItemEx("GrowingBloodPoolBLUE")
 		Stop
 	Ice:
-		S1R3 "#" 5 A_GenericFreezeDeath
-		S1R3 "#" 1 A_FreezeDeathChunks
+		S1R3 "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}
 }
@@ -369,7 +370,8 @@ DropItem "None"
 		S1D7 X -1 A_SpawnItemEx("GrowingBloodPoolBLUE")
 		Stop
 	Ice:
-		"####" "#" 5 A_GenericFreezeDeath
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
 		"####" "#" 1 A_FreezeDeathChunks
 		wait
 	}

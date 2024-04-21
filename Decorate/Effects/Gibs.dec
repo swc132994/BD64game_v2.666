@@ -1327,6 +1327,12 @@ Decal "BrutalBloodSplat"
 	}
 }
 
+Actor BD64IceChunk : IceChunk Replaces IceChunk	//FreezeDeath
+{
+Translation "0:255=%[0,0,0]:[0.94,0.97,1.00]"//ALICE BLUE
+Gravity 0.5
+}
+
 //LIMBS
 //ZOMBIEMEN
 ACTOR XDeathZombieArm1 : XDeath1
