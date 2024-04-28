@@ -25,10 +25,8 @@ HitObituary "%o died by the Pestilence's poison fists"
 Obituary "%o fell to the Pestilence's chemical warfare"
 DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodGreen"
-MONSTER
-+FLOORCLIP
-+DONTHARMSPECIES
 +NOBLOODDECALS
++DONTHARMSPECIES
 	States
 	{
 	Spawn:

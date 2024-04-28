@@ -18,6 +18,7 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 MaxTargetRange 128
 Tag "Forgotten One"
++DONTHARMCLASS
 +NOBLOOD
 +FORCEXYBILLBOARD
 -MISSILEMORE

@@ -28,6 +28,7 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodGreen"
+Species "HellKnight"
 MONSTER
 +BOSSDEATH
 +FLOORCLIP

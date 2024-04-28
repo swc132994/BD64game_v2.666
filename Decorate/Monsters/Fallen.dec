@@ -22,13 +22,15 @@ PainChance "SuperKick",255
 PainChance "Plasma",0
 PainChance "BFG",0
 PainChance "Fire",0
-DamageFactor "CauseWaterSplash",0.0
-DamageFactor "CauseObjectsToSplash",0.0
+DamageFactor "CauseWaterSplash",0
+DamageFactor "CauseObjectsToSplash",0
 DamageFactor "Plasma",0.5
 DamageFactor "BFG",0.5
-DamageFactor "Fire",0.0
+DamageFactor "Fire",0
+DamageFactor "Ice",1.5
 DropItem "DemonEssenceSpawner"
 MONSTER
++DONTHARMCLASS
 +NOGRAVITY
 +FLOAT
 +QUICKTORETALIATE

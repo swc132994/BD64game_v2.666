@@ -1,7 +1,7 @@
 height 40;
 completeborder true;
 
-statusbar fullscreen,forcescaled,0.5
+statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 {
 	InInventory "HUDSwitch",1 //Fullscreen HUD
 	{

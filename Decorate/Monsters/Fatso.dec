@@ -11,7 +11,7 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Dropitem "SawGas"
 Dropitem "DemonEssenceSpawner"
-+DONTHARMSPECIES
++DONTHARMCLASS
 +NOBLOODDECALS
 +NEVERFAST
 	States

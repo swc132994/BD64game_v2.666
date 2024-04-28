@@ -24,7 +24,9 @@ ActiveSound "mother/Active"
 Tag "Mother Demon"
 DropItem "DemonEssenceLargeSpawner"
 DropItem "Soulsphere",32
+Species "Resurrector"
 MONSTER
++DONTHARMSPECIES
 +FLOORCLIP
 +DONTMORPH
 +BOSS

@@ -218,6 +218,7 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Tag "Poltergeist"
 MONSTER
++DONTHARMCLASS
 +NOBLOOD
 +DONTMORPH
 +DONTSQUASH
@@ -883,6 +884,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was killed by a poltergeist."
 Tag "Poltergeist"
 MONSTER
++DONTHARMCLASS
 +NOBLOOD
 +DONTMORPH
 +DONTSQUASH
@@ -1013,6 +1015,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was killed by a poltergeist."
 Tag "Poltergeist"
 MONSTER
++DONTHARMCLASS
 +NOBLOOD
 +DONTMORPH
 +DONTSQUASH
@@ -1103,6 +1106,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was killed by a poltergeist."
 Tag "Poltergeist"
 MONSTER
++DONTHARMCLASS
 +NOBLOOD
 +DONTMORPH
 +DONTSQUASH

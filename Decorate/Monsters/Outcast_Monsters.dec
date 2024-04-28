@@ -23,6 +23,7 @@ BloodType "Brutal_BloodGreen"
 +MISSILEMORE
 +NOBLOODDECALS
 +NEVERFAST
++DONTHARMSPECIES
 	States
 	{
 	Spawn:
@@ -370,7 +371,6 @@ SeeSound ""
 Decal "SmallerScorch"
 DeathSound "world/hotsiz"
 DamageType "BFG"
-Species "Demon"
 PROJECTILE
 -NOGRAVITY
 +RANDOMIZE
@@ -568,7 +568,6 @@ Actor 64NightcrawlerGrenade : 64Rocket
 Damage 4
 Speed 15
 Gravity 0.25
-Species "none"
 BounceType "Doom"
 SeeSound ""
 DeathSound "weapons/rocklx"
@@ -624,7 +623,7 @@ Obituary "%o didn't see the stalker coming."
 PainSound "DSSTLKPN"
 SeeSound "DSSTLKST"
 Tag "Stalker"
-+DONTHARMSPECIES
++DONTHARMCLASS
 +NOBLOODDECALS
 	States
 	{

@@ -198,8 +198,8 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		RLTR IJK 1
 		RLTR LL 8
 		TNT1 A 0 A_PlaySound("ROCKLOAD",CHAN_BODY)
-		RLTR MNOPQRSTUVWXYZ 1
-		RLTR "[\]" 1
+		RLTR MNOPQRSTUVWXYZ 1 A_WeaponReady
+		RLTR "[\]" 1 A_WeaponReady
 		Goto Ready
 	ClassicRLSelected:	//Deselect animation
 		RLTS DCBA 1 Offset(0,32)
@@ -505,7 +505,6 @@ Decal "BigScorch"
 -DEHEXPLOSION
 -ROCKETTRAIL
 +EXTREMEDEATH
-+THRUSPECIES
 	States
 	{
 	Spawn:

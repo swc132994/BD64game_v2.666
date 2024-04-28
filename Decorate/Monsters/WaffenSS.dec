@@ -16,8 +16,8 @@ SeeSound "Waffen/See"
 Obituary "%o was executed by a Waffen-SS."
 DropItem "MP40Spawner"
 DropItem "SOULSPAWNER"
++NOINFIGHTING
 +MISSILEMORE
-+NOTARGET
 	States
 	{
 	Idle:	//placeholder

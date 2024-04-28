@@ -26,9 +26,11 @@ deathsound "tornado/death"
 activesound "tornado/active"
 DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodBlue"
+Species "Archvile"
 MONSTER
 +FLOORCLIP
 +NOTARGET
++DONTHARMSPECIES
 +NOBLOODDECALS
 +QUICKTORETALIATE
 +NEVERFAST

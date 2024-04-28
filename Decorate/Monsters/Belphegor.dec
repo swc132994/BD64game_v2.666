@@ -1,4 +1,4 @@
-Actor 64Belphegor 11053
+Actor 64Belphegor : BaronOfHell 11053
 {
 //$category "Game/BD64_Monsters
 Scale 0.8
@@ -23,6 +23,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodGreen"
 MONSTER
++DONTHARMSPECIES
 +BOSSDEATH
 +MOVEWITHSECTOR
 +NOBLOODDECALS
@@ -243,7 +244,6 @@ Decal "MedScorch"
 		TNT1 A 0 Radius_Quake(2,54,0,15,0)
 		TNT1 A 0 A_PlaySound("EXPLO3",CHAN_VOICE)
 		TNT1 A 0 A_PlaySound("EXPLOSION",CHAN_WEAPON)
-		TNT1 A 0 A_Explode(32,96,1)
 		BAL7 CDEFGH 1 Bright Light("PLASMA_X3") A_SpawnItemEx("LensFlareTorchBlue")
 		Stop
 	}

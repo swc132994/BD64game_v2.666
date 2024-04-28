@@ -691,4 +691,5 @@ Actor UnmakerLaserPierce : UnmakerLaser
 {
 Damage 8
 +RIPPER
++NOBOSSRIP
 }

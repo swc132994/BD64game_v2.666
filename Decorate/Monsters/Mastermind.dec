@@ -145,7 +145,7 @@ AttackSound "weapons/gswing"
 ACTOR MasterMindProjectile : EnemyProjectile
 {
 Scale 0.1
-Damage(random(13,18))
+Damage(2*random (13,18))
 Speed 60
 FastSpeed 70
 +EXTREMEDEATH
@@ -156,7 +156,6 @@ FastSpeed 70
 		Loop
 	Death:
 		TNT1 A 1 A_SpawnItemEx("RicoChet")
-		TNT1 A 0 A_Explode(18,24)
 		EFIR ABCDEFGHIJKLM 1
 		Stop
 	XDeath:
@@ -327,6 +326,7 @@ BloodType "Brutal_BloodBLUE"
 
 Actor EradicatorLaser : UnmakerLaser2
 {
+-FORCERADIUSDMG
 	States
 	{
 	Death:

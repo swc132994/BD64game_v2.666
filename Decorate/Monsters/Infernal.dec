@@ -24,7 +24,9 @@ SeeSound "SisDemon/see"
 PainSound "SisDemon/pain"
 DeathSound "SisDemon/death"
 ActiveSound "SisDemon/active"
+Species "Resurrector"
 MONSTER
++DONTHARMSPECIES
 +MISSILEMORE
 +MISSILEEVENMORE
 +BOSS
