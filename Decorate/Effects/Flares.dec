@@ -510,7 +510,6 @@ PROJECTILE
 
 ACTOR PlayerMuzzle3
 {
-Translation "0:255=%[0,0,0]:[0.4,0.85,1.0]"//Maya Blue
 Speed 0
 PROJECTILE
 +NOCLIP
@@ -518,7 +517,7 @@ PROJECTILE
 	States
 	{
 	Spawn:
-		PLMZ A 2 Bright Light("PLASMAATK")
+		PRMZ A 2 Bright Light("PLASMAATK")
 		Stop
 	}
 }
