@@ -641,6 +641,14 @@ brightmap sprite SKELI1		{map "brightmaps/SKELI1_BR.png"}
 brightmap sprite SKELI2		{map "brightmaps/SKELI2_BR.png"}
 brightmap sprite SKELI3		{map "brightmaps/SKELI3_BR.png"}
 brightmap sprite SKELI8		{map "brightmaps/SKELI8_BR.png"}
+brightmap sprite SKELJ1		{map "brightmaps/SKELJ1_BR.png"  Disablefullbright}
+brightmap sprite SKELJ2		{map "brightmaps/SKELJ2_BR.png"  Disablefullbright}
+brightmap sprite SKELJ3		{map "brightmaps/SKELJ3_BR.png"  Disablefullbright}
+brightmap sprite SKELJ4		{map "brightmaps/SKELJ4_BR.png"  Disablefullbright}
+brightmap sprite SKELJ5		{map "brightmaps/SKELJ5_BR.png"  Disablefullbright}
+brightmap sprite SKELJ6		{map "brightmaps/SKELJ6_BR.png"  Disablefullbright}
+brightmap sprite SKELJ7		{map "brightmaps/SKELJ7_BR.png"  Disablefullbright}
+brightmap sprite SKELJ8		{map "brightmaps/SKELJ8_BR.png" Disablefullbright}
 brightmap sprite SKELK1		{map "brightmaps/SKELK1_BR.png"}
 brightmap sprite SKELK2		{map "brightmaps/SKELK2_BR.png"}
 brightmap sprite SKELK8		{map "brightmaps/SKELK8_BR.png"}
@@ -698,6 +706,14 @@ brightmap sprite GHULI1		{map "brightmaps/SKELI1_BR.png"}
 brightmap sprite GHULI2		{map "brightmaps/SKELI2_BR.png"}
 brightmap sprite GHULI3		{map "brightmaps/SKELI3_BR.png"}
 brightmap sprite GHULI8		{map "brightmaps/SKELI8_BR.png"}
+brightmap sprite GHULJ1		{map "brightmaps/SKELJ1_BR.png"  Disablefullbright}
+brightmap sprite GHULJ2		{map "brightmaps/SKELJ2_BR.png"  Disablefullbright}
+brightmap sprite GHULJ3		{map "brightmaps/SKELJ3_BR.png"  Disablefullbright}
+brightmap sprite GHULJ4		{map "brightmaps/SKELJ4_BR.png"  Disablefullbright}
+brightmap sprite GHULJ5		{map "brightmaps/SKELJ5_BR.png"  Disablefullbright}
+brightmap sprite GHULJ6		{map "brightmaps/SKELJ6_BR.png"  Disablefullbright}
+brightmap sprite GHULJ7		{map "brightmaps/SKELJ7_BR.png"  Disablefullbright}
+brightmap sprite GHULJ8		{map "brightmaps/SKELJ8_BR.png" Disablefullbright}
 brightmap sprite GHULK1		{map "brightmaps/SKELK1_BR.png"}
 brightmap sprite GHULK2		{map "brightmaps/SKELK2_BR.png"}
 brightmap sprite GHULK8		{map "brightmaps/SKELK8_BR.png"}
@@ -1159,7 +1175,7 @@ brightmap sprite DIABE1		{map "BRIGHTMAPS/Infernal/DIABE1_BR.png"disablefullbrig
 brightmap sprite DIABE2		{map "BRIGHTMAPS/Infernal/DIABE2_BR.png"disablefullbright}
 brightmap sprite DIABE8		{map "BRIGHTMAPS/Infernal/DIABE8_BR.png"disablefullbright}
 
-//Classic Cacodemom
+//Classic Cacodemon
 brightmap sprite HEA3A1			{map "brightmaps/Cacodemon_Classic/HEA3A1_BR.png"}
 brightmap sprite HEA3A2A8		{map "brightmaps/Cacodemon_Classic/HEA3A2A8_BR.png"}
 brightmap sprite HEA3B1			{map "brightmaps/Cacodemon_Classic/HEA3B1_BR.png"}
@@ -1184,7 +1200,7 @@ brightmap sprite HEA3N2N8		{map "brightmaps/Cacodemon_Classic/HEA3N2N8_BR.png"}
 brightmap sprite HEA3M1			{map "brightmaps/Cacodemon_Classic/HEA3M1_BR.png"}
 brightmap sprite HEA3M2M8		{map "brightmaps/Cacodemon_Classic/HEA3M2M8_BR.png"}
 
-//Classic Nightmare Cacodemom
+//Classic Nightmare Cacodemon
 brightmap sprite HEA4A1			{map "brightmaps/Cacodemon_Classic/HEA3A1_BR.png"}
 brightmap sprite HEA4A2A8		{map "brightmaps/Cacodemon_Classic/HEA3A2A8_BR.png"}
 brightmap sprite HEA4B1			{map "brightmaps/Cacodemon_Classic/HEA3B1_BR.png"}
@@ -1208,6 +1224,24 @@ brightmap sprite HEA4N1			{map "brightmaps/Cacodemon_Classic/HEA3N1_BR.png"}
 brightmap sprite HEA4N2N8		{map "brightmaps/Cacodemon_Classic/HEA3N2N8_BR.png"}
 brightmap sprite HEA4M1			{map "brightmaps/Cacodemon_Classic/HEA3M1_BR.png"}
 brightmap sprite HEA4M2M8		{map "brightmaps/Cacodemon_Classic/HEA3M2M8_BR.png"}
+
+//Pain Elemental
+brightmap sprite PAINC1		{map "brightmaps/PAINB1.png"  Disablefullbright}
+brightmap sprite PAINC2C8	{map "brightmaps/PAINB2B8.png"  Disablefullbright}
+brightmap sprite PAINC3C7	{map "brightmaps/PAINB3B7.png"  Disablefullbright}
+brightmap sprite PAINC4C6	{Disablefullbright}
+brightmap sprite PAINC5		{Disablefullbright}
+brightmap sprite PAIND1		{map "brightmaps/PAINC1.png"  Disablefullbright}
+brightmap sprite PAIND2D8	{map "brightmaps/PAINC2C8.png"  Disablefullbright}
+brightmap sprite PAIND3D7	{map "brightmaps/PAINC3C7.png"  Disablefullbright}
+brightmap sprite PAIND4D6	{map "brightmaps/PAINC4C6.png"  Disablefullbright}
+brightmap sprite PAIND5		{map "brightmaps/PAINC5.png"  Disablefullbright}
+brightmap sprite PAINF0		{map "brightmaps/PAINE0.png"  Disablefullbright}
+brightmap sprite PAING0		{map "brightmaps/PAINF0.png"  Disablefullbright}
+brightmap sprite PAINH0		{map "brightmaps/PAING0.png"  Disablefullbright}
+brightmap sprite PAINI0		{map "brightmaps/PAINH0.png"  Disablefullbright}
+brightmap sprite PAINJ0		{map "brightmaps/PAINI0.png"  Disablefullbright}
+brightmap sprite PAINK0		{map "brightmaps/PAINJ0.png"  Disablefullbright}
 
 //Keen Replacement
 brightmap sprite SC0RL0		{map "brightmaps/KeenReplace/BMFATALY.png"}
