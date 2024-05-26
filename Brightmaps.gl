@@ -859,6 +859,11 @@ brightmap sprite FATTF2F8	{map "brightmaps/FATTF2F8B.png"}
 brightmap sprite FATTF3F7	{map "brightmaps/FATTF3F7B.png"}
 brightmap sprite FATTF4F6	{map "brightmaps/FATTF4F6B.png"}
 brightmap sprite FATTF5		{map "brightmaps/FATTF5B.png"}
+brightmap sprite FATTG1		{map "brightmaps/FATTG1B.png" disablefullbright}
+brightmap sprite FATTG2G8	{map "brightmaps/FATTG2G8B.png" disablefullbright}
+brightmap sprite FATTG3G7	{map "brightmaps/FATTG3G7B.png" disablefullbright}
+brightmap sprite FATTG4G6	{map "brightmaps/FATTG4G6B.png" disablefullbright}
+brightmap sprite FATTG5		{map "brightmaps/FATTG5B.png" disablefullbright}
 brightmap sprite FATTH1		{map "brightmaps/FATTH1B.png"}
 brightmap sprite FATTH2H8	{map "brightmaps/FATTH2H8B.png"}
 brightmap sprite FATTH3H7	{map "brightmaps/FATTH3H7B.png"}
