@@ -73,11 +73,13 @@ MONSTER
 		TNT1 A 0 A_JumpIfCloser(350,"ChargeStart")
 		Goto See
 	Pain:
+		TNT1 A 0 A_StopSound(1)
 		TNT1 A 0 A_StopSound(6)
 		SWCB F 5
 		SWCB F 3 A_Pain
 		Goto See
 	Death:
+		TNT1 A 0 A_StopSound(1)
 		TNT1 A 0 A_StopSound(6)
 		SWCB G 5
 		SWCB H 5 A_Scream
@@ -87,6 +89,7 @@ MONSTER
 		SWCB K -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Rifle:
+		TNT1 A 0 A_StopSound(1)
 		TNT1 A 0 A_StopSound(6)
 		TNT1 A 0 A_Jump(168,"Death")
 	Death.CutLess:
@@ -97,6 +100,7 @@ MONSTER
 		S4WC A 1 A_SpawnItemEx("64ButcherNoArm",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Death.Plasma:
+		TNT1 A 0 A_StopSound(1)
 		TNT1 A 0 A_StopSound(6)
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
@@ -116,6 +120,7 @@ MONSTER
 		CRB1 H -1
 		Stop
 	Death.Head:
+		TNT1 A 0 A_StopSound(1)
 		TNT1 A 0 A_StopSound(6)
 		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
 		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
@@ -132,6 +137,7 @@ MONSTER
 		S4UK G -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.SSG:
+		TNT1 A 0 A_StopSound(1)
 		TNT1 A 0 A_StopSound(6)
 		SWCB F 2 A_Recoil(9)
 		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
@@ -141,9 +147,11 @@ MONSTER
 		Goto Death
 	Death.SuperFists:
 	Death.SuperKick:
+		TNT1 A 0 A_StopSound(1)
 		TNT1 A 0 A_StopSound(6)
 		TNT1 A 0 A_Jump(170,"Death.Heavy")
 	Death.SplatteredOnWall:
+		TNT1 A 0 A_StopSound(1)
 		TNT1 A 0 A_StopSound(6)
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
@@ -165,6 +173,7 @@ MONSTER
 		SWCD H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Heavy:
+		TNT1 A 0 A_StopSound(1)
 		TNT1 A 0 A_StopSound(6)
 		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
 		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
@@ -183,6 +192,7 @@ MONSTER
 	Death.Chainsaw:
 	Death.BFG:
 	XDeath:
+		TNT1 A 0 A_StopSound(1)
 		TNT1 A 0 A_StopSound(6)
 		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
 		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
@@ -205,6 +215,7 @@ MONSTER
 		SCB1 A 2 A_CheckFloor("LANDAFTERXDEATH")
 		Wait
 	LandAfterXDeath:
+		TNT1 A 0 A_StopSound(1)
 		TNT1 A 0 A_StopSound(6)
 		SCB1 B 1 A_Stop
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
@@ -214,6 +225,7 @@ MONSTER
 		SWCB KJIHG 5
 		Goto See
 	Crush:
+		TNT1 A 0 A_StopSound(1)
 		TNT1 A 0 A_StopSound(6)
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
 		POL5 A -1
