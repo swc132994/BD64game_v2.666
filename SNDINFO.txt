@@ -745,6 +745,9 @@ moan03				moan03
 moan04				moan04
 satan				satan
 
+//Demon walk thump
+DEMONTHM	DEMONTHM
+
 polt/break1			PLTDT
 polt/break2			WALLBRK
 polt/throw			PLTTH
