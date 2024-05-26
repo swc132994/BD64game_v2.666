@@ -1,4 +1,4 @@
-Actor 64Belhegor : BaronOfHell 11053
+Actor 64Belphegor : BaronOfHell 11053
 {
 //$category "Game/BD64_Monsters
 Scale 0.8
@@ -46,7 +46,7 @@ MONSTER
 		TNT1 A 0 A_JumpIfCloser(320,"ChargeStart")
 		TNT1 A 0 A_PlaySound("64Bruiser/raiseguns",CHAN_AUTO)
 		BOS3 EF 9 A_FaceTarget
-		BOS3 G 8 BRIGHT A_CustomMissile("64BOS3hegorBall",60,0)
+		BOS3 G 8 BRIGHT A_CustomMissile("64BelphegorBall",60,0)
 		Goto See
 	ChargeStart:
 		TNT1 A 0 A_FaceTarget
