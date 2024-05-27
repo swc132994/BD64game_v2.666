@@ -7,13 +7,14 @@ Height 56
 Radius 20
 Mass 300
 Speed 10
-PainChance 50
 Obituary "%o was inverted by a Thing."
 SeeSound "64Thing/sight"
 PainSound "64Thing/pain"
 DeathSound "64Thing/death"
 ActiveSound "64Thing/active"
 Tag "Thing"
+PainChance 50
+PainChance "Bullet",26
 PainChance "SuperFists",128
 PainChance "SuperKick",128
 DamageFactor 0.50

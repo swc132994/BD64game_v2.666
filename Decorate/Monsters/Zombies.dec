@@ -10,7 +10,6 @@ FastSpeed 80
 Alpha 0.5
 RenderStyle Add
 Decal "BulletDecalNew1"
-+PAINLESS
 	States
 	{
 	Spawn:
@@ -37,6 +36,7 @@ Scale 0.8
 Height 50
 GibHealth 15
 Speed 6
+PainChance "Bullet",26
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Head",1.5

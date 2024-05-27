@@ -9,6 +9,10 @@ Radius 16
 Height 52
 Mass 400
 MaxTargetRange 250
+PainChance "Bullet",26
+PainChance "SuperFists",200
+PainChance "Kick",255
+PainChance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "chainsaw",0.4

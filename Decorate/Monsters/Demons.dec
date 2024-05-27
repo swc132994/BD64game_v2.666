@@ -4,6 +4,7 @@ Actor 64Demon : Demon Replaces Demon
 Scale 0.8
 GibHealth 20
 MeleeRange 55 //default 44
+PainChance "Bullet",26
 PainChance "SuperFists",200
 PainChance "Kick",255
 PainChance "SuperKick",255
@@ -349,6 +350,7 @@ GibHealth 20
 Alpha 0.5
 MeleeRange 55 //default 44
 RenderStyle Translucent
+PainChance "Bullet",26
 PainChance "SuperFists",200
 PainChance "Kick",255
 PainChance "SuperKick",255

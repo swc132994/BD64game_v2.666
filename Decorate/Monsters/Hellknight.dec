@@ -2,6 +2,7 @@ Actor 64HellKnight : HellKnight Replaces HellKnight
 {
 //$category "Game/BD64_Monsters
 Scale 0.8
+PainChance "Bullet",26
 PainChance "SuperFists",220
 PainChance "Kick",255
 PainChance "SuperKick",255

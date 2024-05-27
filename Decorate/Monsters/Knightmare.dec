@@ -8,7 +8,6 @@ Height 64
 Radius 24
 Mass 500
 Speed 14
-PainChance 75
 Alpha 0.6
 MeleeRange 60	//default 44
 RenderStyle Translucent
@@ -21,6 +20,8 @@ DeathSound "knight/death"
 ActiveSound "knight/active"
 Tag "Knightmare"
 GibHealth 15
+PainChance 75
+PainChance "Bullet",26
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255

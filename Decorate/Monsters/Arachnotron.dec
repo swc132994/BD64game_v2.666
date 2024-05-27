@@ -4,6 +4,7 @@ Actor 64Arachnotron : Arachnotron Replaces Arachnotron
 Scale 0.8
 Radius 40
 Speed 11
+PainChance "Bullet",26
 PainChance "SuperFists",200
 PainChance "Kick",255
 PainChance "SuperKick",255

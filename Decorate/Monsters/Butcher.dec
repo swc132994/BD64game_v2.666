@@ -6,13 +6,13 @@ Radius 20
 Height 56
 Speed 12
 MeleeRange 70
-PainChance 20
 Obituary "%o was gutted by a Butcher"
 Tag "Butcher"
 SeeSound "sawcubus/sight"
 PainSound "sawcubus/pain"
 DeathSound "sawcubus/death"
 ActiveSound "sawcubus/active"
+PainChance 25
 PainChance "SuperFists",200
 PainChance "Kick",200
 PainChance "SuperKick",200

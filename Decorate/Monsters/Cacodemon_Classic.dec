@@ -3,6 +3,7 @@ Actor 64ClassicCacodemon : Cacodemon
 //$category "Game/BD64_Monsters
 Scale 0.8
 Health 350
+PainChance "Bullet",26
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255
@@ -11,7 +12,6 @@ DamageFactor "CauseObjectsToSplash",0.0
 DropItem "DemonEssenceSpawner"
 MeleeRange 60 //default 44
 BloodType "Brutal_BloodBLUE"
-+FLOORCLIP
 +FORCEXYBILLBOARD
 +MISSILEMORE
 +NOBLOODDECALS
@@ -346,6 +346,7 @@ Speed 16
 Alpha 0.5
 RenderStyle Translucent
 PainChance 96
+PainChance "Bullet",26
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255
@@ -356,7 +357,6 @@ HitObituary "%o was chomped by a Nightmare Cacodemon."
 Tag "Nightmare Cacodemon"
 DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodBLUE"
-+FLOORCLIP
 +FORCEXYBILLBOARD
 +MISSILEMORE
 +MISSILEEVENMORE

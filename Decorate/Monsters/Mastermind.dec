@@ -3,6 +3,7 @@ Actor 64SpiderMastermind : SpiderMastermind Replaces SpiderMastermind
 //$category "Game/BD64_Monsters
 Scale 0.9
 Radius 62
+PainChance "Bullet",26
 PainChance "SuperFists",200
 PainChance "Kick",200
 PainChance "SuperKick",200
@@ -149,7 +150,6 @@ Damage 4
 Speed 60
 FastSpeed 70
 +EXTREMEDEATH
--PAINLESS
 	States
 	{
 	Spawn:
@@ -173,6 +173,7 @@ Health 4000
 Speed 14
 Radius 62
 PainChance 30
+PainChance "Bullet",26
 PainChance "SuperFists",200
 PainChance "Kick",200
 PainChance "SuperKick",200

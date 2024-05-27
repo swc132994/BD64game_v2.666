@@ -8,6 +8,7 @@ GibHealth 20
 Speed 15
 Radius 24
 MeleeRange 60 //default 44
+PainChance "Bullet",26
 PainChance "SuperFists",200
 PainChance "Kick",255
 PainChance "SuperKick",255

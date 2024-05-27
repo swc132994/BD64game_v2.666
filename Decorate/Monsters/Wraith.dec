@@ -12,6 +12,7 @@ Fastspeed 16
 MeleeRange 64 //default 44
 MeleeThreshold 128
 PainChance 128
+PainChance "Bullet",26
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255

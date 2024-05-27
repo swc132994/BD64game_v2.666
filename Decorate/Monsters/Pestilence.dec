@@ -10,6 +10,7 @@ Tag "Pestilence"
 MeleeThreshold 196
 PoisonDamage 128 //Poison Damage Duration from Melee About 4-5 Seconds
 PainChance 80
+PainChance "Bullet",26
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255

@@ -4,6 +4,7 @@ Actor 64Cyberdemon : Cyberdemon Replaces Cyberdemon
 Scale 0.80
 Health 5000
 Speed 13
+PainChance "Bullet",26
 PainChance "SuperFists",200
 PainChance "Kick",200
 PainChance "SuperKick",200

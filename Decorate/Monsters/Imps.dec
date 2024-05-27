@@ -5,6 +5,7 @@ Scale 0.75
 GibHealth 15
 MeleeRange 60 //default 44
 MeleeThreshold 70
+PainChance "Bullet",26
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255

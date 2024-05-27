@@ -8,11 +8,11 @@ Radius 40
 Height 110
 Mass 5000
 Damage 15
-PainChance 10
 MeleeThreshold 200
 MeleeRange 100
 Obituary "%o met eternal damnation at the hands of the Infernal Resurrector."
 Tag "Infernal Resurrector"
+PainChance 10
 PainChance "SuperFists",200
 PainChance "Kick",200
 PainChance "SuperKick",200

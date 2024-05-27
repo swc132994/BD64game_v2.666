@@ -7,7 +7,6 @@ Radius 24
 Height 48
 Mass 200
 Speed 20
-PainChance 80
 Damage 10
 MeleeRange 90
 Obituary "%o was immolated by a Fallen."
@@ -16,6 +15,8 @@ SeeSound "monster/falsit"
 PainSound "monster/falpai"
 DeathSound "monster/faldth"
 ActiveSound "monster/falact"
+PainChance 80
+PainChance "Bullet",26
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255

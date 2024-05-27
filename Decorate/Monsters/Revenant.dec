@@ -5,6 +5,7 @@ Scale 0.68
 Health 350
 MeleeThreshold 146	//default 196
 MeleeRange 60		//default 44
+PainChance "Bullet",26
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255

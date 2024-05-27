@@ -4,13 +4,13 @@ Actor 64ForgottenOne : LostSoul 19129
 Scale 0.8
 Health 70
 Alpha 0.5
-PainChance 128
 AttackSound "alphasoul/melee"
 PainSound "alphasoul/pain"
 DeathSound "alphasoul/death"
 ActiveSound "alphasoul/active"
 Obituary "%o was electrocuted by a Forgotten One."
 RenderStyle Translucent
+PainChance 128
 PainChance "SuperFists",200
 PainChance "Kick",255
 PainChance "SuperKick",255
