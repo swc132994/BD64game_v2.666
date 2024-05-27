@@ -225,6 +225,8 @@ Monsters:
 	LordRaptor (ripping MK4 sounds)
 	Frankensprite by Craneo.
 
+//64 Scripted marine varients by Craneo
+
 //Anomaly events
 Poltergeist original credits:
 ----------------------------

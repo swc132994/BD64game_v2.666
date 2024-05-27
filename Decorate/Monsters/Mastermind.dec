@@ -145,10 +145,11 @@ AttackSound "weapons/gswing"
 ACTOR MasterMindProjectile : EnemyProjectile
 {
 Scale 0.1
-Damage(2*random (13,18))
+Damage 4
 Speed 60
 FastSpeed 70
 +EXTREMEDEATH
+-PAINLESS
 	States
 	{
 	Spawn:
