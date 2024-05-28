@@ -1231,22 +1231,22 @@ brightmap sprite HEA4M1			{map "brightmaps/Cacodemon_Classic/HEA3M1_BR.png"}
 brightmap sprite HEA4M2M8		{map "brightmaps/Cacodemon_Classic/HEA3M2M8_BR.png"}
 
 //Pain Elemental
-brightmap sprite PAINC1		{map "brightmaps/PAINB1.png"  Disablefullbright}
-brightmap sprite PAINC2C8	{map "brightmaps/PAINB2B8.png"  Disablefullbright}
-brightmap sprite PAINC3C7	{map "brightmaps/PAINB3B7.png"  Disablefullbright}
-brightmap sprite PAINC4C6	{Disablefullbright}
-brightmap sprite PAINC5		{Disablefullbright}
-brightmap sprite PAIND1		{map "brightmaps/PAINC1.png"  Disablefullbright}
-brightmap sprite PAIND2D8	{map "brightmaps/PAINC2C8.png"  Disablefullbright}
-brightmap sprite PAIND3D7	{map "brightmaps/PAINC3C7.png"  Disablefullbright}
-brightmap sprite PAIND4D6	{map "brightmaps/PAINC4C6.png"  Disablefullbright}
-brightmap sprite PAIND5		{map "brightmaps/PAINC5.png"  Disablefullbright}
-brightmap sprite PAINF0		{map "brightmaps/PAINE0.png"  Disablefullbright}
-brightmap sprite PAING0		{map "brightmaps/PAINF0.png"  Disablefullbright}
-brightmap sprite PAINH0		{map "brightmaps/PAING0.png"  Disablefullbright}
-brightmap sprite PAINI0		{map "brightmaps/PAINH0.png"  Disablefullbright}
-brightmap sprite PAINJ0		{map "brightmaps/PAINI0.png"  Disablefullbright}
-brightmap sprite PAINK0		{map "brightmaps/PAINJ0.png"  Disablefullbright}
+brightmap sprite PAINB1		{map "brightmaps/PAINB1.png"  Disablefullbright}
+brightmap sprite PAINB2B8	{map "brightmaps/PAINB2B8.png"  Disablefullbright}
+brightmap sprite PAINB3B7	{map "brightmaps/PAINB3B7.png"  Disablefullbright}
+brightmap sprite PAINB4B6	{Disablefullbright}
+brightmap sprite PAINB5		{Disablefullbright}
+brightmap sprite PAINC1		{map "brightmaps/PAINC1.png"  Disablefullbright}
+brightmap sprite PAINC2C8	{map "brightmaps/PAINC2C8.png"  Disablefullbright}
+brightmap sprite PAINC3C7	{map "brightmaps/PAINC3C7.png"  Disablefullbright}
+brightmap sprite PAINC4C6	{map "brightmaps/PAINC4C6.png"  Disablefullbright}
+brightmap sprite PAINC5		{map "brightmaps/PAINC5.png"  Disablefullbright}
+brightmap sprite PAINE0		{map "brightmaps/PAINE0.png"  Disablefullbright}
+brightmap sprite PAINF0		{map "brightmaps/PAINF0.png"  Disablefullbright}
+brightmap sprite PAING0		{map "brightmaps/PAING0.png"  Disablefullbright}
+brightmap sprite PAINH0		{map "brightmaps/PAINH0.png"  Disablefullbright}
+brightmap sprite PAINI0		{map "brightmaps/PAINI0.png"  Disablefullbright}
+brightmap sprite PAINJ0		{map "brightmaps/PAINJ0.png"  Disablefullbright}
 
 //Keen Replacement
 brightmap sprite SC0RL0		{map "brightmaps/KeenReplace/BMFATALY.png"}
