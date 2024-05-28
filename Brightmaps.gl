@@ -1231,6 +1231,11 @@ brightmap sprite HEA4M1			{map "brightmaps/Cacodemon_Classic/HEA3M1_BR.png"}
 brightmap sprite HEA4M2M8		{map "brightmaps/Cacodemon_Classic/HEA3M2M8_BR.png"}
 
 //Pain Elemental
+brightmap sprite PAINA1		{Disablefullbright}
+brightmap sprite PAINA2A8	{Disablefullbright}
+brightmap sprite PAINA3A7	{Disablefullbright}
+brightmap sprite PAINA4A6	{Disablefullbright}
+brightmap sprite PAINA5		{Disablefullbright}
 brightmap sprite PAINB1		{map "brightmaps/PAINB1.png"  Disablefullbright}
 brightmap sprite PAINB2B8	{map "brightmaps/PAINB2B8.png"  Disablefullbright}
 brightmap sprite PAINB3B7	{map "brightmaps/PAINB3B7.png"  Disablefullbright}
