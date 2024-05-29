@@ -636,6 +636,8 @@ Decal "LaserDecal"
 SeeSound "weapons/unmaker"
 DeathSound ""
 Obituary "%o was unmade by %k."
+ReactionTime 60
++DONTSPLASH
 +EXTREMEDEATH
 +FORCERADIUSDMG
 +SCREENSEEKER
