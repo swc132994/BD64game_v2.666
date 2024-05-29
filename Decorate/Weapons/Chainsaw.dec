@@ -144,11 +144,6 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 		SAWS D 6
 		SAWS NOPQR 1
 		Stop
-	AirKickingFlash:
-		SAWS RQPON 1
-		SAWS D 8
-		SAWS NOPQR 1
-		Stop
 	SSGFlash:
 		SAWS RQPON 1
 		SAWS D 20
@@ -210,19 +205,19 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 		TNT1 A 0 A_JumpIfInventory("SawGas",1,1)
 		Goto NotReady
 		TNT1 A 0 A_PlaySound("chainsaw/idle",CHAN_6,1,TRUE)
-		SAWG ABCD 2 A_WeaponReady(WRF_ALLOWRELOAD)
+		SAWG ABCD 2 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		SAWG ABCD 2 A_WeaponReady(WRF_ALLOWRELOAD)
+		SAWG ABCD 2 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		SAWG ABCD 2 A_WeaponReady(WRF_ALLOWRELOAD)
+		SAWG ABCD 2 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		SAWG ABCD 2 A_WeaponReady(WRF_ALLOWRELOAD)
+		SAWG ABCD 2 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		TNT1 A 0 A_TakeInventory("SawGas",1)
 		Loop
 	NotReady:

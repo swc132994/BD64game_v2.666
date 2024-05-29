@@ -339,11 +339,6 @@ Tag "Sub-machine gun"
 		SMGG E 8
 		SMGG EDCB 1
 		Stop
-	AirKickingFlash:
-		SMGG BCDE 1
-		SMGG E 10
-		SMGG EDCB 1
-		Stop
 	SlideKickingStart:
 		SMGG BCDE 1
 		SMGG E 18
@@ -356,14 +351,14 @@ Tag "Sub-machine gun"
 		Stop
 	v1Ready:
 	Ready:
-		SMGG A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		SMGG A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"BurstFireMode")
 		Loop
 	Ready2:
-		SMGA A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		SMGA A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")

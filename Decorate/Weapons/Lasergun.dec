@@ -142,13 +142,6 @@ Tag "Laser Rifle"
 		"####" H 8
 		"####" HGFE 1
 		Stop
-	AirKickingFlash:
-		HDLR E 0 A_JumpIfInventory("AltLaserSkin",1,2)
-		LZRS E 0
-		"####" EFGH 1
-		"####" H 10
-		"####" HGFE 1
-		Stop
 	SlideKickingStart:
 		HDLR A 0 A_JumpIfInventory("AltLaserSkin",1,2)
 		LZRS A 0
@@ -167,7 +160,7 @@ Tag "Laser Rifle"
 	Ready:
 		HDLG A 0 A_JumpIfInventory("AltLaserSkin",1,2)
 		LZRG A 0
-		"####" A 1 A_WeaponReady
+		"####" A 1 A_WeaponReady(WRF_ALLOWZOOM)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")

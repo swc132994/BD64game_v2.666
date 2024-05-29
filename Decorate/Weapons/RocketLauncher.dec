@@ -148,20 +148,6 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		RLTN E 8
 		RLTN EDCB 1
 		Stop
-	AirKickingFlash: //18
-		TNT1 B 0 A_JumpIfInventory("RLAmmo",1,1)
-		Goto AirKickNoRockets
-		RLTG B 0 A_JumpIfInventory("AltMode",1,2)
-		RLTL B 0
-		"####" BCDE 1
-		"####" E 10
-		"####" EDCB 1
-		Stop
-	AirKickNoRockets:
-		RLTN BCDE 1
-		RLTN E 10
-		RLTN EDCB 1
-		Stop
 	SlideKickingStart: //18
 		TNT1 B 0 A_JumpIfInventory("RLAmmo",1,1)
 		Goto SlideStartNoRockets
@@ -213,14 +199,14 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		TNT1 A 0 A_JumpIfInventory("ClassicRLToken",1,"ClassicRLSelected")
 		RLTG A 0 A_JumpIfInventory("AltMode",1,2)
 		RLTL A 0
-		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		TNT1 A 0 A_JumpIfInventory("RLAmmo",1,"Ready")
 		Goto NoRockets
 	NoRockets:
-		RLTN A 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		RLTN A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")

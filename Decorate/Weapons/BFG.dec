@@ -107,11 +107,6 @@ Tag "$TAG_BFG9000"
 		BFGZ D 8
 		BFGZ DCBA 1
 		Stop
-	AirKickingFlash:
-		BFGZ ABCD 1
-		BFGZ D 10
-		BFGZ DCBA 1
-		Stop
 	SlideKickingStart:
 		BFGZ ABCD 1
 		BFGZ D 18
@@ -121,7 +116,7 @@ Tag "$TAG_BFG9000"
 		Stop
 	v1Ready:
 	Ready:
-		BFGG A 1 A_WeaponReady
+		BFGG A 1 A_WeaponReady(WRF_ALLOWZOOM)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")

@@ -50,13 +50,6 @@ Tag "Multi-Purpose Mine"
 		PMNK E 8
 		PMNK DCBA 1
 		Stop
-	AirKickingFlash:
-		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,1)
-		Goto NoMinesAirKickingFlash
-		PMNK ABCD 1
-		PMNK E 10
-		PMNK DCBA 1
-		Stop
 	SlideKickingStart:
 		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,1)
 		Goto NoMinesSlideKickingStart
@@ -70,9 +63,6 @@ Tag "Multi-Purpose Mine"
 		Stop
 	NoMinesKickingFlash:
 		TNT1 A 16
-		Stop
-	NoMinesAirKickingFlash:
-		TNT1 A 18
 		Stop
 	NoMinesSlideKickingStart:
 		TNT1 A 22
