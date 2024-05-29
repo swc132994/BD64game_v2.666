@@ -399,7 +399,6 @@ Renderstyle Add
 +CLIENTSIDEONLY
 +NOBLOCKMAP
 +NOGRAVITY
-+MISSILE
 	States
 	{
 	Spawn:

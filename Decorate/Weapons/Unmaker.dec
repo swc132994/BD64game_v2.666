@@ -644,7 +644,7 @@ Obituary "%o was unmade by %k."
 	States
 	{
 	Spawn:
-		ULAZ A 1 NoDelay A_SeekerMissile(5,40,SMF_LOOK,256,10)
+		ULAZ A 1 NoDelay A_SeekerMissile(5,35,SMF_LOOK)
 		ULAZ AAAAA 1 Bright A_ChangeVelocity(velx*1.5,vely*1.5,velz*1.5,CVF_REPLACE)
 		ULAZ B 1 Bright A_ChangeVelocity(velx*1.5,vely*1.5,velz*1.5,CVF_REPLACE)
 		Wait
