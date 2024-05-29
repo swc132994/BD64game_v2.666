@@ -302,6 +302,8 @@ DamageType "Plasma"
 SeeSound "weapons/AlphaLZRGker"
 DeathSound ""
 Obituary "%o was fried by %k's laser."
+ReactionTime 60
++DONTSPLASH
 +PAINLESS
 	States
 	{
@@ -331,6 +333,8 @@ Alpha 0.9
 RenderStyle Add
 Decal "MedScorch"
 DamageType "Plasma"
+ReactionTime 60
++DONTSPLASH
 +BLOODSPLATTER
 +FORCERADIUSDMG
 -DONTSPLASH
