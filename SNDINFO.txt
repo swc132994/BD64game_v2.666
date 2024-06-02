@@ -390,6 +390,8 @@ mother/sight		dsmthsit
 mother/pain			dsmthpai
 mother/death		dsmthdth
 mother/attack		dsmthatk
+mother/scream		dsmthscr
+mother/jump			dsmthjum
 mother/active		dsmthact
 
 //WAFFEN-SS
@@ -1044,4 +1046,5 @@ floor/slimy03			dsslimy3
 floor/slimy04			dsslimy4
 
 //Fans and electrical stuff
+floor/elec1				dselec1		$limit floor/elec1 20
 floor/elec1				dselec1		$limit floor/elec1 20
