@@ -10,7 +10,6 @@ Radius 65
 Mass 1000
 Speed 24
 PainChance 10
-ReactionTime 8
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "UnmakerWhite",0.5
@@ -42,7 +41,7 @@ MONSTER
 	States
 	{
 	Spawn:
-		MOTH ABCD 9 A_Look
+		MOTH ABCD 9 A_LookEx
 		Loop
 	See:
 		MOTH AAABBBCCCDDD 3 A_Chase("Missile","Missile",CHF_RESURRECT)
@@ -243,7 +242,6 @@ Actor Motherdemon_Final : Motherdemon 9898		//New boss for map28 Ultimate Absolu
 	Speed 24
 	Health 20000
 	PainChance 0
-	ReactionTime 8
 	DamageFactor "CauseWaterSplash",0.0
 	DamageFactor "CauseObjectsToSplash",0.0
 	DamageFactor "UnmakerWhite",0.5
@@ -293,18 +291,18 @@ Actor Motherdemon_Final : Motherdemon 9898		//New boss for map28 Ultimate Absolu
 		MOTH F 4 Bright
 		Goto See
 	MotherPreJump:
-		TNT1 A 0 A_Quake (22, 50, 0, 192, 0)
+		TNT1 A 0 A_Quake(22,50,0,192,0)
 		MOTH H 25 A_PlaySound("Mother/scream",7)
-		MOTH H 0 A_ChangeFlag("FLOAT", False)
+		MOTH H 0 A_ChangeFlag("FLOAT",False)
 		MOTH H 0 A_FaceTarget 
-		MOTH H 0 ThrustThingZ(0, 60, 0, 0)
-		MOTH H 0 A_FaceTarget 
-		MOTH H 0 A_MonsterRefire (0, "See")
-		MOTH H 0 ThrustThing(angle*256/360, 40, 0, 0)
+		MOTH H 0 ThrustThingZ(0,60,0,0)
+		MOTH H 0 A_FaceTarget
+		MOTH H 0 A_MonsterRefire(0,"See")
+		MOTH H 0 ThrustThing(angle*256/360,40,0,0)
 		MOTH H 10 A_FaceTarget
 		MOTH H 0 A_PlaySound("Mother/jump",7)
 	MotherJump:
-		MOTH A 0 A_Quake (10, 8, 65, 65, 0)
+		MOTH A 0 A_Quake (10,8,65,65,0)
 		MOTH A 2 A_CheckFloor("MotherLand")
 		MOTH B 2 A_CheckFloor("MotherLand")
 		MOTH C 2 A_CheckFloor("MotherLand")
@@ -312,31 +310,31 @@ Actor Motherdemon_Final : Motherdemon 9898		//New boss for map28 Ultimate Absolu
 		Loop
 	MotherLand:
 		MOTH H 0 A_Stop
-		MOTH H 0 A_PlaySoundEx("Explosion", "WEAPON", 0, 200)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 0, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 20, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 40, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 60, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 80, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 100, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 120, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 140, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 160, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 180, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 200, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 220, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 240, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 260, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 280, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 300, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 320, 2, 0)
-		MOTH H 0 A_CustomMissile("MotherFire", 0, 0, 340, 2, 0)
+		MOTH H 0 A_PlaySoundEx("Explosion","WEAPON",0,200)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,0,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,20,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,40,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,60,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,80,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,100,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,120,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,140,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,160,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,180,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,200,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,220,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,240,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,260,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,280,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,300,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,320,2,0)
+		MOTH H 0 A_CustomMissile("MotherFire",0,0,340,2,0)
 		MOTH G 10
-		MOTH G 0 A_ChangeFlag("FLOAT", True)
+		MOTH G 0 A_ChangeFlag("FLOAT",True)
 		Goto See
 	Pain:
 		MOTH H 5 A_Pain
-		Goto See	
+		Goto See
 		}
 }
 

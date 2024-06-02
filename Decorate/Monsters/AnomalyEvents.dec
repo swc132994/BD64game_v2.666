@@ -657,10 +657,10 @@ SCALE 0.8
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		ES7M ABCB 6 Bright Light("SMALLGREENTORCH") A_SpawnItemEx("LensFlareTorchGreen",0,0,20)	//added light
+		ES7M ABCB 6 Bright Light("SMALLGREENTORCH")
 		Loop
 	StayBlank:
-		ES7M ABCB 6 Bright Light("SMALLGREENTORCH")
+		ES7M ABCB 6 Bright
 		Goto Stay
 	}
 }

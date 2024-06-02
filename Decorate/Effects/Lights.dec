@@ -1862,17 +1862,17 @@ SCALE 0.8
 		Goto Stay
 	Stay:
 		TNT1 A 0 A_CheckSight("StayBlank")
-		CEYE ABCB 6 Bright Light("SMALLGREENTORCH") A_SpawnItemEx("LensFlareTorchGreen",0,0,20)	//added light
+		CEYE ABCB 6 Bright Light("SMALLGREENTORCH")
 		Loop
 	StayBlank:
-		CEYE ABCB 6 Bright Light("SMALLGREENTORCH")
+		CEYE ABCB 6 Bright
 		Goto Stay
 	Stay2:
 		TNT1 A 0 A_CheckSight("StayBlank2")
-		EYE2 ABCB 6 Bright Light("SMALLGREENTORCH") A_SpawnItemEx("LensFlareTorchGreen",0,0,20)	//added light
+		EYE2 ABCB 6 Bright Light("SMALLGREENTORCH")
 		Loop
 	StayBlank2:
-		EYE2 ABCB 6 Bright Light("SMALLGREENTORCH")
+		EYE2 ABCB 6 Bright
 		Goto Stay2
 	}
 }
