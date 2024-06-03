@@ -1007,29 +1007,32 @@ MONSTER
 	SpawnSSGGuy:
 		TNT1 A 1 A_SpawnItemEx("64SSGguy",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
+	SpawnBFGGuy:
+		TNT1 A 1 A_SpawnItemEx("64BFGguy",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
 	P05:
-		TNT1 A 0 A_Jump(13,"SpawnSSGGuy")
+		TNT1 A 0 A_Jump(13,"SpawnSSGGuy","SpawnBFGGuy")
 		Goto SpawnShotgunGuy
 	P10:
-		TNT1 A 0 A_Jump(26,"SpawnSSGGuy")
+		TNT1 A 0 A_Jump(26,"SpawnSSGGuy","SpawnBFGGuy")
 		Goto SpawnShotgunGuy
 	P15:
-		TNT1 A 0 A_Jump(39,"SpawnSSGGuy")
+		TNT1 A 0 A_Jump(39,"SpawnSSGGuy","SpawnBFGGuy")
 		Goto SpawnShotgunGuy
 	P20:
-		TNT1 A 0 A_Jump(51,"SpawnSSGGuy")
+		TNT1 A 0 A_Jump(51,"SpawnSSGGuy","SpawnBFGGuy")
 		Goto SpawnShotgunGuy
 	P25:
-		TNT1 A 0 A_Jump(64,"SpawnSSGGuy")
+		TNT1 A 0 A_Jump(64,"SpawnSSGGuy","SpawnBFGGuy")
 		Goto SpawnShotgunGuy
 	P30:
-		TNT1 A 0 A_Jump(77,"SpawnSSGGuy")
+		TNT1 A 0 A_Jump(77,"SpawnSSGGuy","SpawnBFGGuy")
 		Goto SpawnShotgunGuy
 	P40:
-		TNT1 A 0 A_Jump(102,"SpawnSSGGuy")
+		TNT1 A 0 A_Jump(102,"SpawnSSGGuy","SpawnBFGGuy")
 		Goto SpawnShotgunGuy
 	P50:
-		TNT1 A 0 A_Jump(128,"SpawnSSGGuy")
+		TNT1 A 0 A_Jump(128,"SpawnSSGGuy","SpawnBFGGuy")
 		Goto SpawnShotgunGuy
 	}
 }
@@ -1080,7 +1083,7 @@ MONSTER
 	}
 }
 
-Actor BFGZombie_Random Replaces Chaingunguy
+Actor ChaingunZombie_Random Replaces Chaingunguy
 {
 Scale 0.8
 MONSTER
@@ -1092,39 +1095,39 @@ MONSTER
 	{
 	Spawn:
 		MPOS A 0
-		TNT1 A 3 ACS_NamedExecuteAlways("ZombieBFGRandomACS")
+		TNT1 A 3 ACS_NamedExecuteAlways("ZombieChaingunRandomACS")
 	SpawnChaingunGuy:
 		TNT1 A 1 A_SpawnItemEx("64Chaingunguy",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
-	SpawnBFGGuy:
-		TNT1 A 1 A_SpawnItemEx("64BFGGuy",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+	SpawnPlasmaGuy:
+		TNT1 A 1 A_SpawnItemEx("64PlasmaGuy",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	D64MonsterOnly:
 		TNT1 A 1 A_SpawnItemEx("64ShotgunGuy",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	P05:
-		TNT1 A 0 A_Jump(13,"SpawnBFGGuy")
+		TNT1 A 0 A_Jump(13,"SpawnPlasmaGuy")
 		Goto SpawnChaingunGuy
 	P10:
-		TNT1 A 0 A_Jump(26,"SpawnBFGGuy")
+		TNT1 A 0 A_Jump(26,"SpawnPlasmaGuy")
 		Goto SpawnChaingunGuy
 	P15:
-		TNT1 A 0 A_Jump(39,"SpawnBFGGuy")
+		TNT1 A 0 A_Jump(39,"SpawnPlasmaGuy")
 		Goto SpawnChaingunGuy
 	P20:
-		TNT1 A 0 A_Jump(51,"SpawnBFGGuy")
+		TNT1 A 0 A_Jump(51,"SpawnPlasmaGuy")
 		Goto SpawnChaingunGuy
 	P25:
-		TNT1 A 0 A_Jump(64,"SpawnBFGGuy")
+		TNT1 A 0 A_Jump(64,"SpawnPlasmaGuy")
 		Goto SpawnChaingunGuy
 	P30:
-		TNT1 A 0 A_Jump(77,"SpawnBFGGuy")
+		TNT1 A 0 A_Jump(77,"SpawnPlasmaGuy")
 		Goto SpawnChaingunGuy
 	P40:
-		TNT1 A 0 A_Jump(102,"SpawnBFGGuy")
+		TNT1 A 0 A_Jump(102,"SpawnPlasmaGuy")
 		Goto SpawnChaingunGuy
 	P50:
-		TNT1 A 0 A_Jump(128,"SpawnBFGGuy")
+		TNT1 A 0 A_Jump(128,"SpawnPlasmaGuy")
 		Goto SpawnChaingunGuy
 	}
 }

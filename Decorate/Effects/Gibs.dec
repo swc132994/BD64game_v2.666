@@ -1419,6 +1419,41 @@ ACTOR XDeathMarineArm1 : XDeathZombieArm1
 	}
 }
 
+//MARINE-ZOMBIEPLASMA
+ACTOR MarinePlasmaLeg1 : XDeathZombieArm1
+{
+	States
+	{
+	Spawn:
+		PMG4 A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
+		PMG4 ABCDEFGH 4 A_CheckFloor("Death")
+		Wait
+	Death:
+		PMG4 I 35
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpot")
+		PMG4 I -1
+		Stop
+	}
+}
+
+ACTOR MarinePlasmaArm1 : XDeathZombieArm1
+{
+	States
+	{
+	Spawn:
+		PMG3 A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//RFLIP IMAGE HORZ
+		PMG3 ABCDEFGH 4 A_CheckFloor("Death")
+		Wait
+	Death:
+		PMG3 I 35
+		TNT1 A 0 A_SpawnItemEx("Brutal_BloodSpot")
+		PMG3 I -1
+		Stop
+	}
+}
+
 //SSG GUY
 ACTOR XDeathZombieArmBlack : XDeathZombieArm1
 {

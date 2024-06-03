@@ -630,6 +630,8 @@ script "SSGZombieRandomACS" (void)
 	if(GetCvar("SSGZombieRandom_Cvar") == 1) { SetActorState(0,"SpawnShotgunGuy"); }
 	else
 	if(GetCvar("SSGZombieRandom_Cvar") == 2) { SetActorState(0,"SpawnSSGGuy"); }
+	else
+	if(GetCvar("SSGZombieRandom_Cvar") == 3) { SetActorState(0,"SpawnBFGGuy"); }
 }
 
 script "ZMarineRandomACS" (void)
@@ -655,29 +657,29 @@ script "ZMarineRandomACS" (void)
 	if(GetCvar("ZMarineRandom_Cvar") == 2) { SetActorState(0,"SpawnZombieMarine"); }
 }
 
-script "ZombieBFGRandomACS" (void)
+script "ZombieChaingunRandomACS" (void)
 {
-	if(GetCvar("ZombieBFGRandom_Cvar") == 0) { SetActorState(0,"D64MonsterOnly"); }
+	if(GetCvar("ZombieChaingunRandom_Cvar") == 0) { SetActorState(0,"D64MonsterOnly"); }
 	else
-	if(GetCvar("ZombieBFGRandom_Cvar") == 5) { SetActorState(0,"P05"); }
+	if(GetCvar("ZombieChaingunRandom_Cvar") == 5) { SetActorState(0,"P05"); }
 	else
-	if(GetCvar("ZombieBFGRandom_Cvar") == 10) { SetActorState(0,"P10"); }
+	if(GetCvar("ZombieChaingunRandom_Cvar") == 10) { SetActorState(0,"P10"); }
 	else
-	if(GetCvar("ZombieBFGRandom_Cvar") == 15) { SetActorState(0,"P15"); }
+	if(GetCvar("ZombieChaingunRandom_Cvar") == 15) { SetActorState(0,"P15"); }
 	else
-	if(GetCvar("ZombieBFGRandom_Cvar") == 20) { SetActorState(0,"P20"); }
+	if(GetCvar("ZombieChaingunRandom_Cvar") == 20) { SetActorState(0,"P20"); }
 	else
-	if(GetCvar("ZombieBFGRandom_Cvar") == 25) { SetActorState(0,"P25"); }
+	if(GetCvar("ZombieChaingunRandom_Cvar") == 25) { SetActorState(0,"P25"); }
 	else
-	if(GetCvar("ZombieBFGRandom_Cvar") == 30) { SetActorState(0,"P30"); }
+	if(GetCvar("ZombieChaingunRandom_Cvar") == 30) { SetActorState(0,"P30"); }
 	else
-	if(GetCvar("ZombieBFGRandom_Cvar") == 40) { SetActorState(0,"P40"); }
+	if(GetCvar("ZombieChaingunRandom_Cvar") == 40) { SetActorState(0,"P40"); }
 	else
-	if(GetCvar("ZombieBFGRandom_Cvar") == 50) { SetActorState(0,"P50"); }
+	if(GetCvar("ZombieChaingunRandom_Cvar") == 50) { SetActorState(0,"P50"); }
 	else
-	if(GetCvar("ZombieBFGRandom_Cvar") == 1) { SetActorState(0,"SpawnChaingunGuy"); }
+	if(GetCvar("ZombieChaingunRandom_Cvar") == 1) { SetActorState(0,"SpawnChaingunGuy"); }
 	else
-	if(GetCvar("ZombieBFGRandom_Cvar") == 2) { SetActorState(0,"SpawnBFGGuy"); }
+	if(GetCvar("ZombieChaingunRandom_Cvar") == 2) { SetActorState(0,"SpawnPlasmaGuy"); }
 }
 
 script "AcidDemonRandomACS" (void)

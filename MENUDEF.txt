@@ -145,7 +145,7 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner"
 		StaticText ""
 	Option "Pistol Zombie Spawner =","ZMarineRandom_Cvar","ZMarineRandom_Value"
 		StaticText ""
-	Option "Chaingun Zombie Spawner =","ZombieBFGRandom_Cvar","BFGZombie_Value"
+	Option "Chaingun Zombie Spawner =","ZombieChaingunRandom_Cvar","ChaingunZombie_Value"
 		StaticText ""
 	Option "Imp Spawner =","NImp_Spawner_Cvar","NImp_Spawner_Value"
 		StaticText ""
@@ -594,6 +594,7 @@ OptionValue "SSGZombieRandom_Value"
 	50,"Random (50%)"
 	1,"Shotgun Zombie"
 	2,"SSG Zombie"
+	3,"BFG Zombie"
 }
 
 OptionValue "ZMarineRandom_Value"
@@ -610,7 +611,7 @@ OptionValue "ZMarineRandom_Value"
 	2,"Marine Zombie"
 }
 
-OptionValue "BFGZombie_Value"
+OptionValue "ChaingunZombie_Value"
 {
 	0,"Disabled"
 	5,"Random (5%)"
@@ -622,7 +623,7 @@ OptionValue "BFGZombie_Value"
 	40,"Random (40%)"
 	50,"Random (50%)"
 	1,"Chaingun Zombie"
-	2,"BFG Zombie"
+	2,"Plasma Zombie"
 }
 
 OptionValue "FleshWizardRandom_Value"

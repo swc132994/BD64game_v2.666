@@ -145,6 +145,17 @@ Intermission Doom2Cast
 	}
 	Cast
 	{
+		CastClass = "D64PlasmaGuyCast"
+		CastName = "Plasma Zombie"
+		AttackSound = "Missile",1,"baby/attack"
+		AttackSound = "Missile",2,"baby/attack"
+		AttackSound = "Missile",3,"baby/attack"
+		AttackSound = "Missile",4,"baby/attack"
+		AttackSound = "Missile",5,"baby/attack"
+		AttackSound = "Missile",6,"baby/attack"
+	}
+	Cast
+	{
 		CastClass = "D64BFGGuyCast"
 		CastName = "BFG Zombie"
 		AttackSound = "Missile",1,"weapons/bfgf"

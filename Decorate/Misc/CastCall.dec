@@ -147,6 +147,47 @@ YScale 1.0
 	}
 }
 
+Actor D64PlasmaGuyCast : 64PlasmaGuy
+{
+XScale 1.0
+YScale 1.0
+	States
+	{
+	Idle:
+	Spawn:
+		ZMAY A 8
+		Loop
+	See:
+		ZMAY AABBCCDD 4
+		ZMAY AABBCCDD 4
+		Loop
+	Missile:
+		ZMAY E 8
+		ZMAY F 1 Bright
+		ZMAY E 2
+		ZMAY F 1 Bright
+		ZMAY E 2
+		ZMAY F 1 Bright
+		ZMAY E 2
+		ZMAY F 1 Bright
+		ZMAY E 2
+		ZMAY F 1 Bright
+		ZMAY E 2
+		ZMAY F 1 Bright
+		ZMAY E 10
+		ZMAY UUU 8
+		ZMAY EE 4 Bright
+		ZMAY F 1 Bright
+		ZMAY E 2 Bright
+		ZMAY UUU 4
+		Goto See
+	Death:
+		ZMAY HIJKLM 5
+		ZMAY M -1
+		Stop
+	}
+}
+
 Actor D64BFGGuyCast : 64BFGGuy
 {
 XScale 1.0
