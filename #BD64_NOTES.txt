@@ -78,6 +78,7 @@ Fallen				19133
 Infernal			19135
 Carrion				19136
 Pestilence			19137
+Plasma Zombie		19138
 
 Gauss Cannon spawn	19134
 MP40 SPAWNER		19124
@@ -199,12 +200,11 @@ Monsters:
 	Sprites: Amuscaria, DrDoctor, DrPyspy, Monolith Productions
 	Frankensprite by Craneo
 	Sounds: Dead Space, Doom Eternal
-	mew sounds taken from Project Malice
+	new sounds taken from Project Malice
 
 	Old credits bits:
 	Code: Amuscaria
 	GLDefs: Ghastly Dragon
-
 	old sounds, Brightmaps and ZScript version not used.
 
 //64Infernal
@@ -226,6 +226,10 @@ Monsters:
 	Frankensprite by Craneo.
 
 //64 Scripted marine varients by Craneo
+
+//64 Plasma zombie (colonel)
+	Sprite Credits: Midway, Footman/SteelPH, PresidentPeople, Craneo
+	Sound Credits: Kalisto Entertainment, Id Software
 
 //Anomaly events
 Poltergeist original credits:

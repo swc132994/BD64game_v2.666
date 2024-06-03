@@ -570,6 +570,12 @@ BREATHOF					BREATHOF
 64ThingActive			SBR1C
 64ThingActive1			BLROAM2A	$volume 64ThingActive1 0.75
 
+//Plasma Zombie
+colonelzombie/see		PZOMSEE
+colonelzombie/pain		PZOMPAIN
+colonelzombie/death		PZOMDIE
+colonelzombie/active	PZOMACT
+
 //BFG Zombie
 $random chainguy/sight
 	{
