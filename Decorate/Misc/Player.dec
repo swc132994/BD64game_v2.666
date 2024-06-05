@@ -78,6 +78,7 @@ Height 6
 Speed 1
 Gravity 1
 Mass 1
+DamageType "Jump"
 +NOGRAVITY
 +MISSILE
 +NOTELEPORT

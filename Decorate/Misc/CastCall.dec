@@ -475,7 +475,29 @@ YScale 1.0
 		ESKU G 2 Bright
 		ESKU HI 4 Bright
 		ESKU JKLMNO 4
-		Wait
+		Stop
+	}
+}
+
+ACTOR D64TriteCast : 64Trite
+{
+XScale 1.0
+YScale 1.0
+	States
+	{
+	See:
+		TRIT AABBCCDD 3
+		Loop
+	Melee:
+	Missile:
+		TRIT A 9
+		TRIT F 10
+		TRIT E 8
+		Goto See
+	Death:
+		TRIT GHIJK 5
+		TNT1 A 3
+		Stop
 	}
 }
 

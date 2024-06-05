@@ -78,6 +78,7 @@
 #INCLUDE "Decorate/Monsters/Carrion.dec"
 #INCLUDE "Decorate/Monsters/Pestilence.dec"
 #INCLUDE "Decorate/Monsters/ZombiePlasma.dec"
+#INCLUDE "Decorate/Monsters/Trite.dec"
 #INCLUDE "Decorate/Monsters/NPCMarines.dec"
 
 //RANDOM SPAWNERS, CAST CALL & DROPABLES

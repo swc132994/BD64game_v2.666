@@ -4,7 +4,7 @@ Actor 64HuskZombie : 64ZombieMan 19128
 Scale 0.7
 GibHealth 15
 MeleeRange 60
-Radius 18
+Radius 15
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "chainsaw",0.6

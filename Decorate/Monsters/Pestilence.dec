@@ -28,6 +28,7 @@ DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodGreen"
 +NOBLOODDECALS
 +DONTHARMSPECIES
++NEVERFAST
 	States
 	{
 	Spawn:

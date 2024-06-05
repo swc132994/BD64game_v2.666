@@ -238,6 +238,13 @@ Intermission Doom2Cast
 	}
 	Cast
 	{
+		CastClass = "D64TriteCast"
+		CastName = "Trite"
+		AttackSound = "Melee",1,"Trite/Attack"
+		AttackSound = "Missile",1,"Trite/Attack"
+	}
+	Cast
+	{
 		CastClass = "D64CacodemonCast"
 		CastName = "Cacodemon"
 		AttackSound = "Missile",1,"caco/attack"

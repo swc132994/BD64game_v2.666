@@ -14,6 +14,7 @@ PainChance "Bullet",26
 PainChance "SuperFists",200
 PainChance "Kick",255
 PainChance "SuperKick",255
+DamageFactor "Acid",0
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was dissolved by an acid demon"
@@ -24,7 +25,6 @@ BloodType "Brutal_BloodGreen"
 +MISSILEMORE
 +NOBLOODDECALS
 +NEVERFAST
-+DONTHARMSPECIES
 	States
 	{
 	Spawn:
@@ -368,13 +368,11 @@ Speed 20
 Radius 4
 Height 4
 Gravity 0.8
-SeeSound ""
 Decal "SmallerScorch"
 DeathSound "world/hotsiz"
-DamageType "BFG"
+DamageType "Acid"
 PROJECTILE
 -NOGRAVITY
-+RANDOMIZE
 	States
 	{
 	Spawn:
