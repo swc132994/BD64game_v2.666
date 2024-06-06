@@ -54,11 +54,11 @@ Tag "Multi-Purpose Mine"
 		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,1)
 		Goto NoMinesSlideKickingStart
 		PMNK ABCD 1
-		PMNK E 18
+		PMNK E 35
 	SlideKickingEnd:
 		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,1)
 		Goto NoMinesSlideKickingEnd
-		PMNK E 6
+		PMNK E 2
 		PMNK DCBA 1
 		Stop
 	NoMinesKickingFlash:

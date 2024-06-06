@@ -162,16 +162,16 @@ Tag "$TAG_SUPERSHOTGUN"
 		SSGS ABCD 1
 		Stop
 	KickingFlash:	//16
-		SSGG BCDEFGH 1
-		SSGG I 2
-		SSGG HGFEDCB 1
+		SSGS IJKL 1
+		SSGS M 8
+		SSGS LKJI 1
 		Stop
 	SlideKickingStart:	//22
-		SSGG BCDEFGH 1
-		SSGG I 15
+		SSGS IJKL 1
+		SSGS M 35
 	SlideKickingEnd:	//10
-		SSGG I 3
-		SSGG HGFEDCB 1
+		SSGS M 2
+		SSGS LKJI 1
 		Stop
 	Spawn:
 		SGN2 A -1

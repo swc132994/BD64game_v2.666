@@ -154,20 +154,20 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		RLTG B 0 A_JumpIfInventory("AltMode",1,2)
 		RLTL B 0
 		"####" BCDE 1
-		"####" E 17
+		"####" E 35
 	SlideKickingEnd:
 		TNT1 B 0 A_JumpIfInventory("RLAmmo",1,1)
 		Goto SlideEndNoRockets
 		RLTG E 0 A_JumpIfInventory("AltMode",1,2)
 		RLTL E 0
-		"####" E 6
+		"####" E 2
 		"####" EDCB 1
 		Stop
 	SlideStartNoRockets:
 		RLTN BCDE 1
-		RLTN E 17
+		RLTN E 35
 	SlideEndNoRockets:
-		RLTN E 6
+		RLTN E 2
 		RLTN EDCB 1
 		Stop
 	Spawn:
@@ -374,16 +374,11 @@ Weapon.SisterWeapon "64RocketLauncherTactical"
 		MISS A 8
 		MISS ABCD 1
 		Stop
-	AirKickingFlash: //18
-		MISS DCBA 1
-		MISS A 10
-		MISS ABCD 1
-		Stop
 	SlideKickingStart: //18
 		MISS DCBA 1
-		MISS A 18
+		MISS A 35
 	SlideKickingEnd:
-		MISS A 6
+		MISS A 2
 		MISS ABCD 1
 		Stop
 	Spawn:

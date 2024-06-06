@@ -94,9 +94,9 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		Stop
 	SlideKickingStart:
 		PUN6 CBA 1
-		TNT1 A 20
+		TNT1 A 35
 	SlideKickingEnd:
-		TNT1 A 7
+		TNT1 A 6
 		PUN6 ABC 1
 		Stop
 	v1Ready:

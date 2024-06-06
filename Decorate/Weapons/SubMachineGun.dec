@@ -341,9 +341,9 @@ Tag "Sub-machine gun"
 		Stop
 	SlideKickingStart:
 		SMGG BCDE 1
-		SMGG E 18
+		SMGG E 35
 	SlideKickingEnd:
-		SMGG E 6
+		SMGG E 2
 		SMGG EDCB 1
 		Stop
 	Spawn:

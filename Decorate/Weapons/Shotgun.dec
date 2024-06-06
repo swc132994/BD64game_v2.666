@@ -155,19 +155,19 @@ Tag "$TAG_SHOTGUN"
 		SHTS ABCD 1
 		Stop
 	KickingFlash:
-		SHTG BCDEF 1
-		SHTG G 6
-		SHTG FEDCB 1
+		SHTG VWXY 1
+		SHTG Z 8
+		SHTG YXWV 1
 		Stop
 	ReloadingKick:
 		SHSR C 16
 		Stop
 	SlideKickingStart:
-		SHTG BCDEF 1
-		SHTG G 10
+		SHTG VWXY 1
+		SHTG Z 35
 	SlideKickingEnd:
-		SHTG G 5
-		SHTG FEDCB 1
+		SHTG Z 2
+		SHTG YXWV 1
 		Stop
 	Spawn:
 		SHOT A -1

@@ -151,9 +151,9 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 		Stop
 	SlideKickingStart:
 		SAWS RQPON 1
-		SAWS D 17
+		SAWS D 35
 	SlideKickingEnd:
-		SAWS D 5
+		SAWS D 3
 		SAWS NOPQR 1
 		Stop
 	ClassicSawSelected:	//Deselect animation

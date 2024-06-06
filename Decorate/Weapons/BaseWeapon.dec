@@ -224,15 +224,15 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 A 0 A_TakeInventory("KickHasHit",1)
 		Goto FinishSlide
 	FinishSlide:
+		TNT1 A 0 A_GunFlash("SlideKickingEnd")	
 		TNT1 A 0 A_PlaySound("SlideKickStop",CHAN_5)
-		TNT1 A 0 A_GunFlash("SlideKickingEnd")
-		SLID EDCBA 2
+		SLID GGHIJK 1
 		TNT1 A 0 SetPlayerProperty(0,0,0)
 		Goto GetReady
 	FinishSlideHitwall:
+		TNT1 A 0 A_GunFlash("SlideKickingEnd")	
 		TNT1 A 0 A_Stop
-		TNT1 A 0 A_GunFlash("SlideKickingEnd")
-		SLID EDCBA 2
+		SLID GGHIJK 1
 		TNT1 A 0 A_TakeInventory("KickHasHit",1)
 		TNT1 A 0 SetPlayerProperty(0,0,0)
 		Goto GetReady

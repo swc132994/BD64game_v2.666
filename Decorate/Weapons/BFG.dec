@@ -109,9 +109,9 @@ Tag "$TAG_BFG9000"
 		Stop
 	SlideKickingStart:
 		BFGZ ABCD 1
-		BFGZ D 18
+		BFGZ D 35
 	SlideKickingEnd:
-		BFGZ D 6
+		BFGZ D 2
 		BFGZ DCBA 1
 		Stop
 	v1Ready:

@@ -262,9 +262,9 @@ Tag "Assault Rifle"
 		ARSK A 0 A_JumpIfInventory("AltRifleSkin",1,2)
 		RIFK A 0
 		"####" BCDE 1
-		"####" E 18
+		"####" E 35
 	SlideKickingEnd:
-		"####" E 6
+		"####" E 2
 		"####" EDCB 1
 		Stop
 	Spawn:

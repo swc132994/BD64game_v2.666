@@ -146,11 +146,11 @@ Tag "Laser Rifle"
 		HDLR A 0 A_JumpIfInventory("AltLaserSkin",1,2)
 		LZRS A 0
 		"####" EFGH 1
-		"####" H 18
+		"####" H 35
 	SlideKickingEnd:
 		HDLR H 0 A_JumpIfInventory("AltLaserSkin",1,2)
 		LZRS H 0
-		"####" H 6
+		"####" H 2
 		"####" HGFE 1
 		Stop
 	Spawn:

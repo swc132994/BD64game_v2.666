@@ -409,9 +409,9 @@ Tag "Unmaker"
 		Stop
 	SlideKickingStart:
 		UNMS DCBA 1
-		UNMS A 18
+		UNMS A 35
 	SlideKickingEnd:
-		UNMS A 6
+		UNMS A 2
 		UNMS ABCD 1
 		Stop
 	Spawn:

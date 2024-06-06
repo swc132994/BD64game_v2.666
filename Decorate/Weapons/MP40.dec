@@ -195,9 +195,9 @@ Tag "MP40"
 		Stop
 	SlideKickingStart:	//22
 		MP4G BCDE 1
-		MP4G E 18
+		MP4G E 35
 	SlideKickingEnd:	//10
-		MP4G E 6
+		MP4G E 2
 		MP4G EDCB 1
 		Stop
 	/*GrenadeThrowFlash:

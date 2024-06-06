@@ -148,10 +148,10 @@ Decal "BigScorch"
 	SlideKickingStart:
 		TNT1 A 0 A_TakeInventory("GaussScopeLightAmp",1)
 		GCIK ABCD 1
-		GCIK D 18
+		GCIK D 35
 	SlideKickingEnd:
 		TNT1 A 0 A_TakeInventory("GaussScopeLightAmp",1)
-		GCIK D 6
+		GCIK D 2
 		GCIK DCBA 1
 		Stop
 	v1Ready:

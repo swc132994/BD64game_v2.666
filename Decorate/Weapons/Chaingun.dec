@@ -149,138 +149,74 @@ Tag "$TAG_CHAINGUN"
 		LCGS ABCD 1
 		Stop
 	KickSpin:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
 		CHNG JKLM 1
+		CHNG NOPQNOPQN 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		CHNG NOPQ 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		CHNG NOPQ 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		CHNG RST 1 //16
-		TNT1 A 0 A_AlertMonsters
-		CHNG U 1 A_PlaySound("CHAINSPI",CHAN_5)
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)		
+		CHNG RSTU 1 //16
+		TNT1 A 0 A_StopSound(1)
 		Stop
 	ClassicKickSpin:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
 		LCGS DEFG 1
+		LCGS HIJKHIJKH 1	
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		LCGS HIJK 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		LCGS HIJK 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		LCGS ALM 1 //16
-		TNT1 A 0 A_AlertMonsters
-		LCGS N 1 A_PlaySound("CHAINSPI",CHAN_5)
-		Stop
-	ClassicAirKickingFlash:
-		TNT1 A 0 A_JumpIfInventory("Spin",1,"ClassicAirKickSpin")
-		CHNS DCBA 1
-		CHNS A 10
-		CHNS ABCD 1
-		Stop
-	AirKickSpin:
-		CHNG JKLM 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		CHNG NOPQ 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		CHNG NOPQ 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		CHNG NORS 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		CHNG TU 1
-		Stop
-	ClassicAirKickSpin:
-		LCGS DEFG 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		LCGS HIJK 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		LCGS HIJK 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		LCGS KKAL 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		LCGS MN 1
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)		
+		LCGS ALMN 1 //16
+		TNT1 A 0 A_StopSound(1)
 		Stop
 	SlideKickingStart:
 		TNT1 A 0 A_JumpIfInventory("ClassicChaingunToken",1,"ClassicSlideKickingStart")
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"SlideKickingStartSpin")
 		CHNG EFGH 1
-		CHNG I 18
+		CHNG I 35
 	SlideKickingEnd:
 		TNT1 A 0 A_JumpIfInventory("ClassicChaingunToken",1,"ClassicSlideKickingEnd")
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"SlideKickingEndSpin")
-		CHNG I 6
+		CHNG I 2
 		CHNG HGFE 1
 		Stop
 	SlideKickingStartSpin:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
 		CHNG JKLM 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		CHNG NOPQ 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		CHNG NOPQ 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		CHNG NOPQ 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		CHNG NOPQ 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
+		CHNG NOPQNOPQNOPQNOPQ 1
+		TNT1 A 0 A_StopSound(1)
+		Stop
 	SlideKickingEndSpin:
-		CHNG NOPQ 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSTO",CHAN_6)
-		CHNG PQRS 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSTO",CHAN_6)
-		CHNG TU 1
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
+		CHNG NOPQRSTU 1
+		TNT1 A 0 A_StopSound(1)
 		Stop
 	ClassicSlideKickingStart:
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"ClassicSlideKickingStartSpin")
 		LCGS DCBA 1
-		LCGS A 18
+		LCGS A 35
+		Stop		
 	ClassicSlideKickingEnd:
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"ClassicSlideKickingEndSpin")
-		LCGS A 6
+		LCGS A 2
 		LCGS ABCD 1
 		Stop
 	ClassicSlideKickingStartSpin:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
 		LCGS DEFG 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		LCGS HIJK 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		LCGS HIJK 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		LCGS HIJK 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
-		LCGS HIJK 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5)
+		LCGS HIJKHIJKHIJKHIJK 1
+		TNT1 A 0 A_StopSound(1)
+		Stop		
 	ClassicSlideKickingEndSpin:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
 		LCGS HIJK 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSTO",CHAN_6)
-		LCGS KKAL 1
-		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSTO",CHAN_6)
-		LCGS MN 1
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)			
+		LCGS ALMN 1
+		TNT1 A 0 A_StopSound(1)
 		Stop
 	Spawn:
 		MGUN A -1
