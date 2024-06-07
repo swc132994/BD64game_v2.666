@@ -100,5 +100,10 @@ MONSTER
 		TNT1 A 0 A_SpawnItemEx("BigBloodSpotGreen")
 		TRIT IJK 5
 		Stop
+	Ice:
+		TRIT "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate")
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
 	}
 }
