@@ -1,0 +1,495 @@
+Actor ChaingunSpawner : CustomInventory// Replaces Chaingun		//spawned from randomspawners
+{
+//$category "Game/BD64_Weapons
+Scale 0.82
+Tag "Chaingun"
+Inventory.PickupMessage "$GOTCHAINGUN"
+Inventory.PickupSound "WPICK"
+	States
+	{
+	Spawn:
+		MGUN A 2
+		MGUN A 0 ACS_NamedExecuteAlways("DM_SpawnACS")
+		MGUN A 2
+		TNT1 A 0 A_JumpIfInventory("ISDM",1,"DMSpawn")
+		MGUN A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
+		TNT1 A 0 A_GiveInventory("64Chaingun",1)
+		Stop
+	Pickup2:
+		TNT1 A 0 A_GiveInventory("64ChaingunTACTICAL",1)
+		Stop
+	DMSpawn:
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
+		TNT1 A 0 A_SpawnItemEx("TeleportationFog")
+		TNT1 A 0 A_SpawnItemEx("64Chaingun")
+		TNT1 A 0 A_SpawnItemEx("64ChaingunTACTICAL")
+		TNT1 A 1050
+		Loop
+	}
+}
+
+Actor 64Chaingun : DoomWeapon
+{
+Scale 0.82
+Weapon.SlotNumber 4
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 700
+Weapon.AmmoType "Clip"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 20
+Inventory.PickupMessage "$GOTCHAINGUN"
+Obituary "$OB_MPCHAINGUN"
+Tag "$TAG_CHAINGUN"
+VisibleToPlayerClass "64DoomPlayer"
+Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
++INVENTORY.RESTRICTABSOLUTELY
+	States
+	{
+	Spawn:
+		MGUN A -1
+		Stop
+	Ready:
+		LCGG A 1 A_WeaponReady
+		Loop
+	Select:
+		LCGG A 1 A_Raise
+		Wait
+	Deselect:
+		TNT1 A 0 A_ZoomFactor(1.0)
+		LCGG A 1 A_Lower
+		Wait
+	Fire:
+		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
+		TNT1 A 0 A_FireBullets(5.0,3.5,-1,8,"MachineGunBulletPuff")
+		TNT1 A 0 A_PlaySound("MGUNFIR",CHAN_WEAPON)
+		LCGF A 1 Bright
+		TNT1 A 0 A_ZoomFactor(0.98)
+		LCGF B 2 Bright
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_FireCustomMissile("ChaingunCaseSpawn",0,0,6,-15)
+		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,5),0,-1,-12,0,random(-2,2))
+		TNT1 A 0 A_FireBullets(5.0,3.5,-1,8,"MachineGunBulletPuff")
+		TNT1 A 0 A_PlaySound("MGUNFIR",CHAN_WEAPON)
+		LCGF C 1 Bright
+		LCGF A 0 A_ZoomFactor(0.98)
+		LCGF D 2 Bright
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_FireCustomMissile("ChaingunCaseSpawn",0,0,6,-15)
+		TNT1 A 0 A_Refire
+		TNT1 A 0 A_PlaySound("CHAINSTO",CHAN_6)
+		LCGG ABCD 1 A_WeaponReady
+		LCGG ABCD 2 A_WeaponReady
+		LCGG ABCD 3 A_weaponReady
+		Goto Ready
+	}
+}
+
+Actor ClassicChaingunToken: Inventory
+{
+inventory.maxamount 1
+}
+
+Actor Spin: Inventory
+{
+inventory.maxamount 1
+}
+
+Actor 64ChaingunTACTICAL : Brutal64Weapon
+{
+Scale 0.82
+Weapon.SlotNumber 4
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 700
+Weapon.AmmoType "64HighCaliberBox"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 20
+Inventory.PickupMessage "$GOTCHAINGUN"
+Obituary "$OB_MPCHAINGUN"
+Tag "$TAG_CHAINGUN"
++INVENTORY.RESTRICTABSOLUTELY
++WEAPON.NOAUTOFIRE
+	States
+	{
+	MineThrowFlash:
+		TNT1 A 0 A_JumpIfInventory("ClassicChaingunToken",1,"ClassicMineThrowFlash")
+		CHNS EDCBA 1
+		TNT1 A 16
+		CHNS ABCDE 1
+		Stop
+	ClassicMineThrowFlash:
+		LCGS OPQR 1
+		TNT1 A 18
+		LCGS ABCD 1
+		Stop
+	KickingFlash:
+		TNT1 A 0 A_JumpIfInventory("ClassicChaingunToken",1,"ClassicKickingFlash")
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"KickSpin")
+		CHNG EFGH 1
+		CHNG I 8
+		CHNG HGFE 1
+		Stop
+	ClassicKickingFlash:
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"ClassicKickSpin")
+		LCGS DCBA 1
+		LCGS A 8
+		LCGS ABCD 1
+		Stop
+	KickSpin:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
+		CHNG JKLM 1
+		CHNG NOPQNOPQN 1
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)		
+		CHNG RSTU 1 //16
+		TNT1 A 0 A_StopSound(1)
+		Stop
+	ClassicKickSpin:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
+		LCGS DEFG 1
+		LCGS HIJKHIJKH 1	
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)		
+		LCGS ALMN 1 //16
+		TNT1 A 0 A_StopSound(1)
+		Stop
+	SlideKickingStart:
+		TNT1 A 0 A_JumpIfInventory("ClassicChaingunToken",1,"ClassicSlideKickingStart")
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"SlideKickingStartSpin")
+		CHNG EFGH 1
+		CHNG I 35
+	SlideKickingEnd:
+		TNT1 A 0 A_JumpIfInventory("ClassicChaingunToken",1,"ClassicSlideKickingEnd")
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"SlideKickingEndSpin")
+		CHNG I 2
+		CHNG HGFE 1
+		Stop
+	SlideKickingStartSpin:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
+		CHNG JKLM 1
+		CHNG NOPQNOPQNOPQNOPQ 1
+		TNT1 A 0 A_StopSound(1)
+		Stop
+	SlideKickingEndSpin:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
+		CHNG NOPQRSTU 1
+		TNT1 A 0 A_StopSound(1)
+		Stop
+	ClassicSlideKickingStart:
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"ClassicSlideKickingStartSpin")
+		LCGS DCBA 1
+		LCGS A 35
+		Stop		
+	ClassicSlideKickingEnd:
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"ClassicSlideKickingEndSpin")
+		LCGS A 2
+		LCGS ABCD 1
+		Stop
+	ClassicSlideKickingStartSpin:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
+		LCGS DEFG 1
+		LCGS HIJKHIJKHIJKHIJK 1
+		TNT1 A 0 A_StopSound(1)
+		Stop		
+	ClassicSlideKickingEndSpin:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
+		LCGS HIJK 1
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",1)			
+		LCGS ALMN 1
+		TNT1 A 0 A_StopSound(1)
+		Stop
+	Spawn:
+		MGUN A -1
+		Stop
+	v1Ready:
+	Ready:
+		LCGG A 0 A_JumpIfInventory("ClassicChaingunToken",1,2)
+		CHNG A 0
+		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"Ready2")
+		Loop
+	Ready2: //Minigun Spinning
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5,1,TRUE)
+		LCGG A 0 A_JumpIfInventory("ClassicChaingunToken",1,2)
+		CHNG A 0
+		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		LCGG B 0 A_JumpIfInventory("ClassicChaingunToken",1,2)
+		CHNG B 0
+		"####" B 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		LCGG C 0 A_JumpIfInventory("ClassicChaingunToken",1,2)
+		CHNG C 0
+		"####" C 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		LCGG D 0 A_JumpIfInventory("ClassicChaingunToken",1,2)
+		CHNG D 0
+		"####" D 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		Loop
+	Select:
+		TNT1 A 0 A_PlaySound("CHGNPKUP",CHAN_BODY)
+		TNT1 A 0 A_JumpIfInventory("ClassicChaingunToken",1,"SelectClassic")
+		CHNS ABCDE 1 Offset(0,32)	//New
+		Goto SelectRaise
+	SelectClassic:
+		LCGS ABCD 1 Offset(0,32)	//Classic
+	SelectRaise:
+		TNT1 A 0 A_Raise
+		Wait
+	Deselect:
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
+		TNT1 A 0 A_Takeinventory("TossMine",0)
+		TNT1 A 0 A_Takeinventory("PlaceMine",0)
+		TNT1 A 0 A_Takeinventory("Kicking",0)
+		TNT1 A 0 A_TakeInventory("Spin",0)
+		TNT1 A 0 A_StopSound(CHAN_5)
+		TNT1 A 0 A_JumpIfInventory("ClassicChaingunToken",1,"ClassicDeSelectAnimation")
+		CHNS FGHIJ 1
+		TNT1 A 0 A_Lower
+		Wait
+	ClassicDeSelectAnimation:
+		LCGS OPQR 1
+		TNT1 A 0 A_Lower
+		Wait
+	Fire:
+		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5,1,TRUE)
+		TNT1 A 0 A_JumpIfInventory("ClassicChaingunToken",1,"ClassicFire")
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"Hold")
+		TNT1 A 0 A_PlaySound("CHAINSTA",CHAN_ITEM)
+		TNT1 A 0 A_FireCustomMissile("ChaingunCaseSpawn",0,0,6,-15)
+		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
+		TNT1 A 0 A_PlaySound("MGUNFIR",CHAN_WEAPON)
+		TNT1 A 0 A_SetPitch(pitch-1.8,SPF_INTERPOLATE)
+		CHNF A 1 Bright A_FireBullets(3.5,3.5,-1,8,"MachineGunBulletPuff")
+		TNT1 A 0 A_ZoomFactor(0.98)
+		CHNG A 1 Offset(0,34)
+		CHNG A 1 Offset(0,32)
+		CHNG B 3 Bright
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_FireCustomMissile("ChaingunCaseSpawn",0,0,6,-15)
+		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
+		TNT1 A 0 A_PlaySound("MGUNFIR",CHAN_WEAPON)
+		TNT1 A 0 A_SetPitch(pitch-1.8,SPF_INTERPOLATE)
+		CHNF C 1 Bright A_FireBullets(3.5,3.5,-1,8,"MachineGunBulletPuff")
+		TNT1 A 0 A_ZoomFactor(0.98)
+		CHNG C 1 Offset(0,34)
+		CHNG C 1 Offset(0,32)
+		CHNG D 3 Bright
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_Refire("Fire2")
+		TNT1 A 0 A_StopSound(CHAN_5)
+		TNT1 A 0 A_PlaySound("CHAINSTO",CHAN_6)
+		Goto EndFire
+	Fire2:
+		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5,1,TRUE)
+		TNT1 A 0 A_FireCustomMissile("ChaingunCaseSpawn",0,0,6,-15)
+		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
+		TNT1 A 0 A_PlaySound("MGUNFIR",CHAN_WEAPON)
+		TNT1 A 0 A_SetPitch(pitch-1.8,SPF_INTERPOLATE)
+		CHNF A 1 Bright A_FireBullets(3.5,3.5,-1,8,"MachineGunBulletPuff")
+		TNT1 A 0 A_ZoomFactor(0.98)
+		CHNG A 1 Offset(0,32)
+		CHNG B 2 Bright
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_FireCustomMissile("ChaingunCaseSpawn",0,0,6,-15)
+		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
+		TNT1 A 0 A_PlaySound("MGUNFIR",CHAN_WEAPON)
+		TNT1 A 0 A_SetPitch(pitch-1.8,SPF_INTERPOLATE)
+		CHNF C 1 Bright A_FireBullets(3.5,3.5,-1,7,"MachineGunBulletPuff")
+		TNT1 A 0 A_ZoomFactor(0.98)
+		CHNG C 1 Offset(0,32)
+		CHNG D 2 Bright
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_Refire("Hold")
+		TNT1 A 0 A_StopSound(CHAN_5)
+		TNT1 A 0 A_PlaySound("CHAINSTO",CHAN_6)
+		Goto EndFire2
+	Hold:
+		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5,1,TRUE)
+		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
+		TNT1 A 0 A_PlaySound("MGUNFIR",CHAN_WEAPON)
+		TNT1 A 0 A_SetPitch(pitch-1.8,SPF_INTERPOLATE)
+		CHNF A 1 Bright A_FireBullets(3.5,3.5,-1,8,"MachineGunBulletPuff")
+		TNT1 A 0 A_ZoomFactor(0.98)
+		CHNF B 1 Bright A_SetPitch(pitch+0.8,SPF_INTERPOLATE)
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_FireCustomMissile("ChaingunCaseSpawn",0,0,6,-15)
+		TNT1 A 0 A_SetAngle(angle + random(-2,2))
+		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,5),0,-1,-12,0,random(-2,2))
+		TNT1 A 0 A_PlaySound("MGUNFIR",CHAN_WEAPON)
+		TNT1 A 0 A_SetPitch(pitch-1.8,SPF_INTERPOLATE)
+		CHNF C 1 Bright A_FireBullets(3.5,3.5,-1,8,"MachineGunBulletPuff")
+		TNT1 A 0 A_ZoomFactor(0.98)
+		CHNF D 1 Bright A_SetPitch(pitch+0.8,SPF_INTERPOLATE)
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_FireCustomMissile("ChaingunCaseSpawn",0,0,6,-15)
+		TNT1 A 0 A_SetAngle(angle + random(-2,2))
+		TNT1 A 0 A_Refire("Hold")
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"Ready2")
+		TNT1 A 0 A_TakeInventory("Spin",1)
+		TNT1 A 0 A_StopSound(CHAN_5)
+		TNT1 A 0 A_PlaySound("CHAINSTO",CHAN_6)
+		CHNG ABCDABCDABCD 1// A_Refire("Hold")
+	EndFire2:
+		CHNG ABCDABCD 2
+		TNT1 A 0 A_Refire("Fire2")
+		TNT1 A 0 A_WeaponReady(WRF_ALLOWRELOAD)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+	EndFire:
+		CHNG ABCD 3
+		TNT1 A 0 A_Refire("Fire")
+		TNT1 A 0 A_WeaponReady(WRF_ALLOWRELOAD)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		Goto Ready
+	ClassicFire:
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"ClassicHold")
+		TNT1 A 0 A_PlaySound("CHAINSTA",CHAN_ITEM)
+		LCGG BC 3
+		LCGG D 3
+		LCGG AB 3
+	ClassicHold:
+		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5,1,TRUE)
+		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,3),0,-1,-12,0,random(-2,2))
+		TNT1 A 0 A_PlaySound("MGUNFIR",CHAN_WEAPON)
+		TNT1 A 0 A_SetPitch(pitch-1.8,SPF_INTERPOLATE)
+		LCGF A 1 Bright A_FireBullets(3.5,3.5,-1,8,"MachineGunBulletPuff")
+		TNT1 A 0 A_ZoomFactor(0.98)
+		LCGF B 2 Bright A_SetPitch(pitch+0.8,SPF_INTERPOLATE)
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_FireCustomMissile("ChaingunCaseSpawn",0,0,6,-15)
+		TNT1 A 0 A_SetAngle(angle + random(-2,2))
+		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle2",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("Tracer",random(-3,5),0,-1,-12,0,random(-2,2))
+		TNT1 A 0 A_PlaySound("MGUNFIR",CHAN_WEAPON)
+		TNT1 A 0 A_SetPitch(pitch-1.8,SPF_INTERPOLATE)
+		LCGF C 1 Bright A_FireBullets(3.5,3.5,-1,8,"MachineGunBulletPuff")
+		TNT1 A 0 A_ZoomFactor(0.98)
+		LCGF D 2 Bright A_SetPitch(pitch+0.8,SPF_INTERPOLATE)
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_FireCustomMissile("ChaingunCaseSpawn",0,0,6,-15)
+		TNT1 A 0 A_SetAngle(angle + random(-2,2))
+		TNT1 A 0 A_Refire("ClassicHold")
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"Ready2")
+		TNT1 A 0 A_TakeInventory("Spin",1)
+		TNT1 A 0 A_StopSound(CHAN_5)
+		TNT1 A 0 A_PlaySound("CHAINSTO",CHAN_6)
+		LCGG ABCD 1 A_WeaponReady
+		LCGG ABCD 2 A_WeaponReady
+		LCGG ABCD 3 A_weaponReady
+		Goto Ready
+	AltFire:
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"StopAlt")
+		TNT1 A 0 A_GiveInventory("Spin",1)
+		TNT1 A 0 A_PlaySound("CHAINSTA",CHAN_ITEM)
+		TNT1 A 0 A_JumpIfInventory("64HighCaliberBox",1,1)
+		Goto Ready
+		LCGG A 0 A_JumpIfInventory("ClassicChaingunToken",1,2)
+		CHNG A 0
+		"####" ABCD 2
+		Goto Ready2
+	StopAlt:
+		TNT1 A 0 A_TakeInventory("Spin",1)
+		TNT1 A 0 A_StopSound(CHAN_5)
+		TNT1 A 0 A_PlaySound("CHAINSTO",CHAN_6)
+		LCGG A 0 A_JumpIfInventory("ClassicChaingunToken",1,2)
+		CHNG A 0
+		"####" ABCD 1
+		"####" ABCD 2 A_WeaponReady
+		"####" ABCD 3 A_WeaponReady
+		Goto Ready
+	Reload:
+		TNT1 A 0 A_JumpIfInventory("Spin",1,"FidgetSpinner")
+		TNT1 A 0 A_JumpIfInventory("ClassicChaingunToken",1,"ClassicReload")
+		CHNI ABCDEF 1 A_WeaponReady
+		CHNI G 7 A_WeaponReady
+		TNT1 A 0 A_PlaySound("CHAINSTO",CHAN_6)
+		CHNI HIJ 1 A_WeaponReady
+		CHNG ABCD 2
+		CHNG ABCD 3
+		Goto Ready
+	ClassicReload:
+		LCGI ABCDE 1 A_WeaponReady
+		LCGI F 7 A_WeaponReady
+		TNT1 A 0 A_PlaySound("CHAINSTO",CHAN_6)
+		LCGI GHIJ 1 A_WeaponReady
+		LCGG ABCD 2
+		LCGG ABCD 3
+		Goto Ready
+	FidgetSpinner:
+		TNT1 A 0 A_Print("No one in their right mind would touch a spinning chaingun.")
+		Goto Ready2
+	}
+}

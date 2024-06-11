@@ -1,0 +1,464 @@
+ACTOR 64Butcher 19131
+{
+Scale 0.85
+Health 300
+Radius 20
+Height 56
+Speed 12
+MeleeRange 70
+Obituary "%o was gutted by a Butcher"
+Tag "Butcher"
+SeeSound "sawcubus/sight"
+PainSound "sawcubus/pain"
+DeathSound "sawcubus/death"
+ActiveSound "sawcubus/active"
+PainChance 25
+PainChance "SuperFists",200
+PainChance "Kick",200
+PainChance "SuperKick",200
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+Dropitem "ChainsawDrop"
+DropItem "DemonEssenceSpawner"
+MONSTER
++FLOORCLIP
++NOBLOODDECALS
++EXTREMEDEATH
++NEVERFAST
+	States
+	{
+	Spawn:
+		SWCB A 1
+	Spawned:
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",12,0,62)
+		SWCB A 4 A_LookEx
+		Loop
+	Missile:
+		TNT1 A 0 A_JumpIfCloser(350,"ChargeStart")
+	See:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",12,0,62)
+		SWCB A 4 A_Chase
+		TNT1 A 0 A_PlaySound("Chainsaw/idle",CHAN_6,1,1)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",12,0,62)
+		SWCB B 4 A_Chase
+		TNT1 A 0 A_PlaySound("Chainsaw/idle",CHAN_6,1,1)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",12,0,62)
+		SWCB C 4 A_Chase
+		TNT1 A 0 A_PlaySound("Chainsaw/idle",CHAN_6,1,1)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",12,0,62)
+		SWCB D 4 A_Chase
+		TNT1 A 0 A_PlaySound("Chainsaw/idle",CHAN_6,1,1)
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
+		Loop
+	Forget:
+		TNT1 A 0 A_ClearTarget
+		Goto Spawned
+	Melee:
+		TNT1 A 0 A_StopSound(6)
+		TNT1 A 0 A_Recoil(-3)
+		TNT1 A 0 A_PlaySound("chainsaw/loop",CHAN_WEAPON,1,1)
+		TNT1 A 0 A_CustomMeleeAttack(1)
+		TNT1 A 0 A_CustomMissile("SawDamage",36)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",12,0,62)
+		SWCB E 4 A_FaceTarget
+		Goto See
+	ChargeStart:
+		TNT1 A 0 A_PlaySound("DEMONTHM",CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("Chainsaw/idle",CHAN_6,1,1)
+		SWCB AABB 1 A_Chase
+		TNT1 A 0 A_PlaySound("DEMONTHM",CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("Chainsaw/idle",CHAN_6,1,1)
+		SWCB CCDD 1 A_Chase
+		TNT1 A 0 A_JumpIfCloser(350,"ChargeStart")
+		Goto See
+	Pain:
+		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(6)
+		SWCB F 5
+		SWCB F 3 A_Pain
+		Goto See
+	Death:
+		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(6)
+		SWCB G 5
+		SWCB H 5 A_Scream
+		SWCB I 5 A_NoBlocking
+		SWCB J 5
+		SWCB K 35
+		SWCB K -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Rifle:
+		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(6)
+		TNT1 A 0 A_Jump(168,"Death")
+	Death.CutLess:
+	Death.ShotgunNoArm:
+		TNT1 A 0 A_CustomMissile("XDeathButcherSawArm",50,0,random(00,360),2,random(10,50))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		S4WC A 1 A_SpawnItemEx("64ButcherNoArm",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	Death.Plasma:
+		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(6)
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Stop
+		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmall",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,360))
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",30,0,random(0,360),2,random(0,360))
+		TNT1 AA 0 A_CustomMissile("CarbonizedSmoke1",30,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn")
+		TNT1 A 0 A_SpawnItemEx("BurningFleshEffect2",0,0,5)
+		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
+		CRB1 ABCDEFGH 3
+		CRB1 H -1
+		Stop
+	Death.Head:
+		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(6)
+		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
+		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
+		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		S4UK CDEF 5
+		S4UK G 35
+		S4UK G -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.SSG:
+		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(6)
+		SWCB F 2 A_Recoil(9)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
+		TNT1 A 0 A_JumpIfCloser(250,"Death.Heavy")
+		TNT1 A 0 A_Jump(128,"Death")
+		TNT1 A 0 A_JumpIfCloser(1000,"Death.ShotgunNoArm")
+		Goto Death
+	Death.SuperFists:
+	Death.SuperKick:
+		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(6)
+		TNT1 A 0 A_Jump(170,"Death.Heavy")
+	Death.SplatteredOnWall:
+		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(6)
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeathEyes",40,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 AAAAAA 0 A_CustomMissile("Brutal_Blood",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeathButcherNormalArm",50,0,random(00,360),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathButcherSawArm",50,0,random(00,360),2,random(10,50))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		SWCD EFG 5
+		SWCD H 35
+		SWCD H -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Heavy:
+		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(6)
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeathEyes",40,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		SWCD ABC 5
+		SWCD D 35
+		SWCD D -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Chainsaw:
+	Death.BFG:
+	XDeath:
+		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(6)
+		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeathEyes",40,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_CustomMissile("XDeathButcherSawArm",50,0,random(00,360),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeathButcherLeg1",50,0,random(00,360),2,random(10,50))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		SCB1 A 2 ThrustThingZ(0,40,0,0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
+		SCB1 A 2 A_CheckFloor("LANDAFTERXDEATH")
+		Wait
+	LandAfterXDeath:
+		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(6)
+		SCB1 B 1 A_Stop
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
+		SCB1 B -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Raise:
+		SWCB KJIHG 5
+		Goto See
+	Crush:
+		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(6)
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
+		POL5 A -1
+		Stop
+	Ice:
+		TNT1 A 0 A_StopSound(6)
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	}
+}
+
+Actor 64ButcherNoArm : 64Butcher
+{
+Health 60
+Mass 1500
+DropItem "None"
+-SOLID
+-COUNTKILL
++FRIENDLY
++NOTARGET
++NOPAIN
+	States
+	{
+	Spawn:
+		S4WC A 0
+	See:
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8",0,0,62)
+		S4WC A 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,62)
+		S4WC BA 8 A_FaceTarget
+		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,62)
+		S4WC BA 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,62)
+		S4WC BA 8 A_FaceTarget
+		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,62)
+		S4WC BA 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget6",0,0,62)
+		S4WC BA 8 A_FaceTarget
+		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,62)
+		S4WC BA 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8",0,0,62)
+		S4WC B 8 A_FaceTarget
+	Death.Bullet:
+	Death:
+		TNT1 A 0 A_Die
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		S4WC CDEF 5
+		S4WC G 35
+		S4WC G -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Rifle:
+		TNT1 A 0 A_Jump(128,"Death")
+	Death.CutLess:
+		TNT1 A 0 A_CustomMissile("XDeathButcherNormalArm",50,0,random(00,360),2,random(10,50))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		S4VK A 1 A_SpawnItemEx("64ButcherArmless",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	Death.SSG:
+		S4WC A 2 A_Recoil(9)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
+		TNT1 A 0 A_JumpIfCloser(250,"Death.Heavy")
+		TNT1 A 0 A_Jump(128,"Death")
+		Goto Death
+	Death.Head:
+		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
+		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
+		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		Z4WK CDEF 5
+		Z4WK G 35
+		Z4WK G -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	XDeath:
+	Death.Chainsaw:
+	Death.BFG:
+	Death.SuperFists:
+	Death.SuperKick:
+		TNT1 A 0 A_Jump(170,"Death.Heavy")
+	Death.SplatteredOnWall:
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeathEyes",40,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 AAAAAA 0 A_CustomMissile("Brutal_Blood",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeathButcherNormalArm",50,0,random(00,360),2,random(10,50))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		SWCD EFG 5
+		SWCD H 35
+		SWCD H -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Heavy:
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeathEyes",40,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		SWCD ABC 5
+		SWCD D 35
+		SWCD D -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Pain:
+		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
+		S4WC A 1
+		Goto Spawn
+	Raise:
+		SWCB KJIHG 5
+		SWCB G 1 A_SpawnItemEx("64Butcher",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	}
+}
+
+Actor 64ButcherArmless : 64ButcherNoArm
+{
+	States
+	{
+	Spawn:
+		S4VK A 1
+	See:
+		S4VK A 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		S4VK BA 8 A_FaceTarget
+		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		S4VK BA 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		S4VK BA 8 A_FaceTarget
+		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		S4VK BA 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		S4VK BA 8 A_FaceTarget
+		TNT1 AAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		S4VK BA 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		S4VK B 8 A_FaceTarget
+	Death.Bullet:
+	Death:
+		TNT1 A 0 A_Die
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		S4VK CDEF 5
+		S4VK G 35
+		S4VK G -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Rifle:
+		TNT1 A 0 A_Jump(128,"Death")
+	Death.Head:
+	Death.CutLess:
+		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
+		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
+		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		ZAVK CDEF 5
+		ZAVK G 35
+		ZAVK G -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.SSG:
+		S4VK A 2 A_Recoil(9)
+		TNT1 A 0 A_JumpIfCloser(250,"Death.SplatteredOnWall")
+		TNT1 A 0 A_Jump(128,"Death")
+		Goto Death
+	XDeath:
+	Death.Chainsaw:
+	Death.BFG:
+	Death.SuperFists:
+	Death.SuperKick:
+	Death.Heavy:
+	Death.SplatteredOnWall:
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeathEyes",40,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 AAAAAA 0 A_CustomMissile("Brutal_Blood",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		SWCD EFG 5
+		SWCD H 35
+		SWCD H -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Pain:
+		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
+		S4VK A 1
+		Goto Spawn
+	Raise:
+		SWCB KJIHG 5
+		SWCB G 1 A_SpawnItemEx("64Butcher",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	}
+}

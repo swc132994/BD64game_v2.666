@@ -1,0 +1,458 @@
+actor BloodyTwitchReplacer : RandomSpawner Replaces BloodyTwitch
+{
+DropItem "DamnedHanging1SOLID"
+DropItem "DamnedHanging2SOLID"
+DropItem "64TritePod_SOLID"
+}
+
+actor NonSolidTwitchReplacer : RandomSpawner Replaces NonSolidTwitch
+{
+DropItem "DamnedHanging1"
+DropItem "DamnedHanging2"
+DropItem "64TritePod"
+}
+
+actor Meat3Replacer : RandomSpawner Replaces Meat3
+{
+DropItem "BD64TorturedMarine21SOLID"
+DropItem "BD64TorturedMarine23SOLID"
+DropItem "BD64TorturedMarine32SOLID"
+DropItem "BD64TorturedMarine66SOLID"
+DropItem "64TritePod_SOLID"
+}
+
+actor NonsolidMeat3Replacer : RandomSpawner Replaces NonsolidMeat3
+{
+DropItem "BD64TorturedMarine21"
+DropItem "BD64TorturedMarine23"
+DropItem "BD64TorturedMarine32"
+DropItem "BD64TorturedMarine66"
+DropItem "64TritePod"
+}
+
+Actor DamnedHanging1
+{
+Scale 0.8
+Health 1
+Height 64
+Radius 16
+Mass 999999
++NOGRAVITY
++SPAWNCEILING
++FRIENDLY
++SHOOTABLE
++NORADIUSDMG
++NOBLOODDECALS
++FLOAT
+BloodType "Brutal_Blood"
+	States
+	{
+	Spawn:
+		DAM1 D 100
+		DAM1 D 1 A_Jump(30,"Movement")
+		Loop
+	Movement:
+		DAM1 D 1
+		TNT1 A 0 A_PlaySound("DamnedSee",CHAN_ITEM)
+		TNT1 A 0 A_PlaySound("ChainRattle",CHAN_WEAPON)
+		DAM1 CBAABCDEFGGFEDCBABCDEFGFEDCBCCDDEE 2
+		DAM1 DCDEDC 4
+		DAM1 DCDEDC 5
+		Goto Spawn
+	Death:
+		TNT1 A 0 A_PlaySound("TORTURE4",CHAN_BODY)
+		TNT1 A 0 A_NoGravity
+		DAM1 GHIJ 10
+		TNT1 A 0 A_SpawnItemEx("drippingbloodLeavesSmallPool")
+		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
+		DAM1 K -1
+		Stop
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	}
+}
+Actor DamnedHanging1SOLID : DamnedHanging1	{+SOLID}
+
+Actor DamnedHanging2 : DamnedHanging1
+{
+	States
+	{
+	Spawn:
+		DAM2 D 100
+		DAM2 D 1 A_Jump(30,"Movement")
+		Loop
+	Movement:
+		DAM2 D 1
+		TNT1 A 0 A_PlaySound("DamnedSee",CHAN_ITEM)
+		TNT1 A 0 A_PlaySound("ChainRattle",CHAN_WEAPON)
+		DAM2 CBAABCDEFGGFEDCBABCDEFGFEDCBCCDDEE 2
+		DAM2 DCDEDC 4
+		DAM2 DCDEDC 5
+		Goto Spawn
+	Death:
+		TNT1 A 0 A_PlaySound("TORTURE4",CHAN_BODY)
+		TNT1 A 0 A_NoGravity
+		DAM2 GHIJ 10
+		TNT1 A 0 A_SpawnItemEx("drippingbloodLeavesSmallPool")
+		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
+		DAM2 K -1
+		Stop
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	}
+}
+Actor DamnedHanging2SOLID : DamnedHanging2	{+SOLID}
+
+Actor BD64TorturedMarine21
+{
+Scale 0.8
+Health 1
+Height 72
+Radius 16
+Mass 999999
++SHOOTABLE
++NORADIUSDMG
++SPAWNCEILING
++NOGRAVITY
++NOBLOODDECALS
++FLOAT
+BloodType "Brutal_Blood"
+	States
+	{
+	Spawn:
+		TTR7 A 0 NoDelay A_PlaySound("TORTURE3",CHAN_BODY)
+		TTR7 A 10
+		TTR7 ABABAB 6
+		TNT1 A 0 A_Jump(10,"Scream")
+		TTR7 A 20
+		TTR7 ABABAB 6
+		TNT1 A 0 A_Jump(10,"Scream")
+		TTR7 A 20
+		TTR7 ABABAB 6
+		TNT1 A 0 A_Jump(10,"Scream")
+		TTR7 A 20
+		TTR7 ABABAB 6
+		TTR7 A 40
+		Goto Scream
+	Scream:
+		TTR7 A 2
+		TNT1 A 0 A_PlaySound("TORTURE",CHAN_BODY)
+		TTR7 BC 3
+		TTR7 DCECDCECDCECDCECDCECDCECDCECDCECDCECDCECDCECDCEC 3
+		TTR7 BA 3
+		TTR7 A 10
+		Goto Spawn
+	Death:
+		TNT1 A 0 A_PlaySound("TORTURE4",CHAN_BODY)
+		TNT1 A 0 A_NoGravity
+		TTR7 FGHI 10
+		TNT1 A 0 A_SpawnItemEx("drippingbloodLeavesSmallPool")
+		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
+		TTR7 J -1
+		Stop
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	}
+}
+Actor BD64TorturedMarine21SOLID : BD64TorturedMarine21	{+SOLID}
+
+Actor BD64TorturedMarine32
+{
+Scale 0.8
+Health 1
+Height 72
+Radius 16
+Mass 999999
++SHOOTABLE
++NORADIUSDMG
++SPAWNCEILING
++NOGRAVITY
++NOBLOODDECALS
++FLOAT
+BloodType "Brutal_Blood"
+	States
+	{
+	Spawn:
+		TTR8 A 1
+		TTR8 A 1 A_Jump(80,"Scream")
+		TTR8 A 100
+		Loop
+	Scream:
+		TTR8 A 2
+		TNT1 A 0 A_PlaySound("TORTURE",CHAN_BODY)
+		TTR8 BADEA 3
+		TTR8 BADEA 3
+		TTR8 BADEA 3
+		TTR8 BADEA 3
+		TTR8 BADEA 3
+		TTR8 BADEA 3
+		TTR8 A 10
+		Goto Spawn
+	Death:
+		TNT1 A 0 A_PlaySound("TORTURE4",CHAN_BODY)
+		TNT1 A 0 A_NoGravity
+		TTR8 FGH 10
+		TNT1 A 0 A_SpawnItemEx("drippingbloodLeavesSmallPool")
+		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
+		TTR8 I -1
+		Stop
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	}
+}
+Actor BD64TorturedMarine32SOLID : BD64TorturedMarine32	{+SOLID}
+
+Actor BD64TorturedMarine23
+{
+Scale 0.8
+Health 1
+Height 72
+Radius 16
+Mass 999999
++SHOOTABLE
++NORADIUSDMG
++SPAWNCEILING
++NOGRAVITY
++NOBLOODDECALS
++FLOAT
+BloodType "Brutal_Blood"
+	States
+	{
+	Spawn:
+		TTR9 A 0 NoDelay A_PlaySound("TORTURE3",CHAN_BODY)
+		TTR9 A 10
+		TTR9 ABABAB 6
+		TNT1 A 0 A_Jump(25,"Scream")
+		TTR9 A 20
+		TTR9 ABABAB 6
+		TNT1 A 0 A_Jump(10,"Scream")
+		TTR9 A 20
+		TTR9 ABABAB 6
+		TNT1 A 0 A_Jump(10,"Scream")
+		TTR9 A 20
+		TTR9 ABABAB 6
+		TTR9 A 40
+		Goto Scream
+	Scream:
+		TTR9 A 2
+		TNT1 A 0 A_PlaySound("TORTURE",CHAN_BODY)
+		TTR9 BC 3
+		TTR9 DCECDCECDCECDCECDCECDCECDCECDCECDCECDCECDCECDCEC 3
+		TTR9 BA 3
+		TTR9 A 10
+		Goto Spawn
+	Death:
+		TNT1 A 0 A_PlaySound("TORTURE4",CHAN_BODY)
+		TNT1 A 0 A_NoGravity
+		TTR9 FGHI 10
+		TNT1 A 0 A_SpawnItemEx("drippingbloodLeavesSmallPool")
+		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
+		TTR9 J -1
+		Stop
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	}
+}
+Actor BD64TorturedMarine23SOLID : BD64TorturedMarine23	{+SOLID}
+
+Actor BD64TorturedMarine66
+{
+Scale 0.8
+Health 1
+Height 72
+Radius 16
+Mass 999999
++SHOOTABLE
++NORADIUSDMG
++SPAWNCEILING
++NOGRAVITY
++NOBLOODDECALS
++FLOAT
+BloodType "Brutal_Blood"
+	States
+	{
+	Spawn:
+		TTR6 AAAAAAA 100 A_Jump(10,"Scream")
+		Goto Scream
+	Scream:
+		TTR6 B 2
+		TNT1 A 0 A_PlaySound("TORTURE6",CHAN_BODY)
+		TTR6 BCABCA 6
+		Goto Spawn
+	Death:
+		TNT1 A 0 A_PlaySound("TORTURE4",CHAN_BODY)
+		TNT1 A 0 A_NoGravity
+		TTR6 DE 10
+		TNT1 A 0 A_SpawnItemEx("drippingbloodLeavesSmallPool")
+		TNT1 A 0 A_SpawnItemEx("CeilBloodLargeBloodSpawner")
+		TTR6 F -1
+		Stop
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	}
+}
+Actor BD64TorturedMarine66SOLID : BD64TorturedMarine66	{+SOLID}
+
+ACTOR 64SkullColumnReplacer : RandomSpawner Replaces SkullColumn
+{
+DropItem "64SkullColumn"
+DropItem "64SkullColumn"
+DropItem "64SkullColumn"
+DropItem "BD64TorturedMarine55"
+}
+
+ACTOR 64ShortRedColumnReplacer : RandomSpawner Replaces ShortRedColumn
+{
+DropItem "64ShortRedColumn"
+DropItem "64ShortRedColumn"
+DropItem "64ShortRedColumn"
+DropItem "BD64TorturedMarine55"
+}
+
+ACTOR 64ShortGreenColumnReplacer : RandomSpawner Replaces ShortGreenColumn
+{
+DropItem "64ShortGreenColumn"
+DropItem "64ShortGreenColumn"
+DropItem "64ShortGreenColumn"
+DropItem "BD64TorturedMarine55"
+}
+
+Actor BD64TorturedMarine55
+{
+Scale 0.8
+Health 1
+Height 72
+Radius 16
+Mass 999999
++SHOOTABLE
++NORADIUSDMG
++SOLID
++NOBLOODDECALS
+BloodType "Brutal_Blood"
+	States
+	{
+	Spawn:
+		TTR5 A 6
+		TNT1 A 0 A_Jump(128,2)
+		TTR5 B 35
+		TNT1 A 0 A_PlaySound("TORTURE5",CHAN_BODY)
+		TTR5 A 10
+		TNT1 A 0 A_Jump(128,2)
+		TTR5 B 3
+		TTR5 ABABABCA 6
+		TNT1 A 0 A_Jump(128,2)
+		TTR5 C 6
+		TTR5 A 20
+		TTR5 ABABAB 6
+		TNT1 A 0 A_Jump(128,2)
+		TTR5 C 6
+		TTR5 A 20
+		TTR5 ABABAB 6
+		TNT1 A 0 A_Jump(128,2)
+		TTR5 B 3
+		TTR5 A 20
+		TTR5 ABABABC 6
+		TTR5 ABABA 70
+		Loop
+	Death:
+		TNT1 A 0 A_PlaySound("TORTURE4",CHAN_BODY)
+		TTR5 DEFGH 10
+		TTR5 H -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	}
+}
+
+actor 64TritePod
+{
+Scale 0.8
+Health 15
+Height 93
+Radius 24
+Mass 999999
++NOGRAVITY
++SPAWNCEILING
++SHOOTABLE
++NOBLOODDECALS
++DONTFALL
+BloodType "Brutal_Blood"
+	states
+	{
+	Spawn:
+		HTSP A 0 A_Jump(64,2)
+		TNT1 A 0 A_PlaySound("Carrion/SCREAMING",CHAN_VOICE)
+		HTSP AA 35 A_LookEx(0,0,150,100)
+		TNT1 A 0 A_PlaySound("64Thing/sight",CHAN_AUTO)
+		HTSP ABC 5 A_LookEx(0,0,150,100)
+		TNT1 A 0 A_PlaySound("64Thing/sight",CHAN_AUTO)
+		HTSP BB 35 A_LookEx(0,0,150,100)
+		TNT1 A 0 A_PlaySound("64Thing/sight",CHAN_AUTO)
+		HTSP BCB 5 A_LookEx(0,0,150,100)
+		HTSP CC 35 A_LookEx(0,0,150,100)
+		Loop
+	See:
+		HTSP ABCBBCCA 3 A_PlaySound("64Thing/sight",CHAN_WEAPON)
+	Death:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_VOICE)
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,3)
+		HTSP D 2 A_DualPainAttack("64Trite")
+		HTSP D 2 A_PainAttack("64Trite")
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",0,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",0,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",0,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",0,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_Die
+		HTSP D -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Fire:
+	Death.Plasma:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_VOICE)
+		TNT1 AAA 0 A_SpawnItemEx("BurningBarrelSmoke")
+		HTSP EEEEEEEEEE 4 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",0,0,random(0,360),2,random(70,110))
+		HTSP EEEEEEEEEE 4 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",0,0,random(0,360),2,random(70,110))
+		HTSP EEEEEEEEEE 4 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",0,0,random(0,360),2,random(70,110))
+		HTSP EEEEEEEEEE 4 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",0,0,random(0,360),2,random(70,110))
+		HTSP EEEEEEEEEE 4 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",0,0,random(0,360),2,random(70,110))
+		HTSP EEEEEEEEEE 4 Light("BIGREDTORCH") A_CustomMissile("RealFlameTrailsSmall",0,0,random(0,360),2,random(70,110))
+		HTSP E -1 A_Die
+	Death.BFG:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_VOICE)
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("BurningXDeath1",42,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("BloodmistBig",0,0,random(0,360),2,random(10,90))
+		TNT1 A 1 A_Die
+		Stop
+	Ice:
+		"####" "#" 0 A_StopSound(CHAN_VOICE)
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	}
+}
+
+actor 64TritePod_SOLID : 64TritePod
+{
++SOLID
+}

@@ -1,0 +1,201 @@
+Actor 64Thing 19130
+{
+//$category "Game/BD64_Monsters
+Scale 0.8
+Health 500
+Height 56
+Radius 20
+Mass 300
+Speed 10
+Obituary "%o was inverted by a Thing."
+SeeSound "64Thing/sight"
+PainSound "64Thing/pain"
+DeathSound "64Thing/death"
+ActiveSound "64Thing/active"
+Tag "Thing"
+PainChance 50
+PainChance "Bullet",26
+PainChance "SuperFists",128
+PainChance "SuperKick",128
+DamageFactor 0.50
+DamageFactor "Fire",1.5
+DamageFactor "Plasma",1.5
+DamageFactor "BFG",1.5
+DamageFactor "Unmaker",0.2
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+MeleeRange 80
+DropItem "SoulSpawner"
+BloodType "Brutal_Blood"
+MONSTER
+-COUNTKILL
++FLOORCLIP
++NOPAIN
++LOOKALLAROUND
++NOBLOODDECALS
++NEVERFAST
+	States
+	{
+	Spawn:
+		PLAY M 3 A_LookEx(0,0,150,100)
+		TNT1 A 0 A_UnSetSolid
+		Loop
+	Idle:
+		TNT1 A 0 A_ClearTarget
+		TNG2 CBA 1
+		TNT1 A 0 A_PlaySound("64Thing/sight",CHAN_BODY)
+		THNG ZYXWVUTTRQPON 3
+		TNT1 A 0 A_PlaySound("64Thing/sight",CHAN_BODY)
+		THNG MLKJIHGFEDCBA 3
+		TNT1 A 0 A_SpawnItemEx("64SmallBloodPool")
+		TNT1 A 0 A_ChangeFlag("NOPAIN",TRUE)
+		TNT1 A 0 A_UnSetSolid
+		Goto spawn
+	See:
+		THNG ABABAB 4
+		TNT1 A 0 A_SetSolid
+		TNT1 A 0 A_SpawnItemEx("GrowingBloodPool")
+		TNT1 A 0 A_PlaySound("64Thing/sight",CHAN_BODY)
+		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
+		THNG CDEFGHIJKLMN 2
+		TNT1 A 0 A_PlaySound("64Thing/sight",CHAN_BODY)
+		TNT1 AA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
+		THNG OPQRSTUVWXYZ 2
+		TNT1 AA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
+		TNG2 AB 3
+		TNT1 A 0 A_PlaySound("64ThingActive1",CHAN_WEAPON)
+		TNG2 ABABCDE 4
+		Goto See2
+	See2:
+		TNT1 A 0 A_ChangeFlag("NOPAIN",FALSE)
+		TNT1 A 0 A_JumpIfCloser(500,"SeeFast")
+		TNG2 FGHI 3 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 3 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 3 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 3 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 3 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Idle")
+		TNT1 A 0 A_JumpIfTargetInLOS("See2")
+		TNT1 A 0 A_Jump(128,"See2")//50%
+		Goto Idle
+	SeeFast:
+		TNT1 A 0 A_JumpIfCloser(175,"SeeFastest")
+		TNG2 FGHI 2 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 2 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 2 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 2 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 2 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 2 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Idle")
+		Goto See2
+	SeeFastest:
+		TNT1 A 0 A_Jump(205,7)//80%
+		TNT1 A 0 A_PlaySound("64ThingActive1",CHAN_WEAPON)
+		TNG2 ABCDE 3
+		TNG2 FGHI 1 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 1 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 1 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 1 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 1 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 1 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 1 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNG2 FGHI 1 A_Chase
+		TNT1 A 0 A_PlaySound("64Thing/Walk",CHAN_BODY)
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Idle")
+		Goto See2
+	Melee:
+		TNG2 JK 4 A_FaceTarget
+		TNT1 A 0 A_Recoil(-15)
+		TNG2 LM 4 A_FaceTarget
+		TNT1 A 0 A_CustomMeleeAttack(10*random(1,9),"64Thing/attack")
+		TNG2 NO 4 A_FaceTarget
+		Goto See2
+	Pain:
+		TNG2 P 4
+		TNG2 Q 4 A_Pain
+		Goto See2
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
+		POL5 A -1
+		Stop
+	Death:
+		TNG2 R 10 A_Scream
+		TNG2 S 10 A_NoBlocking
+		TNG2 TU 10
+		TNG2 V 35
+		TNG2 V -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.SSG:
+		TNT1 A 0 A_Recoil(6)
+		TNT1 A 0 A_JumpIfCloser(170,"XDeath")
+		Goto Death
+	Death.SuperFists:
+	Death.SuperKick:
+	Death.Cutless:
+		TNT1 A 0 A_Jump(96,"Death")
+	Death.Chainsaw:
+	Death.BFG:
+	XDeath:
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeathEyes",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathMarineLeg1",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		PLAY PQRSTU 4
+		PLAY V 35
+		PLAY V -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Plasma:
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Stop
+		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmall",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,360))
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",30,0,random(0,360),2,random(0,360))
+		TNT1 AA 0 A_CustomMissile("CarbonizedSmoke1",30,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn")
+		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)
+		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
+		CRB1 ABCDEFGH 3
+		CRB1 H -1
+		Stop
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	}
+}

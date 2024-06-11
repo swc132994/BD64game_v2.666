@@ -1,0 +1,433 @@
+Actor 64Wraith 19123
+{
+//$category "Game/BD64_Monsters
+Scale 0.8
+Health 300
+GibHealth 100
+Height 48
+Radius 19
+Mass 200
+Speed 14
+Fastspeed 16
+MeleeRange 64 //default 44
+MeleeThreshold 128
+PainChance 128
+PainChance "Bullet",26
+PainChance "SuperFists",255
+PainChance "Kick",255
+PainChance "SuperKick",255
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+Alpha 0.6
+RenderStyle Translucent
+Obituary "%o was slit open by a Wraith"
+SeeSound "D3Wraith/Sight"
+PainSound "D3Wraith/Pain"
+DeathSound "D3Wraith/Death"
+ActiveSound "D3Wraith/Active"
+Tag "Wraith"
+DropItem "DemonEssenceSpawner"
+BloodType "Brutal_Blood"
+MONSTER
++SHADOW
++FLOORCLIP
++NOBLOODDECALS
++NEVERFAST
+	States
+	{
+	Spawn:
+		3WRT AAAAAAAA 2 A_LookEx
+		TNT1 A 0 A_TakeInventory("WraithTeleportCooldown",1)	//Staying still lowers teleport cooldown
+		Loop
+	See:
+		TNT1 A 0 A_ChangeFlag("AMBUSH",TRUE)							//The Wraith will not attack when hearing the player...
+		TNT1 A 0 A_ChangeFlag("LOOKALLAROUND",TRUE)					//...but he stays alert and looks all around him
+		TNT1 A 0 A_JumpIfInventory("MonsterHaveSeenPlayer",1,3)		//Check if the Wraith has "woken"
+		//The following happens only the first time the Wraith hears the player and "wakes up"
+		TNT1 A 0 A_GiveInventory("MonsterHaveSeenPlayer",1)			//Give this token so that we know that the Wraith has "woken"
+		TNT1 A 0 A_CheckSight("Hide")								//If the Wraith can't see the player when "woken" he will stay where he are and wait for an ambush
+		//The following is chase code similar to teh nightmar spectre
+		TNT1 A 0 A_Jump(205,2)										//20% chance that the Wraith will hide if he can't see the player
+		TNT1 A 0 A_CheckSight("Hide")
+		TNT1 A 1 A_chase("","")
+		TNT1 A 0 A_SpawnItemEx("WraithSprite1",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_chase("","")
+		TNT1 A 0 A_SpawnItemEx("WraithSprite2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItemEx("WraithSprite3",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItemEx("WraithSprite4",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_chase("","")
+		TNT1 A 0 A_SpawnItemEx("WraithSprite1",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_chase("","")
+		TNT1 A 0 A_SpawnItemEx("WraithSprite2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_chase("","")
+		TNT1 A 0 A_SpawnItemEx("WraithSprite3",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_chase("","")
+		TNT1 A 0 A_SpawnItemEx("WraithSprite4",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 1 A_chase
+		TNT1 AAAA 3 A_chase
+		TNT1 A 0 A_JumpIfInventory("WraithTeleportCooldown",1,2)	//If cooldown is ready, the Wraith may try to teleport
+		TNT1 A 0 A_Jump(256,"Teleport")
+		TNT1 A 0 A_TakeInventory("WraithTeleportCooldown",1)		//Moving lowers teleport cooldown
+		Loop
+	Hide: //Staying still and waiting in ambush.
+		TNT1 A 0 A_ChangeFlag("AMBUSH",TRUE)
+		3WRT AAAAAAAA 2 A_LookEx
+		TNT1 A 0 A_TakeInventory("WraithTeleportCooldown",1)	//Staying still lowers teleport cooldown
+		Loop
+	Melee:
+		TNT1 A 0 A_JumpIfInventory("FireSeq",1,"Melee2")
+		3WRT AAA 2 A_FaceTarget
+		TNT1 A 0 A_Recoil(-1)
+		3WRT FF 3 A_FaceTarget
+		3WRT G 6 A_CustomMeleeAttack(5*random(1,8),"D3Wraith/Attack")
+		3WRT AA 2
+		TNT1 A 0 A_GiveInventory("FireSeq",1)
+		TNT1 A 0 A_TakeInventory("WraithTeleportCooldown",1)	//Attacking lowers teleport cooldown
+		Goto See
+	Melee2:
+		3WRT AAA 2 A_FaceTarget
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)
+		TNT1 A 0 A_Recoil(-1)
+		3WRT FF 3 A_FaceTarget
+		3WRT G 6 A_CustomMeleeAttack(5*random(1,8),"D3Wraith/Attack")
+		3WRT AA 2
+		TNT1 A 0 A_TakeInventory("FireSeq",1)
+		TNT1 A 0 A_TakeInventory("WraithTeleportCooldown",1)	//Attacking lowers teleport cooldown
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)
+		Goto See
+	Pain:
+		TNT1 A 0 A_TakeInventory("WraithTeleportCooldown",1)		//Attacking the Wraith reduces the phantoms teleport cooldown
+		TNT1 A 0 A_CheckSight("Retaliate")							//If taking damage but can't see the player, try to run away
+		TNT1 A 0 A_JumpIfInventory("WraithTeleportCooldown",1,2)	//If cooldown is ready, the Wraith may try to teleport
+		TNT1 A 0 A_Jump(256,"Teleport")
+		3WRT A 3 A_Jump(192,2)										//Since the Wraith has a high painchance, we make it more quiet
+		TNT1 A 0 A_Pain
+		3WRT A 3
+		Goto See
+	Retaliate:
+		TNT1 A 0 A_Pain
+		3WRT BBBCCCDDDEEE 1 A_Wander
+		Goto Hide
+	Teleport:
+		TNT1 A 0 A_JumpIfCloser(1024,2)			//Closer than 1024 units it will try to teleport closer
+		TNT1 A 0 A_Jump(256,"TeleportHideOut")	//Longer than 1024 units it will try to teleport into hiding
+		Goto See
+		TNT1 A 0 A_Jump(256,"TeleportAttackOut")
+		Goto See
+	TeleportAttackOut:
+		3WRT A 1 A_FaceTarget
+		TNT1 A 0 A_GiveInventory("WraithTeleportCooldown",10)
+		TNT1 A 0 A_ChangeFlag("Invulnerable",TRUE)
+		TNT1 A 0 A_UnSetShootable
+		TNT1 A 0 A_ChangeFlag("NoTeleport",TRUE)
+		TNT1 A 0 A_ChangeFlag("NoRadiusDMG",TRUE)
+		TNT1 A 0 A_PlaySound("3WRTLOUT",CHAN_AUTO)
+		TNT1 AAAA 0 A_CustomMissile("WraithSmoke",random(10,30),0,random(0,360),2,random(10,80))
+		3WRT AAAAAAAAAA 1 A_Fadeout(0.06)
+		3WRT AAAAAAAAAAAAA 0 A_Chase("","")
+		TNT1 A 0 A_JumpIfCloser(128,"TeleportAttackIn")
+		3WRT AAAAAAAAAAAAA 0 A_Chase("","")
+		TNT1 A 0 A_JumpIfCloser(128,"TeleportAttackIn")
+		3WRT AAAAAAAAAAAAA 0 A_Chase("","")
+		TNT1 A 0 A_JumpIfCloser(128,"TeleportAttackIn")
+		3WRT AAAAAAAAAAAAA 0 A_Chase("","")
+		TNT1 A 0 A_JumpIfCloser(128,"TeleportAttackIn")
+		3WRT AAAAAAAAAAAAA 0 A_Chase("","")
+		TNT1 A 0 A_JumpIfCloser(128,"TeleportAttackIn")
+		3WRT AAAAAAAAAAAAA 0 A_Chase("","")
+	TeleportAttackIn:
+		TNT1 A 0 A_Jump(256,1,2,3)
+		TNT1 AAAA 5	//random delay
+		TNT1 A 0 A_PlaySound("3WRTTLIN",CHAN_AUTO)
+		TNT1 AAAA 0 A_CustomMissile("WraithSmoke",random(10,30),0,random(0,360),2,random(10,80))
+		3WRT AAAAAAAAAA 1 A_Fadein(0.06)
+		TNT1 A 0 A_ChangeFlag("Invulnerable",FALSE)
+		TNT1 A 0 A_SetShootable
+		TNT1 A 0 A_ChangeFlag("NoTeleport",FALSE)
+		TNT1 A 0 A_ChangeFlag("NoRadiusDMG",FALSE)
+		3WRT A 6
+		TNT1 A 0 A_FaceTarget
+		Goto See
+	TeleportHideOut:
+		3WRT A 1 A_FaceTarget
+		TNT1 A 0 A_GiveInventory("WraithTeleportCooldown",10)
+		TNT1 A 0 A_ChangeFlag("Invulnerable",TRUE)
+		TNT1 A 0 A_UnSetShootable
+		TNT1 A 0 A_ChangeFlag("NoTeleport",TRUE)
+		TNT1 A 0 A_ChangeFlag("NoRadiusDMG",TRUE)
+		TNT1 A 0 A_PlaySound("3WRTLOUT",CHAN_AUTO)
+		TNT1 AAAA 0 A_CustomMissile("WraithSmoke",random(10,30),0,random(0,360),2,random(10,80))
+		3WRT AAAAAAAAAA 1 A_Fadeout(0.06)
+		3WRT AAAAAAAAAAAAA 0 A_Wander
+		TNT1 A 0 A_CheckSight("TeleportHideIn")
+		3WRT AAAAAAAAAAAAA 0 A_Wander
+		TNT1 A 0 A_CheckSight("TeleportHideIn")
+		3WRT AAAAAAAAAAAAA 0 A_Wander
+		TNT1 A 0 A_CheckSight("TeleportHideIn")
+		3WRT AAAAAAAAAAAAA 0 A_Wander
+		TNT1 A 0 A_CheckSight("TeleportHideIn")
+		3WRT AAAAAAAAAAAAA 0 A_Wander
+		TNT1 A 0 A_CheckSight("TeleportHideIn")
+		3WRT AAAAAAAAAAAAA 0 A_Wander
+	TeleportHideIn:
+		TNT1 A 0 A_Jump(256,1,2,3)
+		TNT1 AAAA 5	//random delay
+		TNT1 A 0 A_PlaySound("3WRTTLIN",CHAN_AUTO)
+		TNT1 AAAA 0 A_CustomMissile("WraithSmoke",random(10,30),0,random(0,360),2,random(10,80))
+		3WRT AAAAAAAAAA 1 A_Fadein(0.06)
+		TNT1 A 0 A_ChangeFlag("Invulnerable",FALSE)
+		TNT1 A 0 A_SetShootable
+		TNT1 A 0 A_ChangeFlag("NoTeleport",FALSE)
+		TNT1 A 0 A_ChangeFlag("NoRadiusDMG",FALSE)
+		3WRT A 6
+		TNT1 A 0 A_FaceTarget
+		Goto Hide
+	Raise:
+		3WRT LKJIH 5
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
+		Goto See
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
+		POL5 A -1
+		Stop
+	Death:
+		TNT1 A 0 A_Scream
+		TNT1 AA 0 A_CustomMissile("Brutal_Blood",25,0,random(0,360),2,random(0,180))
+		TNT1 AA 0 A_CustomMissile("BloodMistSmall",25,0,random(0,360),2,random(0,180))
+		3WRT HIJK 5 A_CustomMissile("Brutal_FlyingBlood",20,0,random(0,360),2,random(0,180))
+		TNT1 A 0 A_NoBlocking
+		3WRT L 35
+		3WRT L -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.SuperFists:
+	Death.SuperKick:
+		TNT1 A 0 A_Jump(103,"Death")//40%
+		TNT1 A 0 A_Jump(64,"XDeath")//25%
+	Death.BFG:
+	Death.Chainsaw:
+		PTXC A 3
+		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeathEyes",40,0,random(0,360),2,random(-5,5))
+		TNT1 AA 0 A_CustomMissile("WraithArm",45,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("WraithHead",60,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("WraithGib",30,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		PTXC BCDEFGHIJK 3
+		PTXC L 35
+		PTXC L -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Cutless:
+		TNT1 A 0 A_Jump(85,"Death")//33%
+		Goto XDeath
+	Death.Shotgun:
+		3WRT A 2 A_Recoil(6)
+		TNT1 A 0 A_JumpIfCloser(170,2)
+		TNT1 A 0 A_Jump(166,"Death")//65%
+		TNT1 AAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_XScream
+		Goto Death+1
+	Death.SSG:
+		3WRT A 2 A_Recoil(10)
+		TNT1 A 0 A_JumpIfCloser(170,"XDeath")
+		TNT1 A 0 A_JumpIfCloser(340,2)
+		TNT1 A 0 A_Jump(166,"Death")//65%
+		TNT1 AAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_XScream
+		Goto Death+1
+	XDeath:
+		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
+		TNT1 AA 0 A_CustomMissile("XDeath1",52,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",52,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3",52,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath5",52,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",50,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",50,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",52,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Bloodmist",55,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_SpawnItemEx("WraithGib",0,0,30)
+		PTXB I 2 A_SpawnItemEx("XDeathWraithLegs",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_XScream
+		PTXB JK 2
+		PTXB L 2 ThrustThingZ(0,35,0,0)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
+		PTXB L 2 A_CheckFloor("LANDAFTERXDEATH")
+		Wait
+	LandAfterXDeath:
+		PTXB MNOP 1 A_Stop
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
+		TNT1 A 0 A_BossDeath
+		PTXB P -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Plasma:
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Stop
+		TNT1 AAAA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmall",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,360))
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",30,0,random(0,360),2,random(0,360))
+		TNT1 AA 0 A_CustomMissile("CarbonizedSmoke1",30,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn")
+		TNT1 A 0 A_SpawnItemEx("BurningFleshEffect2",0,0,5)
+		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
+		CRB1 ABCDEFGH 3
+		CRB1 H -1
+		Stop
+	Ice:
+		3WRT "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	}
+}
+
+Actor WraithSprite1
+{
+Scale 0.8
+Alpha 0.08
+RenderStyle Translucent
++NOBLOCKMAP
++CLIENTSIDEONLY
++ISMONSTER
++FLOORCLIP
+	States
+	{
+	Spawn:
+		3WRT BBBB 1 A_FadeIn(0.09)
+		3WRT B 4
+		3WRT BBBBBB 1 A_FadeOut(0.09)
+		Stop
+	}
+}
+
+Actor WraithSprite2 : WraithSprite1
+{
+	States
+	{
+	Spawn:
+		3WRT CCCC 1 A_FadeIn(0.09)
+		3WRT C 4
+		3WRT CCCCC 1 A_FadeOut(0.09)
+		Stop
+	}
+}
+
+Actor WraithSprite3 : WraithSprite1
+{
+	States
+	{
+	Spawn:
+		3WRT DDDD 1 A_FadeIn(0.09)
+		3WRT D 4
+		3WRT DDDDDD 1 A_FadeOut(0.09)
+		Stop
+	}
+}
+
+Actor WraithSprite4 : WraithSprite1
+{
+	States
+	{
+	Spawn:
+		3WRT EEEE 1 A_FadeIn(0.09)
+		3WRT E 4
+		3WRT EEEEEE 1 A_FadeOut(0.09)
+		Stop
+	}
+}
+
+Actor XDeathWraithLegs
+{
+Scale 0.8
+Health 0
+Alpha 0.6
+RenderStyle Translucent
++CLIENTSIDEONLY
++THRUACTORS
++NOBLOCKMAP
++FLOORCLIP
++MOVEWITHSECTOR
++CORPSE
+	States
+	{
+	Spawn:
+		PTXB A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//Flip horizontal
+		PTXB ABCDEFG 4
+		PTXB H -1 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
+		Stop
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
+		POL5 A -1
+		Stop
+	}
+}
+
+ACTOR WraithSmoke
+{
+Scale 1.0
+Height 0
+Radius 0
+Mass 0
+Speed 1
+Alpha 0.3
+Renderstyle Add
++NOBLOCKMAP
++NOTELEPORT
++DONTSPLASH
++MISSILE
++FORCEXYBILLBOARD
++CLIENTSIDEONLY
++NOINTERACTION
++NOGRAVITY
++THRUACTORS
+BounceType "Doom"
+BounceFactor 0.5
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_SetScale(frandom(0.9,1.2))//Random scale
+		TNT1 A 0 A_Jump(128,2)
+		TNT1 A 0 A_SetScale(-1*scaleX,scaleY)//Random X-flip
+		TNT1 A 0 A_Jump(128,2)
+		TNT1 A 0 A_SetScale(scaleX,-1*scaleY)//Random Y-flip
+		Goto Death
+	Death:
+		SMK3 ABCDEFGHIJKLM 1
+		Stop
+	}
+}
+
+//Wraith Tokens
+Actor WraithTeleportCooldown : Inventory
+{Inventory.MaxAmount 15}
+
+Actor FireSeq : Inventory
+{Inventory.MaxAmount 1}
+
+Actor MonsterHaveSeenPlayer : Inventory
+{Inventory.MaxAmount 1}

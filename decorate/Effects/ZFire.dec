@@ -1,0 +1,1493 @@
+ACTOR FlameTrails
+{
+Game Doom
+Scale 0.5
+Radius 1
+Height 1
+Speed 3
+Damage 0
+Gravity 0
+Alpha 1
+RenderStyle Add
+DamageType "Flames"
++NOBLOCKMAP
++NOTELEPORT
++DONTSPLASH
++MISSILE
++FORCEXYBILLBOARD
++CLIENTSIDEONLY
++NOINTERACTION
++NOCLIP
+	States
+	{
+	Spawn:
+		TNT1 A 2
+		FRPR ABCDEFGH 3 Bright
+		Stop
+	}
+}
+
+ACTOR FlameTrails2 : FlameTrails
+{
+Scale 0.5
+Speed 1
+Alpha 1.0
+	States
+	{
+	Spawn:
+		TNT1 A 2
+		FX98 MNOPQ 1 Bright
+		Stop
+	}
+}
+
+ACTOR GreenFlameTrails : FlameTrails
+{
+	States
+	{
+	Spawn:
+		TNT1 A 2
+		FRPG CDEFGH 1 Bright
+		Stop
+	}
+}
+
+ACTOR BlueFlameTrails : FlameTrails
+{
+	States
+	{
+	Spawn:
+		TNT1 A 2
+		FRPB CDEFGH 1 Bright
+		Stop
+	}
+}
+
+ACTOR SmallFlameTrails : FlameTrails
+{
+Scale 0.3
+	States
+	{
+	Spawn:
+		TNT1 A 2
+		FRPR ABCDEFGH 3 Bright
+		Stop
+	}
+}
+
+ACTOR SmallGreenFlameTrails : GreenFlameTrails
+{
+Scale 0.3
+}
+
+ACTOR SmallBlueFlameTrails : BlueFlameTrails
+{
+Scale 0.3
+}
+
+ACTOR TinyFlameTrails : FlameTrails
+{
+Scale 0.1
+}
+
+ACTOR FireBallExplosion : FlameTrails
+{
+Scale 1.6
+	States
+	{
+	Spawn:
+		FX98 ABCDEFGHIJKL 1 Bright A_SpawnItemEx("YellowFlare")
+		FX98 MNOPQ 1
+		Stop
+	}
+}
+
+ACTOR ExplosionFlames : FlameTrails
+{
+Scale 2.2
+Speed 2
+	States
+	{
+	Spawn:
+		EXPL AA 3 Bright A_SpawnItemEx("RedFlare")
+		TNT1 AAA 0 A_CustomMissile("ExplosionSmoke",0,0,random(0,360),2,random(0,360))
+		EXPL FGHH 3 Bright
+		Stop
+	}
+}
+
+ACTOR ExplosionFlamesBig2 : ExplosionFlames
+{
+Scale 3.2
+Speed 4
+	States
+	{
+	Spawn:
+		EXPL AA 6 Bright A_SpawnItemEx("ExplosionFlareSpawner")
+		TNT1 AAA 0 A_CustomMissile("ExplosionSmoke",0,0,random(0,360),2,random(0,360))
+		EXPL FGHH 6 Bright
+		Stop
+	}
+}
+
+ACTOR ExplosionFlamesBig : ExplosionFlames
+{
+Scale 6.2
+Speed 4
+	States
+	{
+	Spawn:
+		EXPL AA 6 Bright A_SpawnItemEx("ExplosionFlareSpawner")
+		TNT1 AAA 0 A_CustomMissile("ExplosionSmoke",0,0,random(0,360),2,random(0,360))
+		EXPL FGHH 6 Bright
+		Stop
+	}
+}
+
+ACTOR ExplosionFlamesGiant : ExplosionFlames
+{
+Scale 9.2
+Speed 5
+	States
+	{
+	Spawn:
+		EXPL AA 8 Bright A_SpawnItemEx("ExplosionFlareSpawner")
+		TNT1 AAA 0 A_CustomMissile("ExplosionSmoke",0,0,random(0,360),2,random(0,360))
+		EXPL FGHH 10 Bright
+		Stop
+	}
+}
+
+ACTOR SmallExplosionFlames : ExplosionFlames
+{
+Scale 0.9
+Speed 3
+	States
+	{
+	Spawn:
+		EXPL AA 2 Bright A_SpawnItemEx("RedFlare")
+		EXPL BCDF 1 Bright
+		EXPL FGHH 1 Bright
+		Stop
+	}
+}
+
+ACTOR MediumExplosionFlames : ExplosionFlames
+{
+Scale 1.3
+Speed 4
+	States
+	{
+	Spawn:
+		EXPL AA 2 Bright A_SpawnItemEx("RedFlare")
+		TNT1 A 0 A_CustomMissile("ExplosionSmoke",0,0,random(0,360),2,random(0,360))
+		EXPL BCDE 1 Bright
+		EXPL FGHH 1 Bright
+		Stop
+	}
+}
+
+ACTOR GreenExplosionFlameTrail : ExplosionFlames
+{
+Scale 0.5
+	States
+	{
+	Spawn:
+		TNT1 A 2
+		EXPG CDEFG 1 Bright
+		Stop
+	}
+}
+
+ACTOR FastSmallFlameTrails
+{
+Game Doom
+Scale 0.3
+Radius 1
+Height 1
+Speed 3
+Damage 0
+Gravity 0
+Alpha 1
+RenderStyle Add
+DamageType "Flames"
++NOBLOCKMAP
++NOTELEPORT
++DONTSPLASH
++MISSILE
++FORCEXYBILLBOARD
++CLIENTSIDEONLY
++NOINTERACTION
+	States
+	{
+	Spawn:
+		TNT1 A 2
+		FRPR ABCDEFGH 1 Bright
+		Stop
+	}
+}
+
+ACTOR ImBallGettingReady : FastSmallFlameTrails
+{
+Scale 1.3
+Speed 0
+	States
+	{
+	Spawn:
+		FRFX AB 2 Bright
+		Stop
+	}
+}
+
+ACTOR ImBallGettingReadyWallTorch : ImBallGettingReady
+{
+Scale 0.75
+}
+
+ACTOR ImBallGettingReady2 : ImBallGettingReady
+{
+Scale 2.3
+Speed 0
+Alpha 1.0
+Renderstyle Add
+-FORCEXYBILLBOARD
+	States
+	{
+	Spawn:
+		FRFX AB 3 Bright
+		Stop
+	}
+}
+
+ACTOR BallGettingReadyBlue : ImBallGettingReady
+{
+Scale 1.6
+Speed 0
+Alpha 1.0
+Renderstyle Add
+-FORCEXYBILLBOARD
+	States
+	{
+	Spawn:
+		FRPB JK 3 Bright
+		Stop
+	}
+}
+
+ACTOR BallGettingReadyBlueWallTorch : BallGettingReadyBlue
+{
+Scale 0.75
+}
+
+ACTOR BallGettingReadyGreen : ImBallGettingReady
+{
+Scale 1.6
+Speed 0
+Alpha 1.0
+Renderstyle Add
+-FORCEXYBILLBOARD
+	States
+	{
+	Spawn:
+		FRPG JK 3 Bright
+		Stop
+	}
+}
+
+ACTOR BallGettingReadyGreenWallTorch : BallGettingReadyGreen
+{
+Scale 0.75
+}
+
+ACTOR BallGettingReadyYellow : ImBallGettingReady
+{
+Scale 1.6
+Speed 0
+Alpha 1.0
+Renderstyle Add
+-FORCEXYBILLBOARD
+	States
+	{
+	Spawn:
+		FRPY AB 3 Bright
+		Stop
+	}
+}
+
+ACTOR BallGettingReadyYellowWallTorch : BallGettingReadyYellow
+{
+Scale 0.75
+}
+
+ACTOR ImBallGettingReady3 : ImBallGettingReady
+{
+Scale 1.6
+Speed 0
+Alpha 1.0
+Renderstyle Add
+-FORCEXYBILLBOARD
+	States
+	{
+	Spawn:
+		FRFX AB 3 Bright
+		Stop
+	}
+}
+
+ACTOR RealFlameTrailsSmall
+{
+Game Doom
+Scale 0.8
+Radius 1
+Height 1
+Speed 4
+Damage 0
+Gravity 0
+Alpha 1.0
+RenderStyle Add
+DamageType "Flames"
++NOBLOCKMAP
++NOTELEPORT
++DONTSPLASH
++MISSILE
++FORCEYBILLBOARD
++CLIENTSIDEONLY
++NOINTERACTION
++NOCLIP
+	States
+	{
+	Spawn:
+		FIR1 AABBCCDEFGHII 1 Bright
+		Stop
+	}
+}
+
+ACTOR YellowFlameTrailsSmall : RealFlameTrailsSmall
+{
+Translation "0:255=%[0,0,0]:[1,1,0]"	//Yellow
+}
+
+Actor RealFlameTrailsWallTorch : RealFlameTrailsSmall
+{
+xScale 0.4
+yscale 0.6
+Speed 2.5
+	States
+	{
+	Spawn:
+		FIR1 ABCDEFGHI 1 Bright
+		Stop
+	}
+}
+
+ACTOR RealFlameTrailsSmallLong : RealFlameTrailsSmall
+{
+Scale 1.1
+	States
+	{
+	Spawn:
+		FIR1 ABC 2 Bright
+		FIR2 ABCDEF 2 Bright
+		Stop
+	}
+}
+
+ACTOR RealFlameTrailsMedium : RealFlameTrailsSmall
+{
+Scale 1.9
+Speed 2
+	States
+	{
+	Spawn:
+		FIR1 AABBCCDEFGHII 2 Bright
+		Stop
+	}
+}
+
+ACTOR RealFlameTrailsGreen : RealFlameTrailsSmall
+{
+	States
+	{
+	Spawn:
+		FIRG AABBCCDEFGHII 1 Bright
+		Stop
+	}
+}
+
+ACTOR RealFlameTrailsGreenWallTorch : RealFlameTrailsGreen
+{
+xScale 0.4
+yscale 0.6
+Speed 2.5
+	States
+	{
+	Spawn:
+		FIRG ABCDEFGHI 1 Bright
+		Stop
+	}
+}
+
+ACTOR RealFlameTrailsBlue : RealFlameTrailsSmall
+{
+	States
+	{
+	Spawn:
+		FIRB AABBCCDEFGHII 1 Bright
+		Stop
+	}
+}
+
+ACTOR RealFlameTrailsBlueWallTorch : RealFlameTrailsBlue
+{
+xScale 0.4
+yscale 0.6
+Speed 2.5
+	States
+	{
+	Spawn:
+		FIRB ABCDEFGHI 1 Bright
+		Stop
+	}
+}
+
+ACTOR RealFlameTrailsYellow : RealFlameTrailsSmall
+{
+	States
+	{
+	Spawn:
+		FIRY AABBCCDEFGHII 1 Bright
+		Stop
+	}
+}
+
+ACTOR RealFlameTrailsYellowWallTorch : RealFlameTrailsYellow
+{
+xScale 0.4
+yscale 0.6
+Speed 2.5
+	States
+	{
+	Spawn:
+		FIRY ABCDEFGHI 1 Bright
+		Stop
+	}
+}
+
+ACTOR CoolandNewFlameTrails3 : FlameTrails
+{
+Scale 0.6
+Speed 1
+	States
+	{
+	Spawn:
+		TNT1 A 2
+		FIR2 ABCDEF 1 Bright
+		Stop
+	}
+}
+
+ACTOR CoolandNewFlameTrails2 : FlameTrails
+{
+Scale 0.8
+	States
+	{
+	Spawn:
+		FIR1 ABC 2 Bright
+		FIR2 ABCDEF 2 Bright
+		Stop
+	}
+}
+
+ACTOR CoolandNewFlameTrails : FlameTrails
+{
+Scale 0.3
+Speed 1
+	States
+	{
+	Spawn:
+		TNT1 A 2
+		FIR3 JMP 1 Bright
+		Stop
+	}
+}
+
+ACTOR CoolandNewFlameTrailsLong : FlameTrails
+{
+Scale 0.6
+Speed 1
+	States
+	{
+	Spawn:
+		FIR3 BCDEFGHIJKLMNOP 1 Bright
+		Stop
+	}
+}
+
+ACTOR CoolandNewFlameTrailsLongAlpha : CoolandNewFlameTrailsLong
+{
+Alpha 0.5
+}
+
+ACTOR FireballExplosionFlames : FlameTrails
+{
+Scale 0.8
+Speed 1
+	States
+	{
+	Spawn:
+		FIR3 CDEFGHIJKLMNOP 1 Bright
+		Stop
+	}
+}
+
+ACTOR FireballExplosionFlamesSmall : FlameTrails
+{
+Scale 0.5
+Speed 1
+	States
+	{
+	Spawn:
+		FIR3 KLMNOP 1 Bright
+		Stop
+	}
+}
+
+ACTOR FireballExplosionFlamesBig : FlameTrails
+{
+Scale 1.6
+Speed 2
+	States
+	{
+	Spawn:
+		FIR3 CDEFGHIJKLMNOP 2 Bright
+		TNT1 A 1 A_CustomMissile("ExplosionSmoke",15,0,random(0,360),2,random(50,130))
+		Stop
+	}
+}
+
+ACTOR FireballExplosionFlamesMedium3 : FlameTrails
+{
+Scale 1.0
+Speed 2
+	States
+	{
+	Spawn:
+		FIR3 CDEFGHIJKLMNOP 2 Bright
+		Stop
+	}
+}
+
+ACTOR FireballExplosionFlamesBigDamaging : FlameTrails
+{
+Scale 1.6
+Speed 6
+Height 2
+Radius 2
+Gravity 0.1
+Damagetype "Fire"
+MaxStepHeight 64
+-NOGRAVITY
+-NOCLIP
+-NOBLOCKMAP
+-NOINTERACTION
+-CLIENTSIDEONLY
++MISSILE
+	States
+	{
+	Spawn:
+		FIR3 CD 2 Bright A_Explode(2,40)
+		TNT1 A 0 A_CustomMissile("ExplosionSmoke",15,0,random(0,360),2,random(50,130))
+		FIR3 EF 2 Bright A_Explode(2,40)
+		FIR3 GH 2 Bright A_Explode(2,40)
+		FIR3 IJ 2 Bright A_Explode(2,40)
+		FIR3 KL 2 Bright A_Explode(2,40)
+		FIR3 MNOP 2 Bright A_Explode(8,50)
+		TNT1 A 1 A_CustomMissile("ExplosionSmoke",15,0,random(0,360),2,random(50,130))
+		Stop
+	Death:
+		TNT1 AA 0 A_CustomMissile("ExplosionSmoke",15,0,random(0,360),2,random(50,130))
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAA 3 A_CustomMissile("BurnParticlesNoDamage",0,0,random(0,360),2,random(70,110))
+		TNT1 AA 0 A_CustomMissile("ExplosionSmoke",15,0,random(0,360),2,random(50,130))
+		TNT1 A 1
+		Stop
+	}
+}
+
+ACTOR FireballExplosionFlamesDamaging2 : FlameTrails
+{
+Scale 1.6
+Speed 6
+Radius 2
+Height 2
+Gravity 0.1
+Damagetype "Fire"
+MaxStepHeight 64
+-NOGRAVITY
+-NOCLIP
+-NOBLOCKMAP
+-NOINTERACTION
+-CLIENTSIDEONLY
++MISSILE
+	States
+	{
+	Spawn:
+		FIR3 CD 2 Bright A_Explode(5,80)
+		FIR3 EF 2 Bright A_Explode(5,80)
+		FIR3 GH 2 Bright A_Explode(5,80)
+		FIR3 IJ 2 Bright A_Explode(5,80)
+		FIR3 KL 2 Bright A_Explode(5,80)
+		FIR3 MNOP 2 Bright A_Explode(2,70)
+		TNT1 A 1 A_CustomMissile("ExplosionSmoke",15,0,random(0,360),2,random(50,130))
+		Stop
+	Death:
+		TNT1 AA 0 A_CustomMissile("ExplosionSmoke",15,0,random(0,360),2,random(50,130))
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAA 3 A_CustomMissile("BurnParticlesNoDamage",0,0,random(0,360),2,random(70,110))
+		TNT1 AA 0 A_CustomMissile("ExplosionSmoke",15,0,random(0,360),2,random(50,130))
+		TNT1 A 1
+		Stop
+	}
+}
+
+ACTOR FireballExplosionFlamesMedium : FlameTrails
+{
+Scale 1.1
+Speed 4
+	States
+	{
+	Spawn:
+		FIR3 ABCDEFGHIJKLMNOP 1 Bright
+		Stop
+	}
+}
+
+ACTOR RevenantProjectileTrails : FlameTrails
+{
+Scale 0.3
+	States
+	{
+	Spawn:
+		TNT1 A 2
+		FRPR BCDEFGH 1 Bright
+		Stop
+	}
+}
+
+ACTOR MinimalFlameTrails
+{
+Game Doom
+Scale 0.4
+Radius 1
+Height 1
+Speed 4
+Damage 0
+Gravity 0
+Alpha 1.0
+RenderStyle Add
+DamageType "Flames"
++NOBLOCKMAP
++NOTELEPORT
++DONTSPLASH
++MISSILE
++CLIENTSIDEONLY
++NOINTERACTION
++NOCLIP
++FORCEXYBILLBOARD
+	States
+	{
+	Spawn:
+		FIR1 FGGHHII 1 Bright
+		Stop
+	}
+}
+
+ACTOR 12SmallFireFocusSpawnerz : BarrelExplosionSmokeColumn
+{
+States
+{
+	Spawn:
+		TNT1 A 1
+		TNT1 A 0 A_Jump(128,3)
+		TNT1 A 0 A_SpawnItemEx("ExplosionSimpleSmokeColumn")
+		TNT1 A 0 A_SpawnItemEx("SmallFireFocus24")
+		TNT1 A 1
+		Stop
+	}
+}
+
+ACTOR 100SmallFireFocusSpawnerz : BarrelExplosionSmokeColumn
+{
+	States
+	{
+	Spawn:
+		TNT1 A 1
+		TNT1 A 0 A_SpawnItemEx("ExplosionSimpleSmokeColumn")
+		TNT1 A 0 A_SpawnItemEx("SmallFireFocus24")
+		TNT1 A 1
+		Stop
+	}
+}
+
+ACTOR SmallFireFocus24 : BarrelExplosionSmokeColumn
+{
+Scale 0.6
+Alpha 0.9
+RenderStyle Translucent
+	States
+	{
+	Spawn:
+		FLME A 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME BCD 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME E 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME FGH 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME I 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME JKL 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME M 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME N 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME A 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME BCD 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME E 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME FGH 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME I 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME JKL 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME M 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME N 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME A 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME BCD 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME E 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME FGH 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME I 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME JKL 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME M 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME N 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME A 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME BCD 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME E 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME FGH 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME I 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME JKL 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME M 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME N 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME A 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME BCD 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME E 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME FGH 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME I 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME JKL 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME M 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME N 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME A 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME BCD 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME E 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME FGH 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME I 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME JKL 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME M 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME N 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME A 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME BCD 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME E 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME FGH 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME I 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME JKL 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME M 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME N 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME A 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME BCD 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME E 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME FGH 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME I 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME JKL 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME M 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME N 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME A 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME BCD 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME E 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME FGH 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME I 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME JKL 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME M 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME N 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME A 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME BCD 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME E 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME FGH 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME I 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME JKL 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME M 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME N 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME A 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME BCD 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME E 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME FGH 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME I 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME JKL 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME M 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME N 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME A 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME BCD 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME E 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME FGH 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME I 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME JKL 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME M 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME N 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME A 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME BCD 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME E 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME FGH 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME I 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME JKL 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME M 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME N 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME A 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME BCD 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME E 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(70,110))
+		FLME FGH 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME I 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME JKL 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		FLME M 1 Bright A_CustomMissile("MinimalFlameTrails",24,0,random(0,360),2,random(60,130))
+		FLME N 1 Bright A_SpawnItemEx("RedFlareSmall",0,0,15)
+		TNT1 AAAAA 3 Bright A_CustomMissile("MinimalFlameTrails",2,0,random(0,360),2,random(60,130))
+		TNT1 AAA 8 Bright A_CustomMissile("MinimalFlameTrails",2,0,random(0,360),2,random(60,130))
+		Stop
+	}
+}
+
+ACTOR FlyingBurningFuel
+{
+Scale 0.8
+Radius 8
+Height 8
+Speed 11
+Mass 1
+Damage 3
+damagetype "Fire"
++NOBLOCKMAP
++MISSILE
++NOTELEPORT
++MOVEWITHSECTOR
++RIPPER
++BLOODLESSIMPACT
++DONTSPLASH
++THRUGHOST
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Underwater")
+		TNT1 A 2 A_CustomMissile("FlameTrails",0,0,random(0,360),2,random(0,180))
+		Loop
+	Death:
+		TNT1 AAAAAA 0 A_CustomMissile("FlameTrails",0,0,random(0,360),2,random(0,180))
+		TNT1 A 0 A_SpawnItemEx("ExplosionSimpleSmokeColumn")
+		TNT1 A 0 A_Playsound("props/redfire",CHAN_BODY)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterNoSplashes")
+		TNT1 A 0 A_CustomMissile("ExplosionSmoke",80,0,random(0,180),2,random(0,180))
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(16,80,0)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_CustomMissile("ExplosionSmoke",80,0,random(0,180),2,random(0,180))
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(16,80,0)
+		TNT1 A 0 A_Playsound("props/redfire",CHAN_BODY)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_CustomMissile("ExplosionSmoke",80,0,random(0,180),2,random(0,180))
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(16,80,0)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_CustomMissile("ExplosionSmoke",80,0,random(0,180),2,random(0,180))
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(16,80,0)
+		TNT1 A 0 A_Playsound("props/redfire",CHAN_BODY)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_CustomMissile("ExplosionSmoke",80,0,random(0,180),2,random(0,180))
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(16,80,0)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_CustomMissile("ExplosionSmoke",80,0,random(0,180),2,random(0,180))
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(16,80,0)
+		TNT1 A 0 A_Playsound("props/redfire",CHAN_BODY)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_CustomMissile("ExplosionSmoke",80,0,random(0,180),2,random(0,180))
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(16,80,0)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_CustomMissile("ExplosionSmoke",80,0,random(0,180),2,random(0,180))
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(16,80,0)
+		TNT1 AAAAAA 3 Bright A_CustomMissile("RealFlameTrailsSmall",2,0,random(0,360),2,random(60,130))
+		TNT1 AAAAA 3 Bright A_CustomMissile("MinimalFlameTrails",2,0,random(0,360),2,random(60,130))
+		TNT1 AAA 8 Bright A_CustomMissile("MinimalFlameTrails",2,0,random(0,360),2,random(60,130))
+		Stop
+	Underwater:
+	Splash:
+		TNT1 A 1
+		Stop
+	}
+}
+
+Actor FlyingBurningFuel2 : FlyingBurningFuel
+{
+speed 8
+}
+
+Actor FlyingBurningFuel3 : FlyingBurningFuel
+{
+speed 15
+}
+
+ACTOR FlyingBurningFuelSmall
+{
+Scale 0.6
+Radius 8
+Height 8
+Speed 11
+Mass 1
+Damage 3
+damagetype "Fire"
+Decal "BigScorch"
+BounceType "None"
+BounceFactor 0.1
++DONTSPLASH
++NOBLOCKMAP
++MISSILE
++NOTELEPORT
++MOVEWITHSECTOR
++RIPPER
++BLOODLESSIMPACT
++THRUGHOST
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Underwater")
+		TNT1 A 2 A_CustomMissile("FlameTrails",0,0,random(0,360),2,random(0,180))
+		Loop
+	Death:
+		TNT1 AAAAAA 0 A_CustomMissile("FlameTrails",0,0,random(0,360),2,random(0,180))
+		TNT1 A 0 A_SpawnItemEx("ExplosionSimpleSmokeColumn")
+		TNT1 A 0 A_Playsound("props/redfire",CHAN_BODY)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterNoSplashes")
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(12,50,0)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(12,50,0)
+		TNT1 A 0 A_Playsound("props/redfire",CHAN_BODY)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(12,50,0)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(12,50,0)
+		TNT1 A 0 A_Playsound("props/redfire",CHAN_BODY)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(12,50,0)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(12,50,0)
+		TNT1 A 0 A_Playsound("props/redfire",CHAN_BODY)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(12,50,0)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(12,50,0)
+		TNT1 AAAAAA 3 Bright A_CustomMissile("RealFlameTrailsSmall",2,0,random(0,360),2,random(60,130))
+		TNT1 AAAAA 3 Bright A_CustomMissile("MinimalFlameTrails",2,0,random(0,360),2,random(60,130))
+		TNT1 AAA 8 Bright A_CustomMissile("MinimalFlameTrails",2,0,random(0,360),2,random(60,130))
+		Stop
+	Underwater:
+	Splash:
+		TNT1 A 1
+		Stop
+	}
+}
+
+ACTOR FlyingBurningFuelTiny
+{
+Scale 0.6
+Radius 8
+Height 8
+Speed 11
+Mass 1
+Damage 0
+damagetype "Fire"
++DONTSPLASH
++NOBLOCKMAP
++MISSILE
++NOTELEPORT
++MOVEWITHSECTOR
++RIPPER
++BLOODLESSIMPACT
++THRUGHOST
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Underwater")
+		TNT1 A 2 A_CustomMissile("FlameTrails",0,0,random(0,360),2,random(0,180))
+		Loop
+	Death:
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmall")
+		TNT1 AAAAAA 0 A_CustomMissile("FlameTrails",0,0,random(0,360),2,random(0,180))
+		TNT1 A 0 A_SpawnItemEx("ExplosionSimpleSmokeColumn")
+		TNT1 A 0 A_Playsound("props/redfire",CHAN_BODY)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(5,40,0)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(5,40,0)
+		TNT1 A 0 A_Playsound("props/redfire",CHAN_BODY)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(5,40,0)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(5,40,0)
+		TNT1 A 0 A_Playsound("props/redfire",CHAN_BODY)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(5,40,0)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(5,40,0)
+		TNT1 A 0 A_Playsound("props/redfire",CHAN_BODY)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(5,40,0)
+		F1RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		F2RE ABCDEFGH 1 Bright A_SpawnItemEx("RedFlareMedium",0,0,32)
+		TNT1 A 0 A_Explode(5,40,0)
+		TNT1 AAAAAA 3 Bright A_CustomMissile("RealFlameTrailsSmall",2,0,random(0,360),2,random(60,130))
+		TNT1 AAAAA 3 Bright A_CustomMissile("MinimalFlameTrails",2,0,random(0,360),2,random(60,130))
+		TNT1 AAA 8 Bright A_CustomMissile("MinimalFlameTrails",2,0,random(0,360),2,random(60,130))
+		Stop
+	Underwater:
+	Splash:
+		TNT1 A 1
+		Stop
+	}
+}
+
+ACTOR FlamethrowerFireParticles
+{
+Game Doom
+Scale 1.5
+Radius 1
+Height 1
+Speed 2
+Damage 0
+Gravity 0
+Alpha 1.0
+Renderstyle Add
+DamageType "Flames"
++NOBLOCKMAP
++NOTELEPORT
++DONTSPLASH
++MISSILE
++CLIENTSIDEONLY
++NOINTERACTION
++NOCLIP
++FORCEXYBILLBOARD
+	States
+	{
+	Spawn:
+		FIR3 ABCD 2 NoDelay Bright A_SpawnItemEx("RedFlare",0,0,10)
+		TNT1 A 0 A_CustomMissile("BigBlackSmoke",40,0,random(0,360),2,random(40,160))
+		FIR3 EFGHIJKLMNOP 2 Bright A_SpawnItemEx("RedFlare",0,0,10)
+		Stop
+	}
+}
+
+Actor FlamethrowerFireParticlesBlue : FlamethrowerFireParticles
+{
+Translation "0:255=%[0,0,0]:[0,0,1]"
+	States
+	{
+	Spawn:
+		FIR3 ABCD 2 NoDelay Bright A_SpawnItemEx("BlueFlare",0,0,10)
+		TNT1 A 0 A_CustomMissile("BigBlackSmoke",40,0,random(0,360),2,random(40,160))
+		FIR3 EFGHIJKLMNOP 2 Bright A_SpawnItemEx("BlueFlare",0,0,10)
+		Stop
+	}
+}
+
+ACTOR BurningGroundHighDamage
+{
+Game Doom
+Scale 1.0
+Radius 1
+Height 1
+Speed 2
+Damage 0
+Gravity 0.3
+Alpha 1.0
+RenderStyle Translucent
+DamageType "Fire"
++NOBLOCKMAP
++NOTELEPORT
++DONTSPLASH
++CLIENTSIDEONLY
++NOINTERACTION
++NOCLIP
++FORCEXYBILLBOARD
+ReactionTime 24
+	States
+	{
+	Spawn:
+		TNT1 A 0 Nodelay A_Countdown
+		TNT1 A 0 A_CustomMissile("MediumBlackSmoke",40,0,random(0,360),2,random(60,130))
+		TNT1 AAA 4 A_CustomMissile("SmallFireTrail",2,0,random(0,360),2,random(0,90))	//12 TICS
+		TNT1 A 0 A_Explode(15,90)
+		Loop
+	Death:
+		TNT1 A 0 A_CustomMissile("MediumBlackSmoke",40,0,random(0,360),2,random(60,130))
+		TNT1 AAA 6 A_CustomMissile("SmallFireTrail",2,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_Explode(10,90)
+		TNT1 A 0 A_CustomMissile("MediumBlackSmoke",40,0,random(0,360),2,random(60,130))
+		TNT1 AAA 8 A_CustomMissile("SmallFireTrail",2,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_Explode(5,90)
+		TNT1 BBBBBBBBB 16 A_CustomMissile("MediumBlackSmoke",20,0,random(0,360),2,random(60,130))
+		Stop
+	}
+}
+
+ACTOR BurningGroundLowDamage
+{
+Game Doom
+Scale 1.0
+Radius 1
+Height 1
+Speed 2
+Damage 0
+Alpha 1.0
+Gravity 0.3
+RenderStyle Translucent
+DamageType "Fire"
++NOBLOCKMAP
++NOTELEPORT
++DONTSPLASH
++CLIENTSIDEONLY
++NOINTERACTION
++NOCLIP
++FORCEXYBILLBOARD
+-NOGRAVITY
+ReactionTime 48
+	States
+	{
+	Spawn:
+		TNT1 A 0 Nodelay A_Countdown
+		TNT1 A 0 A_CustomMissile("MediumBlackSmoke",40,0,random(0,360),2,random(60,130))
+		TNT1 AAAAAA 4 A_CustomMissile("SmallFireTrail",2,0,random(0,360),2,random(0,90))		//24 TICS
+		TNT1 A 0 A_Explode(3,90)
+		Loop
+	Death:
+		TNT1 A 0 A_CustomMissile("MediumBlackSmoke",40,0,random(0,360),2,random(60,130))
+		TNT1 AAA 6 A_CustomMissile("SmallFireTrail",2,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_Explode(10,90)
+		TNT1 A 0 A_CustomMissile("MediumBlackSmoke",40,0,random(0,360),2,random(60,130))
+		TNT1 AAA 8 A_CustomMissile("SmallFireTrail",2,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_Explode(5,90)
+		TNT1 BBBBBBBBB 16 A_CustomMissile("MediumBlackSmoke",20,0,random(0,360),2,random(60,130))
+		Stop
+	}
+}
+
+ACTOR SmallFireTrail : FlameTrails
+{
+Scale 0.7
+Speed 2
+Radius 1
+Height 1
+Alpha 0.7
+Renderstyle Add
+	States
+	{
+	Spawn:
+		TNT1 A 5
+		TNT1 A 0 A_SpawnItemEx("RedFlare")
+		FIR3 CDEFGHIJKLMNOP 2 Bright
+		Stop
+	}
+}
+
+ACTOR SmallFireTrail324 : SmallFireTrail
+{
+Speed 3
+Alpha 0.9
+	States
+	{
+	Spawn:
+		FIR3 CDEFGHIJKLMNOP 1 Bright A_SpawnItemEx("RedFlareSmall")
+		Stop
+	}
+}
+
+ACTOR FlamethrowerMissile
+{
+Game Doom
+Scale 0.5
+Gravity 0
+Radius 2
+Height 2
+Speed 25
+Damage 0
+Alpha 1.0
+RenderStyle Add
+DamageType "Fire"
+-RIPPER
+-BLOODSPLATTER
++NOBLOCKMAP
++NOTELEPORT
++DONTSPLASH
++MISSILE
++FORCEXYBILLBOARD
++NOBLOOD
++NOBLOODDECALS
++BLOODLESSIMPACT
+	States
+	{
+	Spawn:
+		FIR3 A 1 NoDelay Bright A_SpawnItemEx("RedFlareSmall")
+		TNT1 A 0 A_CustomMissile("SmallFireTrail",6,0,0,2,random(0,10))
+		FIR3 B 1 Bright A_SpawnItemEx("RedFlareSmall")
+		TNT1 A 0 A_CustomMissile("SmallFireTrail",6,0,0,2,random(0,20))
+		TNT1 A 0 A_CustomMissile("SmallFireTrail",6,0,0,2,random(0,30))
+		FIR3 D 1 Bright A_SpawnItemEx("RedFlareSmall")
+		TNT1 A 0 A_CustomMissile("SmallFireTrail",6,0,0,2,random(0,40))
+		FIR3 E 1 Bright A_SpawnItemEx("RedFlareSmall")
+		TNT1 A 0 A_CustomMissile("SmallFireTrail",6,0,0,2,random(0,50))
+		FIR3 F 1 Bright A_SpawnItemEx("RedFlareSmall")
+		TNT1 A 0 A_CustomMissile("SmallFireTrail",6,0,0,2,random(-10,60))
+		FIR3 G 1 Bright A_SpawnItemEx("RedFlareSmall")
+		TNT1 A 0 A_CustomMissile("SmallFireTrail",6,0,0,2,random(-50,70))
+		FIR3 H 1 Bright A_SpawnItemEx("RedFlareSmall")
+		TNT1 A 0 A_CustomMissile("SmallFireTrail",6,0,0,2,random(-60,80))
+		FIR3 I 1 Bright A_SpawnItemEx("RedFlareSmall")
+		TNT1 A 0 A_CustomMissile("FlamethrowerFireParticles",6,0,0,2,random(10,20))
+		FIR3 JKL 1 Bright A_SpawnItemEx("RedFlare")
+		TNT1 A 1 A_CustomMissile("FlamethrowerFireParticles",6,0,random(0,360),2,random(10,90))
+		Stop
+	Death:
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece2",random(-25,25),random(-15,15))
+		TNT1 A 0 A_SpawnItemEx("TinyBurningPiece",random(-15,15),random(-15,15))
+		TNT1 AA 0 A_CustomMissile("FlamethrowerFireParticles",6,0,random(0,360),2,random(10,90))
+		TNT1 A 1
+		Stop
+	}
+}
+
+ACTOR TinyBurningPiece : BarrelExplosionSmokeColumn
+{
+Scale 1.1
+Alpha 0.9
+RenderStyle Add
+DamageType "Plasma"
+-CLIENTSIDEONLY
+	States
+	{
+	Spawn:
+		CFCF ABC 1 Bright
+		CFCF D 1 A_Explode(3,60)
+		CFCF EFG 1 Bright
+		CFCF H 1
+		CFCF IJK 1 Bright
+		CFCF L 1
+		TNT1 A 0 A_Jump(24,"StopBurning")
+		Loop
+	StopBurning:
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon")
+		CFCF NOP 1 Bright
+		Stop
+	}
+}
+
+ACTOR TinyBurningPiece2 : TinyBurningPiece
+{
+Scale 0.7
++CLIENTSIDEONLY
+	States
+	{
+	Spawn:
+		CFCF ABC 1 Bright
+		CFCF D 1 A_Explode(2,30)
+		CFCF EFG 1 Bright
+		CFCF H 1
+		CFCF IJK 1 Bright
+		CFCF L 1
+		TNT1 A 0 A_Jump(24,"StopBurning")
+		Loop
+	}
+}
+
+Actor TinyBurningPieceBlue : TinyBurningPiece
+{
+Translation "0:255=%[0,0,0]:[0,0,1]"
+}
+
+Actor TinyBurningPieceBlue2 : TinyBurningPiece2
+{
+Translation "0:255=%[0,0,0]:[0,0,1]"
+}
+
+ACTOR 64ExplosionFireBase : FlameTrails
+{
+Scale 0.75
+Speed 3
+Alpha 0.7
+Renderstyle Add
+	States
+	{
+	Spawn:
+		MISL BCDEF 2 Bright
+		Stop
+	}
+}
+
+ACTOR ExplosionAirDisplacementEffect: FlameTrails
+{
+Scale 0.9
+Speed 0
+Alpha 0.4
+Renderstyle Add
+	States
+	{
+	Spawn:
+		SHWK ACEGIKMOQR 1 A_FadeOut(0.03)
+		Stop
+	}
+}
+
+ACTOR LongFlameParticle1
+{
+Game Doom
+Scale 0.6
+Radius 1
+Height 1
+Speed 4
+Damage 0
+Gravity 0
+Alpha 0.9
+Renderstyle Add
+DamageType "Flames"
++NOBLOCKMAP
++NOTELEPORT
++DONTSPLASH
++MISSILE
++CLIENTSIDEONLY
++NOINTERACTION
++NOCLIP
++FORCEXYBILLBOARD
+	States
+	{
+	Spawn:
+		FIR3 IJKLMNOP 1 Bright
+		Stop
+	}
+}
+
+ACTOR LongFlameParticle2 : LongFlameParticle1
+{
+Scale -0.6
+}
+
+ACTOR LongFlameParticleSpark : LongFlameParticle1
+{
+Scale 0.1
+Speed 2
+	States
+	{
+	Spawn:
+		SPRK S 8 Bright
+		SPRK S 1 Bright A_FadeOut(0.02)
+		Wait
+	}
+}
+
+ACTOR SmallFireballFireTrail : FlameTrails
+{
+Scale 1.0
+	States
+	{
+	Spawn:
+		BAL2 EFGHIJKL 2 Bright
+		Stop
+	}
+}
+
+ACTOR SmallFireballFireTrailGreen : FlameTrails
+{
+Scale 1.0
+	States
+	{
+		Spawn:
+		BAL7 CDEFGH 2 Bright
+		Stop
+	}
+}
+
+ACTOR BurningFleshEffect2
+{
+Scale 0.8
+Radius 0
+Height 0
+Speed 0
+Mass 1
+gravity 0.5
+decal "BrutalBloodSplat"
+seesound "bloood"
+deathsound "bloood"
++MOVEWITHSECTOR
++CLIENTSIDEONLY
++NOBLOCKMAP
++NOTELEPORT
++FORCEXYBILLBOARD
++DONTSPLASH
++NOBLOCKMONST
+ReactionTime 60
++FLOAT
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 3 Light("BIGREDTORCH")
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 3 Light("BIGREDTORCH")
+		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
+		TNT1 A 0 A_CountDown
+		Loop
+	Death:
+		TNT1 A 1
+		Stop
+	}
+}
+
+Actor Shoque
+{
+Game Doom
+Scale 0.7
+Height 1
+Radius 1
+Speed 2
+Damage 0
+Gravity 0
+Alpha 0.5
+RenderStyle Add
++NOBLOCKMAP
++NOTELEPORT
++DONTSPLASH
++MISSILE
++FORCEXYBILLBOARD
++CLIENTSIDEONLY
+	States
+	{
+	Spawn:
+		TNT1 A 1
+		SHOQ ABCDEFG 1 Bright
+		Stop
+	}
+}

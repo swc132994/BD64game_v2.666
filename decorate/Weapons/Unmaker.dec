@@ -1,0 +1,691 @@
+Actor UnmakerSpawner : CustomInventory 9901
+{
+//$category "Game/BD64_Weapons
+SpawnID 84
+Scale 0.9
+Tag "Unmaker"
+Inventory.PickupMessage "What the !@# is this!"
+Inventory.PickupSound "WPICK"
+	States
+	{
+	Spawn:
+		LGUN A 2
+		TNT1 A 0 ACS_NamedExecuteAlways("DM_SpawnACS")
+		LGUN A 2
+		TNT1 A 0 A_JumpIfInventory("ISDM",1,"DMSpawn")
+		LGUN A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
+		TNT1 A 0 A_GiveInventory("Unmaker",1)
+		Stop
+	Pickup2:
+		TNT1 A 0 A_GiveInventory("UnmakerTACTICAL",1)
+		Stop
+	DMSpawn:
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
+		TNT1 A 0 A_SpawnItemEx("TeleportationFog")
+		TNT1 A 0 A_SpawnItemEx("Unmaker")
+		TNT1 A 0 A_SpawnItemEx("UnmakerTACTICAL")
+		TNT1 A 1050
+		Loop
+	}
+}
+
+Actor Unmaker : DoomWeapon
+{
+Scale 0.9
+Weapon.SlotNumber 8
+Weapon.SelectionOrder 2900
+Weapon.AmmoType "Cell"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 20
+AttackSound "weapons/unmaker"
+Inventory.PickupMessage "What the !@# is this!"
+Inventory.Icon LGUNA0
+Tag "Unmaker"
+VisibleToPlayerClass "64DoomPlayer"
+Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
++INVENTORY.RESTRICTABSOLUTELY
+	States
+	{
+	Spawn:
+		LGUN A -1
+		Stop
+	Ready:
+		UNMA A 1 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
+		Loop
+	Deselect:
+		TNT1 A 0 A_Takeinventory("UnAltMode",0)
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
+		UNMA A 1 A_Lower
+		Wait
+	Select:
+		TNT1 A 0 A_Print("Weapon Special Available",1)
+		UNMA A 1 A_Raise
+		Loop
+	Fire:
+		TNT1 A 0 A_JumpIfInventory("UnAltMode",2,"FireAltRed")
+		TNT1 A 0 A_JumpIfInventory("UnAltMode",1,"FireAltGreen")
+		TNT1 A 0 A_JumpIfInventory("WeaponPower",1,"Fire1")
+		UNMA A 1 Offset(0,40)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,22)
+		UNMA B 3 Bright A_FireCustomMissile("UnmakerLaser2",0,1,0,-5)
+		UNMA A 7
+		Goto Ready
+	Fire1:
+		TNT1 A 0 A_JumpIfInventory("WeaponPower",2,"Fire2")
+		UNMA A 1 Offset(0,40)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,22)
+		UNMA B 3 Bright A_FireCustomMissile("Unmakerlaser2",0,1,0,-5)
+		UNMA A 2
+		Goto Ready
+	Fire2:
+		TNT1 A 0 A_JumpIfInventory("WeaponPower",3,"Hold1")
+		UNMA A 1 Offset(0,40)
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("Unmakerlaser2",-2,1,0,-5)
+		TNT1 A 0 A_JumpIfNoAmmo(3)
+		TNT1 A 0 A_FireCustomMissile("Unmakerlaser2",2,1,0,-5)
+		UNMA B 3 Bright
+		UNMA A 2
+		TNT1 A 0 A_Refire
+		Goto Ready
+	Hold1:
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",0,1,0,-5)
+		TNT1 A 0 A_JumpIfNoAmmo(5)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",-2,1,0,-5)
+		TNT1 A 0 A_JumpIfNoAmmo(3)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",2,1,0,-5)
+		UNMA B 3 Bright
+		UNMA A 2
+		TNT1 A 0 A_Refire("Hold2")
+		Goto Ready
+	Hold2:
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",0,1,0,-5)
+		TNT1 A 0 A_JumpIfNoAmmo(5)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",-4,1,0,-5)
+		TNT1 A 0 A_JumpIfNoAmmo(3)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",4,1,0,-5)
+		UNMA B 3 Bright
+		UNMA A 2
+		TNT1 A 0 A_Refire("Hold3")
+		Goto Ready
+	Hold3:
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",0,1,0,-5)
+		TNT1 A 0 A_JumpIfNoAmmo(5)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",-6,1,0,-5)
+		TNT1 A 0 A_JumpIfNoAmmo(3)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",6,1,0,-5)
+		UNMA B 3 Bright
+		UNMA A 2
+		TNT1 A 0 A_Refire("Hold4")
+		Goto Ready
+	Hold4:
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",0,1,0,-5)
+		TNT1 A 0 A_JumpIfNoAmmo(5)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",-8,1,0,-5)
+		TNT1 A 0 A_JumpIfNoAmmo(3)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",8,1,0,-5)
+		UNMA B 3 Bright
+		UNMA A 2
+		TNT1 A 0 A_Refire("Hold5")
+		Goto Ready
+	Hold5:
+		TNT1 A 0 A_GunFlash
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",0,1,0,-5)
+		TNT1 A 0 A_JumpIfNoAmmo(5)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",-10,1,0,-5)
+		TNT1 A 0 A_JumpIfNoAmmo(3)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser2",10,1,0,-5)
+		UNMA B 3 Bright
+		UNMA A 2
+		Goto Ready
+	Flash:
+		TNT1 A 1 Bright
+		goto LightDone
+	Special:
+		TNT1 A 0 A_PlaySound("UnmakerFireModeSwitch",CHAN_VOICE)
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
+		TNT1 A 0 A_JumpIfInventory("UnAltMode",3,"NoAim")
+		TNT1 A 0 A_Giveinventory("UnAltMode",1)
+		TNT1 A 0 A_JumpIfInventory("UnAltMode",2,"ReadyRed")
+		Goto ReadyGreen
+	NoAimFlash:
+		UNFS ABCDEF 3
+		Stop
+	NoAim:
+		TNT1 A 0 A_Print("Normal Mode!",2)
+		TNT1 A 0 A_GunFlash("NoAimFlash")
+		TNT1 A 0 A_Takeinventory("UnAltMode",0)
+		Goto Ready
+	ReadyGreenFlash:
+		UNFG ABCDEF 3
+		Stop
+	ReadyGreen:
+		TNT1 A 0 A_JumpIfInventory("WpnPower4Icon",1,1)
+		Goto Special
+		TNT1 A 0 A_GunFlash("ReadyGreenFlash")
+		TNT1 A 0 A_Print("Levitation Mode!",2)
+	ReadyGreenLoop:
+		UNMG ABCDCBA 2 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
+		Loop
+	ReadyRed:
+		TNT1 A 0 A_JumpIfInventory("WpnPower5Icon",1,1)
+		Goto Special
+		TNT1 A 0 A_Giveinventory("UnAltMode",2)
+		TNT1 A 0 A_GunFlash("ReadyRedFlash")
+		TNT1 A 0 A_Print("Hell Time Mode!",2)
+	ReadyRedLoop:
+		UNMR ABCDCBA 2 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
+		Loop
+	FireAltGreen:
+		TNT1 A 0 A_JumpIfInventory("Cell",15,3)
+		TNT1 A 0 A_Print("Not Enough Ammo!",1)
+		TNT1 A 0 A_Takeinventory("UnAltMode",0)
+		Goto Ready
+		TNT1 A 0 A_PlaySound("DSBOSPIT",CHAN_BODY)
+		TNT1 A 0 ThrustThingZ(0,5,0,0)
+		TNT1 A 0 A_SpawnItemEx("64LevitatingPlatform")
+		TNT1 A 0 A_TakeInventory("Cell",15,TIF_NOTAKEINFINITE)
+		UNMG D 2 Bright
+		UNMG DCBA 4
+		Goto ReadyGreen
+	FireAltRed:
+		TNT1 A 0 A_Explode(20,10,XF_HURTSOURCE,0)
+		TNT1 A 0 A_PlaySound("OutHelltime",CHAN_BODY)
+		TNT1 A 0 A_Print("Time Comes to a Stop!",2)
+		UNMR D 2 Bright
+		UNMR DCBA 4
+		TNT1 A 0 A_GiveInventory("PowerTimeFreezer",1)
+		TNT1 A 0 A_GiveInventory("PowerStrength",1)
+		TNT1 A 0 A_SelectWeapon("64Fist")
+		Goto Deselect
+	}
+}
+
+Actor SoulAmmo : Ammo	//from humans/zombies
+{
+SCALE 0.8
+Inventory.PickupMessage "Soul Collected"
+Inventory.Amount 1
+Inventory.MaxAmount 30
+Ammo.BackpackAmount 0
+Ammo.BackpackMaxAmount 30
+Inventory.PickupSound "HUMAMMO"
+Inventory.Icon "SAMMZ0"
+Tag "Soul"
+RenderStyle Add
+Alpha 0.9
++ALWAYSPICKUP
++FLOATBOB
+ReactionTime 90
+	States
+	{
+	Spawn:
+		SAMM AABBCCDDEE 2 Bright Light("HealthPotion") A_SpawnItemEx("BlueFlareSmallItem",0,0,7)
+		TNT1 A 0 A_Countdown
+		Loop
+	Death:
+		SAMM AABBCCDDEE 2 A_FadeOut(0.05)
+		Wait
+	}
+}
+
+Actor DemonEssence : Ammo	//from demons
+{
+Translation "0:255=187:191"	//Red
+Scale 0.8
+Inventory.PickupMessage "Demonic Essence Collected"
+Inventory.Amount 1
+Inventory.MaxAmount 25
+Ammo.BackpackAmount 0
+Ammo.BackpackMaxAmount 25
+Inventory.PickupSound "DemonSoulUp"
+Inventory.Icon "DESSZ0"
+Tag "Demonic Essence"
+RenderStyle Add
+Alpha 0.9
++ALWAYSPICKUP
++FLOATBOB
+ReactionTime 90
+	States
+	{
+	Spawn:
+		SAMM AABBCCDD 2 Bright Light("HellPotion") A_SpawnItemEx("RedFlareSmallItem",0,0,7)
+		TNT1 A 0 A_Countdown
+		Loop
+	Death:
+		SAMM AABBCCDD 2 A_FadeOut(0.05)
+		Wait
+	}
+}
+
+Actor DemonEssenceLarge : DemonEssence		//from boss demons
+{
+Scale 1.2
+Inventory.PickupMessage "Large Demonic Essence Collected"
+Inventory.Amount 10
+Tag "Demonic Essence Large"
+}
+
+Actor SoulSpawner
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("TUnmakerChecker",0,0,0) == 2,"ShowSoul")
+		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("TUnmakerChecker",0,0,0) == 3,"ShowSoul")
+		TNT1 A 1
+		Stop
+	ShowSoul:
+		TNT1 A 1 A_SpawnItemEx("SoulAmmo",0,0,0,random(0,5),random(0,5),5,random(0,360))
+		Stop
+	}
+}
+
+Actor DemonEssenceSpawner
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("TUnmakerChecker",0,0,0) == 3,"ShowEssence")
+		TNT1 A 1
+		Stop
+	ShowEssence:
+		TNT1 A 1 A_SpawnItemEx("DemonEssence",0,0,0,random(0,5),random(0,5),5,random(0,360))
+		Stop
+	}
+}
+
+Actor DemonEssenceLargeSpawner
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("TUnmakerChecker",0,0,0) == 3,"ShowEssence")
+		TNT1 A 1
+		Stop
+	ShowEssence:
+		TNT1 A 1 A_SpawnItemEx("DemonEssenceLarge",0,0,0,random(0,5),random(0,5),5,random(0,360))
+		Stop
+	}
+}
+
+Actor UnAltMode : Inventory
+{
+inventory.maxamount 3
+}
+
+actor 64LevitatingPlatform
+{
+Radius 16
+Height 10
++SOLID
++NOGRAVITY
+	states
+	{
+	Spawn:
+		PNTG A 5 Bright Light("BLURSPHERE")
+		TNT1 A 0 A_PlaySound("TORTURE6",CHAN_BODY,1,TRUE)
+		TNT1 A 0 ThrustThingZ(0,2,0,1)
+		PNTG AAAAAAAAAAAAAAAAAA 5 Bright Light("BLURSPHERE") A_CustomMissile("ExplosionParticleLaser",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_StopSound(CHAN_BODY)
+		PNTG A 1 A_FadeOut(0.1)
+		Wait
+	}
+}
+
+Actor UnmakerTACTICAL : Brutal64Weapon
+{
+Scale 0.9
+Weapon.SlotNumber 8
+Weapon.SelectionOrder 2900
+Weapon.AmmoType1 "SoulAmmo"
+Weapon.AmmoUse1 1
+Weapon.AmmoGive1 15
+Weapon.AmmoType2 "DemonEssence"
+Weapon.AmmoUse2 1
+Weapon.AmmoGive2 0
+Inventory.PickupMessage "What the !@# is this!"
+Inventory.Icon LGUNA0
+AttackSound "weapons/unmaker"
+Tag "Unmaker"
++INVENTORY.RESTRICTABSOLUTELY
++WEAPON.AMMO_CHECKBOTH
++WEAPON.NOALERT
++WEAPON.NOAUTOFIRE
+	States
+	{
+	MineThrowFlash:
+		UNMS EFGH 1
+		TNT1 A 18
+		UNMS ABCD 1
+		Stop
+	KickingFlash:
+		UNMS DCBA 1
+		UNMS A 8
+		UNMS ABCD 1
+		Stop
+	SlideKickingStart:
+		UNMS DCBA 1
+		UNMS A 35
+	SlideKickingEnd:
+		UNMS A 2
+		UNMS ABCD 1
+		Stop
+	Spawn:
+		LGUN A -1
+		Loop
+	v1Ready:
+	Ready:
+		UNM2 D 0 A_JumpIfInventory("DemonEssence",25,5)
+		UNM2 C 0 A_JumpIfInventory("DemonEssence",15,4)
+		UNM2 B 0 A_JumpIfInventory("DemonEssence",10,3)
+		UNM2 A 0 A_JumpIfInventory("DemonEssence",5,2)
+		UNMA A 0
+		"####" "#" 1 A_WeaponReady(WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
+		TNT1 A 0 A_PlaySound("UNMKLP",CHAN_5,1,TRUE)
+		Loop
+	Select:
+		UNMA A 0 A_PlaySound("UNMAKSEL",CHAN_BODY)
+		TNT1 A 0 A_Print("Weapon Special Available",1)
+		UNMS ABCD 1 offset(0,32)
+		TNT1 A 0 A_Raise
+		Wait
+	Deselect:
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
+		TNT1 A 0 A_Takeinventory("TossMine",0)
+		TNT1 A 0 A_Takeinventory("PlaceMine",0)
+		TNT1 A 0 A_Takeinventory("Kicking",0)
+		TNT1 A 0 A_TakeInventory("UnAltMode",0)
+		UNMS EFGH 1
+		TNT1 A 0 A_StopSound(CHAN_5)
+		TNT1 A 0 A_Lower
+		Wait
+	Fire:
+		TNT1 A 0 A_JumpIfInventory("UnAltMode",2,"FireAltRed")
+		TNT1 A 0 A_JumpIfInventory("UnAltMode",1,"FireAltGreen")
+		TNT1 A 0 A_JumpIfInventory("SoulAmmo",1,1)
+		Goto NotReady1
+		UNMA A 1
+		TNT1 A 0 A_ZoomFactor(0.9)
+		TNT1 A 0 A_PlaySound("UNMAKER",CHAN_WEAPON)
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_JumpIfInventory("WeaponPower",3,"Fire3")
+		TNT1 A 0 A_JumpIfInventory("WeaponPower",2,"Fire2")
+		TNT1 A 0 A_JumpIfInventory("WeaponPower",1,"Fire1")
+		TNT1 A 0 A_GunFlash
+	Fire0:
+		UNMA A 1
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaser",0,1,0,-5)
+		Goto FireAnimation
+	Fire1:
+		UNMA A 1
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaserPierce",0,1,0,-5)
+		Goto FireAnimation
+	Fire2:
+		UNMA A 1
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaserPierce",3,1,0,-5)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaserPierce",-3,0,0,-5)
+		Goto FireAnimation
+	Fire3:
+		UNMA A 1
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle4",20,5,22)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaserPierce",0,1,0,-5)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaserPierce",6,0,0,-5)
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaserPierce",-6,0,0,-5)
+		Goto FireAnimation
+	FireAnimation:
+		TNT1 A 0 A_ZoomFactor(1.0)
+		UNMA BC 2 Bright
+		UNMA DEFGH 1
+		UNMA A 18
+		Goto Ready
+	Special:
+		TNT1 A 0 A_PlaySound("UnmakerFireModeSwitch",CHAN_BODY)
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",1)
+		TNT1 A 0 A_JumpIfInventory("UnAltMode",3,"NoAim")
+		TNT1 A 0 A_Giveinventory("UnAltMode",1)
+		TNT1 A 0 A_JumpIfInventory("UnAltMode",2,"ReadyRed")
+		Goto ReadyGreen
+	NoAimFlash:
+		UNFS ABCDEF 3
+		Stop
+	NoAim:
+		TNT1 A 0 A_Print("Normal Mode!",2)
+		TNT1 A 0 A_GunFlash("NoAimFlash")
+		TNT1 A 0 A_Takeinventory("UnAltMode",0)
+		Goto Ready
+	ReadyGreenFlash:
+		UNFG ABCDEF 3
+		Stop
+	ReadyGreen:
+		TNT1 A 0 A_JumpIfInventory("WpnPower4Icon",1,1)
+		Goto Special
+		TNT1 A 0 A_GunFlash("ReadyGreenFlash")
+		TNT1 A 0 A_Print("Levitation Mode!",2)
+	ReadyGreenLoop:
+		UNMB E 0 A_JumpIfInventory("DemonEssence",25,5)
+		UNMB D 0 A_JumpIfInventory("DemonEssence",15,4)
+		UNMB C 0 A_JumpIfInventory("DemonEssence",10,3)
+		UNMB B 0 A_JumpIfInventory("DemonEssence",5,2)
+		UNMB A 0
+		"####" "#" 1 A_WeaponReady
+		UN4G A 0 A_JumpIfInventory("DemonEssence",25,5)
+		UN3G A 0 A_JumpIfInventory("DemonEssence",15,4)
+		UN2G A 0 A_JumpIfInventory("DemonEssence",10,3)
+		UN1G A 0 A_JumpIfInventory("DemonEssence",5,2)
+		UNMG A 0
+		"####" ABCDCBA 2 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
+		Loop
+	ReadyRedFlash:
+		UNFR ABCDEF 3
+		Stop
+	ReadyRed:
+		TNT1 A 0 A_JumpIfInventory("WpnPower5Icon",1,1)
+		Goto Special
+		TNT1 A 0 A_Giveinventory("UnAltMode",2)
+		TNT1 A 0 A_GunFlash("ReadyRedFlash")
+		TNT1 A 0 A_Print("Hell Time Mode!",2)
+	ReadyRedLoop:
+		UNMB E 0 A_JumpIfInventory("DemonEssence",25,5)
+		UNMB D 0 A_JumpIfInventory("DemonEssence",15,4)
+		UNMB C 0 A_JumpIfInventory("DemonEssence",10,3)
+		UNMB B 0 A_JumpIfInventory("DemonEssence",5,2)
+		UNMB A 0
+		"####" "#" 1 A_WeaponReady
+		UN4R A 0 A_JumpIfInventory("DemonEssence",25,5)
+		UN3R A 0 A_JumpIfInventory("DemonEssence",15,4)
+		UN2R A 0 A_JumpIfInventory("DemonEssence",10,3)
+		UN1R A 0 A_JumpIfInventory("DemonEssence",5,2)
+		UNMR A 0
+		"####" ABCDCBA 2 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("WeaponSpecialAction",1,"Special")
+		Loop
+	FireAltGreen:
+		TNT1 A 0 A_JumpIfInventory("DemonEssence",5,1)
+		Goto NotReady2
+		TNT1 A 0 A_PlaySound("DSBOSPIT",CHAN_VOICE)
+		TNT1 A 0 ThrustThingZ(0,5,0,0)
+		TNT1 A 0 A_SpawnItemEx("64LevitatingPlatform")
+		TNT1 A 0 A_TakeInventory("DemonEssence",5,TIF_NOTAKEINFINITE)
+		UNMG D 2 Bright A_SetPitch(-1.0 + pitch)
+		UNMG DCBA 4 A_SetPitch(0.5 + pitch)
+		Goto ReadyGreen
+	FireAltRed:
+		TNT1 A 0 A_JumpIfInventory("DemonEssence",10,1)
+		Goto NotReady2
+		TNT1 A 0 A_PlaySound("OutHelltime",CHAN_VOICE)
+		TNT1 A 0 A_TakeInventory("DemonEssence",10,TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_Print("Time Comes to a Stop!",2)
+		UNMR D 2 Bright A_SetPitch(-1.0 + pitch)
+		UNMR DCBA 4 A_SetPitch(0.5 + pitch)
+		TNT1 A 0 A_GiveInventory("PowerTimeFreezer",1)
+		TNT1 A 0 A_GiveInventory("PowerStrength",1)
+		TNT1 A 0 A_SelectWeapon("64Fisttactical")
+		Goto Deselect
+	AltFire:
+		TNT1 A 0 A_JumpIfInventory("DemonEssence",1,1)
+		Goto NotReady2
+		TNT1 A 0 A_ZoomFactor(0.9)
+		TNT1 A 0 A_PlaySound("UNMAKER",CHAN_WEAPON)
+		TNT1 A 0 A_AlertMonsters
+		UNMA A 1
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle6",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle6",20,5,22)
+		UNM2 E 2 Bright
+		TNT1 A 0 A_FireCustomMissile("UnmakerLaserIce",0,1,0,-5)
+		TNT1 A 0 A_FireCustomMissile("GunFireSmoke",0,0)
+		UNM2 F 2 Bright
+		TNT1 A 0 A_ZoomFactor(1.0)
+		UNMA DEFGH 1
+		UNMA A 18
+		Goto Ready
+	NotReady1:
+		TNT1 A 0 A_Print("Not Enough Souls!",1)
+		Goto Ready
+	NotReady2:
+		TNT1 A 0 A_Takeinventory("UnAltMode",0)
+		TNT1 A 0 A_Print("Not Enough Demonic Essence!",1)
+		Goto Ready
+	}
+}
+
+Actor UnmakerLaser2 : FastProjectile
+{
+Translation "0:255=%[0,0,0]:[0.83,0.13,0.18]"//Amaranth Red
+Scale 1.5
+Radius 5
+Height 10
+Speed 32
+Damage 10
+DamageType "Unmaker"
+RenderStyle Normal
+Decal "LaserDecal"
+SeeSound "weapons/unmaker"
+DeathSound ""
+Obituary "%o was unmade by %k."
++DONTSPLASH
++EXTREMEDEATH
++FORCERADIUSDMG
++SCREENSEEKER
++PAINLESS
+	States
+	{
+	Spawn:
+		ULAZ A 1 NoDelay A_SeekerMissile(5,35,SMF_LOOK)
+		ULAZ AAAAA 1 Bright A_ChangeVelocity(velx*1.5,vely*1.5,velz*1.5,CVF_REPLACE)
+		ULAZ B 1 Bright A_ChangeVelocity(velx*1.5,vely*1.5,velz*1.5,CVF_REPLACE)
+		Wait
+	Death:
+		TNT1 A 0 A_SpawnItemEx("DetectFloorLaser")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilLaser")
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_Explode(100,15,0)
+		LPUF AAA 1 Bright Light("UNMAKERSHOT")A_SpawnItemEx("RocketFlare")
+		TNT1 AAAAA 0 A_CustomMissile("PlasmaSmoke",0,0,random(0,360),2,random(0,360))
+		LPUF ABC 3 Bright Light("UNMAKERSHOT")
+		Stop
+	}
+}
+
+Actor UnmakerLaser : UnmakerLaser2
+{
+Damage(Random(25,50))
+}
+
+Actor UnmakerLaserIce : UnmakerLaser2
+{
+Translation "0:255=%[0,0,0]:[0.49,0.73,0.91]"//Aero
+Damage 0
+Decal "IceScorch"
+DamageType "Ice"
+	States
+	{
+	Death:
+		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterICE")
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterICE")
+		TNT1 AAA 0 A_CustomMissile("BluePlasmaFire",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_Explode(99,25,0,0,15)
+		TNT1 A 0 A_Explode(66,50,0,0,15)
+		TNT1 A 0 A_Explode(33,100,0,0,15)
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("BlueplasmaParticle",0,0,random(0,360),2,random(0,360))
+		SHWK ABCDEFGHIJKL 1 Bright Light("ICELASER") A_CustomMissile("PlasmaSmoke",0,0,random(0,360),2,random(0,360))
+		Stop
+	}
+}
+
+Actor UnmakerLaserPierce : UnmakerLaser
+{
+Damage 8
++RIPPER
++NOBOSSRIP
+}

@@ -1,0 +1,158 @@
+Actor 64ExplosiveBarrel : ExplosiveBarrel Replaces ExplosiveBarrel	//replaced by poltergiest random spawner
+{
+Scale 0.8
+Health 20
+Mass 125
+Damagefactor "Melee",0
+Damagefactor "Kick",0
+Tag "Explosive Barrel"
++EXTREMEDEATH
++PUSHABLE
++SLIDESONWALLS
+	States
+	{
+	Spawn:
+		BEXP A 0
+	SpawnLoop:
+		"####" A 3 ACS_NamedExecuteAlways("AlphaPickupACS")
+		"####" A 32
+		Loop
+	StayAlpha:
+		BAR1 AB 6 A_SpawnItemEx("GreenLensFlareAltSmall",0,0,35)
+		Goto Spawn
+	Death:
+	Crash:
+		BEXP ABC 3 Bright
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_SpawnItemEx("64BarrelExplosion")
+		TNT1 A 0 A_SpawnItemEx("DetectBarrelCrater")
+		BEXP D 3 Bright
+		TNT1 A 0 A_Explode(100,200)
+		TNT1 A 0 A_CheckSight("Finish")
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn")
+		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
+		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
+		BEXP E 3 Bright
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		BEXP F 3 Bright
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 3
+		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
+		TNT1 A 3
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 3
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 3
+		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
+		TNT1 A 3
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 3
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 3
+		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
+		TNT1 A 3
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 3
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 3
+		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
+		TNT1 A 3
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 3
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 3
+		TNT1 A 0 A_CustomMissile("LongFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_SpawnItemEx("LongFlameParticleSpark",random(-16,16),random(-16,16),random(2,8),0,0,2)
+		TNT1 A 3
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 3
+		TNT1 A 0 A_CustomMissile("LongFlameParticle2",random(0,8),0,random(0,360),2,random(80,100))
+	Finish:
+		TNT1 A 10
+		stop
+	}
+}
+
+Actor 64BarrelExplosion
+{
+scale 0.75
+Radius 65
+Height 8
+Speed 20
+Damage 20
+DamageType "Fire"
+Alpha 0.6
+Renderstyle Translucent
++RANDOMIZE
++DEHEXPLOSION
+	states
+	{
+	Spawn:
+		TNT1 A 3
+	Goto Death
+	Death:
+		TNT1 A 0 A_Explode(10,200)
+		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile("64ExplosionFireBase",40,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile("BarrelExplosionFire",0,0,random(0,360),2,random(10,40))
+		TNT1 AAAAAA 0 A_CustomMissile("BarrelExplosionFireLargeSpawn",0,0,random(0,360),2,random(10,40))
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("ExplosionAirDisplacementEffect")
+		TNT1 A 0 A_PlaySound("EXPLO3",CHAN_WEAPON)
+		TNT1 A 0 Radius_Quake(2,8,0,12,0)
+		TNT1 A 10
+		stop
+	}
+}
+
+actor 64BossExplosion
+{
+scale 0.75
+alpha 0.6
+Renderstyle translucent
+	states
+	{
+	Spawn:
+		TNT1 A 3
+		TNT1 AA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
+		TNT1 AA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
+		TNT1 AA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_CustomMissile("64ExplosionFireBase",20,0,random(0,360),2,random(0,360))
+		TNT1 AAA 0 A_CustomMissile("BarrelExplosionFire",20,0,random(0,360),2,random(10,40))
+		TNT1 A 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_PlaySound("EXPLO3",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 Radius_Quake(2,8,0,12,0)
+		TNT1 A 10
+		stop
+	}
+}
+
+actor 64BossExplosionBLUE : 64BossExplosion
+{
+	states
+	{
+	Spawn:
+		TNT1 A 3
+		TNT1 AA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
+		TNT1 AA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
+		TNT1 AA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_CustomMissile("64ExplosionFireBase",20,0,random(0,360),2,random(0,360))
+		TNT1 AAA 0 A_CustomMissile("BarrelExplosionFire",20,0,random(0,360),2,random(10,40))
+		TNT1 A 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_PlaySound("EXPLO3",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("BloodmistBigBLUE",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 Radius_Quake(2,8,0,12,0)
+		TNT1 A 10
+		stop
+	}
+}

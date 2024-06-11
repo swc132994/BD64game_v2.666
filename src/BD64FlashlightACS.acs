@@ -1,0 +1,44 @@
+#library "BD64FlashlightACS"
+#include "zcommon.acs"
+
+#define MAXPLAYERS 8
+int flashlightOn[MAXPLAYERS];
+
+Script "ToggleFlashlight" (void)
+{
+if (flashlightOn[PlayerNumber()])
+	flashlightOn[PlayerNumber()] = 0;
+		else
+		flashlightOn[PlayerNumber()] = 1;
+	if(CheckInventory("FlashLightPickup") == 0)
+		{
+		Delay(1);
+		flashlightOn[PlayerNumber()] = 0;
+		terminate;
+		}
+		ActivatorSound("flashlight/click",127);
+}
+
+Script "FlashlightHandling" ENTER
+{
+While(1)
+	{
+	if (flashlightOn[PlayerNumber()])
+			GiveInventory("FlashlightSpawner",1);
+			Delay(1);
+	}
+}
+
+Script "FlashLightStartACS" ENTER	//give flashlight at map start
+{
+	While(true)
+	{
+		int type = GetCvar("FlashlightStartCvar");
+		Switch(type)
+		{
+			Case 1:
+			GiveInventory("FlashlightPickup",1);
+		}
+		Delay(1);
+	}
+}

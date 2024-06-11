@@ -1,0 +1,397 @@
+Actor SuperShotgunSpawner : CustomInventory Replaces SuperShotgun
+{
+//$category "Game/BD64_Weapons
+Scale 0.87
+Tag "Super Shotgun"
+Inventory.PickupMessage "$GOTSHOTGUN2"
+Inventory.PickupSound "WPICK"
+	States
+	{
+	Spawn:
+		SGN2 A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_Jumpifinventory("IsTacticalClass",1,"Pickup2")
+		TNT1 A 0 A_Jumpifinventory("IsModern",1,"Pickup2")
+		TNT1 A 0 A_GiveInventory("64SuperShotgun")
+		Stop
+	Pickup2:
+		TNT1 A 0 A_GiveInventory("64SuperShotgunTactical",1)
+		Stop
+	}
+}
+
+Actor 64SuperShotgun : DoomWeapon
+{
+Scale 0.87
+Weapon.SlotNumber 3
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 400
+Weapon.AmmoType "Shell"
+Weapon.AmmoUse 2
+Weapon.AmmoGive 2
++WEAPON.NOAUTOFIRE
+Inventory.PickupMessage "$GOTSHOTGUN2"
+Obituary "$OB_MPSSHOTGUN"
+Tag "$TAG_SUPERSHOTGUN"
+VisibleToPlayerClass "64DoomPlayer"
+Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
++INVENTORY.RESTRICTABSOLUTELY
+	States
+	{
+	Spawn:
+		SGN2 A -1
+		Stop
+	Ready:
+		CSGG A 0 A_JumpIfInventory("VWeaponMode",1,2)
+		SSGG A 0
+		"####" A 1 A_WeaponReady
+		Wait
+	Select:
+		CSGG A 0 A_JumpIfInventory("VWeaponMode",1,2)
+		SSGG A 0
+		"####" A 1 A_Raise
+		Wait
+	Deselect:
+		TNT1 A 0 A_ZoomFactor(1.0)
+		CSGG A 0 A_JumpIfInventory("VWeaponMode",1,2)
+		SSGG A 0
+		"####" A 1 A_Lower
+		Wait
+	Fire:
+		TNT1 AAAA 0 A_FireCustomMissile("GunFireSmoke",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,22)
+		TNT1 A 0 A_JumpIfInventory("VWeaponMode",1,"VanillaFire")
+		TNT1 AAAAAAAAAA 0 A_FireCustomMissile("Tracer",random(-6,6),0,-1,-12,0,random(-5,5))
+		TNT1 A 0 A_FireBullets(8,4,20,5,"ShotPuff")
+		TNT1 A 0 A_PlaySound("SSGFIRE",CHAN_WEAPON)
+		TNT1 A 0 A_ZoomFactor(0.75)
+		SSGF AB 2 Bright
+		TNT1 A 0 A_ZoomFactor(1.0)
+		SSGF C 2
+		SSGF DEF 1
+		SSGG AABCDEFGH 1
+		SSGG I 2
+		SSGG JKLMNOP 1
+		TNT1 A 0 A_PlaySound("weapons/sshoto",CHAN_AUTO)
+		TNT1 A 1
+		SSGG Q 1
+		TNT1 AA 0 A_FireCustomMissile("SSGCaseSpawner",0,0,-5,-15)
+		SSGG SR 2
+		SSGG TUVWX 1
+		TNT1 A 0 A_PlaySound("weapons/sshotl",CHAN_AUTO)
+		SSGG YZ 1
+		SSGH ABCD 1
+		TNT1 A 0 A_PlaySound("weapons/sshotc",CHAN_AUTO)
+		SSGH EFGHIJKLM 1
+		TNT1 A 0 A_Refire
+		Goto Ready
+	VanillaFire:
+		TNT1 A 0 A_GunFlash("VanillaFireFlash")
+		TNT1 AAAAAAAAAA 0 A_FireCustomMissile("Tracer",random(-6,6),0,-1,-12,0,random(-5,5))
+		TNT1 A 0 A_FireBullets(8,4,20,5,"ShotPuff")
+		TNT1 A 0 A_PlaySound("weapons/sshotf",CHAN_WEAPON)
+		CSGG A 2 Bright
+		CSGG B 30
+		TNT1 A 0 A_PlaySound("weapons/sshoto",CHAN_AUTO)
+		CSGG B 5
+		CSGG C 4
+		TNT1 AA 0 A_FireCustomMissile("SSGCaseSpawner",0,0,-5,-15)
+		TNT1 A 0 A_PlaySound("weapons/sshotc",CHAN_AUTO)
+		CSGG A 10
+		TNT1 A 0 A_Refire
+		Goto Ready
+	VanillaFireFlash:
+		CSGF A 1 Bright A_Light1
+		CSGF A 1 Bright A_Light0
+		Goto LightDone
+	}
+}
+
+Actor SSGAmmo : Ammo
+{
+Inventory.Amount 0
+Inventory.MaxAmount 2
+Ammo.BackpackAmount 0
+Ammo.BackpackMaxAmount 2
+Inventory.Icon "sgn2a0"
++IGNORESKILL
+}
+
+Actor NeverSelectedSSG : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor SSGAlt : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor SSGReloading : Inventory
+{
+inventory.maxamount 1
+}
+
+Actor 64SuperShotgunTACTICAL : Brutal64Weapon
+{
+Scale 0.87
+Weapon.SlotNumber 3
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 400
+Weapon.AmmoType1 "Shell"
+Weapon.AmmoUse1 1
+Weapon.AmmoGive1 2
+Weapon.AmmoType2 "SSGAmmo"
+Weapon.AmmoUse2 1
+Weapon.AmmoGive2 0
+Inventory.PickupMessage "$GOTSHOTGUN2"
+Obituary "$OB_MPSSHOTGUN"
+Tag "$TAG_SUPERSHOTGUN"
++INVENTORY.RESTRICTABSOLUTELY
++WEAPON.AMMO_CHECKBOTH
++WEAPON.NOAUTOFIRE
+	States
+	{
+	MineThrowFlash:
+		SSGS EFGH 1
+		TNT1 A 18
+		SSGS ABCD 1
+		Stop
+	KickingFlash:	//16
+		SSGS IJKL 1
+		SSGS M 8
+		SSGS LKJI 1
+		Stop
+	SlideKickingStart:	//22
+		SSGS IJKL 1
+		SSGS M 35
+	SlideKickingEnd:	//10
+		SSGS M 2
+		SSGS LKJI 1
+		Stop
+	Spawn:
+		SGN2 A -1
+		Stop
+	WarmUp:
+		TNT1 A 0 A_TakeInventory("NeverSelectedSSG")
+		SSGG E 1 Offset(48,73)
+		SSGG E 1 Offset(46,68)
+		SSGG E 1 Offset(40,53)
+		SSGG E 1 Offset(25,40)
+		SSGG E 1 Offset(16,32)
+		SSGG EFGH 1 A_WeaponReady
+		SSGG I 3 A_WeaponReady
+		SSGG JKLMNOP 1 A_WeaponReady
+		TNT1 A 0 A_PlaySound("weapons/sshoto",CHAN_AUTO)
+		TNT1 A 1
+		SSGW A 1 A_WeaponReady
+		SSGG SR 2 A_WeaponReady
+		SSGW BCDEFGH 1 A_WeaponReady
+		TNT1 A 0 A_PlaySound("weapons/sshotl",CHAN_AUTO)
+		SSGW IJKLMOPPQRST 1 A_WeaponReady
+		TNT1 A 0 A_PlaySound("weapons/sshotl",CHAN_AUTO)
+		SSGW UUVWXY 1 A_WeaponReady
+		TNT1 A 0 A_PlaySound("weapons/sshotc",CHAN_AUTO)
+		SSGH FGHIJKLM 1 A_WeaponReady
+		Goto Ready
+	v1Ready:
+	Ready:
+		SSGG A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_Jumpifinventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		Loop
+	Select:
+		TNT1 A 0 A_JumpIfInventory("NeverSelectedSSG",1,"WarmUp")
+		TNT1 A 0 A_JumpIfInventory("SSGAmmo",1,1)
+		Goto RaiseReloading
+		TNT1 A 0 A_PlaySound("weapons/sshotc",CHAN_AUTO)
+		SSGH EF 1 Offset(0,32)
+		TNT1 A 0 A_PlaySound("CLIPINSS",CHAN_WEAPON)
+		SSGH GHIJKLM 1 Offset(0,32)
+		TNT1 A 0 A_Raise
+		Wait
+	RaiseReloading:
+		TNT1 A 0 A_JumpIfInventory("Shell",2,1)
+		Goto RaiseNoAmmo
+		SSGS ABCD 1 Offset(0,32)
+		Goto Reload
+	RaiseNoAmmo:
+		SSGS ABCD 1 Offset(0,32)
+		Goto Ready
+	Deselect:
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
+		TNT1 A 0 A_Takeinventory("TossMine",0)
+		TNT1 A 0 A_Takeinventory("PlaceMine",0)
+		TNT1 A 0 A_Takeinventory("Kicking",0)
+		SSGS EFGH 1
+		TNT1 A 0 A_Lower
+		Wait
+	Fidget:
+		SSGR ABCDEF 1 A_WeaponReady
+		SSGI AB 1 A_WeaponReady
+		TNT1 A 0 A_PlaySound("weapons/sshoto",CHAN_AUTO)
+		SSGI B 10 A_WeaponReady
+		SSGI A 1 A_WeaponReady
+		TNT1 A 0 A_PlaySound("weapons/sshotc",CHAN_AUTO)
+		SSGH EFGHIJKLM 1
+		Goto Ready
+	Fire:
+		TNT1 A 0 A_Jumpifinventory("SSGAlt",1,"AltFire2")
+		Goto AmmoCheck
+	ResumeFire:
+		TNT1 AAAA 0 A_FireCustomMissile("GunFireSmoke",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,22)
+		TNT1 AAAAAAAAAA 0 A_FireCustomMissile("Tracer",random(-6,6),0,-1,-12,0,random(-5,5))
+		TNT1 A 0 A_FireBullets(8,4,20,5,"ShotPuff",0)
+		TNT1 A 0 A_PlaySound("SSGFIRE",CHAN_WEAPON)
+		TNT1 A 0 A_ZoomFactor(0.75)
+		SSGF AB 2 Bright
+		TNT1 A 0 A_ZoomFactor(1.0)
+		SSGF C 2 A_SetPitch(pitch-4,SPF_INTERPOLATE)
+		SSGF DE 1 A_SetPitch(pitch+2.6,SPF_INTERPOLATE)
+		SSGF F 1 A_SetPitch(pitch+1.2,SPF_INTERPOLATE)
+		SSGG A 1 A_SetPitch(pitch+0.8,SPF_INTERPOLATE)
+		SSGG A 1 A_SetPitch(pitch+0.4,SPF_INTERPOLATE)
+		SSGG A 1 A_WeaponReady
+		Goto Reload
+	AltFire:
+		TNT1 A 0 A_Jumpifinventory("SSGAlt",1,"AltFire2")
+		Goto AltAmmoCheck
+	ResumeAltFire:
+		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,22)
+		TNT1 AAAAA 0 A_FireCustomMissile("Tracer",random(-6,6),0,-1,-12,0,random(-5,5))
+		TNT1 A 0 A_FireBullets(4,4,10,5,"ShotgunPuff",0)
+		TNT1 A 0 A_GiveInventory("SSGAlt",1)
+		TNT1 A 0 A_PlaySound("SSGALTFI",CHAN_WEAPON)
+		TNT1 A 0 A_ZoomFactor(0.95)
+		SSGU AB 2 Bright
+		TNT1 A 0 A_ZoomFactor(1.0)
+		SSGF E 2 A_SetPitch(pitch-2,SPF_INTERPOLATE)
+		TNT1 A 0 Offset(4,32)
+		SSGF E 1 A_SetPitch(pitch+1.3,SPF_INTERPOLATE)
+		TNT1 A 0 Offset(3,32)
+		SSGF F 1 A_SetPitch(pitch+0.6,SPF_INTERPOLATE)
+		TNT1 A 0 Offset(2,32)
+		SSGG A 1 A_SetPitch(pitch+0.4,SPF_INTERPOLATE)
+		TNT1 A 0 Offset(1,32)
+		SSGG A 1 A_SetPitch(pitch+0.2,SPF_INTERPOLATE)
+		TNT1 A 0 Offset(0,32)
+		Goto Ready
+	AltFire2:
+		Goto AltAmmoCheck
+	ResumeAltFire2:
+		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,22)
+		TNT1 AAAAA 0 A_FireCustomMissile("Tracer",random(-6,6),0,-1,-12,0,random(-5,5))
+		TNT1 A 0 A_FireBullets(4,4,10,5,"ShotgunPuff",0)
+		TNT1 A 0 A_TakeInventory("SSGAlt",1)
+		TNT1 A 0 A_PlaySound("SSGALTFI",CHAN_WEAPON)
+		TNT1 A 0 A_ZoomFactor(0.95)
+		SSGU CD 2 Bright
+		TNT1 A 0 A_ZoomFactor(1.0)
+		SSGF E 2 A_SetPitch(pitch-2,SPF_INTERPOLATE)
+		TNT1 A 0 Offset(-4,32)
+		SSGF E 1 A_SetPitch(pitch+1.3,SPF_INTERPOLATE)
+		TNT1 A 0 Offset(-3,32)
+		SSGF F 1 A_SetPitch(pitch+0.6,SPF_INTERPOLATE)
+		TNT1 A 0 Offset(-2,32)
+		SSGG A 1 A_SetPitch(pitch+0.4,SPF_INTERPOLATE)
+		TNT1 A 0 Offset(-1,32)
+		SSGG A 1 A_SetPitch(pitch+0.2,SPF_INTERPOLATE)
+		TNT1 A 0 Offset(0,32)
+		Goto Reload
+	Reload:
+		TNT1 A 0 A_Jumpifinventory("SSGAmmo",2,"Fidget")
+		TNT1 A 0 A_Jumpifinventory("SSGAlt",1,"Reload1")
+		Goto Reload2
+	Reload2:
+		TNT1 A 0 A_Jumpifinventory("Shell",1,1)
+		Goto NoAmmo
+		TNT1 A 0 A_Jumpifinventory("Shell",2,1)
+		Goto Reload1
+		SSGG BCDEFGH 1
+		SSGG I 2
+		SSGG JKLMNOP 1
+		TNT1 A 0 A_PlaySound("weapons/sshoto",CHAN_AUTO)
+		TNT1 A 1
+		SSGG Q 1
+		TNT1 AA 0 A_FireCustomMissile("SSGCaseSpawner",0,0,-5,-15)
+		SSGG SR 2
+		SSGG TUVWX 1
+		TNT1 A 0 A_PlaySound("weapons/sshotl",CHAN_AUTO)
+		SSGG YZ 1
+		TNT1 A 0 A_GiveInventory("SSGAmmo",2)
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,2)
+		TNT1 A 0 A_TakeInventory("Shell",2,TIF_NOTAKEINFINITE)
+		SSGH ABCD 1
+		TNT1 A 0 A_PlaySound("weapons/sshotc",CHAN_AUTO)
+		SSGH EFGHIJKLM 1
+		TNT1 A 0 A_Refire
+		Goto Ready
+	Reload1:
+		TNT1 A 0 A_Jumpifinventory("Shell",1,1)
+		Goto NoAmmo
+		SSGR ABCDEF 1
+		TNT1 A 1
+		SSGZ A 1
+		TNT1 A 0 A_PlaySound("weapons/sshoto",CHAN_AUTO)
+		TNT1 A 0 A_FireCustomMissile("SSGCaseSpawner",0,0,-5,-15)
+		SSGZ B 2
+		SSGZ CDEFGGHH 1
+		TNT1 A 0 A_PlaySound("weapons/sshotl",CHAN_AUTO)
+		TNT1 A 0 A_TakeInventory("SSGAlt",1)
+		TNT1 A 0 A_GiveInventory("SSGAmmo",1)
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,2)
+		TNT1 A 0 A_TakeInventory("Shell",1,TIF_NOTAKEINFINITE)
+		SSGZ IJKLMNO 1
+		TNT1 A 2
+		TNT1 A 0 A_PlaySound("weapons/sshotc",CHAN_AUTO)
+		SSGH EFGHIJKLM 1
+		TNT1 A 0 A_Refire
+		Goto Ready
+	NoAmmo:
+		SSGG A 10
+		TNT1 A 0 A_PlaySound("DRYFIRE",CHAN_WEAPON)
+		Goto Ready
+	AmmoCheck:
+		TNT1 A 0 A_Jumpifinventory("SSGAmmo",2,1)
+		Goto Reload
+		TNT1 A 0 A_TakeInventory("SSGAmmo",2)
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReload")
+		Goto ResumeFire
+	NoReload:
+		TNT1 A 0 A_Jumpifinventory("Shell",2,1)
+		Goto NoAmmo
+		TNT1 A 0 A_TakeInventory("Shell",2,TIF_NOTAKEINFINITE)
+		Goto ResumeFire
+	AltAmmoCheck:
+		TNT1 A 0 A_Jumpifinventory("SSGAmmo",1,1)
+		Goto Reload
+		TNT1 A 0 A_TakeInventory("SSGAmmo",1)
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"AltNoReload")
+		TNT1 A 0 A_JumpIfInventory("SSGAlt",1,"ResumeAltFire2")
+		Goto ResumeAltFire
+	AltNoReload:
+		TNT1 A 0 A_Jumpifinventory("Shell",1,1)
+		Goto NoAmmo
+		TNT1 A 0 A_TakeInventory("Shell",1,TIF_NOTAKEINFINITE)
+		TNT1 A 0 A_JumpIfInventory("SSGAlt",1,"ResumeAltFire2")
+		Goto ResumeAltFire
+	}
+}

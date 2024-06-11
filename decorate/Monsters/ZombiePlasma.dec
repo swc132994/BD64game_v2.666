@@ -1,0 +1,221 @@
+Actor 64PlasmaGuy : 64Zombieman 19138
+{
+//$category "Game/BD64_Monsters
+Health 95
+Speed 12
+SeeSound "colonelzombie/see"
+ActiveSound "colonelzombie/active"
+DeathSound "colonelzombie/death"
+PainSound "colonelzombie/pain"
+DamageFactor "Head",1.25
+Tag "Plasma Zombie"
+DropItem "Cell"
+DropItem "SOULSPAWNER"
+Obituary "%o was melted by a zombie colonel."
+	States
+	{
+	Idle:	//placeholder
+	Spawn:
+		ZMAY A 8 A_LookEx
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8",4,0,55)
+		Loop
+	Forget:
+		TNT1 A 0 A_ClearTarget
+		Goto Spawn
+	See:
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",0,0,55)
+		ZMAY AA 2 A_Chase("","")
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",0,0,55)
+		ZMAY BB 2 A_Chase
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",0,0,55)
+		ZMAY CC 2 A_Chase
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",0,0,55)
+		ZMAY DD 2 A_Chase
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",0,0,55)
+		ZMAY AA 2 A_Chase("","")
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",0,0,55)
+		ZMAY BB 2 A_Chase
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",0,0,55)
+		ZMAY CC 2 A_Chase
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4",0,0,55)
+		ZMAY DD 2 A_Chase
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
+		Loop
+	Missile:
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget12",0,0,55)
+		ZMAY E 8 A_FaceTarget
+		ZMAY F 1 Bright Light("CHAINGUN") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY E 2 A_FaceTarget
+		ZMAY F 1 Bright Light("CHAINGUN") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY E 2 A_FaceTarget
+		ZMAY F 1 Bright Light("CHAINGUN") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY E 3 A_FaceTarget
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget12",0,0,55)
+		ZMAY E 8 A_FaceTarget
+		ZMAY F 1 Bright Light("CHAINGUN") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY E 2 A_FaceTarget
+		ZMAY F 1 Bright Light("CHAINGUN") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget6",0,0,55)
+		ZMAY E 2 A_FaceTarget
+		ZMAY F 1 Bright Light("CHAINGUN") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY E 3 A_FaceTarget
+		TNT1 A 0 A_Jump(128,"See")
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget12",0,0,55)
+		ZMAY E 8 A_FaceTarget
+		ZMAY F 1 Bright Light("CHAINGUN") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY E 2 A_FaceTarget
+		ZMAY F 1 Bright Light("CHAINGUN") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget12",0,0,55)
+		ZMAY E 2 A_FaceTarget
+		ZMAY F 1 Bright Light("CHAINGUN") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY E 2 A_FaceTarget
+		ZMAY E 7
+		Goto See
+	Pain:
+		ZMAY G 3
+		ZMAY G 3 A_Pain
+		Goto See
+	Death:
+		ZMAY H 5 A_Scream
+		ZMAY I 5 A_CustomMissile("Brutal_Blood",48,0,random(0,360),2,random(0,90))
+		ZMAY J 5 A_NoBlocking
+		ZMAY KL 5
+		ZMAY M 35
+		ZMAY M 3500 A_SpawnItemEx("GrowingBloodPool")
+		ZMAY M -1
+		Stop
+	Death.Head:
+		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
+		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathEyes",40,0,random(150,210),2,random(10,50))
+		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
+		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		ZMAH HIJKL 5
+		ZMAH M 35
+		ZMAH M 3500 A_SpawnItemEx("GrowingBloodPool")
+		ZMAH M -1
+		Stop
+	Raise:
+		ZMAY MLKJIH 5
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",FALSE)
+		Goto See
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
+		POL5 A -1
+		Stop
+	Death.BFG:
+	XDeath:
+		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeathTeeth",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeathEyes",40,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_SpawnItemEx("MarinePlasmaArm1",0,0,50,random(2,6),random(2,6),random(4,8),random(1,360),SXF_TRANSFERPITCH)
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		ZMAY NOPQRSTU 5
+		ZMAY V 35
+		ZMAY V -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Shotgun:
+		ZMAY G 2 A_Recoil(6)
+		TNT1 A 0 A_JumpIfCloser(210,"Death.Heavy")
+		Goto Death
+	Death.SSG:
+		ZMAY G 2 A_Recoil(10)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.SplatteredOnWall")
+		TNT1 A 0 A_JumpIfCloser(210,"Death.Heavy")
+		Goto Death
+	Death.SuperFists:
+	Death.SuperKick:
+		TNT1 A 0 A_Jump(170,"Death.Heavy")
+	Death.Chainsaw:
+	Death.SplatteredOnWall:
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_SpawnItemEx("MarinePlasmaLeg1",0,0,25,random(2,6),random(2,6),random(4,8),random(1,360),SXF_TRANSFERPITCH)
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Brutal_Blood",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		ZMAG A 2 ThrustThingZ(0,40,0,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
+		ZMAG A 2 A_CheckFloor("LANDAFTERXDEATH")
+		Wait
+	LandAfterXDeath:
+		ZMAG B 1 A_Stop
+		TNT1 A 0 A_Jump(128,"LandAfterXDeath2")
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
+		ZMAG B -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	LandAfterXDeath2:
+		ZMAG C 1
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
+		ZMAG C -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Cutless:
+		TNT1 A 0 A_Jump(64,"Death")
+		TNT1 A 0 A_SpawnItemEx("MarinePlasmaArm1",0,0,50,random(2,6),random(2,6),random(4,8),random(1,360),SXF_TRANSFERPITCH)
+		TNT1 AA 0 A_SpawnItemEx("MarinePlasmaLeg1",0,0,25,random(2,6),random(2,6),random(4,8),random(1,360),SXF_TRANSFERPITCH)
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Brutal_Blood",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		ZMAG A 2 ThrustThingZ(0,20,0,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
+		ZMAG A 2 A_CheckFloor("LANDAFTERXDEATH")
+		Wait
+	Death.Bullet:
+		TNT1 A 0 A_Jump(205,"Death")//80%
+	Death.Rifle:
+		TNT1 A 0 A_Jump(168,"Death")
+	Death.Heavy:
+		TNT1 A 0 A_XScream
+		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeath1",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
+		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
+		Goto Death+1
+	Death.PlasmaBurningZombie:
+		BURN A 1 A_SpawnItemEx("BurningPlasmaGuy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	}
+}
+
+ACTOR BurningPlasmaGuy : BurningZombieman
+{
+DeathSound "colonelzombie/death"
+PainSound "colonelzombie/pain"
+	States
+	{
+	Raise:
+		ZMAY MLKJI 5
+		ZMAY H 1 A_SpawnItemEx("64PlasmaGuy",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	}
+}

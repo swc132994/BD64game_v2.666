@@ -1,0 +1,346 @@
+Actor 64SpiderMastermind : SpiderMastermind Replaces SpiderMastermind
+{
+//$category "Game/BD64_Monsters
+Scale 0.9
+Radius 62
+PainChance "Bullet",26
+PainChance "SuperFists",200
+PainChance "Kick",200
+PainChance "SuperKick",200
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+MeleeThreshold 200
+MeleeRange 100
+DropItem "DemonEssenceLargeSpawner"
+DropItem "Soulsphere",32
+AttackSound "weapons/gswing"
++EXTREMEDEATH
++AVOIDMELEE
++QUICKTORETALIATE
++NEVERFAST
++NOBLOODDECALS
+	States
+	{
+	Spawn:
+		MSMN AB 10 A_LookEx
+		Loop
+	See:
+		MSMN A 3 A_Metal
+		MSMN AABBCCDD 3 A_Chase
+		Loop
+	Melee:
+		MSMN DE 6 A_FaceTarget
+		MSMN D 6 A_CustomMeleeAttack(50)
+		Goto See
+	Missile:
+		MSMN A 15 A_FaceTarget
+		MSMN E 2 A_FaceTarget
+		MSMN Q 2 Bright Light("MASTERMINDATK") A_PlaySound("CHGNSHOT",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
+		TNT1 A 0 A_PlaySound("CHGNSHOT",CHAN_ITEM)
+		MSMN E 2 A_FaceTarget
+		MSMN Q 2 Bright Light("MASTERMINDATK") A_PlaySound("CHGNSHOT",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
+		TNT1 A 0 A_PlaySound("CHGNSHOT",CHAN_ITEM)
+		MSMN E 2 A_FaceTarget
+		MSMN Q 2 Bright Light("MASTERMINDATK") A_PlaySound("CHGNSHOT",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
+		TNT1 A 0 A_PlaySound("CHGNSHOT",CHAN_ITEM)
+		MSMN E 2 A_FaceTarget
+		MSMN Q 2 Bright Light("MASTERMINDATK") A_PlaySound("CHGNSHOT",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
+		TNT1 A 0 A_PlaySound("CHGNSHOT",CHAN_ITEM)
+		MSMN E 2 A_FaceTarget
+		MSMN Q 2 Bright Light("MASTERMINDATK") A_PlaySound("CHGNSHOT",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
+		TNT1 A 0 A_PlaySound("CHGNSHOT",CHAN_ITEM)
+		MSMN E 2 A_FaceTarget
+		MSMN Q 2 Bright Light("MASTERMINDATK") A_PlaySound("CHGNSHOT",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
+		TNT1 A 0 A_PlaySound("CHGNSHOT",CHAN_ITEM)
+		MSMN E 2 A_FaceTarget
+		MSMN Q 2 Bright Light("MASTERMINDATK") A_PlaySound("CHGNSHOT",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
+		TNT1 A 0 A_PlaySound("CHGNSHOT",CHAN_ITEM)
+		MSMN E 2 A_FaceTarget
+		MSMN Q 2 Bright Light("MASTERMINDATK") A_PlaySound("CHGNSHOT",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
+		TNT1 A 0 A_PlaySound("CHGNSHOT",CHAN_ITEM)
+		MSMN E 2 A_FaceTarget
+		MSMN Q 2 Bright Light("MASTERMINDATK") A_PlaySound("CHGNSHOT",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("MasterMindProjectile",45,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_SpawnItemEx("MastermindCaseSpawn",26,0,40,0,0)
+		TNT1 A 0 A_PlaySound("CHGNSHOT",CHAN_ITEM)
+		MSMN E 3 A_SpidRefire
+		Goto Missile+2
+	Pain:
+		MSMN F 3
+		MSMN F 3 A_Pain
+		Goto See
+	Death:
+		TNT1 A 0 A_Scream
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",-64,-64,50,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",64,64,100,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",64,64,0,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,50,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",-64,-64,0,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",64,64,50,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",-64,-64,100,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,0,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",-64,-64,50,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",-64,-64,100,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",64,64,0,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",64,64,50,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",64,64,0,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",0,0,50,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",64,64,100,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",-64,-64,0,0,0,0,0,130)
+		MSMN G 4 Bright A_SpawnItemEx("64BossExplosion",-64,-64,50,0,0,0,0,130)
+		TNT1 A 0 A_NoBlocking
+		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_SpawnItemEx("64BarrelExplosion",0,0,32)
+		TNT1 A 0 A_SpawnItemEX("64BarrelExplosion",0,0,90)
+		TNT1 AAAAAAAAA 0 A_CustomMissile("BurningXDeath1",42,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("BloodmistExtraBig",45,0,random(0,360),2,random(10,90))
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("SuperGoreSpawner",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_CustomMissile("XDeathMastermindHead",55,0,random(0,360),2,random(40,90))	//R30.9 removed
+		MSMN H 4 Bright A_SpawnItemEx("64BossExplosion",64,64,100,0,0,0,0,130)
+		MSMN I 4 Bright A_SpawnItemEx("64BossExplosion",-64,-64,0,0,0,0,0,130)
+		MSMN J 4 Bright A_SpawnItemEx("64BossExplosion",64,64,50,0,0,0,0,130)
+		MSMN K 4 Bright A_SpawnItemEx("64BossExplosion",0,0,100,0,0,0,0,130)
+		MSMN LMNO 5 Bright
+		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
+		MSMN P 35 A_BossDeath
+		MSMN P -1 A_SpawnItemEx("GrowingBloodPoolBig")
+		Stop
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
+		POL5 A -1
+		Stop
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 0 A_KillMaster
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	}
+}
+
+ACTOR MasterMindProjectile : EnemyProjectile
+{
+Scale 0.1
+Damage 4
+Speed 60
+FastSpeed 70
++EXTREMEDEATH
+	States
+	{
+	Spawn:
+		SPKO S 1 Bright
+		Loop
+	Death:
+		TNT1 A 1 A_SpawnItemEx("RicoChet")
+		EFIR ABCDEFGHIJKLM 1
+		Stop
+	XDeath:
+		TNT1 A 1
+		Stop
+	}
+}
+
+Actor 64Eradicator : SpiderMastermind 19119
+{
+//$category "Game/BD64_Monsters
+Scale 0.9
+Health 4000
+Speed 14
+Radius 62
+PainChance 30
+PainChance "Bullet",26
+PainChance "SuperFists",200
+PainChance "Kick",200
+PainChance "SuperKick",200
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+AttackSound "weapons/gswing"
+MeleeThreshold 200
+MeleeRange 100
+DropItem "DemonEssenceLargeSpawner"
+DropItem "Soulsphere",64
+Obituary "The Eradicator unmade %o."
+Tag "Eradicator"
+BloodType "Brutal_BloodBLUE"
++EXTREMEDEATH
++AVOIDMELEE
++QUICKTORETALIATE
++NEVERFAST
++NOBLOODDECALS
+	States
+	{
+	Spawn:
+		BSGI AB 10 A_LookEx
+		Loop
+	See:
+		BSGI A 3 A_Metal
+		BSGI AABBCCDD 3 A_Chase
+		Loop
+	Melee:
+		BSGI DE 6 A_FaceTarget
+		BSGI D 6 A_CustomMeleeAttack(75)
+		Goto See
+	Missile:
+		BSGI A 15 A_FaceTarget
+		BSGI E 3 A_FaceTarget
+		BSGI Q 4 Bright Light("ERADICATORATK") A_PlaySound("UNMAKER",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("EradicatorLaser",40,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_PlaySound("UNMAKER",CHAN_ITEM)
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		BSGI E 3 A_FaceTarget
+		BSGI Q 4 Bright Light("ERADICATORATK") A_PlaySound("UNMAKER",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("EradicatorLaser",40,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_PlaySound("UNMAKER",CHAN_ITEM)
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		BSGI E 3 A_FaceTarget
+		BSGI Q 4 Bright Light("ERADICATORATK") A_PlaySound("UNMAKER",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("EradicatorLaser",40,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_PlaySound("UNMAKER",CHAN_ITEM)
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		BSGI E 3 A_FaceTarget
+		BSGI Q 4 Bright Light("ERADICATORATK") A_PlaySound("UNMAKER",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("EradicatorLaser",40,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_PlaySound("UNMAKER",CHAN_ITEM)
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		BSGI E 3 A_FaceTarget
+		BSGI Q 4 Bright Light("ERADICATORATK") A_PlaySound("UNMAKER",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("EradicatorLaser",40,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_PlaySound("UNMAKER",CHAN_ITEM)
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		BSGI E 3 A_FaceTarget
+		BSGI Q 4 Bright Light("ERADICATORATK") A_PlaySound("UNMAKER",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("EradicatorLaser",40,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_PlaySound("UNMAKER",CHAN_ITEM)
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		BSGI E 3 A_FaceTarget
+		BSGI Q 4 Bright Light("ERADICATORATK") A_PlaySound("UNMAKER",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("EradicatorLaser",40,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_PlaySound("UNMAKER",CHAN_ITEM)
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		BSGI E 3 A_FaceTarget
+		BSGI Q 4 Bright Light("ERADICATORATK") A_PlaySound("UNMAKER",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("EradicatorLaser",40,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_PlaySound("UNMAKER",CHAN_ITEM)
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		BSGI E 3 A_FaceTarget
+		BSGI Q 4 Bright Light("ERADICATORATK") A_PlaySound("UNMAKER",CHAN_WEAPON)
+		TNT1 A 0 A_CustomMissile("EradicatorLaser",40,0,random(-4,4),1,random(-2,2))
+		TNT1 A 0 A_PlaySound("UNMAKER",CHAN_ITEM)
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		BSGI E 3 A_SpidRefire
+		Goto Missile+2
+	Pain:
+		BSGI F 3
+		BSGI F 3 A_Pain
+		Goto See
+	Death:
+		TNT1 A 0 A_Scream
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",0,0,100,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",0,0,0,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",-64,-64,50,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",64,64,100,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",64,64,0,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",0,0,50,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",0,0,100,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",-64,-64,0,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",64,64,50,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",-64,-64,100,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",0,0,0,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",-64,-64,50,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",-64,-64,100,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",64,64,0,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",64,64,50,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",0,0,100,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",64,64,0,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",0,0,50,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",64,64,100,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",-64,-64,0,0,0,0,0,130)
+		BSGI G 4 Bright A_SpawnItemEx("64BossExplosionBLUE",-64,-64,50,0,0,0,0,130)
+		TNT1 A 0 A_NoBlocking
+		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncherBLUE",0,0,random(0,360),2,random(50,130))
+		TNT1 AA 0 A_CustomMissile("XDeath1BLUE",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2BLUE",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3BLUE",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPieceBLUE",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_SpawnItemEx("64BarrelExplosion",0,0,32)
+		TNT1 A 0 A_SpawnItemEx("64BarrelExplosion",0,0,90)
+		TNT1 AAAAAAAAA 0 A_CustomMissile("BurningXDeath1BLUE",42,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBLUE",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("BloodmistExtraBigBLUE",45,0,random(0,360),2,random(10,90))
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("SuperGoreSpawnerBLUE",45,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_CustomMissile("EradicatorHead",55,0,random(0,360),2,random(40,90))
+		BSGI H 4 Bright A_SpawnItemEx("64BossExplosionBLUE",64,64,100,0,0,0,0,130)
+		BSGI I 4 Bright A_SpawnItemEx("64BossExplosionBLUE",-64,-64,0,0,0,0,0,130)
+		BSGI J 4 Bright A_SpawnItemEx("64BossExplosionBLUE",64,64,50,0,0,0,0,130)
+		BSGI K 4 Bright A_SpawnItemEx("64BossExplosionBLUE",0,0,100,0,0,0,0,130)
+		BSGI LMNO 5 Bright
+		TNT1 A 0 A_BossDeath
+		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
+		BSGI P 35
+		BSGI P -1 A_SpawnItemEx("GrowingBloodPoolBigBlue")
+		Stop
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
+		A040 A -1
+		Stop
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 0 A_KillMaster
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	}
+}
+
+Actor EradicatorLaser : UnmakerLaser2
+{
+-FORCERADIUSDMG
+	States
+	{
+	Death:
+		TNT1 A 0 A_SpawnItemEx("DetectFloorLaser")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilLaser")
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_Explode(40,15,1)
+		LPUF AAA 1 Bright Light("UNMAKERSHOT") A_SpawnItemEx("RocketFlare")
+		TNT1 AAAAA 0 A_CustomMissile("PlasmaSmoke",0,0,random(0,360),2,random(0,360))
+		LPUF ABC 3 Bright Light("UNMAKERSHOT")
+		Stop
+	}
+}

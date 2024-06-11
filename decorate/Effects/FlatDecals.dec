@@ -1,0 +1,177 @@
+ACTOR DetectFloorBullet
+{
+Mass 1
+Gravity 1
+scale 0.4
+radius 12
+height 1
+Alpha 0.9
+Renderstyle Translucent
++FLOORCLIP
++DONTSPLASH
++CLIENTSIDEONLY
++NOTELEPORT
++NOBLOCKMAP
++FORCEXYBILLBOARD
++NODAMAGETHRUST
++MOVEWITHSECTOR
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("Flat_Decal_Remover")==1,"Off")
+		TNT1 AA 1 A_CheckFloor("Death")
+		Goto Off
+	Death:
+		XXX1 A 2000
+		XXX1 A 1 A_FadeOut(0.01)
+		Wait
+	Off:
+		TNT1 A 1
+		Stop
+	}
+}
+
+ACTOR DetectCeilBullet
+{
+Mass 1
+scale 0.4
+radius 12
+height 1
+Alpha 0.9
+Renderstyle Translucent
++FLOORCLIP
++DONTSPLASH
++MISSILE
++NOTELEPORT
++NOBLOCKMAP
++THRUACTORS
++MOVEWITHSECTOR
++NODAMAGETHRUST
++NOGRAVITY
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("Flat_Decal_Remover")==1,"Off")
+		TNT1 A 0 ThrustThingZ(0,35,0,0)
+		TNT1 AA 1 A_CheckCeiling("Death")
+		Stop
+	Off:
+		TNT1 A 1
+		Stop
+	Death:
+		XXX1 A 2000
+		XXX1 A 1 A_FadeOut(0.01)
+		Wait
+	}
+}
+
+ACTOR DetectFloorCraterNoSplashes : DetectFloorBullet
+{
+scale 3.4
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectFloorCrater : DetectFloorBullet
+{
+scale 3.4
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectCeilCrater : DetectCeilBullet
+{
+scale 3.4
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectFloorCraterSmall : DetectFloorBullet
+{
+scale 2.0
+Renderstyle Shaded
+StencilColor "Black"
+Alpha 0.9
+}
+
+ACTOR DetectCeilCraterSmall : DetectCeilBullet
+{
+scale 2.0
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectBarrelCrater : DetectFloorBullet
+{
+scale 3.4
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectFloorCraterMed : DetectFloorBullet
+{
+scale 2.5
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectCeilCraterMed : DetectCeilBullet
+{
+scale 2.5
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectFloorCraterICE : DetectFloorBullet
+{
+scale 2.5
+Renderstyle Shaded
+Alpha 0.9
+StencilColor "7C B9 E8"
+}
+
+ACTOR DetectCeilCraterICE : DetectCeilBullet
+{
+scale 2.5
+Renderstyle Shaded
+Alpha 0.9
+StencilColor "7C B9 E8"
+}
+
+ACTOR DetectFloorLaser : DetectFloorBullet
+{
+scale 1.5
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectCeilLaser : DetectCeilBullet
+{
+scale 1.5
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+}
+
+ACTOR DetectFloorCraterSmallMotherdemon : DetectFloorBullet
+{
+scale 2.0
+Alpha 0.9
+Renderstyle Shaded
+StencilColor "Black"
+	states
+	{
+	Death:
+		XXX1 A 175	//shorter duration
+		XXX1 A 1 A_FadeOut(0.01)
+		Wait
+	}
+}

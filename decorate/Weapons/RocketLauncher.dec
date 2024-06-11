@@ -1,0 +1,578 @@
+Actor RocketLauncherSpawner : CustomInventory Replaces RocketLauncher
+{
+//$category "Game/BD64_Weapons
+Scale 0.82
+Tag "Rocket Launcher"
+Inventory.PickupMessage "$GOTLAUNCHER"
+Inventory.PickupSound "WPICK"
+	States
+	{
+	Spawn:
+		LAUN A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_Jumpifinventory("IsTacticalClass",1,"Pickup2")
+		TNT1 A 0 A_Jumpifinventory("IsModern",1,"Pickup2")
+		TNT1 A 0 A_GiveInventory("64RocketLauncher")
+		Stop
+	Pickup2:
+		TNT1 A 0 A_GiveInventory("64RocketLauncherTactical",1)
+		Stop
+	}
+}
+
+Actor 64RocketLauncher : DoomWeapon
+{
+Scale 0.82
+Weapon.SlotNumber 5
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 2500
+Weapon.AmmoType "RocketAmmo"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 2
+Inventory.PickupMessage "$GOTLAUNCHER"
+Tag "$TAG_ROCKETLAUNCHER"
+VisibleToPlayerClass "64DoomPlayer"
+Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
++INVENTORY.RESTRICTABSOLUTELY
+	States
+	{
+	Ready:
+		MISG A 1 A_WeaponReady
+		Wait
+	Deselect:
+		MISG A 1 A_Lower
+		Wait
+	Select:
+		MISG A 1 A_Raise
+		Wait
+	Fire:
+		MISG B 2 Bright Offset(0,36)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,22)
+		MISG C 2 Bright Offset(0,37) A_GunFlash
+		TNT1 A 0 A_FireMissile
+		TNT1 A 0 A_Recoil(2)
+		MISG DEFFF 1
+		MISG FGHI 2 Bright
+		MISG A 4
+		TNT1 A 0 A_ReFire
+		Goto Ready
+	Flash:
+		TNT1 A 3 Bright A_Light1
+		TNT1 A 2 Bright
+		TNT1 A 2 Bright A_Light2
+		TNT1 A 6 Bright
+		Goto LightDone
+	Spawn:
+		LAUN A -1
+		Stop
+	}
+}
+
+Actor AltMode : Inventory
+{
+Inventory.MaxAmount 1
+}
+
+Actor ClassicRLToken : Inventory
+{
+Inventory.MaxAmount 1
+}
+
+Actor NeverSelectedRL : Inventory
+{
+Inventory.MaxAmount 1
+}
+
+Actor SisterWeaponSelector : PowerWeaponLevel2
+{
++UNDROPPABLE
++UNTOSSABLE
+-COUNTITEM
+-INVBAR
++PERSISTENTPOWER
+powerup.duration 2147483647
+}
+
+Actor RLAmmo : Ammo
+{
+Inventory.Amount 0
+Inventory.MaxAmount 6
+Ammo.BackpackAmount 0
+Ammo.BackpackMaxAmount 6
+Inventory.Icon "LAUNA0"
++IGNORESKILL
+}
+
+Actor 64RocketLauncherTactical : Brutal64Weapon
+{
+Scale 0.82
+Weapon.SlotNumber 5
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 2500
+Weapon.AmmoType1 "RocketAmmo"
+Weapon.AmmoUse1 1
+Weapon.AmmoGive1 2
+Weapon.AmmoType2 "RLAmmo"
+Weapon.AmmoUse2 1
+Weapon.AmmoGive2 0
+Inventory.PickupMessage "$GOTLAUNCHER"
+Tag "$TAG_ROCKETLAUNCHER"
++INVENTORY.RESTRICTABSOLUTELY
++WEAPON.NOAUTOFIRE
++WEAPON.NOALERT
++WEAPON.AMMO_CHECKBOTH
++WEAPON.PRIMARY_USES_BOTH
+Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
+	States
+	{
+	MineThrowFlash:
+		RLTS EFGH 1
+		TNT1 A 18
+		RLTS ABCD 1
+		Stop
+	KickingFlash:
+		TNT1 B 0 A_JumpIfInventory("RLAmmo",1,1)
+		Goto KickNoRockets
+		RLTG B 0 A_JumpIfInventory("AltMode",1,2)
+		RLTL B 0
+		"####" BCDE 1
+		"####" E 8
+		"####" EDCB 1
+		Stop
+	KickNoRockets:
+		RLTN BCDE 1
+		RLTN E 8
+		RLTN EDCB 1
+		Stop
+	SlideKickingStart: //18
+		TNT1 B 0 A_JumpIfInventory("RLAmmo",1,1)
+		Goto SlideStartNoRockets
+		RLTG B 0 A_JumpIfInventory("AltMode",1,2)
+		RLTL B 0
+		"####" BCDE 1
+		"####" E 35
+	SlideKickingEnd:
+		TNT1 B 0 A_JumpIfInventory("RLAmmo",1,1)
+		Goto SlideEndNoRockets
+		RLTG E 0 A_JumpIfInventory("AltMode",1,2)
+		RLTL E 0
+		"####" E 2
+		"####" EDCB 1
+		Stop
+	SlideStartNoRockets:
+		RLTN BCDE 1
+		RLTN E 35
+	SlideEndNoRockets:
+		RLTN E 2
+		RLTN EDCB 1
+		Stop
+	Spawn:
+		LAUN A -1
+		Stop
+	WarmUp:
+		TNT1 A 0 A_TakeInventory("NeverSelectedRL",1)
+		RLTR F 1 Offset(112,100)
+		RLTR F 1 Offset(90,80)
+		RLTR F 1 Offset(60,61)
+		RLTR F 1 Offset(29,44)
+		RLTR F 1 Offset(18,37)
+		RLTR F 1 Offset(2,33)
+		RLTR IJK 1
+		RLTR LL 8
+		TNT1 A 0 A_PlaySound("ROCKLOAD",CHAN_BODY)
+		RLTR MNOPQRSTUVWXYZ 1 A_WeaponReady
+		RLTR "[\]" 1 A_WeaponReady
+		Goto Ready
+	ClassicRLSelected:	//Deselect animation
+		RLTS DCBA 1 Offset(0,32)
+		TNT1 A 3
+	ClassicRLSelected2:	//Classic select animation
+		TNT1 A 0 A_PlaySound("ROCKPKUP",CHAN_BODY)
+		MISS ABCD 1 Offset(0,32)
+		TNT1 A 0 A_GiveInventory("SisterWeaponSelector",1)
+	v1Ready:
+	Ready:
+		TNT1 A 0 A_JumpIfInventory("ClassicRLToken",1,"ClassicRLSelected")
+		RLTG A 0 A_JumpIfInventory("AltMode",1,2)
+		RLTL A 0
+		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		TNT1 A 0 A_JumpIfInventory("RLAmmo",1,"Ready")
+		Goto NoRockets
+	NoRockets:
+		RLTN A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("ClassicRLToken",1,"ClassicRLSelected")
+		Loop
+	Select:
+		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
+		TNT1 A 0 A_JumpIfInventory("ClassicRLToken",1,"ClassicRLSelected2")
+		TNT1 A 0 A_JumpIfInventory("NeverSelectedRL",1,"WarmUp")
+		TNT1 A 0 A_PlaySound("ROCKPKUP",CHAN_BODY)
+		RLTS ABCD 1 Offset(0,32)
+		TNT1 A 0 A_Raise
+		Wait
+	Deselect:
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
+		TNT1 A 0 A_Takeinventory("TossMine",0)
+		TNT1 A 0 A_Takeinventory("PlaceMine",0)
+		TNT1 A 0 A_Takeinventory("Kicking",0)
+		RLTS EFGH 1
+		TNT1 A 0 A_Takeinventory("SisterWeaponSelector",0)
+		TNT1 A 0 A_Lower
+		Wait
+	Fire:
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReload")
+		TNT1 A 0 A_JumpIfInventory("RLAmmo",1,1)
+		Goto Reload
+		TNT1 A 0 A_TakeInventory("RLAmmo",1,TIF_NOTAKEINFINITE)
+		Goto ResumeFire
+	ResumeFire:
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_ZoomFactor(0.97)
+		TNT1 A 0 A_JumpIfInventory("AltMode",1,"HeavyFire")
+		TNT1 A 0 A_Recoil(2)
+		TNT1 A 0 A_FireCustomMissile("64rocket",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,22)
+		RLLF A 1 Bright offset(0,33)
+		RLLF B 1 Bright offset(0,35)
+		RLLF C 1 Bright offset(0,37)
+		RLLF D 1 Bright offset(0,40)
+		TNT1 A 0 A_SetPitch(pitch-2,SPF_INTERPOLATE)
+		RLLF E 5 offset(0,42)
+		RLLF E 1 offset(0,38)
+		TNT1 A 0 A_ZoomFactor(1.0)
+		RLLF F 1 offset(0,37)
+		RLLF F 1 offset(0,36)
+		RLLF G 1 offset(0,35)
+		RLLF G 1 offset(0,34)
+		RLTL A 1 offset(0,33)
+		RLTL A 5
+		TNT1 A 0 A_ReFire
+		Goto Ready
+	HeavyFire:
+		TNT1 A 0 A_Recoil(3)
+		TNT1 A 0 A_FireCustomMissile("TacticalRocket",0,0)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,22)
+		RLTF A 2 Bright offset(0,33)
+		RLTF B 2 Bright offset(0,34)
+		RLTF C 2 Bright offset(0,36)
+		RLTF D 2 Bright offset(0,38)
+		RLTF F 2 offset(0,40)
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_SetPitch(pitch+0.8,SPF_INTERPOLATE)
+		RLTF E 4 offset(0,40)
+		RLTF E 2 offset(0,40)
+		RLTF F 2 offset(0,36)
+		RLTF F 2 offset(0,35)
+		RLTF G 2 offset(0,34)
+		RLTF G 2 offset(0,33)
+		RLTG A 10
+		TNT1 A 0 A_ReFire
+		Goto Ready
+	Reload:
+		RLTG A 0 A_JumpIfInventory("AltMode",1,3)
+		RLTL A 0 A_JumpIfInventory("RLAmmo",1,2)
+		RLTN A 0 A_Jump(256,2)
+		"####" A 0 A_JumpIfInventory("RLAmmo",1,2)
+		RLTN A 0
+		"####" A 0 A_WeaponReady(WRF_NOFIRE)
+		RLTG A 0 A_JumpIfInventory("RLAmmo",6,"NoNeedToReload")
+		RLTG A 0 A_JumpIfInventory("RocketAmmo",1,1)
+		Goto Ready
+		RLTG A 0 A_PlaySound("ROCKREL",CHAN_BODY)
+		RLTR ABCDEFG 1
+		TNT1 A 0 A_FireCustomMissile("RocketCaseSpawn",-20,0,10,-20)
+		RLTR HIJK 1
+		RLTR LL 8
+		TNT1 A 0 A_PlaySound("ROCKLOAD",CHAN_BODY)
+		RLTR MNOPQRST 1
+		RLTR UVWXYZ 1
+		RLTR "[\]" 1
+		RLTG A 0 A_JumpIfInventory("AltMode",1,"FinishReload") //Skip laser animation
+		RLTG A 1
+		Goto FinishReload
+	FinishReload:
+		RLTG A 0 A_JumpIfInventory("RLAmmo",6,"NoNeedToReload")
+		RLTG A 0 A_JumpIfInventory("RocketAmmo",1,1)
+		Goto Ready
+		TNT1 A 0 A_Giveinventory("RLAmmo",1)
+		TNT1 A 0 A_Takeinventory("RocketAmmo",1,TIF_NOTAKEINFINITE)
+		Goto FinishReload
+	NoNeedToReload:
+		RLTG A 0 A_JumpIfInventory("AltMode",1,2)
+		RLTL A 0
+		"####" A 1 A_Refire
+		Goto Ready
+	Altfire:
+		TNT1 A 0 A_JumpIfInventory("RLAmmo",1,1)
+		Goto Reload
+		TNT1 A 0 A_JumpIfInventory("AltMode",1,"ReturnToClassic")
+		RLTM ABCDEE 1
+		RLTM F 1 A_PlaySound("BEP",CHAN_WEAPON)
+		TNT1 A 0 A_Print("Heavy Payload Rockets Enabled",1)
+		TNT1 A 0 A_GiveInventory("AltMode",1)
+		TNT1 A 0 A_PlaySound("LASEROFF",CHAN_WEAPON)
+		RLTM FFGHIJ 1
+		Goto Ready
+	ReturnToClassic:
+		RLTM JIHGFF 1
+		RLTM E 1 A_PlaySound("BEP",CHAN_WEAPON)
+		TNT1 A 0 A_Print("Regular Rockets Enabled",1)
+		TNT1 A 0 A_TakeInventory("AltMode",1)
+		TNT1 A 0 A_PlaySound("LASERON",CHAN_WEAPON)
+		RLTM EEDBCA 1
+		Goto Ready
+	NoReload:
+		TNT1 A 0 A_JumpIfInventory("RocketAmmo",1,1)
+		Goto NoRockets
+		TNT1 A 0 A_TakeInventory("RocketAmmo",1,TIF_NOTAKEINFINITE)
+		Goto ResumeFire
+	}
+}
+
+Actor 64ClassicRocketLauncherTactical : Brutal64Weapon
+{
+Scale 0.82
+Weapon.SlotNumber 5
+Weapon.SlotPriority 2
+Weapon.SelectionOrder 2500
+Weapon.AmmoType "RocketAmmo"
+Weapon.AmmoUse 1
+Weapon.AmmoGive 0
+Inventory.PickupMessage "$GOTLAUNCHER"
+Tag "$TAG_ROCKETLAUNCHER"
++INVENTORY.RESTRICTABSOLUTELY
++WEAPON.NOAUTOFIRE
++WEAPON.NOALERT
++POWERED_UP
+Weapon.SisterWeapon "64RocketLauncherTactical"
+	States
+	{
+	MineThrowFlash:
+		MISS DCBA 1
+		TNT1 A 18
+		MISS ABCD 1
+		Stop
+	KickingFlash:
+		MISS DCBA 1
+		MISS A 8
+		MISS ABCD 1
+		Stop
+	SlideKickingStart: //18
+		MISS DCBA 1
+		MISS A 35
+	SlideKickingEnd:
+		MISS A 2
+		MISS ABCD 1
+		Stop
+	Spawn:
+		LAUN A -1
+		Stop
+	v1Ready:
+	Ready:
+		TNT1 A 0 A_JumpIfInventory("ClassicRLToken",1,2)
+		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
+		MISG A 1 A_WeaponReady
+		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
+		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
+		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		Goto Ready
+	Select:
+		TNT1 A 0 A_PlaySound("ROCKPKUP",CHAN_BODY)
+		TNT1 A 0 A_JumpIfInventory("ClassicRLToken",1,2)
+		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
+		MISS ABCD 1 Offset(0,32)
+		TNT1 A 0 A_Raise
+		Wait
+	Deselect:
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
+		TNT1 A 0 A_Takeinventory("TossMine",0)
+		TNT1 A 0 A_Takeinventory("PlaceMine",0)
+		TNT1 A 0 A_Takeinventory("Kicking",0)
+		MISS DCBA 1
+		TNT1 A 0 A_Takeinventory("SisterWeaponSelector",0)
+		TNT1 A 0 A_Lower
+		Wait
+	Fire:
+		MISG B 2 Bright Offset(0,36)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,22)
+		MISG C 2 Bright Offset(0,37) A_GunFlash
+		TNT1 A 0 A_AlertMonsters
+		TNT1 A 0 A_ZoomFactor(0.97)
+		TNT1 A 0 A_JumpIfInventory("AltMode",1,"HeavyFire")	//added "Altmode" alternates rocket types
+		TNT1 A 0 A_FireCustomMissile("64rocket")
+		TNT1 A 0 A_Recoil(2)
+		MISG D 1 Bright A_SetPitch(pitch-2)
+		TNT1 A 0 A_ZoomFactor(1.0)
+		MISG E 1 Bright A_SetPitch(pitch+0.8)
+		MISG F 1 A_SetPitch(pitch+0.6,SPF_INTERPOLATE)
+		MISG F 1 A_SetPitch(pitch+0.4,SPF_INTERPOLATE)
+		MISG F 1 A_SetPitch(pitch+0.2,SPF_INTERPOLATE)
+		MISG FGHI 2
+		MISG A 4
+		TNT1 A 0 A_ReFire
+		Goto Ready
+	HeavyFire:
+		TNT1 A 0 A_Recoil(3)
+		TNT1 A 0 A_FireCustomMissile("TacticalRocket")
+		MISG D 1 Bright A_SetPitch(pitch-2,SPF_INTERPOLATE)
+		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,40)
+		TNT1 A 0 A_Jump(256,2)
+		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle1",20,5,22)
+		TNT1 A 0 A_ZoomFactor(1.0)
+		MISG E 1 Bright A_SetPitch(pitch+0.8)
+		MISG F 1 A_SetPitch(pitch+0.6,SPF_INTERPOLATE)
+		MISG F 1 A_SetPitch(pitch+0.4,SPF_INTERPOLATE)
+		MISG F 1 A_SetPitch(pitch+0.2,SPF_INTERPOLATE)
+		MISG FGHI 2
+		MISG A 4
+		MISR ABCCCCC 2
+		TNT1 A 0 A_PlaySound("ROCKLOAD",CHAN_WEAPON)
+		MISR DEFGFED 1
+		MISR CCCCBA 2
+		TNT1 A 0 A_ReFire
+		Goto Ready
+	Flash:
+		TNT1 A 3 Bright A_Light1
+		TNT1 A 2 Bright
+		TNT1 A 2 Bright A_Light2
+		TNT1 A 6 Bright
+		Goto LightDone
+	Altfire:
+		MISR ABCCCCC 2
+		TNT1 A 0 A_JumpIfInventory("AltMode",1,"ReturnToClassic")
+		TNT1 A 0 A_PlaySound("ROCKLOAD",CHAN_WEAPON)
+		TNT1 A 0 A_Print("Heavy Payload Rockets Enabled",1)
+		TNT1 A 0 A_GiveInventory("AltMode",1)
+		MISR DEFGFED 1
+		MISR CCCCBA 2
+		Goto Ready
+	ReturnToClassic:
+		TNT1 A 0 A_PlaySound("ROCKLOAD",CHAN_WEAPON)
+		TNT1 A 0 A_Print("Regular Rockets Enabled",1)
+		TNT1 A 0 A_TakeInventory("AltMode",1)
+		MISR DEFGFED 1
+		MISR CCCCBA 2
+		Goto Ready
+	}
+}
+
+Actor 64Rocket : Rocket Replaces Rocket
+{
+scale 0.75
+Speed 30
+Decal "BigScorch"
+-DEHEXPLOSION
+-ROCKETTRAIL
++EXTREMEDEATH
+	States
+	{
+	Spawn:
+		TNT1 A 3
+	Fly:
+		MISL A 1 Bright Light("ROCKET")
+		TNT1 A 0 A_PlaySound("DSRLAUN",CHAN_BODY)
+		TNT1 A 0 A_SpawnItemEx("RocketFlare",-20)
+		TNT1 A 0 A_SpawnItemEx("OldschoolRocketSmokeTrail2")
+		TNT1 A 0 A_CustomMissile("OldschoolRocketSmokeTrail2",2,0,random(160,210),2,random(-30,30))
+		Loop
+	Death:
+		TNT1 A 0 A_SpawnItemEx("ExplosionFlareSpawner")
+		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile("64ExplosionFireBase",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilCrater")
+		TNT1 A 0 A_SpawnItemEx("ExplosionAirDisplacementEffect")
+		TNT1 A 0 A_PlaySound("EXPLO3",CHAN_VOICE)
+		TNT1 A 0 A_PlaySound("EXPLOSION",CHAN_WEAPON)
+		TNT1 A 0 Radius_Quake(2,8,0,12,0)
+		TNT1 A 2
+		TNT1 A 0 A_Explode
+		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
+		MISL BCDEF 1 Bright
+		stop
+	}
+}
+
+Actor TacticalRocket : 64Rocket
+{
+Scale 1.2
+Gravity 0.2
+-NOGRAVITY
+	States
+	{
+	Death:
+		TNT1 A 0 A_SpawnItemEx("ExplosionFlareSpawner")
+		TNT1 AAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("64ExplosionFireBaseTactical",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilCrater")
+		TNT1 A 0 A_SpawnItemEx("ExplosionAirDisplacementEffect")
+		TNT1 A 0 A_PlaySound("EXPLO3",CHAN_VOICE)
+		TNT1 A 0 A_PlaySound("EXPLOSION",CHAN_WEAPON)
+		TNT1 A 0 Radius_Quake(7,13,0,17,0)	//+5ea
+		TNT1 A 2
+		TNT1 AAA 0 A_Explode
+		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
+		MISL BCDEF 1 Bright
+		stop
+	}
+}
+
+Actor CyberRocket : 64Rocket
+{
+Scale 1.3
+	States
+	{
+	Death:
+		TNT1 A 0 A_SpawnItemEx("ExplosionFlareSpawner")
+		TNT1 AAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("64ExplosionFireBaseTactical",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilCrater")
+		TNT1 A 0 A_SpawnItemEx("ExplosionAirDisplacementEffect")
+		TNT1 A 0 A_PlaySound("EXPLO3",CHAN_VOICE)
+		TNT1 A 0 A_PlaySound("EXPLOSION",CHAN_WEAPON)
+		TNT1 A 0 Radius_Quake(8,15,0,20,0)
+		TNT1 A 2
+		TNT1 AA 0 A_Explode
+		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
+		MISL BCDEF 1 Bright
+		stop
+	}
+}
+
+Actor 64ExplosionFireBaseTactical : 64ExplosionFireBase	//larger explosion for tactical rocket
+{
+scale 1.35
+}

@@ -1,0 +1,717 @@
+ACTOR 64Hellstorm 19132
+{
+//$category "Game/BD64_Monsters
+Translation "112:127=%[0,0,0]:[0.35,0,0.7]"
+Scale 0.64
+Health 800
+Radius 20
+Height 56
+Mass 500
+Speed 20
+Alpha 0.6
+RenderStyle Translucent
+MeleeRange 150
+PainChance 10
+PainChance "SuperFists",200
+PainChance "Kick",200
+PainChance "SuperKick",200
+DamageFactor "Head",0.9
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+obituary "%o was torn apart by a Hellstorm"
+Tag "Hellstorm"
+seesound "tornado/see"
+painsound "tornado/pain"
+deathsound "tornado/death"
+activesound "tornado/active"
+DropItem "DemonEssenceSpawner"
+BloodType "Brutal_BloodBlue"
+Species "Archvile"
+MONSTER
++FLOORCLIP
++NOTARGET
++DONTHARMSPECIES
++NOBLOODDECALS
++QUICKTORETALIATE
++NEVERFAST
+	states
+	{
+	Spawn:
+		S1R3 AB 10 A_LookEx
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget20BLUE",12,0,62)
+		Loop
+	See:
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2BLUE",12,0,62)
+		TNT1 A 1 A_chase("","")
+		TNT1 A 0 A_SpawnItemEx("HellstormSprite1",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2BLUE",12,0,62)
+		TNT1 A 1 A_chase("","")
+		TNT1 A 0 A_SpawnItemEx("HellstormSprite2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2BLUE",12,0,62)
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItemEx("HellstormSprite3",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2BLUE",12,0,62)
+		TNT1 A 1 A_chase("","")
+		TNT1 A 0 A_SpawnItemEx("HellstormSprite4",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2BLUE",12,0,62)
+		TNT1 A 1 A_chase("","")
+		TNT1 A 0 A_SpawnItemEx("HellstormSprite5",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2BLUE",12,0,62)
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItemEx("HellstormSprite6",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2BLUE",12,0,62)
+		TNT1 A 1 A_chase("","")
+		TNT1 A 0 A_SpawnItemEx("HellstormSprite1",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2BLUE",12,0,62)
+		TNT1 A 1 A_chase("","")
+		TNT1 A 0 A_SpawnItemEx("HellstormSprite2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2BLUE",12,0,62)
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItemEx("HellstormSprite3",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2BLUE",12,0,62)
+		TNT1 A 1 A_chase("","")
+		TNT1 A 0 A_SpawnItemEx("HellstormSprite4",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2BLUE",12,0,62)
+		TNT1 A 1 A_chase("","")
+		TNT1 A 0 A_SpawnItemEx("HellstormSprite5",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2BLUE",12,0,62)
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItemEx("HellstormSprite6",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget2BLUE",12,0,62)
+		TNT1 A 1 A_chase
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget23BLUE",12,0,62)
+		TNT1 AAAAAAAA 3 A_chase
+		Loop
+	Missile:
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8BLUE",-8,0,62)
+		S1R3 G 8 Bright A_FaceTarget
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8BLUE",-8,0,62)
+		S1R3 H 8 Bright A_FaceTarget
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8BLUE",0,0,62)
+		S1R3 IJ 4 Bright
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8BLUE",4,0,62)
+		S1R3 KL 4 Bright
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4BLUE",4,0,62)
+		S1R3 M 4 Bright A_CustomMissile("64HellstormSoulBall1",58,12,90,0)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4BLUE",4,0,62)
+		S1R3 N 4 Bright A_CustomMissile("64HellstormSoulBall2",58,-12,-90,0)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4BLUE",4,0,62)
+		S1R3 O 4 Bright A_CustomMissile("64HellstormFire",0,0,-10,2,0)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget4BLUE",4,0,62)
+		S1R3 P 4 Bright A_CustomMissile("64HellstormFire",0,0,10,2,0)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget20BLUE",4,0,62)
+		S1R3 Q 20 Bright
+		Goto See
+	Melee:
+		TNT1 A 0 A_ChangeFlag("NOPAIN",TRUE)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget30BLUE",-8,0,62)
+		SP1N ABCDEFGHABCDEFGHABCDEFGHABCDEFGH 1 BRIGHT
+		TNT1 A 0 A_PlaySound("tornado/form",CHAN_BODY)
+		ZP1N ABC 1 BRIGHT
+	TornadoSpinning:
+		TNT1 A 0 A_JumpIfInventory("HellstormTornadoStopper",30,"StopSpin")
+		TNT1 A 0 A_PlaySound("tornado/form",CHAN_BODY)
+		TNT1 A 0 A_Explode(8,180,XF_NOTMISSILE)
+		TNT1 AA 0 A_CustomMissile("ExplosionSmokeFast22",30,0,random(0,360),2,random(0,360))
+		TNT1 AAAA 0 A_CustomMissile("64LeavesEffect",Random(16,64),Random(-32,32),Random(0,360),0,0)
+		TNT1 A 0 A_SpawnItemEx("HellstormTornadoSprite",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
+		TNT1 A 0 A_GiveInventory("HellstormTornadoStopper",1)
+		ZP1N ABC 1 BRIGHT A_Chase("","")
+		Loop
+	StopSpin:
+		TNT1 A 0 A_TakeInventory("HellstormTornadoStopper",30)
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget30BLUE",-8,0,62)
+		SP1N ABCDEFGHABCDEFGHABCDEFGHABCDEFGH 1 BRIGHT
+		TNT1 A 0 A_ChangeFlag("NOPAIN",FALSE)
+		Goto See
+	Pain:
+		S1R3 R 5
+		S1R3 R 5 A_Pain
+		Goto See
+	Death:
+		S1R3 S 7 A_NoBlocking
+		S1R3 T 7 A_Scream
+		S1R3 UVWX 7
+		S1R3 Y 35
+		S1R3 Y -1 A_SpawnItemEx("GrowingBloodPoolBLUE")
+		Stop
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
+		A040 A -1
+		Stop
+	Death.Plasma:
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Stop
+		TNT1 AAAA 0 A_CustomMissile("XDeath1BLUE",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmallBLUE",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",30,0,random(0,360),2,random(0,360))
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",30,0,random(0,360),2,random(0,360))
+		TNT1 AA 0 A_CustomMissile("CarbonizedSmoke1",30,0,random(0,360),2,random(10,90))
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn",random(-10,10),random(-10,10),20)
+		TNT1 A 0 A_SpawnItemEx("BarrelExplosionSmokeColumn")
+		TNT1 A 0 A_SpawnItemEx("BurningFleshEffect2",0,0,5)
+		TNT1 AAA 0 A_SpawnItemEx("Brutal_BloodBLUE",0,0,30)
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
+		CRP1 ABCDEFGH 3
+		CRP1 H -1
+		Stop
+	Death.Shotgun:
+		S1R3 S 2 A_Recoil(5)
+		TNT1 A 0 A_JumpIfCloser(210,"Death.Heavy")
+		Goto Death
+	Death.SSG:
+		S1R3 S 2 A_Recoil(9)
+		TNT1 A 0 A_JumpIfCloser(170,"XDeath")
+		TNT1 A 0 A_JumpIfCloser(210,"Death.Heavy")
+		Goto Death
+	Death.SuperFists:
+	Death.SuperKick:
+		TNT1 A 0 A_Jump(170,"Death.Heavy")
+	XDeath:
+	Death.BFG:
+	Death.Chainsaw:
+		TNT1 AA 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeath2BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeath3BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath5BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPieceBLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 AAAA 0 A_CustomMissile("XDeathStormArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathStormLeg1",50,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1BLUE",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2BLUE",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("IntestineBLUE",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Brutal_BloodBLUE",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		S1D5 A 2 ThrustThingZ(0,40,0,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
+		S1D5 A 2 A_CheckFloor("LANDAFTERXDEATH")
+		Wait
+	Death.Rifle:
+		TNT1 A 0 A_Jump(128,"Death")
+	Death.Cutless:
+		TNT1 A 0 A_Jump(92,"Death.Heavy")
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath2BLUE",32,0,random(0,360),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath3BLUE",32,0,random(0,360),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathStormArm1",50,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("Brutal_BloodBLUE",55,0,random(0,360),2,random(0,90))
+		S1R3 S 1 A_SpawnItemEx("BrutalizedHellstorm_1",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	Death.Heavy:
+		TNT1 AA 0 A_CustomMissile("XDeathStormLeg1",25,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1BLUE",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2BLUE",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("IntestineBLUE",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Brutal_BloodBLUE",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		SID6 A 2 ThrustThingZ(0,30,0,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
+		SID6 A 2 A_CheckFloor(1)
+		Wait
+		SID6 B 5 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
+		SID6 B -1 A_SpawnItemEx("GrowingBloodPoolBLUE")
+		Stop
+	LandAfterXDeath:
+		S1D5 B 5 A_Stop
+		TNT1 A 0 A_Jump(128,"LandAfterXDeath2BLUE")
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
+		S1D5 B -1 A_SpawnItemEx("GrowingBloodPoolBLUE")
+		Stop
+	LandAfterXDeath2:
+		S1D5 C 5
+		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
+		S1D5 C -1 A_SpawnItemEx("GrowingBloodPoolBLUE")
+		Stop
+	Death.Head:
+		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
+		TNT1 AAA 0 A_CustomMissile("Brutal_BloodBLUE",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("BloodmistBLUE",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmallBLUE",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPieceBLUE",56,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFakeBLUE",56,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBloodBLUE",7,56,random(0,360),2,random(20,60))
+		TNT1 AAA 0 A_CustomMissile("BloodHitBLUE",56,0,random(0,360),2,random(0,90))
+		VILE ST 5
+		VID4 A 5 A_XScream
+		VID4 B 5 A_NoBlocking
+		VID4 C 5
+		VILE WX 5
+		VILE Y 35
+		VILE Y -1 A_SpawnItemEx("GrowingBloodPoolBLUE")
+		Stop
+	Ice:
+		S1R3 "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	}
+}
+
+Actor BrutalizedHellstorm_1 : 64Hellstorm
+{
+Health 70
+Mass 1500
+DropItem "None"
+-SOLID
+-COUNTKILL
++FRIENDLY
++NOTARGET
++NOPAIN
+	States
+	{
+	Spawn:
+		S1D7 A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//Flip horizontal
+	See:
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8BLUE",0,0,62)
+		S1D7 A 8 A_Facetarget
+		TNT1 A 0 A_Pain
+		TNT1 A 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16BLUE",0,0,62)
+		S1D7 BA 8 A_Facetarget
+		TNT1 A 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16BLUE",0,0,62)
+		S1D7 BA 8 A_Facetarget
+		TNT1 A 0 A_Pain
+		TNT1 A 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16BLUE",0,0,62)
+		S1D7 BA 8 A_Facetarget
+		TNT1 A 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8BLUE",0,0,62)
+		S1D7 B 8 A_Facetarget
+	Death:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Die
+		S1D7 CDE 4
+		S1R3 WX 5
+		S1R3 Y 35
+		S1R3 Y -1 A_SpawnItemEx("GrowingBloodPoolBLUE")
+		Stop
+	Death.Head:
+		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
+		TNT1 AAA 0 A_CustomMissile("Brutal_BloodBLUE",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("BloodmistBLUE",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmallBLUE",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPieceBLUE",56,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFakeBLUE",56,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBloodBLUE",7,56,random(0,360),2,random(20,60))
+		TNT1 AAA 0 A_CustomMissile("BloodHitBLUE",56,0,random(0,360),2,random(0,90))
+		S1D7 C 8
+		S1D7 N 5 A_XScream
+		S1D7 O 5 A_NoBlocking
+		S1D7 P 5
+		S1R3 WX 5
+		S1R3 Y 35
+		S1R3 Y -1 A_SpawnItemEx("GrowingBloodPoolBLUE")
+		Stop
+	Death.Shotgun:
+		S1D7 A 2 A_Recoil(5)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.Heavy")
+		Goto Death.Heavy
+	Death.SSG:
+		S1D7 A 2 A_Recoil(9)
+		TNT1 A 0 A_JumpIfCloser(170,"XDeath")
+		Goto Death.Heavy
+	Death.Rifle:
+		TNT1 A 0 A_Jump(128,"Death")
+	Death.Cutless:
+		TNT1 A 0 A_Jump(92,"Death.Heavy")
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath2BLUE",32,0,random(0,360),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath3BLUE",32,0,random(0,360),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathStormArm1",50,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("Brutal_BloodBLUE",55,0,random(0,360),2,random(0,90))
+		S1D7 A 1 A_SpawnItemEx("BrutalizedHellstorm_2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	Death.Chainsaw:
+	Death.BFG:
+	XDeath:
+		TNT1 AA 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeath2BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeath3BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath5BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPieceBLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("XDeathStormArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathStormLeg1",50,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1BLUE",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2BLUE",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("IntestineBLUE",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Brutal_BloodBLUE",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		S1D5 A 2 ThrustThingZ(0,40,0,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
+		S1D5 A 2 A_CheckFloor("LANDAFTERXDEATH")
+		Wait
+	Death.SuperFists:
+	Death.SuperKick:
+		TNT1 A 0 A_Jump(170,"Death.Heavy")
+	Death.Heavy:
+		S1D7 A 5
+		TNT1 AA 0 A_CustomMissile("XDeathStormLeg1",25,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1BLUE",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2BLUE",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("IntestineBLUE",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Brutal_BloodBLUE",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		S1D7 W 2 ThrustThingZ(0,30,0,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
+		S1D7 W 2 A_CheckFloor(1)
+		Wait
+		S1D7 X 5 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
+		S1D7 X -1 A_SpawnItemEx("GrowingBloodPoolBLUE")
+		Stop
+	Ice:
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	}
+}
+
+Actor BrutalizedHellstorm_2 : BrutalizedHellstorm_1
+{
+	States
+	{
+	Spawn:
+		S1D8 A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//Flip horizontal
+	See:
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8BLUE",0,0,62)
+		S1D8 A 8 A_Facetarget
+		TNT1 A 0 A_Pain
+		TNT1 A 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16BLUE",0,0,62)
+		S1D8 BA 8 A_Facetarget
+		TNT1 A 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16BLUE",0,0,62)
+		S1D8 BA 8 A_Facetarget
+		TNT1 A 0 A_Pain
+		TNT1 A 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16BLUE",0,0,62)
+		S1D8 BA 8 A_Facetarget
+		TNT1 A 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8BLUE",0,0,62)
+		S1D8 B 8 A_Facetarget
+	Death:
+	Death.Rifle:
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_Die
+		S1D8 CDE 4
+		S1R3 WX 5
+		S1R3 Y 35
+		S1R3 Y -1 A_SpawnItemEx("GrowingBloodPoolBLUE")
+		Stop
+	Death.Head:
+		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
+		TNT1 AAA 0 A_CustomMissile("Brutal_BloodBLUE",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("BloodmistBLUE",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistSmallBLUE",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPieceBLUE",56,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Brutal_FlyingBloodFakeBLUE",56,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBloodBLUE",7,56,random(0,360),2,random(20,60))
+		TNT1 AAA 0 A_CustomMissile("BloodHitBLUE",56,0,random(0,360),2,random(0,90))
+		S1D8 C 8
+		S1D8 N 5 A_XScream
+		S1D8 O 5 A_NoBlocking
+		S1D8 P 5
+		S1R3 WX 5
+		S1R3 Y 35
+		S1R3 Y -1 A_SpawnItemEx("GrowingBloodPoolBLUE")
+		Stop
+	Death.Shotgun:
+		S1D8 A 2 A_Recoil(5)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.Heavy")
+		Goto Death.Heavy
+	Death.SSG:
+	Death.Cutless:
+		S1D8 A 2 A_Recoil(9)
+		TNT1 A 0 A_JumpIfCloser(170,"XDeath")
+		Goto Death.Heavy
+	Death.Chainsaw:
+	Death.BFG:
+	XDeath:
+		TNT1 AA 0 A_CustomMissile("XDeath1BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeath2BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeath3BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath5BLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPieceBLUE",32,0,random(150,210),2,random(10,50))
+		TNT1 AA 0 A_CustomMissile("XDeathStormArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathStormLeg1",50,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1BLUE",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2BLUE",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("IntestineBLUE",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Brutal_BloodBLUE",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		S1D5 A 2 ThrustThingZ(0,40,0,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
+		S1D5 A 2 A_CheckFloor("LANDAFTERXDEATH")
+		Wait
+	Death.SuperFists:
+	Death.SuperKick:
+		TNT1 A 0 A_Jump(170,"Death.Heavy")
+	Death.Heavy:
+		S1D8 A 5
+		TNT1 AA 0 A_CustomMissile("XDeathStormLeg1",25,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1BLUE",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2BLUE",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("IntestineBLUE",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Brutal_BloodBLUE",35,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		S1D8 W 2 ThrustThingZ(0,30,0,1)
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
+		S1D8 W 2 A_CheckFloor(1)
+		Wait
+		S1D8 X 5 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
+		S1D8 X -1 A_SpawnItemEx("GrowingBloodPoolBLUE")
+		Stop
+	}
+}
+
+ACTOR 64LeavesEffect
+{
+Scale 0.5
+Alpha 1
+BounceType "Doom"
+RenderStyle Translucent
+Radius 8
+Height 16
+Speed 4
+Damage 1
+PROJECTILE
++FLOAT
+	states
+	{
+	Spawn:
+		L3F9 ABCDEFGHIJKL 1 BRIGHT A_CustomMissile("64LeavesTrail",0,0,random(-18,18),2,0)
+		L3F9 ABCDEFGHIJKL 1 BRIGHT A_CustomMissile("64LeavesTrail",0,0,random(-18,18),2,0)
+		L3F9 ABCDEFGHIJKL 1 BRIGHT A_FadeOut(0.05)
+		Stop
+	Death:
+		TNT1 AAAAAA 0 A_CustomMissile("MeleeSmoke",0,0,random(0,360),2,random(0,360))
+		L3F9 ABCDEFGHIJKL 1 BRIGHT A_FadeOut(0.05)
+		Stop
+	}
+}
+
+Actor 64LeavesTrail
+{
+Scale 0.5
+Alpha 0.6
+RenderStyle Translucent
+Mass 1
++NOBLOCKMAP
++NOGRAVITY
++FLOATBOB
++CLIENTSIDEONLY
+	States
+	{
+	Spawn:
+		L3F9 ABCDEFGHIJKL 1 A_FadeOut(0.05)
+		Stop
+	}
+}
+
+Actor 64HellstormSoulBall1 : 64RevenantTracer3
+{
+Damage 8
+Speed 10
+Scale 0.7
+DamageType "BFG"
+PROJECTILE
+	States
+	{
+	Spawn:
+		ZT63 A 2 NoDelay Bright A_SpawnItemEx("LensFlareProjectileBlue")
+		TNT1 A 0 A_SeekerMissile(15,15)
+		TNT1 A 0 A_SpawnItemEx("OldschoolRocketSmokeTrail2")
+		ZT63 B 2 Bright A_SpawnItemEx("LensFlareProjectileBlue")
+		TNT1 A 0 A_SeekerMissile(15,15)
+		TNT1 A 0 A_SpawnItemEx("OldschoolRocketSmokeTrail2")
+		Loop
+	Death:
+		TNT1 AAAAAAA 0 A_CustomMissile("ExplosionParticleBlueHeavySmall",0,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleBlueHeavySmall",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAA 0 A_CustomMissile("ExplosionParticleBlueVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmall")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterSmall")
+		TNT1 A 0 A_SpawnItemEx("ExplosionAirDisplacementEffect")
+		TNT1 A 0 A_PlaySound("EXPLOSIO3",CHAN_VOICE)
+		TNT1 A 0 Radius_Quake(2,8,0,12,0)
+		TNT1 A 2
+		TNT1 A 0 A_Explode(5,64)
+		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
+		ZT63 CDEFGH 2 Bright
+		Stop
+	}
+}
+
+ACTOR 64HellstormSoulBall2 : 64HellstormSoulBall1
+{
+Speed 9
+}
+
+Actor 64HellstormFire : MotherFire
+{
+	States
+	{
+	Spawn:
+		ZFYR ABCDE 4 Bright A_CustomMissile("64HellstormFireTrail",0,0,0,2,0)
+		TNT1 A 0 A_FireCrackle
+		Loop
+	Death:
+		ZFYR E 1 Bright
+		Stop
+	}
+}
+
+Actor 64HellstormFireTrail : MotherFireTrail
+{
+renderstyle stencil
+stencilcolor "88 80 BF"
+	States
+	{
+	Spawn:
+		MPUF A 5 Bright
+		MPUF A 5 Bright A_CustomMissile("LongBlueFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_ChangeFlag("DONTSPLASH",TRUE)
+		TNT1 A 0 A_Explode(15,35,1)
+		MPUF A 5 Bright A_CustomMissile("LongBlueFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_Explode(15,35,1)
+		MPUF A 5 Bright A_CustomMissile("LongBlueFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_Explode(15,35,1)
+		MPUF A 5 Bright A_CustomMissile("LongBlueFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_Explode(15,35,1)
+		MPUF A 5 Bright A_CustomMissile("LongBlueFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_Explode(15,35,1)
+		MPUF A 5 Bright A_CustomMissile("LongBlueFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_Explode(15,35,1)
+		MPUF A 5 Bright A_CustomMissile("LongBlueFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_Explode(15,35,1)
+		MPUF A 5 Bright A_CustomMissile("LongBlueFlameParticle1",random(0,8),0,random(0,360),2,random(80,100))
+		TNT1 A 0 A_Explode(15,35,1)
+		TNT1 A 1 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon")
+		Stop
+	}
+}
+
+Actor LongBlueFlameParticle1 : LongFlameParticle1
+{
+	States
+	{
+	Spawn:
+		FZR5 IJKLMNOP 1 Bright
+		Stop
+	}
+}
+
+Actor HellstormSprite1
+{
+Scale 0.64
+Alpha 0.2
+RenderStyle Translucent
++NOBLOCKMAP
++CLIENTSIDEONLY
++ISMONSTER	//Infrared
++FLOORCLIP
+	States
+	{
+	Spawn:
+		S1R3 AAAA 1 A_FadeIn(0.05)
+		S1R3 A 4
+		S1R3 AAAAAA 1 A_FadeOut(0.05)
+		Stop
+	}
+}
+
+Actor HellstormSprite2 : HellstormSprite1
+{
+	States
+	{
+	Spawn:
+		S1R3 BBBB 1 A_FadeIn(0.05)
+		S1R3 B 4
+		S1R3 BBBBBB 1 A_FadeOut(0.05)
+		Stop
+	}
+}
+
+Actor HellstormSprite3 : HellstormSprite1
+{
+	States
+	{
+	Spawn:
+		S1R3 CCCC 1 A_FadeIn(0.05)
+		S1R3 C 4
+		S1R3 CCCCC 1 A_FadeOut(0.05)
+		Stop
+	}
+}
+
+Actor HellstormSprite4 : HellstormSprite1
+{
+	States
+	{
+	Spawn:
+		S1R3 DDDD 1 A_FadeIn(0.05)
+		S1R3 D 4
+		S1R3 DDDDDD 1 A_FadeOut(0.05)
+		Stop
+	}
+}
+
+Actor HellstormSprite5 : HellstormSprite1
+{
+	States
+	{
+	Spawn:
+		S1R3 EEEE 1 A_FadeIn(0.05)
+		S1R3 E 4
+		S1R3 EEEEEE 1 A_FadeOut(0.05)
+		Stop
+	}
+}
+
+Actor HellstormSprite6 : HellstormSprite1
+{
+	States
+	{
+	Spawn:
+		S1R3 FFFF 1 A_FadeIn(0.05)
+		S1R3 F 4
+		S1R3 FFFFFF 1 A_FadeOut(0.05)
+		Stop
+	}
+}
+
+Actor HellstormTornadoSprite : HellstormSprite1
+{
+	States
+	{
+	Spawn:
+		ZP1N ABCABC 1 A_FadeIn(0.05)
+		ZP1N ABCABC 1
+		ZP1N ABCABC 1 A_FadeOut(0.05)
+		Stop
+	}
+}
+
+ACTOR HellstormTornadoStopper : Inventory
+{
+Inventory.MaxAmount 30
+Inventory.Amount 1
+}
