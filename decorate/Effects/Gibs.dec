@@ -1208,7 +1208,6 @@ BounceFactor 1
 ACTOR XDeathEyes
 {
 Scale 0.8
-Health 0
 Radius 2
 Height 2
 Speed 6

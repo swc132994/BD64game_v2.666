@@ -108,28 +108,24 @@ Scale 0.8
 ACTOR EmptyBrass
 {
 Scale 0.2
-Height 3
-Radius 3
+Radius 2
+Height 2
 Speed 6
-Mass 3
-Health 0
+Mass 1
 BounceSound "weapons/casing"
 DeathSound "weapons/casing"
-BounceType "doom"
-BounceFactor 0.3
-BounceCount 3
-Projectile
--NOGRAVITY
--DROPOFF
--CANBOUNCEWATER
-+WINDTHRUST
-+CLIENTSIDEONLY
++MISSILE
++NOBLOCKMAP
++NOTELEPORT
 +MOVEWITHSECTOR
-+FORCEXYBILLBOARD
-+NOTDMATCH
-+GHOST
-+FLOORCLIP
++CLIENTSIDEONLY
+-DONTSPLASH
++THRUGHOST
 +THRUACTORS
++FLOORCLIP
+BounceType "Doom"
+BounceCount 0
+BounceFactor 0.5
 	States
 	{
 	Spawn:
@@ -137,9 +133,11 @@ Projectile
 		"####" "#" 0 A_SetScale(0-ScaleX,ScaleY)		//FLIP IMAGE HORZ
 	SpawnHold:
 		"####" "#" 0 A_JumpIf(waterlevel > 1,"Splash")
-		CAS3 FGHABCDE 3 A_CheckFloor("Death")
+		CAS3 FGHABCDE 3
 		Loop
 	Death:
+		TNT1 A 0 A_Stop
+		TNT1 A 0 ThrustThingZ(0,1,0,1)
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		LCPJ A 0 A_Jump(256,"Rest1","Rest2","Rest3")
 		Goto Rest1
@@ -190,9 +188,11 @@ Speed 4
 		"####" "#" 0 A_SetScale(0-ScaleX,ScaleY)		//FLIP IMAGE HORZ
 	SpawnHold:
 		"####" "#" 0 A_JumpIf(waterlevel > 1,"Splash")
-		CLIN ABCDEFGH 3 A_CheckFloor("Death")
+		CLIN ABCDEFGH 3
 		Loop
 	Death:
+		TNT1 A 0 A_Stop
+		TNT1 A 0 ThrustThingZ(0,1,0,1)
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2")
 		Goto Rest1
@@ -218,9 +218,11 @@ Mass 4
 		"####" "#" 0 A_SetScale(0-ScaleX,ScaleY)		//FLIP IMAGE HORZ
 	SpawnHold:
 		"####" "#" 0 A_JumpIf(waterlevel > 1,"Splash")
-		C4S1 ABCDEFGH 3 A_CheckFloor("Death")
+		C4S1 ABCDEFGH 3
 		Loop
 	Death:
+		TNT1 A 0 A_Stop
+		TNT1 A 0 ThrustThingZ(0,1,0,1)
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3")
 		Goto Rest1
@@ -261,9 +263,11 @@ DeathSound "weapons/shell"
 		"####" "#" 0 A_SetScale(0-ScaleX,ScaleY)		//FLIP IMAGE HORZ
 	SpawnHold:
 		"####" "#" 0 A_JumpIf(waterlevel > 1,"Splash")
-		CAS2 ABCDEFGH 3 A_CheckFloor("Death")
+		CAS2 ABCDEFGH 3
 		Loop
 	Death:
+		TNT1 A 0 A_Stop
+		TNT1 A 0 ThrustThingZ(0,1,0,1)
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3")
 		Goto Rest1
@@ -300,9 +304,12 @@ DeathSound "weapons/largemagdrop"
 		ECLI A 0
 	SpawnHold:
 		"####" "#" 0 A_JumpIf(waterlevel > 1,"Splash")
-		"####" ABCDEFGH 4 A_CheckFloor("Death")
+		"####" ABCDEFGH 4
 		Loop
 	Death:
+		TNT1 A 0 A_Stop
+		TNT1 A 0 ThrustThingZ(0,1,0,1)
+	Rest:
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		ECL1 G 0 A_JumpIfInventory("AltRifleSkin",1,2)
 		ECLI G 0
@@ -328,11 +335,13 @@ DeathSound "weapons/smallmagdrop"
 		"####" "#" 0 A_SetScale(0-ScaleX,ScaleY)		//FLIP IMAGE HORZ
 	SpawnHold:
 		"####" "#" 0 A_JumpIf(waterlevel > 1,"Splash")
-		ECLP A 4 A_CheckFloor("Death")
+		ECLP A 4
 		Loop
 	Death:
+		TNT1 A 0 A_Stop
+		TNT1 A 0 ThrustThingZ(0,1,0,1)
 		ECLP B 4
-	rest:
+	Rest:
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		ECLP C 525
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
@@ -356,9 +365,12 @@ DeathSound "weapons/barrelpain"
 		"####" "#" 0 A_SetScale(0-ScaleX,ScaleY)		//FLIP IMAGE HORZ
 	SpawnHold:
 		"####" "#" 0 A_JumpIf(waterlevel > 1,"Splash")
-		RCSE ABCDEFGH 4 A_CheckFloor("Death")
+		RCSE ABCDEFGH 4
 		Loop
 	Death:
+		TNT1 A 0 A_Stop
+		TNT1 A 0 ThrustThingZ(0,1,0,1)
+	Rest:
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		RCSE G 525
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
@@ -382,9 +394,12 @@ DeathSound "weapons/barrelpain"
 		"####" "#" 0 A_SetScale(0-ScaleX,ScaleY)		//FLIP IMAGE HORZ
 	SpawnHold:
 		"####" "#" 0 A_JumpIf(waterlevel > 1,"Splash")
-		ECEL A 4 A_CheckFloor("Death")
+		ECEL A 4
 		Loop
 	Death:
+		TNT1 A 0 A_Stop
+		TNT1 A 0 ThrustThingZ(0,1,0,1)
+	Rest:
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
 		ECEL A 525
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
