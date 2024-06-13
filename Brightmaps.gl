@@ -213,6 +213,14 @@ brightmap sprite PLSFC0		{map "brightmaps/PLSFC0_BR.png"disablefullbright}
 brightmap sprite PLSFD0		{map "brightmaps/PLSFD0_BR.png"disablefullbright}
 brightmap sprite PLSFE0		{map "brightmaps/PLSMBMP1.png"disablefullbright}
 brightmap sprite PLSGA0		{map "brightmaps/PLSMBMP1.png"disablefullbright}
+brightmap sprite PLSGJ0		{map "brightmaps/PLSMBMP1.png"disablefullbright}
+brightmap sprite PLSGK0		{map "brightmaps/PLSMBMP1.png"disablefullbright}
+brightmap sprite PLSGL0		{map "brightmaps/PLSMBMP1.png"disablefullbright}
+brightmap sprite PLSGM0		{map "brightmaps/PLSMBMP1.png"disablefullbright}
+brightmap sprite PLSGN0		{map "brightmaps/PLSMBMP1.png"disablefullbright}
+brightmap sprite PLSGO0		{map "brightmaps/PLSMBMP1.png"disablefullbright}
+brightmap sprite PLSGP0		{map "brightmaps/PLSMBMP1.png"disablefullbright}
+brightmap sprite PLSGQ0		{map "brightmaps/PLSMBMP1.png"disablefullbright}
 brightmap sprite 2LSGA0		{map "brightmaps/PLSMBMP1.png"disablefullbright}//DIMMED
 brightmap sprite PLSGB0		{map "brightmaps/PLSMBMP1.png"disablefullbright}
 brightmap sprite 2LSGB0		{map "brightmaps/PLSMBMP1.png"disablefullbright}//DIMMED
