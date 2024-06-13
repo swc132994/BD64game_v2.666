@@ -50,7 +50,7 @@ MONSTER
 		MOTH E 1 A_FaceTarget
 		TNT1 A 0 A_Jump(96,"SuperAttack")
 		MOTH E 8 A_FaceTarget
-		TNT1 A 0 A_PlaySound("Mother/attack",CHAN_BODY)
+		TNT1 A 0 A_PlaySound("mother/attack",CHAN_BODY)
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,0,2,0)
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,90,2,0)
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,-90,2,0)
@@ -64,7 +64,7 @@ MONSTER
 		Goto See
 	SuperAttack:
 		MOTH E 8 A_FaceTarget
-		TNT1 A 0 A_PlaySound("Mother/attack",CHAN_BODY)
+		TNT1 A 0 A_PlaySound("mother/attack",CHAN_BODY)
 		TNT1 A 0 A_CustomMissile("SuperMotherBall",100)
 		MOTH E 8 A_FaceTarget
 		MOTH F 8 Bright
@@ -137,6 +137,32 @@ Speed 15
 RenderStyle Normal
 }
 
+Actor MotherBallWeak : 64RevenantTracer3
+{
+Damage 3
+Speed 15
+RenderStyle Normal
+States
+	{
+	Death:
+		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
+		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile("64ExplosionFireBase",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmall")
+		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterSmall")
+		TNT1 A 0 A_SpawnItemEx("ExplosionAirDisplacementEffect")
+		TNT1 A 0 A_playSound("EXPLOSIO3",CHAN_VOICE)
+		TNT1 A 0 Radius_Quake(2,8,0,12,0)
+		TNT1 A 2
+		TNT1 A 0 A_Explode(2,100)
+		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
+		MBAL CDEFGH 2 Bright
+		Stop
+	}
+}
+
 Actor MotherFire 9899
 {
 Game Doom
@@ -160,6 +186,43 @@ PROJECTILE
 		MFIR ABCDE 4 Bright A_CustomMissile("MotherFireTrail",0,0,0,2,0)
 		TNT1 A 0 A_FireCrackle
 		Loop
+	Death:
+		MFIR E 1 Bright
+		Stop
+	}
+}
+
+Actor MotherFireJump
+{
+Game Doom
+Scale 0.8
+Damage 5
+Speed 15
+Height 8
+Radius 6
+Alpha 0.5
+Gravity -1
+RenderStyle Translucent
+DamageType "Vertigo"
+SeeSound "skeleton/attack"
+DeathSound "null"
+PROJECTILE
++RANDOMIZE
++NODAMAGETHRUST
++FLOORHUGGER
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_ChangeFlag("DONTSPLASH",TRUE)
+		MFIR ABCDE 4 Bright A_CustomMissile("MotherFireTrail",0,0,0,2,0)
+		TNT1 A 0 A_FireCrackle
+		MFIR ABCDE 4 Bright A_CustomMissile("MotherFireTrail",0,0,0,2,0)
+		TNT1 A 0 A_FireCrackle
+		MFIR ABCDE 4 Bright A_CustomMissile("MotherFireTrail",0,0,0,2,0)
+		TNT1 A 0 A_FireCrackle
+		MFIR ABCDE 4 Bright A_CustomMissile("MotherFireTrail",0,0,0,2,0)
+		TNT1 A 0 A_FireCrackle
+		MFIR ABCDE 4 Bright A_CustomMissile("MotherFireTrail",0,0,0,2,0)
 	Death:
 		MFIR E 1 Bright
 		Stop
@@ -239,6 +302,8 @@ FastSpeed 30
 
 Actor Motherdemon_Final : Motherdemon 9898		//New boss for map28 Ultimate Absolution
 {
+	Height 150
+	Radius 60
 	Speed 24
 	Health 20000
 	PainChance 0
@@ -252,90 +317,275 @@ Actor Motherdemon_Final : Motherdemon 9898		//New boss for map28 Ultimate Absolu
 		MOTH AAAAAAAAAAAABBBBBBBBBBBBCCCCCCCCCCCCDDDDDDDDDDDD 1 A_Chase("Missile","Missile",CHF_RESURRECT)
 		Loop
 	Missile:
-		MOTH E 1 A_FaceTarget
-		MOTH E 3 A_FaceTarget
-		TNT1 A 0 A_PlaySound("Mother/attack",CHAN_BODY)
+		TNT1 A 0 A_Jump(32,"EnragedScream")
+		TNT1 A 0 A_Jump(128,"SuperAttack")
+		MOTH E 10 A_FaceTarget
+		MOTH A 0 ThrustThing(angle*256/360,2,0,0)
+		TNT1 A 0 A_PlaySound("mother/attack",CHAN_BODY)
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,0,2,0)
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,90,2,0)
 		TNT1 A 0 A_CustomMissile("MotherFire",0,0,-90,2,0)
-		MOTH G 7 Bright A_CustomMissile("MotherFire",0,0,180,2,0)
-		TNT1 A 0 A_Jump(96,"SuperAttack")
-		MOTH E 4 A_FaceTarget
+		MOTH G 10 Bright A_CustomMissile("MotherFire",0,0,180,2,0)
+		TNT1 A 0 A_Jump(32,"HomingBurst")
+		MOTH E 8 A_FaceTarget
+		MOTH E 0 A_Stop
 		TNT1 A 0 A_CustomMissile("MotherBall",160,-24,90)
 		TNT1 A 0 A_CustomMissile("MotherBall",80,-48,90)
 		TNT1 A 0 A_CustomMissile("MotherBall",160,24,-90)
-		MOTH F 7 Bright A_CustomMissile("MotherBall",80,48,-90)
-		MOTH E 4
-		TNT1 A 0 A_Jump(96,"MotherPreJump")
+		MOTH F 10 Bright A_CustomMissile("MotherBall",80,48,-90)
+		MOTH E 8 A_FaceTarget
+		TNT1 A 0 A_Jump(128,"MotherPreJump")
+		Goto See
+	HomingBurst:
+		MOTH H 0 A_PlaySound("mother/scream",CHAN_6)
+		MOTH H 60
+		MOTH E 5 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,-24,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",80,-48,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,24,-90)
+		MOTH F 4 Bright A_CustomMissile("MotherBallWeak",80,48,-90)
+		MOTH E 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,-24,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",80,-48,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,24,-90)
+		MOTH F 4 Bright A_CustomMissile("MotherBallWeak",80,48,-90)
+		MOTH E 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,-24,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",80,-48,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,24,-90)
+		MOTH F 4 Bright A_CustomMissile("MotherBallWeak",80,48,-90)
+		MOTH E 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,-24,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",80,-48,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,24,-90)
+		MOTH F 4 Bright A_CustomMissile("MotherBallWeak",80,48,-90)
+		MOTH E 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,-24,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",80,-48,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,24,-90)
+		MOTH F 4 Bright A_CustomMissile("MotherBallWeak",80,48,-90)
+		MOTH E 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,-24,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",80,-48,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,24,-90)
+		MOTH F 4 Bright A_CustomMissile("MotherBallWeak",80,48,-90)
+		MOTH E 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,-24,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",80,-48,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,24,-90)
+		MOTH F 4 Bright A_CustomMissile("MotherBallWeak",80,48,-90)
+		MOTH E 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,-24,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",80,-48,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,24,-90)
+		MOTH F 4 Bright A_CustomMissile("MotherBallWeak",80,48,-90)
+		MOTH E 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,-24,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",80,-48,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,24,-90)
+		MOTH F 4 Bright A_CustomMissile("MotherBallWeak",80,48,-90)
+		MOTH E 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,-24,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",80,-48,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,24,-90)
+		MOTH F 4 Bright A_CustomMissile("MotherBallWeak",80,48,-90)
+		MOTH E 0 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,-24,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",80,-48,90)
+		TNT1 A 0 A_CustomMissile("MotherBallWeak",160,24,-90)
+		MOTH F 4 Bright A_CustomMissile("MotherBallWeak",80,48,-90)
+		Goto See
+	EnragedScream:
+		MOTH H 0 A_SetRenderStyle(1, STYLE_Subtract)
+		MOTH H 0 A_ChangeFlag("INVULNERABLE", True)
+		MOTH H 0 A_PlaySound("mother/scream2",CHAN_6)
+		MOTH H 0 A_Quake (4,160,0,32000)
+		MOTH HHHHHHHHHHHHHHHHHHHHHHH 5 Bright A_FaceTarget
+		MOTH H 0 A_SetRenderStyle(1, STYLE_Normal)
+		MOTH H 0 A_ChangeFlag("INVULNERABLE", False)
+		MOTH H 0 A_PlaySound("mother/beamstart",CHAN_BODY)
+	EnragedLoop:
+		MOTH G 0 Bright A_Quake (9,2,0,4096,0)
+		MOTH G 0 Bright A_PlaySound("mother/beamloop",CHAN_7,1,1)
+		MOTH G 0 Bright ThrustThing(angle*256/360,2,0,0)
+		MOTH G 0 Bright A_VileAttack("",(1),0,0,0,"Fire",VAF_DMGTYPEAPPLYTODIRECT)
+		MOTH G 0 Bright A_CustomRailgun(0,0,None,None,RGF_FULLBRIGHT|RGF_NOPIERCING|RGF_NORANDOMPUFFZ,10,10,"FinalMotherdemonBeamPuff",0,0,0,0,30,5,"FinalMotherdemonBeam",25)
+		MOTH G 1 Bright A_FaceTarget
+		MOTH G 1 Bright ThrustThing(angle*256/360,1,0,0)
+		MOTH G 0 Bright A_MonsterRefire (128, "EnragedEnd")
+		Loop
+	EnragedEnd:
+		MOTH E 0 A_StopSound(CHAN_7)
+		MOTH E 0 A_PlaySound("mother/beamend",CHAN_7)
+		MOTH E 35 A_FaceTarget
 		Goto See
 	SuperAttack:
-		MOTH E 8 A_FaceTarget
-		TNT1 A 0 A_PlaySound("Mother/attack",CHAN_BODY)
-		TNT1 A 0 A_CustomMissile("SuperMotherBall",100)
-		MOTH E 4 A_FaceTarget
-		MOTH F 4 Bright
 		TNT1 A 0 A_Jump(96,"SuperAttackBurst")
-		MOTH E 4
+		MOTH E 0 ThrustThing(random(angle*90/360,angle*256/360), 50, 0, 0)
+		MOTH E 10 A_FaceTarget
+		TNT1 A 0 A_PlaySound("mother/attack",CHAN_BODY)
+		TNT1 A 0 A_CustomMissile("SuperMotherBall",100)
+		MOTH E 6 A_FaceTarget
+		MOTH F 6 Bright
+		MOTH E 8
 		Goto See
 	SuperAttackBurst:
-		MOTH E 8 A_FaceTarget
-		TNT1 A 0 A_PlaySound("Mother/attack",CHAN_BODY)
+		MOTH E 0 ThrustThing(random(angle*90/360,angle*256/360), 50, 0, 0)
+		MOTH E 10 A_FaceTarget
+		TNT1 A 0 A_PlaySound("mother/attack",CHAN_BODY)
 		TNT1 A 0 A_CustomMissile("SuperMotherBall",100)
-		MOTH E 4 A_FaceTarget
-		MOTH F 4 Bright
+		MOTH E 5 A_FaceTarget
+		MOTH F 5 Bright
 		TNT1 A 0 A_CustomMissile("SuperMotherBall",100)
-		MOTH E 4 A_FaceTarget
-		MOTH F 4 Bright
+		MOTH E 5 A_FaceTarget
+		MOTH F 5 Bright
 		TNT1 A 0 A_CustomMissile("SuperMotherBall",100)
-		MOTH E 4 A_FaceTarget
-		MOTH F 4 Bright
+		MOTH E 5 A_FaceTarget
+		MOTH F 5 Bright
 		Goto See
 	MotherPreJump:
 		TNT1 A 0 A_Quake(22,50,0,192,0)
-		MOTH H 25 A_PlaySound("Mother/scream",7)
+		MOTH H 50 A_PlaySound("mother/attack",CHAN_BODY,1)
 		MOTH H 0 A_ChangeFlag("FLOAT",False)
 		MOTH H 0 A_FaceTarget 
 		MOTH H 0 ThrustThingZ(0,60,0,0)
 		MOTH H 0 A_FaceTarget
 		MOTH H 0 A_MonsterRefire(0,"See")
 		MOTH H 0 ThrustThing(angle*256/360,40,0,0)
-		MOTH H 10 A_FaceTarget
-		MOTH H 0 A_PlaySound("Mother/jump",7)
+		MOTH H 5 A_FaceTarget
+		MOTH H 0 A_PlaySound("mother/jump",CHAN_BODY,1)
 	MotherJump:
 		MOTH A 0 A_Quake (10,8,65,65,0)
+		TNT1 A 0 A_SpawnItemEx("FinalMotherdemonSprite1",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		MOTH A 2 A_CheckFloor("MotherLand")
+		TNT1 A 0 A_SpawnItemEx("FinalMotherdemonSprite2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		MOTH B 2 A_CheckFloor("MotherLand")
+		TNT1 A 0 A_SpawnItemEx("FinalMotherdemonSprite3",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		MOTH C 2 A_CheckFloor("MotherLand")
+		TNT1 A 0 A_SpawnItemEx("FinalMotherdemonSprite4",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
 		MOTH D 2 A_CheckFloor("MotherLand")
 		Loop
 	MotherLand:
 		MOTH H 0 A_Stop
 		MOTH H 0 A_PlaySoundEx("Explosion","WEAPON",0,200)
 		MOTH H 0 A_CustomMissile("MotherFire",0,0,0,2,0)
-		MOTH H 0 A_CustomMissile("MotherFire",0,0,20,2,0)
+		MOTH H 0 A_CustomMissile("MotherFireJump",0,0,20,2,0)
 		MOTH H 0 A_CustomMissile("MotherFire",0,0,40,2,0)
-		MOTH H 0 A_CustomMissile("MotherFire",0,0,60,2,0)
+		MOTH H 0 A_CustomMissile("MotherFireJump",0,0,60,2,0)
 		MOTH H 0 A_CustomMissile("MotherFire",0,0,80,2,0)
-		MOTH H 0 A_CustomMissile("MotherFire",0,0,100,2,0)
+		MOTH H 0 A_CustomMissile("MotherFireJump",0,0,100,2,0)
 		MOTH H 0 A_CustomMissile("MotherFire",0,0,120,2,0)
-		MOTH H 0 A_CustomMissile("MotherFire",0,0,140,2,0)
+		MOTH H 0 A_CustomMissile("MotherFireJump",0,0,140,2,0)
 		MOTH H 0 A_CustomMissile("MotherFire",0,0,160,2,0)
-		MOTH H 0 A_CustomMissile("MotherFire",0,0,180,2,0)
+		MOTH H 0 A_CustomMissile("MotherFireJump",0,0,180,2,0)
 		MOTH H 0 A_CustomMissile("MotherFire",0,0,200,2,0)
-		MOTH H 0 A_CustomMissile("MotherFire",0,0,220,2,0)
+		MOTH H 0 A_CustomMissile("MotherFireJump",0,0,220,2,0)
 		MOTH H 0 A_CustomMissile("MotherFire",0,0,240,2,0)
-		MOTH H 0 A_CustomMissile("MotherFire",0,0,260,2,0)
+		MOTH H 0 A_CustomMissile("MotherFireJump",0,0,260,2,0)
 		MOTH H 0 A_CustomMissile("MotherFire",0,0,280,2,0)
-		MOTH H 0 A_CustomMissile("MotherFire",0,0,300,2,0)
+		MOTH H 0 A_CustomMissile("MotherFireJump",0,0,300,2,0)
 		MOTH H 0 A_CustomMissile("MotherFire",0,0,320,2,0)
-		MOTH H 0 A_CustomMissile("MotherFire",0,0,340,2,0)
-		MOTH G 10
+		MOTH H 0 A_CustomMissile("MotherFireJump",0,0,340,2,0)
+		MOTH G 30
 		MOTH G 0 A_ChangeFlag("FLOAT",True)
 		Goto See
 	Pain:
 		MOTH H 5 A_Pain
 		Goto See
 		}
+}
+
+Actor FinalMotherdemonBeam
+{
++RANDOMIZE
++NOBLOCKMAP
++NOGRAVITY
++FORCEXYBILLBOARD
++BLOODLESSIMPACT
+RenderStyle Add
+Scale 0.5
+States
+{
+	Spawn:
+	MOTB ABCDEFG 3 Bright
+	Stop
+	}
+}
+
+ACTOR FinalMotherdemonBeamPuff
+{
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+ACTIVATEIMPACT
+	+ACTIVATEPCROSS
+	+NOTELEPORT
+	+PUFFGETSOWNER
+	+FORCERADIUSDMG
+	+FORCEXYBILLBOARD
+	+BLOODLESSIMPACT
+	Renderstyle Add
+	Scale 0.25
+	Decal "MiniScorch"
+	States
+	{
+	Spawn:
+		TNT1 A 0 Bright
+		Stop
+	}
+}
+
+Actor FinalMotherdemonSprite1
+{
+Alpha 0.5
+RenderStyle Add
++NOBLOCKMAP
++CLIENTSIDEONLY
++ISMONSTER
++FLOORCLIP
+	States
+	{
+	Spawn:
+		MOTH AAAA 1 A_FadeIn(0.09)
+		MOTH A 4
+		MOTH AAAAAA 1 A_FadeOut(0.09)
+		Stop
+	}
+}
+
+Actor FinalMotherdemonSprite2 : FinalMotherdemonSprite1
+{
+	States
+	{
+	Spawn:
+		MOTH BBBB 1 A_FadeIn(0.09)
+		MOTH B 4
+		MOTH BBBBBB 1 A_FadeOut(0.09)
+		Stop
+	}
+}
+
+Actor FinalMotherdemonSprite3 : FinalMotherdemonSprite1
+{
+	States
+	{
+	Spawn:
+		MOTH CCCC 1 A_FadeIn(0.09)
+		MOTH C 4
+		MOTH CCCCCC 1 A_FadeOut(0.09)
+		Stop
+	}
+}
+
+Actor FinalMotherdemonSprite4 : FinalMotherdemonSprite1
+{
+	States
+	{
+	Spawn:
+		MOTH DDDD 1 A_FadeIn(0.09)
+		MOTH D 4
+		MOTH DDDDDD 1 A_FadeOut(0.09)
+		Stop
+	}
 }
 
 Actor Motherdemon_GD : Motherdemon		//Added for GD.wad (going down) support

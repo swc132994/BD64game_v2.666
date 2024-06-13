@@ -391,8 +391,26 @@ mother/pain			dsmthpai
 mother/death		dsmthdth
 mother/attack		dsmthatk
 mother/scream		dsmthscr
+mother/scream2		dsmthsc2
 mother/jump			dsmthjum
 mother/active		dsmthact
+
+mother/beamstart	dsmthbst
+mother/beamloop		dsmthblo
+mother/beamend		dsmthben
+
+$attenuation  mother/sight 0.2
+$attenuation  mother/pain 0.3
+$attenuation  mother/death 0.1
+$attenuation  mother/attack 0.1
+$attenuation  mother/scream 0.05
+$attenuation  mother/scream2 0.05
+$attenuation  mother/jump 0.1
+$attenuation  mother/active 0.5
+
+$attenuation  mother/beamstart 0.25
+$attenuation  mother/beamloop 0.25
+$attenuation  mother/beamend 0.25
 
 //WAFFEN-SS
 $random Waffen/Active
