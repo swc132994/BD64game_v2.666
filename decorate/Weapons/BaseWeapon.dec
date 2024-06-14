@@ -66,6 +66,20 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 A 1
 		TNT1 A 0 A_Jump(256,"v1Ready")
 		Loop
+		
+	KickFlash: //16 frames for normal and air kicks
+		TNT1 AAAA 1
+		TNT1 A 10
+		TNT1 AAAA 1
+		stop		
+	SlideKickingStart: //dont make it loop forever, just a failsafe
+		TNT1 AAAA 1
+		TNT1 A 35
+	SlideKickingEnd: //7 frames total
+		TNT1 A 5
+		TNT1 AAAA 1
+		Stop		
+		
 	Zoom:
 	DoKick:
 		TNT1 A 0 A_ZoomFactor(1.0)
@@ -88,20 +102,20 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 A 0 A_GunFlash("KickingFlash", GFF_NOEXTCHANGE)
 		TNT1 A 0 A_PlaySound("KICK",CHAN_BODY)
 		TNT1 A 0 SetPlayerProperty(0,1,0)
-		KICK ABC 1
+		KICK ABC 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
 		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"BerserkerKick")		
 		TNT1 A 0 A_FireCustomMissile("KickAttack",0,0,0,-7)
 		TNT1 A 0 A_RadiusThrust(4000,65,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
-		KICK DEEEEFGHIJ 1
+		KICK DEEEEFGHIJ 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
 		TNT1 A 0 SetPlayerProperty(0,0,0)		
-		KICK KLM 1
+		KICK KLM 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
 		Goto GetReady
 	BerserkerKick:
 		TNT1 A 0 A_FireCustomMissile("SuperKickAttack",0,0,0,-7)
 		TNT1 A 0 A_RadiusThrust(6000,65,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
-		KICK DEEEEFGHIJ 1
+		KICK DEEEEFGHIJ 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
 		TNT1 A 0 SetPlayerProperty(0,0,0)		
-		KICK KLM 1
+		KICK KLM 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
 		Goto GetReady
 	AirKick:
 		TNT1 A 0 A_JumpIfInventory("IsModern",1,2)
@@ -109,18 +123,18 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 A 0 A_GunFlash("KickingFlash")
 		TNT1 A 0 A_PlaySound("KICK",CHAN_BODY)
 		TNT1 A 0 A_Recoil(-6)
-		KICK NOPQ 1
+		KICK NOPQ 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
 		TNT1 A 0 A_jumpifinventory("PowerStrength",1,"SuperAirKick")		
 		TNT1 A 0 A_FireCustomMissile("AirKickAttack",0,0,0,-31)
 		TNT1 A 0 A_RadiusThrust(5000,65,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
-		KICK RRSTUVWXYZ 1
-		KICK "[]" 1
+		KICK RRSTUVWXYZ 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+		KICK "[]" 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
 		Goto GetReady
 	SuperAirKick:
 		TNT1 A 0 A_FireCustomMissile("SuperAirKickAttack",0,0,0,-31)
 		TNT1 A 0 A_RadiusThrust(7500,65,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
-		KICK RRSTUVWXYZ 1
-		KICK "[]" 1
+		KICK RRSTUVWXYZ 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
+		KICK "[]" 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
 		Goto GetReady
 	SlideAttack:
 		TNT1 A 0 SetPlayerProperty(0,1,0)
@@ -128,7 +142,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 A 0 A_Recoil(-6)
 		TNT1 A 0 A_PlaySound("SlideKickStart",CHAN_5)
 		TNT1 A 0 A_GunFlash("SlideKickingStart")
-		SLID ABCDE 1
+		SLID ABCDE 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
 		TNT1 A 0 A_SetPItch(10)
 		SLID F 1 A_FireCustomMissile("SlideAttack",0,0,0,10)
 		TNT1 A 0 A_RadiusThrust(4500,65,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
@@ -225,13 +239,13 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 	FinishSlide:
 		TNT1 A 0 A_GunFlash("SlideKickingEnd")	
 		TNT1 A 0 A_PlaySound("SlideKickStop",CHAN_5)
-		SLID GGHIJK 1
+		SLID GGHIJK 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
 		TNT1 A 0 SetPlayerProperty(0,0,0)
 		Goto GetReady
 	FinishSlideHitwall:
 		TNT1 A 0 A_GunFlash("SlideKickingEnd")	
 		TNT1 A 0 A_Stop
-		SLID GGHIJK 1
+		SLID GGHIJK 1 A_WeaponReady(WRF_NOFIRE|WRF_NOSWITCH)
 		TNT1 A 0 A_TakeInventory("KickHasHit",1)
 		TNT1 A 0 SetPlayerProperty(0,0,0)
 		Goto GetReady

@@ -34,7 +34,7 @@ firstaidkit/zerk		64ADREN
 Knuckled		Knuckled
 
 PISBACK			PISBACK
-PISFORW			PISFORW
+pistol/slide	PISFORW
 
 RIFBOLT			RIFBOLT
 ARSBOLT			ARSBOLT
@@ -128,6 +128,9 @@ PREL			PREL
 PISTOLF			PISTOLF
 PISTOLF2		PISTOLF2
 PISTOLF3		PISTOLF3
+pistol/magout	MG_OUT
+pistol/magin	MG_IN
+
 
 //Pistol Suppressor
 SILEIN			SILEIN
