@@ -176,8 +176,11 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner"
 		StaticText ""
 	Option "Mastermind Spawner =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"
 		StaticText ""
-	Option "Husk Spawner =","HordeLeader_Spawner_Cvar","HordeLeader_Spawner_Value"
-		StaticText "(Recommend set x3, x4 or Random Horde)",1
+	Option "Husk Zombie Horde Multiplier =","TheHorde_Multiplier_Cvar","TheHorde_Multiplier_Value"
+		StaticText "Option to spawn Husks & Carrions near dead zombie props",1
+		StaticText "Disabled by Default",1
+		StaticText "(Recommended setting x3, x4 or Random)",1
+		StaticText ""
 }
 
 OptionMenu "BrutalDoom64OptionsOtherMonster"
@@ -196,10 +199,6 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 		StaticText "You can use Doom 2 on non-compatible wads",1
 		StaticText ""
 		StaticText "Map Prop Replacement Options!",1
-		StaticText ""
-	Option "Husk Zombie Horde Multiplier =","TheHorde_Multiplier_Cvar","TheHorde_Multiplier_Value"
-		StaticText "Disabled by Default",1
-		StaticText "Option to spawn 'Husk Zombies' near dead zombie props.",1
 		StaticText ""
 	Option "Infected Dead Marine Corpse =","ThingRandomCvar","YesOrNo"
 		StaticText "Replace dead marines & dead marine props with 'The Thing' monsters.",1
@@ -658,28 +657,14 @@ OptionValue "FleshWizardRandom_Value"
 	3,"Hellstorm"
 }
 
-OptionValue "HordeLeader_Spawner_Value"
-{
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
-	1,"Husk"
-	2,"Carrion"
-}
-
 OptionValue "TheHorde_Multiplier_Value"		//Husk zombie
 {
 	0,"Random"
-	1,"Disable Husks"
-	2,"x1 Husks"
-	3,"x2 Husks"
-	4,"x3 Husks"
-	5,"x4 Husks"
+	1,"Disabled"
+	2,"1 Husk"
+	3,"2 Husks"
+	4,"2 Husks & 1 Carrion"
+	5,"3 Husks & 1 Carrion"
 }
 
 OptionValue "Keen_Spawner_Value"

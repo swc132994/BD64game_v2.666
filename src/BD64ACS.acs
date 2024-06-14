@@ -1096,29 +1096,6 @@ script "LiquidSplashCvarACS" (void)
 SetResultValue(GetCVar("LiquidSplashCvar"));
 }
 
-script "HordeLeaderRandom" (void)
-{
-	if(GetCvar("HordeLeader_Spawner_Cvar") == 5) { SetActorState(0,"P05"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 10) { SetActorState(0,"P10"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 15) { SetActorState(0,"P15"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 20) { SetActorState(0,"P20"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 25) { SetActorState(0,"P25"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 30) { SetActorState(0,"P30"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 40) { SetActorState(0,"P40"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 50) { SetActorState(0,"P50"); }
-	else
-	if(GetCvar("HordeLeader_Spawner_Cvar") == 1) { SetActorState(0,"SpawnHusk"); }
-	else
-	if(GetCvar("HordeLeader_Spawner_Cvar") == 2) { SetActorState(0,"SpawnCarrion"); }
-}
-
 script "ShootableProjectiles" (void) Net
 {
 SetResultValue(GetCVar("ShootableProjectilesCVAR"));

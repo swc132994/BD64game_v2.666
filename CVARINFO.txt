@@ -58,7 +58,6 @@ server bool ClassicChaingunCvar = FALSE;	//Classic Chaingun
 server int PoltergeistCvar = 0;				//Enable poltergiest props
 server int ClassicTorchCvar = 0;			//Enable classic style torces
 server int LiquidSplashCvar = 0;			//Enable liquid splashes
-server int HordeLeader_Spawner_Cvar = 1;	//Carrion replaces Husk leader
 server bool ShootableProjectilesCVAR = FALSE;	//Shootable Projectiles
 server int CacoChooserCvar = 0;				//choose Cacodemon variant
 server int bd64_WadCheck = 1;				//Selecting Mapset
