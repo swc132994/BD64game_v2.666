@@ -331,6 +331,7 @@ Player.ViewHeight 50
 Player.AttackZOffset 23
 Player.DisplayName "Tactical (Rifle)"
 Player.CrouchSprite "PLYC"
+Player.Portrait "TCLASS1"
 +THRUSPECIES
 +MTHRUSPECIES
 +NOBLOODDECALS

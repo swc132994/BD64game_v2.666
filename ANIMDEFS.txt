@@ -8,6 +8,19 @@ pic 6 tics 3
 pic 7 tics 3
 pic 8 tics 3
 
+texture TCLASS1
+pic 1 tics 15
+pic 2 tics 15
+pic 1 tics 10
+pic 3 tics 5
+pic 4 tics 10
+pic 3 tics 5
+pic 1 tics 5
+pic 5 tics 5
+pic 6 tics 10
+pic 5 tics 5
+pic 1 tics 10
+
 //NEW NUKAGE
 warp2 texture NUKAGE1
 warp2 texture NUKAGE2
