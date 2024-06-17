@@ -782,6 +782,15 @@ TRITSPL2		TRITSPL2
 Trite/WebStart		TRITWEB1
 Trite/WebEnd		TRITWEB2
 
+//Impaler
+Impaler/See			ScSight
+Impaler/Melee		ScSmack
+Impaler/Miss		ScTail
+Impaler/Attack		ScRocket	$volume Impaler/Attack 0.5
+Impaler/Pain		ScPain
+Impaler/Death		ScDead
+
+
 //Anomaly Events
 $random polt/see
 	{

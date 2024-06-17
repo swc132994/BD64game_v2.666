@@ -690,6 +690,28 @@ YScale 1.0
 	}
 }
 
+actor D64ImpalerCast : 64Impaler
+{
+XScale 1.0
+YScale 1.0
+	States
+	{
+	See:
+		CENT A 20
+		CENT AAABBBCCCDDD 2
+		goto See+1
+	Missile:
+		CENT A 15
+		CENT EEEEE 6
+		CENT E 1
+		Goto See
+	Death:
+		CENT IJKLMN 10
+		CENT N -1
+		Stop
+	}
+}
+
 actor D64PainElementalCast : 64PainElemental
 {
 XScale 1.0

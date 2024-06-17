@@ -954,35 +954,62 @@ MONSTER
 		Stop
 	Spawn:
 		BSPI A 0
-		TNT1 A 3 ACS_NamedExecuteAlways("NightCrawlerRandomACS")
+		TNT1 A 3 ACS_NamedExecuteAlways("ArachnotronRandomACS")
 	SpawnArachnotron:
 		TNT1 A -1 A_SpawnItemEx("64Arachnotron",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	SpawnNightCrawler:
 		TNT1 A -1 A_SpawnItemEx("64NightCrawler",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		stop
+	SpawnImpaler:
+		TNT1 A -1 A_SpawnItemEx("64Impaler",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		stop
 	P05:
-		TNT1 A 0 A_Jump(13,"SpawnNightCrawler")
+		TNT1 A 0 A_Jump(13,"SpawnNightCrawler","SpawnImpaler")
 		Goto SpawnArachnotron
 	P10:
-		TNT1 A 0 A_Jump(26,"SpawnNightCrawler")
+		TNT1 A 0 A_Jump(26,"SpawnNightCrawler","SpawnImpaler")
 		Goto SpawnArachnotron
 	P15:
-		TNT1 A 0 A_Jump(39,"SpawnNightCrawler")
+		TNT1 A 0 A_Jump(39,"SpawnNightCrawler","SpawnImpaler")
 		Goto SpawnArachnotron
 	P20:
-		TNT1 A 0 A_Jump(51,"SpawnNightCrawler")
+		TNT1 A 0 A_Jump(51,"SpawnNightCrawler","SpawnImpaler")
 		Goto SpawnArachnotron
 	P25:
-		TNT1 A 0 A_Jump(64,"SpawnNightCrawler")
+		TNT1 A 0 A_Jump(64,"SpawnNightCrawler","SpawnImpaler")
 		Goto SpawnArachnotron
 	P30:
-		TNT1 A 0 A_Jump(77,"SpawnNightCrawler")
+		TNT1 A 0 A_Jump(77,"SpawnNightCrawler","SpawnImpaler")
 		Goto SpawnArachnotron
 	P40:
-		TNT1 A 0 A_Jump(102,"SpawnNightCrawler")
+		TNT1 A 0 A_Jump(102,"SpawnNightCrawler","SpawnImpaler")
 		Goto SpawnArachnotron
 	P50:
+		TNT1 A 0 A_Jump(128,"SpawnNightCrawler","SpawnImpaler")
+		Goto SpawnArachnotron
+	P05B:
+		TNT1 A 0 A_Jump(13,"SpawnNightCrawler")
+		Goto SpawnArachnotron
+	P10B:
+		TNT1 A 0 A_Jump(26,"SpawnNightCrawler")
+		Goto SpawnArachnotron
+	P15B:
+		TNT1 A 0 A_Jump(39,"SpawnNightCrawler")
+		Goto SpawnArachnotron
+	P20B:
+		TNT1 A 0 A_Jump(51,"SpawnNightCrawler")
+		Goto SpawnArachnotron
+	P25B:
+		TNT1 A 0 A_Jump(64,"SpawnNightCrawler")
+		Goto SpawnArachnotron
+	P30B:
+		TNT1 A 0 A_Jump(77,"SpawnNightCrawler")
+		Goto SpawnArachnotron
+	P40B:
+		TNT1 A 0 A_Jump(102,"SpawnNightCrawler")
+		Goto SpawnArachnotron
+	P50B:
 		TNT1 A 0 A_Jump(128,"SpawnNightCrawler")
 		Goto SpawnArachnotron
 	}

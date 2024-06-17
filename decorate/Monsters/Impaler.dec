@@ -1,0 +1,282 @@
+Actor 64Impaler 19140
+{
+//$category "Game/BD64_Monsters
+Scale 0.8
+Health 800
+Height 64
+Radius 64
+Speed 12
+Mass 300
+MeleeRange 90
+MeleeThreshold 175
+PoisonDamage 128 //Poison Damage Duration from Melee About 4-5 Seconds
+SeeSound "Impaler/See"
+PainSound "Impaler/Pain"
+DeathSound "Impaler/Death"
+Obituary "%o was punctured by an Impaler."
+Tag "Impaler"
+PainChance 32
+PainChance "SuperFists",220
+PainChance "Kick",255
+PainChance "SuperKick",255
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+DamageFactor "Plasma",0.7
+DropItem "DemonEssenceSpawner"
+BloodType "Brutal_BloodGreen"
+MONSTER
++MOVEWITHSECTOR
++NOBLOODDECALS
++MISSILEMORE
++MISSILEEVENMORE
++FLOORCLIP
++BOSSDEATH
++NEVERFAST
++QUICKTORETALIATE
+	States
+	{
+	Spawn:
+		CENT BA 10 A_LookEx
+		Loop
+	See:
+		CENT A 10
+		CENT A 2 A_BabyMetal
+		CENT AA 2 A_Chase("","")
+		CENT BBBCCCDDD 2 A_Chase
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
+		goto See+1
+	Forget:
+		TNT1 A 0 A_ClearTarget
+		Goto Spawn
+	Pain:
+		CENT H 4
+		CENT H 4 A_Pain
+		Goto See
+	Missile:
+		CENT A 8 A_FaceTarget
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		CENT E 1 Bright
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,-30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,38,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,-38,random(-3,3),1,random(-3,3))
+		CENT E 5 A_FaceTarget
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		CENT E 1 Bright
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,-30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,38,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,-38,random(-3,3),1,random(-3,3))
+		CENT E 5 A_FaceTarget
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		CENT E 1 Bright
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,-30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,38,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,-38,random(-3,3),1,random(-3,3))
+		CENT E 5 A_FaceTarget
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		CENT E 1 Bright
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,-30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,38,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,-38,random(-3,3),1,random(-3,3))
+		CENT E 5 A_MonsterRefire(128,"Missile")
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		CENT E 1 Bright
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,-30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,38,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,-38,random(-3,3),1,random(-3,3))
+		CENT E 5 A_FaceTarget
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		CENT E 1 Bright
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,-30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,38,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,-38,random(-3,3),1,random(-3,3))
+		CENT E 5 A_FaceTarget
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		CENT E 1 Bright
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,-30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,38,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,-38,random(-3,3),1,random(-3,3))
+		CENT E 5 A_FaceTarget
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		CENT E 1 Bright
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,-30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,38,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,-38,random(-3,3),1,random(-3,3))
+		CENT E 5 A_FaceTarget
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
+		CENT E 1 Bright
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail",28,-30,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,38,random(-3,3),1,random(-3,3))
+		TNT1 A 0 A_CustomMissile("64ImpalerNail2",28,-38,random(-3,3),1,random(-3,3))
+		CENT E 5 A_FaceTarget
+		Goto See+1
+	Melee:
+		CENT F 3 A_FaceTarget
+		CENT F 3 A_Recoil(-10)
+		CENT G 6 A_CustomMeleeAttack(10*random(2,8),"Impaler/Melee","Impaler/Miss")
+		Goto See
+	Raise:
+		CENT NMLKJI 5
+		Goto See
+	Death:
+		CENT I 5 A_Scream
+		CENT J 5 A_NoBlocking
+		CENT K 5 A_BossDeath
+		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
+		CENT LM 5
+		CENT N 35
+		CENT N -1 A_SpawnItemEx("GrowingBloodPoolGreen")
+		Stop
+	XDeath:
+		TNT1 A 0 A_CustomMissile("XDeath1Green",52,0,random(150,210),2,random(10,50))
+		TNT1 AAAA 0 A_CustomMissile("XDeath1Green",52,0,random(0,360),2,random(10,50))
+		TNT1 AAAA 0 A_CustomMissile("XDeath2Green",52,0,random(0,360),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("XDeath2Green",52,0,random(150,210),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("XDeath3Green",52,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPieceGreen",52,0,random(150,210),2,random(10,50))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodmistGreen",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("BloodmistExtraBigGreen",45,0,random(0,360),2,random(10,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("Brutal_BloodGreen",55,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("64ImpalerTail",35,0,random(0,360),2,random(10,60))
+		TNT1 A 0 A_CustomMissile("64ImpalerArm",35,0,random(0,360),2,random(10,60))
+		TNT1 A 0 A_CustomMissile("64ImpalerLeg1",35,0,random(0,360),2,random(10,60))
+		TNT1 A 0 A_CustomMissile("64ImpalerLeg2",35,0,random(0,360),2,random(30,60))
+		TNT1 A 0 A_CustomMissile("64ImpalerLeg3",35,0,random(0,360),2,random(20,60))
+		CENT O 5 A_Scream
+		CENT O 5 A_NoBlocking
+		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
+		CENT O 35 A_BossDeath
+		CENT O -1 A_SpawnItemEx("GrowingBloodPoolGreen")
+		Stop
+	Ice:
+		CENT "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate")
+		"####" "#" 5 A_FreezeDeath
+		"####" "#" 0 A_KillMaster("None")	//tag 666 fix
+		"####" "#" 1 A_FreezeDeathChunks
+		wait
+	Crush:
+		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
+		A038 A -1
+		Stop
+	}
+}
+
+actor 64ImpalerNail
+{
+scale 0.4
+height 6
+Radius 3
+Speed 80
+Damage 2
+Obituary "%o got nailed!"
+SeeSound "Impaler/Attack"
+Decal "BulletDecalNew1"
+DamageType "Bullet"
+PROJECTILE
+-PUFFONACTORS
++RIPPER
+	States
+	{
+	Spawn:
+		DART A -1
+		Stop
+	Xdeath:
+		TNT1 A 3 A_PlaySound("NAILFLE",CHAN_WEAPON)
+		Stop
+	Death:
+		DART B 1 bright A_PlaySound("NAILHIT",CHAN_BODY)
+		TNT1 A 0 A_SpawnItemEx("HitPuff")
+		DART C 4 bright
+		DART DEFG 4
+		stop
+	}
+}
+
+actor 64ImpalerNail2 : 64ImpalerNail
+{
+Speed 40
+-RIPPER
+}
+
+Actor 64ImpalerArm : XDeathZombieArm1
+{
+	States
+	{
+	Spawn:
+		CARM A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
+		CARM ABCDEFGH 4 A_CheckFloor("Death")
+		Wait
+	Death:
+		TNT1 A 0 A_Jump(128,"Death2")
+		CARM A 35
+		TNT1 A 0 A_CustomMissile("BigBloodSpotGreen",0,0,random(0,360),2,random(0,90))
+		CARM A -1
+		Stop
+	Death2:
+		CARM E 35
+		TNT1 A 0 A_CustomMissile("BigBloodSpotGreen",0,0,random(0,360),2,random(0,90))
+		CARM E -1
+		Stop
+	}
+}
+
+ACTOR 64ImpalerLeg1 : XDeathZombieArm1
+{
+	States
+	{
+	Spawn:
+		CLEG ABCDEFGH 4 A_CheckFloor("Death")
+		Wait
+	Death:
+		CLEG I 1
+		CLEG I -1
+		Stop
+	}
+}
+
+ACTOR 64ImpalerLeg2 : 64ImpalerLeg1
+{
+XScale -0.8
+YScale 0.8
+}
+
+ACTOR 64ImpalerLeg3 : 64ImpalerLeg1
+{
+XScale -0.8
+YScale -0.8
+}
+
+Actor 64ImpalerTail : XDeathZombieArm1
+{
+	States
+	{
+	Spawn:
+		CTAI A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
+		CTAI ABCDEFGH 4 A_CheckFloor("Death")
+		Wait
+	Death:
+		CTAI I 35
+		TNT1 A 0 A_CustomMissile("BigBloodSpotGreen",0,0,random(0,360),2,random(0,90))
+		CTAI I -1
+		Stop
+	}
+}

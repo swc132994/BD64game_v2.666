@@ -73,6 +73,7 @@ Carrion				19136
 Pestilence			19137
 Plasma Zombie		19138
 Trite				19139
+Impaler				19140
 
 Gauss Cannon spawn	19134
 MP40 SPAWNER		19124
@@ -234,6 +235,12 @@ Monsters:
 
 	Sprite Edits :	Midway, DrDoctor, DrPyspy, Capstone Games, Dunkelschwamm, Captain Toenail
 	D64 Frankensprite by Craneo
+
+//64Impaler
+	Scorpion Tail by: LilWhiteMouse
+	Sprites by: Sheriffsheep132
+	Sprite edits by Craneo
+	Decorate by swc132994
 
 //Anomaly events
 Poltergeist original credits:
