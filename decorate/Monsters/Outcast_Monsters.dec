@@ -4,8 +4,6 @@ Actor 64AcidDemon : Demon 19106
 SpawnID 158
 Scale 0.8
 Health 200
-Speed 12
-FastSpeed 16
 MeleeRange 60 //default 44
 MaxTargetRange 384
 MeleeThreshold 125
@@ -34,7 +32,7 @@ BloodType "Brutal_BloodGreen"
 		TNT1 A 0 A_ClearTarget
 		Goto Spawn
 	See:
-		ACID AAAABBBBCCCCDDDD 2 Fast A_Chase
+		ACID AAAABBBBCCCCDDDD 2 A_Chase
 		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		Loop
 	Melee:
@@ -46,13 +44,13 @@ BloodType "Brutal_BloodGreen"
 		Goto See
 	Missile:
 		TNT1 A 0 A_PlaySound("SlimeBall/Shoot",CHAN_BODY)
-		ACID EF 8 Fast A_FaceTarget
+		ACID EF 8 A_FaceTarget
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("64AcidProjectile",random(44,54),random(-8,8),0,CMF_AIMOFFSET)
-		ACID G 10 Fast
+		ACID G 10
 		Goto See
 	Pain:
-		ACID H 2 Fast
-		ACID H 2 Fast A_Pain
+		ACID H 2
+		ACID H 2 A_Pain
 		Goto See
 	Raise:
 		ACID NMLKJI 5

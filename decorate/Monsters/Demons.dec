@@ -17,8 +17,6 @@ DropItem "DemonEssenceSpawner"
 	States
 	{
 	Spawn:
-		SARG Y 1
-	Spawned:
 		SARG YZ 10 A_LookEx
 		Loop
 	See:
@@ -32,7 +30,7 @@ DropItem "DemonEssenceSpawner"
 		Loop
 	Forget:
 		TNT1 A 0 A_ClearTarget
-		Goto Spawned
+		Goto Spawn
 	Melee:
 		SARG E 8 A_FaceTarget
 		TNT1 A 0 A_Recoil(-2)
@@ -362,12 +360,10 @@ DropItem "DemonEssenceSpawner"
 	States
 	{
 	Spawn:
-		SAR2 Y 1
-	Spawned:
 		SAR2 YZ 10 A_LookEx
 		Loop
 	See:
-		TNT1 AA 2 A_Chase
+		SAR2 AA 2 A_Chase
 		TNT1 A 0 A_JumpIfCloser(800,"ChaseSee")
 		Loop
 	ChaseSee:
@@ -780,12 +776,10 @@ Obituary "%o was hunted down by a nightmare spectre."
 	States
 	{
 	Spawn:
-		SAR3 Y 1
-	Spawned:
 		SAR3 YZ 10 A_LookEx
 		Loop
 	See:
-		TNT1 AA 2 A_Chase
+		SAR3 AA 2 A_Chase
 		TNT1 A 0 A_JumpIfCloser(800,"ChaseSee")
 		Loop
 	ChaseSee:
