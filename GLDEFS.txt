@@ -2023,6 +2023,163 @@ object 64SisterTracer2
 	frame MZ39H {light TRACER_X3}
 }
 
+//Soul harvester
+Pointlight SoulHarvesterBall1
+{
+Color 1.0 0.8 0.3
+Size 40
+}
+
+Pointlight SoulHarvesterBall2
+{
+Color 1.0 0.8 0.3
+Size 44
+}
+
+Pointlight SoulHarvesterBall3
+{
+Color 1.0 0.8 0.3
+Size 48
+}
+
+Pointlight SoulHarvesterBall4
+{
+Color 1.0 0.8 0.3
+Size 36
+}
+
+Pointlight SoulHarvesterBall5
+{
+Color 1.0 0.8 0.3
+Size 32
+}
+
+Object 64SoulHarvesterBall
+{
+Frame SHBAA {Light SoulHarvesterBall1}
+Frame SHBAB {Light SoulHarvesterBall1}
+Frame SHBAC {Light SoulHarvesterBall2}
+Frame SHBAD {Light SoulHarvesterBall3}
+Frame SHBAE {Light SoulHarvesterBall2}
+Frame SHBAF {Light SoulHarvesterBall1}
+Frame SHBAG {Light SoulHarvesterBall4}
+Frame SHBAH {Light SoulHarvesterBall5}
+}
+
+
+PointLight SoulHarvesterX_1
+{
+Offset 0 34 0
+Color 1.0 1.0 0.0
+Size 8
+}
+
+PointLight SoulHarvesterX_2
+{
+Offset 0 35 0
+Color 1.0 1.0 0.0
+Size 12
+}
+
+PointLight SoulHarvesterX_3
+{
+Offset 0 35 0
+Color 1.0 1.0 0.0
+Size 16
+}
+
+PointLight SoulHarvesterX_4
+{
+Offset 0 35 0
+Color 1.0 1.0 0.0
+Size 20
+}
+
+PointLight SoulHarvesterX_5
+{
+Offset 0 35 0
+Color 1.0 1.0 0.0
+Size 24
+}
+
+PointLight SoulHarvesterX_6
+{
+Offset 0 35 0
+Color 1.0 1.0 0.0
+Size 32
+}
+
+Object 64SoulHarvester
+{
+Frame SLHVE {Light SoulHarvesterX_1}
+Frame SLHVF {Light SoulHarvesterX_2}
+Frame SLHVG {Light SoulHarvesterX_3}
+Frame SLHVH {Light SoulHarvesterX_4}
+Frame SLHVI {Light SoulHarvesterX_5}
+Frame SLHVJ {Light SoulHarvesterX_6}
+}
+
+Pointlight SoulHarvesterGhost1
+{
+Color 1.0 1.0 0.0
+Size 8
+Offset 0 4 0
+}
+
+Pointlight SoulHarvesterGhost2
+{
+Color 1.0 1.0 0.0
+Size 16
+Offset 0 8 0
+}
+
+Pointlight SoulHarvesterGhost3
+{
+Color 1.0 1.0 0.0
+Size 24
+Offset 0 32 0
+}
+
+Pointlight SoulHarvesterGhost4
+{
+Color 0.6 0.6 0.0
+Size 24
+Offset 0 48 0
+}
+
+Pointlight SoulHarvesterGhost5
+{
+Color 0.4 0.4 0.0
+Size 16
+Offset 0 56 0
+}
+
+Object 64SoulHarvesterGhost
+{
+Frame SHGHA {Light SoulHarvesterGhost1}
+Frame SHGHB {Light SoulHarvesterGhost2}
+Frame SHGHC {Light SoulHarvesterGhost3}
+Frame SHGHD {Light SoulHarvesterGhost4}
+Frame SHGHE {Light SoulHarvesterGhost5}
+Frame SHGHF {Light SoulHarvesterGhost4}
+Frame SHGHG {Light SoulHarvesterGhost3}
+Frame SHGHH {Light SoulHarvesterGhost2}
+Frame SHGHI {Light SoulHarvesterGhost1}
+}
+
+Object 64SoulHarvesterGhostReturning
+{
+Frame SHGHA {Light SoulHarvesterGhost1}
+Frame SHGHB {Light SoulHarvesterGhost2}
+Frame SHGHC {Light SoulHarvesterGhost3}
+Frame SHGHD {Light SoulHarvesterGhost4}
+Frame SHGHE {Light SoulHarvesterGhost5}
+Frame SHGHF {Light SoulHarvesterGhost4}
+Frame SHGHG {Light SoulHarvesterGhost3}
+Frame SHGHH {Light SoulHarvesterGhost2}
+Frame SHGHI {Light SoulHarvesterGhost1}
+}
+
 //Doom Teleport fog
 flickerlight DTFOG1
 {

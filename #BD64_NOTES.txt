@@ -242,6 +242,12 @@ Monsters:
 	Sprite edits by Craneo
 	Decorate by swc132994
 
+//64Soul Harvester
+	CODE: Vader, Tormentor667
+	GLDefs (unused atm): Keksdose, Ghstly Dragon
+	SPRITES: Amuscaria, DrPyspy (monster), Midway, AtomicFrog (projectile), unsplash.com, Captain Toenail (death soul)
+	SOUNDS: Dead Space, Id Software, The Blue Savior/Project Malice
+
 //Anomaly events
 Poltergeist original credits:
 ----------------------------

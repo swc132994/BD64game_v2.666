@@ -80,6 +80,7 @@
 #INCLUDE "Decorate/Monsters/ZombiePlasma.dec"
 #INCLUDE "Decorate/Monsters/Trite.dec"
 #INCLUDE "Decorate/Monsters/Impaler.dec"
+#INCLUDE "Decorate/Monsters/Harvester.dec"
 #INCLUDE "Decorate/Monsters/NPCMarines.dec"
 
 //RANDOM SPAWNERS, CAST CALL & DROPABLES

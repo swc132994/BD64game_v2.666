@@ -286,6 +286,33 @@ YScale 1.0
 	}
 }
 
+actor D64HarvesterCast : 64SoulHarvester
+{
+XScale 1.0
+YScale 1.0
+	States
+	{
+	See:
+		SLHV AABBCCDD 3
+		Loop
+	Melee:
+		SLHM A 9
+		SLHM BC 6
+		Goto See
+	Missile:
+		SLHV EEF 4
+		SLHV GHI 5 Bright
+		SLHV J 8 Bright
+		SLHV I 10
+		Goto See
+	Death:
+		SLHV LM 8
+		SLHV NOP 6
+		SLHV Q -1
+		Stop
+	}
+}
+
 actor D64DemonCast : 64Demon
 {
 XScale 1.0
