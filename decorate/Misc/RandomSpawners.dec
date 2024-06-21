@@ -287,28 +287,55 @@ MONSTER
 	SpawnNightImp:
 		TNT1 A 1 A_SpawnItemEx("Nightmareimp",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
-	P05:
+	SpawnHarvester:
+		TNT1 A 1 A_SpawnItemEx("64SoulHarvester",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
+		Stop
+	P05A:
+		TNT1 A 0 A_Jump(13,"SpawnNightImp","SpawnHarvester")
+		Goto SpawnImp
+	P10A:
+		TNT1 A 0 A_Jump(26,"SpawnNightImp","SpawnHarvester")
+		Goto SpawnImp
+	P15A:
+		TNT1 A 0 A_Jump(39,"SpawnNightImp","SpawnHarvester")
+		Goto SpawnImp
+	P20A:
+		TNT1 A 0 A_Jump(51,"SpawnNightImp","SpawnHarvester")
+		Goto SpawnImp
+	P25A:
+		TNT1 A 0 A_Jump(64,"SpawnNightImp","SpawnHarvester")
+		Goto SpawnImp
+	P30A:
+		TNT1 A 0 A_Jump(77,"SpawnNightImp","SpawnHarvester")
+		Goto SpawnImp
+	P40A:
+		TNT1 A 0 A_Jump(102,"SpawnNightImp","SpawnHarvester")
+		Goto SpawnImp
+	P50A:
+		TNT1 A 0 A_Jump(128,"SpawnNightImp","SpawnHarvester")
+		Goto SpawnImp
+	P05B:
 		TNT1 A 0 A_Jump(13,"SpawnNightImp")
 		Goto SpawnImp
-	P10:
+	P10B:
 		TNT1 A 0 A_Jump(26,"SpawnNightImp")
 		Goto SpawnImp
-	P15:
+	P15B:
 		TNT1 A 0 A_Jump(39,"SpawnNightImp")
 		Goto SpawnImp
-	P20:
+	P20B:
 		TNT1 A 0 A_Jump(51,"SpawnNightImp")
 		Goto SpawnImp
-	P25:
+	P25B:
 		TNT1 A 0 A_Jump(64,"SpawnNightImp")
 		Goto SpawnImp
-	P30:
+	P30B:
 		TNT1 A 0 A_Jump(77,"SpawnNightImp")
 		Goto SpawnImp
-	P40:
+	P40B:
 		TNT1 A 0 A_Jump(102,"SpawnNightImp")
 		Goto SpawnImp
-	P50:
+	P50B:
 		TNT1 A 0 A_Jump(128,"SpawnNightImp")
 		Goto SpawnImp
 	}
@@ -964,28 +991,28 @@ MONSTER
 	SpawnImpaler:
 		TNT1 A -1 A_SpawnItemEx("64Impaler",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		stop
-	P05:
+	P05A:
 		TNT1 A 0 A_Jump(13,"SpawnNightCrawler","SpawnImpaler")
 		Goto SpawnArachnotron
-	P10:
+	P10A:
 		TNT1 A 0 A_Jump(26,"SpawnNightCrawler","SpawnImpaler")
 		Goto SpawnArachnotron
-	P15:
+	P15A:
 		TNT1 A 0 A_Jump(39,"SpawnNightCrawler","SpawnImpaler")
 		Goto SpawnArachnotron
-	P20:
+	P20A:
 		TNT1 A 0 A_Jump(51,"SpawnNightCrawler","SpawnImpaler")
 		Goto SpawnArachnotron
-	P25:
+	P25A:
 		TNT1 A 0 A_Jump(64,"SpawnNightCrawler","SpawnImpaler")
 		Goto SpawnArachnotron
-	P30:
+	P30A:
 		TNT1 A 0 A_Jump(77,"SpawnNightCrawler","SpawnImpaler")
 		Goto SpawnArachnotron
-	P40:
+	P40A:
 		TNT1 A 0 A_Jump(102,"SpawnNightCrawler","SpawnImpaler")
 		Goto SpawnArachnotron
-	P50:
+	P50A:
 		TNT1 A 0 A_Jump(128,"SpawnNightCrawler","SpawnImpaler")
 		Goto SpawnArachnotron
 	P05B:

@@ -166,7 +166,7 @@ MONSTER
 		CENT O -1 A_SpawnItemEx("GrowingBloodPoolGreen")
 		Stop
 	Ice:
-		CENT "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate")
+		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate")
 		"####" "#" 5 A_FreezeDeath
 		"####" "#" 0 A_KillMaster("None")	//tag 666 fix
 		"####" "#" 1 A_FreezeDeathChunks

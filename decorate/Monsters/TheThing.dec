@@ -53,7 +53,6 @@ MONSTER
 		Goto spawn
 	See:
 		THNG ABABAB 4
-		TNT1 A 0 A_SetSolid
 		TNT1 A 0 A_SpawnItemEx("GrowingBloodPool")
 		TNT1 A 0 A_PlaySound("64Thing/sight",CHAN_BODY)
 		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
@@ -65,6 +64,7 @@ MONSTER
 		TNG2 AB 3
 		TNT1 A 0 A_PlaySound("64ThingActive1",CHAN_WEAPON)
 		TNG2 ABABCDE 4
+		TNT1 A 0 A_SetSolid
 		Goto See2
 	See2:
 		TNT1 A 0 A_ChangeFlag("NOPAIN",FALSE)

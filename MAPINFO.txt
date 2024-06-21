@@ -183,6 +183,13 @@ Intermission Doom2Cast
 	}
 	Cast
 	{
+		CastClass = "D64HarvesterCast"
+		CastName = "Soul Harvester"
+		AttackSound = "Missile",2,"harvester/scream"
+		AttackSound = "Melee",2,"imp/melee"
+	}
+	Cast
+	{
 		CastClass = "D64DemonCast"
 		CastName = "Demon"
 		AttackSound = "Melee",1,"demon/melee"
@@ -198,7 +205,7 @@ Intermission Doom2Cast
 	{
 		CastClass = "64ButcherCast"
 		CastName = "Butcher"
-		AttackSound = "Melee",1,"weapons/sawhit"
+		AttackSound = "Missile",1,"chainsaw/loop"
 	}
 	Cast
 	{

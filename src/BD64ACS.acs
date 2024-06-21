@@ -290,25 +290,43 @@ script "WpnPowerRandom" (void)
 
 script "NImpRandom" (void)
 {
-	if(GetCvar("NImp_Spawner_Cvar") == 5) { SetActorState(0,"P05"); }
+	if(GetCvar("NImp_Spawner_Cvar") == 5) { SetActorState(0,"P05A"); }
 	else
-	if(GetCvar("NImp_Spawner_Cvar") == 10) { SetActorState(0,"P10"); }
+	if(GetCvar("NImp_Spawner_Cvar") == 10) { SetActorState(0,"P10A"); }
 	else
-	if(GetCvar("NImp_Spawner_Cvar") == 15) { SetActorState(0,"P15"); }
+	if(GetCvar("NImp_Spawner_Cvar") == 15) { SetActorState(0,"P15A"); }
 	else
-	if(GetCvar("NImp_Spawner_Cvar") == 20) { SetActorState(0,"P20"); }
+	if(GetCvar("NImp_Spawner_Cvar") == 20) { SetActorState(0,"P20A"); }
 	else
-	if(GetCvar("NImp_Spawner_Cvar") == 25) { SetActorState(0,"P25"); }
+	if(GetCvar("NImp_Spawner_Cvar") == 25) { SetActorState(0,"P25A"); }
 	else
-	if(GetCvar("NImp_Spawner_Cvar") == 30) { SetActorState(0,"P30"); }
+	if(GetCvar("NImp_Spawner_Cvar") == 30) { SetActorState(0,"P30A"); }
 	else
-	if(GetCvar("NImp_Spawner_Cvar") == 40) { SetActorState(0,"P40"); }
+	if(GetCvar("NImp_Spawner_Cvar") == 40) { SetActorState(0,"P40A"); }
 	else
-	if(GetCvar("NImp_Spawner_Cvar") == 50) { SetActorState(0,"P50"); }
+	if(GetCvar("NImp_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }
+	else
+	if(GetCvar("NImp_Spawner_Cvar") == 51) { SetActorState(0,"P05B"); }
+	else
+	if(GetCvar("NImp_Spawner_Cvar") == 101) { SetActorState(0,"P10B"); }
+	else
+	if(GetCvar("NImp_Spawner_Cvar") == 151) { SetActorState(0,"P15B"); }
+	else
+	if(GetCvar("NImp_Spawner_Cvar") == 201) { SetActorState(0,"P20B"); }
+	else
+	if(GetCvar("NImp_Spawner_Cvar") == 251) { SetActorState(0,"P25B"); }
+	else
+	if(GetCvar("NImp_Spawner_Cvar") == 301) { SetActorState(0,"P30B"); }
+	else
+	if(GetCvar("NImp_Spawner_Cvar") == 401) { SetActorState(0,"P40B"); }
+	else
+	if(GetCvar("NImp_Spawner_Cvar") == 501) { SetActorState(0,"P50B"); }
 	else
 	if(GetCvar("NImp_Spawner_Cvar") == 1) { SetActorState(0,"SpawnImp"); }
 	else
 	if(GetCvar("NImp_Spawner_Cvar") == 2) { SetActorState(0,"SpawnNightImp"); }
+	else
+	if(GetCvar("NImp_Spawner_Cvar") == 3) { SetActorState(0,"SpawnHarvester"); }
 }
 
 script "NSpectreRandom" (void)
@@ -793,21 +811,21 @@ script "ArachnotronRandomACS" (void)
 	else
 	if(GetCvar("ArachnotronRandomCvar") == 3) { SetActorState(0,"SpawnImpaler"); }
 	else
-	if(GetCvar("ArachnotronRandomCvar") == 5) { SetActorState(0,"P05"); }
+	if(GetCvar("ArachnotronRandomCvar") == 5) { SetActorState(0,"P05A"); }
 	else
-	if(GetCvar("ArachnotronRandomCvar") == 10) { SetActorState(0,"P10"); }
+	if(GetCvar("ArachnotronRandomCvar") == 10) { SetActorState(0,"P10A"); }
 	else
-	if(GetCvar("ArachnotronRandomCvar") == 15) { SetActorState(0,"P15"); }
+	if(GetCvar("ArachnotronRandomCvar") == 15) { SetActorState(0,"P15A"); }
 	else
-	if(GetCvar("ArachnotronRandomCvar") == 20) { SetActorState(0,"P20"); }
+	if(GetCvar("ArachnotronRandomCvar") == 20) { SetActorState(0,"P20A"); }
 	else
-	if(GetCvar("ArachnotronRandomCvar") == 25) { SetActorState(0,"P25"); }
+	if(GetCvar("ArachnotronRandomCvar") == 25) { SetActorState(0,"P25A"); }
 	else
-	if(GetCvar("ArachnotronRandomCvar") == 30) { SetActorState(0,"P30"); }
+	if(GetCvar("ArachnotronRandomCvar") == 30) { SetActorState(0,"P30A"); }
 	else
-	if(GetCvar("ArachnotronRandomCvar") == 40) { SetActorState(0,"P40"); }
+	if(GetCvar("ArachnotronRandomCvar") == 40) { SetActorState(0,"P40A"); }
 	else
-	if(GetCvar("ArachnotronRandomCvar") == 50) { SetActorState(0,"P50"); }
+	if(GetCvar("ArachnotronRandomCvar") == 50) { SetActorState(0,"P50A"); }
 	else
 	if(GetCvar("ArachnotronRandomCvar") == 51) { SetActorState(0,"P05B"); }
 	else
