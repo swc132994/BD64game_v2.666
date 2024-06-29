@@ -49,6 +49,9 @@ BFGREADY		BFGREADY
 LSGREADY		LSGREADY
 UNMAKSEL		UNMAKSEL
 
+//Low Ammo
+weapon/lowammo MagClick
+
 //Tired no stamina
 TIRED		TIRED	$limit TIRED 1
 

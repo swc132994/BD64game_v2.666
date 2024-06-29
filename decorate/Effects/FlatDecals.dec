@@ -18,9 +18,10 @@ Renderstyle Translucent
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("Flat_Decal_Remover")==1,"Off")
+		TNT1 A 3 
+		TNT1 A 0 ACS_NamedExecute("Flat_Decal_Remover")
 		TNT1 AA 1 A_CheckFloor("Death")
-		Goto Off
+		Stop
 	Death:
 		XXX1 A 2000
 		XXX1 A 1 A_FadeOut(0.01)
@@ -51,17 +52,18 @@ Renderstyle Translucent
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(ACS_NamedExecuteWithResult("Flat_Decal_Remover")==1,"Off")
+		TNT1 A 3
 		TNT1 A 0 ThrustThingZ(0,35,0,0)
+		TNT1 A 0 ACS_NamedExecute("Flat_Decal_Remover")		
 		TNT1 AA 1 A_CheckCeiling("Death")
-		Stop
-	Off:
-		TNT1 A 1
 		Stop
 	Death:
 		XXX1 A 2000
 		XXX1 A 1 A_FadeOut(0.01)
-		Wait
+		Wait		
+	Off:
+		TNT1 A 1
+		Stop
 	}
 }
 

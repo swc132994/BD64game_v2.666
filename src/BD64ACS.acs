@@ -5,7 +5,7 @@
 script "BD64Respawn" Respawn NET
 {
 	//Hud to Doom Style
-	If(!getusercvar(0,"HUDSwitchCvar"))
+	If(!getusercvar(PlayerNumber(),"HUDSwitchCvar"))
 	{
 		TakeInventory("HUDSwitch",1);
 	}
@@ -28,8 +28,8 @@ script "BD64Respawn" Respawn NET
 	SetInventory("VWeaponMode",getCvar("VWeaponCvar"));
 
 	//Alternative Skins
-	SetInventory("AltRifleSkin",getuserCvar(0,"AlternativeRifleSkinCvar"));
-	SetInventory("AltLaserSkin",getuserCvar(0,"AlternativeLaserSkinCvar"));
+	SetInventory("AltRifleSkin",getuserCvar(PlayerNumber(),"AlternativeRifleSkinCvar"));
+	SetInventory("AltLaserSkin",getuserCvar(PlayerNumber(),"AlternativeLaserSkinCvar"));
 
 
 	//Classic Weapons Mode for Tactical and Modern Classes
@@ -79,8 +79,7 @@ Script "BD64Initilize" Enter
 	GiveInventory("64PortableFirstAidKitTACTICAL",1);
 
 	//Map Checker
-	SetInventory("VmapCheck",GetCvar("VMapCheckCvar"));
-	SetInventory("AbsMapCheck",GetCvar("AbsMapCheckCvar"));
+	SetInventory("VmapCheck",GetCvar("VMapCheckCvar")); //Vanilla Final Outpost and The Absolution
 	SetInventory("TCMapCheck",GetCvar("TCMapCheckCvar"));
 }
 
@@ -91,24 +90,19 @@ Delay(1);
 }
 
 Script "PlayerDeathScript" Death
-	{
+{
 	Delay(1);
 	TakeInventory("ClassicChainsawToken",1);
 	TakeInventory("ClassicRLToken",1);
-	}
-
-script "RifleSkinACS" (void) NET
-{
-SetResultValue(GetUserCVar(0,"AlternativeRifleSkinCvar"));
 }
 
 script "KickKeyPress" (VOID) NET
 {
 	if(CheckInventory("IsModern") > 0)
-	{
-	GiveInventory("Kicking",1);
-	terminate;
-	}
+		{
+		GiveInventory("Kicking",1);
+		terminate;
+		}
 	else
 	{
 	if(CheckInventory("stamina") == 100)
@@ -117,16 +111,16 @@ script "KickKeyPress" (VOID) NET
 		}
 	else
 		{
-		if(CheckInventory("Stamina") > 80)
-			{
-			Print(s:"Not Enough Stamina!");
-			PlaySound(0,"Tired",2,1.0,FALSE,ATTN_NORM);
-			terminate;
-			}
-		else
-			{
-			GiveInventory("Kicking",1);
-			}
+	if(CheckInventory("Stamina") > 80)
+		{
+		Print(s:"Not Enough Stamina!");
+		PlaySound(0,"Tired",2,1.0,FALSE,ATTN_NORM);
+		terminate;
+		}
+	else
+		{
+		GiveInventory("Kicking",1);
+		}
 		}
 	}
 }
@@ -172,7 +166,7 @@ if	(GameType() == GAME_NET_DEATHMATCH)
 
 script "SetBloodAmountACS" (void)
 {
-	if	(GetCvar("isrunningzandronum") != 0)
+	if(GetCvar("isrunningzandronum") != 0)
 	{
 		switch(GetCvar("bd_bloodamount"))
 		{
@@ -189,7 +183,7 @@ script "SetBloodAmountACS" (void)
 	}
 	else
 	{
-		switch( GetCvar("zdoombrutalblood") )
+		switch(GetCvar("zdoombrutalblood"))
 		{
 			Case 0: SetActorState(0,"LowBlood"); break;
 			Case 1: SetActorState(0,"LowBlood"); break;
@@ -258,351 +252,310 @@ SetActorProperty(0,APROP_Speed,2.0);
 delay (1);
 }
 
-script "GaussCannonRandom" (void)
+//Weapon Spawner
+script "ChaingunSpawner" (void)
 {
-	if(GetCvar("GaussCannon_Spawner_Cvar") == 1) { SetActorState(0,"SpawnPlasmaRifle"); }
-	else
-	if(GetCvar("GaussCannon_Spawner_Cvar") == 2) { SetActorState(0,"SpawnGaussCannon"); }
+	static str WeaponType[] =
+	{
+		"SpawnChaingun", "SpawnRifle",
+		"SpawnSMG"
+	};
+	Delay(1);
+	SetActorState(0,WeaponType[GetCvar("Chaingun_Spawner_Cvar") - 1]);
 }
 
-script "BFGRandom" (void)
+script "PlasmaRifleSpawner" (void)
 {
-	if(GetCvar("BFG_Spawner_Cvar") == 1) { SetActorState(0,"SpawnBFG9000"); }
-	else
-	if(GetCvar("BFG_Spawner_Cvar") == 2) { SetActorState(0,"SpawnUnmaker"); }
-	else
-	if(GetCvar("BFG_Spawner_Cvar") == 3) { SetActorState(0,"SpawnLasergun"); }
+	static str WeaponType[] =
+	{
+		"SpawnPlasmaRifle", "SpawnGaussCannon"
+	};
+	Delay(1);
+	SetActorState(0,WeaponType[GetCvar("GaussCannon_Spawner_Cvar") - 1]);
+}
+
+script "BFGSpawner" (void)
+{
+	static str WeaponType[] =
+	{
+		"SpawnBFG9000", "SpawnUnmaker",
+		"SpawnLasergun"
+	};
+	Delay(1);
+	SetActorState(0,WeaponType[GetCvar("BFG_Spawner_Cvar") - 1]);
 }
 
 script "WpnPowerRandom" (void)
 {
-	if(GetCvar("WpnPower_Spawner_Cvar") == 1)
+	Switch(GetCvar("WpnPower_Spawner_Cvar"))
 	{
-		SetActorState(0,"SpawnBlurSphere");
-		SetActorState(0,"SpawnBerserk");
-		SetActorState(0,"SpawnSoulSphere");
-		SetActorState(0,"SpawnMegaSphere");
-		SetActorState(0,"SpawnInvulnerabilitySphere");
+		Case 1: SetActorState(0,"SpawnBlurSphere"); SetActorState(0,"SpawnBerserk"); SetActorState(0,"SpawnSoulSphere"); SetActorState(0,"SpawnMegaSphere"); SetActorState(0,"SpawnInvulnerabilitySphere"); break;
+		Case 2: SetActorState(0,"SpawnDemonKey"); break;
 	}
-	else
-	if(GetCvar("WpnPower_Spawner_Cvar") == 2) { SetActorState(0,"SpawnDemonKey"); }
+	Delay(1);
 }
 
-script "NImpRandom" (void)
+//Monster Spawner
+
+script "SpawnPercent" (void)
 {
-	if(GetCvar("NImp_Spawner_Cvar") == 5) { SetActorState(0,"P05A"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 10) { SetActorState(0,"P10A"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 15) { SetActorState(0,"P15A"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 20) { SetActorState(0,"P20A"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 25) { SetActorState(0,"P25A"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 30) { SetActorState(0,"P30A"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 40) { SetActorState(0,"P40A"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 51) { SetActorState(0,"P05B"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 101) { SetActorState(0,"P10B"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 151) { SetActorState(0,"P15B"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 201) { SetActorState(0,"P20B"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 251) { SetActorState(0,"P25B"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 301) { SetActorState(0,"P30B"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 401) { SetActorState(0,"P40B"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 501) { SetActorState(0,"P50B"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 1) { SetActorState(0,"SpawnImp"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 2) { SetActorState(0,"SpawnNightImp"); }
-	else
-	if(GetCvar("NImp_Spawner_Cvar") == 3) { SetActorState(0,"SpawnHarvester"); }
+	int PercentValue = GetCvar("bd64_SpawnPercent");
+	SetResultValue(PercentValue);
 }
 
-script "NSpectreRandom" (void)
+script "ZombiemanSpawner" (void)
 {
-	if(GetCvar("NSpectre_Spawner_Cvar") == 5) { SetActorState(0,"P05A"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 10) { SetActorState(0,"P10A"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 15) { SetActorState(0,"P15A"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 20) { SetActorState(0,"P20A"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 25) { SetActorState(0,"P25A"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 30) { SetActorState(0,"P30A"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 40) { SetActorState(0,"P40A"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 51) { SetActorState(0,"P05B"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 101) { SetActorState(0,"P10B"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 151) { SetActorState(0,"P15B"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 201) { SetActorState(0,"P20B"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 251) { SetActorState(0,"P25B"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 301) { SetActorState(0,"P30B"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 401) { SetActorState(0,"P40B"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 501) { SetActorState(0,"P50B"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 1) { SetActorState(0,"SpawnSpectre"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 2) { SetActorState(0,"SpawnNightSpectre"); }
-	else
-	if(GetCvar("NSpectre_Spawner_Cvar") == 3) { SetActorState(0,"SpawnWraith"); }
+	static str MonsterType[] =
+	{
+		"SpawnZombieMan", "SpawnZombieMarine"
+	};
+	delay(1);
+	SetActorState(0,MonsterType[GetCvar("ZMarineRandom_Cvar") - 1]);
 }
 
-script "NCacoRandom" (void)
+script "ShotgunGuySpawner" (void)
 {
-	if(GetCvar("NCaco_Spawner_Cvar") == 5) { SetActorState(0,"P05A"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 10) { SetActorState(0,"P10A"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 15) { SetActorState(0,"P15A"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 20) { SetActorState(0,"P20A"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 25) { SetActorState(0,"P25A"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 30) { SetActorState(0,"P30A"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 40) { SetActorState(0,"P40A"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 51) { SetActorState(0,"P05B"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 101) { SetActorState(0,"P10B"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 151) { SetActorState(0,"P15B"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 201) { SetActorState(0,"P20B"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 251) { SetActorState(0,"P25B"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 301) { SetActorState(0,"P30B"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 401) { SetActorState(0,"P40B"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 501) { SetActorState(0,"P50B"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 1) { SetActorState(0,"SpawnCacodemon"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 2) { SetActorState(0,"SpawnNightCacodemon"); }
-	else
-	if(GetCvar("NCaco_Spawner_Cvar") == 3) { SetActorState(0,"SpawnFallen"); }
+	static str MonsterType[] =
+	{
+		"SpawnShotgunGuy", "SpawnSSGGuy",
+		"SpawnPlasmaGuy"
+	};
+	delay(1);
+	SetActorState(0,MonsterType[GetCvar("SSGZombieRandom_Cvar") - 1]);
 }
 
-script "HellHoundRandom" (void)
+script "ChaingunGuySpawner" (void)
 {
-	if(GetCvar("Hellhound_Spawner_Cvar") == 5) { SetActorState(0,"P05A"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 10) { SetActorState(0,"P10A"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 15) { SetActorState(0,"P15A"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 20) { SetActorState(0,"P20A"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 25) { SetActorState(0,"P25A"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 30) { SetActorState(0,"P30A"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 40) { SetActorState(0,"P40A"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 51) { SetActorState(0,"P05B"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 101) { SetActorState(0,"P10B"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 151) { SetActorState(0,"P15B"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 201) { SetActorState(0,"P20B"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 251) { SetActorState(0,"P25B"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 301) { SetActorState(0,"P30B"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 401) { SetActorState(0,"P40B"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 501) { SetActorState(0,"P50B"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 1) { SetActorState(0,"SpawnBaron"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 2) { SetActorState(0,"HoundChooser"); }
-	else
-	if(GetCvar("Hellhound_Spawner_Cvar") == 3) { SetActorState(0,"SpawnBelp"); }
+	Switch(GetCvar("ZombieChaingunRandom_Cvar"))
+	{
+		Case -1: SetActorState(0,"D64MonsterOnly"); break;
+		Case 0: Break;
+		Default:		
+		Case 1: SetActorState(0,"SpawnChaingunGuy"); break;
+		Case 2: SetActorState(0,"SpawnBFGGuy"); break;
+	}
+	Delay(1);
 }
 
-script "AnnihilatorRandom" (void)
+script "ImpSpawner" (void)
 {
-	if(GetCvar("Annihilator_Spawner_Cvar") == 5) { SetActorState(0,"P05A"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 10) { SetActorState(0,"P10A"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 15) { SetActorState(0,"P15A"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 20) { SetActorState(0,"P20A"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 25) { SetActorState(0,"P25A"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 30) { SetActorState(0,"P30A"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 40) { SetActorState(0,"P40A"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 51) { SetActorState(0,"P05B"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 101) { SetActorState(0,"P10B"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 151) { SetActorState(0,"P15B"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 201) { SetActorState(0,"P20B"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 251) { SetActorState(0,"P25B"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 301) { SetActorState(0,"P30B"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 401) { SetActorState(0,"P40B"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 501) { SetActorState(0,"P50B"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 1) { SetActorState(0,"SpawnCyberdemon"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 2) { SetActorState(0,"SpawnAnnihilator"); }
-	else
-	if(GetCvar("Annihilator_Spawner_Cvar") == 3) { SetActorState(0,"SpawnInfernal"); }
+	static str MonsterType[] =
+	{
+		"SpawnImp", "SpawnNightImp",
+		"SpawnHarvester"
+	};
+	delay(1);
+	SetActorState(0,MonsterType[GetCvar("NImp_Spawner_Cvar") - 1]);
 }
 
-script "MotherDemonRandom" (void)
+script "DemonSpawner" (void)
 {
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 0) { SetActorState(0,"D64MonsterOnly"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 5) { SetActorState(0,"P05A"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 10) { SetActorState(0,"P10A"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 15) { SetActorState(0,"P15A"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 20) { SetActorState(0,"P20A"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 25) { SetActorState(0,"P25A"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 30) { SetActorState(0,"P30A"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 40) { SetActorState(0,"P40A"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 50) { SetActorState(0,"P50A"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 51) { SetActorState(0,"P05B"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 101) { SetActorState(0,"P10B"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 151) { SetActorState(0,"P15B"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 201) { SetActorState(0,"P20B"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 251) { SetActorState(0,"P25B"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 301) { SetActorState(0,"P30B"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 401) { SetActorState(0,"P40B"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 501) { SetActorState(0,"P50B"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 52) { SetActorState(0,"P05C"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 102) { SetActorState(0,"P10C"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 152) { SetActorState(0,"P15C"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 202) { SetActorState(0,"P20C"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 252) { SetActorState(0,"P25C"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 302) { SetActorState(0,"P30C"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 402) { SetActorState(0,"P40C"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 502) { SetActorState(0,"P50C"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 1) { SetActorState(0,"SpawnMastermind"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 2) { SetActorState(0,"SpawnMother"); }
-	else
-	if(GetCvar("Motherdemon_Spawner_Cvar") == 3) { SetActorState(0,"SpawnEradicator"); }
+	static str MonsterType[] =
+	{
+		"SpawnDemon", "SpawnAcidDemon",
+		"SpawnButcher"
+	};
+	delay(1);
+	SetActorState(0,MonsterType[GetCvar("AcidDemonRandom_Cvar") - 1]);
+}
+
+script "SpectreSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnSpectre", "SpawnNightSpectre",
+		"SpawnWraith"
+	};
+	delay(1);
+	SetActorState(0,MonsterType[GetCvar("NSpectre_Spawner_Cvar") - 1]);
+}
+
+script "CacodemonSpawner" (void)
+{
+	static str CacoSpawnType[] =
+	{
+		"SpawnCacodemon", "SpawnNightCacodemon",
+		"SpawnFallen"
+	};
+	delay(1);
+	SetActorState(0,CacoSpawnType[GetCvar("NCaco_Spawner_Cvar") - 1]);
+}
+
+script "BaronSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnBaron", "HoundChooser",
+		"SpawnBelp"
+	};
+	delay(1);
+	SetActorState(0,MonsterType[GetCvar("Hellhound_Spawner_Cvar") - 1]);
 }
 
 script "HoundChooserACS" (void)
 {
-	if(GetCvar("HoundChooserCvar") == -1) { SetActorState(0,"D64MonsterOnly"); }
-	else
-	if(GetCvar("HoundChooserCvar") == 1) { SetActorState(0,"HoundDefault"); }
-	else
-	if(GetCvar("HoundChooserCvar") == 3) { SetActorState(0,"HoundGEC"); }
+	Switch(GetCvar("HoundChooserCvar"))
+	{
+		Case -1: SetActorState(0,"D64MonsterOnly"); break;
+		Default:
+		Case 0: SetActorState(0,"HoundDefault"); break;
+		Case 1: SetActorState(0,"HoundGEC"); break;
+	}
+	Delay(1);	
 }
 
-script "RevenantRandomACS" (void)
+script "RevenantSpawner" (void)
 {
-	if(GetCvar("Revenant_Spawner_Cvar") == 0) { SetActorState(0,"D64MonsterOnly"); }
-	else
-	if(GetCvar("Revenant_Spawner_Cvar") == 5) { SetActorState(0,"P05"); }
-	else
-	if(GetCvar("Revenant_Spawner_Cvar") == 10) { SetActorState(0,"P10"); }
-	else
-	if(GetCvar("Revenant_Spawner_Cvar") == 15) { SetActorState(0,"P15"); }
-	else
-	if(GetCvar("Revenant_Spawner_Cvar") == 20) { SetActorState(0,"P20"); }
-	else
-	if(GetCvar("Revenant_Spawner_Cvar") == 25) { SetActorState(0,"P25"); }
-	else
-	if(GetCvar("Revenant_Spawner_Cvar") == 30) { SetActorState(0,"P30"); }
-	else
-	if(GetCvar("Revenant_Spawner_Cvar") == 40) { SetActorState(0,"P40"); }
-	else
-	if(GetCvar("Revenant_Spawner_Cvar") == 50) { SetActorState(0,"P50"); }
-	else
-	if(GetCvar("Revenant_Spawner_Cvar") == 1) { SetActorState(0,"Revenant"); }
-	else
-	if(GetCvar("Revenant_Spawner_Cvar") == 2) { SetActorState(0,"SpawnPestilence"); }
+	Switch(GetCvar("Revenant_Spawner_Cvar"))
+	{
+		Case -1: SetActorState(0,"D64MonsterOnly"); break;
+		Case 0: Break;
+		Default:		
+		Case 1: SetActorState(0,"Revenant"); break;
+		Case 2: SetActorState(0,"SpawnPestilence"); break;
+	}
+	Delay(1);
+}
+
+script "HellKnightSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnHellKnight", "SpawnKnightmare"
+	};
+	delay(1);
+	SetActorState(0,MonsterType[GetCvar("KnightmareRandomCvar") - 1]);
+}
+
+script "MancubusSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnFatso", "SpawnBruiser"
+	};
+	delay(1);
+	SetActorState(0,MonsterType[GetCvar("BruiserRandom_Cvar") - 1]);
+}
+
+script "LostSoulSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnLostSoul", "SpawnStalker",
+		"SpawnForgottenOne"
+	};
+	delay(1);
+	SetActorState(0,MonsterType[GetCvar("StalkerRandom_Cvar") - 1]);
+}
+
+script "ArachnotronSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnArachnotron", "SpawnNightCrawler",
+		"SpawnImpaler"
+	};
+	delay(1);
+	SetActorState(0,MonsterType[GetCvar("ArachnotronRandomCvar") - 1]);
+}
+
+Script "PainElementalSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnPainElemental", "SpawnNightmareElemental"
+	};
+	delay(1);
+	SetActorState(0,MonsterType[GetCvar("NightElementalRandomCvar") - 1]);
+}
+
+Script "ArchvileSpawner" (void)
+{
+	Switch(GetCvar("FleshWizardRandomCvar"))
+	{
+		Case -1: SetActorState(0,"D64MonsterOnly"); break;
+		Case 0: Break;
+		Default:
+		Case 1: SetActorState(0,"SpawnArchvile"); break;
+		Case 2: SetActorState(0,"SpawnFleshWizard"); break;
+		Case 3: SetActorState(0,"SpawnHellstorm"); break;
+	}
+	Delay(1);	
+}
+
+script "CyberdemonSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnCyberdemon", "SpawnAnnihilator",
+		"SpawnInfernal"
+	};
+	delay(1);	
+	SetActorState(0,MonsterType[GetCvar("Annihilator_Spawner_Cvar") - 1]);
+}
+
+script "MastermindSpawner" (void)
+{
+	Switch(GetCvar("Motherdemon_Spawner_Cvar"))
+	{
+		Case -1: SetActorState(0,"D64MonsterOnly"); break;
+		Case 0: Break;
+		Default:
+		Case 1: SetActorState(0,"SpawnMastermind"); break;
+		Case 2: SetActorState(0,"SpawnMother"); break;
+		Case 3: SetActorState(0,"SpawnEradicator"); break;
+	}
+	Delay(1);
+}
+
+Script "WadChecker" (void)
+{
+	static str WadChecking[] =
+	{
+		"Doom2", "Doom64",
+		"ScytheII", "Bloodstain",
+		"GoingDown","DoomZero"
+	};
+	delay(1);	
+	SetActorState(0,WadChecking[GetCvar("BD64_WadCheck") - 1]);
+}
+
+script "HordeMultiplier" (void)		//husk zombie multiplier option
+{
+	Switch(GetCvar("TheHorde_Multiplier_Cvar"))
+	{
+		Default:
+		Case -1: SetActorState(0,"Disabled"); break;
+		Case 0: Break;
+		Case 1: SetActorState(0,"Hordex1"); break;
+		Case 2: SetActorState(0,"Hordex2"); break;
+		Case 3: SetActorState(0,"Hordex3"); break;
+		Case 4: SetActorState(0,"Hordex4"); break;		
+	}
+	Delay(1);
 }
 
 script "LightAndFogChecker" (Void)
 {
-	if(GetCvar("LFog_Cvar") == 1) { SetActorState(0,"NoLight"); SetActorState(0,"NoShaft"); }
-	else
-	if(GetCvar("LFog_Cvar") == 2) { SetActorState(0,"NoLight"); }
-	else
-	if(GetCvar("LFog_Cvar") == 3) { SetActorState(0,"NoShaft"); }
+	Switch(GetCvar("LFog_Cvar"))
+	{
+		Default:	
+		Case 0: Break;
+		Case 1: SetActorState(0,"NoLight"); SetActorState(0,"NoShaft"); break;
+		Case 2: SetActorState(0,"NoLight"); break;
+		Case 3: SetActorState(0,"NoShaft"); break;
+	}
+	Delay(1);
 }
 
-script "BerserkSwitchFistsACS" (void)
+script "BerserkSwitchFistsACS" (void) Clientside
 {
-SetResultValue(GetCVar("BerserkSwitchFistsCvar"));
+SetResultValue(GetUserCVar(PlayerNumber(),"BerserkSwitchFistsCvar"));
 }
 
 script "Flat_Decal_Remover" (void)
 {
-SetResultValue(GetCVar("FloorDecal_Cvar"));
+	if(GetCVar("FloorDecal_Cvar") == 0) { SetActorState(0,"Off"); }
 }
 
 script "SoulHandler" ENTER			//unmaker ammo set ThingID
@@ -627,256 +580,31 @@ Script "TUnmakerChecker" (void)		//checks if you have tactical unmaker to allow 
 	}
 }
 
-script "SSGZombieRandomACS" (void)
-{
-	if(GetCvar("SSGZombieRandom_Cvar") == 5) { SetActorState(0,"P05"); }
-	else
-	if(GetCvar("SSGZombieRandom_Cvar") == 10) { SetActorState(0,"P10"); }
-	else
-	if(GetCvar("SSGZombieRandom_Cvar") == 15) { SetActorState(0,"P15"); }
-	else
-	if(GetCvar("SSGZombieRandom_Cvar") == 20) { SetActorState(0,"P20"); }
-	else
-	if(GetCvar("SSGZombieRandom_Cvar") == 25) { SetActorState(0,"P25"); }
-	else
-	if(GetCvar("SSGZombieRandom_Cvar") == 30) { SetActorState(0,"P30"); }
-	else
-	if(GetCvar("SSGZombieRandom_Cvar") == 40) { SetActorState(0,"P40"); }
-	else
-	if(GetCvar("SSGZombieRandom_Cvar") == 50) { SetActorState(0,"P50"); }
-	else
-	if(GetCvar("SSGZombieRandom_Cvar") == 1) { SetActorState(0,"SpawnShotgunGuy"); }
-	else
-	if(GetCvar("SSGZombieRandom_Cvar") == 2) { SetActorState(0,"SpawnSSGGuy"); }
-	else
-	if(GetCvar("SSGZombieRandom_Cvar") == 3) { SetActorState(0,"SpawnBFGGuy"); }
-}
-
-script "ZMarineRandomACS" (void)
-{
-	if(GetCvar("ZMarineRandom_Cvar") == 5) { SetActorState(0,"P05"); }
-	else
-	if(GetCvar("ZMarineRandom_Cvar") == 10) { SetActorState(0,"P10"); }
-	else
-	if(GetCvar("ZMarineRandom_Cvar") == 15) { SetActorState(0,"P15"); }
-	else
-	if(GetCvar("ZMarineRandom_Cvar") == 20) { SetActorState(0,"P20"); }
-	else
-	if(GetCvar("ZMarineRandom_Cvar") == 25) { SetActorState(0,"P25"); }
-	else
-	if(GetCvar("ZMarineRandom_Cvar") == 30) { SetActorState(0,"P30"); }
-	else
-	if(GetCvar("ZMarineRandom_Cvar") == 40) { SetActorState(0,"P40"); }
-	else
-	if(GetCvar("ZMarineRandom_Cvar") == 50) { SetActorState(0,"P50"); }
-	else
-	if(GetCvar("ZMarineRandom_Cvar") == 1) { SetActorState(0,"SpawnZombieMan"); }
-	else
-	if(GetCvar("ZMarineRandom_Cvar") == 2) { SetActorState(0,"SpawnZombieMarine"); }
-}
-
-script "ZombieChaingunRandomACS" (void)
-{
-	if(GetCvar("ZombieChaingunRandom_Cvar") == 0) { SetActorState(0,"D64MonsterOnly"); }
-	else
-	if(GetCvar("ZombieChaingunRandom_Cvar") == 5) { SetActorState(0,"P05"); }
-	else
-	if(GetCvar("ZombieChaingunRandom_Cvar") == 10) { SetActorState(0,"P10"); }
-	else
-	if(GetCvar("ZombieChaingunRandom_Cvar") == 15) { SetActorState(0,"P15"); }
-	else
-	if(GetCvar("ZombieChaingunRandom_Cvar") == 20) { SetActorState(0,"P20"); }
-	else
-	if(GetCvar("ZombieChaingunRandom_Cvar") == 25) { SetActorState(0,"P25"); }
-	else
-	if(GetCvar("ZombieChaingunRandom_Cvar") == 30) { SetActorState(0,"P30"); }
-	else
-	if(GetCvar("ZombieChaingunRandom_Cvar") == 40) { SetActorState(0,"P40"); }
-	else
-	if(GetCvar("ZombieChaingunRandom_Cvar") == 50) { SetActorState(0,"P50"); }
-	else
-	if(GetCvar("ZombieChaingunRandom_Cvar") == 1) { SetActorState(0,"SpawnChaingunGuy"); }
-	else
-	if(GetCvar("ZombieChaingunRandom_Cvar") == 2) { SetActorState(0,"SpawnPlasmaGuy"); }
-}
-
-script "AcidDemonRandomACS" (void)
-{
-	if(GetCvar("AcidDemonRandom_Cvar") == 5) { SetActorState(0,"P05A"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 10) { SetActorState(0,"P10A"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 15) { SetActorState(0,"P15A"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 20) { SetActorState(0,"P20A"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 25) { SetActorState(0,"P25A"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 30) { SetActorState(0,"P30A"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 40) { SetActorState(0,"P40A"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 50) { SetActorState(0,"P50A"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 51) { SetActorState(0,"P05B"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 101) { SetActorState(0,"P10B"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 151) { SetActorState(0,"P15B"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 201) { SetActorState(0,"P20B"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 251) { SetActorState(0,"P25B"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 301) { SetActorState(0,"P30B"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 401) { SetActorState(0,"P40B"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 501) { SetActorState(0,"P50B"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 1) { SetActorState(0,"SpawnDemon"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 2) { SetActorState(0,"SpawnAcidDemon"); }
-	else
-	if(GetCvar("AcidDemonRandom_Cvar") == 3) { SetActorState(0,"SpawnButcher"); }
-}
-
-script "ChaingunRandomACS" (void)
-{
-if(getcvar("Chaingun_Spawner_Cvar") == 1) { SetActorState(0,"SpawnChaingun"); }
-else
-if(getcvar("Chaingun_Spawner_Cvar") == 2) { SetActorState(0,"SpawnRifle"); }
-else
-if(getcvar("Chaingun_Spawner_Cvar") == 3) { SetActorState(0,"SpawnSMG"); }
-}
-
 Script "AlternativeAmmoPickupSpritesACS" (void)
 {
-	if(getCvar("AlternativeAmmoPickupSpritesCvar") == 1) { SetActorState(0,"Spawn1"); }
-	else
-	if(getCvar("AlternativeAmmoPickupSpritesCvar") == 2)
+	Switch(GetCvar("AlternativeAmmoPickupSpritesCvar"))
 	{
-		SetActorState(0,"Spawn2");
-		SetActorState(0,"AlternativeSprite");
-		SetActorState(0,"AltSpawn");
+		Case 0: Break;
+		Default:		
+		Case 1: SetActorState(0,"Spawn1"); break;
+		Case 2: SetActorState(0,"Spawn2"); SetActorState(0,"AlternativeSprite"); SetActorState(0,"AltSpawn"); break;	
 	}
-}
-
-script "StalkerRandomACS" (void)
-{
-	if(GetCvar("StalkerRandom_Cvar") == 5) { SetActorState(0,"P05A"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 10) { SetActorState(0,"P10A"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 15) { SetActorState(0,"P15A"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 20) { SetActorState(0,"P20A"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 25) { SetActorState(0,"P25A"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 30) { SetActorState(0,"P30A"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 40) { SetActorState(0,"P40A"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 50) { SetActorState(0,"P50A"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 51) { SetActorState(0,"P05B"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 101) { SetActorState(0,"P10B"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 151) { SetActorState(0,"P15B"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 201) { SetActorState(0,"P20B"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 251) { SetActorState(0,"P25B"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 301) { SetActorState(0,"P30B"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 401) { SetActorState(0,"P40B"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 501) { SetActorState(0,"P50B"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 1) { SetActorState(0,"SpawnLostSoul"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 2) { SetActorState(0,"SpawnStalker"); }
-	else
-	if(GetCvar("StalkerRandom_Cvar") == 3) { SetActorState(0,"SpawnForgottenOne"); }
-}
-
-script "ArachnotronRandomACS" (void)
-{
-	if(GetCvar("ArachnotronRandomCvar") == 1) { SetActorState(0,"SpawnArachnotron"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 2) { SetActorState(0,"SpawnNightCrawler"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 3) { SetActorState(0,"SpawnImpaler"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 5) { SetActorState(0,"P05A"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 10) { SetActorState(0,"P10A"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 15) { SetActorState(0,"P15A"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 20) { SetActorState(0,"P20A"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 25) { SetActorState(0,"P25A"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 30) { SetActorState(0,"P30A"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 40) { SetActorState(0,"P40A"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 50) { SetActorState(0,"P50A"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 51) { SetActorState(0,"P05B"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 101) { SetActorState(0,"P10B"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 151) { SetActorState(0,"P15B"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 201) { SetActorState(0,"P20B"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 251) { SetActorState(0,"P25B"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 301) { SetActorState(0,"P30B"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 401) { SetActorState(0,"P40B"); }
-	else
-	if(GetCvar("ArachnotronRandomCvar") == 501) { SetActorState(0,"P50B"); }
+	Delay(1);
 }
 
 script "FootStepCheck" (void)	//footstep sound check for player decorate
 {
-if(GetCvar("FootStepCheckCvar") == 1) { GiveInventory("FootstepDisabled",1); }
+	if(GetCvar("FootStepCheckCvar") == 1) { GiveInventory("FootstepDisabled",1); }
 }
 
 script "CensoredHealing_ACS" (void)
 {
-	if(GetCVar("CensoredHealing_Cvar") == 1) { SetActorState(0,"CensoredSpawn"); }
-	else
-	if(GetCVar("CensoredHealing_Cvar") == 2) { SetActorState(0,"BFGStyleSpawn"); }
-}
-
-script "BruiserRandom_ACS" (void)
-{
-	if(GetCvar("BruiserRandom_Cvar") == 5) { SetActorState(0,"P05"); }
-	else
-	if(GetCvar("BruiserRandom_Cvar") == 10) { SetActorState(0,"P10"); }
-	else
-	if(GetCvar("BruiserRandom_Cvar") == 15) { SetActorState(0,"P15"); }
-	else
-	if(GetCvar("BruiserRandom_Cvar") == 20) { SetActorState(0,"P20"); }
-	else
-	if(GetCvar("BruiserRandom_Cvar") == 25) { SetActorState(0,"P25"); }
-	else
-	if(GetCvar("BruiserRandom_Cvar") == 30) { SetActorState(0,"P30"); }
-	else
-	if(GetCvar("BruiserRandom_Cvar") == 40) { SetActorState(0,"P40"); }
-	else
-	if(GetCvar("BruiserRandom_Cvar") == 50) { SetActorState(0,"P50"); }
-	else
-	if(GetCvar("BruiserRandom_Cvar") == 1) { SetActorState(0,"SpawnFatso"); }
-	else
-	if(GetCvar("BruiserRandom_Cvar") == 2) { SetActorState(0,"SpawnBruiser"); }
+	static str CensorHeal[] =
+	{
+		"CensoredSpawn", "BFGStyleSpawn"
+	};
+	delay(1);
+	SetActorState(0,CensorHeal[GetCVar("CensoredHealing_Cvar") - 1]);
 }
 
 /*
@@ -913,29 +641,6 @@ Restart;
 }
 */
 
-script "KnightmareRandom" (void)
-{
-	if(GetCvar("KnightmareRandomCvar") == 5) { SetActorState(0,"P05"); }
-	else
-	if(GetCvar("KnightmareRandomCvar") == 10) { SetActorState(0,"P10"); }
-	else
-	if(GetCvar("KnightmareRandomCvar") == 15) { SetActorState(0,"P15"); }
-	else
-	if(GetCvar("KnightmareRandomCvar") == 20) { SetActorState(0,"P20"); }
-	else
-	if(GetCvar("KnightmareRandomCvar") == 25) { SetActorState(0,"P25"); }
-	else
-	if(GetCvar("KnightmareRandomCvar") == 30) { SetActorState(0,"P30"); }
-	else
-	if(GetCvar("KnightmareRandomCvar") == 40) { SetActorState(0,"P40"); }
-	else
-	if(GetCvar("KnightmareRandomCvar") == 50) { SetActorState(0,"P50"); }
-	else
-	if(GetCvar("KnightmareRandomCvar") == 1) { SetActorState(0,"SpawnHellKnight"); }
-	else
-	if(GetCvar("KnightmareRandomCvar") == 2) { SetActorState(0,"SpawnKnightmare"); }
-}
-
 script "AlphaPickupACS" (void)
 {
 	if(GetCvar("AlphaPickupCvar") == 1)
@@ -953,135 +658,27 @@ script "AlphaBarrelSee" (void)
 	}
 }
 
-Script "WadChecker" (void)
-{
-	if(GetCvar("BD64_WadCheck") == 1) { SetActorState(0,"Doom2"); }
-	else
-	if(GetCvar("BD64_WadCheck") == 2) { SetActorState(0,"Doom64"); }
-	else
-	if(GetCvar("BD64_WadCheck") == 3) { SetActorState(0,"ScytheII"); }
-	else
-	if(GetCvar("BD64_WadCheck") == 4) { SetActorState(0,"Bloodstain"); }
-	else
-	if(GetCvar("BD64_WadCheck") == 5) { SetActorState(0,"GoingDown"); }
-	else
-	if(GetCvar("BD64_WadCheck") == 6) { SetActorState(0,"DoomZero"); }
-}
-
-Script "NightElementalRandom_ACS" (void)
-{
-	if(GetCvar("NightElementalRandomCvar") == 5) { SetActorState(0,"P05"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 10) { SetActorState(0,"P10"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 15) { SetActorState(0,"P15"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 20) { SetActorState(0,"P20"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 25) { SetActorState(0,"P25"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 30) { SetActorState(0,"P30"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 40) { SetActorState(0,"P40"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 50) { SetActorState(0,"P50"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 1) { SetActorState(0,"SpawnPainElemental"); }
-	else
-	if(GetCvar("NightElementalRandomCvar") == 2) { SetActorState(0,"SpawnNightmareElemental"); }
-}
-
-Script "FleshWizardRandomACS" (void)
-{
-	if(GetCvar("FleshWizardRandomCvar") == -1) { SetActorState(0,"D64MonsterOnly"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 5) { SetActorState(0,"P05A"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 10) { SetActorState(0,"P10A"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 15) { SetActorState(0,"P15A"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 20) { SetActorState(0,"P20A"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 25) { SetActorState(0,"P25A"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 30) { SetActorState(0,"P30A"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 40) { SetActorState(0,"P40A"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 50) { SetActorState(0,"P50A"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 51) { SetActorState(0,"P05B"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 101) { SetActorState(0,"P10B"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 151) { SetActorState(0,"P15B"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 201) { SetActorState(0,"P20B"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 251) { SetActorState(0,"P25B"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 301) { SetActorState(0,"P30B"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 401) { SetActorState(0,"P40B"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 501) { SetActorState(0,"P50B"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 52) { SetActorState(0,"P05C"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 102) { SetActorState(0,"P10C"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 152) { SetActorState(0,"P15C"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 202) { SetActorState(0,"P20C"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 252) { SetActorState(0,"P25C"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 302) { SetActorState(0,"P30C"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 402) { SetActorState(0,"P40C"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 502) { SetActorState(0,"P50C"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 1) { SetActorState(0,"SpawnArchvile"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 2) { SetActorState(0,"SpawnFleshWizard"); }
-	else
-	if(GetCvar("FleshWizardRandomCvar") == 3) { SetActorState(0,"SpawnHellstorm"); }
-}
-
-script "HordeMultiplier" (void)		//husk zombie multiplier option
-{
-	if(GetCvar("TheHorde_Multiplier_Cvar") == 1) { SetActorState(0,"Disabled"); }
-	else
-	if(GetCvar("TheHorde_Multiplier_Cvar") == 2) { SetActorState(0,"Hordex1"); }
-	else
-	if(GetCvar("TheHorde_Multiplier_Cvar") == 3) { SetActorState(0,"Hordex2"); }
-	else
-	if(GetCvar("TheHorde_Multiplier_Cvar") == 4) { SetActorState(0,"Hordex3"); }
-	else
-	if(GetCvar("TheHorde_Multiplier_Cvar") == 5) { SetActorState(0,"Hordex4"); }
-}
-
 script "BonusRandomACS" (void)
 {
-	if(GetCvar("BonusRandomCvar") == 1)
+	Switch(GetCvar("BonusRandomCvar"))
 	{
-		SetActorState(0,"SpawnHealthBonus");
-		SetActorState(0,"SpawnArmorBonus");
+		Case 0: Break;
+		Default:		
+		Case 1: SetActorState(0,"SpawnHealthBonus"); SetActorState(0,"SpawnArmorBonus"); break;
+		Case 2: SetActorState(0,"SpawnHellPotion"); break;	
 	}
-	else
-	if(GetCvar("BonusRandomCvar") == 2) { SetActorState(0,"SpawnHellPotion"); }
+	Delay(1);
 }
 
 script "ThingRandomACS" (void)
 {
-	SetResultValue(GetCVar("ThingRandomCvar"));
+	int ThingDeath = GetCVar("ThingRandomCvar");
 	if(GetCvar("ThingRandomCvar") == 0)
 	{
 		SetActorState(0,"SpawnDeadMarine");
 		SetActorState(0,"SpawnGibbedMarine");
 		SetActorState(0,"SpawnGibbedMarineExtra");
+		SetResultValue(ThingDeath);
 	}
 }
 
@@ -1129,15 +726,234 @@ script "ClassicTorchACS" (void)
 
 script "LiquidSplashCvarACS" (void)
 {
-SetResultValue(GetCVar("LiquidSplashCvar"));
-}
-
-script "ShootableProjectiles" (void) Net
-{
-SetResultValue(GetCVar("ShootableProjectilesCVAR"));
+	if(GetCVar("LiquidSplashCvar") == 1) { SetActorState(0,"NoSplash"); }
 }
 
 script "CacoChooserACS" (void)
 {
 	if(GetCvar("CacoChooserCvar") == 1) { SetActorState(0,"ClassicCacos"); }
+}
+
+script "LowAmmoSFX" (void) clientside
+{
+	if(GetUserCVar(PlayerNumber(),"LowAmmoSFX") == 1) { PlaySound(0, "Weapon/LowAmmo", CHAN_AUTO, 1.0, false, 1.0, true); }
+}
+
+//Presets
+script "OriginalCvars" (void) net
+{
+	SetCvar("VanillaChainsawCvar",0);
+	SetCvar("ClassicChaingunCvar",0);
+	SetCvar("ClassicRLCvar",0);
+	SetCvar("VWeaponCvar",1);
+	SetCvar("WeaponsWarmUpCvar",1);
+	SetCvar("CensoredHealing_Cvar",0);
+	SetCvar("AlphaPickupCvar",0);
+	SetCvar("FlashlightStartCvar",0);
+	SetCvar("NoReloadCvar",0);
+	SetCvar("VMapCheckCvar",1);
+	SetCvar("TCMapCheckCvar",0);
+	SetCvar("AbsMapCheckCvar",0);
+	SetCvar("Chaingun_Spawner_Cvar",1);
+	SetCvar("GaussCannon_Spawner_Cvar",1);
+	SetCvar("BFG_Spawner_Cvar",1);
+	SetCvar("WpnPower_Spawner_Cvar",1);
+	SetCvar("BonusRandomCvar",1);
+	SetCvar("CacoChooserCvar",0);
+	SetCvar("ZMarineRandom_Cvar",1);
+	SetCvar("SSGZombieRandom_Cvar",1);
+	SetCvar("ZombieChaingunRandom_Cvar",1);
+	SetCvar("NImp_Spawner_Cvar",1);
+	SetCvar("AcidDemonRandom_Cvar",1);	
+	SetCvar("NSpectre_Spawner_Cvar",1);
+	SetCvar("NCaco_Spawner_Cvar",1);
+	SetCvar("StalkerRandom_Cvar",1);
+	SetCvar("ArachnotronRandomCvar",1);
+	SetCvar("KnightmareRandomCvar",1);
+	SetCvar("Revenant_Spawner_Cvar",-1);
+	SetCvar("Hellhound_Spawner_Cvar",1);
+	SetCvar("HoundChooserCvar",-1);
+	SetCvar("BruiserRandom_Cvar",1);
+	SetCvar("NightElementalRandomCvar",1);
+	SetCvar("FleshWizardRandomCvar",-1);
+	SetCvar("Annihilator_Spawner_Cvar",1);
+	SetCvar("Motherdemon_Spawner_Cvar",-1);
+	SetCvar("bd64_SpawnPercent",0);
+	SetCvar("bd64_WadCheck",2);
+	SetCvar("ClassicTorchCvar",0);
+	SetCvar("LiquidSplashCvar",0);
+	SetCvar("LFog_Cvar",0);
+	SetCvar("PoltergeistCvar",0);
+	SetCvar("FlashlightStartCvar",0);
+	SetCvar("ThingRandomCvar",0);
+	SetCvar("TheHorde_Multiplier_Cvar",-1);
+	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",0);
+	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",0);
+	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",1);
+	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);	
+	ACS_NamedExecute("BD64Respawn",0);
+	delay(1);
+}
+
+script "ClassicCvars" (void) net
+{
+	SetCvar("VanillaChainsawCvar",1);
+	SetCvar("ClassicChaingunCvar",1);
+	SetCvar("ClassicRLCvar",1);
+	SetCvar("VWeaponCvar",1);
+	SetCvar("WeaponsWarmUpCvar",1);
+	SetCvar("CensoredHealing_Cvar",0);
+	SetCvar("AlphaPickupCvar",0);
+	SetCvar("FlashlightStartCvar",0);
+	SetCvar("NoReloadCvar",1);
+	SetCvar("VMapCheckCvar",1);
+	SetCvar("TCMapCheckCvar",0);
+	SetCvar("Chaingun_Spawner_Cvar",1);
+	SetCvar("GaussCannon_Spawner_Cvar",1);
+	SetCvar("BFG_Spawner_Cvar",1);
+	SetCvar("WpnPower_Spawner_Cvar",1);
+	SetCvar("BonusRandomCvar",1);
+	SetCvar("CacoChooserCvar",0);
+	SetCvar("ZMarineRandom_Cvar",1);
+	SetCvar("SSGZombieRandom_Cvar",1);
+	SetCvar("ZombieChaingunRandom_Cvar",1);
+	SetCvar("NImp_Spawner_Cvar",1);
+	SetCvar("AcidDemonRandom_Cvar",1);
+	SetCvar("NSpectre_Spawner_Cvar",1);
+	SetCvar("NCaco_Spawner_Cvar",1);
+	SetCvar("StalkerRandom_Cvar",1);
+	SetCvar("ArachnotronRandomCvar",1);	
+	SetCvar("KnightmareRandomCvar",1);
+	SetCvar("Revenant_Spawner_Cvar",-1);
+	SetCvar("Hellhound_Spawner_Cvar",1);
+	SetCvar("HoundChooserCvar",-1);
+	SetCvar("BruiserRandom_Cvar",1);
+	SetCvar("NightElementalRandomCvar",1);
+	SetCvar("FleshWizardRandomCvar",-1);
+	SetCvar("Annihilator_Spawner_Cvar",1);
+	SetCvar("Motherdemon_Spawner_Cvar",-1);
+	SetCvar("bd64_SpawnPercent",0);
+	SetCvar("TheHorde_Multiplier_Cvar",-1);		
+	SetCvar("bd64_WadCheck",2);
+	SetCvar("ClassicTorchCvar",1);
+	SetCvar("LiquidSplashCvar",1);
+	SetCvar("LFog_Cvar",1);
+	SetCvar("LFog_Cvar",0);
+	SetCvar("PoltergeistCvar",0);
+	SetCvar("FlashlightStartCvar",0);
+	SetCvar("ThingRandomCvar",0);
+	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",0);
+	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",0);
+	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",1);
+	SetUserCvar(PlayerNumber(),"LowAmmoSFX",0);	
+	ACS_NamedExecute("BD64Respawn",0);
+	delay(1);
+}
+
+script "EnhancedCvars" (void) net
+{
+	SetCvar("VanillaChainsawCvar",0);
+	SetCvar("ClassicChaingunCvar",0);
+	SetCvar("ClassicRLCvar",0);
+	SetCvar("VWeaponCvar",0);
+	SetCvar("WeaponsWarmUpCvar",1);
+	SetCvar("CensoredHealing_Cvar",0);
+	SetCvar("AlphaPickupCvar",0);
+	SetCvar("FlashlightStartCvar",0);
+	SetCvar("NoReloadCvar",0);
+	SetCvar("VMapCheckCvar",0);
+	SetCvar("TCMapCheckCvar",0);
+	SetCvar("Chaingun_Spawner_Cvar",1);
+	SetCvar("GaussCannon_Spawner_Cvar",1);
+	SetCvar("BFG_Spawner_Cvar",1);
+	SetCvar("WpnPower_Spawner_Cvar",1);
+	SetCvar("BonusRandomCvar",1);
+	SetCvar("CacoChooserCvar",0);
+	SetCvar("ZMarineRandom_Cvar",1);
+	SetCvar("SSGZombieRandom_Cvar",1);
+	SetCvar("ZombieChaingunRandom_Cvar",1);
+	SetCvar("NImp_Spawner_Cvar",1);
+	SetCvar("AcidDemonRandom_Cvar",1);
+	SetCvar("NSpectre_Spawner_Cvar",1);
+	SetCvar("NCaco_Spawner_Cvar",1);
+	SetCvar("StalkerRandom_Cvar",1);
+	SetCvar("ArachnotronRandomCvar",1);	
+	SetCvar("KnightmareRandomCvar",1);
+	SetCvar("Revenant_Spawner_Cvar",1);
+	SetCvar("Hellhound_Spawner_Cvar",1);
+	SetCvar("HoundChooserCvar",0);
+	SetCvar("BruiserRandom_Cvar",1);
+	SetCvar("NightElementalRandomCvar",1);
+	SetCvar("FleshWizardRandomCvar",1);
+	SetCvar("Annihilator_Spawner_Cvar",1);
+	SetCvar("Motherdemon_Spawner_Cvar",1);
+	SetCvar("bd64_SpawnPercent",0);
+	SetCvar("TheHorde_Multiplier_Cvar",-1);	
+	SetCvar("bd64_WadCheck",2);
+	SetCvar("ClassicTorchCvar",0);
+	SetCvar("LiquidSplashCvar",0);
+	SetCvar("LFog_Cvar",0);
+	SetCvar("PoltergeistCvar",0);
+	SetCvar("FlashlightStartCvar",0);
+	SetCvar("ThingRandomCvar",0);	
+	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",0);
+	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",0);
+	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",0);
+	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);	
+	ACS_NamedExecute("BD64Respawn",0);
+	delay(1);
+}
+
+script "RandomCvars" (void) net
+{
+	SetCvar("VanillaChainsawCvar",0);
+	SetCvar("ClassicChaingunCvar",0);
+	SetCvar("ClassicRLCvar",0);
+	SetCvar("VWeaponCvar",0);
+	SetCvar("WeaponsWarmUpCvar",1);
+	SetCvar("CensoredHealing_Cvar",0);
+	SetCvar("AlphaPickupCvar",0);
+	SetCvar("FlashlightStartCvar",0);
+	SetCvar("NoReloadCvar",0);
+	SetCvar("VMapCheckCvar",0);
+	SetCvar("TCMapCheckCvar",0);
+	SetCvar("Chaingun_Spawner_Cvar",0);
+	SetCvar("GaussCannon_Spawner_Cvar",0);
+	SetCvar("BFG_Spawner_Cvar",0);
+	SetCvar("WpnPower_Spawner_Cvar",0);
+	SetCvar("BonusRandomCvar",0);
+	SetCvar("CacoChooserCvar",0);
+	SetCvar("ZMarineRandom_Cvar",0);
+	SetCvar("SSGZombieRandom_Cvar",0);
+	SetCvar("ZombieChaingunRandom_Cvar",0);
+	SetCvar("NImp_Spawner_Cvar",0);
+	SetCvar("AcidDemonRandom_Cvar",0);
+	SetCvar("NSpectre_Spawner_Cvar",0);
+	SetCvar("NCaco_Spawner_Cvar",0);
+	SetCvar("StalkerRandom_Cvar",0);
+	SetCvar("ArachnotronRandomCvar",0);	
+	SetCvar("KnightmareRandomCvar",0);
+	SetCvar("Revenant_Spawner_Cvar",0);
+	SetCvar("Hellhound_Spawner_Cvar",0);
+	SetCvar("HoundChooserCvar",0);
+	SetCvar("BruiserRandom_Cvar",0);
+	SetCvar("NightElementalRandomCvar",0);
+	SetCvar("FleshWizardRandomCvar",0);
+	SetCvar("Annihilator_Spawner_Cvar",0);
+	SetCvar("Motherdemon_Spawner_Cvar",0);
+	SetCvar("bd64_SpawnPercent",5);
+	SetCvar("TheHorde_Multiplier_Cvar",0);
+	SetCvar("bd64_WadCheck",2);
+	SetCvar("ClassicTorchCvar",0);
+	SetCvar("LiquidSplashCvar",0);
+	SetCvar("LFog_Cvar",0);
+	SetCvar("PoltergeistCvar",0);
+	SetCvar("FlashlightStartCvar",0);
+	SetCvar("ThingRandomCvar",0);
+	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",0);
+	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",0);
+	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",0);
+	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);	
+	ACS_NamedExecute("BD64Respawn",0);
+	delay(1);
 }

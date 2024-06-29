@@ -25,7 +25,7 @@ Tag "Berserk Pack"
 		TNT1 A 0 A_SetBlend("ff0000",0.75,70)
 		TNT1 A 0 A_GiveInventory("PowerStrength")
 		TNT1 A 0 HealThing(100,0)
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("BerserkSwitchFistsACS")==0,"NoSwitch")
+		TNT1 A 0 A_JumpIf(CallACS("BerserkSwitchFistsACS")==0,"NoSwitch")
 		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
 		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
 		TNT1 A 0 A_SelectWeapon("64Fist")

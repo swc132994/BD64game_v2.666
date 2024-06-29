@@ -200,28 +200,28 @@ BloodType "Brutal_BloodGreen"
 
 ACTOR PestilentMissile1
 {
-Scale 0.5
-Health 15
-Damage 8
-Speed 12
-Height 16
-Radius 8
-SeeSound "Pestilence/attack"
-DeathSound "Pestilence/tracex"
-RenderStyle Translucent
-Alpha 0.7
-Decal "SmallerScorch"
-PROJECTILE
-+SEEKERMISSILE
-+NOBLOOD
+	Scale 0.5
+	Health 15
+	Damage 8
+	Speed 12
+	FastSpeed 17
+	Height 16
+	Radius 8
+	SeeSound "Pestilence/attack"
+	DeathSound "Pestilence/tracex"
+	RenderStyle Translucent
+	Alpha 0.7
+	Decal "SmallerScorch"
+	PROJECTILE
+	+SEEKERMISSILE
+	+NOBLOOD
+	-NOBLOCKMAP
+	+SHOOTABLE
+	+GHOST
 	States
 	{
 	Spawn:
 		TNT1 A 2
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ShootableProjectiles")==False,"SpawnContinue")
-		TNT1 A 0 A_ChangeFlag("NOBLOCKMAP",FALSE)
-		TNT1 A 0 A_SetShootable
-	SpawnContinue:
 		TNT1 A 0 A_Jump(253,2)//99%
 		TNT1 A 0 ThrustThingZ(0,1,0,0)
 		GASB A 3 A_SeekerMissile(15,15)
@@ -569,36 +569,36 @@ DropItem "None"
 
 Actor WalkPestLegs
 {
-Scale 0.68
-Health 80
-Height 40
-Radius 8
-Speed 5
-SeeSound ""
-PainSound ""
-DeathSound ""
-ActiveSound ""
-AttackSound ""
-DropItem "None"
-BloodType "Brutal_BloodGreen"
-MeleeThreshold 146	//default 196
-MeleeRange 60		//default 44
-PainChance "SuperFists",255
-PainChance "Kick",255
-PainChance "SuperKick",255
-DamageFactor "CauseWaterSplash",0.0
-DamageFactor "CauseObjectsToSplash",0.0
-DamageFactor "Poison",0
-MONSTER
--SOLID
--COUNTKILL
-+SHOOTABLE
-+FLOORCLIP
-+LOOKALLAROUND
-+FRIENDLY
-+NOTARGET
-+NOPAIN
-+NEVERFAST
+	Scale 0.68
+	Health 80
+	Height 40
+	Radius 8
+	Speed 5
+	SeeSound ""
+	PainSound ""
+	DeathSound ""
+	ActiveSound ""
+	AttackSound ""
+	DropItem "None"
+	BloodType "Brutal_BloodGreen"
+	MeleeThreshold 146	//default 196
+	MeleeRange 60		//default 44
+	PainChance "SuperFists",255
+	PainChance "Kick",255
+	PainChance "SuperKick",255
+	DamageFactor "CauseWaterSplash",0.0
+	DamageFactor "CauseObjectsToSplash",0.0
+	DamageFactor "Poison",0
+	MONSTER
+	-SOLID
+	-COUNTKILL
+	+SHOOTABLE
+	+FLOORCLIP
+	+LOOKALLAROUND
+	+FRIENDLY
+	+NOTARGET
+	+NOPAIN
+	+NEVERFAST
 	States
 	{
 	Spawn:

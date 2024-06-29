@@ -64,24 +64,40 @@ LISTMENU "MainMenu"
 OptionMenu "BD64Menu"
 {
 	Title "BRUTAL DOOM 64 OPTIONS"
-	Submenu "Item/Weapon Spawner Options",		"BrutalDoom64OptionsItem/WeaponSpawner"
-	Submenu "Other Item/Weapon Options",		"BrutalDoom64Item/WeaponOptions"
-	Submenu "Monster Spawner Options",			"BrutalDoom64OptionsMonsterSpawner"
-	Submenu "Other Monster Options",			"BrutalDoom64OptionsOtherMonster"
-	Submenu "Performance & Misc. Options",		"BrutalDoom64OptionsPerformance"
-	Submenu "Map Options",						"BD64MapOptions"
-	StaticText ""
-	Submenu 	"Engine (GZD, Zand) Shortcuts",		"GZDShortcuts"
-	StaticText " "
 	StaticText "Some changes are not initialized automatically", 1
 	StaticText "Press \"Apply Changes\" for the changes to take effect",1
 	Command "Apply Changes","PukeName BD64Respawn"
-	
+	StaticText " "
+	StaticText "-------------------------------- Presets -------------------------------------",1
+	StaticText " "
+	SafeCommand "Original", "pukename OriginalCvars"
+	SafeCommand "Classic", "pukename ClassicCvars"
+	SafeCommand "Enhanced", "pukename EnhancedCvars"
+	SafeCommand "Randomizer", "pukename RandomCvars"	
+	StaticText " "
+	StaticText "-------------------------------- Options -------------------------------------",1
+	StaticText " "	
+	Submenu "Other Item/Weapon Options",		"BrutalDoom64Item/WeaponOptions"
+	Submenu "Other Monster Options",			"BrutalDoom64OptionsOtherMonster"
+	Submenu "Performance & Misc. Options",		"BrutalDoom64OptionsPerformance"
+	Submenu "Map Options",						"BD64MapOptions"
+	StaticText " "
+	StaticText "-------------------------------- Gameplay -------------------------------------",1
+	StaticText " "	
+	Submenu "Item/Weapon Spawner Options",		"BrutalDoom64OptionsItem/WeaponSpawner"	
+	Submenu "Monster Spawner Options",			"BrutalDoom64OptionsMonsterSpawner"	
+	StaticText " "	
+	StaticText ""
+	Submenu 	"Engine (GZD, Zand) Shortcuts",		"GZDShortcuts"
 }
 
 OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner"
 {
 	Title "Item/Weapon Spawner Options"
+	StaticText "Some changes are not initialized automatically", 1
+	StaticText "Press \"Apply Changes\" for the changes to take effect",1
+	Command "Apply Changes","PukeName BD64Respawn"
+		StaticText " "
 		StaticText "Options to choose replacements of weapons and power-ups",1
 		StaticText "or set to appear randomly",1
 		StaticText ""
@@ -106,6 +122,12 @@ OptionMenu "BrutalDoom64OptionsItem/WeaponSpawner"
 OptionMenu "BrutalDoom64Item/WeaponOptions"
 {
 	Title "Other Item/Weapon Options"
+	StaticText "Some changes are not initialized automatically", 1
+	StaticText "Press \"Apply Changes\" for the changes to take effect",1
+	Command "Apply Changes","PukeName BD64Respawn"
+	StaticText " "
+	StaticText "---------------------------- Weapons Functions ------------------------------",1
+		StaticText " "
 	Option "Enable Vanilla Weapon Animations =","VWeaponCvar","YesOrNo"
 		StaticText "Show classic Doom 64 weapon animations (classical mode ONLY).",1
 		StaticText ""
@@ -117,6 +139,15 @@ OptionMenu "BrutalDoom64Item/WeaponOptions"
 	Option "Classic Style Rocket Launcher for Tactical/Modern =","ClassicRLCvar","YesOrNo"
 		StaticText "Options to switch between classic or modernised weapons.",1
 		StaticText ""
+	Option "Skip Weapon Reload Sequences (Need Map Restart) =","NoReloadCvar","YesOrNo"
+		StaticText "Skip weapon reload animation sequences (tactical/modern modes ONLY).",1
+		StaticText ""
+	Option "Low Ammo SFX =","LowAmmoSFX","YesOrNo"
+		StaticText "Allows you to toggle the sound warning when ammo is too low.",1
+		StaticText "(tactical/modern modes ONLY)",1
+		StaticText ""
+		StaticText "--------------------------- Weapons & Items Skins -----------------------------",1
+		StaticText " "
 	Option "Alternative Rifle Skin =","AlternativeRifleSkinCvar","YesOrNo"
 	Option "Alternative Laser Skin =","AlternativeLaserSkinCvar","YesOrNo"
 	Option "Item Sprites Pickups =","AlternativeAmmoPickupSpritesCvar","AlternativeAmmoPickupSpritesValue"
@@ -124,26 +155,25 @@ OptionMenu "BrutalDoom64Item/WeaponOptions"
 	Option "Alpha Build Item Pickups =","AlphaPickupCvar","YesOrNo"
 		StaticText "Options for alternative or some alpha build looks for items & weapons.",1
 		StaticText ""
-	Option "Switch to Fists on Berserk Pickup =","BerserkSwitchFistsCvar","YesOrNo"
-		StaticText "Option to disable switching to fists on berserk pack pickup.",1
-		StaticText ""
+		StaticText "-------------------------------------- Other -----------------------------------",1
+		StaticText " "		
 	Option "Start with Flashlight/Torch (Need Map Restart) =","FlashlightStartCvar","YesOrNo"
-		StaticText ""
-	Option "Skip Weapon Reload Sequences (Need Map Restart) =","NoReloadCvar","YesOrNo"
-		StaticText "Skip weapon reload animation sequences (tactical/modern modes ONLY).",1
 }
 
 OptionMenu "BrutalDoom64OptionsMonsterSpawner"
 {
 	Title "Monster Spawner Options"
+	StaticText "Some changes are not initialized automatically", 1
+	StaticText "Press \"Apply Changes\" for the changes to take effect",1
+	Command "Apply Changes","PukeName BD64Respawn"
 		StaticText ""
 		StaticText "These options allow setting the monster replacements to nightmare,",1
 		StaticText "outcast and extra monsters, or set to appear randomly",1
 		StaticText "Any change here requires a level restart in order to work.",1
 		StaticText ""
-	Option "Shotgun Zombie Spawner =","SSGZombieRandom_Cvar","SSGZombieRandom_Value"
-		StaticText ""
 	Option "Pistol Zombie Spawner =","ZMarineRandom_Cvar","ZMarineRandom_Value"
+		StaticText ""
+	Option "Shotgun Zombie Spawner =","SSGZombieRandom_Cvar","SSGZombieRandom_Value"
 		StaticText ""
 	Option "Chaingun Zombie Spawner =","ZombieChaingunRandom_Cvar","ChaingunZombie_Value"
 		StaticText ""
@@ -176,6 +206,12 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner"
 		StaticText ""
 	Option "Mastermind Spawner =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"
 		StaticText ""
+	Option "Random Monster Chance Spawn =","bd64_SpawnPercent","SpawnPercentValue"	
+		StaticText "This function only works",1
+		StaticText "if you set your enemies to \"random\"",1
+		StaticText ""
+
+
 	Option "Husk Zombie Horde Multiplier =","TheHorde_Multiplier_Cvar","TheHorde_Multiplier_Value"
 		StaticText "Option to spawn Husks & Carrions near dead zombie props",1
 		StaticText "Disabled by Default",1
@@ -186,19 +222,26 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner"
 OptionMenu "BrutalDoom64OptionsOtherMonster"
 {
 	Title "Other Monster Options"
+	StaticText "Some changes are not initialized automatically", 1
+	StaticText "Press \"Apply Changes\" for the changes to take effect",1
+	Command "Apply Changes","PukeName BD64Respawn"
 		StaticText ""
 		StaticText "Any change here requires a level restart in order to work.",1
-		StaticText ""
+		StaticText ""	
+		StaticText "------------------------------- Monster Skins -------------------------------",1
+		StaticText ""		
 	Option "Hellhound Style =","HoundChooserCvar","HoundChooser"
 		StaticText ""
 	Option "Cacodemon Style =","CacoChooserCvar","CacoSkinChooser"
 		StaticText ""
+		StaticText "------------------------------- MapSet Selection -------------------------------",1
+		StaticText ""			
 	Option "Select Mapset =","BD64_WadCheck","WadCheck"
 		StaticText "This option is not automatic and must be configured manually",1
 		StaticText "before starting a new game in one of the supported wads",1
 		StaticText "You can use Doom 2 on non-compatible wads",1
 		StaticText ""
-		StaticText "Map Prop Replacement Options!",1
+		StaticText "----------------------------- Map Prop Replacement -----------------------------",1
 		StaticText ""
 	Option "Infected Dead Marine Corpse =","ThingRandomCvar","YesOrNo"
 		StaticText "Replace dead marines & dead marine props with 'The Thing' monsters.",1
@@ -207,6 +250,8 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 		StaticText "Replace map props with hostile poltergeists props.",1
 		StaticText "(poltergeists are hostile map props that can attack the player)",1
 		StaticText ""
+		StaticText "-------------------------------------- Other -----------------------------------",1
+		StaticText " "			
 	Option "Enable Shootable Projectiles =","ShootableProjectilesCVAR","YesOrNo"
 		StaticText ""
 }
@@ -214,23 +259,26 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 OptionMenu "BrutalDoom64OptionsPerformance"
 {
 	Title "Performance & Miscellaneous Options"
+	StaticText "Some changes are not initialized automatically", 1
+	StaticText "Press \"Apply Changes\" for the changes to take effect",1
+	Command "Apply Changes","PukeName BD64Respawn"
 		StaticText ""
 		StaticText "Enable this option ONLY if hosting a server on a multiplayer game.",1
 		StaticText "(enabling this option will generate an error message if using GZDoom)",1
 		StaticText ""
 	Option "Enable Zandronum Specific Multiplayer Scripts =","isrunningzandronum","OnOff"
 		StaticText ""
-		StaticText "Performance & Gore Options!",1
+		StaticText "-------------------------------- Performance & Gore --------------------------------",1
 		StaticText ""
 	Option "Select Blood Amount (Server/Singleplayer) =","zdoombrutalblood","BrutalBlood"
 	Option "Select Blood Amount (Client/Multiplayer) =","bd_bloodamount","BrutalBlood"
 	Option "Enable Gore Removing on Flats (30s) =","zdoombrutaljanitor","YesOrNo"
-	Option "Enable Floor/Ceiling Shot/Blast Decals =","FloorDecal_Cvar","YesOrNoFalse"
+	Option "Enable Floor/Ceiling Shot/Blast Decals =","FloorDecal_Cvar","YesOrNo"
 	Option "Light Fog & Halos Options =","LFog_Cvar","LFog_Value"
 	Option "Enable Classic Style Torches (Need Map Restart) =","ClassicTorchCvar","YesOrNo"
 	Option "Disable Liquid Splashes =","LiquidSplashCvar","YesOrNo"
 		StaticText ""
-		StaticText "HUD Options!",1
+		StaticText "------------------------------------ HUD ------------------------------------",1
 		StaticText ""
 	Option "Set HUD Style =","HUDSwitchCvar","HUDValue"
 		StaticText ""
@@ -242,7 +290,7 @@ OptionMenu "BrutalDoom64OptionsPerformance"
 		StaticText "(If screen effects are disabled, this option will also be disabled)"
 		StaticText "(Does not work for BDv21 screen effects mode)"
 		StaticText ""
-		StaticText "Sound Options!",1
+		StaticText "---------------------------------- Sounds ----------------------------------",1
 		StaticText ""
 	Option "Enable Footstep Sounds =","FootStepCheckCvar","YesOrNoFalse"
 }
@@ -250,11 +298,13 @@ OptionMenu "BrutalDoom64OptionsPerformance"
 OptionMenu "BD64MapOptions"
 {
 	Title "Map Options"
+	StaticText "Some changes are not initialized automatically", 1
+	StaticText "Press \"Apply Changes\" for the changes to take effect",1
+	Command "Apply Changes","PukeName BD64Respawn"
 		StaticText ""
 		StaticText "(These options ONLY work with the BD64 Maps)",1
 		StaticText ""
-	Option "Play Easier Map08 (No Boss Fight) =","VMapCheckCvar","YesOrNo"
-	Option "Play Easier Map28 (No Extended Final Boss Fight) =","AbsMapCheckCvar","YesOrNo"
+	Option "Play Easier Map08 and Map28 (No (Extended Final) Boss Fight) =","VMapCheckCvar","YesOrNo"
 	Option "Add Absolution TC Maps to Campaign =","TCMapCheckCvar","YesOrNo"
 		StaticText ""
 		StaticText "Show orignal Doom 64 opening title sequence at startup",1
@@ -316,8 +366,8 @@ OptionValue "ZombieMarineNazi"
 OptionValue "HoundChooser"
 {
 	-1,"Disabled"
-	1,"Alternate"
-	3,"GEC"
+	0,"Default"
+	1,"GEC"
 }
 
 OptionValue "CacoSkinChooser"
@@ -328,22 +378,7 @@ OptionValue "CacoSkinChooser"
 
 OptionValue "Annihilator_Spawner_Value"
 {
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
-	51,"5%(No Infernal)"
-	101,"10%(No Infernal)"
-	151,"15%(No Infernal)"
-	201,"20%(No Infernal)"
-	251,"25%(No Infernal)"
-	301,"30%(No Infernal)"
-	401,"40%(No Infernal)"
-	501,"50%(No Infernal)"
+	0,"Random"
 	1,"Cyberdemon"
 	2,"Annihilator"
 	3,"Infernal"
@@ -351,31 +386,8 @@ OptionValue "Annihilator_Spawner_Value"
 
 OptionValue "Motherdemon_Spawner_Value"
 {
-	0,"Disabled"
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
-	51,"5%(No Motherdemon)"
-	101,"10%(No Motherdemon)"
-	151,"15%(No Motherdemon)"
-	201,"20%(No Motherdemon)"
-	251,"25%(No Motherdemon)"
-	301,"30%(No Motherdemon)"
-	401,"40%(No Motherdemon)"
-	501,"50%(No Motherdemon)"
-	52,"5%(No Eradicator)"
-	102,"10%(No Eradicator)"
-	152,"15%(No Eradicator)"
-	202,"20%(No Eradicator)"
-	252,"25%(No Eradicator)"
-	302,"30%(No Eradicator)"
-	402,"40%(No Eradicator)"
-	502,"50%(No Eradicator)"
+	-1,"Disabled"
+	0,"Random"
 	1,"Mastermind"
 	2,"Motherdemon"
 	3,"Eradicator"
@@ -383,50 +395,21 @@ OptionValue "Motherdemon_Spawner_Value"
 
 OptionValue "Knightmare_Spawner_Value"
 {
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
+	0,"Random"
 	1,"HellKnight"
 	2,"Knightmare"
 }
 
 OptionValue "Bruiser_Spawner_Value"
 {
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
+	0,"Random"
 	1,"Mancubus"
 	2,"Bruiser"
 }
 
 OptionValue "Arachnotron_Spawner_Value"
 {
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
-	51,"Arachnotron/N.Crawler (5%)"
-	101,"Arachnotron/N.Crawler (10%)"
-	151,"Arachnotron/N.Crawler (15%)"
-	201,"Arachnotron/N.Crawler (20%)"
-	251,"Arachnotron/N.Crawler (25%)"
-	301,"Arachnotron/N.Crawler (30%)"
-	401,"Arachnotron/N.Crawler (40%)"
-	501,"Arachnotron/N.Crawler (50%)"
+	0,"Random"
 	1,"Arachnotron"
 	2,"Night Crawler"
 	3,"Impaler"
@@ -434,22 +417,7 @@ OptionValue "Arachnotron_Spawner_Value"
 
 OptionValue "Stalker_Spawner_Value"
 {
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
-	51,"Lost Soul/Stalker (5%)"
-	101,"Lost Soul/Stalker (10%)"
-	151,"Lost Soul/Stalker (15%)"
-	201,"Lost Soul/Stalker (20%)"
-	251,"Lost Soul/Stalker (25%)"
-	301,"Lost Soul/Stalker (30%)"
-	401,"Lost Soul/Stalker (40%)"
-	501,"Lost Soul/Stalker (50%)"
+	0,"Random"
 	1,"Lost Soul"
 	2,"Stalker"
 	3,"Forgotten One"
@@ -457,22 +425,7 @@ OptionValue "Stalker_Spawner_Value"
 
 OptionValue "Hellhound_Spawner_Value"
 {
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
-	51,"Baron/Hellhound (5%)"
-	101,"Baron/Hellhound (10%)"
-	151,"Baron/Hellhound (15%)"
-	201,"Baron/Hellhound (20%)"
-	251,"Baron/Hellhound (25%)"
-	301,"Baron/Hellhound (30%)"
-	401,"Baron/Hellhound (40%)"
-	501,"Baron/Hellhound (50%)"
+	0,"Random"
 	1,"Baron"
 	2,"Hellhound"
 	3,"Belphegor"
@@ -480,22 +433,7 @@ OptionValue "Hellhound_Spawner_Value"
 
 OptionValue "AcidDemon_Spawner_Value"
 {
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
-	51,"Pinky/Acid (5%)"
-	101,"Pinky/Acid (10%)"
-	151,"Pinky/Acid (15%)"
-	201,"Pinky/Acid (20%)"
-	251,"Pinky/Acid (25%)"
-	301,"Pinky/Acid (30%)"
-	401,"Pinky/Acid (40%)"
-	501,"Pinky/Acid (50%)"
+	0,"Random"
 	1,"Pinky"
 	2,"Acid"
 	3,"Butcher"
@@ -503,22 +441,7 @@ OptionValue "AcidDemon_Spawner_Value"
 
 OptionValue "NCaco_Spawner_Value"
 {
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
-	51,"Cacodemon/N'mare (5%)"
-	101,"Cacodemon/N'mare (10%)"
-	151,"Cacodemon/N'mare (15%)"
-	201,"Cacodemon/N'mare (20%)"
-	251,"Cacodemon/N'mare (25%)"
-	301,"Cacodemon/N'mare (30%)"
-	401,"Cacodemon/N'mare (40%)"
-	501,"Cacodemon/N'mare (50%)"
+	0,"Random"
 	1,"Cacodemon"
 	2,"N'mare Variant"
 	3,"Fallen"
@@ -526,22 +449,7 @@ OptionValue "NCaco_Spawner_Value"
 
 OptionValue "NSpectre_Spawner_Value"
 {
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
-	51,"Spectre/N'mare (5%)"
-	101,"Spectre/N'mare (10%)"
-	151,"Spectre/N'mare (15%)"
-	201,"Spectre/N'mare (20%)"
-	251,"Spectre/N'mare (25%)"
-	301,"Spectre/N'mare (30%)"
-	401,"Spectre/N'mare (40%)"
-	501,"Spectre/N'mare (50%)"
+	0,"Random"
 	1,"Spectre"
 	2,"N'mare Variant"
 	3,"Wraith"
@@ -549,22 +457,7 @@ OptionValue "NSpectre_Spawner_Value"
 
 OptionValue "NImp_Spawner_Value"
 {
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
-	51,"Imp/N'mare (5%)"
-	101,"Imp/N'mare (10%)"
-	151,"Imp/N'mare (15%)"
-	201,"Imp/N'mare (20%)"
-	251,"Imp/N'mare (25%)"
-	301,"Imp/N'mare (30%)"
-	401,"Imp/N'mare (40%)"
-	501,"Imp/N'mare (50%)"
+	0,"Random"
 	1,"Imp"
 	2,"N'mare Variant"
 	3,"Soul Harvester"
@@ -572,117 +465,59 @@ OptionValue "NImp_Spawner_Value"
 
 OptionValue "Revenant_Spawner_Value"
 {
-	0,"Disabled"
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
+	-1,"Disabled"
+	0,"Random"
 	1,"Revenant"
 	2,"Pestilence"
 }
 
 OptionValue "NightElemental_Spawner_Value"
 {
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
+	0,"Random"
 	1,"Pain Elemental"
-	2,"Agony Elemental"	
+	2,"Agony Elemental"
 }
 
 OptionValue "SSGZombieRandom_Value"
 {
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
+	0,"Random"
 	1,"Shotgun Zombie"
 	2,"SSG Zombie"
-	3,"BFG Zombie"
+	3,"Plasma Zombie"
 }
 
 OptionValue "ZMarineRandom_Value"
 {
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
+	0,"Random"
 	1,"Pistol Zombie"
 	2,"Marine Zombie"
 }
 
 OptionValue "ChaingunZombie_Value"
 {
-	0,"Disabled"
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
+	-1,"Disabled"
+	0,"Random"
 	1,"Chaingun Zombie"
-	2,"Plasma Zombie"
+	2,"BFG Zombie"
 }
 
 OptionValue "FleshWizardRandom_Value"
 {
 	-1,"Disabled"
-	5,"Random (5%)"
-	10,"Random (10%)"
-	15,"Random (15%)"
-	20,"Random (20%)"
-	25,"Random (25%)"
-	30,"Random (30%)"
-	40,"Random (40%)"
-	50,"Random (50%)"
-	51,"Archvile/Hellstorm (5%)"
-	101,"Archvile/Hellstorm (10%)"
-	151,"Archvile/Hellstorm (15%)"
-	201,"Archvile/Hellstorm (20%)"
-	251,"Archvile/Hellstorm (25%)"
-	301,"Archvile/Hellstorm (30%)"
-	401,"Archvile/Hellstorm (40%)"
-	501,"Archvile/Hellstorm (50%)"
-	52,"Archvile/Flesh Wizard (5%)"
-	102,"Archvile/Flesh Wizard (10%)"
-	152,"Archvile/Flesh Wizard (15%)"
-	202,"Archvile/Flesh Wizard (20%)"
-	252,"Archvile/Flesh Wizard (25%)"
-	302,"Archvile/Flesh Wizard (30%)"
-	402,"Archvile/Flesh Wizard (40%)"
-	502,"Archvile/Flesh Wizard (50%)"
+	0,"Random"
 	1,"Archvile"
 	2,"Flesh Wizard"
 	3,"Hellstorm"
 }
 
-OptionValue "TheHorde_Multiplier_Value"		//Husk zombie
+OptionValue "TheHorde_Multiplier_Value"	//Husk zombie
 {
+	-1,"Disabled"
 	0,"Random"
-	1,"Disabled"
 	2,"1 Husk"
 	3,"2 Husks"
 	4,"2 Husks & 1 Carrion"
-	5,"3 Husks & 1 Carrion"
+	5,"3 Husks & 1 Carrion"	
 }
 
 OptionValue "Keen_Spawner_Value"
@@ -692,6 +527,20 @@ OptionValue "Keen_Spawner_Value"
 	2,"Fallen (boss health)"
 }
 
+OptionValue "SpawnPercentValue"
+{
+	0,"Disabled"
+	1,"5%"
+	2,"10%"
+	3,"15%"
+	4,"20%"
+	5,"25%"
+	6,"25%"
+	7,"30%"	
+	8,"40%"	
+	9,"50%"
+}
+	
 //Performance values
 OptionValue "BrutalBlood"	//Blood amount
 {
