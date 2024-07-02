@@ -1,6 +1,3 @@
-#library "BD64FlashlightACS"
-#include "zcommon.acs"
-
 #define MAXPLAYERS 8
 int flashlightOn[MAXPLAYERS];
 

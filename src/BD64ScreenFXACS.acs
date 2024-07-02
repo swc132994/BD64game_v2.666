@@ -1,9 +1,6 @@
 //Original addon for BDv21 by Mechanical-Sanity 
 //Port to BD64 by IDDQD_1337
 
-#library "BD64ScreenFXACS"
-#include "zcommon.acs"
-
 //Blood
 script 580 (void)
 {

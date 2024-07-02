@@ -1,6 +1,9 @@
 #library "BD64ACS"
 #include "zcommon.acs"
-#import "ACSFunc.acs"
+#include "ACSFunc.acs"
+
+#include "BD64FlashlightACS.acs"
+#include "BD64ScreenFXACS.acs"
 
 script "BD64Respawn" Respawn NET
 {
@@ -53,7 +56,7 @@ Script "BD64Initilize" Enter
 		TakeInventory("Stamina",100);
 	}
 
-	if(GetCvar("WeaponsWarmUpCvar") == 0)
+	if(GetCvar("WeaponsWarmUpCvar") == 0) //First Select Animation
 	{
 		TakeInventory("StartWeapon",1);
 		TakeInventory("NeverSelectedPistol",1);

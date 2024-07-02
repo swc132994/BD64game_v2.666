@@ -1,6 +1,3 @@
-#library "ACSFunc"
-#include "zcommon.acs"
-
 function void SetInventory(str item, int amount)
 {
 	int diff = amount - CheckInventory(item);

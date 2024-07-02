@@ -22,6 +22,7 @@
 #INCLUDE "Decorate/Effects/TerrainSplash.dec"
 
 //WEAPONS & AMMO
+#INCLUDE "Decorate/Weapons/WeaponSpawner.dec"
 #INCLUDE "Decorate/Weapons/BaseWeapon.dec"
 #INCLUDE "Decorate/Weapons/Fists.dec"
 #INCLUDE "Decorate/Weapons/Chainsaw.dec"
