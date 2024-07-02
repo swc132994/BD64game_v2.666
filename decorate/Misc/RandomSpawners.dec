@@ -60,7 +60,7 @@ Actor 64GibbedMarineExtraReplacer replaces GibbedMarineExtra
 
 Actor Dyn_ChaingunReplacer Replaces Chaingun
 {
-	Scale 0.82
+Scale 0.82
 	States
 	{
 	Spawn:
@@ -81,7 +81,7 @@ Actor Dyn_ChaingunReplacer Replaces Chaingun
 
 Actor Dyn_PlasmaRifleReplacer Replaces Plasmarifle	//Option to replace plasma rifle with gauss cannon
 {
-	Scale 0.82
+Scale 0.82
 	States
 	{
 	Spawn:
@@ -271,12 +271,12 @@ Scale 0.82
 //Random monster spawners
 Actor ZMarine_Random Replaces ZombieMan
 {
-	Scale 0.8
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+NOTARGET
-	+NOBLOOD
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++NOTARGET
++NOBLOOD
 	States
 	{
 	Spawn:
@@ -294,12 +294,12 @@ Actor ZMarine_Random Replaces ZombieMan
 
 Actor SSG_Zombie_Random Replaces Shotgunguy
 {
-	Scale 0.8
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+NOTARGET
-	+NOBLOOD
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++NOTARGET
++NOBLOOD
 	States
 	{
 	Spawn:
@@ -320,12 +320,12 @@ Actor SSG_Zombie_Random Replaces Shotgunguy
 
 Actor ChaingunZombie_Random Replaces Chaingunguy
 {
-	Scale 0.8
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+NOTARGET
-	+NOBLOOD
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++NOTARGET
++NOBLOOD
 	States
 	{
 	Spawn:
@@ -346,12 +346,12 @@ Actor ChaingunZombie_Random Replaces Chaingunguy
 
 Actor NImp_Random Replaces Doomimp
 {
-	Scale 0.8
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+NOTARGET
-	+NOBLOOD
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++NOTARGET
++NOBLOOD
 	States
 	{
 	Spawn:
@@ -372,12 +372,12 @@ Actor NImp_Random Replaces Doomimp
 
 Actor D64AcidButcherDemonRandom Replaces Demon
 {
-	Scale 0.9
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+NOTARGET
-	+NOBLOOD
+Scale 0.9
+MONSTER
+-SOLID
+-COUNTKILL
++NOTARGET
++NOBLOOD
 	States
 	{
 	Spawn:
@@ -398,18 +398,18 @@ Actor D64AcidButcherDemonRandom Replaces Demon
 
 Actor NSpectre_Random Replaces Spectre
 {
-	Scale 0.9
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+NOTARGET
-	+NOBLOOD
-	States
+Scale 0.9
+MONSTER
+-SOLID
+-COUNTKILL
++NOTARGET
++NOBLOOD
+States
 	{
 	Spawn:
 		SAR2 A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("SpectreSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnSpectre","SpawnNightSpectre","SpawnWraith")		
+		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnSpectre","SpawnNightSpectre","SpawnWraith")
 	SpawnSpectre:
 		TNT1 A 1 A_SpawnItemEx("64Spectre",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -424,12 +424,12 @@ Actor NSpectre_Random Replaces Spectre
 
 Actor Caco_SkinChooser
 {
-	Scale 0.8
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+NOTARGET
-	+NOBLOOD
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++NOTARGET
++NOBLOOD
 	States
 	{
 	Spawn:
@@ -446,12 +446,12 @@ Actor Caco_SkinChooser
 
 Actor NCaco_SkinChooser
 {
-	Scale 0.8
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+NOTARGET
-	+NOBLOOD
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++NOTARGET
++NOBLOOD
 	States
 	{
 	Spawn:
@@ -468,7 +468,7 @@ Actor NCaco_SkinChooser
 
 Actor DeadCaco_SkinChooser Replaces DeadCacodemon
 {
-	Scale 0.8
+Scale 0.8
 	States
 	{
 	Spawn:
@@ -485,18 +485,18 @@ Actor DeadCaco_SkinChooser Replaces DeadCacodemon
 
 Actor NCacodemon_Random Replaces Cacodemon
 {
-	Scale 0.8
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+NOTARGET
-	+NOBLOOD
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++NOTARGET
++NOBLOOD
 	States
 	{
 	Spawn:
 		HEAD A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("CacodemonSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnCacodemon","SpawnNightCacodemon","SpawnFallen")			
+		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnCacodemon","SpawnNightCacodemon","SpawnFallen")
 	SpawnCacodemon:
 		TNT1 A 1 A_SpawnItemEx("Caco_SkinChooser",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -511,13 +511,13 @@ Actor NCacodemon_Random Replaces Cacodemon
 
 Actor Hellhound_Random Replaces BaronOfHell		//tag 666 fix (A_KillMaster must be called from spawned monster)
 {
-	Scale 0.8
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+BOSSDEATH
-	+NOTARGET
-	+NOBLOOD
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++BOSSDEATH
++NOTARGET
++NOBLOOD
 	States
 	{
 	Death:
@@ -527,7 +527,7 @@ Actor Hellhound_Random Replaces BaronOfHell		//tag 666 fix (A_KillMaster must be
 	Spawn:
 		BOSS A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("BaronSpawner")	//if D64 monsters only enabled spawn Baron
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnBaron","HoundChooser","SpawnBelp")		
+		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnBaron","HoundChooser","SpawnBelp")
 	SpawnBaron:
 		TNT1 A -1 A_SpawnItemEx("64BaronOfHell",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -542,13 +542,13 @@ Actor Hellhound_Random Replaces BaronOfHell		//tag 666 fix (A_KillMaster must be
 
 Actor D64_HellKnight_Replacer Replaces HellKnight	//tag 666 fix (A_KillMaster must be called from spawned monster)
 {
-	Scale 0.8
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+BOSSDEATH
-	+NOTARGET
-	+NOBLOOD
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++BOSSDEATH
++NOTARGET
++NOBLOOD
 	States
 	{
 	Death:
@@ -570,13 +570,13 @@ Actor D64_HellKnight_Replacer Replaces HellKnight	//tag 666 fix (A_KillMaster mu
 
 Actor D64Arachnotron_Replacer Replaces Arachnotron		//tag 666 fix (A_KillMaster must be called from spawned monster)
 {
-	Scale 0.8
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+BOSSDEATH
-	+NOTARGET
-	+NOBLOOD
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++BOSSDEATH
++NOTARGET
++NOBLOOD
 	States
 	{
 	Death:
@@ -586,7 +586,7 @@ Actor D64Arachnotron_Replacer Replaces Arachnotron		//tag 666 fix (A_KillMaster 
 	Spawn:
 		BSPI A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("ArachnotronSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnArachnotron","SpawnNightCrawler","SpawnImpaler")		
+		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnArachnotron","SpawnNightCrawler","SpawnImpaler")
 	SpawnArachnotron:
 		TNT1 A -1 A_SpawnItemEx("64Arachnotron",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -601,18 +601,18 @@ Actor D64Arachnotron_Replacer Replaces Arachnotron		//tag 666 fix (A_KillMaster 
 
 Actor NightmareElemental_Random Replaces PainElemental
 {
-	Scale 0.8
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+NOTARGET
-	+NOBLOOD
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++NOTARGET
++NOBLOOD
 	States
 	{
 	Spawn:
 		PAIN A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("PainElementalSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnPainElemental","SpawnNightmareElemental")		
+		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnPainElemental","SpawnNightmareElemental")
 	SpawnPainElemental:
 		TNT1 A 1 A_SpawnItemEx("64PainElemental",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -624,18 +624,18 @@ Actor NightmareElemental_Random Replaces PainElemental
 
 Actor D64StalkerRandom Replaces LostSoul
 {
-	Scale 0.8
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+NOTARGET
-	+NOBLOOD
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++NOTARGET
++NOBLOOD
 	States
 	{
 	Spawn:
 		SKUL A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("LostSoulSpawner")	//if D64 monsters only enabled spawn lost soul
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnLostSoul","SpawnStalker","SpawnForgottenOne")			
+		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnLostSoul","SpawnStalker","SpawnForgottenOne")
 	SpawnLostSoul:
 		TNT1 A 1 A_SpawnItemEx("64LostSoul",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -650,13 +650,13 @@ Actor D64StalkerRandom Replaces LostSoul
 
 Actor D64_Mancubus_Replacer Replaces Fatso	//tag 666 fix (A_KillMaster must be called from spawned monster)
 {
-	Scale 0.8
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+BOSSDEATH
-	+NOTARGET
-	+NOBLOOD
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++BOSSDEATH
++NOTARGET
++NOBLOOD
 	States
 	{
 	Death:
@@ -678,17 +678,17 @@ Actor D64_Mancubus_Replacer Replaces Fatso	//tag 666 fix (A_KillMaster must be c
 
 Actor D64_Archvile_Replacer Replaces Archvile
 {
-	Scale 0.7
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+NOTARGET
+Scale 0.7
+MONSTER
+-SOLID
+-COUNTKILL
++NOTARGET
 	States
 	{
 	Spawn:
 		VILE A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("ArchvileSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnArchvile","SpawnFleshWizard","SpawnHellstorm")		
+		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnArchvile","SpawnFleshWizard","SpawnHellstorm")
 	SpawnArchvile:
 		TNT1 A 1 A_SpawnItemEx("64Archvile",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -706,13 +706,13 @@ Actor D64_Archvile_Replacer Replaces Archvile
 
 Actor D64_Cyberdemon_Replacer Replaces Cyberdemon	//tag 666 fix (A_KillMaster must be called from spawned monster)
 {
-	Scale 0.8
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+BOSSDEATH
-	+NOTARGET
-	+NOBLOOD
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++BOSSDEATH
++NOTARGET
++NOBLOOD
 	States
 	{
 	Death:
@@ -737,13 +737,13 @@ Actor D64_Cyberdemon_Replacer Replaces Cyberdemon	//tag 666 fix (A_KillMaster mu
 
 Actor D64_Mastermind_Replacer Replaces SpiderMastermind		//tag 666 fix (A_KillMaster must be called from spawned monster)
 {
-	Scale 1
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+BOSSDEATH
-	+NOTARGET
-	+NOBLOOD
+Scale 1
+MONSTER
+-SOLID
+-COUNTKILL
++BOSSDEATH
++NOTARGET
++NOBLOOD
 	States
 	{
 	Death:
@@ -771,12 +771,12 @@ Actor D64_Mastermind_Replacer Replaces SpiderMastermind		//tag 666 fix (A_KillMa
 
 Actor 64TheHorde_Spawner	//Spawns husk zombies near dead body props
 {
-	Scale 0.7
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+NOTARGET
-	+NOBLOOD
+Scale 0.7
+MONSTER
+-SOLID
+-COUNTKILL
++NOTARGET
++NOBLOOD
 	States
 	{
 	Spawn:
@@ -785,7 +785,7 @@ Actor 64TheHorde_Spawner	//Spawns husk zombies near dead body props
 		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"Hordex1","Hordex2","Hordex3","Hordex4")
 	Disabled:
 		TNT1 A 1
-		Stop		
+		Stop
 	Hordex1:
 		TNT1 A 1 A_SpawnItemex("64HuskZombie",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
 		Stop
@@ -810,12 +810,12 @@ Actor 64TheHorde_Spawner	//Spawns husk zombies near dead body props
 //Direct monster replacers
 Actor D64_WaffenSS_Replacer Replaces WolfensteinSS
 {
-	Scale 0.7
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+NOTARGET
-	+NOBLOOD
+Scale 0.7
+MONSTER
+-SOLID
+-COUNTKILL
++NOTARGET
++NOBLOOD
 	States
 	{
 	Death:
@@ -844,12 +844,12 @@ Actor D64_WaffenSS_Replacer Replaces WolfensteinSS
 
 Actor Revenant_Random Replaces Revenant
 {
-	Scale 0.6
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+NOTARGET
-	+NOBLOOD
+Scale 0.6
+MONSTER
+-SOLID
+-COUNTKILL
++NOTARGET
++NOBLOOD
 	States
 	{
 	Spawn:
@@ -871,14 +871,14 @@ Actor Revenant_Random Replaces Revenant
 Actor Hound_Chooser	19125	//Used for direct hound placement on maps. Tag 666 fix (A_KillMaster must be called from spawned monster)
 {
 //$category "Game/BD64_Monsters
-	SpawnID 185
-	Scale 0.8
-	MONSTER
-	-SOLID
-	-COUNTKILL
-	+BOSSDEATH
-	+NOTARGET
-	+NOBLOOD
+SpawnID 185
+Scale 0.8
+MONSTER
+-SOLID
+-COUNTKILL
++BOSSDEATH
++NOTARGET
++NOBLOOD
 	States
 	{
 	Death:

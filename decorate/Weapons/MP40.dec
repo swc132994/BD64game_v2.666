@@ -195,9 +195,8 @@ Tag "MP40"
 		TNT1 A 0 A_JumpIfInventory("MP40Ammo",1,1)
 		Goto Reload
 		TNT1 A 0 A_TakeInventory("MP40Ammo",1,TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_JumpIfInventory("MP40Ammo",9,2)
-		TNT1 A 0 ACS_NamedExecute("LowAmmoSFX",0,0,0,0)
-		TNT1 AAA 0
+		TNT1 A 0 A_JumpIfInventory("MP40Ammo",9,"ResumeFire")
+		TNT1 A 0 ACS_NamedExecute("LowAmmoSFX")
 		Goto ResumeFire
 	NoReload:
 		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
@@ -217,7 +216,7 @@ Tag "MP40"
 		MP4F A 1 Bright A_FireBullets(0.0,0.0,1,5,"HitPuff",FBF_NORANDOM)
 		MP4F BC 1 A_SetPitch(pitch+0.4,SPF_INTERPOLATE)
 		TNT1 A 0 A_Firecustommissile("BulletCaseSpawn",0,0,0,-10)
-		MP4G A 0 A_SetAngle(angle + random(-1,1))
+		TNT1 A 0 A_SetAngle(angle + random(-1,1))
 		TNT1 A 0 A_Refire
 		MP4G A 1
 		Goto Ready
@@ -233,8 +232,8 @@ Tag "MP40"
 		MP4G S 1 Bright A_FireBullets(0.0,0.0,1,7,"HitPuff",FBF_NORANDOM) 
 		MP4G T 1 A_SetPitch(-1.0 + pitch)
 		MP4G U 1 A_SetPitch(0.5 + pitch)
-		MP4G R 0 A_SetPitch(0.5 + pitch)
-		MP4G R 0 A_Refire
+		TNT1 A 0 A_SetPitch(0.5 + pitch)
+		TNT1 A 0 A_Refire
 		MP4G R 1 A_WeaponReady
 		Goto Ready2
 	AltFire:
@@ -268,34 +267,29 @@ Tag "MP40"
 		MP4G A 0
 		MP4G "#" 1 A_WeaponReady(WRF_NOFIRE)
 		TNT1 A 0 A_JumpIfInventory("MP40Ammo",32,"Fidget")
-		MP40 A 0 A_TakeInventory("Zoomed",0)
-		MP40 A 0 A_ZoomFactor(1.0)
-		TNT1 A 0 A_JumpIfInventory("Clip",1,3)
+		TNT1 A 0 A_TakeInventory("Zoomed",0)
+		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
 		Goto NoAmmo
-		TNT1 AAA 0
-		RIFG A 0 A_JumpIfInventory("MP40Ammo",1,"ReloadNotEmpty")//30+1 effect
+		TNT1 A 0 A_JumpIfInventory("MP40Ammo",1,"ReloadNotEmpty")//30+1 effect
 		MP4R ABCDEE 1
-		SOUN D 0 A_PlaySound("DRYFIRE", 5)
+		TNT1 A 0 A_PlaySound("DRYFIRE",5)
 		MP4R FFFGHIJJJK 1
-		MP40 A 0 A_PlaySound("MP40/MagOut", 5)
+		TNT1 A 0 A_PlaySound("MP40/MagOut",5)
 		MP4R LMN 1
-		MP4R A 0 A_FireCustomMissile("EmptyClipSpawn",-5,0,8,-22)
+		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",-5,0,8,-22)
 		MP4R OPQRSTTTTTTTUVWXXYYY 1
 	InsertBullets:
-		TNT1 AAAA 0
-		TNT1 A 0 A_JumpIfInventory("MP40Ammo",32,15)
-		TNT1 A 0 A_JumpIfInventory("Clip",1,3)
+		TNT1 A 0 A_JumpIfInventory("MP40Ammo",32,4)
+		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
 		Goto FullReload
-		TNT1 AAAAAA 0
 		TNT1 A 0 A_Giveinventory("MP40Ammo",1)
 		TNT1 A 0 A_Takeinventory("Clip",1,TIF_NOTAKEINFINITE)
 		Goto InsertBullets
-		TNT1 AAAAAAAAAA 0
 		TNT1 A 0 A_Refire
-		Goto FullReload
 	FullReload:
 		MP4R Z 1
-		MP40 A 0 A_PlaySound("MP40/MagIn", 5)
+		TNT1 A 0 A_PlaySound("MP40/MagIn",5)
 		MP4R "[\]" 1
 		2P4R ABCCDE 1
 		TNT1 A 0 A_PlaySound("MP40/Charge",CHAN_WEAPON)
@@ -306,26 +300,22 @@ Tag "MP40"
 	ReloadNotEmpty:
 		MP4R AB 1
 		2P4R PQRSS 1 A_JumpIfInventory("Kicking",1,"DoKick")
-		SOUN D 0 A_PlaySound("DRYFIRE", 5)
+		SOUN D 0 A_PlaySound("DRYFIRE",5)
 		2P4R TTTUVWXYYYZ 1
-		MP40 A 0 A_PlaySound("MP40/MagOut", 5)
+		TNT1 A 0 A_PlaySound("MP40/MagOut",5)
 		2P4R "[\]" 1
-		MP4R A 0 A_FireCustomMissile("EmptyClipSpawn",-5,0,8,-22)
+		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",-5,0,8,-22)
 		3P4R ABCDEEEEEEEFGHIIJJJ 1 A_JumpIfInventory("Kicking",1,"DoKick")
 	InsertBullets2:
-		TNT1 AAAA 0
-		TNT1 A 0 A_JumpIfInventory("MP40Ammo",32,15)
-		TNT1 A 0 A_JumpIfInventory("Clip",1,3)
+		TNT1 A 0 A_JumpIfInventory("MP40Ammo",32,4)
+		TNT1 A 0 A_JumpIfInventory("Clip",1,1)
 		Goto ContinueReloading
-		TNT1 AAAAAA 0
 		TNT1 A 0 A_Giveinventory("MP40Ammo",1)
 		TNT1 A 0 A_Takeinventory("Clip",1,TIF_NOTAKEINFINITE)
 		Goto InsertBullets2
-		TNT1 AAAAAAAAAA 0
 		TNT1 A 0 A_Refire
-		Goto ContinueReloading	
 	ContinueReloading:
-		MP40 A 0 A_PlaySound("MP40/MagIn", 5)
+		TNT1 A 0 A_PlaySound("MP40/MagIn",5)
 		3P4R KLMNNOOOO 1
 		2P4R UTRQP 1
 		MP4R BA 1

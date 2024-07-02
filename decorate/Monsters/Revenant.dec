@@ -188,26 +188,26 @@ Actor 64StealthRevenant : 64Revenant Replaces StealthRevenant
 
 Actor 64RevenantTracer3 Replaces RevenantTracer
 {
-	Game Doom
-	SpawnID 53
-	Scale 0.4
-	Health 15
-	Damage 8
-	Speed 10
-	FastSpeed 15	
-	Height 16
-	Radius 8
-	SeeSound "skeleton/attack"
-	DeathSound "skeleton/tracex"
-	Decal "SmallerScorch"
-	DamageType "Fire"
-	PROJECTILE
-	+SEEKERMISSILE
-	+EXTREMEDEATH
-	+NOBLOOD
-	-NOBLOCKMAP
-	+SHOOTABLE
-	+GHOST
+Game Doom
+SpawnID 53
+Scale 0.4
+Health 15
+Damage 8
+Speed 10
+FastSpeed 15
+Height 16
+Radius 8
+SeeSound "skeleton/attack"
+DeathSound "skeleton/tracex"
+Decal "SmallerScorch"
+DamageType "Fire"
+PROJECTILE
++SEEKERMISSILE
++EXTREMEDEATH
++NOBLOOD
+-NOBLOCKMAP
++SHOOTABLE
++GHOST
 	States
 	{
 	Spawn:

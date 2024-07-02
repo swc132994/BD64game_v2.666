@@ -31,7 +31,6 @@ script "BD64Respawn" Respawn NET
 	SetInventory("AltRifleSkin",getuserCvar(PlayerNumber(),"AlternativeRifleSkinCvar"));
 	SetInventory("AltLaserSkin",getuserCvar(PlayerNumber(),"AlternativeLaserSkinCvar"));
 
-
 	//Classic Weapons Mode for Tactical and Modern Classes
 	SetInventory("ClassicRLToken",getcvar("ClassicRLCvar"));
 	SetInventory("ClassicChaingunToken",getcvar("ClassicChaingunCvar"));
@@ -112,15 +111,15 @@ script "KickKeyPress" (VOID) NET
 	else
 		{
 	if(CheckInventory("Stamina") > 80)
-		{
-		Print(s:"Not Enough Stamina!");
-		PlaySound(0,"Tired",2,1.0,FALSE,ATTN_NORM);
-		terminate;
-		}
+			{
+			Print(s:"Not Enough Stamina!");
+			PlaySound(0,"Tired",2,1.0,FALSE,ATTN_NORM);
+			terminate;
+			}
 	else
-		{
-		GiveInventory("Kicking",1);
-		}
+			{
+			GiveInventory("Kicking",1);
+			}
 		}
 	}
 }
@@ -257,8 +256,7 @@ script "ChaingunSpawner" (void)
 {
 	static str WeaponType[] =
 	{
-		"SpawnChaingun", "SpawnRifle",
-		"SpawnSMG"
+		"SpawnChaingun","SpawnRifle","SpawnSMG"
 	};
 	Delay(1);
 	SetActorState(0,WeaponType[GetCvar("Chaingun_Spawner_Cvar") - 1]);
@@ -268,7 +266,7 @@ script "PlasmaRifleSpawner" (void)
 {
 	static str WeaponType[] =
 	{
-		"SpawnPlasmaRifle", "SpawnGaussCannon"
+		"SpawnPlasmaRifle","SpawnGaussCannon"
 	};
 	Delay(1);
 	SetActorState(0,WeaponType[GetCvar("GaussCannon_Spawner_Cvar") - 1]);
@@ -278,8 +276,7 @@ script "BFGSpawner" (void)
 {
 	static str WeaponType[] =
 	{
-		"SpawnBFG9000", "SpawnUnmaker",
-		"SpawnLasergun"
+		"SpawnBFG9000","SpawnUnmaker","SpawnLasergun"
 	};
 	Delay(1);
 	SetActorState(0,WeaponType[GetCvar("BFG_Spawner_Cvar") - 1]);
@@ -307,7 +304,7 @@ script "ZombiemanSpawner" (void)
 {
 	static str MonsterType[] =
 	{
-		"SpawnZombieMan", "SpawnZombieMarine"
+		"SpawnZombieMan","SpawnZombieMarine"
 	};
 	delay(1);
 	SetActorState(0,MonsterType[GetCvar("ZMarineRandom_Cvar") - 1]);
@@ -317,8 +314,7 @@ script "ShotgunGuySpawner" (void)
 {
 	static str MonsterType[] =
 	{
-		"SpawnShotgunGuy", "SpawnSSGGuy",
-		"SpawnPlasmaGuy"
+		"SpawnShotgunGuy","SpawnSSGGuy","SpawnPlasmaGuy"
 	};
 	delay(1);
 	SetActorState(0,MonsterType[GetCvar("SSGZombieRandom_Cvar") - 1]);
@@ -330,7 +326,7 @@ script "ChaingunGuySpawner" (void)
 	{
 		Case -1: SetActorState(0,"D64MonsterOnly"); break;
 		Case 0: Break;
-		Default:		
+		Default:
 		Case 1: SetActorState(0,"SpawnChaingunGuy"); break;
 		Case 2: SetActorState(0,"SpawnBFGGuy"); break;
 	}
@@ -341,8 +337,7 @@ script "ImpSpawner" (void)
 {
 	static str MonsterType[] =
 	{
-		"SpawnImp", "SpawnNightImp",
-		"SpawnHarvester"
+		"SpawnImp","SpawnNightImp","SpawnHarvester"
 	};
 	delay(1);
 	SetActorState(0,MonsterType[GetCvar("NImp_Spawner_Cvar") - 1]);
@@ -352,8 +347,7 @@ script "DemonSpawner" (void)
 {
 	static str MonsterType[] =
 	{
-		"SpawnDemon", "SpawnAcidDemon",
-		"SpawnButcher"
+		"SpawnDemon","SpawnAcidDemon","SpawnButcher"
 	};
 	delay(1);
 	SetActorState(0,MonsterType[GetCvar("AcidDemonRandom_Cvar") - 1]);
@@ -363,8 +357,7 @@ script "SpectreSpawner" (void)
 {
 	static str MonsterType[] =
 	{
-		"SpawnSpectre", "SpawnNightSpectre",
-		"SpawnWraith"
+		"SpawnSpectre","SpawnNightSpectre","SpawnWraith"
 	};
 	delay(1);
 	SetActorState(0,MonsterType[GetCvar("NSpectre_Spawner_Cvar") - 1]);
@@ -374,8 +367,7 @@ script "CacodemonSpawner" (void)
 {
 	static str CacoSpawnType[] =
 	{
-		"SpawnCacodemon", "SpawnNightCacodemon",
-		"SpawnFallen"
+		"SpawnCacodemon","SpawnNightCacodemon","SpawnFallen"
 	};
 	delay(1);
 	SetActorState(0,CacoSpawnType[GetCvar("NCaco_Spawner_Cvar") - 1]);
@@ -385,8 +377,7 @@ script "BaronSpawner" (void)
 {
 	static str MonsterType[] =
 	{
-		"SpawnBaron", "HoundChooser",
-		"SpawnBelp"
+		"SpawnBaron","HoundChooser","SpawnBelp"
 	};
 	delay(1);
 	SetActorState(0,MonsterType[GetCvar("Hellhound_Spawner_Cvar") - 1]);
@@ -401,7 +392,7 @@ script "HoundChooserACS" (void)
 		Case 0: SetActorState(0,"HoundDefault"); break;
 		Case 1: SetActorState(0,"HoundGEC"); break;
 	}
-	Delay(1);	
+	Delay(1);
 }
 
 script "RevenantSpawner" (void)
@@ -410,7 +401,7 @@ script "RevenantSpawner" (void)
 	{
 		Case -1: SetActorState(0,"D64MonsterOnly"); break;
 		Case 0: Break;
-		Default:		
+		Default:
 		Case 1: SetActorState(0,"Revenant"); break;
 		Case 2: SetActorState(0,"SpawnPestilence"); break;
 	}
@@ -421,7 +412,7 @@ script "HellKnightSpawner" (void)
 {
 	static str MonsterType[] =
 	{
-		"SpawnHellKnight", "SpawnKnightmare"
+		"SpawnHellKnight","SpawnKnightmare"
 	};
 	delay(1);
 	SetActorState(0,MonsterType[GetCvar("KnightmareRandomCvar") - 1]);
@@ -431,7 +422,7 @@ script "MancubusSpawner" (void)
 {
 	static str MonsterType[] =
 	{
-		"SpawnFatso", "SpawnBruiser"
+		"SpawnFatso","SpawnBruiser"
 	};
 	delay(1);
 	SetActorState(0,MonsterType[GetCvar("BruiserRandom_Cvar") - 1]);
@@ -441,8 +432,7 @@ script "LostSoulSpawner" (void)
 {
 	static str MonsterType[] =
 	{
-		"SpawnLostSoul", "SpawnStalker",
-		"SpawnForgottenOne"
+		"SpawnLostSoul","SpawnStalker","SpawnForgottenOne"
 	};
 	delay(1);
 	SetActorState(0,MonsterType[GetCvar("StalkerRandom_Cvar") - 1]);
@@ -452,8 +442,7 @@ script "ArachnotronSpawner" (void)
 {
 	static str MonsterType[] =
 	{
-		"SpawnArachnotron", "SpawnNightCrawler",
-		"SpawnImpaler"
+		"SpawnArachnotron","SpawnNightCrawler","SpawnImpaler"
 	};
 	delay(1);
 	SetActorState(0,MonsterType[GetCvar("ArachnotronRandomCvar") - 1]);
@@ -463,7 +452,7 @@ Script "PainElementalSpawner" (void)
 {
 	static str MonsterType[] =
 	{
-		"SpawnPainElemental", "SpawnNightmareElemental"
+		"SpawnPainElemental","SpawnNightmareElemental"
 	};
 	delay(1);
 	SetActorState(0,MonsterType[GetCvar("NightElementalRandomCvar") - 1]);
@@ -480,7 +469,7 @@ Script "ArchvileSpawner" (void)
 		Case 2: SetActorState(0,"SpawnFleshWizard"); break;
 		Case 3: SetActorState(0,"SpawnHellstorm"); break;
 	}
-	Delay(1);	
+	Delay(1);
 }
 
 script "CyberdemonSpawner" (void)
@@ -490,7 +479,7 @@ script "CyberdemonSpawner" (void)
 		"SpawnCyberdemon", "SpawnAnnihilator",
 		"SpawnInfernal"
 	};
-	delay(1);	
+	delay(1);
 	SetActorState(0,MonsterType[GetCvar("Annihilator_Spawner_Cvar") - 1]);
 }
 
@@ -516,7 +505,7 @@ Script "WadChecker" (void)
 		"ScytheII", "Bloodstain",
 		"GoingDown","DoomZero"
 	};
-	delay(1);	
+	delay(1);
 	SetActorState(0,WadChecking[GetCvar("BD64_WadCheck") - 1]);
 }
 
@@ -530,7 +519,7 @@ script "HordeMultiplier" (void)		//husk zombie multiplier option
 		Case 1: SetActorState(0,"Hordex1"); break;
 		Case 2: SetActorState(0,"Hordex2"); break;
 		Case 3: SetActorState(0,"Hordex3"); break;
-		Case 4: SetActorState(0,"Hordex4"); break;		
+		Case 4: SetActorState(0,"Hordex4"); break;
 	}
 	Delay(1);
 }
@@ -539,7 +528,7 @@ script "LightAndFogChecker" (Void)
 {
 	Switch(GetCvar("LFog_Cvar"))
 	{
-		Default:	
+		Default:
 		Case 0: Break;
 		Case 1: SetActorState(0,"NoLight"); SetActorState(0,"NoShaft"); break;
 		Case 2: SetActorState(0,"NoLight"); break;
@@ -585,7 +574,7 @@ Script "AlternativeAmmoPickupSpritesACS" (void)
 	Switch(GetCvar("AlternativeAmmoPickupSpritesCvar"))
 	{
 		Case 0: Break;
-		Default:		
+		Default:
 		Case 1: SetActorState(0,"Spawn1"); break;
 		Case 2: SetActorState(0,"Spawn2"); SetActorState(0,"AlternativeSprite"); SetActorState(0,"AltSpawn"); break;	
 	}
@@ -663,7 +652,7 @@ script "BonusRandomACS" (void)
 	Switch(GetCvar("BonusRandomCvar"))
 	{
 		Case 0: Break;
-		Default:		
+		Default:
 		Case 1: SetActorState(0,"SpawnHealthBonus"); SetActorState(0,"SpawnArmorBonus"); break;
 		Case 2: SetActorState(0,"SpawnHellPotion"); break;	
 	}
@@ -751,7 +740,7 @@ script "OriginalCvars" (void) net
 	SetCvar("AlphaPickupCvar",0);
 	SetCvar("FlashlightStartCvar",0);
 	SetCvar("NoReloadCvar",0);
-	SetCvar("VMapCheckCvar",1);
+	SetCvar("VMapCheckCvar",0);
 	SetCvar("TCMapCheckCvar",0);
 	SetCvar("AbsMapCheckCvar",0);
 	SetCvar("Chaingun_Spawner_Cvar",1);
@@ -764,7 +753,7 @@ script "OriginalCvars" (void) net
 	SetCvar("SSGZombieRandom_Cvar",1);
 	SetCvar("ZombieChaingunRandom_Cvar",1);
 	SetCvar("NImp_Spawner_Cvar",1);
-	SetCvar("AcidDemonRandom_Cvar",1);	
+	SetCvar("AcidDemonRandom_Cvar",1);
 	SetCvar("NSpectre_Spawner_Cvar",1);
 	SetCvar("NCaco_Spawner_Cvar",1);
 	SetCvar("StalkerRandom_Cvar",1);
@@ -772,7 +761,6 @@ script "OriginalCvars" (void) net
 	SetCvar("KnightmareRandomCvar",1);
 	SetCvar("Revenant_Spawner_Cvar",-1);
 	SetCvar("Hellhound_Spawner_Cvar",1);
-	SetCvar("HoundChooserCvar",-1);
 	SetCvar("BruiserRandom_Cvar",1);
 	SetCvar("NightElementalRandomCvar",1);
 	SetCvar("FleshWizardRandomCvar",-1);
@@ -790,7 +778,7 @@ script "OriginalCvars" (void) net
 	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",0);
 	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",0);
 	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",1);
-	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);	
+	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);
 	ACS_NamedExecute("BD64Respawn",0);
 	delay(1);
 }
@@ -833,7 +821,7 @@ script "ClassicCvars" (void) net
 	SetCvar("Annihilator_Spawner_Cvar",1);
 	SetCvar("Motherdemon_Spawner_Cvar",-1);
 	SetCvar("bd64_SpawnPercent",0);
-	SetCvar("TheHorde_Multiplier_Cvar",-1);		
+	SetCvar("TheHorde_Multiplier_Cvar",-1);
 	SetCvar("bd64_WadCheck",2);
 	SetCvar("ClassicTorchCvar",1);
 	SetCvar("LiquidSplashCvar",1);
@@ -845,7 +833,7 @@ script "ClassicCvars" (void) net
 	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",0);
 	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",0);
 	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",1);
-	SetUserCvar(PlayerNumber(),"LowAmmoSFX",0);	
+	SetUserCvar(PlayerNumber(),"LowAmmoSFX",0);
 	ACS_NamedExecute("BD64Respawn",0);
 	delay(1);
 }
@@ -862,7 +850,7 @@ script "EnhancedCvars" (void) net
 	SetCvar("FlashlightStartCvar",0);
 	SetCvar("NoReloadCvar",0);
 	SetCvar("VMapCheckCvar",0);
-	SetCvar("TCMapCheckCvar",0);
+	SetCvar("TCMapCheckCvar",1);
 	SetCvar("Chaingun_Spawner_Cvar",1);
 	SetCvar("GaussCannon_Spawner_Cvar",1);
 	SetCvar("BFG_Spawner_Cvar",1);
@@ -877,46 +865,34 @@ script "EnhancedCvars" (void) net
 	SetCvar("NSpectre_Spawner_Cvar",1);
 	SetCvar("NCaco_Spawner_Cvar",1);
 	SetCvar("StalkerRandom_Cvar",1);
-	SetCvar("ArachnotronRandomCvar",1);	
+	SetCvar("ArachnotronRandomCvar",1);
 	SetCvar("KnightmareRandomCvar",1);
 	SetCvar("Revenant_Spawner_Cvar",1);
 	SetCvar("Hellhound_Spawner_Cvar",1);
-	SetCvar("HoundChooserCvar",0);
 	SetCvar("BruiserRandom_Cvar",1);
 	SetCvar("NightElementalRandomCvar",1);
 	SetCvar("FleshWizardRandomCvar",1);
 	SetCvar("Annihilator_Spawner_Cvar",1);
 	SetCvar("Motherdemon_Spawner_Cvar",1);
 	SetCvar("bd64_SpawnPercent",0);
-	SetCvar("TheHorde_Multiplier_Cvar",-1);	
+	SetCvar("TheHorde_Multiplier_Cvar",-1);
 	SetCvar("bd64_WadCheck",2);
 	SetCvar("ClassicTorchCvar",0);
 	SetCvar("LiquidSplashCvar",0);
 	SetCvar("LFog_Cvar",0);
 	SetCvar("PoltergeistCvar",0);
 	SetCvar("FlashlightStartCvar",0);
-	SetCvar("ThingRandomCvar",0);	
+	SetCvar("ThingRandomCvar",0);
 	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",0);
 	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",0);
 	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",0);
-	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);	
+	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);
 	ACS_NamedExecute("BD64Respawn",0);
 	delay(1);
 }
 
 script "RandomCvars" (void) net
 {
-	SetCvar("VanillaChainsawCvar",0);
-	SetCvar("ClassicChaingunCvar",0);
-	SetCvar("ClassicRLCvar",0);
-	SetCvar("VWeaponCvar",0);
-	SetCvar("WeaponsWarmUpCvar",1);
-	SetCvar("CensoredHealing_Cvar",0);
-	SetCvar("AlphaPickupCvar",0);
-	SetCvar("FlashlightStartCvar",0);
-	SetCvar("NoReloadCvar",0);
-	SetCvar("VMapCheckCvar",0);
-	SetCvar("TCMapCheckCvar",0);
 	SetCvar("Chaingun_Spawner_Cvar",0);
 	SetCvar("GaussCannon_Spawner_Cvar",0);
 	SetCvar("BFG_Spawner_Cvar",0);
@@ -931,11 +907,10 @@ script "RandomCvars" (void) net
 	SetCvar("NSpectre_Spawner_Cvar",0);
 	SetCvar("NCaco_Spawner_Cvar",0);
 	SetCvar("StalkerRandom_Cvar",0);
-	SetCvar("ArachnotronRandomCvar",0);	
+	SetCvar("ArachnotronRandomCvar",0);
 	SetCvar("KnightmareRandomCvar",0);
 	SetCvar("Revenant_Spawner_Cvar",0);
 	SetCvar("Hellhound_Spawner_Cvar",0);
-	SetCvar("HoundChooserCvar",0);
 	SetCvar("BruiserRandom_Cvar",0);
 	SetCvar("NightElementalRandomCvar",0);
 	SetCvar("FleshWizardRandomCvar",0);
@@ -947,13 +922,13 @@ script "RandomCvars" (void) net
 	SetCvar("ClassicTorchCvar",0);
 	SetCvar("LiquidSplashCvar",0);
 	SetCvar("LFog_Cvar",0);
-	SetCvar("PoltergeistCvar",0);
+	SetCvar("PoltergeistCvar",1);
 	SetCvar("FlashlightStartCvar",0);
-	SetCvar("ThingRandomCvar",0);
+	SetCvar("ThingRandomCvar",1);
 	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",0);
 	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",0);
 	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",0);
-	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);	
+	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);
 	ACS_NamedExecute("BD64Respawn",0);
 	delay(1);
 }

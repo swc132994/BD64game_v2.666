@@ -73,20 +73,20 @@ OptionMenu "BD64Menu"
 	SafeCommand "Original", "pukename OriginalCvars"
 	SafeCommand "Classic", "pukename ClassicCvars"
 	SafeCommand "Enhanced", "pukename EnhancedCvars"
-	SafeCommand "Randomizer", "pukename RandomCvars"	
+	SafeCommand "Randomiser", "pukename RandomCvars"
 	StaticText " "
 	StaticText "-------------------------------- Options -------------------------------------",1
-	StaticText " "	
+	StaticText " "
 	Submenu "Other Item/Weapon Options",		"BrutalDoom64Item/WeaponOptions"
 	Submenu "Other Monster Options",			"BrutalDoom64OptionsOtherMonster"
 	Submenu "Performance & Misc. Options",		"BrutalDoom64OptionsPerformance"
 	Submenu "Map Options",						"BD64MapOptions"
 	StaticText " "
 	StaticText "-------------------------------- Gameplay -------------------------------------",1
-	StaticText " "	
+	StaticText " "
 	Submenu "Item/Weapon Spawner Options",		"BrutalDoom64OptionsItem/WeaponSpawner"	
 	Submenu "Monster Spawner Options",			"BrutalDoom64OptionsMonsterSpawner"	
-	StaticText " "	
+	StaticText " "
 	StaticText ""
 	Submenu 	"Engine (GZD, Zand) Shortcuts",		"GZDShortcuts"
 }
@@ -156,7 +156,7 @@ OptionMenu "BrutalDoom64Item/WeaponOptions"
 		StaticText "Options for alternative or some alpha build looks for items & weapons.",1
 		StaticText ""
 		StaticText "-------------------------------------- Other -----------------------------------",1
-		StaticText " "		
+		StaticText " "
 	Option "Start with Flashlight/Torch (Need Map Restart) =","FlashlightStartCvar","YesOrNo"
 }
 
@@ -206,12 +206,10 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner"
 		StaticText ""
 	Option "Mastermind Spawner =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"
 		StaticText ""
-	Option "Random Monster Chance Spawn =","bd64_SpawnPercent","SpawnPercentValue"	
+	Option "Random Monster Chance Spawn =","bd64_SpawnPercent","SpawnPercentValue"
 		StaticText "This function only works",1
 		StaticText "if you set your enemies to \"random\"",1
 		StaticText ""
-
-
 	Option "Husk Zombie Horde Multiplier =","TheHorde_Multiplier_Cvar","TheHorde_Multiplier_Value"
 		StaticText "Option to spawn Husks & Carrions near dead zombie props",1
 		StaticText "Disabled by Default",1
@@ -227,15 +225,15 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 	Command "Apply Changes","PukeName BD64Respawn"
 		StaticText ""
 		StaticText "Any change here requires a level restart in order to work.",1
-		StaticText ""	
+		StaticText ""
 		StaticText "------------------------------- Monster Skins -------------------------------",1
-		StaticText ""		
+		StaticText ""
 	Option "Hellhound Style =","HoundChooserCvar","HoundChooser"
 		StaticText ""
 	Option "Cacodemon Style =","CacoChooserCvar","CacoSkinChooser"
 		StaticText ""
 		StaticText "------------------------------- MapSet Selection -------------------------------",1
-		StaticText ""			
+		StaticText ""
 	Option "Select Mapset =","BD64_WadCheck","WadCheck"
 		StaticText "This option is not automatic and must be configured manually",1
 		StaticText "before starting a new game in one of the supported wads",1
@@ -251,7 +249,7 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 		StaticText "(poltergeists are hostile map props that can attack the player)",1
 		StaticText ""
 		StaticText "-------------------------------------- Other -----------------------------------",1
-		StaticText " "			
+		StaticText " "
 	Option "Enable Shootable Projectiles =","ShootableProjectilesCVAR","YesOrNo"
 		StaticText ""
 }
