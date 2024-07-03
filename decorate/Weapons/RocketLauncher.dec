@@ -1,3 +1,26 @@
+Actor RocketLauncherSpawner : CustomInventory Replaces RocketLauncher
+{
+//$category "Game/BD64_Weapons
+Scale 0.82
+Tag "Rocket Launcher"
+Inventory.PickupMessage "$GOTLAUNCHER"
+Inventory.PickupSound "WPICK"
+	States
+	{
+	Spawn:
+		LAUN A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_Jumpifinventory("IsTacticalClass",1,"Pickup2")
+		TNT1 A 0 A_Jumpifinventory("IsModern",1,"Pickup2")
+		TNT1 A 0 A_GiveInventory("64RocketLauncher")
+		Stop
+	Pickup2:
+		TNT1 A 0 A_GiveInventory("64RocketLauncherTactical",1)
+		Stop
+	}
+}
+
 Actor 64RocketLauncher : DoomWeapon
 {
 Scale 0.82

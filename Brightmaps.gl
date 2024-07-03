@@ -1238,6 +1238,40 @@ brightmap sprite HEA4N2N8		{map "brightmaps/Cacodemon_Classic/HEA3N2N8_BR.png"}
 brightmap sprite HEA4M1			{map "brightmaps/Cacodemon_Classic/HEA3M1_BR.png"}
 brightmap sprite HEA4M2M8		{map "brightmaps/Cacodemon_Classic/HEA3M2M8_BR.png"}
 
+//Harvester
+brightmap sprite SLHMA1			{map "brightmaps/Harvester/SLHMA1_BR.png"}
+brightmap sprite SLHMA7A3		{map "brightmaps/Harvester/SLHMA7A3_BR.png"}
+brightmap sprite SLHMA8A2		{map "brightmaps/Harvester/SLHMA8A2_BR.png"}
+brightmap sprite SLHMB1			{map "brightmaps/Harvester/SLHMB1_BR.png"}
+brightmap sprite SLHMB7B3		{map "brightmaps/Harvester/SLHMB7B3_BR.png"}
+brightmap sprite SLHMB8B2		{map "brightmaps/Harvester/SLHMB8B2_BR.png"}
+brightmap sprite SLHMC1			{map "brightmaps/Harvester/SLHMC1_BR.png"}
+brightmap sprite SLHMC7C3		{map "brightmaps/Harvester/SLHMC7C3_BR.png"}
+brightmap sprite SLHMC8C2		{map "brightmaps/Harvester/SLHMC8C2_BR.png"}
+brightmap sprite SLHVA1			{map "brightmaps/Harvester/SLHVA1_BR.png"}
+brightmap sprite SLHVA7A3		{map "brightmaps/Harvester/SLHVA7A3_BR.png"}
+brightmap sprite SLHVA8A2		{map "brightmaps/Harvester/SLHVA8A2_BR.png"}
+brightmap sprite SLHVB1			{map "brightmaps/Harvester/SLHVB1_BR.png"}
+brightmap sprite SLHVB7B3		{map "brightmaps/Harvester/SLHVB7B3_BR.png"}
+brightmap sprite SLHVB8B2		{map "brightmaps/Harvester/SLHVB8B2_BR.png"}
+brightmap sprite SLHVC1			{map "brightmaps/Harvester/SLHVC1_BR.png"}
+brightmap sprite SLHVC7C3		{map "brightmaps/Harvester/SLHVC7C3_BR.png"}
+brightmap sprite SLHVC8C2		{map "brightmaps/Harvester/SLHVC8C2_BR.png"}
+brightmap sprite SLHVD1			{map "brightmaps/Harvester/SLHVD1_BR.png"}
+brightmap sprite SLHVD7D3		{map "brightmaps/Harvester/SLHVD7D3_BR.png"}
+brightmap sprite SLHVD8D2		{map "brightmaps/Harvester/SLHVD8D2_BR.png"}
+brightmap sprite SLHVE1			{map "brightmaps/Harvester/SLHVE1_BR.png"}
+brightmap sprite SLHVE5			{map "brightmaps/Harvester/SLHVE5_BR.png"}
+brightmap sprite SLHVE6E4		{map "brightmaps/Harvester/SLHVE6E4_BR.png"}
+brightmap sprite SLHVE7E3		{map "brightmaps/Harvester/SLHVE7E3_BR.png"}
+brightmap sprite SLHVE8E2		{map "brightmaps/Harvester/SLHVE8E2_BR.png"}
+brightmap sprite SLHVF1			{map "brightmaps/Harvester/SLHVF1_BR.png"}
+brightmap sprite SLHVF5			{map "brightmaps/Harvester/SLHVF5_BR.png"}
+brightmap sprite SLHVF6F4		{map "brightmaps/Harvester/SLHVF6F4_BR.png"}
+brightmap sprite SLHVF7F3		{map "brightmaps/Harvester/SLHVF7F3_BR.png"}
+brightmap sprite SLHVF8F2		{map "brightmaps/Harvester/SLHVF8F2_BR.png"}
+
+
 //Pain Elemental
 brightmap sprite PAINA1		{Disablefullbright}
 brightmap sprite PAINA2A8	{Disablefullbright}

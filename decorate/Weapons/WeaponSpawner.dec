@@ -5,7 +5,7 @@ radius 16 //Anything above this value will cause the actor to get stuck on platf
 +FORCEXYBILLBOARD
 +MOVEWITHSECTOR
 -COUNTITEM
-+INVENTORY.ALWAYSPICKUP
+//+INVENTORY.ALWAYSPICKUP
 Inventory.Amount 0
 Inventory.MaxAmount 99999
 Inventory.PickupMessage ""

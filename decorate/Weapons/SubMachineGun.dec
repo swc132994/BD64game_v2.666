@@ -1,3 +1,37 @@
+Actor SMGSpawner : CustomInventory 19121
+{
+//$category "Game/BD64_Weapons
+Scale 0.82
+Tag "Sub-Machine Gun"
+Inventory.PickupMessage "You got the SMG!"
+Inventory.PickupSound "WPICK"
+	States
+	{
+	Spawn:
+		SMGZ A 2
+		TNT1 A 0 ACS_NamedExecuteAlways("DM_SpawnACS")
+		SMGZ A 2
+		TNT1 A 0 A_JumpIfInventory("ISDM",1,"DMSpawn")
+		SMGZ A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
+		TNT1 A 0 A_GiveInventory("64SMG",1)
+		Stop
+	Pickup2:
+		TNT1 A 0 A_GiveInventory("64SMGTactical",1)
+		Stop
+	DMSpawn:
+		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
+		TNT1 A 0 A_SpawnItemEx("TeleportationFog")
+		TNT1 A 0 A_SpawnItemEx("64SMG")
+		TNT1 A 0 A_SpawnItemEx("64SMGTactical")
+		TNT1 A 1050
+		Loop
+	}
+}
+
 //SMG(based on Rifle code) by IDDQD_1337
 Actor BurstFiredSMG : Inventory
 {

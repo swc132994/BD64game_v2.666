@@ -438,13 +438,9 @@ PROJECTILE
 actor 64SoulHarvesterGhost
 {
 Scale 0.5
-Radius 1
-Height 1
-Speed 0
 Alpha 0.7
 RenderStyle Add
 SeeSound "harvester/ghost"
-PROJECTILE
 +NOCLIP
 	States
 	{

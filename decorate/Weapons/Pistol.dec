@@ -1,3 +1,26 @@
+ACTOR PistolSpawner : CustomInventory Replaces Pistol
+{
+//$category "Game/BD64_Weapons
+Scale 0.82
+Tag "Pistol"
+Inventory.PickupMessage "$PICKUP_PISTOL_DROPPED"
+Inventory.PickupSound "WPICK"
+	States
+	{
+	Spawn:
+		PIST A -1
+		Stop
+	Pickup:
+		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
+		TNT1 A 0 A_GiveInventory("64Pistol",1)
+		Stop
+	Pickup2:
+		TNT1 A 0 A_GiveInventory("64PistolTactical",1)
+		Stop
+	}
+}
+
 Actor 64Pistol : DoomWeapon
 {
 Scale 0.82
