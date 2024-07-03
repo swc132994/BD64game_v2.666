@@ -133,6 +133,20 @@ MONSTER
 		CRB1 ABCDEFGH 3
 		CRB1 H -1
 		Stop
+	Death.Bullet:
+		TNT1 A 0 A_Jump(205,"Death")//80%
+	Death.Rifle:
+	Death.CutLess:
+		TNT1 A 0 A_Jump(64,"Death")
+		TNT1 A 0 A_CustomMissile("XDeathHarvesterArm1",50,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath2b",32,0,random(0,360),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath3b",32,0,random(0,360),2,random(10,50))
+		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",55,0,random(0,360),2,random(0,90))
+		SHDM A 1 A_SpawnItemEx("64BrutalisedHarvester",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
 		POL5 A -1
@@ -149,6 +163,238 @@ MONSTER
 		wait
 	}
 }
+
+Actor 64BrutalisedHarvester : 64SoulHarvester
+{
+Health 40
+Mass 0x7FFFFFFF
+DamageFactor "CauseWaterSplash",0.0
+DamageFactor "CauseObjectsToSplash",0.0
+DamageFactor "Head",2
+DropItem "None"
+-SOLID
+-COUNTKILL
++FLOORCLIP
++FRIENDLY
++NOTARGET
++NOPAIN
+	States
+	{
+	Spawn:
+		SHDM A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//Flip horizontal
+	See:
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8",0,0,60)
+		SHDM A 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,60)
+		SHDM XA 8 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,60)
+		SHDM XA 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,60)
+		SHDM XA 8 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,60)
+		SHDM XA 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,60)
+		SHDM XA 8 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,60)
+		SHDM XA 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8",0,0,60)
+		SHDM X 8 A_FaceTarget
+	Death:
+	Death.Bullet:
+		TNT1 A 0 A_Die
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		SHDM I 5 A_SpawnItemEx("64SoulHarvesterGhost",0,0,32)
+		SHDM JKLM 5
+		SHDM N 35
+		SHDM N -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Head:
+		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
+		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
+		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
+		SH8H A 5 A_XScream
+		SH8H B 5 A_NoBlocking
+		SH8H D 5 A_SpawnItemEx("64SoulHarvesterGhost",0,0,32)
+		SH8H DE 5
+		SH8H F 35
+		SH8H F -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Shotgun:
+		SHDM A 2 A_Recoil(6)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.Head")
+		Goto Death
+	Death.SSG:
+		SHDM A 2 A_Recoil(10)
+		TNT1 A 0 A_JumpIfCloser(170,"XDeath")
+	Death.Rifle:
+		TNT1 A 0 A_Jump(128,"Death")
+	Death.CutLess:
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath2",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeath3",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_CustomMissile("XDeathHarvesterArm1",50,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_XScream
+		TNT1 A 0 A_NoBlocking
+		SHDM B 1 A_SpawnItemEx("64BrutalisedHarvester_2",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	XDeath:
+	Death.Chainsaw:
+	Death.BFG:
+		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeathEyes",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathHarvesterArm1",50,0,random(0,360),2,random(20,90))
+		TNT1 AA 0 A_CustomMissile("XDeathHarvesterLeg1",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		SLHV R 5
+		SLHV S 5 A_XScream
+		SLHV T 5 A_SpawnItemEx("64SoulHarvesterGhost",0,0,32)
+		SLHV U 5 A_NoBlocking
+		SLHV VWX 5
+		SLHV Y -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Pain:
+		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
+		SHDM A 1
+		Goto Spawn
+	Raise:
+		TNT1 A 0 A_SpawnItemEx("64SoulHarvesterGhostReturning",0,0,32)
+		SLHV QPONML 7
+		SLHV L 1 A_SpawnItemEx("64SoulHarvester",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	}
+}
+
+Actor 64BrutalisedHarvester_2 : 64BrutalisedHarvester
+{
+	States
+	{
+	Spawn:
+		SHDM B 1
+	See:
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8",0,0,60)
+		SHDM B 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,60)
+		SHDM YB 8 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,60)
+		SHDM YB 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,60)
+		SHDM YB 8 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,60)
+		SHDM YB 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,60)
+		SHDM YB 8 A_FaceTarget
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget16",0,0,60)
+		SHDM YB 8 A_FaceTarget
+		TNT1 A 0 A_Pain
+		TNT1 A 0 A_CustomMissile("XDeath1",32,0,random(150,210),2,random(10,50))
+		TNT1 A 0 A_SpawnItemEx("HeadshotTarget8",0,0,60)
+		SHDM Y 8 A_FaceTarget
+	Death:
+	Death.Bullet:
+	Death.Rifle:
+		TNT1 A 0 A_Die
+		TNT1 A 0 A_Scream
+		TNT1 A 0 A_NoBlocking
+		SHDM C 5 A_SpawnItemEx("64SoulHarvesterGhost",0,0,32)
+		SHDM DEFM 5
+		SHDM N 35
+		SHDM N -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Head:
+		TNT1 A 0 A_JumpIfInTargetInventory("HasPlasmaWeapon",1,"Death.Plasma")
+		TNT1 AAA 0 A_CustomMissile("Brutal_Blood",56,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("BloodMist",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAAA 0 A_CustomMissile("BloodMistSmall",56,0,random(0,360),2,random(20,90))
+		TNT1 AAAAAA 0 A_CustomMissile("SmallBrainPiece",56,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("Brutal_FlyingBloodFake",56,0,random(0,360),2,random(0,90))
+		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
+		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
+		SH9H A 5 A_XScream
+		SH9H B 5 A_SpawnItemEx("64SoulHarvesterGhost",0,0,32)
+		SH9H C 5 A_NoBlocking
+		SH9H DE 5
+		SH9H F 35
+		SH9H F -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Death.Shotgun:
+		SHDM B 2 A_Recoil(6)
+		TNT1 A 0 A_JumpIfCloser(170,"Death.Head")
+		Goto Death
+	Death.SSG:
+		SHDM B 2 A_Recoil(10)
+		TNT1 A 0 A_JumpIfCloser(170,"XDeath")
+	XDeath:
+	Death.CutLess:
+	Death.Chainsaw:
+	Death.BFG:
+		TNT1 AAAAAA 0 A_CustomMissile("CeilBloodLauncher",0,0,random(0,360),2,random(50,130))
+		TNT1 AA 0 A_CustomMissile("XDeath1",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath2",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeath3",32,0,random(0,360),2,random(0,90))
+		TNT1 A 0 A_CustomMissile("XDeath5",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAAAA 0 A_CustomMissile("SmallBrainPiece",32,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("XDeathEyes",40,0,random(0,360),2,random(-5,5))
+		TNT1 AA 0 A_CustomMissile("XDeathHarvesterLeg1",50,0,random(0,360),2,random(20,90))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan1",40,0,random(0,360),2,random(-5,5))
+		TNT1 A 0 A_CustomMissile("XDeathOrgan2",40,0,random(0,360),2,random(-5,5))
+		TNT1 AAAA 0 A_CustomMissile("Intestine",32,0,random(0,360),2,random(0,90))
+		TNT1 AAAA 0 A_CustomMissile("Bloodmist",35,0,random(0,360),2,random(0,90))
+		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBig",45,0,random(0,360),2,random(10,90))
+		SLHV R 5
+		SLHV S 5 A_XScream
+		SLHV T 5 A_SpawnItemEx("64SoulHarvesterGhost",0,0,32)
+		SLHV U 5 A_NoBlocking
+		SLHV VWX 5
+		SLHV Y -1 A_SpawnItemEx("GrowingBloodPool")
+		Stop
+	Pain:
+		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
+		SHDM B 1
+		Goto Spawn
+	Raise:
+		TNT1 A 0 A_SpawnItemEx("64SoulHarvesterGhostReturning",0,0,32)
+		SLHV QPONML 7
+		SLHV L 1 A_SpawnItemEx("64SoulHarvester",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		Stop
+	}
+}
+
 
 actor 64SoulHarvesterBall
 {

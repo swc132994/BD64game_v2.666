@@ -1,4 +1,4 @@
 STARTUPTYPE = "Hexen"
 STARTUPTITLE = "Brutal Doom 64 (Version 2.666)"
-STARTUPCOLORS = "CC 00 00", "00 33 66"	//red text,blue background
+STARTUPCOLORS = "CC 00 00", "00 00 00"	//red text, black background
 DiscordAppId = "1208721820036104202"
