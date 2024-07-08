@@ -282,7 +282,7 @@ MONSTER
 	Spawn:
 		PSSS B 0
 		TNT1 A 3 ACS_NamedExecuteAlways("ZombiemanSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnZombieMan","SpawnZombieMarine")
+		TNT1 A 0 A_Jump(CallACS("ZombiemanSpawnPercent",0,0,0)*64,"SpawnZombieMan","SpawnZombieMarine")
 	SpawnZombieMan:
 		TNT1 A 1 A_SpawnItemEx("64ZombieMan",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -305,7 +305,16 @@ MONSTER
 	Spawn:
 		SPOS A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("ShotgunGuySpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnShotgunGuy","SpawnSSGGuy","SpawnPlasmaGuy")
+		TNT1 A 0 A_Jump(CallACS("ShotgunGuySpawnPercent",0,0,0)*64,"SpawnShotgunGuy","SpawnSSGGuy","SpawnPlasmaGuy")
+		Goto Spawn
+	AltSpawn1:
+		TNT1 A 0 A_Jump(CallACS("ShotgunGuySpawnPercent",0,0,0)*64,"SpawnShotgunGuy","SpawnSSGGuy")
+		Goto AltSpawn1
+	AltSpawn2:
+		TNT1 A 0 A_Jump(CallACS("ShotgunGuySpawnPercent",0,0,0)*64,"SpawnShotgunGuy","SpawnPlasmaGuy")
+		Goto AltSpawn2
+	AltSpawn3:
+		TNT1 A 0 A_Jump(CallACS("ShotgunGuySpawnPercent",0,0,0)*64,"SpawnSSGGuy","SpawnPlasmaGuy")
 	SpawnShotgunGuy:
 		TNT1 A 1 A_SpawnItemEx("64Shotgunguy",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -331,7 +340,7 @@ MONSTER
 	Spawn:
 		MPOS A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("ChaingunGuySpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnChaingunGuy","SpawnBFGGuy")
+		TNT1 A 0 A_Jump(CallACS("ChaingunGuySpawnPercent",0,0,0)*64,"SpawnChaingunGuy","SpawnBFGGuy")
 	SpawnChaingunGuy:
 		TNT1 A 1 A_SpawnItemEx("64Chaingunguy",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -357,7 +366,19 @@ MONSTER
 	Spawn:
 		DI64 A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("ImpSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnImp","SpawnNightImp","SpawnHarvester")
+		TNT1 A 0 A_Jump(CallACS("ImpSpawnPercent",0,0,0)*64,"SpawnImp","SpawnNightImp","SpawnHarvester")
+		Goto Spawn
+	AltSpawn1:
+		DI64 A 0
+		TNT1 A 0 A_Jump(CallACS("ImpSpawnPercent",0,0,0)*64,"SpawnImp","SpawnNightImp")	
+		Goto AltSpawn1
+	AltSpawn2:
+		DI64 A 0
+		TNT1 A 0 A_Jump(CallACS("ImpSpawnPercent",0,0,0)*64,"SpawnImp","SpawnHarvester")	
+		Goto AltSpawn2
+	AltSpawn3:
+		DI64 A 0
+		TNT1 A 0 A_Jump(CallACS("ImpSpawnPercent",0,0,0)*64,"SpawnNightImp","SpawnHarvester")		
 	SpawnImp:
 		TNT1 A 1 A_SpawnItemEx("64DoomImp",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -383,7 +404,16 @@ MONSTER
 	Spawn:
 		SARG A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("DemonSpawner")	//if D64 monsters only enabled spawn pinky demon
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnDemon","SpawnAcidDemon","SpawnButcher")
+		TNT1 A 0 A_Jump(CallACS("DemonSpawnPercent",0,0,0)*64,"SpawnDemon","SpawnAcidDemon","SpawnButcher")
+		Goto Spawn
+	AltSpawn1:
+		TNT1 A 0 A_Jump(CallACS("DemonSpawnPercent",0,0,0)*64,"SpawnDemon","SpawnAcidDemon")
+		Goto AltSpawn1
+	AltSpawn2:
+		TNT1 A 0 A_Jump(CallACS("DemonSpawnPercent",0,0,0)*64,"SpawnDemon","SpawnButcher")
+		Goto AltSpawn2	
+	AltSpawn3:
+		TNT1 A 0 A_Jump(CallACS("DemonSpawnPercent",0,0,0)*64,"SpawnAcidDemon","SpawnButcher")		
 	SpawnDemon:
 		TNT1 A 1 A_SpawnItemEx("64Demon",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -409,7 +439,16 @@ States
 	Spawn:
 		SAR2 A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("SpectreSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnSpectre","SpawnNightSpectre","SpawnWraith")
+		TNT1 A 0 A_Jump(CallACS("SpectreSpawnPercent",0,0,0)*64,"SpawnSpectre","SpawnNightSpectre","SpawnWraith")
+		Goto Spawn
+	AltSpawn1:
+		TNT1 A 0 A_Jump(CallACS("SpectreSpawnPercent",0,0,0)*64,"SpawnSpectre","SpawnNightSpectre")
+		Goto AltSpawn1
+	AltSpawn2:
+		TNT1 A 0 A_Jump(CallACS("SpectreSpawnPercent",0,0,0)*64,"SpawnSpectre","SpawnWraith")
+		Goto AltSpawn2
+	AltSpawn3:
+		TNT1 A 0 A_Jump(CallACS("SpectreSpawnPercent",0,0,0)*64,"SpawnNightSpectre","SpawnWraith")	
 	SpawnSpectre:
 		TNT1 A 1 A_SpawnItemEx("64Spectre",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -496,7 +535,16 @@ MONSTER
 	Spawn:
 		HEAD A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("CacodemonSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnCacodemon","SpawnNightCacodemon","SpawnFallen")
+		TNT1 A 0 A_Jump(CallACS("CacodemonSpawnPercent",0,0,0)*64,"SpawnCacodemon","SpawnNightCacodemon","SpawnFallen")
+		Goto Spawn
+	AltSpawn1:
+		TNT1 A 0 A_Jump(CallACS("CacodemonSpawnPercent",0,0,0)*64,"SpawnCacodemon","SpawnNightCacodemon")
+		Goto AltSpawn1
+	AltSpawn2:
+		TNT1 A 0 A_Jump(CallACS("CacodemonSpawnPercent",0,0,0)*64,"SpawnCacodemon","SpawnFallen")
+		Goto AltSpawn2
+	AltSpawn3:
+		TNT1 A 0 A_Jump(CallACS("CacodemonSpawnPercent",0,0,0)*64,"SpawnNightCacodemon","SpawnFallen")		
 	SpawnCacodemon:
 		TNT1 A 1 A_SpawnItemEx("Caco_SkinChooser",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -527,7 +575,13 @@ MONSTER
 	Spawn:
 		BOSS A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("BaronSpawner")	//if D64 monsters only enabled spawn Baron
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnBaron","HoundChooser","SpawnBelp")
+		TNT1 A 0 A_Jump(CallACS("BaronSpawnPercent",0,0,0)*64,"SpawnBaron","HoundChooser","SpawnBelp")
+		Goto Spawn
+	AltSpawn1:
+		TNT1 A 0 A_Jump(CallACS("BaronSpawnPercent",0,0,0)*64,"SpawnBaron","HoundChooser")	
+		Goto AltSpawn1
+	AltSpawn2:
+		TNT1 A 0 A_Jump(CallACS("BaronSpawnPercent",0,0,0)*64,"HoundChooser","SpawnBelp")			
 	SpawnBaron:
 		TNT1 A -1 A_SpawnItemEx("64BaronOfHell",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -558,7 +612,7 @@ MONSTER
 	Spawn:
 		BOS2 A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("HellKnightSpawner")	//if D64 monsters only enabled spawn Hellknight
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnHellKnight","SpawnKnightmare")
+		TNT1 A 0 A_Jump(CallACS("HellKnightSpawnPercent",0,0,0)*64,"SpawnHellKnight","SpawnKnightmare")
 	SpawnHellKnight:
 		TNT1 A -1 A_SpawnItemEx("64HellKnight",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -582,11 +636,20 @@ MONSTER
 	Death:
 	XDeath:
 		TNT1 A 1 A_BossDeath
-		Stop
+		Stop	
 	Spawn:
 		BSPI A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("ArachnotronSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnArachnotron","SpawnNightCrawler","SpawnImpaler")
+		TNT1 A 0 A_Jump(CallACS("ArachnotronSpawnPercent",0,0,0)*64,"SpawnArachnotron","SpawnNightCrawler","SpawnImpaler")
+		Goto Spawn
+	AltSpawn1:
+		TNT1 A 0 A_Jump(CallACS("ArachnotronSpawnPercent",0,0,0)*64,"SpawnArachnotron","SpawnNightCrawler")
+		Goto AltSpawn1
+	AltSpawn2:
+		TNT1 A 0 A_Jump(CallACS("ArachnotronSpawnPercent",0,0,0)*64,"SpawnArachnotron","SpawnImpaler")
+		Goto AltSpawn2		
+	AltSpawn3:
+		TNT1 A 0 A_Jump(CallACS("ArachnotronSpawnPercent",0,0,0)*64,"SpawnNightCrawler","SpawnImpaler")		
 	SpawnArachnotron:
 		TNT1 A -1 A_SpawnItemEx("64Arachnotron",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -612,7 +675,7 @@ MONSTER
 	Spawn:
 		PAIN A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("PainElementalSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnPainElemental","SpawnNightmareElemental")
+		TNT1 A 0 A_Jump(CallACS("PainElementalSpawnPercent",0,0,0)*64,"SpawnPainElemental","SpawnNightmareElemental")
 	SpawnPainElemental:
 		TNT1 A 1 A_SpawnItemEx("64PainElemental",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -635,7 +698,16 @@ MONSTER
 	Spawn:
 		SKUL A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("LostSoulSpawner")	//if D64 monsters only enabled spawn lost soul
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnLostSoul","SpawnStalker","SpawnForgottenOne")
+		TNT1 A 0 A_Jump(CallACS("LostSoulSpawnPercent",0,0,0)*64,"SpawnLostSoul","SpawnStalker","SpawnForgottenOne")
+		Goto Spawn
+	AltSpawn1:
+		TNT1 A 0 A_Jump(CallACS("LostSoulSpawnPercent",0,0,0)*64,"SpawnLostSoul","SpawnStalker")
+		Goto AltSpawn1
+	AltSpawn2:
+		TNT1 A 0 A_Jump(CallACS("LostSoulSpawnPercent",0,0,0)*64,"SpawnLostSoul","SpawnForgottenOne")	
+		Goto AltSpawn2
+	AltSpawn3:
+		TNT1 A 0 A_Jump(CallACS("LostSoulSpawnPercent",0,0,0)*64,"SpawnStalker","SpawnForgottenOne")
 	SpawnLostSoul:
 		TNT1 A 1 A_SpawnItemEx("64LostSoul",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -666,7 +738,7 @@ MONSTER
 	Spawn:
 		FATT A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("MancubusSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnFatso","SpawnBruiser")
+		TNT1 A 0 A_Jump(CallACS("MancubusSpawnPercent",0,0,0)*64,"SpawnFatso","SpawnBruiser")
 	SpawnFatso:
 		TNT1 A -1 A_SpawnItemEx("64Fatso",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -688,7 +760,19 @@ MONSTER
 	Spawn:
 		VILE A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("ArchvileSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnArchvile","SpawnFleshWizard","SpawnHellstorm")
+		TNT1 A 0 A_Jump(CallACS("ArchvileSpawnPercent",0,0,0)*64,"SpawnArchvile","SpawnFleshWizard","SpawnHellstorm")
+		Goto Spawn
+	AltSpawn1:
+		VILE A 0
+		TNT1 A 0 A_Jump(CallACS("ArchvileSpawnPercent",0,0,0)*64,"SpawnArchvile","SpawnFleshWizard")
+		Goto AltSpawn1
+	AltSpawn2:
+		VILE A 0
+		TNT1 A 0 A_Jump(CallACS("ArchvileSpawnPercent",0,0,0)*64,"SpawnArchvile","SpawnHellstorm")
+		Goto AltSpawn2
+	AltSpawn3:
+		VILE A 0
+		TNT1 A 0 A_Jump(CallACS("ArchvileSpawnPercent",0,0,0)*64,"SpawnFleshWizard","SpawnHellstorm")		
 	SpawnArchvile:
 		TNT1 A 1 A_SpawnItemEx("64Archvile",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -722,7 +806,15 @@ MONSTER
 	Spawn:
 		CYBR A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("CyberdemonSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnCyberdemon","SpawnAnnihilator","SpawnInfernal")
+		TNT1 A 0 A_Jump(CallACS("CyberdemonSpawnPercent",0,0,0)*64,"SpawnCyberdemon","SpawnAnnihilator","SpawnInfernal")
+	AltSpawn1:
+		TNT1 A 0 A_Jump(CallACS("CyberdemonSpawnPercent",0,0,0)*64,"SpawnCyberdemon","SpawnAnnihilator")
+		Goto AltSpawn1
+	AltSpawn2:
+		TNT1 A 0 A_Jump(CallACS("CyberdemonSpawnPercent",0,0,0)*64,"SpawnCyberdemon","SpawnInfernal")
+		Goto AltSpawn2
+	AltSpawn3:
+		TNT1 A 0 A_Jump(CallACS("CyberdemonSpawnPercent",0,0,0)*64,"SpawnAnnihilator","SpawnInfernal")
 	SpawnCyberdemon:
 		TNT1 A -1 A_SpawnItemEx("64Cyberdemon",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -753,7 +845,16 @@ MONSTER
 	Spawn:
 		MSMN A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("MastermindSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"SpawnMastermind","SpawnMother","SpawnEradicator")
+		TNT1 A 0 A_Jump(CallACS("MastermindSpawnPercent",0,0,0)*64,"SpawnMastermind","SpawnMother","SpawnEradicator")
+		Goto Spawn
+	AltSpawn1:
+		TNT1 A 0 A_Jump(CallACS("MastermindSpawnPercent",0,0,0)*64,"SpawnMastermind","SpawnMother")
+		Goto AltSpawn1
+	AltSpawn2:
+		TNT1 A 0 A_Jump(CallACS("MastermindSpawnPercent",0,0,0)*64,"SpawnMastermind","SpawnEradicator")
+		Goto AltSpawn2
+	AltSpawn3:
+		TNT1 A 0 A_Jump(CallACS("MastermindSpawnPercent",0,0,0)*64,"SpawnMother","SpawnEradicator")		
 	SpawnMastermind:
 		TNT1 A -1 A_SpawnItemEx("64SpiderMastermind",0,0,0,0,0,0,0,SXF_SETMASTER|SXF_NOCHECKPOSITION|SXF_TRANSFERAMBUSHFLAG|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -782,7 +883,7 @@ MONSTER
 	Spawn:
 		64ZF A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("HordeMultiplier")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"Hordex1","Hordex2","Hordex3","Hordex4")
+		TNT1 A 0 A_Jump(CallACS("HordeSpawnPercent",0,0,0)*64,"Disabled","Hordex1","Hordex2","Hordex3","Hordex4")
 	Disabled:
 		TNT1 A 1
 		Stop
@@ -855,7 +956,7 @@ MONSTER
 	Spawn:
 		SKEL A 0
 		TNT1 A 3 ACS_NamedExecuteAlways("RevenantSpawner")
-		TNT1 A 0 A_Jump(CallACS("SpawnPercent",0,0,0)*64,"Revenant","SpawnPestilence")
+		TNT1 A 0 A_Jump(CallACS("RevenantSpawnPercent",0,0,0)*64,"Revenant","SpawnPestilence")
 	Revenant:
 		TNT1 A 1 A_SpawnItemEx("64Revenant",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop

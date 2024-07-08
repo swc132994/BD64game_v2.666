@@ -172,45 +172,59 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner"
 		StaticText "Any change here requires a level restart in order to work.",1
 		StaticText ""
 	Option "Pistol Zombie Spawner =","ZMarineRandom_Cvar","ZMarineRandom_Value"
+	Option "Pistol Zombie Random Percent =","bd64_SpawnPercentZombieman","SpawnPercentValue"
 		StaticText ""
 	Option "Shotgun Zombie Spawner =","SSGZombieRandom_Cvar","SSGZombieRandom_Value"
+	Option "Shotgun Zombie Random Percent =","bd64_SpawnPercentShotgunGuy","SpawnPercentValue"	
 		StaticText ""
 	Option "Chaingun Zombie Spawner =","ZombieChaingunRandom_Cvar","ChaingunZombie_Value"
+	Option "Chaingun Zombie Random Percent =","bd64_SpawnPercentChaingunGuy","SpawnPercentValue"		
 		StaticText ""
 	Option "Imp Spawner =","NImp_Spawner_Cvar","NImp_Spawner_Value"
+	Option "Imp Random Percent =","bd64_SpawnPercentImp","SpawnPercentValue"		
 		StaticText ""
 	Option "Demon Spawner =","AcidDemonRandom_Cvar","AcidDemon_Spawner_Value"
+	Option "Demon Random Percent =","bd64_SpawnPercentDemon","SpawnPercentValue"		
 		StaticText ""
 	Option "Spectre Spawner =","NSpectre_Spawner_Cvar","NSpectre_Spawner_Value"
+	Option "Spectre Random Percent =","bd64_SpawnPercentSpectre","SpawnPercentValue"		
 		StaticText ""
 	Option "Cacodemon Spawner =","NCaco_Spawner_Cvar","NCaco_Spawner_Value"
+	Option "Cacodemon Random Percent =","bd64_SpawnPercentCacodemon","SpawnPercentValue"		
 		StaticText ""
 	Option "Lost Soul Spawner =","StalkerRandom_Cvar","Stalker_Spawner_Value"
+	Option "Lost Soul Random Percent =","bd64_SpawnPercentLostSoul","SpawnPercentValue"		
 		StaticText "(Pain/Agony Elemental can summon them depending on values)",1
 		StaticText ""
 	Option "Arachnotron Spawner =","ArachnotronRandomCvar","Arachnotron_Spawner_Value"
+	Option "Arachnotron Random Percent =","bd64_SpawnPercentArachnotron","SpawnPercentValue"		
 		StaticText ""
 	Option "HellKnight Spawner =","KnightmareRandomCvar","Knightmare_Spawner_Value"
+	Option "HellKnight Random Percent =","bd64_SpawnPercentHellKnight","SpawnPercentValue"		
 		StaticText ""
 	Option "Revenant Spawner =","Revenant_Spawner_Cvar","Revenant_Spawner_Value"
+	Option "Revenant Random Percent =","bd64_SpawnPercentRevenant","SpawnPercentValue"	
 		StaticText ""
 	Option "Baron Spawner =","Hellhound_Spawner_Cvar","Hellhound_Spawner_Value"
+	Option "Baron Random Percent =","bd64_SpawnPercentBaron","SpawnPercentValue"		
 		StaticText ""
 	Option "Mancubus Spawner =","BruiserRandom_Cvar","Bruiser_Spawner_Value"
+	Option "Mancubus Random Percent =","bd64_SpawnPercentMancubus","SpawnPercentValue"	
 		StaticText ""
 	Option "Pain Elemental Spawner =","NightElementalRandomCvar","NightElemental_Spawner_Value"
+	Option "Pain Elemental Random Percent =","bd64_SpawnPercentPainElemental","SpawnPercentValue"		
 		StaticText ""
 	Option "Archvile Spawner =","FleshWizardRandomCvar","FleshWizardRandom_Value"
+	Option "Archvile Random Percent =","bd64_SpawnPercentArchvile","SpawnPercentValue"		
 		StaticText ""
 	Option "Cyberdemon Spawner =","Annihilator_Spawner_Cvar","Annihilator_Spawner_Value"
+	Option "Cyberdemon Random Percent =","bd64_SpawnPercentCyberdemon","SpawnPercentValue"		
 		StaticText ""
 	Option "Mastermind Spawner =","Motherdemon_Spawner_Cvar","Motherdemon_Spawner_Value"
-		StaticText ""
-	Option "Random Monster Chance Spawn =","bd64_SpawnPercent","SpawnPercentValue"
-		StaticText "This function only works",1
-		StaticText "if you set your enemies to \"random\"",1
+	Option "Mastermind Random Percent =","bd64_SpawnPercentMastermind","SpawnPercentValue"	
 		StaticText ""
 	Option "Husk Zombie Horde Multiplier =","TheHorde_Multiplier_Cvar","TheHorde_Multiplier_Value"
+	Option "Husk Zombie Horde Random Percent =","bd64_SpawnPercentHorde","SpawnPercentValue"
 		StaticText "Option to spawn Husks & Carrions near dead zombie props",1
 		StaticText "Disabled by Default",1
 		StaticText "(Recommended setting x3, x4 or Random)",1
@@ -229,6 +243,9 @@ OptionMenu "BrutalDoom64OptionsOtherMonster"
 		StaticText "------------------------------- Monster Skins -------------------------------",1
 		StaticText ""
 	Option "Hellhound Style =","HoundChooserCvar","HoundChooser"
+		StaticText "If you selected \"Random (No Baron)\"",1
+		StaticText "and turned off Hellhound skin selection",1
+		StaticText "you will receive \"Random (No HellHound)\"",1
 		StaticText ""
 	Option "Cacodemon Style =","CacoChooserCvar","CacoSkinChooser"
 		StaticText ""
@@ -376,6 +393,9 @@ OptionValue "CacoSkinChooser"
 
 OptionValue "Annihilator_Spawner_Value"
 {
+	-3,"Random (No Cyberdemon)"
+	-2,"Random (No Annihilator)"
+	-1,"Random (No Infernal)"
 	0,"Random"
 	1,"Cyberdemon"
 	2,"Annihilator"
@@ -384,7 +404,10 @@ OptionValue "Annihilator_Spawner_Value"
 
 OptionValue "Motherdemon_Spawner_Value"
 {
-	-1,"Disabled"
+	-4,"Disabled"
+	-3,"Random (No Mastermind)"	
+	-2,"Random (No Motherdemon)"
+	-1,"Random (No Eradicator)"
 	0,"Random"
 	1,"Mastermind"
 	2,"Motherdemon"
@@ -407,6 +430,9 @@ OptionValue "Bruiser_Spawner_Value"
 
 OptionValue "Arachnotron_Spawner_Value"
 {
+	-3, "Random (No Arachnotron)"
+	-2, "Random (No Night Crawler)"
+	-1, "Random (No Impaler)"
 	0,"Random"
 	1,"Arachnotron"
 	2,"Night Crawler"
@@ -415,6 +441,9 @@ OptionValue "Arachnotron_Spawner_Value"
 
 OptionValue "Stalker_Spawner_Value"
 {
+	-3,"Random (No Lost Soul)"
+	-2,"Random (No Stalker)"
+	-1,"Random (No Forgotten)"
 	0,"Random"
 	1,"Lost Soul"
 	2,"Stalker"
@@ -423,6 +452,8 @@ OptionValue "Stalker_Spawner_Value"
 
 OptionValue "Hellhound_Spawner_Value"
 {
+	-2, "Random (No Baron)"
+	-1, "Random (No Belphegor)"
 	0,"Random"
 	1,"Baron"
 	2,"Hellhound"
@@ -431,6 +462,9 @@ OptionValue "Hellhound_Spawner_Value"
 
 OptionValue "AcidDemon_Spawner_Value"
 {
+	-3,"Random (No Pinky)"
+	-2,"Random (No Acid)"
+	-1,"Random (No Butcher)"
 	0,"Random"
 	1,"Pinky"
 	2,"Acid"
@@ -439,6 +473,9 @@ OptionValue "AcidDemon_Spawner_Value"
 
 OptionValue "NCaco_Spawner_Value"
 {
+	-3,"Random (No Cacodemon)"
+	-2,"Random (No N'mare Variant)" 
+	-1,"Random (No Fallen)"
 	0,"Random"
 	1,"Cacodemon"
 	2,"N'mare Variant"
@@ -447,6 +484,9 @@ OptionValue "NCaco_Spawner_Value"
 
 OptionValue "NSpectre_Spawner_Value"
 {
+	-3,"Random (No Spectre)"
+	-2,"Random (No N'mare Variant)"
+	-1,"Random (No Wraith)"
 	0,"Random"
 	1,"Spectre"
 	2,"N'mare Variant"
@@ -455,6 +495,9 @@ OptionValue "NSpectre_Spawner_Value"
 
 OptionValue "NImp_Spawner_Value"
 {
+	-3,"Random (No Imp)"
+	-2,"Random (No N'mare Variant"
+	-1,"Random (No Harvester)"
 	0,"Random"
 	1,"Imp"
 	2,"N'mare Variant"
@@ -478,6 +521,9 @@ OptionValue "NightElemental_Spawner_Value"
 
 OptionValue "SSGZombieRandom_Value"
 {
+	-3,"Random (No Shotgun)"
+	-2,"Random (No SSG)"
+	-1,"Random (No Plasma)"
 	0,"Random"
 	1,"Shotgun Zombie"
 	2,"SSG Zombie"
@@ -501,7 +547,10 @@ OptionValue "ChaingunZombie_Value"
 
 OptionValue "FleshWizardRandom_Value"
 {
-	-1,"Disabled"
+	-4,"Disabled"
+	-3,"Random (No Archvile)"
+	-2,"Random (No Flesh Wizard)"
+	-1,"Random (No Hellstorm)"
 	0,"Random"
 	1,"Archvile"
 	2,"Flesh Wizard"
@@ -527,7 +576,6 @@ OptionValue "Keen_Spawner_Value"
 
 OptionValue "SpawnPercentValue"
 {
-	0,"Disabled"
 	1,"5%"
 	2,"10%"
 	3,"15%"
@@ -564,7 +612,7 @@ OptionValue "ScreenTypes"	//HUD effects
 	2, "BDv21"
 }
 
-//Item/Weapon values
+//Item & Weapon values
 OptionValue "Chaingun_Spawner_Value"
 {
 	0,"Random"
