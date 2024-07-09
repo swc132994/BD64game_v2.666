@@ -1271,29 +1271,60 @@ brightmap sprite SLHVF6F4		{map "brightmaps/Harvester/SLHVF6F4_BR.png"}
 brightmap sprite SLHVF7F3		{map "brightmaps/Harvester/SLHVF7F3_BR.png"}
 brightmap sprite SLHVF8F2		{map "brightmaps/Harvester/SLHVF8F2_BR.png"}
 
-
 //Pain Elemental
 brightmap sprite PAINA1		{Disablefullbright}
 brightmap sprite PAINA2A8	{Disablefullbright}
 brightmap sprite PAINA3A7	{Disablefullbright}
 brightmap sprite PAINA4A6	{Disablefullbright}
 brightmap sprite PAINA5		{Disablefullbright}
-brightmap sprite PAINB1		{map "brightmaps/PAINB1.png"  Disablefullbright}
-brightmap sprite PAINB2B8	{map "brightmaps/PAINB2B8.png"  Disablefullbright}
-brightmap sprite PAINB3B7	{map "brightmaps/PAINB3B7.png"  Disablefullbright}
+brightmap sprite PAINB1		{map "brightmaps/PAINB1.png" Disablefullbright}
+brightmap sprite PAINB2B8	{map "brightmaps/PAINB2B8.png" Disablefullbright}
+brightmap sprite PAINB3B7	{map "brightmaps/PAINB3B7.png" Disablefullbright}
 brightmap sprite PAINB4B6	{Disablefullbright}
 brightmap sprite PAINB5		{Disablefullbright}
-brightmap sprite PAINC1		{map "brightmaps/PAINC1.png"  Disablefullbright}
-brightmap sprite PAINC2C8	{map "brightmaps/PAINC2C8.png"  Disablefullbright}
-brightmap sprite PAINC3C7	{map "brightmaps/PAINC3C7.png"  Disablefullbright}
-brightmap sprite PAINC4C6	{map "brightmaps/PAINC4C6.png"  Disablefullbright}
-brightmap sprite PAINC5		{map "brightmaps/PAINC5.png"  Disablefullbright}
-brightmap sprite PAINE0		{map "brightmaps/PAINE0.png"  Disablefullbright}
-brightmap sprite PAINF0		{map "brightmaps/PAINF0.png"  Disablefullbright}
-brightmap sprite PAING0		{map "brightmaps/PAING0.png"  Disablefullbright}
-brightmap sprite PAINH0		{map "brightmaps/PAINH0.png"  Disablefullbright}
-brightmap sprite PAINI0		{map "brightmaps/PAINI0.png"  Disablefullbright}
-brightmap sprite PAINJ0		{map "brightmaps/PAINJ0.png"  Disablefullbright}
+brightmap sprite PAINC1		{map "brightmaps/PAINC1.png" Disablefullbright}
+brightmap sprite PAINC2C8	{map "brightmaps/PAINC2C8.png" Disablefullbright}
+brightmap sprite PAINC3C7	{map "brightmaps/PAINC3C7.png" Disablefullbright}
+brightmap sprite PAINC4C6	{map "brightmaps/PAINC4C6.png" Disablefullbright}
+brightmap sprite PAINC5		{map "brightmaps/PAINC5.png" Disablefullbright}
+brightmap sprite PAINE0		{map "brightmaps/PAINE0.png" Disablefullbright}
+brightmap sprite PAINF0		{map "brightmaps/PAINF0.png" Disablefullbright}
+brightmap sprite PAING0		{map "brightmaps/PAING0.png" Disablefullbright}
+brightmap sprite PAINH0		{map "brightmaps/PAINH0.png" Disablefullbright}
+brightmap sprite PAINI0		{map "brightmaps/PAINI0.png" Disablefullbright}
+brightmap sprite PAINJ0		{map "brightmaps/PAINJ0.png" Disablefullbright}
+
+//Impaler
+brightmap sprite CENTA1		{map "brightmaps/Impaler/CENTA1_BR.png"}
+brightmap sprite CENTA2A8	{map "brightmaps/Impaler/CENTA2A8_BR.png"}
+brightmap sprite CENTA3A7	{map "brightmaps/Impaler/CENTA3A7_BR.png"}
+brightmap sprite CENTB1		{map "brightmaps/Impaler/CENTB1_BR.png"}
+brightmap sprite CENTB2B8	{map "brightmaps/Impaler/CENTB2B8_BR.png"}
+brightmap sprite CENTB3B7	{map "brightmaps/Impaler/CENTB3B7_BR.png"}
+brightmap sprite CENTC1		{map "brightmaps/Impaler/CENTC1_BR.png"}
+brightmap sprite CENTC2C8	{map "brightmaps/Impaler/CENTC2C8_BR.png"}
+brightmap sprite CENTC3C7	{map "brightmaps/Impaler/CENTC3C7_BR.png"}
+brightmap sprite CENTD1		{map "brightmaps/Impaler/CENTD1_BR.png"}
+brightmap sprite CENTD2D8	{map "brightmaps/Impaler/CENTD2D8_BR.png"}
+brightmap sprite CENTE1		{map "brightmaps/Impaler/CENTE1_BR.png"}
+brightmap sprite CENTE2E8	{map "brightmaps/Impaler/CENTE2E8_BR.png"}
+brightmap sprite CENTE3E7	{map "brightmaps/Impaler/CENTE3E7_BR.png"}
+brightmap sprite CENTE4E6	{map "brightmaps/Impaler/CENTE4E6_BR.png"}
+brightmap sprite CENTF1		{map "brightmaps/Impaler/CENTF1_BR.png"}
+brightmap sprite CENTF2F8	{map "brightmaps/Impaler/CENTF2F8_BR.png"}
+brightmap sprite CENTF3F7	{map "brightmaps/Impaler/CENTF3F7_BR.png"}
+brightmap sprite CENTF4F6	{map "brightmaps/Impaler/CENTF4F6_BR.png"}
+brightmap sprite CENTG1		{map "brightmaps/Impaler/CENTG1_BR.png"}
+brightmap sprite CENTG2G8	{map "brightmaps/Impaler/CENTG2G8_BR.png"}
+brightmap sprite CENTG3G7	{map "brightmaps/Impaler/CENTG3G7_BR.png"}
+brightmap sprite CENTG4G6	{map "brightmaps/Impaler/CENTG4G6_BR.png"}
+brightmap sprite CENTH1		{map "brightmaps/Impaler/CENTH1_BR.png"}
+brightmap sprite CENTH2H8	{map "brightmaps/Impaler/CENTH2H8_BR.png"}
+brightmap sprite CENTH3H7	{map "brightmaps/Impaler/CENTH3H7_BR.png"}
+brightmap sprite CENTH4H6	{map "brightmaps/Impaler/CENTH4H6_BR.png"}
+brightmap sprite CENTI0		{map "brightmaps/Impaler/CENTI0_BR.png"}
+brightmap sprite CENTJ0		{map "brightmaps/Impaler/CENTJ0_BR.png"}
+brightmap sprite CENTK0		{map "brightmaps/Impaler/CENTK0_BR.png"}
 
 //Keen Replacement
 brightmap sprite SC0RL0		{map "brightmaps/KeenReplace/BMFATALY.png"}
