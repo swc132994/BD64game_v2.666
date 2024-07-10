@@ -582,9 +582,9 @@ BounceSound "dart/shotx"
 	States
 	{
 	Spawn:
-		GREN A 0 NoDelay ThrustThingZ(0,10,0,1)
+		GR3N A 0 NoDelay ThrustThingZ(0,10,0,1)
 	Spawn2:
-		GREN AAAA 2 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
+		GR3N AAAA 2 A_CustomMissile("OldschoolRocketSmokeTrail2",0,0,0,2,0)
 		Loop
 	Death:
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
