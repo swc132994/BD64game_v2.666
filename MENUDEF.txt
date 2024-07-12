@@ -381,7 +381,7 @@ OptionValue "ZombieMarineNazi"
 OptionValue "HoundChooser"
 {
 	-1,"Disabled"
-	0,"Default"
+	0,"Alternative"
 	1,"GEC"
 }
 

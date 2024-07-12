@@ -478,6 +478,16 @@ script "BaronSpawner" (void)
 
 script "HoundChooserACS" (void)
 {
+	Switch(GetCvar("HoundChooserCvar"))
+	{
+		Case -1: SetActorState(0,"D64MonsterOnly"); break;
+		Case 0: SetActorState(0,"HoundDefault"); break;
+		Case 1: SetActorState(0,"HoundGEC"); break;
+	}
+}
+
+/*script "HoundChooserACS" (void)
+{
 	static str SkinType[] =
 	{
 		"HoundDefault","HoundGEC"
@@ -485,7 +495,7 @@ script "HoundChooserACS" (void)
 	if(GetCvar("HoundChooserCvar") == -1) {SetActorState(0,"D64MonsterOnly");}		
 	Delay(1);
 	SetActorState(0,SkinType[GetCvar("HoundChooserCvar") - 1]);
-}
+}*/
 
 script "RevenantSpawnPercent" (void)
 {
@@ -957,13 +967,12 @@ script "OriginalCvars" (void) net
 	SetCvar("bd64_WadCheck",2);
 	SetCvar("ClassicTorchCvar",0);
 	SetCvar("LiquidSplashCvar",0);
-	SetCvar("LFog_Cvar",0);
 	SetCvar("PoltergeistCvar",0);
 	SetCvar("FlashlightStartCvar",0);
 	SetCvar("ThingRandomCvar",0);
 	SetCvar("TheHorde_Multiplier_Cvar",-1);
-	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",0);
-	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",0);
+	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",FALSE);
+	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",FALSE);
 	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",1);
 	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);
 	ACS_NamedExecuteAlways("BD64Respawn",0);
@@ -1012,13 +1021,11 @@ script "ClassicCvars" (void) net
 	SetCvar("bd64_WadCheck",2);
 	SetCvar("ClassicTorchCvar",1);
 	SetCvar("LiquidSplashCvar",1);
-	SetCvar("LFog_Cvar",1);
-	SetCvar("LFog_Cvar",0);
 	SetCvar("PoltergeistCvar",0);
 	SetCvar("FlashlightStartCvar",0);
 	SetCvar("ThingRandomCvar",0);
-	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",0);
-	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",0);
+	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",FALSE);
+	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",FALSE);
 	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",1);
 	SetUserCvar(PlayerNumber(),"LowAmmoSFX",0);
 	ACS_NamedExecuteAlways("BD64Respawn",0);
@@ -1066,12 +1073,11 @@ script "EnhancedCvars" (void) net
 	SetCvar("bd64_WadCheck",2);
 	SetCvar("ClassicTorchCvar",0);
 	SetCvar("LiquidSplashCvar",0);
-	SetCvar("LFog_Cvar",0);
 	SetCvar("PoltergeistCvar",0);
 	SetCvar("FlashlightStartCvar",0);
 	SetCvar("ThingRandomCvar",0);
-	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",0);
-	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",0);
+	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",TRUE);
+	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",TRUE);
 	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",0);
 	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);
 	ACS_NamedExecuteAlways("BD64Respawn",0);
@@ -1107,12 +1113,9 @@ script "RandomCvars" (void) net
 	SetCvar("bd64_WadCheck",2);
 	SetCvar("ClassicTorchCvar",0);
 	SetCvar("LiquidSplashCvar",0);
-	SetCvar("LFog_Cvar",0);
 	SetCvar("PoltergeistCvar",1);
 	SetCvar("FlashlightStartCvar",0);
 	SetCvar("ThingRandomCvar",1);
-	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",0);
-	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",0);
 	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",0);
 	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);
 	ACS_NamedExecuteAlways("RandomMonstersPercent",0);
@@ -1137,6 +1140,6 @@ script "RandomMonstersPercent" (void) net
 	SetCvar("bd64_SpawnPercentArachnotron", random(1,9));
 	SetCvar("bd64_SpawnPercentMancubus", random(1,9));
 	SetCvar("bd64_SpawnPercentCyberdemon", random(1,9));
-	SetCvar("bd64_SpawnPercentMastermind", random(1,9));	
+	SetCvar("bd64_SpawnPercentMastermind", random(1,9));
 	delay(1);
 }

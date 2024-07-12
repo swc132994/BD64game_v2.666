@@ -150,23 +150,23 @@ Tag "$TAG_CHAINGUN"
 		Stop
 	KickSpin:
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
+		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_WEAPON)
 		CHNG JKLM 1
 		CHNG NOPQNOPQN 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",1)		
+		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_WEAPON)
 		CHNG RSTU 1 //16
-		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
 		Stop
 	ClassicKickSpin:
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
+		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_WEAPON)
 		LCGS DEFG 1
-		LCGS HIJKHIJKH 1	
+		LCGS HIJKHIJKH 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",1)		
+		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_WEAPON)
 		LCGS ALMN 1 //16
-		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
 		Stop
 	SlideKickingStart:
 		TNT1 A 0 A_JumpIfInventory("ClassicChaingunToken",1,"ClassicSlideKickingStart")
@@ -181,22 +181,22 @@ Tag "$TAG_CHAINGUN"
 		Stop
 	SlideKickingStartSpin:
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
+		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_WEAPON)
 		CHNG JKLM 1
 		CHNG NOPQNOPQNOPQNOPQ 1
-		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
 		Stop
 	SlideKickingEndSpin:
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
+		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_WEAPON)
 		CHNG NOPQRSTU 1
-		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
 		Stop
 	ClassicSlideKickingStart:
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"ClassicSlideKickingStartSpin")
 		LCGS DCBA 1
 		LCGS A 35
-		Stop		
+		Stop
 	ClassicSlideKickingEnd:
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"ClassicSlideKickingEndSpin")
 		LCGS A 2
@@ -204,19 +204,19 @@ Tag "$TAG_CHAINGUN"
 		Stop
 	ClassicSlideKickingStartSpin:
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
+		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_WEAPON)
 		LCGS DEFG 1
 		LCGS HIJKHIJKHIJKHIJK 1
-		TNT1 A 0 A_StopSound(1)
-		Stop		
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		Stop
 	ClassicSlideKickingEndSpin:
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",1)	
+		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_WEAPON)
 		LCGS HIJK 1
 		TNT1 A 0 A_AlertMonsters
-		TNT1 A 0 A_PlaySound("CHAINSPI",1)			
+		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_WEAPON)
 		LCGS ALMN 1
-		TNT1 A 0 A_StopSound(1)
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
 		Stop
 	Spawn:
 		MGUN A -1

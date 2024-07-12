@@ -2,15 +2,14 @@ Actor Flare_General
 {
 Scale 0.4
 Speed 0
-radius 1
-height 1
+radius 6
+height 12
 alpha 0.4
 renderstyle Add
 +NOINTERACTION
 +NOGRAVITY
 +CLIENTSIDEONLY
 +NOCLIP
-+MISSILE
 }
 
 Actor RedFlare : Flare_General
@@ -315,11 +314,12 @@ alpha 0.05
 
 Actor ShortWhiteFlareSmall : Flare_General
 {
-XScale 0.5
-YScale 0.2
-alpha 0.6
+XScale 0.6
+YScale 0.3
+alpha 0.4
 -FORCEYBILLBOARD
 +FORCEXYBILLBOARD
++NOBLOCKMAP
 	states
 	{
 	Spawn:
@@ -329,18 +329,16 @@ alpha 0.6
 		LENS A 8
 		Stop
 	NoLight:
-		TNT1 A 2
+		TNT1 A 3
 		Stop
 	}
 }
 
 Actor WhiteFlareCeilingTexture : Flare_General
 {
-XScale 0.5
-YScale 0.2
-alpha 0.99
-rADIUS 0
-Height 0
+XScale 0.55
+YScale 0.25
+alpha 1
 -FORCEYBILLBOARD
 +FORCEXYBILLBOARD
 +NOCLIP
@@ -349,18 +347,28 @@ Height 0
 	states
 	{
 	Spawn:
-		LENS A -1
-		Stop
+		TNT1 A 1
+	SpawnLoop:
+		"####" A 2 ACS_NamedExecuteAlways("LightAndFogChecker")
+	Live:
+		TNT1 A 0 A_CheckSight("WaitSight")
+		LENS A 1 A_SetScale(0.55,0.25)
+		LENS A 1 A_SetScale(0.54,0.24)
+		Goto SpawnLoop
+	WaitSight:
+		TNT1 A 3
+		Goto Live
+	NoLight:
+		TNT1 A 175
+		Goto SpawnLoop
 	}
 }
 
 Actor WhiteFlareFloorTexture : Flare_General
 {
-XScale 0.5
-YScale 0.2
-radius 1
-Height 1
-alpha 0.99
+XScale 0.55
+YScale 0.25
+alpha 1
 -NOGRAVITY
 -FLOAT
 -NOCLIP
@@ -370,42 +378,48 @@ alpha 0.99
 	states
 	{
 	Spawn:
-		TNT1 AA 1 NoDelay ACS_NamedExecuteAlways("LightAndFogChecker")
+		TNT1 A 1
+	SpawnLoop:
+		"####" A 2 ACS_NamedExecuteAlways("LightAndFogChecker")
 	Live:
 		TNT1 A 0 A_CheckSight("WaitSight")
-		LENS A 525
-		Goto Spawn
+		LENS A 1 A_SetScale(0.55,0.25)
+		LENS A 1 A_SetScale(0.54,0.24)
+		Goto SpawnLoop
 	WaitSight:
 		TNT1 A 3
 		Goto Live
 	NoLight:
-		TNT1 A 2
-		Stop
+		TNT1 A 175
+		Goto SpawnLoop
 	}
 }
 
 Actor ShortWhiteFlareSmallPermanent : Flare_General
 {
-XScale 0.5
-YScale 0.2
-alpha 0.6
+XScale 0.6
+YScale 0.3
+alpha 1
 -FORCEYBILLBOARD
 +FORCEXYBILLBOARD
 +NOBLOCKMAP
 	states
 	{
 	Spawn:
-		TNT1 AA 1 NoDelay ACS_NamedExecuteAlways("LightAndFogChecker")
+		TNT1 A 0
+	SpawnLoop:
+		"####" A 2 ACS_NamedExecuteAlways("LightAndFogChecker")
 	Live:
 		TNT1 A 0 A_CheckSight("WaitSight")
-		LENS A 525
-		Goto Spawn
+		LENS A 1 A_SetScale(0.6,0.3)
+		LENS A 1 A_SetScale(0.59,0.29)
+		Goto SpawnLoop
 	WaitSight:
 		TNT1 A 3
 		Goto Live
 	NoLight:
-		TNT1 A 2
-		Stop
+		TNT1 A 175
+		Goto SpawnLoop
 	}
 }
 
@@ -703,8 +717,7 @@ alpha 0.5
 
 Actor LensFlareAltLongOrangeForever : LensFlareAlt
 {
-Alpha 0.25
-+RANDOMIZE
+Alpha 0.5
 	states
 	{
 	Spawn:
@@ -712,7 +725,8 @@ Alpha 0.25
 	SpawnLoop:
 		"####" "#" 3 Bright ACS_NamedExecuteAlways("LightAndFogChecker")
 	Live:
-		LEYS O 4 Bright A_CheckSight("WaitSight")
+		TNT1 A 0 A_CheckSight("WaitSight")
+		LEYS O 4 Bright
 		LEYZ O 2 Bright
 		LEYS O 4 Bright
 		LEYZ O 2 Bright
@@ -723,8 +737,8 @@ Alpha 0.25
 		TNT1 A 3
 		Goto Live
 	NoLight:
-		TNT1 A 2
-		Stop
+		TNT1 A 175
+		Goto SpawnLoop
 	}
 }
 
@@ -936,7 +950,6 @@ xScale 0.5
 yScale 0.2
 Speed 20
 alpha 0.6
-+MISSILE
 	states
 	{
 	Spawn:
