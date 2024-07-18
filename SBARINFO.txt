@@ -45,9 +45,9 @@ statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 	else
 	{
 		drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero|interpolate(4),88,183;
-		drawimage "HTEXA0",30,170;
+		drawimage "Health",30,170;
 		drawnumber 3,HUDFONT_DOOM,untranslated,health,69,180;
-		drawimage "ATEXA0",246,170;
+		drawimage "Armour",244,170;
 		drawnumber 3,HUDFONT_DOOM,untranslated,armor,283,180;
 		drawimage "nullimage",306,196;
 		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
@@ -92,12 +92,12 @@ statusbar normal
 	drawswitchableimage WpnPower1Icon,"nullimage","POW1E0",222,215;
 	drawswitchableimage WpnPower3Icon,"nullimage","POW3E0",261,215; //This is out of order on purpose
 	drawswitchableimage WpnPower2Icon,"nullimage","POW2E0",300,215;
-	drawimage "HTEXA0",6,165;
+	drawimage "Health",6,165;
 	drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero|interpolate(4),45,186;
 	drawnumber 3,HUDFONT_DOOM,untranslated,health,45,174;
 	InInventory "NoReloading",1
 	{
-	IsSelected  "UnmakerTactical"
+	IsSelected "UnmakerTactical"
 		{
 		drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
 		}
@@ -108,7 +108,7 @@ statusbar normal
 	}
 
 	drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
-	drawimage "ATEXA0",108,165;
+	drawimage "Armour",105,165;
 	drawnumber 3,HUDFONT_DOOM,untranslated,armor,145,177;
 	//Icon Card and Skull fix
 	drawswitchableimage BlueCard,"nullimage","STKEYS0",59,166,center,10,6;
@@ -117,20 +117,28 @@ statusbar normal
 	drawswitchableimage BlueSkull,"nullimage","STKEYS3",63,168,center,10,6;
 	drawswitchableimage YellowSkull,"nullimage","STKEYS4",79,168,center,10,6;
 	drawswitchableimage RedSkull,"nullimage","STKEYS5",95,168,center,10,6;
-	drawstring SMALLFONT,untranslated,"BU:",169,162;
-	drawstring SMALLFONT,untranslated,"/",191,162;
+//	drawstring SMALLFONT,untranslated,"BU:",169,162;
+	drawimage "Bul",153,162;
+//	drawstring SMALLFONT,untranslated,"/",191,162;
+	drawimage "Div",183,162;
 	drawnumber 3,INDEXFONT,darkgray,ammo clip,182,163;
 	drawnumber 3,INDEXFONT,darkgray,ammocapacity clip,203,163;
-	drawstring SMALLFONT,untranslated,"SH:",169,172;
-	drawstring SMALLFONT,untranslated,"/",191,172;
+//	drawstring SMALLFONT,untranslated,"SH:",169,172;
+	drawimage "She",153,172;
+//	drawstring SMALLFONT,untranslated,"/",191,172;
+	drawimage "Div",183,172;
 	drawnumber 3,INDEXFONT,darkgray,ammo shell,182,173;
 	drawnumber 3,INDEXFONT,darkgray,ammocapacity shell,203,173;
-	drawstring SMALLFONT,untranslated,"RO:",169,182;
-	drawstring SMALLFONT,untranslated,"/",191,182;
+//	drawstring SMALLFONT,untranslated,"RO:",169,182;
+	drawimage "Roc",153,182;
+//	drawstring SMALLFONT,untranslated,"/",191,182;
+	drawimage "Div",183,182;
 	drawnumber 3,INDEXFONT,darkgray,ammo rocketammo,182,183;
 	drawnumber 3,INDEXFONT,darkgray,ammocapacity rocketammo,203,183;
-	drawstring SMALLFONT,untranslated,"CE:",169,192;
-	drawstring SMALLFONT,untranslated,"/",191,192;
+//	drawstring SMALLFONT,untranslated,"CE:",169,192;
+	drawimage "Cel",153,192;
+//	drawstring SMALLFONT,untranslated,"/",191,192;
+	drawimage "Div",183,192;
 	drawnumber 3,INDEXFONT,darkgray,ammo cell,182,193;
 	drawnumber 3,INDEXFONT,darkgray,ammocapacity cell,203,193;
 
@@ -151,7 +159,8 @@ statusbar normal
 			{
 			IsSelected  "UnmakerTactical"
 				{
-				drawstring SMALLFONT,untranslated,"CL",15,169;
+//				drawimage "Mag",5,169;
+//				drawstring SMALLFONT,untranslated,"CL",15,169;
 				drawnumber 3,HUDFONT_DOOM,Red,ammo2,44,164;
 				drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;
 				}
@@ -160,18 +169,19 @@ statusbar normal
 			}
 			else
 			{
-			drawstring SMALLFONT,untranslated,"CL",15,169;
+//			drawimage "Mag",5,169;
+//			drawstring SMALLFONT,untranslated,"CL",15,169;
 			drawnumber 3,HUDFONT_DOOM,Red,ammo2,44,164;
 			drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;
 			}
 		}
+		drawimage "Ammo",8,191;
+//		drawstring SMALLFONT,untranslated,"AMMO",38,191;
 
-		drawstring SMALLFONT,untranslated,"AMMO",38,191;
-
-		drawstring SMALLFONT,untranslated,"HEALTH",96,191;
+		drawimage "Health",56,191;
 		drawnumber 3,HUDFONT_DOOM,Red,health,88,171;
 
-		drawstring SMALLFONT,untranslated,"ARMOUR",228,191;
+		drawimage "Armour",186,191;
 		drawnumber 3,HUDFONT_DOOM,untranslated,armor,219,171;
 
 		//keys
@@ -180,14 +190,22 @@ statusbar normal
 		drawswitchableimage keyslot 1 && 4,"nullimage","STKEYS2","STKEYS5","STKEYS8",239,189;
 
 		//ammo counts
-		drawstring SMALLFONT,untranslated,"BU:",269,163;
-		drawstring SMALLFONT,untranslated,"/",291,163;
-		drawstring SMALLFONT,untranslated,"SH:",269,172;
-		drawstring SMALLFONT,untranslated,"/",291,172;
-		drawstring SMALLFONT,untranslated,"RO:",269,182;
-		drawstring SMALLFONT,untranslated,"/",291,182;
-		drawstring SMALLFONT,untranslated,"CE:",269,192;
-		drawstring SMALLFONT,untranslated,"/",291,192;
+//		drawstring SMALLFONT,untranslated,"BU:",269,163;
+		drawimage "Bul",253,163;
+//		drawstring SMALLFONT,untranslated,"/",291,163;
+		drawimage "Div",283,163;
+//		drawstring SMALLFONT,untranslated,"SH:",269,172;
+		drawimage "She",253,172;
+//		drawstring SMALLFONT,untranslated,"/",291,172;
+		drawimage "Div",283,172;
+//		drawstring SMALLFONT,untranslated,"RO:",269,182;
+		drawimage "Roc",253,182;
+//		drawstring SMALLFONT,untranslated,"/",291,182;
+		drawimage "Div",283,182;
+//		drawstring SMALLFONT,untranslated,"CE:",269,192;
+		drawimage "Cel",253,192;
+//		drawstring SMALLFONT,untranslated,"/",291,192;
+		drawimage "Div",283,192;
 
 		drawnumber 3,INDEXFONT,gold,ammo Clip,282,163;
 		drawnumber 3,INDEXFONT,gold,ammo Shell,282,172;
@@ -202,6 +220,15 @@ statusbar normal
 		drawmugshot 5,143,160;
 		drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero|interpolate(4),166,193;
 
+	PlayerType "Tactical64DoomPlayer","Modern"
+	{
+		IsSelected not "64ProximityMine"
+		{
+		drawimage "PMNEC0",8,169,center,20,15;
+		drawnumber 3,SMALLFONT,untranslated,Ammo("64MineAmmo"),alignment(center),8,169;
+		}
+	}
+
 		gamemode deathmatch,teamgame
 		{
 			drawnumber 2,HUDFONT_DOOM,untranslated,frags,138,171;
@@ -209,7 +236,7 @@ statusbar normal
 		gamemode cooperative,singleplayer
 		{
 			drawimage "STARMS1",105,160;
-			drawstring SMALLFONT,untranslated,"ARMS",138,191;
+			drawimage "Arms",110,191;
 			drawswitchableimage weaponslot 1,"STGNUM1","STYSNUM1",111,163;
 			drawswitchableimage weaponslot 2,"STGNUM2","STYSNUM2",123,163;
 			drawswitchableimage weaponslot 3,"STGNUM3","STYSNUM3",135,163;
@@ -236,21 +263,21 @@ statusbar automap
 	drawswitchableimage WpnPower1Icon,"nullimage","POW1E0",222,215;
 	drawswitchableimage WpnPower3Icon,"nullimage","POW3E0",261,215; //This is out of order on purpose
 	drawswitchableimage WpnPower2Icon,"nullimage","POW2E0",300,215;
-	drawimage "HTEXA0",6,165;
+	drawimage "Health",6,165;
 	drawnumber 3,HUDFONT_DOOM,untranslated,health,45,174;
 	InInventory "NoReloading",1
 	{
 	IsSelected  "UnmakerTactical"
-	{
-	drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
-	}	
+		{
+		drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
+		}
 	}
 	else
 	{
 	drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
 	}
 	drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
-	drawimage "ATEXA0",108,165;
+	drawimage "Armour",105,165;
 	drawnumber 3,HUDFONT_DOOM,untranslated,armor,145,177;
 	//Icon Card and Skull fix
 	drawswitchableimage BlueCard,"nullimage","STKEYS0",59,166,center,10,6;
@@ -259,20 +286,37 @@ statusbar automap
 	drawswitchableimage BlueSkull,"nullimage","STKEYS3",63,168,center,10,6;
 	drawswitchableimage YellowSkull,"nullimage","STKEYS4",79,168,center,10,6;
 	drawswitchableimage RedSkull,"nullimage","STKEYS5",95,168,center,10,6;
-	drawstring SMALLFONT,untranslated,"BU:",169,162;
-	drawstring SMALLFONT,untranslated,"/",191,162;
+//	drawstring SMALLFONT,untranslated,"BU:",169,162;
+	drawimage "Bul",153,162;
+//	drawstring SMALLFONT,untranslated,"/",191,162;
+	drawimage "Div",183,162;
 	drawnumber 3,INDEXFONT,darkgray,ammo clip,182,163;
 	drawnumber 3,INDEXFONT,darkgray,ammocapacity clip,203,163;
-	drawstring SMALLFONT,untranslated,"SH:",169,172;
-	drawstring SMALLFONT,untranslated,"/",191,172;
+//	drawstring SMALLFONT,untranslated,"SH:",169,172;
+	drawimage "She",153,172;
+//	drawstring SMALLFONT,untranslated,"/",191,172;
+	drawimage "Div",183,172;
 	drawnumber 3,INDEXFONT,darkgray,ammo shell,182,173;
 	drawnumber 3,INDEXFONT,darkgray,ammocapacity shell,203,173;
-	drawstring SMALLFONT,untranslated,"RO:",169,182;
-	drawstring SMALLFONT,untranslated,"/",191,182;
+//	drawstring SMALLFONT,untranslated,"RO:",169,182;
+	drawimage "Roc",153,182;
+//	drawstring SMALLFONT,untranslated,"/",191,182;
+	drawimage "Div",183,182;
 	drawnumber 3,INDEXFONT,darkgray,ammo rocketammo,182,183;
 	drawnumber 3,INDEXFONT,darkgray,ammocapacity rocketammo,203,183;
-	drawstring SMALLFONT,untranslated,"CE:",169,192;
-	drawstring SMALLFONT,untranslated,"/",191,192;
+//	drawstring SMALLFONT,untranslated,"CE:",169,192;
+	drawimage "Cel",153,192;
+//	drawstring SMALLFONT,untranslated,"/",191,192;
+	drawimage "Div",183,192;
 	drawnumber 3,INDEXFONT,darkgray,ammo cell,182,193;
 	drawnumber 3,INDEXFONT,darkgray,ammocapacity cell,203,193;
+
+	PlayerType "Tactical64DoomPlayer","Modern"
+	{
+		IsSelected not "64ProximityMine"
+		{
+		drawimage "PMNEC0",8,169,center,20,15;
+		drawnumber 3,SMALLFONT,untranslated,Ammo("64MineAmmo"),alignment(center),8,169;
+		}
+	}
 }

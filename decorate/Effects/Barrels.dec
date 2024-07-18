@@ -18,7 +18,7 @@ Tag "Explosive Barrel"
 		"####" A 32
 		Loop
 	StayAlpha:
-		BAR1 AB 4 Light("STALKER_X1") A_SpawnItemEx("GreenLensFlareAltSmall",0,0,35)
+		BAR1 AB 4 Light("BETABALL_X4") A_SpawnItemEx("GreenLensFlareAltSmall",0,0,35)
 		Goto Spawn
 	Death:
 	Crash:
