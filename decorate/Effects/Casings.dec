@@ -263,12 +263,13 @@ DeathSound "weapons/shell"
 		"####" "#" 0 A_SetScale(0-ScaleX,ScaleY)		//FLIP IMAGE HORZ
 	SpawnHold:
 		"####" "#" 0 A_JumpIf(waterlevel > 1,"Splash")
-		CAS2 ABCDEFGH 3
+		CAS2 ABCDEFGH 3 A_CustomMissile("CasingSmoke",0,0,random(0,360),2,random(85,90))
 		Loop
 	Death:
 		TNT1 A 0 A_Stop
 		TNT1 A 0 ThrustThingZ(0,1,0,1)
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
+		TNT1 A 0 A_SpawnItemEx("MicroSmokeColumn")
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3")
 		Goto Rest1
 	Rest1:
