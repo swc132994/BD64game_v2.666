@@ -46,14 +46,18 @@ brightmap sprite PSTRC0		{map "brightmaps/PSTRB_BR.png"disablefullbright}//Berse
 brightmap sprite MEDID0		{map "brightmaps/MEDID0_BR.png"disablefullbright}//Medikit
 brightmap sprite STIMD0		{map "brightmaps/STIMD0_BR.png"disablefullbright}//Stimpack
 brightmap sprite PSTRD0		{map "brightmaps/PSTRD0_BR.png"disablefullbright}//Berserk
-brightmap sprite CELPC0		{map "brightmaps/CELPC0_BR.png"disablefullbright}//Cell Pack
+brightmap sprite CPKAA0		{map "brightmaps/CPKAA0_BR.png"disablefullbright}//Cell Pack
 brightmap sprite PMAPE0		{map "brightmaps/PMAPE0_BR.png"disablefullbright}//All Map
 
 //PLASMA AMMO
 brightmap sprite CELLA0		{map "brightmaps/CELLA0_BR.png"disablefullbright}//cell
+
 brightmap sprite CEL2A0		{map "brightmaps/CELLA0_BR.png"disablefullbright}//Blue alt cell
+
 brightmap sprite CELPA0		{map "brightmaps/CELPA0_BR.png"disablefullbright}//cell pack
+
 brightmap sprite CPK2A0		{map "brightmaps/CELPA0_BR.png"disablefullbright}//red alt cell pack
+
 brightmap sprite CEL3A0		{map "brightmaps/CEL3A0_BR.png"disablefullbright}//new alt cell animated
 brightmap sprite CEL3B0		{map "brightmaps/CEL3B0_BR.png"disablefullbright}//new alt cell animated
 brightmap sprite CEL3C0		{map "brightmaps/CEL3C0_BR.png"disablefullbright}//new alt cell animated
@@ -64,7 +68,10 @@ brightmap sprite CEL3G0		{map "brightmaps/CEL3G0_BR.png"disablefullbright}//new 
 brightmap sprite CEL3H0		{map "brightmaps/CEL3H0_BR.png"disablefullbright}//new alt cell animated
 brightmap sprite CEL3I0		{map "brightmaps/CEL3I0_BR.png"disablefullbright}//new alt cell animated
 brightmap sprite CEL3J0		{map "brightmaps/CEL3J0_BR.png"disablefullbright}//new alt cell animated
-brightmap sprite CELPB0		{map "brightmaps/CELPB0_BR.png"disablefullbright}//new alt cell pack
+
+brightmap sprite CPK3A0		{map "brightmaps/CPK3A0_BR.png"disablefullbright}//new alt cell pack
+brightmap sprite CPK3B0		{map "brightmaps/CPK3A0_BR.png"disablefullbright}//new alt cell pack
+brightmap sprite CPK3C0		{map "brightmaps/CPK3A0_BR.png"disablefullbright}//new alt cell pack
 
 //PLASMA RIFLE PICKUP
 brightmap sprite PLASA0		{map "brightmaps/PGUNB.png"disablefullbright}
