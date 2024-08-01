@@ -147,6 +147,12 @@ brightmap sprite RIFIH0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIH0_BR.png"disablefu
 brightmap sprite RIFII0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFII0_BR.png"disablefullbright}
 brightmap sprite RIFIJ0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIJ0_BR.png"disablefullbright}
 brightmap sprite RIFIK0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIK0_BR.png"disablefullbright}
+brightmap sprite RIFIL0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIL0_BR.png"disablefullbright}
+brightmap sprite RIFIM0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIM0_BR.png"disablefullbright}
+brightmap sprite RIFIN0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIN0_BR.png"disablefullbright}
+brightmap sprite RIFIO0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIO0_BR.png"disablefullbright}
+brightmap sprite RIFIP0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIP0_BR.png"disablefullbright}
+brightmap sprite RIFIQ0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIQ0_BR.png"disablefullbright}
 
 //GAUSS CANNON
 brightmap sprite GCPCA0		{map "BRIGHTMAPS/GCPCA0_BR.png" Disablefullbright}//Pick-Up
