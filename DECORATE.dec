@@ -14,7 +14,7 @@
 #INCLUDE "Decorate/Effects/Smoke.dec"
 #INCLUDE "Decorate/Effects/Flares.dec"
 #INCLUDE "Decorate/Effects/Zfire.dec"
-#INCLUDE "Decorate/Effects/Lights.dec"
+#INCLUDE "Decorate/Effects/Props.dec"
 #INCLUDE "Decorate/Effects/Barrels.dec"
 #INCLUDE "Decorate/Effects/Insects.dec"
 #INCLUDE "Decorate/Effects/FlatDecals.dec"

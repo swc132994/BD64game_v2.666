@@ -315,7 +315,6 @@ Player.StartItem "SSGAmmo",2
 Player.StartItem "PlasmaRifleAmmo",40
 Player.StartItem "RLAmmo",6
 Player.StartItem "GaussAmmo",4
-Player.StartItem "64ProximityMine",1
 Player.StartItem "64HighCaliberBox",30
 Player.StartItem "MP40Ammo",31
 Player.StartItem "StartWeapon"
@@ -586,7 +585,6 @@ Player.StartItem "PlasmaRifleAmmo",40
 Player.StartItem "RLAmmo",6
 Player.StartItem "GaussAmmo",4
 Player.StartItem "MP40Ammo",31
-Player.StartItem "64ProximityMine",1
 Player.StartItem "StartWeapon"
 Player.StartItem "NeverSelectedRifle"
 Player.StartItem "NeverSelectedShotgun"

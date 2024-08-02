@@ -894,6 +894,7 @@ Height 49
 	{
 	Spawn:
 		HDB3 A 0
+		TNT1 A 0 A_Jump(52,"Spawn2")
 		TNT1 A 0 A_SpawnItemEx("Swarm")
 		Goto Stay
 	Stay:
@@ -907,6 +908,9 @@ Height 49
 	StayBlank:
 		HDB3 A 3
 		Goto Stay
+	Spawn2:
+		HGDB A -1
+		stop
 	}
 }
 
