@@ -214,6 +214,18 @@ if (GetCvar("isrunningzandronum") == 1)
 	}
 }
 
+script "QZanTacticalCheck" Enter
+{
+Delay(3);
+if (GetCvar("IsRunningQZan") == 1)
+	{
+	if(CheckInventory("IsTacticalClass") == 1)
+		{
+		ConsoleCommand("cl_run FALSE");
+		}
+	}
+}
+
 script "Sprinting" ENTER
 {
 if(CheckInventory("IsTacticalClass") == 1)

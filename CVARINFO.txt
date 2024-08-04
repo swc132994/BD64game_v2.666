@@ -4,6 +4,7 @@ user int bd_lowgraphicsmode = 0;
 server int zdoombrutalblood	= 2;
 server int zdoombrutaljanitor = 0;
 server int isrunningzandronum = 0;
+server int IsRunningQZan = 0;
 
 user bool AlternativeRifleSkinCvar = TRUE;	//old or new rifle
 user bool AlternativeLaserSkinCvar = TRUE;	//old or new laser

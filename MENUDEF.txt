@@ -282,6 +282,7 @@ OptionMenu "BrutalDoom64OptionsPerformance"
 		StaticText "(enabling this option will generate an error message if using GZDoom)",1
 		StaticText ""
 	Option "Enable Zandronum Specific Multiplayer Scripts =","isrunningzandronum","OnOff"
+	Option "Enable QZandronum Specific Tactical Class Script =","IsRunningQZan","OnOff"
 		StaticText ""
 		StaticText "-------------------------------- Performance & Gore --------------------------------",1
 		StaticText ""

@@ -19,3 +19,6 @@ DefaultBind "M" "MinePlace"
 Alias "WeaponSpecialAction" "PukeName WeaponSpecialAction"
 AddMenuKey "Weapon Special Action" "WeaponSpecialAction"
 DefaultBind "V" "WeaponSpecialAction"
+
+//DefaultBind "R" "+Reload"
+DefaultBind "CAPSLOCK" "toggle cl_run"
