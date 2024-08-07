@@ -1,5 +1,6 @@
-actor 64SoulHarvester
+actor 64SoulHarvester 19141
 {
+//$category "Game/BD64_Monsters
 Scale 0.75
 Health 100
 Radius 20

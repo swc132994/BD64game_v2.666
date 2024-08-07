@@ -205,8 +205,8 @@ statusbar normal
 	drawnumber 3,INDEXFONT,darkgray,items,293,185;
 	drawnumber 3,INDEXFONT,darkgray,totalitems,315,185;
 
-		drawmugshot 5,143,160;
-		drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero|interpolate(4),166,193;
+		drawmugshot 5,143,168;
+		drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero|interpolate(4),166,162;
 
 	PlayerType "Tactical64DoomPlayer","Modern"
 	{

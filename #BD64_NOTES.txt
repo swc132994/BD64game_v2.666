@@ -74,6 +74,7 @@ Pestilence			19137
 Plasma Zombie		19138
 Trite				19139
 Impaler				19140
+Harverster			19141
 
 Gauss Cannon spawn	19134
 MP40 SPAWNER		19124

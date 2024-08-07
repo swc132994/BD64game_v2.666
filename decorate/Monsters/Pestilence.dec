@@ -1,5 +1,6 @@
 ACTOR 64Pestilence : Revenant 19137
 {
+//$category "Game/BD64_Monsters
 Scale 0.68
 Health 400
 Radius 20

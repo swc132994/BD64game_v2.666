@@ -780,14 +780,15 @@ Script "TUnmakerChecker" (void)		//checks if you have tactical unmaker to allow 
 
 Script "AlternativeAmmoPickupSpritesACS" (void)
 {
-	Switch(GetCvar("AlternativeAmmoPickupSpritesCvar"))
-	{
-		Case 0: Break;
-		Default:
-		Case 1: SetActorState(0,"Spawn1"); break;
-		Case 2: SetActorState(0,"Spawn2"); SetActorState(0,"AlternativeSprite"); SetActorState(0,"AltSpawn"); break;	
-	}
-	Delay(1);
+	if(GetCvar("AlphaPickupCvar") == 1 && GetCvar("AlternativeAmmoPickupSpritesCvar") == 2)
+		{
+			SetActorState(0,"AlternativeSprite"); SetActorState(0,"AltSpawn"); SetActorState(0,"SpawnAny");
+		}
+	else
+	if(GetCvar("AlternativeAmmoPickupSpritesCvar") == 2)
+		{
+			SetActorState(0,"AlternativeSprite"); SetActorState(0,"AltSpawn");
+		}
 }
 
 script "FootStepCheck" (void)	//footstep sound check for player decorate
@@ -986,12 +987,14 @@ script "OriginalCvars" (void) net
 	SetCvar("HUDSwitchCvar",0);
 	SetCvar("FootStepCheckCvar",1);
 	SetCvar("LFog_Cvar",0);
+	SetCvar("FloorDecal_Cvar",1);
 	SetCvar("ClassicTorchCvar",0);
 	SetCvar("LiquidSplashCvar",0);
-	SetCvar("PoltergeistCvar",0);
 
+	SetCvar("PoltergeistCvar",0);
 	SetCvar("ThingRandomCvar",0);
 	SetCvar("TheHorde_Multiplier_Cvar",-1);
+	
 	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",FALSE);
 	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",FALSE);
 	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",1);
@@ -1050,11 +1053,13 @@ script "ClassicCvars" (void) net
 	SetCvar("HUDSwitchCvar",0);
 	SetCvar("FootStepCheckCvar",1);
 	SetCvar("LFog_Cvar",1);
+	SetCvar("FloorDecal_Cvar",0);
 	SetCvar("ClassicTorchCvar",1);
 	SetCvar("LiquidSplashCvar",1);
-	SetCvar("PoltergeistCvar",0);
 
+	SetCvar("PoltergeistCvar",0);
 	SetCvar("ThingRandomCvar",0);
+
 	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",FALSE);
 	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",FALSE);
 	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",1);
@@ -1115,6 +1120,7 @@ script "EnhancedCvars" (void) net
 	SetCvar("LFog_Cvar",0);
 	SetCvar("ClassicTorchCvar",0);
 	SetCvar("LiquidSplashCvar",0);
+	SetCvar("FloorDecal_Cvar",1);
 
 	SetCvar("PoltergeistCvar",1);
 	SetCvar("ThingRandomCvar",1);
