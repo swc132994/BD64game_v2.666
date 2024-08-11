@@ -63,8 +63,8 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 AAAA 1 A_Jump(256,"v1Ready")
 		Loop
 	v1Ready:
-		TNT1 A 1
-		TNT1 A 0 A_Jump(256,"v1Ready")
+		//TNT1 A 1
+		TNT1 A 5 A_Jump(256,"v1Ready")
 		Loop
 		
 	KickFlash: //16 frames for normal and air kicks
