@@ -16,9 +16,12 @@ GOTREDSKUL = You pick up a red skull key.
 GOTINVIS = Partial Invisibility!
 GOTVISOR = Light Amplification Goggles!
 GOTMSPHERE = Mega Sphere!
-GOTSHELLBOX = Picked up a box of shells.
 GOTBACKPACK = You got the Backpack!
-GOTRADSUIT = Radiation Shield!
+GOTSUIT = Radiation Shield!
+GOTSUPER = Supercharge!
+GOTINVUL = Invulnerability!
+GOTBERSERK = Berserk!
+GOTMAP = Computer Area Map!
 
 PD_BLUEO = You need a blue key.
 PD_REDO = You need a red key.
@@ -47,24 +50,22 @@ STSTR_DQDOFF = All Powerful Mode OFF!
 STSTR_FAADDED = Lots of Ammo!
 STSTR_KFAADDED = Lots of Goodies!
 
-GOTSUPER = Supercharge!
-GOTINVUL = Invulnerability!
-GOTBERSERK = Berserk!
-GOTMAP = Computer Area Map!
 GOTCLIP = Picked up a clip.
 GOTCLIPBOX = Picked up a box of bullets.
+GOTSHELLS = Picked up 4 shotgun shells.
+GOTSHELLBOX = Picked up a box of shells.
 GOTROCKET = Picked up a rocket.
 GOTROCKBOX = Picked up a box of rockets.
 GOTCELL = Picked up an energy cell.
 GOTCELLBOX = Picked up an energy cell pack.
-GOTSHELLS = Picked up 4 shotgun shells.
-GOTBFG9000 = You got the BFG9000! Oh, yes.
-GOTCHAINGUN = You got the Chaingun!
+
 GOTCHAINSAW = A chainsaw! Find some meat!
-GOTLAUNCHER = You got the Rocket Launcher!
-GOTPLASMA = You got the Plasma Rifle!
 GOTSHOTGUN = You got the Shotgun!
 GOTSHOTGUN2 = You got the Super Shotgun!
+GOTCHAINGUN = You got the Chaingun!
+GOTLAUNCHER = You got the Rocket Launcher!
+GOTPLASMA = You got the Plasma Rifle!
+GOTBFG9000 = You got the BFG9000! Oh, yes.
 
 OB_MPFIST = %o chewed on %k's fist.
 OB_MPCHAINSAW = %o was mowed over by %k's chainsaw.

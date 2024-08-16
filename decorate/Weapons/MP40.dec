@@ -229,7 +229,7 @@ Tag "MP40"
 		TNT1 A 0 A_Firecustommissile("BulletCaseSpawn",0,0,0,-10)
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_PlaySound("MP40",CHAN_WEAPON)
-		MP4G S 1 Bright A_FireBullets(0.0,0.0,1,7,"HitPuff",FBF_NORANDOM)
+		MP4G S 1 Bright A_FireBullets(0.0,0.0,1,5,"HitPuff",FBF_NORANDOM)
 		MP4G T 1 A_SetPitch(-1.0 + pitch)
 		MP4G U 1 A_SetPitch(0.5 + pitch)
 		TNT1 A 0 A_SetPitch(0.5 + pitch)
