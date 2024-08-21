@@ -2,8 +2,8 @@ Actor ChaingunSpawner : CustomInventory// Replaces Chaingun		//spawned from rand
 {
 //$category "Game/BD64_Weapons
 Scale 0.82
-Tag "Chaingun"
-Inventory.PickupMessage "$GOTCHAINGUN"
+Tag "$FO_TAG_CHAINGUN"
+Inventory.PickupMessage "$FO_GOTCHAINGUN"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -41,9 +41,9 @@ Weapon.SelectionOrder 700
 Weapon.AmmoType "Clip"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 20
-Inventory.PickupMessage "$GOTCHAINGUN"
-Obituary "$OB_MPCHAINGUN"
-Tag "$TAG_CHAINGUN"
+Inventory.PickupMessage "$FO_GOTCHAINGUN"
+Obituary "$FO_OB_MPCHAINGUN"
+Tag "$FO_TAG_CHAINGUN"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -117,9 +117,9 @@ Weapon.SelectionOrder 700
 Weapon.AmmoType "64HighCaliberBox"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 20
-Inventory.PickupMessage "$GOTCHAINGUN"
-Obituary "$OB_MPCHAINGUN"
-Tag "$TAG_CHAINGUN"
+Inventory.PickupMessage "$FO_GOTCHAINGUN"
+Obituary "$FO_OB_MPCHAINGUN"
+Tag "$FO_TAG_CHAINGUN"
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.NOAUTOFIRE
 	States

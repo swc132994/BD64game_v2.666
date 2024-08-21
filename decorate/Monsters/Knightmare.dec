@@ -12,13 +12,13 @@ Alpha 0.6
 MeleeRange 60	//default 44
 RenderStyle Translucent
 DamageFactor "Head",0.8
+Tag "Knightmare"
 Obituary "%o was charred by a Knightmare."
 HitObituary "%o was mangled by a Knightmare."
 SeeSound "knight/sight"
 PainSound "knight/pain"
 DeathSound "knight/death"
 ActiveSound "knight/active"
-Tag "Knightmare"
 GibHealth 15
 PainChance 75
 PainChance "Bullet",26

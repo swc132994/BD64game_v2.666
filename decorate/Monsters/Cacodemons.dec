@@ -11,6 +11,9 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DropItem "DemonEssenceSpawner"
 MeleeRange 60 //default 44
+Tag "Cacodemon"
+Obituary "$FO_OB_CACO"
+HitObituary "$FO_OB_CACOHIT"
 +FORCEXYBILLBOARD
 +MISSILEMORE
 +NOBLOODDECALS
@@ -347,6 +350,9 @@ Actor Brutalized64Caco_3 : Brutalized64Caco
 
 Actor 64StealthCacodemon : 64Cacodemon Replaces StealthCacodemon
 {
+Tag "Stealth Cacodemon"
+Obituary "$FO_OB_STEALTHCACO"
+HitObituary "$FO_OB_STEALTHCACO"
 +STEALTH
 }
 

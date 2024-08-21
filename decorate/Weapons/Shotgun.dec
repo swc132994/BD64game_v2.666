@@ -1,8 +1,8 @@
 Actor ShotgunSpawner : CustomInventory	replaces Shotgun	//spawned from randomspawners
 {
 Scale 0.87
-Tag "Shotgun"
-Inventory.PickupMessage "$GOTSHOTGUN"
+Tag "$FO_TAG_SHOTGUN"
+Inventory.PickupMessage "$FO_GOTSHOTGUN"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -40,9 +40,9 @@ Weapon.SelectionOrder 1300
 Weapon.AmmoType "Shell"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 8
-Inventory.PickupMessage "$GOTSHOTGUN"
-Obituary "$OB_MPSHOTGUN"
-Tag "$TAG_SHOTGUN"
+Inventory.PickupMessage "$FO_GOTSHOTGUN"
+Obituary "$FO_OB_MPSHOTGUN"
+Tag "$FO_TAG_SHOTGUN"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -141,9 +141,9 @@ Weapon.AmmoGive1 8
 Weapon.AmmoType2 "ShotgunAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Inventory.PickupMessage "$GOTSHOTGUN"
-Obituary "$OB_MPSHOTGUN"
-Tag "$TAG_SHOTGUN"
+Inventory.PickupMessage "$FO_GOTSHOTGUN"
+Obituary "$FO_OB_MPSHOTGUN"
+Tag "$FO_TAG_SHOTGUN"
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AMMO_CHECKBOTH
 +NOALERT

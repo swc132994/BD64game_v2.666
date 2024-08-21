@@ -12,6 +12,8 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Dropitem "SawGas"
 Dropitem "DemonEssenceSpawner"
+Tag "Mancubus"
+Obituary "$FO_OB_FATSO"
 +DONTHARMCLASS
 +NOBLOODDECALS
 +NEVERFAST
@@ -171,6 +173,8 @@ Dropitem "DemonEssenceSpawner"
 
 Actor 64StealthFatso : 64Fatso Replaces StealthFatso
 {
+Tag "Stealth Mancubus"
+Obituary "$FO_OB_STEALTHFATSO"
 +STEALTH
 }
 

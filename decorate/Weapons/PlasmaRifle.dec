@@ -2,8 +2,8 @@ Actor PlasmaRifleSpawner : CustomInventory// Replaces PlasmaRifle		//spawned fro
 {
 //$category "Game/BD64_Weapons
 Scale 0.82
-Tag "Plasma Rifle"
-Inventory.PickupMessage "$GOTPLASMA"
+Tag "$FO_TAG_PLASMARIFLE"
+Inventory.PickupMessage "$FO_GOTPLASMA"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -46,8 +46,8 @@ Weapon.SelectionOrder 100
 Weapon.AmmoType "Cell"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 40
-Inventory.PickupMessage "$GOTPLASMA"
-Tag "$TAG_PLASMARIFLE"
+Inventory.PickupMessage "$FO_GOTPLASMA"
+Tag "$FO_TAG_PLASMARIFLE"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -118,8 +118,8 @@ Weapon.AmmoGive1 40
 Weapon.AmmoType2 "PlasmaRifleAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Inventory.PickupMessage "$GOTPLASMA"
-Tag "$TAG_PLASMARIFLE"
+Inventory.PickupMessage "$FO_GOTPLASMA"
+Tag "$FO_TAG_PLASMARIFLE"
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AMMO_CHECKBOTH
 +WEAPON.NOALERT
@@ -329,11 +329,10 @@ RenderStyle Add
 Damagetype "Plasma"
 SeeSound "weapons/plasmaf"
 DeathSound "weapons/plasmax"
-Obituary "$OB_MPPLASMARIFLE"
+Obituary "$FO_OB_MPPLASMARIFLE"
 Decal "SmallerScorch"
-Projectile
+PROJECTILE
 +RANDOMIZE
-+MISSILE
 +THRUSPECIES
 	States
 	{
@@ -445,6 +444,7 @@ Alpha 1
 DamageType "Plasma"
 Decal "SmallerScorch"
 DeathSound "world/lavsiz2"
+Obituary "$FO_OB_MPPLASMARIFLE"
 +MISSILE
 +NOBLOCKMAP
 +NOTELEPORT

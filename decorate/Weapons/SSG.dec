@@ -2,8 +2,8 @@ Actor SuperShotgunSpawner : CustomInventory Replaces SuperShotgun
 {
 //$category "Game/BD64_Weapons
 Scale 0.87
-Tag "Super Shotgun"
-Inventory.PickupMessage "$GOTSHOTGUN2"
+Tag "$FO_TAG_SUPERSHOTGUN"
+Inventory.PickupMessage "$FO_GOTSHOTGUN2"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -31,9 +31,9 @@ Weapon.AmmoType "Shell"
 Weapon.AmmoUse 2
 Weapon.AmmoGive 2
 +WEAPON.NOAUTOFIRE
-Inventory.PickupMessage "$GOTSHOTGUN2"
-Obituary "$OB_MPSSHOTGUN"
-Tag "$TAG_SUPERSHOTGUN"
+Inventory.PickupMessage "$FO_GOTSHOTGUN2"
+Obituary "$FO_OB_MPSSHOTGUN"
+Tag "$FO_TAG_SUPERSHOTGUN"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -148,9 +148,9 @@ Weapon.AmmoGive1 2
 Weapon.AmmoType2 "SSGAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Inventory.PickupMessage "$GOTSHOTGUN2"
-Obituary "$OB_MPSSHOTGUN"
-Tag "$TAG_SUPERSHOTGUN"
+Inventory.PickupMessage "$FO_GOTSHOTGUN2"
+Obituary "$FO_OB_MPSSHOTGUN"
+Tag "$FO_TAG_SUPERSHOTGUN"
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AMMO_CHECKBOTH
 +WEAPON.NOAUTOFIRE

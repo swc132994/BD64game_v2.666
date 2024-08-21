@@ -12,6 +12,8 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 BloodType "BD64ArachnotronBlood"
 DropItem "DemonEssenceSpawner"
+Tag "Arachnotron"
+Obituary "$FO_OB_BABY"
 +NOBLOODDECALS
 +NEVERFAST
 	states
@@ -110,5 +112,7 @@ DropItem "DemonEssenceSpawner"
 
 Actor 64StealthArachnotron : 64Arachnotron Replaces StealthArachnotron
 {
+Tag "Stealth Arachnotron"
+Obituary "$FO_OB_STEALTHBABY"
 +STEALTH
 }

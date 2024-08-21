@@ -7,13 +7,13 @@ MeleeRange 500
 PainChance 64
 DamageFactor "Unmaker",0.1
 Tag "Waffen-SS"
+Obituary "$FO_OB_WOLFSS."
 BloodType "Brutal_Blood"
 AttackSound ""
 ActiveSound "Waffen/Active"
 DeathSound "Waffen/Death"
 PainSound "Waffen/Pain"
 SeeSound "Waffen/See"
-Obituary "%o was executed by a Waffen-SS."
 DropItem "MP40Spawner"
 DropItem "SOULSPAWNER"
 +NOINFIGHTING

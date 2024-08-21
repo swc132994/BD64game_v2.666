@@ -12,6 +12,9 @@ PainChance "SuperKick",255
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DropItem "DemonEssenceSpawner"
+Tag "Revenant"
+HitObituary "$FO_OB_UNDEADHIT"
+Obituary "$FO_OB_UNDEAD"
 +DONTHARMSPECIES
 +NOBLOODDECALS
 +NEVERFAST
@@ -183,6 +186,9 @@ DropItem "DemonEssenceSpawner"
 
 Actor 64StealthRevenant : 64Revenant Replaces StealthRevenant
 {
+Tag "Stealth Revenant"
+Obituary "$FO_OB_STEALTHUNDEAD"
+HitObituary "$FO_OB_STEALTHUNDEAD"
 +STEALTH
 }
 

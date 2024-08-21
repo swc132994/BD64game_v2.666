@@ -14,6 +14,9 @@ MeleeRange 100
 DropItem "DemonEssenceLargeSpawner"
 DropItem "Soulsphere",32
 AttackSound "weapons/gswing"
+Tag "Spider Mastermind"
+Obituary "$FO_OB_SPIDER"
+HitObituary "%o was crushed underfoot."
 +EXTREMEDEATH
 +AVOIDMELEE
 +QUICKTORETALIATE
@@ -185,6 +188,7 @@ MeleeRange 100
 DropItem "DemonEssenceLargeSpawner"
 DropItem "Soulsphere",64
 Obituary "The Eradicator unmade %o."
+HitObituary "%o was crushed underfoot."
 Tag "Eradicator"
 BloodType "Brutal_BloodBLUE"
 +EXTREMEDEATH

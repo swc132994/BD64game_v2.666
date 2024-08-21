@@ -12,6 +12,8 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DropItem "DemonEssenceLargeSpawner"
 DropItem "Soulsphere",32
+Tag "Cyberdemon"
+Obituary "$FO_OB_CYBORG"
 +NOBLOODDECALS
 +QUICKTORETALIATE
 +NEVERFAST
@@ -107,12 +109,12 @@ PainChance "Kick",200
 PainChance "SuperKick",200
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
+Tag "Annihilator"
 Obituary "The Annihilator blew %o away with its rockets."
 SeeSound "monster/annsit"
 PainSound "cyber/pain"
 DeathSound "monster/anndth"
 ActiveSound "cyber/active"
-Tag "Annihilator"
 DropItem "DemonEssenceLargeSpawner"
 DropItem "Soulsphere",32
 +NOBLOODDECALS

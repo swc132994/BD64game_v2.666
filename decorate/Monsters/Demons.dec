@@ -12,6 +12,8 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "chainsaw",0.9
 DropItem "DemonEssenceSpawner"
+Tag "Demon"
+Obituary "$FO_OB_DEMONHIT"
 +NOBLOODDECALS
 +NEVERFAST
 	States
@@ -337,6 +339,9 @@ DropItem "None"
 
 Actor 64StealthDemon : 64Demon Replaces StealthDemon
 {
+Tag "Stealth Demon"
+Obituary "$FO_OB_STEALTHDEMON"
+HitObituary "$FO_OB_STEALTHDEMON"
 +STEALTH
 }
 
@@ -356,6 +361,8 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "chainsaw",0.9
 DropItem "DemonEssenceSpawner"
+Tag "Spectre"
+HitObituary "$FO_OB_SPECTREHIT"
 +NOBLOODDECALS
 	States
 	{

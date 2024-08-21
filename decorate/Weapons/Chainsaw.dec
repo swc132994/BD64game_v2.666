@@ -2,8 +2,8 @@ Actor ChainsawSpawner : CustomInventory Replaces Chainsaw
 {
 //$category "Game/BD64_Weapons
 Scale 0.82
-Tag "Chainsaw"
-Inventory.PickupMessage "$GOTCHAINSAW"
+Tag "$FO_TAG_CHAINSAW"
+Inventory.PickupMessage "$FO_GOTCHAINSAW"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -28,9 +28,10 @@ Weapon.SlotNumber 1
 Weapon.SlotPriority 2
 Weapon.SelectionOrder 2200
 Weapon.Kickback 0
-Inventory.PickupMessage "$GOTCHAINSAW"
+Inventory.PickupMessage "$FO_GOTCHAINSAW"
+Obituary "$FO_OB_MPCHAINSAW"
+Tag "$FO_TAG_CHAINSAW"
 +WEAPON.AXEBLOOD
-Tag "$TAG_CHAINSAW"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -82,7 +83,7 @@ RenderStyle Add
 Decal "SawVertical"
 SeeSound "none"
 DeathSound "none"
-Obituary "$OB_MPCHAINSAW"
+Obituary "$FO_OB_MPCHAINSAW"
 +FORCEXYBILLBOARD
 +EXTREMEDEATH
 +BLOODSPLATTER
@@ -120,9 +121,9 @@ Weapon.Kickback 0
 Weapon.AmmoType "SawGas"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 100
-Inventory.PickupMessage "$GOTCHAINSAW"
-Obituary "$OB_MPCHAINSAW"
-Tag "$TAG_CHAINSAW"
+Inventory.PickupMessage "$FO_GOTCHAINSAW"
+Obituary "$FO_OB_MPCHAINSAW"
+Tag "$FO_TAG_CHAINSAW"
 +WEAPON.MELEEWEAPON
 +WEAPON.AXEBLOOD
 +WEAPON.ALT_USES_BOTH
@@ -379,9 +380,9 @@ Weapon.Kickback 0
 Weapon.AmmoType "SawGas"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 100
-Inventory.PickupMessage "$GOTCHAINSAW"
-Obituary "$OB_MPCHAINSAW"
-Tag "$TAG_CHAINSAW"
+Inventory.PickupMessage "$FO_GOTCHAINSAW"
+Obituary "$FO_OB_MPCHAINSAW"
+Tag "$FO_TAG_CHAINSAW"
 +WEAPON.MELEEWEAPON
 +WEAPON.AXEBLOOD
 +POWERED_UP

@@ -42,6 +42,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Head",1.5
 DamageFactor "Chainsaw",0.65
 DamageFactor "Unmaker",0.2
+Obituary "$FO_OB_ZOMBIE"
 Tag "Pistol Zombie"
 DropItem "SOULSPAWNER"
 DropItem "64Clip"
@@ -656,6 +657,8 @@ Actor BrutalizedZombieman_2 : BrutalizedZombieman_1
 
 Actor 64StealthZombieMan : 64Zombieman Replaces StealthZombieMan
 {
+Tag "Stealth Pistol Zombie"
+Obituary "$FO_OB_STEALTHZOMBIE"
 +STEALTH
 }
 
@@ -665,7 +668,7 @@ Actor 64ShotgunGuy : 64Zombieman Replaces ShotgunGuy
 Speed 6
 GibHealth 15
 Tag "Shotgun Zombie"
-Obituary "$OB_SHOTGUY"
+Obituary "$FO_OB_SHOTGUY"
 DropItem "ShotgunDrop"
 DropItem "SOULSPAWNER"
 	States
@@ -1180,6 +1183,8 @@ Actor BrutalizedShotgunner_2 : BrutalizedZombieman_2
 
 Actor 64StealthShotgunGuy : 64ShotgunGuy Replaces StealthShotgunGuy
 {
+Tag "Stealth Shotgun Zombie"
+Obituary "$FO_OB_STEALTHSHOTGUNGUY"
 +STEALTH
 }
 
@@ -1189,8 +1194,8 @@ Actor 64SSGGuy : 64ShotgunGuy 19110
 DropItem "SSGDrop"
 DropItem "SOULSPAWNER"
 Tag "SSG Zombie"
-SpawnID 170
 Obituary "%o was blown apart by an SSG Zombie."
+SpawnID 170
 	States
 	{
 	Spawn:
@@ -1726,7 +1731,7 @@ Health 120
 Speed 4
 AttackSound "grunt/attack"
 Tag "Chaingun Zombie"
-Obituary "$OB_CHAINGUY"
+Obituary "$FO_OB_CHAINGUY"
 DropItem "ChaingunDrop"
 DropItem "SOULSPAWNER"
 	States
@@ -1962,8 +1967,8 @@ ACTOR BurningChaingunGuy : BurningZombieman
 
 Actor 64StealthChaingunguy : 64Chaingunguy replaces stealthchaingunguy
 {
-Alpha 0
-RenderStyle Translucent
+Tag "Stealth Chaingun Zombie"
+Obituary "$FO_OB_STEALTHCHAINGUY"
 +STEALTH
 }
 
@@ -2153,9 +2158,9 @@ Speed 12
 DamageFactor "Head",1.25
 AttackSound "grunt/attack"
 Tag "Marine Zombie"
+Obituary "%o was gunned down by a zombie marine."
 DropItem "RifleDrop"
 DropItem "SOULSPAWNER"
-Obituary "%o was gunned down by a zombie marine."
 	States
 	{
 	Idle:	//placeholder

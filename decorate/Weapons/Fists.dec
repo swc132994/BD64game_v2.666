@@ -8,7 +8,8 @@ Actor 64Fist : Fist Replaces Fist
 Weapon.SlotNumber 1
 Weapon.SlotPriority 1
 Weapon.SelectionOrder 3700
-Tag "Fists"
+Obituary "$FO_OB_MPFIST"
+Tag "$FO_TAG_FIST"
 Inventory.Icon "PUN1A0"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
@@ -73,7 +74,8 @@ Actor 64FistTactical : Brutal64Weapon
 Weapon.SlotNumber 1
 Weapon.SlotPriority 1
 Weapon.SelectionOrder 3700
-Tag "Fists"
+Obituary "$FO_OB_MPFIST"
+Tag "$FO_TAG_FIST"
 Inventory.Icon "PUN1A0"
 Inventory.forbiddento "64DoomPlayer"
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
@@ -309,7 +311,7 @@ RenderStyle Add
 SeeSound "none"
 DeathSound "none"
 Decal "none"
-Obituary "$OB_MPFIST"
+Obituary "$FO_OB_MPFIST"
 +NOEXTREMEDEATH
 	States
 	{
@@ -329,7 +331,7 @@ Actor SuperPunchAttack : PunchAttack
 {
 Damage(2*random(60,80))
 DamageType "SuperFists"
-Obituary "$OB_MPFIST"
+Obituary "$FO_OB_MPFIST"
 Decal "Crack"
 +EXTREMEDEATH
 	States

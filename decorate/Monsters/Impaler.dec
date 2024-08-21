@@ -14,6 +14,7 @@ SeeSound "Impaler/See"
 PainSound "Impaler/Pain"
 DeathSound "Impaler/Death"
 Obituary "%o was punctured by an Impaler."
+HitObituary "%o was impaled by an Impaler."
 Tag "Impaler"
 PainChance 32
 PainChance "SuperFists",220

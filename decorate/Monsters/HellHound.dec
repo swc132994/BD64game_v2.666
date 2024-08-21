@@ -19,10 +19,10 @@ PainSound "Dog/pain"
 DeathSound "Dog/die"
 ActiveSound "Dog/active"
 AttackSound "Dog/melee"
+Tag "Hell Hound"
 Obituary "%o was scorched by a Hell Hound."
 Hitobituary "%o is now dog food."
 Species "Dog"
-Tag "Hell Hound"
 DropItem "DemonEssenceSpawner"
 +NOBLOODDECALS
 +NEVERFAST

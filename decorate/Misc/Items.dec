@@ -1,6 +1,300 @@
+Actor 64ArmorBonus : ArmorBonus Replaces ArmorBonus
+{
+Scale 0.82
+Armor.SaveAmount 2
+Armor.Savepercent 50
+Inventory.Pickupmessage "$FO_GOTARMBONUS"
+Tag "Armour Bonus"
+	States
+	{
+	Spawn:
+		BON2 A 6 Light("ARMORBONUS")
+		BON2 BBCCDDCCBB 2 Light("ARMORBONUS") A_SpawnItemEx("GreenFlareSmallItem",0,0,7)
+		loop
+	}
+}
+
+Actor 64GreenArmor : GreenArmor Replaces GreenArmor
+{
+Scale 0.82
+Inventory.Pickupmessage "$FO_GOTARMOR"
+Inventory.PickupSound "ARMOR"
+Tag "Green Armour"
+	States
+	{
+	Spawn:
+		ARM1 A 0 Light("INVULN")
+	SpawnLoop:
+		"####" "#" 3 Light("INVULN") ACS_NamedExecuteAlways("AlphaPickupACS")
+	SpawnNormal:
+		ARM1 A 6 Light("INVULN")
+		ARM1 B 6 Bright Light("INVULN")
+		Goto SpawnLoop
+	AlphaSpawn:
+		ARM3 A 6 Light("INVULN")
+		ARM3 B 6 Bright Light("INVULN")
+		Goto SpawnLoop
+	}
+}
+
+Actor 64BlueArmor : BlueArmor Replaces BlueArmor
+{
+Scale 0.82
+Inventory.Pickupmessage "$FO_GOTMEGA"
+Inventory.PickupSound "ARMOR"
+Tag "Blue Armour"
+	States
+	{
+	Spawn:
+		ARM2 A 0 Light("SOULSPHERE")
+	SpawnLoop:
+		"####" "#" 3 Light("SOULSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
+	SpawnNormal:
+		ARM2 A 6 Light("SOULSPHERE")
+		ARM2 B 6 Bright Light("SOULSPHERE")
+		Goto SpawnLoop
+	AlphaSpawn:
+		ARM4 A 6 Light("SOULSPHERE")
+		ARM4 B 6 Bright Light("SOULSPHERE")
+		Goto SpawnLoop
+	}
+}
+
+Actor 64HealthBonus : HealthBonus Replaces HealthBonus
+{
+Scale 0.82
+Inventory.Amount 2
+Inventory.PickupMessage "$FO_GOTHTHBONUS"
+Tag "Health Bonus"
+	states
+	{
+	Spawn:
+		BON1 AABBCCDD 2 Bright Light("HealthPotion") A_SpawnItemEx("BlueFlareSmallItem",0,0,7)
+		loop
+	}
+}
+
+Actor 64Stimpack : Stimpack Replaces Stimpack
+{
+Scale 0.82
+Inventory.PickupMessage "$FO_GOTSTIM"
+Tag "Stimpack"
+	states
+	{
+	Spawn:
+		STIM A 0
+	SpawnLoop:
+		"####" "#" 3 ACS_NamedExecuteAlways("AlphaPickupACS")
+		"####" "#" 3 ACS_NamedExecuteAlways("CensoredHealing_ACS")
+	SpawnNormal:
+		STIM A 32
+		Goto SpawnLoop
+	CensoredSpawn:
+		STIM B 32
+		Goto SpawnLoop
+	BFGStyleSpawn:
+		STIM C 32
+		Goto SpawnLoop
+	AlphaSpawn:
+		STIM D 32
+		Goto SpawnLoop
+	}
+}
+
+Actor 64Medikit : Medikit Replaces Medikit
+{
+Scale 0.82
+Inventory.PickupMessage "$FO_GOTMEDIKIT"
+Health.LowMessage 25, "$FO_GOTMEDINEED"
+Tag "Medikit"
+	states
+	{
+	Spawn:
+		MEDI A 0
+	SpawnLoop:
+		"####" "#" 3 ACS_NamedExecuteAlways("AlphaPickupACS")
+		"####" "#" 3 ACS_NamedExecuteAlways("CensoredHealing_ACS")
+	SpawnNormal:
+		MEDI A 32
+		Goto SpawnLoop
+	CensoredSpawn:
+		MEDI B 32
+		Goto SpawnLoop
+	BFGStyleSpawn:
+		MEDI C 32
+		Goto SpawnLoop
+	AlphaSpawn:
+		MEDI D 32
+		Goto SpawnLoop
+	}
+}
+
+Actor 64InvulnerabilitySphere : InvulnerabilitySphere Replaces InvulnerabilitySphere
+{
+Scale 0.82
+powerup.color "FF FF FF",0.30
+Inventory.PickupMessage "$FO_GOTINVUL"
+Tag "Invulnerability Sphere"
+	states
+	{
+	Spawn:
+		PINV A 0 Bright Light("INVULN")
+	SpawnLoop:
+		"####" "#" 3 Bright Light("INVULN") ACS_NamedExecuteAlways("AlphaPickupACS")
+	SpawnNormal:
+		PINV ABCDCB 6 Bright Light("INVULN")
+		Goto SpawnLoop
+	AlphaSpawn:
+		P1NV ABCDCB 6 Bright Light("INVULN")
+		Goto SpawnLoop
+	}
+}
+
+Actor 64Soulsphere : CustomInventory Replaces Soulsphere
+{
+Scale 0.7
++COUNTITEM
++INVENTORY.ALWAYSPICKUP
+Inventory.PickupMessage "$FO_GOTSUPER"
+Inventory.PickupSound "misc/p_pkup"
+Inventory.PickupAnnouncerEntry "soulsphere"
+Tag "Soul Sphere"
+	States
+	{
+	Spawn:
+		SOUL A 0 Bright Light("SOULSPHERE")
+	SpawnLoop:
+		"####" "#" 3 Bright Light("SOULSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
+	SpawnNormal:
+		SOUL ABCDCB 3 Bright Light("SOULSPHERE")
+		Goto SpawnLoop
+	AlphaSpawn:
+		2OUL ABCDCB 3 Bright Light("SOULSPHERE")
+		Goto SpawnLoop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("SoulSphere",1)
+		TNT1 A 0 A_TakeInventory("Stamina",0)
+		Stop
+	}
+}
+
+Actor 64Megasphere : Megasphere Replaces Megasphere
+{
+Scale 0.82
+Inventory.PickupMessage "$FO_GOTMSPHERE"
+Inventory.PickupSound "misc/p_pkup"
+Tag "Mega Sphere"
+	States
+	{
+	Spawn:
+		MEGA A 0 Bright Light("MEGASPHERE")
+	SpawnLoop:
+		"####" "#" 3 Bright Light("MEGASPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
+	SpawnNormal:
+		MEGA ABCD 6 Bright Light("MEGASPHERE")
+		Goto SpawnLoop
+	AlphaSpawn:
+		MEG1 ABCD 6 Bright Light("MEGASPHERE")
+		Goto SpawnLoop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("BlueArmorForMegasphere",1)
+		TNT1 A 0 A_GiveInventory("MegasphereHealth",1)
+		TNT1 A 0 A_TakeInventory("Stamina",0)
+		Stop
+	}
+}
+
+Actor 64BlurSphere : BlurSphere Replaces BlurSphere
+{
+Scale 0.82
+powerup.strength 50
+Inventory.PickupMessage "$FO_GOTINVIS"
+Tag "Partial Invisibility Sphere"
+-VISIBILITYPULSE
+	States
+	{
+	Spawn:
+		PINS A 0 Bright Light("BLURSPHERE")
+	SpawnLoop:
+		"####" D 3 Bright Light("BLURSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
+	SpawnNormal:
+		PINS ABC 3 Bright Light("BLURSPHERE")
+		Goto SpawnLoop
+	AlphaSpawn:
+		PIN2 ABC 3 Bright Light("BLURSPHERE")
+		Goto SpawnLoop
+	}
+}
+
+Actor 64RadSuit : RadSuit Replaces RadSuit
+{
+Scale 0.82
+Inventory.PickupMessage "$FO_GOTSUIT"
+powerup.color "green",0.15
+Tag "Radiation Suit"
+	States
+	{
+	Spawn:
+		SUIT A 0 Bright Light("INVULN")
+	SpawnLoop:
+		"####" "#" 3 Bright Light("INVULN") ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
+	SpawnNormal:
+		SUIT A 6 Bright Light("INVULN")
+		SUIT B 6 Light("INVULN")
+		Goto SpawnLoop
+	AltSpawn:
+		SUIT C 32
+		Goto SpawnLoop
+	}
+}
+
+ACTOR 64Infrared : Infrared //Replaces Infrared		//Replaced by optional spawner
+{
+Scale 0.82
+Inventory.PickupMessage "$FO_GOTVISOR"
+Tag "Night Vision Goggles"
+	States
+	{
+	Spawn:
+		PVIS A 0
+	SpawnLoop:
+		"####" "#" 3 Bright ACS_NamedExecuteAlways("AlphaPickupACS")
+	SpawnNormal:
+		PVIS A 6
+		PVIS B 6 Bright
+		Goto SpawnLoop
+	AlphaSpawn:
+		PVI2 A 6
+		PVI2 B 6 Bright
+		Goto SpawnLoop
+	}
+}
+
+Actor 64Allmap : Allmap Replaces Allmap
+{
+Scale 0.82
+Inventory.PickupMessage "$FO_GOTMAP"
+Tag "Computer Area Map"
+	states
+	{
+	Spawn:
+		PMAP A 0 Bright Light("HellPotion")
+	SpawnLoop:
+		"####" "#" 3 Bright Light("HellPotion") ACS_NamedExecuteAlways("AlphaPickupACS")
+	SpawnNormal:
+		PMAP ABC 6 Bright Light("HellPotion")
+		PMAP BAD 6 Bright Light("HellPotion")
+		Goto SpawnLoop
+	AlphaSpawn:
+		PMAP E 32 Bright Light("ARMORBONUS")
+		Goto SpawnLoop
+	}
+}
+
 Actor 64Berserk : Berserk Replaces Berserk
 {
 Scale 0.82
+Inventory.PickupMessage "$FO_GOTBERSERK"
 Tag "Berserk Pack"
 	states
 	{
@@ -39,214 +333,110 @@ Tag "Berserk Pack"
 	}
 }
 
-Actor 64GreenArmor : GreenArmor Replaces GreenArmor
+ACTOR GLBlueCard : CustomInventory Replaces Bluecard
 {
-Scale 0.82
-Inventory.PickupSound "ARMOR"
-Tag "Green Armour"
-	States
-	{
-	Spawn:
-		ARM1 A 0 Light("INVULN")
-	SpawnLoop:
-		"####" "#" 3 Light("INVULN") ACS_NamedExecuteAlways("AlphaPickupACS")
-	SpawnNormal:
-		ARM1 A 6 Light("INVULN")
-		ARM1 B 6 Bright Light("INVULN")
-		Goto SpawnLoop
-	AlphaSpawn:
-		ARM3 A 6 Light("INVULN")
-		ARM3 B 6 Bright Light("INVULN")
-		Goto SpawnLoop
-	}
-}
-
-Actor 64BlueArmor : BlueArmor Replaces BlueArmor
-{
-Scale 0.82
-Inventory.PickupSound "ARMOR"
-Tag "Blue Armour"
-	States
-	{
-	Spawn:
-		ARM2 A 0 Light("SOULSPHERE")
-	SpawnLoop:
-		"####" "#" 3 Light("SOULSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
-	SpawnNormal:
-		ARM2 A 6 Light("SOULSPHERE")
-		ARM2 B 6 Bright Light("SOULSPHERE")
-		Goto SpawnLoop
-	AlphaSpawn:
-		ARM4 A 6 Light("SOULSPHERE")
-		ARM4 B 6 Bright Light("SOULSPHERE")
-		Goto SpawnLoop
-	}
-}
-
-Actor 64BlurSphere : BlurSphere Replaces BlurSphere
-{
-Scale 0.82
-powerup.strength 50
-Tag "Partial Invisibility Sphere"
--VISIBILITYPULSE
-	States
-	{
-	Spawn:
-		PINS A 0 Bright Light("BLURSPHERE")
-	SpawnLoop:
-		"####" D 3 Bright Light("BLURSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
-	SpawnNormal:
-		PINS ABC 3 Bright Light("BLURSPHERE")
-		Goto SpawnLoop
-	AlphaSpawn:
-		PIN2 ABC 3 Bright Light("BLURSPHERE")
-		Goto SpawnLoop
-	}
-}
-
-Actor 64InvulnerabilitySphere : InvulnerabilitySphere Replaces InvulnerabilitySphere
-{
-Scale 0.82
-powerup.color "FF FF FF",0.30
-Tag "Invulnerability Sphere"
-	states
-	{
-	Spawn:
-		PINV A 0 Bright Light("INVULN")
-	SpawnLoop:
-		"####" "#" 3 Bright Light("INVULN") ACS_NamedExecuteAlways("AlphaPickupACS")
-	SpawnNormal:
-		PINV ABCDCB 6 Bright Light("INVULN")
-		Goto SpawnLoop
-	AlphaSpawn:
-		P1NV ABCDCB 6 Bright Light("INVULN")
-		Goto SpawnLoop
-	}
-}
-
-Actor 64Megasphere : Megasphere Replaces Megasphere
-{
-Scale 0.82
-Inventory.PickupSound "misc/p_pkup"
-Tag "Mega Sphere"
-	States
-	{
-	Spawn:
-		MEGA A 0 Bright Light("MEGASPHERE")
-	SpawnLoop:
-		"####" "#" 3 Bright Light("MEGASPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
-	SpawnNormal:
-		MEGA ABCD 6 Bright Light("MEGASPHERE")
-		Goto SpawnLoop
-	AlphaSpawn:
-		MEG1 ABCD 6 Bright Light("MEGASPHERE")
-		Goto SpawnLoop
-	Pickup:
-		TNT1 A 0 A_GiveInventory("BlueArmorForMegasphere",1)
-		TNT1 A 0 A_GiveInventory("MegasphereHealth",1)
-		TNT1 A 0 A_TakeInventory("Stamina",0)
-		Stop
-	}
-}
-
-Actor 64RadSuit : RadSuit Replaces RadSuit
-{
-Scale 0.82
-powerup.color "green",0.15
-Tag "Radiation Suit"
-	States
-	{
-	Spawn:
-		SUIT A 0 Bright Light("INVULN")
-	SpawnLoop:
-		"####" "#" 3 Bright Light("INVULN") ACS_NamedExecuteAlways("AlternativeAmmoPickupSpritesACS")
-	SpawnNormal:
-		SUIT A 6 Bright Light("INVULN")
-		SUIT B 6 Light("INVULN")
-		Goto SpawnLoop
-	AltSpawn:
-		SUIT C 32
-		Goto SpawnLoop
-	}
-}
-
-Actor 64Soulsphere : CustomInventory Replaces Soulsphere
-{
-Scale 0.7
+Inventory.PickupMessage "$FO_GOTBLUECARD"
+Inventory.PickupSound "KCRPKUP"
+Tag "Blue Keycard"
 +COUNTITEM
-+INVENTORY.ALWAYSPICKUP
-Inventory.PickupMessage "$GOTSUPER"
-Inventory.PickupSound "misc/p_pkup"
-Inventory.PickupAnnouncerEntry "soulsphere"
-Tag "Soul Sphere"
 	States
 	{
 	Spawn:
-		SOUL A 0 Bright Light("SOULSPHERE")
-	SpawnLoop:
-		"####" "#" 3 Bright Light("SOULSPHERE") ACS_NamedExecuteAlways("AlphaPickupACS")
-	SpawnNormal:
-		SOUL ABCDCB 3 Bright Light("SOULSPHERE")
-		Goto SpawnLoop
-	AlphaSpawn:
-		2OUL ABCDCB 3 Bright Light("SOULSPHERE")
-		Goto SpawnLoop
+		BKEY AAAAA 3 BRIGHT Light("BLUEKEY") A_SpawnItemEx("LensFlareTorchBlue",0,0,10)
+		BKEY B 12 Light("BLUEKEY")
+		Loop
 	Pickup:
-		TNT1 A 0 A_GiveInventory("SoulSphere",1)
-		TNT1 A 0 A_TakeInventory("Stamina",0)
+		TNT1 A 0 A_GiveInventory("BlueCard",1)
 		Stop
 	}
 }
 
-Actor 64Stimpack : Stimpack Replaces Stimpack
+ACTOR GLYellowCard : CustomInventory Replaces Yellowcard
 {
-Scale 0.82
-Tag "Stimpack"
-	states
+Inventory.PickupMessage "$FO_GOTYELWCARD"
+Inventory.PickupSound "KCRPKUP"
+Tag "Yellow Keycard"
++COUNTITEM
+	States
 	{
 	Spawn:
-		STIM A 0
-	SpawnLoop:
-		"####" "#" 3 ACS_NamedExecuteAlways("AlphaPickupACS")
-		"####" "#" 3 ACS_NamedExecuteAlways("CensoredHealing_ACS")
-	SpawnNormal:
-		STIM A 32
-		Goto SpawnLoop
-	CensoredSpawn:
-		STIM B 32
-		Goto SpawnLoop
-	BFGStyleSpawn:
-		STIM C 32
-		Goto SpawnLoop
-	AlphaSpawn:
-		STIM D 32
-		Goto SpawnLoop
+		YKEY AAAAA 3 BRIGHT Light("YELLOWKEY") A_SpawnItemEx("LensFlareTorchYellow",0,0,10)
+		YKEY B 12 Light("YELLOWKEY")
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("YellowCard",1)
+		Stop
 	}
 }
 
-Actor 64Medikit : Medikit Replaces Medikit
+ACTOR GLRedCard : CustomInventory Replaces Redcard
 {
-Scale 0.82
-Tag "Medikit"
-	states
+Inventory.PickupMessage "$FO_GOTREDCARD"
+Inventory.PickupSound "KCRPKUP"
+Tag "Red Keycard"
++COUNTITEM
+	States
 	{
 	Spawn:
-		MEDI A 0
-	SpawnLoop:
-		"####" "#" 3 ACS_NamedExecuteAlways("AlphaPickupACS")
-		"####" "#" 3 ACS_NamedExecuteAlways("CensoredHealing_ACS")
-	SpawnNormal:
-		MEDI A 32
-		Goto SpawnLoop
-	CensoredSpawn:
-		MEDI B 32
-		Goto SpawnLoop
-	BFGStyleSpawn:
-		MEDI C 32
-		Goto SpawnLoop
-	AlphaSpawn:
-		MEDI D 32
-		Goto SpawnLoop
+		RKEY AAAAA 3 BRIGHT Light("REDKEY") A_SpawnItemEx("LensFlareTorchRed",0,0,10)
+		RKEY B 12 Light("REDKEY")
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("RedCard",1)
+		Stop
+	}
+}
+
+ACTOR GLBlueSkull : CustomInventory Replaces BlueSkull
+{
+Inventory.PickupMessage "$FO_GOTBLUESKUL"
+Inventory.PickupSound "SKLPKUP"
+Tag "Blue Skullkey"
++COUNTITEM
+	States
+	{
+	Spawn:
+		BSKU AAAAA 3 BRIGHT Light("BLUEKEY") A_SpawnItemEx("LensFlareTorchBlue",0,0,10)
+		BSKU B 12 Light("BLUEKEY")
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("BlueSkull",1)
+		Stop
+	}
+}
+ACTOR GLYellowSkull : CustomInventory Replaces YellowSkull
+{
+Inventory.PickupMessage "$FO_GOTYELWSKUL"
+Inventory.PickupSound "SKLPKUP"
+Tag "Yellow Skullkey"
++COUNTITEM
+	States
+	{
+	Spawn:
+		YSKU AAAAA 3 BRIGHT Light("YELLOWKEY") A_SpawnItemEx("LensFlareTorchYellow",0,0,10)
+		YSKU B 12 Light("YELLOWKEY")
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("YellowSkull",1)
+		Stop
+	}
+}
+
+ACTOR GLRedSkull : CustomInventory Replaces RedSkull
+{
+Inventory.PickupMessage "$FO_GOTREDSKUL"
+Inventory.PickupSound "SKLPKUP"
+Tag "Red Skullkey"
++COUNTITEM
+	States
+	{
+	Spawn:
+		RSKU AAAAA 3 BRIGHT Light("REDKEY") A_SpawnItemEx("LensFlareTorchRed",0,0,10)
+		RSKU B 12 Light("REDKEY")
+		Loop
+	Pickup:
+		TNT1 A 0 A_GiveInventory("RedSkull",1)
+		Stop
 	}
 }
 
@@ -270,7 +460,7 @@ Actor 64Backpack : CustomInventory Replaces Backpack
 Game Doom
 Scale 0.82
 Height 26
-Inventory.PickupMessage "$GOTBACKPACK"
+Inventory.PickupMessage "$FO_GOTBACKPACK"
 Inventory.PickupSound "BPPICK"
 Tag "Backpack"
 	States
@@ -387,6 +577,7 @@ Tag "Backpack with Flashlight and Pistol Silencer"
 Actor 64Clip : Clip Replaces Clip
 {
 Scale 0.82
+Inventory.PickupMessage "$FO_GOTCLIP"
 Inventory.PickupSound "IPICK"
 Tag "Bullet Magazine"
 	states
@@ -425,6 +616,7 @@ Tag "Bullet Magazine"
 Actor 64Shell : Shell Replaces Shell
 {
 Scale 0.82
+Inventory.PickupMessage "$FO_GOTSHELLS"
 Inventory.PickupSound "IPICK"
 Tag "Shotgun Shells"
 	states
@@ -457,6 +649,7 @@ Tag "Shotgun Shells"
 Actor 64RocketAmmo : RocketAmmo Replaces RocketAmmo
 {
 Scale 0.82
+Inventory.PickupMessage "$FO_GOTROCKET"
 Inventory.PickupSound "IPICK"
 Tag "Rocket Shell"
 	states
@@ -489,6 +682,7 @@ Tag "Rocket Shell"
 Actor 64Cell : Cell Replaces Cell
 {
 Scale 0.82
+Inventory.PickupMessage "$FO_GOTCELL"
 Inventory.PickupSound "IPICK"
 Tag "Energy Cell"
 	states
@@ -533,6 +727,7 @@ Scale 0.82
 Actor 64ClipBox : ClipBox
 {
 Scale 0.82
+Inventory.PickupMessage "$FO_GOTCLIPBOX"
 Inventory.PickupSound "IPICK"
 Tag "Bullet Box"
 	states
@@ -574,6 +769,7 @@ Actor 64ShellBox : ShellBox Replaces ShellBox
 {
 Scale 0.82
 Inventory.Amount 16
+Inventory.PickupMessage "$FO_GOTSHELLBOX"
 Inventory.PickupSound "IPICK"
 Tag "Shotgun Shell Box"
 	states
@@ -601,6 +797,7 @@ Tag "Shotgun Shell Box"
 ACTOR 64Rocketbox : Rocketbox replaces Rocketbox
 {
 Scale 0.82
+Inventory.PickupMessage "$FO_GOTROCKBOX"
 Inventory.PickupSound "IPICK"
 Tag "Rocket Shell Crate"
 	states
@@ -624,6 +821,7 @@ Tag "Rocket Shell Crate"
 Actor 64CellPack : CellPack Replaces CellPack
 {
 Scale 0.82
+Inventory.PickupMessage "$FO_GOTCELLBOX"
 Inventory.PickupSound "IPICK"
 Tag "Energy Cell Pack"
 	states
@@ -651,54 +849,6 @@ Tag "Energy Cell Pack"
 	}
 }
 
-Actor 64Allmap : Allmap Replaces Allmap
-{
-Scale 0.82
-Tag "Computer Area Map"
-	states
-	{
-	Spawn:
-		PMAP A 0 Bright Light("HellPotion")
-	SpawnLoop:
-		"####" "#" 3 Bright Light("HellPotion") ACS_NamedExecuteAlways("AlphaPickupACS")
-	SpawnNormal:
-		PMAP ABC 6 Bright Light("HellPotion")
-		PMAP BAD 6 Bright Light("HellPotion")
-		Goto SpawnLoop
-	AlphaSpawn:
-		PMAP E 32 Bright Light("ARMORBONUS")
-		Goto SpawnLoop
-	}
-}
-
-Actor 64HealthBonus : HealthBonus Replaces HealthBonus
-{
-Scale 0.82
-Inventory.Amount 2
-Tag "Health Bonus"
-	states
-	{
-	Spawn:
-		BON1 AABBCCDD 2 Bright Light("HealthPotion") A_SpawnItemEx("BlueFlareSmallItem",0,0,7)
-		loop
-	}
-}
-
-Actor 64ArmorBonus : ArmorBonus Replaces ArmorBonus
-{
-Scale 0.82
-Armor.SaveAmount 2
-Armor.Savepercent 50
-Tag "Armour Bonus"
-	States
-	{
-	Spawn:
-		BON2 A 6 Light("ARMORBONUS")
-		BON2 BBCCDDCCBB 2 Light("ARMORBONUS") A_SpawnItemEx("GreenFlareSmallItem",0,0,7)
-		loop
-	}
-}
-
 ACTOR 64HellPotion : CustomInventory 1657
 {
 //$category "Game/BD64_Artifacts
@@ -719,27 +869,6 @@ Tag "Hell Potion"
 		TNT1 A 0 A_GiveInventory("64HealthBonus",1)
 		TNT1 A 0 A_GiveInventory("64ArmorBonus",1)
 		stop
-	}
-}
-
-ACTOR 64Infrared : Infrared //Replaces Infrared		//Replaced by optional spawner
-{
-Scale 0.82
-Tag "Night Vision Goggles"
-	States
-	{
-	Spawn:
-		PVIS A 0
-	SpawnLoop:
-		"####" "#" 3 Bright ACS_NamedExecuteAlways("AlphaPickupACS")
-	SpawnNormal:
-		PVIS A 6
-		PVIS B 6 Bright
-		Goto SpawnLoop
-	AlphaSpawn:
-		PVI2 A 6
-		PVI2 B 6 Bright
-		Goto SpawnLoop
 	}
 }
 
@@ -924,114 +1053,6 @@ Tag "Advanced Area Scanner"
 	Pickup:
 		TNT1 A 0 A_GiveInventory("PowerScanner",1)
 		TNT1 A 0 A_GiveInventory("AllMap",1)
-		Stop
-	}
-}
-
-ACTOR GLBlueCard : CustomInventory Replaces Bluecard
-{
-Inventory.PickupMessage "$GOTBLUECARD"
-Inventory.PickupSound "KCRPKUP"
-Tag "Blue Keycard"
-+COUNTITEM
-	States
-	{
-	Spawn:
-		BKEY AAAAA 3 BRIGHT Light("BLUEKEY") A_SpawnItemEx("LensFlareTorchBlue",0,0,10)
-		BKEY B 12 Light("BLUEKEY")
-		Loop
-	Pickup:
-		TNT1 A 0 A_GiveInventory("BlueCard",1)
-		Stop
-	}
-}
-
-ACTOR GLBlueSkull : CustomInventory Replaces BlueSkull
-{
-Inventory.PickupMessage "$GOTBLUESKUL"
-Inventory.PickupSound "SKLPKUP"
-Tag "Blue Skullkey"
-+COUNTITEM
-	States
-	{
-	Spawn:
-		BSKU AAAAA 3 BRIGHT Light("BLUEKEY") A_SpawnItemEx("LensFlareTorchBlue",0,0,10)
-		BSKU B 12 Light("BLUEKEY")
-		Loop
-	Pickup:
-		TNT1 A 0 A_GiveInventory("BlueSkull",1)
-		Stop
-	}
-}
-
-ACTOR GLRedCard : CustomInventory Replaces Redcard
-{
-Inventory.PickupMessage "$GOTREDCARD"
-Inventory.PickupSound "KCRPKUP"
-Tag "Red Keycard"
-+COUNTITEM
-	States
-	{
-	Spawn:
-		RKEY AAAAA 3 BRIGHT Light("REDKEY") A_SpawnItemEx("LensFlareTorchRed",0,0,10)
-		RKEY B 12 Light("REDKEY")
-		Loop
-	Pickup:
-		TNT1 A 0 A_GiveInventory("RedCard",1)
-		Stop
-	}
-}
-
-ACTOR GLRedSkull : CustomInventory Replaces RedSkull
-{
-Inventory.PickupMessage "$GOTREDSKUL"
-Inventory.PickupSound "SKLPKUP"
-Tag "Red Skullkey"
-+COUNTITEM
-	States
-	{
-	Spawn:
-		RSKU AAAAA 3 BRIGHT Light("REDKEY") A_SpawnItemEx("LensFlareTorchRed",0,0,10)
-		RSKU B 12 Light("REDKEY")
-		Loop
-	Pickup:
-		TNT1 A 0 A_GiveInventory("RedSkull",1)
-		Stop
-	}
-}
-
-ACTOR GLYellowCard : CustomInventory Replaces Yellowcard
-{
-Inventory.PickupMessage "$GOTYELWCARD"
-Inventory.PickupSound "KCRPKUP"
-Tag "Yellow Keycard"
-+COUNTITEM
-	States
-	{
-	Spawn:
-		YKEY AAAAA 3 BRIGHT Light("YELLOWKEY") A_SpawnItemEx("LensFlareTorchYellow",0,0,10)
-		YKEY B 12 Light("YELLOWKEY")
-		Loop
-	Pickup:
-		TNT1 A 0 A_GiveInventory("YellowCard",1)
-		Stop
-	}
-}
-
-ACTOR GLYellowSkull : CustomInventory Replaces YellowSkull
-{
-Inventory.PickupMessage "$GOTYELWSKUL"
-Inventory.PickupSound "SKLPKUP"
-Tag "Yellow Skullkey"
-+COUNTITEM
-	States
-	{
-	Spawn:
-		YSKU AAAAA 3 BRIGHT Light("YELLOWKEY") A_SpawnItemEx("LensFlareTorchYellow",0,0,10)
-		YSKU B 12 Light("YELLOWKEY")
-		Loop
-	Pickup:
-		TNT1 A 0 A_GiveInventory("YellowSkull",1)
 		Stop
 	}
 }

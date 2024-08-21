@@ -12,6 +12,8 @@ DropItem "DemonEssenceSpawner"
 MeleeRange 60	//default 44
 Species "HellKnight"
 BloodType "Brutal_BloodGreen"
+HitObituary "$FO_OB_KNIGHTHIT"
+Obituary "$FO_OB_KNIGHT"
 +NOBLOODDECALS
 +NEVERFAST
 	states
@@ -211,4 +213,12 @@ RenderStyle Add
 		BAL7 J 2 Bright
 		Stop
 	}
+}
+
+ACTOR 64StealthHellKnight : 64HellKnight Replaces StealthHellKnight
+{
+Tag "Stealth Hell Knight"
+Obituary "$FO_OB_STEALTHKNIGHT"
+HitObituary "$FO_OB_STEALTHKNIGHT"
++STEALTH
 }

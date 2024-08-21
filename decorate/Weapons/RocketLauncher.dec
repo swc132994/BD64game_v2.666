@@ -2,8 +2,8 @@ Actor RocketLauncherSpawner : CustomInventory Replaces RocketLauncher
 {
 //$category "Game/BD64_Weapons
 Scale 0.82
-Tag "Rocket Launcher"
-Inventory.PickupMessage "$GOTLAUNCHER"
+Tag "$FO_TAG_ROCKETLAUNCHER"
+Inventory.PickupMessage "$FO_GOTLAUNCHER"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -30,8 +30,8 @@ Weapon.SelectionOrder 2500
 Weapon.AmmoType "RocketAmmo"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 2
-Inventory.PickupMessage "$GOTLAUNCHER"
-Tag "$TAG_ROCKETLAUNCHER"
+Inventory.PickupMessage "$FO_GOTLAUNCHER"
+Tag "$FO_TAG_ROCKETLAUNCHER"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -119,8 +119,8 @@ Weapon.AmmoGive1 2
 Weapon.AmmoType2 "RLAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Inventory.PickupMessage "$GOTLAUNCHER"
-Tag "$TAG_ROCKETLAUNCHER"
+Inventory.PickupMessage "$FO_GOTLAUNCHER"
+Tag "$FO_TAG_ROCKETLAUNCHER"
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.NOAUTOFIRE
 +WEAPON.NOALERT
@@ -355,8 +355,8 @@ Weapon.SelectionOrder 2500
 Weapon.AmmoType "RocketAmmo"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 0
-Inventory.PickupMessage "$GOTLAUNCHER"
-Tag "$TAG_ROCKETLAUNCHER"
+Inventory.PickupMessage "$FO_GOTLAUNCHER"
+Tag "$FO_TAG_ROCKETLAUNCHER"
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.NOAUTOFIRE
 +WEAPON.NOALERT
@@ -483,6 +483,7 @@ Actor 64Rocket : Rocket Replaces Rocket
 scale 0.75
 Speed 30
 Decal "BigScorch"
+Obituary "$FO_OB_MPROCKET"
 -DEHEXPLOSION
 -ROCKETTRAIL
 +EXTREMEDEATH

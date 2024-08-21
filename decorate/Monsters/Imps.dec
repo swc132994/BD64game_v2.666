@@ -14,6 +14,9 @@ DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "chainsaw",0.5
 DamageFactor "Head",0.8
 DropItem "DemonEssenceSpawner"
+Tag "Imp"
+HitObituary "$FO_OB_IMPHIT"
+Obituary "$FO_OB_IMP"
 +NOBLOODDECALS
 +NEVERFAST
 	States
@@ -652,6 +655,9 @@ PROJECTILE
 
 Actor 64StealthDoomImp : 64DoomImp Replaces StealthDoomImp
 {
+Tag "Stealth Imp"
+Obituary "$FO_OB_STEALTHIMP"
+HitObituary "FO_$OB_STEALTHIMP"
 +STEALTH
 }
 
@@ -667,13 +673,13 @@ PainChance 200
 Alpha 0.6
 RenderStyle Translucent
 DamageFactor "Head",0.8
-Obituary "%o was burned by a Nightmare Imp."
-HitObituary "%o was slashed by a Nightmare Imp."
 SeeSound "imp/sight"
 PainSound "imp/pain"
 DeathSound "imp/death"
 ActiveSound "imp/active"
 Tag "Nightmare Imp"
+Obituary "%o was burned by a Nightmare Imp."
+HitObituary "%o was slashed by a Nightmare Imp."
 BloodType "Brutal_BloodBLUE"
 	States
 	{

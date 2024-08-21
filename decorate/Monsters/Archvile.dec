@@ -11,6 +11,8 @@ DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Head",0.9
 DropItem "DemonEssenceSpawner"
 Species "Archvile"
+Tag "Archvile"
+Obituary "$FO_OB_VILE"
 +NOBLOODDECALS
 +NEVERFAST
 	States
@@ -425,4 +427,11 @@ RenderStyle Add
 		F4RE FEFEFGHIGHIGHI 2 Bright A_Fire
 		Stop
 	}
+}
+
+Actor 64StealthArchvile : 64Archvile Replaces StealthArchvile
+{
+Tag "Stealth Archvile"
+Obituary "$FO_OB_STEALTHVILE"
++STEALTH
 }

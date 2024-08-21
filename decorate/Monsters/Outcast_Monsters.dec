@@ -16,6 +16,7 @@ DamageFactor "Acid",0
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Obituary "%o was dissolved by an acid demon"
+HitObituary "%o was mauled by an acid demon"
 Tag "Acid Demon"
 DropItem "DemonEssenceSpawner"
 BloodType "Brutal_BloodGreen"
@@ -617,10 +618,10 @@ Alpha 0.5
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 RenderStyle Translucent
+Tag "Stalker"
 Obituary "%o didn't see the stalker coming."
 PainSound "DSSTLKPN"
 SeeSound "DSSTLKST"
-Tag "Stalker"
 +DONTHARMCLASS
 +NOBLOODDECALS
 	States

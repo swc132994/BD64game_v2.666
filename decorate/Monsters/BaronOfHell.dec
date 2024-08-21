@@ -12,6 +12,9 @@ DropItem "DemonEssenceSpawner"
 MeleeRange 60	//default 44
 BloodType "Brutal_BloodGreen"
 BloodColor "00 64 00"	//Hex value
+Tag "Baron of Hell"
+Obituary "$FO_OB_BARON"
+HitObituary "$FO_OB_BARONHIT"
 +NOBLOODDECALS
 +NEVERFAST
 	States
@@ -220,4 +223,12 @@ RenderStyle Add
 		BAL7 I 2 Bright
 		Stop
 	}
+}
+
+Actor 64StealthBaron : 64BaronOfHell Replaces StealthBaron
+{
+Tag "Stealth Baron of Hell"
+Obituary "$FO_OB_STEALTHBARON"
+HitObituary "$FO_OB_STEALTHBARON"
++STEALTH
 }

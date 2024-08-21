@@ -2,8 +2,8 @@ ACTOR PistolSpawner : CustomInventory Replaces Pistol
 {
 //$category "Game/BD64_Weapons
 Scale 0.82
-Tag "Pistol"
-Inventory.PickupMessage "$PICKUP_PISTOL_DROPPED"
+Tag "$FO_TAG_PISTOL"
+Inventory.PickupMessage "$FO_PICKUP_PISTOL_DROPPED"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -30,11 +30,11 @@ Weapon.SelectionOrder 1900
 Weapon.AmmoType "Clip"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 10
-Obituary "$OB_MPPISTOL"
 +WEAPON.WIMPY_WEAPON
 +WEAPON.NOAUTOFIRE
-Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
-Tag "$TAG_PISTOL"
+Obituary "$FO_OB_MPPISTOL"
+Inventory.Pickupmessage "$FO_PICKUP_PISTOL_DROPPED"
+Tag "$FO_TAG_PISTOL"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
@@ -106,9 +106,9 @@ Weapon.AmmoGive1 10
 Weapon.AmmoType2 "PistolAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Obituary "$OB_MPPISTOL"
-Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED"
-Tag "$TAG_PISTOL"
+Obituary "$FO_OB_MPPISTOL"
+Inventory.Pickupmessage "$FO_PICKUP_PISTOL_DROPPED"
+Tag "$FO_TAG_PISTOL"
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.NOALERT
 +WEAPON.NOAUTOFIRE
