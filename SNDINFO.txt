@@ -280,7 +280,7 @@ MP40/Charge		MP40BACK
 GRNPIN			GRNPIN
 
 //Flies
-Flies			DSBUZZ		$volume Flies 0.85
+Flies			DSBUZZ		$volume Flies 0.75
 
 //Projectiles
 $random world/ricochet
@@ -337,7 +337,7 @@ weapons/largemagdrop2		dsaounc2
 weapons/largemagdrop3		dsaounc3
 weapons/largemagdrop4		dsaounc4
 
-weapons/barrelpain		barrelz
+weapons/barrelpain			barrelz		$volume weapons/barrelpain 0.75
 
 //explosiona
 $random Explosion

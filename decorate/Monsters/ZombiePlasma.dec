@@ -1,13 +1,13 @@
 Actor 64PlasmaGuy : 64Zombieman 19138
 {
 //$category "Game/BD64_Monsters
-Health 95
+Health 80
 Speed 12
 SeeSound "colonelzombie/see"
 ActiveSound "colonelzombie/active"
 DeathSound "colonelzombie/death"
 PainSound "colonelzombie/pain"
-DamageFactor "Head",1.25
+DamageFactor "Head",2.25
 Tag "Plasma Zombie"
 DropItem "Cell"
 DropItem "SOULSPAWNER"

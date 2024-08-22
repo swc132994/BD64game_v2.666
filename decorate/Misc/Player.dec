@@ -125,16 +125,13 @@ Player.ViewHeight 50
 Player.AttackZOffset 23
 Player.DisplayName "Classical"
 Player.CrouchSprite "PLYC"
-+THRUSPECIES
-+MTHRUSPECIES
-+NOBLOODDECALS
 	States
 	{
 	Spawn:
 		PLAY E 0
 		PLAY E -1 A_TakeInventory("Stamina",0)
 		Stop
-	See:	//Frames set the player animation on player seect menu
+	See:	//Frames set the player animation on player select menu
 		PLAY AB 6
 		PLAY B 0 A_SpawnItemEx("BD64FootStep",0,0,0,0,0,0,0,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
 		PLAY B 0
@@ -330,9 +327,6 @@ Player.AttackZOffset 23
 Player.DisplayName "Tactical (Rifle)"
 Player.CrouchSprite "PLYC"
 Player.Portrait "TCLASS1"
-+THRUSPECIES
-+MTHRUSPECIES
-+NOBLOODDECALS
 	States
 	{
 	Spawn:
@@ -597,9 +591,6 @@ Player.ViewHeight 50
 Player.AttackZOffset 23
 Player.DisplayName "Modern"
 Player.CrouchSprite "PLYC"
-+THRUSPECIES
-+MTHRUSPECIES
-+NOBLOODDECALS
 	States
 	{
 	Spawn:

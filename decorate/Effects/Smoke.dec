@@ -120,11 +120,11 @@ YScale -0.2
 
 Actor PlasmaSmoke : ExplosionSmoke
 {
+Translation "0:255=%[0,0,0]:[1,1,1]"//White
 Scale 0.5
 Speed 1
 Alpha 0.1
-renderstyle stencil
-stencilcolor white
+RenderStyle Add
 	States
 	{
 	Spawn:
@@ -155,11 +155,11 @@ Renderstyle Add
 
 Actor OldschoolRocketSmokeTrail2
 {
+Translation "0:255=%[0,0,0]:[1,1,1]"//White
 Scale 0.2
 Speed 1
-Alpha 0.7
-renderstyle stencil
-stencilcolor white
+Alpha 0.5
+RenderStyle Add
 +NOINTERACTION
 +NOCLIP
 +CLIENTSIDEONLY

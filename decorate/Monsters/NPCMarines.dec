@@ -14,6 +14,7 @@ MaxTargetRange 600
 Species "Marines"
 Translation "112:127=%[0.00,0.00,0.00]:[0.0,0.6,0.0]"
 Tag "Rifle Marine"
+DamageFactor "Head",2.25
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Unmaker",0.1
@@ -243,6 +244,7 @@ MaxTargetRange 600
 Scale 0.8
 Translation "112:127=%[0.00,0.00,0.00]:[0.35,0.35,0.35]"
 Tag "BFG 9k Marine"
+DamageFactor "Head",2.25
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Unmaker",0.1
@@ -444,6 +446,7 @@ MaxTargetRange 600
 Scale 0.8
 Translation "112:127=%[0.00,0.00,0.00]:[0.72,0.57,0.58]"
 Tag "Berserk Marine"
+DamageFactor "Head",2.25
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Unmaker",0.1
@@ -640,6 +643,7 @@ MaxTargetRange 600
 Scale 0.8
 Translation "112:127=%[0.00,0.00,0.00]:[0.91,0.15,0.15]"
 Tag "Chaingun Marine"
+DamageFactor "Head",2.25
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Unmaker",0.1
@@ -837,6 +841,7 @@ MaxTargetRange 600
 Scale 0.8
 Translation "112:127=%[0.00,0.00,0.00]:[0.65,1.39,1.17]"
 Tag "Chainsaw Marine"
+DamageFactor "Head",2.25
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Unmaker",0.1
@@ -1021,6 +1026,7 @@ MaxTargetRange 600
 Scale 0.8
 Translation "112:127=%[0.00,0.00,0.00]:[0.97,0.98,0.61]"
 Tag "Melee Marine"
+DamageFactor "Head",2.25
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Unmaker",0.1
@@ -1205,6 +1211,7 @@ MaxTargetRange 600
 Scale 0.8
 Translation "112:127=%[0.00,0.00,0.00]:[0.56,0.61,0.94]"
 Tag "Plasma Rifle Marine"
+DamageFactor "Head",2.25
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Unmaker",0.1
@@ -1400,6 +1407,7 @@ MaxTargetRange 600
 Scale 0.8
 Translation "112:127=%[0.00,0.00,0.00]:[1.20,1.13,1.35]"
 Tag "Gauss Cannon Marine"
+DamageFactor "Head",2.25
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Unmaker",0.1
@@ -1594,6 +1602,7 @@ MaxTargetRange 600
 Scale 0.8
 Translation "112:127=%[0.00,0.00,0.00]:[0.80,1.11,0.65]"
 Tag "Rocket Launcher Marine"
+DamageFactor "Head",2.25
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Unmaker",0.1
@@ -1791,6 +1800,7 @@ MaxTargetRange 600
 Scale 0.8
 Translation "112:127=%[0.00,0.00,0.00]:[0.32,0.32,0.32]"
 Tag "Super Shotgun Marine"
+DamageFactor "Head",2.25
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Unmaker",0.1
@@ -1986,6 +1996,7 @@ MaxTargetRange 600
 Scale 0.8
 Translation "112:127=%[0.00,0.00,0.00]:[0.66,0.70,0.75]"
 Tag "Shotgun Marine"
+DamageFactor "Head",2.25
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Unmaker",0.1
@@ -2184,6 +2195,7 @@ MaxTargetRange 600
 Scale 0.8
 Translation "112:127=%[0.00,0.00,0.00]:[0.79,0.54,0.68]"
 Tag "Rank 1 Unmaker Marine"
+DamageFactor "Head",2.25
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Unmaker",0.1
@@ -2380,6 +2392,7 @@ MaxTargetRange 600
 Scale 0.8
 Translation "112:127=%[0.00,0.00,0.00]:[0.79,0.54,0.68]"
 Tag "Rank 2 Unmaker Marine"
+DamageFactor "Head",2.25
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Unmaker",0.1
@@ -2576,6 +2589,7 @@ MaxTargetRange 600
 Scale 0.8
 Translation "112:127=%[0.00,0.00,0.00]:[0.79,0.54,0.68]"
 Tag "Rank 3 Unmaker Marine"
+DamageFactor "Head",2.25
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Unmaker",0.1
@@ -2773,6 +2787,7 @@ MaxTargetRange 600
 Scale 0.8
 Translation "112:127=%[0.00,0.00,0.00]:[0.79,0.54,0.68]"
 Tag "Rank 4 Unmaker Marine"
+DamageFactor "Head",2.25
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 DamageFactor "Unmaker",0.1

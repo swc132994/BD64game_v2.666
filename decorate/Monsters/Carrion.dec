@@ -2,11 +2,11 @@ ACTOR 64Carrion 19136
 {
 //$category "Game/BD64_Monsters
 Scale 0.7
-Health 50
+Health 60
 PainChance 100
 Speed 6
 Radius 15
-Height 52
+Height 56
 Mass 400
 MaxTargetRange 250
 PainChance "Bullet",26

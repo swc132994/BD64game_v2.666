@@ -33,13 +33,12 @@ Actor 64ZombieMan : ZombieMan Replaces ZombieMan
 {
 //$category "Game/BD64Monsters
 Scale 0.8
-Height 50
 GibHealth 15
 Speed 6
 PainChance "Bullet",26
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
-DamageFactor "Head",1.5
+DamageFactor "Head",2.5
 DamageFactor "Chainsaw",0.65
 DamageFactor "Unmaker",0.2
 Obituary "$FO_OB_ZOMBIE"
@@ -302,7 +301,7 @@ Inventory.Amount 1
 ACTOR BurningZombieman
 {
 Scale 0.8
-Height 50
+Height 56
 Health 30
 Speed 6
 Mass 1500
@@ -2155,7 +2154,7 @@ Actor 64ZombieMarine : 64Zombieman Replaces WolfensteinSS
 //$category "Game/BD64_Monsters
 Health 80
 Speed 12
-DamageFactor "Head",1.25
+DamageFactor "Head",2.25
 AttackSound "grunt/attack"
 Tag "Marine Zombie"
 Obituary "%o was gunned down by a zombie marine."

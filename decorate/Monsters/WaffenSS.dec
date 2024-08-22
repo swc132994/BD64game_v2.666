@@ -5,6 +5,7 @@ Health 60
 Speed 12
 MeleeRange 500
 PainChance 64
+DamageFactor "Head",2.5
 DamageFactor "Unmaker",0.1
 Tag "Waffen-SS"
 Obituary "$FO_OB_WOLFSS."

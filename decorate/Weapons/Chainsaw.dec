@@ -73,11 +73,11 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 
 Actor SawDamage : FastProjectile
 {
-Damage(Random(5,6))
+Damage 3
 DamageType "Chainsaw"
 Speed 25
 Radius 2
-Height 2
+Height 4
 Alpha 0.7
 RenderStyle Add
 Decal "SawVertical"
