@@ -176,7 +176,7 @@ Model MinuscleBloodSpot	//MODEL1
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodspothd.png"
+Skin 0 "bloodspot.png"
 Scale 30.0 30.0 30.0
 ZOffset 0.1
 FrameIndex BPDL A 0 0
@@ -189,8 +189,8 @@ Model MinuscleBloodSpot	//MODEL2
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodpool.png"
-Scale 20.0 20.0 20.0
+Skin 0 "bloodstains.png"
+Scale 40.0 40.0 40.0
 ZOffset 0.12
 FrameIndex BPDL C 0 0
 AngleOffset 90
@@ -202,7 +202,7 @@ Model MinuscleBloodSpotGREEN	//MODEL1
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodspothd.png"
+Skin 0 "bloodspot.png"
 Scale 30.0 30.0 30.0
 ZOffset 0.14
 FrameIndex BPDL A 0 0
@@ -215,8 +215,8 @@ Model MinuscleBloodSpotGREEN	//MODEL2
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodpool.png"
-Scale 20.0 20.0 20.0
+Skin 0 "bloodstains.png"
+Scale 40.0 40.0 40.0
 ZOffset 0.16
 FrameIndex BPDL C 0 0
 AngleOffset 90
@@ -228,7 +228,7 @@ Model MinuscleBloodSpotBLUE	//MODEL1
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodspothd.png"
+Skin 0 "bloodspot.png"
 Scale 30.0 30.0 30.0
 ZOffset 0.18
 FrameIndex BPDL A 0 0
@@ -241,8 +241,8 @@ Model MinuscleBloodSpotBLUE	//MODEL2
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodpool.png"
-Scale 20.0 20.0 20.0
+Skin 0 "bloodstains.png"
+Scale 40.0 40.0 40.0
 ZOffset 0.20
 FrameIndex BPDL C 0 0
 AngleOffset 90
@@ -254,7 +254,7 @@ Model Brutal_BloodSpot	//MODEL1
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodspothd.png"
+Skin 0 "bloodspot.png"
 Scale 50.0 50.0 1.0
 ZOffset 0.22
 FrameIndex BPDL A 0 0
@@ -267,8 +267,8 @@ Model Brutal_BloodSpot	//MODEL2
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodspothd2.png"
-Scale 50.0 50.0 1.0
+Skin 0 "bloodstain.png"
+Scale 25.0 25.0 1.0
 ZOffset 0.24
 FrameIndex BPDL C 0 0
 AngleOffset 90
@@ -280,7 +280,7 @@ Model Brutal_BloodSpotGreen	//MODEL1
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodspothd.png"
+Skin 0 "bloodspot.png"
 Scale 50.0 50.0 1.0
 ZOffset 0.26
 FrameIndex BPDL A 0 0
@@ -293,8 +293,8 @@ Model Brutal_BloodSpotGreen	//MODEL2
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodspothd2.png"
-Scale 50.0 50.0 1.0
+Skin 0 "bloodstain.png"
+Scale 25.0 25.0 1.0
 ZOffset 0.29
 FrameIndex BPDL C 0 0
 AngleOffset 90
@@ -306,7 +306,7 @@ Model Brutal_BloodSpotBLUE	//MODEL1
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodspothd.png"
+Skin 0 "bloodspot.png"
 Scale 50.0 50.0 1.0
 ZOffset 0.30
 FrameIndex BPDL A 0 0
@@ -319,8 +319,8 @@ Model Brutal_BloodSpotBLUE	//MODEL2
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodspothd2.png"
-Scale 50.0 50.0 1.0
+Skin 0 "bloodstain.png"
+Scale 25.0 25.0 1.0
 ZOffset 0.32
 FrameIndex BPDL C 0 0
 AngleOffset 90
@@ -332,7 +332,7 @@ Model MediumBloodSpot
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodspot2.png"
+Skin 0 "bloodpool.png"
 Scale 80.0 80.0 80.0
 ZOffset 0.34
 FrameIndex BPDL A 0 0
@@ -351,7 +351,7 @@ Model MediumBloodSpotGREEN
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodspot2.png"
+Skin 0 "bloodpool.png"
 Scale 80.0 80.0 80.0
 ZOffset 0.38
 FrameIndex BPDL A 0 0
@@ -370,7 +370,7 @@ Model MediumBloodSpotBLUE
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodspot2.png"
+Skin 0 "bloodpool.png"
 Scale 80.0 80.0 80.0
 ZOffset 0.42
 FrameIndex BPDL A 0 0
@@ -389,7 +389,7 @@ Model MediumAcidSpot
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodspot2.png"
+Skin 0 "bloodpool.png"
 Scale 40.0 40.0 40.0
 ZOffset 0.46
 FrameIndex BPDL A 0 0
@@ -408,8 +408,8 @@ Model BigBloodSpot
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bigbloodpool32.png"
-Scale 80.0 80.0 80.0
+Skin 0 "bloodsplat.png"
+Scale 60.0 60.0 60.0
 ZOffset 0.50
 FrameIndex BPDL A 0 0
 AngleOffset 90
@@ -427,8 +427,8 @@ Model BigBloodSpotGreen
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bigbloodpool32.png"
-Scale 80.0 80.0 80.0
+Skin 0 "bloodsplat.png"
+Scale 60.0 60.0 60.0
 ZOffset 0.54
 FrameIndex BPDL A 0 0
 AngleOffset 90
@@ -446,8 +446,8 @@ Model BigBloodSpotBLUE
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bigbloodpool32.png"
-Scale 80.0 80.0 80.0
+Skin 0 "bloodsplat.png"
+Scale 60.0 60.0 60.0
 ZOffset 0.58
 FrameIndex BPDL A 0 0
 AngleOffset 90
@@ -465,8 +465,8 @@ Model GiantBloodSpot
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bigbloodpool32.png"
-Scale 90.0 90.0 90.0
+Skin 0 "bloodsplat.png"
+Scale 70.0 70.0 70.0
 ZOffset 0.62
 FrameIndex BPDL A 0 0
 AngleOffset 90
@@ -484,8 +484,8 @@ Model GiantBloodSpotGreen
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bigbloodpool32.png"
-Scale 90.0 90.0 90.0
+Skin 0 "bloodsplat.png"
+Scale 70.0 70.0 70.0
 ZOffset 0.66
 FrameIndex BPDL A 0 0
 AngleOffset 90
@@ -503,8 +503,8 @@ Model GiantBloodSpotBLUE
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bigbloodpool32.png"
-Scale 90.0 90.0 90.0
+Skin 0 "bloodsplat.png"
+Scale 70.0 70.0 70.0
 ZOffset 0.70
 FrameIndex BPDL A 0 0
 AngleOffset 90
@@ -523,7 +523,7 @@ Model 64SmallBloodPool
 Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "oldblood.png"
-Scale 60.0 60.0 60.0
+Scale 50.0 50.0 50.0
 ZOffset 0.76
 FrameIndex POB2 A 0 0
 AngleOffset 90
@@ -542,7 +542,7 @@ Model 64SmallBloodPoolBLUE
 Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "oldblood.png"
-Scale 60.0 60.0 60.0
+Scale 50.0 50.0 50.0
 ZOffset 0.80
 FrameIndex POB2 A 0 0
 AngleOffset 90
@@ -561,7 +561,7 @@ Model GrowingBloodPool	//combined into one model
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodpool2.png"
+Skin 0 "bloodpoolgrow.png"
 Scale 20.0 20.0 1.0
 ZOffset 0.84
 rotating
@@ -626,7 +626,7 @@ Model GrowingBloodPoolBig
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodpool2.png"
+Skin 0 "bloodpoolgrow.png"
 Scale 35.0 35.0 1.0
 ZOffset 0.85
 rotating
@@ -691,7 +691,7 @@ Model GrowingBloodPoolBigBLUE
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodpool2.png"
+Skin 0 "bloodpoolgrow.png"
 Scale 35.0 35.0 1.0
 ZOffset 0.86
 rotating
@@ -756,7 +756,7 @@ Model GrowingBloodPoolGreen	//combined into one model
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodpool2.png"
+Skin 0 "bloodpoolgrow.png"
 Scale 20.0 20.0 1.0
 ZOffset 0.87
 rotating
@@ -821,7 +821,7 @@ Model GrowingBloodPoolBLUE	//combined into one model
 {
 Path "models"
 Model 0 "bloodspot.md3"
-Skin 0 "bloodpool2.png"
+Skin 0 "bloodpoolgrow.png"
 Scale 20.0 20.0 1.0
 ZOffset 0.88
 rotating
@@ -1001,7 +1001,7 @@ Model CeilBloodSpot
 {
 Path "models"
 Model 0 "bloodceil.md3"
-Skin 0 "bloodspothd.png"
+Skin 0 "bloodspot.png"
 Scale 40.0 40.0 -60.0
 ZOffset -0.10
 FrameIndex BPDL A 0 0
@@ -1011,7 +1011,7 @@ Model CeilBloodSpotGreen
 {
 Path "models"
 Model 0 "bloodceil.md3"
-Skin 0 "bloodspothd.png"
+Skin 0 "bloodspot.png"
 Scale 40.0 40.0 -60.0
 ZOffset -0.12
 FrameIndex BPDL A 0 0
@@ -1021,7 +1021,7 @@ Model CeilBloodSpotBLUE
 {
 Path "models"
 Model 0 "bloodceil.md3"
-Skin 0 "bloodspothd.png"
+Skin 0 "bloodspot.png"
 Scale 40.0 40.0 -60.0
 ZOffset -0.13
 FrameIndex BPDL A 0 0
@@ -1031,7 +1031,7 @@ Model CeilBloodSpotLarge
 {
 Path "models"
 Model 0 "bloodceil.md3"
-Skin 0 "bloodspothd2.png"
+Skin 0 "bloodstains.png"
 Scale 40.0 40.0 -60.0
 ZOffset -0.14
 FrameIndex BPDL A 0 0
@@ -1041,7 +1041,7 @@ Model CeilBloodSpotLargeGreen
 {
 Path "models"
 Model 0 "bloodceil.md3"
-Skin 0 "bloodspothd2.png"
+Skin 0 "bloodstains.png"
 Scale 40.0 40.0 -60.0
 ZOffset -0.15
 FrameIndex BPDL A 0 0
@@ -1051,7 +1051,7 @@ Model CeilBloodSpotLargeBLUE
 {
 Path "models"
 Model 0 "bloodceil.md3"
-Skin 0 "bloodspothd2.png"
+Skin 0 "bloodstains.png"
 Scale 40.0 40.0 -60.0
 ZOffset -0.16
 FrameIndex BPDL A 0 0
