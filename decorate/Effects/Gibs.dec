@@ -8,7 +8,6 @@ Mass 1
 SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
 Decal "BrutalBloodSuper"
-DamageType "Blood"
 +MISSILE
 +NOBLOCKMAP
 +NOTELEPORT
@@ -103,7 +102,7 @@ Decal "BrutalBloodSuper"
 BounceType "Doom"
 BounceCount 1
 BounceFactor 1
-PROJECTILE
++MISSILE
 +SKYEXPLODE
 +NOBLOCKMAP
 +NOTELEPORT

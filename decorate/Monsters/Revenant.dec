@@ -201,8 +201,8 @@ Health 15
 Damage 8
 Speed 10
 FastSpeed 15
-Height 16
-Radius 8
+Height 6
+Radius 3
 SeeSound "skeleton/attack"
 DeathSound "skeleton/tracex"
 Decal "SmallerScorch"

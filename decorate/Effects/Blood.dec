@@ -51,9 +51,7 @@ actor Brutal_Blood Replaces Blood
 Scale 0.8
 Speed 0
 Mass 9999
-Alpha 1.0
 Decal "BrutalBloodSplat"
-Renderstyle Translucent
 +FORCEXYBILLBOARD
 +THRUACTORS
 +CLIENTSIDEONLY
@@ -282,11 +280,7 @@ health 1
 radius 6
 height 12
 Gravity 0.8
-damage 0
 Mass 1
-Alpha 0.95
-Renderstyle Translucent
-DamageType "Blood"
 Decal "BrutalBloodSplat"
 +MISSILE
 +CLIENTSIDEONLY
@@ -424,9 +418,7 @@ mass 1
 Health 300
 Speed 0
 Gravity 1.0
-Alpha 1.0
 Decal "BrutalBloodSplat"
-DamageFactor "TeleportRemover",100
 -NOGRAVITY
 -DONTSPLASH
 -SOLID
@@ -631,7 +623,7 @@ Decal "BrutalBloodSplatBLUE"
 actor CeilBloodSpot : Brutal_BloodSpot	//modelled
 {
 BounceType "None"
-PROJECTILE
++MISSILE
 +MOVEWITHSECTOR
 +NOGRAVITY
 +DONTSPLASH
@@ -656,7 +648,7 @@ PROJECTILE
 actor CeilBloodSpotGreen : Brutal_BloodSpotGreen	//modelled
 {
 BounceType "None"
-PROJECTILE
++MISSILE
 +SPAWNCEILING
 +CEILINGHUGGER
 +MOVEWITHSECTOR
@@ -683,7 +675,7 @@ Translation "0:255=%[0,0,0]:[1,2,0]"//Green
 actor CeilBloodSpotBLUE : Brutal_BloodSpotBLUE	//modelled
 {
 BounceType "None"
-PROJECTILE
++MISSILE
 +SPAWNCEILING
 +CEILINGHUGGER
 +MOVEWITHSECTOR
@@ -1194,7 +1186,6 @@ radius 1
 height 1
 mass 1
 Health 600
-Alpha 0.99
 Decal "BrutalBloodSplat"
 -DONTSPLASH
 +NOTELEPORT
@@ -1305,11 +1296,7 @@ health 1
 radius 8
 height 1
 Gravity 0.3
-damage 0
-Alpha 0.95
-Renderstyle Translucent
 Decal "BrutalBloodSplat"
-DamageType "Blood"
 +MISSILE
 +DONTSPLASH
 +CLIENTSIDEONLY
@@ -1651,15 +1638,13 @@ Alpha 0.3
 Actor SuperGoreSpawner
 {
 scale 0.15
-damage 0
 radius 2
 height 0
 speed 10
 alpha 0.9
 gravity 0.7
-renderstyle ADD
+renderstyle Add
 Decal "BrutalBloodSuper"
-Projectile
 -NOGRAVITY
 +RANDOMIZE
 +MISSILE

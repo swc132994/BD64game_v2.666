@@ -1,12 +1,18 @@
-ACTOR HitPuff : BulletPuff Replaces BulletPuff
+ACTOR HitPuff Replaces BulletPuff
 {
 Scale 1.5
+radius 0
+height 0
+Mass 500
+Gravity 0.01
 alpha 0.4
 renderstyle Add
 DamageType "Bullet"
 Decal "BulletDecalNew1"
++NOBLOCKMAP
++NOGRAVITY
++NOEXTREMEDEATH
 +FORCEXYBILLBOARD
--ALLOWPARTICLES
 	states
 	{
 	Spawn:

@@ -18,7 +18,7 @@ Renderstyle Translucent
 	States
 	{
 	Spawn:
-		TNT1 A 3 
+		TNT1 A 1
 		TNT1 A 0 ACS_NamedExecute("Flat_Decal_Remover")
 		TNT1 AA 1 A_CheckFloor("Death")
 		Stop
@@ -42,7 +42,6 @@ Alpha 0.9
 Renderstyle Translucent
 +FLOORCLIP
 +DONTSPLASH
-+MISSILE
 +NOTELEPORT
 +NOBLOCKMAP
 +THRUACTORS
@@ -52,15 +51,15 @@ Renderstyle Translucent
 	States
 	{
 	Spawn:
-		TNT1 A 3
+		TNT1 A 1
 		TNT1 A 0 ThrustThingZ(0,35,0,0)
-		TNT1 A 0 ACS_NamedExecute("Flat_Decal_Remover")		
+		TNT1 A 0 ACS_NamedExecute("Flat_Decal_Remover")
 		TNT1 AA 1 A_CheckCeiling("Death")
 		Stop
 	Death:
 		XXX1 A 2000
 		XXX1 A 1 A_FadeOut(0.01)
-		Wait		
+		Wait
 	Off:
 		TNT1 A 1
 		Stop
