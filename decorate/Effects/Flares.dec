@@ -457,8 +457,8 @@ Alpha 0.3
 ACTOR RedFlareSpawn
 {
 Speed 20
-PROJECTILE
 +NOCLIP
++NOGRAVITY
 	States
 	{
 	Spawn:
@@ -470,8 +470,8 @@ PROJECTILE
 ACTOR PlasmaFlareSpawn
 {
 Speed 20
-PROJECTILE
 +NOCLIP
++NOGRAVITY
 	States
 	{
 	Spawn:
@@ -483,7 +483,6 @@ PROJECTILE
 ACTOR YellowFlareSpawn
 {
 Speed 20
-PROJECTILE
 +NOCLIP
 +NOGRAVITY
 	States
@@ -497,7 +496,6 @@ PROJECTILE
 ACTOR PlayerMuzzle1
 {
 Speed 0
-PROJECTILE
 +NOCLIP
 +NOGRAVITY
 	States
@@ -508,12 +506,8 @@ PROJECTILE
 	}
 }
 
-ACTOR PlayerMuzzle2
+ACTOR PlayerMuzzle2 : PlayerMuzzle1
 {
-Speed 0
-PROJECTILE
-+NOCLIP
-+NOGRAVITY
 	States
 	{
 	Spawn:
@@ -522,12 +516,8 @@ PROJECTILE
 	}
 }
 
-ACTOR PlayerMuzzle3
+ACTOR PlayerMuzzle3 : PlayerMuzzle1
 {
-Speed 0
-PROJECTILE
-+NOCLIP
-+NOGRAVITY
 	States
 	{
 	Spawn:
@@ -536,13 +526,9 @@ PROJECTILE
 	}
 }
 
-ACTOR PlayerMuzzle4
+ACTOR PlayerMuzzle4 : PlayerMuzzle1
 {
 Translation "0:255=%[0,0,0]:[1,0,0]"//Red
-Speed 0
-PROJECTILE
-+NOCLIP
-+NOGRAVITY
 	States
 	{
 	Spawn:
@@ -551,13 +537,9 @@ PROJECTILE
 	}
 }
 
-ACTOR PlayerMuzzle5
+ACTOR PlayerMuzzle5 : PlayerMuzzle1
 {
 Translation "0:255=%[0,0,0]:[0,1,0]"//Green
-Speed 0
-PROJECTILE
-+NOCLIP
-+NOGRAVITY
 	States
 	{
 	Spawn:
@@ -566,13 +548,9 @@ PROJECTILE
 	}
 }
 
-ACTOR PlayerMuzzle6
+ACTOR PlayerMuzzle6 : PlayerMuzzle1
 {
 Translation "0:255=%[0,0,0]:[0.49,0.73,0.91]"//Aero
-Speed 0
-PROJECTILE
-+NOCLIP
-+NOGRAVITY
 	States
 	{
 	Spawn:
@@ -584,8 +562,8 @@ PROJECTILE
 ACTOR BlueFlareSpawn
 {
 Speed 20
-PROJECTILE
 +NOCLIP
++NOGRAVITY
 	States
 	{
 	Spawn:
@@ -597,8 +575,8 @@ PROJECTILE
 ACTOR GreenFlareSpawn
 {
 Speed 20
-PROJECTILE
 +NOCLIP
++NOGRAVITY
 	States
 	{
 	Spawn:

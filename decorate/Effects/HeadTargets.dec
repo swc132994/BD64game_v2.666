@@ -1,25 +1,3 @@
-actor MinorHeadDamage
-{
-Radius 1
-Height 1
-DamageType "Head"
-PROJECTILE
-+NOGRAVITY
-+NOTELEPORT
-+NODAMAGETHRUST
-+THRUGHOST
-+NORADIUSDMG
-+NOEXTREMEDEATH
-+FORCERADIUSDMG
-+MISSILE
-	States
-	{
-	Spawn:
-		TNT1 A 1 NoDelay A_Explode(100,200)
-		Stop
-	}
-}
-
 actor HeadshotTargetBase
 {
 Health 300
@@ -29,7 +7,6 @@ Height 16
 DamageType "Head"
 BloodType "Brutal_Blood"
 PainChance 255
-damagefactor "Blood",0.0
 damagefactor "Head",0.0
 damagefactor "SSG",1.0
 damagefactor "ExplosiveImpact",0.0

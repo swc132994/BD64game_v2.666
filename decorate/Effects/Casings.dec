@@ -1,7 +1,7 @@
 ACTOR 50CaseSpawn
 {
 Speed 20
-PROJECTILE
++MISSILE
 +NOCLIP
 +CLIENTSIDEONLY
 	States
@@ -115,6 +115,7 @@ Mass 1
 BounceSound "weapons/casing"
 DeathSound "weapons/casing"
 +MISSILE
++FORCEXYBILLBOARD
 +NOBLOCKMAP
 +NOTELEPORT
 +MOVEWITHSECTOR

@@ -95,8 +95,8 @@ Height 14
 Speed 1
 FastSpeed 1
 Damage 3
-Projectile
 DeathSound "polt/break1"
+PROJECTILE
 +RANDOMIZE
 -FLOAT
 -NOGRAVITY

@@ -9,9 +9,9 @@ Mass 0
 Gravity 0.5
 Alpha 0.4
 RenderStyle Add
-+Missile
--NoGravity
-+DontSplash
++MISSILE
+-NOGRAVITY
++DONTSPLASH
 +FORCEXYBILLBOARD
 +THRUACTORS
 +CLIENTSIDEONLY
@@ -42,8 +42,8 @@ height 0
 speed 40
 alpha 0.9
 renderstyle ADD
-Projectile
-+RANDOMIZE
++MISSILE
++NOGRAVITY
 +FORCEXYBILLBOARD
 +NOTELEPORT
 	states

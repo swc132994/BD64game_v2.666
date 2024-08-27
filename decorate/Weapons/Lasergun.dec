@@ -373,8 +373,6 @@ Speed 80
 Damage 0
 Alpha 1
 RenderStyle Add
-PROJECTILE
-+RANDOMIZE
 	states
 	{
 	Spawn:

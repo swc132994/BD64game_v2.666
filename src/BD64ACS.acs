@@ -751,6 +751,11 @@ script "BerserkSwitchFistsACS" (void) Clientside
 SetResultValue(GetUserCVar(PlayerNumber(),"BerserkSwitchFistsCvar"));
 }
 
+script "Flat_Decal_Check" (void) NET
+{
+SetResultValue(GetCVar("FloorDecal_Cvar"));
+}
+
 script "Flat_Decal_Remover" (void)
 {
 	if(GetCVar("FloorDecal_Cvar") == 0) { SetActorState(0,"Off"); }

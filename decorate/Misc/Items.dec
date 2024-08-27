@@ -981,7 +981,6 @@ Inventory.PickupMessage "It looks like some sort of key...."
 Inventory.PickupSound "DEMKEYUP"
 Tag "Outcast Demon Key Green"
 +COUNTITEM
-+FANCYPICKUPSOUND
 -INTERHUBSTRIP
 	States
 	{
@@ -1010,7 +1009,6 @@ Inventory.PickupMessage "What is this used for?"
 Inventory.PickupSound "DEMKEYUP"
 Tag "Outcast Demon Key Red"
 +COUNTITEM
-+FANCYPICKUPSOUND
 -INTERHUBSTRIP
 	States
 	{
@@ -1062,8 +1060,6 @@ ACTOR FlashlightItem : CustomInventory
 Inventory.PickupMessage "You got a flashlight!"
 Inventory.PickupSound "misc/p_pkup"
 Tag "Flashlight"
-+COUNTITEM
-+FANCYPICKUPSOUND
 -INTERHUBSTRIP
 	States
 	{
@@ -1081,8 +1077,6 @@ ACTOR PistolSilencerItem : CustomInventory
 Inventory.PickupMessage "You got a pistol silencer!"
 Inventory.PickupSound "misc/p_pkup"
 Tag "Pistol Silencer"
-+COUNTITEM
-+FANCYPICKUPSOUND
 -INTERHUBSTRIP
 	States
 	{
