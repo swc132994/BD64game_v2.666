@@ -328,7 +328,7 @@ actor WaterSplashBase2
 Scale 1.1
 Radius 1
 Height 1
-Mass 999999
+Mass 0x7FFFFFFF
 Health 100
 alpha 0.6
 DamageFactor "CauseWaterSplash",99.0

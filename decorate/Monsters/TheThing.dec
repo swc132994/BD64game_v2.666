@@ -189,7 +189,7 @@ MONSTER
 		TNT1 A 0 A_spawnItemEx("BurningFleshEffect2",0,0,5)
 		TNT1 AAA 0 A_SpawnItemEx("Brutal_Blood",0,0,30)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
-		CRB1 ABCDEFGH 3
+		CRB1 BCDEFGH 3
 		CRB1 H -1
 		Stop
 	Ice:
