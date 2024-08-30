@@ -131,17 +131,18 @@ speed 2
 mass 1
 RenderStyle Translucent
 Alpha 0.6
-+NOBLOCKMAP
 +MISSILE
++THRUACTORS
 +NOTELEPORT
 +DONTSPLASH
++MOVEWITHSECTOR
 	States
 	{
 	Spawn:
 		PLS1 ABCDABC 4
 		PLS1 D 4 A_Jump(24,"DeathA")
 		PLS1 ABCDABC 4
-		PLS1 D 4 A_Jump(24,"DeatB")
+		PLS1 D 4 A_Jump(24,"DeathB")
 		Loop
 	DeathA:
 		PLS1 C 5 A_Jump(80,"DeathA2")
@@ -162,19 +163,8 @@ Alpha 0.6
 	}
 }
 
-ACTOR poltshard2
+ACTOR poltshard2 : poltshard1
 {
-Scale 0.5
-Radius 2
-Height 4
-speed 2
-mass 1
-RenderStyle Translucent
-Alpha 0.6
-+NOBLOCKMAP
-+MISSILE
-+NOTELEPORT
-+DONTSPLASH
 	States
 	{
 	Spawn:
@@ -648,7 +638,6 @@ PROJECTILE
 actor 64BruiserFireCandle : EvilEye
 {
 SCALE 0.8
-+RANDOMIZE
 -SOLID
 	States
 	{
@@ -796,13 +785,11 @@ actor Drt1
 {
 Scale 0.7
 Radius 2
-Damage 0
 Speed 5
-PROJECTILE
--NOGRAVITY
--NOBLOCKMAP
--NOTELEPORT
-+RANDOMIZE
++MISSILE
++THRUACTORS
++NOTELEPORT
++MOVEWITHSECTOR
 	States
 	{
 	Spawn:
@@ -818,17 +805,8 @@ PROJECTILE
 	}
 }
 
-actor Drt2
+actor Drt2 : Drt1
 {
-Scale 0.7
-Radius 2
-Damage 0
-Speed 5
-PROJECTILE
--NOGRAVITY
--NOBLOCKMAP
--NOTELEPORT
-+RANDOMIZE
 	States
 	{
 	Spawn:
@@ -844,17 +822,8 @@ PROJECTILE
 	}
 }
 
-actor Drt3
+actor Drt3 : Drt1
 {
-Scale 0.7
-Radius 2
-Damage 0
-Speed 5
-PROJECTILE
--NOGRAVITY
--NOBLOCKMAP
--NOTELEPORT
-+RANDOMIZE
 	States
 	{
 	Spawn:
@@ -950,9 +919,10 @@ Gravity 0.6
 RenderStyle Add
 Alpha 0.6
 DeathSound "GlassShardImpact"
-PROJECTILE
--NOGRAVITY
++MISSILE
 +THRUACTORS
++NOTELEPORT
++DONTSPLASH
 +MOVEWITHSECTOR
 	States
 	{
@@ -1333,6 +1303,7 @@ MONSTER
 -SHOOTABLE
 -SOLID
 -COUNTKILL
++NOTELEPORT
 +NOTARGETSWITCH
 +NOBLOODDECALS
 +NOICEDEATH
