@@ -41,13 +41,19 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		CWAS A -1
 		Stop
 	Select:
+		TNT1 A 0 A_JumpIf(waterlevel > 1,2)
 		TNT1 A 0 A_PlaySound("chainsaw/start",CHAN_AUTO)
 		WASG C 1 A_Raise
 		Wait
 	Ready:
+		TNT1 A 0 A_JumpIf(waterlevel > 1,"NotReady")
 		TNT1 A 0 A_PlaySound("chainsaw/idle",CHAN_6,1,TRUE)
 		WASG CD 5 A_WeaponReady
 		Loop
+	NotReady:
+		TNT1 A 0 A_StopSound(CHAN_6)
+		WASG C 5 A_WeaponReady(WRF_NOFIRE)
+		Goto Select
 	Fire:
 		WASG HI 1
 	Hold:
@@ -184,6 +190,7 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 	Select:
 		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
 		TNT1 A 0 A_JumpIfInventory("ClassicChainsawToken",1,"ClassicSawSelected2")
+		TNT1 A 0 A_JumpIf(waterlevel > 1,2)
 		TNT1 A 0 A_JumpIfInventory("SawGas",1,"Select2")
 		SAWS ABCDNOPQR 1 Offset(0,32)
 		TNT1 A 0 A_Raise
@@ -200,6 +207,7 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 	v1Ready:
 	Ready:
 		TNT1 A 0 A_JumpIfInventory("ClassicChainsawToken",1,"ClassicSawSelected")
+		TNT1 A 0 A_JumpIf(waterlevel > 1,"NotReady")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
@@ -223,13 +231,17 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 		Loop
 	NotReady:
 		TNT1 A 0 A_JumpIfInventory("ClassicChainsawToken",1,"ClassicSawSelected")
+		TNT1 A 0 A_StopSound(CHAN_6)
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
 		SAWG A 5 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		TNT1 A 0 A_JumpIf(waterlevel > 1,"NotReady")
 		TNT1 A 0 A_JumpIfInventory("SawGas",1,"Select")
 		Loop
 	Fire:
+		TNT1 A 0 A_JumpIf(waterlevel > 1,"NotReady")
 		TNT1 A 0 A_JumpIfInventory("SawGas",1,1)
 		Goto FinishFire
 		SAWF AB 1
@@ -237,6 +249,7 @@ Weapon.SisterWeapon "64ChainsawTactical_Classic"
 		TNT1 A 0 A_StopSound(CHAN_6)
 		TNT1 A 0 A_PlaySound("chainsaw/loop",CHAN_WEAPON,1,TRUE)
 	Hold1:
+		TNT1 A 0 A_JumpIf(waterlevel > 1,"NotReady")
 		TNT1 A 0 A_AlertMonsters
 		SAWF C 1 Offset(0,36) A_FireCustomMissile("SawDamage",15)
 		SAWF C 1 Offset(-1,34) A_FireCustomMissile("SawDamage",-15,0)
@@ -431,6 +444,7 @@ Weapon.SisterWeapon "64ChainsawTactical"
 	Select:
 		TNT1 A 0 A_JumpIfInventory("ClassicChainsawToken",1,2)
 		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
+		TNT1 A 0 A_JumpIf(waterlevel > 1,"SelectNoFuel")
 		TNT1 A 0 A_JumpIfInventory("SawGas",1,1)
 		Goto SelectNoFuel
 		TNT1 A 0 A_PlaySound("chainsaw/start",CHAN_7)
@@ -445,6 +459,7 @@ Weapon.SisterWeapon "64ChainsawTactical"
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		TNT1 A 0 A_JumpIf(waterlevel > 1,"NotReady")
 		TNT1 A 0 A_JumpIfInventory("SawGas",1,1)
 		Goto NotReady
 		TNT1 A 0 A_PlaySound("chainsaw/idle",CHAN_6,1,TRUE)
@@ -464,18 +479,23 @@ Weapon.SisterWeapon "64ChainsawTactical"
 		TNT1 A 0 A_TakeInventory("SawGas",1)
 		Loop
 	NotReady:
+		TNT1 A 0 A_StopSound(CHAN_6)
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
 		WASG C 5 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("SawGas",1,"Select")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
+		TNT1 A 0 A_JumpIf(waterlevel > 1,"NotReady")
+		TNT1 A 0 A_JumpIfInventory("SawGas",1,"Select")
 		Loop
 	Fire:
+		TNT1 A 0 A_JumpIf(waterlevel > 1,"NotReady")
 		WASG HI 1
 	Hold:
 		TNT1 A 0 A_StopSound(CHAN_6)
 		TNT1 A 0 A_PlaySound("chainsaw/loop",CHAN_WEAPON,1,TRUE)
 	Hold1:
+		TNT1 A 0 A_JumpIf(waterlevel > 1,"NotReady")
 		WASG A 2 A_FireCustomMissile("SawDamage",15)
 		WASG BB 1 A_FireCustomMissile("SawDamage",-15,0)
 		WASG EE 1 A_FireCustomMissile("SawDamage",15,0)
