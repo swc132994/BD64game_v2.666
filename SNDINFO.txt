@@ -37,7 +37,9 @@ PISBACK			PISBACK
 pistol/slide	PISFORW
 
 RIFBOLT			RIFBOLT
-ARSBOLT			ARSBOLT
+
+AltRifle/BoltIn ARSBLT1
+AltRifle/BoltOut ARSBLT2
 
 //Restore select animation
 PISSEL			PISSEL

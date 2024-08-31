@@ -273,6 +273,7 @@ Tag "Laser Rifle"
 		TNT1 A 0 A_AlertMonsters
 		TNT1 A 0 A_FireCustomMissile("LaserTrail",0,0)
 		HDLl A 0 A_JumpIfInventory("AltLaserSkin",1,2)
+		LSAL A 0
 		"####" A 0 Bright A_StopSound(CHAN_ITEM)
 		"####" ABC 2 Bright A_FireCustomMissile("GunFireSmoke",0,0)
 		"####" A 0 A_PlaySound("RBLAST",CHAN_WEAPON)
