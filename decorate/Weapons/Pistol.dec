@@ -139,7 +139,7 @@ Tag "$FO_TAG_PISTOL"
 		TNT1 A 0 A_PlaySound("pistol/backslide",CHAN_WEAPON)
 		PISI FG 1 A_WeaponReady(WRF_ALLOWZOOM)
 		PISI H 4 A_WeaponReady(WRF_ALLOWZOOM)
-		TNT1 A 0 A_PlaySound("pistol/slide",CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("pistol/forwardslide",CHAN_WEAPON)
 		PISI IJKLLLMMN 1 A_WeaponReady
 		PISR EDCBA 1 A_WeaponReady
 		Goto Ready
