@@ -72,12 +72,14 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		"####" A 1 A_WeaponReady
 		Loop
 	Select:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
 		HDLG A 0 A_JumpIfInventory("AltLaserSkin",1,2)
 		LZRG A 0
 		"####" A 1 A_Raise
 		Wait
 	Deselect:
 		TNT1 A 0 A_ZoomFactor(1.0)
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
 		HDLG A 0 A_JumpIfInventory("AltLaserSkin",1,2)
 		LZRG A 0
 		"####" A 1 A_Lower
@@ -169,6 +171,7 @@ Tag "Laser Rifle"
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		Loop
 	Select:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
 		TNT1 A 0 A_PlaySound("LSGREADY",CHAN_BODY)
 		HDLR A 0 A_JumpIfInventory("AltLaserSkin",1,2)
 		LZRS A 0
@@ -176,6 +179,7 @@ Tag "Laser Rifle"
 		TNT1 A 0 A_Raise
 		Wait
 	Deselect:
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
 		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
 		TNT1 A 0 A_Takeinventory("TossMine",0)
