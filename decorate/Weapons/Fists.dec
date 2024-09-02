@@ -480,7 +480,7 @@ Decal "Crack"
 
 Actor AltPunchAttack : PunchAttack
 {
-Damage(random(10,15))
+Damage(20)
 }
 
 Actor SuperAltPunchAttack : SuperPunchAttack
