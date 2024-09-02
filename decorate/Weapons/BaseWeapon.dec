@@ -320,7 +320,7 @@ Obituary "%o chewed on %k's foot."
 	States
 	{
 	Spawn:
-		TNT1 A 1
+		TNT1 A 2
 		Stop
 	Death:
 	XDeath:
