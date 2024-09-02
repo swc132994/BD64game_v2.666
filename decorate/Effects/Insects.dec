@@ -15,7 +15,7 @@ Actor Swarm
 
 Actor FlyDecor
 {
-Scale 0.3
+Scale 0.1
 Speed 3
 +MISSILE
 +NOGRAVITY
