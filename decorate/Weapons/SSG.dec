@@ -332,7 +332,7 @@ Tag "$FO_TAG_SUPERSHOTGUN"
 		TNT1 A 0 Offset(0,32)
 		Goto Reload
 	Reload:
-		TNT1 A 0 A_Jumpifinventory("SSGAmmo",2,"Fidget")
+		TNT1 A 0 A_Jumpifinventory("SSGAmmo",0,"Fidget")
 		TNT1 A 0 A_Jumpifinventory("SSGAlt",1,"Reload1")
 		Goto Reload2
 	Reload2:

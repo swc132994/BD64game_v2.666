@@ -301,7 +301,7 @@ Tag "$FO_TAG_SHOTGUN"
 		TNT1 A 0 A_ZoomFactor(1.0)
 		SHTG A 1 A_WeaponReady
 		TNT1 A 0 A_JumpIfInventory("HasUsedShell",1,"Pump")
-		TNT1 A 0 A_JumpIfInventory("ShotgunAmmo",9,"Fidget")
+		TNT1 A 0 A_JumpIfInventory("ShotgunAmmo",0,"Fidget")
 		TNT1 A 0 A_JumpIfInventory("ShotgunAmmo",1,"ReloadNormally")
 		TNT1 A 0 A_GiveInventory("HasUsedShell",1)
 	ReloadNormally:
@@ -323,7 +323,7 @@ Tag "$FO_TAG_SHOTGUN"
 		TNT1 A 0 A_TakeInventory("Shell",1,TIF_NOTAKEINFINITE)
 		SHTR GHIJ 1
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKickReloading")
-		TNT1 A 0 A_JumpIfInventory("ShotgunAmmo",9,"FinishInsertingShells")
+		TNT1 A 0 A_JumpIfInventory("ShotgunAmmo",0,"FinishInsertingShells")
 		TNT1 A 0 A_JumpIfInventory("ShotgunAmmo",1,1)
 		Goto InsertingShells
 		SHTR J 1 A_WeaponReady(WRF_NOBOB)
