@@ -380,52 +380,120 @@ brightmap sprite UN4GD0		{map "BRIGHTMAPS/Unmaker/UN4RB0_BR.png"disablefullbrigh
 
 //MONSTERS
 //IMP
-brightmap sprite DI64A1		{map "brightmaps/DI64A1B.png"}
-brightmap sprite DI64A2A8	{map "brightmaps/DI64A2A8B.png"}
-brightmap sprite DI64B1		{map "brightmaps/DI64B1B.png"}
-brightmap sprite DI64B2B8	{map "brightmaps/DI64B2B8B.png"}
-brightmap sprite DI64C1		{map "brightmaps/DI64C1B.png"}
-brightmap sprite DI64C2C8	{map "brightmaps/DI64C2C8B.png"}
-brightmap sprite DI64D1		{map "brightmaps/DI64D1B.png"}
-brightmap sprite DI64D2D8	{map "brightmaps/DI64D2D8B.png"}
-brightmap sprite DI64E1		{map "brightmaps/DI64E1B.png"}
-brightmap sprite DI64E2E8	{map "brightmaps/DI64E2E8B.png"}
-brightmap sprite DI64F1		{map "brightmaps/DI64F1B.png"}
-brightmap sprite DI64F2F8	{map "brightmaps/DI64F2F8B.png"}
-brightmap sprite DI64G1		{map "brightmaps/DI64G1B.png"}
-brightmap sprite DI64G2G8	{map "brightmaps/DI64G2G8B.png"}
-brightmap sprite DI64H1		{map "brightmaps/DI64H1B.png"}
-brightmap sprite DI64H2H8	{map "brightmaps/DI64H2H8B.png"}
-brightmap sprite DI64I1		{map "brightmaps/DI64I1B.png"}
-brightmap sprite DI64I2I8	{map "brightmaps/DI64I2I8B.png"}
-brightmap sprite DI64J1		{map "brightmaps/DI64J1B.png"}
-brightmap sprite DI64J2J8	{map "brightmaps/DI64J2J8B.png"}
-brightmap sprite DI64K1		{map "brightmaps/DI64K1B.png"}
-brightmap sprite DI64K2K8	{map "brightmaps/DI64K2K8B.png"}
+brightmap sprite DI64A1		{map "brightmaps/DI64A1B.png"  Disablefullbright}
+brightmap sprite DI64A2A8	{map "brightmaps/DI64A2A8B.png"  Disablefullbright}
+brightmap sprite DI64A3A7	{map "brightmaps/DI64A3A7B.png" Disablefullbright}
+brightmap sprite DI64A4A6	{map "brightmaps/DI64A4A6B.png" Disablefullbright}
+brightmap sprite DI64A5		{Disablefullbright}
+brightmap sprite DI64B1		{map "brightmaps/DI64B1B.png"  Disablefullbright}
+brightmap sprite DI64B2B8	{map "brightmaps/DI64B2B8B.png"  Disablefullbright}
+brightmap sprite DI64B3B7	{map "brightmaps/DI64B3B7B.png" Disablefullbright}
+brightmap sprite DI64B4B6	{map "brightmaps/DI64B4B6B.png" Disablefullbright}
+brightmap sprite DI64B5		{Disablefullbright}
+brightmap sprite DI64C1		{map "brightmaps/DI64B1B.png"  Disablefullbright}
+brightmap sprite DI64C2C8	{map "brightmaps/DI64B2B8B.png"  Disablefullbright}
+brightmap sprite DI64C3C7	{map "brightmaps/DI64B3B7B.png" Disablefullbright}
+brightmap sprite DI64C4C6	{Disablefullbright}
+brightmap sprite DI64C5		{Disablefullbright}
+brightmap sprite DI64D1		{map "brightmaps/DI64D1B.png"  Disablefullbright}
+brightmap sprite DI64D2D8	{map "brightmaps/DI64D2D8B.png"  Disablefullbright}
+brightmap sprite DI64D3D7	{map "brightmaps/DI64D3D7B.png" Disablefullbright}
+brightmap sprite DI64D4D6	{Disablefullbright}
+brightmap sprite DI64D5		{Disablefullbright}
+brightmap sprite DI64E1		{map "brightmaps/DI64E1B.png"  Disablefullbright}
+brightmap sprite DI64E2E8	{map "brightmaps/DI64E2E8B.png"  Disablefullbright}
+brightmap sprite DI64E3E7	{map "brightmaps/DI64E3E7B.png" Disablefullbright}
+brightmap sprite DI64E4E6	{map "brightmaps/DI64E4E6B.png" Disablefullbright}
+brightmap sprite DI64E5		{Disablefullbright}
+brightmap sprite DI64F1		{map "brightmaps/DI64F1B.png"  Disablefullbright}
+brightmap sprite DI64F2F8	{map "brightmaps/DI64F2F8B.png"  Disablefullbright}
+brightmap sprite DI64F3F7	{map "brightmaps/DI64F3F7B.png"  Disablefullbright}
+brightmap sprite DI64F4F6	{map "brightmaps/DI64F4F6B.png"  Disablefullbright}
+brightmap sprite DI64F5		{Disablefullbright}
+brightmap sprite DI64G1		{map "brightmaps/DI64G1B.png"  Disablefullbright}
+brightmap sprite DI64G2G8	{map "brightmaps/DI64G2G8B.png"  Disablefullbright}
+brightmap sprite DI64G3G7	{map "brightmaps/DI64G3G7B.png"  Disablefullbright}
+brightmap sprite DI64G4G6	{Disablefullbright}
+brightmap sprite DI64G5		{Disablefullbright}
+brightmap sprite DI64H1		{map "brightmaps/DI64H1B.png"  Disablefullbright}
+brightmap sprite DI64H2H8	{map "brightmaps/DI64H2H8B.png"  Disablefullbright}
+brightmap sprite DI64H3H7	{map "brightmaps/DI64H3H7B.png" Disablefullbright}
+brightmap sprite DI64H4H6	{map "brightmaps/DI64H4H6B.png" Disablefullbright}
+brightmap sprite DI64H5		{Disablefullbright}
+brightmap sprite DI64I1		{map "brightmaps/DI64I1B.png"  Disablefullbright}
+brightmap sprite DI64I2I8	{map "brightmaps/DI64I2I8B.png"  Disablefullbright}
+brightmap sprite DI64I3I7	{map "brightmaps/DI64I3I7B.png" Disablefullbright}
+brightmap sprite DI64I4I6	{map "brightmaps/DI64I4I6B.png" Disablefullbright}
+brightmap sprite DI64I5		{Disablefullbright}
+brightmap sprite DI64J1		{map "brightmaps/DI64J1B.png"  Disablefullbright}
+brightmap sprite DI64J2J8	{map "brightmaps/DI64J2J8B.png"  Disablefullbright}
+brightmap sprite DI64J3J7	{Disablefullbright}
+brightmap sprite DI64J4J6	{Disablefullbright}
+brightmap sprite DI64J5		{Disablefullbright}
+brightmap sprite DI64K1		{map "brightmaps/DI64K1B.png"  Disablefullbright}
+brightmap sprite DI64K2K8	{map "brightmaps/DI64K2K8B.png"  Disablefullbright}
+brightmap sprite DI64K3K7	{map "brightmaps/DI64K3K7B.png" Disablefullbright}
+brightmap sprite DI64K4K6	{Disablefullbright}
+brightmap sprite DI64K5		{Disablefullbright}
+brightmap sprite DI64L1		{map "brightmaps/DI64L0B.png"  Disablefullbright}
 
 //NIGHTMARE IMP
-brightmap sprite TRO2A1		{map "brightmaps/DI64A1B.png"}
-brightmap sprite TRO2A2A8	{map "brightmaps/DI64A2A8B.png"}
-brightmap sprite TRO2B1		{map "brightmaps/DI64B1B.png"}
-brightmap sprite TRO2B2B8	{map "brightmaps/DI64B2B8B.png"}
-brightmap sprite TRO2C1		{map "brightmaps/DI64C1B.png"}
-brightmap sprite TRO2C2C8	{map "brightmaps/DI64C2C8B.png"}
-brightmap sprite TRO2D1		{map "brightmaps/DI64D1B.png"}
-brightmap sprite TRO2D2D8	{map "brightmaps/DI64D2D8B.png"}
-brightmap sprite TRO2E1		{map "brightmaps/DI64E1B.png"}
-brightmap sprite TRO2E2E8	{map "brightmaps/DI64E2E8B.png"}
-brightmap sprite TRO2F1		{map "brightmaps/DI64F1B.png"}
-brightmap sprite TRO2F2F8	{map "brightmaps/DI64F2F8B.png"}
-brightmap sprite TRO2G1		{map "brightmaps/DI64G1B.png"}
-brightmap sprite TRO2G2G8	{map "brightmaps/DI64G2G8B.png"}
-brightmap sprite TRO2H1		{map "brightmaps/DI64H1B.png"}
-brightmap sprite TRO2H2H8	{map "brightmaps/DI64H2H8B.png"}
-brightmap sprite TRO2I1		{map "brightmaps/DI64I1B.png"}
-brightmap sprite TRO2I2I8	{map "brightmaps/DI64I2I8B.png"}
-brightmap sprite TRO2J1		{map "brightmaps/DI64J1B.png"}
-brightmap sprite TRO2J2J8	{map "brightmaps/DI64J2J8B.png"}
-brightmap sprite TRO2K1		{map "brightmaps/DI64K1B.png"}
-brightmap sprite TRO2K2K8	{map "brightmaps/DI64K2K8B.png"}
+brightmap sprite TRO2A1		{map "brightmaps/DI64A1B.png"  Disablefullbright}
+brightmap sprite TRO2A2A8	{map "brightmaps/DI64A2A8B.png"  Disablefullbright}
+brightmap sprite TRO2A3A7	{map "brightmaps/DI64A3A7B.png" Disablefullbright}
+brightmap sprite TRO2A4A6	{map "brightmaps/DI64A4A6B.png" Disablefullbright}
+brightmap sprite TRO2A5		{Disablefullbright}
+brightmap sprite TRO2B1		{map "brightmaps/DI64B1B.png"  Disablefullbright}
+brightmap sprite TRO2B2B8	{map "brightmaps/DI64B2B8B.png"  Disablefullbright}
+brightmap sprite TRO2B3B7	{map "brightmaps/DI64B3B7B.png" Disablefullbright}
+brightmap sprite TRO2B4B6	{map "brightmaps/DI64B4B6B.png" Disablefullbright}
+brightmap sprite TRO2B5		{Disablefullbright}
+brightmap sprite TRO2C1		{map "brightmaps/DI64B1B.png"  Disablefullbright}
+brightmap sprite TRO2C2C8	{map "brightmaps/DI64B2B8B.png"  Disablefullbright}
+brightmap sprite TRO2C3C7	{map "brightmaps/DI64B3B7B.png" Disablefullbright}
+brightmap sprite TRO2C4C6	{Disablefullbright}
+brightmap sprite TRO2C5		{Disablefullbright}
+brightmap sprite TRO2D1		{map "brightmaps/DI64D1B.png"  Disablefullbright}
+brightmap sprite TRO2D2D8	{map "brightmaps/DI64D2D8B.png"  Disablefullbright}
+brightmap sprite TRO2D3D7	{map "brightmaps/DI64D3D7B.png" Disablefullbright}
+brightmap sprite TRO2D4D6	{Disablefullbright}
+brightmap sprite TRO2D5		{Disablefullbright}
+brightmap sprite TRO2E1		{map "brightmaps/DI64E1B.png"  Disablefullbright}
+brightmap sprite TRO2E2E8	{map "brightmaps/DI64E2E8B.png"  Disablefullbright}
+brightmap sprite TRO2E3E7	{map "brightmaps/DI64E3E7B.png" Disablefullbright}
+brightmap sprite TRO2E4E6	{map "brightmaps/DI64E4E6B.png" Disablefullbright}
+brightmap sprite TRO2E5		{Disablefullbright}
+brightmap sprite TRO2F1		{map "brightmaps/DI64F1B.png"  Disablefullbright}
+brightmap sprite TRO2F2F8	{map "brightmaps/DI64F2F8B.png"  Disablefullbright}
+brightmap sprite TRO2F3F7	{map "brightmaps/DI64F3F7B.png"  Disablefullbright}
+brightmap sprite TRO2F4F6	{map "brightmaps/DI64F4F6B.png"  Disablefullbright}
+brightmap sprite TRO2F5		{Disablefullbright}
+brightmap sprite TRO2G1		{map "brightmaps/DI64G1B.png"  Disablefullbright}
+brightmap sprite TRO2G2G8	{map "brightmaps/DI64G2G8B.png"  Disablefullbright}
+brightmap sprite TRO2G3G7	{map "brightmaps/DI64G3G7B.png"  Disablefullbright}
+brightmap sprite TRO2G4G6	{Disablefullbright}
+brightmap sprite TRO2G5		{Disablefullbright}
+brightmap sprite TRO2H1		{map "brightmaps/DI64H1B.png"  Disablefullbright}
+brightmap sprite TRO2H2H8	{map "brightmaps/DI64H2H8B.png"  Disablefullbright}
+brightmap sprite TRO2H3H7	{map "brightmaps/DI64H3H7B.png" Disablefullbright}
+brightmap sprite TRO2H4H6	{map "brightmaps/DI64H4H6B.png" Disablefullbright}
+brightmap sprite TRO2H5		{Disablefullbright}
+brightmap sprite TRO2I1		{map "brightmaps/DI64I1B.png"  Disablefullbright}
+brightmap sprite TRO2I2I8	{map "brightmaps/DI64I2I8B.png"  Disablefullbright}
+brightmap sprite TRO2I3I7	{map "brightmaps/DI64I3I7B.png" Disablefullbright}
+brightmap sprite TRO2I4I6	{map "brightmaps/DI64I4I6B.png" Disablefullbright}
+brightmap sprite TRO2I5		{Disablefullbright}
+brightmap sprite TRO2J1		{map "brightmaps/DI64J1B.png"  Disablefullbright}
+brightmap sprite TRO2J2J8	{map "brightmaps/DI64J2J8B.png"  Disablefullbright}
+brightmap sprite TRO2J3J7	{Disablefullbright}
+brightmap sprite TRO2J4J6	{Disablefullbright}
+brightmap sprite TRO2J5		{Disablefullbright}
+brightmap sprite TRO2K1		{map "brightmaps/DI64K1B.png"  Disablefullbright}
+brightmap sprite TRO2K2K8	{map "brightmaps/DI64K2K8B.png"  Disablefullbright}
+brightmap sprite TRO2K3K7	{map "brightmaps/DI64K3K7B.png" Disablefullbright}
+brightmap sprite TRO2K4K6	{Disablefullbright}
+brightmap sprite TRO2K5		{Disablefullbright}
+brightmap sprite TRO2L1		{map "brightmaps/DI64L0B.png"  Disablefullbright}
 
 //PINKY DEMON
 brightmap sprite SARGA1		{map "brightmaps/sarga1_B.png"}
