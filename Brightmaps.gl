@@ -154,6 +154,29 @@ brightmap sprite RIFIO0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIO0_BR.png"disablefu
 brightmap sprite RIFIP0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIP0_BR.png"disablefullbright}
 brightmap sprite RIFIQ0		{map "BRIGHTMAPS/RifleBM/Fidget/RIFIQ0_BR.png"disablefullbright}
 
+//CHAINGUN
+brightmap sprite CHNGA0		{map "BRIGHTMAPS/CHNGA0B.png" Disablefullbright}
+brightmap sprite CHNGB0		{map "BRIGHTMAPS/CHNGB0B.png" Disablefullbright}
+brightmap sprite CHNGC0		{map "BRIGHTMAPS/CHNGC0B.png" Disablefullbright}
+brightmap sprite CHNGD0		{map "BRIGHTMAPS/CHNGD0B.png" Disablefullbright}
+brightmap sprite CHNGE0		{map "BRIGHTMAPS/CHNGE0B.png" Disablefullbright}
+brightmap sprite CHNGF0		{map "BRIGHTMAPS/CHNGF0B.png" Disablefullbright}
+brightmap sprite CHNGG0		{map "BRIGHTMAPS/CHNGG0B.png" Disablefullbright}
+brightmap sprite CHNGH0		{map "BRIGHTMAPS/CHNGH0B.png" Disablefullbright}
+brightmap sprite CHNGI0		{map "BRIGHTMAPS/CHNGI0B.png" Disablefullbright}
+brightmap sprite CHNGJ0		{map "BRIGHTMAPS/CHNGJ0B.png" Disablefullbright}
+brightmap sprite CHNGK0		{map "BRIGHTMAPS/CHNGK0B.png" Disablefullbright}
+brightmap sprite CHNGL0		{map "BRIGHTMAPS/CHNGL0B.png" Disablefullbright}
+brightmap sprite CHNGM0		{map "BRIGHTMAPS/CHNGM0B.png" Disablefullbright}
+brightmap sprite CHNGN0		{map "BRIGHTMAPS/CHNGN0B.png" Disablefullbright}
+brightmap sprite CHNGO0		{map "BRIGHTMAPS/CHNGO0B.png" Disablefullbright}
+brightmap sprite CHNGP0		{map "BRIGHTMAPS/CHNGP0B.png" Disablefullbright}
+brightmap sprite CHNGQ0		{map "BRIGHTMAPS/CHNGQ0B.png" Disablefullbright}
+brightmap sprite CHNGR0		{map "BRIGHTMAPS/CHNGR0B.png" Disablefullbright}
+brightmap sprite CHNGS0		{map "BRIGHTMAPS/CHNGS0B.png" Disablefullbright}
+brightmap sprite CHNGT0		{map "BRIGHTMAPS/CHNGT0B.png" Disablefullbright}
+brightmap sprite CHNGU0		{map "BRIGHTMAPS/CHNGU0B.png" Disablefullbright}
+
 //GAUSS CANNON
 brightmap sprite GCPCA0		{map "BRIGHTMAPS/GCPCA0_BR.png" Disablefullbright}//Pick-Up
 brightmap sprite GCFIA0		{map "BRIGHTMAPS/GCFIA0_BR.png" Disablefullbright}//Fire
