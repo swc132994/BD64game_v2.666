@@ -436,6 +436,17 @@ brightmap sprite DI64K3K7	{map "brightmaps/DI64K3K7B.png" Disablefullbright}
 brightmap sprite DI64K4K6	{Disablefullbright}
 brightmap sprite DI64K5		{Disablefullbright}
 brightmap sprite DI64L1		{map "brightmaps/DI64L0B.png"  Disablefullbright}
+brightmap sprite TIMDA0		{map "brightmaps/TIMDA0B.png"  Disablefullbright}
+brightmap sprite TIMDB0		{map "brightmaps/TIMDB0B.png"  Disablefullbright}
+brightmap sprite TIMDC0		{map "brightmaps/TIMDC0B.png"  Disablefullbright}
+brightmap sprite TIMDD0		{map "brightmaps/TIMDD0B.png"  Disablefullbright}
+brightmap sprite TIMDE0		{map "brightmaps/TIMDE0B.png"  Disablefullbright}
+brightmap sprite TRDMA0		{map "brightmaps/TRDMA0B.png"  Disablefullbright}
+brightmap sprite TRDMB0		{map "brightmaps/TRDMB0B.png"  Disablefullbright}
+brightmap sprite TRDMC0		{map "brightmaps/TRDMC0B.png"  Disablefullbright}
+brightmap sprite TRDMG0		{map "brightmaps/TRDMG0B.png"  Disablefullbright}
+brightmap sprite TRDMX0		{map "brightmaps/TRDMX0B.png"  Disablefullbright}
+brightmap sprite TRDMY0		{map "brightmaps/TRDMY0B.png"  Disablefullbright}
 
 //NIGHTMARE IMP
 brightmap sprite TRO2A1		{map "brightmaps/DI64A1B.png"  Disablefullbright}
@@ -494,6 +505,17 @@ brightmap sprite TRO2K3K7	{map "brightmaps/DI64K3K7B.png" Disablefullbright}
 brightmap sprite TRO2K4K6	{Disablefullbright}
 brightmap sprite TRO2K5		{Disablefullbright}
 brightmap sprite TRO2L1		{map "brightmaps/DI64L0B.png"  Disablefullbright}
+brightmap sprite NIMDA0		{map "brightmaps/TIMDA0B.png"  Disablefullbright}
+brightmap sprite NIMDB0		{map "brightmaps/TIMDB0B.png"  Disablefullbright}
+brightmap sprite NIMDC0		{map "brightmaps/TIMDC0B.png"  Disablefullbright}
+brightmap sprite NIMDD0		{map "brightmaps/TIMDD0B.png"  Disablefullbright}
+brightmap sprite NIMDE0		{map "brightmaps/TIMDE0B.png"  Disablefullbright}
+brightmap sprite TRNMA0		{map "brightmaps/TRDMA0B.png"  Disablefullbright}
+brightmap sprite TRNMB0		{map "brightmaps/TRDMB0B.png"  Disablefullbright}
+brightmap sprite TRNMC0		{map "brightmaps/TRDMC0B.png"  Disablefullbright}
+brightmap sprite TRNMG0		{map "brightmaps/TRDMG0B.png"  Disablefullbright}
+brightmap sprite TRNMX0		{map "brightmaps/TRDMX0B.png"  Disablefullbright}
+brightmap sprite TRNMY0		{map "brightmaps/TRDMY0B.png"  Disablefullbright}
 
 //PINKY DEMON
 brightmap sprite SARGA1		{map "brightmaps/sarga1_B.png"}
