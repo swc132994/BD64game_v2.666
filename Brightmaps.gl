@@ -98,7 +98,6 @@ brightmap sprite 2MGRN0		{map "BRIGHTMAPS/2MGRN0B.png" Disablefullbright}
 brightmap sprite 2MGRO0		{map "BRIGHTMAPS/2MGRO0B.png" Disablefullbright}
 brightmap sprite 2MGRP0		{map "BRIGHTMAPS/2MGRP0B.png" Disablefullbright}
 brightmap sprite SMGAA0		{map "BRIGHTMAPS/SMGAA0B.png" Disablefullbright}
-brightmap sprite SMGAB0		{map "BRIGHTMAPS/SMGAB0B.png" Disablefullbright}
 brightmap sprite SMGAC0		{map "BRIGHTMAPS/SMGAC0B.png" Disablefullbright}
 brightmap sprite SMGAD0		{map "BRIGHTMAPS/SMGAD0B.png" Disablefullbright}
 brightmap sprite SMGAE0		{map "BRIGHTMAPS/SMGAE0B.png" Disablefullbright}
