@@ -177,6 +177,9 @@ brightmap sprite SMGSE0		{map "BRIGHTMAPS/SMGSE0B.png" Disablefullbright}
 brightmap sprite SMGSF0		{map "BRIGHTMAPS/SMGSF0B.png" Disablefullbright}
 brightmap sprite SMGSG0		{map "BRIGHTMAPS/SMGSG0B.png" Disablefullbright}
 brightmap sprite SMGSH0		{map "BRIGHTMAPS/SMGSH0B.png" Disablefullbright}
+brightmap sprite SMGPA0		{map "BRIGHTMAPS/SMGPA0B.png" Disablefullbright}
+brightmap sprite SMGPB0		{map "BRIGHTMAPS/SMGPB0B.png" Disablefullbright}
+brightmap sprite SMGPC0		{map "BRIGHTMAPS/SMGPC0B.png" Disablefullbright}
 
 //RIFLE
 brightmap sprite R1FRB0		{map "BRIGHTMAPS/RifleBM/R1FRB0_BR.png"disablefullbright}
