@@ -277,6 +277,26 @@ brightmap sprite CHNGR0		{map "BRIGHTMAPS/CHNGR0B.png" Disablefullbright}
 brightmap sprite CHNGS0		{map "BRIGHTMAPS/CHNGS0B.png" Disablefullbright}
 brightmap sprite CHNGT0		{map "BRIGHTMAPS/CHNGT0B.png" Disablefullbright}
 brightmap sprite CHNGU0		{map "BRIGHTMAPS/CHNGU0B.png" Disablefullbright}
+brightmap sprite CHNSA0		{map "BRIGHTMAPS/CHNSA0B.png" Disablefullbright}
+brightmap sprite CHNSB0		{map "BRIGHTMAPS/CHNSB0B.png" Disablefullbright}
+brightmap sprite CHNSC0		{map "BRIGHTMAPS/CHNSC0B.png" Disablefullbright}
+brightmap sprite CHNSD0		{map "BRIGHTMAPS/CHNSD0B.png" Disablefullbright}
+brightmap sprite CHNSE0		{map "BRIGHTMAPS/CHNSE0B.png" Disablefullbright}
+brightmap sprite CHNSF0		{map "BRIGHTMAPS/CHNSF0B.png" Disablefullbright}
+brightmap sprite CHNSG0		{map "BRIGHTMAPS/CHNSG0B.png" Disablefullbright}
+brightmap sprite CHNSH0		{map "BRIGHTMAPS/CHNSH0B.png" Disablefullbright}
+brightmap sprite CHNSI0		{map "BRIGHTMAPS/CHNSI0B.png" Disablefullbright}
+brightmap sprite CHNSJ0		{map "BRIGHTMAPS/CHNSJ0B.png" Disablefullbright}
+brightmap sprite CHNIA0		{map "BRIGHTMAPS/CHNIA0B.png" Disablefullbright}
+brightmap sprite CHNIB0		{map "BRIGHTMAPS/CHNIB0B.png" Disablefullbright}
+brightmap sprite CHNIC0		{map "BRIGHTMAPS/CHNIC0B.png" Disablefullbright}
+brightmap sprite CHNID0		{map "BRIGHTMAPS/CHNID0B.png" Disablefullbright}
+brightmap sprite CHNIE0		{map "BRIGHTMAPS/CHNIE0B.png" Disablefullbright}
+brightmap sprite CHNIF0		{map "BRIGHTMAPS/CHNIF0B.png" Disablefullbright}
+brightmap sprite CHNIG0		{map "BRIGHTMAPS/CHNIG0B.png" Disablefullbright}
+brightmap sprite CHNIH0		{map "BRIGHTMAPS/CHNIH0B.png" Disablefullbright}
+brightmap sprite CHNII0		{map "BRIGHTMAPS/CHNII0B.png" Disablefullbright}
+brightmap sprite CHNIJ0		{map "BRIGHTMAPS/CHNIJ0B.png" Disablefullbright}
 
 //GAUSS CANNON
 brightmap sprite GCPCA0		{map "BRIGHTMAPS/GCPCA0_BR.png" Disablefullbright}//Pick-Up
