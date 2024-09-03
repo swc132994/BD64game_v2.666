@@ -79,13 +79,114 @@ brightmap sprite PLASB0		{map "brightmaps/PGUNB1.png"disablefullbright}
 brightmap sprite PLASC0		{map "brightmaps/PGUNB2.png"disablefullbright}
 
 //WEAPONS
+
+//SMG
+brightmap sprite 2MGRA0		{map "BRIGHTMAPS/2MGRA0B.png" Disablefullbright}
+brightmap sprite 2MGRB0		{map "BRIGHTMAPS/2MGRB0B.png" Disablefullbright}
+brightmap sprite 2MGRC0		{map "BRIGHTMAPS/2MGRC0B.png" Disablefullbright}
+brightmap sprite 2MGRD0		{map "BRIGHTMAPS/2MGRD0B.png" Disablefullbright}
+brightmap sprite 2MGRE0		{map "BRIGHTMAPS/2MGRE0B.png" Disablefullbright}
+brightmap sprite 2MGRF0		{map "BRIGHTMAPS/2MGRF0B.png" Disablefullbright}
+brightmap sprite 2MGRG0		{map "BRIGHTMAPS/2MGRG0B.png" Disablefullbright}
+brightmap sprite 2MGRH0		{map "BRIGHTMAPS/2MGRH0B.png" Disablefullbright}
+brightmap sprite 2MGRI0		{map "BRIGHTMAPS/2MGRI0B.png" Disablefullbright}
+brightmap sprite 2MGRJ0		{map "BRIGHTMAPS/2MGRJ0B.png" Disablefullbright}
+brightmap sprite 2MGRK0		{map "BRIGHTMAPS/2MGRK0B.png" Disablefullbright}
+brightmap sprite 2MGRL0		{map "BRIGHTMAPS/2MGRL0B.png" Disablefullbright}
+brightmap sprite 2MGRM0		{map "BRIGHTMAPS/2MGRM0B.png" Disablefullbright}
+brightmap sprite 2MGRN0		{map "BRIGHTMAPS/2MGRN0B.png" Disablefullbright}
+brightmap sprite 2MGRO0		{map "BRIGHTMAPS/2MGRO0B.png" Disablefullbright}
+brightmap sprite 2MGRP0		{map "BRIGHTMAPS/2MGRP0B.png" Disablefullbright}
+brightmap sprite SMGAA0		{map "BRIGHTMAPS/SMGAA0B.png" Disablefullbright}
+brightmap sprite SMGAC0		{map "BRIGHTMAPS/SMGAC0B.png" Disablefullbright}
+brightmap sprite SMGAD0		{map "BRIGHTMAPS/SMGAD0B.png" Disablefullbright}
+brightmap sprite SMGAE0		{map "BRIGHTMAPS/SMGAE0B.png" Disablefullbright}
+brightmap sprite SMGAF0		{map "BRIGHTMAPS/SMGAF0B.png" Disablefullbright}
+brightmap sprite SMGAG0		{map "BRIGHTMAPS/SMGAG0B.png" Disablefullbright}
+brightmap sprite SMGAH0		{map "BRIGHTMAPS/SMGAH0B.png" Disablefullbright}
+brightmap sprite SMGAI0		{map "BRIGHTMAPS/SMGAI0B.png" Disablefullbright}
+brightmap sprite SMGAJ0		{map "BRIGHTMAPS/SMGAJ0B.png" Disablefullbright}
+brightmap sprite SMGAK0		{map "BRIGHTMAPS/SMGAK0B.png" Disablefullbright}
+brightmap sprite SMGAL0		{map "BRIGHTMAPS/SMGAL0B.png" Disablefullbright}
+brightmap sprite SMGAM0		{map "BRIGHTMAPS/SMGAM0B.png" Disablefullbright}
+brightmap sprite SMGAN0		{map "BRIGHTMAPS/SMGAN0B.png" Disablefullbright}
+brightmap sprite SMGAO0		{map "BRIGHTMAPS/SMGAO0B.png" Disablefullbright}
+brightmap sprite SMGAP0		{map "BRIGHTMAPS/SMGAP0B.png" Disablefullbright}
+brightmap sprite SMGAQ0		{map "BRIGHTMAPS/SMGAQ0B.png" Disablefullbright}
+brightmap sprite SMGAR0		{map "BRIGHTMAPS/SMGAR0B.png" Disablefullbright}
+brightmap sprite SMGAS0		{map "BRIGHTMAPS/SMGAS0B.png" Disablefullbright}
+brightmap sprite SMGAT0		{map "BRIGHTMAPS/SMGAT0B.png" Disablefullbright}
+brightmap sprite SMGAU0		{map "BRIGHTMAPS/SMGAU0B.png" Disablefullbright}
+brightmap sprite SMGAV0		{map "BRIGHTMAPS/SMGAV0B.png" Disablefullbright}
+brightmap sprite SMGAW0		{map "BRIGHTMAPS/SMGAW0B.png" Disablefullbright}
+brightmap sprite SMGAX0		{map "BRIGHTMAPS/SMGAX0B.png" Disablefullbright}
+brightmap sprite SMGAY0		{map "BRIGHTMAPS/SMGAY0B.png" Disablefullbright}
+brightmap sprite SMGAZ0		{map "BRIGHTMAPS/SMGAZ0B.png" Disablefullbright}
+brightmap sprite SMGFC0		{map "BRIGHTMAPS/SMGFC0B.png" Disablefullbright}
+brightmap sprite SMGFD0		{map "BRIGHTMAPS/SMGFD0B.png" Disablefullbright}
+brightmap sprite SMGGA0		{map "BRIGHTMAPS/SMGGA0B.png" Disablefullbright}
+brightmap sprite SMGGB0		{map "BRIGHTMAPS/SMGGB0B.png" Disablefullbright}
+brightmap sprite SMGGC0		{map "BRIGHTMAPS/SMGGC0B.png" Disablefullbright}
+brightmap sprite SMGGD0		{map "BRIGHTMAPS/SMGGD0B.png" Disablefullbright}
+brightmap sprite SMGGE0		{map "BRIGHTMAPS/SMGGE0B.png" Disablefullbright}
+brightmap sprite SMGIA0		{map "BRIGHTMAPS/SMGIA0B.png" Disablefullbright}
+brightmap sprite SMGIB0		{map "BRIGHTMAPS/SMGIB0B.png" Disablefullbright}
+brightmap sprite SMGIC0		{map "BRIGHTMAPS/SMGIC0B.png" Disablefullbright}
+brightmap sprite SMGID0		{map "BRIGHTMAPS/SMGID0B.png" Disablefullbright}
+brightmap sprite SMGIE0		{map "BRIGHTMAPS/SMGIE0B.png" Disablefullbright}
+brightmap sprite SMGIF0		{map "BRIGHTMAPS/SMGIF0B.png" Disablefullbright}
+brightmap sprite SMGIG0		{map "BRIGHTMAPS/SMGIG0B.png" Disablefullbright}
+brightmap sprite SMGIH0		{map "BRIGHTMAPS/SMGIH0B.png" Disablefullbright}
+brightmap sprite SMGII0		{map "BRIGHTMAPS/SMGII0B.png" Disablefullbright}
+brightmap sprite SMGIJ0		{map "BRIGHTMAPS/SMGIJ0B.png" Disablefullbright}
+brightmap sprite SMGRA0		{map "BRIGHTMAPS/SMGRA0B.png" Disablefullbright}
+brightmap sprite SMGRB0		{map "BRIGHTMAPS/SMGRB0B.png" Disablefullbright}
+brightmap sprite SMGRC0		{map "BRIGHTMAPS/SMGRC0B.png" Disablefullbright}
+brightmap sprite SMGRD0		{map "BRIGHTMAPS/SMGRD0B.png" Disablefullbright}
+brightmap sprite SMGRE0		{map "BRIGHTMAPS/SMGRE0B.png" Disablefullbright}
+brightmap sprite SMGRF0		{map "BRIGHTMAPS/SMGRF0B.png" Disablefullbright}
+brightmap sprite SMGRG0		{map "BRIGHTMAPS/SMGRG0B.png" Disablefullbright}
+brightmap sprite SMGRH0		{map "BRIGHTMAPS/SMGRH0B.png" Disablefullbright}
+brightmap sprite SMGRI0		{map "BRIGHTMAPS/SMGRI0B.png" Disablefullbright}
+brightmap sprite SMGRJ0		{map "BRIGHTMAPS/SMGRJ0B.png" Disablefullbright}
+brightmap sprite SMGRK0		{map "BRIGHTMAPS/SMGRK0B.png" Disablefullbright}
+brightmap sprite SMGRL0		{map "BRIGHTMAPS/SMGRL0B.png" Disablefullbright}
+brightmap sprite SMGRM0		{map "BRIGHTMAPS/SMGRM0B.png" Disablefullbright}
+brightmap sprite SMGRN0		{map "BRIGHTMAPS/SMGRN0B.png" Disablefullbright}
+brightmap sprite SMGRO0		{map "BRIGHTMAPS/SMGRO0B.png" Disablefullbright}
+brightmap sprite SMGRP0		{map "BRIGHTMAPS/SMGRP0B.png" Disablefullbright}
+brightmap sprite SMGRQ0		{map "BRIGHTMAPS/SMGRQ0B.png" Disablefullbright}
+brightmap sprite SMGRR0		{map "BRIGHTMAPS/SMGRR0B.png" Disablefullbright}
+brightmap sprite SMGRS0		{map "BRIGHTMAPS/SMGRS0B.png" Disablefullbright}
+brightmap sprite SMGRT0		{map "BRIGHTMAPS/SMGRT0B.png" Disablefullbright}
+brightmap sprite SMGRU0		{map "BRIGHTMAPS/SMGRU0B.png" Disablefullbright}
+brightmap sprite SMGRV0		{map "BRIGHTMAPS/SMGRV0B.png" Disablefullbright}
+brightmap sprite SMGRW0		{map "BRIGHTMAPS/SMGRW0B.png" Disablefullbright}
+brightmap sprite SMGRX0		{map "BRIGHTMAPS/SMGRX0B.png" Disablefullbright}
+brightmap sprite SMGRY0		{map "BRIGHTMAPS/SMGRY0B.png" Disablefullbright}
+brightmap sprite SMGRZ0		{map "BRIGHTMAPS/SMGRZ0B.png" Disablefullbright}
+brightmap sprite SMGR[0		{map "BRIGHTMAPS/SMGR[0B.png" Disablefullbright}
+brightmap sprite SMGR]0		{map "BRIGHTMAPS/SMGR]0B.png" Disablefullbright}
+brightmap sprite SMGR\0		{map "BRIGHTMAPS/SMGRbslash0B.png" Disablefullbright} //Why does slade not let me do backslashes bro 
+brightmap sprite SMGSA0		{map "BRIGHTMAPS/SMGSA0B.png" Disablefullbright}
+brightmap sprite SMGSB0		{map "BRIGHTMAPS/SMGSB0B.png" Disablefullbright}
+brightmap sprite SMGSC0		{map "BRIGHTMAPS/SMGSC0B.png" Disablefullbright}
+brightmap sprite SMGSD0		{map "BRIGHTMAPS/SMGSD0B.png" Disablefullbright}
+brightmap sprite SMGSE0		{map "BRIGHTMAPS/SMGSE0B.png" Disablefullbright}
+brightmap sprite SMGSF0		{map "BRIGHTMAPS/SMGSF0B.png" Disablefullbright}
+brightmap sprite SMGSG0		{map "BRIGHTMAPS/SMGSG0B.png" Disablefullbright}
+brightmap sprite SMGSH0		{map "BRIGHTMAPS/SMGSH0B.png" Disablefullbright}
+brightmap sprite SMGPA0		{map "BRIGHTMAPS/SMGPA0B.png" Disablefullbright}
+brightmap sprite SMGPB0		{map "BRIGHTMAPS/SMGPB0B.png" Disablefullbright}
+brightmap sprite SMGPC0		{map "BRIGHTMAPS/SMGPC0B.png" Disablefullbright}
+
 //RIFLE
 brightmap sprite R1FRB0		{map "BRIGHTMAPS/RifleBM/R1FRB0_BR.png"disablefullbright}
 brightmap sprite R1FRC0		{map "BRIGHTMAPS/RifleBM/R1FRC0_BR.png"disablefullbright}
-brightmap sprite RI2FA0		{map "BRIGHTMAPS/RifleBM/RI2FA0_BR.png"}
+brightmap sprite RI2FA0		{map "BRIGHTMAPS/RifleBM/RI2FA0_BR.png"disablefullbright}
 brightmap sprite RI2FB0		{map "BRIGHTMAPS/RifleBM/RI2FB0_BR.png"disablefullbright}
 brightmap sprite RI2FC0		{map "BRIGHTMAPS/RifleBM/RI2FC0_BR.png"disablefullbright}
-brightmap sprite RI2FD0		{map "BRIGHTMAPS/RifleBM/RI2FD0_BR.png"}
+brightmap sprite RI2FD0		{map "BRIGHTMAPS/RifleBM/RI2FD0_BR.png"disablefullbright}
 brightmap sprite RI2GA0		{map "BRIGHTMAPS/RifleBM/RI2GA0_BR.png"disablefullbright}
 brightmap sprite RI2RA0		{map "BRIGHTMAPS/RifleBM/RI2RA0_BR.png"disablefullbright}
 brightmap sprite RI2RB0		{map "BRIGHTMAPS/RifleBM/RI2RB0_BR.png"disablefullbright}
