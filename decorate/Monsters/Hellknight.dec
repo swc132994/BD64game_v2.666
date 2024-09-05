@@ -43,8 +43,7 @@ Obituary "$FO_OB_KNIGHT"
 		BOS2 G 8 Bright A_CustomMissile("64BaronBallGreen",32)	//Melee and Missile seperated
 		Goto See
 	Pain:
-		BOS2 H 2
-		BOS2 H 2 A_Pain
+		BOS2 H 6 A_Pain
 		Goto See
 	Death:
 		BOS2 I 5 A_Scream

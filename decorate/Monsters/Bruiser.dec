@@ -107,8 +107,7 @@ MONSTER
 		DKHL H 23 A_FaceTarget
 		Goto See
 	Pain:
-		DKHL I 3
-		DKHL I 3 A_Pain
+		DKHL I 6 A_Pain
 		Goto See
 	Death:
 		DKHL J 5 A_Scream

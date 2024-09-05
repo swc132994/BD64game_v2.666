@@ -69,7 +69,6 @@ Obituary "%o was gunned down by a rifle marine."
 		PLAY E 2
 		Goto See
 	Pain:
-		PLAY G 4 A_SpawnItemEx("HeadshotTarget8",0,0,55)
 		PLAY G 4 A_Pain
 		Goto See
 	Raise:
@@ -297,8 +296,7 @@ DropItem "cellpack"
 		ZLAY A 1
 		Goto See
 	Pain:
-		ZLAY G 4 A_SpawnItemEx("HeadshotTarget8",4,0,55)
-		ZLAY G 4 A_Pain
+		ZLAY G 6 A_Pain
 		Goto Idle
 	Death:
 		TNT1 A 0 A_Scream
@@ -494,8 +492,7 @@ DropItem "SOULSPAWNER"
 		ZLAY A 5
 		Goto See
 	Pain:
-		ZLAY G 4 A_SpawnItemEx("HeadshotTarget8",4,0,55)
-		ZLAY G 4 A_Pain
+		ZLAY G 6 A_Pain
 		Goto Idle
 	Death:
 		TNT1 A 0 A_Scream
@@ -692,8 +689,7 @@ DropItem "clip"
 		ZLAY E 1
 		Goto See
 	Pain:
-		ZLAY G 4 A_SpawnItemEx("HeadshotTarget8",4,0,55)
-		ZLAY G 4 A_Pain
+		ZLAY G 6 A_Pain
 		Goto Idle
 	Death:
 		TNT1 A 0 A_Scream
@@ -877,8 +873,7 @@ DropItem "SOULSPAWNER"
 		PLAY DD 2 A_MarineChase
 		Loop
 	Pain:
-		PLAY G 4 A_SpawnItemEx("HeadshotTarget8",4,0,55)
-		PLAY G 4 A_Pain
+		PLAY G 6 A_Pain
 		Goto Idle
 	Death:
 		TNT1 A 0 A_Scream
@@ -1062,8 +1057,7 @@ DropItem "SOULSPAWNER"
 		PLAY DD 2 A_MarineChase
 		Loop
 	Pain:
-		PLAY G 4 A_SpawnItemEx("HeadshotTarget8",4,0,55)
-		PLAY G 4 A_Pain
+		PLAY G 6 A_Pain
 		Goto Idle
 	Death:
 		TNT1 A 0 A_Scream
@@ -1258,8 +1252,7 @@ DropItem "cell"
 		ZLAY A 1
 		Goto See
 	Pain:
-		ZLAY G 4 A_SpawnItemEx("HeadshotTarget8",0,0,55)
-		ZLAY G 4 A_Pain
+		ZLAY G 6 A_Pain
 		Goto Idle
 	Death:
 		TNT1 A 0 A_Scream
@@ -1453,8 +1446,7 @@ DropItem "cell"
 		ZLAY F 7 BRIGHT Light("PLASMA_X2") A_CustomRailgun(15,0,NONE,NONE,RGF_FULLBRIGHT | RGF_SILENT,1,0,"GaussCannonProjectilePuff",0,0,0,0,0,0,"GaussCannonProjectileTrail")
 		Goto See
 	Pain:
-		ZLAY G 4 A_SpawnItemEx("HeadshotTarget8",0,0,55)
-		ZLAY G 4 A_Pain
+		ZLAY G 6 A_Pain
 		Goto Idle
 	Death:
 		TNT1 A 0 A_Scream
@@ -1639,8 +1631,7 @@ DropItem "rocketammo"
 		PLAY DD 2 A_MarineChase
 		Loop
 	Pain:
-		PLAY G 4 A_SpawnItemEx("HeadshotTarget8",4,0,55)
-		PLAY G 4 A_Pain
+		PLAY G 6 A_Pain
 		Goto Idle
 	Missile:
 		TNT1 A 0 A_JumpIfTargetInLOS(1)
@@ -1837,8 +1828,7 @@ DropItem "shell"
 		PLAY DD 2 A_MarineChase
 		Loop
 	Pain:
-		PLAY G 4 A_SpawnItemEx("HeadshotTarget8",4,0,55)
-		PLAY G 4 A_Pain
+		PLAY G 6 A_Pain
 		Goto Idle
 	Missile:
 		TNT1 A 0 A_JumpIfTargetInLOS(1)
@@ -2033,8 +2023,7 @@ DropItem "shell"
 		PLAY DD 2 A_MarineChase
 		Loop
 	Pain:
-		PLAY G 4 A_SpawnItemEx("HeadshotTarget8",4,0,55)
-		PLAY G 4 A_Pain
+		PLAY G 6 A_Pain
 		Goto Idle
 	Missile:
 		TNT1 A 0 A_JumpIfTargetInLOS(1)
@@ -2232,8 +2221,7 @@ Game Doom
 		PLAY DD 2 A_MarineChase
 		Loop
 	Pain:
-		PLAY G 4 A_SpawnItemEx("HeadshotTarget8",4,0,55)
-		PLAY G 4 A_Pain
+		PLAY G 6 A_Pain
 		Goto Idle
 	Missile:
 		TNT1 A 0 A_JumpIfTargetInLOS(1)
@@ -2429,8 +2417,7 @@ Game Doom
 		PLAY DD 2 A_MarineChase
 		Loop
 	Pain:
-		PLAY G 4 A_SpawnItemEx("HeadshotTarget8",4,0,55)
-		PLAY G 4 A_Pain
+		PLAY G 6 A_Pain
 		Goto Idle
 	Missile:
 		TNT1 A 0 A_JumpIfTargetInLOS(1)
@@ -2637,8 +2624,7 @@ Game Doom
 		ZLAY E 1
 		Goto See
 	Pain:
-		ZLAY G 4 A_SpawnItemEx("HeadshotTarget8",0,0,55)
-		ZLAY G 4 A_Pain
+		ZLAY G 6 A_Pain
 		Goto Idle
 	Death:
 		TNT1 A 0 A_Scream
@@ -2836,8 +2822,7 @@ Game Doom
 		ZLAY E 1
 		Goto See
 	Pain:
-		ZLAY G 4
-		ZLAY G 4 A_Pain
+		ZLAY G 6 A_Pain
 		Goto Idle
 	Death:
 		TNT1 A 0 A_Scream

@@ -110,8 +110,7 @@ MONSTER
 		DIAB GGGG 5 Bright A_SpawnItemEx("ExplosionFlareSpawner")
 		Goto See
 	Pain:
-		DIAB H 10
-		DIAB H 10 A_Pain
+		DIAB H 6 A_Pain
 		Goto See
 	Death:
 		DIAB I 10 A_Scream

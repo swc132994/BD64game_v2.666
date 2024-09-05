@@ -100,8 +100,7 @@ Tag "Forgotten One"
 		TNT1 A 0 A_ChangeFlag("NOPAIN",FALSE)
 		Goto See
 	Pain:
-		ESKU FF 2
-		ESKU F 1 A_Pain
+		ESKU F 6 A_Pain
 		goto See
 	Death:
 		ESKU G 2 Bright

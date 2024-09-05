@@ -125,8 +125,7 @@ MONSTER
 		TNT1 A 0 A_ChangeFlag("NOPAIN",FALSE)
 		Goto See
 	Pain:
-		S1R3 R 5
-		S1R3 R 5 A_Pain
+		S1R3 R 6 A_Pain
 		Goto See
 	Death:
 		S1R3 S 7 A_NoBlocking

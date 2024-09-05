@@ -49,8 +49,7 @@ DamageFactor "CauseObjectsToSplash",0.0
 		TNT1 A 45
 		Stop
 	Pain:
-		SC0R N 4
-		SC0R N 8 A_Pain
+		SC0R N 6 A_Pain
 		Goto Spawn
 	Ice:
 		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
@@ -249,8 +248,7 @@ Obituary "%o was incinerated by a Supreme Fallen."
 		Goto See
 	Pain:
 		TNT1 AAAAAA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
-		F2LN G 3 Bright
-		F2LN G 3 Bright A_Pain
+		F2LN G 6 Bright A_Pain
 		Goto See
 	Death:
 	Death.Chainsaw:

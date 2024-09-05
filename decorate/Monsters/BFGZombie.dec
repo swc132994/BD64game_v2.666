@@ -61,8 +61,7 @@ MeleeRange 120
 		TNT1 A 0 A_ChangeFlag("NOPAIN",FALSE)
 		Goto See
 	Pain:
-		64BZ G 3
-		64BZ G 3 A_Pain
+		64BZ G 6 A_Pain
 		Goto See
 	Raise:
 		64BZ NMLKJIH 5

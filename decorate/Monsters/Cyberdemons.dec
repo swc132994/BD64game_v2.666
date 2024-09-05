@@ -29,7 +29,7 @@ Obituary "$FO_OB_CYBORG"
 		CYBR BBCCCDDD 3 A_Chase
 		Loop
 	Pain:
-		CYBR F 10 A_Pain
+		CYBR F 6 A_Pain
 		Goto See
 	Missile:
 		CYBR F 7 A_FaceTarget
@@ -155,7 +155,7 @@ DropItem "Soulsphere",32
 		A64A F 12 Bright A_CustomMissile("CyberRocket",68,-25,0)
 		Goto See
 	Pain:
-		A64A B 10 A_Pain
+		A64A B 6 A_Pain
 		Goto See
 	Death:
 		A64A G 10 A_Scream

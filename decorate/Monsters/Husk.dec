@@ -94,8 +94,7 @@ DropItem "SOULSPAWNER"
 		64ZF R 4 A_CustomMeleeAttack(random(2,16)*1,"imp/melee")
 		Goto See
 	Pain:
-		64ZF H 3
-		64ZF H 3 A_Pain
+		64ZF H 6 A_Pain
 		Goto See
 	Raise:
 		TNT1 A 0 A_SetScale(0.7)

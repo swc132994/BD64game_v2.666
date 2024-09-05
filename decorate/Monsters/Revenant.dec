@@ -60,8 +60,7 @@ Obituary "$FO_OB_UNDEAD"
 		SKEL K 12 A_FaceTarget
 		Goto See
 	Pain:
-		SKEL L 5
-		SKEL L 5 A_Pain
+		SKEL L 6 A_Pain
 		Goto See
 	Raise:
 		SKEL QPONM 5
@@ -399,8 +398,8 @@ DropItem "None"
 		TNT1 A 0 A_CustomMissile("XDeath1",5,17,random(0,360),2,random(0,90))
 		Loop
 	Pain:
-		SND1 A 5
-		SND1 B 5 A_Pain
+		SND1 A 3
+		SND1 B 3 A_Pain
 		Goto See
 	Melee:
 	Missile:

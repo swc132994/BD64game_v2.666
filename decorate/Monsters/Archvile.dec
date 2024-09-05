@@ -58,8 +58,7 @@ Obituary "$FO_OB_VILE"
 		VILH AB 10 Bright
 		Goto See
 	Pain:
-		VILE R 5
-		VILE R 5 A_Pain
+		VILE R 6 A_Pain
 		Goto See
 	Death:
 		VILE S 7 A_NoBlocking

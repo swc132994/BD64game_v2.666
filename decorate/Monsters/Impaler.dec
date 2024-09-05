@@ -51,8 +51,7 @@ MONSTER
 		TNT1 A 0 A_ClearTarget
 		Goto Spawn
 	Pain:
-		CENT H 4
-		CENT H 4 A_Pain
+		CENT H 6 A_Pain
 		Goto See
 	Missile:
 		CENT A 8 A_FaceTarget
