@@ -54,12 +54,16 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 	States
 	{
 	Select:
-		PLSG A 1 A_Raise
+		3LSG A 0 A_JumpIf(waterlevel > 1,2)
+		PLSG A 0
+		"####" A 1 A_Raise
 		Wait
 	Deselect:
 		TNT1 A 0 A_TakeInventory("HasPlasmaWeapon",0)
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		PLSG A 1 A_Lower
+		3LSG A 0 A_JumpIf(waterlevel > 1,2)
+		PLSG A 0
+		"####" A 1 A_Lower
 		Wait
 	Ready:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"NotReady")
@@ -178,8 +182,15 @@ Tag "$FO_TAG_PLASMARIFLE"
 		3LSR FEDCBA 1
 		Stop
 	Select:
+		TNT1 A 0 A_JumpIf(waterlevel > 1,"SelectWater")
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,1)
+		Goto SelectWater
 		TNT1 A 0 A_PlaySound("PLSDRAW",CHAN_BODY)
 		PLSG JKLM 1 Offset(0,32)
+		TNT1 A 0 A_Raise
+		Wait
+	SelectWater:
+		3LSG JKLM 1 Offset(0,32)
 		TNT1 A 0 A_Raise
 		Wait
 	Deselect:
@@ -188,7 +199,15 @@ Tag "$FO_TAG_PLASMARIFLE"
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
 		TNT1 A 0 A_TakeInventory("HasPlasmaWeapon",0)
+		TNT1 A 0 A_JumpIf(waterlevel > 1,"DeselectWater")
+		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,1)
+		Goto DeselectWater
 		PLSG NOPQ 1
+		TNT1 A 0 A_StopSound(CHAN_WEAPON)
+		TNT1 A 0 A_Lower
+		Wait
+	DeselectWater:
+		3LSG NOPQ 1
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
 		TNT1 A 0 A_Lower
 		Wait

@@ -142,7 +142,7 @@ OptionMenu "BrutalDoom64Item/WeaponOptions"
 	Option "Classic Style Rocket Launcher for Tactical/Modern =","ClassicRLCvar","YesOrNo"
 		StaticText "Options to switch between classic or modernised weapons.",1
 		StaticText ""
-	Option "Skip Weapon Reload Sequences (Need to press apply changes') =","NoReloadCvar","YesOrNo"
+	Option "Skip Weapon Reload Sequences (Need to press 'apply changes') =","NoReloadCvar","YesOrNo"
 		StaticText "Skip weapon reload animation sequences (tactical/modern modes ONLY).",1
 		StaticText ""
 	Option "Low Ammo SFX =","LowAmmoSFX","YesOrNo"
