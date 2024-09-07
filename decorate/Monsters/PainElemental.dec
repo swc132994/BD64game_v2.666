@@ -33,7 +33,6 @@ DropItem "DemonEssenceSpawner"
 		PAIN CB 3
 		Goto See
 	Pain:
-		PAIN D 6
 		PAIN D 6 A_Pain
 		Goto See
 	Death:
@@ -100,7 +99,6 @@ Tag "Agony Elemental"
 		NPEL CB 3
 		Goto See
 	Pain:
-		NPEL D 6
 		NPEL D 6 A_Pain
 		Goto See
 	Death:

@@ -14,7 +14,6 @@ CACODEMONS		1.0
 DEMONS (ALL)	0.67
 FATSO			0.62
 HELLHOUND ALT	0.65
-HELLHOUND CER	0.65
 HELLHOUND GEC	0.65
 HELLKNIGHT		0.72
 KNIGHTMARE		0.72
@@ -27,7 +26,6 @@ ERADICATOR		0.9
 MOTHERDEMON		1.0
 PAIN ELEMENTAL	0.77
 REVENENT		0.68
-REVENANT TCHER	0.74
 ZOMBIES			0.63
 THING			0.63
 
@@ -343,6 +341,7 @@ Impaled Doom 64 guys - Craneo
 64 TwitchGibs - Nevander's D64 Retribution
 64 HeadCandles - Craneo
 64 Stalagmites - DrDoctor
+64 Fly particle - 3D Realms, Captain Toenail, Craneo
 Nukage recolour - Craneo
 New blood splats sprites by I'M
 New screen blood splats by IDDQD_1337

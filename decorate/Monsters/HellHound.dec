@@ -50,8 +50,7 @@ DropItem "DemonEssenceSpawner"
 		HEHR EE 4 A_FaceTarget
 		Goto See
 	Pain:
-		HEHR G 2
-		HEHR G 2 A_Pain
+		HEHR G 6 A_Pain
 		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
@@ -223,9 +222,6 @@ DropItem "None"
 		HHMI E 35
 		HHMI E -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Pain:
-		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
-		Goto Spawn
 	Raise:
 		TNT1 A 0 A_SetScale(0.8,0.8)
 		HEHR MLKJ 5

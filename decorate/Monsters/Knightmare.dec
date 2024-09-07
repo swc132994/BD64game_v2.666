@@ -78,8 +78,7 @@ MONSTER
 		BOZ3 G 6 Bright A_CustomMissile("64BaronBallYellow",32)
 		Goto See
 	Pain:
-		BOZ3 H 3
-		BOZ3 H 3 A_Pain
+		BOZ3 H 6 A_Pain
 		Goto See
 	Death:
 		BOZ3 I 5 A_Scream

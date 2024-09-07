@@ -128,8 +128,7 @@ MONSTER
 		Goto See
 	Pain:
 		TNT1 AAAAAA 0 A_CustomMissile("RealFlameTrailsSmall",random(25,40),random(-20,20),random(0,360),2,random(70,110))
-		FALN G 3 Bright
-		FALN G 3 Bright A_Pain
+		FALN G 6 Bright A_Pain
 		Goto See
 	Death:
 		FALN H 5 Bright A_Scream

@@ -417,7 +417,7 @@ Tag "Assault Rifle"
 		ARSG A 0 A_JumpIfInventory("AltRifleSkin",1,"AlternativeReload")
 		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"ADSReload")
 		RIFG A 1 A_WeaponReady(WRF_ALLOWZOOM)
-		TNT1 A 0 A_JumpIfInventory("RifleAmmo",31,"Fidget")
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",0,"Fidget")
 		TNT1 A 0 A_JumpIfInventory("64HighCaliberBox",1,1)
 		Goto NoAmmo
 		TNT1 A 0 A_PlaySound("Reload",CHAN_AUTO)
@@ -437,7 +437,7 @@ Tag "Assault Rifle"
 	ADSReload:
 		ARSG A 0 A_JumpIfInventory("AltRifleSkin",1,"ADSAlternativeReload")
 		RI2G A 1 A_WeaponReady(WRF_ALLOWZOOM)
-		TNT1 A 0 A_JumpIfInventory("RifleAmmo",31,"Ready2")
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",0,"Ready2")
 		TNT1 A 0 A_JumpIfInventory("64HighCaliberBox",1,1)
 		Goto Ready2
 		TNT1 A 0 A_PlaySound("Reload",CHAN_AUTO)
@@ -458,7 +458,7 @@ Tag "Assault Rifle"
 	/*AlternativeReload:
 		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"ADSAlternativeReload")
 		ARSG A 1 A_WeaponReady(WRF_ALLOWZOOM)
-		TNT1 A 0 A_JumpIfInventory("RifleAmmo",31,"AltFidget")
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",0,"AltFidget")
 		TNT1 A 0 A_JumpIfInventory("64HighCaliberBox",1,1)
 		Goto NoAmmo
 		TNT1 A 0 A_PlaySound("Relo1",CHAN_AUTO)
@@ -542,7 +542,7 @@ Tag "Assault Rifle"
 		TNT1 A 0 A_Refire
 		Goto FinishReloadChecking
 	InsertBullets2:
-		TNT1 A 0 A_JumpIfInventory("RifleAmmo",31,"FinishReloadChecking")
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",0,"FinishReloadChecking")
 		TNT1 A 0 A_JumpIfInventory("64HighCaliberBox",1,1)
 		Goto FinishReloadChecking
 		TNT1 A 0 A_Giveinventory("RifleAmmo",1)
@@ -555,7 +555,7 @@ Tag "Assault Rifle"
 		Goto FinishReload	
 	ADSAlternativeReload:
 		AR2G A 1 A_WeaponReady(WRF_ALLOWZOOM)
-		TNT1 A 0 A_JumpIfInventory("RifleAmmo",31,"AltADSFidget")
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",0,"AltADSFidget")
 		TNT1 A 0 A_JumpIfInventory("64HighCaliberBox",1,1)
 		Goto Ready2
 		TNT1 A 0 A_PlaySound("Relo1",CHAN_AUTO)

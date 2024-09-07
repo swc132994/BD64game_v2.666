@@ -72,8 +72,7 @@ Obituary "%o was melted by a zombie colonel."
 		ZMAY E 7
 		Goto See
 	Pain:
-		ZMAY G 3
-		ZMAY G 3 A_Pain
+		ZMAY G 6 A_Pain
 		Goto See
 	Death:
 		ZMAY H 5 A_Scream

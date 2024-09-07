@@ -109,8 +109,7 @@ DropItem "SOULSPAWNER"
 		SSWV F 6
 		Goto See
 	Pain:
-		SSWV H 3
-		SSWV H 3 A_Pain
+		SSWV H 6 A_Pain
 		Goto See
 	Death:
 		SSWV I 5 A_Scream

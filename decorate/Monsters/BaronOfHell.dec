@@ -44,8 +44,7 @@ HitObituary "$FO_OB_BARONHIT"
 		BOSS G 8 Bright A_CustomMissile("64BaronBall",32)	//Melee and Missile seperated
 		Goto See
 	Pain:
-		BOSS H 2
-		BOSS H 2 A_Pain
+		BOSS H 6 A_Pain
 		Goto See
 	Death:
 		BOSS I 5 A_Scream

@@ -55,8 +55,7 @@ Obituary "$FO_OB_FATSO"
 		FATT HH 5 A_FaceTarget
 		Goto See
 	Pain:
-		FATT I 3
-		FATT I 3 A_Pain
+		FATT I 6 A_Pain
 		Goto See
 	Death:
 		FATT J 5

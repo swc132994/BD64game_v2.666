@@ -67,8 +67,7 @@ MONSTER
 		SLHV I 10
 		Goto See
 	Pain:
-		SLHV K 3
-		SLHV K 3 A_Pain
+		SLHV K 6 A_Pain
 		Goto See
 	Death:
 		SLHV L 8
@@ -280,10 +279,6 @@ DropItem "None"
 		SLHV VWX 5
 		SLHV Y -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Pain:
-		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
-		SHDM A 1
-		Goto Spawn
 	Raise:
 		TNT1 A 0 A_SpawnItemEx("64SoulHarvesterGhostReturning",0,0,32)
 		SLHV QPONML 7
@@ -384,10 +379,6 @@ Actor 64BrutalisedHarvester_2 : 64BrutalisedHarvester
 		SLHV VWX 5
 		SLHV Y -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Pain:
-		TNT1 AAAAAAA 0 A_CustomMissile("Bloodmist",56,0,random(0,360),2,random(0,90))
-		SHDM B 1
-		Goto Spawn
 	Raise:
 		TNT1 A 0 A_SpawnItemEx("64SoulHarvesterGhostReturning",0,0,32)
 		SLHV QPONML 7
