@@ -281,7 +281,7 @@ Scale 0.6
 radius 1
 height 1
 speed 150
-damage 3
+damage 4
 Alpha 1
 Renderstyle Add
 Decal "LaserDecal"
