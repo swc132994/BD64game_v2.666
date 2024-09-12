@@ -14,6 +14,7 @@ Species "HellKnight"
 BloodType "Brutal_BloodGreen"
 HitObituary "$FO_OB_KNIGHTHIT"
 Obituary "$FO_OB_KNIGHT"
+Tag "Hell Knight"
 +NOBLOODDECALS
 +NEVERFAST
 	states
