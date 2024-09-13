@@ -44,14 +44,14 @@ Skill Hard
 	mustconfirm = "Equivalent to 'Ultra violence'"
 }
 
-/*Skill HardPlus
+Skill HardPlus
 {
 	SpawnFilter = Hard
 	Name = "Watch me die+!"
 	FastMonsters
 	SpawnMulti //This command works correctly in GZDoom, but has no effect on Zandronum
 	mustconfirm = "Equivalent to 'Ultra violence+', Fast Monster Projectiles, (GZDoom only) Spawn Multiplayer Weapons"
-}*/
+}
 
 Skill Nightmare
 {

@@ -166,7 +166,7 @@ BounceFactor 1
 
 ACTOR XDeath2Green : XDeath2
 {
-Translation "0:255=%[0,0,0]:[0.5,1,0]"//Green
+Translation "0:255=%[0,0,0]:[0.6,1,0]"//Green
 Decal "BrutalBloodSuperGreen"
 	States
 	{
@@ -333,7 +333,7 @@ Decal "BrutalBloodSplat"
 
 ACTOR XDeath3GREEN : XDeath3
 {
-Translation "0:255=%[0,0,0]:[0.5,1,0]"//Green
+Translation "0:255=%[0,0,0]:[0.6,1,0]"//Green
 Decal "BrutalBloodSplatGREEN"
 	States
 	{
