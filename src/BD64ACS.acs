@@ -336,7 +336,7 @@ script "ShotgunGuySpawner" (void)
 {
 	static str MonsterType[] =
 	{
-		"SpawnShotgunGuy","SpawnSSGGuy","SpawnPlasmaGuy"
+		"SpawnShotgunGuy","SpawnSSGGuy","SpawnBFGGuy"
 	};
 	
 	Switch(GetCvar("SSGZombieRandom_Cvar"))
@@ -360,7 +360,7 @@ script "ChaingunGuySpawner" (void)
 {
 	static str MonsterType[] =
 	{
-		"SpawnChaingunGuy","SpawnBFGGuy"
+		"SpawnChaingunGuy","SpawnPlasmaGuy"
 	};
 	
 	If(GetCvar("ZombieChaingunRandom_Cvar") == -1) {SetActorState(0,"D64MonsterOnly");}

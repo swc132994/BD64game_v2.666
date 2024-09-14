@@ -311,10 +311,10 @@ MONSTER
 		TNT1 A 0 A_Jump(CallACS("ShotgunGuySpawnPercent",0,0,0)*13,"SpawnShotgunGuy","SpawnSSGGuy")
 		Goto SpawnShotgunGuy
 	AltSpawn2:
-		TNT1 A 0 A_Jump(CallACS("ShotgunGuySpawnPercent",0,0,0)*13,"SpawnShotgunGuy","SpawnPlasmaGuy")
+		TNT1 A 0 A_Jump(CallACS("ShotgunGuySpawnPercent",0,0,0)*13,"SpawnShotgunGuy","SpawnBFGGuy")
 		Goto SpawnShotgunGuy
 //	AltSpawn3:
-//		TNT1 A 0 A_Jump(CallACS("ShotgunGuySpawnPercent",0,0,0)*13,"SpawnSSGGuy","SpawnPlasmaGuy")
+//		TNT1 A 0 A_Jump(CallACS("ShotgunGuySpawnPercent",0,0,0)*13,"SpawnSSGGuy","SpawnBFGGuy")
 	SpawnShotgunGuy:
 		TNT1 A 1 A_SpawnItemEx("64Shotgunguy",0,0,0,0,0,0,0,SXF_TRANSFERAMBUSHFLAG|SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
