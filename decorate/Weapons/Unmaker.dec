@@ -618,7 +618,7 @@ Tag "Unmaker"
 
 Actor UnmakerLaser2 : FastProjectile
 {
-Translation "0:255=%[0,0,0]:[0.83,0.13,0.18]"//Amaranth Red
+Translation "0:255=%[0,0,0]:[0.55,0,0]"//DarkRed
 Scale 1.5
 Radius 3
 Height 6
@@ -658,7 +658,7 @@ Obituary "%o was unmade by %k."
 
 Actor UnmakerLaser : UnmakerLaser2
 {
-Damage(Random(25,50))
+Damage 30
 }
 
 Actor UnmakerLaserIce : UnmakerLaser2

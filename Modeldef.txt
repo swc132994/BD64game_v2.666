@@ -887,7 +887,7 @@ Model Intestine		//MODEL 1
 Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "gut1.png"
-Scale 18 18 1
+Scale 12 12 1
 ZOffset 0.89
 FrameIndex MDL1 A 0 0
 AngleOffset 90
@@ -906,7 +906,7 @@ Model Intestine		//MODEL 2
 Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "gut2.png"
-Scale 18 18 1
+Scale 14 14 1
 ZOffset 0.93
 FrameIndex MDL2 A 0 0
 AngleOffset 90
@@ -925,7 +925,7 @@ Model IntestineGreen	//MODEL 1
 Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "gut1.png"
-Scale 18 18 1
+Scale 12 12 1
 ZOffset 0.97
 FrameIndex MDL1 A 0 0
 AngleOffset 90
@@ -944,7 +944,7 @@ Model IntestineGreen	//MODEL 2
 Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "gut2.png"
-Scale 18 18 1
+Scale 14 14 1
 ZOffset 1.01
 FrameIndex MDL2 A 0 0
 AngleOffset 90
@@ -963,7 +963,7 @@ Model IntestineBLUE	//MODEL 1
 Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "gut1.png"
-Scale 18.0 18.0 1
+Scale 12 12 1
 ZOffset 1.05
 FrameIndex MDL1 A 0 0
 AngleOffset 90
@@ -982,7 +982,7 @@ Model IntestineBLUE	//MODEL 2
 Path "models"
 Model 0 "bloodspot.md3"
 Skin 0 "gut2.png"
-Scale 18.0 18.0 1
+Scale 14 14 1
 ZOffset 1.09
 FrameIndex MDL2 A 0 0
 AngleOffset 90

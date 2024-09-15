@@ -1,7 +1,6 @@
 #library "BD64ACS"
 #include "zcommon.acs"
 #include "ACSFunc.acs"
-
 #include "BD64FlashlightACS.acs"
 #include "BD64ScreenFXACS.acs"
 
@@ -337,7 +336,7 @@ script "ShotgunGuySpawner" (void)
 {
 	static str MonsterType[] =
 	{
-		"SpawnShotgunGuy","SpawnSSGGuy","SpawnPlasmaGuy"
+		"SpawnShotgunGuy","SpawnSSGGuy","SpawnBFGGuy"
 	};
 	
 	Switch(GetCvar("SSGZombieRandom_Cvar"))
@@ -361,7 +360,7 @@ script "ChaingunGuySpawner" (void)
 {
 	static str MonsterType[] =
 	{
-		"SpawnChaingunGuy","SpawnBFGGuy"
+		"SpawnChaingunGuy","SpawnPlasmaGuy"
 	};
 	
 	If(GetCvar("ZombieChaingunRandom_Cvar") == -1) {SetActorState(0,"D64MonsterOnly");}
@@ -766,19 +765,17 @@ script "SoulHandler" ENTER			//unmaker ammo set ThingID
 Thing_ChangeTID(0,2337+PlayerNumber());
 }
 
-Script "TUnmakerChecker" (void)		//checks if you have tactical unmaker to allow spawn of tactical unmaker ammo
+Script "TUnmakerChecker" (void)
 {
 	for(int i = 2337; i < 2400; i++)
 	{
-		if(CheckActorInventory(i,"UnmakerTACTICAL") && CheckActorInventory(i,"WpnPower1Icon") && CheckActorInventory(i,"WpnPower2Icon") && CheckActorInventory(i,"WpnPower3Icon"))		//Checks if you have tactical unmaker & demon keys
-		{
-			SetResultValue(3);
-			break;
-		}
-		if(CheckActorInventory(i,"UnmakerTACTICAL"))
+		if(CheckActorInventory(i,"unmakerTACTICAL") || CheckActorInventory(i,"64RuinerTACTICAL"))	//checks if you have unmaker or ruiner
 		{
 			SetResultValue(2);
-			break;
+			if(CheckActorInventory(i,"WpnPower1Icon") && CheckActorInventory(i,"WpnPower2Icon") && CheckActorInventory(i,"WpnPower3Icon"))	//checks if you have all 3 demon keys
+			{
+			SetResultValue(3);
+			}
 		}
 	}
 }

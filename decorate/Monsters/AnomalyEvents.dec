@@ -865,9 +865,9 @@ MONSTER
 	States
 	{
 	Spawn:
-		TLP2 AA 0 NoDelay A_SpawnItemEx("LightShaft2Killable")
+		TLP2 A 0 NoDelay A_SpawnItemEx("LightShaft2Killable")
 	Stay:
-		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",0,0,55)
+		TNT1 A 0 A_SpawnItemEx("ShortOrangeFlareSmall",0,0,50)
 		TLP2 A 3 Light("LampBasic") A_LookEx(LOF_NOSOUNDCHECK,0,192,0,360)
 		TNT1 A 0 A_Jump(8,"Stay2")
 		Loop
@@ -877,15 +877,15 @@ MONSTER
 	See:
 		TLP2 A 1 A_PlaySound("polt/see",CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("polt/buzz",CHAN_AUTO)
-		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,55)
-		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,55)
+		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,50)
+		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,50)
 		TLP2 B 3
-		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,55)
-		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,55)
+		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,50)
+		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,50)
 		TLP2 B 3
-		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,55)
+		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,50)
 		TLP2 B 3
-		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,55)
+		TLP2 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,50)
 		TLP2 B 3
 		Goto Missile
 	Missile:
@@ -903,7 +903,7 @@ MONSTER
 		TNT1 AAAAAAAAA 0 A_SpawnItemEx("64PolterGlassShard",0,0,55,random(-2,2),random(-2,2),random(3,9),random(0,359),32)
 		TNT1 A 0 A_SpawnItemEx("ExplosionSmoke",0,0,55)
 	Death.DidAttack:
-		TNT1 A 0 A_Explode(4,100)
+		TNT1 A 0 A_Explode(4,150)
 		TLP2 C -1
 		Stop
 	}
@@ -976,9 +976,9 @@ MONSTER
 	States
 	{
 	Spawn:
-		TLMP AA 0 NoDelay A_SpawnItemEx("LightShaft2Killable")
+		TLMP A 0 NoDelay A_SpawnItemEx("LightShaft2Killable")
 	Stay:
-		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",0,0,71)
+		TNT1 A 0 A_SpawnItemEx("ShortOrangeFlareSmall",0,0,66)
 		TLMP A 3 Light("LampBasic") A_LookEx(LOF_NOSOUNDCHECK,0,192,0,360)
 		TNT1 A 0 A_Jump(8,"Stay2")
 		Loop
@@ -988,15 +988,15 @@ MONSTER
 	See:
 		TLMP A 1 A_PlaySound("polt/see",CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("polt/buzz",CHAN_AUTO)
-		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,71)
-		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,71)
+		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,66)
+		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,66)
 		TLMP B 3
-		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,71)
-		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,71)
+		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,66)
+		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,66)
 		TLMP B 3
-		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,71)
+		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,66)
 		TLMP B 3
-		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,71)
+		TLMP A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,66)
 		TLMP B 3
 		Goto Missile
 	Missile:
@@ -1014,7 +1014,7 @@ MONSTER
 		TNT1 AAAAAAAAAAAAAAA 0 A_SpawnItemEx("64PolterGlassShard",0,0,71,random(-2,2),random(-2,2),random(3,9),random(0,359),32)
 		TNT1 A 0 A_SpawnItemEx("ExplosionSmoke",0,0,71)
 	Death.DidAttack:
-		TNT1 A 0 A_Explode(4,100)
+		TNT1 A 0 A_Explode(4,150)
 		TLMP C -1
 		Stop
 	}
@@ -1046,9 +1046,9 @@ MONSTER
 	States
 	{
 	Spawn:
-		TLP1 AA 0 NoDelay A_SpawnItemEx("LightShaft2Killable")
+		TLP1 A 0 NoDelay A_SpawnItemEx("LightShaft2Killable")
 	Stay:
-		TNT1 A 0 A_SpawnItemEx("ShortWhiteFlareSmall",0,0,45)
+		TNT1 A 0 A_SpawnItemEx("ShortOrangeFlareSmall",0,0,44)
 		TLP1 A 3 Light("LampBasic") A_LookEx(LOF_NOSOUNDCHECK,0,192,0,360)
 		TNT1 A 0 A_Jump(8,"Stay2")
 		Loop
@@ -1058,15 +1058,15 @@ MONSTER
 	See:
 		TLP1 A 1 A_PlaySound("polt/see",CHAN_AUTO)
 		TNT1 A 0 A_PlaySound("polt/buzz",CHAN_AUTO)
-		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,45)
-		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,45)
+		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,44)
+		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,44)
 		TLP1 B 3
-		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,45)
-		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,45)
+		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,44)
+		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,44)
 		TLP1 B 3
-		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,45)
+		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,44)
 		TLP1 B 3
-		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortWhiteFlareSmall",0,0,45)
+		TLP1 A 8 Light("LampBasic") A_SpawnItemEx("ShortOrangeFlareSmall",0,0,44)
 		TLP1 B 3
 		Goto Missile
 	Missile:
@@ -1084,7 +1084,7 @@ MONSTER
 		TNT1 AAAAAAAAA 0 A_SpawnItemEx("64PolterGlassShard",0,0,52,random(-2,2),random(-2,2),random(3,9),random(0,359),32)
 		TNT1 A 0 A_SpawnItemEx("ExplosionSmoke",0,0,52)
 	Death.DidAttack:
-		TNT1 A 0 A_Explode(4,100)
+		TNT1 A 0 A_Explode(4,150)
 		TLP1 C -1
 		Stop
 	}

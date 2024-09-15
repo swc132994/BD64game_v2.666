@@ -18,42 +18,39 @@ Skill Baby
 	Name = "Be Gentle!"
 	AmmoFactor = 2.0
 	EasyBossBrain
-	mustconfirm = "Are you kidding me? This is barely a challenge"
+	mustconfirm = "Equivalent to 'I'm too young to die' (ammo factor x2)"
 }
 
 Skill Easy
 {
 	SpawnFilter = Easy
 	Name = "Bring it on!"
-	Key = "n"
 	EasyBossBrain
-	mustconfirm = "Don't complain if you find it boring"
+	mustconfirm = "Equivalent to 'Hey, not too rough'"
 }
 
 Skill Normal
 {
 	SpawnFilter = Normal
 	Name = "I own Doom!"
-	mustconfirm = "Normal difficulty"
+	mustconfirm = "Equivalent to 'Hurt me plenty'"
 	defaultskill
 }
 
 Skill Hard
 {
 	SpawnFilter = Hard
-	MonsterHealth = 1.0
 	Name = "Watch me die!"
-	mustconfirm = "Equivalent to Ultra Violence"
+	mustconfirm = "Equivalent to 'Ultra violence'"
 }
 
 Skill HardPlus
 {
 	SpawnFilter = Hard
-	MonsterHealth = 1.0
 	Name = "Watch me die+!"
 	FastMonsters
 	SpawnMulti //This command works correctly in GZDoom, but has no effect on Zandronum
-	mustconfirm = "Equivalent to Ultra Violence+, Fast Monsters, (GZDoom only) Spawn Multiplayer weapons"
+	mustconfirm = "Equivalent to 'Ultra violence+', Fast Monster Projectiles, (GZDoom only) Spawn Multiplayer Weapons"
 }
 
 Skill Nightmare
@@ -63,7 +60,7 @@ Skill Nightmare
 	Aggressiveness = 0.5
 	FastMonsters
 	Name = "Hardcore!"
-	mustconfirm = "Monsters are more durarble and aggressive"
+	mustconfirm = "Monsters abilities  = Faster projectiles, +25% health and more aggressive"
 }
 
 Skill Survival
@@ -76,7 +73,7 @@ Skill Survival
 	ReplaceActor = "64Berserk","BerserkerSyringeSpawner"
 	Name = "Survival!"
 	textcolor = Gray
-	mustconfirm = "Monsters are more durarble (Manual healing)."
+	mustconfirm = "Monsters abilities = +25% health (player manual healing)."
 }
 
 Skill SurvivalRealism
@@ -89,9 +86,9 @@ Skill SurvivalRealism
 	ReplaceActor = "Medikit","BandagedMedikitSpawner"
 	ReplaceActor = "64Berserk","BerserkerSyringeSpawner"
 	FastMonsters
-	Name = "Survival! (Realism)"
+	Name = "Survival! (realism)"
 	textcolor = Gray
-	mustconfirm = "Monsters are less durarble but faster and inflict more damage (Manual healing)."
+	mustconfirm = "Monsters abilities = Faster Projectiles, -50% health and inflict x5 damage (player manual healing)"
 }
 
 

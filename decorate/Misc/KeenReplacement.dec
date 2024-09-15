@@ -7,6 +7,7 @@ Tag "Scorpion"
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 +NOBLOODDECALS
+DropItem "SOULSPAWNER"
 	States
 	{
 	Spawn:
@@ -39,12 +40,12 @@ DamageFactor "CauseObjectsToSplash",0.0
 		TNT1 A 8 A_Die("SpawnedFlyingMonsterBoss")
 		Stop
 	Death.SpawnedFlyingMonster:
-		TNT1 A 1 A_NoBlocking
+		TNT1 A 1 A_UnSetSolid
 		TNT1 A 0 A_SpawnItemEx("64NOTAFRIT",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		TNT1 A 45
 		Stop
 	Death.SpawnedFlyingMonsterBoss:
-		TNT1 A 1 A_NoBlocking
+		TNT1 A 1 A_UnSetSolid
 		TNT1 A 0 A_SpawnItemEx("64YESAFRIT",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		TNT1 A 45
 		Stop

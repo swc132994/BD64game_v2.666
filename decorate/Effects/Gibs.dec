@@ -43,7 +43,7 @@ BounceFactor 1
 
 ACTOR XDeath1Green : XDeath1
 {
-Translation "16:31=152:159","176:191=112:127","32:47=152:159"//GREEN PARTIAL
+Translation "0:255=%[0,0,0]:[0.5,1,0]"//Green
 Decal "BrutalBloodSuperGreen"
 	States
 	{
@@ -166,7 +166,7 @@ BounceFactor 1
 
 ACTOR XDeath2Green : XDeath2
 {
-Translation "0:255=%[0,0,0]:[1,2,0]"//Green
+Translation "0:255=%[0,0,0]:[0.6,1,0]"//Green
 Decal "BrutalBloodSuperGreen"
 	States
 	{
@@ -333,7 +333,7 @@ Decal "BrutalBloodSplat"
 
 ACTOR XDeath3GREEN : XDeath3
 {
-Translation "0:255=%[0,0,0]:[1,2,0]"//Green
+Translation "0:255=%[0,0,0]:[0.6,1,0]"//Green
 Decal "BrutalBloodSplatGREEN"
 	States
 	{
@@ -531,7 +531,7 @@ Decal "BrutalBloodSuper"
 
 ACTOR XDeath5GREEN : XDeath2
 {
-Translation "0:255=%[0,0,0]:[1,2,0]"//Green
+Translation "0:255=%[0,0,0]:[0.5,1,0]"//Green
 Scale 1.1
 Speed 15
 Gravity 1
@@ -851,7 +851,7 @@ Decal "BrutalBloodSplat"
 
 ACTOR IntestineGREEN : XDeath1	//modelled
 {
-Translation "16:31=%[0,0,0]:[0,1,0]","176:191=%[0,0,0]:[0,1,0]","32:47=%[0,0,0]:[0,1,0]"//Green
+Translation "0:255=%[0,0,0]:[0.7,1,0]"//Green
 Scale 0.8
 Radius 8
 Height 12
@@ -969,7 +969,7 @@ Decal "BrutalBloodSuper"
 
 ACTOR BurningXDeath1BLUE : BurningXDeath1
 {
-Translation "0:255=%[0,0,0]:[1,0,2]"//BLUE
+Translation "0:255=%[0,0,0]:[0.5,0,1]"//BLUE
 Decal "BrutalBloodSuperBLUE"
 	States
 	{
@@ -1062,7 +1062,7 @@ BounceFactor 1
 
 ACTOR SmallBrainPieceGreen : SmallBrainPiece
 {
-Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
+Translation "0:255=%[0,0,0]:[0.5,1,0]"//Green
 Decal "BrutalBloodSplatGreen"
 	States
 	{
@@ -1249,7 +1249,7 @@ BounceFactor 0.7
 
 ACTOR XDeathEyesGreen : XDeathEyes
 {
-Translation "16:31=152:159","176:191=112:127","32:47=152:159"	//Green Partial
+Translation "0:255=%[0,0,0]:[0.5,1,0]"//Green
 Decal "BrutalBloodSplatGreen"
 	States
 	{
