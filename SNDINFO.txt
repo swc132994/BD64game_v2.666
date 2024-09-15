@@ -1,3 +1,13 @@
+//64SpawnSpark_Up
+$random Sparks/Spawn
+	{
+	Sparks/Sound1 Sparks/Sound2 Sparks/Sound3 Sparks/Sound4
+	}	$volume Sparks/Spawn 0.5
+Sparks/Sound1		SPARKS1
+Sparks/Sound2		SPARKS2
+Sparks/Sound3		SPARKS3
+Sparks/Sound4		SPARKS4
+
 //Flashlight
 flashlight/click		click
 

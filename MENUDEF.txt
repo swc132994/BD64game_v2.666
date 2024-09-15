@@ -130,9 +130,9 @@ OptionMenu "BrutalDoom64Item/WeaponOptions"
 	StaticText " "
 	StaticText "---------------------------- Weapons Functions ------------------------------",1
 		StaticText ""
-	Option "Enable Vanilla Weapon Animations =","VWeaponCvar","YesOrNo"
-		StaticText "Show classic Doom 64 weapon animations (classical mode).",1
-		StaticText "Show faster shotgun pump animation (modern/tactical mode).",1
+	Option "Enable Traditional Shotgun/SSG Animations =","VWeaponCvar","YesOrNo"
+		StaticText "Show classic Doom 64 Shotgun/SSG animations (classical mode).",1
+		StaticText "Show traditional shotgun pump animation (modern/tactical mode).",1
 		StaticText ""
 	Option "Enable Weapon Warm Up Animations =","WeaponsWarmUpCvar","YesOrNo"
 		StaticText "Show weapon warm up animations on first pickup (tactical/modern modes ONLY).",1
