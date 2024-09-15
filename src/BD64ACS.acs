@@ -64,6 +64,7 @@ Script "BD64Initilize" Enter
 		TakeInventory("NeverSelectedSSG",1);
 		TakeInventory("NeverSelectedSMG",1);
 		TakeInventory("NeverSelectedRL",1);
+		TakeInventory("NeverSelectedPlasma",1);
 		TakeInventory("NeverSelectedGauss",1);
 	}
 
