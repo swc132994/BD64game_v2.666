@@ -1,5 +1,6 @@
 actor BloodyTwitchReplacer : RandomSpawner Replaces BloodyTwitch
 {
++SPAWNCEILING
 DropItem "DamnedHanging1SOLID"
 DropItem "DamnedHanging2SOLID"
 DropItem "64TritePod_SOLID"
@@ -7,6 +8,7 @@ DropItem "64TritePod_SOLID"
 
 actor NonSolidTwitchReplacer : RandomSpawner Replaces NonSolidTwitch
 {
++SPAWNCEILING
 DropItem "DamnedHanging1"
 DropItem "DamnedHanging2"
 DropItem "64TritePod"
@@ -14,6 +16,7 @@ DropItem "64TritePod"
 
 actor Meat3Replacer : RandomSpawner Replaces Meat3
 {
++SPAWNCEILING
 DropItem "BD64TorturedMarine21SOLID"
 DropItem "BD64TorturedMarine23SOLID"
 DropItem "BD64TorturedMarine32SOLID"
@@ -23,6 +26,7 @@ DropItem "64TritePod_SOLID"
 
 actor NonsolidMeat3Replacer : RandomSpawner Replaces NonsolidMeat3
 {
++SPAWNCEILING
 DropItem "BD64TorturedMarine21"
 DropItem "BD64TorturedMarine23"
 DropItem "BD64TorturedMarine32"

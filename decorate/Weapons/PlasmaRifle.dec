@@ -308,7 +308,6 @@ Tag "$FO_TAG_PLASMARIFLE"
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
 		PLSR A 0 A_PlaySound("PLREAD1",CHAN_AUTO)
 		PLSR ABCDE 1 A_WeaponReady(WRF_ALLOWZOOM)
-		PLSR FF 1 A_FireCustomMissile("PlasmaCaseSpawn",-5,0,-10,-15)
 		PLSR R 0 A_JumpIfInventory("PlasmaRifleAmmo",21,"2CellReloaded")
 		PLSR G 10 A_WeaponReady(WRF_ALLOWZOOM)
 		PLSR A 0 A_PlaySound("PLREL",CHAN_AUTO)
@@ -322,8 +321,10 @@ Tag "$FO_TAG_PLASMARIFLE"
 		TNT1 A 0 A_Takeinventory("Cell",1,TIF_NOTAKEINFINITE)
 		Goto InsertBullets
 	1CellReloaded:
+		PLSR F 1 A_FireCustomMissile("PlasmaCaseSpawn",-5,0,-10,-15)
 		PLSR OPQ 1 A_WeaponReady(WRF_ALLOWZOOM)
 	2CellReloaded:
+		PLSR F 1 A_FireCustomMissile("PlasmaCaseSpawn",-5,0,-10,-15)
 		PLSR R 5 A_WeaponReady(WRF_ALLOWZOOM)
 		PLSR A 0 A_PlaySound("PLREL",CHAN_AUTO)
 		PLSR STU 1 A_WeaponReady(WRF_ALLOWZOOM)
