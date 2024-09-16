@@ -1042,7 +1042,7 @@ LQDRIP14		LQDRIP14
 //**********TERRAIN**********
 //---------------------------
 //World Sounds/Terrain sounds
-$random world/watersplash
+/*$random world/watersplash
 	{
 	dssplash dssplas2 water
 	}		$volume world/watersplash 0.6	$limit world/watersplash 4
@@ -1120,7 +1120,7 @@ floor/grav03			dsgrav3
 floor/grav04			dsgrav4
 
 //Metal - hard metal
-$random floor/metal
+/*$random floor/metal
 	{
 	floor/metl01 floor/metl02 floor/metl03 floor/metl04 floor/metl05 floor/metl06
 	}		$limit floor/metal 20
