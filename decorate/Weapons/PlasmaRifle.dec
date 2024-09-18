@@ -308,7 +308,7 @@ Tag "$FO_TAG_PLASMARIFLE"
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
 		PLSR A 0 A_PlaySound("PLREAD1",CHAN_AUTO)
 		PLSR ABCDE 1 A_WeaponReady(WRF_ALLOWZOOM)
-		PLSR R 0 A_JumpIfInventory("PlasmaRifleAmmo",21,"2CellReloaded")
+		PLSR R 0 A_JumpIfInventory("PlasmaRifleAmmo",20,"2CellReloaded")
 		PLSR G 10 A_WeaponReady(WRF_ALLOWZOOM)
 		PLSR A 0 A_PlaySound("PLREL",CHAN_AUTO)
 		PLSR HIJK 1 A_WeaponReady(WRF_ALLOWZOOM)
