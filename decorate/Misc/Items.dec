@@ -899,6 +899,7 @@ Inventory.MaxAmount 1
 ACTOR WpnPower1 : CustomInventory 9905
 {
 //$category "Game/BD64_Artifacts
+SpawnID 162
 Inventory.Icon POW1E0
 Inventory.PickupMessage "You have a feeling that it wasn't meant to be touched."
 Inventory.PickupSound "DEMKEYUP"
@@ -922,6 +923,7 @@ Tag "Demon Key Orange"
 ACTOR WpnPower2 : CustomInventory 9906
 {
 //$category "Game/BD64_Artifacts
+SpawnID 163
 Inventory.Icon POW2E0
 Inventory.PickupMessage "It must do something..."
 Inventory.PickupSound "DEMKEYUP"
@@ -945,6 +947,7 @@ Tag "Demon Key Purple"
 ACTOR WpnPower3 : CustomInventory 9907
 {
 //$category "Game/BD64_Artifacts
+SpawnID 164
 Inventory.Icon POW3E0
 Inventory.PickupMessage "Whatever it is, it doesn't belong in this world."
 Inventory.PickupSound "DEMKEYUP"

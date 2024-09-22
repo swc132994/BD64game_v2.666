@@ -15,6 +15,7 @@ clearskills
 Skill Baby
 {
 	SpawnFilter = Easy
+	DamageFactor = 0.5
 	Name = "Be Gentle!"
 	AmmoFactor = 2.0
 	EasyBossBrain
@@ -24,6 +25,7 @@ Skill Baby
 Skill Easy
 {
 	SpawnFilter = Easy
+	DamageFactor = 0.5
 	Name = "Bring it on!"
 	EasyBossBrain
 	mustconfirm = "Equivalent to 'Hey, not too rough'"
@@ -32,6 +34,7 @@ Skill Easy
 Skill Normal
 {
 	SpawnFilter = Normal
+	DamageFactor = 0.75
 	Name = "I own Doom!"
 	mustconfirm = "Equivalent to 'Hurt me plenty'"
 	defaultskill
@@ -40,6 +43,7 @@ Skill Normal
 Skill Hard
 {
 	SpawnFilter = Hard
+	DamageFactor = 0.75
 	Name = "Watch me die!"
 	mustconfirm = "Equivalent to 'Ultra violence'"
 }
@@ -47,6 +51,7 @@ Skill Hard
 Skill HardPlus
 {
 	SpawnFilter = Hard
+	DamageFactor = 0.75
 	Name = "Watch me die+!"
 	FastMonsters
 	SpawnMulti //This command works correctly in GZDoom, but has no effect on Zandronum
@@ -57,15 +62,17 @@ Skill Nightmare
 {
 	SpawnFilter = Nightmare
 	MonsterHealth = 1.25
+	DamageFactor = 0.75
 	Aggressiveness = 0.5
 	FastMonsters
 	Name = "Hardcore!"
-	mustconfirm = "Monsters abilities  = Faster projectiles, +25% health and more aggressive"
+	mustconfirm = "Monster abilities = Fast projectiles, +25% health and more aggressive"
 }
 
 Skill Survival
 {
 	SpawnFilter = Hard
+	DamageFactor = 0.75
 	MonsterHealth = 1.25
 	ReplaceActor = "64HealthBonus","64Bandages"
 	ReplaceActor = "Stimpack","BandagedStimSpawner"
@@ -73,14 +80,14 @@ Skill Survival
 	ReplaceActor = "64Berserk","BerserkerSyringeSpawner"
 	Name = "Survival!"
 	textcolor = Gray
-	mustconfirm = "Monsters abilities = +25% health (player manual healing)."
+	mustconfirm = "Monster abilities = +25% health (player manual healing)."
 }
 
 Skill SurvivalRealism
 {
 	SpawnFilter = Nightmare
 	DamageFactor = 5.0
-	MonsterHealth = 0.5
+	MonsterHealth = 0.3
 	ReplaceActor = "64HealthBonus","64Bandages"
 	ReplaceActor = "Stimpack","BandagedStimSpawner"
 	ReplaceActor = "Medikit","BandagedMedikitSpawner"
@@ -88,7 +95,7 @@ Skill SurvivalRealism
 	FastMonsters
 	Name = "Survival! (realism)"
 	textcolor = Gray
-	mustconfirm = "Monsters abilities = Faster Projectiles, -50% health and inflict x5 damage (player manual healing)"
+	mustconfirm = "Monster abilities = Fast Projectiles, -70% health and inflict x5 damage (player manual healing)"
 }
 
 
