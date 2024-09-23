@@ -70,9 +70,10 @@ BounceFactor 0.5
 	{
 	Spawn:
 		SPKO S 20 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
+		Loop
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		SPKO S 1 Bright A_FadeOut(0.1)
+		SPRK A 1 Bright A_FadeOut(0.1)
 		Loop
 	Splash:
 		TNT1 A 1
@@ -90,9 +91,10 @@ BounceFactor 0.01
 	{
 	Spawn:
 		SPKO S 30 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
+		Loop
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		SPKO S 1 Bright A_FadeOut(0.1)
+		SPRK A 1 Bright A_FadeOut(0.1)
 		Loop
 	}
 }
@@ -107,9 +109,10 @@ BounceType "None"
 	{
 	Spawn:
 		SPKO S 40 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
+		Loop
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		SPKO S 1 Bright A_FadeOut(0.1)
+		SPRK A 1 Bright A_FadeOut(0.1)
 		Loop
 	}
 }
