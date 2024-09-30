@@ -1,22 +1,5 @@
 #INCLUDE Brightmaps.gl
 
-//Bullet puff/HitPuff
-flickerlight BPUFF1
-{
-	color 1 0.75 0.0
-	size 6
-	secondarySize 9
-	chance 0.8
-}
-
-flickerlight BPUFF2
-{
-	color 1 0.75 0.0
-	size 3
-	secondarySize 6
-	chance 0.8
-}
-
 //Rocket
 pointlight ROCKET
 {
