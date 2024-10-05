@@ -64,7 +64,6 @@ Script "BD64Initilize" Enter
 		TakeInventory("NeverSelectedSSG",1);
 		TakeInventory("NeverSelectedSMG",1);
 		TakeInventory("NeverSelectedRL",1);
-		TakeInventory("NeverSelectedPlasma",1);
 		TakeInventory("NeverSelectedGauss",1);
 	}
 
@@ -273,8 +272,8 @@ script "ChaingunSpawner" (void)
 	{
 		"SpawnChaingun","SpawnRifle","SpawnSMG"
 	};
-	SetActorState(0,WeaponType[GetCvar("Chaingun_Spawner_Cvar") - 1]);
 	Delay(1);
+	SetActorState(0,WeaponType[GetCvar("Chaingun_Spawner_Cvar") - 1]);
 }
 
 script "PlasmaRifleSpawner" (void)
@@ -283,8 +282,8 @@ script "PlasmaRifleSpawner" (void)
 	{
 		"SpawnPlasmaRifle","SpawnGaussCannon"
 	};
-	SetActorState(0,WeaponType[GetCvar("GaussCannon_Spawner_Cvar") - 1]);
 	Delay(1);
+	SetActorState(0,WeaponType[GetCvar("GaussCannon_Spawner_Cvar") - 1]);
 }
 
 script "BFGSpawner" (void)
@@ -293,8 +292,8 @@ script "BFGSpawner" (void)
 	{
 		"SpawnBFG9000","SpawnUnmaker","SpawnLasergun"
 	};
-	SetActorState(0,WeaponType[GetCvar("BFG_Spawner_Cvar") - 1]);
 	Delay(1);
+	SetActorState(0,WeaponType[GetCvar("BFG_Spawner_Cvar") - 1]);
 }
 
 script "WpnPowerRandom" (void)
@@ -322,8 +321,8 @@ script "ZombiemanSpawner" (void)
 	{
 		"SpawnZombieMan","SpawnZombieMarine"
 	};
+	delay(1);
 	SetActorState(0,MonsterType[GetCvar("ZMarineRandom_Cvar") - 1]);
-	Delay(1);
 }
 
 script "ShotgunGuySpawnPercent" (void)
@@ -346,8 +345,8 @@ script "ShotgunGuySpawner" (void)
 		Case -2: SetActorState(0,"AltSpawn2"); break;
 		Case -1: SetActorState(0,"AltSpawn1"); break;
 	}
+	delay(1);
 	SetActorState(0,MonsterType[GetCvar("SSGZombieRandom_Cvar") - 1]);
-	Delay(1);
 }
 
 script "ChaingunGuySpawnPercent" (void)
@@ -365,8 +364,8 @@ script "ChaingunGuySpawner" (void)
 	};
 	
 	If(GetCvar("ZombieChaingunRandom_Cvar") == -1) {SetActorState(0,"D64MonsterOnly");}
-	SetActorState(0,MonsterType[GetCvar("ZombieChaingunRandom_Cvar") - 1]);
 	Delay(1);
+	SetActorState(0,MonsterType[GetCvar("ZombieChaingunRandom_Cvar") - 1]);
 }
 
 script "ImpSpawnPercent" (void)
@@ -389,8 +388,8 @@ script "ImpSpawner" (void)
 		Case -2: SetActorState(0,"AltSpawn2"); break;
 		Case -1: SetActorState(0,"AltSpawn1"); break;
 	}
+	delay(1);
 	SetActorState(0,MonsterType[GetCvar("NImp_Spawner_Cvar") - 1]);
-	Delay(1);
 }
 
 script "DemonSpawnPercent" (void)
@@ -412,9 +411,9 @@ script "DemonSpawner" (void)
 //		Case -3: SetActorState(0,"AltSpawn3"); break;
 		Case -2: SetActorState(0,"AltSpawn2"); break;
 		Case -1: SetActorState(0,"AltSpawn1"); break;
-	}
+	}	
+	delay(1);
 	SetActorState(0,MonsterType[GetCvar("AcidDemonRandom_Cvar") - 1]);
-	Delay(1);
 }
 
 script "SpectreSpawnPercent" (void)
@@ -437,8 +436,8 @@ script "SpectreSpawner" (void)
 		Case -2: SetActorState(0,"AltSpawn2"); break;
 		Case -1: SetActorState(0,"AltSpawn1"); break;
 	}
+	delay(1);
 	SetActorState(0,MonsterType[GetCvar("NSpectre_Spawner_Cvar") - 1]);
-	Delay(1);
 }
 
 script "CacodemonSpawnPercent" (void)
@@ -460,9 +459,9 @@ script "CacodemonSpawner" (void)
 //		Case -3: SetActorState(0,"AltSpawn3"); break;
 		Case -2: SetActorState(0,"AltSpawn2"); break;
 		Case -1: SetActorState(0,"AltSpawn1"); break;
-	}
+	}	
+	delay(1);
 	SetActorState(0,CacoSpawnType[GetCvar("NCaco_Spawner_Cvar") - 1]);
-	Delay(1);
 }
 
 script "BaronSpawnPercent" (void)
@@ -484,8 +483,8 @@ script "BaronSpawner" (void)
 		Case -2: SetActorState(0,"AltSpawn2"); break;
 		Case -1: SetActorState(0,"AltSpawn1"); break;
 	}
+	delay(1);
 	SetActorState(0,MonsterType[GetCvar("Hellhound_Spawner_Cvar") - 1]);
-	Delay(1);
 }
 
 script "HoundChooserACS" (void)
@@ -505,8 +504,8 @@ script "HoundChooserACS" (void)
 		"HoundDefault","HoundGEC"
 	};
 	if(GetCvar("HoundChooserCvar") == -1) {SetActorState(0,"D64MonsterOnly");}
-	SetActorState(0,SkinType[GetCvar("HoundChooserCvar") - 1]);
 	Delay(1);
+	SetActorState(0,SkinType[GetCvar("HoundChooserCvar") - 1]);
 }*/
 
 script "RevenantSpawnPercent" (void)
@@ -523,8 +522,8 @@ script "RevenantSpawner" (void)
 		"Revenant","SpawnPestilence"
 	};
 	if(GetCvar("Revenant_Spawner_Cvar") == -1) {SetActorState(0,"D64MonsterOnly");}	
+	delay(1);
 	SetActorState(0,MonsterType[GetCvar("Revenant_Spawner_Cvar") - 1]);
-	Delay(1);
 }
 
 script "HellKnightSpawnPercent" (void)
@@ -540,8 +539,8 @@ script "HellKnightSpawner" (void)
 	{
 		"SpawnHellKnight","SpawnKnightmare"
 	};
+	delay(1);
 	SetActorState(0,MonsterType[GetCvar("KnightmareRandomCvar") - 1]);
-	Delay(1);
 }
 
 script "MancubusSpawnPercent" (void)
@@ -557,8 +556,8 @@ script "MancubusSpawner" (void)
 	{
 		"SpawnFatso","SpawnBruiser"
 	};
+	delay(1);
 	SetActorState(0,MonsterType[GetCvar("BruiserRandom_Cvar") - 1]);
-	Delay(1);
 }
 
 script "LostSoulSpawnPercent" (void)
@@ -581,8 +580,8 @@ script "LostSoulSpawner" (void)
 		Case -2: SetActorState(0,"AltSpawn2"); break;
 		Case -1: SetActorState(0,"AltSpawn1"); break;
 	}
+	delay(1);
 	SetActorState(0,MonsterType[GetCvar("StalkerRandom_Cvar") - 1]);
-	Delay(1);
 }
 
 script "ArachnotronSpawnPercent" (void)
@@ -605,8 +604,8 @@ script "ArachnotronSpawner" (void)
 		Case -2: SetActorState(0,"AltSpawn2"); break;
 		Case -1: SetActorState(0,"AltSpawn1"); break;
 	}
+	delay(1);
 	SetActorState(0,MonsterType[GetCvar("ArachnotronRandomCvar") - 1]);
-	Delay(1);
 }
 
 script "PainElementalSpawnPercent" (void)
@@ -622,8 +621,8 @@ Script "PainElementalSpawner" (void)
 	{
 		"SpawnPainElemental","SpawnNightmareElemental"
 	};
+	delay(1);
 	SetActorState(0,MonsterType[GetCvar("NightElementalRandomCvar") - 1]);
-	Delay(1);
 }
 
 script "ArchvileSpawnPercent" (void)
@@ -646,8 +645,8 @@ Script "ArchvileSpawner" (void)
 		Case -2: SetActorState(0,"AltSpawn2"); break;
 		Case -1: SetActorState(0,"AltSpawn1"); break;
 	}
+	delay(1);
 	SetActorState(0,MonsterType[GetCvar("FleshWizardRandomCvar") - 1]);
-	Delay(1);
 }
 
 script "CyberdemonSpawnPercent" (void)
@@ -670,8 +669,8 @@ script "CyberdemonSpawner" (void)
 		Case -2: SetActorState(0,"AltSpawn2"); break;
 		Case -1: SetActorState(0,"AltSpawn1"); break;
 	}
+	delay(1);
 	SetActorState(0,MonsterType[GetCvar("Annihilator_Spawner_Cvar") - 1]);
-	Delay(1);
 }
 
 script "MastermindSpawnPercent" (void)
@@ -695,8 +694,8 @@ script "MastermindSpawner" (void)
 		Case -2: SetActorState(0,"AltSpawn2"); break;
 		Case -1: SetActorState(0,"AltSpawn1"); break;
 	}
-	SetActorState(0,MonsterType[GetCvar("Motherdemon_Spawner_Cvar") - 1]);
 	Delay(1);
+	SetActorState(0,MonsterType[GetCvar("Motherdemon_Spawner_Cvar") - 1]);	
 }
 
 Script "WadChecker" (void)
@@ -707,8 +706,8 @@ Script "WadChecker" (void)
 		"ScytheII","Bloodstain",
 		"GoingDown","DoomZero"
 	};
+	delay(1);
 	SetActorState(0,WadChecking[GetCvar("BD64_WadCheck") - 1]);
-	Delay(1);
 }
 
 script "HordeSpawnPercent" (void)
@@ -805,8 +804,8 @@ script "CensoredHealing_ACS" (void)
 	{
 		"CensoredSpawn","BFGStyleSpawn"
 	};
+	delay(1);
 	SetActorState(0,CensorHeal[GetCVar("CensoredHealing_Cvar") - 1]);
-	Delay(1);
 }
 
 /*

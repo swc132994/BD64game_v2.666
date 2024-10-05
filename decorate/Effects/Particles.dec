@@ -30,7 +30,7 @@ BounceCount 1
 		SPRK O 8 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		SPRK O 1 Bright A_FadeOut(0.03)
+		SPRK O 1 Bright A_FadeOut(0.02)
 		Loop
 	Splash:
 		TNT1 A 1
@@ -70,10 +70,9 @@ BounceFactor 0.5
 	{
 	Spawn:
 		SPKO S 20 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
-		Loop
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		SPRK A 1 Bright A_FadeOut(0.1)
+		SPKO S 1 Bright A_FadeOut(0.1)
 		Loop
 	Splash:
 		TNT1 A 1
@@ -91,10 +90,9 @@ BounceFactor 0.01
 	{
 	Spawn:
 		SPKO S 30 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
-		Loop
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		SPRK A 1 Bright A_FadeOut(0.1)
+		SPKO S 1 Bright A_FadeOut(0.1)
 		Loop
 	}
 }
@@ -109,10 +107,9 @@ BounceType "None"
 	{
 	Spawn:
 		SPKO S 40 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
-		Loop
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		SPRK A 1 Bright A_FadeOut(0.1)
+		SPKO S 1 Bright A_FadeOut(0.1)
 		Loop
 	}
 }
@@ -139,7 +136,7 @@ BounceCount 2
 		SPKB A 4 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		SPKB A 2 Bright A_FadeOut(0.03)
+		SPKB A 2 Bright A_FadeOut(0.04)
 		Loop
 	Splash:
 		TNT1 A 1
@@ -159,8 +156,8 @@ BounceType "None"
 	Spawn:
 		FIR5 A 1 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
 	Death:
-		FIR5 BCDEFGHIJKLMNO 1 Bright A_FadeOut(0.03)
-		FIR5 P 1 Bright A_FadeOut(0.03)
+		FIR5 BCDEFGHIJKLMNO 1 Bright A_FadeOut(0.04)
+		FIR5 P 1 Bright A_FadeOut(0.04)
 		Loop
 	}
 }
@@ -191,7 +188,7 @@ RenderStyle Add
 		SPKG A 8 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		SPKG A 1 Bright A_FadeOut(0.03)
+		SPKG A 1 Bright A_FadeOut(0.02)
 		Loop
 	Splash:
 		TNT1 A 1
@@ -213,7 +210,7 @@ Scale 0.06
 		SPKG A 8 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		SPKG A 1 Bright A_FadeOut(0.03)
+		SPKG A 1 Bright A_FadeOut(0.02)
 		Loop
 	}
 }
@@ -227,7 +224,7 @@ Scale 0.04
 		SPKG A 8 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		SPKG A 1 Bright A_FadeOut(0.03)
+		SPKG A 1 Bright A_FadeOut(0.02)
 		Loop
 	}
 }
@@ -248,7 +245,7 @@ Gravity 0.9
 		SPKG A 8 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		SPKG A 1 Bright A_FadeOut(0.03)
+		SPKG A 1 Bright A_FadeOut(0.02)
 		Loop
 	}
 }
@@ -273,7 +270,7 @@ Translation "0:255=%[0,0,0]:[1,1,0]"
 		SPKG A 8 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		SPKG A 1 Bright A_FadeOut(0.03)
+		SPKG A 1 Bright A_FadeOut(0.02)
 		Loop
 	}
 }
@@ -290,7 +287,7 @@ Translation "0:255=%[0,0,0]:[1,1,0]"
 		SPKG A 8 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
 	Death:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Splash")
-		SPKG A 1 Bright A_FadeOut(0.03)
+		SPKG A 1 Bright A_FadeOut(0.02)
 		Loop
 	}
 }
@@ -310,101 +307,3 @@ ACTOR BurnParticlesNoDamage
 		stop
 	}
 }
-
-actor 64SpawnSpark_Up
-{
-+NOGRAVITY
-+NOCLIP
-+CLIENTSIDEONLY
-	states
-	{
-	Spawn:
-		TNT1 A 0 A_PlaySound("Sparks/Spawn",CHAN_AUTO)
-		TNT1 A 0 A_SpawnItemEx("64SparkFlare_W1")
-		TNT1 AA 0 A_CustomMissile("64Spark_W1",0,0,random(0,360),2,random(67,113))
-		TNT1 AA 0 A_CustomMissile("64Spark_W2",0,0,random(0,360),2,random(67,113))
-		TNT1 AA 0 A_CustomMissile("64Spark_W3",0,0,random(0,360),2,random(67,113))
-		TNT1 AA 0 A_CustomMissile("64Spark_W4",0,0,random(0,360),2,random(67,113))
-		TNT1 AA 0 A_CustomMissile("64Spark_W5",0,0,random(0,360),2,random(67,113))
-		TNT1 AA 0 A_CustomMissile("64Spark_W6",0,0,random(0,360),2,random(67,113))
-		TNT1 AA 0 A_CustomMissile("64Spark_W7",0,0,random(0,360),2,random(67,113))
-		TNT1 AA 0 A_CustomMissile("64Spark_W8",0,0,random(0,360),2,random(67,113))
-		TNT1 AA 0 A_CustomMissile("64Spark_W9",0,0,random(0,360),2,random(67,113))
-		TNT1 AA 0 A_CustomMissile("64Spark_W10",0,0,random(0,360),2,random(67,113))
-		TNT1 AA 0 A_CustomMissile("64Spark_W11",0,0,random(0,360),2,random(67,113))
-		TNT1 AA 0 A_CustomMissile("64Spark_W12",0,0,random(0,360),2,random(67,113))
-		TNT1 AA 0 A_CustomMissile("64Spark_W13",0,0,random(0,360),2,random(67,113))
-		TNT1 AA 0 A_CustomMissile("64Spark_W14",0,0,random(0,360),2,random(67,113))
-		TNT1 AA 0 A_CustomMissile("64Spark_W15",0,0,random(0,360),2,random(67,113))
-		TNT1 AA 0 A_CustomMissile("64Spark_W16",0,0,random(0,360),2,random(67,113))
-		TNT1 A 0 A_Jump(256,1,2,3,4,5,6)
-		TNT1 A 140//4s
-		Goto Spawn
-		TNT1 A 210//6s
-		Goto Spawn
-		TNT1 A 280//8s
-		Goto Spawn
-		TNT1 A 350//10s
-		Goto Spawn
-		TNT1 A 420//12s
-		Goto Spawn
-		TNT1 A 490//14s
-		Goto Spawn
-	}
-}
-
-actor 64SparkFlare_W1
-{
-scale 0.25
-renderstyle Add
-+NOCLIP
-+NOGRAVITY
-+CLIENTSIDEONLY
-	states
-	{
-	Spawn:
-		SPRK A 1 bright A_FadeOut(0.1)
-		loop
-	}
-}
-
-actor 64Spark_W1
-{
-scale 0.02
-height 1
-radius 2
-speed 0.25
-mass 0
-Gravity 0.125
-BounceType "Doom"
-bouncefactor 0.2
-renderstyle Add
-+MISSILE
-+CLIENTSIDEONLY
-+THRUACTORS
-	states
-	{
-	Spawn:
-		SPRK A 1 bright
-		loop
-	Death:
-		SPRK A 1 bright A_FadeOut(0.1)
-		Wait
-	}
-}
-
-actor 64Spark_W2 : 64Spark_W1	{speed 0.5}
-actor 64Spark_W3 : 64Spark_W1	{speed 0.75}
-actor 64Spark_W4 : 64Spark_W1	{speed 1.0}
-actor 64Spark_W5 : 64Spark_W1	{speed 1.25}
-actor 64Spark_W6 : 64Spark_W1	{speed 1.5}
-actor 64Spark_W7 : 64Spark_W1	{speed 1.75}
-actor 64Spark_W8 : 64Spark_W1	{speed 2.0}
-actor 64Spark_W9 : 64Spark_W1	{speed 2.25}
-actor 64Spark_W10 : 64Spark_W1	{speed 2.5}
-actor 64Spark_W11 : 64Spark_W1	{speed 2.75}
-actor 64Spark_W12 : 64Spark_W1	{speed 3.0}
-actor 64Spark_W13 : 64Spark_W1	{speed 3.25}
-actor 64Spark_W14 : 64Spark_W1	{speed 3.5}
-actor 64Spark_W15 : 64Spark_W1	{speed 3.75}
-actor 64Spark_W16 : 64Spark_W1	{speed 4.0}

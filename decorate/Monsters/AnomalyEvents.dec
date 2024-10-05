@@ -904,7 +904,6 @@ MONSTER
 		TNT1 A 0 A_SpawnItemEx("ExplosionSmoke",0,0,55)
 	Death.DidAttack:
 		TNT1 A 0 A_Explode(4,150)
-		TNT1 A 0 A_SpawnItemEx("64SpawnSpark_Up",0,0,50)
 		TLP2 C -1
 		Stop
 	}
@@ -1016,7 +1015,6 @@ MONSTER
 		TNT1 A 0 A_SpawnItemEx("ExplosionSmoke",0,0,71)
 	Death.DidAttack:
 		TNT1 A 0 A_Explode(4,150)
-		TNT1 A 0 A_SpawnItemEx("64SpawnSpark_Up",0,0,66)
 		TLMP C -1
 		Stop
 	}
@@ -1087,7 +1085,6 @@ MONSTER
 		TNT1 A 0 A_SpawnItemEx("ExplosionSmoke",0,0,52)
 	Death.DidAttack:
 		TNT1 A 0 A_Explode(4,150)
-		TNT1 A 0 A_SpawnItemEx("64SpawnSpark_Up",0,0,44)
 		TLP1 C -1
 		Stop
 	}

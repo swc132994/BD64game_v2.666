@@ -43,8 +43,9 @@ ZOMBIE MARINE					(Replaces WolfensteinSS)	84		116
 INTRO MARINE					(Replaces MarinePistol)		9104	151
 SSG GUY				19110	170
 
-HELLHOUND GEC		19117	177		{Hound Chooser 19125 185
+HELLHOUND GEC		19117	177		{-------------------
 HELLHOUND ALT		19116	176		{Hound Chooser 19125 185
+HELLHOUND CER		19115	175		{-------------------
 ANNIHILATOR			19991	157
 MOTHERDEMON			9897	17
 ERADICATOR			19119
@@ -79,9 +80,9 @@ SMG SPAWNER			19121
 RIFLE SPAWNER		19120
 UNMAKER SPAWNER		9901	84
 LASERGUN SPAWNER	9351	180
-WPNPOWER1			9905	162
-WPNPOWER2			9906	163
-WPNPOWER3			9907	164
+WPNPOWER1			9905
+WPNPOWER2			9906
+WPNPOWER3			9907
 WPNPOWER4			9908
 WPNPOWER5			9909
 
@@ -387,7 +388,7 @@ Iddqd_Idkfa_Idclip for Stamina drain fixes from run button press. (BD 64 Absolut
 Onox792 for the completed nightmare monsters.
 Gifty (ZDoom) for the smooth animations used for the Archvile
 YukiHerz for HD Laser gun sprites.
-Immorpher for the Tchernobog style Revenant melee sprites.
+Immorpher for the Revenant melee sprites.
 Jimmy (ZDoom forum) for Doom 64 style fonts.
 The music track for the intro map is Algamated Man by Lustmord used in the unloved mod final boss map. (NOW INTRO INTERMISSION in v2.666)
 Jakinsbob for beta testing the no stamina class (Modern).

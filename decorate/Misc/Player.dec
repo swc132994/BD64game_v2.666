@@ -320,7 +320,6 @@ Player.StartItem "NeverSelectedShotgun"
 Player.StartItem "NeverSelectedSSG"
 Player.StartItem "NeverSelectedSMG"
 Player.StartItem "NeverSelectedRL"
-Player.StartItem "NeverSelectedPlasma"
 Player.StartItem "NeverSelectedGauss"
 Player.ColorRange 112,127
 Player.ViewHeight 50
@@ -550,7 +549,6 @@ Player.StartItem "NeverSelectedShotgun"
 Player.StartItem "NeverSelectedSSG"
 Player.StartItem "NeverSelectedSMG"
 Player.StartItem "NeverSelectedRL"
-Player.StartItem "NeverSelectedPlasma"
 Player.StartItem "NeverSelectedGauss"
 Player.DisplayName "Tactical (Pistol)"
 }
@@ -587,7 +585,6 @@ Player.StartItem "NeverSelectedShotgun"
 Player.StartItem "NeverSelectedSSG"
 Player.StartItem "NeverSelectedSMG"
 Player.StartItem "NeverSelectedRL"
-Player.StartItem "NeverSelectedPlasma"
 Player.StartItem "NeverSelectedGauss"
 Player.ColorRange 112,127
 Player.ViewHeight 50
