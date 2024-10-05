@@ -1,3 +1,13 @@
+//64SpawnSpark_Up
+$random Sparks/Spawn
+	{
+	Sparks/Sound1 Sparks/Sound2 Sparks/Sound3 Sparks/Sound4
+	}	$volume Sparks/Spawn 0.5
+Sparks/Sound1		SPARKS1
+Sparks/Sound2		SPARKS2
+Sparks/Sound3		SPARKS3
+Sparks/Sound4		SPARKS4
+
 //Flashlight
 flashlight/click		click
 
@@ -1098,7 +1108,7 @@ floor/carpet02			dscarp2
 floor/carpet03			dscarp3
 
 //Dirt
-$random floor/dirt0
+$random floor/dirt
 	{
 	floor/dirt01 floor/dirt02 floor/dirt03 floor/dirt04 floor/dirt05 floor/dirt06
 	}		$limit floor/dirt 2
