@@ -499,7 +499,7 @@ Tag "Assault Rifle"
 		//13 ticsOG
 		//32 tics in total sequneOG
 		TNT1 A 0 A_JumpIfInventory("RifleBolt",1,"ReloadEmpty")
-		ARSG TSRQPONMLJKIH 1
+		ARSG TSRQPONMLKJIH 1
 		//21 tics not emptyOG
 		//43 tics total sequnceOG
 		Goto Ready
