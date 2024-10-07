@@ -814,10 +814,10 @@ DropItem "SOULSPAWNER"
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
 		TNT1 A 0 A_XScream
+		PPSH ABCDE 5
 		TNT1 A 0 A_NoBlocking
-		PP4H ABCD 5
-		PP4H E 35
-		PP4H E -1 A_SpawnItemEx("GrowingBloodPool")
+		PPSH F 35
+		PPSH F -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.Shotgun:
 		SPOS H 2 A_Recoil(6)
