@@ -337,7 +337,7 @@ Tag "Assault Rifle"
 		TNT1 A 0 A_PlaySound("AltRifle/BoltOut",CHAN_WEAPON)
 		ARS0 ONMKJIH 1 A_WeaponReady(WRF_ALLOWZOOM)
 		ARSG TSRQPO 1 A_WeaponReady(WRF_ALLOWZOOM)
-		ARSG NMLJKIH 1 A_WeaponReady(WRF_ALLOWZOOM)
+		ARSG NMLKJIH 1 A_WeaponReady(WRF_ALLOWZOOM)
 		Goto Ready
 	AltADSFidget:
 		AR2G HIJ 1
