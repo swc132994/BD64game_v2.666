@@ -25,6 +25,9 @@ Decal "BulletDecalNew1"
 	}
 }
 
+ACTOR HitPuffSilence : HitPuff
+{+FORCEPAIN}
+
 Actor UnderwaterHitPuff
 {
 +NOCLIP
