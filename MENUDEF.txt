@@ -142,7 +142,7 @@ OptionMenu "BrutalDoom64Item/WeaponOptions"
 	Option "Classic Style Rocket Launcher for Tactical/Modern =","ClassicRLCvar","YesOrNo"
 		StaticText "Options to switch between classic or modernised weapons.",1
 		StaticText ""
-	Option "Skip Weapon Reload Sequences (Need to press 'apply changes') =","NoReloadCvar","YesOrNo"
+	Option "Skip Weapon Reload Sequences (Press \"Apply Changes\") =","NoReloadCvar","YesOrNo"
 		StaticText "Skip weapon reload animation sequences (tactical/modern modes ONLY).",1
 		StaticText ""
 	Option "Low Ammo SFX =","LowAmmoSFX","YesOrNo"
@@ -163,7 +163,7 @@ OptionMenu "BrutalDoom64Item/WeaponOptions"
 		StaticText ""
 		StaticText "-------------------------------------- Other -----------------------------------",1
 		StaticText " "
-	Option "Start with Flashlight/Torch (Need Map Restart) =","FlashlightStartCvar","YesOrNo"
+	Option "Start with Flashlight/Torch =","FlashlightStartCvar","YesOrNo"
 }
 
 OptionMenu "BrutalDoom64OptionsMonsterSpawner"
@@ -175,7 +175,7 @@ OptionMenu "BrutalDoom64OptionsMonsterSpawner"
 		StaticText ""
 		StaticText "These options allow setting the monster replacements to nightmare,",1
 		StaticText "outcast and extra monsters, or set to appear randomly",1
-		StaticText "Any change here requires a level restart in order to work.",1
+		StaticText "Any changes here requires a level restart in order to work.",1
 		StaticText ""
 	Option "Pistol Zombie Spawner =","ZMarineRandom_Cvar","ZMarineRandom_Value"
 	Option "Pistol Zombie Random Percent =","bd64_SpawnPercentZombieman","SpawnPercentValue"
@@ -326,7 +326,7 @@ OptionMenu "BD64MapOptions"
 		StaticText ""
 		StaticText "Show orignal Doom 64 opening title sequence at startup",1
 		StaticText ""
-	Option "Show Opening Title Map (Restart Required) =","D64_SkipTitleMap","YesOrNoFalse"
+	Option "Show Opening Title Map (Restart Required) =","BD64_SkipTitleMap","YesOrNoFalse"
 }
 
 Optionmenu GZDShortcuts
@@ -346,10 +346,10 @@ Optionmenu GZDShortcuts
 		StaticText ""
 	Slider "Max Particles",		"r_maxparticles",	100,30000,100,0
 		textfield "input value manually","r_maxparticles"
-		StaticText ""
+	StaticText ""
 	Slider "Max Decals","cl_maxdecals",0,10000,100,0
 		textfield "input value manually","cl_maxdecals"
-		StaticText ""
+	StaticText ""
 	Option "FPS counter",				"vid_fps",			"OnOff"
 	StaticText ""
 	Option "Discord Rich Presence ",	"i_discordrpc",		"OnOff"
@@ -362,6 +362,7 @@ Optionmenu GZDShortcuts
 	StaticText ""
 	Slider "Max Giblets","sv_corpsequeuesize",1,1000,10,0
 		textfield "input value manually","sv_corpsequeuesize"
+	StaticText ""
 }
 
 //Misc values
