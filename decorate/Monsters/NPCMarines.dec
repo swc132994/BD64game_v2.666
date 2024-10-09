@@ -87,11 +87,6 @@ Obituary "%o was gunned down by a rifle marine."
 		PLAY JKL 5
 		PLAY M 35
 		PLAY M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(224,3)//(87.5%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		PLAY M 1 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
 		TNT1 A 0 A_Jump(32,"Raise")//12.5%
 		PLAY M -1
 		Stop
@@ -110,13 +105,7 @@ Obituary "%o was gunned down by a rifle marine."
 		TNT1 A 0 A_NoBlocking
 		CPOH HIJKL 5
 		CPOH M 35
-		CPOH M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(230,3)//(90%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
-		CPOH M -1
+		CPOH M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Death.BFG:
 	XDeath:
@@ -305,6 +294,7 @@ DropItem "cellpack"
 		ZLAY JKL 5
 		ZLAY M 35
 		ZLAY M 3500 A_SpawnItemEx("GrowingBloodPool")
+		TNT1 A 0 A_Jump(32,"Raise")//12.5%
 		ZLAY M -1
 		Stop
 	Death.BFG:
@@ -415,13 +405,7 @@ DropItem "cellpack"
 		TNT1 A 0 A_NoBlocking
 		CPOH HIJKL 5
 		CPOH M 35
-		CPOH M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(230,3)//(90%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
-		CPOH M -1
+		CPOH M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		64BZ NMLKJI 5
@@ -501,6 +485,7 @@ DropItem "SOULSPAWNER"
 		ZLAY JKL 5
 		ZLAY M 35
 		ZLAY M 3500 A_SpawnItemEx("GrowingBloodPool")
+		TNT1 A 0 A_Jump(32,"Raise")//12.5%
 		ZLAY M -1
 		Stop
 	Death.BFG:
@@ -611,13 +596,7 @@ DropItem "SOULSPAWNER"
 		TNT1 A 0 A_NoBlocking
 		CPOH HIJKL 5
 		CPOH M 35
-		CPOH M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(230,3)//(90%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
-		CPOH M -1
+		CPOH M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		64ZF NMLKJ 5
@@ -698,6 +677,7 @@ DropItem "clip"
 		ZLAY JKL 5
 		ZLAY M 35
 		ZLAY M 3500 A_SpawnItemEx("GrowingBloodPool")
+		TNT1 A 0 A_Jump(32,"Raise")//12.5%
 		ZLAY M -1
 		Stop
 	Death.BFG:
@@ -808,13 +788,7 @@ DropItem "clip"
 		TNT1 A 0 A_NoBlocking
 		CPOH HIJKL 5
 		CPOH M 35
-		CPOH M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(230,3)//(90%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
-		CPOH M -1
+		CPOH M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		MPOS LKJIH 5
@@ -882,6 +856,7 @@ DropItem "SOULSPAWNER"
 		PLAY JKL 5
 		PLAY M 35
 		PLAY M 3500 A_SpawnItemEx("GrowingBloodPool")
+		TNT1 A 0 A_Jump(32,"Raise")//12.5%
 		PLAY M -1
 		Stop
 	Death.BFG:
@@ -992,13 +967,7 @@ DropItem "SOULSPAWNER"
 		TNT1 A 0 A_NoBlocking
 		CPOH HIJKL 5
 		CPOH M 35
-		CPOH M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(230,3)//(90%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
-		CPOH M -1
+		CPOH M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		64ZF NMLKJ 5
@@ -1066,6 +1035,7 @@ DropItem "SOULSPAWNER"
 		PLAY JKL 5
 		PLAY M 35
 		PLAY M 3500 A_SpawnItemEx("GrowingBloodPool")
+		TNT1 A 0 A_Jump(32,"Raise")//12.5%
 		PLAY M -1
 		Stop
 	Death.BFG:
@@ -1176,13 +1146,7 @@ DropItem "SOULSPAWNER"
 		TNT1 A 0 A_NoBlocking
 		CPOH HIJKL 5
 		CPOH M 35
-		CPOH M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(230,3)//(90%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
-		CPOH M -1
+		CPOH M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		64ZF NMLKJ 5
@@ -1261,6 +1225,7 @@ DropItem "cell"
 		ZLAY JKL 5
 		ZLAY M 35
 		ZLAY M 3500 A_SpawnItemEx("GrowingBloodPool")
+		TNT1 A 0 A_Jump(32,"Raise")//12.5%
 		ZLAY M -1
 		Stop
 	Death.BFG:
@@ -1371,13 +1336,7 @@ DropItem "cell"
 		TNT1 A 0 A_NoBlocking
 		CPOH HIJKL 5
 		CPOH M 35
-		CPOH M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(230,3)//(90%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
-		CPOH M -1
+		CPOH M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		ZMAY MLKJIH 5
@@ -1455,6 +1414,7 @@ DropItem "cell"
 		ZLAY JKL 5
 		ZLAY M 35
 		ZLAY M 3500 A_SpawnItemEx("GrowingBloodPool")
+		TNT1 A 0 A_Jump(32,"Raise")//12.5%
 		ZLAY M -1
 		Stop
 	Death.BFG:
@@ -1565,13 +1525,7 @@ DropItem "cell"
 		TNT1 A 0 A_NoBlocking
 		CPOH HIJKL 5
 		CPOH M 35
-		CPOH M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(230,3)//(90%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
-		CPOH M -1
+		CPOH M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		ZMAY MLKJIH 5
@@ -1652,6 +1606,7 @@ DropItem "rocketammo"
 		PLAY JKL 5
 		PLAY M 35
 		PLAY M 3500 A_SpawnItemEx("GrowingBloodPool")
+		TNT1 A 0 A_Jump(32,"Raise")//12.5%
 		PLAY M -1
 		Stop
 	Death.BFG:
@@ -1762,13 +1717,7 @@ DropItem "rocketammo"
 		TNT1 A 0 A_NoBlocking
 		CPOH HIJKL 5
 		CPOH M 35
-		CPOH M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(230,3)//(90%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
-		CPOH M -1
+		CPOH M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		64ZF NMLKJ 5
@@ -1847,6 +1796,7 @@ DropItem "shell"
 		PLAY JKL 5
 		PLAY M 35
 		PLAY M 3500 A_SpawnItemEx("GrowingBloodPool")
+		TNT1 A 0 A_Jump(32,"Raise")//12.5%
 		PLAY M -1
 		Stop
 	Death.BFG:
@@ -1957,13 +1907,7 @@ DropItem "shell"
 		TNT1 A 0 A_NoBlocking
 		CPOH HIJKL 5
 		CPOH M 35
-		CPOH M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(230,3)//(90%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
-		CPOH M -1
+		CPOH M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		POS4 LKJIH 5
@@ -2042,6 +1986,7 @@ DropItem "shell"
 		PLAY JKL 5
 		PLAY M 35
 		PLAY M 3500 A_SpawnItemEx("GrowingBloodPool")
+		TNT1 A 0 A_Jump(32,"Raise")//12.5%
 		PLAY M -1
 		Stop
 	Death.BFG:
@@ -2152,13 +2097,7 @@ DropItem "shell"
 		TNT1 A 0 A_NoBlocking
 		CPOH HIJKL 5
 		CPOH M 35
-		CPOH M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(230,3)//(90%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
-		CPOH M -1
+		CPOH M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		SPOS LKJIH 5
@@ -2240,6 +2179,7 @@ Game Doom
 		PLAY JKL 5
 		PLAY M 35
 		PLAY M 3500 A_SpawnItemEx("GrowingBloodPool")
+		TNT1 A 0 A_Jump(32,"Raise")//12.5%
 		PLAY M -1
 		Stop
 	Death.BFG:
@@ -2350,13 +2290,7 @@ Game Doom
 		TNT1 A 0 A_NoBlocking
 		CPOH HIJKL 5
 		CPOH M 35
-		CPOH M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(230,3)//(90%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
-		CPOH M -1
+		CPOH M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		CRRI PONMLKJIHG 5
@@ -2436,6 +2370,7 @@ Game Doom
 		PLAY JKL 5
 		PLAY M 35
 		PLAY M 3500 A_SpawnItemEx("GrowingBloodPool")
+		TNT1 A 0 A_Jump(32,"Raise")//12.5%
 		PLAY M -1
 		Stop
 	Death.BFG:
@@ -2546,13 +2481,7 @@ Game Doom
 		TNT1 A 0 A_NoBlocking
 		CPOH HIJKL 5
 		CPOH M 35
-		CPOH M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(230,3)//(90%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
-		CPOH M -1
+		CPOH M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		CRRI PONMLKJIHG 5
@@ -2633,6 +2562,7 @@ Game Doom
 		ZLAY JKL 5
 		ZLAY M 35
 		ZLAY M 3500 A_SpawnItemEx("GrowingBloodPool")
+		TNT1 A 0 A_Jump(32,"Raise")//12.5%
 		ZLAY M -1
 		Stop
 	Death.BFG:
@@ -2743,13 +2673,7 @@ Game Doom
 		TNT1 A 0 A_NoBlocking
 		CPOH HIJKL 5
 		CPOH M 35
-		CPOH M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(230,3)//(90%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
-		CPOH M -1
+		CPOH M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		CRRI PONMLKJIHG 5
@@ -2831,6 +2755,7 @@ Game Doom
 		ZLAY JKL 5
 		ZLAY M 35
 		ZLAY M 3500 A_SpawnItemEx("GrowingBloodPool")
+		TNT1 A 0 A_Jump(32,"Raise")//12.5%
 		ZLAY M -1
 		Stop
 	Death.BFG:
@@ -2941,13 +2866,7 @@ Game Doom
 		TNT1 A 0 A_NoBlocking
 		CPOH HIJKL 5
 		CPOH M 35
-		CPOH M 3500 A_SpawnItemEx("GrowingBloodPool")
-		TNT1 A 0 A_JumpIf(ACS_NamedExecuteWithResult("ThingRandomACS")==0,4)
-		TNT1 A 0 A_Jump(230,3)//(90%)
-		THT1 A 0 A_ChangeFlag("FRIENDLY",FALSE)
-		TNT1 A 0 A_SpawnItemEx("64Thing",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
-		CPOH M -1
+		CPOH M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
 	Raise:
 		CRRI PONMLKJIHG 5

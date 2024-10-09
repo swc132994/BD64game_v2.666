@@ -92,7 +92,7 @@ Tag "Agony Elemental"
 		TNT1 AAAA 3 A_chase
 		Loop
 	Missile:
-		NPEL BB 6 A_FaceTarget
+		NPEL BB 8 A_FaceTarget
 		NPEL CC 6 Bright A_FaceTarget
 		TNT1 A 0 A_DualPainAttack
 		TNT1 A 0 A_PainAttack
