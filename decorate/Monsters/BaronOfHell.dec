@@ -184,8 +184,7 @@ Health 0
 Actor 64BaronBall : BaronBall
 {
 Scale 0.8
-Radius 6
-Height 6
+Height 12
 RenderStyle Normal
 Decal "MedScorch"
 	States

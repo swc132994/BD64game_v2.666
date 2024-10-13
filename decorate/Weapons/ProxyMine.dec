@@ -166,9 +166,7 @@ PROJECTILE
 +THRUGHOST
 +THRUACTORS
 +CANNOTPUSH
-+FORCERADIUSDMG
 +EXPLODEONWATER
-+FIXMAPTHINGPOS
 	States
 	{
 	Spawn:
@@ -207,11 +205,12 @@ PROJECTILE
 +CANNOTPUSH
 +FORCERADIUSDMG
 +EXPLODEONWATER
-+FIXMAPTHINGPOS
 +SKYEXPLODE
++NODAMAGETHRUST
 +BOUNCEONFLOORS
 +BOUNCEONWALLS
 +BOUNCEONCEILINGS
++NODAMAGETHRUST
 BounceFactor 0.5
 WallBounceFactor 0.25
 	States
@@ -249,6 +248,7 @@ WallBounceFactor 0.25
 		TNT1 A 0 A_Explode(200,175,XF_NOTMISSILE)
 		TNT1 A 0 A_ChangeFlag("DONTSPLASH",TRUE)
 		TNT1 A 0 A_Explode(150,250,XF_NOTMISSILE)
+		TNT1 A 0 A_RadiusThrust(128,-1,RTF_AFFECTSOURCE|RTF_NOIMPACTDAMAGE)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCrater")
 		TNT1 A 0 A_SpawnItemEx("ExplosionFlareSpawner")
@@ -286,7 +286,6 @@ Obituary "%o was shreded by %k's Mine."
 -EXPLODEONWATER
 +FLOORCLIP
 +FRIENDLY
-+FIXMAPTHINGPOS
 +MOVEWITHSECTOR
 +NOBLOOD
 +NOICEDEATH
@@ -297,6 +296,7 @@ Obituary "%o was shreded by %k's Mine."
 +USESPECIAL
 +EXTREMEDEATH
 +FORCERADIUSDMG
++NODAMAGETHRUST
 	States
 	{
 	Pain:
@@ -364,6 +364,7 @@ Obituary "%o was shreded by %k's Mine."
 		TNT1 AAAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_Explode(200,175,XF_NOTMISSILE)
 		TNT1 A 0 A_Explode(150,250,XF_NOTMISSILE)
+		TNT1 A 0 A_RadiusThrust(128,-1,RTF_AFFECTSOURCE|RTF_NOIMPACTDAMAGE)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCrater")
 		TNT1 A 0 A_SpawnItemEx("ExplosionFlareSpawner")

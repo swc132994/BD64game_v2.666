@@ -1284,11 +1284,12 @@ ACTOR 64PossessedTreeBramble
 {
 Scale 0.7
 height 56
-radius 20
+radius 12
 speed 12
 Health 50
 Mass 5000
 meleerange 45
+MaxTargetRange 60
 Obituary "%o was impaled by a Yateveo."
 DeathSound "EvilEye/pain"
 BloodType "Brutal_BloodGreen"
@@ -1311,11 +1312,11 @@ MONSTER
 +FLOORCLIP
 +LOOKALLAROUND
 +NEVERFAST
++DROPOFF
 	States
 	{
 	Spawn:
 		R0OT A 0 NoDelay A_UnsetShootable
-		TNT1 A 0 A_UnsetSolid
 		R0OT ABC 4 A_LookEx
 		Loop
 	See:
@@ -1358,7 +1359,6 @@ MONSTER
 		Goto Melee
 	Melee:
 		TNT1 A 0 A_SetShootable
-		TNT1 A 0 A_SetSolid
 		R0OT AD 4
 		TNT1 A 0 A_SpawnItemEx("Drt1",0,0,0,5,0,3,Random(0,360),128)
 		TNT1 A 0 A_SpawnItemEx("Drt2",0,0,0,5,0,3,Random(0,360),128)
@@ -1376,7 +1376,10 @@ MONSTER
 		TNT1 A 0 A_FaceTarget
 		R0OT T 3 A_CustomMeleeAttack(1,"weapons/gswing")
 		R0OT MLK 4
-		Goto ContinueMelee
+		TNT1 A 0 A_JumpIfCloser(100,"ContinueMelee")
+		R0OT DA 4
+		TNT1 A 0 A_UnSetShootable
+		Goto See
 	Pain:
 		R0OT GFE 4
 		TNT1 A 0 A_SpawnItemEx("Drt1",0,0,0,5,0,3,Random(0,360),128)
@@ -1387,7 +1390,6 @@ MONSTER
 		TNT1 A 0 A_SpawnItemEx("Drt3",0,0,0,5,0,3,Random(0,360),128)
 		TNT1 A 0 A_SpawnItemEx("ExplosionSmoke")
 		R0OT DA 4
-		TNT1 A 0 A_UnSetSolid
 		TNT1 A 0 A_UnSetShootable
 		Goto See
 	Death:

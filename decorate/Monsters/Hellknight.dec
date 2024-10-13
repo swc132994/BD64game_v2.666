@@ -175,8 +175,7 @@ Health 0
 Actor 64BaronBallGreen : BaronBall Replaces BaronBall
 {
 Scale 0.75
-Radius 6
-Height 6
+Height 12
 RenderStyle Normal
 Decal "MedScorch"
 	states

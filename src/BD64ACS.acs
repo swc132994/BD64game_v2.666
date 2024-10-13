@@ -768,7 +768,7 @@ Thing_ChangeTID(0,2337+PlayerNumber());
 
 Script "TUnmakerChecker" (void)
 {
-	for(int i = 2337; i < 2400; i++)
+	for(int i = 2337; i < 5000; i++)
 	{
 		if(CheckActorInventory(i,"unmakerTACTICAL") || CheckActorInventory(i,"64RuinerTACTICAL"))	//checks if you have unmaker or ruiner
 		{
@@ -907,7 +907,7 @@ script "PoltergeistEnablerACS" (void)
 
 Script "HighCalibreCheck" (void)
 {
-	for(int i = 2337; i < 2400; i++)
+	for(int i = 2337; i < 5000; i++)
 	{
 	if(CheckActorInventory(i,"IsTacticalClass")||CheckActorInventory(i,"IsModern")) {SetActorState(0,"RandomSpawn");}
 	}
@@ -915,7 +915,7 @@ Script "HighCalibreCheck" (void)
 
 Script "ClassCheckWeaponDrop" (void)
 {
-	for(int i = 2337; i < 2400; i++)
+	for(int i = 2337; i < 5000; i++)
 	{
 	if(CheckActorInventory(i,"IsTacticalClass")||CheckActorInventory(i,"IsModern")) {SetActorState(0,"DropTactical");}
 	}

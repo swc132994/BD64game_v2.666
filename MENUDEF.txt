@@ -530,11 +530,11 @@ OptionValue "SSGZombieRandom_Value"
 {
 //	-3,"Random (No Shotgun)"
 	-2,"Random (No SSG)"
-	-1,"Random (No Plasma)"
+	-1,"Random (No BFG)"
 	0,"Random"
 	1,"Shotgun Zombie"
 	2,"SSG Zombie"
-	3,"Plasma Zombie"
+	3,"BFG Zombie"
 }
 
 OptionValue "ZMarineRandom_Value"
@@ -549,7 +549,7 @@ OptionValue "ChaingunZombie_Value"
 	-1,"Disabled"
 	0,"Random"
 	1,"Chaingun Zombie"
-	2,"BFG Zombie"
+	2,"Plasma Zombie"
 }
 
 OptionValue "FleshWizardRandom_Value"

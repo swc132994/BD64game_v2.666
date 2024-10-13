@@ -373,6 +373,8 @@ Actor BrutalizedBFGDude_2 : BrutalizedBFGDude_1
 Actor 64EnemyBFGBall : 64BaronBallGreen
 {
 Scale 0.50
+Radius 8
+Height 16
 DamageType "BFG"
 Damage 30
 Speed 25
