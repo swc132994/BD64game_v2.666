@@ -173,6 +173,8 @@ Tag "$FO_TAG_BFG9000"
 		TNT1 A 0 A_PlaySound("BBFGHOLD",CHAN_5,1,TRUE)
 		TNT1 A 0 A_FireCustomMissile("BFGBetaBall",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
 		TNT1 A 0 A_FireCustomMissile("BFGBetaBall2",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
+		TNT1 A 0 A_SetPitch(pitch+random(-1,1),SPF_INTERPOLATE)
+		TNT1 A 0 A_SetAngle(angle+random(-1,1),SPF_INTERPOLATE)
 		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle5",20,5,40)
 		TNT1 A 0 A_Jump(256,2)
@@ -185,6 +187,8 @@ Tag "$FO_TAG_BFG9000"
 		BFGF D 1 Bright
 		TNT1 A 0 A_FireCustomMissile("BFGBetaBall",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
 		TNT1 A 0 A_FireCustomMissile("BFGBetaBall2",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
+		TNT1 A 0 A_SetPitch(pitch+random(-1,1),SPF_INTERPOLATE)
+		TNT1 A 0 A_SetAngle(angle+random(-1,1),SPF_INTERPOLATE)
 		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle5",20,5,40)
 		TNT1 A 0 A_Jump(256,2)
@@ -197,6 +201,8 @@ Tag "$FO_TAG_BFG9000"
 		BFGF E 1 Bright
 		TNT1 A 0 A_FireCustomMissile("BFGBetaBall",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
 		TNT1 A 0 A_FireCustomMissile("BFGBetaBall2",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
+		TNT1 A 0 A_SetPitch(pitch+random(-1,1),SPF_INTERPOLATE)
+		TNT1 A 0 A_SetAngle(angle+random(-1,1),SPF_INTERPOLATE)
 		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
 		TNT1 A 0 A_SpawnItemEx("PlayerMuzzle5",20,5,40)
 		TNT1 A 0 A_Jump(256,2)
@@ -209,12 +215,13 @@ Tag "$FO_TAG_BFG9000"
 		BFGF F 1 Bright
 		TNT1 A 0 A_FireCustomMissile("BFGBetaBall",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
 		TNT1 A 0 A_FireCustomMissile("BFGBetaBall2",random(8,-8),1,random(5,-5),random(5,-5),0,random(5,-5))
-		TNT1 A 0 A_SetPitch(pitch-2,SPF_INTERPOLATE)
+		TNT1 A 0 A_SetPitch(pitch+random(-1,1),SPF_INTERPOLATE)
+		TNT1 A 0 A_SetAngle(angle+random(-1,1),SPF_INTERPOLATE)
 		TNT1 A 0 A_ZoomFactor(0.9)
 		BFGF JI 1
 		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 0 A_ReFire
-		BFGF GGGHIJ 1 A_SetPitch(pitch+0.5,SPF_INTERPOLATE)
+		BFGF GGGHIJ 1
 		TNT1 A 0 A_StopSound(CHAN_5)
 		Goto Ready
 	}
@@ -305,7 +312,7 @@ DamageType "BFG"
 
 Actor BFGBetaBall : PlasmaBall
 {
-Scale 0.75
+Scale 0.6
 Damage 10
 DamageType "Extreme"
 Obituary "%o was obliterated by %k's BFG."
@@ -339,7 +346,7 @@ ReactionTime 60
 
 Actor BFGBetaBall2 : BFGBetaBall
 {
-Damage 5
+Damage 8
 	States
 	{
 	Spawn:
@@ -353,7 +360,7 @@ Damage 5
 		REDB ABCD 3 Bright
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleLaser",0,0,random(0,360),2,random(0,360))
-		TNT1 A 1 A_Explode(100,70,0)
+		TNT1 A 1 A_Explode(80,100,0)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterMed")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterMed")
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")

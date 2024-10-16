@@ -761,14 +761,14 @@ script "Flat_Decal_Remover" (void)
 	if(GetCVar("FloorDecal_Cvar") == 0) { SetActorState(0,"Off"); }
 }
 
-script "SoulHandler" ENTER			//unmaker ammo set ThingID
+script "SoulHandler" ENTER
 {
-Thing_ChangeTID(0,2337+PlayerNumber());
+Thing_ChangeTID(0,6666+PlayerNumber());//gives player a TID to allow control of item spawns
 }
 
 Script "TUnmakerChecker" (void)
 {
-	for(int i = 2337; i < 5000; i++)
+	for(int i = 6666; i < 6766; i++)
 	{
 		if(CheckActorInventory(i,"unmakerTACTICAL") || CheckActorInventory(i,"64RuinerTACTICAL"))	//checks if you have unmaker or ruiner
 		{
@@ -907,17 +907,9 @@ script "PoltergeistEnablerACS" (void)
 
 Script "HighCalibreCheck" (void)
 {
-	for(int i = 2337; i < 5000; i++)
+	for(int i = 6666; i < 6766; i++)
 	{
 	if(CheckActorInventory(i,"IsTacticalClass")||CheckActorInventory(i,"IsModern")) {SetActorState(0,"RandomSpawn");}
-	}
-}
-
-Script "ClassCheckWeaponDrop" (void)
-{
-	for(int i = 2337; i < 5000; i++)
-	{
-	if(CheckActorInventory(i,"IsTacticalClass")||CheckActorInventory(i,"IsModern")) {SetActorState(0,"DropTactical");}
 	}
 }
 

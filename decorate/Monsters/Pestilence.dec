@@ -203,7 +203,7 @@ ACTOR PestilentMissile1
 {
 Scale 0.5
 Health 15
-Damage 8
+Damage 5
 Speed 12
 FastSpeed 17
 Height 16

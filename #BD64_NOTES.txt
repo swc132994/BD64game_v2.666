@@ -103,7 +103,7 @@ SSG - animations by IDDQD_1337 (first select animation and single shell reload i
 Tactical Shotgun Alt attack - IDDQD_1337 (animation) & I'M (sprites). Smoother alt fire animation by Doomer Blazkowicz.
 Laser Mine (unused) - Sprite rework by Craneo, Animations extra sprites and decorate by IDDQD_1337. Sounds from Brutal Hellfest by Gni. Orginally created by Capt. J and Ezequiel-TM's tripwire lasermine
 Proxy Mine (Tactical & Modern) - CaptJ and Apocalyptic Studios, edited by Craneo and IDDQD_1337.
-Chaingun (tactical & Modern) - Doomer Blazkowicz (sprite rework), IDDQD_1337 (Animation, inspired from Dox 778), taken from Sgt Mark IV's BD Chaingun.
+Chaingun (tactical & Modern) - Doomer Blazkowicz (sprite rework), Kokus270 (muzzle flash), IDDQD_1337 (Animation, inspired from Dox 778), taken from Sgt Mark IV's BD Chaingun.
 Unmaker (tactical/modern) edits - D64 Frankensprites and sounds by DoomerBlazcowicz. Muzzle flashes by BigStronk. Animations by IDDQD_1337. Tactical Unmaker ready state continuous looping sound (Immorpher)
 BFG9000 Alt Attack - Sprite Edit: Gothic, D3athStalker - Idea Base: Chronoseth, BFG from Doom press release beta - Sounds by - D3athStalker, New Sprites by - I'M
 

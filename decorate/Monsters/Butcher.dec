@@ -1,6 +1,7 @@
 ACTOR 64Butcher 19131
 {
 Scale 0.85
+Mass 300
 Health 300
 Radius 20
 Height 56
