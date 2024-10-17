@@ -309,12 +309,17 @@ script "WpnPowerRandom" (void)
 
 //Monster Spawner
 
-script "ZombiemanSpawnPercent" (void)
+script "MonstersSpawnPercent" (int Monster)
 {
-	int PercentValue = GetCvar("bd64_SpawnPercentZombieman");
+	static str _cvarprefixes[18] = {
+	"Zombieman","ShotgunGuy","ChaingunGuy","Imp","Demon","Spectre","Cacodemon","LostSoul","PainElemental","Arachnotron","HellKnight","Revenant","Baron","Mancubus","Archvile","Cyberdemon","Mastermind","Horde"
+	};
 
-	SetResultValue(PercentValue);
+	str cvarname = StrParam(s:"bd64_SpawnPercent",s:_cvarprefixes[Monster-1]);
+
+	SetResultValue(GetCvar(cvarname));
 }
+
 
 script "ZombiemanSpawner" (void)
 {
@@ -324,13 +329,6 @@ script "ZombiemanSpawner" (void)
 	};
 	SetActorState(0,MonsterType[GetCvar("ZMarineRandom_Cvar") - 1]);
 	Delay(1);
-}
-
-script "ShotgunGuySpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentShotgunGuy");
-
-	SetResultValue(PercentValue);
 }
 
 script "ShotgunGuySpawner" (void)
@@ -350,13 +348,6 @@ script "ShotgunGuySpawner" (void)
 	Delay(1);
 }
 
-script "ChaingunGuySpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentChaingunGuy");
-
-	SetResultValue(PercentValue);
-}
-
 script "ChaingunGuySpawner" (void)
 {
 	static str MonsterType[] =
@@ -367,13 +358,6 @@ script "ChaingunGuySpawner" (void)
 	If(GetCvar("ZombieChaingunRandom_Cvar") == -1) {SetActorState(0,"D64MonsterOnly");}
 	SetActorState(0,MonsterType[GetCvar("ZombieChaingunRandom_Cvar") - 1]);
 	Delay(1);
-}
-
-script "ImpSpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentImp");
-
-	SetResultValue(PercentValue);
 }
 
 script "ImpSpawner" (void)
@@ -393,13 +377,6 @@ script "ImpSpawner" (void)
 	Delay(1);
 }
 
-script "DemonSpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentDemon");
-
-	SetResultValue(PercentValue);
-}
-
 script "DemonSpawner" (void)
 {
 	static str MonsterType[] =
@@ -415,13 +392,6 @@ script "DemonSpawner" (void)
 	}
 	SetActorState(0,MonsterType[GetCvar("AcidDemonRandom_Cvar") - 1]);
 	Delay(1);
-}
-
-script "SpectreSpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentSpectre");
-
-	SetResultValue(PercentValue);
 }
 
 script "SpectreSpawner" (void)
@@ -441,13 +411,6 @@ script "SpectreSpawner" (void)
 	Delay(1);
 }
 
-script "CacodemonSpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentCacodemon");
-
-	SetResultValue(PercentValue);
-}
-
 script "CacodemonSpawner" (void)
 {
 	static str CacoSpawnType[] =
@@ -463,13 +426,6 @@ script "CacodemonSpawner" (void)
 	}
 	SetActorState(0,CacoSpawnType[GetCvar("NCaco_Spawner_Cvar") - 1]);
 	Delay(1);
-}
-
-script "BaronSpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentBaron");
-
-	SetResultValue(PercentValue);
 }
 
 script "BaronSpawner" (void)
@@ -509,13 +465,6 @@ script "HoundChooserACS" (void)
 	Delay(1);
 }*/
 
-script "RevenantSpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentRevenant");
-
-	SetResultValue(PercentValue);
-}
-
 script "RevenantSpawner" (void)
 {
 	static str MonsterType[] =
@@ -525,13 +474,6 @@ script "RevenantSpawner" (void)
 	if(GetCvar("Revenant_Spawner_Cvar") == -1) {SetActorState(0,"D64MonsterOnly");}	
 	SetActorState(0,MonsterType[GetCvar("Revenant_Spawner_Cvar") - 1]);
 	Delay(1);
-}
-
-script "HellKnightSpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentHellKnight");
-
-	SetResultValue(PercentValue);
 }
 
 script "HellKnightSpawner" (void)
@@ -544,13 +486,6 @@ script "HellKnightSpawner" (void)
 	Delay(1);
 }
 
-script "MancubusSpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentMancubus");
-
-	SetResultValue(PercentValue);
-}
-
 script "MancubusSpawner" (void)
 {
 	static str MonsterType[] =
@@ -559,13 +494,6 @@ script "MancubusSpawner" (void)
 	};
 	SetActorState(0,MonsterType[GetCvar("BruiserRandom_Cvar") - 1]);
 	Delay(1);
-}
-
-script "LostSoulSpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentLostSoul");
-
-	SetResultValue(PercentValue);
 }
 
 script "LostSoulSpawner" (void)
@@ -585,13 +513,6 @@ script "LostSoulSpawner" (void)
 	Delay(1);
 }
 
-script "ArachnotronSpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentArachnotron");
-
-	SetResultValue(PercentValue);
-}
-
 script "ArachnotronSpawner" (void)
 {
 	static str MonsterType[] =
@@ -609,13 +530,6 @@ script "ArachnotronSpawner" (void)
 	Delay(1);
 }
 
-script "PainElementalSpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentPainElemental");
-
-	SetResultValue(PercentValue);
-}
-
 Script "PainElementalSpawner" (void)
 {
 	static str MonsterType[] =
@@ -624,13 +538,6 @@ Script "PainElementalSpawner" (void)
 	};
 	SetActorState(0,MonsterType[GetCvar("NightElementalRandomCvar") - 1]);
 	Delay(1);
-}
-
-script "ArchvileSpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentArchvile");
-
-	SetResultValue(PercentValue);
 }
 
 Script "ArchvileSpawner" (void)
@@ -650,13 +557,6 @@ Script "ArchvileSpawner" (void)
 	Delay(1);
 }
 
-script "CyberdemonSpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentCyberdemon");
-
-	SetResultValue(PercentValue);
-}
-
 script "CyberdemonSpawner" (void)
 {
 	static str MonsterType[] =
@@ -672,13 +572,6 @@ script "CyberdemonSpawner" (void)
 	}
 	SetActorState(0,MonsterType[GetCvar("Annihilator_Spawner_Cvar") - 1]);
 	Delay(1);
-}
-
-script "MastermindSpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentMastermind");
-
-	SetResultValue(PercentValue);
 }
 
 script "MastermindSpawner" (void)
@@ -709,13 +602,6 @@ Script "WadChecker" (void)
 	};
 	SetActorState(0,WadChecking[GetCvar("BD64_WadCheck") - 1]);
 	Delay(1);
-}
-
-script "HordeSpawnPercent" (void)
-{
-	int PercentValue = GetCvar("bd64_SpawnPercentHorde");
-
-	SetResultValue(PercentValue);
 }
 
 script "HordeMultiplier" (void)		//husk zombie multiplier option
