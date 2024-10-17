@@ -3,10 +3,11 @@ Actor 64HellHoundGEC : Demon 19117
 //$category "Game/BD64_Monsters
 SpawnID 177
 Scale 0.8
-Health 800
+Health 1000
 GibHealth 20
-Speed 15
+Speed 16
 Radius 24
+MeleeThreshold 200
 MeleeRange 60 //default 44
 PainChance "Bullet",26
 PainChance "SuperFists",200
@@ -32,22 +33,25 @@ DropItem "DemonEssenceSpawner"
 		GECH BA 10 A_LookEx
 		Loop
 	See:
+		TNT1 A 0 A_JumpIfCloser(500,"SeeClose")
 		GECH AABBCCDD 2 A_Chase
 		Loop
+	SeeClose:
+		GECH AABBCCDD 1 A_Chase
+		Goto See
 	Melee:
 		GECH EF 4 A_FaceTarget
-		GECH H 4 A_SargAttack
-		TNT1 AA 0 A_SargAttack
-		TNT1 A 0 A_Recoil(-2)
+		TNT1 A 0 A_Recoil(-12)
+		TNT1 A 0 ThrustThingZ(0,20,0,0)
+		GECH H 4 A_CustomMeleeAttack(6*random(2,8),"Dog/melee")
 		GECH FE 4 A_FaceTarget
 		Goto See
 	Missile:
 		GECH EE 4 A_FaceTarget
 		GECH O 3 A_FaceTarget
-		TNT1 A 0 A_CustomMissile("CacodemonBall",36,-9,random(-1,1),1,random(-1,1))
-		TNT1 A 0 A_CustomMissile("CacodemonBall",36,9,random(-1,1),1,random(-1,1))
-		GECH P 4 Bright Light("Cacoball")
-		GECH OEE 3 A_FaceTarget
+		GECH P 2 Bright A_CustomMissile("CacodemonBall",36,-9,random(-1,1),1,random(-1,1))
+		GECH P 2 Bright A_CustomMissile("CacodemonBall",36,9,random(-1,1),1,random(-1,1))
+		GECH OE 4 A_FaceTarget
 		Goto See
 	Pain:
 		GECH G 6 A_Pain
