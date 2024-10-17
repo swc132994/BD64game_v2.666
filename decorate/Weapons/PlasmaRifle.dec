@@ -496,7 +496,7 @@ Alpha 0.1
 
 Actor PlasmaFlame
 {
-Damage 3
+Damage 4
 Speed 40
 Height 8
 Radius 8
@@ -583,9 +583,9 @@ Obituary "$FO_OB_MPPLASMARIFLE"
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("BlueplasmaParticle",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterSmall")
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmallMotherdemon")
-		TNT1 A 0 A_SpawnItemEx("TinyBurningPieceBlue2",random(-25,25),random(-15,15))
-		TNT1 A 0 A_SpawnItemEx("TinyBurningPieceBlue",random(-15,15),random(-15,15))
-		TNT1 AA 0 A_CustomMissile("FlamethrowerFireParticlesBlue",6,0,random(0,360),2,random(10,90))
+		TNT1 AAA 0 A_SpawnItemEx("TinyBurningPieceBlue2",random(-25,25),random(-15,15))
+		TNT1 AAA 0 A_SpawnItemEx("TinyBurningPieceBlue",random(-15,15),random(-15,15))
+		TNT1 AAA 0 A_CustomMissile("FlamethrowerFireParticlesBlue",6,0,random(0,360),2,random(10,90))
 		TNT1 A 1
 		Stop
 	}

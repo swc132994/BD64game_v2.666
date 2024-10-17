@@ -3,10 +3,11 @@ Actor 64HellHound : Demon 19116	//Hellhound Alt by IMI
 //$category "Game/BD64_Monsters
 SpawnID 176
 Scale 0.8
-Health 800
+Health 1000
 GibHealth 20
-Speed 15
+Speed 16
 Radius 24
+MeleeThreshold 200
 MeleeRange 60 //default 44
 PainChance "Bullet",26
 PainChance "SuperFists",200
@@ -32,21 +33,24 @@ DropItem "DemonEssenceSpawner"
 		HEHR BA 10 A_LookEx
 		Loop
 	See:
+		TNT1 A 0 A_JumpIfCloser(500,"SeeClose")
 		HEHR AABBCCDD 2 A_Chase
 		Loop
+	SeeClose:
+		HEHR AABBCCDD 1 A_Chase
+		Goto See
 	Melee:
 		HEHR EF 4 A_FaceTarget
-		HEHR H 4 A_SargAttack
-		TNT1 AA 0 A_SargAttack
-		TNT1 A 0 A_Recoil(-2)
+		TNT1 A 0 A_Recoil(-12)
+		TNT1 A 0 ThrustThingZ(0,20,0,0)
+		HEHR H 4 A_CustomMeleeAttack(6*random(2,8),"Dog/melee")
 		HEHR FE 4 A_FaceTarget
 		Goto See
 	Missile:
 		HEHR EE 4 A_FaceTarget
-		HEHR O 3 Bright Light("Cacoball") A_FaceTarget
-		TNT1 A 0 A_CustomMissile("CacodemonBall",36,-9,random(-1,1),1,random(-1,1))
-		TNT1 A 0 A_CustomMissile("CacodemonBall",36,9,random(-1,1),1,random(-1,1))
-		HEHR P 3 Bright Light("Cacoball")
+		HEHR O 3 A_FaceTarget
+		HEHR P 2 Bright A_CustomMissile("CacodemonBall",36,-9,random(-1,1),1,random(-1,1))
+		HEHR P 2 Bright A_CustomMissile("CacodemonBall",36,9,random(-1,1),1,random(-1,1))
 		HEHR EE 4 A_FaceTarget
 		Goto See
 	Pain:
