@@ -428,6 +428,7 @@ PROJECTILE
 
 Actor 64ArachnotronPlasma : 64PlasmaBall Replaces ArachnotronPlasma
 {
+Damage 8
 Speed 25
 }
 
