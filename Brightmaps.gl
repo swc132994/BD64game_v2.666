@@ -3,7 +3,7 @@
 brightmap sprite 64HCA0		{map "brightmaps/64HCA0_BR.png"disablefullbright}
 
 //64TECHPILLAR
-brightmap sprite ELECC0		{map "brightmaps/ELECC0_BR.png"disablefullbright}
+brightmap sprite ELECA0		{map "brightmaps/ELECA0_BR.png"disablefullbright}
 
 //GARGOYLES
 brightmap sprite GAR1A0		{map "brightmaps/GAR1A0_BR.png"disablefullbright}
