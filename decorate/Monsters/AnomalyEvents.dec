@@ -786,6 +786,7 @@ actor Drt1
 Scale 0.7
 Radius 2
 Speed 5
+Mass 5
 +MISSILE
 +THRUACTORS
 +NOTELEPORT
@@ -1222,6 +1223,8 @@ DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 MaxTargetRange 896
 MONSTER
+-COUNTKILL
+-CANPUSHWALLS
 +NOPAIN
 +DONTMORPH
 +NOBLOODDECALS
@@ -1230,8 +1233,6 @@ MONSTER
 +STANDSTILL
 +LOOKALLAROUND
 +DONTCORPSE
--COUNTKILL
--CANPUSHWALLS
 +NEVERFAST
 	States
 	{
@@ -1239,32 +1240,37 @@ MONSTER
 		3TRE A 10 A_LookEx
 		Loop
 	See:
+		TNT1 A 0 A_JumpIfTargetInLOS(3)
+		TNT1 A 0 A_Jump(152,2)//%60
+		TNT1 A 0 A_RemoveChildren(TRUE)
+		TNT1 A 0 A_Jump(256,"See1","See2","See3","See4")
+	See1:
 		3TRE AAA 3 A_Chase
-		TNT1 A 0 A_Jump(64,"See2","See3","See4")
-		Loop
+		Goto See
 	See2:
 		3TRE BAAC 3 A_Chase
-		Loop
+		Goto See
 	See3:
 		3TRE BBCCAA 3 A_Chase
-		Loop
+		Goto See
 	See4:
 		3TRE AABBCCBB 3 A_Chase
-		Loop
+		Goto See
 	Missile:
-		TNT1 A 0 A_Jump(64,"Missile2","Missile3")
+		TNT1 A 0 A_Jump(256,"Missile1","Missile2","Missile3")
+	Missile1:
 		3TRE BBCC 3
-		TNT1 AAA 0 A_SpawnItemEx("64PossessedTreeBramble",64,0,1,0,0,0,0,SXF_SETMASTER)
+		3TRE AA 2 A_SpawnItemEx("64PossessedTreeBramble",70,0,0,0,0,0,0,SXF_SETMASTER)
 		3TRE B 3
 		Goto See
 	Missile2:
 		3TRE AABBCC 3
-		TNT1 AA 0 A_SpawnItemEx("64PossessedTreeBramble",56,0,1,0,0,0,0,SXF_SETMASTER)
+		3TRE AA 2 A_SpawnItemEx("64PossessedTreeBramble",70,0,0,0,0,0,0,SXF_SETMASTER)
 		3TRE BA 3
 		Goto See
 	Missile3:
 		3TRE AABBCCAA 3
-		TNT1 AA 0 A_SpawnItemEx("64PossessedTreeBramble",56,0,1,0,0,0,0,SXF_SETMASTER)
+		3TRE AA 2 A_SpawnItemEx("64PossessedTreeBramble",70,0,0,0,0,0,0,SXF_SETMASTER)
 		3TRE CBA 3
 		Goto See
 	Death:
@@ -1274,8 +1280,56 @@ MONSTER
 		TNT1 AAAA 0 A_CustomMissile("BloodmistGreen",35,0,random(0,360),2,random(0,90))
 		TNT1 AAAAAA 0 A_CustomMissile("BloodmistBigGreen",45,0,random(0,360),2,random(10,90))
 		3TRE DEF 5
-		3TRE G 105	//3s delay
 		3TRE G -1 A_KillChildren
+		Stop
+	}
+}
+
+actor BrambleTargetBase : HeadshotTargetBase
+{
+Height 56
+Tag "Tree Bramble"
+BloodType "Brutal_BloodGreen"
+-SERVERSIDEONLY
+-THRUACTORS
+}
+
+actor BrambleTarget3 : BrambleTargetBase
+{
+	States
+	{
+	Spawn:
+		TNT1 A 4
+		Stop
+	}
+}
+
+actor BrambleTarget8 : BrambleTargetBase
+{
+	States
+	{
+	Spawn:
+		TNT1 A 9
+		Stop
+	}
+}
+
+actor BrambleTarget12 : BrambleTargetBase
+{
+	States
+	{
+	Spawn:
+		TNT1 A 13
+		Stop
+	}
+}
+
+actor BrambleTarget24 : BrambleTargetBase
+{
+	States
+	{
+	Spawn:
+		TNT1 A 25
 		Stop
 	}
 }
@@ -1283,11 +1337,11 @@ MONSTER
 ACTOR 64PossessedTreeBramble
 {
 Scale 0.7
-height 56
-radius 12
+height 0
+radius 0
 speed 12
 Health 50
-Mass 5000
+Mass 5
 meleerange 45
 MaxTargetRange 60
 Obituary "%o was impaled by a Yateveo."
@@ -1301,8 +1355,9 @@ DamageFactor "Plasma",1.5
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 Tag "Possessed Tree Bramble"
+ActiveSound "floor/slimy"
+DeathSound "Misc/Gibbed"
 MONSTER
--SHOOTABLE
 -SOLID
 -COUNTKILL
 +NOTELEPORT
@@ -1312,13 +1367,12 @@ MONSTER
 +FLOORCLIP
 +LOOKALLAROUND
 +NEVERFAST
-+DROPOFF
++NOCLIP
 	States
 	{
 	Spawn:
-		R0OT A 0 NoDelay A_UnsetShootable
 		R0OT ABC 4 A_LookEx
-		Loop
+		Wait
 	See:
 		R0OT AB 3 A_Chase
 		TNT1 A 0 A_SpawnItemEx("Drt1",0,0,0,5,0,3,Random(0,360),128)
@@ -1358,7 +1412,7 @@ MONSTER
 		TNT1 A 0 A_SpawnItemEx("Drt2",0,0,0,5,0,3,Random(0,360),128)
 		Goto Melee
 	Melee:
-		TNT1 A 0 A_SetShootable
+		TNT1 A 0 A_SpawnItemEx("BrambleTarget8")
 		R0OT AD 4
 		TNT1 A 0 A_SpawnItemEx("Drt1",0,0,0,5,0,3,Random(0,360),128)
 		TNT1 A 0 A_SpawnItemEx("Drt2",0,0,0,5,0,3,Random(0,360),128)
@@ -1367,39 +1421,38 @@ MONSTER
 		TNT1 A 0 A_SpawnItemEx("Drt1",0,0,0,5,0,3,Random(0,360),128)
 		TNT1 A 0 A_SpawnItemEx("Drt3",0,0,0,5,0,3,Random(0,360),128)
 		TNT1 A 0 A_SpawnItemEx("ExplosionSmoke")
+		TNT1 A 0 A_SpawnItemEx("BrambleTarget12")
 		R0OT EFG 4
 	ContinueMelee:
+		TNT1 A 0 A_SpawnItemEx("BrambleTarget12")
 		R0OT JIH 4
 		TNT1 A 0 A_FaceTarget
-		R0OT S 3 A_CustomMeleeAttack(1,"weapons/gswing")
+		TNT1 A 0 A_SpawnItemEx("BrambleTarget3")
+		R0OT S 3 A_CustomMeleeAttack(1,"skeleton/melee")
+		TNT1 A 0 A_SpawnItemEx("BrambleTarget24")
 		R0OT HIJKLM 4
 		TNT1 A 0 A_FaceTarget
-		R0OT T 3 A_CustomMeleeAttack(1,"weapons/gswing")
+		TNT1 A 0 A_SpawnItemEx("BrambleTarget3")
+		R0OT T 3 A_CustomMeleeAttack(1,"skeleton/melee")
+		TNT1 A 0 A_SpawnItemEx("BrambleTarget12")
 		R0OT MLK 4
 		TNT1 A 0 A_JumpIfCloser(100,"ContinueMelee")
+		TNT1 A 0 A_SpawnItemEx("BrambleTarget8")
 		R0OT DA 4
-		TNT1 A 0 A_UnSetShootable
 		Goto See
 	Pain:
-		R0OT GFE 4
-		TNT1 A 0 A_SpawnItemEx("Drt1",0,0,0,5,0,3,Random(0,360),128)
-		TNT1 A 0 A_SpawnItemEx("Drt2",0,0,0,5,0,3,Random(0,360),128)
-		TNT1 A 0 A_SpawnItemEx("Drt3",0,0,0,5,0,3,Random(0,360),128)
-		TNT1 A 0 A_SpawnItemEx("Drt2",0,0,0,5,0,3,Random(0,360),128)
-		TNT1 A 0 A_SpawnItemEx("Drt1",0,0,0,5,0,3,Random(0,360),128)
-		TNT1 A 0 A_SpawnItemEx("Drt3",0,0,0,5,0,3,Random(0,360),128)
+		R0OT GFE 2
 		TNT1 A 0 A_SpawnItemEx("ExplosionSmoke")
-		R0OT DA 4
-		TNT1 A 0 A_UnSetShootable
+		R0OT D 2
 		Goto See
 	Death:
 		R0OT N 5
 		R0OT O 5 A_Scream
-		TNT1 AAA 0 A_CustomMissile("Brutal_BloodGreen",35,0,random(0,360),2,random(0,90))
+		TNT1 AA 0 A_CustomMissile("Brutal_BloodGreen",35,0,random(0,360),2,random(0,90))
 		R0OT P 5 A_NoBlocking
 		R0OT QQRR 5
-		R0OT AAAAAAAAAA 2 A_FadeOut(0.1)
-		stop
+		R0OT A 2 A_FadeOut(0.1)
+		Wait
 	}
 }
 

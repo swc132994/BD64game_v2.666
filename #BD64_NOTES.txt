@@ -340,7 +340,8 @@ Impaled Doom 64 guys - Craneo
 64 TwitchGibs - Nevander's D64 Retribution
 64 HeadCandles - Craneo
 64 Stalagmites - DrDoctor
-64 Fly particle - 3D Realms, Captain Toenail, Craneo
+64 Flies - 3D Realms, Captain Toenail, Craneo
+SMK3 smoke sprites from BD Platinum
 Nukage recolour - Craneo
 New blood splats sprites by I'M
 New screen blood splats by IDDQD_1337
