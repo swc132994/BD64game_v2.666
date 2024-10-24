@@ -1119,7 +1119,7 @@ Scale 0.8
 	States
 	{
 	Spawn:
-		64HC A 0
+		COL5 A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
 		TNT1 A 0 A_Jump(32,"SpawnPossessedStatue")//12.5%
 	SpawnNormalStatue:

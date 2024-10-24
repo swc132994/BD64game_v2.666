@@ -1,13 +1,13 @@
 //PROP DECORATIONS
 //64HEARTCOLUMN
-brightmap sprite 64HCA0		{map "brightmaps/64HCA0_BR.png"disablefullbright}
+brightmap sprite COL5A0		{map "brightmaps/COL5A0_BR.png"disablefullbright}
 
 //64TECHPILLAR
 brightmap sprite ELECA0		{map "brightmaps/ELECA0_BR.png"disablefullbright}
 
 //GARGOYLES
-brightmap sprite GAR1A0		{map "brightmaps/GAR1A0_BR.png"disablefullbright}
-brightmap sprite GAR2A0		{map "brightmaps/GAR2A0_BR.png"disablefullbright}
+brightmap sprite COL1A0		{map "brightmaps/COL1A0_BR.png"disablefullbright}
+brightmap sprite COL3A0		{map "brightmaps/COL3A0_BR.png"disablefullbright}
 
 //Alpha Build Barrel
 brightmap sprite BAR1A0		{map "brightmaps/BAR1A0_BR.png"}
