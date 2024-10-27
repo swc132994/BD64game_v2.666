@@ -213,7 +213,7 @@ Tag "$FO_TAG_PISTOL"
 		P1SR A 0 A_JumpIfInventory("IsSilencer",1,2)
 		PISR A 0
 		"####" ABCD 1
-		"####" Y 10
+		"####" Y 8
 		"####" DCBA 1
 		Stop
 	SlideKickingStart:
@@ -222,7 +222,7 @@ Tag "$FO_TAG_PISTOL"
 		"####" ABCD 1
 		"####" Y 35
 	SlideKickingEnd:
-		"####" Y 5
+		"####" Y 2
 		"####" DCBA 1
 		Stop
 	v1Ready:

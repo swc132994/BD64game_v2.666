@@ -294,6 +294,11 @@ object 64BFGExtra
 	frame BFE2F {light BFGBALL_X5}
 }
 
+object BruiserFlame
+{
+	frame FIR3 {light BIGGREENTORCH}
+}
+
 //Floor lamp
 pointlight LAMP
 {
@@ -322,98 +327,93 @@ pulselight BIGLAMP
 	offset 0 72 0
 }
 
-// Tall red torch
+//TECH LAMPS & TORCHES
+flickerlight2 SMALLREDTORCH
+{
+color 1.0 0.3 0.0
+size 50
+secondarySize 54
+interval 0.05
+offset 0 35 0
+}
+
+//Tall red torch
 flickerlight2 BIGREDTORCH
 {
-	color 1.0 0.0 0.0
-	size 58
+	color 1.0 0.3 0.0
+	size 60
 	secondarySize 64
-	interval 0.1
+	interval 0.05
 	offset 0 60 0
 }
 
-//Tall green torch
-flickerlight2 BIGGREENTORCH
+//Small blue torch
+flickerlight2 SMALLBLUETORCH
 {
-	color 0.0 1.0 0.0
-	size 58
-	secondarySize 64
-	interval 0.1
-	offset 0 60 0
-}
-
-object BruiserFlame
-{
-	frame FIR3 {light BIGGREENTORCH}
-}
-
-//Tall yellow torch
-flickerlight2 BIGYELLOWTORCH
-{
-color 1.0 0.9 0.0
-size 58
-secondarySize 64
-interval 0.1
-offset 0 60 0
+	color 0.0 0.2 1.0
+	size 50
+	secondarySize 54
+	interval 0.05
+	offset 0 35 0
 }
 
 //Tall blue torch
 flickerlight2 BIGBLUETORCH
 {
 	color 0.0 0.2 1.0
-	size 58
+	size 60
 	secondarySize 64
-	interval 0.1
+	interval 0.05
 	offset 0 60 0
 }
 
-// Small red torch
-flickerlight2 SMALLREDTORCH
-{
-	color 1.0 0.0 0.0
-	size 48
-	secondarySize 54
-	interval 0.1
-	offset 0 35 0
-}
-
-// Small green torch
+//Small green torch
 flickerlight2 SMALLGREENTORCH
 {
 	color 0.0 1.0 0.0
-	size 48
+	size 50
 	secondarySize 54
-	interval 0.1
+	interval 0.05
 	offset 0 35 0
 }
 
-// Small blue torch
-flickerlight2 SMALLBLUETORCH
+//Tall green torch
+flickerlight2 BIGGREENTORCH
 {
-	color 0.0 0.2 1.0
-	size 48
-	secondarySize 54
-	interval 0.1
-	offset 0 35 0
+	color 0.0 1.0 0.0
+	size 60
+	secondarySize 64
+	interval 0.05
+	offset 0 60 0
 }
 
-// Small yellow torch
+//Small yellow torch
 flickerlight2 SMALLYELLOWTORCH
 {
 	color 1.0 0.9 0.0
-	size 48
+	size 50
 	secondarySize 54
-	interval 0.1
+	interval 0.05
 	offset 0 35 0
 }
 
-// Skulls w/candles
+//Tall yellow torch
+flickerlight2 BIGYELLOWTORCH
+{
+color 1.0 0.9 0.0
+size 55
+secondarySize 60
+interval 0.05
+offset 0 60 0
+}
+
+//Skulls w/candles
 flickerlight2 SKULLCANDLES
 {
 	color 1.0 1.0 0.0
 	size 32
 	secondarySize 34
-	interval 0.1
+	interval 0.05
 	offset 0 24 0
 }
 
@@ -2249,70 +2249,6 @@ pointlight Flashlight3
 color 0.2 0.2 0.2
 size 64
 offset 0 0 0
-}
-
-//TECH LAMPS & TORCHES
-pulselight SMALLREDTORCH
-{
-color 1.0 0.3 0.0
-size 64
-secondarySize 72
-interval 0.1
-offset 0 35 0
-}
-
-pulselight BIGREDTORCH
-{
-color 1.0 0.3 0.0
-size 110
-secondarySize 120
-interval 0.1
-offset 0 80 0
-}
-
-pulselight SMALLBLUETORCH
-{
-color 0.0 0.3 1.0
-size 64
-secondarySize 72
-interval 0.1
-offset 0 35 0
-}
-
-pulselight BIGBLUETORCH
-{
-color 0.0 0.3 1.0
-size 110
-secondarySize 120
-interval 0.1
-offset 0 80 0
-}
-
-pulselight SMALLGREENTORCH
-{
-color 0.2 1.0 0.0
-size 64
-secondarySize 72
-interval 0.1
-offset 0 35 0
-}
-
-pulselight BIGGREENTORCH
-{
-color 0.2 1.0 0.0
-size 110
-secondarySize 120
-interval 0.1
-offset 0 80 0
-}
-
-pulselight SMALLYELLOWTORCH
-{
-color 1.0 1.0 0.0
-size 64
-secondarySize 72
-interval 0.1
-offset 0 35 0
 }
 
 pointlight LampBasic

@@ -419,9 +419,9 @@ PROJECTILE
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterSmall")
 		TNT1 A 0 A_CustomMissile("BluePlasmaFire",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAA 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
-		TNT1 AAAA 1 A_SpawnItemEx("LensFlareTorchBlue")
+		TNT1 A 0 A_SpawnItemEx("LensFlareTorchBlue")
 		PLSE ABC 2 Bright A_CustomMissile("PlasmaSmoke",1,0,random(0,360),2,random(0,160))
-		PLSE DEF 2 Bright
+		PLSE DEF 2 Bright A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
 		Stop
 	}
 }

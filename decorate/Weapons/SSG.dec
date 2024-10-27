@@ -166,10 +166,10 @@ Tag "$FO_TAG_SUPERSHOTGUN"
 		SSGS M 8
 		SSGS LKJI 1
 		Stop
-	SlideKickingStart:	//22
+	SlideKickingStart:	//39
 		SSGS IJKL 1
 		SSGS M 35
-	SlideKickingEnd:	//10
+	SlideKickingEnd:	//6
 		SSGS M 2
 		SSGS LKJI 1
 		Stop

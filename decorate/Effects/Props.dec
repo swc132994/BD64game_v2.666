@@ -26,7 +26,7 @@ scale 0.75
 		Wait
 	Spawn:
 		HEA3 K 0 NoDelay A_SpawnItemEx("64SmallBloodPoolBLUE")
-		TNT1 A 0 A_Jump(51,"Spawn2")//20%
+		TNT1 A 0 A_Jump(39,"Spawn2")//15%
 	Death:
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3")
 		Goto Rest1
@@ -61,7 +61,7 @@ scale 0.75
 		Wait
 	Spawn:
 		HEAD M 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
-		TNT1 A 0 A_Jump(51,"Spawn2")//20%
+		TNT1 A 0 A_Jump(39,"Spawn2")//15%
 	Death:
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3")
 		Goto Rest1
@@ -96,7 +96,7 @@ scale 0.75
 		Wait
 	Spawn:
 		SARG N 0 NoDelay A_SpawnItemEx("64SmallBloodPool")
-		TNT1 A 0 A_Jump(51,"Spawn2")//20%
+		TNT1 A 0 A_Jump(39,"Spawn2")//15%
 	Death:
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3","Rest4","Rest5","Rest6")
 		Goto Rest1
@@ -140,7 +140,7 @@ scale 0.75
 	Spawn:
 		DI64 P 0 NoDelay A_Jump(128,"SpawnDeadNightImp")
 		TNT1 A 0 A_SpawnItemEx("64SmallBloodPool")
-		TNT1 A 0 A_Jump(51,"Spawn2")//20%
+		TNT1 A 0 A_Jump(39,"Spawn2")//15%
 	Death:
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3","Rest4","Rest5","Rest6")
 		Goto Rest1
@@ -185,7 +185,7 @@ RenderStyle Translucent
 		Wait
 	Spawn:
 		TRO2 P 0 NoDelay A_SpawnItemEx("64SmallBloodPoolBLUE")
-		TNT1 A 0 A_Jump(51,"Spawn2")//20%
+		TNT1 A 0 A_Jump(39,"Spawn2")//15%
 	Death:
 		TNT1 A 0 A_Jump(256,"Rest1","Rest2","Rest3","Rest4","Rest5","Rest6")
 		Goto Rest1
@@ -1194,9 +1194,9 @@ Scale 0.7
 		CAND A 0 NoDelay A_SpawnItemEx("LightShaft2Brighter")
 	Stay:
 		TNT1 A 0 A_SpawnItemEx("LensFlareAltLongOrangeCandle",0,0,20)
-		CAND AB 1 Bright Light("SMALLREDTORCH")
+		CAND ABBA 1 Bright Light("SMALLREDTORCH")
 		TNT1 A 0 A_SpawnItemEx("LensFlareAltLongOrangeCandle",0,0,20)
-		CAND BABB 1 Bright Light("SMALLREDTORCH")
+		CAND B 2 Bright Light("SMALLREDTORCH")
 		Loop
 	}
 }
