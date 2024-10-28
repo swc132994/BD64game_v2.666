@@ -100,6 +100,8 @@ melee/swing4		swing4
 $random world/swing	{ melee/swing1 melee/swing2 melee/swing3 melee/swing4 skeleton/swing}
 $alias KICK weapons/melee/kick
 $alias FOOTWALL weapons/melee/heavy
+melee/swingB		swingB
+$random world/swingB	{ melee/swingB melee/swingB melee/swingB melee/swingB melee/swingB melee/swing1 melee/swing2 melee/swing3 melee/swing4 skeleton/swing}
 
 //Sliding kick
 $random SlideKickStart
