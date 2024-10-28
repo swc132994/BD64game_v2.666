@@ -1,0 +1,352 @@
+//Weapon Spawner
+script "ChaingunSpawner" (void)
+{
+	static str WeaponType[] =
+	{
+		"SpawnChaingun","SpawnRifle","SpawnSMG"
+	};
+	SetActorState(0,WeaponType[GetCvar("Chaingun_Spawner_Cvar") - 1]);
+	Delay(1);
+}
+
+script "PlasmaRifleSpawner" (void)
+{
+	static str WeaponType[] =
+	{
+		"SpawnPlasmaRifle","SpawnGaussCannon"
+	};
+	SetActorState(0,WeaponType[GetCvar("GaussCannon_Spawner_Cvar") - 1]);
+	Delay(1);
+}
+
+script "BFGSpawner" (void)
+{
+	static str WeaponType[] =
+	{
+		"SpawnBFG9000","SpawnUnmaker","SpawnLasergun"
+	};
+	SetActorState(0,WeaponType[GetCvar("BFG_Spawner_Cvar") - 1]);
+	Delay(1);
+}
+
+script "WpnPowerRandom" (void)
+{
+	Switch(GetCvar("WpnPower_Spawner_Cvar"))
+	{
+		Case 1: SetActorState(0,"SpawnBlurSphere"); SetActorState(0,"SpawnBerserk"); SetActorState(0,"SpawnSoulSphere"); SetActorState(0,"SpawnMegaSphere"); SetActorState(0,"SpawnInvulnerabilitySphere"); break;
+		Case 2: SetActorState(0,"SpawnDemonKey"); break;
+	}
+	Delay(1);
+}
+
+//Monster Spawner
+
+script "MonstersSpawnPercent" (int Monster)
+{
+	static str _cvarprefixes[18] = {
+	"Zombieman","ShotgunGuy","ChaingunGuy","Imp","Demon","Spectre","Cacodemon","LostSoul","PainElemental","Arachnotron","HellKnight","Revenant","Baron","Mancubus","Archvile","Cyberdemon","Mastermind","Horde"
+	};
+
+	str cvarname = StrParam(s:"bd64_SpawnPercent",s:_cvarprefixes[Monster-1]);
+
+	SetResultValue(GetCvar(cvarname));
+}
+
+
+script "ZombiemanSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnZombieMan","SpawnZombieMarine"
+	};
+	SetActorState(0,MonsterType[GetCvar("ZMarineRandom_Cvar") - 1]);
+	Delay(1);
+}
+
+script "ShotgunGuySpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnShotgunGuy","SpawnSSGGuy","SpawnBFGGuy"
+	};
+	
+	Switch(GetCvar("SSGZombieRandom_Cvar"))
+	{
+//		Case -3: SetActorState(0,"AltSpawn3"); break;
+		Case -2: SetActorState(0,"AltSpawn2"); break;
+		Case -1: SetActorState(0,"AltSpawn1"); break;
+	}
+	SetActorState(0,MonsterType[GetCvar("SSGZombieRandom_Cvar") - 1]);
+	Delay(1);
+}
+
+script "ChaingunGuySpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnChaingunGuy","SpawnPlasmaGuy"
+	};
+	
+	If(GetCvar("ZombieChaingunRandom_Cvar") == -1) {SetActorState(0,"D64MonsterOnly");}
+	SetActorState(0,MonsterType[GetCvar("ZombieChaingunRandom_Cvar") - 1]);
+	Delay(1);
+}
+
+script "ImpSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnImp","SpawnNightImp","SpawnHarvester"
+	};
+
+	Switch(GetCvar("NImp_Spawner_Cvar"))
+	{
+//		Case -3: SetActorState(0,"AltSpawn3"); break;
+		Case -2: SetActorState(0,"AltSpawn2"); break;
+		Case -1: SetActorState(0,"AltSpawn1"); break;
+	}
+	SetActorState(0,MonsterType[GetCvar("NImp_Spawner_Cvar") - 1]);
+	Delay(1);
+}
+
+script "DemonSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnDemon","SpawnAcidDemon","SpawnButcher"
+	};
+	
+	Switch(GetCvar("NSpectre_Spawner_Cvar"))
+	{
+//		Case -3: SetActorState(0,"AltSpawn3"); break;
+		Case -2: SetActorState(0,"AltSpawn2"); break;
+		Case -1: SetActorState(0,"AltSpawn1"); break;
+	}
+	SetActorState(0,MonsterType[GetCvar("AcidDemonRandom_Cvar") - 1]);
+	Delay(1);
+}
+
+script "SpectreSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnSpectre","SpawnNightSpectre","SpawnWraith"
+	};
+	
+	Switch(GetCvar("NSpectre_Spawner_Cvar"))
+	{
+//		Case -3: SetActorState(0,"AltSpawn3"); break;
+		Case -2: SetActorState(0,"AltSpawn2"); break;
+		Case -1: SetActorState(0,"AltSpawn1"); break;
+	}
+	SetActorState(0,MonsterType[GetCvar("NSpectre_Spawner_Cvar") - 1]);
+	Delay(1);
+}
+
+script "CacodemonSpawner" (void)
+{
+	static str CacoSpawnType[] =
+	{
+		"SpawnCacodemon","SpawnNightCacodemon","SpawnFallen"
+	};
+	
+	Switch(GetCvar("NCaco_Spawner_Cvar"))
+	{
+//		Case -3: SetActorState(0,"AltSpawn3"); break;
+		Case -2: SetActorState(0,"AltSpawn2"); break;
+		Case -1: SetActorState(0,"AltSpawn1"); break;
+	}
+	SetActorState(0,CacoSpawnType[GetCvar("NCaco_Spawner_Cvar") - 1]);
+	Delay(1);
+}
+
+script "BaronSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnBaron","HoundChooser","SpawnBelp"
+	};
+	
+	Switch(GetCvar("Hellhound_Spawner_Cvar"))
+	{
+		Case -2: SetActorState(0,"AltSpawn2"); break;
+		Case -1: SetActorState(0,"AltSpawn1"); break;
+	}
+	SetActorState(0,MonsterType[GetCvar("Hellhound_Spawner_Cvar") - 1]);
+	Delay(1);
+}
+
+script "HoundChooserACS" (void)
+{
+	Switch(GetCvar("HoundChooserCvar"))
+	{
+		Case -1: SetActorState(0,"D64MonsterOnly"); break;
+		Case 0: SetActorState(0,"HoundDefault"); break;
+		Case 1: SetActorState(0,"HoundGEC"); break;
+	}
+}
+
+/*script "HoundChooserACS" (void)
+{
+	static str SkinType[] =
+	{
+		"HoundDefault","HoundGEC"
+	};
+	if(GetCvar("HoundChooserCvar") == -1) {SetActorState(0,"D64MonsterOnly");}
+	SetActorState(0,SkinType[GetCvar("HoundChooserCvar") - 1]);
+	Delay(1);
+}*/
+
+script "RevenantSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"Revenant","SpawnPestilence"
+	};
+	if(GetCvar("Revenant_Spawner_Cvar") == -1) {SetActorState(0,"D64MonsterOnly");}	
+	SetActorState(0,MonsterType[GetCvar("Revenant_Spawner_Cvar") - 1]);
+	Delay(1);
+}
+
+script "HellKnightSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnHellKnight","SpawnKnightmare"
+	};
+	SetActorState(0,MonsterType[GetCvar("KnightmareRandomCvar") - 1]);
+	Delay(1);
+}
+
+script "MancubusSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnFatso","SpawnBruiser"
+	};
+	SetActorState(0,MonsterType[GetCvar("BruiserRandom_Cvar") - 1]);
+	Delay(1);
+}
+
+script "LostSoulSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnLostSoul","SpawnStalker","SpawnForgottenOne"
+	};
+
+	Switch(GetCvar("StalkerRandom_Cvar"))
+	{
+//		Case -3: SetActorState(0,"AltSpawn3"); break;
+		Case -2: SetActorState(0,"AltSpawn2"); break;
+		Case -1: SetActorState(0,"AltSpawn1"); break;
+	}
+	SetActorState(0,MonsterType[GetCvar("StalkerRandom_Cvar") - 1]);
+	Delay(1);
+}
+
+script "ArachnotronSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnArachnotron","SpawnNightCrawler","SpawnImpaler"
+	};
+
+	Switch(GetCvar("ArachnotronRandomCvar"))
+	{
+//		Case -3: SetActorState(0,"AltSpawn3"); break;
+		Case -2: SetActorState(0,"AltSpawn2"); break;
+		Case -1: SetActorState(0,"AltSpawn1"); break;
+	}
+	SetActorState(0,MonsterType[GetCvar("ArachnotronRandomCvar") - 1]);
+	Delay(1);
+}
+
+Script "PainElementalSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnPainElemental","SpawnNightmareElemental"
+	};
+	SetActorState(0,MonsterType[GetCvar("NightElementalRandomCvar") - 1]);
+	Delay(1);
+}
+
+Script "ArchvileSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnArchvile","SpawnFleshWizard","SpawnHellstorm"
+	};
+	Switch(GetCvar("FleshWizardRandomCvar"))
+	{
+		Case -4: SetActorState(0,"D64MonsterOnly"); break;
+//		Case -3: SetActorState(0,"AltSpawn3"); break;
+		Case -2: SetActorState(0,"AltSpawn2"); break;
+		Case -1: SetActorState(0,"AltSpawn1"); break;
+	}
+	SetActorState(0,MonsterType[GetCvar("FleshWizardRandomCvar") - 1]);
+	Delay(1);
+}
+
+script "CyberdemonSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnCyberdemon","SpawnAnnihilator",
+		"SpawnInfernal"
+	};
+	Switch(GetCvar("Annihilator_Spawner_Cvar"))
+	{
+//		Case -3: SetActorState(0,"AltSpawn3"); break;
+		Case -2: SetActorState(0,"AltSpawn2"); break;
+		Case -1: SetActorState(0,"AltSpawn1"); break;
+	}
+	SetActorState(0,MonsterType[GetCvar("Annihilator_Spawner_Cvar") - 1]);
+	Delay(1);
+}
+
+script "MastermindSpawner" (void)
+{
+	static str MonsterType[] =
+	{
+		"SpawnMastermind","SpawnMother",
+		"SpawnEradicator"
+	};
+	Switch(GetCvar("Motherdemon_Spawner_Cvar"))
+	{
+		Case -4: SetActorState(0,"D64MonsterOnly"); break;
+//		Case -3: SetActorState(0,"AltSpawn3"); break;
+		Case -2: SetActorState(0,"AltSpawn2"); break;
+		Case -1: SetActorState(0,"AltSpawn1"); break;
+	}
+	SetActorState(0,MonsterType[GetCvar("Motherdemon_Spawner_Cvar") - 1]);
+	Delay(1);
+}
+
+Script "WadChecker" (void)
+{
+	static str WadChecking[] =
+	{
+		"Doom2","Doom64",
+		"ScytheII","Bloodstain",
+		"GoingDown","DoomZero"
+	};
+	SetActorState(0,WadChecking[GetCvar("BD64_WadCheck") - 1]);
+	Delay(1);
+}
+
+script "HordeMultiplier" (void)		//husk zombie multiplier option
+{
+	Switch(GetCvar("TheHorde_Multiplier_Cvar"))
+	{
+		Default:
+		Case -1: SetActorState(0,"Disabled"); break;
+		Case 0: Break;
+		Case 1: SetActorState(0,"Hordex1"); break;
+		Case 2: SetActorState(0,"Hordex2"); break;
+		Case 3: SetActorState(0,"Hordex3"); break;
+		Case 4: SetActorState(0,"Hordex4"); break;
+	}
+	Delay(1);
+}

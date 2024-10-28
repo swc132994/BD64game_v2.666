@@ -1,24 +1,24 @@
 AddKeySection "Brutal Doom 64" BrutalDoomInteractions
 
-Alias "kickem" "pukeName KickKeyPress"
-AddMenuKey "Kick" "kickem"
-DefaultBind "Q" "kickem"
+AddMenuKey "Kick" "+zoom"
+DefaultBind "Q" "+zoom"
+
+AddMenuKey "Reload" "+Reload"
+DefaultBind "R" "+Reload"
+
+AddMenuKey "Toss Mine" "+user1"
+DefaultBind "G" "+user1"
+
+AddMenuKey "Place Mine" "+user2"
+DefaultBind "M" "+user2"
+
+AddMenuKey "Weapon Special Action" "+user3"
+DefaultBind "V" "+user3"
 
 Alias "Flashlightswitch" "PukeName ToggleFlashlight"
 AddMenuKey "Toggle Flashlight/Torch" "FlashlightSwitch"
 DefaultBind "F" "FlashlightSwitch"
 
-Alias "MineToss" "PukeName TossingMine"
-AddMenuKey "Toss Mine" "MineToss"
-DefaultBind "G" "MineToss"
 
-Alias "MinePlace" "PukeName PlacingMine"
-AddMenuKey "Place Mine" "MinePlace"
-DefaultBind "M" "MinePlace"
 
-Alias "WeaponSpecialAction" "PukeName WeaponSpecialAction"
-AddMenuKey "Weapon Special Action" "WeaponSpecialAction"
-DefaultBind "V" "WeaponSpecialAction"
-
-//DefaultBind "R" "+Reload"
 DefaultBind "CAPSLOCK" "toggle cl_run"

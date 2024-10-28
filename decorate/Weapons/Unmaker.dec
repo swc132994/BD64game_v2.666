@@ -351,11 +351,6 @@ Actor DemonEssenceLargeSpawner
 	}
 }
 
-Actor UnAltMode : Inventory
-{
-inventory.maxamount 3
-}
-
 actor 64LevitatingPlatform
 {
 Radius 16
@@ -391,7 +386,6 @@ Inventory.Icon LGUNA0
 AttackSound "weapons/unmaker"
 Tag "Unmaker"
 +INVENTORY.RESTRICTABSOLUTELY
-+WEAPON.AMMO_CHECKBOTH
 +WEAPON.NOALERT
 +WEAPON.NOAUTOFIRE
 	States

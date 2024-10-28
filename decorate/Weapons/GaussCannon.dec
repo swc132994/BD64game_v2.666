@@ -94,11 +94,6 @@ Decal "BigScorch"
 	}
 }
 
-Actor NeverSelectedGauss : Inventory
-{
-Inventory.MaxAmount 1
-}
-
 Actor GaussAmmo : Ammo
 {
 Inventory.Amount 0

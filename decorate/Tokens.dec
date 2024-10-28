@@ -1,0 +1,68 @@
+Actor BD64_Tokens : Inventory
+{
+inventory.maxamount 1
++inventory.Undroppable
+-inventory.Invbar
++NONETID
+}
+
+//Player Functions
+Actor IsRunning : BD64_Tokens {}
+Actor IsTacticalClass : BD64_Tokens {}
+Actor IsModern : BD64_Tokens {}		//check for modern class
+Actor IsCrouching : BD64_Tokens {}
+Actor HudSwitch : BD64_Tokens {}	//option to switch to Doom Style Hud
+Actor ScreenFX : BD64_Tokens {}		//option to HUD blood splash
+Actor BloodTrail : BD64_Tokens {}	//option to HUD blood trail
+Actor FootStepDisabled : BD64_Tokens {}
+
+//Switch Map Functions
+Actor VMapCheck : BD64_Tokens {}		//option switch to vanilla BD64 maps
+Actor AbsMapCheck : BD64_Tokens {}	//option switch to final map now Map28A
+Actor TCMapCheck : BD64_Tokens {}	//option to switch to TC maps
+
+//Weapon Functions
+Actor Kicking : BD64_Tokens {}
+Actor VWeaponMode : BD64_Tokens {}	//option to switch to classic weapons (For Classical Class)
+Actor ISDM : BD64_Tokens {}	//DEATHMATCH STUFF
+Actor KickHasHit : BD64_Tokens {}
+Actor Reloading : BD64_Tokens {}
+Actor TossMine : BD64_Tokens {}
+Actor PlaceMine : BD64_Tokens {}
+Actor WeaponSpecialAction : BD64_Tokens {}
+Actor NoReloading : BD64_Tokens {}
+Actor Zoomed : BD64_Tokens {}
+Actor HasPlasmaWeapon : BD64_Tokens {}
+Actor HoldFidget : BD64_Tokens {}
+Actor AltMode : BD64_Tokens {}
+Actor IsSilencer : BD64_Tokens {}
+Actor MP40Checker : BD64_Tokens {}
+Actor BurstFiredSMG : BD64_Tokens { inventory.maxamount 3 }
+Actor SMGBurstMode : BD64_Tokens {}
+Actor SMGBolt : BD64_Tokens {}
+Actor HasUsedShell : BD64_Tokens {}
+Actor ShotgunPumping : BD64_Tokens {}
+Actor SSGAlt : BD64_Tokens {}
+Actor RifleBolt : BD64_Tokens {}
+Actor Spin : BD64_Tokens {}
+Actor UnAltMode : BD64_Tokens { inventory.maxamount 3 }
+
+//Reloading Tokens (For No Reloading)
+Actor SSGReloading : BD64_Tokens {}
+
+//First Pickup Animations
+Actor StartWeapon : BD64_Tokens {}	//option to show starting weapon warm-up
+Actor NeverSelectedPistol : BD64_Tokens {}
+Actor NeverSelectedSMG : BD64_Tokens {}
+Actor NeverSelectedShotgun : BD64_Tokens {}
+Actor NeverSelectedSSG : BD64_Tokens {}
+Actor NeverSelectedRifle : BD64_Tokens {}
+Actor NeverSelectedRL : BD64_Tokens {}
+Actor NeverSelectedGauss : BD64_Tokens {}
+
+//Weapons Skins Tokens
+Actor ClassicChainsawToken : BD64_Tokens {}
+Actor AltRifleSkin : BD64_Tokens {}
+Actor ClassicChaingunToken: BD64_Tokens {}
+Actor ClassicRLToken : BD64_Tokens {}
+Actor AltLaserSkin : BD64_Tokens {}

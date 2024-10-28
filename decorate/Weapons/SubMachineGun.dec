@@ -33,21 +33,6 @@ Inventory.PickupSound "WPICK"
 }
 
 //SMG(based on Rifle code) by IDDQD_1337
-Actor BurstFiredSMG : Inventory
-{
-inventory.maxamount 3
-}
-
-Actor SMGBurstMode : Inventory
-{
-inventory.maxamount 1
-}
-
-Actor NeverSelectedSMG : Inventory
-{
-inventory.maxamount 1
-}
-
 Actor 64SMG : DoomWeapon
 {
 Scale 0.82
@@ -112,11 +97,6 @@ Inventory.Icon "SMGZA0"
 +IGNORESKILL
 }
 
-Actor SMGBolt : Inventory
-{
-inventory.maxamount 1
-}
-
 Actor 64SMGTactical : Brutal64Weapon
 {
 Scale 0.82
@@ -133,7 +113,6 @@ Inventory.PickupMessage "You got the SMG!"
 Obituary "%o was picked off by %k SMG."
 Tag "Sub-machine gun"
 +INVENTORY.RESTRICTABSOLUTELY
-+WEAPON.AMMO_CHECKBOTH
 +WEAPON.NOALERT
 +WEAPON.NOAUTOFIRE
 	States

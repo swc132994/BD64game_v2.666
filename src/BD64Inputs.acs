@@ -1,0 +1,127 @@
+script "KickKeyPress" (VOID) NET
+{
+	if(CheckInventory("IsModern"))
+	{
+		GiveInventory("Kicking",1);
+		terminate;
+	}
+	else if(CheckInventory("stamina"))
+	{
+		terminate;
+	}
+	else if(CheckInventory("Stamina"))
+	{
+		Print(s:"Not Enough Stamina!");
+		PlaySound(0,"Tired",2,1.0,FALSE,ATTN_NORM);
+		terminate;
+	}
+	else
+	{
+		GiveInventory("Kicking",1);
+	}
+}
+
+script "CheckWeaponAction" ENTER
+{
+	int buttons4;
+	
+	while(TRUE)
+	{
+		buttons4 = GetPlayerInput(-1, INPUT_BUTTONS) & (~GetPlayerInput(-1, INPUT_OLDBUTTONS));
+	
+		if(buttons4 & BT_RELOAD)
+		{
+			GiveInventory("Reloading",1);
+		}
+		else if(buttons4 & BT_ZOOM)
+		{
+			ACS_NamedExecute("KickKeyPress",0);
+		}
+		else if(buttons4 & BT_USER1)
+		{
+			GiveInventory("TossMine",1);
+		}
+		else if(buttons4 & BT_USER2)
+		{
+			GiveInventory("PlaceMine",1);
+		}
+		else if(buttons4 & BT_USER3)
+		{
+			GiveInventory("WeaponSpecialAction",1);
+		}
+		delay(1);
+	}
+}	
+
+/*Script "TossingMine" (VOID) NET
+{
+GiveInventory("TossMine",1);
+}
+
+Script "PlacingMine" (VOID) NET
+{
+GiveInventory("PlaceMine",1);
+}
+
+Script "WeaponSpecialAction" (VOID) NET
+{
+GiveInventory("WeaponSpecialAction",1);
+}*/
+
+script "CheckCrouch" ENTER
+{
+	int buttons2;
+	while (TRUE)
+	{
+		buttons2 = GetPlayerInput(-1,INPUT_BUTTONS);
+
+		if ((buttons2 & BT_CROUCH)||(GetActorViewHeight(0) <= PLAYER_VIEWHEIGHT / 2 << 16))
+		{
+			GiveInventory("IsCrouching",1);
+			//delay(1);
+			//restart;
+		}
+		TakeInventory("IsCrouching",1);
+		delay(4);
+	}
+}
+
+script "Sprinting" ENTER
+{
+if(CheckInventory("IsTacticalClass") == 1)
+	{
+	int buttons;
+
+	while (TRUE)
+		{
+		buttons = GetPlayerInput(-1, INPUT_BUTTONS) & (~GetPlayerInput(-1, INPUT_OLDBUTTONS));
+
+		if ((buttons & BT_SPEED) && (buttons & BT_FORWARD) && !(buttons & BT_CROUCH))
+			{
+			GiveInventory("IsRunning",1);
+			delay(1);
+			}
+		delay(1);
+		TakeInventory("IsRunning",1);
+		}
+	}
+	else
+	terminate;
+}
+
+script "StaminaRecovery" (VOID)
+{
+	SetActorProperty(0,APROP_Speed,0.9);	
+	if(CheckInventory("PowerStrength") > 0)
+	{
+	TakeInventory("Stamina",2);
+	}
+	else
+	TakeInventory("Stamina",1);
+}
+
+script "TacticalPlayerFasterACS" (void)
+{
+SetActorProperty(0,APROP_Speed,2.0);
+delay (1);
+}

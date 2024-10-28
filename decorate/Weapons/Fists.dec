@@ -103,38 +103,46 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		Stop
 	v1Ready:
 	Ready:
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		PUN1 A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PUN1 A 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		PUN1 LL 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PUN1 LL 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		PUN1 MM 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PUN1 MM 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		PUN1 NN 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PUN1 NN 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		PUN1 OOO 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PUN1 OOO 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		PUN1 NN 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PUN1 NN 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		PUN1 MM 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PUN1 MM 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		PUN1 LL 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PUN1 LL 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		Loop
 	Tired:
 		TNT1 A 0 A_Print("Not enough stamina!",1)
@@ -149,12 +157,14 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		PALT AAAAAA 3
 		Goto Ready
 	Select:
-		PUN6 ABCD 1 Offset(0,32)
+		PUN6 ABCD 1 A_WeaponReady(WRF_NOFIRE)
+		TNT1 A 0 A_Takeinventory("Reloading",1)
 		TNT1 A 0 A_Raise
 		Wait
 	Deselect:
 		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
+		TNT1 A 0 A_Takeinventory("Reloading",1)
 		TNT1 A 0 A_Takeinventory("TossMine",0)
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
@@ -209,11 +219,13 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 A 0 A_ReFire
 		Goto Ready
 	Reload: //Knuckle animation(Tactical and Modern only)
+		TNT1 A 0 A_TakeInventory("Reloading",1)
 		PUNS ABC 1
 		PUNS D 7 A_PlaySound("Knuckled",CHAN_BODY)
 		PUNS EFED 3
 		PUNS I 7 A_PlaySound("Knuckled",CHAN_BODY)
 		PUNS JKJI 3
+		PUN1 A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		Goto Ready
 	Altfire:
 		PALT ABCDE 1

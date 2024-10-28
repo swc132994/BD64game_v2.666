@@ -1,3 +1,5 @@
+#INCLUDE "Decorate/Tokens.dec"
+
 //OTHER
 #INCLUDE "Decorate/Misc/Player.dec"
 #INCLUDE "Decorate/Misc/Items.dec"
@@ -22,7 +24,6 @@
 #INCLUDE "Decorate/Effects/TerrainSplash.dec"
 
 //WEAPONS & AMMO
-//#INCLUDE "Decorate/Weapons/WeaponSpawner.dec"
 #INCLUDE "Decorate/Weapons/BaseWeapon.dec"
 #INCLUDE "Decorate/Weapons/Fists.dec"
 #INCLUDE "Decorate/Weapons/Chainsaw.dec"

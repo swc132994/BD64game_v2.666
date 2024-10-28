@@ -39,12 +39,19 @@ statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 		drawnumber 3,HUDFONT_DOOM,untranslated,ammo2,276,166;
 		}
 		
+		
+		PlayerType "Tactical64DoomPlayer"
+		{
 		drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero|interpolate(4),175,180;
+		}
 		drawmugshot 5,68,160;
 	}
 	else
 	{
+		PlayerType "Tactical64DoomPlayer"
+		{	
 		drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero|interpolate(4),88,183;
+		}
 		drawimage "Health",30,170;
 		drawnumber 3,HUDFONT_DOOM,untranslated,health,69,180;
 		drawimage "Armour",244,170;
@@ -95,7 +102,10 @@ statusbar normal
 	drawswitchableimage WpnPower2Icon,"nullimage","POW2E0",300,215;
 
 	drawimage "Health",6,165;
+	PlayerType "Tactical64DoomPlayer"
+	{
 	drawnumber 3,HUDFONT_DOOM,Orange,Ammo("Stamina"),WhenNotZero|interpolate(4),45,186;
+	}
 	drawnumber 3,HUDFONT_DOOM,untranslated,health,45,174;
 
 	InInventory "NoReloading",1
@@ -205,8 +215,11 @@ statusbar normal
 	drawnumber 3,INDEXFONT,darkgray,items,293,185;
 	drawnumber 3,INDEXFONT,darkgray,totalitems,315,185;
 
-		drawmugshot 5,143,168;
+	drawmugshot 5,143,168;
+	PlayerType "Tactical64DoomPlayer"
+	{
 		drawnumber 3,SMALLFONT,Orange,Ammo("Stamina"),WhenNotZero|interpolate(4),166,162;
+	}
 
 	PlayerType "Tactical64DoomPlayer","Modern"
 	{

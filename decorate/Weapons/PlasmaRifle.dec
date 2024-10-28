@@ -32,11 +32,6 @@ Inventory.PickupSound "WPICK"
 	}
 }
 
-Actor HasPlasmaWeapon : Inventory
-{
-inventory.maxamount 1
-}
-
 Actor 64PlasmaRifle : DoomWeapon
 {
 Scale 0.82
@@ -129,7 +124,6 @@ Weapon.AmmoGive2 0
 Inventory.PickupMessage "$FO_GOTPLASMA"
 Tag "$FO_TAG_PLASMARIFLE"
 +INVENTORY.RESTRICTABSOLUTELY
-+WEAPON.AMMO_CHECKBOTH
 +WEAPON.NOALERT
 +WEAPON.NOAUTOFIRE
 	States
@@ -187,7 +181,8 @@ Tag "$FO_TAG_PLASMARIFLE"
 	Select:
 		TNT1 A 0 A_JumpIfInventory("NeverSelectedPlasma",1,"FirstSelectAnimation")
 		TNT1 A 0 A_PlaySound("PLSDRAW",CHAN_BODY)
-		PLSG HIJK 1 Offset(0,32)
+		PLSG HIJK 1 A_WeaponReady(WRF_NOFIRE)
+		TNT1 A 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_Raise
 		Wait
 	FirstSelectAnimation:
@@ -198,7 +193,7 @@ Tag "$FO_TAG_PLASMARIFLE"
 		PLSR G 1 Offset(-27, 60)
 		PLSR G 1 Offset(-9, 38)
 		PLSR G 1 Offset(-3, 34)
-		PLSR G 1 Offset(0, 32)
+		PLSR G 1 A_WeaponReady
 		PLSR G 10
 		2LSR EFGH 1
 		2LSR IJK 2
@@ -209,6 +204,7 @@ Tag "$FO_TAG_PLASMARIFLE"
 		Goto Ready
 	Deselect:
 		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
+		TNT1 A 0 A_TakeInventory("Reloading",0)
 		TNT1 A 0 A_Takeinventory("TossMine",0)
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
@@ -227,37 +223,44 @@ Tag "$FO_TAG_PLASMARIFLE"
 		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,1)	//Cooldown if no ammo
 		Goto NoAmmo	
 		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",21,"ReadyNormal")
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		PLSG D 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PLSG D 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		PLSG E 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PLSG E 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		PLSG F 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PLSG F 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		Loop
 	ReadyNormal:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"NotReady")
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		PLSG A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PLSG A 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		PLSG B 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PLSG B 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		PLSG C 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PLSG C 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		Loop		
 	NotReady:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
-		PLSG G 5 A_WeaponReady(WRF_NOFIRE|WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PLSG G 5 A_WeaponReady(WRF_NOFIRE)//|WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
@@ -301,6 +304,7 @@ Tag "$FO_TAG_PLASMARIFLE"
 		TNT1 A 0 A_ReFire
 		Goto Ready
 	Reload:
+		TNT1 A 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_JumpIfInventory("Cell",1,1)
 		Goto Ready
 		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",0,"Ready")

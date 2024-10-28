@@ -36,11 +36,6 @@ Inventory.PickupSound "WPICK"
 	}
 }
 
-Actor AltLaserSkin : Inventory
-{
-Inventory.MaxAmount 1
-}
-
 Actor Lasergun : DoomWeapon
 {
 Scale 0.9

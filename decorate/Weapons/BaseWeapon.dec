@@ -1,52 +1,13 @@
 //Own Weapon Base for Tactical and Modern Classes
 //restored bob from v1
 
-Actor Kicking : Inventory
-{
-inventory.maxamount 1
-}
-
-Actor ISDM : Inventory	//DEATHMATCH STUFF
-{
-Inventory.MaxAmount 1
-}
-
-Actor KickHasHit : Inventory
-{
-inventory.maxamount 1
-}
-
-Actor TossMine : Inventory
-{
-inventory.maxamount 1
-}
-
-Actor PlaceMine : Inventory
-{
-inventory.maxamount 1
-}
-
-Actor WeaponSpecialAction : Inventory
-{
-inventory.maxamount 1
-}
-
-Actor NoReloading: Inventory
-{
-inventory.maxamount 1
-}
-
-Actor IsCrouching : Inventory
-{
-inventory.maxamount 1
-}
-
 Actor Brutal64Weapon : DoomWeapon
 {
 Weapon.BobStyle InverseSmooth
 Weapon.BobSpeed 2.0
 Weapon.BobRangeX 0.5
 Weapon.BobRangeY 0.5
++WEAPON.AMMO_CHECKBOTH
 Inventory.forbiddento "64DoomPlayer"
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 	States
@@ -58,10 +19,12 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		Goto GetReady
 	GetReady:
 		TNT1 A 0 A_TakeInventory("Kicking",0)
+		TNT1 A 0 A_TakeInventory("Reloading",0)
 		TNT1 A 0 A_TakeInventory("TossMine",0)
 		TNT1 A 0 A_TakeInventory("PlaceMine",0)
-		TNT1 AAAA 1 A_Jump(256,"v1Ready")
-		Loop
+		TNT1 A 0 A_GunFlash
+		TNT1 A 1 A_Raise
+		Goto v1Ready
 	v1Ready:
 		//TNT1 A 1
 		TNT1 A 5 A_Jump(256,"v1Ready")
@@ -249,6 +212,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 A 0 A_TakeInventory("KickHasHit",1)
 		TNT1 A 0 SetPlayerProperty(0,0,0)
 		Goto GetReady
+	User1:
 	TossMine:
 		"----" A 0 A_JumpIfInventory("64MineAmmo",1,2)
 		"----" A 0 A_Print("No Mines in inventory!")
@@ -268,6 +232,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		PMNF HIJKLMNOP 1
 		TNT1 A 5
 		Goto GetReady
+	User2:	
 	PlaceMine:
 		"----" A 0 A_JumpIfInventory("64MineAmmo",1,2)
 		"----" A 0 A_Print("No Mines in inventory!")
