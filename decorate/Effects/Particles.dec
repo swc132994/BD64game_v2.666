@@ -159,9 +159,9 @@ BounceType "None"
 	Spawn:
 		FIR5 A 1 Bright NoDelay A_JumpIf(waterlevel > 1,"Splash")
 	Death:
-		FIR5 BCDEFGHIJKLMNO 1 Bright A_FadeOut(0.03)
-		FIR5 P 1 Bright A_FadeOut(0.03)
-		Loop
+		FIR5 BCDEFGHIJKLMNO 1 Bright A_FadeOut(0.05)
+		FIR5 P 1 Bright A_FadeOut(0.05)
+		Wait
 	}
 }
 

@@ -1355,13 +1355,13 @@ Scale 0.75
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsSmall",44,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("ImBallGettingReady",44,0,random(0,140),2,random(0,160))
-		TSBN AA 2 Light("SMALLREDTORCH") A_SpawnItemEx("LensFlareTorchOrange",0,0,44)
+		TSBN AA 2 Light("BIGREDTORCH") A_SpawnItemEx("LensFlareTorchOrange",0,0,44)
 		Loop
 	StayBlank:
-		SMRT ABCDE 2 Light("SMALLREDTORCH")
+		SMRT ABCDE 2 Light("BIGREDTORCH")
 		Goto Stay
 	ClassicTorch:
-		SMRT ABCDE 4 Light("SMALLREDTORCH")
+		SMRT ABCDE 4 Light("BIGREDTORCH")
 		Loop
 	}
 }
@@ -1380,13 +1380,13 @@ Scale 0.75
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsBlue",44,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("BallGettingReadyBlue",44,0,random(0,140),2,random(0,160))
-		TSBN AA 2 Light("SMALLBLUETORCH") A_SpawnItemEx("LensFlareTorchBlue",0,0,44)
+		TSBN AA 2 Light("BIGBLUETORCH") A_SpawnItemEx("LensFlareTorchBlue",0,0,44)
 		Loop
 	StayBlank:
-		SMBT ABCDE 2 Light("SMALLBLUETORCH")
+		SMBT ABCDE 2 Light("BIGBLUETORCH")
 		Goto Stay
 	ClassicTorch:
-		SMBT ABCDE 4 Light("SMALLBLUETORCH")
+		SMBT ABCDE 4 Light("BIGBLUETORCH")
 		Loop
 	}
 }
@@ -1405,13 +1405,13 @@ Scale 0.75
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsGreen",44,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("BallGettingReadyGreen",44,0,random(0,140),2,random(0,160))
-		TSBN AA 2 Light("SMALLGREENTORCH") A_SpawnItemEx("LensFlareTorchGreen",0,0,44)
+		TSBN AA 2 Light("BIGGREENTORCH") A_SpawnItemEx("LensFlareTorchGreen",0,0,44)
 		Loop
 	StayBlank:
-		SMGT ABCDE 2 Light("SMALLGREENTORCH")
+		SMGT ABCDE 2 Light("BIGGREENTORCH")
 		Goto Stay
 	ClassicTorch:
-		SMGT ABCDE 4 Light("SMALLGREENTORCH")
+		SMGT ABCDE 4 Light("BIGGREENTORCH")
 		Loop
 	}
 }
@@ -1431,13 +1431,13 @@ Scale 0.75
 		TNT1 A 0 A_CheckSight("StayBlank")
 		TNT1 A 0 A_CustomMissile("RealFlameTrailsYellow",44,0,random(0,360),2,random(70,110))
 		TNT1 A 0 A_CustomMissile("BallGettingReadyYellow",44,0,random(0,140),2,random(0,160))
-		TSBN AA 2 Light("SMALLYELLOWTORCH") A_SpawnItemEx("LensFlareTorchYellow",0,0,44)
+		TSBN AA 2 Light("BIGELLOWTORCH") A_SpawnItemEx("LensFlareTorchYellow",0,0,44)
 		Loop
 	StayBlank:
-		SMYT ABCDE 2 Light("SMALLYELLOWTORCH")
+		SMYT ABCDE 2 Light("BIGELLOWTORCH")
 		Goto Stay
 	ClassicTorch:
-		SMYT ABCDE 4 Light("SMALLYELLOWTORCH")
+		SMYT ABCDE 4 Light("BIGELLOWTORCH")
 		Loop
 	}
 }

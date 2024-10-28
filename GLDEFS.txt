@@ -328,92 +328,92 @@ pulselight BIGLAMP
 }
 
 //TECH LAMPS & TORCHES
-flickerlight2 SMALLREDTORCH
-{
-color 1.0 0.3 0.0
-size 50
-secondarySize 54
-interval 0.05
-offset 0 35 0
-}
-
-//Tall red torch
-flickerlight2 BIGREDTORCH
+flickerlight SMALLREDTORCH
 {
 	color 1.0 0.3 0.0
-	size 60
-	secondarySize 64
-	interval 0.05
-	offset 0 60 0
+	size 30
+	secondarySize 34
+	chance 0.5
+	offset 0 35 0
 }
 
 //Small blue torch
-flickerlight2 SMALLBLUETORCH
+flickerlight SMALLBLUETORCH
 {
 	color 0.0 0.2 1.0
-	size 50
-	secondarySize 54
-	interval 0.05
+	size 30
+	secondarySize 34
+	chance 0.5
 	offset 0 35 0
-}
-
-//Tall blue torch
-flickerlight2 BIGBLUETORCH
-{
-	color 0.0 0.2 1.0
-	size 60
-	secondarySize 64
-	interval 0.05
-	offset 0 60 0
 }
 
 //Small green torch
-flickerlight2 SMALLGREENTORCH
+flickerlight SMALLGREENTORCH
 {
 	color 0.0 1.0 0.0
-	size 50
-	secondarySize 54
-	interval 0.05
+	size 30
+	secondarySize 34
+	chance 0.5
 	offset 0 35 0
-}
-
-//Tall green torch
-flickerlight2 BIGGREENTORCH
-{
-	color 0.0 1.0 0.0
-	size 60
-	secondarySize 64
-	interval 0.05
-	offset 0 60 0
 }
 
 //Small yellow torch
-flickerlight2 SMALLYELLOWTORCH
+flickerlight SMALLYELLOWTORCH
 {
 	color 1.0 0.9 0.0
-	size 50
-	secondarySize 54
-	interval 0.05
+	size 30
+	secondarySize 34
+	chance 0.5
 	offset 0 35 0
 }
 
-//Tall yellow torch
-flickerlight2 BIGYELLOWTORCH
+//Tall red torch
+flickerlight BIGREDTORCH
 {
-color 1.0 0.9 0.0
-size 55
-secondarySize 60
-interval 0.05
-offset 0 60 0
+	color 1.0 0.3 0.0
+	size 52
+	secondarySize 60
+	chance 0.5
+	offset 0 60 0
+}
+
+//Tall blue torch
+flickerlight BIGBLUETORCH
+{
+	color 0.0 0.2 1.0
+	size 52
+	secondarySize 60
+	chance 0.5
+	offset 0 60 0
+}
+
+//Tall green torch
+flickerlight BIGGREENTORCH
+{
+	color 0.0 1.0 0.0
+	size 52
+	secondarySize 60
+	chance 0.5
+	offset 0 60 0
+}
+
+//Tall yellow torch
+flickerlight BIGYELLOWTORCH
+{
+	color 1.0 0.9 0.0
+	size 52
+	secondarySize 60
+	chance 0.5
+	offset 0 60 0
 }
 
 //Skulls w/candles
-flickerlight2 SKULLCANDLES
+flickerlight SKULLCANDLES
 {
 	color 1.0 1.0 0.0
-	size 32
-	secondarySize 34
-	interval 0.05
+	size 28
+	secondarySize 32
+	chance 0.5
 	offset 0 24 0
 }
 
