@@ -158,3 +158,5 @@ renderstyle ADD
 		Stop
 	}
 }
+
+Actor TracerChaingun : Tracer {}

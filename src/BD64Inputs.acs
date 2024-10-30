@@ -70,19 +70,18 @@ GiveInventory("WeaponSpecialAction",1);
 
 script "CheckCrouch" ENTER
 {
-	int buttons2;
+	//int buttons2;
 	while (TRUE)
 	{
-		buttons2 = GetPlayerInput(-1,INPUT_BUTTONS);
-
-		if ((buttons2 & BT_CROUCH)||(GetActorViewHeight(0) <= PLAYER_VIEWHEIGHT / 2 << 16))
+		if(GetActorViewHeight(0) <= (PLAYER_VIEWHEIGHT / 2 << 16))
 		{
 			GiveInventory("IsCrouching",1);
 			//delay(1);
 			//restart;
 		}
+		else
 		TakeInventory("IsCrouching",1);
-		delay(4);
+		delay(2);
 	}
 }
 

@@ -7,7 +7,7 @@ Scale 0.8
 	Spawn:
 		PLAY M 0
 		TNT1 A 2 ACS_NamedExecuteAlways("ThingRandomACS")
-		TNT1 A 0 A_Jump(32,"SpawnThing")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnThing")//10%
 	SpawnDeadMarine:
 		TNT1 A 0 A_SpawnItemEx("64DeadMarine",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		TNT1 A 1 A_SpawnItemex("64TheHorde_Spawner")
@@ -26,7 +26,7 @@ Scale 0.8
 	Spawn:
 		PLAY V 0
 		TNT1 A 2 ACS_NamedExecuteAlways("ThingRandomACS")
-		TNT1 A 0 A_Jump(32,"SpawnThing")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnThing")//10%
 	SpawnGibbedMarine:
 		TNT1 A 0 A_SpawnItemEx("64GibbedMarine",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		TNT1 A 1 A_SpawnItemex("64TheHorde_Spawner")
@@ -45,7 +45,7 @@ Actor 64GibbedMarineExtraReplacer replaces GibbedMarineExtra
 	Spawn:
 		CPOG B 0
 		TNT1 A 2 ACS_NamedExecuteAlways("ThingRandomACS")
-		TNT1 A 0 A_Jump(32,"SpawnThing")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnThing")//10%
 	SpawnGibbedMarineExtra:
 		TNT1 A 0 A_SpawnItemEx("64GibbedMarineExtra",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		TNT1 A 1 A_SpawnItemex("64TheHorde_Spawner",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION)
@@ -57,7 +57,6 @@ Actor 64GibbedMarineExtraReplacer replaces GibbedMarineExtra
 }
 
 //Weapon replacements
-
 Actor Dyn_ChaingunReplacer Replaces Chaingun
 {
 Scale 0.82
@@ -105,7 +104,7 @@ Scale 0.9
 	Spawn:
 		BFUG A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("BFGSpawner")
-		TNT1 A 0 A_Jump(85,"SpawnUnmaker","SpawnLasergun")//3%
+		TNT1 A 0 A_Jump(64,"SpawnUnmaker","SpawnLasergun")//25%
 	SpawnBFG9000:
 		TNT1 A 1 A_SpawnItemEx("BFG9000Spawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -127,7 +126,7 @@ Scale 0.82
 	Spawn:
 		BON1 A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("BonusRandomACS")
-		TNT1 A 0 A_Jump(32,"SpawnHellPotion")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnHellPotion")//10%
 	SpawnHealthBonus:
 		TNT1 A 1 A_SpawnItemEx("64HealthBonus",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -145,7 +144,7 @@ Scale 0.82
 	Spawn:
 		BON2 A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("BonusRandomACS")
-		TNT1 A 0 A_Jump(32,"SpawnHellPotion")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnHellPotion")//10%
 	SpawnArmorBonus:
 		TNT1 A 1 A_SpawnItemEx("64ArmorBonus",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -163,7 +162,7 @@ Scale 0.82
 	Spawn:
 		PINS A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("WpnPowerRandom")
-		TNT1 A 0 A_Jump(45,"SpawnDemonKey")//17.5%
+		TNT1 A 0 A_Jump(32,"SpawnDemonKey")//12.5%
 	SpawnBlurSphere:
 		TNT1 A 1 A_SpawnItemEx("64Blursphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -182,7 +181,7 @@ Scale 0.82
 	Spawn:
 		PSTR A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("WpnPowerRandom")
-		TNT1 A 0 A_Jump(45,"SpawnDemonKey")//17.5%
+		TNT1 A 0 A_Jump(32,"SpawnDemonKey")//12.5%
 	SpawnBerserk:
 		TNT1 A 1 A_SpawnItemEx("64Berserk",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -201,7 +200,7 @@ Scale 0.7
 	Spawn:
 		SOUL A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("WpnPowerRandom")
-		TNT1 A 0 A_Jump(45,"SpawnDemonKey")//17.5%
+		TNT1 A 0 A_Jump(32,"SpawnDemonKey")//12.5%
 	SpawnSoulSphere:
 		TNT1 A 1 A_SpawnItemEx("64Soulsphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -220,7 +219,7 @@ Scale 0.7
 	Spawn:
 		MEGA A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("WpnPowerRandom")
-		TNT1 A 0 A_Jump(45,"SpawnDemonKey")//17.5%
+		TNT1 A 0 A_Jump(32,"SpawnDemonKey")//12.5%
 	SpawnMegaSphere:
 		TNT1 A 1 A_SpawnItemEx("64MegaSphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -239,7 +238,7 @@ Scale 0.7
 	Spawn:
 		PINV A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("WpnPowerRandom")
-		TNT1 A 0 A_Jump(45,"SpawnDemonKey")//17.5%
+		TNT1 A 0 A_Jump(32,"SpawnDemonKey")//12.5%
 	SpawnInvulnerabilitySphere:
 		TNT1 A 1 A_SpawnItemEx("64InvulnerabilitySphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -258,7 +257,7 @@ Scale 0.82
 	Spawn:
 		PVIS A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("FlashlightCheck")
-		TNT1 A 0 A_Jump(64,"SpawnFlashlight")
+		TNT1 A 0 A_Jump(51,"SpawnFlashlight")//20%
 	SpawnInfrared:
 		TNT1 A 1 A_SpawnItemEx("64Infrared",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -400,7 +399,7 @@ MONSTER
 	{
 	Spawn:
 		SARG A 0
-		TNT1 A 2 ACS_NamedExecuteAlways("DemonSpawner")	//if D64 monsters only enabled spawn pinky demon
+		TNT1 A 2 ACS_NamedExecuteAlways("DemonSpawner")
 		TNT1 A 0 A_Jump(CallACS("MonstersSpawnPercent",5)*13,"SpawnAcidDemon","SpawnButcher")
 		Goto SpawnDemon
 	AltSpawn1:
@@ -1008,7 +1007,7 @@ Scale 0.7
 	Spawn:
 		LTRI A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
-		TNT1 A 0 A_Jump(32,"SpawnDemonTree")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnDemonTree")//10%
 	SpawnBigTree:
 		TNT1 A 1 A_SpawnItemEx("64BigTree",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1026,16 +1025,16 @@ Scale 0.7
 	Spawn:
 		CEYE A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
-		TNT1 A 0 A_Jump(32,"SpawnVenomEye1","SpawnVenomEye2")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnVenomEye1","SpawnVenomEye2")//10%
 	SpawnEvilEye:
 		TNT1 A 1 A_SpawnItemEx("64EvilEye",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
 	SpawnVenomEye1:
-		TNT1 A 1 A_SpawnItemEx("64BruiserFireCandle",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID|SXF_NOCHECKPOSITION,0,tid)
+		TNT1 A 0 A_SpawnItemEx("64BruiserFireCandle",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID|SXF_NOCHECKPOSITION,0,tid)
 		TNT1 A 1 A_SpawnItemEx("64VenomEye1",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID|SXF_NOCHECKPOSITION,0,tid)
 		Stop
 	SpawnVenomEye2:
-		TNT1 A 1 A_SpawnItemEx("64BruiserFireCandle",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID|SXF_NOCHECKPOSITION,0,tid)
+		TNT1 A 0 A_SpawnItemEx("64BruiserFireCandle",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID|SXF_NOCHECKPOSITION,0,tid)
 		TNT1 A 1 A_SpawnItemEx("64VenomEye2",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID|SXF_NOCHECKPOSITION,0,tid)
 		Stop
 	}
@@ -1049,7 +1048,7 @@ Scale 0.7
 	Spawn:
 		CAND A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
-		TNT1 A 0 A_Jump(32,"SpawnHellCandle")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnHellCandle")//10%
 	SpawnCandlestick:
 		TNT1 A 1 A_SpawnItemEx("64Candlestick",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1067,7 +1066,7 @@ Scale 0.7
 	Spawn:
 		64CN A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
-		TNT1 A 0 A_Jump(32,"SpawnHellCandle")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnHellCandle")//10%
 	SpawnCandelabra:
 		TNT1 A 1 A_SpawnItemEx("64Candelabra",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1085,7 +1084,7 @@ Scale 0.7
 	Spawn:
 		BEXP A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
-		TNT1 A 0 A_Jump(32,"SpawnKillerBarrel")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnKillerBarrel")//10%
 	SpawnNormalBarrel:
 		TNT1 A 1 A_SpawnItemEx("64ExplosiveBarrel",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1103,7 +1102,7 @@ Scale 0.7
 	Spawn:
 		DAM1 A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
-		TNT1 A 0 A_Jump(32,"SpawnHangedManEnemy")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnHangedManEnemy")//10%
 	SpawnNormalHangmen:
 		TNT1 A 1 A_SpawnItemEx("BloodyTwitchReplacer",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1121,7 +1120,7 @@ Scale 0.8
 	Spawn:
 		COL5 A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
-		TNT1 A 0 A_Jump(32,"SpawnPossessedStatue")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnPossessedStatue")//10%
 	SpawnNormalStatue:
 		TNT1 A 1 A_SpawnItemEx("64HeartColumn",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1139,7 +1138,7 @@ Scale 0.8
 	Spawn:
 		FSKU A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
-		TNT1 A 0 A_Jump(32,"SpawnAggressiveFloatingSkull")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnAggressiveFloatingSkull")//10%
 	SpawnNormalFloatingSkull:
 		TNT1 A 1 A_SpawnItemEx("64FloatingSkull",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1157,7 +1156,7 @@ Scale 0.7
 	Spawn:
 		DAM1 A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
-		TNT1 A 0 A_Jump(32,"SpawnHangedManEnemy")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnHangedManEnemy")//10%
 	SpawnNormalHangmen:
 		TNT1 A 1 A_SpawnItemEx("NonSolidTwitchReplacer",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1174,7 +1173,7 @@ Actor 64FailingTechLampReplacer replaces TechLamp
 	Spawn:
 		TLMP A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
-		TNT1 A 0 A_Jump(32,"SpawnHellLamp")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnHellLamp")//10%
 	SpawnTechLamp:
 		TNT1 A 1 A_SpawnItemEx("64TechLampB",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1191,7 +1190,7 @@ Actor 64FailingTechLamp2Replacer replaces TechLamp2
 	Spawn:
 		TLP2 A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
-		TNT1 A 0 A_Jump(32,"SpawnHellLamp")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnHellLamp")//10%
 	SpawnTechLamp:
 		TNT1 A 1 A_SpawnItemEx("64TechLamp2B",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -1208,7 +1207,7 @@ Actor 64FailingColumnReplacer replaces Column
 	Spawn:
 		TLP1 A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
-		TNT1 A 0 A_Jump(32,"SpawnHellLamp")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnHellLamp")//10%
 	SpawnTechLamp:
 		TNT1 A 1 A_SpawnItemEx("64TechColumn",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop

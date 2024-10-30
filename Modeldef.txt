@@ -1063,11 +1063,11 @@ Model 64LevitatingPlatform
 Path "models"
 rotating
 Rotation-Center 0 0 0
-rotation-speed 0.20
+rotation-speed 0.5
 Model 0 "bloodspot.md3"
 Skin 0 "UnPent.png"
 Scale 50 50 1
-ZOffset 0.65
+ZOffset 1
 FrameIndex PNTG A 0 0
 }
 
@@ -1113,6 +1113,17 @@ PITCHFROMMOMENTUM
 FrameIndex SPKO S 0 0
 }
 
+Model TracerChaingun
+{
+Path "models"
+Model 0 "tracer.md3"
+Skin 0 "tracer4.png"
+Scale 5.5 10 10
+Offset 150 0 0
+PITCHFROMMOMENTUM
+FrameIndex SPKO S 0 0
+}
+
 Model EnemyProjectile
 {
 Path "models"
@@ -1139,8 +1150,19 @@ Model MasterMindProjectile
 {
 Path "models"
 Model 0 "tracer.md3"
-Skin 0 "tracer3.png"
+Skin 0 "tracer4.png"
 Scale 6 10.5 10.5
+Offset 150 0 0
+PITCHFROMMOMENTUM
+FrameIndex SPKO S 0 0
+}
+
+Model ChaingunProjectile
+{
+Path "models"
+Model 0 "tracer.md3"
+Skin 0 "tracer4.png"
+Scale 5.5 10 10
 Offset 150 0 0
 PITCHFROMMOMENTUM
 FrameIndex SPKO S 0 0
