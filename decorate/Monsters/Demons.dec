@@ -170,7 +170,7 @@ Obituary "$FO_OB_DEMONHIT"
 		SARX H 35
 		SARX H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop
@@ -539,7 +539,7 @@ HitObituary "$FO_OB_SPECTREHIT"
 		SR2X H 35
 		SR2X H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop
@@ -951,7 +951,7 @@ Obituary "%o was hunted down by a nightmare spectre."
 		SR3X H 35
 		SR3X H -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop

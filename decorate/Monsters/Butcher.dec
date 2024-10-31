@@ -89,7 +89,7 @@ MONSTER
 		TNT1 A 0 A_NoBlocking
 		S4WC A 1 A_SpawnItemEx("64ButcherNoArm",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_StopSound(CHAN_WEAPON)
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking

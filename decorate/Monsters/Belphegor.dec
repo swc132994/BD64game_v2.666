@@ -160,7 +160,7 @@ BloodType "Brutal_BloodGreen"
 		TNT1 A 0 A_ChangeFlag("FORCEXYBILLBOARD",TRUE)
 		BPTG D -1 A_SpawnItemEx("GrowingBloodPoolGreen")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_SetScale(1.0,1.0)
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking

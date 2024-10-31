@@ -201,7 +201,7 @@ Obituary "$FO_OB_IMP"
 		TROD E 35
 		TROD E -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop
@@ -862,7 +862,7 @@ BloodType "Brutal_BloodBLUE"
 		NROD E 35
 		NROD E -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop

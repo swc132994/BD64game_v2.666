@@ -279,7 +279,7 @@ MONSTER
 		TNT1 A 0 A_BossDeath
 		PTXB P -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop

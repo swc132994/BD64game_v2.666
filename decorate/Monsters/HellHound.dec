@@ -71,7 +71,7 @@ DropItem "DemonEssenceSpawner"
 		HEHR M 35 A_KillMaster("None")	//tag 666 fix
 		HEHR M -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_SetScale(1.2,1.2)
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking

@@ -16,6 +16,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
 +INVENTORY.UNDROPPABLE
 +WEAPON.NOALERT
++WEAPON.MELEEWEAPON
 	States
 	{
 	Ready:
@@ -82,6 +83,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
 +INVENTORY.UNDROPPABLE
 +WEAPON.NOALERT
++WEAPON.MELEEWEAPON
 	States
 	{
 	MineThrowFlash:

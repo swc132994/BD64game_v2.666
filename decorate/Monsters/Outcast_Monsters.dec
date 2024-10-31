@@ -185,7 +185,7 @@ BloodType "Brutal_BloodGreen"
 		GARX H 35
 		GARX H -1 A_SpawnItemEx("GrowingBloodPoolGreen")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop
@@ -610,6 +610,9 @@ Health 200
 Speed 16
 FastSpeed 24
 Alpha 0.5
+PainChance "Fire",0
+DamageFactor "Fire",0
+DamageFactor "Ice",1.5
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 RenderStyle Translucent

@@ -48,6 +48,7 @@ Tag "Unmaker"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
++WEAPON.BFG
 	States
 	{
 	Spawn:
@@ -426,6 +427,7 @@ Tag "Unmaker"
 +INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.NOALERT
 +WEAPON.NOAUTOFIRE
++WEAPON.BFG
 	States
 	{
 	MineThrowFlash:

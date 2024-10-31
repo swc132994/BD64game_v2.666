@@ -17,10 +17,11 @@ PainChance 50
 PainChance "Bullet",26
 PainChance "SuperFists",128
 PainChance "SuperKick",128
+PainChance "Fire",128
 DamageFactor 0.50
-DamageFactor "Fire",1.5
-DamageFactor "Plasma",1.5
-DamageFactor "BFG",1.5
+DamageFactor "Fire",3
+DamageFactor "Plasma",1.75
+DamageFactor "BFG",1.75
 DamageFactor "Unmaker",0.2
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
@@ -174,7 +175,7 @@ MONSTER
 		PLAY V 35
 		PLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_XScream
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Stop

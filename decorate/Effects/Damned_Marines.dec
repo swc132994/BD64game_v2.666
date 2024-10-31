@@ -489,7 +489,7 @@ DropItem "SOULSPAWNER"
 		HTSP D 50
 		Loop
 	Death.Fire:
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_VOICE)
 		TNT1 AAA 0 A_SpawnItemEx("BurningBarrelSmoke")
 		TNT1 A 0 A_NoBlocking

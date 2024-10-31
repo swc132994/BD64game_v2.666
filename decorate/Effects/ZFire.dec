@@ -9,7 +9,7 @@ Damage 0
 Gravity 0
 Alpha 1
 RenderStyle Add
-DamageType "Flames"
+DamageType "Fire"
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -209,7 +209,7 @@ Damage 0
 Gravity 0
 Alpha 1
 RenderStyle Add
-DamageType "Flames"
+DamageType "Fire"
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -343,7 +343,7 @@ Damage 0
 Gravity 0
 Alpha 1.0
 RenderStyle Add
-DamageType "Flames"
+DamageType "Fire"
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -581,7 +581,7 @@ Speed 6
 Height 2
 Radius 2
 Gravity 0.1
-Damagetype "Fire"
+DamageType "Fire"
 MaxStepHeight 64
 -NOGRAVITY
 -NOCLIP
@@ -617,7 +617,7 @@ Speed 6
 Radius 2
 Height 2
 Gravity 0.1
-Damagetype "Fire"
+DamageType "Fire"
 MaxStepHeight 64
 -NOGRAVITY
 -NOCLIP
@@ -680,7 +680,7 @@ Damage 0
 Gravity 0
 Alpha 1.0
 RenderStyle Add
-DamageType "Flames"
+DamageType "Fire"
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -857,7 +857,7 @@ Height 8
 Speed 11
 Mass 1
 Damage 3
-damagetype "Fire"
+DamageType "Fire"
 +NOBLOCKMAP
 +MISSILE
 +NOTELEPORT
@@ -941,7 +941,7 @@ Height 8
 Speed 11
 Mass 1
 Damage 3
-damagetype "Fire"
+DamageType "Fire"
 Decal "BigScorch"
 BounceType "None"
 BounceFactor 0.1
@@ -1010,7 +1010,7 @@ Height 8
 Speed 11
 Mass 1
 Damage 0
-damagetype "Fire"
+DamageType "Fire"
 +DONTSPLASH
 +NOBLOCKMAP
 +MISSILE
@@ -1079,7 +1079,7 @@ Damage 0
 Gravity 0
 Alpha 1.0
 Renderstyle Add
-DamageType "Flames"
+DamageType "Fire"
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH
@@ -1372,7 +1372,7 @@ Damage 0
 Gravity 0
 Alpha 0.9
 Renderstyle Add
-DamageType "Flames"
+DamageType "Fire"
 +NOBLOCKMAP
 +NOTELEPORT
 +DONTSPLASH

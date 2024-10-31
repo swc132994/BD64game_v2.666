@@ -36,11 +36,12 @@ AttackSound "None"
 Inventory.PickupSound "IPick"
 Inventory.Pickupmessage "You got a Multi-Purpose Mine!"
 Tag "Multi-Purpose Mine"
++INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.NOAUTOAIM
 +WEAPON.NOALERT
 +WEAPON.NOAUTOFIRE
 +WEAPON.ALT_USES_BOTH
-+INVENTORY.RESTRICTABSOLUTELY
+-WEAPON.AMMO_CHECKBOTH
 	States
 	{
 	KickingFlash:

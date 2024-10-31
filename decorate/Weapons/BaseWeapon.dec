@@ -7,9 +7,9 @@ Weapon.BobStyle InverseSmooth
 Weapon.BobSpeed 2.0
 Weapon.BobRangeX 0.5
 Weapon.BobRangeY 0.5
-+WEAPON.AMMO_CHECKBOTH
 Inventory.forbiddento "64DoomPlayer"
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
++WEAPON.AMMO_CHECKBOTH
 	States
 	{
 	Tired:

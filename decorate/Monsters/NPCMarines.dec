@@ -198,7 +198,7 @@ Obituary "%o was gunned down by a rifle marine."
 		TNT1 AAA 0 A_CustomMissile("Brutal_FlyingBlood",7,56,random(0,360),2,random(20,60))
 		TNT1 AAA 0 A_CustomMissile("BloodHit",56,0,random(0,360),2,random(0,90))
 		Goto Death+1
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Jump(128,"Death.PlasmaBurningZombie")
 		TNT1 A 0 A_XScream
@@ -318,7 +318,7 @@ DropItem "cellpack"
 		ZLAY V 35
 		ZLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Jump(128,"Death.PlasmaBurningZombie")
 		TNT1 A 0 A_XScream
@@ -509,7 +509,7 @@ DropItem "SOULSPAWNER"
 		ZLAY V 35
 		ZLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Jump(128,"Death.PlasmaBurningZombie")
 		TNT1 A 0 A_XScream
@@ -701,7 +701,7 @@ DropItem "clip"
 		ZLAY V 35
 		ZLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Jump(128,"Death.PlasmaBurningZombie")
 		TNT1 A 0 A_XScream
@@ -880,7 +880,7 @@ DropItem "SOULSPAWNER"
 		PLAY V 35
 		PLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Jump(128,"Death.PlasmaBurningZombie")
 		TNT1 A 0 A_XScream
@@ -1059,7 +1059,7 @@ DropItem "SOULSPAWNER"
 		PLAY V 35
 		PLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Jump(128,"Death.PlasmaBurningZombie")
 		TNT1 A 0 A_XScream
@@ -1249,7 +1249,7 @@ DropItem "cell"
 		ZLAY V 35
 		ZLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Jump(128,"Death.PlasmaBurningZombie")
 		TNT1 A 0 A_XScream
@@ -1438,7 +1438,7 @@ DropItem "cell"
 		ZLAY V 35
 		ZLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Jump(128,"Death.PlasmaBurningZombie")
 		TNT1 A 0 A_XScream
@@ -1630,7 +1630,7 @@ DropItem "rocketammo"
 		PLAY V 35
 		PLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Jump(128,"Death.PlasmaBurningZombie")
 		TNT1 A 0 A_XScream
@@ -1820,7 +1820,7 @@ DropItem "shell"
 		PLAY V 35
 		PLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Jump(128,"Death.PlasmaBurningZombie")
 		TNT1 A 0 A_XScream
@@ -2010,7 +2010,7 @@ DropItem "shell"
 		PLAY V 35
 		PLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Jump(128,"Death.PlasmaBurningZombie")
 		TNT1 A 0 A_XScream
@@ -2203,7 +2203,7 @@ Game Doom
 		PLAY V 35
 		PLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Jump(128,"Death.PlasmaBurningZombie")
 		TNT1 A 0 A_XScream
@@ -2394,7 +2394,7 @@ Game Doom
 		PLAY V 35
 		PLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Jump(128,"Death.PlasmaBurningZombie")
 		TNT1 A 0 A_XScream
@@ -2586,7 +2586,7 @@ Game Doom
 		ZLAY V 35
 		ZLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Jump(128,"Death.PlasmaBurningZombie")
 		TNT1 A 0 A_XScream
@@ -2779,7 +2779,7 @@ Game Doom
 		ZLAY V 35
 		ZLAY V -1 A_SpawnItemEx("GrowingBloodPool")
 		Stop
-	Death.Plasma:
+	Death.Plasma: Death.Fire:
 		TNT1 A 0 A_NoBlocking
 		TNT1 A 0 A_Jump(128,"Death.PlasmaBurningZombie")
 		TNT1 A 0 A_XScream
