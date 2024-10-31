@@ -274,7 +274,7 @@ Player.Portrait "TCLASS1"
 		PLAY E 0
 		PLAY E 2 A_TakeInventory("Stamina",1)
 		Loop
-	See:	//Frames set the player animation on player seect menu
+	See:	//Frames set the player animation on player select menu
 		PLAY AB 6 ACS_NamedExecuteAlways("StaminaRecovery")
 		PLAY B 0 A_SpawnItemEx("BD64FootStep",0,0,0,0,0,0,0,SXF_ABSOLUTEANGLE|SXF_ABSOLUTEPOSITION)
 		PLAY B 0 A_JumpIfInventory("IsRunning",1,"StartRun")

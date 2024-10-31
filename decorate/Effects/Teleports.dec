@@ -48,11 +48,9 @@ RenderStyle Add
 	States
 	{
 	Spawn:
-		TNT1 A 1
-		TNT1 AAAAA 2 A_SpawnItemEx("BurningPentagram")
-		TNT1 A 20
+		TNT1 A 0 NoDelay A_SpawnItemEx("BurningPentagram")
+		TNT1 A 35
 		TNT1 A 1 A_SpawnItemEx("PentagramOff")
-		TNT1 A 1
 		Stop
 	}
 }
@@ -63,8 +61,8 @@ Alpha 0
 	States
 	{
 	Spawn:
-		PNTG AAAAAAAAAAAAAAAAAAAAAAA 1 NoDelay A_FadeIn(0.02)
-		PNTG A 1 A_FadeOut(0.02)
+		PNTG AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 Bright Light("BETABALL_X4") NoDelay A_FadeIn(0.03)
+		PNTG A 1 Bright A_FadeOut(0.03)
 		Wait
 	}
 }
@@ -75,8 +73,7 @@ Renderstyle Normal
 	States
 	{
 	Spawn:
-		PNTG B 300
-		PNTG B 1 A_FadeOut(0.02)
+		PNTG B 2 A_FadeOut(0.01)
 		Wait
 	}
 }

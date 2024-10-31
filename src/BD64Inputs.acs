@@ -5,11 +5,11 @@ script "KickKeyPress" (VOID) NET
 		GiveInventory("Kicking",1);
 		terminate;
 	}
-	else if(CheckInventory("stamina"))
+	if(CheckInventory("stamina") == 100)
 	{
 		terminate;
 	}
-	else if(CheckInventory("Stamina"))
+	if(CheckInventory("Stamina") > 80)
 	{
 		Print(s:"Not Enough Stamina!");
 		PlaySound(0,"Tired",2,1.0,FALSE,ATTN_NORM);
@@ -27,7 +27,7 @@ script "CheckWeaponAction" ENTER
 	
 	while(TRUE)
 	{
-		buttons4 = GetPlayerInput(-1, INPUT_BUTTONS) & (~GetPlayerInput(-1, INPUT_OLDBUTTONS));
+		buttons4 = GetPlayerInput(-1,INPUT_BUTTONS) & (~GetPlayerInput(-1,INPUT_OLDBUTTONS));
 	
 		if(buttons4 & BT_RELOAD)
 		{
@@ -93,7 +93,7 @@ if(CheckInventory("IsTacticalClass") == 1)
 
 	while (TRUE)
 		{
-		buttons = GetPlayerInput(-1, INPUT_BUTTONS) & (~GetPlayerInput(-1, INPUT_OLDBUTTONS));
+		buttons = GetPlayerInput(-1,INPUT_BUTTONS); //& (~GetPlayerInput(-1,INPUT_OLDBUTTONS));
 
 		if ((buttons & BT_SPEED) && (buttons & BT_FORWARD) && !(buttons & BT_CROUCH))
 			{
@@ -104,13 +104,11 @@ if(CheckInventory("IsTacticalClass") == 1)
 		TakeInventory("IsRunning",1);
 		}
 	}
-	else
-	terminate;
 }
 
 script "StaminaRecovery" (VOID)
 {
-	SetActorProperty(0,APROP_Speed,0.9);	
+	SetActorProperty(0,APROP_Speed,0.9);
 	if(CheckInventory("PowerStrength") > 0)
 	{
 	TakeInventory("Stamina",2);
@@ -122,5 +120,5 @@ script "StaminaRecovery" (VOID)
 script "TacticalPlayerFasterACS" (void)
 {
 SetActorProperty(0,APROP_Speed,2.0);
-delay (1);
+delay(1);
 }
