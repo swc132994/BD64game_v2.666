@@ -26,7 +26,6 @@ Actor Kicking : BD64_Tokens {}
 Actor VWeaponMode : BD64_Tokens {}	//option to switch to classic weapons (For Classical Class)
 Actor ISDM : BD64_Tokens {}	//DEATHMATCH STUFF
 Actor KickHasHit : BD64_Tokens {}
-Actor Reloading : BD64_Tokens {}
 Actor TossMine : BD64_Tokens {}
 Actor PlaceMine : BD64_Tokens {}
 Actor WeaponSpecialAction : BD64_Tokens {}

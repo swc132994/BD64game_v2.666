@@ -1108,7 +1108,7 @@ Path "models"
 Model 0 "tracer.md3"
 Skin 0 "tracer3.png"
 Scale 5.5 10 10
-Offset 150 0 0
+Offset 250 0 0
 PITCHFROMMOMENTUM
 FrameIndex SPKO S 0 0
 }
@@ -1119,7 +1119,7 @@ Path "models"
 Model 0 "tracer.md3"
 Skin 0 "tracer4.png"
 Scale 5.5 10 10
-Offset 150 0 0
+Offset 250 0 0
 PITCHFROMMOMENTUM
 FrameIndex SPKO S 0 0
 }
@@ -1130,7 +1130,7 @@ Path "models"
 Model 0 "tracer.md3"
 Skin 0 "tracer3.png"
 Scale 5.5 10 10
-Offset 150 0 0
+Offset 250 0 0
 PITCHFROMMOMENTUM
 FrameIndex SPKO S 0 0
 }
@@ -1141,7 +1141,7 @@ Path "models"
 Model 0 "tracer.md3"
 Skin 0 "tracer3.png"
 Scale 5.5 10 10
-Offset 150 0 0
+Offset 250 0 0
 PITCHFROMMOMENTUM
 FrameIndex SPKO S 0 0
 }
@@ -1152,7 +1152,7 @@ Path "models"
 Model 0 "tracer.md3"
 Skin 0 "tracer4.png"
 Scale 6 10.5 10.5
-Offset 150 0 0
+Offset 250 0 0
 PITCHFROMMOMENTUM
 FrameIndex SPKO S 0 0
 }

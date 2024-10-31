@@ -29,11 +29,7 @@ script "CheckWeaponAction" ENTER
 	{
 		buttons4 = GetPlayerInput(-1,INPUT_BUTTONS) & (~GetPlayerInput(-1,INPUT_OLDBUTTONS));
 	
-		if(buttons4 & BT_RELOAD)
-		{
-			GiveInventory("Reloading",1);
-		}
-		else if(buttons4 & BT_ZOOM)
+		if(buttons4 & BT_ZOOM)
 		{
 			ACS_NamedExecute("KickKeyPress",0);
 		}

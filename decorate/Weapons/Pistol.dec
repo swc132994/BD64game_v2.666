@@ -141,14 +141,12 @@ Tag "$FO_TAG_PISTOL"
 		P1SS A 0 A_JumpIfInventory("IsSilencer",1,2)
 		PISS A 0
 		"####" ABCD 1 A_WeaponReady(WRF_NOFIRE)
-		TNT1 A 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_Raise
 		Wait
 	SelectEmpty:
 		P1SS I 0 A_JumpIfInventory("IsSilencer",1,2)
 		PISS I 0
 		"####" IJKL 1 A_WeaponReady(WRF_NOFIRE)
-		TNT1 A 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_Raise
 		Wait
 	Deselect:
@@ -222,23 +220,21 @@ Tag "$FO_TAG_PISTOL"
 	v1Ready:
 	Ready:
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		TNT1 A 0 A_JumpIfInventory("PistolAmmo",1,1)
 		Goto ReadyEmpty
 		P1SG A 0 A_JumpIfInventory("IsSilencer",1,2)
 		PISG A 0
-		"####" A 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)		
+		"####" A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		Loop
 	ReadyEmpty:
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		P1SG B 0 A_JumpIfInventory("IsSilencer",1,2)
 		PISG B 0
-		"####" B 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)		
+		"####" B 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		Loop
 	Fire:
 		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReload")
@@ -315,7 +311,6 @@ Tag "$FO_TAG_PISTOL"
 		PISR EDCBA 1
 		Goto Ready
 	Reload:
-		"####" A 0 A_TakeInventory("Reloading",1)
 		"####" A 0 A_JumpIfInventory("Clip",1,1)
 		Goto NoAmmo
 		"####" A 0 A_JumpIfInventory("HoldFidget",1,"HoldingFidget")
@@ -336,7 +331,6 @@ Tag "$FO_TAG_PISTOL"
 		TNT1 A 0 A_Giveinventory("PistolAmmo",1)
 		TNT1 A 0 A_Takeinventory("Clip",1,TIF_NOTAKEINFINITE)
 		Goto InsertBullets
-		TNT1 A 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_Refire
 	FinishReload:
 		P12R A 0 A_JumpIfInventory("IsSilencer",1,2)
@@ -360,7 +354,6 @@ Tag "$FO_TAG_PISTOL"
 		TNT1 A 0 A_Giveinventory("PistolAmmo",1)
 		TNT1 A 0 A_Takeinventory("Clip",1,TIF_NOTAKEINFINITE)
 		Goto InsertBullets2
-		TNT1 A 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_Refire
 	FinishReload2:
 		P1SR A 0 A_JumpIfInventory("IsSilencer",1,2)

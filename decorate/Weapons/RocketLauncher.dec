@@ -248,53 +248,48 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		RLLG A 0 A_JumpIfInventory("AltMode",1,"HeavyReady")
 		RLHG A 0 A_JumpIfInventory("NoReloading",1,"ReadyNoReload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		RLLG A 0 A_JumpIfInventory("RLAmmo",3,3)
 		RLLG G 0 A_JumpIfInventory("RLAmmo",2,2)
 		RLLG K 0
-		"####" "#" 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)		
+		"####" "#" 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		Loop
 	ReadyNoReload:
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		RLLG A 0 A_JumpIfInventory("RocketAmmo",3,3)
 		RLLG G 0 A_JumpIfInventory("RocketAmmo",2,2)
 		RLLG K 0
-		"####" "#" 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)		
-		Loop		
+		"####" "#" 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		Loop
 	HeavyReady:
 		TNT1 A 0 A_JumpIfInventory("ClassicRLToken",1,"ClassicRLSelected")
 		RLHG A 0 A_JumpIfInventory("NoReloading",1,"HeavyReadyNoReload")
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")		
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		RLHG A 0 A_JumpIfInventory("RLAmmo",3,3)
 		RLHG G 0 A_JumpIfInventory("RLAmmo",2,2)
 		RLHG K 0
-		"####" "#" 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)		
+		"####" "#" 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		Loop
 	HeavyReadyNoReload:
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		RLHG A 0 A_JumpIfInventory("RLAmmo",3,3)
 		RLHG G 0 A_JumpIfInventory("RLAmmo",2,2)
 		RLHG K 0
-		"####" "#" 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)		
+		"####" "#" 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		Loop
 	ReadyNoAmmo:
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		RLNG A 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
-		Loop		
+		RLNG A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		Loop
 	Select:
 		TNT1 A 0 A_TakeInventory("SisterWeaponSelector",0)
 		TNT1 A 0 A_JumpIfInventory("ClassicRLToken",1,"ClassicRLSelected2")
@@ -303,24 +298,22 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		TNT1 A 0 A_JumpIfInventory("RLAmmo",3,"FullSelect")
 		TNT1 A 0 A_JumpIfInventory("RLAmmo",2,"HalfSelect")
 		RLNS AOPQ 1 A_WeaponReady(WRF_NOFIRE)
-		TNT1 A 0 A_TakeInventory("Reloading",1)
 		Goto Ready
 	FullSelect:
 		RLNS ABCD 1 A_WeaponReady(WRF_NOFIRE)
 		Goto Ready
 	HalfSelect:
 		RLNS AIJK 1 A_WeaponReady(WRF_NOFIRE)
-		Goto Ready		
-	Deselect:	
+		Goto Ready
+	Deselect:
 		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
 		TNT1 A 0 A_Takeinventory("TossMine",0)
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
-		TNT1 A 0 A_Takeinventory("Reloading",0)
 		TNT1 A 0 A_Takeinventory("SisterWeaponSelector",0)
 		TNT1 A 0 A_JumpIfInventory("RLAmmo",3,"FullDeSelect")
-		TNT1 A 0 A_JumpIfInventory("RLAmmo",2,"HalfDeSelect")		
+		TNT1 A 0 A_JumpIfInventory("RLAmmo",2,"HalfDeSelect")
 		RLNS RSTH 1
 		TNT1 A 0 A_Lower
 		Wait
@@ -359,8 +352,8 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 	RecoilFireNoReload:
 		RLHG A 0 A_JumpIfInventory("RocketAmmo",2,"FireFull")
 		RLHG G 0 A_JumpIfInventory("RocketAmmo",1,"FireHalf")
-		Goto FireLast		
-	FireFull:	
+		Goto FireLast
+	FireFull:
 		RLLF ABC 1 Bright offset(0,33)
 		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 0 A_SetPitch(pitch-2,SPF_INTERPOLATE)
@@ -413,20 +406,20 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		RLHG A 0 A_JumpIfInventory("RLAmmo",2,"HeavyFireFull")
 		RLHG G 0 A_JumpIfInventory("RLAmmo",1,"HeavyFireHalf")
 		Goto HeavyFireLast
-	RecoilHeavyFireNoReload:	
+	RecoilHeavyFireNoReload:
 		RLHG A 0 A_JumpIfInventory("RocketAmmo",2,"HeavyFireFull")
 		RLHG G 0 A_JumpIfInventory("RocketAmmo",1,"HeavyFireHalf")
-		Goto HeavyFireLast		
+		Goto HeavyFireLast
 	HeavyFireFull:
 		RLHF ABC 1 Bright
 		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 0 A_SetPitch(pitch+0.8,SPF_INTERPOLATE)
 		RLHF DDEEFFGGHI 2
-		RLHF JKLMN 1		
-		RLHG A 10		
+		RLHF JKLMN 1
+		RLHG A 10
 	HeavyLoadAnimation:
 		RLHG BCD 2
-		RLLG E 0 A_JumpIfInventory("NoReloading",1,"HeavyLoadAnimationNoReload")		
+		RLLG E 0 A_JumpIfInventory("NoReloading",1,"HeavyLoadAnimationNoReload")
 		RLHG E 0 A_JumpIfInventory("RLAmmo",3,2)
 		RLHG F 0
 		RLHG "#" 2
@@ -456,11 +449,10 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		RLHF DDEEFFGGHI 2
 		RLHF Z 1
 		RLHF "[\]" 1
-		2LHF A 1		
+		2LHF A 1
 		RLHG K 5
 		Goto Ready
 	Reload:
-		TNT1 A 0 A_TakeInventory("Reloading",1)
 		RLTG A 0 A_JumpIfInventory("AltMode",1,3)
 		RLTL A 0 A_JumpIfInventory("RLAmmo",1,2)
 		RLTN A 0 A_Jump(256,2)
@@ -484,7 +476,7 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		Goto Ready
 		TNT1 A 0 A_Giveinventory("RLAmmo",1)
 		TNT1 A 0 A_Takeinventory("RocketAmmo",1,TIF_NOTAKEINFINITE)
-		Goto InsertRounds	
+		Goto InsertRounds
 	FinishReload:
 		RLNR UVVWWXXYZ 1 A_WeaponReady(WRF_ALLOWZOOM)
 		RLNR "[" 1 A_WeaponReady(WRF_ALLOWZOOM)
@@ -544,7 +536,7 @@ Weapon.SisterWeapon "64ClassicRocketLauncherTactical"
 		2LLG IHHGGFF 1
 		2LLG EDCBA 1
 		Goto Ready
-	FullReturnToLaser:	
+	FullReturnToLaser:
 		RLHG TSRQP 1
 		RLHG ONM 2
 		RLHG L 1 A_PlaySound("BEP",CHAN_ITEM)

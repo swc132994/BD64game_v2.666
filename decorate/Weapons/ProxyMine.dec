@@ -148,10 +148,10 @@ Tag "Multi-Purpose Mine"
 Actor 64ThrownProxMine
 {
 Scale 0.35
-Radius 10
-Height 10
+Radius 3
+Height 6
 Speed 15
-Damage(random(2,2))
+Damage 1
 BounceType "Doom"
 BounceFactor 0.3
 BounceCount 3
@@ -185,11 +185,11 @@ PROJECTILE
 Actor 64ThrownActiveProxMine1
 {
 Scale 0.35
-Radius 10
-Height 10
+Radius 3
+Height 6
 Health 5
 Speed 20
-Damage(random(2,2))
+Damage 1
 Gravity 1
 SeeSound "GRNTOSS"
 DeathSound "MINE002"
@@ -210,7 +210,6 @@ PROJECTILE
 +BOUNCEONFLOORS
 +BOUNCEONWALLS
 +BOUNCEONCEILINGS
-+NODAMAGETHRUST
 BounceFactor 0.5
 WallBounceFactor 0.25
 	States
@@ -245,9 +244,9 @@ WallBounceFactor 0.25
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAAA 0 A_CustomMissile("MediumExplosionFlames",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
-		TNT1 A 0 A_Explode(200,175,XF_NOTMISSILE)
+		TNT1 A 0 A_Explode(150,175,XF_NOTMISSILE)
 		TNT1 A 0 A_ChangeFlag("DONTSPLASH",TRUE)
-		TNT1 A 0 A_Explode(150,250,XF_NOTMISSILE)
+		TNT1 A 0 A_Explode(100,250,XF_NOTMISSILE)
 		TNT1 A 0 A_RadiusThrust(128,-1,RTF_AFFECTSOURCE|RTF_NOIMPACTDAMAGE)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCrater")
@@ -269,8 +268,8 @@ Actor 64GroundProxMine : SwitchableDecoration
 {
 Scale 0.35
 Height 6
-Radius 10
-Health 10
+Radius 3
+Health 6
 Damage 0
 Mass 9999
 Activation THINGSPEC_Activate
@@ -362,8 +361,8 @@ Obituary "%o was shreded by %k's Mine."
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAAA 0 A_CustomMissile("MediumExplosionFlames",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
-		TNT1 A 0 A_Explode(200,175,XF_NOTMISSILE)
-		TNT1 A 0 A_Explode(150,250,XF_NOTMISSILE)
+		TNT1 A 0 A_Explode(150,175,XF_NOTMISSILE)
+		TNT1 A 0 A_Explode(100,250,XF_NOTMISSILE)
 		TNT1 A 0 A_RadiusThrust(128,-1,RTF_AFFECTSOURCE|RTF_NOIMPACTDAMAGE)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCrater")

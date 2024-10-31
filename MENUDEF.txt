@@ -601,7 +601,7 @@ OptionValue "BrutalBlood"	//Blood amount
 	2,"Normal"
 	3,"Lots"
 	4,"Comical"
-	666,"Maximum"
+	5,"Maximum"
 }
 
 OptionValue "LFog_Value"	//Steam and Halo effects

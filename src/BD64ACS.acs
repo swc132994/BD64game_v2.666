@@ -117,9 +117,7 @@ script "SetBloodAmountACS" (void)
 			Case 2: break;
 			Case 3: SetActorState(0,"LotsOfBlood"); break;
 			Case 4: SetActorState(0,"AbsurdBlood"); break;
-			Default: //at least 5
-			SetActorState(0,"AbsurdBlood");
-			GiveInventory("AnimuGore",1);
+			case 5: SetActorState(0,"AnimuGore"); break;
 			break;
 		}
 	}
@@ -132,9 +130,7 @@ script "SetBloodAmountACS" (void)
 			Case 2: break;
 			Case 3: SetActorState(0,"LotsOfBlood"); break;
 			Case 4: SetActorState(0,"AbsurdBlood"); break;
-			Default: //at least 5
-			SetActorState(0,"AbsurdBlood");
-			GiveInventory("AnimuGore",1);
+			case 5: SetActorState(0,"AnimuGore"); break;
 			break;
 		}
 	}

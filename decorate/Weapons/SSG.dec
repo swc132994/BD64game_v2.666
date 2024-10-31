@@ -184,7 +184,6 @@ Tag "$FO_TAG_SUPERSHOTGUN"
 		Goto Ready
 	v1Ready:
 	Ready:
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_Jumpifinventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
@@ -198,7 +197,6 @@ Tag "$FO_TAG_SUPERSHOTGUN"
 		SSGH EF 1 Offset(0,32)
 		TNT1 A 0 A_PlaySound("CLIPINSS",CHAN_WEAPON)
 		SSGH GHIJKLM 1 A_WeaponReady(WRF_NOFIRE)
-		TNT1 A 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_Raise
 		Wait
 	RaiseReloading:
@@ -212,7 +210,6 @@ Tag "$FO_TAG_SUPERSHOTGUN"
 	Deselect:
 		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
-		TNT1 A 0 A_TakeInventory("Reloading",0)
 		TNT1 A 0 A_Takeinventory("TossMine",0)
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
@@ -230,7 +227,6 @@ Tag "$FO_TAG_SUPERSHOTGUN"
 		SSGI A 1 A_WeaponReady(WRF_NOFIRE|WRF_ALLOWZOOM)
 		SSGI A 0 A_PlaySound("weapons/sshotc",CHAN_AUTO)
 		SSGH EFGHIJKLM 1 A_WeaponReady(WRF_NOFIRE|WRF_ALLOWZOOM)
-		TNT1 A 0 A_TakeInventory("Reloading",1)
 		Goto Ready
 	Fire:
 		TNT1 A 0 A_Jumpifinventory("SSGAlt",1,"AltFire")
@@ -322,7 +318,6 @@ Tag "$FO_TAG_SUPERSHOTGUN"
 		TNT1 A 0 Offset(0,32)
 		Goto Reload
 	Reload:
-		TNT1 A 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_TakeInventory("SSGAlt",1)
 		TNT1 A 0 A_JumpIfInventory("HoldFidget",1,"HoldingFidget")
 		TNT1 A 0 A_Jumpifinventory("SSGAmmo",0,"Fidget")

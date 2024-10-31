@@ -105,20 +105,20 @@ Tag "MP40"
 +WEAPON.CHEATNOTWEAPON
 	States
 	{
-	MineThrowFlash://26
+	MineThrowFlash:
 		MP4S EFGH 1
 		TNT1 A 43
 		MP4S ABCD 1
 		Stop
-	KickingFlash://16
+	KickingFlash:
 		MP4G BCDE 1
 		MP4G E 8
 		MP4G EDCB 1
 		Stop
-	SlideKickingStart://22
+	SlideKickingStart:
 		MP4G BCDE 1
 		MP4G E 35
-	SlideKickingEnd://10
+	SlideKickingEnd:
 		MP4G E 2
 		MP4G EDCB 1
 		Stop
@@ -137,17 +137,15 @@ Tag "MP40"
 	v1Ready:
 	Ready:
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		MP4G A 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		MP4G A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		Loop
 	Ready2:
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
-		TNT1 A 0 A_JumpIfInventory("Reloading",1,"Reload")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		MP4G R 1 A_WeaponReady//(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		MP4G R 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		Loop
 	NoAmmo:
 		MP4G A 10 A_PlaySound("DRYFIRE",CHAN_WEAPON)
@@ -156,7 +154,6 @@ Tag "MP40"
 		TNT1 A 0 A_GiveInventory("MP40Checker",1)
 		TNT1 A 0 A_PlaySound("RIFBOLT",CHAN_BODY)
 		MP4S ABCD 1 A_WeaponReady(WRF_NOFIRE)
-		TNT1 A 0 A_TakeInventory("Reloading",1)
 		TNT1 A 0 A_Raise
 		Wait
 	Fidget:
@@ -184,7 +181,6 @@ Tag "MP40"
 		TNT1 A 0 A_Takeinventory("TossMine",0)
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
-		TNT1 A 0 A_Takeinventory("Reloading",0)
 		TNT1 A 0 A_TakeInventory("MP40Checker",0)
 		MP4S EFGH 1
 		TNT1 A 0 A_Lower
@@ -262,7 +258,6 @@ Tag "MP40"
 		TNT1 A 0 A_Refire
 		Goto Ready*/
 	Reload:
-		TNT1 A 0 A_TakeInventory("Reloading",1)
 		MP4G R 0 A_JumpIfInventory("Zoomed",1,2)
 		MP4G A 0
 		MP4G "#" 1 A_WeaponReady(WRF_NOFIRE)
