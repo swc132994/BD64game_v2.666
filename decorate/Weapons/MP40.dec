@@ -99,9 +99,6 @@ Inventory.PickupMessage "You got the MP40!"
 Obituary "%o was gunned down by %k."
 Tag "MP40"
 +INVENTORY.RESTRICTABSOLUTELY
-+WEAPON.AMMO_CHECKBOTH
-+WEAPON.NOALERT
-+WEAPON.NOAUTOFIRE
 +WEAPON.CHEATNOTWEAPON
 	States
 	{

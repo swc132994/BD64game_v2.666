@@ -42,6 +42,7 @@ Weapon.AmmoUse 40
 Weapon.AmmoGive 40
 Inventory.PickupMessage "$FO_GOTBFG9000"
 Tag "$FO_TAG_BFG9000"
++WEAPON.BFG
 +WEAPON.NOAUTOFIRE
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
@@ -92,9 +93,8 @@ Weapon.AmmoUse 1
 Weapon.AmmoGive 40
 Inventory.PickupMessage "$FO_GOTBFG9000"
 Tag "$FO_TAG_BFG9000"
-+WEAPON.NOAUTOFIRE
++WEAPON.BFG
 +WEAPON.ALT_USES_BOTH
-+WEAPON.NOALERT
 +INVENTORY.RESTRICTABSOLUTELY
 	States
 	{
@@ -138,10 +138,8 @@ Tag "$FO_TAG_BFG9000"
 		TNT1 A 0 A_Raise
 		Wait
 	Fire:
+		TNT1 A 0 A_JumpIfNoAmmo("NoAmmo")
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Ready")
-		TNT1 A 0 A_JumpIfInventory("CELL",40,2)
-		TNT1 A 0 A_Print("Not Enough Ammo!",1)
-		Goto Ready
 		TNT1 A 0 A_AlertMonsters
 		BFGG A 1 A_BFGSound
 		BFGC ABCDABCDABCDABCDABCDABCD 1 Bright
@@ -161,6 +159,7 @@ Tag "$FO_TAG_BFG9000"
 		BFUG A -1
 		Stop
 	AltFire:
+		TNT1 A 0 A_JumpIfNoAmmo("NoAmmo")
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"Ready")
 		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,2)
 		TNT1 A 0 A_JumpIfInventory("IsModern",1,1)
@@ -223,6 +222,9 @@ Tag "$FO_TAG_BFG9000"
 		TNT1 A 0 A_ReFire
 		BFGF GGGHIJ 1
 		TNT1 A 0 A_StopSound(CHAN_5)
+		Goto Ready
+	NoAmmo:
+		TNT1 A 0 A_Print("Not Enough Ammo!",1)
 		Goto Ready
 	}
 }

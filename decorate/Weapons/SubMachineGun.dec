@@ -113,8 +113,6 @@ Inventory.PickupMessage "You got the SMG!"
 Obituary "%o was picked off by %k SMG."
 Tag "Sub-machine gun"
 +INVENTORY.RESTRICTABSOLUTELY
-+WEAPON.NOALERT
-+WEAPON.NOAUTOFIRE
 	States
 	{
 	MineThrowFlash:

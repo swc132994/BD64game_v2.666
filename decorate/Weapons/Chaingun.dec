@@ -256,7 +256,6 @@ Tag "$FO_TAG_CHAINGUN"
 		Goto SelectRaise
 	SelectClassic:
 		LCGS ABCD 1 A_WeaponReady(WRF_NOFIRE)
-
 	SelectRaise:
 		TNT1 A 0 A_Raise
 		Wait
@@ -277,6 +276,7 @@ Tag "$FO_TAG_CHAINGUN"
 		TNT1 A 0 A_Lower
 		Wait
 	Fire:
+		TNT1 A 0 A_JumpIfNoAmmo("EndFire")
 		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5,1,TRUE)
 		TNT1 A 0 A_JumpIfInventory("ClassicChaingunToken",1,"ClassicFire")
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"Hold")
@@ -317,6 +317,7 @@ Tag "$FO_TAG_CHAINGUN"
 		TNT1 A 0 A_StopSound(CHAN_7)
 		Goto EndFire
 	Fire2:
+		TNT1 A 0 A_JumpIfNoAmmo("EndFire2")
 		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5,1,TRUE)
 		TNT1 A 0 A_FireCustomMissile("ChaingunCaseSpawn",0,0,6,-15)
 		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0)
@@ -352,6 +353,7 @@ Tag "$FO_TAG_CHAINGUN"
 		TNT1 A 0 A_StopSound(CHAN_7)
 		Goto EndFire2
 	Hold:
+		TNT1 A 0 A_JumpIfNoAmmo("EndFire3")
 		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5,1,TRUE)
 		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0)
 		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
@@ -382,6 +384,7 @@ Tag "$FO_TAG_CHAINGUN"
 		TNT1 A 0 A_FireCustomMissile("ChaingunCaseSpawn",0,0,6,-15)
 		TNT1 A 0 A_SetAngle(angle + random(-2,2))
 		TNT1 A 0 A_Refire("Hold")
+	EndFire3:	
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"Ready2")
 		TNT1 A 0 A_TakeInventory("Spin",1)
 		TNT1 A 0 A_StopSound(CHAN_5)
@@ -404,12 +407,14 @@ Tag "$FO_TAG_CHAINGUN"
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
 		Goto Ready
 	ClassicFire:
+		TNT1 A 0 A_JumpIfNoAmmo("Ready")
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"ClassicHold")
 		TNT1 A 0 A_PlaySound("CHAINSTA",CHAN_ITEM)
 		LCGG BC 3
 		LCGG D 3
 		LCGG AB 3
 	ClassicHold:
+		TNT1 A 0 A_JumpIfNoAmmo("ClassicEndFire")
 		TNT1 A 0 A_PlaySound("CHAINSPI",CHAN_5,1,TRUE)
 		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke",0,0)
 		TNT1 A 0 A_JumpIfInventory("IsCrouching",1,3)
@@ -440,6 +445,7 @@ Tag "$FO_TAG_CHAINGUN"
 		TNT1 A 0 A_FireCustomMissile("ChaingunCaseSpawn",0,0,6,-15)
 		TNT1 A 0 A_SetAngle(angle + random(-2,2))
 		TNT1 A 0 A_Refire("ClassicHold")
+	ClassicEndFire:	
 		TNT1 A 0 A_JumpIfInventory("Spin",1,"Ready2")
 		TNT1 A 0 A_TakeInventory("Spin",1)
 		TNT1 A 0 A_StopSound(CHAN_5)

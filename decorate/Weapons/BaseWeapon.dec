@@ -7,7 +7,12 @@ Weapon.BobStyle InverseSmooth
 Weapon.BobSpeed 2.0
 Weapon.BobRangeX 0.5
 Weapon.BobRangeY 0.5
-+WEAPON.AMMO_CHECKBOTH
++WEAPON.AMMO_OPTIONAL
++WEAPON.ALT_AMMO_OPTIONAL
++WEAPON.NOAUTOAIM
++WEAPON.NOAUTOFIRE
++WEAPON.NOALERT
+//+WEAPON.AMMO_CHECKBOTH //A_JumpIfNoAmmo doesn't work with this
 Inventory.forbiddento "64DoomPlayer"
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 	States
