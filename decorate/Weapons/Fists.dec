@@ -81,6 +81,7 @@ Inventory.forbiddento "64DoomPlayer"
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 +INVENTORY.RESTRICTABSOLUTELY
 +INVENTORY.UNDROPPABLE
++WEAPON.NOALERT
 	States
 	{
 	MineThrowFlash:

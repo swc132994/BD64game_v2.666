@@ -36,22 +36,28 @@ AttackSound "None"
 Inventory.PickupSound "IPick"
 Inventory.Pickupmessage "You got a Multi-Purpose Mine!"
 Tag "Multi-Purpose Mine"
++WEAPON.NOAUTOAIM
++WEAPON.NOALERT
++WEAPON.NOAUTOFIRE
 +WEAPON.ALT_USES_BOTH
 +INVENTORY.RESTRICTABSOLUTELY
 	States
 	{
 	KickingFlash:
-		TNT1 A 0 A_JumpIfNoAmmo("NoMinesKickingFlash")
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,1)
+		Goto NoMinesKickingFlash
 		PMNK ABCD 1
 		PMNK E 8
 		PMNK DCBA 1
 		Stop
 	SlideKickingStart:
-		TNT1 A 0 A_JumpIfNoAmmo("NoMinesSlideKickingStart")
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,1)
+		Goto NoMinesSlideKickingStart
 		PMNK ABCD 1
 		PMNK E 35
 	SlideKickingEnd:
-		TNT1 A 0 A_JumpIfNoAmmo("NoMinesSlideKickingEnd")
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,1)
+		Goto NoMinesSlideKickingEnd
 		PMNK E 2
 		PMNK DCBA 1
 		Stop
@@ -67,7 +73,8 @@ Tag "Multi-Purpose Mine"
 		PMNE C -1
 		Stop
 	Select:
-		TNT1 A 0 A_JumpIfNoAmmo("NoMines")
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,1)
+		Goto NoMines
 		PMNS ABCDE 1 Offset(0,32)
 		TNT1 A 0 A_Raise
 		Wait
@@ -77,7 +84,8 @@ Tag "Multi-Purpose Mine"
 		TNT1 A 0 A_Takeinventory("TossMine",0)
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_TakeInventory("MineHold",0)
-		TNT1 A 0 A_JumpIfNoAmmo("DeselectNoMines")
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,1)
+		Goto DeselectNoMines
 		PMNS EDCBA 1
 		TNT1 A 0 A_Lower
 		Wait
@@ -86,7 +94,8 @@ Tag "Multi-Purpose Mine"
 		Wait
 	v1Ready:
 	Ready:
-		TNT1 A 0 A_JumpIfNoAmmo("NoMines")
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,1)
+		Goto NoMines
 		PMNE B 1 A_WeaponReady(WRF_ALLOWZOOM)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		Loop
@@ -96,7 +105,6 @@ Tag "Multi-Purpose Mine"
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		Goto Ready
 	Fire:	//Throw Active Mine, detonate on impact
-		TNT1 A 0 A_JumpIfNoAmmo("NoMines")
 		PMNF ABCD 1
 	Hold:
 		PMNF D 2
@@ -123,7 +131,8 @@ Tag "Multi-Purpose Mine"
 		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,"Select")
 		Goto NoMines
 	AltFire:	//Place Proxy on ground
-		TNT1 A 0 A_JumpIfNoAmmo("NoMines")
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,1)
+		Goto NoMines
 		PMNE B 1 Offset(0,33)
 		PMNE B 1 Offset(0,34)
 		PMNE B 1 Offset(0,35)

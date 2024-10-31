@@ -123,6 +123,9 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 Inventory.ForbiddenTo "64DoomPlayer"
 Decal "BigScorch"
 +INVENTORY.RESTRICTABSOLUTELY
++WEAPON.AMMO_CHECKBOTH
++WEAPON.NOALERT
++WEAPON.NOAUTOFIRE
 	States
 	{
 	MineThrowFlash:

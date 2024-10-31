@@ -124,6 +124,9 @@ Inventory.PickupMessage "You got the assault rifle!"
 Obituary "%o was picked off by %k Assualt Rifle."
 Tag "Assault Rifle"
 +INVENTORY.RESTRICTABSOLUTELY
++WEAPON.AMMO_CHECKBOTH
++WEAPON.NOALERT
++WEAPON.NOAUTOFIRE
 	States
 	{
 	MineThrowFlash:
