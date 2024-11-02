@@ -126,7 +126,7 @@ Monsters:
 
 //Hellhound GEC - Gerardo194 (sprites)
 
-//Bruiser a.k.a Duke of Hell - Gerardo194 (sprites)
+//Bruiser a.k.a Duke of Hell - Gerardo194 (sprites), XDeath sprites by kaviarmackan
 
 //Knightmare a.k.a. DreadKnight - Dr Doctor (Original sprites) Craneo (Rework)
 
