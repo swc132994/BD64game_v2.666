@@ -19,9 +19,9 @@ PainChance "SuperFists",128
 PainChance "SuperKick",128
 PainChance "Fire",128
 DamageFactor 0.50
-DamageFactor "Fire",3
-DamageFactor "Plasma",1.75
-DamageFactor "BFG",1.75
+DamageFactor "Fire",2
+DamageFactor "Plasma",1.5
+DamageFactor "BFG",1.5
 DamageFactor "Unmaker",0.2
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0

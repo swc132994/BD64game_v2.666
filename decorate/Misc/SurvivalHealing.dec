@@ -104,7 +104,6 @@ Weapon.AmmoGive1 0
 Weapon.AmmoType2 "64AdrenalineStim"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-+WEAPON.AMMO_CHECKBOTH
 +WEAPON.AMMO_OPTIONAL
 +WEAPON.WIMPY_WEAPON
 +WEAPON.NOALERT

@@ -116,6 +116,8 @@ Player/Doomguy 64 crouch sprites:
 	D64 Frankensprites by Craneo
 
 Monsters:
+//Mancubus bone gib added by kaviarmackan
+
 //64Thing - Craneo(D64 sprites), based on the Mimic by StopSignal, sounds from Duke Nukem 3D by 3D Realms
 
 //64 Revenant - DrPyspy (sprites)

@@ -42,6 +42,7 @@ Tag "Multi-Purpose Mine"
 +WEAPON.NOAUTOFIRE
 +WEAPON.ALT_USES_BOTH
 -WEAPON.AMMO_CHECKBOTH
++WEAPON.EXPLOSIVE
 	States
 	{
 	KickingFlash:
@@ -278,7 +279,7 @@ Tag "Proximity Mine"
 PainChance "SuperFists",200
 PainChance "Kick",255
 PainChance "SuperKick",255
-Damagetype "Fire"
+DamageType "Fire"
 Decal "BigScorch"
 Obituary "%o was shreded by %k's Mine."
 -SHOOTABLE

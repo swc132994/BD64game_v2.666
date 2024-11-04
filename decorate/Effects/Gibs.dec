@@ -18,7 +18,8 @@ Decal "BrutalBloodSuper"
 +THRUACTORS
 +FLOORCLIP
 +ISMONSTER		//INFRARED
-BounceType "Doom"
++BOUNCEONFLOORS
++BOUNCEAUTOOFF
 BounceCount 1
 BounceFactor 1
 	States
@@ -99,11 +100,7 @@ Gravity 0.8
 SeeSound "misc/xdeath4"
 DeathSound "misc/xdeath3"
 Decal "BrutalBloodSuper"
-BounceType "Doom"
-BounceCount 1
-BounceFactor 1
 +MISSILE
-+SKYEXPLODE
 +NOBLOCKMAP
 +NOTELEPORT
 +MOVEWITHSECTOR
@@ -114,8 +111,10 @@ BounceFactor 1
 +ISMONSTER		//INFRARED
 -NOGRAVITY
 -DONTSPLASH
--BOUNCEONWALLS
--BOUNCEONCEILINGS
++BOUNCEONFLOORS
++BOUNCEAUTOOFF
+BounceCount 1
+BounceFactor 1
 	States
 	{
 	Spawn:
@@ -1012,6 +1011,7 @@ Decal "BrutalBloodSplat"
 +CORPSE
 +BOUNCEONWALLS
 +BOUNCEONFLOORS
++BOUNCEAUTOOFF
 BounceCount 1
 BounceFactor 1
 	States
@@ -1169,12 +1169,9 @@ Height 5
 Speed 7
 Mass 1
 Decal "BrutalBloodSplat"
-BounceType "Doom"
-BounceCount 1
-BounceFactor 1
++MISSILE
 -DONTSPLASH
 +NOBLOCKMAP
-+MISSILE
 +NOTELEPORT
 +MOVEWITHSECTOR
 +CLIENTSIDEONLY
@@ -1182,6 +1179,11 @@ BounceFactor 1
 +THRUACTORS
 +FLOORCLIP
 +CORPSE
++BOUNCEONWALLS
++BOUNCEONFLOORS
++BOUNCEAUTOOFF
+BounceCount 1
+BounceFactor 1
 	States
 	{
 	Spawn:
@@ -1222,8 +1224,10 @@ Decal "BrutalBloodSplat"
 +THRUACTORS
 +FLOORCLIP
 +ISMONSTER		//INFRARED
-BounceType "Doom"
-BounceCount 0
++BOUNCEONWALLS
++BOUNCEONFLOORS
++BOUNCEAUTOOFF
+BounceCount 3
 BounceFactor 0.7
 	States
 	{
@@ -1337,16 +1341,16 @@ ACTOR XDeathZombieArm1 : XDeath1
 {
 Scale 0.8
 Health 0
+Radius 5
 Height 10
-+DONTSPLASH
 +CORPSE
--MISSILE
++BOUNCEONWALLS
 	States
 	{
 	Spawn:
 		TRG3 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		TRG3 ABCDEFGH 4 A_CheckFloor("Death")
+		TRG3 ABCDEFGH 4
 		Wait
 	Death:
 		TNT1 A 0 A_Jump(128,"Death2")
@@ -1372,7 +1376,7 @@ ACTOR XDeathZombieLeg1 : XDeathZombieArm1
 	Spawn:
 		TRG4 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		TRG4 ABCDEFGH 4 A_CheckFloor("Death")
+		TRG4 ABCDEFGH 4
 		Wait
 	Death:
 		TRG4 I 35
@@ -1390,7 +1394,7 @@ ACTOR XDeathMarineLeg1 : XDeathZombieArm1
 	Spawn:
 		MRG4 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		MRG4 ABCDEFGH 4 A_CheckFloor("Death")
+		MRG4 ABCDEFGH 4
 		Wait
 	Death:
 		MRG4 I 35
@@ -1407,7 +1411,7 @@ ACTOR XDeathMarineArm1 : XDeathZombieArm1
 	Spawn:
 		MRG3 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//RFLIP IMAGE HORZ
-		MRG3 ABCDEFGH 4 A_CheckFloor("Death")
+		MRG3 ABCDEFGH 4
 		Wait
 	Death:
 		MRG3 I 35
@@ -1425,7 +1429,7 @@ ACTOR MarinePlasmaLeg1 : XDeathZombieArm1
 	Spawn:
 		PMG4 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		PMG4 ABCDEFGH 4 A_CheckFloor("Death")
+		PMG4 ABCDEFGH 4
 		Wait
 	Death:
 		PMG4 I 35
@@ -1442,7 +1446,7 @@ ACTOR MarinePlasmaArm1 : XDeathZombieArm1
 	Spawn:
 		PMG3 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//RFLIP IMAGE HORZ
-		PMG3 ABCDEFGH 4 A_CheckFloor("Death")
+		PMG3 ABCDEFGH 4
 		Wait
 	Death:
 		PMG3 I 35
@@ -1460,7 +1464,7 @@ ACTOR XDeathZombieArmBlack : XDeathZombieArm1
 	Spawn:
 		TRS3 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		TRS3 ABCDEFGH 4 A_CheckFloor("Death")
+		TRS3 ABCDEFGH 4
 		Wait
 	Death:
 		TNT1 A 0 A_Jump(128,"Death2")
@@ -1483,7 +1487,7 @@ ACTOR XDeathZombieLegBlack : XDeathZombieArm1
 	Spawn:
 		TRS4 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		TRS4 ABCDEFGH 4 A_CheckFloor("Death")
+		TRS4 ABCDEFGH 4
 		Wait
 	Death:
 		TRS4 I 35
@@ -1501,7 +1505,7 @@ ACTOR XDeathZombieArmRed : XDeathZombieArm1
 	Spawn:
 		ZMG3 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		ZMG3 ABCDEFGH 4 A_CheckFloor("Death")
+		ZMG3 ABCDEFGH 4
 		Wait
 	Death:
 		ZMG3 I 35
@@ -1518,7 +1522,7 @@ ACTOR XDeathZombieLegRed : XDeathZombieArm1
 	Spawn:
 		ZMG4 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		ZMG4 ABCDEFGH 4 A_CheckFloor("Death")
+		ZMG4 ABCDEFGH 4
 		Wait
 	Death:
 		ZMG4 I 35
@@ -1536,7 +1540,7 @@ ACTOR XDeathWaffenArm : XDeathZombieArm1
 	Spawn:
 		NZAG A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		NZAG ABCDEFGH 4 A_CheckFloor("Death")
+		NZAG ABCDEFGH 4
 		Wait
 	Death:
 		NZAG I 35
@@ -1555,7 +1559,7 @@ Scale 0.75
 	Spawn:
 		TRG1 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		TRG1 ABCDEFGH 4 A_CheckFloor("Death")
+		TRG1 ABCDEFGH 4
 		Wait
 	Death:
 		TRG1 I 35
@@ -1573,7 +1577,7 @@ Scale 0.75
 	Spawn:
 		TRG2 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		TRG2 ABCDEFGH 4 A_CheckFloor("Death")
+		TRG2 ABCDEFGH 4
 		Wait
 	Death:
 		TRG2 I 35
@@ -1594,7 +1598,7 @@ renderstyle Translucent
 	Spawn:
 		NRG1 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		NRG1 ABCDEFGH 4 A_CheckFloor("Death")
+		NRG1 ABCDEFGH 4
 		Wait
 	Death:
 		NRG1 I 35
@@ -1614,7 +1618,7 @@ renderstyle Translucent
 	Spawn:
 		NRG2 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		NRG2 ABCDEFGH 4 A_CheckFloor("Death")
+		NRG2 ABCDEFGH 4
 		Wait
 	Death:
 		NRG2 I 35
@@ -1632,7 +1636,7 @@ ACTOR XDeathPinkyArm1 : XDeathZombieArm1
 	Spawn:
 		TRG5 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		TRG5 ABCDEFGH 4 A_CheckFloor("Death")
+		TRG5 ABCDEFGH 4
 		Wait
 	Death:
 		TRG5 I 35
@@ -1649,7 +1653,7 @@ ACTOR XDeathPinkyLeg1 : XDeathZombieArm1
 	Spawn:
 		TRG6 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//R31 FLIP IMAGE HORZ
-		TRG6 ABCDEFGH 4 A_CheckFloor("Death")
+		TRG6 ABCDEFGH 4
 		Wait
 	Death:
 		TRG6 I 35
@@ -1669,7 +1673,7 @@ Renderstyle Translucent
 	Spawn:
 		PRG5 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		PRG5 ABCDEFGH 4 A_CheckFloor("Death")
+		PRG5 ABCDEFGH 4
 		Wait
 	Death:
 		PRG5 I 35
@@ -1688,7 +1692,7 @@ Renderstyle Translucent
 	Spawn:
 		PRG6 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		PRG6 ABCDEFGH 4 A_CheckFloor("Death")
+		PRG6 ABCDEFGH 4
 		Wait
 	Death:
 		PRG6 I 35
@@ -1709,7 +1713,7 @@ Renderstyle Translucent
 	Spawn:
 		NRG5 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		NRG5 ABCDEFGH 4 A_CheckFloor("Death")
+		NRG5 ABCDEFGH 4
 		Wait
 	Death:
 		NRG5 I 35
@@ -1729,7 +1733,7 @@ Renderstyle Translucent
 	Spawn:
 		NRG6 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		NRG6 ABCDEFGH 4 A_CheckFloor("Death")
+		NRG6 ABCDEFGH 4
 		Wait
 	Death:
 		NRG6 I 35
@@ -1748,7 +1752,7 @@ Translation "16:31=%[0,0,0]:[0,1,0]","176:191=%[0,0,0]:[0,1,0]","32:47=%[0,0,0]:
 	Spawn:
 		GRG5 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		GRG5 ABCDEFGH 4 A_CheckFloor("Death")
+		GRG5 ABCDEFGH 4
 		Wait
 	Death:
 		GRG5 I 35
@@ -1766,7 +1770,7 @@ Translation "16:31=%[0,0,0]:[0,1,0]","176:191=%[0,0,0]:[0,1,0]","32:47=%[0,0,0]:
 	Spawn:
 		GRG6 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		GRG6 ABCDEFGH 4 A_CheckFloor("Death")
+		GRG6 ABCDEFGH 4
 		Wait
 	Death:
 		GRG6 I 35
@@ -1784,12 +1788,30 @@ ACTOR XDeathFatsoCannon : XDeathZombieArm1
 	Spawn:
 		FTX3 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		FTX3 ABCDEFGH 4 A_CheckFloor("Death")
+		FTX3 ABCDEFGH 4
 		Wait
 	Death:
 		FTX3 I 35
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
 		FTX3 I -1
+		Stop
+	}
+}
+
+ACTOR XDeathFatsoBoneGib : XDeathZombieArm1
+{
+Scale 1
+	States
+	{
+	Spawn:
+		MANB A 0 NoDelay A_Jump(128,2)
+		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
+		MANB ABCDEFGH 4
+		Wait
+	Death:
+		MANB I 35
+		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
+		MANB I -1
 		Stop
 	}
 }
@@ -1803,7 +1825,7 @@ ACTOR XDeathBruiserCannonGreen : XDeathZombieArm1
 	Spawn:
 		BTX3 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		BTX3 ABCDEFGH 4 A_CheckFloor("Death")
+		BTX3 ABCDEFGH 4
 		Wait
 	Death:
 		BTX3 I 35
@@ -1822,7 +1844,7 @@ States
 	Spawn:
 		SKG1 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)		//R31 FLIP IMAGE HORZ
-		SKG1 ABCDEFGH 4 A_CheckFloor("Death")
+		SKG1 ABCDEFGH 4
 		Wait
 	Death:
 		SKG1 I 35
@@ -1840,7 +1862,7 @@ Scale 0.68
 	Spawn:
 		SKD1 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		SKD1 ABCD 4 A_CheckFloor("Death")
+		SKD1 ABCD 4
 		Wait
 	Death:
 		SKD1 E 35
@@ -1856,7 +1878,7 @@ Scale 0.68
 	States
 	{
 	Spawn:
-		SKLG A 1 NoDelay A_CheckFloor("Death")
+		SKLG A 1 NoDelay
 		Wait
 	Death:
 		SKLG C 35
@@ -1872,7 +1894,7 @@ Scale 0.68
 	States
 	{
 	Spawn:
-		SKLG B 1 NoDelay A_CheckFloor("Death")
+		SKLG B 1 NoDelay
 		Wait
 	Death:
 		SKLG D 35
@@ -1888,7 +1910,7 @@ Scale 0.68
 	States
 	{
 	Spawn:
-		RLAU A 1 NoDelay A_CheckFloor("Death")
+		RLAU A 1 NoDelay
 		Wait
 	Death:
 		RLAU B 35
@@ -1905,7 +1927,7 @@ ACTOR XDeathCacodemonGib1 : XDeathZombieArm1
 	States
 	{
 	Spawn:
-		CAG1 A 4 A_CheckFloor("Death")
+		CAG1 A 4
 		Wait
 	Death:
 		CAG1 B 35
@@ -1920,7 +1942,7 @@ ACTOR XDeathCacodemonGib2 : XDeathZombieArm1
 	States
 	{
 	Spawn:
-		CAG2 A 4 A_CheckFloor("Death")
+		CAG2 A 4
 		Wait
 	Death:
 		CAG2 B 35
@@ -1935,7 +1957,7 @@ ACTOR XDeathCacodemonGib3 : XDeathZombieArm1
 	States
 	{
 	Spawn:
-		CAG3 A 4 A_CheckFloor("Death")
+		CAG3 A 4
 		Wait
 	Death:
 		CAG3 B 35
@@ -1950,7 +1972,7 @@ ACTOR XDeathCacodemonGib4 : XDeathZombieArm1
 States
 	{
 	Spawn:
-		CAG4 A 4 A_CheckFloor("Death")
+		CAG4 A 4
 		Wait
 	Death:
 		CAG4 B 35
@@ -1965,7 +1987,7 @@ ACTOR XDeathCacodemonGib5 : XDeathZombieArm1
 	States
 	{
 	Spawn:
-		CAG5 A 4 A_CheckFloor("Death")
+		CAG5 A 4
 		Wait
 	Death:
 		CAG5 B 35
@@ -1983,7 +2005,7 @@ renderstyle translucent
 	States
 	{
 	Spawn:
-		NCG1 A 4 A_CheckFloor("Death")
+		NCG1 A 4
 		Wait
 	Death:
 		NCG1 B 35
@@ -2000,7 +2022,7 @@ renderstyle translucent
 	States
 	{
 	Spawn:
-		NCG2 A 4 A_CheckFloor("Death")
+		NCG2 A 4
 		Wait
 	Death:
 		NCG2 B 35
@@ -2017,7 +2039,7 @@ renderstyle translucent
 	States
 	{
 	Spawn:
-		NCG3 A 4 A_CheckFloor("Death")
+		NCG3 A 4
 		Wait
 	Death:
 		NCG3 B 35
@@ -2034,7 +2056,7 @@ renderstyle translucent
 	States
 	{
 	Spawn:
-		NCG4 A 4 A_CheckFloor("Death")
+		NCG4 A 4
 		Wait
 	Death:
 		NCG4 B 35
@@ -2051,7 +2073,7 @@ renderstyle translucent
 	States
 	{
 	Spawn:
-		NCG5 A 4 A_CheckFloor("Death")
+		NCG5 A 4
 		Wait
 	Death:
 		NCG5 B 35
@@ -2069,7 +2091,7 @@ ACTOR XDeathHKArm : XDeathZombieArm1
 	Spawn:
 		KGB2 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		KGB2 A 4 A_CheckFloor("Death")
+		KGB2 A 4
 		Wait
 	Death:
 		KGB2 B 35
@@ -2087,7 +2109,7 @@ ACTOR XDeathBaronArm : XDeathZombieArm1
 	Spawn:
 		BGB2 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		BGB2 A 4 A_CheckFloor("Death")
+		BGB2 A 4
 		Wait
 	Death:
 		BGB2 B 35
@@ -2107,7 +2129,7 @@ RenderStyle Translucent
 	Spawn:
 		BZB2 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)
-		BZB2 A 4 A_CheckFloor("Death")
+		BZB2 A 4
 		Wait
 	Death:
 		BZB2 B 35
@@ -2126,7 +2148,7 @@ Scale 0.64
 	Spawn:
 		DIAG A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		DIAG ABCDEFGH 4 A_CheckFloor("Death")
+		DIAG ABCDEFGH 4
 		Wait
 	Death:
 		DIAG I 35
@@ -2144,7 +2166,7 @@ Scale 0.64
 	Spawn:
 		DIAG J 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		DIAG JKLMNOPQ 4 A_CheckFloor("Death")
+		DIAG JKLMNOPQ 4
 		Wait
 	Death:
 		DIAG R 35
@@ -2162,7 +2184,7 @@ ACTOR XDeathCyberArm : XDeathZombieArm1
 	Spawn:
 		CYAR A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		CYAR A 4 A_CheckFloor("Death")
+		CYAR A 4
 		Wait
 	Death:
 		CYAR A 35
@@ -2179,7 +2201,7 @@ ACTOR XDeathCyberLeg : XDeathZombieArm1
 	Spawn:
 		CYLG A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		CYLG A 4 A_CheckFloor("Death")
+		CYLG A 4
 		Wait
 	Death:
 		CYLG A 35
@@ -2198,7 +2220,7 @@ Scale 0.85
 	Spawn:
 		ANLG A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		ANLG A 4 A_CheckFloor("Death")
+		ANLG A 4
 		Wait
 	Death:
 		ANLG A 35
@@ -2214,7 +2236,7 @@ ACTOR XDeathSpiderLeg1 : XDeathZombieArm1
 	States
 	{
 	Spawn:
-		SPIL ABCDEFGH 4 A_CheckFloor("Death")
+		SPIL ABCDEFGH 4
 		Wait
 	Death:
 		SPIL I 1
@@ -2242,7 +2264,7 @@ ACTOR XDeathSpiderHead : XDeathSpiderLeg1
 	Spawn:
 		SPIH A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		SPIH ABCDEFGH 4 A_CheckFloor("Death")
+		SPIH ABCDEFGH 4
 		Wait
 	Death:
 		TNT1 A 0 A_Jump(128,"Death2")
@@ -2266,7 +2288,7 @@ ACTOR XDeathBlueSpiderHead : XDeathSpiderHead
 	Spawn:
 		BBRH A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		BBRH ABCDEFGH 4 A_CheckFloor("Death")
+		BBRH ABCDEFGH 4
 		Wait
 	Death:
 		TNT1 A 0 A_Jump(128,"Death2")
@@ -2288,7 +2310,7 @@ renderstyle Normal
 	States
 	{
 	Spawn:
-		NCG3 A 4 A_CheckFloor("Death")
+		NCG3 A 4
 		Wait
 	Death:
 		NCG3 B 35
@@ -2309,7 +2331,7 @@ ACTOR XDeathBlueSpiderLeg1 : XDeathSpiderLeg1
 	States
 	{
 	Spawn:
-		BBRL ABCDEFGH 4 A_CheckFloor("Death")
+		BBRL ABCDEFGH 4
 		Wait
 	Death:
 		BBRL I 1
@@ -2344,7 +2366,7 @@ ACTOR XDeathHHRearLeg : XDeathZombieArm1
 	Spawn:
 		HHRL A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		HHRL ABCDEFGH 4 A_CheckFloor("Death")
+		HHRL ABCDEFGH 4
 		Wait
 	Death:
 		HHRL I 35
@@ -2361,7 +2383,7 @@ ACTOR XDeathHHHead : XDeathZombieArm1
 	Spawn:
 		HHHD A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		HHHD ABCDEFGH 4 A_CheckFloor("Death")
+		HHHD ABCDEFGH 4
 		Wait
 	Death:
 		HHHD A 35
@@ -2379,7 +2401,7 @@ ACTOR HoundGEC_RearLeg : XDeathZombieArm1
 	Spawn:
 		GHRL A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP HORZ
-		GHRL ABCDEFGH 4 A_CheckFloor("Death")
+		GHRL ABCDEFGH 4
 		Wait
 	Death:
 		GHRL I 35
@@ -2396,7 +2418,7 @@ ACTOR HoundGEC_Head : XDeathZombieArm1
 	Spawn:
 		GHHD A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP HORZ
-		GHHD ABCDEFGH 4 A_CheckFloor("Death")
+		GHHD ABCDEFGH 4
 		Wait
 	Death:
 		GHHD A 35
@@ -2414,7 +2436,7 @@ ACTOR BelphegorLeg : XDeathZombieArm1
 	Spawn:
 		BPLG A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		BPLG ABCDEFGH 4 A_CheckFloor("Death")
+		BPLG ABCDEFGH 4
 		Wait
 	Death:
 		BPLG I 35
@@ -2431,7 +2453,7 @@ ACTOR BelphegorArm : XDeathHKArm
 	Spawn:
 		KGB6 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		KGB6 A 4 A_CheckFloor("Death")
+		KGB6 A 4
 		Wait
 	Death:
 		KGB6 B 35
@@ -2449,7 +2471,7 @@ ACTOR XDeathZombieArmBFG : XDeathZombieArm1
 	Spawn:
 		TNT1 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		ZBG3 ABCDEFGH 4 A_CheckFloor("Death")
+		ZBG3 ABCDEFGH 4
 		Wait
 	Death:
 		ZBG3 I 35
@@ -2466,7 +2488,7 @@ ACTOR XDeathZombieLegBFG : XDeathZombieArm1
 	Spawn:
 		TNT1 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		ZBG4 ABCDEFGH 4 A_CheckFloor("Death")
+		ZBG4 ABCDEFGH 4
 		Wait
 	Death:
 		ZBG4 I 35
@@ -2486,7 +2508,7 @@ RenderStyle Translucent
 	Spawn:
 		PTQA A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP HORZ
-		PTQA ABCDEFGH 2 A_CheckFloor("Death")
+		PTQA ABCDEFGH 2
 		Wait
 	Death:
 		PTQA I 35
@@ -2502,11 +2524,10 @@ BounceFactor 0.5
 wallbouncefactor 0.5
 RenderStyle Translucent
 Alpha 0.6
-+RANDOMIZE
 	States
 	{
 	Spawn:
-		PTQB ABCDEFG 2 A_CheckFloor("Death")
+		PTQB ABCDEFG 2
 		wait
 	Death:
 		"####" "#" 35
@@ -2527,7 +2548,7 @@ RenderStyle Translucent
 	Spawn:
 		PTQC A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP HORZ
-		PTQC ABCDEFGH 2 A_CheckFloor("Death")
+		PTQC ABCDEFGH 2
 		Wait
 	Death:
 		"####" "#" 35
@@ -2557,7 +2578,7 @@ RenderStyle Translucent
 	States
 	{
 	Spawn:
-		RMYX ABCD 4 A_CheckFloor("Death")
+		RMYX ABCD 4
 		Wait
 	Death:
 		RMYX A 0 A_Jump(128,"Death2")
@@ -2583,7 +2604,7 @@ RenderStyle Translucent
 	Spawn:
 		RNYX A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		RNYX A 4 A_CheckFloor("Death")
+		RNYX A 4
 		Wait
 	Death:
 		RNYX B 35
@@ -2602,7 +2623,7 @@ Scale 0.85
 	Spawn:
 		SWG6 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		SWG6 ABCDEFGH 4 A_CheckFloor("Death")
+		SWG6 ABCDEFGH 4
 		Wait
 	Death:
 		SWG6 I 35
@@ -2620,7 +2641,7 @@ Scale 0.85
 	Spawn:
 		SWKB A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		SWKB A 4 A_CheckFloor("Death")
+		SWKB A 4
 		Wait
 	Death:
 		SWKB B 35
@@ -2638,7 +2659,7 @@ Scale 0.85
 	Spawn:
 		SWKB C 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		SWKB C 4 A_CheckFloor("Death")
+		SWKB C 4
 		Wait
 	Death:
 		SWKB D 35
@@ -2656,7 +2677,7 @@ ACTOR XDeathHuskArm1 : XDeathZombieArm1
 	Spawn:
 		HKAR A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		HKAR ABCDEFGH 4 A_CheckFloor("Death")
+		HKAR ABCDEFGH 4
 		Wait
 	Death:
 		HKAR I 35
@@ -2669,12 +2690,13 @@ ACTOR XDeathHuskArm1 : XDeathZombieArm1
 //Lost Soul
 ACTOR LostSoulPiece1 : XDeathZombieArm1
 {
+Scale 0.7
 	States
 	{
 	Spawn:
 		LSP1 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		LSP1 ABCDEFGH 4 A_CheckFloor("Death")
+		LSP1 ABCDEFGH 4
 		Wait
 	Death:
 		LSP1 F -1
@@ -2682,14 +2704,14 @@ ACTOR LostSoulPiece1 : XDeathZombieArm1
 	}
 }
 
-ACTOR LostSoulPiece2 : XDeathZombieArm1
+ACTOR LostSoulPiece2 : LostSoulPiece1
 {
 	States
 	{
 	Spawn:
 		LSP2 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		LSP2 ABCDEFGH 4 A_CheckFloor("Death")
+		LSP2 ABCDEFGH 4
 		Wait
 	Death:
 		LSP2 F -1
@@ -2697,14 +2719,14 @@ ACTOR LostSoulPiece2 : XDeathZombieArm1
 	}
 }
 
-ACTOR LostSoulPiece3 : XDeathZombieArm1
+ACTOR LostSoulPiece3 : LostSoulPiece1
 {
 	States
 	{
 	Spawn:
 		LSP3 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		LSP3 ABCDEFGH 4 A_CheckFloor("Death")
+		LSP3 ABCDEFGH 4
 		Wait
 	Death:
 		LSP3 C -1
@@ -2712,14 +2734,14 @@ ACTOR LostSoulPiece3 : XDeathZombieArm1
 	}
 }
 
-ACTOR LostSoulPiece4 : XDeathZombieArm1
+ACTOR LostSoulPiece4 : LostSoulPiece1
 {
 	States
 	{
 	Spawn:
 		LSP4 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		LSP4 ABCDEFGH 4 A_CheckFloor("Death")
+		LSP4 ABCDEFGH 4
 		Wait
 	Death:
 		LSP4 E -1
@@ -2727,14 +2749,14 @@ ACTOR LostSoulPiece4 : XDeathZombieArm1
 	}
 }
 
-ACTOR LostSoulPiece5 : XDeathZombieArm1
+ACTOR LostSoulPiece5 : LostSoulPiece1
 {
 	States
 	{
 	Spawn:
 		LSP5 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		LSP5 ABCDEFGH 4 A_CheckFloor("Death")
+		LSP5 ABCDEFGH 4
 		Wait
 	Death:
 		LSP5 A -1
@@ -2749,7 +2771,7 @@ ALPHA 0.5
 	States
 	{
 	Spawn:
-		NCG3 A 4 A_CheckFloor("Death")
+		NCG3 A 4
 		Wait
 	Death:
 		NCG3 B 35
@@ -2764,7 +2786,7 @@ ACTOR XDeathClassicCacodemonGib4 : XDeathZombieArm1
 States
 	{
 	Spawn:
-		CLG4 A 4 A_CheckFloor("Death")
+		CLG4 A 4
 		Wait
 	Death:
 		CLG4 B 35
@@ -2779,7 +2801,7 @@ ACTOR XDeathClassicCacodemonGib5 : XDeathZombieArm1
 	States
 	{
 	Spawn:
-		CLG5 A 4 A_CheckFloor("Death")
+		CLG5 A 4
 		Wait
 	Death:
 		CLG5 B 35
@@ -2797,7 +2819,7 @@ renderstyle translucent
 	States
 	{
 	Spawn:
-		CNG4 A 4 A_CheckFloor("Death")
+		CNG4 A 4
 		Wait
 	Death:
 		CNG4 B 35
@@ -2814,7 +2836,7 @@ renderstyle translucent
 	States
 	{
 	Spawn:
-		CNG5 A 4 A_CheckFloor("Death")
+		CNG5 A 4
 		Wait
 	Death:
 		CNG5 B 35
@@ -2836,7 +2858,7 @@ renderstyle translucent
 	Spawn:
 		D1A6 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		D1A6 ABCDEFGH 4 A_CheckFloor("Death")
+		D1A6 ABCDEFGH 4
 		Wait
 	Death:
 		D1A6 I 35
@@ -2857,7 +2879,7 @@ renderstyle translucent
 	Spawn:
 		D1A6 J 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		D1A6 JKLMNOPQ 4 A_CheckFloor("Death")
+		D1A6 JKLMNOPQ 4
 		Wait
 	Death:
 		D1A6 R 35
@@ -2876,7 +2898,7 @@ States
 	Spawn:
 		PTG1 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)		//FLIP IMAGE HORZ
-		PTG1 ABCDEFGH 4 A_CheckFloor("Death")
+		PTG1 ABCDEFGH 4
 		Wait
 	Death:
 		PTG1 I 35
@@ -2894,7 +2916,7 @@ Scale 0.68
 	Spawn:
 		PTD1 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		PTD1 ABCD 4 A_CheckFloor("Death")
+		PTD1 ABCD 4
 		Wait
 	Death:
 		PTD1 E 35
@@ -2910,7 +2932,7 @@ Scale 0.68
 	States
 	{
 	Spawn:
-		PTIG A 1 NoDelay A_CheckFloor("Death")
+		PTIG A 1 NoDelay
 		Wait
 	Death:
 		PTIG C 35
@@ -2926,7 +2948,7 @@ Scale 0.68
 	States
 	{
 	Spawn:
-		PTIG B 1 NoDelay A_CheckFloor("Death")
+		PTIG B 1 NoDelay
 		Wait
 	Death:
 		PTIG D 35
@@ -2942,7 +2964,7 @@ Scale 0.68
 	States
 	{
 	Spawn:
-		VLAU A 1 NoDelay A_CheckFloor("Death")
+		VLAU A 1 NoDelay
 		Wait
 	Death:
 		VLAU B 35
@@ -2961,7 +2983,7 @@ Scale 0.75
 	Spawn:
 		SLH1 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		SLH1 ABCDEFGH 4 A_CheckFloor("Death")
+		SLH1 ABCDEFGH 4
 		Wait
 	Death:
 		SLH1 I 35
@@ -2979,7 +3001,7 @@ Scale 0.75
 	Spawn:
 		SLH2 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
-		SLH2 ABCDEFGH 4 A_CheckFloor("Death")
+		SLH2 ABCDEFGH 4
 		Wait
 	Death:
 		SLH2 I 35

@@ -205,10 +205,9 @@ Radius 3
 SeeSound "skeleton/attack"
 DeathSound "skeleton/tracex"
 Decal "SmallerScorch"
-DamageType "Fire"
+DamageType "Extreme"
 PROJECTILE
 +SEEKERMISSILE
-+EXTREMEDEATH
 +NOBLOOD
 -NOBLOCKMAP
 +SHOOTABLE

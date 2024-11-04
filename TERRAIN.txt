@@ -96,10 +96,12 @@ liquid
 
 terrain	lava
 {
-splash lava
-footclip 5
+splash			Lava
+footclip		10
 liquid
-damagetype "Fire"
+DamageAmount	5
+DamageType		lava
+DamageTimeMask	31
 }
 
 terrain blood
