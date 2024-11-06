@@ -186,12 +186,12 @@ Tag "$FO_TAG_PLASMARIFLE"
 		Wait
 	FirstSelectAnimation:
 		TNT1 A 0 A_TakeInventory("NeverSelectedPlasma",1)
-		PLSR G 1 Offset(-89, 120)
-		PLSR G 1 Offset(-77, 109)
-		PLSR G 1 Offset(-60, 92)
-		PLSR G 1 Offset(-27, 60)
-		PLSR G 1 Offset(-9, 38)
-		PLSR G 1 Offset(-3, 34)
+		PLSR G 1 Offset(-89,120)
+		PLSR G 1 Offset(-77,109)
+		PLSR G 1 Offset(-60,92)
+		PLSR G 1 Offset(-27,60)
+		PLSR G 1 Offset(-9,38)
+		PLSR G 1 Offset(-3,34)
 		PLSR G 1 A_WeaponReady
 		PLSR G 10
 		2LSR EFGH 1
@@ -386,7 +386,6 @@ DeathSound "weapons/plasmax"
 Obituary "$FO_OB_MPPLASMARIFLE"
 Decal "SmallerScorch"
 PROJECTILE
-+RANDOMIZE
 +THRUSPECIES
 	States
 	{

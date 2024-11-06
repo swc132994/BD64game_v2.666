@@ -233,7 +233,8 @@ Tag "$FO_TAG_BFG9000"
 Actor 64BFGBall : BFGBall Replaces BFGBall
 {
 Scale 0.75
-Renderstyle Normal
+Alpha 1
+Renderstyle Add
 DamageType "BFG"
 Decal "BFGLIGHTNING"
 Obituary "$FO_OB_MPBFG_BOOM"
@@ -253,15 +254,14 @@ Obituary "$FO_OB_MPBFG_BOOM"
 		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleGreenHeavySmall",0,0,random(0,360),2,random(20,50))
 		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleGreenVeryFast",0,0,random(0,360),2,random(20,40))
 		TNT1 AAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleGreen",0,0,random(0,360),2,random(0,360))
-		TNT1 AAAAAAAAAAAA 0 A_CustomMissile("64BFGFireBase",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCrater")
 		TNT1 A 0 A_SpawnItemEx("ExplosionAirDisplacementEffect")
 		TNT1 A 0 Radius_Quake(4,8,0,12,0)
 		TNT1 A 0 A_Explode(200,180,0)
-		TNT1 A 2
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
+		TNT1 A 0 A_SetScale(1.3,1.3)
 		BFE1 A 8 BRIGHT
 		BFE1 B 7 BRIGHT A_FadeOut(0.14)
 		BFE1 C 3 BRIGHT A_FadeOut(0.14)
@@ -269,19 +269,6 @@ Obituary "$FO_OB_MPBFG_BOOM"
 		BFE1 D 3 BRIGHT A_FadeOut(0.14)
 		BFE1 E 3 BRIGHT A_FadeOut(0.14)
 		BFE1 F 3 BRIGHT A_FadeOut(0.14)
-		Stop
-	}
-}
-
-Actor 64BFGFireBase
-{
-Scale 1.2
-Alpha 0.8
-RenderStyle Add
-	States
-	{
-	Spawn:
-		BFE1 ABCDEF 4 Bright
 		Stop
 	}
 }
@@ -294,7 +281,7 @@ DamageType "BFG"
 	states
 	{
 	Spawn:
-		BFE2 ABCDEF 2 Bright
+		BFE2 ABCDEF 3 Bright
 		Stop
 	}
 }
@@ -302,7 +289,7 @@ DamageType "BFG"
 Actor BFGBetaBall
 {
 Scale 0.6
-Damage 10
+Damage 9
 Radius 6
 Height 8
 Speed 25
@@ -314,54 +301,58 @@ DamageType "Extreme"
 Obituary "%o was obliterated by %k's BFG."
 SeeSound ""
 Decal "MedScorch"
-+MISSILE
+PROJECTILE
 +BOUNCEONFLOORS
+-NOGRAVITY
 BounceFactor 0.95
-ReactionTime 60
+ReactionTime 20
 	States
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Death")
-		GRNB ACB 2 Bright
+		GRNB ACB 2 Bright Light("BETABALL1_X3")
 		TNT1 A 0 A_Countdown
 		Loop
 	Death:
 		TNT1 A 0 A_Stop
 		TNT1 A 0 A_NoGravity
 		TNT1 A 0 A_PlaySound("DSFIRXPL",CHAN_ITEM)
-		BFE2 ABCD 3 Bright
 		TNT1 AAAAA 0 A_CustomMissile("explosionParticleGreenHeavySmall",0,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleGreen",0,0,random(0,360),2,random(0,360))
-		TNT1 A 1 A_Explode(100,70,0)
+		TNT1 A 0 A_Explode(100,70,0)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterMed")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterMed",0,0,4)
+		BFE2 ABCD 3 Bright
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
-		TNT1 A 9 A_CustomMissile("PlasmaSmoke",1,0,random(0,360),2,random(0,160))
+		TNT1 A 1 A_CustomMissile("PlasmaSmoke",1,0,random(0,360),2,random(0,160))
 		Stop
 	}
 }
 
 Actor BFGBetaBall2 : BFGBetaBall
 {
-Damage 8
+Damage 7
+Speed 30
+Gravity 0.4
 	States
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Death")
-		LAZR AB 2 Bright
+		LAZR AB 2 Bright Light("BETABALL2_X3")
 		TNT1 A 0 A_Countdown
 		Loop
 	Death:
 		TNT1 A 0 A_Stop
+		TNT1 A 0 A_NoGravity
 		TNT1 A 0 A_PlaySound("DSFIRXPL",CHAN_ITEM)
-		REDB ABCD 3 Bright
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
 		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleLaser",0,0,random(0,360),2,random(0,360))
-		TNT1 A 1 A_Explode(80,100,0)
+		TNT1 A 0 A_Explode(80,100,0)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterMed")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterMed")
+		REDB ABCD 3 Bright
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
-		TNT1 A 9 A_CustomMissile("PlasmaSmoke",1,0,random(0,360),2,random(0,160))
+		TNT1 A 1 A_CustomMissile("PlasmaSmoke",1,0,random(0,360),2,random(0,160))
 		Stop
 	}
 }

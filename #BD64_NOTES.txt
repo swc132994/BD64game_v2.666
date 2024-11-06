@@ -117,6 +117,7 @@ Player/Doomguy 64 crouch sprites:
 
 Monsters:
 //Mancubus bone gib added by kaviarmackan
+//Archnotron & nightcrawler flipped xdeath sprites by kaviarmackan
 
 //64Thing - Craneo(D64 sprites), based on the Mimic by StopSignal, sounds from Duke Nukem 3D by 3D Realms
 
