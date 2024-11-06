@@ -459,52 +459,54 @@ Actor 64StickGrenade : 64Rocket
 {
 Scale 0.5
 Damage 4
-Speed 10
+Speed 12
+Mass 9
 Gravity 1
 Species "none"
-BounceType "Doom"
 SeeSound ""
 DeathSound "weapons/rocklx"
 BounceSound "dart/shotx"
--MISSILE
 -THRUSPECIES
--DEHEXPLOSION
--ROCKETTRAIL
 -ACTIVATEIMPACT
 -NOGRAVITY
-+NODAMAGETHRUST //NO VERTICAL ROCKET BOOSTS
 +FLOORCLIP
 +FORCEXYBILLBOARD
 +EXPLODEONWATER
-ReactionTime 35
++BOUNCEONWALLS
++BOUNCEONFLOORS
++BOUNCEAUTOOFF
++USEBOUNCESTATE
+BounceCount 6
+BounceFactor 0.7
+ReactionTime 10
 	States
 	{
 	Spawn:
-		ZZND A 1 NoDelay ThrustThingZ(0,35,0,1)
-		ZZND BCD 1
-		TNT1 A 0 A_SetSolid
-	Fly:
-		ZZND ABCD 1 A_CheckFloor("Rest")
-		Loop
-	Rest:
-		TNT1 A 0 A_Jump(128,2)//50%
+		ZZND A 0 NoDelay A_Jump(128,2)//50%
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//Flip horizontal
-		TNT1 A 0 A_PlaySound("dart/shotx",CHAN_WEAPON)
-	Rest2:
-		ZZND I 1 A_CountDown
+		ZZND A 1 ThrustThingZ(0,32,0,1)
+	Fly:
+		ZZND ABCD 1
+		Loop
+	Bounce.Wall:
+		TNT1 A 0 A_CountDown
+		ZZND ABCD 1
+		Loop
+	Bounce.Floor:
+		TNT1 A 0 A_CountDown
+		ZZND B 4
 		Loop
 	Death:
-		TNT1 A 1 ThrustThingZ(0,10,1,0)
+		ZZND B 8 A_Stop
 		TNT1 A 0 Radius_Quake(2,54,0,15,0)
 		TNT1 A 0 A_PlaySound("Explosion",CHAN_ITEM)
-		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
-		TNT1 AAAAAAA 0 A_CustomMissile("MediumExplosionFlames",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile("MediumExplosionFlames",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_Explode(64,136)
-		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
-		TNT1 A 0 A_SpawnItemEx("DetectCeilCrater")
+		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater",0,0,-4)
+		TNT1 A 0 A_SpawnItemEx("DetectCeilCrater",0,0,4)
 		TNT1 A 0 A_SpawnItemEx("ExplosionFlareSpawner")
-		TNT1 AAAAAAA 0 A_CustomMissile("ExplosionFlames",0,0,random(0,360),2,random(0,360))
 		TNT1 AAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
 		TNT1 A 0 Radius_Quake(2,24,0,15,0)
 		TNT1 A 0 A_PlaySound("FAREXPL",CHAN_BODY)
@@ -516,5 +518,5 @@ ReactionTime 35
 
 Actor 64StickGrenadePlayer: 64StickGrenade
 {
-Speed 30
+Speed 15
 }

@@ -44,32 +44,32 @@ Obituary "%o was melted by a zombie colonel."
 	Missile:
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget20",0,0,55)
 		ZMAY E 8 A_FaceTarget
-		ZMAY F 2 Bright Light("PLASMABALL") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY F 2 Bright Light("PLASMA_X1") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
 		ZMAY E 3 A_FaceTarget
-		ZMAY F 2 Bright Light("PLASMABALL") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY F 2 Bright Light("PLASMA_X1") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
 		ZMAY E 3 A_FaceTarget
-		ZMAY F 2 Bright Light("PLASMABALL") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY F 2 Bright Light("PLASMA_X1") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget20",0,0,55)
 		ZMAY E 8 A_FaceTarget
-		ZMAY F 2 Bright Light("PLASMABALL") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY F 2 Bright Light("PLASMA_X1") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
 		ZMAY E 3 A_FaceTarget
-		ZMAY F 2 Bright Light("PLASMABALL") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY F 2 Bright Light("PLASMA_X1") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
 		ZMAY E 3 A_FaceTarget
-		ZMAY F 2 Bright Light("PLASMABALL") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY F 2 Bright Light("PLASMA_X1") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget20",0,0,55)
 		ZMAY E 8 A_FaceTarget
-		ZMAY F 2 Bright Light("PLASMABALL") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY F 2 Bright Light("PLASMA_X1") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
 		ZMAY E 3 A_FaceTarget
-		ZMAY F 2 Bright Light("PLASMABALL") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY F 2 Bright Light("PLASMA_X1") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
 		ZMAY E 3 A_FaceTarget
-		ZMAY F 2 Bright Light("PLASMABALL") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY F 2 Bright Light("PLASMA_X1") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget20",0,0,55)
 		ZMAY E 8 A_FaceTarget
-		ZMAY F 2 Bright Light("PLASMABALL") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY F 2 Bright Light("PLASMA_X1") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
 		ZMAY E 3 A_FaceTarget
-		ZMAY F 2 Bright Light("PLASMABALL") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY F 2 Bright Light("PLASMA_X1") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
 		ZMAY E 3 A_FaceTarget
-		ZMAY F 2 Bright Light("PLASMABALL") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
+		ZMAY F 2 Bright Light("PLASMA_X1") A_CustomMissile("64ArachnotronPlasma",36,5,random(-3,3),1,random(-3,3))
 		TNT1 A 0 A_SpawnItemEx("HeadshotTarget10",0,0,55)
 		ZMAY E 10 A_FaceTarget
 		Goto See

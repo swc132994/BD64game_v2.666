@@ -1,48 +1,42 @@
 #INCLUDE Brightmaps.gl
 
 //Rocket
-pointlight ROCKET
-{
-	color 1.0 0.7 0.0
-	size 56
-}
-
 flickerlight ROCKET_X1
 {
 	color 1.0 0.7 0.0
-	size 64
-	secondarySize 72
+	size 62
+	secondarySize 70
 	chance 0.3
 }
 
 flickerlight ROCKET_X2
 {
-	color 0.5 0.3 0.0
-	size 80
-	secondarySize 88
+	color 1.0 0.7 0.0
+	size 48
+	secondarySize 56
 	chance 0.3
 }
 
 flickerlight ROCKET_X3
 {
-	color 0.4 0.2 0.0
-	size 96
-	secondarySize 104
+	color 1.0 0.7 0.0
+	size 40
+	secondarySize 48
 	chance 0.3
 }
 
 flickerlight ROCKET_X4
 {
-	color 0.3 0.1 0.0
-	size 96
-	secondarySize 104
+	color 1.0 0.7 0.0
+	size 32
+	secondarySize 40
 	chance 0.3
 }
 flickerlight ROCKET_X5
 {
-	color 0.2 0.1 0.0
-	size 96
-	secondarySize 104
+	color 1.0 0.7 0.0
+	size 24
+	secondarySize 32
 	chance 0.3
 }
 
@@ -128,63 +122,55 @@ object 64GroundProxMine
 }
 
 //Plasma
-pointlight PLASMABALL
-{
-	color 0.0 0.2 1.0
-	size 56
-}
-
 flickerlight PLASMA_X1
 {
 	color 0.0 0.2 1.0
-	size 64
-	secondarySize 72
+	size 40
+	secondarySize 48
 	chance 0.4
 }
 
 flickerlight PLASMA_X2
 {
 	color 0.0 0.1 0.8
-	size 80
-	secondarySize 88
+	size 32
+	secondarySize 40
 	chance 0.4
 }
 
 flickerlight PLASMA_X3
 {
-	color 0.0 0.0 0.5
-	size 64
-	secondarySize 72
+	color 0.0 0.1 0.8
+	size 24
+	secondarySize 32
 	chance 0.4
 }
 
 flickerlight PLASMA_X4
 {
-	color 0.0 0.0 0.2
-	size 8
-	secondarySize 16
+	color 0.0 0.1 0.8
+	size 16
+	secondarySize 24
 	chance 0.4
 }
 
 flickerlight PLASMA_X5
 {
-	color 0.0 0.0 0.1
-	size 4
-	secondarySize 8
+	color 0.0 0.1 0.8
+	size 8
+	secondarySize 16
 	chance 0.4
 }
 
 object 64PlasmaBall
 {
-	frame PLSSA {light PLASMABALL}
-	frame PLSSB {light PLASMABALL}
+	frame PLSS {light PLASMA_X1}
 
 	frame PLSEA {light PLASMA_X1}
 	frame PLSEB {light PLASMA_X2}
-	frame PLSEC {light PLASMA_X2}
-	frame PLSED {light PLASMA_X3}
-	frame PLSEE {light PLASMA_X4}
-	frame PLSEF {light PLASMA_X5}
+	frame PLSEC {light PLASMA_X3}
+	frame PLSED {light PLASMA_X4}
+	frame PLSEE {light PLASMA_X5}
 }
 
 object PlasmaFlame
@@ -205,15 +191,13 @@ object PlasmaFlame
 
 object 64ArachnotronPlasma
 {
-	frame PLSSA {light PLASMABALL}
-	frame PLSSB {light PLASMABALL}
+	frame PLSS {light PLASMA_X1}
 
 	frame PLSEA {light PLASMA_X1}
 	frame PLSEB {light PLASMA_X2}
-	frame PLSEC {light PLASMA_X2}
-	frame PLSED {light PLASMA_X3}
-	frame PLSEE {light PLASMA_X4}
-	frame PLSEF {light PLASMA_X5}
+	frame PLSEC {light PLASMA_X3}
+	frame PLSED {light PLASMA_X4}
+	frame PLSEE {light PLASMA_X5}
 }
 
 //UNMAKER

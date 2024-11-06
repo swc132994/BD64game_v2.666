@@ -234,7 +234,7 @@ Decal "MedScorch"
 	States
 	{
 	Spawn:
-		BRNR AB 2 NoDelay Bright Light("PLASMABALL") A_CustomMissile("LensFlareProjectileBlue",-2,0)
+		BRNR AB 2 NoDelay Bright Light("PLASMA_X1") A_CustomMissile("LensFlareProjectileBlue",-2,0)
 		TNT1 A 0 A_CustomMissile("BaronProjectileCoreBlue",-2,0)
 		Loop
 	Death:

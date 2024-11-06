@@ -148,7 +148,7 @@ HitObituary "%o was crushed underfoot."
 ACTOR MasterMindProjectile : EnemyProjectile
 {
 Scale 0.1
-Damage 4
+Damage 5
 Speed 60
 FastSpeed 70
 +EXTREMEDEATH

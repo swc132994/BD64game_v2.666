@@ -329,7 +329,7 @@ DamageType "Plasma"
 	States
 	{
 	Spawn:
-		GEXP A 1 light("PLASMABALL")
+		GEXP A 1 light("PLASMA_X1")
 		Goto Death
 	Death:
 		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("BluePlasmaParticle",0,0,random(0,360),2,random(0,360))
@@ -338,7 +338,7 @@ DamageType "Plasma"
 		TNT1 A 0 ThrustThingZ(0,1,1,0)
 		TNT1 A 1 A_Explode(30,40)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCrater")
-		GEXP ABCDEFGHIJKL 2 Bright light("PLASMABALL")
+		GEXP ABCDEFGHIJKL 2 Bright light("PLASMA_X1")
 		GEXP MNOPQRS 2 Bright light("PLASMA_X3") A_CustomMissile("PlasmaSmoke",1,0,random(0,360),2,random(0,160))
 		GEXP TUVWXYZ 2 Bright light("PLASMA_X4")
 		stop
