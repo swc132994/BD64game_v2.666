@@ -174,33 +174,33 @@ Health 0
 
 Actor 64BaronBallGreen : BaronBall Replaces BaronBall
 {
-Scale 0.75
+Scale 0.9
 Height 12
 RenderStyle Normal
 Decal "MedScorch"
 	states
 	{
 	Spawn:
-		BAL7 AB 2 NoDelay Bright A_CustomMissile("LensFlareProjectileGreen",-2,0)
-		TNT1 A 0 A_CustomMissile("BaronGreenProjectileCore",-2,0)
+		BAL7 AB 2 Bright A_CustomMissile("LensFlareProjectileGreen",-2,0)
 		Loop
 	Death:
-		TNT1 A 1
+		TNT1 A 0 A_SetScale(1.5,1.5)
+		TNT1 A 0 A_FadeOut(0.3)
 		TNT1 AAA 0 A_CustomMissile("ExplosionParticleGreenHeavySmall",0,0,random(0,360),2,random(10,70))
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleGreenHeavySmall",0,0,random(0,360),2,random(20,50))
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleGreenVeryFast",0,0,random(0,360),2,random(20,40))
 		TNT1 AAAA 0 A_CustomMissile("ExplosionParticleGreen",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterMed")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterMed")
-		BAL7 CDEFGH 1 Bright A_SpawnItemEx("LensFlareTorchGreen")
+		BAL7 CDEFGH 2 Bright A_SpawnItemEx("LensFlareTorchGreen")
 		Stop
 	}
 }
 
 Actor BaronGreenProjectileCore
 {
-Scale 0.9
-Alpha 0.9
+Scale 1
+Alpha 1
 RenderStyle Add
 +CLIENTSIDEONLY
 +THRUACTORS

@@ -4,12 +4,20 @@
 flickerlight ROCKET_X1
 {
 	color 1.0 0.7 0.0
-	size 62
-	secondarySize 70
+	size 70
+	secondarySize 62
 	chance 0.3
 }
 
 flickerlight ROCKET_X2
+{
+	color 1.0 0.7 0.0
+	size 56
+	secondarySize 62
+	chance 0.3
+}
+
+flickerlight ROCKET_X3
 {
 	color 1.0 0.7 0.0
 	size 48
@@ -17,26 +25,18 @@ flickerlight ROCKET_X2
 	chance 0.3
 }
 
-flickerlight ROCKET_X3
+flickerlight ROCKET_X4
 {
 	color 1.0 0.7 0.0
 	size 40
 	secondarySize 48
 	chance 0.3
 }
-
-flickerlight ROCKET_X4
+flickerlight ROCKET_X5
 {
 	color 1.0 0.7 0.0
 	size 32
 	secondarySize 40
-	chance 0.3
-}
-flickerlight ROCKET_X5
-{
-	color 1.0 0.7 0.0
-	size 24
-	secondarySize 32
 	chance 0.3
 }
 
@@ -124,7 +124,7 @@ object 64GroundProxMine
 //Plasma
 flickerlight PLASMA_X1
 {
-	color 0.0 0.2 1.0
+	color 0.0 0.1 0.8
 	size 40
 	secondarySize 48
 	chance 0.4
@@ -249,6 +249,17 @@ flickerlight BFGBALL_X5
 }
 
 object 64BFGBall
+{
+	frame BFS1 {light BFGBALL_X2}
+
+	frame BFE1A {light BFGBALL_X1}
+	frame BFE1B {light BFGBALL_X2}
+	frame BFE1C {light BFGBALL_X3}
+	frame BFE1D {light BFGBALL_X4}
+	frame BFE1E {light BFGBALL_X5}
+}
+
+object 64EnemyBFGBall
 {
 	frame BFS1 {light BFGBALL_X2}
 
@@ -609,60 +620,60 @@ pointlight IMPBALL
 	size 64
 }
 
-//Doom imp fireball explosion
 flickerlight IMPBALL_X1
 {
-	color 0.7 0.4 0.0
-	size 80
-	secondarySize 88
+	color 1.0 0.6 0.0
+	size 56
+	secondarySize 64
 	chance 0.25
 }
 
 flickerlight IMPBALL_X2
 {
-	color 0.5 0.3 0.0
-	size 96
-	secondarySize 104
+	color 1.0 0.6 0.0
+	size 48
+	secondarySize 56
 	chance 0.25
 }
 
 flickerlight IMPBALL_X3
 {
-	color 0.4 0.2 0.0
-	size 112
-	secondarySize 120
+	color 1.0 0.6 0.0
+	size 40
+	secondarySize 48
 	chance 0.25
 }
 
 flickerlight IMPBALL_X4
 {
-	color 0.3 0.2 0.0
-	size 112
-	secondarySize 120
+	color 1.0 0.6 0.0
+	size 32
+	secondarySize 40
 	chance 0.25
 }
 
 flickerlight IMPBALL_X5
 {
-	color 0.2 0.1 0.0
-	size 112
-	secondarySize 120
+	color 1.0 0.6 0.0
+	size 24
+	secondarySize 32
 	chance 0.25
 }
 
 flickerlight IMPBALL_X6
 {
-	color 0.1 0.0 0.0
-	size 112
-	secondarySize 120
+	color 1.0 0.6 0.0
+	size 16
+	secondarySize 24
 	chance 0.25
 }
 
 object 64ImpBall
 {
-	frame BAL1A {light IMPBALL}
-	frame BAL1B {light IMPBALL}
-	frame BAL1C {light IMPBALL}
+	frame BAL1A {light IMPBALL_X5}
+	frame BAL1B {light IMPBALL_X5}
+	frame BAL1C {light IMPBALL_X5}
+
 	frame BAL1D {light IMPBALL_X1}
 	frame BAL1E {light IMPBALL_X2}
 	frame BAL1F {light IMPBALL_X3}
@@ -678,60 +689,60 @@ pointlight NIMPBALL
 	size 64
 }
 
-//Nightmare imp fireball explosion
 flickerlight NIMPBALL_X1
 {
 	color 0.2 0.0 0.7
-	size 80
-	secondarySize 88
+	size 56
+	secondarySize 62
 	chance 0.25
 }
 
 flickerlight NIMPBALL_X2
 {
-	color 0.1 0.0 0.5
-	size 96
-	secondarySize 104
+	color 0.2 0.0 0.7
+	size 48
+	secondarySize 56
 	chance 0.25
 }
 
 flickerlight NIMPBALL_X3
 {
-	color 0.1 0.0 0.4
-	size 112
-	secondarySize 120
+	color 0.2 0.0 0.7
+	size 40
+	secondarySize 48
 	chance 0.25
 }
 
 flickerlight NIMPBALL_X4
 {
-	color 0.0 0.0 0.3
-	size 112
-	secondarySize 120
+	color 0.2 0.0 0.7
+	size 32
+	secondarySize 40
 	chance 0.25
 }
 
 flickerlight NIMPBALL_X5
 {
-	color 0.0 0.0 0.2
-	size 112
-	secondarySize 120
+	color 0.2 0.0 0.7
+	size 24
+	secondarySize 32
 	chance 0.25
 }
 
 flickerlight NIMPBALL_X6
 {
-	color 0.0 0.0 0.1
-	size 112
-	secondarySize 120
+	color 0.2 0.0 0.7
+	size 16
+	secondarySize 24
 	chance 0.25
 }
 
 object NImpBall
 {
-	frame NMBLA {light NIMPBALL}
-	frame NMBLB {light NIMPBALL}
-	frame NMBLC {light NIMPBALL}
+	frame NMBLA {light NIMPBALL_X5}
+	frame NMBLB {light NIMPBALL_X5}
+	frame NMBLC {light NIMPBALL_X5}
+
 	frame NMBLD {light NIMPBALL_X1}
 	frame NMBLE {light NIMPBALL_X2}
 	frame NMBLF {light NIMPBALL_X3}
@@ -740,53 +751,25 @@ object NImpBall
 	frame NMBLI {light NIMPBALL_X6}
 }
 
+object 64BelphegorBall
+{
+	frame BRNR {light NIMPBALL_X3}
+
+	frame BAL7C {light NIMPBALL_X1}
+	frame BAL7D {light NIMPBALL_X1}
+	frame BAL7E {light NIMPBALL_X2}
+	frame BAL7F {light NIMPBALL_X2}
+	frame BAL7G {light NIMPBALL_X3}
+	frame BAL7H {light NIMPBALL_X3}
+}
+
 //Cacodemon fireball
 flickerlight CACOBALL
 {
-	color 1.0 0.0 0.0
-	size 56
-	secondarySize 64
+	color 1.0 0.2 0.6
+	size 40
+	secondarySize 48
 	chance 0.5
-}
-
-flickerlight CACOBALL_X1
-{
-	color 0.9 0.0 0.0
-	size 72
-	secondarySize 80
-	chance 0.25
-}
-
-flickerlight CACOBALL_X2
-{
-	color 0.6 0.0 0.0
-	size 88
-	secondarySize 96
-	chance 0.25
-}
-
-flickerlight CACOBALL_X3
-{
-	color 0.3 0.0 0.0
-	size 104
-	secondarySize 112
-	chance 0.25
-}
-
-flickerlight CACOBALL_X4
-{
-	color 0.2 0.0 0.0
-	size 104
-	secondarySize 112
-	chance 0.25
-}
-
-flickerlight CACOBALL_X5
-{
-	color 0.1 0.0 0.0
-	size 104
-	secondarySize 112
-	chance 0.25
 }
 
 object 64CacodemonBall
@@ -795,138 +778,83 @@ object 64CacodemonBall
 	frame NCACB {light CACOBALL}
 	frame NCACC {light CACOBALL}
 
-	frame NCACD {light CACOBALL_X1}
-	frame NCACE {light CACOBALL_X2}
-	frame NCACF {light CACOBALL_X3}
-	frame NCACG {light CACOBALL_X4}
-	frame NCACH {light CACOBALL_X5}
-	frame NCACI {light CACOBALL_X5}
-	frame NCACJ {light CACOBALL_X5}
-}
-
-//Nightmare Cacodemon Fireball
-flickerlight NCACOBALL
-{
-	color 1.0 0.2 0.6
-	size 56
-	secondarySize 64
-	chance 0.5
-}
-
-flickerlight NCACOBALL_X1
-{
-	color 0.9 0.1 0.4
-	size 72
-	secondarySize 80
-	chance 0.25
-}
-
-flickerlight NCACOBALL_X2
-{
-	color 0.6 0.0 0.3
-	size 88
-	secondarySize 96
-	chance 0.25
-}
-
-flickerlight NCACOBALL_X3
-{
-	color 0.3 0.0 0.2
-	size 104
-	secondarySize 112
-	chance 0.25
-}
-
-flickerlight NCACOBALL_X4
-{
-	color 0.2 0.0 0.1
-	size 104
-	secondarySize 112
-	chance 0.25
-}
-
-flickerlight NCACOBALL_X5
-{
-	color 0.1 0.0 0.0
-	size 104
-	secondarySize 112
-	chance 0.25
+	frame NCACD {light BARONBALL2_X1}
+	frame NCACE {light BARONBALL2_X2}
+	frame NCACF {light BARONBALL2_X3}
+	frame NCACG {light BARONBALL2_X4}
+	frame NCACH {light BARONBALL2_X5}
+	frame NCACI {light BARONBALL2_X6}
+	frame NCACJ {light BARONBALL2_X6}
 }
 
 object NCacoBall
 {
-	frame BAL9A {light NCACOBALL}
-	frame BAL9B {light NCACOBALL}
-	frame BAL9C {light NCACOBALL}
+	frame BAL9A {light CACOBALL}
+	frame BAL9B {light CACOBALL}
+	frame BAL9C {light CACOBALL}
 
-	frame NCACD {light NCACOBALL_X1}
-	frame NCACE {light NCACOBALL_X2}
-	frame NCACF {light NCACOBALL_X3}
-	frame NCACG {light NCACOBALL_X4}
-	frame NCACH {light NCACOBALL_X5}
-	frame NCACI {light NCACOBALL_X5}
-	frame NCACJ {light NCACOBALL_X5}
+	frame NCACD {light BARONBALL2_X1}
+	frame NCACE {light BARONBALL2_X2}
+	frame NCACF {light BARONBALL2_X3}
+	frame NCACG {light BARONBALL2_X4}
+	frame NCACH {light BARONBALL2_X5}
+	frame NCACI {light BARONBALL2_X6}
+	frame NCACJ {light BARONBALL2_X6}
 }
 
 //Hell Knight fireball
-pointlight BARONBALL
-{
-	color 0.0 1.0 0.0
-	size 64
-}
-
 flickerlight BARONBALL_X1
 {
 	color 0.0 0.7 0.0
-	size 80
-	secondarySize 88
+	size 56
+	secondarySize 64
 	chance 0.25
 }
 
 flickerlight BARONBALL_X2
 {
 	color 0.0 0.5 0.0
-	size 96
-	secondarySize 104
+	size 48
+	secondarySize 56
 	chance 0.25
 }
 
 flickerlight BARONBALL_X3
 {
 	color 0.0 0.4 0.0
-	size 112
-	secondarySize 120
+	size 40
+	secondarySize 48
 	chance 0.25
 }
 
 flickerlight BARONBALL_X4
 {
 	color 0.0 0.3 0.0
-	size 112
-	secondarySize 120
+	size 32
+	secondarySize 40
 	chance 0.25
 }
 
 flickerlight BARONBALL_X5
 {
 	color 0.0 0.2 0.0
-	size 112
-	secondarySize 120
+	size 24
+	secondarySize 32
 	chance 0.25
 }
 
 flickerlight BARONBALL_X6
 {
 	color 0.0 0.1 0.0
-	size 112
-	secondarySize 120
+	size 16
+	secondarySize 24
 	chance 0.25
 }
 
 object 64BaronBallGreen
 {
-	frame BAL7A {light BARONBALL}
-	frame BAL7B {light BARONBALL}
+	frame BAL7A {light BARONBALL_X4}
+	frame BAL7B {light BARONBALL_X4}
 
 	frame BAL7C {light BARONBALL_X1}
 	frame BAL7D {light BARONBALL_X2}
@@ -938,89 +866,70 @@ object 64BaronBallGreen
 
 object 64BruiserBall
 {
-	frame BAL7A {light BARONBALL}
-	frame BAL7B {light BARONBALL}
+	frame BAL7A {light BARONBALL_X3}
+	frame BAL7B {light BARONBALL_X3}
 
 	frame BAL7C {light BARONBALL_X1}
-	frame BAL7D {light BARONBALL_X2}
-	frame BAL7E {light BARONBALL_X3}
-	frame BAL7F {light BARONBALL_X4}
-	frame BAL7G {light BARONBALL_X5}
-	frame BAL7H {light BARONBALL_X6}
-}
-
-object 64EnemyBFGBall
-{
-	frame BFS1A {light BARONBALL}
-	frame BFS1B {light BARONBALL}
-
-	frame BFE1A {light BARONBALL_X1}
-	frame BFE1B {light BARONBALL_X2}
-	frame BFE1C {light BARONBALL_X3}
-	frame BFE1D {light BARONBALL_X4}
-	frame BFE1E {light BARONBALL_X5}
-	frame BFE1F {light BARONBALL_X6}
+	frame BAL7D {light BARONBALL_X1}
+	frame BAL7E {light BARONBALL_X2}
+	frame BAL7F {light BARONBALL_X2}
+	frame BAL7G {light BARONBALL_X3}
+	frame BAL7H {light BARONBALL_X3}
 }
 
 //Baron of Hell fireball
-pointlight BARONBALL2
-{
-	color 1.0 0.0 0.0
-	size 64
-}
-
 flickerlight BARONBALL2_X1
 {
 	color 0.7 0.0 0.0
-	size 80
-	secondarySize 88
+	size 56
+	secondarySize 64
 	chance 0.25
 }
 
 flickerlight BARONBALL2_X2
 {
 	color 0.5 0.0 0.0
-	size 96
-	secondarySize 104
+	size 48
+	secondarySize 56
 	chance 0.25
 }
 
 flickerlight BARONBALL2_X3
 {
 	color 0.4 0.0 0.0
-	size 112
-	secondarySize 120
+	size 40
+	secondarySize 48
 	chance 0.25
 }
 
 flickerlight BARONBALL2_X4
 {
 	color 0.3 0.0 0.0
-	size 112
-	secondarySize 120
+	size 32
+	secondarySize 40
 	chance 0.25
 }
 
 flickerlight BARONBALL2_X5
 {
 	color 0.2 0.0 0.0
-	size 112
-	secondarySize 120
+	size 24
+	secondarySize 32
 	chance 0.25
 }
 
 flickerlight BARONBALL2_X6
 {
 	color 0.1 0.0 0.0
-	size 112
-	secondarySize 120
+	size 16
+	secondarySize 24
 	chance 0.25
 }
 
 object 64BaronBall
 {
-	frame BRNRA {light BARONBALL2}
-	frame BRNRB {light BARONBALL2}
+	frame BRNRA {light BARONBALL2_X4}
+	frame BRNRB {light BARONBALL2_X4}
 
 	frame BRNRC {light BARONBALL2_X1}
 	frame BRNRD {light BARONBALL2_X2}
@@ -1031,64 +940,58 @@ object 64BaronBall
 }
 
 //Knightmare fireball
-pointlight BARONBALL3
-{
-	color 1.0 1.0 0.0
-	size 64
-}
-
 flickerlight BARONBALL3_X1
 {
 	color 0.7 0.7 0.0
-	size 80
-	secondarySize 88
+	size 56
+	secondarySize 64
 	chance 0.25
 }
 
 flickerlight BARONBALL3_X2
 {
 	color 0.5 0.5 0.0
-	size 96
-	secondarySize 104
+	size 48
+	secondarySize 56
 	chance 0.25
 }
 
 flickerlight BARONBALL3_X3
 {
 	color 0.4 0.4 0.0
-	size 112
-	secondarySize 120
+	size 40
+	secondarySize 48
 	chance 0.25
 }
 
 flickerlight BARONBALL3_X4
 {
 	color 0.3 0.3 0.0
-	size 112
-	secondarySize 120
+	size 32
+	secondarySize 40
 	chance 0.25
 }
 
 flickerlight BARONBALL3_X5
 {
 	color 0.2 0.2 0.0
-	size 112
-	secondarySize 120
+	size 24
+	secondarySize 32
 	chance 0.25
 }
 
 flickerlight BARONBALL3_X6
 {
 	color 0.1 0.1 0.0
-	size 112
-	secondarySize 120
+	size 16
+	secondarySize 24
 	chance 0.25
 }
 
 object 64BaronBallYellow
 {
-	frame BAL7A {light BARONBALL3}
-	frame BAL7B {light BARONBALL3}
+	frame BAL7A {light BARONBALL3_X4}
+	frame BAL7B {light BARONBALL3_X4}
 
 	frame BAL7C {light BARONBALL3_X1}
 	frame BAL7D {light BARONBALL3_X2}
@@ -1255,16 +1158,14 @@ object 64Stalker
 //Mancubus Fireball
 object 64FatShot
 {
-	frame MTB1A {light IMPBALL}
-	frame MTB1B {light IMPBALL}
-	frame MTB1C {light IMPBALL}
+	frame MTB1 {light IMPBALL_X4}
 
-	frame MANFD {light TRACER_X1}
-	frame MANFE {light TRACER_X1}
-	frame MANFF {light TRACER_X2}
-	frame MANFG {light TRACER_X2}
-	frame MANFH {light TRACER_X3}
-	frame MANFI {light TRACER_X3}
+	frame MANFD {light IMPBALL_X1}
+	frame MANFE {light IMPBALL_X2}
+	frame MANFF {light IMPBALL_X3}
+	frame MANFG {light IMPBALL_X4}
+	frame MANFH {light IMPBALL_X5}
+	frame MANFI {light IMPBALL_X6}
 }
 
 /*//Arachnotron Fireball
@@ -1334,76 +1235,48 @@ flickerlight NukageParticle
 }
 
 //Revenant tracer
-pointlight TRACER
+flickerlight TRACER
 {
 	color 1.0 0.3 0.0
-	size 48
-}
-
-flickerlight TRACER_X1
-{
-	color 1.0 0.2 0.0
-	size 64
-	secondarySize 72
-	chance 0.25
-}
-
-flickerlight TRACER_X2
-{
-	color 0.6 0.0 0.0
-	size 80
-	secondarySize 88
-	chance 0.25
-}
-
-flickerlight TRACER_X3
-{
-	color 0.3 0.0 0.0
-	size 96
-	secondarySize 104
+	size 40
+	secondarySize 48
 	chance 0.25
 }
 
 object 64RevenantTracer3
 {
-	frame M5B1A {light TRACER}
-	frame M5B1B {light TRACER}
-	frame M5B1C {light TRACER}
+	frame M5B1 {light TRACER}
 
-	frame MBALC {light TRACER_X1}
-	frame MBALD {light TRACER_X1}
-	frame MBALE {light TRACER_X2}
-	frame MBALF {light TRACER_X2}
-	frame MBALG {light TRACER_X3}
-	frame MBALH {light TRACER_X3}
+	frame MBALC {light IMPBALL_X1}
+	frame MBALD {light IMPBALL_X1}
+	frame MBALE {light IMPBALL_X2}
+	frame MBALF {light IMPBALL_X2}
+	frame MBALG {light IMPBALL_X3}
+	frame MBALH {light IMPBALL_X3}
 }
 
 object 64RevenantTracer2
 {
-	frame M5B1A {light TRACER}
-	frame M5B1B {light TRACER}
-	frame M5B1C {light TRACER}
+	frame M5B1 {light TRACER}
 
-	frame MBALC {light TRACER_X1}
-	frame MBALD {light TRACER_X1}
-	frame MBALE {light TRACER_X2}
-	frame MBALF {light TRACER_X2}
-	frame MBALG {light TRACER_X3}
-	frame MBALH {light TRACER_X3}
+	frame MBALC {light IMPBALL_X1}
+	frame MBALD {light IMPBALL_X1}
+	frame MBALE {light IMPBALL_X2}
+	frame MBALF {light IMPBALL_X2}
+	frame MBALG {light IMPBALL_X3}
+	frame MBALH {light IMPBALL_X3}
 }
 
 object 64StalkerShot
 {
-	frame M5B1A {light TRACER}
-	frame M5B1B {light TRACER}
-	frame M5B1C {light TRACER}
+	frame M5B1 {light TRACER}
 
-	frame MBALC {light TRACER_X1}
-	frame MBALD {light TRACER_X1}
-	frame MBALE {light TRACER_X2}
-	frame MBALF {light TRACER_X2}
-	frame MBALG {light TRACER_X3}
-	frame MBALH {light TRACER_X3}
+	frame MBALC {light IMPBALL_X1}
+	frame MBALD {light IMPBALL_X1}
+	frame MBALE {light IMPBALL_X2}
+	frame MBALF {light IMPBALL_X2}
+	frame MBALG {light IMPBALL_X3}
+	frame MBALH {light IMPBALL_X3}
 }
 
 //Pestilence
@@ -1935,14 +1808,14 @@ Frame FALNJ {Light FallenLight4}
 //Infernal
 object 64SisShot
 {
-	frame F51AZ {light IMPBALL}
+	frame F51AZ {light IMPBALL_X4}
 
-	frame MANFD {light TRACER_X1}
-	frame MANFE {light TRACER_X1}
-	frame MANFF {light TRACER_X2}
-	frame MANFG {light TRACER_X2}
-	frame MANFH {light TRACER_X3}
-	frame MANFI {light TRACER_X3}
+	frame MANFD {light IMPBALL_X1}
+	frame MANFE {light IMPBALL_X1}
+	frame MANFF {light IMPBALL_X2}
+	frame MANFG {light IMPBALL_X2}
+	frame MANFH {light IMPBALL_X3}
+	frame MANFI {light IMPBALL_X3}
 }
 
 object 64SisterTracer3
@@ -1950,12 +1823,12 @@ object 64SisterTracer3
 	frame MZ39A {light TRACER}
 	frame MZ39B {light TRACER}
 
-	frame MZ39C {light TRACER_X1}
-	frame MZ39D {light TRACER_X1}
-	frame MZ39E {light TRACER_X2}
-	frame MZ39F {light TRACER_X2}
-	frame MZ39G {light TRACER_X3}
-	frame MZ39H {light TRACER_X3}
+	frame MZ39C {light IMPBALL_X1}
+	frame MZ39D {light IMPBALL_X1}
+	frame MZ39E {light IMPBALL_X2}
+	frame MZ39F {light IMPBALL_X2}
+	frame MZ39G {light IMPBALL_X3}
+	frame MZ39H {light IMPBALL_X3}
 }
 
 object 64SisterTracer2
@@ -1963,12 +1836,12 @@ object 64SisterTracer2
 	frame MZ39A {light TRACER}
 	frame MZ39B {light TRACER}
 
-	frame MZ39C {light TRACER_X1}
-	frame MZ39D {light TRACER_X1}
-	frame MZ39E {light TRACER_X2}
-	frame MZ39F {light TRACER_X2}
-	frame MZ39G {light TRACER_X3}
-	frame MZ39H {light TRACER_X3}
+	frame MZ39C {light IMPBALL_X1}
+	frame MZ39D {light IMPBALL_X1}
+	frame MZ39E {light IMPBALL_X2}
+	frame MZ39F {light IMPBALL_X2}
+	frame MZ39G {light IMPBALL_X3}
+	frame MZ39H {light IMPBALL_X3}
 }
 
 //Soul harvester

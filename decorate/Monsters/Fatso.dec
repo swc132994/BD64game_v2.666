@@ -196,7 +196,6 @@ DamageType "Extreme"
 	States
 	{
 	Spawn:
-		TNT1 A 2
 		MTB1 A 2 Bright A_SpawnItemEx("YellowFlare")
 		TNT1 A 0 A_SpawnItemEx("MancubusFireTrailparticle")
 		TNT1 A 0 A_SpawnItemEx("OldschoolRocketSmokeTrail2")
@@ -208,17 +207,20 @@ DamageType "Extreme"
 		TNT1 A 0 A_SpawnItemEx("OldschoolRocketSmokeTrail2")
 		Loop
 	Death:
-		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
-		TNT1 AAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
-		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
-		TNT1 AAAAAAAAAA 0 A_CustomMissile("BarrelExplosionFire",0,0,random(0,360),2,random(0,360))
+		TNT1 A 0 A_FadeOut(0.4)
+		TNT1 A 0 A_SetScale(1.6,1.6)
+		TNT1 A 0 A_SpawnItemEx("ExplosionFlareSpawner")
+		TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile("ExplosionParticleVeryFast",0,0,random(0,360),2,random(0,360))
+		TNT1 AAAAAAAAAA 0 A_CustomMissile("SmallFireTrail",6,0,0,2,random(-60,80))
+		TNT1 AAAAA 0 A_SpawnItemEx("TinyBurningPiece2",random(-25,25),random(-15,15))
+		TNT1 AAAAA 0 A_SpawnItemEx("TinyBurningPiece",random(-15,15),random(-15,15))
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionSmokeFast22",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_SpawnItemEx("ExplosionAirDisplacementEffect")
 		TNT1 A 0 A_PlaySound("EXPLOSIO3",CHAN_VOICE)
 		TNT1 A 0 Radius_Quake(2,8,0,12,0)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterMed")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterMed")
-		TNT1 A 2
 		TNT1 A 0 A_Explode(12,100)
 		TNT1 A 0 A_SpawnItemEx("LiquidExplosionEffectSpawner")
 		MANF DEFGHI 2 Bright

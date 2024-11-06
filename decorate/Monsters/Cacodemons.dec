@@ -725,7 +725,7 @@ Decal "SmallerScorch"
 	States
 	{
 	Spawn:
-		NCAC AABBCC 1 Bright A_SpawnItemEx("LensFlareProjectileOrange")
+		NCAC AABBCC 2 Bright A_SpawnItemEx("LensFlareProjectileRed")
 		Loop
 	Death:
 		TNT1 AA 0 A_CustomMissile("ExplosionParticleHeavy",0,0,random(0,360),2,random(0,180))
@@ -735,9 +735,8 @@ Decal "SmallerScorch"
 		TNT1 AAAAAA 0 A_CustomMissile("SmallFireballFireTrail",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterSmall")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterSmall")
-		NCAC D 5 Bright A_SpawnItemEx("LensFlareTorchOrange")
-		NCAC EFGHI 3 Bright A_FadeOut(0.142857)
-		NCAC J 3 Bright A_FadeOut(0.142857)
+		NCAC D 5 Bright A_SpawnItemEx("LensFlareTorchRed")
+		NCAC EFGHIJ 3 Bright A_FadeOut(0.142857)
 		Stop
 	}
 }
@@ -749,7 +748,7 @@ Alpha 0.8
 	States
 	{
 	Spawn:
-		BAL9 AABBCC 1 Bright A_SpawnItemEx("LensFlareProjectileOrange")
+		BAL9 AABBCC 2 Bright A_SpawnItemEx("LensFlareProjectileRed")
 		Loop
 	}
 }

@@ -839,6 +839,17 @@ xScale 0.3
 yScale 0.15
 }
 
+Actor LensFlareProjectileRed : LensFlareTorchOrange
+{
+	states
+	{
+	Spawn:
+		LENS R 1 Bright
+		LENZ R 1 Bright
+		Stop
+	}
+}
+
 Actor LensFlareProjectileOrange : LensFlareTorchOrange
 {
 	states

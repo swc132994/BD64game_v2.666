@@ -1280,18 +1280,16 @@ ACTOR TinyBurningPiece : BarrelExplosionSmokeColumn
 Scale 1.1
 Alpha 0.9
 RenderStyle Add
-DamageType "Plasma"
+DamageType "Fire"
 -CLIENTSIDEONLY
 	States
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
-		CFCF ABC 1 Bright
-		CFCF D 1 A_Explode(3,60)
-		CFCF EFG 1 Bright
-		CFCF H 1
-		CFCF IJK 1 Bright
-		CFCF L 1
+		CFCF ABCDEFG 1 Bright
+		TNT1 A 0 A_Explode(2,64)
+		CFCF HIJKLM 1 Bright
+		TNT1 A 0 A_Explode(2,64)
 		TNT1 A 0 A_Jump(24,"StopBurning")
 		Loop
 	StopBurning:
@@ -1312,12 +1310,10 @@ Scale 0.7
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1,"Splash")
-		CFCF ABC 1 Bright
-		CFCF D 1 A_Explode(2,30)
-		CFCF EFG 1 Bright
-		CFCF H 1
-		CFCF IJK 1 Bright
-		CFCF L 1
+		CFCF ABCDEFG 1 Bright
+		TNT1 A 0 A_Explode(1,32)
+		CFCF HIJKLM 1 Bright
+		TNT1 A 0 A_Explode(1,32)
 		TNT1 A 0 A_Jump(24,"StopBurning")
 		Loop
 	}

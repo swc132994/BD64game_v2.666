@@ -265,7 +265,7 @@ Actor KnightmareSprite4 : KnightmareSprite1
 
 Actor 64BaronBallYellow : BaronBall
 {
-Scale 0.75
+Scale 0.9
 Speed 20
 FastSpeed 25
 RenderStyle Normal
@@ -274,18 +274,18 @@ Translation "0:255=%[0,0,0]:[1,1,0]"
 	States
 	{
 	Spawn:
-		BAL7 AB 2 NoDelay Bright A_CustomMissile("LensFlareProjectileYellow",-2,0)
-		TNT1 A 0 A_CustomMissile("BaronYellowProjectileCore",-2,0)
+		BAL7 AB 2 Bright A_CustomMissile("LensFlareProjectileYellow",-2,0)
 		Loop
 	Death:
-		TNT1 A 1
+		TNT1 A 0 A_SetScale(1.5,1.5)
+		TNT1 A 0 A_FadeOut(0.3)
 		TNT1 AAA 0 A_CustomMissile("ExplosionParticleYellowHeavySmall",0,0,random(0,360),2,random(10,70))
 		TNT1 AAAAAAAAA 0 A_CustomMissile("ExplosionParticleYellowHeavySmall",0,0,random(0,360),2,random(20,50))
 		TNT1 AAAAA 0 A_CustomMissile("ExplosionParticleYellowVeryFast",0,0,random(0,360),2,random(20,40))
 		TNT1 AAAA 0 A_CustomMissile("ExplosionParticleYellow",0,0,random(0,360),2,random(0,360))
 		TNT1 A 0 A_SpawnItemEx("DetectFloorCraterMed")
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterMed")
-		BAL7 CDEFGH 1 Bright A_SpawnItemEx("LensFlareTorchYellow")
+		BAL7 CDEFGH 2 Bright A_SpawnItemEx("LensFlareTorchYellow")
 		Stop
 	}
 }
@@ -293,8 +293,8 @@ Translation "0:255=%[0,0,0]:[1,1,0]"
 Actor BaronYellowProjectileCore
 {
 Translation "0:255=%[0,0,0]:[1,1,0]"
-Scale 0.9
-Alpha 0.9
+Scale 1
+Alpha 1
 RenderStyle Add
 +CLIENTSIDEONLY
 +THRUACTORS
