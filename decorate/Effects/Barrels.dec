@@ -3,10 +3,10 @@ Actor 64ExplosiveBarrel : ExplosiveBarrel Replaces ExplosiveBarrel	//replaced by
 Scale 0.8
 Health 20
 Mass 125
+DamageType "Extreme"
 Damagefactor "Melee",0
 Damagefactor "Kick",0
 Tag "Explosive Barrel"
-+EXTREMEDEATH
 +PUSHABLE
 +SLIDESONWALLS
 	States

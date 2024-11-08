@@ -6,6 +6,8 @@ PainChance "Bullet",26
 PainChance "SuperFists",255
 PainChance "Kick",255
 PainChance "SuperKick",255
+DamageFactor "Ice",1.5
+DamageFactor "Fire",0.5
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0
 HitObituary "%o got too close to a Pain Elemental."

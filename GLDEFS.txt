@@ -1844,49 +1844,18 @@ object 64SisterTracer2
 	frame MZ39H {light IMPBALL_X3}
 }
 
-//Soul harvester
-Pointlight SoulHarvesterBall1
-{
-Color 1.0 0.8 0.3
-Size 40
-}
-
-Pointlight SoulHarvesterBall2
-{
-Color 1.0 0.8 0.3
-Size 44
-}
-
-Pointlight SoulHarvesterBall3
-{
-Color 1.0 0.8 0.3
-Size 48
-}
-
-Pointlight SoulHarvesterBall4
-{
-Color 1.0 0.8 0.3
-Size 36
-}
-
-Pointlight SoulHarvesterBall5
-{
-Color 1.0 0.8 0.3
-Size 32
-}
-
 Object 64SoulHarvesterBall
 {
-Frame SHBAA {Light SoulHarvesterBall1}
-Frame SHBAB {Light SoulHarvesterBall1}
-Frame SHBAC {Light SoulHarvesterBall2}
-Frame SHBAD {Light SoulHarvesterBall3}
-Frame SHBAE {Light SoulHarvesterBall2}
-Frame SHBAF {Light SoulHarvesterBall1}
-Frame SHBAG {Light SoulHarvesterBall4}
-Frame SHBAH {Light SoulHarvesterBall5}
-}
+Frame SHBAA {Light BARONBALL3_X4}
+Frame SHBAB {Light BARONBALL3_X4}
 
+Frame SHBAC {Light BARONBALL3_X1}
+Frame SHBAD {Light BARONBALL3_X2}
+Frame SHBAE {Light BARONBALL3_X3}
+Frame SHBAF {Light BARONBALL3_X4}
+Frame SHBAG {Light BARONBALL3_X5}
+Frame SHBAH {Light BARONBALL3_X6}
+}
 
 PointLight SoulHarvesterX_1
 {
