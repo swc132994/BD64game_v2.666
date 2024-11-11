@@ -214,6 +214,8 @@ PROJECTILE
 +BOUNCEONCEILINGS
 BounceFactor 0.5
 WallBounceFactor 0.25
+Mass 9
+BounceSound "MINE001"
 	States
 	{
 	Spawn:

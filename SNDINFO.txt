@@ -78,10 +78,30 @@ marine/superfist3		plspnch3
 marine/superfist4		plspnch4
 marine/superfist5		plspnch5
 
-KICK				KICK
-FOOTWALL			FOOTWALL
+//KICK				KICK
+//FOOTWALL			FOOTWALL
 VUP					VUP
 weapons/gswing		dsswing	//Fist swing
+
+//katherine addition, sounds from stronk and peak(action doom 2)
+weapons/melee/swing     "sounds/combat/weapons/fists/melee-swing.wav"
+weapons/melee/kick      "sounds/combat/weapons/kicks/melee-kick.wav"
+weapons/melee/heavy1    "sounds/combat/weapons/fists/melee-heavy-1.wav"
+weapons/melee/heavy2    "sounds/combat/weapons/fists/melee-heavy-2.wav"
+weapons/melee/heavy3    "sounds/combat/weapons/fists/melee-heavy-3.wav"
+weapons/melee/heavy4    "sounds/combat/weapons/fists/melee-heavy-4.wav"
+weapons/melee/heavy5    "sounds/combat/weapons/fists/melee-heavy-5.wav"
+$random weapons/melee/heavy { weapons/melee/heavy1 weapons/melee/heavy2 weapons/melee/heavy3 weapons/melee/heavy4 weapons/melee/heavy5 }
+//its time to up the ante
+melee/swing1		swing1
+melee/swing2		swing2
+melee/swing3		swing3
+melee/swing4		swing4
+$random world/swing	{ melee/swing1 melee/swing2 melee/swing3 melee/swing4 skeleton/swing}
+$alias KICK weapons/melee/kick
+$alias FOOTWALL weapons/melee/heavy
+melee/swingB		swingB
+$random world/swingB	{ melee/swingB melee/swingB melee/swingB melee/swingB melee/swingB melee/swing1 melee/swing2 melee/swing3 melee/swing4 skeleton/swing}
 
 //Sliding kick
 $random SlideKickStart
@@ -1034,7 +1054,7 @@ LQDRIP14		LQDRIP14
 //**********TERRAIN**********
 //---------------------------
 //World Sounds/Terrain sounds
-$random world/watersplash
+/*$random world/watersplash
 	{
 	dssplash dssplas2 water
 	}		$volume world/watersplash 0.6	$limit world/watersplash 4
@@ -1112,7 +1132,7 @@ floor/grav03			dsgrav3
 floor/grav04			dsgrav4
 
 //Metal - hard metal
-$random floor/metal
+/*$random floor/metal
 	{
 	floor/metl01 floor/metl02 floor/metl03 floor/metl04 floor/metl05 floor/metl06
 	}		$limit floor/metal 20
