@@ -300,22 +300,18 @@ DeathSound "weapons/largemagdrop"
 	States
 	{
 	Spawn:
-		ECLI A 0 NoDelay A_Jump(128,2)
+		ECL1 A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)		//FLIP IMAGE HORZ
-		ECL1 A 0 A_JumpIfInventory("AltRifleSkin",1,2)
-		ECLI A 0
 	SpawnHold:
-		"####" "#" 0 A_JumpIf(waterlevel > 1,"Splash")
-		"####" ABCDEFGH 4
+		ECL1 "#" 0 A_JumpIf(waterlevel > 1,"Splash")
+		ECL1 ABCDEFGH 4
 		Loop
 	Death:
 		TNT1 A 0 A_Stop
 		TNT1 A 0 ThrustThingZ(0,1,0,1)
 	Rest:
 		TNT1 A 0 ACS_NamedExecuteAlways("LowBloodCheckerACS")//Check Effects
-		ECL1 G 0 A_JumpIfInventory("AltRifleSkin",1,2)
-		ECLI G 0
-		"####" G 525
+		ECL1 G 525
 		TNT1 A 0 A_JumpIfInventory("LowGraphicsMode",1,"Stoping")
 		Loop
 	}

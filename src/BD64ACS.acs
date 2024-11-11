@@ -32,7 +32,6 @@ script "BD64Respawn" Respawn NET
 	SetInventory("VWeaponMode",getCvar("VWeaponCvar"));
 
 	//Alternative Skins
-	SetInventory("AltRifleSkin",getuserCvar(PlayerNumber(),"AlternativeRifleSkinCvar"));
 	SetInventory("AltLaserSkin",getuserCvar(PlayerNumber(),"AlternativeLaserSkinCvar"));
 
 	//Classic Weapons Mode for Tactical and Modern Classes
@@ -419,7 +418,6 @@ script "OriginalCvars" (void) net
 	SetCvar("ThingRandomCvar",0);
 	SetCvar("TheHorde_Multiplier_Cvar",-1);
 	
-	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",FALSE);
 	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",FALSE);
 	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",1);
 	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);
@@ -484,7 +482,6 @@ script "ClassicCvars" (void) net
 	SetCvar("PoltergeistCvar",0);
 	SetCvar("ThingRandomCvar",0);
 
-	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",FALSE);
 	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",FALSE);
 	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",1);
 	SetUserCvar(PlayerNumber(),"LowAmmoSFX",0);
@@ -548,7 +545,6 @@ script "EnhancedCvars" (void) net
 
 	SetCvar("PoltergeistCvar",1);
 	SetCvar("ThingRandomCvar",1);
-	SetUserCvar(PlayerNumber(),"AlternativeRifleSkinCvar",TRUE);
 	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",TRUE);
 	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",0);
 	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);

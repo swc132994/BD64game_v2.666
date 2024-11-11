@@ -6,7 +6,6 @@ server int zdoombrutaljanitor = 0;
 server int isrunningzandronum = 0;
 server int IsRunningQZan = 0;
 
-user bool AlternativeRifleSkinCvar = TRUE;	//old or new rifle
 user bool AlternativeLaserSkinCvar = TRUE;	//old or new laser
 user bool HUDSwitchCvar = False;			//enable vanila status bar/arragaend hud
 user bool BerserkSwitchFistsCvar = TRUE;	//berserk fists switching

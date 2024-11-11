@@ -153,7 +153,6 @@ OptionMenu "BrutalDoom64Item/WeaponOptions"
 		StaticText ""
 		StaticText "--------------------------- Weapons & Items Skins -----------------------------",1
 		StaticText " "
-	Option "Alternative Rifle Skin =","AlternativeRifleSkinCvar","YesOrNo"
 	Option "Alternative Laser Skin =","AlternativeLaserSkinCvar","YesOrNo"
 	Option "Item Sprites Pickups =","AlternativeAmmoPickupSpritesCvar","AlternativeAmmoPickupSpritesValue"
 	Option "Alternative Healing Kits & Berserk Pickups =","CensoredHealing_Cvar","CensoredHealing_Value"

@@ -61,7 +61,6 @@ Actor NeverSelectedGauss : BD64_Tokens {}
 
 //Weapons Skins Tokens
 Actor ClassicChainsawToken : BD64_Tokens {}
-Actor AltRifleSkin : BD64_Tokens {}
 Actor ClassicChaingunToken: BD64_Tokens {}
 Actor ClassicRLToken : BD64_Tokens {}
 Actor AltLaserSkin : BD64_Tokens {}
