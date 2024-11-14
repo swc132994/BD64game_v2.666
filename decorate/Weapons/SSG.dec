@@ -210,6 +210,7 @@ Tag "$FO_TAG_SUPERSHOTGUN"
 	Deselect:
 		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
+		TNT1 A 0 A_TakeInventory("HoldFidget",0)
 		TNT1 A 0 A_Takeinventory("TossMine",0)
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)

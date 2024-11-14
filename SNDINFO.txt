@@ -48,8 +48,8 @@ pistol/forwardslide	PISFORW
 
 RIFBOLT			RIFBOLT
 
-AltRifle/BoltIn ARSBLT1
-AltRifle/BoltOut ARSBLT2
+Rifle/BoltIn RIFBLT1
+Rifle/BoltOut RIFBLT2
 
 //Restore select animation
 PISSEL			PISSEL
@@ -213,9 +213,8 @@ RIFLOAD			RIFLOAD
 RIFLE			RIFLE		$volume RIFLE 0.9
 
 //Rifle reload alt skin
-RELO1		RELO1
-RELO2		RELO2
-RELO3		RELO3
+Rifle/MagOut RIFREL1
+Rifle/MagIn RIFREL2
 
 //Chaingun
 MGUNFIR			MGUNFIR		$limit MGUNFIR 30

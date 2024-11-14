@@ -272,10 +272,10 @@ Tag "$FO_TAG_CHAINGUN"
 		TNT1 A 0 A_StopSound(CHAN_5)
 		TNT1 A 0 A_JumpIfInventory("ClassicChaingunToken",1,"ClassicDeSelectAnimation")
 		CHNS FGHIJ 1
-		TNT1 A 0 A_Lower
-		Wait
+		Goto DeselectLower
 	ClassicDeSelectAnimation:
 		LCGS OPQR 1
+	DeselectLower:	
 		TNT1 A 0 A_Lower
 		Wait
 	Fire:

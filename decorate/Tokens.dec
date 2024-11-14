@@ -32,6 +32,7 @@ Actor WeaponSpecialAction : BD64_Tokens {}
 Actor NoReloading : BD64_Tokens {}
 Actor Zoomed : BD64_Tokens {}
 Actor HasPlasmaWeapon : BD64_Tokens {}
+Actor IsFidgeting : BD64_Tokens {}
 Actor HoldFidget : BD64_Tokens {}
 Actor AltMode : BD64_Tokens {}
 Actor IsSilencer : BD64_Tokens {}

@@ -168,17 +168,16 @@ Tag "Assault Rifle"
 		ARSG S 1 Offset(-24,32)
 		ARSG ST 1 A_WeaponReady(WRF_ALLOWZOOM)
 		ARSG T 6 A_WeaponReady(WRF_ALLOWZOOM)
-		TNT1 A 0 A_PlaySound("Relo2",CHAN_AUTO)
-		TNT1 A 0 A_PlaySound("Relo3",CHAN_AUTO)
-		ARS0 CDEFG 1 A_WeaponReady(WRF_ALLOWZOOM)
-		ARS0 G 8 A_WeaponReady(WRF_ALLOWZOOM)
-		ARS0 HIJKLMN 1 A_WeaponReady(WRF_ALLOWZOOM)
-		TNT1 A 0 A_PlaySound("AltRifle/BoltIn",CHAN_WEAPON)
-		ARS0 OPQRST 1 A_WeaponReady(WRF_ALLOWZOOM)
-		TNT1 A 0 A_PlaySound("AltRifle/BoltOut",CHAN_WEAPON)
-		ARS0 SRQPONMKJIH 1 A_WeaponReady(WRF_ALLOWZOOM)
-		ARSG TSRQPO 1 A_WeaponReady(WRF_ALLOWZOOM)
-		ARSG NMLJKIH 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_PlaySound("Rifle/MagIn",CHAN_AUTO)
+		ARS0 CDEFG 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOFIRE)
+		ARS0 G 8 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOFIRE)
+		ARS0 HIJKLMN 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOFIRE)
+		TNT1 A 0 A_PlaySound("Rifle/BoltIn",CHAN_WEAPON)
+		ARS0 OPQRST 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOFIRE)
+		TNT1 A 0 A_PlaySound("Rifle/BoltOut",CHAN_WEAPON)
+		ARS0 SRQPONMKJIH 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOFIRE)
+		ARSG TSRQPO 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOFIRE)
+		ARSG NMLJKIH 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM|WRF_NOFIRE)
 		Goto Ready
 	Select:
 		TNT1 A 0 A_JumpIfInventory("StartWeapon",1,"LetsGetStarted")
@@ -188,28 +187,38 @@ Tag "Assault Rifle"
 		TNT1 A 0 A_Raise
 		Wait
 	Fidget:
-		ARSG HIJKLMNOPQRST 1 A_WeaponReady(WRF_ALLOWZOOM)
-		ARS0 HIJKLMN 1 A_WeaponReady(WRF_ALLOWZOOM)
-		TNT1 A 0 A_PlaySound("AltRifle/BoltIn",CHAN_WEAPON)
-		ARS0 OPPPPP 1 A_WeaponReady(WRF_ALLOWZOOM)
-		TNT1 A 0 A_PlaySound("AltRifle/BoltOut",CHAN_WEAPON)
-		ARS0 ONMKJIH 1 A_WeaponReady(WRF_ALLOWZOOM)
-		ARSG TSRQPO 1 A_WeaponReady(WRF_ALLOWZOOM)
-		ARSG NMLKJIH 1 A_WeaponReady(WRF_ALLOWZOOM)
+		ARSG HIJKLMNOPQRST 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOFIRE|WRF_NOBOB)
+		ARS0 HIJ 1  A_WeaponReady(WRF_ALLOWZOOM|WRF_NOFIRE|WRF_NOBOB)
+		TNT1 A 0 A_GiveInventory("IsFidgeting",1)
+	CountinueFidget:	
+		ARS0 KLMN 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOFIRE|WRF_NOBOB)
+		TNT1 A 0 A_PlaySound("Rifle/BoltIn",CHAN_WEAPON)
+		ARS0 OPPPPP 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOFIRE|WRF_NOBOB)
+		TNT1 A 0 A_GiveInventory("HoldFidget",1)
+	HoldingFidget:	
+		ARS0 P 2 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM|WRF_NOFIRE)
+		TNT1 A 0 A_TakeInventory("HoldFidget",1)
+		TNT1 A 0 A_PlaySound("Rifle/BoltOut",CHAN_WEAPON)
+		ARS0 ONMKJIH 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM|WRF_NOFIRE|WRF_NOBOB)
+		TNT1 A 0 A_TakeInventory("IsFidgeting",1)
+		ARSG TSRQPO 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOFIRE|WRF_NOBOB)
+		ARSG NMLKJIH 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOFIRE|WRF_NOBOB)
 		Goto Ready
 	ADSFidget:
 		AR2G HIJ 1
 		AR2G K 3
-		AR2G L 1 A_PlaySound("AltRifle/BoltIn",CHAN_WEAPON)
+		AR2G L 1 A_PlaySound("Rifle/BoltIn",CHAN_WEAPON)
 		AR2G MN 2
 		AR2G O 4
-		TNT1 A 0 A_PlaySound("AltRifle/BoltOut",CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Rifle/BoltOut",CHAN_WEAPON)
 		AR2G NML 2
 		AR2G KJIH 1
 		Goto Ready2
 	Deselect:
 		TNT1 A 0 A_ZoomFactor(1.0)
 		TNT1 A 0 A_Takeinventory("WeaponSpecialAction",0)
+		TNT1 A 0 A_TakeInventory("HoldFidget",0)
+		TNT1 A 0 A_TakeInventory("IsFidgeting",0)
 		TNT1 A 0 A_Takeinventory("TossMine",0)
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
@@ -250,20 +259,21 @@ Tag "Assault Rifle"
 		Goto Ready
 	Reload:
 		TNT1 A 0 A_JumpIfInventory("Zoomed",1,"ADSReload")
-		TNT1 A 0 A_JumpIfInventory("RifleAmmo",31,"Fidget")
+		TNT1 A 0 A_JumpIfInventory("HoldFidget",1,"HoldingFidget")
+		TNT1 A 0 A_JumpIfInventory("IsFidgeting",1,"CountinueFidget")
+		TNT1 A 0 A_JumpIfInventory("RifleAmmo",0,"Fidget")
 		TNT1 A 0 A_JumpIfInventory("64HighCaliberBox",1,1)
 		Goto NoAmmo
 		ARSG HIJKLMNOPQRST 1
-		TNT1 A 0 A_PlaySound("Relo1",CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("Rifle/MagOut",CHAN_AUTO)
 		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",-5,0,8,-30)
 		ARSG VWXYZ 1
 		ARS0 A 1
 		ARS0 B 11
-		TNT1 A 0 A_PlaySound("Relo2",CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("Rifle/MagIn",CHAN_AUTO)
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",1,"InsertBullets2")//30+1 effect
 		Goto InsertBullets
 	FinishReload:
-		TNT1 A 0 A_PlaySound("Relo3",CHAN_AUTO)
 		ARS0 CDEFG 1
 		TNT1 A 0 A_JumpIfInventory("RifleBolt",1,"ReloadEmpty")
 		ARSG TSRQPONMLKJIH 1
@@ -271,9 +281,9 @@ Tag "Assault Rifle"
 	ReloadEmpty:
 		TNT1 A 0 A_TakeInventory("RifleBolt",1)
 		ARS0 HIJKLMN 1
-		TNT1 A 0 A_PlaySound("AltRifle/BoltIn",CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Rifle/BoltIn",CHAN_WEAPON)
 		ARS0 OPQRST 1
-		TNT1 A 0 A_PlaySound("AltRifle/BoltOut",CHAN_WEAPON)
+		TNT1 A 0 A_PlaySound("Rifle/BoltOut",CHAN_WEAPON)
 		ARS0 SRQPONMKJIH 1
 		ARSG TSRQPO 1
 		ARSG NMLJKIH 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
@@ -305,7 +315,7 @@ Tag "Assault Rifle"
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",0,"ADSFidget")
 		TNT1 A 0 A_JumpIfInventory("64HighCaliberBox",1,1)
 		Goto Ready2
-		TNT1 A 0 A_PlaySound("Relo1",CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("Rifle/MagOut",CHAN_AUTO)
 		AR2G AB 1
 		TNT1 A 0 A_FireCustomMissile("EmptyClipSpawn",-5,0,8,-14)
 		AR2G CDEF 1
@@ -314,11 +324,11 @@ Tag "Assault Rifle"
 		AR2G G 1 Offset(0,35)
 		AR2G G 1 Offset(0,36)
 		AR2G GG 4
-		AR2G G 1 Offset(0,37) A_PlaySound("Relo2",CHAN_AUTO)
+		AR2G G 1 Offset(0,37) A_PlaySound("Rifle/MagIn",CHAN_AUTO)
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",1,"InsertBullets2")//30+1 effect
 		Goto InsertBullets
 	FinishADSReload:
-		AR2G G 1 Offset(0,38) A_PlaySound("Relo3",CHAN_AUTO)
+		AR2G G 1 Offset(0,38)
 		AR2G G 1 Offset(0,36)
 		AR2G G 3
 		AR2G G 1 Offset(0,35)

@@ -1,5 +1,5 @@
 #library "BD64ACS"
-#include "zcommon.acs"
+#import "zcommon.bcs"
 #include "ACSFunc.acs"
 #include "BD64FlashlightACS.acs"
 #include "BD64ScreenFXACS.acs"
