@@ -291,15 +291,24 @@ brightmap sprite RLTSC0		{map "brightmaps/RLTSC0_BR.png"}
 brightmap sprite RLTSD0		{map "brightmaps/RLTSD0_BR.png"}
 
 //PLASMA RIFLE
+brightmap sprite PLSFB0		{map "brightmaps/PlasmaRifleBM/PLSFB0_BR.png"}
 brightmap sprite PLSFC0		{map "brightmaps/PlasmaRifleBM/PLSFC0_BR.png"}
 brightmap sprite PLSFD0		{map "brightmaps/PlasmaRifleBM/PLSFD0_BR.png"}
 
 brightmap sprite 2LSRA0		{map "brightmaps/PlasmaRifleBM/2LSRA0_BR.png"}
 brightmap sprite 2LSRB0		{map "brightmaps/PlasmaRifleBM/2LSRB0_BR.png"}
 brightmap sprite 2LSRC0		{map "brightmaps/PlasmaRifleBM/2LSRC0_BR.png"}
-
 brightmap sprite 2LSRD0		{map "brightmaps/PlasmaRifleBM/2LSRD0_BR.png"}
+
 brightmap sprite PLSGA0		{map "brightmaps/PlasmaRifleBM/PLSGA0_BR.png"}
+brightmap sprite PLSGB0		{map "brightmaps/PlasmaRifleBM/PLSGA0_BR.png"}
+brightmap sprite PLSGC0		{map "brightmaps/PlasmaRifleBM/PLSGA0_BR.png"}
+brightmap sprite PLSGD0		{map "brightmaps/PlasmaRifleBM/PLSGA0_BR.png"}
+brightmap sprite PLSGE0		{map "brightmaps/PlasmaRifleBM/PLSGA0_BR.png"}
+brightmap sprite PLSGF0		{map "brightmaps/PlasmaRifleBM/PLSGA0_BR.png"}
+
+brightmap sprite PLSKA0		{map "brightmaps/PlasmaRifleBM/PLSGA0_BR.png"}
+brightmap sprite PLSKF0		{map "brightmaps/PlasmaRifleBM/PLSGA0_BR.png"}
 
 //UNMAKER
 brightmap sprite UNFSA0		{map "BRIGHTMAPS/Unmaker/UNFSA0_BR.png"disablefullbright}	//White exhaust
