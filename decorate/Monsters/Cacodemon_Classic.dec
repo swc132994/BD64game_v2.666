@@ -122,8 +122,8 @@ HitObituary "$FO_OB_CACOHIT"
 		CLGM A -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Raise:
-		HEA3 M 5 A_UnSetFloorClip
-		HEA3 LKJIH 5
+		HEA3 K 5 A_UnSetFloorClip
+		HEA3 JIHGFE 5
 		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
@@ -223,9 +223,9 @@ DropItem "None"
 		CLGM A -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Raise:
-		HEA3 M 5 A_UnSetFloorCliP
-		HEA3 LKJIH 5
-		HEA3 H 1 A_SpawnItemEx("64ClassicCacodemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		HEA3 K 5 A_UnSetFloorCliP
+		HEA3 KIHGFE 5
+		HEA3 E 1 A_SpawnItemEx("64ClassicCacodemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
 }
@@ -278,11 +278,6 @@ Actor Brutalized64ClassicCaco_2 : Brutalized64ClassicCaco
 		CLGM A 35 A_SetFloorClip
 		CLGM A -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
-	Raise:
-		HEA3 M 5 A_UnSetFloorClip
-		HEA3 LKJIH 5
-		HEA3 H 1 A_SpawnItemEx("64ClassicCacodemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
 	}
 }
 
@@ -320,11 +315,6 @@ Actor Brutalized64ClassicCaco_3 : Brutalized64ClassicCaco
 		TNT1 A 0 A_XScream
 		CLGM A 35 A_SetFloorClip
 		CLGM A -1 A_SpawnItemEx("GrowingBloodPoolBlue")
-		Stop
-	Raise:
-		HEA3 M 5 A_UnSetFloorClip
-		HEA3 LKJIH 5
-		HEA3 H 1 A_SpawnItemEx("64ClassicCacodemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
 }
@@ -475,8 +465,8 @@ BloodType "Brutal_BloodBLUE"
 		CNGM A -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Raise:
-		HEA4 M 5 A_UnSetFloorClip
-		HEA4 LKJIH 5
+		HEA4 K 5 A_UnSetFloorClip
+		HEA4 JIHGFE 5
 		Goto See
 	Crush:
 		TNT1 A 0 A_PlaySound("Misc/Gibbed",CHAN_BODY)
@@ -576,9 +566,9 @@ DropItem "None"
 		CNGM A -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
 	Raise:
-		HEA4 M 5 A_UnSetFloorClip
-		HEA4 LKJIH 5
-		HEA4 H 1 A_SpawnItemEx("NightmareClassicCacodemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
+		HEA4 K 5 A_UnSetFloorClip
+		HEA4 JIHGFE 5
+		HEA4 E 1 A_SpawnItemEx("NightmareClassicCacodemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	Ice:
 		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate") 
@@ -636,11 +626,6 @@ Actor BrutalizedNClassicCaco_2 : BrutalizedNClassicCaco
 		CNGM A 35 A_SetFloorClip
 		CNGM A -1 A_SpawnItemEx("GrowingBloodPoolBlue")
 		Stop
-	Raise:
-		HEA4 M 5 A_UnSetFloorClip
-		HEA4 LKJIH 5
-		HEA4 H 1 A_SpawnItemEx("NightmareClassicCacodemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
-		Stop
 	}
 }
 
@@ -678,11 +663,6 @@ Actor BrutalizedNClassicCaco_3 : BrutalizedNClassicCaco
 		TNT1 A 0 A_XScream
 		CNGM A 35 A_SetFloorClip
 		CNGM A -1 A_SpawnItemEx("GrowingBloodPoolBlue")
-		Stop
-	Raise:
-		HEA4 M 5 A_UnSetFloorClip
-		HEA4 LKJIH 5
-		HEA4 H 1 A_SpawnItemEx("NightmareClassicCacodemon",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL)
 		Stop
 	}
 }
