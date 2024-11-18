@@ -8,6 +8,7 @@ Height 56
 Mass 100
 Speed 15
 PainChance 70
+PainChance "Fire",26
 PainChance "Bullet",26
 PainChance "SuperFists",220
 PainChance "Kick",255

@@ -632,7 +632,7 @@ colonelzombie/death		PZOMDIE
 colonelzombie/active	PZOMACT
 
 //BFG Zombie
-$random chainguy/sight
+$random bfgguy/sight
 	{
 	bfgguy/sight1 bfgguy/sight2
 	}

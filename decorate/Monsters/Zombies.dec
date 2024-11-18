@@ -37,6 +37,7 @@ Actor 64ZombieMan : ZombieMan Replaces ZombieMan
 Scale 0.8
 GibHealth 15
 Speed 6
+PainChance "Fire",64
 PainChance "Bullet",26
 DamageFactor "CauseWaterSplash",0.0
 DamageFactor "CauseObjectsToSplash",0.0

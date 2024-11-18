@@ -9,6 +9,7 @@ PainChance "SuperFists",200
 PainChance "Kick",255
 PainChance "SuperKick",255
 PainChance "Fire",0
+PainChance "bullet",64
 DamageFactor "Fire",0
 DamageFactor "Ice",1.5
 DamageFactor "CauseWaterSplash",0.0

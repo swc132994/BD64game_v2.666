@@ -3,6 +3,7 @@ Actor 64Cacodemon : Cacodemon Replaces Cacodemon
 //$category "Game/BD64_Monsters
 Scale 0.8
 Health 350
+PainChance "Fire",26
 PainChance "Bullet",26
 PainChance "SuperFists",255
 PainChance "Kick",255
@@ -356,6 +357,7 @@ Speed 14
 Alpha 0.5
 RenderStyle Translucent
 PainChance 96
+PainChance "Fire",26
 PainChance "Bullet",26
 PainChance "SuperFists",255
 PainChance "Kick",255

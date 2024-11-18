@@ -8,6 +8,7 @@ MeleeRange 60 //default 44
 MaxTargetRange 384
 MeleeThreshold 125
 PainChance 180
+PainChance "Fire",26
 PainChance "Bullet",26
 PainChance "SuperFists",200
 PainChance "Kick",255
@@ -465,6 +466,7 @@ Actor 64Nightcrawler : 64Arachnotron 19105
 //$category "Game/BD64_Monsters
 Health 750
 PainChance 96
+PainChance "Fire",26
 PainChance "Bullet",26
 PainChance "SuperFists",200
 PainChance "Kick",255

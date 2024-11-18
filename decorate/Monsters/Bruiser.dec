@@ -13,7 +13,8 @@ DeathSound "64Bruiser/death"
 ActiveSound "64Bruiser/active"
 Obituary "%o was blasted by a Bruiser"
 Tag "Bruiser"
-PainChance 25
+PainChance 26
+PainChance "Fire",26
 PainChance "SuperFists",220
 PainChance "Kick",255
 PainChance "SuperKick",255

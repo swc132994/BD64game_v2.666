@@ -21,6 +21,7 @@ DeathSound "knight/death"
 ActiveSound "knight/active"
 GibHealth 15
 PainChance 75
+PainChance "Fire",26
 PainChance "Bullet",26
 PainChance "SuperFists",255
 PainChance "Kick",255

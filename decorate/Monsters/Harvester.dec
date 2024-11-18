@@ -9,6 +9,7 @@ Speed 12
 MeleeRange 70 //default 44
 MeleeThreshold 60
 PainChance 160
+PainChance "Fire",26
 PainChance "Bullet",26
 PainChance "SuperFists",255
 PainChance "Kick",255

@@ -3,6 +3,7 @@ Actor 64SpiderMastermind : SpiderMastermind Replaces SpiderMastermind
 //$category "Game/BD64_Monsters
 Scale 0.9
 Radius 62
+PainChance "Fire",26
 PainChance "Bullet",26
 PainChance "SuperFists",200
 PainChance "Kick",200
@@ -175,7 +176,8 @@ Health 4000
 Speed 14
 Radius 62
 PainChance 30
-PainChance "Bullet",26
+PainChance "Fire",10
+PainChance "Bullet",10
 PainChance "SuperFists",200
 PainChance "Kick",200
 PainChance "SuperKick",200

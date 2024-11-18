@@ -4,6 +4,7 @@ Actor 64Arachnotron : Arachnotron Replaces Arachnotron
 Scale 0.8
 Radius 40
 Speed 11
+PainChance "Fire",26
 PainChance "Bullet",26
 PainChance "SuperFists",200
 PainChance "Kick",255
@@ -31,6 +32,8 @@ Obituary "$FO_OB_BABY"
 		TNT1 A 0 A_ClearTarget
 		Goto Spawn
 	Missile:
+		TNT1 A 0 A_JumpIfTargetInLOS(1)
+		Goto See
 		BSPI A 20 A_FaceTarget
 		TNT1 A 0 A_CustomMissile("ArachnotronPlasma",25,-12,2)
 		BSPI E 4 Bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
@@ -51,6 +54,8 @@ Obituary "$FO_OB_BABY"
 		TNT1 A 0 A_CustomMissile("ArachnotronPlasma",25,-12,2)
 		BSPI E 4 Bright A_CustomMissile("ArachnotronPlasma",25,12,-2)
 		BSPI E 3 Bright A_FaceTarget
+		TNT1 A 0 A_Jump(153,2)//60%
+		TNT1 A 0 A_JumpIfInTargetInventory("PowerInvisibility",1,"Forget")
 		BSPI E 1 Bright A_SpidRefire
 		Loop
 	Pain:

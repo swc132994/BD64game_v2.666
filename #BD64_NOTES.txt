@@ -360,12 +360,14 @@ Alt cell packs - DrDoctor (sprites)
 Soul ammo & Demon essence - Craneo (sprites)	EDIT: Added Hitodama sprites by DoomerBlazcowicz
 
 Maps:
-Converting Hexen format maps to UDMF - IDDQD_1337
-New Map28 Ultimate Absolution - Styd051
+Converting all Hexen format maps to UDMF - IDDQD_1337
+New Map28 Ultimate Absolution by Styd051
 D64 puzzles - added by IDDQD_1337 from Nevander's D64 Retribution
 D64 opening title - added by Styd051 from Nevander's D64 Retribution
+BD64 rework on reckoning maps (maps 1-3) by Styd051
+BD64 import of D64 Absolution TC features by Styd051
 
-Compatible_Retribution_Maps - Trimmed down version of Nevander's D64 Retribution
+Compatible_Retribution_Maps - Imported Nevander's D64 Retribution retribution maps but with gameplay features removed.
 
 Blood, nukage, slime and water liquid textures - Guest6777
 

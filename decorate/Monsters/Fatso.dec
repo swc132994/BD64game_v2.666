@@ -4,6 +4,7 @@ Actor 64Fatso : Fatso Replaces Fatso
 Scale 0.8
 Health 700
 Speed 6
+PainChance "Fire",26
 PainChance "Bullet",26
 PainChance "SuperFists",200
 PainChance "Kick",255

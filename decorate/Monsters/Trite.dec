@@ -17,6 +17,7 @@ DeathSound "Trite/Death"
 ActiveSound "Trite/Active"
 BloodType "Brutal_BloodGreen"
 PainChance 200
+PainChance "Fire",64
 PainChance "Bullet",26
 PainChance "SuperFists",255
 PainChance "Kick",255
