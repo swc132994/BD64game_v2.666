@@ -323,7 +323,7 @@ Tag "Laser Rifle"
 Actor AlphaLZRGkerLaser : FastProjectile
 {
 Scale 0.4
-radius 1
+radius 10
 height 1
 speed 150
 damage 2
@@ -371,7 +371,7 @@ Scale 0.8
 Speed 85
 Damage 25
 Height 7
-Radius 7
+Radius 10
 Alpha 0.9
 RenderStyle Add
 Decal "MedScorch"
@@ -420,10 +420,7 @@ ReactionTime 45
 Actor LaserTrail
 {
 Scale 2.75
-Height 7
-Radius 7
 Speed 80
-Damage 0
 Alpha 1
 RenderStyle Add
 	states

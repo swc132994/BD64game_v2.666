@@ -222,10 +222,10 @@ PROJECTILE
 -NOBLOCKMAP
 +SHOOTABLE
 +GHOST
++NOTARGETSWITCH
 	States
 	{
 	Spawn:
-		TNT1 A 2
 		TNT1 A 0 A_Jump(253,2)//99%
 		TNT1 A 0 ThrustThingZ(0,1,0,0)
 		GASB A 3 A_SeekerMissile(15,15)

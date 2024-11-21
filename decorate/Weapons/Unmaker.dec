@@ -654,7 +654,7 @@ Actor UnmakerLaser2 : FastProjectile
 {
 Translation "0:255=%[0,0,0]:[0.55,0,0]"//DarkRed
 Scale 1.5
-Radius 3
+Radius 10
 Height 6
 Speed 32
 Damage 10
