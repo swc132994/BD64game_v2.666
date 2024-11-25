@@ -203,8 +203,8 @@ Health 15
 Damage 8
 Speed 10
 FastSpeed 15
-Height 6
-Radius 3
+Height 2
+Radius 2
 SeeSound "skeleton/attack"
 DeathSound "skeleton/tracex"
 Decal "SmallerScorch"
@@ -221,14 +221,17 @@ PROJECTILE
 	Spawn:
 		TNT1 A 0 NoDelay A_Jump(253,2)//99%
 		TNT1 A 0 ThrustThingZ(0,1,0,0)
+		TNT1 A 0 A_SpawnItemEx("MissileTarget2")
 		M5B1 A 2 Bright A_SpawnItemEx("RedFlareSmall")
 		TNT1 A 0 A_SeekerMissile(15,15)
 		TNT1 A 0 A_SpawnItemEx("RevenantFireTrailparticle")
 		TNT1 A 0 A_SpawnItemEx("OldschoolRocketSmokeTrail2")
+		TNT1 A 0 A_SpawnItemEx("MissileTarget2")
 		M5B1 B 2 Bright A_SpawnItemEx("RedFlareSmall")
 		TNT1 A 0 A_SeekerMissile(15,15)
 		TNT1 A 0 A_SpawnItemEx("RevenantFireTrailparticle")
 		TNT1 A 0 A_SpawnItemEx("OldschoolRocketSmokeTrail2")
+		TNT1 A 0 A_SpawnItemEx("MissileTarget2")
 		M5B1 C 2 Bright A_SpawnItemEx("RedFlareSmall")
 		TNT1 A 0 A_SeekerMissile(15,15)
 		TNT1 A 0 A_SpawnItemEx("RevenantFireTrailparticle")

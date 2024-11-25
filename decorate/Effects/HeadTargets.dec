@@ -408,3 +408,14 @@ actor HeadshotTarget32 : HeadshotTargetBase
 		Stop
 	}
 }
+
+actor MissileTarget2 : HeadshotTarget2
+{
++NOBLOOD
+States
+	{
+	Spawn:
+		TNT1 A 3
+		Stop
+	}
+}
