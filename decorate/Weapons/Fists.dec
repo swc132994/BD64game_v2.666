@@ -1,6 +1,7 @@
-Actor AltPunchCharge : Inventory
+Actor AltPunchCharge : Ammo
 {
 inventory.maxamount 100
+Inventory.Icon "PUN1F0"
 }
 
 Actor 64Fist : Fist Replaces Fist
@@ -20,91 +21,57 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 	States
 	{
 	Ready:
-		PUN1 A 1 A_WeaponReady
+		PUNG A 1 A_WeaponReady
 		Loop
 	Select:
-		PUN1 A 1 A_Raise
+		PUNG A 1 A_Raise
 		WAIT
 	Deselect:
-		PUN1 A 1 A_Lower
+		PUNG A 1 A_Lower
 		Wait
 	PullUp:
-		TNT1 A 1 Offset(0,99)
-		PUN1 A 1 Offset(0,99)
-		PUN1 A 1 Offset(0,65)
-		PUN1 A 1 Offset(0,53)
-		PUN1 A 1 Offset(0,39)
-		PUN1 A 1 Offset(0,35)
-		TNT1 A 0 A_TakeInventory("64Fist2",1)
+		PUNG DCB 1
 		Goto Ready
+	PullUp2:
+		PUNG ONM 1
+		Goto Ready	
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("64Fist2",1,"Punk")
-		PUN1 A 1 Offset(0,53)
-		TNT1 A 1 Offset(0,32)
-		Goto Punk2
-	Punk:
-		TNT1 A 2
-	Punk2:
+		PUNG BCD 1
+	Hold:
 		TNT1 A 0 A_Jump(256,"Punch1","Punch2")
 	Punch1:
+		PUNG EF 1
+		TNT1 A 0 A_FireCustomMissile("PunchAttack",0,0,0,0)
 		TNT1 A 0 A_JumpIfInventory("powerstrength",1,"BerserkPunch1")
 		TNT1 A 0 A_PlaySound("world/swing",CHAN_AUTO)
-		PUN1 BC 1
-		TNT1 A 0 A_FireCustomMissile("PunchAttack",0,0,0,0)
-		PUN1 DEFG 1
-		TNT1 A 0 A_GiveInventory("64Fist2",1)
-		PUN1 HI 1
-		TNT1 A 1
-		TNT1 A 7 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PUNG GHIJKL 1
+		TNT1 A 3
 		TNT1 A 0 A_ReFire
 		Goto PullUp
 	Punch2:
-		TNT1 A 0 A_JumpIfInventory("powerstrength",1,"BerserkPunch2")
-		TNT1 A 0 A_PlaySound("world/swing",CHAN_AUTO)
-		PUN1 JK 1
+		PUNG PQ 1
+		TNT1 A 0 A_JumpIfInventory("powerstrength",1,"BerserkPunch2")	
 		TNT1 A 0 A_FireCustomMissile("PunchAttack",0,0,0,0)
-		PUN1 LMNO 1
-		TNT1 A 0 A_GiveInventory("64Fist2",1)
-		PUN1 PQ 1
-		TNT1 A 1
-		TNT1 A 7 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_PlaySound("world/swing",CHAN_AUTO)
+		PUNG RSTUVW 1
+		TNT1 A 3
 		TNT1 A 0 A_ReFire
-		Goto PullUp
+		Goto PullUp2
 	BerserkPunch1:
-		PUN1 BC 1
 		TNT1 A 0 A_FireCustomMissile("SuperPunchAttack",0,0,0,0)
 		TNT1 A 0 A_PlaySound("world/swingB",CHAN_AUTO)
-		PUN1 DEFG 1
-		TNT1 A 0 A_GiveInventory("64Fist2",1)
-		PUN1 HI 1
-		TNT1 A 1
-		TNT1 A 7 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PUNG RSTUVW 1
+		TNT1 A 3
 		TNT1 A 0 A_ReFire
 		Goto PullUp
 	BerserkPunch2:
-		TNT1 A 0 A_PlaySound("world/swingB",CHAN_AUTO)
-		PUN1 JK 1
 		TNT1 A 0 A_FireCustomMissile("SuperPunchAttack",0,0,0,0)
-		PUN1 LMNO 1
-		TNT1 A 0 A_GiveInventory("64Fist2",1)
-		PUN1 PQ 1
-		TNT1 A 1
-		TNT1 A 7 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_PlaySound("world/swingB",CHAN_AUTO)
+		PUNG RSTUVW 1
+		TNT1 A 3
 		TNT1 A 0 A_ReFire
-		Goto PullUp
+		Goto PullUp2
 	}
-}
-
-actor 64Fist2 : Inventory
-{
-Inventory.MaxAmount 1
-+UNDROPPABLE
-}
-
-actor 64Fist3 : Inventory
-{
-Inventory.MaxAmount 1
-+UNDROPPABLE
 }
 
 Actor 64FistTactical : Brutal64Weapon
@@ -117,9 +84,7 @@ Tag "$FO_TAG_FIST"
 Inventory.Icon "PUN1A0"
 Inventory.forbiddento "64DoomPlayer"
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
-+INVENTORY.RESTRICTABSOLUTELY
 +INVENTORY.UNDROPPABLE
-+WEAPON.NOALERT
 +WEAPON.MELEEWEAPON
 	States
 	{
@@ -150,7 +115,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		TNT1 A 0 A_JumpIfInventory("TossMine",1,"TossMine")
 		TNT1 A 0 A_JumpIfInventory("PlaceMine",1,"PlaceMine")
-		PUN1 A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PUNG A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		Loop
 	Tired:
 		TNT1 A 0 A_Print("Not enough stamina!",1)
@@ -172,196 +137,138 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 A 0 A_Takeinventory("PlaceMine",0)
 		TNT1 A 0 A_Takeinventory("Kicking",0)
 		TNT1 A 0 A_TakeInventory("AltPunchCharge",0)
+		TNT1 A 0 A_TakeInventory("64FistUpperToken",0)
 		PUN6 DCBA 1
 		TNT1 A 0 A_Lower
 		Wait
 	PullUp:
-		TNT1 A 1 Offset(0,99)
-		PUN1 A 1 Offset(0,99)
-		PUN1 A 1 Offset(0,65)
-		PUN1 A 1 Offset(0,53)
-		PUN1 A 1 Offset(0,39)
-		PUN1 A 1 Offset(0,35)
-		TNT1 A 0 A_TakeInventory("64Fist2",1)
-		TNT1 A 0 A_TakeInventory("64Fist3",1)
+		PUNG DCB 1 A_WeaponReady
+		TNT1 A 0 A_TakeInventory("64FistUpperToken",0)
 		Goto Ready
 	PullUp2:
-		TNT1 A 0 Offset(0,99)
-		TNT1 A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM|WRF_NOBOB)
-		TNT1 A 0 Offset(0,99) 
-		PUN1 A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM|WRF_NOBOB)
-		TNT1 A 0 Offset(0,65)
-		PUN1 A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM|WRF_NOBOB)
-		TNT1 A 0 Offset(0,53)
-		PUN1 A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM|WRF_NOBOB)
-		TNT1 A 0 Offset(0,39)
-		PUN1 A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM|WRF_NOBOB)
-		TNT1 A 0 Offset(0,35)
-		PUN1 A 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM|WRF_NOBOB)
-		TNT1 A 0 A_TakeInventory("64Fist2",1)
-		TNT1 A 0 A_TakeInventory("64Fist3",1)
+		PUNG ONM 1 A_WeaponReady
+		TNT1 A 0 A_TakeInventory("64FistUpperToken",0)
 		Goto Ready
 	Fire:
-		TNT1 A 0 A_JumpIfInventory("64Fist2",1,"TheLeft")
-		TNT1 A 0 A_JumpIfInventory("64Fist3",1,"Upper")
-		PUN1 A 1 Offset(0,35)
-		PUN1 A 1 Offset(0,39)
-		PUN1 A 1 Offset(0,53)
-		PUN1 A 1 Offset(0,65)
-		PUN1 A 1 Offset(0,99)
-		TNT1 A 1 Offset(0,32)
-		Goto TheLeft2
-	TheLeft:
-		TNT1 A 5 Offset(-1,32)
-	TheLeft2:
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,2)
-		TNT1 A 0 A_JumpIfInventory("isModern",1,3)
-		Goto punch1
+		PUNG BCD 1
+		TNT1 A 1
+	Hold:	
+		TNT1 A 0 A_JumpIfInventory("IsModern",1,2)
 		TNT1 A 0 A_JumpIfInventory("Stamina",91,"Tired")
 		TNT1 A 0 A_GiveInventory("Stamina",9)
+		TNT1 A 0 A_Jump(255, "Punch1","Punch2")
 	Punch1:
+		PUNG EF 1
 		TNT1 A 0 A_JumpIfInventory("powerstrength",1,"BerserkPunch1")
-		TNT1 A 0 A_PlaySound("world/swing",CHAN_AUTO)
-		PUN1 BC 1
 		TNT1 A 0 A_FireCustomMissile("PunchAttack",0,0,0,0)
-		PUN1 DEFG 1
-		TNT1 A 0 A_GiveInventory("64Fist2",1)
-		PUN1 HI 1
-		Goto PullUp2
-	Altfire:
-	Altfire1:
-		TNT1 A 0 A_JumpIfInventory("64Fist3",1,"Altfire2")
-		TNT1 A 0 A_JumpIfInventory("64Fist2",1,"The")
-		PUN1 A 1 Offset(0,35)
-		PUN1 A 1 Offset(0,39)
-		PUN1 A 1 Offset(0,53)
-		PUN1 A 1 Offset(0,65)
-		PUN1 A 1 Offset(0,99)
-		TNT1 A 1 Offset(0,32)
-	Punch2P:
-		TNT1 A 1 A_WeaponReady(WRF_NOFIRE)
-		TNT1 A 0 A_Refire("Punch2P")
-		Goto The
-	Altfire2:
-		PUN1 OPQ 1
-		TNT1 A 6
-	The:
-		TNT1 A 0 A_JumpIfInventory("istacticalclass",1,2)
-		TNT1 A 0 A_JumpIfInventory("isModern",1,3)
-		Goto punch2
-		TNT1 A 0 A_JumpIfInventory("Stamina",91,"Tired")
-		TNT1 A 0 A_GiveInventory("Stamina",9)
+		TNT1 A 0 A_PlaySound("world/swing",CHAN_AUTO)
+		PUNG GHIJKL 1
+		TNT1 A 5 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOPRIMARY)
+		TNT1 A 0 A_Refire
+		Goto PullUp
 	Punch2:
+		PUNG PQ 1
 		TNT1 A 0 A_JumpIfInventory("powerstrength",1,"BerserkPunch2")
-		TNT1 A 0 A_PlaySound("world/swing",CHAN_AUTO)
-		PUN1 JK 1 A_WeaponReady(WRF_NOFIRE)
 		TNT1 A 0 A_FireCustomMissile("PunchAttack",0,0,0,0)
-		PUN1 LMNO 1
-		TNT1 A 0 A_TakeInventory("64Fist2",1)
-		TNT1 A 0 A_GiveInventory("64Fist3",1)
-		PUN1 PQ 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_PlaySound("world/swing",CHAN_AUTO)
+		PUNG RSTUWV 1
+		TNT1 A 5 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOPRIMARY)
+		TNT1 A 0 A_Refire
 		Goto PullUp2
-		
 	BerserkPunch1:
-		TNT1 A 0 A_PlaySound("world/swingB",CHAN_AUTO)
-		PUN1 BC 1
 		TNT1 A 0 A_FireCustomMissile("SuperPunchAttack",0,0,0,0)
-		PUN1 DEFG 1
-		TNT1 A 0 A_GiveInventory("64Fist2",1)
-		PUN1 HI 1
+		TNT1 A 0 A_PlaySound("world/swingB",CHAN_AUTO)
+		PUNG GHIJKL 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOPRIMARY)
+		TNT1 A 2
+		TNT1 A 0 A_Refire
 		Goto PullUp2
 	BerserkPunch2:
-		TNT1 A 0 A_PlaySound("world/swingB",CHAN_AUTO)
-		PUN1 JK 1 Offset(-1,32)
 		TNT1 A 0 A_FireCustomMissile("SuperPunchAttack",0,0,0,0)
-		PUN1 LMNO 1
-		TNT1 A 0 A_TakeInventory("64Fist2",1)
-		TNT1 A 0 A_GiveInventory("64Fist3",1)
-		PUN1 PQ 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		TNT1 A 0 A_PlaySound("world/swingB",CHAN_AUTO)
+		PUNG RSTUWV 1
+		TNT1 A 2 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOPRIMARY)
+		TNT1 A 0 A_Refire
 		Goto PullUp2
-	Upper:
-		PUN1 R 1 A_WeaponReady(WRF_NOFIRE)
-		PUN1 STUVWXYZ 1
-		PUN0 ABC 1
-	UpperHold:
+	AltFire:
+		PUNG BCD 1
+	AltHold:
+		PUN1 ABCDE 1 A_WeaponReady
+	AltHolding:	
+		TNT1 A 0 A_GiveInventory("64FistUpperToken",1)
 		TNT1 A 0 A_JumpIfInventory("IsModern",1,3)
 		TNT1 A 0 A_JumpIfInventory("Stamina",100,"AltTired")
 		TNT1 A 0 A_GiveInventory("Stamina",1)
 		TNT1 A 0 A_GiveInventory("AltPunchCharge",1)
-		PUN0 C 1
-		TNT1 A 0 A_Refire("UpperHold")
+		PUN1 F 1 A_WeaponReady(WRF_ALLOWRELOAD)
+		TNT1 A 0 A_Refire("AltHolding")
 	AltEndPunch:
+		TNT1 A 0 A_TakeInventory("64FistUpperToken",1)
+		PUN1 GHIJ 1
 		TNT1 A 0 A_JumpIfInventory("AltPunchCharge",100,"AltEndPunch3")
-		TNT1 A 0 A_JumpIfInventory("AltPunchCharge",50,"AltEndPunch2")
-		TNT1 A 0 A_JumpIfInventory("PowerStrength",1,3)
-		TNT1 A 0 A_PlaySound("world/swing",CHAN_AUTO)
-		TNT1 A 0 A_Jump(256,2)
-		TNT1 A 0 A_PlaySound("world/swingB",CHAN_AUTO)
-		PUN0 DEF 1
+		TNT1 A 0 A_JumpIfInventory("AltPunchCharge",50,"AltEndPunch2")		
 		TNT1 A 0 A_ZoomFactor(0.95)
 		TNT1 A 0 A_JumpIfInventory("PowerStrength",1,"BerserkAltEndPunch")
 		TNT1 A 0 A_FireCustomMissile("AltPunchAttack",0,0,0,-7)
-		PUN0 GH 1
+		TNT1 A 0 A_PlaySound("world/swing",CHAN_AUTO)
+		PUN1 KL 1
 		TNT1 A 0 A_ZoomFactor(1.0)
-		PUN0 IJKLM 1
+		PUN1 MNOPQ 1
 		TNT1 A 0 A_TakeInventory("AltPunchCharge",0)
 		Goto PullUp
 	BerserkAltEndPunch:
 		TNT1 A 0 A_ZoomFactor(0.95)
 		TNT1 A 0 A_FireCustomMissile("SuperAltPunchAttack",0,0,0,-7)
 		TNT1 A 0 A_RadiusThrust(5000,65,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
-		PUN0 GH 1
+		TNT1 A 0 A_PlaySound("world/swingB",CHAN_AUTO)
+		PUN1 KL 1
 		TNT1 A 0 A_ZoomFactor(1.0)
-		PUN0 IJKLM 1
+		PUN1 MNOPQ 1
 		TNT1 A 0 A_TakeInventory("AltPunchCharge",0)
 		Goto PullUp
 	AltEndPunch2:
-		TNT1 A 0 A_PlaySound("world/swing",CHAN_AUTO)
-		PUN0 DEF 1
 		TNT1 A 0 A_ZoomFactor(0.95)
 		TNT1 A 0 A_JumpIfInventory("PowerStrength",1,"BerserkAltEndPunch2")
 		TNT1 AA 0 A_FireCustomMissile("AltPunchAttack",0,0,0,-7)
 		TNT1 A 0 A_RadiusThrust(750,65,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
-		TNT1 A 0 A_Print("Charged attack")
-		PUN0 GH 1
+		TNT1 A 0 A_PlaySound("world/swing",CHAN_AUTO)
+		PUN1 KL 1
 		TNT1 A 0 A_ZoomFactor(1.0)
-		PUN0 IJKLM 1
+		PUN1 MNOPQ 1
 		TNT1 A 0 A_TakeInventory("AltPunchCharge",0)
 		Goto PullUp
 	BerserkAltEndPunch2:
 		TNT1 A 0 A_ZoomFactor(0.95)
 		TNT1 AA 0 A_FireCustomMissile("SuperAltPunchAttack",0,0,0,-7)
 		TNT1 A 0 A_RadiusThrust(6000,65,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
-		TNT1 A 0 A_Print("Charged Berserk attack")
-		PUN0 GH 1
+		TNT1 A 0 A_PlaySound("world/swingB",CHAN_AUTO)
+		PUN1 KL 1
 		TNT1 A 0 A_ZoomFactor(1.0)
-		PUN0 IJKLM 1
+		PUN1 MNOPQ 1
 		TNT1 A 0 A_TakeInventory("AltPunchCharge",0)
 		Goto PullUp
 	AltEndPunch3:
-		TNT1 A 0 A_PlaySound("world/swing",CHAN_AUTO)
-		PUN0 DEF 1
 		TNT1 A 0 A_ZoomFactor(0.95)
 		TNT1 A 0 A_JumpIfInventory("PowerStrength",1,"BerserkAltEndPunch3")
 		TNT1 AAA 0 A_FireCustomMissile("AltPunchAttack",0,0,0,-7)
 		TNT1 A 0 A_RadiusThrust(1500,65,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
-		TNT1 A 0 A_Print("Super charged attack")
-		PUN0 GH 1
+		TNT1 A 0 A_PlaySound("world/swing",CHAN_AUTO)
+		PUN1 KL 1
 		TNT1 A 0 A_ZoomFactor(1.0)
-		PUN0 IJKLM 1
+		PUN1 MNOPQ 1
 		TNT1 A 0 A_TakeInventory("AltPunchCharge",0)
 		Goto PullUp
 	BerserkAltEndPunch3:
 		TNT1 A 0 A_ZoomFactor(0.95)
 		TNT1 AAA 0 A_FireCustomMissile("SuperAltPunchAttack",0,0,0,-7)
 		TNT1 A 0 A_RadiusThrust(7000,65,RTF_NOTMISSILE|RTF_NOIMPACTDAMAGE)
-		TNT1 A 0 A_Print("Super charged Berserk attack")
-		PUN0 GH 1
+		TNT1 A 0 A_PlaySound("world/swingB",CHAN_AUTO)
+		PUN1 KL 1
 		TNT1 A 0 A_ZoomFactor(1.0)
-		PUN0 IJKLM 1
+		PUN1 MNOPQ 1
 		TNT1 A 0 A_TakeInventory("AltPunchCharge",0)
 		Goto PullUp
 	Reload: //Knuckle animation(Tactical and Modern only)
+		TNT1 A 0 A_JumpIfInventory("64FistUpperToken",1,"StopUpper")
 		PUNS DE 2 A_WeaponReady(WRF_ALLOWZOOM)
 		PUNS FG 1 A_WeaponReady(WRF_ALLOWZOOM)
 		TNT1 A 0 A_PlaySound("Knuckled",CHAN_VOICE)
@@ -374,12 +281,18 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		PUNS PON 1 A_WeaponReady(WRF_ALLOWZOOM)
 		PUNS LK 2 A_WeaponReady(WRF_ALLOWZOOM)
 		Goto Ready
+	StopUpper:
+		TNT1 A 0 A_TakeInventory("64FistUpperToken",1)
+		PUN1 EDCBA 1 A_WeaponReady
+		TNT1 A 0 A_TakeInventory("AltPunchCharge",0)
+		TNT1 A 0 A_Jump(128,"PullUp2")
+		Goto PullUp
 	}
 }
 
 Actor PunchAttack : FastProjectile
 {
-Damage 14 
+Damage 8 
 DamageType "Melee"
 Speed 27
 Height 6

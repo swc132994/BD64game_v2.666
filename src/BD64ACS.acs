@@ -237,39 +237,27 @@ script "CensoredHealing_ACS" (void)
 	Delay(1);
 }
 
-/*
-Script "VanillaChainsawACS" ENTER 	//option to set vanilla chainsaw
+script "WeaponPickupChecker" (int Weapon)
 {
-if (CheckInventory("64ChainsawTACTICAL") == 1 && GetCvar("VanillaChainsawCvar") == 1)
+	static str WeaponPickups[50] =
+	{ //Regular Weapons
+		"64Chainsaw", "64Pistol","64SMG","64Shotgun","64SuperShotgun","64Chaingun","64Rifle","64RocketLauncher","64PlasmaRifle","64GaussCannon","64BFG9000","Unmaker","Lasergun","64MP40",
+		//Xtra Weapons
+		"64FireAxe","64Revolver","64AssaultShotgun","64QuadShotgun","64HexaShotgun","64LMG","64SniperRifle","64NadeLauncher","64Nailgun","64BFG10K","64Ruiner","64Flamethrower","64HeatseekerLauncher","64NuclearMissileLauncher"
+		};
+
+
+	If(CheckInventory("IsTacticalClass") || CheckInventory("IsModern"))
 	{
-		SetAmmoCapacity("SawGas",700);
-		GiveInventory("64ChainsawTACTICAL_Classic",1);
-		TakeInventory("64ChainsawTACTICAL",1);
-		TakeInventory("SawGas",100);
-		SetAmmoCapacity("SawGas",600);
-	}
-if (CheckInventory("64ChainsawTACTICAL_Classic") == 1 && GetCvar("VanillaChainsawCvar") == 0)
+		str TacticalWeaponPickup = StrParam(s:WeaponPickups[Weapon-1],s:"Tactical");
+		
+		GiveInventory(TacticalWeaponPickup,1);
+	}	
+	else
 	{
-		SetAmmoCapacity("SawGas",700);
-		GiveInventory("64ChainsawTACTICAL",1);
-		TakeInventory("64ChainsawTACTICAL_Classic",1);
-		TakeInventory("SawGas",100);
-		SetAmmoCapacity("SawGas",600);
+		GiveInventory(WeaponPickups[Weapon-1],1);
 	}
-if (CheckInventory("64ChainsawMODERN") == 1 && GetCvar("VanillaChainsawCvar") == 1)
-	{
-		GiveInventory("64ChainsawMODERN_Classic",1);
-		TakeInventory("64ChainsawMODERN",1);
-	}
-if (CheckInventory("64ChainsawMODERN_Classic") == 1 && GetCvar("VanillaChainsawCvar") == 0)
-	{
-		GiveInventory("64ChainsawMODERN",1);
-		TakeInventory("64ChainsawMODERN_Classic",1);
-	}
-Delay(40);
-Restart;
 }
-*/
 
 script "AlphaPickupACS" (void)
 {

@@ -3,7 +3,7 @@ ACTOR PistolSpawner : CustomInventory Replaces Pistol
 //$category "Game/BD64_Weapons
 Scale 0.82
 Tag "$FO_TAG_PISTOL"
-Inventory.PickupMessage "$FO_PICKUP_PISTOL_DROPPED"
+Inventory.PickupMessage "$GOTPISTOL"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -11,12 +11,7 @@ Inventory.PickupSound "WPICK"
 		PIST A -1
 		Stop
 	Pickup:
-		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
-		TNT1 A 0 A_GiveInventory("64Pistol",1)
-		Stop
-	Pickup2:
-		TNT1 A 0 A_GiveInventory("64PistolTactical",1)
+		TNT1 A 0 ACS_NamedExecuteWithResult("WeaponPickupChecker",2)
 		Stop
 	}
 }
@@ -33,7 +28,7 @@ Weapon.AmmoGive 10
 +WEAPON.WIMPY_WEAPON
 +WEAPON.NOAUTOFIRE
 Obituary "$FO_OB_MPPISTOL"
-Inventory.Pickupmessage "$FO_PICKUP_PISTOL_DROPPED"
+Inventory.Pickupmessage "$GOTPISTOL"
 Tag "$FO_TAG_PISTOL"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
@@ -99,9 +94,7 @@ Weapon.AmmoGive2 0
 Obituary "$FO_OB_MPPISTOL"
 Inventory.Pickupmessage "$FO_PICKUP_PISTOL_DROPPED"
 Tag "$FO_TAG_PISTOL"
-+INVENTORY.RESTRICTABSOLUTELY
-+WEAPON.NOALERT
-+WEAPON.NOAUTOFIRE
++WEAPON.WIMPY_WEAPON
 	states
 	{
 	Spawn:

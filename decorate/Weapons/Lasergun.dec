@@ -4,7 +4,7 @@ Actor LasergunSpawner : CustomInventory 9351
 SpawnID 180
 Scale 0.9
 Tag "Laser Rifle"
-Inventory.PickupMessage "You got the Laser Rifle"
+Inventory.PickupMessage "$GOTLASER"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -19,12 +19,7 @@ Inventory.PickupSound "WPICK"
 		"####" "#" 2
 		Loop
 	Pickup:
-		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
-		TNT1 A 0 A_GiveInventory("Lasergun")
-		Stop
-	Pickup2:
-		TNT1 A 0 A_GiveInventory("LasergunTactical")
+		TNT1 A 0 ACS_NamedExecuteWithResult("WeaponPickupChecker",13)
 		Stop
 	DMSpawn:
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
@@ -41,7 +36,7 @@ Actor Lasergun : DoomWeapon
 Scale 0.9
 Weapon.SlotNumber 9
 Weapon.SelectionOrder 200
-Inventory.PickupMessage "You got the Laser Rifle"
+Inventory.PickupMessage "$GOTLASER"
 AttackSound "weapons/AlphaLZRGker"
 Weapon.AmmoType "Cell"
 Weapon.AmmoUse 1
@@ -133,17 +128,14 @@ Actor LasergunTactical : Brutal64Weapon
 Scale 0.9
 Weapon.SlotNumber 9
 Weapon.SelectionOrder 200
-Inventory.PickupMessage "You got the Laser Rifle"
+Inventory.PickupMessage "$GOTLASER"
 AttackSound "weapons/AlphaLZRGker"
 Weapon.AmmoType "Cell"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 40
 Inventory.Icon LGUNB0
 Tag "Laser Rifle"
-+INVENTORY.RESTRICTABSOLUTELY
-+WEAPON.NOALERT
 +WEAPON.ALT_USES_BOTH
--WEAPON.AMMO_CHECKBOTH
 	States
 	{
 	MineThrowFlash:

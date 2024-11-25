@@ -9,7 +9,11 @@ Weapon.BobRangeX 0.5
 Weapon.BobRangeY 0.5
 Inventory.forbiddento "64DoomPlayer"
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
++INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AMMO_CHECKBOTH
++WEAPON.NOAUTOAIM
++WEAPON.NOALERT
++WEAPON.NOAUTOFIRE
 	States
 	{
 	Tired:
@@ -226,7 +230,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		PMNF D 1 Offset(-14,33)
 		PMNF EFG 1
 		TNT1 A 0 A_TakeInventory("64MineAmmo",1,TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_FireCustomMissile("64ThrownActiveProxMine1",0,0,0,0,0,10)
+		TNT1 A 0 A_ThrowGrenade("64ThrownActiveProxMine",3,15,8,0)
 		PMNF HIJKLMNOP 1
 		TNT1 A 5
 		Goto GetReady
@@ -245,7 +249,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		PMNF D 1 Offset(14,33)
 		PMNP BCDE 1
 		TNT1 A 0 A_TakeInventory("64MineAmmo",1,TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_FireCustomMissile("64GroundProxMine",0,0)
+		TNT1 A 0 A_ThrowGrenade("64GroundProxMine",0,0,2,1)
 		TNT1 A 13
 		Goto GetReady
 	TossGrenade:
@@ -258,7 +262,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		GREN RSTUVWXYY 1
 		GREN Z 1 A_PlaySound("GRNTOSS",CHAN_WEAPON)
 		TNT1 A 0 A_TakeInventory("64MineAmmo",1,TIF_NOTAKEINFINITE)
-		TNT1 A 0 A_FireCustomMissile("64StickGrenadePlayer",0,0)
+		TNT1 A 0 A_ThrowGrenade("64StickGrenadePlayer",4,15,15,0)
 		GREN "[\]" 1
 		2REN ABCD 1
 		TNT1 A 5

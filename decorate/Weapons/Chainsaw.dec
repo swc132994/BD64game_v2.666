@@ -3,7 +3,7 @@ Actor ChainsawSpawner : CustomInventory Replaces Chainsaw
 //$category "Game/BD64_Weapons
 Scale 0.82
 Tag "$FO_TAG_CHAINSAW"
-Inventory.PickupMessage "$FO_GOTCHAINSAW"
+Inventory.PickupMessage "$GOTCHAINSAW"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -11,13 +11,8 @@ Inventory.PickupSound "WPICK"
 		CSAW A -1
 		Stop
 	Pickup:
-		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
-		TNT1 A 0 A_GiveInventory("64Chainsaw")
+		TNT1 A 0 ACS_NamedExecuteWithResult("WeaponPickupChecker",1)
 		Stop
-	Pickup2:
-		TNT1 A 0 A_GiveInventory("64ChainsawTactical",1)
-		stop
 	}
 }
 
@@ -28,7 +23,7 @@ Weapon.SlotNumber 1
 Weapon.SlotPriority 2
 Weapon.SelectionOrder 2200
 Weapon.Kickback 0
-Inventory.PickupMessage "$FO_GOTCHAINSAW"
+Inventory.PickupMessage "$GOTCHAINSAW"
 Obituary "$FO_OB_MPCHAINSAW"
 Tag "$FO_TAG_CHAINSAW"
 VisibleToPlayerClass "64DoomPlayer"
@@ -126,16 +121,13 @@ Weapon.AmmoGive1 100
 Weapon.AmmoType2 "SSGAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Inventory.PickupMessage "$FO_GOTCHAINSAW"
+Inventory.PickupMessage "$GOTCHAINSAW"
 Obituary "$FO_OB_MPCHAINSAW"
 Tag "$FO_TAG_CHAINSAW"
 Inventory.forbiddento "64DoomPlayer"
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 Weapon.SisterWeapon "64ChainsawTactical_Classic"
-+INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AXEBLOOD
-+WEAPON.NOAUTOFIRE
-+WEAPON.NOALERT
 +WEAPON.MELEEWEAPON
 	States
 	{
@@ -405,15 +397,13 @@ Weapon.Kickback 0
 Weapon.AmmoType "SawGas"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 100
-Inventory.PickupMessage "$FO_GOTCHAINSAW"
+Inventory.PickupMessage "$GOTCHAINSAW"
 Obituary "$FO_OB_MPCHAINSAW"
 Tag "$FO_TAG_CHAINSAW"
 Inventory.forbiddento "64DoomPlayer"
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 Weapon.SisterWeapon "64ChainsawTactical"
-+INVENTORY.RESTRICTABSOLUTELY
 +WEAPON.AXEBLOOD
-+WEAPON.NOAUTOFIRE
 +WEAPON.MELEEWEAPON
 +POWERED_UP
 	States

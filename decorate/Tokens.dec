@@ -37,6 +37,8 @@ Actor HoldFidget : BD64_Tokens {}
 Actor AltMode : BD64_Tokens {}
 Actor IsSilencer : BD64_Tokens {}
 Actor MP40Checker : BD64_Tokens {}
+Actor 64FistUpperToken : BD64_Tokens {}
+Actor ProxyMineThrownActive : BD64_Tokens {}
 Actor BurstFiredSMG : BD64_Tokens { inventory.maxamount 3 }
 Actor SMGBurstMode : BD64_Tokens {}
 Actor SMGBolt : BD64_Tokens {}

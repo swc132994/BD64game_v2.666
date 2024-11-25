@@ -59,14 +59,29 @@ FO_GOTCELLBOX = "Picked up an energy cell pack.";
 	PD_All6 = "You need all six keys.";
 */
 
-FO_PICKUP_PISTOL_DROPPED = "Picked up a pistol.";
-FO_GOTCHAINSAW = "A chainsaw! Find some meat!";
-FO_GOTSHOTGUN = "You got the Shotgun!";
-FO_GOTSHOTGUN2 = "You got the Super Shotgun!";
-FO_GOTCHAINGUN = "You got the Chaingun!";
-FO_GOTLAUNCHER = "You got the Rocket Launcher!";
-FO_GOTPLASMA = "You got the Plasma Rifle!";
-FO_GOTBFG9000 = "You got the BFG9000! Oh, yes.";
+GOTCHAINSAW = "A chainsaw! Find some meat! (Slot 1)";
+//Slot 3
+GOTPISTOL = "You got the pistol! (Slot 2)";
+GOTSMG = "You got the SMG! (Slot 2)";
+GOTMP40 = "You got the MP40! (Slot 2)";
+//Slot 3
+GOTSHOTGUN = "You got the Shotgun! (Slot 3)";
+GOTSHOTGUN2 = "You got the Super Shotgun! (Slot 3)";
+//Slot 4
+GOTRIFLE = "You got an assault rifle! (Slot 4)";
+GOTCHAINGUN = "You got the Chaingun! (Slot 4)";
+//Slot 5
+GOTLAUNCHER = "You got the Rocket Launcher! (Slot 5)";
+GOTMINES = "You got a Multi-Purpose Mine! (Slot 5)";
+//Slot 6
+GOTPLASMA = "You got the Plasma Rifle! (Slot 6)";
+GOTGAUSS = "You got the Gauss Cannon! (Slot 6)";
+//Slot 7
+GOTBFG9000 = "You got the BFG9000! Oh, yes. (Slot 7)";
+//Slot 8
+GOTUNMAKER = "What the !@# is this! (Slot 8)";
+//Slot 9
+GOTLASER = "You got the Laser Rifle! (Slot 9)";
 
 FO_TAG_FIST = "Fists";
 FO_TAG_CHAINSAW = "Chainsaw";

@@ -3,7 +3,7 @@ Actor SuperShotgunSpawner : CustomInventory Replaces SuperShotgun
 //$category "Game/BD64_Weapons
 Scale 0.87
 Tag "$FO_TAG_SUPERSHOTGUN"
-Inventory.PickupMessage "$FO_GOTSHOTGUN2"
+Inventory.PickupMessage "$GOTSHOTGUN2"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -11,12 +11,7 @@ Inventory.PickupSound "WPICK"
 		SGN2 A -1
 		Stop
 	Pickup:
-		TNT1 A 0 A_Jumpifinventory("IsTacticalClass",1,"Pickup2")
-		TNT1 A 0 A_Jumpifinventory("IsModern",1,"Pickup2")
-		TNT1 A 0 A_GiveInventory("64SuperShotgun")
-		Stop
-	Pickup2:
-		TNT1 A 0 A_GiveInventory("64SuperShotgunTactical",1)
+		TNT1 A 0 ACS_NamedExecuteWithResult("WeaponPickupChecker",5)
 		Stop
 	}
 }
@@ -31,7 +26,7 @@ Weapon.AmmoType "Shell"
 Weapon.AmmoUse 2
 Weapon.AmmoGive 2
 +WEAPON.NOAUTOFIRE
-Inventory.PickupMessage "$FO_GOTSHOTGUN2"
+Inventory.PickupMessage "$GOTSHOTGUN2"
 Obituary "$FO_OB_MPSSHOTGUN"
 Tag "$FO_TAG_SUPERSHOTGUN"
 VisibleToPlayerClass "64DoomPlayer"
@@ -133,11 +128,9 @@ Weapon.AmmoGive1 2
 Weapon.AmmoType2 "SSGAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Inventory.PickupMessage "$FO_GOTSHOTGUN2"
+Inventory.PickupMessage "$GOTSHOTGUN2"
 Obituary "$FO_OB_MPSSHOTGUN"
 Tag "$FO_TAG_SUPERSHOTGUN"
-+INVENTORY.RESTRICTABSOLUTELY
-+WEAPON.NOAUTOFIRE
 	States
 	{
 	MineThrowFlash:

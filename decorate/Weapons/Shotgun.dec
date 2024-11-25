@@ -2,7 +2,7 @@ Actor ShotgunSpawner : CustomInventory	replaces Shotgun	//spawned from randomspa
 {
 Scale 0.87
 Tag "$FO_TAG_SHOTGUN"
-Inventory.PickupMessage "$FO_GOTSHOTGUN"
+Inventory.PickupMessage "$GOTSHOTGUN"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -14,12 +14,7 @@ Inventory.PickupSound "WPICK"
 		SHOT A -1
 		Stop
 	Pickup:
-		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
-		TNT1 A 0 A_GiveInventory("64Shotgun",1)
-		Stop
-	Pickup2:
-		TNT1 A 0 A_GiveInventory("64ShotgunTactical",1)
+		TNT1 A 0 ACS_NamedExecuteWithResult("WeaponPickupChecker",4)
 		Stop
 	DMSpawn:
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
@@ -40,7 +35,7 @@ Weapon.SelectionOrder 1300
 Weapon.AmmoType "Shell"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 8
-Inventory.PickupMessage "$FO_GOTSHOTGUN"
+Inventory.PickupMessage "$GOTSHOTGUN"
 Obituary "$FO_OB_MPSHOTGUN"
 Tag "$FO_TAG_SHOTGUN"
 VisibleToPlayerClass "64DoomPlayer"
@@ -138,11 +133,9 @@ Weapon.AmmoGive1 8
 Weapon.AmmoType2 "ShotgunAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Inventory.PickupMessage "$FO_GOTSHOTGUN"
+Inventory.PickupMessage "$GOTSHOTGUN"
 Obituary "$FO_OB_MPSHOTGUN"
 Tag "$FO_TAG_SHOTGUN"
-+INVENTORY.RESTRICTABSOLUTELY
-+WEAPON.NOALERT
 	States
 	{
 	MineThrowFlash:

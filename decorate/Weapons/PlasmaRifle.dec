@@ -3,7 +3,7 @@ Actor PlasmaRifleSpawner : CustomInventory// Replaces PlasmaRifle		//spawned fro
 //$category "Game/BD64_Weapons
 Scale 0.82
 Tag "$FO_TAG_PLASMARIFLE"
-Inventory.PickupMessage "$FO_GOTPLASMA"
+Inventory.PickupMessage "$GOTPLASMA"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -15,12 +15,7 @@ Inventory.PickupSound "WPICK"
 		PLAS C 2
 		Loop
 	Pickup:
-		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
-		TNT1 A 0 A_GiveInventory("64PlasmaRifle",1)
-		Stop
-	Pickup2:
-		TNT1 A 0 A_GiveInventory("64PlasmaRifleTACTICAL",1)
+		TNT1 A 0 ACS_NamedExecuteWithResult("WeaponPickupChecker",9)
 		Stop
 	DMSpawn:
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
@@ -41,7 +36,7 @@ Weapon.SelectionOrder 100
 Weapon.AmmoType "Cell"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 40
-Inventory.PickupMessage "$FO_GOTPLASMA"
+Inventory.PickupMessage "$GOTPLASMA"
 Tag "$FO_TAG_PLASMARIFLE"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
@@ -121,11 +116,8 @@ Weapon.AmmoGive1 40
 Weapon.AmmoType2 "PlasmaRifleAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Inventory.PickupMessage "$FO_GOTPLASMA"
+Inventory.PickupMessage "$GOTPLASMA"
 Tag "$FO_TAG_PLASMARIFLE"
-+INVENTORY.RESTRICTABSOLUTELY
-+WEAPON.NOALERT
-+WEAPON.NOAUTOFIRE
 	States
 	{
 	MineThrowFlash:

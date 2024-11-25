@@ -3,7 +3,7 @@ Actor RifleSpawner : CustomInventory 19120
 //$category "Game/BD64_Weapons
 Scale 0.82
 Tag "Assault Rifle"
-Inventory.PickupMessage "You got an assault rifle!"
+Inventory.PickupMessage "$GOTRIFLE"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -15,12 +15,7 @@ Inventory.PickupSound "WPICK"
 		ARSD A 1
 		Loop
 	Pickup:
-		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
-		TNT1 A 0 A_GiveInventory("64Rifle",1)
-		Stop
-	Pickup2:
-		TNT1 A 0 A_GiveInventory("64RifleTactical",1)
+		TNT1 A 0 ACS_NamedExecuteWithResult("WeaponPickupChecker",7)
 		Stop
 	SpawnChaingun:
 		TNT1 A 1 A_SpawnItemEx("ChaingunSpawner",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
@@ -44,7 +39,7 @@ Weapon.SelectionOrder 800
 Weapon.AmmoType "Clip"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 10
-Inventory.PickupMessage "You got the assault rifle!"
+Inventory.PickupMessage "$GOTRIFLE"
 Obituary "%o was picked off by %k."
 Tag "Assault Rifle"
 VisibleToPlayerClass "64DoomPlayer"
@@ -77,7 +72,7 @@ Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
 		TNT1 A 0 A_Firecustommissile("50CaseSpawn",0,0,2,-16)
 		ARSG D 1
 		TNT1 A 0 A_Refire
-		RIFG E 1
+		ARSG E 1
 		ARSG F 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		Goto Ready
 	}
@@ -105,13 +100,9 @@ Weapon.AmmoGive1 20
 Weapon.AmmoType2 "RifleAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Inventory.PickupMessage "You got the assault rifle!"
+Inventory.PickupMessage "$GOTRIFLE"
 Obituary "%o was picked off by %k Assualt Rifle."
 Tag "Assault Rifle"
-+INVENTORY.RESTRICTABSOLUTELY
-+WEAPON.AMMO_CHECKBOTH
-+WEAPON.NOALERT
-+WEAPON.NOAUTOFIRE
 	States
 	{
 	MineThrowFlash:

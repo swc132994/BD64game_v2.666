@@ -3,7 +3,7 @@ Actor BFG9000Spawner : CustomInventory Replaces BFG9000
 //$category "Game/BD64_Weapons
 Scale 0.9
 Tag "$FO_TAG_BFG9000"
-Inventory.PickupMessage "$FO_GOTBFG9000"
+Inventory.PickupMessage "$GOTBFG9000"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -15,12 +15,7 @@ Inventory.PickupSound "WPICK"
 		BFUG A -1
 		Stop
 	Pickup:
-		TNT1 A 0 A_JumpIfInventory("IsTacticalClass",1,"Pickup2")
-		TNT1 A 0 A_JumpIfInventory("IsModern",1,"Pickup2")
-		TNT1 A 0 A_GiveInventory("64BFG9000")
-		Stop
-	Pickup2:
-		TNT1 A 0 A_GiveInventory("64BFG9000Tactical")
+		TNT1 A 0 ACS_NamedExecuteWithResult("WeaponPickupChecker",11)
 		Stop
 	DMSpawn:
 		TNT1 A 0 A_ChangeFlag("THRUACTORS",TRUE)
@@ -40,7 +35,7 @@ Weapon.SelectionOrder 2800
 Weapon.AmmoType "Cell"
 Weapon.AmmoUse 40
 Weapon.AmmoGive 40
-Inventory.PickupMessage "$FO_GOTBFG9000"
+Inventory.PickupMessage "$GOTBFG9000"
 Tag "$FO_TAG_BFG9000"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
@@ -91,14 +86,10 @@ Weapon.SelectionOrder 2800
 Weapon.AmmoType "Cell"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 40
-Inventory.PickupMessage "$FO_GOTBFG9000"
+Inventory.PickupMessage "$GOTBFG9000"
 Tag "$FO_TAG_BFG9000"
-+INVENTORY.RESTRICTABSOLUTELY
-+WEAPON.NOAUTOFIRE
 +WEAPON.ALT_USES_BOTH
-+WEAPON.NOALERT
 +WEAPON.BFG
--WEAPON.AMMO_CHECKBOTH
 	States
 	{
 	MineThrowFlash:
