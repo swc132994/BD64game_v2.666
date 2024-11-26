@@ -98,7 +98,8 @@ Tactical Rocket Launcher - IDDQD_1337 (animation) & I'M (sprites)
 Tactical Chainsaw - IDDQD_1337 (animation)
 Tactical Pistol - IDDQD_1337 (animation, inspired from Dox 778) & I'M (sprites), Croteam (SS3 Pistol Reload sounds)
 Alt Lasergun - IDDQD_1337 (animation)
-Alt Rifle - IDDQD_1337 (animation, reload and inspection animations from Dox 778), & I'M (sprites)
+Plasma Rifle - IDDQD_1337 (animation), Kokus370 & Craneo (Muzzleflash edit)
+Rifle - IDDQD_1337 (animation, reload and inspection animations from Dox 778). Edited by BigStronk & Katherinecode
 SSG - animations by IDDQD_1337 (first select animation and single shell reload inspired from Dox 778) 
 Tactical Shotgun Alt attack - IDDQD_1337 (animation) & I'M (sprites). Smoother alt fire animation by Doomer Blazkowicz.
 Laser Mine (unused) - Sprite rework by Craneo, Animations extra sprites and decorate by IDDQD_1337. Sounds from Brutal Hellfest by Gni. Orginally created by Capt. J and Ezequiel-TM's tripwire lasermine
