@@ -83,8 +83,12 @@ Obituary "$FO_OB_MPFIST"
 Tag "$FO_TAG_FIST"
 Inventory.Icon "PUN1A0"
 Inventory.forbiddento "64DoomPlayer"
+Weapon.AmmoType "AltPunchCharge"
+Weapon.AmmoUse 0
+Weapon.AmmoGive 0
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 +INVENTORY.UNDROPPABLE
++WEAPON.AMMO_OPTIONAL
 +WEAPON.MELEEWEAPON
 	States
 	{

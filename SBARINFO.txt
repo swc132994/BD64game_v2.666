@@ -51,7 +51,7 @@ statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 				}
 			}
 	
-		InInventory "ProxyMineThrownActive",1
+		/*InInventory "ProxyMineThrownActive",1
 		{
 			//Drawimage "MineIcon",280,164;
 			drawbar "vinebar2","vinebar1", Ammo MineHold,vertical,interpolate(15),286,158;
@@ -61,7 +61,7 @@ statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 		{
 			drawimage "UPTEXT",226,152;
 			drawbar "UPBAR1","UPBAR2", Ammo AltPunchCharge,horizontal,interpolate(25),235,160;
-		}	
+		}*/	
 	
 		PlayerType "Tactical64DoomPlayer"
 		{
@@ -98,7 +98,7 @@ statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 				else drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
 			}
 
-		InInventory "ProxyMineThrownActive",1
+		/*InInventory "ProxyMineThrownActive",1
 		{
 			drawimage "mineicon",186,170;
 			drawbar "minebar2","minebar1", Ammo MineHold,horizontal,interpolate(15),180,183;
@@ -108,7 +108,7 @@ statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 		{
 			drawimage "UPTEXT",107,152;
 			drawbar "UPBAR1","UPBAR2", Ammo AltPunchCharge,horizontal,interpolate(25),115,160;
-		}
+		}*/
 
 		drawswitchableimage BlueCard,"nullimage","STKEYS0",90,181;
 		drawswitchableimage YellowCard,"nullimage","STKEYS1",100,181;
@@ -169,23 +169,15 @@ statusbar normal
 						}
 					}	
 				}
-				else 
-				{
-					InInventory "ProxyMineThrownActive",1
-					{
-						drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;
-						drawbar "stmnbar2","stmnbar1",Ammo MineHold,horizontal,interpolate(20),4,164;
-					}
 				else drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,171;
-				}
 				drawimage "Ammo",8,191;
 			}	
 
-		InInventory "64FistUpperToken",1
+		/*InInventory "64FistUpperToken",1
 		{
 			drawimage "stuptext",3,164;
 			drawbar "stupbar2","stupbar1",Ammo AltPunchCharge,horizontal,interpolate(10),3,170;
-		}
+		}*/
 
 		PlayerType "Tactical64DoomPlayer"
 		{
@@ -288,7 +280,7 @@ statusbar normal
 				else drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
 			}
 
-		InInventory "64FistUpperToken",1
+		/*InInventory "64FistUpperToken",1
 			{
 			drawimage "nuluptxt",57,177;
 			drawbar "nulupbr2","nulupbr1",Ammo AltPunchCharge,horizontal,interpolate(10),57,182;
@@ -297,7 +289,7 @@ statusbar normal
 		InInventory "ProxyMineThrownActive",1
 			{
 			drawbar "nulmnbr2","nulmnbr1",Ammo MineHold,horizontal,interpolate(20),57,177;
-			}
+			}*/
 
 		drawimage "Armour",105,165;
 		drawnumber 3,HUDFONT_DOOM,untranslated,armor,145,177;
@@ -351,18 +343,22 @@ statusbar automap
 
 	drawimage "Health",6,165;
 	drawnumber 3,HUDFONT_DOOM,untranslated,health,45,174;
-	InInventory "NoReloading",1
-	{
-	IsSelected  "UnmakerTactical"
-		{
-		drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
-		}
-	}
-	else
-	{
-	drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
-	}
-	drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
+		UsesAmmo
+			{
+			UsesSecondaryAmmo
+				{
+				InInventory not "NoReloading",1
+					{
+					drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
+					IsSelected "UnmakerTactical"
+						{
+						drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
+						}
+					}
+					drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
+				}
+				else drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
+			}
 	drawimage "Armour",105,165;
 	drawnumber 3,HUDFONT_DOOM,untranslated,armor,145,177;
 	//Icon Card and Skull fix

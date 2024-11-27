@@ -3,7 +3,7 @@ Actor BFG9000Spawner : CustomInventory Replaces BFG9000
 //$category "Game/BD64_Weapons
 Scale 0.9
 Tag "$FO_TAG_BFG9000"
-Inventory.PickupMessage "$GOTBFG9000"
+Inventory.PickupMessage "$BD64_GOTBFG9000"
 Inventory.PickupSound "WPICK"
 	States
 	{
@@ -89,6 +89,7 @@ Weapon.AmmoGive 40
 Inventory.PickupMessage "$GOTBFG9000"
 Tag "$FO_TAG_BFG9000"
 +WEAPON.ALT_USES_BOTH
+-WEAPON.AMMO_CHECKBOTH
 +WEAPON.BFG
 	States
 	{

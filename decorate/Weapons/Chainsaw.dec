@@ -3,7 +3,7 @@ Actor ChainsawSpawner : CustomInventory Replaces Chainsaw
 //$category "Game/BD64_Weapons
 Scale 0.82
 Tag "$FO_TAG_CHAINSAW"
-Inventory.PickupMessage "$GOTCHAINSAW"
+Inventory.PickupMessage "$BD64_GOTCHAINSAW"
 Inventory.PickupSound "WPICK"
 	States
 	{

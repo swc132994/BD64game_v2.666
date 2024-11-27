@@ -334,9 +334,9 @@ Tag "Assault Rifle"
 		TNT1 A 0 A_TakeInventory("RifleBolt",1)
 		AR2G HIJ 1
 		AR2G K 3
-		AR2G L 1 A_PlaySound("AltRifle/BoltIn",CHAN_WEAPON)
+		AR2G L 1 A_PlaySound("Rifle/BoltIn",CHAN_WEAPON)
 		AR2G MNOO 2
-		AR2G O 1 A_PlaySound("AltRifle/BoltOut",CHAN_WEAPON)
+		AR2G O 1 A_PlaySound("Rifle/BoltOut",CHAN_WEAPON)
 		AR2G ONML 2
 		AR2G KJIH 1
 		Goto Ready2

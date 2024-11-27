@@ -3,7 +3,7 @@ Actor SuperShotgunSpawner : CustomInventory Replaces SuperShotgun
 //$category "Game/BD64_Weapons
 Scale 0.87
 Tag "$FO_TAG_SUPERSHOTGUN"
-Inventory.PickupMessage "$GOTSHOTGUN2"
+Inventory.PickupMessage "$BD64_GOTSHOTGUN2"
 Inventory.PickupSound "WPICK"
 	States
 	{

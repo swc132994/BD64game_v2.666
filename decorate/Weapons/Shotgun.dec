@@ -2,7 +2,7 @@ Actor ShotgunSpawner : CustomInventory	replaces Shotgun	//spawned from randomspa
 {
 Scale 0.87
 Tag "$FO_TAG_SHOTGUN"
-Inventory.PickupMessage "$GOTSHOTGUN"
+Inventory.PickupMessage "$BD64_GOTSHOTGUN"
 Inventory.PickupSound "WPICK"
 	States
 	{

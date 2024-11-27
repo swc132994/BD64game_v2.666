@@ -136,6 +136,7 @@ Weapon.AmmoGive 40
 Inventory.Icon LGUNB0
 Tag "Laser Rifle"
 +WEAPON.ALT_USES_BOTH
+-WEAPON.AMMO_CHECKBOTH
 	States
 	{
 	MineThrowFlash:
