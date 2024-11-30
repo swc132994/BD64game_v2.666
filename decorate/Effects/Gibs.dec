@@ -2242,6 +2242,25 @@ ACTOR XDeathSpiderLeg1 : XDeathZombieArm1
 	}
 }
 
+ACTOR XDeathCrawlerGun : XDeathZombieArm1
+{
+	States
+	{
+	Spawn:
+		NCWG ABCDEFGH 4
+		Wait
+	Death:
+		NCWG I 1
+		NCWG I -1
+		Stop
+	}
+}
+
+ACTOR XDeathArachGun : XDeathCrawlerGun
+{
+Translation "0:255=%[0,0,0]:[1.8,1.8,1.8]"//lavander grey
+}
+
 ACTOR XDeathSpiderLeg2 : XDeathSpiderLeg1
 {
 XScale -0.8

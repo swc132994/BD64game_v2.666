@@ -268,6 +268,7 @@ Player.AttackZOffset 23
 Player.DisplayName "Tactical (Rifle)"
 Player.CrouchSprite "PLYC"
 Player.Portrait "TCLASS1"
++NOMENU
 	States
 	{
 	Spawn:
@@ -492,7 +493,8 @@ Player.StartItem "NeverSelectedSMG"
 Player.StartItem "NeverSelectedRL"
 Player.StartItem "NeverSelectedPlasma"
 Player.StartItem "NeverSelectedGauss"
-Player.DisplayName "Tactical (Pistol)"
+Player.DisplayName "Tactical"
+-NOMENU
 }
 
 Actor Modern : PlayerPawn Replaces DoomPlayer	//RModern class - tactical with no stamina

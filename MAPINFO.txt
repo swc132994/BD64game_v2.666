@@ -7,7 +7,7 @@ MenuFontColor_Action = "White"	//Colour used for actions in menu pages
 MenuFontColor_Header = "Gold"	//Colour used for section headers in menu pages
 
 	NoRandomPlayerClass = true
-	playerclasses = "64DoomPlayer","Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
+	playerclasses = "64DoomPlayer","Modern","Tactical64DoomPlayer","Tactical64DoomPlayer_P"
 }
 
 clearskills

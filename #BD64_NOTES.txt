@@ -93,7 +93,7 @@ Original Brutal Doom 64 mod by Sergeant Mark IV
 Weapons:
 Kicks - animation by IDDQD_1337 (originally from BDv22 by Dox778 (all sprites))
 SMG - IDDQD_1337 (Animation) & Super Piter (sprites). New sprites update (04/05/23) - Midway, Doom Piter, Sgt Mark IV, I'M.
-Gauss Cannon - IDDQD_1337 (animation), I'M (scope and cell sprites), BigStronk (decorate), VriskaSerket & CaptainJ (sprites), reload sound from Dox778's BD fork
+Gauss Cannon - IDDQD_1337(animation), I'M(scope and cell sprites), BigStronk(decorate), Kokus270(muzzle flashes), VriskaSerket & CaptainJ (sprites), reload sound from Dox778's BD fork
 Tactical Rocket Launcher - IDDQD_1337 (animation) & I'M (sprites)
 Tactical Chainsaw - IDDQD_1337 (animation)
 Tactical Pistol - IDDQD_1337 (animation, inspired from Dox 778) & I'M (sprites), Croteam (SS3 Pistol Reload sounds)
@@ -118,9 +118,9 @@ Player/Doomguy 64 crouch sprites:
 
 Monsters:
 //Mancubus bone and cybernetic gib by kaviarmackan
-//Archnotron & nightcrawler flipped xdeath sprites by kaviarmackan
+//Archnotron & NightCrawler flipped XDeath and XDeath Gun sprites by kaviarmackan
 
-//64Thing - Craneo(D64 sprites), based on the Mimic by StopSignal, sounds from Duke Nukem 3D by 3D Realms
+//64Thing - Craneo(D64 sprites), swc132994(decorate) based on the Mimic by StopSignal, sounds from Duke Nukem 3D by 3D Realms
 
 //64 Revenant - DrPyspy (sprites)
 
