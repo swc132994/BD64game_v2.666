@@ -39,7 +39,10 @@ AttackSound "None"
 Inventory.PickupSound "IPick"
 Inventory.Pickupmessage "$GOTMINES"
 Tag "Multi-Purpose Mine"
+<<<<<<< Updated upstream
 -WEAPON.AMMO_CHECKBOTH
+=======
+>>>>>>> Stashed changes
 +WEAPON.ALT_AMMO_OPTIONAL
 +WEAPON.ALT_USES_BOTH
 +WEAPON.EXPLOSIVE
@@ -92,7 +95,7 @@ Tag "Multi-Purpose Mine"
 		Loop
 	NoMines:
 		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,"Select")
-		TNT1 A 1 A_WeaponReady(WRF_ALLOWZOOM)
+		TNT1 A 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOFIRE)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		Goto Ready
 	Fire:	//Throw Active Mine, detonate on impact
@@ -141,8 +144,13 @@ Tag "Multi-Purpose Mine"
 		PMNP ABCDE 1
 		TNT1 A 3
 		TNT1 A 0 A_ThrowGrenade("64GroundProxMine",0,0,2,1)
+<<<<<<< Updated upstream
 		TNT1 A 0 A_JumpifNoAmmo("NoMines")
 		Goto Select
+=======
+		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,"Select")
+		Goto NoMines
+>>>>>>> Stashed changes
 	Reload:
 		TNT1 A 0 A_ClearRefire
 		PMNF DCBA 1
