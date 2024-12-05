@@ -110,6 +110,7 @@ Inventory.PickupMessage "$GOTCHAINGUN"
 Obituary "$FO_OB_MPCHAINGUN"
 Tag "$FO_TAG_CHAINGUN"
 +WEAPON.ALT_USES_BOTH
+-WEAPON.AMMO_CHECKBOTH
 	States
 	{
 	MineThrowFlash:

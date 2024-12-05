@@ -32,16 +32,13 @@ Weapon.AmmoType1 "64MineAmmo"
 Weapon.AmmoUse1 1
 Weapon.AmmoGive1 1
 Weapon.AmmoType2 "MineHold"
-Weapon.AmmoUse2 0
+Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
 Obituary "%o was shreded by %k's Mine."
 AttackSound "None"
 Inventory.PickupSound "IPick"
 Inventory.Pickupmessage "$GOTMINES"
 Tag "Multi-Purpose Mine"
--WEAPON.AMMO_CHECKBOTH
-+WEAPON.ALT_AMMO_OPTIONAL
-+WEAPON.ALT_USES_BOTH
 +WEAPON.EXPLOSIVE
 	States
 	{
@@ -68,6 +65,7 @@ Tag "Multi-Purpose Mine"
 		Stop
 	Select:
 		TNT1 A 0 A_JumpIfNoAmmo("NoMines")
+		TNT1 A 0 A_TakeInventory("MineHold",0)
 		PMNS ABCDE 1 Offset(0,32)
 		TNT1 A 0 A_Raise
 		Wait
@@ -92,7 +90,7 @@ Tag "Multi-Purpose Mine"
 		Loop
 	NoMines:
 		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,"Select")
-		TNT1 A 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOFIRE)
+		TNT1 A 1 A_WeaponReady(WRF_ALLOWZOOM)
 		TNT1 A 0 A_JumpIfInventory("Kicking",1,"DoKick")
 		Goto Ready
 	Fire:	//Throw Active Mine, detonate on impact
@@ -102,29 +100,29 @@ Tag "Multi-Purpose Mine"
 		TNT1 A 0 A_GiveInventory("MineHold",1)
 		TNT1 A 0 A_Refire
 		PMNF EFG 1
-		TNT1 A 0 A_TakeInventory("ProxyMineThrownActive",1)
+		TNT1 A 0 A_TakeInventory("64MineAmmo",1)
 		TNT1 A 0 A_JumpIfInventory("MineHold",50,"Throw5")
 		TNT1 A 0 A_JumpIfInventory("MineHold",40,"Throw4")
 		TNT1 A 0 A_JumpIfInventory("MineHold",25,"Throw3")
 		TNT1 A 0 A_JumpIfInventory("MineHold",10,"Throw2")
 	Throw1:
-		TNT1 A 0 A_ThrowGrenade("64ThrownActiveProxMine",3,5,2,1)
+		TNT1 A 0 A_ThrowGrenade("64ThrownActiveProxMine",3,5,2,0)
 		TNT1 A 0 A_TakeInventory("MineHold",0)
 		Goto FinishThrow
 	Throw2:
-		TNT1 A 0 A_ThrowGrenade("64ThrownActiveProxMine",3,7,3,1)
+		TNT1 A 0 A_ThrowGrenade("64ThrownActiveProxMine",3,7,3,0)
 		TNT1 A 0 A_TakeInventory("MineHold",0)
 		Goto FinishThrow		
 	Throw3:
-		TNT1 A 0 A_ThrowGrenade("64ThrownActiveProxMine",3,10,4,1)
+		TNT1 A 0 A_ThrowGrenade("64ThrownActiveProxMine",3,10,4,0)
 		TNT1 A 0 A_TakeInventory("MineHold",0)
 		Goto FinishThrow
 	Throw4:
-		TNT1 A 0 A_ThrowGrenade("64ThrownActiveProxMine",3,13,6,1)
+		TNT1 A 0 A_ThrowGrenade("64ThrownActiveProxMine",3,13,6,0)
 		TNT1 A 0 A_TakeInventory("MineHold",0)
 		Goto FinishThrow		
 	Throw5:
-		TNT1 A 0 A_ThrowGrenade("64ThrownActiveProxMine",3,15,8,1)
+		TNT1 A 0 A_ThrowGrenade("64ThrownActiveProxMine",3,15,8,0)
 		TNT1 A 0 A_TakeInventory("MineHold",0)
 		Goto FinishThrow
 	FinishThrow:
@@ -140,7 +138,8 @@ Tag "Multi-Purpose Mine"
 		PMNE B 1 Offset(0,35)
 		PMNP ABCDE 1
 		TNT1 A 3
-		TNT1 A 0 A_ThrowGrenade("64GroundProxMine",0,0,2,1)
+		TNT1 A 0 A_ThrowGrenade("64GroundProxMine",0,0,2,0)
+		TNT1 A 0 A_TakeInventory("64MineAmmo",1)
 		TNT1 A 0 A_JumpIfInventory("64MineAmmo",1,"Select")
 		Goto NoMines
 		TNT1 A 0 A_JumpifNoAmmo("NoMines")
