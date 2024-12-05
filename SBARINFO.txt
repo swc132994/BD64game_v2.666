@@ -169,16 +169,13 @@ statusbar normal
 						}
 					}	
 				}
-<<<<<<< Updated upstream
-=======
-				else 
-				{
+				//else 
+				//{
 					/*InInventory "ProxyMineThrownActive",1
 					{
 						drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;
 						drawbar "stmnbar2","stmnbar1",Ammo MineHold,horizontal,interpolate(20),4,164;
 					}*/
->>>>>>> Stashed changes
 				else drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,171;
 				drawimage "Ammo",8,191;
 			}	
