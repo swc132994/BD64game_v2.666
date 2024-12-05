@@ -1,5 +1,8 @@
 Installation from scratch:
 
+If you don't want to read the following guide, I have uploaded a video showing how to install GZDoom, Zandronum and Doom Mod Launcher.
+https://www.youtube.com/watch?v=lzFlUGhLrik
+
 On top of the download you will also need:
 ⦁ Any Doom or Freedoom iwad (N.B. Freedoom is an open source project and is free to download from: Freedoom.github.io)
 
