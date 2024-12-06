@@ -35,7 +35,7 @@ Weapon.SelectionOrder 2800
 Weapon.AmmoType "Cell"
 Weapon.AmmoUse 40
 Weapon.AmmoGive 40
-Inventory.PickupMessage "$GOTBFG9000"
+Inventory.PickupMessage "$BD64_GOTBFG9000"
 Tag "$FO_TAG_BFG9000"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
@@ -86,7 +86,7 @@ Weapon.SelectionOrder 2800
 Weapon.AmmoType "Cell"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 40
-Inventory.PickupMessage "$GOTBFG9000"
+Inventory.PickupMessage "$BD64_GOTBFG9000"
 Tag "$FO_TAG_BFG9000"
 +WEAPON.ALT_USES_BOTH
 -WEAPON.AMMO_CHECKBOTH

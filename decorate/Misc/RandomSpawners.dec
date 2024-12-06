@@ -1205,7 +1205,7 @@ Actor 64FailingColumnReplacer replaces Column
 	States
 	{
 	Spawn:
-		TLP1 A 0
+		COLU A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("PoltergeistEnablerACS")
 		TNT1 A 0 A_Jump(26,"SpawnHellLamp")//10%
 	SpawnTechLamp:

@@ -26,7 +26,7 @@ Weapon.AmmoType "Shell"
 Weapon.AmmoUse 2
 Weapon.AmmoGive 2
 +WEAPON.NOAUTOFIRE
-Inventory.PickupMessage "$GOTSHOTGUN2"
+Inventory.PickupMessage "$BD64_GOTSHOTGUN2"
 Obituary "$FO_OB_MPSSHOTGUN"
 Tag "$FO_TAG_SUPERSHOTGUN"
 VisibleToPlayerClass "64DoomPlayer"
@@ -128,7 +128,7 @@ Weapon.AmmoGive1 2
 Weapon.AmmoType2 "SSGAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Inventory.PickupMessage "$GOTSHOTGUN2"
+Inventory.PickupMessage "$BD64_GOTSHOTGUN2"
 Obituary "$FO_OB_MPSSHOTGUN"
 Tag "$FO_TAG_SUPERSHOTGUN"
 	States

@@ -35,7 +35,7 @@ Weapon.SelectionOrder 1300
 Weapon.AmmoType "Shell"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 8
-Inventory.PickupMessage "$GOTSHOTGUN"
+Inventory.PickupMessage "$BD64_GOTSHOTGUN"
 Obituary "$FO_OB_MPSHOTGUN"
 Tag "$FO_TAG_SHOTGUN"
 VisibleToPlayerClass "64DoomPlayer"
@@ -133,7 +133,7 @@ Weapon.AmmoGive1 8
 Weapon.AmmoType2 "ShotgunAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Inventory.PickupMessage "$GOTSHOTGUN"
+Inventory.PickupMessage "$BD64_GOTSHOTGUN"
 Obituary "$FO_OB_MPSHOTGUN"
 Tag "$FO_TAG_SHOTGUN"
 	States

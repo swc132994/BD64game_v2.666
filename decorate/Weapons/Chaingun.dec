@@ -36,7 +36,7 @@ Weapon.SelectionOrder 700
 Weapon.AmmoType "Clip"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 20
-Inventory.PickupMessage "$GOTCHAINGUN"
+Inventory.PickupMessage "$BD64_GOTCHAINGUN"
 Obituary "$FO_OB_MPCHAINGUN"
 Tag "$FO_TAG_CHAINGUN"
 VisibleToPlayerClass "64DoomPlayer"
@@ -106,7 +106,7 @@ Weapon.SelectionOrder 700
 Weapon.AmmoType "64HighCaliberBox"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 20
-Inventory.PickupMessage "$GOTCHAINGUN"
+Inventory.PickupMessage "$BD64_GOTCHAINGUN"
 Obituary "$FO_OB_MPCHAINGUN"
 Tag "$FO_TAG_CHAINGUN"
 +WEAPON.ALT_USES_BOTH

@@ -23,7 +23,7 @@ Weapon.SlotNumber 1
 Weapon.SlotPriority 2
 Weapon.SelectionOrder 2200
 Weapon.Kickback 0
-Inventory.PickupMessage "$GOTCHAINSAW"
+Inventory.PickupMessage "$BD64_GOTCHAINSAW"
 Obituary "$FO_OB_MPCHAINSAW"
 Tag "$FO_TAG_CHAINSAW"
 VisibleToPlayerClass "64DoomPlayer"
@@ -121,7 +121,7 @@ Weapon.AmmoGive1 100
 Weapon.AmmoType2 "SSGAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Inventory.PickupMessage "$GOTCHAINSAW"
+Inventory.PickupMessage "$BD64_GOTCHAINSAW"
 Obituary "$FO_OB_MPCHAINSAW"
 Tag "$FO_TAG_CHAINSAW"
 Inventory.forbiddento "64DoomPlayer"
@@ -397,7 +397,7 @@ Weapon.Kickback 0
 Weapon.AmmoType "SawGas"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 100
-Inventory.PickupMessage "$GOTCHAINSAW"
+Inventory.PickupMessage "$BD64_GOTCHAINSAW"
 Obituary "$FO_OB_MPCHAINSAW"
 Tag "$FO_TAG_CHAINSAW"
 Inventory.forbiddento "64DoomPlayer"

@@ -36,7 +36,7 @@ Weapon.SelectionOrder 100
 Weapon.AmmoType "Cell"
 Weapon.AmmoUse 1
 Weapon.AmmoGive 40
-Inventory.PickupMessage "$GOTPLASMA"
+Inventory.PickupMessage "$BD64_GOTPLASMA"
 Tag "$FO_TAG_PLASMARIFLE"
 VisibleToPlayerClass "64DoomPlayer"
 Inventory.ForbiddenTo "Tactical64DoomPlayer","Tactical64DoomPlayer_p","Modern"
@@ -116,7 +116,7 @@ Weapon.AmmoGive1 40
 Weapon.AmmoType2 "PlasmaRifleAmmo"
 Weapon.AmmoUse2 1
 Weapon.AmmoGive2 0
-Inventory.PickupMessage "$GOTPLASMA"
+Inventory.PickupMessage "$BD64_GOTPLASMA"
 Tag "$FO_TAG_PLASMARIFLE"
 	States
 	{
