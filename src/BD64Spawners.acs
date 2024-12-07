@@ -178,24 +178,13 @@ script "BaronSpawner" (void)
 
 script "HoundChooserACS" (void)
 {
-	Switch(GetCvar("HoundChooserCvar"))
-	{
-		Case -1: SetActorState(0,"D64MonsterOnly"); break;
-		Case 0: SetActorState(0,"HoundDefault"); break;
-		Case 1: SetActorState(0,"HoundGEC"); break;
-	}
-}
-
-/*script "HoundChooserACS" (void)
-{
 	static str SkinType[] =
 	{
-		"HoundDefault","HoundGEC"
+		"D64MonsterOnly","HoundDefault","HoundGEC"
 	};
-	if(GetCvar("HoundChooserCvar") == -1) {SetActorState(0,"D64MonsterOnly");}
-	SetActorState(0,SkinType[GetCvar("HoundChooserCvar") - 1]);
+	SetActorState(0,SkinType[GetCvar("HoundChooserCvar") - -1]);
 	Delay(1);
-}*/
+}
 
 script "RevenantSpawner" (void)
 {

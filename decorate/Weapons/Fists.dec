@@ -268,8 +268,8 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		PUNG EF 1
 		TNT1 A 0 A_FireCustomMissile("SuperPunchAttack",0,0,0,0)
 		PUNG GHIJ 1
-		PUNG KL 1
-		TNT1 A 0 A_WeaponReady(WRF_NOPRIMARY)		
+		PUNG KL 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOPRIMARY)
+		TNT1 A 0 A_Refire("TheLeft")
 		Goto PullUp2
 	BerserkPunch2:
 		TNT1 A 0 A_PlaySound("world/swingB",CHAN_AUTO)
@@ -278,7 +278,8 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		PUNG RSTU 1
 		TNT1 A 0 A_TakeInventory("64Fist2",1)
 		TNT1 A 0 A_GiveInventory("64Fist3",1)
-		PUNG WV 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+		PUNG WV 1 A_WeaponReady(WRF_ALLOWZOOM|WRF_NOSECONDARY)
+		TNT1 A 0 A_Refire("TheRight")
 		Goto PullUp2
 	Upper:
 		PUN1 R 1 A_WeaponReady(WRF_NOFIRE)

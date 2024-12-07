@@ -8,31 +8,10 @@
 
 script "BD64Respawn" Respawn NET
 {
-	//Hud to Doom Style
-	If(!getusercvar(PlayerNumber(),"HUDSwitchCvar"))
-	{
-		TakeInventory("HUDSwitch",1);
-	}
-	else
-	{
-		GiveInventory("HUDSwitch",1);
-	}
-
-	//Reloading Mode
-	if(!getcvar("NoReloadCvar"))
-	{
-		TakeInventory("NoReloading",1);
-	}
-	else
-	{
-		GiveInventory("NoReloading",1);
-	}
-
-	//Classic Weapons mode for Classical Mode
-	SetInventory("VWeaponMode",getCvar("VWeaponCvar"));
-
-	//Alternative Skins
-	SetInventory("AltLaserSkin",getuserCvar(PlayerNumber(),"AlternativeLaserSkinCvar"));
+	SetInventory("HudSwitch",getusercvar(PlayerNumber(),"HUDSwitchCvar")); //Hud to Doom Style
+	SetInventory("NoReloading",getcvar("NoReloadCvar")); //Reloading Mode
+	SetInventory("VWeaponMode",getCvar("VWeaponCvar")); //Classic Weapons mode for Classical Mode
+	SetInventory("AltLaserSkin",getuserCvar(PlayerNumber(),"AlternativeLaserSkinCvar")); //Alternative Lasergun skins
 
 	//Classic Weapons Mode for Tactical and Modern Classes
 	SetInventory("ClassicRLToken",getcvar("ClassicRLCvar"));
