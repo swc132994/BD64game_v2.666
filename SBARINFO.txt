@@ -55,13 +55,13 @@ statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 		{
 			//Drawimage "MineIcon",280,164;
 			drawbar "vinebar2","vinebar1", Ammo MineHold,vertical,interpolate(15),286,158;
-		}
+		}*/
 	
 		InInventory "64FistUpperToken",1
 		{
 			drawimage "UPTEXT",226,152;
 			drawbar "UPBAR1","UPBAR2", Ammo AltPunchCharge,horizontal,interpolate(25),235,160;
-		}*/	
+		}
 	
 		PlayerType "Tactical64DoomPlayer"
 		{
@@ -84,6 +84,10 @@ statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 			{
 			UsesSecondaryAmmo
 				{
+		IsSelected not "64FistTactical"
+		{
+		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
+		}
 				InInventory not "NoReloading",1
 					{
 						drawnumber 3,SMALLFONT,red,ammo2,192,183;
@@ -93,22 +97,22 @@ statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 						drawnumber 3,SMALLFONT,red,ammo2,192,183;
 						}
 					}
-					drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
+					//drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
 				}
-				else drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
+				//else drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
 			}
 
 		/*InInventory "ProxyMineThrownActive",1
 		{
 			drawimage "mineicon",186,170;
 			drawbar "minebar2","minebar1", Ammo MineHold,horizontal,interpolate(15),180,183;
-		}
+		}*/
 
 		InInventory "64FistUpperToken",1
 		{
 			drawimage "UPTEXT",107,152;
 			drawbar "UPBAR1","UPBAR2", Ammo AltPunchCharge,horizontal,interpolate(25),115,160;
-		}*/
+		}
 
 		drawswitchableimage BlueCard,"nullimage","STKEYS0",90,181;
 		drawswitchableimage YellowCard,"nullimage","STKEYS1",100,181;
@@ -180,11 +184,11 @@ statusbar normal
 				drawimage "Ammo",8,191;
 			}	
 
-		/*InInventory "64FistUpperToken",1
+		InInventory "64FistUpperToken",1
 		{
 			drawimage "stuptext",3,164;
 			drawbar "stupbar2","stupbar1",Ammo AltPunchCharge,horizontal,interpolate(10),3,170;
-		}*/
+		}
 
 		PlayerType "Tactical64DoomPlayer"
 		{
@@ -287,13 +291,13 @@ statusbar normal
 				else drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
 			}
 
-		/*InInventory "64FistUpperToken",1
+		InInventory "64FistUpperToken",1
 			{
 			drawimage "nuluptxt",57,177;
 			drawbar "nulupbr2","nulupbr1",Ammo AltPunchCharge,horizontal,interpolate(10),57,182;
 			}
 			
-		InInventory "ProxyMineThrownActive",1
+		/*InInventory "ProxyMineThrownActive",1
 			{
 			drawbar "nulmnbr2","nulmnbr1",Ammo MineHold,horizontal,interpolate(20),57,177;
 			}*/
