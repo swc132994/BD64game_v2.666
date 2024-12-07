@@ -39,15 +39,19 @@ statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 						drawnumber 3,HUDFONT_DOOM,untranslated,ammo2,276,166;
 						}
 					drawimage ammoicon1,288,190,none,15,15;
-					drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;	
+					//drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;	
+		IsSelected not "64FistTactical"
+		{
+		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;	
+		}
 				}
 				drawimage ammoicon1,288,190,none,15,15;
-				drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;
+				//drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;
 				}
 				else
 				{
 				drawimage ammoicon1,288,190,none,15,15;
-				drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;
+				//drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;
 				}
 			}
 	
