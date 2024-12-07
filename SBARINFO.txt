@@ -3,7 +3,7 @@ completeborder true;
 
 statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 {
-	InInventory "HUDSwitch",1 //Fullscreen HUD
+	InInventory "HUDSwitch",1 //Doom Style (Fullscreen HUD)
 	{
 		drawswitchableimage BlueCard,"nullimage","STKEYS0",101,181;
 		drawswitchableimage YellowCard,"nullimage","STKEYS1",111,181;
@@ -31,20 +31,23 @@ statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 				InInventory not "NoReloading",1
 					{
 					drawimage ammoicon2,288,174,none,20,20;
-					drawnumber 3,HUDFONT_DOOM,untranslated,ammo2,276,166;	
-					
-					IsSelected "UnmakerTactical"
-						{
-						drawimage ammoicon2,288,174,none,20,20;
-						drawnumber 3,HUDFONT_DOOM,untranslated,ammo2,276,166;
-						}
-					drawimage ammoicon1,288,190,none,15,15;
-					drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;	
-				}
+					drawnumber 3,HUDFONT_DOOM,untranslated,ammo2,276,166;
+					}
+
+				IsSelected "UnmakerTactical","64ProximityMine"
+					{
+					drawimage ammoicon2,288,174,none,20,20;
+					drawnumber 3,HUDFONT_DOOM,untranslated,ammo2,276,166;
+					}	
+					else IsSelected "64ChainsawTactical"
+					{
+					drawimage ammoicon2,288,174,none,20,20;
+					drawnumber 3,HUDFONT_DOOM,untranslated,ammo2,276,166;
+					}				
 				drawimage ammoicon1,288,190,none,15,15;
 				drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;
 				}
-				else
+				else IsSelected not "64FistTactical"
 				{
 				drawimage ammoicon1,288,190,none,15,15;
 				drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,276,180;
@@ -69,7 +72,7 @@ statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 		}
 		drawmugshot 5,68,160;
 	}
-	else
+	else //Default (Fullscreen HUD)
 	{
 		PlayerType "Tactical64DoomPlayer"
 		{	
@@ -84,22 +87,24 @@ statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 			{
 			UsesSecondaryAmmo
 				{
-		IsSelected not "64FistTactical"
-		{
-		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
-		}
 				InInventory not "NoReloading",1
 					{
-						drawnumber 3,SMALLFONT,red,ammo2,192,183;
-
-						IsSelected "UnmakerTactical"
-						{
-						drawnumber 3,SMALLFONT,red,ammo2,192,183;
-						}
+					drawnumber 3,SMALLFONT,red,ammo2,192,183;
 					}
-					//drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
+				IsSelected "UnmakerTactical","64ProximityMine"
+					{
+					drawnumber 3,SMALLFONT,red,ammo2,192,183;
+					}
+					else IsSelected "64ChainsawTactical"
+					{
+					drawnumber 3,SMALLFONT,red,ammo2,192,183;
+					}					
+					drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
 				}
-				//else drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
+				else IsSelected not "64FistTactical"
+				{
+				drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,175,180;
+				}
 			}
 
 		/*InInventory "ProxyMineThrownActive",1
@@ -141,7 +146,7 @@ statusbar fullscreen,forcescaled//,0.75 //set HUD transparancy
 
 statusbar normal
 {
-	InInventory "HUDSwitch",1	//Vanilla status bar
+	InInventory "HUDSwitch",1	//Doom Style (Status Bar)
 		{
 		drawimage "STBAR1",0,160;
 		drawimage "STTPRCNT",88,171;
@@ -155,33 +160,20 @@ statusbar normal
 		UsesAmmo
 			{
 				UsesSecondaryAmmo
-				{
-					PlayerType "Tactical64DoomPlayer","Modern"
+				{	
+					InInventory not "NoReloading",1
 					{
-						InInventory not "NoReloading",1
-						{
-							drawnumber 3,HUDFONT_DOOM,Red,ammo2,44,164;
-							drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;
-						
-						}
-						else drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,171;
-						
-						IsSelected "UnmakerTactical"
-						{
-							drawnumber 3,HUDFONT_DOOM,Red,ammo2,44,164;
-							drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;
-						}
-					}	
-				}
-				//else 
-				//{
-					/*InInventory "ProxyMineThrownActive",1
-					{
+						drawnumber 3,HUDFONT_DOOM,Red,ammo2,44,164;
 						drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,178;
-						drawbar "stmnbar2","stmnbar1",Ammo MineHold,horizontal,interpolate(20),4,164;
-					}*/
-				else drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,171;
+					}						
+					else drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,171;					
+					drawimage "Ammo",8,191;
+				}
+				else IsSelected not "64FistTactical"
+				{
+				drawnumber 3,HUDFONT_DOOM,Red,ammo1,44,171;
 				drawimage "Ammo",8,191;
+				}	
 			}	
 
 		InInventory "64FistUpperToken",1
@@ -258,7 +250,7 @@ statusbar normal
 			drawswitchableimage weaponslot 9,"STGNUM9","STYSNUM9",135,182;
 		}
 	}
-	else
+	else //Default (Status Bar)
 	{
 		drawimage "nullbar",0,160;
 
@@ -280,19 +272,15 @@ statusbar normal
 				{
 				InInventory not "NoReloading",1
 					{
-		IsSelected not "64FistTactical"
-		{
-		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
-		}
-					drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
-					IsSelected "UnmakerTactical"
-						{
-						drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
-						}
+					drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;		
+					drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
 					}
-					//drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
+					else drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,181;
 				}
-				//else drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
+				else IsSelected not "64FistTactical"
+				{
+					drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,181;
+				}
 			}
 
 		InInventory "64FistUpperToken",1
@@ -345,66 +333,4 @@ statusbar normal
 statusbar inventory
 {
 	drawinventorybar Doom,7,INDEXFONT,50,170;
-}
-
-statusbar automap
-{
-	drawimage "nullbar",0,160;
-
-	//Demon Keys
-	drawswitchableimage WpnPower1Icon,"nullimage","POW1E0",222,215;
-	drawswitchableimage WpnPower3Icon,"nullimage","POW3E0",261,215; //This is out of order on purpose
-	drawswitchableimage WpnPower2Icon,"nullimage","POW2E0",300,215;
-
-	drawimage "Health",6,165;
-	drawnumber 3,HUDFONT_DOOM,untranslated,health,45,174;
-		UsesAmmo
-			{
-			UsesSecondaryAmmo
-				{
-				InInventory not "NoReloading",1
-					{
-					drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
-					IsSelected "UnmakerTactical"
-						{
-						drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
-						}
-					}
-					drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
-				}
-				else drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
-			}
-	drawimage "Armour",105,165;
-	drawnumber 3,HUDFONT_DOOM,untranslated,armor,145,177;
-	//Icon Card and Skull fix
-	drawswitchableimage BlueCard,"nullimage","STKEYS0",59,166,center,10,6;
-	drawswitchableimage YellowCard,"nullimage","STKEYS1",75,166,center,10,6;
-	drawswitchableimage RedCard,"nullimage","STKEYS2",91,166,center,10,6;
-	drawswitchableimage BlueSkull,"nullimage","STKEYS3",63,168,center,10,6;
-	drawswitchableimage YellowSkull,"nullimage","STKEYS4",79,168,center,10,6;
-	drawswitchableimage RedSkull,"nullimage","STKEYS5",95,168,center,10,6;
-
-	drawimage "Secret",153,162;
-	drawimage "Div",183,162;
-	drawnumber 3,INDEXFONT,darkgray,secrets,182,163;
-	drawnumber 3,INDEXFONT,darkgray,totalsecrets,203,163;
-
-	drawimage "Kills",153,172;
-	drawimage "Div",183,172;
-	drawnumber 3,INDEXFONT,darkgray,kills,182,173;
-	drawnumber 3,INDEXFONT,darkgray,monsters,203,173;
-
-	drawimage "Item",153,182;
-	drawimage "Div",183,182;
-	drawnumber 3,INDEXFONT,darkgray,items,182,183;
-	drawnumber 3,INDEXFONT,darkgray,totalitems,203,183;
-
-	PlayerType "Tactical64DoomPlayer","Modern"
-	{
-		IsSelected not "64ProximityMine"
-		{
-		drawimage "PMNEC0",62,182,center,20,15;
-		drawnumber 3,SMALLFONT,untranslated,Ammo("64MineAmmo"),alignment(center),62,180;
-		}
-	}
 }

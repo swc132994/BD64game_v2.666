@@ -258,6 +258,7 @@ Tag "$FO_TAG_PLASMARIFLE"
 	Fire:
 		TNT1 A 0 A_JumpIf(waterlevel > 1,"NotReady")
 		TNT1 A 0 A_GiveInventory("HasPlasmaWeapon",1)
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReload")
 		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",1,1)
 		Goto Reload
 		TNT1 A 0 A_Takeinventory("PlasmaRifleAmmo",1,TIF_NOTAKEINFINITE)
@@ -276,15 +277,23 @@ Tag "$FO_TAG_PLASMARIFLE"
 		PLSF A 0
 		PLSF "#" 1 Bright A_FireCustomMissile("64PlasmaBall",0,0,0,-5)
 		TNT1 A 0 A_SpawnItemEx("PlasmaSmoke",30,0,40,0,0,2)
+	FastRecoil:
+		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"FastRecoilNoReload")
 		TNT1 A 0 A_JumpIfInventory("PlasmaRifleAmmo",21,"ResumeFastFire")
-		PLSF BC 2
-		TNT1 A 0 A_ReFire
-		Goto Ready
+		Goto SlowFire
+	FastRecoilNoReload:
+		TNT1 A 0 A_JumpIfInventory("Cell",21,"ResumeFastFire")
+		Goto SlowFire
 	ResumeFastFire:
 		PLSF B 1 A_SetPitch(pitch+random(-1,1),SPF_INTERPOLATE)
 		PLSF C 1 A_SetAngle(angle+random(-1,1),SPF_INTERPOLATE)
 		TNT1 A 0 A_ReFire
+		Goto Ready		
+	SlowFire:
+		PLSF BC 2
+		TNT1 A 0 A_ReFire
 		Goto Ready
+
 	Reload:
 		TNT1 A 0 A_JumpIfInventory("Cell",1,1)
 		Goto Ready
