@@ -280,19 +280,15 @@ statusbar normal
 				{
 				InInventory not "NoReloading",1
 					{
-		IsSelected not "64FistTactical"
-		{
-		drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
-		}
 					drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
 					IsSelected "UnmakerTactical"
 						{
 						drawnumber 2,HUDFONT_DOOM,untranslated,ammo2,97,176;
 						}
 					}
-					//drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
+					drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
 				}
-				//else drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
+				else drawnumber 3,HUDFONT_DOOM,untranslated,ammo1,97,187;
 			}
 
 		InInventory "64FistUpperToken",1
