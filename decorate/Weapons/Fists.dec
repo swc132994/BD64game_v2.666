@@ -111,9 +111,9 @@ Obituary "$FO_OB_MPFIST"
 Tag "$FO_TAG_FIST"
 Inventory.Icon "PUN1A0"
 Inventory.forbiddento "64DoomPlayer"
-Weapon.AmmoType "AltPunchCharge"
+/*Weapon.AmmoType "AltPunchCharge" //sry Craneo
 Weapon.AmmoUse 0
-Weapon.AmmoGive 0
+Weapon.AmmoGive 0*/
 VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 +INVENTORY.UNDROPPABLE
 +WEAPON.AMMO_OPTIONAL
@@ -225,7 +225,8 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		PUNG EF 1
 		TNT1 A 0 A_FireCustomMissile("PunchAttack",0,0,0,0)
 		PUNG GHIJ 1
-		TNT1 A 0 A_GiveInventory("64Fist2",1)
+		TNT1 A 0 A_GiveInventory("64Fist2")
+		TNT1 A 0 A_WeaponReady(WRF_NOPRIMARY)
 		PUNG KL 1
 		Goto PullUp2
 	Altfire:
@@ -267,8 +268,8 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		PUNG EF 1
 		TNT1 A 0 A_FireCustomMissile("SuperPunchAttack",0,0,0,0)
 		PUNG GHIJ 1
-		TNT1 A 0 A_GiveInventory("64Fist2",1)
 		PUNG KL 1
+		TNT1 A 0 A_WeaponReady(WRF_NOPRIMARY)		
 		Goto PullUp2
 	BerserkPunch2:
 		TNT1 A 0 A_PlaySound("world/swingB",CHAN_AUTO)
@@ -289,7 +290,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 A 0 A_JumpIfInventory("Stamina",100,"AltTired")
 		TNT1 A 0 A_GiveInventory("Stamina",1)
 		TNT1 A 0 A_GiveInventory("AltPunchCharge",1)
-		PUN0 C 1
+		PUN0 C 1 A_WeaponReady(WRF_ALLOWRELOAD)
 		TNT1 A 0 A_Refire("UpperHold")
 	AltEndPunch:
 		TNT1 A 0 A_JumpIfInventory("AltPunchCharge",100,"AltEndPunch3")
@@ -369,6 +370,7 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		TNT1 A 0 A_TakeInventory("AltPunchCharge",0)
 		Goto PullUp
 	Reload: //Knuckle animation(Tactical and Modern only)
+		TNT1 A 0 A_JumpIfInventory("64FistUpperToken",1,"CancelUpper")
 		PUNS DE 2 A_WeaponReady(WRF_ALLOWZOOM)
 		PUNS FG 1 A_WeaponReady(WRF_ALLOWZOOM)
 		TNT1 A 0 A_PlaySound("Knuckled",CHAN_VOICE)
@@ -381,6 +383,12 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		PUNS PON 1 A_WeaponReady(WRF_ALLOWZOOM)
 		PUNS LK 2 A_WeaponReady(WRF_ALLOWZOOM)
 		Goto Ready
+	CancelUpper:
+		PUN0 CBA 1	
+		TNT1 A 0 A_GiveInventory("64FistUpperToken",1)
+		PUN1 ZYXWVUTS 1
+		TNT1 A 0 A_TakeInventory("AltPunchCharge",0)
+		Goto PullUp		
 	}
 }
 
