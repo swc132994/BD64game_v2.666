@@ -70,6 +70,9 @@ OptionMenu "BD64Menu"
 	StaticText " "
 	StaticText "-------------------------------- Presets -------------------------------------",1
 	StaticText "------------You must be inside a level before pressing the buttons------------"
+	StaticText "---------You also have to exit the menu each time you apply a preset---------"
+	Option "Last Preset Used =", "BD64_Preset", "VisualPreset"
+	StaticText "Option above is purely a confirmation of the preset successfully applying, it does nothing"
 	StaticText " "
 	StaticText "The mod's default options",1
 	SafeCommand "Default", "pukename DefaultCvars"
@@ -378,6 +381,13 @@ OptionValue "YesOrNoFalse"
 {
 	1,"No"
 	0,"Yes"
+}
+
+OptionValue "VisualPreset"
+{
+	0,"Default"
+	1,"Classical"
+	2,"Additional"
 }
 
 //Monster values
