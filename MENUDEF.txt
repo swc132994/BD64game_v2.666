@@ -70,12 +70,15 @@ OptionMenu "BD64Menu"
 	StaticText " "
 	StaticText "-------------------------------- Presets -------------------------------------",1
 	StaticText "------------You must be inside a level before pressing the buttons------------"
+	StaticText "---------You also have to exit the menu each time you apply a preset---------"
+	Option "Last Preset Used =", "BD64_Preset", "VisualPreset"
+	StaticText "Option above is purely a confirmation of the preset successfully applying, it does nothing"
 	StaticText " "
 	StaticText "The mod's default options",1
 	SafeCommand "Default", "pukename DefaultCvars"
 	StaticText "Tweaks the settings to be as vanilla as possible",1
 	SafeCommand "Classical", "pukename ClassicalCvars"
-	StaticText "Adds new monsters with balanced settings, how the creator plays his own mod",1
+	StaticText "Adds new monsters and weapons with balanced settings, how the creator plays his own mod",1
 	SafeCommand "Additional", "pukename StevenCvars"
 	StaticText " "
 	StaticText "To set all monster/weapon/item spawners to random, press this",1
@@ -378,6 +381,13 @@ OptionValue "YesOrNoFalse"
 {
 	1,"No"
 	0,"Yes"
+}
+
+OptionValue "VisualPreset"
+{
+	0,"Default"
+	1,"Classical"
+	2,"Additional"
 }
 
 //Monster values

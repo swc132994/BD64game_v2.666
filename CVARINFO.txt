@@ -59,6 +59,7 @@ server int LiquidSplashCvar = 0;			//Enable liquid splashes
 server int CacoChooserCvar = 0;				//choose Cacodemon variant
 server int bd64_WadCheck = 2;				//Selecting Mapset - Default Doom64
 user bool LowAmmoSFX = TRUE;				//Switch Low Ammo SFX
+server int BD64_Preset = 0;					//Shows what preset was last applied, does nothing
 
 //Random Spawn Percent
 server int bd64_SpawnPercentZombieman = 1;

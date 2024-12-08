@@ -4,7 +4,9 @@
 //Presets
 script "DefaultCvars" (void) net
 {
-	SetCvar("AlternativeAmmoPickupSpritesCvar",2);
+	SetCvar("BD64_Preset",0);
+
+	SetCvar("AlternativeAmmoPickupSpritesCvar",1);
 	SetCvar("VanillaChainsawCvar",0);
 	SetCvar("ClassicChaingunCvar",0);
 	SetCvar("ClassicRLCvar",0);
@@ -59,7 +61,7 @@ script "DefaultCvars" (void) net
 	SetCvar("TheHorde_Multiplier_Cvar",-1);
 	
 	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",TRUE);
-	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",0);
+	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",TRUE);
 	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);
 	ACS_NamedExecuteAlways("BD64Respawn",0);
 	
@@ -88,6 +90,8 @@ script "DefaultCvars" (void) net
 
 script "ClassicalCvars" (void) net
 {
+	SetCvar("BD64_Preset",1);
+	
 	SetCvar("AlternativeAmmoPickupSpritesCvar",1);
 	SetCvar("VanillaChainsawCvar",1);
 	SetCvar("ClassicChaingunCvar",1);
@@ -173,6 +177,8 @@ script "ClassicalCvars" (void) net
 
 script "StevenCvars" (void) net
 {
+	SetCvar("BD64_Preset",2);
+	
 	SetCvar("AlternativeAmmoPickupSpritesCvar",2);
 	SetCvar("VanillaChainsawCvar",0);
 	SetCvar("ClassicChaingunCvar",0);
@@ -189,11 +195,11 @@ script "StevenCvars" (void) net
 	SetCvar("TCMapCheckCvar",1);
 	SetCvar("AbsMapCheckCvar",1);
 
-	SetCvar("Chaingun_Spawner_Cvar",1);
-	SetCvar("GaussCannon_Spawner_Cvar",1);
-	SetCvar("BFG_Spawner_Cvar",1);
-	SetCvar("WpnPower_Spawner_Cvar",1);
-	SetCvar("BonusRandomCvar",1);
+	SetCvar("Chaingun_Spawner_Cvar",0);
+	SetCvar("GaussCannon_Spawner_Cvar",0);
+	SetCvar("BFG_Spawner_Cvar",0);
+	SetCvar("WpnPower_Spawner_Cvar",0);
+	SetCvar("BonusRandomCvar",0);
 
 	SetCvar("ZMarineRandom_Cvar",0);
 	SetCvar("SSGZombieRandom_Cvar",0);
@@ -228,7 +234,7 @@ script "StevenCvars" (void) net
 	SetCvar("TheHorde_Multiplier_Cvar",0);
 	
 	SetUserCvar(PlayerNumber(),"AlternativeLaserSkinCvar",TRUE);
-	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",0);
+	SetUserCvar(PlayerNumber(),"BerserkSwitchFistsCvar",TRUE);
 	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);
 	ACS_NamedExecuteAlways("BD64Respawn",0);
 	
