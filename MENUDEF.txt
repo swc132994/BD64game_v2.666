@@ -78,7 +78,7 @@ OptionMenu "BD64Menu"
 	SafeCommand "Default", "pukename DefaultCvars"
 	StaticText "Tweaks the settings to be as vanilla as possible",1
 	SafeCommand "Classical", "pukename ClassicalCvars"
-	StaticText "Adds new monsters with balanced settings, how the creator plays his own mod",1
+	StaticText "Adds new monsters and weapons with balanced settings, how the creator plays his own mod",1
 	SafeCommand "Additional", "pukename StevenCvars"
 	StaticText " "
 	StaticText "To set all monster/weapon/item spawners to random, press this",1
