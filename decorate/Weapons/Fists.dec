@@ -280,8 +280,11 @@ VisibleToPlayerClass "Tactical64DoomPlayer","Tactical64DoomPlayer_P","Modern"
 		PUNG WV 1 A_WeaponReady(WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
 		Goto PullUp2
 	UpperWait:
-		TNT1 A 4
+		TNT1 A 6
 		TNT1 A 0 A_ReFire("Upper")
+		Goto AltEndPunchStamina
+	AltEndPunchStamina:
+		TNT1 A 0 A_GiveInventory("Stamina",8)
 		Goto AltEndPunch
 	Upper:
 		PUN1 R 1 A_WeaponReady(WRF_NOFIRE)
