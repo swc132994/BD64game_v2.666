@@ -1,10 +1,7 @@
-#library "64PRESET"
-#include "zcommon.acs"
-
 //Presets
 script "DefaultCvars" (void) net
 {
-	SetCvar("BD64_Preset",0);
+	SetCVarString("BD64_Preset","Default");
 
 	SetCvar("AlternativeAmmoPickupSpritesCvar",1);
 	SetCvar("VanillaChainsawCvar",0);
@@ -90,7 +87,7 @@ script "DefaultCvars" (void) net
 
 script "ClassicalCvars" (void) net
 {
-	SetCvar("BD64_Preset",1);
+	SetCVarString("BD64_Preset","Classical");
 	
 	SetCvar("AlternativeAmmoPickupSpritesCvar",1);
 	SetCvar("VanillaChainsawCvar",1);
@@ -177,7 +174,7 @@ script "ClassicalCvars" (void) net
 
 script "StevenCvars" (void) net
 {
-	SetCvar("BD64_Preset",2);
+	SetCVarString("BD64_Preset","SWC's Vision");
 	
 	SetCvar("AlternativeAmmoPickupSpritesCvar",2);
 	SetCvar("VanillaChainsawCvar",0);

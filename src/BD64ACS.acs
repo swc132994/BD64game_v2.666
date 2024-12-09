@@ -5,6 +5,7 @@
 #include "BD64ScreenFXACS.acs"
 #include "BD64Inputs.acs"
 #include "BD64Spawners.acs"
+#include "BD64Preset.acs"
 
 script "BD64Respawn" Respawn NET
 {
@@ -328,7 +329,8 @@ script "LowAmmoSFX" (void) clientside
 	if(GetUserCVar(PlayerNumber(),"LowAmmoSFX") == 1) { PlaySound(0,"Weapon/LowAmmo",CHAN_AUTO,1.0,false,1.0,true); }
 }
 
-//Presets
+//Presets (Outdated except Randomiser)
+/*
 script "OriginalCvars" (void) net
 {
 	SetCvar("AlternativeAmmoPickupSpritesCvar",1);
@@ -517,7 +519,7 @@ script "EnhancedCvars" (void) net
 	SetUserCvar(PlayerNumber(),"LowAmmoSFX",1);
 	ACS_NamedExecuteAlways("BD64Respawn",0);
 	delay(1);
-}
+}*/
 
 script "RandomCvars" (void) net
 {

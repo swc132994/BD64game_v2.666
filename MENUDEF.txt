@@ -69,17 +69,18 @@ OptionMenu "BD64Menu"
 	Command "Apply Changes","PukeName BD64Respawn"
 	StaticText " "
 	StaticText "-------------------------------- Presets -------------------------------------",1
-	StaticText "------------You must be inside a level before pressing the buttons------------"
-	StaticText "---------You also have to exit the menu each time you apply a preset---------"
-	Option "Last Preset Used =", "BD64_Preset", "VisualPreset"
-	StaticText "Option above is purely a confirmation of the preset successfully applying, it does nothing"
+	StaticText "You must be inside a level before pressing the buttons",1
+	StaticText "You also have to exit the menu each time you apply a preset",1
+	TextField "Last Preset Used =", "BD64_Preset"
+	StaticText "Option above is purely a confirmation of the preset successfully applying",1
+	StaticText "it does nothing",1
 	StaticText " "
-	StaticText "The mod's default options",1
 	SafeCommand "Default", "pukename DefaultCvars"
-	StaticText "Tweaks the settings to be as vanilla as possible",1
+	StaticText "The mod's default options",1
 	SafeCommand "Classical", "pukename ClassicalCvars"
+	StaticText "Tweaks the settings to be as vanilla as possible",1	
+	SafeCommand "SWC's Vision", "pukename StevenCvars"
 	StaticText "Adds new monsters and weapons with balanced settings, how the creator plays his own mod",1
-	SafeCommand "Additional", "pukename StevenCvars"
 	StaticText " "
 	StaticText "To set all monster/weapon/item spawners to random, press this",1
 	SafeCommand "Spawner Randomiser", "pukename RandomCvars"
@@ -383,11 +384,11 @@ OptionValue "YesOrNoFalse"
 	0,"Yes"
 }
 
-OptionValue "VisualPreset"
+OptionString "VisualPreset"
 {
-	0,"Default"
-	1,"Classical"
-	2,"Additional"
+	"Default","Default"
+	"Classical","Classical"
+	"SWC's Vision","SWC's Vision"
 }
 
 //Monster values
