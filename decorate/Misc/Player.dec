@@ -65,6 +65,7 @@ Player.ViewHeight 50
 Player.AttackZOffset 23
 Player.DisplayName "Classical"
 Player.CrouchSprite "PLYC"
+	//Player.Portrait	"PDOMA0"
 	States
 	{
 	Spawn:
@@ -536,6 +537,7 @@ Player.ViewHeight 50
 Player.AttackZOffset 23
 Player.DisplayName "Modern"
 Player.CrouchSprite "PLYC"
+	//Player.Portrait	"PCSHA0"
 	States
 	{
 	Spawn:
