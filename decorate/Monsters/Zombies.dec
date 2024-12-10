@@ -1731,7 +1731,7 @@ Actor 64ChaingunGuy : 64Zombieman Replaces Chaingunguy
 //$category "Game/BD64_Monsters
 Health 120
 Speed 4
-AttackSound "grunt/attack"
+AttackSound "MGUNFIR"
 Tag "Chaingun Zombie"
 Obituary "$FO_OB_CHAINGUY"
 DropItem "ChaingunDrop"
@@ -2157,7 +2157,7 @@ Actor 64ZombieMarine : 64Zombieman Replaces WolfensteinSS
 Health 80
 Speed 12
 DamageFactor "Head",2.25
-AttackSound "grunt/attack"
+AttackSound "RIFLE"
 Tag "Marine Zombie"
 Obituary "%o was gunned down by a zombie marine."
 DropItem "RifleDrop"

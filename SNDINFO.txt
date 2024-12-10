@@ -980,6 +980,110 @@ FLORGLS2		FLORGLS2
 
 polt/buzz		PLBUZZIN
 
+//PSX Caulking sounds - By Jaxxoon R
+//Generic sounds
+claw1					DSCLAW1
+claw2					DSCLAW2
+claw3					DSCLAW3
+claw4					DSCLAW4
+
+fireexplode1			DSFIRXP1
+fireexplode2			DSFIRXP2
+
+fireshooty1				DSFIRSH1
+fireshooty2				DSFIRSH1
+misc/gibbed				DSSLOP
+
+//Imp sounds
+imp/pain				DSBGPAI2
+imp/active				DSBGACT
+$random imp/melee
+	{
+	claw1 claw2 claw3 claw4
+	}
+$random imp/attack
+	{
+	fireshooty1 fireshooty2
+	}
+$random imp/shotx
+	{
+	fireexplode1 fireexplode2
+	}
+
+//Monster see sounds
+demon/sight				DSSPCSIT
+spectre/sight			DSSPCSIT
+
+//Monster pain Sounds
+caco/pain				DSCACPAI
+skull/pain				DSSKLPN
+skeleton/pain			DSSKEPAI
+cyber/pain				DSCYBPAI
+baron/pain 				DSBRPAIN
+knight/pain				DSKNTPAI
+spectre/pain			DSSPCPAN
+fatso/pain				DSMNPAIN
+spider/pain				DSSPPAIN
+baby/pain				DSBSPPAI
+
+//Monster active sounds
+caco/active				DSCACACT
+skull/active			DSLSACT
+baron/active			DSBRACT
+cyber/active			DSCYBACT
+spider/active			DSSPIACT
+knight/active			DSKNTACT
+fatso/active			DSMANACT
+pain/active				DSPEACT
+spectre/active			DSSPCACT
+baby/active				Dsbspact
+skeleton/active			DSSKEACT
+
+//Monster attack sounds
+demon/melee				DSSGTATK
+$random caco/attack
+	{
+	fireshooty1 fireshooty2
+	}
+$random baron/melee
+	{
+	claw1 claw2 claw3 claw4
+	}
+$random baron/attack
+	{
+	fireshooty1 fireshooty2
+	}
+$random baron/shotx
+	{
+	fireexplode1 fireexplode2
+	}
+$random fatso/attack
+	{
+	fireshooty1 fireshooty2
+	}
+spectre/melee			DSSPECTK
+baby/attack				DSPLASMA
+
+//Death Sounds
+spider/death			DSSPIDTH
+spectre/death			DSSPCDTH
+demon/death				DSSPCDTH
+skull/death				DSLSOD
+
+dguyfall				DSPLFALL
+pl_gibbed				DSSLOP
+vile/raise				DSSLOP
+
+//Quit, etc
+$random menu/quit1
+	{
+	items/health2 powerups/invis  berserk/punch cyber/pain baron/pain weapons/unmaker player/male/death1 demon/pain grunt/pain misc/gibbed misc/teleport grunt/sight1 grunt/sight3 demon/melee
+	}
+$random menu/quit2
+	{
+	gibbage/egg1 powerups/megasphere chainguy/sight1 chainguy/sight2 skeleton/head gibbage/vilebody1 vile/active misc/p_pkup brain/cube misc/gibbed skeleton/swing knight/death baby/active demon/melee
+	}
+
 //---------------------------
 //**********GORE*************
 //---------------------------

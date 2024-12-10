@@ -1,7 +1,7 @@
 Actor AltPunchCharge : Ammo
 {
 inventory.maxamount 100
-Inventory.Icon "PUN1F0"
+Inventory.Icon "PUN1A0"
 }
 
 Actor 64Fist : Fist Replaces Fist
