@@ -64,8 +64,8 @@ LISTMENU "MainMenu"
 ListMenu "PlayerclassMenu"
 {
 	StaticTextCentered 160, 15, "Choose Class:"
-	Position 30, 50
-	PlayerDisplay 160, 35, "FF 00 00", "FF 00 00"
+	Position 50, 45
+	PlayerDisplay 140, 35, "FF 00 00", "FF 00 00"
 	// The rest of this menu will be set up based on the actual player definitions.
 }
 
