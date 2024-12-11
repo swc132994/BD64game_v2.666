@@ -615,6 +615,31 @@ BREATHOF					BREATHOF
 64Bruiser/attack			SNDBDMSL
 64Bruiser/shotx				SNDIMPCT
 
+//BELPHEGOR
+$random 64Belphegor/see
+	{
+	64Belphegor/see1 64Belphegor/see2
+	}
+64Belphegor/see1		TAURSIT1
+64Belphegor/see2		TAURSIT2
+
+64Belphegor/active		TAURACT
+
+$random 64Belphegor/pain
+	{
+	64Belphegor/pain1 64Belphegor/pain2
+	}
+64Belphegor/pain1		TAURHIT1
+64Belphegor/pain2		TAURHIT2
+
+$random 64Belphegor/throw
+	{
+	64Belphegor/throw1 64Belphegor/throw2
+	}
+64Belphegor/throw1		TAURATK1
+64Belphegor/throw2		TAURATK2
+64Belphegor/death		TAURDIE
+
 //THING
 64Thing/sight			HEADRIP3
 64Thing/pain			BQPAIN2A
@@ -1011,36 +1036,34 @@ $random imp/shotx
 	}
 
 //Monster see sounds
-demon/sight				DSSPCSIT
-spectre/sight			DSSPCSIT
+aciddemon/see			DSSPCSIT
 
 //Monster pain Sounds
 caco/pain				DSCACPAI
-skull/pain				DSSKLPN
 skeleton/pain			DSSKEPAI
 cyber/pain				DSCYBPAI
 baron/pain 				DSBRPAIN
 knight/pain				DSKNTPAI
-spectre/pain			DSSPCPAN
+aciddemon/pain			DSSPCPAI
 fatso/pain				DSMNPAIN
 spider/pain				DSSPPAIN
 baby/pain				DSBSPPAI
 
 //Monster active sounds
 caco/active				DSCACACT
-skull/active			DSLSACT
 baron/active			DSBRACT
 cyber/active			DSCYBACT
 spider/active			DSSPIACT
 knight/active			DSKNTACT
 fatso/active			DSMANACT
 pain/active				DSPEACT
-spectre/active			DSSPCACT
+aciddemon/active		DSSPCACT
 baby/active				Dsbspact
 skeleton/active			DSSKEACT
 
 //Monster attack sounds
-demon/melee				DSSGTATK
+aciddemon/melee			DSSPECTK
+
 $random caco/attack
 	{
 	fireshooty1 fireshooty2
@@ -1061,13 +1084,12 @@ $random fatso/attack
 	{
 	fireshooty1 fireshooty2
 	}
-spectre/melee			DSSPECTK
+
 baby/attack				DSPLASMA
 
 //Death Sounds
 spider/death			DSSPIDTH
-spectre/death			DSSPCDTH
-demon/death				DSSPCDTH
+aciddemon/death			DSSPCDTH
 skull/death				DSLSOD
 
 dguyfall				DSPLFALL

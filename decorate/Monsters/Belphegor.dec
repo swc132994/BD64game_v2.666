@@ -8,10 +8,10 @@ Radius 24
 Speed 8
 FastSpeed 12
 Mass 1200
-SeeSound "64Bruiser/sight"
-PainSound "64Bruiser/pain"
-DeathSound "64Bruiser/death"
-ActiveSound "64Bruiser/active"
+SeeSound "64Belphegor/see"
+PainSound "64Belphegor/pain"
+DeathSound "64Belphegor/death"
+ActiveSound "64Belphegor/active"
 Obituary "%o was Obliterated by a Belphegor."
 Tag "Belphegor"
 PainChance 25
@@ -40,7 +40,7 @@ BloodType "Brutal_BloodGreen"
 		Goto See
 	Missile:
 		TNT1 A 0 A_JumpIfCloser(320,"ChargeStart")
-		TNT1 A 0 A_PlaySound("64Bruiser/raiseguns",CHAN_AUTO)
+		TNT1 A 0 A_PlaySound("64Belphegor/throw",CHAN_AUTO)
 		BOS3 EF 9 A_FaceTarget
 		BOS3 G 8 BRIGHT A_CustomMissile("64BelphegorBall",60,0)
 		Goto See

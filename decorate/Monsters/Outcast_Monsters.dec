@@ -7,6 +7,11 @@ Health 200
 MeleeRange 60 //default 44
 MaxTargetRange 384
 MeleeThreshold 125
+SeeSound "aciddemon/see"
+ActiveSound "aciddemon/active"
+AttackSound "aciddemon/melee"
+PainSound "aciddemon/pain"
+DeathSound "aciddemon/death"
 PainChance 180
 PainChance "Fire",26
 PainChance "Bullet",26

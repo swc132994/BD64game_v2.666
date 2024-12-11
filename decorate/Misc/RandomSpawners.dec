@@ -162,7 +162,7 @@ Scale 0.82
 	Spawn:
 		PINS A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("WpnPowerRandom")
-		TNT1 A 0 A_Jump(32,"SpawnDemonKey")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnDemonKey")//10%
 	SpawnBlurSphere:
 		TNT1 A 1 A_SpawnItemEx("64Blursphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -181,7 +181,7 @@ Scale 0.82
 	Spawn:
 		PSTR A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("WpnPowerRandom")
-		TNT1 A 0 A_Jump(32,"SpawnDemonKey")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnDemonKey")//10%
 	SpawnBerserk:
 		TNT1 A 1 A_SpawnItemEx("64Berserk",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -200,7 +200,7 @@ Scale 0.7
 	Spawn:
 		SOUL A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("WpnPowerRandom")
-		TNT1 A 0 A_Jump(32,"SpawnDemonKey")//12.5%
+		TNT1 A 0 A_Jump(26,"SpawnDemonKey")//10%
 	SpawnSoulSphere:
 		TNT1 A 1 A_SpawnItemEx("64Soulsphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -219,7 +219,7 @@ Scale 0.7
 	Spawn:
 		MEGA A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("WpnPowerRandom")
-		TNT1 A 0 A_Jump(32,"SpawnDemonKey")//12.5%
+		TNT1 A 0 A_Jump(38,"SpawnDemonKey")//15%
 	SpawnMegaSphere:
 		TNT1 A 1 A_SpawnItemEx("64MegaSphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop
@@ -238,7 +238,7 @@ Scale 0.7
 	Spawn:
 		PINV A 0
 		TNT1 A 2 ACS_NamedExecuteAlways("WpnPowerRandom")
-		TNT1 A 0 A_Jump(32,"SpawnDemonKey")//12.5%
+		TNT1 A 0 A_Jump(38,"SpawnDemonKey")//15%
 	SpawnInvulnerabilitySphere:
 		TNT1 A 1 A_SpawnItemEx("64InvulnerabilitySphere",0,0,0,0,0,0,0,SXF_TRANSFERPOINTERS|SXF_TRANSFERSPECIAL|SXF_CLEARCALLERTID,0,tid)
 		Stop

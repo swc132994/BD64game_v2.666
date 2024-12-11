@@ -526,7 +526,7 @@ script "RandomCvars" (void) net
 	SetCvar("Chaingun_Spawner_Cvar",0);
 	SetCvar("GaussCannon_Spawner_Cvar",0);
 	SetCvar("BFG_Spawner_Cvar",0);
-	SetCvar("WpnPower_Spawner_Cvar",0);
+//	SetCvar("WpnPower_Spawner_Cvar",0);
 	SetCvar("BonusRandomCvar",0);
 	SetCvar("ZMarineRandom_Cvar",0);
 	SetCvar("SSGZombieRandom_Cvar",random(-2,0));

@@ -118,6 +118,7 @@ Player/Doomguy 64 crouch sprites:
 
 Monsters:
 //Mancubus bone and cybernetic gib by kaviarmackan
+
 //Archnotron & NightCrawler flipped XDeath and XDeath Gun sprites by kaviarmackan
 
 //64Thing - Craneo(D64 sprites), swc132994(decorate) based on the Mimic by StopSignal, sounds from Duke Nukem 3D by 3D Realms
@@ -144,7 +145,7 @@ Monsters:
 
 //64BFGZombie - Sprites: Id Software, Midway, DrDoctor, Immorpher, Footman, Atomic Frog, Vader, Xim, Korp, ItsNatureToDie, neoworm, Craneo. Sounds: Immorpher
 
-//64Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks)
+//64Belphegor - Midway, NMN, DrDoctor (sprites), Craneo (tweaks), kaviarmackan (sounds)
 
 //64Wraith - Vader, Captain Toenail, Midway, Id Software, Gregor Punchatz, Craneo (D64 style sprites)
 
