@@ -287,6 +287,9 @@ DSFIRXPL		DSFIRXPL
 //Unmaker
 UNMAKER			UNMAKER
 UNMKLP			UNMKLP
+LASERTR			LASERTR		$limit LASERTR 0
+LASERLO			LASERLO		$attenuation LASERLO 2
+LASERIC			LASERIC		$attenuation LASERIC 2
 weapons/unmaker				dslaser		$limit weapons/unmaker 0
 OutHelltime					DSHTIME
 UnmakerFireModeSwitch		UNFMSW
