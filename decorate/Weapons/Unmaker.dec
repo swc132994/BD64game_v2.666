@@ -674,13 +674,14 @@ Obituary "%o was unmade by %k."
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_PlaySound ("LASERLO", 7, 1, TRUE, 1.0)
+// 		TNT1 A 0 A_PlaySound ("LASERLO", 7, 1, TRUE, 1.0)
 		ULAZ A 1 NoDelay A_SeekerMissile(5,35,SMF_LOOK)
 		ULAZ AAAAA 1 Bright A_ChangeVelocity(velx*1.5,vely*1.5,velz*1.5,CVF_REPLACE)
-	Spawn2:
-		TNT1 A 0 A_PlaySound ("LASERLO", 7, 1, TRUE, 1.0)
 		ULAZ B 1 Bright A_ChangeVelocity(velx*1.5,vely*1.5,velz*1.5,CVF_REPLACE)
-		Loop
+		Wait
+// 	Spawn2:
+// 		TNT1 A 0 A_PlaySound ("LASERLO", 7, 1, TRUE, 1.0)
+// 		Loop
 	Death:
 		TNT1 A 0 A_StopSound(7)
 		TNT1 A 0 A_SpawnItemEx("DetectFloorLaser")
@@ -710,13 +711,14 @@ DamageType "Ice"
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_PlaySound ("LASERIC", 7, 1, TRUE, 1.0)
+// 		TNT1 A 0 A_PlaySound ("LASERIC", 7, 1, TRUE, 1.0)
 		ULAZ A 1 NoDelay A_SeekerMissile(5,35,SMF_LOOK)
 		ULAZ AAAAA 1 Bright A_ChangeVelocity(velx*1.5,vely*1.5,velz*1.5,CVF_REPLACE)
-	Spawn2:
-		TNT1 A 0 A_PlaySound ("LASERIC", 7, 1, TRUE, 1.0)
 		ULAZ B 1 Bright A_ChangeVelocity(velx*1.5,vely*1.5,velz*1.5,CVF_REPLACE)
-		Loop
+		Wait
+// 	Spawn2:
+// 		TNT1 A 0 A_PlaySound ("LASERIC", 7, 1, TRUE, 1.0)
+// 		Loop
 	Death:
 		TNT1 A 0 A_StopSound(7)
 		TNT1 A 0 A_SpawnItemEx("DetectCeilCraterICE")
