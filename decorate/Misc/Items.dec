@@ -751,10 +751,10 @@ Actor 64HighCaliberBox : Ammo	//new ammo for rifle and chaingun
 Scale 0.82
 Inventory.PickupSound "IPICK"
 Inventory.PickupMessage "Picked up a high-caliber ammo box."
-Inventory.Amount 40
-Inventory.MaxAmount 150
-Ammo.BackpackAmount 20
-Ammo.BackpackMaxAmount 300
+Inventory.Amount 50
+Inventory.MaxAmount 200
+Ammo.BackpackAmount 10
+Ammo.BackpackMaxAmount 400
 Inventory.Icon "HI04X0"
 Tag "High Calibre Bullet Box"
 	states

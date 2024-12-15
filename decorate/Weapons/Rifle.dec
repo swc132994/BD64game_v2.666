@@ -221,7 +221,7 @@ Tag "Assault Rifle"
 		TNT1 A 0 A_JumpIfInventory("NoReloading",1,"NoReload")
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",1,1)
 		Goto Reload
-		TNT1 A 0 A_Takeinventory("RifleAmmo",1)
+		TNT1 A 0 A_Takeinventory("RifleAmmo",1,TIF_NOTAKEINFINITE)
 		TNT1 A 0 A_JumpIfInventory("RifleAmmo",9,"ResumeFire")
 		TNT1 A 0 ACS_NamedExecute("LowAmmoSFX")
 		Goto ResumeFire

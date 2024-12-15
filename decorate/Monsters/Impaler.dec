@@ -160,11 +160,19 @@ MONSTER
 		TNT1 A 0 A_CustomMissile("64ImpalerLeg1",35,0,random(0,360),2,random(10,60))
 		TNT1 A 0 A_CustomMissile("64ImpalerLeg2",35,0,random(0,360),2,random(30,60))
 		TNT1 A 0 A_CustomMissile("64ImpalerLeg3",35,0,random(0,360),2,random(20,60))
+		TNT1 A 0 A_Jump(128,"XDeathFlip")
 		CENT O 5 A_Scream
 		CENT O 5 A_NoBlocking
 		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
 		CENT O 35 A_BossDeath
 		CENT O -1 A_SpawnItemEx("GrowingBloodPoolGreen")
+		Stop
+	XDeathFlip:
+		CEN2 O 5 A_Scream
+		CEN2 O 5 A_NoBlocking
+		TNT1 A 0 A_KillMaster("None")	//tag 666 fix
+		CEN2 O 35 A_BossDeath
+		CEN2 O -1 A_SpawnItemEx("GrowingBloodPoolGreen")
 		Stop
 	Ice:
 		"####" "#" 2 ACS_NamedExecuteAlways("IceDeathTranslate")

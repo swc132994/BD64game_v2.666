@@ -2290,25 +2290,27 @@ XScale -0.8
 YScale -0.8
 }
 
-ACTOR XDeathSpiderHead : XDeathSpiderLeg1
+ACTOR XDeathSpiderHead : XDeathZombieArm1
 {
+Scale 0.7
 	States
 	{
 	Spawn:
 		SPIH A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
+		SPIH A 1 ThrustThingZ(0,25,0,0)
 		SPIH ABCDEFGH 4
 		Wait
 	Death:
 		TNT1 A 0 A_Jump(128,"Death2")
-		SPIH I 35
+		SPIH B 35
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
-		SPIH I -1
+		SPIH B -1
 		Stop
 	Death2:
-		SPIH J 35
+		SPIH F 35
 		TNT1 A 0 A_CustomMissile("BigBloodSpot",0,0,random(0,360),2,random(0,90))
-		SPIH J -1
+		SPIH F -1
 		Stop
 	}
 }
@@ -2321,18 +2323,19 @@ ACTOR XDeathBlueSpiderHead : XDeathSpiderHead
 	Spawn:
 		BBRH A 0 NoDelay A_Jump(128,2)
 		TNT1 A 0 A_SetScale(0-ScaleX,ScaleY)	//FLIP IMAGE HORZ
+		BBRH A 1 ThrustThingZ(0,25,0,0)
 		BBRH ABCDEFGH 4
 		Wait
 	Death:
 		TNT1 A 0 A_Jump(128,"Death2")
-		BBRH I 35
+		BBRH B 35
 		TNT1 A 0 A_CustomMissile("BigBloodSpotBLUE",0,0,random(0,360),2,random(0,90))
-		BBRH I -1
+		BBRH B -1
 		Stop
 	Death2:
-		BBRH J 35
+		BBRH F 35
 		TNT1 A 0 A_CustomMissile("BigBloodSpotBLUE",0,0,random(0,360),2,random(0,90))
-		BBRH J -1
+		BBRH F -1
 		Stop
 	}
 }
@@ -2356,7 +2359,7 @@ renderstyle Normal
 //ERADICATOR - UNMAKER MASTERMIND
 Actor EradicatorHead : XDeathBlueSpiderHead
 {
-Scale 1.5
+Scale 1.2
 }
 
 ACTOR XDeathBlueSpiderLeg1 : XDeathSpiderLeg1
@@ -2388,7 +2391,7 @@ YScale -0.8
 //SPIDER MASTERMIND
 ACTOR XDeathMastermindHead : XDeathSpiderHead
 {
-Scale 1.5
+Scale 1.2
 }
 
 //HELLHOUND ALT

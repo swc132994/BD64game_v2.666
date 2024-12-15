@@ -9,7 +9,7 @@ DeathSound "colonelzombie/death"
 PainSound "colonelzombie/pain"
 DamageFactor "Head",2.25
 Tag "Plasma Zombie"
-DropItem "Cell"
+DropItem "64Cell"
 DropItem "SOULSPAWNER"
 Obituary "%o was melted by a zombie colonel."
 	States
